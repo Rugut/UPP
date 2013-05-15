@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:113px;width:163px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Период',
 			style: 'position:absolute;left:176px;top:113px;width:120px;height:19px;',
 		},
@@ -30,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокНачисленияСеверныхНадбавок',
 			style: 'position:absolute;left:176px;top:8px;width:120px;height:19px;',
 		},
@@ -40,8 +43,11 @@
 			style: 'position:absolute;left:209px;top:73px;width:37px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СеверныйСтажДней',
 			style: 'position:absolute;left:251px;top:73px;width:40px;height:19px;',
 		},
@@ -52,8 +58,11 @@
 			style: 'position:absolute;left:8px;top:32px;width:163px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НачальныйПроцентСевернойНадбавки',
 			style: 'position:absolute;left:176px;top:32px;width:40px;height:19px;',
 		},
@@ -64,8 +73,46 @@
 			style: 'position:absolute;left:99px;top:73px;width:54px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Северный стаж',
+			style: 'position:absolute;left:8px;top:55px;width:288px;height:16px;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'СеверныйСтажМесяцев',
+			style: 'position:absolute;left:154px;top:73px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:103px;width:288px;height:6px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСеверныйСтажЛет',
+			text: 'Лет:',
+			style: 'position:absolute;left:13px;top:73px;width:29px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'СеверныйСтажЛет',
+			style: 'position:absolute;left:47px;top:73px;width:40px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:140px;width:304px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -83,24 +130,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СеверныйСтажМесяцев',
-			style: 'position:absolute;left:154px;top:73px;width:40px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСеверныйСтажЛет',
-			text: 'Лет:',
-			style: 'position:absolute;left:13px;top:73px;width:29px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СеверныйСтажЛет',
-			style: 'position:absolute;left:47px;top:73px;width:40px;height:19px;',
 		},
 	]
 });

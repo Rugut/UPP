@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:324px;width:314px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Период',
 			style: 'position:absolute;left:322px;top:324px;width:100px;height:19px;',
 		},
@@ -30,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтношениеКВоинскойОбязанности',
 			style: 'position:absolute;left:202px;top:8px;width:220px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтношениеКВоинскомуУчету',
 			style: 'position:absolute;left:202px;top:198px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Годность',
 			style: 'position:absolute;left:322px;top:126px;width:100px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Звание',
 			style: 'position:absolute;left:202px;top:80px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗабронированОрганизацией',
 			style: 'position:absolute;left:202px;top:289px;width:220px;height:19px;',
 		},
@@ -95,6 +102,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Военкомат',
 			style: 'position:absolute;left:88px;top:150px;width:334px;height:19px;',
 		},
@@ -107,12 +115,76 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВУС',
 			style: 'position:absolute;left:88px;top:126px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Специальный воинский учет',
+			style: 'position:absolute;left:8px;top:268px;width:414px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Общий воинский учет',
+			style: 'position:absolute;left:8px;top:177px;width:414px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Данные военного билета',
+			style: 'position:absolute;left:8px;top:33px;width:414px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Категория запаса:',
+			style: 'position:absolute;left:14px;top:54px;width:186px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'КатегорияЗапаса',
+			style: 'position:absolute;left:202px;top:54px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'Состав (профиль):',
+			style: 'position:absolute;left:14px;top:102px;width:186px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Состав',
+			style: 'position:absolute;left:202px;top:102px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись12',
+			text: 'Номер команды, партии:',
+			style: 'position:absolute;left:14px;top:242px;width:186px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'НомерКомандыПартии',
+			style: 'position:absolute;left:202px;top:242px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:313px;width:414px;height:6px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:351px;width:430px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -130,42 +202,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись10',
-			text: 'Категория запаса:',
-			style: 'position:absolute;left:14px;top:54px;width:186px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КатегорияЗапаса',
-			style: 'position:absolute;left:202px;top:54px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись11',
-			text: 'Состав (профиль):',
-			style: 'position:absolute;left:14px;top:102px;width:186px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Состав',
-			style: 'position:absolute;left:202px;top:102px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись12',
-			text: 'Номер команды, партии:',
-			style: 'position:absolute;left:14px;top:242px;width:186px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерКомандыПартии',
-			style: 'position:absolute;left:202px;top:242px;width:220px;height:19px;',
 		},
 	]
 });

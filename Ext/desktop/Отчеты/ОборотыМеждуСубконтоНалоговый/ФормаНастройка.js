@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:251px;',
 			height: 251,width: 384,
@@ -47,8 +26,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:88px;top:6px;width:120px;height:19px;',
 		},
@@ -59,8 +40,10 @@
 			style: 'position:absolute;left:212px;top:6px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:232px;top:6px;width:120px;height:19px;',
 		},
@@ -79,6 +62,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:32px;width:288px;height:19px;',
 		},
@@ -157,22 +141,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:116px;width:182px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:194px;top:116px;width:182px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидУчета',
 			style: 'position:absolute;left:88px;top:56px;width:80px;height:19px;',
 		},
@@ -218,13 +189,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:24px;width:222px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -345,14 +309,32 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
-			items:
-			[
+					]
+				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

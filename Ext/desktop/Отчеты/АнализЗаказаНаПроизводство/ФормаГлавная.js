@@ -10,21 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьЗаказ',
 			text: 'Заказ на производство:',
@@ -33,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Заказ',
 			style: 'position:absolute;left:148px;top:33px;width:611px;height:19px;',
 		},
@@ -48,8 +34,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНаДату',
 			style: 'position:absolute;left:57px;top:2px;width:80px;height:19px;',
 		},
@@ -60,6 +48,25 @@
 			style: 'position:absolute;left:0px;top:2px;width:55px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

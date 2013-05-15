@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:424px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:504px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:524px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:113px;top:33px;width:203px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:506px;width:584px;height:19px;',
 		},
@@ -66,36 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:686px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:236px;top:533px;width:450px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -106,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:113px;top:57px;width:203px;height:19px;',
 		},
@@ -128,22 +107,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:81px;top:6px;width:365px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Целодневный (целосменный) с:',
-			style: 'position:absolute;left:26px;top:97px;width:184px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Внутрисменный',
-			style: 'position:absolute;left:26px;top:121px;width:103px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:212px;top:97px;width:100px;height:19px;',
 		},
@@ -154,14 +126,18 @@
 			style: 'position:absolute;left:327px;top:97px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:346px;top:97px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаВнутрисменная',
 			style: 'position:absolute;left:212px;top:121px;width:100px;height:19px;',
 		},
@@ -172,8 +148,11 @@
 			style: 'position:absolute;left:314px;top:121px;width:29px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОплачиватьЧасов',
 			style: 'position:absolute;left:346px;top:121px;width:100px;height:19px;',
 		},
@@ -190,8 +169,10 @@
 			style: 'position:absolute;left:6px;top:30px;width:162px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаСобытия',
 			style: 'position:absolute;left:168px;top:30px;width:100px;height:19px;',
 		},
@@ -255,49 +236,28 @@
 			text: '',
 			style: 'position:absolute;left:490px;top:252px;width:172px;height:68px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Целодневный (целосменный) с:',
+			style: 'position:absolute;left:26px;top:97px;width:184px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внутрисменный',
+			style: 'position:absolute;left:26px;top:121px;width:103px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 				{
 					title:'Оплата',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:656px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:656px;height:252px;',
@@ -696,43 +656,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:73px;width:656px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Рассчитать',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:97px;width:656px;height:176px;',
 			height: 176,width: 656,
@@ -851,14 +774,18 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодРасчетаСреднегоЗаработкаНачало',
 			style: 'position:absolute;left:42px;top:24px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодРасчетаСреднегоЗаработкаОкончание',
 			style: 'position:absolute;left:160px;top:24px;width:90px;height:19px;',
 		},
@@ -911,21 +838,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:113px;top:81px;width:203px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:533px;width:236px;height:25px;',
-			items:
-			[
-				{
-					text:'Исправить',
-				},
-				{
-					text:'Отменить исправление',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -972,6 +887,53 @@
 			style: 'position:absolute;left:0px;top:0px;width:129px;height:33px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:686px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:236px;top:533px;width:450px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:533px;width:236px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					text:'Исправить',
+				},
+				{
+					text:'Отменить исправление',
 				},
 			]
 		},

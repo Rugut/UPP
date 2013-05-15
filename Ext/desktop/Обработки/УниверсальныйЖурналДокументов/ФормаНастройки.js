@@ -20,21 +20,14 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:374px;width:681px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:7px;width:609px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:180px;width:665px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -103,22 +96,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:618px;top:5px;width:55px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:614px;top:196px;width:59px;height:24px;',
 			items:
 			[
@@ -157,6 +134,44 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:374px;width:681px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:618px;top:5px;width:55px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+			]
 		},
 	]
 });

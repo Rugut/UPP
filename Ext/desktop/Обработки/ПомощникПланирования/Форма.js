@@ -10,73 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:814px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Выбирать даты периодом',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Выбирать даты периодом',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:516px;width:814px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Далее>>',
-				},
-				'-',
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:798px;height:475px;',
 			height: 475,width: 798,
@@ -178,11 +111,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Конечные планы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
 		},
 					]
 				},
@@ -191,13 +122,26 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Стратегии расчета количества',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Изменить результат расчета (%):',
 			style: 'position:absolute;left:6px;top:430px;width:190px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаИзменитьРезультатРасчетаКоличестваПроцент',
 			style: 'position:absolute;left:198px;top:430px;width:80px;height:19px;',
 		},
@@ -214,15 +158,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаРежимСложенияОбъединения',
 			style: 'position:absolute;left:504px;top:430px;width:286px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -346,13 +284,21 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Изменить результат расчета (%)',
 			style: 'position:absolute;left:6px;top:430px;width:190px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаИзменитьРезультатРасчетаСуммыПроцент',
 			style: 'position:absolute;left:198px;top:430px;width:80px;height:19px;',
 		},
@@ -367,11 +313,9 @@
 			style: 'position:absolute;left:362px;top:430px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Стратегии расчета суммы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -526,16 +470,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:6px;top:430px;width:210px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отборы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
 		},
 					]
 				},
@@ -590,37 +532,83 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить пометки',
-				},
-				{
-					text:'Снять пометки',
-				},
-				'-',
-				{
-					text:'Провести',
-				},
-				{
-					text:'Установить/Снять пометку на удаление',
-				},
-				{
-					text:'Удалить непосредственно',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Обновить',
+			xtype: 'fieldset',
+			title: 'Сформированные документы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+		},
+					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:814px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Выбирать даты периодом',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 					]
+				},
+				'-',
+				{
+					text:'Выбирать даты периодом',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:516px;width:814px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Далее>>',
+				},
+				'-',
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

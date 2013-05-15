@@ -111,12 +111,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:202px;top:33px;width:120px;height:19px;',
 		},
@@ -129,6 +132,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:261px;width:360px;height:19px;',
 		},
@@ -141,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СписокТиповЦен',
 			style: 'position:absolute;left:102px;top:57px;width:360px;height:19px;',
 		},
@@ -153,6 +158,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:237px;width:360px;height:19px;',
 		},
@@ -217,5 +223,8 @@
 			boxLabel: 'Не регистрировать нулевые цены номенклатуры',
 			style: 'position:absolute;left:8px;top:81px;width:270px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

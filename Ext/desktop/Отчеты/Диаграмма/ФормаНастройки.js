@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:257px;width:487px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:128px;top:30px;width:280px;height:19px;',
 		},
@@ -37,8 +24,11 @@
 			style: 'position:absolute;left:128px;top:54px;width:180px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоОграничения',
 			style: 'position:absolute;left:372px;top:54px;width:60px;height:19px;',
 		},
@@ -145,8 +135,11 @@
 			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение',
 			style: 'position:absolute;left:136px;top:24px;width:60px;height:19px;',
 		},
@@ -188,8 +181,11 @@
 			style: 'position:absolute;left:6px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение1',
 			style: 'position:absolute;left:136px;top:24px;width:60px;height:19px;',
 		},
@@ -231,8 +227,11 @@
 			style: 'position:absolute;left:6px;top:48px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение2',
 			style: 'position:absolute;left:136px;top:48px;width:58px;height:19px;',
 		},
@@ -284,8 +283,11 @@
 			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение3',
 			style: 'position:absolute;left:136px;top:0px;width:60px;height:19px;',
 		},
@@ -307,8 +309,11 @@
 			style: 'position:absolute;left:6px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение4',
 			style: 'position:absolute;left:136px;top:0px;width:60px;height:19px;',
 		},
@@ -335,6 +340,33 @@
 			xtype: 'checkbox',
 			boxLabel: 'Серии в строках',
 			style: 'position:absolute;left:14px;top:78px;width:108px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Общие',
+			style: 'position:absolute;left:8px;top:8px;width:471px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Индивидуальные, для текущего типа диаграммы',
+			style: 'position:absolute;left:8px;top:101px;width:471px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:257px;width:487px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

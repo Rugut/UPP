@@ -10,37 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:548px;width:643px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -49,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:415px;top:33px;width:80px;height:19px;',
 		},
@@ -59,8 +29,10 @@
 			style: 'position:absolute;left:495px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:515px;top:33px;width:120px;height:19px;',
 		},
@@ -73,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
@@ -85,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -99,45 +73,6 @@
 					title:'Начисления',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:17px;width:627px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:41px;width:627px;height:262px;',
@@ -463,6 +398,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники и показатели для расчета',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
+		},
 					]
 				},
 			]
@@ -476,6 +416,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:521px;width:548px;height:19px;',
 		},
@@ -493,18 +434,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:296px;top:26px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДействия',
 			style: 'position:absolute;left:296px;top:72px;width:96px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДействияКонец',
 			style: 'position:absolute;left:420px;top:72px;width:96px;height:19px;',
 		},
@@ -520,6 +466,25 @@
 			text: 'по:',
 			style: 'position:absolute;left:397px;top:72px;width:20px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Действие',
+			style: 'position:absolute;left:0px;top:6px;width:221px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Вид расчета',
+			style: 'position:absolute;left:272px;top:6px;width:221px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Период',
+			style: 'position:absolute;left:272px;top:51px;width:221px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Внести или изменить начисление ',
@@ -540,7 +505,45 @@
 			boxLabel: 'Прекратить удержание',
 			style: 'position:absolute;left:18px;top:94px;width:221px;height:19px;',
 		},
+			]
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:548px;width:643px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

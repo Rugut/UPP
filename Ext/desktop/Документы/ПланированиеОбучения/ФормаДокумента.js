@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:286px;width:320px;height:19px;',
 		},
@@ -54,47 +58,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:262px;width:320px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:408px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Распределить на период',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -152,8 +118,57 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Учебный план',
+			style: 'position:absolute;left:8px;top:57px;width:408px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:408px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Распределить на период',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:424px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -191,6 +206,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:313px;width:424px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

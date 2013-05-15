@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:261px;width:431px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:415px;height:245px;',
 			height: 245,width: 415,
@@ -49,18 +28,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Счет',
 			style: 'position:absolute;left:89px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:89px;top:30px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:198px;top:30px;width:80px;height:19px;',
 		},
@@ -91,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:89px;top:54px;width:318px;height:19px;',
 		},
@@ -103,6 +88,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Данные по количеству',
 			style: 'position:absolute;left:14px;top:157px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:95px;width:401px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -151,13 +141,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:51px;width:401px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -249,14 +232,32 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:401px;height:24px;',
-			items:
-			[
+					]
+				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:261px;width:431px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

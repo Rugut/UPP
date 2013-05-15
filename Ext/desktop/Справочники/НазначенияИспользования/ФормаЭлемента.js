@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:373px;top:57px;width:40px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:90px;top:57px;width:246px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:90px;top:33px;width:323px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособПогашенияСтоимости',
 			style: 'position:absolute;left:186px;top:105px;width:227px;height:19px;',
 		},
@@ -64,8 +68,11 @@
 			style: 'position:absolute;left:8px;top:129px;width:177px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокПолезногоИспользования',
 			style: 'position:absolute;left:186px;top:129px;width:90px;height:19px;',
 		},
@@ -76,8 +83,11 @@
 			style: 'position:absolute;left:8px;top:81px;width:177px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:186px;top:81px;width:90px;height:19px;',
 		},
@@ -90,6 +100,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:343px;top:81px;width:70px;height:19px;',
 		},
@@ -102,12 +113,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияРасходов',
 			style: 'position:absolute;left:186px;top:153px;width:227px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:421px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -115,6 +131,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:180px;width:421px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

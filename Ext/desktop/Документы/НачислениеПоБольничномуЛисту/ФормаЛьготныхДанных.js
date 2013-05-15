@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:114px;width:596px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:580px;height:98px;',
 			height: 98,width: 580,
@@ -56,14 +39,18 @@
 			style: 'position:absolute;left:229px;top:0px;width:181px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплатыБезЛьгот1',
 			style: 'position:absolute;left:229px;top:48px;width:57px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОграничениеПособияБезЛьгот1',
 			style: 'position:absolute;left:229px;top:73px;width:351px;height:19px;',
 		},
@@ -74,8 +61,11 @@
 			style: 'position:absolute;left:0px;top:23px;width:225px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтажЛет',
 			style: 'position:absolute;left:229px;top:23px;width:57px;height:19px;',
 		},
@@ -86,8 +76,11 @@
 			style: 'position:absolute;left:380px;top:23px;width:47px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтажМесяцев',
 			style: 'position:absolute;left:317px;top:23px;width:57px;height:19px;',
 		},
@@ -115,8 +108,11 @@
 			style: 'position:absolute;left:0px;top:23px;width:208px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплаты3',
 			style: 'position:absolute;left:217px;top:23px;width:57px;height:19px;',
 		},
@@ -129,6 +125,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОграничениеПособия',
 			style: 'position:absolute;left:217px;top:48px;width:172px;height:19px;',
 		},
@@ -145,18 +142,43 @@
 			style: 'position:absolute;left:217px;top:0px;width:172px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплатыБезЛьгот2',
 			style: 'position:absolute;left:408px;top:23px;width:57px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОграничениеПособияБезЛьгот2',
 			style: 'position:absolute;left:408px;top:48px;width:172px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:114px;width:596px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

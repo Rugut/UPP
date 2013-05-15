@@ -10,55 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:6px;width:247px;height:24px;',
-			items:
-			[
-				{
-					text:'Добавить тип цен',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Установить все пометки',
-				},
-				{
-					text:'Снять все пометки',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:207px;width:263px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:247px;height:145px;',
 			height: 145,width: 247,
@@ -90,6 +41,60 @@
 			xtype: 'checkbox',
 			boxLabel: 'Перемещать отмеченные элементы наверх',
 			style: 'position:absolute;left:8px;top:180px;width:247px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:6px;width:247px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Добавить тип цен',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить все пометки',
+				},
+				{
+					text:'Снять все пометки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:207px;width:263px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -10,21 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:99px;width:312px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:35px;width:220px;height:19px;',
 		},
@@ -35,14 +23,18 @@
 			style: 'position:absolute;left:8px;top:35px;width:76px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:8px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
@@ -68,6 +60,23 @@
 			xtype: 'checkbox',
 			boxLabel: 'Показывать только сводные итоги ',
 			style: 'position:absolute;left:8px;top:63px;width:296px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:99px;width:312px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

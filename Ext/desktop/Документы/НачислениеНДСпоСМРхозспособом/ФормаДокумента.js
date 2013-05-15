@@ -10,55 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:396px;width:709px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
 			text: 'Комментарий:',
@@ -67,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:369px;width:611px;height:19px;',
 		},
@@ -79,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
@@ -89,8 +42,10 @@
 			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
@@ -103,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
@@ -115,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
 		},
@@ -191,6 +148,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Начисление НДС по СМР (хозспособ)',
+			style: 'position:absolute;left:8px;top:82px;width:693px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НалоговыйПериод',
 			text: '',
@@ -207,6 +169,60 @@
 			name: 'ГиперссылкаСчетФактура',
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:90px;top:347px;width:611px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:396px;width:709px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

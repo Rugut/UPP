@@ -10,32 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
-			items:
-			[
-				{
-					text:'Содержимое контейнера',
-				},
-				{
-					text:'Контейнер',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:341px;width:582px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОтправитель',
 			text: 'Отправитель:',
@@ -101,6 +75,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр2',
 			text: 'Проверить',
@@ -109,9 +88,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЗашифровано',
-			text: '
-ВНИМАНИЕ!
-Вероятно, содержимое этого сообщения не было распаковано при получении!',
+			text: '\r\nВНИМАНИЕ!\r\nВероятно, содержимое этого сообщения не было распаковано при получении!',
 			style: 'position:absolute;left:0px;top:0px;width:566px;height:111px;text-align:center;',
 		},
 					]
@@ -149,6 +126,11 @@
 			name: 'НадписьПодтверждениеНалогоплательщика',
 			text: 'Подтверждение налогоплательщика:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -227,6 +209,11 @@
 			name: 'Надпись1',
 			text: 'Для просмотра подписи сервера документооборота под квитанцией о приеме нажмите',
 			style: 'position:absolute;left:0px;top:92px;width:452px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -324,6 +311,11 @@
 			text: 'сюда.',
 			style: 'position:absolute;left:371px;top:134px;width:35px;height:15px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+		},
 					]
 				},
 				{
@@ -417,6 +409,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстПисьма',
 			style: 'position:absolute;left:0px;top:3px;width:566px;height:168px;',
 		},
@@ -515,6 +508,11 @@
 			name: 'НадписьПодтверждениеНалогоплательщика2',
 			text: 'Подтверждение налогоплательщика:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -634,6 +632,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПроверитьСтр10',
 			text: 'Проверить',
@@ -668,6 +671,11 @@
 			name: 'Надпись10',
 			text: 'Для просмотра подписи сервера документооборота под квитанцией о приеме нажмите',
 			style: 'position:absolute;left:0px;top:66px;width:452px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:58px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -778,6 +786,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаПодтверждениеОтправкиЗапроса',
 			text: '',
@@ -830,6 +843,11 @@
 			name: 'НадписьПодтверждениеНалогоплательщика15',
 			text: 'Подтверждение налогоплательщика:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -902,6 +920,11 @@
 			name: 'Надпись13',
 			text: 'Для просмотра подписи сервера документооборота под квитанцией о приеме нажмите',
 			style: 'position:absolute;left:0px;top:92px;width:452px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -993,6 +1016,11 @@
 			text: 'сюда.',
 			style: 'position:absolute;left:371px;top:134px;width:35px;height:15px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+		},
 					]
 				},
 				{
@@ -1022,6 +1050,11 @@
 			name: 'НадписьПодтверждениеНалогоплательщика16',
 			text: 'Подтверждение налогоплательщика:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -1083,6 +1116,11 @@
 			text: 'сюда.',
 			style: 'position:absolute;left:404px;top:112px;width:35px;height:15px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+		},
 					]
 				},
 				{
@@ -1104,8 +1142,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЗашифровано1',
-			text: 'Содержимое этого сообщения зашифровано.
-Вы можете изменить содержимое сообщения и затем зашифровать его заново.',
+			text: 'Содержимое этого сообщения зашифровано.\r\nВы можете изменить содержимое сообщения и затем зашифровать его заново.',
 			style: 'position:absolute;left:0px;top:0px;width:566px;height:111px;text-align:center;',
 		},
 		{
@@ -1385,6 +1422,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПротоколКвитанция',
 			text: '',
@@ -1487,6 +1529,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеОшибки',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 		},
@@ -1583,6 +1626,11 @@
 			name: 'НадписьПодтверждениеАбонента1',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -2125,6 +2173,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНП',
 			text: '',
@@ -2313,6 +2366,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатОбработкиНП',
 			text: '',
@@ -2499,6 +2557,11 @@
 			name: 'НадписьПодтверждениеАбонента4',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -2777,6 +2840,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНП2НДФЛ',
 			text: '',
@@ -2963,6 +3031,11 @@
 			name: 'НадписьПодтверждениеАбонента6',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -3241,6 +3314,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНПОбращение',
 			text: '',
@@ -3341,6 +3419,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНПОбращение',
 			text: '',
@@ -3439,6 +3522,11 @@
 			name: 'НадписьПодтверждениеАбонента9',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -3627,6 +3715,11 @@
 			name: 'НадписьПодтверждениеАбонента10',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -3993,6 +4086,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНПЗапрос',
 			text: '',
@@ -4181,6 +4279,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНПЗапрос',
 			text: '',
@@ -4279,6 +4382,11 @@
 			name: 'НадписьПодтверждениеАбонента13',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -4469,6 +4577,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНПЗаявление',
 			text: '',
@@ -4657,6 +4770,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНПЗаявление',
 			text: '',
@@ -4755,6 +4873,11 @@
 			name: 'НадписьПодтверждениеАбонента16',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -5121,6 +5244,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеОбОтзывеЗаявлениеРФНП',
 			text: '',
@@ -5221,6 +5349,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатОбработкиТСНП',
 			text: '',
@@ -5319,6 +5452,11 @@
 			name: 'НадписьПодтверждениеАбонента19',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:130px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:127px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -5785,6 +5923,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеДатыОтправкиФСГС',
 			text: '',
@@ -6061,6 +6204,11 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПротоколВходногоКонтроляОтчетностиФСГС',
 			text: '',
@@ -6247,6 +6395,11 @@
 			name: 'НадписьПодтверждениеПисьмоВходящееФСГС',
 			text: 'Подтверждение абонента:',
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -6523,14 +6676,51 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Содержимое',
+			style: 'position:absolute;left:8px;top:126px;width:566px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОтправитель1',
 			text: 'Тип:',
 			style: 'position:absolute;left:8px;top:64px;width:73px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Содержимое контейнера',
+				},
+				{
+					text:'Контейнер',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:341px;width:582px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:372px;top:64px;width:190px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

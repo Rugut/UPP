@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:38px;top:33px;width:60px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:183px;top:33px;width:280px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНалогообложенияРезидента',
 			style: 'position:absolute;left:183px;top:86px;width:60px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодДляОтчетности',
 			style: 'position:absolute;left:183px;top:57px;width:60px;height:19px;',
 		},
@@ -74,13 +78,28 @@
 			style: 'position:absolute;left:8px;top:122px;width:284px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'По месяцу, за который производится начисление',
 			style: 'position:absolute;left:16px;top:147px;width:276px;height:19px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'По месяцу начисления',
+			style: 'position:absolute;left:16px;top:169px;width:276px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:471px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -88,6 +107,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:222px;width:471px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -105,11 +125,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По месяцу начисления',
-			style: 'position:absolute;left:16px;top:169px;width:276px;height:19px;',
 		},
 	]
 });

@@ -12,12 +12,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:361px;top:61px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:61px;width:219px;height:19px;',
 		},
@@ -30,19 +32,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:98px;top:33px;width:303px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись4',
-			text: 'Тип цены
-номенклатуры:',
+			text: 'Тип цены\r\nноменклатуры:',
 			style: 'position:absolute;left:8px;top:87px;width:88px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦеныНоменклатуры',
 			style: 'position:absolute;left:98px;top:89px;width:303px;height:19px;',
 		},
@@ -55,21 +58,16 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеТипаЦеныНоменклатурыКонтрагента',
 			style: 'position:absolute;left:98px;top:141px;width:303px;height:40px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:186px;width:303px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:409px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -101,6 +99,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаЦены',
 			style: 'position:absolute;left:98px;top:117px;width:80px;height:19px;',
 		},
@@ -126,6 +125,17 @@
 			name: 'НадписьКод',
 			text: 'Код:',
 			style: 'position:absolute;left:319px;top:61px;width:40px;height:19px;text-align:center;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:409px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

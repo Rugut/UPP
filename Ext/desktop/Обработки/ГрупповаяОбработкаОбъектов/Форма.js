@@ -10,30 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:303px;width:500px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:32px;width:484px;height:264px;',
 			height: 264,width: 484,
@@ -52,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеТипаОбъектов',
 			style: 'position:absolute;left:88px;top:8px;width:386px;height:19px;',
 		},
@@ -76,27 +53,6 @@
 					title:'Обрабатываемые объекты',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:466px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Установить все пометки',
-				},
-				{
-					text:'Снять все пометки',
-				},
-				{
-					text:'Инвертировать пометки',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:466px;height:176px;',
@@ -155,23 +111,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:466px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Установить все пометки',
-				},
-				{
-					text:'Снять все пометки',
-				},
-				{
-					text:'Инвертировать пометки',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:466px;height:204px;',
 			height: 204,width: 466,
@@ -227,6 +166,35 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:303px;width:500px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

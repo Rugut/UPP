@@ -18,48 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:428px;width:621px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Проверить в CheckXML',
-				},
-				'-',
-				{
-					text:'Показать файл',
-				},
-				'-',
-				{
-					text:'Записать файл на диск',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -116,12 +77,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:525px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:625px;top:0px;width:120px;height:19px;',
 		},
@@ -134,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:0px;width:324px;height:19px;',
 		},
@@ -146,6 +111,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:525px;top:24px;width:220px;height:19px;',
 		},
@@ -158,6 +124,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:94px;top:72px;width:120px;height:19px;',
 		},
@@ -170,6 +137,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:292px;top:72px;width:126px;height:19px;',
 		},
@@ -182,6 +150,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КатегорияЗастрахованныхЛиц',
 			style: 'position:absolute;left:94px;top:48px;width:120px;height:19px;',
 		},
@@ -192,31 +161,19 @@
 			style: 'position:absolute;left:0px;top:24px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:94px;top:24px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Исходные',
-			style: 'position:absolute;left:525px;top:48px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Корректирующие',
-			style: 'position:absolute;left:605px;top:48px;width:109px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьТипСведений1',
 			text: 'Тип сведений:',
 			style: 'position:absolute;left:439px;top:48px;width:85px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Отменяющие',
-			style: 'position:absolute;left:714px;top:48px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -227,6 +184,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерПачки',
 			style: 'position:absolute;left:292px;top:24px;width:126px;height:19px;',
 		},
@@ -239,6 +197,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипДоговора',
 			style: 'position:absolute;left:292px;top:48px;width:126px;height:19px;',
 		},
@@ -251,8 +210,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписьАДВ62',
 			style: 'position:absolute;left:625px;top:72px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:525px;top:48px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:605px;top:48px;width:109px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющие',
+			style: 'position:absolute;left:714px;top:48px;width:89px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -269,16 +250,6 @@
 					title:'Страница1',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:830px;height:24px;',
-			items:
-			[
-				{
-					text:'Начисленные суммы',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:269px;height:211px;',
@@ -315,6 +286,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Застрахованные лица',
+			style: 'position:absolute;left:0px;top:0px;width:830px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -383,6 +359,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:706px;top:65px;width:124px;height:19px;',
 		},
@@ -395,6 +372,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:706px;top:89px;width:124px;height:19px;',
 		},
@@ -407,6 +385,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:706px;top:113px;width:124px;height:19px;',
 		},
@@ -419,6 +398,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР',
 			style: 'position:absolute;left:706px;top:137px;width:124px;height:19px;',
 		},
@@ -429,6 +409,51 @@
 			style: 'position:absolute;left:631px;top:40px;width:125px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Проверить в CheckXML',
+				},
+				'-',
+				{
+					text:'Показать файл',
+				},
+				'-',
+				{
+					text:'Записать файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

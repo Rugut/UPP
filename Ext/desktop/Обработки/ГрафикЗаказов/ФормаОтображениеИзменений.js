@@ -10,25 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:310px;width:747px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сохранить изменения',
-				},
-				{
-					text:'Не сохранять изменения',
-				},
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:48px;width:731px;height:254px;',
 			height: 254,width: 731,
@@ -133,6 +114,29 @@
 			name: 'НадписьИнформация',
 			text: '',
 			style: 'position:absolute;left:8px;top:5px;width:731px;height:38px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:310px;width:747px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сохранить изменения',
+				},
+				{
+					text:'Не сохранять изменения',
+				},
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

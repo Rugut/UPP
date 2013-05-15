@@ -61,5 +61,8 @@
 			text: 'Отмена',
 			style: 'position:absolute;left:253px;top:213px;width:75px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

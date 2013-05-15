@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:382px;width:568px;height:19px;',
 		},
@@ -116,12 +120,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерГТД',
 			style: 'position:absolute;left:92px;top:6px;width:210px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТаможенныйСборВал',
 			style: 'position:absolute;left:168px;top:59px;width:83px;height:19px;',
 		},
@@ -138,8 +146,11 @@
 			style: 'position:absolute;left:18px;top:113px;width:148px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТаможенныйШтрафВал',
 			style: 'position:absolute;left:168px;top:113px;width:83px;height:19px;',
 		},
@@ -150,8 +161,11 @@
 			style: 'position:absolute;left:18px;top:86px;width:148px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТаможенныйСбор',
 			style: 'position:absolute;left:168px;top:86px;width:83px;height:19px;',
 		},
@@ -162,10 +176,18 @@
 			style: 'position:absolute;left:18px;top:137px;width:148px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТаможенныйШтраф',
 			style: 'position:absolute;left:168px;top:137px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Таможенный сбор',
+			style: 'position:absolute;left:6px;top:38px;width:636px;height:16px;',
 		},
 					]
 				},
@@ -446,18 +468,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:218px;top:212px;width:91px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоПошлина',
 			style: 'position:absolute;left:405px;top:212px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:562px;top:212px;width:80px;height:19px;',
 		},
@@ -598,32 +623,45 @@
 			style: 'position:absolute;left:3px;top:27px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтавкаПошлины',
 			style: 'position:absolute;left:241px;top:27px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТаможеннаяСтоимость',
 			style: 'position:absolute;left:445px;top:0px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНДС',
 			style: 'position:absolute;left:241px;top:54px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:445px;top:54px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПошлины',
 			style: 'position:absolute;left:445px;top:27px;width:120px;height:19px;',
 		},
@@ -636,6 +674,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:91px;width:636px;height:16px;',
+		},
 					]
 				},
 				{
@@ -645,6 +688,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:92px;top:6px;width:210px;height:19px;',
 		},
@@ -657,6 +701,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:414px;top:6px;width:228px;height:19px;',
 		},
@@ -669,6 +714,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:92px;top:30px;width:210px;height:19px;',
 		},
@@ -687,26 +733,40 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСКонтрагентом',
 			style: 'position:absolute;left:242px;top:27px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяПрочихДоходовРасходов',
 			style: 'position:absolute;left:563px;top:75px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовБУ',
 			style: 'position:absolute;left:242px;top:51px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовНУ',
 			style: 'position:absolute;left:242px;top:75px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: ' Расчеты в валюте регламентированного учета',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: ' Расчеты в иностранной валюте ',
+			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -717,6 +777,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСКонтрагентомВал',
 			style: 'position:absolute;left:242px;top:123px;width:80px;height:19px;',
 		},
@@ -729,6 +790,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовБУВал',
 			style: 'position:absolute;left:242px;top:147px;width:80px;height:19px;',
 		},
@@ -741,6 +803,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовНУВал',
 			style: 'position:absolute;left:242px;top:171px;width:80px;height:19px;',
 		},
@@ -753,6 +816,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяПрочихДоходовРасходовВал',
 			style: 'position:absolute;left:563px;top:171px;width:80px;height:19px;',
 		},
@@ -775,12 +839,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:422px;top:57px;width:237px;height:19px;',
 		},
@@ -793,6 +859,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -841,8 +908,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагентаРегл',
 			style: 'position:absolute;left:422px;top:81px;width:237px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

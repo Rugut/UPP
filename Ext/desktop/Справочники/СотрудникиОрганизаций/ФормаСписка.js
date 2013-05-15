@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			items:
-			[
-				{
-					text:'Данные сотрудника',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:276px;top:159px;width:716px;height:249px;',
 			height: 249,width: 716,
@@ -202,8 +192,10 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОстаткаОтпусков',
 			style: 'position:absolute;left:636px;top:0px;width:80px;height:19px;',
 		},
@@ -435,22 +427,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:1px;top:25px;width:715px;height:24px;',
-			items:
-			[
-				{
-					text:'Обязательное страхование',
-				},
-				{
-					text:'Добровольное страхование',
-				},
-				{
-					text:'Добровольное страхование родственника',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:1px;top:50px;width:715px;height:108px;',
 			height: 108,width: 715,
@@ -539,24 +515,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:55px;width:716px;height:24px;',
-			items:
-			[
-				{
-					text:'Редактировать остаток отпуска',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Изменить количество дней отпуска в год',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:1px;top:81px;width:715px;height:77px;',
 			height: 77,width: 715,
@@ -633,6 +591,20 @@
 			[
 				{
 					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Данные сотрудника',
 				},
 			]
 		},

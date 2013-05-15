@@ -28,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:40px;top:6px;width:322px;height:19px;',
 		},
@@ -58,44 +59,6 @@
 					title:'Параметры',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:356px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:356px;height:228px;',
@@ -206,6 +169,11 @@
 			style: 'position:absolute;left:18px;top:28px;width:115px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Возможен вывод отчета',
+			style: 'position:absolute;left:6px;top:6px;width:287px;height:120px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'в диаграмму',
 			style: 'position:absolute;left:18px;top:52px;width:115px;height:19px;',
@@ -234,6 +202,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетРасшифровкиРедактор',
 			style: 'position:absolute;left:148px;top:156px;width:145px;height:19px;',
 		},
@@ -267,5 +236,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

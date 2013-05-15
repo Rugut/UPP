@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:178px;width:413px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:399px;height:162px;',
 			height: 162,width: 399,
@@ -45,9 +28,32 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:306px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:59px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:6px;top:6px;width:65px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:84px;top:6px;width:150px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Бухгалтерского учета',
@@ -63,19 +69,30 @@
 			boxLabel: 'Бухгалтерского учета с постоянными и временными разницами',
 			style: 'position:absolute;left:7px;top:118px;width:384px;height:16px;',
 		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'За период:',
-			style: 'position:absolute;left:6px;top:6px;width:65px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:84px;top:6px;width:150px;height:19px;',
+			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:178px;width:413px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

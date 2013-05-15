@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:348px;width:562px;height:19px;',
 		},
@@ -451,6 +455,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовПоТаре',
 			style: 'position:absolute;left:160px;top:6px;width:80px;height:19px;',
 		},
@@ -469,12 +474,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:54px;width:206px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:636px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:100px;top:27px;width:87px;height:19px;',
 		},
@@ -497,12 +509,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:425px;top:81px;width:233px;height:19px;',
 		},
@@ -515,12 +529,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Заказ',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -533,6 +549,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладОрдер',
 			style: 'position:absolute;left:425px;top:57px;width:233px;height:19px;',
 		},
@@ -582,6 +599,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидПоступления',
 			style: 'position:absolute;left:336px;top:57px;width:88px;height:19px;',
 		},
@@ -590,5 +608,8 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:572px;top:33px;width:86px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

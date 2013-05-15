@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:122px;top:33px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРаспределения',
 			style: 'position:absolute;left:122px;top:84px;width:344px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИзмерениеБюджетирования',
 			style: 'position:absolute;left:122px;top:57px;width:344px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИсточникДанных',
 			style: 'position:absolute;left:122px;top:108px;width:344px;height:19px;',
 		},
@@ -66,47 +70,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПоказательИсточника',
 			style: 'position:absolute;left:122px;top:132px;width:344px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:220px;width:458px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:412px;width:474px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -117,6 +83,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Распределять значение по всем элементам',
 			style: 'position:absolute;left:8px;top:159px;width:250px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Элементы для распределения:',
+			style: 'position:absolute;left:8px;top:204px;width:458px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -173,8 +144,54 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:386px;top:33px;width:80px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:220px;width:458px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:412px;width:474px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

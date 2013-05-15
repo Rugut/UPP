@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -79,6 +82,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -91,6 +95,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:373px;width:328px;height:19px;',
 		},
@@ -169,16 +174,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:124px;width:414px;height:24px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:400px;width:430px;height:25px;',
 			items:
 			[
@@ -207,8 +202,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:108px;width:414px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:414px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
 		},
 	]
 });

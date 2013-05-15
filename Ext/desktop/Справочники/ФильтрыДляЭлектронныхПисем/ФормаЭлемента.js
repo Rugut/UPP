@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:640px;top:57px;width:66px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:99px;top:33px;width:502px;height:19px;',
 		},
@@ -42,15 +44,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:99px;top:57px;width:502px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:99px;width:347px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -108,13 +104,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:359px;top:99px;width:347px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:359px;top:123px;width:347px;height:267px;',
 			height: 267,width: 347,
@@ -170,8 +159,53 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Соединение условий по:',
+			style: 'position:absolute;left:8px;top:371px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:141px;top:371px;width:139px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Условия фильтра',
+			style: 'position:absolute;left:8px;top:81px;width:347px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Действия фильтра',
+			style: 'position:absolute;left:359px;top:81px;width:347px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Использование',
+			style: 'position:absolute;left:608px;top:33px;width:98px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:99px;width:347px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:359px;top:99px;width:347px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:714px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -179,6 +213,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:398px;width:714px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -196,21 +231,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Соединение условий по:',
-			style: 'position:absolute;left:8px;top:371px;width:127px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:141px;top:371px;width:139px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Использование',
-			style: 'position:absolute;left:608px;top:33px;width:98px;height:19px;',
 		},
 	]
 });

@@ -10,69 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:731px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Субконто',
-				},
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Заголовок',
-				},
-				'-',
-				{
-					text:'Субконто',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
@@ -81,18 +18,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:400px;top:32px;width:200px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:66px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:166px;top:32px;width:80px;height:19px;',
 		},
@@ -161,13 +103,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:19px;width:320px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -243,11 +178,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:326px;top:19px;width:388px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:326px;top:0px;width:388px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Виды субконто',
+			style: 'position:absolute;left:0px;top:0px;width:320px;height:16px;',
 		},
 					]
 				},
@@ -262,8 +200,76 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидУчета',
 			style: 'position:absolute;left:663px;top:32px;width:60px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:731px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Заголовок',
+				},
+				{
+					text:'Субконто',
+				},
+				{
+					text:'Настройка...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Субконто',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

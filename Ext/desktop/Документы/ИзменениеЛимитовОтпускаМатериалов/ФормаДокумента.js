@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:350px;width:564px;height:19px;',
 		},
@@ -81,6 +85,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -93,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:326px;width:564px;height:19px;',
 		},
@@ -223,6 +229,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Лимиты',
+			style: 'position:absolute;left:8px;top:107px;width:652px;height:17px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПодразделение',
 			text: 'Подразделение:',
@@ -231,6 +242,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -243,6 +255,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:423px;top:81px;width:237px;height:19px;',
 		},
@@ -271,8 +284,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:423px;top:57px;width:237px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

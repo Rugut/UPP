@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:410px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:490px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:510px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:33px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:84px;top:314px;width:576px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:410px;top:57px;width:220px;height:19px;',
 		},
@@ -74,45 +80,6 @@
 			name: 'НадписьВозврат',
 			text: 'Возврат за:',
 			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:105px;width:652px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -216,16 +183,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:668px;height:25px;',
-			items:
-			[
-				{
-					text:'Сотрудниками, имеющими переплату по НДФЛ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:341px;width:668px;height:25px;',
 			items:
 			[
@@ -246,10 +203,70 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:89px;width:652px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МесяцНалоговогоПериода',
 			style: 'position:absolute;left:84px;top:57px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:105px;width:652px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:668px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Сотрудниками, имеющими переплату по НДФЛ',
+				},
+			]
 		},
 	]
 });

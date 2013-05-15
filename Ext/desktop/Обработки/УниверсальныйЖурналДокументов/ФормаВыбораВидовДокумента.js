@@ -10,8 +10,16 @@
 	items:
 	[
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:31px;width:276px;height:226px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:6px;width:276px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -25,6 +33,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:265px;width:292px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -38,10 +47,6 @@
 					text:'Отмена',
 				},
 			]
-		},
-		{
-			xtype: 'itemselector',
-			style: 'position:absolute;left:8px;top:31px;width:276px;height:226px;',
 		},
 	]
 });

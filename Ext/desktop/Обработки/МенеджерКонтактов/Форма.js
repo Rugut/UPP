@@ -33,6 +33,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВыбКонтрагент',
 			style: 'position:absolute;left:89px;top:0px;width:220px;height:19px;',
 		},
@@ -41,90 +42,6 @@
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
 			style: 'position:absolute;left:1px;top:0px;width:88px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:24px;width:804px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Настроить интервал',
-				},
-				'-',
-				{
-					text:'Настроить отбор',
-				},
-				{
-					text:'Отбор по текущему значению',
-				},
-				{
-					text:'Снять отбор',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Анализ заказа',
-				},
-				{
-					text:'Документы по заказу',
-				},
-				'-',
-				{
-					text:'Настройка списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-					]
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Настроить интервал',
-				},
-				'-',
-				{
-					text:'Настроить отбор',
-				},
-				{
-					text:'Отбор по текущему значению',
-				},
-				{
-					text:'Снять отбор',
-				},
-				'-',
-				'-',
-			]
 		},
 		{
 			xtype: 'grid',
@@ -334,13 +251,6 @@
 			name: 'НадписьДня',
 			text: '',
 			style: 'position:absolute;left:0px;top:0px;width:200px;height:22px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:671px;top:420px;width:133px;height:26px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -786,12 +696,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеОтправитель',
 			style: 'position:absolute;left:64px;top:0px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеТема',
 			style: 'position:absolute;left:64px;top:24px;width:220px;height:19px;',
 		},
@@ -810,12 +722,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеКому',
 			style: 'position:absolute;left:336px;top:0px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеКопии',
 			style: 'position:absolute;left:336px;top:24px;width:220px;height:19px;',
 		},
@@ -1027,5 +941,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

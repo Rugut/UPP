@@ -10,31 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:310px;width:333px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Ограничить доступ на уровне записей по видам объектов:',
 			style: 'position:absolute;left:8px;top:8px;width:317px;height:19px;',
@@ -72,6 +47,35 @@
 			name: 'НадписьПодсказкаКВидамОбъектов',
 			text: 'Настройка доступа выполняется для групп пользователей.',
 			style: 'position:absolute;left:8px;top:283px;width:317px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:310px;width:333px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

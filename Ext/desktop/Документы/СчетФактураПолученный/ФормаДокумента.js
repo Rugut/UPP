@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:116px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:216px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:437px;width:686px;height:19px;',
 		},
@@ -84,6 +88,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:8px;top:154px;width:776px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Список',
 			style: 'position:absolute;left:696px;top:152px;width:59px;height:16px;',
@@ -97,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:413px;width:686px;height:19px;',
 		},
@@ -114,14 +124,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснование',
 			style: 'position:absolute;left:76px;top:0px;width:417px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОснование',
-			text: 'Основание:
-',
+			text: 'Основание:\r\n',
 			style: 'position:absolute;left:0px;top:0px;width:73px;height:19px;',
 		},
 		{
@@ -153,6 +163,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНДС',
 			style: 'position:absolute;left:276px;top:32px;width:92px;height:19px;',
 		},
@@ -165,6 +176,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:79px;top:57px;width:120px;height:19px;',
 		},
@@ -177,8 +189,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммаСНДС',
 			style: 'position:absolute;left:79px;top:32px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Реквизиты счета-фактуры на аванс',
+			style: 'position:absolute;left:5px;top:6px;width:771px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -192,8 +210,11 @@
 			style: 'position:absolute;left:0px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Увеличение',
 			style: 'position:absolute;left:79px;top:33px;width:92px;height:19px;',
 		},
@@ -204,8 +225,11 @@
 			style: 'position:absolute;left:185px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НДСУвеличение',
 			style: 'position:absolute;left:276px;top:33px;width:92px;height:19px;',
 		},
@@ -216,8 +240,11 @@
 			style: 'position:absolute;left:0px;top:58px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Уменьшение',
 			style: 'position:absolute;left:79px;top:58px;width:92px;height:19px;',
 		},
@@ -228,8 +255,11 @@
 			style: 'position:absolute;left:185px;top:58px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НДСУменьшение',
 			style: 'position:absolute;left:276px;top:58px;width:92px;height:19px;',
 		},
@@ -239,6 +269,11 @@
 					title:'Данные по авансу несколько',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Реквизиты счета-фактуры на аванс',
+			style: 'position:absolute;left:0px;top:12px;width:776px;height:16px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Список',
@@ -377,6 +412,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Получение счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:774px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьКодВидаОперации',
 			text: 'Код вида операции:',
@@ -385,6 +425,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодВидаОперации',
 			style: 'position:absolute;left:106px;top:19px;width:50px;height:19px;',
 		},
@@ -395,6 +436,16 @@
 			style: 'position:absolute;left:166px;top:19px;width:98px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСостояниеЭД',
+			text: 'Состояние ЭД:',
+			style: 'position:absolute;left:0px;top:43px;width:105px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'На бумажном носителе',
 			style: 'position:absolute;left:272px;top:19px;width:139px;height:19px;',
@@ -404,11 +455,7 @@
 			boxLabel: 'В электронном виде',
 			style: 'position:absolute;left:413px;top:19px;width:124px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьСостояниеЭД',
-			text: 'Состояние ЭД:',
-			style: 'position:absolute;left:0px;top:43px;width:105px;height:19px;',
+			]
 		},
 					]
 				},
@@ -428,8 +475,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСуммаДокумента',
-			text: 'Всего:
-',
+			text: 'Всего:\r\n',
 			style: 'position:absolute;left:0px;top:1px;width:40px;height:19px;',
 		},
 		{
@@ -439,8 +485,11 @@
 			style: 'position:absolute;left:148px;top:1px;width:47px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:40px;top:1px;width:105px;height:19px;',
 		},
@@ -451,8 +500,11 @@
 			style: 'position:absolute;left:265px;top:1px;width:66px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДСДокумента',
 			style: 'position:absolute;left:336px;top:1px;width:105px;height:19px;',
 		},
@@ -469,8 +521,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:69px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаУвеличение',
 			style: 'position:absolute;left:72px;top:0px;width:95px;height:19px;',
 		},
@@ -481,8 +536,11 @@
 			style: 'position:absolute;left:389px;top:0px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаУменьшение',
 			style: 'position:absolute;left:475px;top:0px;width:95px;height:19px;',
 		},
@@ -505,8 +563,11 @@
 			style: 'position:absolute;left:628px;top:0px;width:65px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДСУменьшение',
 			style: 'position:absolute;left:694px;top:0px;width:80px;height:19px;',
 		},
@@ -517,8 +578,11 @@
 			style: 'position:absolute;left:225px;top:0px;width:65px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДСУвеличение',
 			style: 'position:absolute;left:291px;top:0px;width:80px;height:19px;',
 		},
@@ -540,15 +604,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент1',
-			text: 'Контрагент:
-',
+			text: 'Контрагент:\r\n',
 			style: 'position:absolute;left:0px;top:24px;width:75px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
-			text: 'Договор:
-',
+			text: 'Договор:\r\n',
 			style: 'position:absolute;left:0px;top:49px;width:75px;height:19px;',
 		},
 		{
@@ -560,18 +622,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:107px;top:0px;width:257px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:107px;top:24px;width:257px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:107px;top:49px;width:257px;height:19px;',
 		},
@@ -584,6 +649,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСчетаФактуры',
 			style: 'position:absolute;left:107px;top:73px;width:257px;height:19px;',
 		},
@@ -605,6 +671,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИсходногоДокумента',
 			style: 'position:absolute;left:172px;top:0px;width:91px;height:19px;',
 		},
@@ -615,14 +682,19 @@
 			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсходногоДокумента',
 			style: 'position:absolute;left:285px;top:0px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерИсправленияИсходногоДокумента',
 			style: 'position:absolute;left:172px;top:25px;width:91px;height:19px;',
 		},
@@ -633,8 +705,10 @@
 			style: 'position:absolute;left:265px;top:25px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсправленияИсходногоДокумента',
 			style: 'position:absolute;left:285px;top:25px;width:91px;height:19px;',
 		},
@@ -670,12 +744,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерВходящего',
 			style: 'position:absolute;left:172px;top:0px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВходящего',
 			style: 'position:absolute;left:286px;top:0px;width:89px;height:19px;',
 		},
@@ -712,8 +789,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:126px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерИсправления',
 			style: 'position:absolute;left:172px;top:0px;width:91px;height:19px;',
 		},
@@ -724,8 +804,10 @@
 			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсправления',
 			style: 'position:absolute;left:285px;top:0px;width:91px;height:19px;',
 		},
@@ -738,6 +820,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИсходногоДокумента3',
 			style: 'position:absolute;left:172px;top:0px;width:91px;height:19px;',
 		},
@@ -748,8 +831,10 @@
 			style: 'position:absolute;left:265px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсходногоДокумента3',
 			style: 'position:absolute;left:285px;top:0px;width:91px;height:19px;',
 		},
@@ -763,5 +848,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -110,13 +110,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:17px;top:26px;width:146px;height:26px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:7px;width:179px;height:122px;',
 			height: 122,width: 179,
@@ -334,26 +327,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:239px;top:12px;width:32px;height:24px;',
-			items:
-			[
-				{
-					text:' > ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:239px;top:44px;width:32px;height:24px;',
-			items:
-			[
-				{
-					text:' < ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:491px;top:6px;width:24px;height:97px;',
 			items:
 			[
@@ -447,26 +420,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:239px;top:12px;width:32px;height:24px;',
-			items:
-			[
-				{
-					text:' > ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:239px;top:44px;width:32px;height:24px;',
-			items:
-			[
-				{
-					text:' < ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:491px;top:6px;width:24px;height:97px;',
 			items:
 			[
@@ -551,26 +504,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:239px;top:12px;width:32px;height:24px;',
-			items:
-			[
-				{
-					text:' > ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:239px;top:44px;width:32px;height:24px;',
-			items:
-			[
-				{
-					text:' < ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:491px;top:6px;width:24px;height:97px;',
 			items:
 			[
@@ -652,29 +585,12 @@
 				},
 			]
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:23px;top:57px;width:144px;height:24px;',
-			items:
-			[
-				{
-					text:'Расшифровка...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:199px;top:13px;width:34px;height:24px;',
-			items:
-			[
-				{
-					text:'Выполнить отчет',
-				},
-			]
-		},
 					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

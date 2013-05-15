@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:205px;width:276px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
 			text: '',
@@ -61,6 +40,16 @@
 			style: 'position:absolute;left:14px;top:178px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Период составления отчета',
+			style: 'position:absolute;left:8px;top:60px;width:260px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Форма',
+			style: 'position:absolute;left:8px;top:112px;width:260px;height:15px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПериод',
 			text: 'Период:',
@@ -69,8 +58,39 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:8px;top:27px;width:260px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Организация',
+			style: 'position:absolute;left:8px;top:8px;width:260px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:205px;width:276px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
 		},
 	]
 });

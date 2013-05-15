@@ -10,31 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:580px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Печать',
-				},
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Параметры заполнения',
+			style: 'position:absolute;left:8px;top:33px;width:564px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -45,50 +23,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Документы',
 			style: 'position:absolute;left:76px;top:54px;width:496px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:103px;width:564px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'Переместить вверх',
-				},
-				{
-					text:'Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-			]
+			xtype: 'fieldset',
+			title: 'Номенклатура, для которой необходима печать штрихкодов',
+			style: 'position:absolute;left:8px;top:79px;width:564px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -189,6 +131,80 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:580px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Печать',
+				},
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:103px;width:564px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'Переместить вверх',
+				},
+				{
+					text:'Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+			]
 		},
 	]
 });

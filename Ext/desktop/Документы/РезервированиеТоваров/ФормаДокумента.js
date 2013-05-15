@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:293px;width:548px;height:19px;',
 		},
@@ -402,6 +406,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:91px;top:29px;width:214px;height:19px;',
 		},
@@ -414,8 +419,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:396px;top:29px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:5px;width:622px;height:17px;',
 		},
 					]
 				},
@@ -471,6 +482,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -483,6 +495,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Заказ',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -495,8 +508,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

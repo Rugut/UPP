@@ -10,30 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:781px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:307px;width:781px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура (характеристика, серия):',
@@ -42,18 +18,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:142px;top:59px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:307px;top:59px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияНоменклатуры',
 			style: 'position:absolute;left:452px;top:59px;width:140px;height:19px;',
 		},
@@ -64,8 +43,11 @@
 			style: 'position:absolute;left:8px;top:86px;width:134px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:142px;top:86px;width:89px;height:19px;',
 		},
@@ -78,6 +60,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:307px;top:86px;width:69px;height:19px;',
 		},
@@ -88,8 +71,11 @@
 			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерСтрокиТабличнойЧасти',
 			style: 'position:absolute;left:142px;top:33px;width:89px;height:19px;',
 		},
@@ -149,14 +135,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:430px;top:26px;width:335px;height:24px;',
-			items:
-			[
-				'-',
-			]
 		},
 		{
 			xtype: 'grid',
@@ -232,14 +210,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:26px;width:149px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
 			text: 'Порядок присвоения:',
@@ -248,8 +218,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокПрисвоенияСерийногоНомера',
 			style: 'position:absolute;left:265px;top:28px;width:161px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Разряды серийного номера',
+			style: 'position:absolute;left:0px;top:6px;width:426px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -260,6 +236,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПримерСерийногоНомера',
 			style: 'position:absolute;left:89px;top:175px;width:210px;height:19px;',
 		},
@@ -270,10 +247,18 @@
 			style: 'position:absolute;left:305px;top:175px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоЗнаков',
 			style: 'position:absolute;left:396px;top:175px;width:30px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Серийные номера',
+			style: 'position:absolute;left:430px;top:6px;width:335px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -282,8 +267,11 @@
 			style: 'position:absolute;left:596px;top:175px;width:139px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоСерийныхНомеров',
 			style: 'position:absolute;left:735px;top:175px;width:30px;height:19px;',
 		},
@@ -293,13 +281,6 @@
 					title:'Ввод серийных номеров',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:26px;width:765px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:50px;width:765px;height:121px;',
@@ -347,18 +328,55 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Серийные номера',
+			style: 'position:absolute;left:0px;top:6px;width:765px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьКоличествоСерийныхНомеровВвод',
 			text: 'Кол-во серийных номеров:',
 			style: 'position:absolute;left:596px;top:175px;width:139px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоСерийныхНомеровВвод',
 			style: 'position:absolute;left:735px;top:175px;width:30px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:781px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:307px;width:781px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

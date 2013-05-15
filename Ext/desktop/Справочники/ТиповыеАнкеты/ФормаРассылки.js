@@ -50,6 +50,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстПисьма',
 			style: 'position:absolute;left:6px;top:6px;width:443px;height:222px;',
 		},
@@ -59,26 +60,6 @@
 					title:'Получатели',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
@@ -123,25 +104,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
 			height: 204,width: 443,
@@ -176,6 +138,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Анкета',
 			style: 'position:absolute;left:90px;top:33px;width:375px;height:19px;',
 		},
@@ -204,6 +167,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронныйАдресОтветов',
 			style: 'position:absolute;left:82px;top:0px;width:375px;height:19px;',
 		},
@@ -228,6 +192,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент',
 			style: 'position:absolute;left:89px;top:24px;width:368px;height:19px;',
 		},
@@ -245,5 +210,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

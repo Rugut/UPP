@@ -10,35 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:386px;width:561px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Назад',
-				},
-				'-',
-				{
-					text:'Далее',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:190px;top:0px;width:365px;height:386px;',
 			height: 386,width: 365,
@@ -66,18 +37,10 @@
 			style: 'position:absolute;left:16px;top:83px;width:265px;height:121px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Настроить вручную',
-			style: 'position:absolute;left:0px;top:345px;width:364px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Заполнить по шаблону:',
-			style: 'position:absolute;left:0px;top:48px;width:364px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:79px;top:262px;width:84px;height:19px;',
 		},
@@ -113,9 +76,25 @@
 			]
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Заполнить по шаблону:',
+			style: 'position:absolute;left:0px;top:48px;width:364px;height:19px;',
+		},
+		{
 			xtype: 'radio',
 			boxLabel: 'ДополнительныйСпособЗаполнения',
 			style: 'position:absolute;left:0px;top:321px;width:365px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Настроить вручную',
+			style: 'position:absolute;left:0px;top:345px;width:364px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -132,6 +111,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипГрафика',
 			style: 'position:absolute;left:92px;top:50px;width:149px;height:19px;',
 		},
@@ -142,8 +122,11 @@
 			style: 'position:absolute;left:0px;top:76px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЧасовВНеделе',
 			style: 'position:absolute;left:92px;top:76px;width:90px;height:19px;',
 		},
@@ -179,18 +162,9 @@
 			style: 'position:absolute;left:4px;top:194px;width:360px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Сокращенная рабочая неделя',
-			style: 'position:absolute;left:18px;top:238px;width:180px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Неполный рабочий день',
-			style: 'position:absolute;left:18px;top:216px;width:180px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикПолногоРабочегоВремени',
 			style: 'position:absolute;left:144px;top:309px;width:220px;height:19px;',
 		},
@@ -201,6 +175,26 @@
 			style: 'position:absolute;left:18px;top:263px;width:199px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Неполный рабочий день',
+			style: 'position:absolute;left:18px;top:216px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сокращенная рабочая неделя',
+			style: 'position:absolute;left:18px;top:238px;width:180px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'По этому графику',
 			style: 'position:absolute;left:18px;top:288px;width:124px;height:19px;',
@@ -209,6 +203,8 @@
 			xtype: 'radio',
 			boxLabel: 'По другому графику:',
 			style: 'position:absolute;left:18px;top:309px;width:124px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -229,8 +225,10 @@
 			style: 'position:absolute;left:3px;top:338px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоНочных',
 			style: 'position:absolute;left:124px;top:338px;width:59px;height:19px;',
 		},
@@ -241,8 +239,10 @@
 			style: 'position:absolute;left:3px;top:281px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоДневных',
 			style: 'position:absolute;left:124px;top:281px;width:59px;height:19px;',
 		},
@@ -497,10 +497,18 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоПерерывов',
 			style: 'position:absolute;left:106px;top:17px;width:33px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:6px;width:360px;height:3px;',
 		},
 					]
 				},
@@ -561,15 +569,10 @@
 			style: 'position:absolute;left:215px;top:14px;width:51px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:9px;width:132px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаСменного',
 			style: 'position:absolute;left:276px;top:14px;width:84px;height:19px;',
 		},
@@ -595,8 +598,10 @@
 			style: 'position:absolute;left:0px;top:4px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоВечерних',
 			style: 'position:absolute;left:121px;top:4px;width:59px;height:19px;',
 		},
@@ -633,6 +638,39 @@
 					items:
 					[
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:386px;width:561px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Назад',
+				},
+				'-',
+				{
+					text:'Далее',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

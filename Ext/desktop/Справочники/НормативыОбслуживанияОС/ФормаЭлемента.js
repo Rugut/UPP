@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:356px;top:57px;width:40px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:92px;top:57px;width:220px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:92px;top:33px;width:304px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:92px;top:402px;width:304px;height:19px;',
 		},
@@ -66,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:92px;top:130px;width:120px;height:19px;',
 		},
@@ -76,8 +81,10 @@
 			style: 'position:absolute;left:215px;top:130px;width:99px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаУтверждения',
 			style: 'position:absolute;left:316px;top:130px;width:80px;height:19px;',
 		},
@@ -90,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Услуга',
 			style: 'position:absolute;left:92px;top:84px;width:304px;height:19px;',
 		},
@@ -102,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодичностьОбслуживания',
 			style: 'position:absolute;left:136px;top:178px;width:260px;height:19px;',
 		},
@@ -112,8 +121,11 @@
 			style: 'position:absolute;left:18px;top:202px;width:116px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:136px;top:202px;width:85px;height:19px;',
 		},
@@ -126,6 +138,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПараметрВыработки',
 			style: 'position:absolute;left:136px;top:226px;width:260px;height:19px;',
 		},
@@ -136,21 +149,13 @@
 			style: 'position:absolute;left:18px;top:250px;width:116px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеПараметраВыработкиОС',
 			style: 'position:absolute;left:136px;top:250px;width:85px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:293px;width:390px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -200,13 +205,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:429px;width:404px;height:25px;',
 			items:
 			[
@@ -227,14 +225,27 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Основные средства:',
+			style: 'position:absolute;left:6px;top:277px;width:390px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры обслуживания основных средств:',
+			style: 'position:absolute;left:6px;top:157px;width:390px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись12',
 			text: 'Количество:',
 			style: 'position:absolute;left:6px;top:107px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:92px;top:107px;width:120px;height:19px;',
 		},
@@ -243,6 +254,29 @@
 			name: 'ЕдиницаПараметраВыработки',
 			text: 'ЕдиницаПараметраВыработки',
 			style: 'position:absolute;left:225px;top:250px;width:90px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:293px;width:390px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

@@ -10,34 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:448px;width:468px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'По умолчанию',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Открыть справку',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Не формировать автоматически подтверждения на входящие сообщения',
 			style: 'position:absolute;left:14px;top:33px;width:397px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Общие',
+			style: 'position:absolute;left:8px;top:8px;width:452px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -50,6 +30,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительные возможности',
+			style: 'position:absolute;left:0px;top:0px;width:452px;height:16px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать сервис онлайн-проверки отчетности',
@@ -89,6 +74,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдентификаторСистемыОтправителяПФР',
 			style: 'position:absolute;left:372px;top:0px;width:80px;height:19px;',
 		},
@@ -121,6 +107,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолноеНаименованиеУполномоченногоПредставителя',
 			style: 'position:absolute;left:184px;top:6px;width:246px;height:19px;',
 		},
@@ -133,6 +120,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННУполномоченногоПредставителя',
 			style: 'position:absolute;left:184px;top:31px;width:130px;height:19px;',
 		},
@@ -145,6 +133,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КППУполномоченногоПредставителя',
 			style: 'position:absolute;left:329px;top:31px;width:101px;height:19px;',
 		},
@@ -171,10 +160,40 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдентификаторСистемыОтправителяФСГС',
 			style: 'position:absolute;left:372px;top:0px;width:80px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:448px;width:468px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'По умолчанию',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Открыть справку',
 				},
 			]
 		},

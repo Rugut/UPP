@@ -42,5 +42,13 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:189px;width:529px;height:3px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -18,12 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:298px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеЗанятия',
 			style: 'position:absolute;left:8px;top:75px;width:384px;height:82px;',
 		},
@@ -34,8 +36,11 @@
 			style: 'position:absolute;left:8px;top:162px;width:160px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДлительностьЗанятия',
 			style: 'position:absolute;left:170px;top:162px;width:75px;height:19px;',
 		},
@@ -97,8 +102,35 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Изучаемые компетенции',
+			style: 'position:absolute;left:8px;top:223px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпис��ВидЗанятия',
+			text: 'Форма проведения занятия:',
+			style: 'position:absolute;left:8px;top:186px;width:160px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ВидЗанятия',
+			style: 'position:absolute;left:170px;top:186px;width:222px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание занятия:',
+			style: 'position:absolute;left:8px;top:56px;width:384px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -106,6 +138,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:381px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -123,18 +156,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпис��ВидЗанятия',
-			text: 'Форма проведения занятия:',
-			style: 'position:absolute;left:8px;top:186px;width:160px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ВидЗанятия',
-			style: 'position:absolute;left:170px;top:186px;width:222px;height:19px;',
 		},
 	]
 });

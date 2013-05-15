@@ -10,44 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:884px;height:539px;',
 			height: 539,width: 884,
@@ -1184,52 +1146,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
-			items:
-			[
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Настройка списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-				'-',
-				{
-					text:'Зафиксировать слева',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПериодичностьПродаж',
 			text: 'Периодичность продаж:',
@@ -1248,14 +1164,24 @@
 			style: 'position:absolute;left:425px;top:27px;width:55px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:482px;top:27px;width:40px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:16px;',
+		},
+		{
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаФормирования',
 			style: 'position:absolute;left:118px;top:27px;width:80px;height:19px;',
 		},
@@ -1264,8 +1190,11 @@
 			style: 'position:absolute;left:330px;top:27px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоРабочихДней',
 			style: 'position:absolute;left:604px;top:27px;width:40px;height:19px;',
 		},
@@ -1278,6 +1207,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'График',
 			style: 'position:absolute;left:696px;top:27px;width:180px;height:19px;',
 		},
@@ -1296,6 +1226,11 @@
 					title:'Поля',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Остатки (не более 10)',
+			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:438px;top:46px;width:424px;height:158px;',
@@ -1343,38 +1278,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:438px;top:22px;width:424px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Типы цен (не более 10)',
+			style: 'position:absolute;left:438px;top:213px;width:424px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -1448,6 +1354,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Поля (не более 40)',
+			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:424px;height:365px;',
 			height: 365,width: 424,
@@ -1475,31 +1386,17 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:424px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Отбор и сортировка',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Отборы',
+			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:424px;height:365px;',
@@ -1574,23 +1471,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:424px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Сортировка',
+			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -1629,30 +1512,53 @@
 				]
 			},
 		},
+					]
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:438px;top:22px;width:424px;height:24px;',
+			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
-					text:'&Добавить',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Восстановить настройку...',
 				},
 				{
-					text:'&Удалить',
+					text:'Сохранить настройку...',
 				},
+				'-',
 				{
-					text:'&Переместить вверх',
+					text:'Заполнить',
 				},
+				'-',
 				{
-					text:'&Переместить вниз',
+					text:'Справка',
 				},
-			]
-		},
 					]
 				},
-			]
-		},
-					]
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
 				},
 			]
 		},

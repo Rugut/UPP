@@ -29,12 +29,14 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрНаименование',
 			style: 'position:absolute;left:126px;top:37px;width:265px;height:30px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрУлицаНомерДома',
 			style: 'position:absolute;left:126px;top:173px;width:265px;height:19px;',
 		},
@@ -53,18 +55,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтвЛицоФинУрСтранаНаименование',
 			style: 'position:absolute;left:152px;top:101px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрИндекс',
 			style: 'position:absolute;left:126px;top:77px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрОбласть',
 			style: 'position:absolute;left:126px;top:125px;width:265px;height:19px;',
 		},
@@ -89,6 +94,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрНаселенныйПункт',
 			style: 'position:absolute;left:126px;top:149px;width:265px;height:19px;',
 		},
@@ -101,12 +107,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтвЛицоФинУрСтранаКод',
 			style: 'position:absolute;left:126px;top:101px;width:23px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрРФ_ОГРН',
 			style: 'position:absolute;left:126px;top:221px;width:101px;height:19px;',
 		},
@@ -119,12 +127,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрРФ_ИНН',
 			style: 'position:absolute;left:126px;top:197px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрРФ_КПП',
 			style: 'position:absolute;left:290px;top:197px;width:101px;height:19px;',
 		},
@@ -154,12 +164,14 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодНаименование',
 			style: 'position:absolute;left:120px;top:10px;width:265px;height:30px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодУлицаНомерДома',
 			style: 'position:absolute;left:120px;top:144px;width:265px;height:19px;',
 		},
@@ -172,18 +184,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтвЛицоФинУрПодСтранаНаименование',
 			style: 'position:absolute;left:146px;top:74px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодИндекс',
 			style: 'position:absolute;left:120px;top:50px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодОбласть',
 			style: 'position:absolute;left:120px;top:96px;width:265px;height:19px;',
 		},
@@ -196,30 +211,35 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодНаселенныйПункт',
 			style: 'position:absolute;left:120px;top:120px;width:265px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтвЛицоФинУрПодСтранаКод',
 			style: 'position:absolute;left:120px;top:74px;width:23px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодРФ_ОГРН',
 			style: 'position:absolute;left:120px;top:192px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодРФ_ИНН',
 			style: 'position:absolute;left:120px;top:168px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПодРФ_КПП',
 			style: 'position:absolute;left:284px;top:168px;width:101px;height:19px;',
 		},
@@ -241,6 +261,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтвЛицоФинУрПасВидДок',
 			style: 'position:absolute;left:120px;top:2px;width:23px;height:19px;',
 		},
@@ -253,12 +274,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПасНаименование',
 			style: 'position:absolute;left:146px;top:2px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПасНомерДок',
 			style: 'position:absolute;left:120px;top:26px;width:265px;height:19px;',
 		},
@@ -269,8 +292,10 @@
 			style: 'position:absolute;left:2px;top:26px;width:112px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ОтвЛицоФинУрПасДатаДок',
 			style: 'position:absolute;left:120px;top:50px;width:85px;height:19px;',
 		},
@@ -283,6 +308,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтвЛицоФинУрПасОрг',
 			style: 'position:absolute;left:120px;top:74px;width:265px;height:30px;',
 		},
@@ -306,5 +332,8 @@
 			text: 'Выбор вида отв.лица:',
 			style: 'position:absolute;left:8px;top:8px;width:112px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

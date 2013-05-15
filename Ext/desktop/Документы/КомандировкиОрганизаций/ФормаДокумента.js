@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -54,70 +58,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:428px;width:548px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Открыть начисления',
-				},
-				'-',
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:268px;top:455px;width:384px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -238,14 +181,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:220px;width:636px;height:24px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Место назначения',
+			style: 'position:absolute;left:8px;top:84px;width:636px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -256,6 +194,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:96px;top:105px;width:548px;height:19px;',
 		},
@@ -268,8 +207,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода2',
 			style: 'position:absolute;left:96px;top:129px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:204px;width:636px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -280,14 +225,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОснованиеКомандировки',
 			style: 'position:absolute;left:96px;top:177px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основание командировки:',
+			style: 'position:absolute;left:8px;top:156px;width:636px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -340,17 +292,6 @@
 			style: 'position:absolute;left:0px;top:0px;width:129px;height:33px;',
 		},
 					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:268px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Отменить исправление',
 				},
 			]
 		},
@@ -415,6 +356,96 @@
 				},
 				{
 					text:'Настройка списка...',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Открыть начисления',
+				},
+				'-',
+				{
+					text:'Открыть свойства',
+				},
+				{
+					text:'Открыть категории',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:268px;top:455px;width:384px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:220px;width:636px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:268px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				'-',
+				{
+					text:'Отменить исправление',
 				},
 			]
 		},

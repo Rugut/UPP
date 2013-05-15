@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:364px;width:552px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:536px;height:348px;',
 			height: 348,width: 536,
@@ -36,6 +19,16 @@
 					title:'Стандартные вычеты',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Личный стандартный вычет',
+			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Стандартные вычеты на детей',
+			style: 'position:absolute;left:6px;top:142px;width:522px;height:16px;',
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:158px;width:522px;height:24px;',
@@ -206,20 +199,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:522px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Стандартные вычеты предоставляются на основании письменного заявления сотрудника',
@@ -231,8 +210,10 @@
 			style: 'position:absolute;left:32px;top:303px;width:222px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПредоставленияВычетов',
 			style: 'position:absolute;left:256px;top:303px;width:85px;height:19px;',
 		},
@@ -261,6 +242,60 @@
 			style: 'position:absolute;left:343px;top:62px;width:114px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
+			text: '',
+			style: 'position:absolute;left:242px;top:62px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
+			style: 'position:absolute;left:115px;top:62px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Статус налогоплательщика по НДФЛ задается с точностью до месяца и определяет порядок представления налоговых вычетов и ставку налога.',
+			style: 'position:absolute;left:17px;top:6px;width:511px;height:31px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:43px;width:522px;height:5px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:40px;top:183px;width:488px;height:28px;',
+			height: 28,width: 488,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
+			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
+		},
+			]
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Резидент',
 			style: 'position:absolute;left:40px;top:87px;width:86px;height:19px;',
@@ -276,46 +311,10 @@
 			style: 'position:absolute;left:40px;top:135px;width:302px;height:19px;',
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
-			text: '',
-			style: 'position:absolute;left:242px;top:62px;width:100px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
-			style: 'position:absolute;left:115px;top:62px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Статус налогоплательщика по НДФЛ задается с точностью до месяца и определяет порядок представления налоговых вычетов и ставку налога.',
-			style: 'position:absolute;left:17px;top:6px;width:511px;height:31px;',
-		},
-		{
 			xtype: 'radio',
 			boxLabel: 'Участник программы по переселению соотечественников',
 			style: 'position:absolute;left:40px;top:159px;width:319px;height:19px;',
 		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:40px;top:183px;width:488px;height:28px;',
-			height: 28,width: 488,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Страница1',
-					items:
-					[
-		{
-			xtype: 'radio',
-			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
-			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
-		},
-					]
-				},
 			]
 		},
 					]
@@ -362,10 +361,18 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:67px;top:24px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Справка с предыдущего места работы',
+			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -374,6 +381,27 @@
 			style: 'position:absolute;left:6px;top:24px;width:60px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:364px;width:552px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Отмена',
 				},
 			]
 		},

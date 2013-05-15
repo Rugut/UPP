@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:143px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:82px;width:490px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:107px;width:490px;height:19px;',
 		},
@@ -66,12 +71,51 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:133px;width:490px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:180px;top:58px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:259px;top:58px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:98px;top:58px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Месяц начисления:',
+			style: 'position:absolute;left:346px;top:33px;width:102px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: true,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:451px;top:33px;width:137px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:596px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -106,6 +150,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:160px;width:596px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -127,39 +172,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтраженияВУчете',
-			text: 'Отразить в:',
-			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'бух. учете',
-			style: 'position:absolute;left:180px;top:58px;width:71px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'налог. учете',
-			style: 'position:absolute;left:259px;top:58px;width:82px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'упр. учете',
-			style: 'position:absolute;left:98px;top:58px;width:71px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'Месяц начисления:',
-			style: 'position:absolute;left:346px;top:33px;width:102px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:451px;top:33px;width:137px;height:19px;',
 		},
 	]
 });

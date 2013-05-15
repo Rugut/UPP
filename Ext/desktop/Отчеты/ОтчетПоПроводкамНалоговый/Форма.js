@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:68px;top:33px;width:84px;height:19px;',
 		},
@@ -28,8 +30,10 @@
 			style: 'position:absolute;left:156px;top:33px;width:24px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:33px;width:84px;height:19px;',
 		},
@@ -42,12 +46,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:392px;top:33px;width:380px;height:19px;',
 		},
 		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:272px;top:33px;width:20px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -98,12 +113,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаНастройкаПериода',
-			text: '...',
-			style: 'position:absolute;left:272px;top:33px;width:20px;height:19px;',
 		},
 	]
 });

@@ -10,40 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:576px;height:25px;',
-			items:
-			[
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:485px;width:576px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:272px;width:560px;height:205px;',
 			height: 205,width: 560,
@@ -61,6 +27,45 @@
 				[
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:576px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выполнить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:485px;width:576px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

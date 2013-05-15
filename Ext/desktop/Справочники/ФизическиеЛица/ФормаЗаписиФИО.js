@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:89px;width:210px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Период',
 			style: 'position:absolute;left:218px;top:89px;width:80px;height:19px;',
 		},
@@ -30,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:78px;top:8px;width:220px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:78px;top:30px;width:220px;height:19px;',
 		},
@@ -54,12 +58,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:78px;top:54px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:78px;width:290px;height:6px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:116px;width:306px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

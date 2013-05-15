@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:138px;width:316px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Выполнять в транзакции',
 			style: 'position:absolute;left:8px;top:8px;width:263px;height:20px;',
@@ -39,8 +26,11 @@
 			style: 'position:absolute;left:8px;top:111px;width:250px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОграничениеНаСтрокиНеограниченнойДлины',
 			style: 'position:absolute;left:258px;top:111px;width:50px;height:19px;',
 		},
@@ -58,6 +48,23 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отбор по категориям',
 			style: 'position:absolute;left:8px;top:88px;width:263px;height:20px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:138px;width:316px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

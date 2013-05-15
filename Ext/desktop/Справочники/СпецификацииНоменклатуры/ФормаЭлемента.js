@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:468px;top:58px;width:64px;height:19px;',
 		},
@@ -30,39 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:58px;width:330px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			items:
-			[
-				{
-					text:'Установить основной спецификацией на дату...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:419px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -73,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:550px;height:19px;',
 		},
@@ -85,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодВерсии',
 			style: 'position:absolute;left:604px;top:58px;width:40px;height:19px;',
 		},
@@ -102,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:392px;width:550px;height:19px;',
 		},
@@ -137,16 +111,6 @@
 			name: 'НадписьСостояние',
 			text: 'Состояние:',
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -525,16 +489,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -593,19 +547,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить из шаблона',
-				},
-				{
-					text:'Заполнить по спецификации',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -658,16 +599,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -677,12 +608,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:108px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаУтверждения',
 			style: 'position:absolute;left:108px;top:30px;width:80px;height:19px;',
 		},
@@ -695,6 +629,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:108px;top:54px;width:198px;height:19px;',
 		},
@@ -707,6 +642,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДоступа',
 			style: 'position:absolute;left:108px;top:78px;width:198px;height:19px;',
 		},
@@ -726,6 +662,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Выходное изделие',
+			style: 'position:absolute;left:0px;top:1px;width:636px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура:',
@@ -734,6 +675,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:86px;top:22px;width:220px;height:19px;',
 		},
@@ -746,30 +688,37 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:416px;top:22px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:86px;top:46px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:226px;top:46px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерОперацииМаршрута',
 			style: 'position:absolute;left:86px;top:70px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТочкаМаршрута',
 			style: 'position:absolute;left:416px;top:46px;width:220px;height:19px;',
 		},
@@ -780,14 +729,20 @@
 			style: 'position:absolute;left:326px;top:46px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Кратность',
 			style: 'position:absolute;left:226px;top:70px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МинимальнаяПартия',
 			style: 'position:absolute;left:416px;top:70px;width:80px;height:19px;',
 		},
@@ -809,17 +764,6 @@
 					title:'Полная',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:636px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:636px;height:48px;',
@@ -947,6 +891,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Выходные изделия',
+			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;',
+		},
 					]
 				},
 			]
@@ -973,18 +922,6 @@
 					title:'Исходные комплектующие',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:228px;',
@@ -1172,6 +1109,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СостояниеУзел',
 			style: 'position:absolute;left:108px;top:6px;width:80px;height:19px;',
 		},
@@ -1182,8 +1120,10 @@
 			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаУтвержденияУзел',
 			style: 'position:absolute;left:108px;top:30px;width:80px;height:19px;',
 		},
@@ -1196,6 +1136,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтветственныйУзел',
 			style: 'position:absolute;left:108px;top:54px;width:198px;height:19px;',
 		},
@@ -1208,6 +1149,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДоступаУзел',
 			style: 'position:absolute;left:108px;top:78px;width:198px;height:19px;',
 		},
@@ -1224,6 +1166,42 @@
 			name: 'ТекстОсновнаяСпецификация',
 			text: '',
 			style: 'position:absolute;left:164px;top:82px;width:480px;height:15px;text-align:right;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Установить основной спецификацией на дату...',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:419px;width:652px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

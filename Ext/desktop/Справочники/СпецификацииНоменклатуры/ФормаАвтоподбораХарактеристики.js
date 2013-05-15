@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:167px;width:500px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:6px;width:484px;height:153px;',
 			height: 153,width: 484,
@@ -37,13 +20,6 @@
 					title:'Исходные комплектующие',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:484px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:484px;height:129px;',
@@ -88,13 +64,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:484px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:484px;height:129px;',
 			height: 129,width: 484,
@@ -132,6 +101,27 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:167px;width:500px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

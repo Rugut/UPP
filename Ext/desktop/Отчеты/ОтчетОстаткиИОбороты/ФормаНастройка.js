@@ -20,14 +20,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:8px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
@@ -146,6 +150,16 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:136px;width:460px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:55px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:12px;top:76px;width:433px;height:20px;',
 			height: 20,width: 433,
@@ -207,13 +221,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -294,13 +301,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -339,13 +339,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -390,13 +383,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -422,5 +408,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

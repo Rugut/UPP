@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Касса',
 			style: 'position:absolute;left:118px;top:91px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаПолучатель',
 			style: 'position:absolute;left:118px;top:156px;width:220px;height:19px;',
 		},
@@ -40,8 +42,11 @@
 			style: 'position:absolute;left:8px;top:187px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:118px;top:187px;width:80px;height:19px;',
 		},
@@ -59,6 +64,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДвиженияДенежныхСредств',
 			style: 'position:absolute;left:118px;top:211px;width:220px;height:19px;',
 		},
@@ -71,6 +77,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:118px;top:249px;width:220px;height:19px;',
 		},
@@ -83,12 +90,76 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:118px;top:276px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:201px;top:33px;width:20px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Номер',
+			style: 'position:absolute;left:118px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'Дата',
+			style: 'position:absolute;left:224px;top:33px;width:114px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалютаДокумент',
+			text: 'USD',
+			style: 'position:absolute;left:200px;top:187px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация - отправитель:',
+			style: 'position:absolute;left:8px;top:57px;width:108px;height:33px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:118px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизацияПолучатель',
+			text: 'Организация - получатель:',
+			style: 'position:absolute;left:8px;top:122px;width:108px;height:30px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ОрганизацияПолучатель',
+			style: 'position:absolute;left:118px;top:124px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:346px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -115,6 +186,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:314px;width:346px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -136,60 +208,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНомер',
-			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:108px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДата',
-			text: 'от:',
-			style: 'position:absolute;left:201px;top:33px;width:20px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Номер',
-			style: 'position:absolute;left:118px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Дата',
-			style: 'position:absolute;left:224px;top:33px;width:114px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьВалютаДокумент',
-			text: 'USD',
-			style: 'position:absolute;left:200px;top:187px;width:40px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Организация - отправитель:',
-			style: 'position:absolute;left:8px;top:57px;width:108px;height:33px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:118px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизацияПолучатель',
-			text: 'Организация - получатель:',
-			style: 'position:absolute;left:8px;top:122px;width:108px;height:30px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ОрганизацияПолучатель',
-			style: 'position:absolute;left:118px;top:124px;width:220px;height:19px;',
 		},
 	]
 });

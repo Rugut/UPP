@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:712px;height:25px;',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Документ',
 			style: 'position:absolute;left:102px;top:33px;width:340px;height:19px;',
 		},
@@ -47,6 +31,27 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:612px;top:33px;width:92px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:712px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+			]
 		},
 	]
 });

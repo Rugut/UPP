@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:640px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:624px;height:439px;',
 			height: 439,width: 624,
@@ -91,23 +74,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -151,38 +117,28 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Установить/Снять пометку на удаление',
-				},
-				{
-					text:'Удалить непосредственно',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'',
+					]
 				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:640px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

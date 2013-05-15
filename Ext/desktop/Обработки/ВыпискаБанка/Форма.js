@@ -39,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:106px;top:32px;width:220px;height:19px;',
 		},
@@ -51,12 +52,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетОрганизации',
 			style: 'position:absolute;left:106px;top:56px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОплаты',
 			style: 'position:absolute;left:106px;top:8px;width:96px;height:19px;',
 		},
@@ -171,8 +175,11 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОстатокНаНачалоДня',
 			style: 'position:absolute;left:548px;top:308px;width:120px;height:19px;',
 		},
@@ -188,8 +195,11 @@
 			style: 'position:absolute;left:422px;top:308px;width:124px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПриходИтого',
 			style: 'position:absolute;left:548px;top:332px;width:120px;height:19px;',
 		},
@@ -200,8 +210,11 @@
 			style: 'position:absolute;left:422px;top:332px;width:124px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаРасходИтого',
 			style: 'position:absolute;left:548px;top:356px;width:120px;height:19px;',
 		},
@@ -212,8 +225,11 @@
 			style: 'position:absolute;left:422px;top:356px;width:124px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОстатокНаКонецДня',
 			style: 'position:absolute;left:548px;top:380px;width:120px;height:19px;',
 		},
@@ -248,5 +264,13 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Банковские расчетные документы',
+			style: 'position:absolute;left:8px;top:83px;width:660px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

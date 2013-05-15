@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:154px;width:648px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Дата и время получения:',
@@ -31,8 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаВремяПолучения',
 			style: 'position:absolute;left:173px;top:8px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Полученные файлы',
+			style: 'position:absolute;left:8px;top:35px;width:632px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -61,6 +54,23 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:154px;width:648px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

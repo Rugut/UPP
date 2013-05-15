@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:350px;width:600px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Провести документы',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
@@ -39,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:80px;top:6px;width:192px;height:19px;',
 		},
@@ -51,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПлатежнаяВедомость',
 			style: 'position:absolute;left:400px;top:6px;width:192px;height:19px;',
 		},
@@ -119,8 +100,90 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Выплаченные суммы',
+			style: 'position:absolute;left:8px;top:33px;width:584px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаРКО',
+			text: 'Проставить дату:',
+			style: 'position:absolute;left:170px;top:299px;width:93px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаРКО',
+			style: 'position:absolute;left:263px;top:299px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПервогоРКО',
+			text: 'Нумеровать с:',
+			style: 'position:absolute;left:8px;top:299px;width:78px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'НомерПервогоРКО',
+			style: 'position:absolute;left:86px;top:299px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Формирование расходных кассовых ордеров',
+			style: 'position:absolute;left:8px;top:279px;width:584px;height:16px;',
+		},
+		{
+			xtype: 'button',
+			name: 'Создать',
+			text: 'Создать документы',
+			style: 'position:absolute;left:400px;top:323px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Касса',
+			style: 'position:absolute;left:86px;top:323px;width:297px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Касса:',
+			style: 'position:absolute;left:8px;top:323px;width:78px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:350px;width:600px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Провести документы',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:49px;width:584px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				'-',
@@ -138,48 +201,6 @@
 					text:'Обновить',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДатаРКО',
-			text: 'Проставить дату:',
-			style: 'position:absolute;left:170px;top:299px;width:93px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаРКО',
-			style: 'position:absolute;left:263px;top:299px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНомерПервогоРКО',
-			text: 'Нумеровать с:',
-			style: 'position:absolute;left:8px;top:299px;width:78px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерПервогоРКО',
-			style: 'position:absolute;left:86px;top:299px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'Создать',
-			text: 'Создать документы',
-			style: 'position:absolute;left:400px;top:323px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Касса',
-			style: 'position:absolute;left:86px;top:323px;width:297px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Касса:',
-			style: 'position:absolute;left:8px;top:323px;width:78px;height:19px;',
 		},
 	]
 });

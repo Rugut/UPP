@@ -20,8 +20,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:60px;top:6px;width:80px;height:19px;',
 		},
@@ -40,6 +42,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:6px;top:50px;width:212px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:73px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -100,6 +107,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаОтчета',
 			style: 'position:absolute;left:208px;top:6px;width:80px;height:19px;',
 		},
@@ -147,11 +155,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:240px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:240px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -191,11 +197,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:252px;top:22px;width:214px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:252px;top:6px;width:214px;height:16px;',
 		},
 					]
 				},
@@ -230,13 +234,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -355,5 +352,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

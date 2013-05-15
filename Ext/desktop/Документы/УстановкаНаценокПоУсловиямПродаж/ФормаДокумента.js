@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,17 +29,12 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -137,12 +133,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:354px;width:552px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:331px;width:552px;height:19px;',
 		},
@@ -151,6 +149,17 @@
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
 			style: 'position:absolute;left:8px;top:331px;width:88px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

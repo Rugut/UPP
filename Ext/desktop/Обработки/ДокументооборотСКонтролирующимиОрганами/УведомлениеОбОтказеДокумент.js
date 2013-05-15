@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:506px;',
 			height: 506,width: 497,
@@ -84,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаВремяНапр',
 			style: 'position:absolute;left:191px;top:55px;width:298px;height:19px;',
 		},
@@ -96,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПост',
 			style: 'position:absolute;left:191px;top:80px;width:298px;height:19px;',
 		},
@@ -108,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КНД',
 			style: 'position:absolute;left:191px;top:30px;width:298px;height:19px;',
 		},
@@ -120,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимВидДок',
 			style: 'position:absolute;left:191px;top:5px;width:298px;height:19px;',
 		},
@@ -128,6 +119,28 @@
 			style: 'position:absolute;left:6px;top:124px;width:483px;height:356px;',
 		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Полученные файлы',
+			style: 'position:absolute;left:8px;top:130px;width:497px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

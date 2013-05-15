@@ -45,8 +45,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:306px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:54px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'itemselector',
@@ -65,8 +71,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:93px;top:36px;width:126px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

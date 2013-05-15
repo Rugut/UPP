@@ -31,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаВремяНапр',
 			style: 'position:absolute;left:193px;top:57px;width:295px;height:19px;',
 		},
@@ -43,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПост',
 			style: 'position:absolute;left:193px;top:81px;width:295px;height:19px;',
 		},
@@ -55,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимВидДок',
 			style: 'position:absolute;left:193px;top:9px;width:295px;height:19px;',
 		},
@@ -67,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПрин',
 			style: 'position:absolute;left:193px;top:105px;width:295px;height:19px;',
 		},
@@ -83,8 +87,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КНД',
 			style: 'position:absolute;left:193px;top:33px;width:295px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Полученные файлы',
+			style: 'position:absolute;left:8px;top:128px;width:480px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

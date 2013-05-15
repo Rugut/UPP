@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -42,15 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:354px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:142px;width:656px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -198,6 +195,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:444px;top:78px;width:220px;height:19px;',
 		},
@@ -209,6 +207,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:102px;width:220px;height:19px;',
 		},
@@ -218,8 +217,14 @@
 			style: 'position:absolute;left:14px;top:102px;width:82px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Отбор по реквизитам',
+			style: 'position:absolute;left:8px;top:57px;width:656px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтветственныйЗаявка',
 			style: 'position:absolute;left:444px;top:102px;width:220px;height:19px;',
 		},
@@ -229,8 +234,14 @@
 			style: 'position:absolute;left:338px;top:102px;width:104px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заявки для закрытия',
+			style: 'position:absolute;left:8px;top:126px;width:656px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода2',
 			style: 'position:absolute;left:444px;top:354px;width:220px;height:19px;',
 		},
@@ -243,6 +254,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода3',
 			style: 'position:absolute;left:98px;top:381px;width:566px;height:19px;',
 		},
@@ -259,8 +271,10 @@
 			style: 'position:absolute;left:14px;top:78px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ОтборДатаНач',
 			style: 'position:absolute;left:98px;top:78px;width:88px;height:19px;',
 		},
@@ -271,8 +285,10 @@
 			style: 'position:absolute;left:188px;top:78px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ОтборДатаКон',
 			style: 'position:absolute;left:207px;top:78px;width:88px;height:19px;',
 		},
@@ -281,6 +297,17 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:298px;top:78px;width:20px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:142px;width:656px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

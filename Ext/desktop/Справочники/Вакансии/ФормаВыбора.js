@@ -98,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:269px;top:33px;width:492px;height:19px;',
 		},
@@ -106,9 +107,13 @@
 			boxLabel: 'Организация:',
 			style: 'position:absolute;left:178px;top:33px;width:88px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:769px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

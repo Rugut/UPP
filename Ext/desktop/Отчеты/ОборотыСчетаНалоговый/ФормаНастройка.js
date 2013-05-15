@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:260px;width:490px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:236px;',
 			height: 236,width: 474,
@@ -49,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Счет',
 			style: 'position:absolute;left:84px;top:6px;width:80px;height:19px;',
 		},
@@ -58,14 +38,18 @@
 			style: 'position:absolute;left:268px;top:174px;width:96px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:30px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:30px;width:80px;height:19px;',
 		},
@@ -90,8 +74,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:54px;width:382px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:110px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'combobox',
@@ -231,13 +221,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:24px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'По субконто:',
@@ -322,14 +305,32 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:4px;width:460px;height:24px;',
-			items:
-			[
+					]
+				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:260px;width:490px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

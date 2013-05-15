@@ -118,5 +118,8 @@
 			text: 'Значения свойств текущей характеристики номенклатуры',
 			style: 'position:absolute;left:8px;top:209px;width:472px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

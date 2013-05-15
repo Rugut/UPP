@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:101px;top:57px;width:291px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:101px;top:81px;width:291px;height:19px;',
 		},
@@ -40,8 +42,11 @@
 			style: 'position:absolute;left:140px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:220px;top:33px;width:108px;height:19px;',
 		},
@@ -52,14 +57,21 @@
 			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерУпаковки',
 			style: 'position:absolute;left:101px;top:33px;width:35px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -67,6 +79,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:108px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

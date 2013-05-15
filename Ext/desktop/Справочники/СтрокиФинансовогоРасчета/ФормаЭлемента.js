@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:182px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСтроки',
 			style: 'position:absolute;left:94px;top:61px;width:304px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Измерение',
 			style: 'position:absolute;left:94px;top:85px;width:304px;height:19px;',
 		},
@@ -54,12 +57,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Формула',
 			style: 'position:absolute;left:94px;top:109px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Код',
+			style: 'position:absolute;left:317px;top:33px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Код:',
+			style: 'position:absolute;left:277px;top:33px;width:40px;height:19px;text-align:center;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -67,6 +88,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:136px;width:406px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -84,18 +106,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Код',
-			style: 'position:absolute;left:317px;top:33px;width:81px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Код:',
-			style: 'position:absolute;left:277px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 	]
 });

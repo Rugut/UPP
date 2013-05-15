@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:671px;width:662px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:646px;height:654px;',
 			height: 654,width: 646,
@@ -133,6 +120,11 @@
 			name: 'Надпись38',
 			text: 'Количество рекомендаций:',
 			style: 'position:absolute;left:0px;top:47px;width:154px;height:17px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Подробно',
+			style: 'position:absolute;left:0px;top:0px;width:632px;height:16px;',
 		},
 					]
 				},
@@ -253,6 +245,16 @@
 			style: 'position:absolute;left:166px;top:8px;width:472px;height:17px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Общие сведения',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сведения о налогоплательщике',
+			style: 'position:absolute;left:6px;top:328px;width:632px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:348px;width:632px;height:95px;',
 			height: 95,width: 632,
@@ -340,6 +342,23 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:671px;width:662px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

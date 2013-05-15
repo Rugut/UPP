@@ -29,6 +29,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субъект',
 			style: 'position:absolute;left:330px;top:541px;width:222px;height:19px;',
 		},
@@ -49,6 +50,16 @@
 			name: 'СубъектЯвляется',
 			text: 'Субъект является:',
 			style: 'position:absolute;left:6px;top:542px;width:102px;height:18px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Уничтожение персональных данных',
+			style: 'position:absolute;left:6px;top:485px;width:684px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Просмотр зарегистрированных событий',
+			style: 'position:absolute;left:6px;top:6px;width:684px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -304,25 +315,13 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборСубъект',
 			style: 'position:absolute;left:280px;top:27px;width:179px;height:19px;',
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:138px;top:27px;width:138px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:85px;height:24px;',
-			items:
-			[
-				{
-					text:'Обновить',
-				},
-				{
-					text:'Установить период',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -375,17 +374,14 @@
 			style: 'position:absolute;left:113px;top:541px;width:138px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:469px;top:22px;width:221px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Области данных',
+			style: 'position:absolute;left:469px;top:53px;width:221px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Субъекты события',
+			style: 'position:absolute;left:469px;top:141px;width:221px;height:16px;',
 		},
 					]
 				},
@@ -394,5 +390,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

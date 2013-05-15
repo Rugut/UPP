@@ -60,8 +60,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьШаблоновТелефонов',
-			text: 'Шаблоны будут использованы при вводе контактной информации.
-Шаблон может содержать заменитель цифр в номере телефона (цифра "9") и символы "разделители". Например, 999-99-99 или 999*99*99.',
+			text: 'Шаблоны будут использованы при вводе контактной информации.\r\nШаблон может содержать заменитель цифр в номере телефона (цифра "9") и символы "разделители". Например, 999-99-99 или 999*99*99.',
 			style: 'position:absolute;left:312px;top:124px;width:220px;height:88px;text-align:left;',
 		},
 		{
@@ -115,8 +114,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись3',
-			text: 'Контроль остатков товаров на складах может выполняться по регистру "Свободные остатки".
-Этот регистр содержит сводные данные по регистрам "Товары на складах", "Товары в рознице", "Товары в резерве на складах", "Товары к передаче со складов".',
+			text: 'Контроль остатков товаров на складах может выполняться по регистру "Свободные остатки".\r\nЭтот регистр содержит сводные данные по регистрам "Товары на складах", "Товары в рознице", "Товары в резерве на складах", "Товары к передаче со складов".',
 			style: 'position:absolute;left:28px;top:68px;width:506px;height:52px;',
 		},
 		{
@@ -152,14 +150,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьНомерВерсииКонфигурации',
-			text: 'Номер версии контролируется системой автоматически. 
-При установке новой версии выполняются необходимые обновления информационной базы.
-Изменять номер версии конфигурации вручную запрещено.',
+			text: 'Номер версии контролируется системой автоматически. \r\nПри установке новой версии выполняются необходимые обновления информационной базы.\r\nИзменять номер версии конфигурации вручную запрещено.',
 			style: 'position:absolute;left:12px;top:92px;width:484px;height:41px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерВерсииКонфигурации',
 			style: 'position:absolute;left:142px;top:72px;width:88px;height:19px;',
 		},
@@ -172,6 +169,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаголовокСистемы',
 			style: 'position:absolute;left:142px;top:48px;width:392px;height:19px;',
 		},
@@ -225,30 +223,11 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:12px;top:100px;width:148px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалПроверкиНапоминанийВСекундах',
 			style: 'position:absolute;left:256px;top:48px;width:46px;height:19px;',
 		},
@@ -265,6 +244,10 @@
 					items:
 					[
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Использовать основной почтовый клиент операционной системы',
 			style: 'position:absolute;left:12px;top:48px;width:372px;height:19px;',
@@ -273,6 +256,8 @@
 			xtype: 'radio',
 			boxLabel: 'Использовать встроенный почтовый клиент',
 			style: 'position:absolute;left:12px;top:105px;width:260px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -310,12 +295,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательДляВыполненияРегламентныхЗаданийВФайловомВарианте',
 			style: 'position:absolute;left:256px;top:48px;width:278px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалДляОпросаРегламентныхЗаданийВФайловомВарианте',
 			style: 'position:absolute;left:256px;top:92px;width:44px;height:19px;',
 		},
@@ -338,8 +327,7 @@
 		{
 			xtype: 'label',
 			name: 'ПодсказкаРасчетОстатковОтпусков',
-			text: 'Программа будет автоматически заполнять остатки отпусков прошлого года для каждого сотрудника. Автоматическое заполнение будет происходить
-1-го января каждого года.',
+			text: 'Программа будет автоматически заполнять остатки отпусков прошлого года для каждого сотрудника. Автоматическое заполнение будет происходить\r\n1-го января каждого года.',
 			style: 'position:absolute;left:28px;top:225px;width:404px;height:43px;',
 		},
 		{
@@ -427,32 +415,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:12px;top:48px;width:148px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись62',
-			text: 'Необходимо указать организации, для которых применяется отложенное проведение, 
-даты начала действия отложенного проведения и выбрать настройку допроведения документов',
+			text: 'Необходимо указать организации, для которых применяется отложенное проведение, \r\nдаты начала действия отложенного проведения и выбрать настройку допроведения документов',
 			style: 'position:absolute;left:12px;top:252px;width:522px;height:28px;text-align:left;',
 		},
 					]
@@ -474,8 +439,11 @@
 			style: 'position:absolute;left:12px;top:48px;width:145px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГраницаПогрешностиСЛУ',
 			style: 'position:absolute;left:270px;top:48px;width:46px;height:19px;',
 		},
@@ -486,8 +454,11 @@
 			style: 'position:absolute;left:12px;top:72px;width:217px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимальноеКоличествоИтерацийСЛУ',
 			style: 'position:absolute;left:270px;top:72px;width:46px;height:19px;',
 		},
@@ -504,14 +475,20 @@
 			style: 'position:absolute;left:28px;top:117px;width:374px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтепеньСреднегоОтклоненияСЛУ',
 			style: 'position:absolute;left:270px;top:96px;width:46px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазмерНабораПриЗаписиРегистровУчетаЗатрат',
 			style: 'position:absolute;left:109px;top:183px;width:75px;height:19px;',
 		},
@@ -522,6 +499,16 @@
 			style: 'position:absolute;left:12px;top:137px;width:258px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРазмерНабораПриЗаписиРегистровУчетаЗатрат',
+			text: 'записей',
+			style: 'position:absolute;left:191px;top:183px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'все сразу',
 			style: 'position:absolute;left:28px;top:160px;width:242px;height:19px;',
@@ -531,11 +518,7 @@
 			boxLabel: 'частями по',
 			style: 'position:absolute;left:28px;top:183px;width:78px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьРазмерНабораПриЗаписиРегистровУчетаЗатрат',
-			text: 'записей',
-			style: 'position:absolute;left:191px;top:183px;width:79px;height:19px;',
+			]
 		},
 					]
 				},
@@ -651,19 +634,6 @@
 			text: 'При обновлении списка «Мои задачи» будут создаваться следующие виды задач:',
 			style: 'position:absolute;left:12px;top:35px;width:522px;height:22px;',
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:316px;top:118px;width:116px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -723,10 +693,20 @@
 			style: 'position:absolute;left:0px;top:61px;width:202px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Информационные системы персональных данных класса 3',
+			style: 'position:absolute;left:0px;top:40px;width:521px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Подсказка7',
 			text: 'Регистрация событий входа и выхода из системы, аутентификации, изменения прав доступа пользователей. Настройка регистрации событий производится в конфигураторе.',
 			style: 'position:absolute;left:14px;top:79px;width:506px;height:29px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Информационные системы персональных данных класса 2',
+			style: 'position:absolute;left:0px;top:113px;width:521px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -788,6 +768,11 @@
 			boxLabel: 'Ограничивать количество сотрудников при печати платежных ведомостей',
 			style: 'position:absolute;left:0px;top:338px;width:426px;height:15px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:331px;width:513px;height:5px;',
+		},
 					]
 				},
 				{
@@ -797,8 +782,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРежимНедоступен',
-			text: 'Режим защиты персональных данных в соответствии с требованиями Федерального закона от 27.07.2006 N152-ФЗ "О персональных данных"
-доступен при использовании платформы 1С:Предприятие версии 8.2.10 и выше',
+			text: 'Режим защиты персональных данных в соответствии с требованиями Федерального закона от 27.07.2006 N152-ФЗ "О персональных данных"\r\nдоступен при использовании платформы 1С:Предприятие версии 8.2.10 и выше',
 			style: 'position:absolute;left:26px;top:19px;width:400px;height:54px;',
 		},
 					]
@@ -838,5 +822,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -10,13 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:424px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:31px;width:408px;height:216px;',
 			height: 216,width: 408,
@@ -351,6 +344,17 @@
 				{
 					text:'Закрыть',
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:424px;height:25px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

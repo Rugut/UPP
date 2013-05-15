@@ -10,33 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:453px;width:863px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Полномочия по списку',
-			style: 'position:absolute;left:136px;top:35px;width:133px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Полные полномочия',
-			style: 'position:absolute;left:8px;top:35px;width:122px;height:15px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'ОКАТО:',
@@ -45,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОКАТО',
 			style: 'position:absolute;left:54px;top:10px;width:90px;height:19px;',
 		},
@@ -57,21 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:195px;top:10px;width:90px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:72px;width:847px;height:25px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -118,6 +80,62 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Области полномочий',
+			style: 'position:absolute;left:8px;top:56px;width:847px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Полные полномочия',
+			style: 'position:absolute;left:8px;top:35px;width:122px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Полномочия по списку',
+			style: 'position:absolute;left:136px;top:35px;width:133px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:453px;width:863px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:72px;width:847px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 	]
 });

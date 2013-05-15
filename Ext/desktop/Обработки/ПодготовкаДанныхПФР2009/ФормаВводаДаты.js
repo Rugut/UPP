@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:8px;width:258px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияМежрасчетногоПериода',
 			style: 'position:absolute;left:271px;top:8px;width:80px;height:19px;',
 		},
@@ -71,9 +73,13 @@
 			text: 'Выберите сотрудников, выходящих на пенсию',
 			style: 'position:absolute;left:8px;top:38px;width:258px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:59px;width:343px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				'-',

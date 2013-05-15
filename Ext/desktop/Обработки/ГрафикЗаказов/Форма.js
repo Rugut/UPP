@@ -10,58 +10,18 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Видимость отборы',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Восстановить настройку',
-				},
-				'-',
-				{
-					text:'Сохранить график',
-				},
-				{
-					text:'Отменить не сохраненные изменения',
-				},
-				'-',
-				{
-					text:'Диагностика',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:821px;top:2px;width:64px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:908px;top:2px;width:64px;height:19px;',
 		},
@@ -82,13 +42,6 @@
 			name: 'НадписьПо',
 			text: 'по',
 			style: 'position:absolute;left:889px;top:2px;width:16px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:761px;top:0px;width:239px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -174,15 +127,64 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:953px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Видимость отборы',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Восстановить настройку',
+				},
+				'-',
+				{
+					text:'Сохранить график',
+				},
+				{
+					text:'Отменить не сохраненные изменения',
+				},
+				'-',
+				{
+					text:'Диагностика',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:761px;top:0px;width:239px;height:25px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

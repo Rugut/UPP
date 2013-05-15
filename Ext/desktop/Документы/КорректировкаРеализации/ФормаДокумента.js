@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:433px;width:574px;height:19px;',
 		},
@@ -856,48 +860,66 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:114px;top:180px;width:218px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:39px;width:642px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:99px;top:59px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчетОрганизации',
 			style: 'position:absolute;left:114px;top:155px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрузоотправительДополнительно',
 			style: 'position:absolute;left:114px;top:130px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрузополучательДополнительно',
 			style: 'position:absolute;left:430px;top:130px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяПрочихДоходовИРасходов',
 			style: 'position:absolute;left:113px;top:6px;width:535px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:82px;width:642px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресДоставки',
 			style: 'position:absolute;left:114px;top:105px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнениеКАдресуДоставки',
 			style: 'position:absolute;left:430px;top:105px;width:218px;height:19px;',
 		},
@@ -914,6 +936,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
@@ -944,6 +967,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:542px;top:388px;width:122px;height:17px;',
 		},
@@ -956,6 +980,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:542px;top:410px;width:122px;height:17px;',
 		},
@@ -990,16 +1015,6 @@
 			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Упр. и регл. учет',
-			style: 'position:absolute;left:428px;top:57px;width:236px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Только НДС',
-			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Корректировать',
 			text: 'Корректировать:',
@@ -1014,6 +1029,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументРеализации',
 			style: 'position:absolute;left:98px;top:82px;width:220px;height:19px;',
 		},
@@ -1034,5 +1050,24 @@
 			text: 'Исправляемый документ:',
 			style: 'position:absolute;left:8px;top:410px;width:137px;height:17px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Упр. и регл. учет',
+			style: 'position:absolute;left:428px;top:57px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только НДС',
+			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
 	]
 });

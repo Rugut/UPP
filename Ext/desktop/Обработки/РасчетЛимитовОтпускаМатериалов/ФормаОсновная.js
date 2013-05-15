@@ -10,38 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:769px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<Назад',
-				},
-				'-',
-				{
-					text:'Далее>',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:753px;height:384px;',
 			height: 384,width: 753,
@@ -62,26 +30,36 @@
 			style: 'position:absolute;left:13px;top:50px;width:215px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПланыПроизводстваПроцент',
 			style: 'position:absolute;left:228px;top:26px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПланыПродажПроцент',
 			style: 'position:absolute;left:228px;top:50px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПланыПроизводстваДатаНач',
 			style: 'position:absolute;left:398px;top:26px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПланыПроизводстваДатаКон',
 			style: 'position:absolute;left:498px;top:26px;width:80px;height:19px;',
 		},
@@ -104,14 +82,18 @@
 			style: 'position:absolute;left:583px;top:26px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПланыПродажДатаНач',
 			style: 'position:absolute;left:398px;top:50px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПланыПродажДатаКон',
 			style: 'position:absolute;left:498px;top:50px;width:80px;height:19px;',
 		},
@@ -134,6 +116,11 @@
 			style: 'position:absolute;left:583px;top:50px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Производство',
+			style: 'position:absolute;left:6px;top:6px;width:739px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Исключить',
 			style: 'position:absolute;left:618px;top:26px;width:80px;height:19px;',
@@ -149,20 +136,27 @@
 			style: 'position:absolute;left:13px;top:97px;width:215px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗаказыПокупателейПроцент',
 			style: 'position:absolute;left:228px;top:97px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗаказыПокупателейДатаНач',
 			style: 'position:absolute;left:398px;top:97px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗаказыПокупателейДатаКон',
 			style: 'position:absolute;left:498px;top:97px;width:80px;height:19px;',
 		},
@@ -185,6 +179,11 @@
 			style: 'position:absolute;left:583px;top:97px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заказы',
+			style: 'position:absolute;left:6px;top:76px;width:739px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Исключить',
 			style: 'position:absolute;left:618px;top:97px;width:80px;height:19px;',
@@ -195,20 +194,27 @@
 			style: 'position:absolute;left:13px;top:121px;width:215px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВнутренниеЗаказыПроцент',
 			style: 'position:absolute;left:228px;top:121px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВнутренниеЗаказыДатаНач',
 			style: 'position:absolute;left:398px;top:121px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВнутренниеЗаказыДатаКон',
 			style: 'position:absolute;left:498px;top:121px;width:80px;height:19px;',
 		},
@@ -246,26 +252,36 @@
 			style: 'position:absolute;left:13px;top:191px;width:215px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РасходСоСкладаПроцент',
 			style: 'position:absolute;left:228px;top:167px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РасходНаВыпускПроцент',
 			style: 'position:absolute;left:228px;top:191px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'РасходСоСкладаДатаНач',
 			style: 'position:absolute;left:398px;top:167px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'РасходСоСкладаДатаКон',
 			style: 'position:absolute;left:498px;top:167px;width:80px;height:19px;',
 		},
@@ -288,14 +304,18 @@
 			style: 'position:absolute;left:583px;top:167px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'РасходНаВыпускДатаНач',
 			style: 'position:absolute;left:398px;top:191px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'РасходНаВыпускДатаКон',
 			style: 'position:absolute;left:498px;top:191px;width:80px;height:19px;',
 		},
@@ -318,6 +338,11 @@
 			style: 'position:absolute;left:583px;top:191px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Фактический расход',
+			style: 'position:absolute;left:6px;top:146px;width:739px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Исключить',
 			style: 'position:absolute;left:618px;top:167px;width:80px;height:19px;',
@@ -328,13 +353,21 @@
 			style: 'position:absolute;left:618px;top:191px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:217px;width:739px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Изменить результат расчета (%)',
 			style: 'position:absolute;left:13px;top:238px;width:195px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИзменитьРезультатРасчетаПроцент',
 			style: 'position:absolute;left:228px;top:238px;width:80px;height:19px;',
 		},
@@ -432,13 +465,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:70px;width:739px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:6px;top:339px;width:739px;height:19px;',
@@ -452,6 +478,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:95px;top:6px;width:650px;height:19px;',
 		},
@@ -464,8 +491,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:95px;top:30px;width:650px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:6px;top:54px;width:739px;height:16px;',
 		},
 					]
 				},
@@ -473,21 +506,6 @@
 					title:'Результат',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:733px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Изменить...',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:733px;height:328px;',
@@ -580,6 +598,43 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:769px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<Назад',
+				},
+				'-',
+				{
+					text:'Далее>',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

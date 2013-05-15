@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:475px;width:700px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:459px;',
 			height: 459,width: 684,
@@ -69,33 +48,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:95px;width:670px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить пометки',
-				},
-				{
-					text:'Снять пометки',
-				},
-				'-',
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:363px;top:6px;width:313px;height:19px;',
 		},
@@ -106,9 +58,19 @@
 			style: 'position:absolute;left:285px;top:6px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:79px;width:670px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:466px;top:53px;width:205px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:32px;width:670px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -137,14 +99,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон',
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
@@ -173,8 +139,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНаДату',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
@@ -300,20 +268,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:320px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:356px;top:6px;width:320px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:329px;top:30px;width:24px;height:399px;',
 			items:
 			[
@@ -336,28 +290,6 @@
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
 			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:48px;width:670px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -399,6 +331,11 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:6px;width:588px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отобранные интервалы',
+			style: 'position:absolute;left:6px;top:32px;width:670px;height:16px;',
 		},
 					]
 				},
@@ -479,26 +416,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
 					title:'Дополнительные поля',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:399px;',
@@ -551,13 +474,6 @@
 					title:'Сортировка',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:399px;',
@@ -657,11 +573,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:69px;width:670px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Условное оформление',
+			style: 'position:absolute;left:6px;top:53px;width:670px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Оформление отчета',
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:16px;',
 		},
 		{
 			xtype: 'combobox',
@@ -731,6 +650,11 @@
 					text:'Сортировать по убыванию',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:8px;top:81px;width:214px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -929,18 +853,19 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:242px;top:97px;width:210px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Группировки строк',
+			style: 'position:absolute;left:242px;top:81px;width:210px;height:16px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:482px;top:97px;width:210px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Группировки колонок',
+			style: 'position:absolute;left:482px;top:81px;width:210px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отборы',
+			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -996,6 +921,11 @@
 					text:'Сортировать по убыванию',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:8px;top:81px;width:332px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -1115,11 +1045,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:360px;top:97px;width:332px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Группировки строк',
+			style: 'position:absolute;left:360px;top:81px;width:332px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отборы',
+			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -1155,6 +1088,16 @@
 			name: 'НадписьИмяРегистра2',
 			text: 'Раздел учета:',
 			style: 'position:absolute;left:287px;top:8px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:8px;top:34px;width:684px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:8px;top:34px;width:684px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -1208,14 +1151,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач1',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон1',
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
@@ -1262,8 +1209,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНаДату1',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
@@ -1301,14 +1250,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач2',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон2',
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
@@ -1355,8 +1308,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНаДату2',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
@@ -1393,6 +1348,55 @@
 				{
 					text:'Командная панель группировки действие перенести в измерения строк',
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:475px;width:700px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:242px;top:97px;width:210px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:482px;top:97px;width:210px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:360px;top:97px;width:332px;height:24px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

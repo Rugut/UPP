@@ -10,83 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Файлы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:555px;width:665px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
@@ -95,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:392px;top:35px;width:92px;height:19px;',
 		},
@@ -107,12 +31,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:35px;width:253px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:8px;top:200px;width:341px;height:163px;',
 		},
@@ -124,6 +50,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'РезультатЗакрытия',
 			style: 'position:absolute;left:366px;top:507px;width:291px;height:40px;',
 		},
@@ -136,6 +63,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:490px;top:438px;width:167px;height:19px;',
 		},
@@ -148,6 +76,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаЗадач',
 			style: 'position:absolute;left:490px;top:414px;width:167px;height:19px;',
 		},
@@ -160,8 +89,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИсточникИнформации',
 			style: 'position:absolute;left:490px;top:390px;width:167px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:366px;top:370px;width:291px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -183,6 +118,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:421px;top:28px;width:220px;height:19px;',
 		},
@@ -193,8 +129,10 @@
 			style: 'position:absolute;left:359px;top:76px;width:155px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОткрытия',
 			style: 'position:absolute;left:520px;top:76px;width:80px;height:19px;',
 		},
@@ -207,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Важность',
 			style: 'position:absolute;left:421px;top:52px;width:220px;height:19px;',
 		},
@@ -219,8 +158,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Вакансия',
 			style: 'position:absolute;left:111px;top:28px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Позиционирование',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Состояние',
+			style: 'position:absolute;left:359px;top:6px;width:282px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -231,6 +181,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:111px;top:52px;width:230px;height:19px;',
 		},
@@ -254,6 +205,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:105px;top:0px;width:230px;height:19px;',
 		},
@@ -270,6 +222,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:111px;top:100px;width:230px;height:19px;',
 		},
@@ -362,6 +315,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:490px;top:462px;width:167px;height:19px;',
 		},
@@ -424,6 +378,88 @@
 			[
 				{
 					text:'Зарегистрировать результат',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Файлы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:555px;width:665px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

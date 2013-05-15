@@ -10,8 +10,17 @@
 	items:
 	[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Показывать при начале работы программы',
+			style: 'position:absolute;left:133px;top:4px;width:241px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -22,11 +31,6 @@
 				},
 				'-',
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Показывать при начале работы программы',
-			style: 'position:absolute;left:133px;top:4px;width:241px;height:15px;',
 		},
 	]
 });

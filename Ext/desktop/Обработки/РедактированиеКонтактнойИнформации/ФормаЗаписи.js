@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:193px;width:220px;height:19px;',
 		},
@@ -58,8 +59,14 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Представление',
 			style: 'position:absolute;left:102px;top:105px;width:220px;height:80px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Значение',
+			style: 'position:absolute;left:8px;top:85px;width:314px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -76,14 +83,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Вид',
 			style: 'position:absolute;left:102px;top:61px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Объект',
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

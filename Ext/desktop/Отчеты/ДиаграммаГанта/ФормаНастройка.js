@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:286px;width:490px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:270px;',
 			height: 270,width: 474,
@@ -43,8 +26,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачПериода',
 			style: 'position:absolute;left:64px;top:6px;width:80px;height:19px;',
 		},
@@ -55,8 +40,10 @@
 			style: 'position:absolute;left:146px;top:6px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонПериода',
 			style: 'position:absolute;left:164px;top:6px;width:80px;height:19px;',
 		},
@@ -65,21 +52,6 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:246px;top:6px;width:20px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Час, день',
-			style: 'position:absolute;left:92px;top:54px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'День, неделя, месяц',
-			style: 'position:absolute;left:178px;top:54px;width:132px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Неделя, месяц, год',
-			style: 'position:absolute;left:316px;top:54px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -104,6 +76,27 @@
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Час, день',
+			style: 'position:absolute;left:92px;top:54px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'День, неделя, месяц',
+			style: 'position:absolute;left:178px;top:54px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Неделя, месяц, год',
+			style: 'position:absolute;left:316px;top:54px;width:120px;height:19px;',
+		},
 			]
 		},
 					]
@@ -148,13 +141,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -235,13 +221,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -285,14 +264,28 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
+					]
+				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:286px;width:490px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

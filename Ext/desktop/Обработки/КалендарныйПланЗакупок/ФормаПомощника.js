@@ -10,31 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<< Назад',
-				},
-				'-',
-				{
-					text:'Далее >>',
-				},
-				'-',
-				{
-					text:'Готово',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:8px;width:619px;height:389px;',
 			height: 389,width: 619,
@@ -110,30 +85,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:619px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Номенклатура, для подбора поставщиков',
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
 		},
 					]
 				},
@@ -141,6 +95,11 @@
 					title:'Настройки',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Настройка отборов по свойствам и категориям контрагентов',
+			style: 'position:absolute;left:0px;top:95px;width:619px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:140px;width:619px;height:249px;',
@@ -197,11 +156,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:115px;width:619px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Настройка основных отборов',
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -221,36 +178,46 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияНадежность',
 			style: 'position:absolute;left:258px;top:45px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияСрокВыполненияЗаказа',
 			style: 'position:absolute;left:258px;top:69px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеНадежность',
 			style: 'position:absolute;left:381px;top:45px;width:238px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеСрокВыполненияЗаказа',
 			style: 'position:absolute;left:381px;top:69px;width:238px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеСрокВыполненияЗаказаНач',
 			style: 'position:absolute;left:381px;top:69px;width:117px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеСрокВыполненияЗаказаКон',
 			style: 'position:absolute;left:502px;top:69px;width:117px;height:19px;',
 		},
@@ -278,6 +245,11 @@
 				[
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Подбор номенклатуры по ценам и поставщикам',
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -312,6 +284,35 @@
 			[
 				{
 					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<< Назад',
+				},
+				'-',
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'Готово',
+				},
+				'-',
+				{
+					text:'Отмена',
 				},
 			]
 		},

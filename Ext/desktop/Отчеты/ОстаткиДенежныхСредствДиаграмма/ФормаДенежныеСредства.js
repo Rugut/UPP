@@ -10,8 +10,99 @@
 	items:
 	[
 		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаКон',
+			style: 'position:absolute;left:68px;top:33px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'На дату::',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:377px;top:33px;width:219px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Тип диаграммы:',
+			style: 'position:absolute;left:288px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:60px;width:588px;height:72px;',
+			height: 72,width: 588,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Поля',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиВидДенежныхСредств',
+			style: 'position:absolute;left:288px;top:0px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Наличные, безналичные:',
+			style: 'position:absolute;left:0px;top:0px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:0px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиВалютаДенежныхСредств',
+			style: 'position:absolute;left:288px;top:24px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Валюта денежных средств:',
+			style: 'position:absolute;left:0px;top:24px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:24px;width:128px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиБанковскийСчетКасса',
+			style: 'position:absolute;left:288px;top:48px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Банковский счет, касса:',
+			style: 'position:absolute;left:0px;top:48px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:158px;top:48px;width:128px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -74,88 +165,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаКон',
-			style: 'position:absolute;left:68px;top:33px;width:97px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДатаНач',
-			text: 'На дату::',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:377px;top:33px;width:219px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись8',
-			text: 'Тип диаграммы:',
-			style: 'position:absolute;left:288px;top:33px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:60px;width:588px;height:72px;',
-			height: 72,width: 588,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Поля',
-					items:
-					[
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиВидДенежныхСредств',
-			style: 'position:absolute;left:288px;top:0px;width:300px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Наличные, безналичные:',
-			style: 'position:absolute;left:0px;top:0px;width:156px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:158px;top:0px;width:128px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиВалютаДенежныхСредств',
-			style: 'position:absolute;left:288px;top:24px;width:300px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Валюта денежных средств:',
-			style: 'position:absolute;left:0px;top:24px;width:156px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:158px;top:24px;width:128px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиБанковскийСчетКасса',
-			style: 'position:absolute;left:288px;top:48px;width:300px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Банковский счет, касса:',
-			style: 'position:absolute;left:0px;top:48px;width:156px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:158px;top:48px;width:128px;height:19px;',
-		},
-					]
 				},
 			]
 		},

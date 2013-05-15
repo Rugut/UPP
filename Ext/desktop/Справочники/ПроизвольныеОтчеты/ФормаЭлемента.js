@@ -18,33 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:33px;width:341px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:298px;width:445px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Описание',
 			style: 'position:absolute;left:8px;top:251px;width:429px;height:39px;',
 		},
@@ -86,16 +67,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
-			items:
-			[
-				{
-					text:'Показатель монитора эффективности',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьГруппа',
 			text: 'Группа:',
@@ -104,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:96px;top:58px;width:341px;height:19px;',
 		},
@@ -114,8 +86,50 @@
 			style: 'position:absolute;left:8px;top:232px;width:56px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Источники данных',
+			style: 'position:absolute;left:8px;top:95px;width:429px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:298px;width:445px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Показатель монитора эффективности',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:111px;width:429px;height:24px;',
+			dock: 'top',
 			items:
 			[
 			]

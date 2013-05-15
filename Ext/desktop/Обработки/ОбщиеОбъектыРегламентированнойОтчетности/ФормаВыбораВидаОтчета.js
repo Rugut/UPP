@@ -47,8 +47,23 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОписаниеОтчета',
+			text: '',
+			style: 'position:absolute;left:8px;top:340px;width:521px;height:58px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание',
+			style: 'position:absolute;left:8px;top:322px;width:521px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:537px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -94,12 +109,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписаниеОтчета',
-			text: '',
-			style: 'position:absolute;left:8px;top:340px;width:521px;height:58px;',
 		},
 	]
 });

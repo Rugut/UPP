@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:68px;top:33px;width:84px;height:19px;',
 		},
@@ -28,8 +30,10 @@
 			style: 'position:absolute;left:156px;top:33px;width:28px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:188px;top:33px;width:84px;height:19px;',
 		},
@@ -42,36 +46,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:508px;top:33px;width:124px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'button',
@@ -98,8 +75,41 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Счет',
 			style: 'position:absolute;left:344px;top:33px;width:80px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

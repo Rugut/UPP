@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:202px;top:33px;width:120px;height:19px;',
 		},
@@ -234,6 +237,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЦФО',
 			style: 'position:absolute;left:102px;top:57px;width:220px;height:19px;',
 		},
@@ -246,6 +250,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьиОборотов',
 			style: 'position:absolute;left:102px;top:81px;width:220px;height:19px;',
 		},
@@ -262,8 +267,10 @@
 			style: 'position:absolute;left:340px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:422px;top:33px;width:80px;height:19px;',
 		},
@@ -274,8 +281,10 @@
 			style: 'position:absolute;left:504px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонца',
 			style: 'position:absolute;left:522px;top:33px;width:80px;height:19px;',
 		},
@@ -294,6 +303,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:334px;width:220px;height:19px;',
 		},
@@ -306,6 +316,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:422px;top:81px;width:220px;height:19px;',
 		},
@@ -318,8 +329,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:358px;width:540px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'БюджетныеОперации',
+			style: 'position:absolute;left:8px;top:108px;width:634px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

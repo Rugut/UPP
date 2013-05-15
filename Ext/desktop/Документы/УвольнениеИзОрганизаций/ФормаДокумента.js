@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -49,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -61,18 +65,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:412px;width:461px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:124px;width:549px;height:24px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -211,27 +206,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:268px;top:438px;width:297px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
@@ -240,8 +214,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:108px;width:549px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -291,9 +271,46 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:549px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:268px;top:438px;width:297px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:438px;width:268px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				'-',
@@ -305,6 +322,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:72px;top:269px;width:389px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

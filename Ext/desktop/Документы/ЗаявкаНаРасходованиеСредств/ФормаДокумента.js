@@ -35,6 +35,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:87px;top:6px;width:220px;height:19px;',
 		},
@@ -82,31 +83,38 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСделка',
-			text: 'Сделка:
-',
+			text: 'Сделка:\r\n',
 			style: 'position:absolute;left:319px;top:0px;width:90px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:81px;top:0px;width:167px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сделка',
 			style: 'position:absolute;left:409px;top:0px;width:216px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:81px;top:24px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:81px;top:48px;width:100px;height:19px;',
 		},
@@ -125,12 +133,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДвиженияДенежныхСредств',
 			style: 'position:absolute;left:409px;top:72px;width:216px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:409px;top:48px;width:100px;height:19px;',
 		},
@@ -143,6 +155,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:81px;top:72px;width:220px;height:19px;',
 		},
@@ -161,6 +174,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументРасчетовСКонтрагентом',
 			style: 'position:absolute;left:409px;top:24px;width:216px;height:19px;',
 		},
@@ -277,16 +291,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:294px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьИтогоСписок',
 			text: 'Итого платежей по списку:',
@@ -315,16 +319,6 @@
 			style: 'position:absolute;left:325px;top:30px;width:82px;height:31px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Без разбиения',
-			style: 'position:absolute;left:415px;top:6px;width:100px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Списком',
-			style: 'position:absolute;left:520px;top:6px;width:108px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьРедактировать',
 			text: 'Редактировать:',
@@ -342,6 +336,22 @@
 			text: 'Контрагент:',
 			style: 'position:absolute;left:325px;top:6px;width:82px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Без разбиения',
+			style: 'position:absolute;left:415px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:520px;top:6px;width:108px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 				{
@@ -357,6 +367,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаВзаиморасчетовПодотчетника',
 			style: 'position:absolute;left:415px;top:6px;width:100px;height:19px;',
 		},
@@ -369,6 +380,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:87px;top:6px;width:220px;height:19px;',
 		},
@@ -381,6 +393,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РасчетныйДокумент',
 			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
 		},
@@ -391,8 +404,10 @@
 			style: 'position:absolute;left:325px;top:30px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПогашенияАванса',
 			style: 'position:absolute;left:87px;top:102px;width:100px;height:19px;',
 		},
@@ -403,20 +418,27 @@
 			style: 'position:absolute;left:6px;top:102px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсВзаиморасчетовПодотчетника',
 			style: 'position:absolute;left:87px;top:54px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетовПодотчетника',
 			style: 'position:absolute;left:87px;top:30px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДвиженияДенежныхСредств1',
 			style: 'position:absolute;left:415px;top:78px;width:218px;height:19px;',
 		},
@@ -427,14 +449,18 @@
 			style: 'position:absolute;left:188px;top:54px;width:120px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПлатежаПодотчет',
 			style: 'position:absolute;left:415px;top:54px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект1',
 			style: 'position:absolute;left:87px;top:78px;width:220px;height:19px;',
 		},
@@ -459,12 +485,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаККМ',
 			style: 'position:absolute;left:415px;top:6px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДвиженияДенежныхСредств2',
 			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
 		},
@@ -475,14 +503,18 @@
 			style: 'position:absolute;left:6px;top:6px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетовККМ',
 			style: 'position:absolute;left:87px;top:6px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект2',
 			style: 'position:absolute;left:87px;top:30px;width:220px;height:19px;',
 		},
@@ -501,6 +533,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидВыдачиДенежныхСредств',
 			style: 'position:absolute;left:325px;top:6px;width:82px;height:19px;',
 		},
@@ -513,6 +546,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДвиженияДенежныхСредств3',
 			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
 		},
@@ -523,20 +557,25 @@
 			style: 'position:absolute;left:6px;top:6px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетовПрочие',
 			style: 'position:absolute;left:87px;top:6px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтрагентПрочие',
 			style: 'position:absolute;left:415px;top:6px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект3',
 			style: 'position:absolute;left:87px;top:30px;width:220px;height:19px;',
 		},
@@ -561,6 +600,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Описание',
 			style: 'position:absolute;left:6px;top:6px;width:628px;height:127px;',
 		},
@@ -585,16 +625,6 @@
 			name: 'НадписьАвтоматическое',
 			text: 'Автоматическое:',
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:30px;width:358px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить и провести',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -663,6 +693,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:87px;top:6px;width:220px;height:19px;',
 		},
@@ -675,6 +706,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяОборотов',
 			style: 'position:absolute;left:415px;top:6px;width:218px;height:19px;',
 		},
@@ -687,12 +719,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:415px;top:30px;width:218px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтрагентОперации',
 			style: 'position:absolute;left:87px;top:30px;width:220px;height:19px;',
 		},
@@ -715,12 +749,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчетКасса',
 			style: 'position:absolute;left:424px;top:249px;width:225px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:96px;top:56px;width:100px;height:19px;',
 		},
@@ -758,6 +794,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФормаОплаты',
 			style: 'position:absolute;left:424px;top:57px;width:225px;height:19px;',
 		},
@@ -774,8 +811,10 @@
 			style: 'position:absolute;left:334px;top:33px;width:90px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРасхода',
 			style: 'position:absolute;left:424px;top:33px;width:88px;height:19px;',
 		},
@@ -788,6 +827,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:296px;width:225px;height:19px;',
 		},
@@ -800,6 +840,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:96px;top:320px;width:220px;height:19px;',
 		},
@@ -812,6 +853,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:249px;width:220px;height:19px;',
 		},
@@ -822,14 +864,18 @@
 			style: 'position:absolute;left:200px;top:56px;width:33px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:233px;top:57px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -840,8 +886,10 @@
 			style: 'position:absolute;left:177px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -859,6 +907,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЦФО',
 			style: 'position:absolute;left:96px;top:296px;width:220px;height:19px;',
 		},
@@ -871,6 +920,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:424px;top:320px;width:225px;height:19px;',
 		},
@@ -880,5 +930,8 @@
 			text: 'Комментарий:',
 			style: 'position:absolute;left:334px;top:320px;width:90px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

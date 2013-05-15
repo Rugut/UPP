@@ -10,84 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:581px;width:654px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Сохранить запрос на диск',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:638px;height:44px;',
 			height: 44,width: 638,
@@ -134,6 +56,16 @@
 			text: 'Ответ:',
 			style: 'position:absolute;left:0px;top:10px;width:77px;height:15px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:0px;width:638px;height:5px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:31px;width:638px;height:5px;',
+		},
 					]
 				},
 			]
@@ -158,6 +90,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидУслуги',
 			style: 'position:absolute;left:99px;top:92px;width:539px;height:19px;',
 		},
@@ -176,12 +109,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:99px;top:2px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:210px;top:2px;width:130px;height:19px;',
 		},
@@ -194,8 +130,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:99px;top:29px;width:539px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:83px;width:638px;height:3px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -217,6 +159,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФорматОтвета',
 			style: 'position:absolute;left:99px;top:0px;width:539px;height:19px;',
 		},
@@ -227,8 +170,10 @@
 			style: 'position:absolute;left:0px;top:26px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачПериода',
 			style: 'position:absolute;left:99px;top:26px;width:88px;height:19px;',
 		},
@@ -239,8 +184,10 @@
 			style: 'position:absolute;left:190px;top:26px;width:15px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонПериода',
 			style: 'position:absolute;left:210px;top:26px;width:88px;height:19px;',
 		},
@@ -249,6 +196,11 @@
 			name: 'КнопкаВыбораПериода',
 			text: '...',
 			style: 'position:absolute;left:311px;top:26px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Налоги',
+			style: 'position:absolute;left:0px;top:50px;width:638px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -267,6 +219,11 @@
 			text: 'Уточните налоги (комбинации КБК и кодов ОКАТО), в разрезе которых Вы хотели бы получить отчет от налогового органа.',
 			style: 'position:absolute;left:0px;top:2px;width:638px;height:16px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:17px;width:638px;height:3px;',
+		},
 					]
 				},
 			]
@@ -282,13 +239,6 @@
 					title:'Страница1',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:638px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:638px;height:204px;',
@@ -372,6 +322,10 @@
 					items:
 					[
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'первичные',
 			style: 'position:absolute;left:99px;top:1px;width:80px;height:19px;',
@@ -386,6 +340,8 @@
 			boxLabel: 'все',
 			style: 'position:absolute;left:314px;top:1px;width:40px;height:19px;',
 		},
+			]
+		},
 					]
 				},
 			]
@@ -399,10 +355,94 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрацияВИФНС',
 			style: 'position:absolute;left:99px;top:55px;width:539px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:581px;width:654px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Сохранить запрос на диск',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

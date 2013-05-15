@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:351px;width:546px;height:19px;',
 		},
@@ -229,14 +233,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:28px;width:214px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:413px;top:28px;width:214px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
 		},
 					]
 				},
@@ -257,12 +268,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
 		},
@@ -275,6 +288,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
@@ -306,15 +320,18 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сделка',
 			style: 'position:absolute;left:98px;top:105px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСделка',
-			text: 'Сделка:
-',
+			text: 'Сделка:\r\n',
 			style: 'position:absolute;left:8px;top:101px;width:88px;height:28px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,17 +29,12 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:148px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:108px;width:553px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -141,8 +137,59 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:357px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:94px;top:357px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:94px;top:81px;width:467px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:94px;top:57px;width:467px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:108px;width:553px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:569px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -170,6 +217,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:384px;width:569px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -191,42 +239,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:357px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:94px;top:357px;width:467px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:94px;top:81px;width:467px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись5',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:94px;top:57px;width:467px;height:19px;',
 		},
 	]
 });

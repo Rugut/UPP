@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:400px;width:326px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПользователь',
 			text: 'Пользователь:',
@@ -60,9 +43,31 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:400px;width:326px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:14px;top:13px;width:105px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

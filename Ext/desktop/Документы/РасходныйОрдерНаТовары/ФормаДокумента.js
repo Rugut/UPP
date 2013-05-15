@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:347px;width:542px;height:19px;',
 		},
@@ -391,14 +395,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:98px;top:27px;width:204px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:408px;top:27px;width:208px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:16px;',
 		},
 					]
 				},
@@ -413,6 +424,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
 		},
@@ -425,6 +437,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
@@ -437,6 +450,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:412px;top:57px;width:220px;height:19px;',
 		},
@@ -449,6 +463,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументПередачи',
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
@@ -477,5 +492,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -282,8 +282,29 @@
 			},
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ЗначениеОтбораСпискаКонтрагентов',
+			style: 'position:absolute;left:235px;top:33px;width:451px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗначениеОтбораСпискаНоменклатуры',
+			text: 'содержит:',
+			style: 'position:absolute;left:174px;top:33px;width:57px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:694px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -340,22 +361,6 @@
 				'-',
 				'-',
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ЗначениеОтбораСпискаКонтрагентов',
-			style: 'position:absolute;left:235px;top:33px;width:451px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьЗначениеОтбораСпискаНоменклатуры',
-			text: 'содержит:',
-			style: 'position:absolute;left:174px;top:33px;width:57px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
 		},
 	]
 });

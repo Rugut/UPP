@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -57,17 +61,12 @@
 			style: 'position:absolute;left:516px;top:33px;width:44px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачисленияРеверсированныхРасходов',
 			style: 'position:absolute;left:562px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:84px;width:634px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -161,8 +160,46 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:333px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:94px;top:333px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:422px;top:57px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:84px;width:634px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -190,6 +227,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:360px;width:650px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -211,30 +249,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:333px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:94px;top:333px;width:548px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись5',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:422px;top:57px;width:220px;height:19px;',
 		},
 	]
 });

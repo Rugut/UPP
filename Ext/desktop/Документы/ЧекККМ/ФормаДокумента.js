@@ -60,26 +60,29 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:110px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:210px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаККМ',
 			style: 'position:absolute;left:402px;top:32px;width:242px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКассаККМ',
-			text: 'Касса ККМ:
-',
+			text: 'Касса ККМ:\r\n',
 			style: 'position:absolute;left:337px;top:32px;width:61px;height:19px;',
 		},
 		{
@@ -91,6 +94,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:110px;top:56px;width:220px;height:19px;',
 		},
@@ -103,6 +107,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЧекККМПродажа',
 			style: 'position:absolute;left:402px;top:56px;width:242px;height:19px;',
 		},
@@ -115,6 +120,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:89px;top:386px;width:555px;height:19px;',
 		},
@@ -131,8 +137,11 @@
 			style: 'position:absolute;left:497px;top:340px;width:64px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:563px;top:340px;width:81px;height:17px;',
 		},
@@ -322,37 +331,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Поиск по штрихкоду',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Серийные номера',
-				},
-				'-',
-				{
-					text:'Состав набора',
-				},
-				'-',
-				{
-					text:'Вес',
-				},
-				{
-					text:'Оплатить картой',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:110px;width:622px;height:90px;',
 			height: 90,width: 622,
@@ -445,6 +423,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:405px;top:6px;width:223px;height:19px;',
 		},
@@ -461,6 +440,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДисконтнаяКарта',
 			style: 'position:absolute;left:110px;top:80px;width:220px;height:19px;',
 		},
@@ -471,20 +451,27 @@
 			style: 'position:absolute;left:209px;top:362px;width:62px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Сдача',
 			style: 'position:absolute;left:276px;top:362px;width:72px;height:17px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОплаты',
 			style: 'position:absolute;left:418px;top:80px;width:159px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаОплаты',
 			style: 'position:absolute;left:110px;top:362px;width:91px;height:19px;',
 		},
@@ -493,16 +480,6 @@
 			name: 'НадписьОплата',
 			text: 'Оплата:',
 			style: 'position:absolute;left:337px;top:80px;width:61px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: '',
-			style: 'position:absolute;left:402px;top:80px;width:13px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Списком',
-			style: 'position:absolute;left:581px;top:80px;width:63px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -516,5 +493,24 @@
 			text: '',
 			style: 'position:absolute;left:89px;top:362px;width:20px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:402px;top:80px;width:13px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:581px;top:80px;width:63px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
 	]
 });

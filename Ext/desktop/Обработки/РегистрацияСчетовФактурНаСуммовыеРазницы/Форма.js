@@ -10,42 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Список счетов-фактур (выд.)',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:365px;width:736px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Период с:',
 			style: 'position:absolute;left:8px;top:33px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:70px;top:33px;width:80px;height:19px;',
 		},
@@ -56,8 +30,10 @@
 			style: 'position:absolute;left:152px;top:33px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:171px;top:33px;width:80px;height:19px;',
 		},
@@ -68,17 +44,6 @@
 			style: 'position:absolute;left:253px;top:33px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:720px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
@@ -87,8 +52,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:373px;top:33px;width:355px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Список',
+			style: 'position:absolute;left:8px;top:60px;width:720px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -189,6 +160,51 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Список счетов-фактур (выд.)',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:365px;width:736px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:720px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 	]
 });

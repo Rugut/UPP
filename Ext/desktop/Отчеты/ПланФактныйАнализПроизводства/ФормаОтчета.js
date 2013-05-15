@@ -873,35 +873,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:304px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Выбирать даты периодом',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -963,6 +934,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:86px;top:0px;width:2px;height:56px;',
+		},
 					]
 				},
 			]
@@ -1014,5 +990,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

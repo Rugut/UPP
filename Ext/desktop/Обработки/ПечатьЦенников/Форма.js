@@ -10,13 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:210px;width:764px;height:217px;',
 			height: 217,width: 764,
@@ -107,6 +100,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:390px;top:33px;width:236px;height:19px;',
 		},
@@ -184,16 +178,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:87px;width:764px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Только имеющиеся в наличии',
 			style: 'position:absolute;left:8px;top:72px;width:233px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:8px;top:53px;width:764px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -228,6 +220,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:680px;top:33px;width:92px;height:19px;',
 		},
@@ -240,6 +233,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:83px;top:33px;width:244px;height:19px;',
 		},
@@ -248,6 +242,25 @@
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
 			style: 'position:absolute;left:8px;top:33px;width:70px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:87px;width:764px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

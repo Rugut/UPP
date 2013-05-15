@@ -18,29 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:146px;top:33px;width:285px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:253px;width:439px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -51,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатусПартии',
 			style: 'position:absolute;left:146px;top:226px;width:285px;height:19px;',
 		},
@@ -63,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Заказ',
 			style: 'position:absolute;left:146px;top:57px;width:285px;height:19px;',
 		},
@@ -75,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКомитента',
 			style: 'position:absolute;left:146px;top:81px;width:285px;height:19px;',
 		},
@@ -87,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКомиссионера',
 			style: 'position:absolute;left:146px;top:130px;width:285px;height:19px;',
 		},
@@ -99,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументПередачи',
 			style: 'position:absolute;left:146px;top:154px;width:285px;height:19px;',
 		},
@@ -111,6 +96,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:146px;top:178px;width:285px;height:19px;',
 		},
@@ -123,6 +109,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НазначениеИспользования',
 			style: 'position:absolute;left:146px;top:202px;width:285px;height:19px;',
 		},
@@ -135,8 +122,35 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комиссионер',
 			style: 'position:absolute;left:146px;top:105px;width:285px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:253px;width:439px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

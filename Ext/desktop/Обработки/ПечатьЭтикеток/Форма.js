@@ -186,8 +186,14 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры печати',
+			style: 'position:absolute;left:8px;top:168px;width:764px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФорматЭтикетки',
 			style: 'position:absolute;left:64px;top:206px;width:201px;height:19px;',
 		},
@@ -203,8 +209,11 @@
 			style: 'position:absolute;left:8px;top:185px;width:92px;height:18px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ШиринаЭтикетки',
 			style: 'position:absolute;left:349px;top:206px;width:21px;height:19px;',
 		},
@@ -215,8 +224,11 @@
 			style: 'position:absolute;left:271px;top:206px;width:71px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВысотаЭтикетки',
 			style: 'position:absolute;left:449px;top:206px;width:20px;height:19px;',
 		},
@@ -245,6 +257,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:213px;top:13px;width:250px;height:19px;',
 		},
@@ -257,6 +270,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Единица',
 			style: 'position:absolute;left:90px;top:37px;width:113px;height:19px;',
 		},
@@ -269,6 +283,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Качество',
 			style: 'position:absolute;left:290px;top:37px;width:173px;height:19px;',
 		},
@@ -284,33 +299,14 @@
 			style: 'position:absolute;left:473px;top:37px;width:107px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'заполненные',
-			style: 'position:absolute;left:584px;top:13px;width:85px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'пустые',
-			style: 'position:absolute;left:675px;top:13px;width:55px;height:19px;',
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Характеристики:',
 			style: 'position:absolute;left:472px;top:13px;width:107px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'заполненные',
-			style: 'position:absolute;left:584px;top:37px;width:87px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'пустые',
-			style: 'position:absolute;left:675px;top:37px;width:57px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипШтрихкода',
 			style: 'position:absolute;left:90px;top:61px;width:113px;height:19px;',
 		},
@@ -323,8 +319,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦены',
 			style: 'position:absolute;left:90px;top:105px;width:373px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры отбора',
+			style: 'position:absolute;left:0px;top:0px;width:764px;height:130px;',
 		},
 		{
 			xtype: 'combobox',
@@ -333,9 +335,62 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:631px;top:105px;width:126px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Тип цены:',
+			style: 'position:absolute;left:6px;top:105px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры расчета цены',
+			style: 'position:absolute;left:6px;top:85px;width:752px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать только внутренние штрихкоды',
+			style: 'position:absolute;left:473px;top:60px;width:254px;height:20px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'заполненные',
+			style: 'position:absolute;left:584px;top:13px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'пустые',
+			style: 'position:absolute;left:675px;top:13px;width:55px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'заполненные',
+			style: 'position:absolute;left:584px;top:37px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'пустые',
+			style: 'position:absolute;left:675px;top:37px;width:57px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'В валютах цен',
@@ -346,20 +401,16 @@
 			boxLabel: 'Валюта:',
 			style: 'position:absolute;left:570px;top:105px;width:60px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'Надпись9',
-			text: 'Тип цены:',
-			style: 'position:absolute;left:6px;top:105px;width:81px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Отбирать только внутренние штрихкоды',
-			style: 'position:absolute;left:473px;top:60px;width:254px;height:20px;',
+			]
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Строки для этикеток',
+			style: 'position:absolute;left:8px;top:231px;width:764px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -368,10 +419,16 @@
 			style: 'position:absolute;left:474px;top:206px;width:96px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:576px;top:206px;width:51px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

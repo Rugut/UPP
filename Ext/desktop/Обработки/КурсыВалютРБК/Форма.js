@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачДата',
 			style: 'position:absolute;left:114px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +30,10 @@
 			style: 'position:absolute;left:196px;top:33px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонДата',
 			style: 'position:absolute;left:214px;top:33px;width:80px;height:19px;',
 		},
@@ -168,5 +172,13 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Валюты',
+			style: 'position:absolute;left:8px;top:57px;width:476px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

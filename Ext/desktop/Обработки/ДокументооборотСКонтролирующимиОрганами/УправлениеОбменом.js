@@ -10,95 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
-			items:
-			[
-				{
-					text:'Заявления на подключение',
-				},
-				'-',
-				{
-					text:'Учетные записи документооборота',
-				},
-				{
-					text:'Серверы документооборота',
-				},
-				'-',
-				{
-					text:'Налоговые органы',
-				},
-				{
-					text:'Органы ПФР',
-				},
-				{
-					text:'Органы ФСГС',
-				},
-				'-',
-				{
-					text:'Регламентированные отчеты',
-				},
-				{
-					text:'Виды отправляемых документов',
-				},
-				{
-					text:'Внешние электронные представления отчетов',
-				},
-				'-',
-				{
-					text:'Архив документооборота с ФНС',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сегодня',
-				},
-				{
-					text:'Текущая неделя',
-				},
-				{
-					text:'Текущий месяц',
-				},
-				{
-					text:'Текущий квартал',
-				},
-				{
-					text:'Текущий год',
-				},
-				'-',
-				{
-					text:'Вчера',
-				},
-				{
-					text:'Предыдущая неделя',
-				},
-				{
-					text:'Предыдущий месяц',
-				},
-				{
-					text:'Предыдущий квартал',
-				},
-				{
-					text:'Предыдущий год',
-				},
-				'-',
-				{
-					text:'Произвольный период',
-				},
-				{
-					text:'Без ограничений',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
 			height: 23,width: 778,
@@ -118,6 +29,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборУчетнаяЗапись',
 			style: 'position:absolute;left:97px;top:0px;width:681px;height:19px;',
 		},
@@ -351,6 +263,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтбораЦикловОбмена',
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
@@ -368,12 +281,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбора',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораСтрока',
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
@@ -386,6 +301,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчета',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -399,6 +315,24 @@
 					items:
 					[
 		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НомерКорректировки',
+			style: 'position:absolute;left:310px;top:0px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: '№ корректировки:',
+			style: 'position:absolute;left:195px;top:2px;width:111px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'первичный',
 			style: 'position:absolute;left:2px;top:2px;width:74px;height:15px;',
@@ -408,16 +342,7 @@
 			boxLabel: 'корректирующий',
 			style: 'position:absolute;left:81px;top:2px;width:106px;height:15px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерКорректировки',
-			style: 'position:absolute;left:310px;top:0px;width:41px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: '№ корректировки:',
-			style: 'position:absolute;left:195px;top:2px;width:111px;height:15px;',
+			]
 		},
 					]
 				},
@@ -428,6 +353,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронноеПредставлениеДляОтбора',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -451,33 +377,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:93px;top:4px;width:55px;height:20px;',
 		},
 					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'Подписать',
-				},
-				'-',
-				{
-					text:'Сформировать подтверждения',
-				},
-				'-',
-				{
-					text:'Зашифровать',
-				},
-				{
-					text:'Расшифровать',
 				},
 			]
 		},
@@ -691,6 +599,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтбораЦикловОбменаЗаявление',
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
@@ -708,6 +617,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораЗаявление',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -786,6 +696,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораЗаявлениеСтрока',
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
@@ -801,6 +712,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронноеПредставлениеДляОтбораЗаявление',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -830,29 +742,15 @@
 			style: 'position:absolute;left:63px;top:7px;width:23px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГодЗаявление',
 			style: 'position:absolute;left:93px;top:4px;width:55px;height:20px;',
 		},
 					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'Выгрузить контейнеры и их содержимое',
-				},
-				'-',
-				{
-					text:'Выгрузить контейнеры',
-				},
-				{
-					text:'Выгрузить содержимое',
 				},
 			]
 		},
@@ -945,47 +843,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -1168,56 +1025,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'&Новый',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -1427,50 +1234,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -2047,6 +1810,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтбораЦикловОбменаПФР',
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
@@ -2064,12 +1828,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораПФР',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораСтрокаПФР',
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
@@ -2082,6 +1848,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчетаПФР',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -2094,6 +1861,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронноеПредставлениеДляОтбораПФР',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -2198,56 +1966,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'&Новый',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -2421,50 +2139,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -2746,6 +2420,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтбораЦикловОбменаФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
@@ -2763,12 +2438,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораСтрокаФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
@@ -2781,6 +2458,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчетаФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -2793,6 +2471,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронноеПредставлениеДляОтбораФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
@@ -2897,56 +2576,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'&Новый',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -3138,50 +2767,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 					]
 				},
@@ -3388,6 +2973,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:14px;width:543px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:9px;width:543px;height:3px;',
+		},
 					]
 				},
 			]
@@ -3445,17 +3040,121 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Учетные записи',
+			style: 'position:absolute;left:0px;top:2px;width:195px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:23px;width:195px;height:24px;',
 			items:
 			[
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:21px;width:195px;height:3px;',
+		},
 					]
 				},
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заявления на подключение',
+				},
+				'-',
+				{
+					text:'Учетные записи документооборота',
+				},
+				{
+					text:'Серверы документооборота',
+				},
+				'-',
+				{
+					text:'Налоговые органы',
+				},
+				{
+					text:'Органы ПФР',
+				},
+				{
+					text:'Органы ФСГС',
+				},
+				'-',
+				{
+					text:'Регламентированные отчеты',
+				},
+				{
+					text:'Виды отправляемых документов',
+				},
+				{
+					text:'Внешние электронные представления отчетов',
+				},
+				'-',
+				{
+					text:'Архив документооборота с ФНС',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сегодня',
+				},
+				{
+					text:'Текущая неделя',
+				},
+				{
+					text:'Текущий месяц',
+				},
+				{
+					text:'Текущий квартал',
+				},
+				{
+					text:'Текущий год',
+				},
+				'-',
+				{
+					text:'Вчера',
+				},
+				{
+					text:'Предыдущая неделя',
+				},
+				{
+					text:'Предыдущий месяц',
+				},
+				{
+					text:'Предыдущий квартал',
+				},
+				{
+					text:'Предыдущий год',
+				},
+				'-',
+				{
+					text:'Произвольный период',
+				},
+				{
+					text:'Без ограничений',
 				},
 			]
 		},

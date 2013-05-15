@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:564px;width:996px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Записать вычеты и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьЗаголовокГлавногоОкна',
 			text: 'Выделение вычетов на второго, третьего (четвертого, ...) ребенка',
@@ -160,6 +143,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:39px;width:220px;height:19px;',
 		},
@@ -295,8 +279,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПояснения',
-			text: 'Первая строка пояснения
-Вторая строка пояснения',
+			text: 'Первая строка пояснения\r\nВторая строка пояснения',
 			style: 'position:absolute;left:8px;top:63px;width:980px;height:32px;',
 		},
 		{
@@ -345,9 +328,13 @@
 					items:
 					[
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
-			boxLabel: 'Оставить вычет только на второго ребенка',
-			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
+			boxLabel: 'Не заменять вычеты',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -356,13 +343,15 @@
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Заменить вычетами на третьего ребенка',
-			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
+			boxLabel: 'Оставить вычет только на второго ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Не заменять вычеты',
-			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+			boxLabel: 'Заменить вычетами на третьего ребенка',
+			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -422,9 +411,13 @@
 					items:
 					[
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
-			boxLabel: 'Оставить вычет только на второго ребенка',
-			style: 'position:absolute;left:0px;top:44px;width:249px;height:19px;',
+			boxLabel: 'Не заменять вычеты',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -433,13 +426,15 @@
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Заменить вычетами на третьего ребенка',
-			style: 'position:absolute;left:0px;top:66px;width:249px;height:19px;',
+			boxLabel: 'Оставить вычет только на второго ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:249px;height:19px;',
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Не заменять вычеты',
-			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+			boxLabel: 'Заменить вычетами на третьего ребенка',
+			style: 'position:absolute;left:0px;top:66px;width:249px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -499,9 +494,13 @@
 					items:
 					[
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
-			boxLabel: 'Оставить вычет только на второго ребенка',
-			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
+			boxLabel: 'Не заменять вычеты',
+			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -510,13 +509,15 @@
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Заменить вычетами на третьего ребенка',
-			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
+			boxLabel: 'Оставить вычет только на второго ребенка',
+			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Не заменять вычеты',
-			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
+			boxLabel: 'Заменить вычетами на третьего ребенка',
+			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -548,6 +549,27 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:564px;width:996px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Записать вычеты и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:119px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Установить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Флажок',
 			style: 'position:absolute;left:24px;top:24px;width:138px;height:19px;',
@@ -43,6 +22,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаДокумент',
 			style: 'position:absolute;left:152px;top:68px;width:240px;height:19px;',
 		},
@@ -61,6 +41,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:152px;top:92px;width:240px;height:19px;',
 		},
@@ -69,6 +50,31 @@
 			name: 'Надпись3',
 			text: 'По видам учета:',
 			style: 'position:absolute;left:8px;top:4px;width:138px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:119px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Установить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

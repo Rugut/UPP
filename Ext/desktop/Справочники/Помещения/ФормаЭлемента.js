@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:314px;top:33px;width:78px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:187px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:93px;top:57px;width:299px;height:19px;',
 		},
@@ -50,9 +53,13 @@
 			boxLabel: 'Для встреч',
 			style: 'position:absolute;left:8px;top:82px;width:384px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -70,6 +77,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:105px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

@@ -41,6 +41,15 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Укажите источник загрузки',
+			style: 'position:absolute;left:6px;top:6px;width:449px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'с диска "Информационно-технологическое сопровождение"',
 			style: 'position:absolute;left:6px;top:31px;width:330px;height:15px;',
@@ -49,6 +58,8 @@
 			xtype: 'radio',
 			boxLabel: 'с сайта агентства "РосБизнесКонсалтинг"',
 			style: 'position:absolute;left:6px;top:51px;width:240px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -162,40 +173,6 @@
 			text: 'Надпись',
 			style: 'position:absolute;left:6px;top:290px;width:449px;height:15px;',
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:449px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Свернуть все',
-				},
-				{
-					text:'Развернуть все',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -278,40 +255,20 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКонфликты',
-			text: 'Список банков, уже имеющихся в базе, но отличающихся от классификатора некоторыми параметрами. 
-Пометьте те банки, изменения для которых необходимо принять.',
+			text: 'Список банков, уже имеющихся в базе, но отличающихся от классификатора некоторыми параметрами. \r\nПометьте те банки, изменения для которых необходимо принять.',
 			style: 'position:absolute;left:6px;top:6px;width:449px;height:43px;text-align:left;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:70px;width:449px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Пометить',
-				},
-				{
-					text:'Снять пометки',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Различия информационной базы с классификатором',
+			style: 'position:absolute;left:6px;top:54px;width:449px;height:16px;',
 		},
 					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

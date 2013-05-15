@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:368px;width:556px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -66,40 +71,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'бух. учете',
 			style: 'position:absolute;left:497px;top:33px;width:69px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -146,6 +117,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:426px;top:57px;width:220px;height:19px;',
 		},
@@ -158,6 +130,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:426px;top:81px;width:220px;height:19px;',
 		},
@@ -171,19 +144,6 @@
 					title:'Основные средства',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:624px;height:24px;',
-			items:
-			[
-				{
-					text:'По группе ОС',
-				},
-				{
-					text:'По наименованию',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:624px;height:195px;',
@@ -1150,8 +1110,47 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
 		},
 	]
 });

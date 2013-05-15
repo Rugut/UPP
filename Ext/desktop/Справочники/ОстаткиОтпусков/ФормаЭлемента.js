@@ -10,34 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:288px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:299px;width:288px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:58px;width:272px;height:233px;',
 			height: 233,width: 272,
@@ -55,8 +27,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОстатков',
 			style: 'position:absolute;left:96px;top:0px;width:80px;height:19px;',
 		},
@@ -73,8 +47,11 @@
 			style: 'position:absolute;left:0px;top:96px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоДней',
 			style: 'position:absolute;left:96px;top:96px;width:80px;height:19px;',
 		},
@@ -152,24 +129,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:208px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Рассчитать',
-				},
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'ПростойВвод',
 			text: '<< Простой ввод остатков',
@@ -190,6 +149,39 @@
 			name: 'НадписьСотрудник',
 			text: '',
 			style: 'position:absolute;left:8px;top:33px;width:272px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:288px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:299px;width:288px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

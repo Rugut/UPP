@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:29px;width:306px;height:24px;',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:53px;width:764px;height:220px;',
 			height: 220,width: 764,
@@ -165,10 +155,29 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Документы планирования',
+			style: 'position:absolute;left:8px;top:8px;width:764px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВыбрано',
 			text: 'Всего выбрано:',
 			style: 'position:absolute;left:491px;top:30px;width:281px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:29px;width:306px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+			]
 		},
 	]
 });

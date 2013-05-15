@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:368px;width:627px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:611px;height:352px;',
 			height: 352,width: 611,
@@ -101,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:6px;width:501px;height:19px;',
 		},
@@ -187,13 +171,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:597px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -203,6 +180,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:400px;top:36px;width:203px;height:19px;',
 		},
@@ -221,26 +199,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Компетенция',
 			style: 'position:absolute;left:97px;top:36px;width:203px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:336px;height:25px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:342px;top:6px;width:261px;height:25px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Распределение полученных оценок',
+			style: 'position:absolute;left:6px;top:69px;width:597px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -254,14 +220,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачПериода',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонПериода',
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
@@ -288,6 +258,27 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:368px;width:627px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

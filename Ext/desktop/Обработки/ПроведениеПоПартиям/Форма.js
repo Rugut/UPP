@@ -10,24 +10,12 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:207px;top:33px;width:103px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			items:
-			[
-				{
-					text:'Настройка обработки',
-				},
-				'-',
-				{
-					text:'Установка границы последовательности',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -141,8 +129,37 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: ' По видам учета:',
+			style: 'position:absolute;left:8px;top:57px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: ' По организациям:',
+			style: 'position:absolute;left:8px;top:117px;width:384px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Настройка обработки',
+				},
+				'-',
+				{
+					text:'Установка границы последовательности',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:136px;width:384px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

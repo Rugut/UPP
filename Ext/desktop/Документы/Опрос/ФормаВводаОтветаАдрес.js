@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Регион',
 			style: 'position:absolute;left:102px;top:29px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Район',
 			style: 'position:absolute;left:102px;top:53px;width:220px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Город',
 			style: 'position:absolute;left:102px;top:77px;width:220px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаселенныйПункт',
 			style: 'position:absolute;left:102px;top:101px;width:220px;height:19px;',
 		},
@@ -66,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Улица',
 			style: 'position:absolute;left:102px;top:125px;width:220px;height:19px;',
 		},
@@ -78,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Дом',
 			style: 'position:absolute;left:102px;top:149px;width:36px;height:19px;',
 		},
@@ -90,6 +96,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Корпус',
 			style: 'position:absolute;left:190px;top:149px;width:36px;height:19px;',
 		},
@@ -102,12 +109,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Квартира',
 			style: 'position:absolute;left:286px;top:149px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:197px;width:220px;height:19px;',
 		},
@@ -139,8 +148,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Индекс',
 			style: 'position:absolute;left:102px;top:173px;width:60px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Адрес',
+			style: 'position:absolute;left:8px;top:8px;width:314px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -9,5 +9,8 @@
 	
 	items:
 	[
+	],
+	dockedItems:
+	[
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:428px;top:57px;width:220px;height:19px;',
 		},
@@ -64,8 +69,10 @@
 			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:98px;top:81px;width:80px;height:19px;',
 		},
@@ -76,8 +83,10 @@
 			style: 'position:absolute;left:180px;top:81px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:198px;top:81px;width:80px;height:19px;',
 		},
@@ -90,39 +99,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Периодичность',
 			style: 'position:absolute;left:428px;top:81px;width:95px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -310,14 +289,22 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Список номенклатуры для данных условий поставки',
+			style: 'position:absolute;left:8px;top:132px;width:640px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСуммаУсловийПоДоговору',
 			text: 'Сумма:',
 			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаУсловийДоговора',
 			style: 'position:absolute;left:98px;top:105px;width:80px;height:19px;',
 		},
@@ -336,6 +323,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:331px;width:552px;height:19px;',
 		},
@@ -348,6 +336,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:428px;top:105px;width:220px;height:19px;',
 		},
@@ -360,8 +349,44 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:568px;top:309px;width:80px;height:17px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 	]
 });

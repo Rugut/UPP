@@ -10,30 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:644px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:628px;height:384px;',
 			height: 384,width: 628,
@@ -129,6 +105,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:88px;top:6px;width:220px;height:19px;',
 		},
@@ -145,8 +122,10 @@
 			style: 'position:absolute;left:328px;top:6px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:386px;top:6px;width:96px;height:19px;',
 		},
@@ -157,8 +136,10 @@
 			style: 'position:absolute;left:484px;top:6px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:502px;top:6px;width:96px;height:19px;',
 		},
@@ -169,23 +150,9 @@
 			style: 'position:absolute;left:600px;top:6px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:70px;width:614px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Включить все',
-				},
-				{
-					text:'Выключить все',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Отбор документов',
+			style: 'position:absolute;left:6px;top:54px;width:614px;height:16px;',
 		},
 					]
 				},
@@ -277,6 +244,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Документы для обработки',
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:614px;height:174px;',
 			height: 174,width: 614,
@@ -296,31 +268,40 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:614px;height:24px;',
-			items:
-			[
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				{
-					text:'Заполнить',
+			xtype: 'fieldset',
+			title: 'Выполняемые действия',
+			style: 'position:absolute;left:6px;top:225px;width:614px;height:16px;',
+		},
+					]
 				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:644px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

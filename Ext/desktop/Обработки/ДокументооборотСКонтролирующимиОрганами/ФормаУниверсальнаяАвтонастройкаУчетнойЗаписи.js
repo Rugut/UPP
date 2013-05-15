@@ -10,33 +10,26 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:325px;width:597px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Настроить сейчас',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Укажите идентификатор абонента, присвоенный вам специализированным оператором связи при подключении.',
 			style: 'position:absolute;left:8px;top:166px;width:581px;height:18px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:249px;width:581px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Перед автоматической настройкой убедитесь в том, что на компьютере установлен криптопровайдер (средство криптографической защиты информации), и в системе зарегистрирован абонентский сертификат. Регистрация абонентского сертификата с привязкой к закрытому ключу производится средствами криптопровайдера.',
 			style: 'position:absolute;left:70px;top:265px;width:519px;height:52px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:62px;width:581px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -47,6 +40,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпецоператорИУЦ',
 			style: 'position:absolute;left:252px;top:77px;width:337px;height:19px;',
 		},
@@ -65,6 +59,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдентификаторАбонента',
 			style: 'position:absolute;left:252px;top:143px;width:337px;height:19px;',
 		},
@@ -77,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:252px;top:197px;width:337px;height:19px;',
 		},
@@ -91,6 +87,27 @@
 			name: 'Надпись50',
 			text: 'Укажите организацию для которой будет настроена учетная запись.',
 			style: 'position:absolute;left:8px;top:220px;width:581px;height:18px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:325px;width:597px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Настроить сейчас',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

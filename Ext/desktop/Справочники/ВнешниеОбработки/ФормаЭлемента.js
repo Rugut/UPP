@@ -10,17 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Настройка доступа',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наименование:',
@@ -29,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:325px;top:33px;width:285px;height:19px;',
 		},
@@ -41,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОбработки',
 			style: 'position:absolute;left:39px;top:57px;width:185px;height:19px;',
 		},
@@ -53,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:39px;top:33px;width:185px;height:19px;',
 		},
@@ -67,43 +59,6 @@
 					title:'Принадлежность печатной формы',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:22px;width:602px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Заменить файл',
-				},
-				{
-					text:'Сохранить файл на диск',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:47px;width:602px;height:200px;',
@@ -231,6 +186,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Принадлежность',
+			style: 'position:absolute;left:0px;top:6px;width:602px;height:16px;',
+		},
 					]
 				},
 			]
@@ -244,6 +204,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:325px;top:57px;width:285px;height:19px;',
 		},
@@ -274,9 +235,25 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:81px;width:514px;height:27px;',
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Настройка доступа',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:527px;top:81px;width:83px;height:27px;',
+			dock: 'top',
 			items:
 			[
 				{

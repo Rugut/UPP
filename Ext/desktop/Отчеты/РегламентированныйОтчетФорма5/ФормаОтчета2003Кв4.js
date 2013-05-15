@@ -11,30 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
-			items:
-			[
-				{
-					text:'Проверить в Интернете',
-				},
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				{
-					text:'Подготовить к отправке',
-				},
-				'-',
-				{
-					text:'Показать отправки',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:720px;height:25px;',
 			items:
 			[
@@ -65,14 +41,19 @@
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:226px;top:0px;width:32px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
@@ -81,8 +62,11 @@
 			style: 'position:absolute;left:172px;top:24px;width:116px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:303px;top:24px;width:49px;height:19px;',
 		},
@@ -104,12 +88,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КомментарийОбщий',
 			style: 'position:absolute;left:263px;top:3px;width:441px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Статус',
 			style: 'position:absolute;left:47px;top:3px;width:119px;height:19px;',
 		},
@@ -133,14 +119,18 @@
 			style: 'position:absolute;left:0px;top:265px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиФормаОтчета',
 			style: 'position:absolute;left:226px;top:265px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийФормаОтчета',
 			style: 'position:absolute;left:352px;top:265px;width:352px;height:19px;',
 		},
@@ -193,6 +183,34 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Проверить в Интернете',
+				},
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
+				},
+				{
+					text:'Подготовить к отправке',
+				},
+				'-',
+				{
+					text:'Показать отправки',
 				},
 			]
 		},

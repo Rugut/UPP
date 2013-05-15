@@ -10,65 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Данные сотрудника',
-				},
-				'-',
-				{
-					text:'Медицинские страховые полисы',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:481px;width:700px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:480px;top:33px;width:212px;height:440px;',
 			height: 440,width: 212,
@@ -112,14 +53,20 @@
 					items:
 					[
 		{
-			xtype: 'radio',
-			boxLabel: 'Создать нового сотрудника, выбрав его из справочника физических лиц',
-			style: 'position:absolute;left:3px;top:36px;width:242px;height:28px;',
-		},
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Создать нового сотрудника и ввести его личные данные в справочник физических лиц',
 			style: 'position:absolute;left:3px;top:3px;width:267px;height:28px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Создать нового сотрудника, выбрав его из справочника физических лиц',
+			style: 'position:absolute;left:3px;top:36px;width:242px;height:28px;',
+		},
+			]
 		},
 					]
 				},
@@ -144,6 +91,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Пол',
 			style: 'position:absolute;left:95px;top:49px;width:100px;height:19px;',
 		},
@@ -154,14 +102,17 @@
 			style: 'position:absolute;left:11px;top:26px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРождения',
 			style: 'position:absolute;left:95px;top:26px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:368px;top:49px;width:90px;height:19px;',
 		},
@@ -180,12 +131,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодИМНС',
 			style: 'position:absolute;left:292px;top:49px;width:42px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР',
 			style: 'position:absolute;left:368px;top:26px;width:90px;height:19px;',
 		},
@@ -220,6 +173,16 @@
 			style: 'position:absolute;left:11px;top:162px;width:82px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Личные данные',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Данные сотрудника',
+			style: 'position:absolute;left:6px;top:96px;width:452px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'ПерейтиКВводуТрудовогоДоговора',
 			text: 'Перейти к вводу данных трудового договора...',
@@ -234,24 +197,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЗанятости',
 			style: 'position:absolute;left:95px;top:186px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:95px;top:162px;width:239px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:95px;top:209px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПередставлениеНаименования',
 			style: 'position:absolute;left:95px;top:116px;width:349px;height:19px;',
 		},
@@ -262,6 +229,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДоговора',
 			style: 'position:absolute;left:95px;top:139px;width:239px;height:19px;',
 		},
@@ -355,6 +323,11 @@
 			style: 'position:absolute;left:11px;top:187px;width:83px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Основная оплата при приеме на работу',
+			style: 'position:absolute;left:6px;top:144px;width:452px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадбавкиПоТрудовомуДоговоруТекст',
 			text: 'Надбавки по трудовому договору ...',
@@ -363,84 +336,107 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДоговора',
 			style: 'position:absolute;left:92px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДоговора',
 			style: 'position:absolute;left:192px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:92px;top:29px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:192px;top:29px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИспытательныйСрок',
 			style: 'position:absolute;left:423px;top:29px;width:35px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбособленноеПодразделение',
 			style: 'position:absolute;left:92px;top:52px;width:366px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:92px;top:75px;width:366px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:92px;top:98px;width:366px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикРаботы',
 			style: 'position:absolute;left:92px;top:121px;width:253px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗанимаемыхСтавок',
 			style: 'position:absolute;left:414px;top:121px;width:44px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:96px;top:164px;width:249px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаТарифнойСтавки',
 			style: 'position:absolute;left:265px;top:187px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТарифнаяСтавка',
 			style: 'position:absolute;left:96px;top:187px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТарифныйРазряд',
 			style: 'position:absolute;left:96px;top:187px;width:249px;height:19px;',
 		},
@@ -569,6 +565,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеФизлица',
 			style: 'position:absolute;left:45px;top:79px;width:421px;height:19px;',
 		},
@@ -581,18 +578,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:45px;top:101px;width:167px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:214px;top:101px;width:125px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:341px;top:101px;width:125px;height:19px;',
 		},
@@ -605,6 +605,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:103px;top:421px;width:363px;height:19px;',
 		},
@@ -617,6 +618,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Физлицо',
 			style: 'position:absolute;left:45px;top:79px;width:421px;height:19px;',
 		},
@@ -679,6 +681,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Пол1',
 			style: 'position:absolute;left:90px;top:29px;width:100px;height:19px;',
 		},
@@ -689,26 +692,31 @@
 			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРождения1',
 			style: 'position:absolute;left:90px;top:6px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН1',
 			style: 'position:absolute;left:368px;top:29px;width:90px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодИМНС1',
 			style: 'position:absolute;left:292px;top:29px;width:42px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР1',
 			style: 'position:absolute;left:368px;top:6px;width:90px;height:19px;',
 		},
@@ -719,6 +727,11 @@
 			style: 'position:absolute;left:6px;top:52px;width:452px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Налоговые вычеты, статус налогоплательщика',
+			style: 'position:absolute;left:6px;top:120px;width:452px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьГражданство',
 			text: 'Гражданство:',
@@ -727,12 +740,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Гражданство',
 			style: 'position:absolute;left:103px;top:74px;width:355px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Инвалидность',
 			style: 'position:absolute;left:103px;top:97px;width:355px;height:19px;',
 		},
@@ -751,6 +766,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтандартныеВычеты',
 			style: 'position:absolute;left:103px;top:141px;width:355px;height:19px;',
 		},
@@ -763,6 +779,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмущественныеВычеты',
 			style: 'position:absolute;left:103px;top:166px;width:355px;height:19px;',
 		},
@@ -775,6 +792,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатусНалогоплательщика',
 			style: 'position:absolute;left:103px;top:191px;width:355px;height:19px;',
 		},
@@ -789,6 +807,11 @@
 					title:'Кадровые данные',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Место работы',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:452px;height:63px;',
@@ -979,6 +1002,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Кадровые документы',
+			style: 'position:absolute;left:6px;top:88px;width:452px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -1666,6 +1694,16 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Плановые начисления',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Плановые удержания',
+			style: 'position:absolute;left:6px;top:157px;width:452px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:174px;width:452px;height:97px;',
 			height: 97,width: 452,
@@ -2082,19 +2120,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:324px;top:66px;width:125px;height:24px;',
-			items:
-			[
-				{
-					text:'Настройка списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:316px;top:194px;width:125px;height:24px;',
 			items:
 			[
@@ -2177,6 +2202,16 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Отражение в учете плановых начислений',
+			style: 'position:absolute;left:6px;top:130px;width:452px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отражение в учете основных начислений',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:452px;height:77px;',
 			height: 77,width: 452,
@@ -2230,16 +2265,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:452px;height:24px;',
-			items:
-			[
-				{
-					text:'Показать историю ...',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -2330,6 +2355,11 @@
 			style: 'position:absolute;left:11px;top:210px;width:83px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Основная оплата при приеме на работу',
+			style: 'position:absolute;left:6px;top:167px;width:452px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадбавкиПоТрудовомуДоговоруТекст1',
 			text: 'Надбавки по трудовому договору ...',
@@ -2344,84 +2374,107 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДоговора1',
 			style: 'position:absolute;left:92px;top:29px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДоговора1',
 			style: 'position:absolute;left:192px;top:29px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала1',
 			style: 'position:absolute;left:92px;top:52px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания1',
 			style: 'position:absolute;left:192px;top:52px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИспытательныйСрок1',
 			style: 'position:absolute;left:423px;top:52px;width:35px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗанимаемыхСтавок1',
 			style: 'position:absolute;left:414px;top:144px;width:44px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикРаботы1',
 			style: 'position:absolute;left:92px;top:144px;width:253px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбособленноеПодразделение1',
 			style: 'position:absolute;left:92px;top:75px;width:366px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации1',
 			style: 'position:absolute;left:92px;top:98px;width:366px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность1',
 			style: 'position:absolute;left:92px;top:121px;width:366px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаТарифнойСтавки1',
 			style: 'position:absolute;left:265px;top:210px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета1',
 			style: 'position:absolute;left:96px;top:187px;width:249px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТарифнаяСтавка1',
 			style: 'position:absolute;left:96px;top:210px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТарифныйРазряд1',
 			style: 'position:absolute;left:96px;top:210px;width:249px;height:19px;',
 		},
@@ -2539,6 +2592,16 @@
 			name: 'НадписьКодИМНС1',
 			text: 'Код ИФНС:',
 			style: 'position:absolute;left:226px;top:29px;width:64px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Место работы',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Кадровые документы',
+			style: 'position:absolute;left:6px;top:75px;width:452px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -2884,36 +2947,42 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДоговора1',
 			style: 'position:absolute;left:84px;top:46px;width:250px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЗанятости1',
 			style: 'position:absolute;left:84px;top:95px;width:250px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация1',
 			style: 'position:absolute;left:84px;top:71px;width:250px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код1',
 			style: 'position:absolute;left:84px;top:23px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель1',
 			style: 'position:absolute;left:103px;top:421px;width:363px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПередставлениеНаименования1',
 			style: 'position:absolute;left:84px;top:0px;width:237px;height:19px;',
 		},
@@ -2933,9 +3002,74 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Данные сотрудника',
+				},
+				'-',
+				{
+					text:'Медицинские страховые полисы',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:481px;width:700px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:650px;top:0px;width:50px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

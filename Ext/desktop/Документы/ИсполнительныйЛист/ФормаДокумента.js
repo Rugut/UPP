@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:454px;top:33px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:580px;top:33px;width:120px;height:19px;',
 		},
@@ -36,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Физлицо',
 			style: 'position:absolute;left:100px;top:57px;width:246px;height:19px;',
 		},
@@ -48,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:100px;top:33px;width:246px;height:19px;',
 		},
@@ -58,8 +63,10 @@
 			style: 'position:absolute;left:370px;top:129px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:454px;top:129px;width:79px;height:19px;',
 		},
@@ -70,8 +77,10 @@
 			style: 'position:absolute;left:535px;top:129px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:553px;top:129px;width:79px;height:19px;',
 		},
@@ -82,8 +91,11 @@
 			style: 'position:absolute;left:16px;top:294px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Размер',
 			style: 'position:absolute;left:121px;top:294px;width:80px;height:19px;',
 		},
@@ -96,36 +108,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:100px;top:446px;width:600px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:473px;width:708px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -148,6 +133,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РеквизитыИсполнительногоДокумента',
 			style: 'position:absolute;left:454px;top:105px;width:246px;height:19px;',
 		},
@@ -160,6 +146,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Получатель',
 			style: 'position:absolute;left:100px;top:129px;width:246px;height:19px;',
 		},
@@ -170,8 +157,11 @@
 			style: 'position:absolute;left:16px;top:317px;width:68px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Предел',
 			style: 'position:absolute;left:121px;top:317px;width:80px;height:19px;',
 		},
@@ -184,22 +174,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода5',
 			style: 'position:absolute;left:454px;top:57px;width:246px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Процентом от заработка',
-			style: 'position:absolute;left:24px;top:201px;width:151px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Фиксированной суммой',
-			style: 'position:absolute;left:24px;top:247px;width:151px;height:19px;',
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:100px;top:105px;width:246px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Реквизиты исполнительного документа',
+			style: 'position:absolute;left:8px;top:84px;width:692px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Удержание',
+			style: 'position:absolute;left:8px;top:156px;width:692px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -208,25 +199,17 @@
 			style: 'position:absolute;left:16px;top:177px;width:79px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДействия',
 			style: 'position:absolute;left:100px;top:177px;width:79px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Через кассу, перечислением на банковский счет',
-			style: 'position:absolute;left:16px;top:368px;width:295px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Почтовым переводом',
-			style: 'position:absolute;left:16px;top:391px;width:295px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Банковским переводом',
-			style: 'position:absolute;left:16px;top:414px;width:295px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Порядок выплаты получателю',
+			style: 'position:absolute;left:8px;top:345px;width:692px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -242,6 +225,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТарифБанкаНаДенежныеПереводы',
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
 		},
@@ -252,14 +236,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентПочтовогоСбора',
 			style: 'position:absolute;left:180px;top:46px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Тариф',
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
 		},
@@ -276,34 +264,117 @@
 			style: 'position:absolute;left:0px;top:0px;width:135px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Рассчитывать по тарифу:',
 			style: 'position:absolute;left:12px;top:23px;width:160px;height:19px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Рассчитывать процентом:',
 			style: 'position:absolute;left:12px;top:46px;width:160px;height:19px;',
+		},
+			]
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Кратно величине прожиточного минимума:',
-			style: 'position:absolute;left:24px;top:270px;width:235px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПрожиточныйМинимум',
 			style: 'position:absolute;left:265px;top:270px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Процентом от заработка',
+			style: 'position:absolute;left:24px;top:201px;width:151px;height:19px;',
 		},
 		{
 			xtype: 'radio',
 			boxLabel: 'Процентом от заработка с учетом больничных листов',
 			style: 'position:absolute;left:24px;top:224px;width:303px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Фиксированной суммой',
+			style: 'position:absolute;left:24px;top:247px;width:151px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Кратно величине прожиточного минимума:',
+			style: 'position:absolute;left:24px;top:270px;width:235px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Через кассу, перечислением на банковский счет',
+			style: 'position:absolute;left:16px;top:368px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом',
+			style: 'position:absolute;left:16px;top:391px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Банковским переводом',
+			style: 'position:absolute;left:16px;top:414px;width:295px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:473px;width:708px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

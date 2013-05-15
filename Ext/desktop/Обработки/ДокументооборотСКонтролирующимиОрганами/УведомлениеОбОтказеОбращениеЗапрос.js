@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:506px;',
 			height: 506,width: 497,
@@ -43,6 +30,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'По файлам',
+			style: 'position:absolute;left:0px;top:3px;width:483px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:23px;width:483px;height:280px;',
@@ -151,6 +143,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяОбрабФайла',
 			style: 'position:absolute;left:191px;top:6px;width:298px;height:19px;',
 		},
@@ -163,6 +156,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаВремяПредст',
 			style: 'position:absolute;left:191px;top:30px;width:298px;height:19px;',
 		},
@@ -175,6 +169,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПрием',
 			style: 'position:absolute;left:191px;top:54px;width:298px;height:19px;',
 		},
@@ -187,6 +182,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КНД',
 			style: 'position:absolute;left:191px;top:78px;width:298px;height:19px;',
 		},
@@ -199,10 +195,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимВидДок',
 			style: 'position:absolute;left:191px;top:102px;width:298px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

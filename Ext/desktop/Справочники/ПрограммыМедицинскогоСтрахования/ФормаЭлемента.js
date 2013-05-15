@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:424px;top:33px;width:79px;height:19px;',
 		},
@@ -30,12 +31,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:299px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:58px;width:53px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textarea',
+			hideLabel: true,
+			disabled: false,
+			name: 'Описание',
+			style: 'position:absolute;left:8px;top:77px;width:495px;height:108px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:511px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -43,6 +62,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:193px;width:511px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -60,18 +80,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписание',
-			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:58px;width:53px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textarea',
-			hideLabel: true,
-			name: 'Описание',
-			style: 'position:absolute;left:8px;top:77px;width:495px;height:108px;',
 		},
 	]
 });

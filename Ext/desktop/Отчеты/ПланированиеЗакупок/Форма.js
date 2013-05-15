@@ -10,65 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'Сформировать заказ',
-				},
-				{
-					text:'Формирование внутренних заказов...',
-				},
-				'-',
-				{
-					text:'Восстановить настройки...',
-				},
-				{
-					text:'Сохранить настройки...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Сформировать заказ',
-				},
-				'-',
-				{
-					text:'Формирование внутренних заказов...',
-				},
-				'-',
-				{
-					text:'Восстановить настройки...',
-				},
-				{
-					text:'Сохранить настройки...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:784px;height:123px;',
 			height: 123,width: 784,
@@ -79,14 +20,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонПродаж',
 			style: 'position:absolute;left:248px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачПродаж',
 			style: 'position:absolute;left:148px;top:6px;width:80px;height:19px;',
 		},
@@ -109,14 +54,18 @@
 			style: 'position:absolute;left:330px;top:6px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонЗакупок',
 			style: 'position:absolute;left:248px;top:30px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачЗакупок',
 			style: 'position:absolute;left:148px;top:30px;width:80px;height:19px;',
 		},
@@ -149,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаОкруглятьВБольшуюСторону',
 			style: 'position:absolute;left:586px;top:54px;width:190px;height:19px;',
 		},
@@ -160,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТипЦенНоменклатуры',
 			style: 'position:absolute;left:148px;top:78px;width:201px;height:19px;',
 		},
@@ -257,13 +208,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:770px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -297,13 +241,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:770px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -349,6 +286,69 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'Сформировать заказ',
+				},
+				{
+					text:'Формирование внутренних заказов...',
+				},
+				'-',
+				{
+					text:'Восстановить настройки...',
+				},
+				{
+					text:'Сохранить настройки...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Сформировать заказ',
+				},
+				'-',
+				{
+					text:'Формирование внутренних заказов...',
+				},
+				'-',
+				{
+					text:'Восстановить настройки...',
+				},
+				{
+					text:'Сохранить настройки...',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

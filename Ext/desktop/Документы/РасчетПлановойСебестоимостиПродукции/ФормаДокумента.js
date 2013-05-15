@@ -10,75 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:345px;width:608px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -93,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:52px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:152px;top:33px;width:120px;height:19px;',
 		},
@@ -119,8 +53,11 @@
 			style: 'position:absolute;left:6px;top:154px;width:160px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентНакладныхРасходов',
 			style: 'position:absolute;left:166px;top:154px;width:80px;height:19px;',
 		},
@@ -133,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:166px;top:130px;width:180px;height:19px;',
 		},
@@ -714,13 +652,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:578px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:578px;height:170px;',
 			height: 170,width: 578,
@@ -826,13 +757,6 @@
 					title:'Состав затрат',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:578px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:578px;height:170px;',
@@ -973,6 +897,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:294px;width:504px;height:19px;',
 		},
@@ -985,8 +910,83 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:318px;width:504px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:345px;width:608px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

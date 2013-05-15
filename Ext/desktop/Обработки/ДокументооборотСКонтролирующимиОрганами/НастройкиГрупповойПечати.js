@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:228px;width:230px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Выбрано циклов обмена: ',
@@ -60,6 +43,11 @@
 			style: 'position:absolute;left:149px;top:8px;width:73px;height:15px;text-align:center;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:27px;width:214px;height:5px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Уведомление об уточнении',
 			style: 'position:absolute;left:14px;top:159px;width:208px;height:15px;',
@@ -78,6 +66,27 @@
 			xtype: 'checkbox',
 			boxLabel: 'Подтверждение получения (ПФР)',
 			style: 'position:absolute;left:14px;top:113px;width:208px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:228px;width:230px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

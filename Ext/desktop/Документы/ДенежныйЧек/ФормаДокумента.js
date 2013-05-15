@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:102px;top:57px;width:219px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетОрганизации',
 			style: 'position:absolute;left:102px;top:81px;width:219px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Касса',
 			style: 'position:absolute;left:435px;top:81px;width:219px;height:19px;',
 		},
@@ -52,8 +55,11 @@
 			style: 'position:absolute;left:8px;top:105px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:102px;top:105px;width:120px;height:19px;',
 		},
@@ -66,15 +72,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:129px;width:219px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:169px;width:647px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -132,8 +132,103 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Номер',
+			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'Дата',
+			style: 'position:absolute;left:202px;top:33px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Оплачено:',
+			style: 'position:absolute;left:341px;top:33px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаОплаты',
+			style: 'position:absolute;left:435px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:153px;width:647px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьИтогоЗП',
+			text: 'Итого на выплату заработной платы: 15000 руб',
+			style: 'position:absolute;left:8px;top:298px;width:364px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВалюта',
+			text: 'Руб',
+			style: 'position:absolute;left:224px;top:105px;width:97px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатья',
+			text: 'Статья движ. ден. средств:',
+			style: 'position:absolute;left:341px;top:105px;width:92px;height:27px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СтатьяДвиженияДенежныхСредств',
+			style: 'position:absolute;left:435px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:318px;width:73px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:87px;top:318px;width:568px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:169px;width:647px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:663px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -161,6 +256,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:345px;width:663px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -182,77 +278,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Номер',
-			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'от:',
-			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Дата',
-			style: 'position:absolute;left:202px;top:33px;width:119px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Оплачено:',
-			style: 'position:absolute;left:341px;top:33px;width:92px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаОплаты',
-			style: 'position:absolute;left:435px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьИтогоЗП',
-			text: 'Итого на выплату заработной платы: 15000 руб',
-			style: 'position:absolute;left:8px;top:298px;width:364px;height:15px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьВалюта',
-			text: 'Руб',
-			style: 'position:absolute;left:224px;top:105px;width:97px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСтатья',
-			text: 'Статья движ. ден. средств:',
-			style: 'position:absolute;left:341px;top:105px;width:92px;height:27px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СтатьяДвиженияДенежныхСредств',
-			style: 'position:absolute;left:435px;top:105px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКомментарий',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:318px;width:73px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:87px;top:318px;width:568px;height:19px;',
 		},
 	]
 });

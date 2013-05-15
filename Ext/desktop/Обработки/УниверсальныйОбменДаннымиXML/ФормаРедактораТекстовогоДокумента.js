@@ -10,20 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
-			items:
-			[
-				{
-					text:'Копировать в буфер обмена',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:622px;height:534px;',
 			height: 534,width: 622,
@@ -37,6 +23,24 @@
 				},
 				{
 					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Копировать в буфер обмена',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

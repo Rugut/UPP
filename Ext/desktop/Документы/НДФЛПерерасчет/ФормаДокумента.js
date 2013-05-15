@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -36,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:324px;width:593px;height:19px;',
 		},
@@ -66,47 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:349px;width:593px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:9px;top:123px;width:680px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -344,8 +311,85 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьМесяцОтражения',
+			text: 'Отразить в расчетах с сотрудниками:',
+			style: 'position:absolute;left:231px;top:81px;width:192px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПериодВзаиморасчетов',
+			style: 'position:absolute;left:423px;top:81px;width:266px;height:19px;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НалоговыйПериод',
+			style: 'position:absolute;left:96px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники организации',
+			style: 'position:absolute;left:8px;top:107px;width:681px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:9px;top:123px;width:680px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:697px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -388,6 +432,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:376px;width:697px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -405,30 +450,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОт',
-			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьМесяцОтражения',
-			text: 'Отразить в расчетах с сотрудниками:',
-			style: 'position:absolute;left:231px;top:81px;width:192px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодВзаиморасчетов',
-			style: 'position:absolute;left:423px;top:81px;width:266px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НалоговыйПериод',
-			style: 'position:absolute;left:96px;top:81px;width:80px;height:19px;',
 		},
 	]
 });

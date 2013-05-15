@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:426px;width:569px;height:19px;',
 		},
@@ -1032,20 +1036,29 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:119px;top:184px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерВходящегоДокумента',
 			style: 'position:absolute;left:119px;top:112px;width:210px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВходящегоДокумента',
 			style: 'position:absolute;left:450px;top:112px;width:94px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:12px;top:91px;width:634px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -1056,6 +1069,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Грузоотправитель',
 			style: 'position:absolute;left:119px;top:136px;width:210px;height:19px;',
 		},
@@ -1068,12 +1082,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Грузополучатель',
 			style: 'position:absolute;left:119px;top:160px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяПрочихДоходовИРасходов',
 			style: 'position:absolute;left:119px;top:7px;width:528px;height:19px;',
 		},
@@ -1086,6 +1102,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:119px;top:63px;width:86px;height:19px;',
 		},
@@ -1096,6 +1113,11 @@
 			style: 'position:absolute;left:215px;top:63px;width:432px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:12px;top:41px;width:634px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьБанковскийСчетКонтрагента',
 			text: 'Б/счет контрагента:',
@@ -1104,6 +1126,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчетКонтрагента',
 			style: 'position:absolute;left:450px;top:136px;width:197px;height:19px;',
 		},
@@ -1120,6 +1143,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
 		},
@@ -1150,6 +1174,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:540px;top:359px;width:116px;height:17px;',
 		},
@@ -1162,6 +1187,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:540px;top:380px;width:116px;height:17px;',
 		},
@@ -1204,6 +1230,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументПоступления',
 			style: 'position:absolute;left:94px;top:80px;width:220px;height:19px;',
 		},
@@ -1225,6 +1252,16 @@
 			style: 'position:absolute;left:8px;top:402px;width:133px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Корректировать',
+			text: 'Корректировать:',
+			style: 'position:absolute;left:328px;top:56px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Упр. и регл. учет',
 			style: 'position:absolute;left:420px;top:56px;width:232px;height:19px;',
@@ -1234,11 +1271,10 @@
 			boxLabel: 'Только НДС',
 			style: 'position:absolute;left:420px;top:80px;width:232px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'Корректировать',
-			text: 'Корректировать:',
-			style: 'position:absolute;left:328px;top:56px;width:90px;height:19px;',
+			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

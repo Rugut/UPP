@@ -10,8 +10,16 @@
 	items:
 	[
 		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:30px;width:288px;height:85px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:123px;width:304px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -27,12 +35,9 @@
 			]
 		},
 		{
-			xtype: 'itemselector',
-			style: 'position:absolute;left:8px;top:30px;width:288px;height:85px;',
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:304px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

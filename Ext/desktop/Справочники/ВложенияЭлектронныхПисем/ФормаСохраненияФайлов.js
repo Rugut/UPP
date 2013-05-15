@@ -12,6 +12,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяКаталога',
 			style: 'position:absolute;left:76px;top:8px;width:428px;height:19px;',
 		},
@@ -31,9 +32,13 @@
 			boxLabel: 'Открыть каталог после сохранения',
 			style: 'position:absolute;left:76px;top:52px;width:208px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:75px;width:512px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

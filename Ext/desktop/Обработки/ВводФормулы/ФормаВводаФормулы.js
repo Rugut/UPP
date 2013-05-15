@@ -11,23 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:479px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:92px;width:463px;height:51px;',
 			items:
 			[
@@ -80,11 +63,21 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры выпуска продукции',
+			style: 'position:absolute;left:8px;top:145px;width:463px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:161px;width:463px;height:24px;',
 			items:
 			[
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Свойства характеристики номенклатуры',
+			style: 'position:absolute;left:8px;top:276px;width:463px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -137,6 +130,27 @@
 			style: 'position:absolute;left:8px;top:292px;width:463px;height:24px;',
 			items:
 			[
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:479px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 	]

@@ -10,30 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:315px;width:600px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Набор :',
@@ -42,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:77px;top:33px;width:515px;height:19px;',
 		},
@@ -52,8 +29,11 @@
 			style: 'position:absolute;left:8px;top:57px;width:68px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:77px;top:57px;width:89px;height:19px;',
 		},
@@ -66,8 +46,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:290px;top:57px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Состав набора',
+			style: 'position:absolute;left:8px;top:85px;width:584px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -250,9 +236,39 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:315px;width:600px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:100px;width:584px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				'-',

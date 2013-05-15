@@ -17,12 +17,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияКонтрагент',
 			style: 'position:absolute;left:126px;top:32px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораКонтрагент',
 			style: 'position:absolute;left:308px;top:32px;width:246px;height:19px;',
 		},
@@ -34,12 +36,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ВидСравненияПользователь',
 			style: 'position:absolute;left:126px;top:81px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ЗначениеОтбораПользователь',
 			style: 'position:absolute;left:308px;top:81px;width:246px;height:19px;',
 		},
@@ -51,12 +55,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияВажность',
 			style: 'position:absolute;left:126px;top:105px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораВажность',
 			style: 'position:absolute;left:308px;top:105px;width:246px;height:19px;',
 		},
@@ -68,12 +74,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияТип',
 			style: 'position:absolute;left:126px;top:129px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораТип',
 			style: 'position:absolute;left:308px;top:129px;width:246px;height:19px;',
 		},
@@ -85,24 +93,31 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияДата',
 			style: 'position:absolute;left:126px;top:8px;width:180px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДата',
 			style: 'position:absolute;left:308px;top:8px;width:246px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДатаНач',
 			style: 'position:absolute;left:308px;top:8px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДатаКон',
 			style: 'position:absolute;left:434px;top:8px;width:120px;height:19px;',
 		},
@@ -114,12 +129,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияНомер',
 			style: 'position:absolute;left:126px;top:177px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораНомер',
 			style: 'position:absolute;left:308px;top:177px;width:246px;height:19px;',
 		},
@@ -131,12 +148,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияТипДокумента',
 			style: 'position:absolute;left:126px;top:153px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораТипДокумента',
 			style: 'position:absolute;left:308px;top:153px;width:246px;height:19px;',
 		},
@@ -148,12 +167,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияВидОперации',
 			style: 'position:absolute;left:126px;top:201px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораВидОперации',
 			style: 'position:absolute;left:308px;top:201px;width:246px;height:19px;',
 		},
@@ -165,24 +186,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияДатаСобытия',
 			style: 'position:absolute;left:126px;top:225px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораДатаСобытия',
 			style: 'position:absolute;left:308px;top:225px;width:246px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДатаСобытияНач',
 			style: 'position:absolute;left:308px;top:225px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДатаСобытияКон',
 			style: 'position:absolute;left:434px;top:225px;width:120px;height:19px;',
 		},
@@ -215,14 +242,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияКонтактноеЛицо',
 			style: 'position:absolute;left:126px;top:57px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораКонтактноеЛицо',
 			style: 'position:absolute;left:308px;top:57px;width:246px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

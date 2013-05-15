@@ -10,38 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:416px;width:657px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -56,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -80,12 +51,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:413px;top:82px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:96px;top:82px;width:220px;height:19px;',
 		},
@@ -98,20 +71,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:58px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сделка',
 			style: 'position:absolute;left:96px;top:106px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСделка',
-			text: 'Сделка:
-',
+			text: 'Сделка:\r\n',
 			style: 'position:absolute;left:8px;top:106px;width:80px;height:19px;',
 		},
 		{
@@ -121,8 +95,10 @@
 			style: 'position:absolute;left:328px;top:33px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:413px;top:33px;width:96px;height:19px;',
 		},
@@ -141,12 +117,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:389px;width:553px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:530px;top:33px;width:96px;height:19px;',
 		},
@@ -265,20 +244,29 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОстатокНаНачало',
 			style: 'position:absolute;left:146px;top:207px;width:77px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: true,
+			value: 0,
 			name: 'ОстатокНаКонец',
 			style: 'position:absolute;left:280px;top:207px;width:87px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: true,
+			value: 0,
 			name: 'Расхождение',
 			style: 'position:absolute;left:569px;top:207px;width:66px;height:19px;',
 		},
@@ -394,20 +382,29 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: true,
+			value: 0,
 			name: 'ОстатокНаНачалоКонтрагент',
 			style: 'position:absolute;left:148px;top:207px;width:77px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: true,
+			value: 0,
 			name: 'ОстатокНаКонецКонтрагент',
 			style: 'position:absolute;left:282px;top:207px;width:87px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: true,
+			value: 0,
 			name: 'РасхождениеКонтрагент',
 			style: 'position:absolute;left:568px;top:207px;width:67px;height:19px;',
 		},
@@ -464,6 +461,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:627px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:627px;height:24px;',
 			items:
@@ -478,20 +480,28 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:32px;width:627px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:97px;top:6px;width:215px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставительОрганизаци',
 			style: 'position:absolute;left:161px;top:53px;width:472px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставительКонтрагента',
 			style: 'position:absolute;left:161px;top:77px;width:472px;height:19px;',
 		},
@@ -520,6 +530,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:413px;top:58px;width:96px;height:19px;',
 		},
@@ -533,6 +544,43 @@
 			xtype: 'checkbox',
 			boxLabel: 'Сверка согласована',
 			style: 'position:absolute;left:328px;top:106px;width:143px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:416px;width:657px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

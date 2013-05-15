@@ -11,13 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:396px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:111px;width:396px;height:25px;',
 			items:
 			[
@@ -46,6 +39,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:92px;top:85px;width:296px;height:19px;',
 		},
@@ -58,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайла',
 			style: 'position:absolute;left:92px;top:60px;width:296px;height:19px;',
 		},
@@ -70,8 +65,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Объект',
 			style: 'position:absolute;left:92px;top:33px;width:296px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:396px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

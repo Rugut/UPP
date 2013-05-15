@@ -10,13 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:408px;',
 			height: 408,width: 764,
@@ -199,24 +192,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:374px;height:24px;',
-			items:
-			[
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Обновить',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Дерево спецификаций',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Номенклатура',
+			style: 'position:absolute;left:386px;top:6px;width:370px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -385,115 +368,6 @@
 					title:'Спецификации',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:369px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Новая группа',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Иерархический просмотр',
-				},
-				{
-					text:'Переместить в группу',
-				},
-				{
-					text:'Уровень вверх',
-				},
-				{
-					text:'Уровень вниз',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Сортировка',
-					menu: [
-				{
-					text:'(Поля сортировки)',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Версии спецификации',
-				},
-					]
-				},
-				{
-					text:'Создать версию',
-				},
-				'-',
-				{
-					text:'Печать спецификации',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:370px;height:151px;',
@@ -674,13 +548,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:370px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:370px;height:77px;',
 			height: 77,width: 370,
@@ -714,13 +581,6 @@
 					title:'Номенклатура',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:370px;height:25px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:370px;height:154px;',
@@ -802,8 +662,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:177px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:6px;width:80px;height:19px;',
 		},
@@ -833,19 +695,24 @@
 			style: 'position:absolute;left:6px;top:279px;width:378px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Настройка дерева спецификаций',
+			style: 'position:absolute;left:6px;top:30px;width:750px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'При изменении спецификации',
+			style: 'position:absolute;left:6px;top:238px;width:750px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Выводить выходные изделия',
 			style: 'position:absolute;left:384px;top:73px;width:372px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Добавлять новую строку спецификации',
-			style: 'position:absolute;left:6px;top:192px;width:378px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Выводить меню',
-			style: 'position:absolute;left:6px;top:212px;width:378px;height:15px;',
+			xtype: 'fieldset',
+			title: 'При вводе новой строки',
+			style: 'position:absolute;left:6px;top:168px;width:378px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -856,6 +723,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВыводитьДляНоменклатуры',
 			style: 'position:absolute;left:274px;top:120px;width:110px;height:19px;',
 		},
@@ -873,6 +741,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'КонечнаяПродукция',
 			style: 'position:absolute;left:129px;top:303px;width:255px;height:19px;',
 		},
@@ -885,6 +754,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'КонечнаяХарактеристикаПродукции',
 			style: 'position:absolute;left:129px;top:327px;width:255px;height:19px;',
 		},
@@ -895,8 +765,11 @@
 			style: 'position:absolute;left:6px;top:144px;width:258px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоУровней',
 			style: 'position:absolute;left:274px;top:144px;width:110px;height:19px;',
 		},
@@ -905,6 +778,31 @@
 			boxLabel: 'Устанавливать спецификацию как основную',
 			style: 'position:absolute;left:6px;top:257px;width:378px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Формировать отчеты по дереву спецификаций',
+			style: 'position:absolute;left:384px;top:168px;width:372px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Добавлять новую строку спецификации',
+			style: 'position:absolute;left:6px;top:192px;width:378px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выводить меню',
+			style: 'position:absolute;left:6px;top:212px;width:378px;height:15px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'На количество выходных изделий по спецификации',
@@ -915,8 +813,21 @@
 			boxLabel: 'На единицу выходного изделия',
 			style: 'position:absolute;left:384px;top:212px;width:372px;height:15px;',
 		},
+			]
+		},
 					]
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

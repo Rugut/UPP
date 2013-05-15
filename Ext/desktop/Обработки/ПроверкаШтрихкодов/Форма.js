@@ -10,52 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			items:
-			[
-				{
-					text:'Загрузить из терминала',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:275px;width:500px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Таблица проверяемых товаров',
+			style: 'position:absolute;left:8px;top:79px;width:484px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Не удалять отсканированные позиции из таблицы проверки',
 			style: 'position:absolute;left:8px;top:56px;width:327px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:95px;width:484px;height:24px;',
-			items:
-			[
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие4',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -168,6 +130,55 @@
 			name: 'НадписьПроверяемыйДокументОбъект',
 			text: '',
 			style: 'position:absolute;left:140px;top:33px;width:352px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Загрузить из терминала',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:275px;width:500px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:95px;width:484px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+			]
 		},
 	]
 });

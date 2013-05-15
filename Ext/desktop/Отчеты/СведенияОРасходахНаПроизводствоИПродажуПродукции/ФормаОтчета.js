@@ -21,14 +21,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:8px;top:20px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:98px;top:20px;width:80px;height:19px;',
 		},
@@ -817,21 +821,9 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:2px;width:297px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Восстановить',
-				},
-				'-',
-				{
-					text:'ЗакрытьПанельНастроек',
-				},
-			]
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:0px;width:306px;height:42px;',
 		},
 		{
 			xtype: 'label',
@@ -843,5 +835,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

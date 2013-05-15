@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:157px;width:675px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Да',
-				},
-				'-',
-				{
-					text:'Нет',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:659px;height:119px;',
 			height: 119,width: 659,
@@ -54,6 +33,31 @@
 			name: 'НадписьСообщение',
 			text: '',
 			style: 'position:absolute;left:8px;top:2px;width:659px;height:28px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:157px;width:675px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Да',
+				},
+				'-',
+				{
+					text:'Нет',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

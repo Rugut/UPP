@@ -10,54 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			items:
-			[
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:716px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: '_ИндикаторВнешнегоОтчета',
 			text: 'Внешний отчет',
@@ -75,14 +27,19 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Ставка',
 			style: 'position:absolute;left:297px;top:23px;width:89px;height:19px;',
 		},
@@ -91,8 +48,11 @@
 			style: 'position:absolute;left:82px;top:0px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:262px;top:0px;width:32px;height:19px;',
 		},
@@ -101,8 +61,11 @@
 			style: 'position:absolute;left:399px;top:23px;width:116px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:530px;top:23px;width:49px;height:19px;',
 		},
@@ -130,16 +93,71 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:263px;top:4px;width:437px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Статус',
 			style: 'position:absolute;left:47px;top:4px;width:119px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Действие2',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:716px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

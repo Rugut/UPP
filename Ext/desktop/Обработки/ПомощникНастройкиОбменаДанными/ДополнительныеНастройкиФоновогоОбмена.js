@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:184px;width:494px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьИнформацияОФоновомОбмене',
 			text: 'Сопоставление объектов в двух информационных базах будет выполнено в фоновом режиме. При этом в каждый пакет данных, передаваемый при обмене данными, будет добавляться дополнительная информация о соответствии объектов',
@@ -45,6 +28,25 @@
 			style: 'position:absolute;left:8px;top:157px;width:315px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКоличествоДополняемыхОбъектов',
+			text: 'Дополнять пакет до фиксированного количества объектов:',
+			style: 'position:absolute;left:8px;top:133px;width:315px;height:19px;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'КоличествоОбъектовДляФоновогоОбмена',
+			style: 'position:absolute;left:328px;top:133px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Добавлять фиксированное количество объектов для сопоставление при каждом обмене',
 			style: 'position:absolute;left:8px;top:77px;width:478px;height:19px;',
@@ -54,17 +56,28 @@
 			boxLabel: 'Дополнять пакет обмена до фиксированного числа объектов',
 			style: 'position:absolute;left:8px;top:101px;width:478px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьКоличествоДополняемыхОбъектов',
-			text: 'Дополнять пакет до фиксированного количества объектов:',
-			style: 'position:absolute;left:8px;top:133px;width:315px;height:19px;',
+			]
 		},
+	],
+	dockedItems:
+	[
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КоличествоОбъектовДляФоновогоОбмена',
-			style: 'position:absolute;left:328px;top:133px;width:124px;height:19px;',
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:184px;width:494px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

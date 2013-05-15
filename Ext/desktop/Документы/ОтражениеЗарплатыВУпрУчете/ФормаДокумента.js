@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:338px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:438px;top:33px;width:120px;height:19px;',
 		},
@@ -36,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:113px;top:33px;width:120px;height:19px;',
 		},
@@ -48,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:338px;top:57px;width:220px;height:19px;',
 		},
@@ -60,6 +65,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:404px;width:464px;height:19px;',
 		},
@@ -199,68 +205,15 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:431px;width:566px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
 			style: 'position:absolute;left:418px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:566px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Отражение в учете',
+			style: 'position:absolute;left:8px;top:174px;width:550px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -280,14 +233,22 @@
 			style: 'position:absolute;left:0px;top:20px;width:80px;height:22px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Затраты',
+			style: 'position:absolute;left:0px;top:0px;width:550px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьЗарплата',
 			text: 'Зарплата:',
 			style: 'position:absolute;left:105px;top:20px;width:51px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Зарплата',
 			style: 'position:absolute;left:161px;top:20px;width:102px;height:19px;',
 		},
@@ -298,8 +259,11 @@
 			style: 'position:absolute;left:105px;top:44px;width:51px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЕСН',
 			style: 'position:absolute;left:161px;top:44px;width:102px;height:19px;',
 		},
@@ -310,8 +274,11 @@
 			style: 'position:absolute;left:105px;top:68px;width:51px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НДФЛ',
 			style: 'position:absolute;left:161px;top:68px;width:102px;height:19px;',
 		},
@@ -348,6 +315,69 @@
 			name: 'КнопкаОчистить',
 			text: 'Очистить',
 			style: 'position:absolute;left:113px;top:195px;width:80px;height:22px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:431px;width:566px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:566px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 	]
 });

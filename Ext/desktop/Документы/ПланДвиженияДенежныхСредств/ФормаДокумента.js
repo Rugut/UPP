@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:359px;width:548px;height:19px;',
 		},
@@ -79,20 +83,12 @@
 			style: 'position:absolute;left:336px;top:57px;width:213px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПланирования',
 			style: 'position:absolute;left:549px;top:57px;width:95px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:150px;width:636px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -203,6 +199,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -240,6 +237,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
@@ -252,12 +250,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:424px;top:33px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -270,6 +270,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДенежныхСредств',
 			style: 'position:absolute;left:549px;top:81px;width:95px;height:19px;',
 		},
@@ -298,22 +299,50 @@
 			style: 'position:absolute;left:420px;top:335px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИтогоПлатежи',
 			style: 'position:absolute;left:556px;top:311px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЧДП',
 			style: 'position:absolute;left:556px;top:335px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИтогоПоступления',
 			style: 'position:absolute;left:556px;top:287px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Движения денежных средств',
+			style: 'position:absolute;left:8px;top:129px;width:636px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:150px;width:636px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 	]
 });

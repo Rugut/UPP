@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:115px;width:334px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Для автоматического расчета отчетности необходимо заполнить следующие параметры:',
@@ -45,14 +28,20 @@
 			style: 'position:absolute;left:14px;top:65px;width:190px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаСуммаДивидендовКон',
 			style: 'position:absolute;left:206px;top:41px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаСуммаДивидендовПред',
 			style: 'position:absolute;left:206px;top:65px;width:120px;height:19px;',
 		},
@@ -61,6 +50,27 @@
 			name: 'НадписьВсеСуммы',
 			text: '(Все суммы в рублях)',
 			style: 'position:absolute;left:8px;top:92px;width:318px;height:15px;text-align:right;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:115px;width:334px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

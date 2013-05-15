@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:382px;top:33px;width:80px;height:19px;',
 		},
@@ -30,12 +31,58 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:251px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Способ расчета остатка отпуска:',
+			style: 'position:absolute;left:8px;top:59px;width:454px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКоличествоДнейОтпускаВГод',
+			text: 'количество дней отпуска в год:',
+			style: 'position:absolute;left:254px;top:131px;width:160px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'КоличествоДнейОтпускаВГод',
+			style: 'position:absolute;left:419px;top:131px;width:43px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Предоставлять отпуск всем сотрудникам',
+			style: 'position:absolute;left:8px;top:131px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'По календарным дням',
+			style: 'position:absolute;left:8px;top:80px;width:454px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По рабочим дням',
+			style: 'position:absolute;left:8px;top:104px;width:454px;height:18px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -88,6 +135,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:158px;width:470px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -105,33 +153,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По календарным дням',
-			style: 'position:absolute;left:8px;top:80px;width:454px;height:18px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По рабочим дням',
-			style: 'position:absolute;left:8px;top:104px;width:454px;height:18px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКоличествоДнейОтпускаВГод',
-			text: 'количество дней отпуска в год:',
-			style: 'position:absolute;left:254px;top:131px;width:160px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КоличествоДнейОтпускаВГод',
-			style: 'position:absolute;left:419px;top:131px;width:43px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Предоставлять отпуск всем сотрудникам',
-			style: 'position:absolute;left:8px;top:131px;width:232px;height:19px;',
 		},
 	]
 });

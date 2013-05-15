@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:151px;top:33px;width:621px;height:364px;',
 			height: 364,width: 621,
@@ -107,6 +90,27 @@
 			[
 				{
 					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Отмена',
 				},
 			]
 		},

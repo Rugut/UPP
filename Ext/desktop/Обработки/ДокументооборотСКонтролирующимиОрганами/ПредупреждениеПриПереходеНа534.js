@@ -10,8 +10,22 @@
 	items:
 	[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Больше не показывать это сообщение',
+			style: 'position:absolute;left:8px;top:225px;width:217px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:218px;width:637px;height:3px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:248px;width:653px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -21,11 +35,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Больше не показывать это сообщение',
-			style: 'position:absolute;left:8px;top:225px;width:217px;height:15px;',
 		},
 	]
 });

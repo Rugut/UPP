@@ -11,40 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Режим ввода информации',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:457px;width:736px;height:25px;',
 			items:
 			[
@@ -68,14 +34,18 @@
 			style: 'position:absolute;left:6px;top:264px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиДвижениеКапитала',
 			style: 'position:absolute;left:232px;top:264px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийДвижениеКапитала',
 			style: 'position:absolute;left:358px;top:264px;width:356px;height:19px;',
 		},
@@ -105,32 +75,40 @@
 			style: 'position:absolute;left:232px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:372px;top:0px;width:32px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:232px;top:23px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчета',
 			style: 'position:absolute;left:502px;top:0px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Примечание',
 			style: 'position:absolute;left:502px;top:23px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:50px;top:0px;width:80px;height:19px;',
 		},
@@ -168,10 +146,49 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:89px;top:6px;width:633px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Настройка',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Режим ввода информации',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

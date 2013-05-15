@@ -10,34 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:302px;width:682px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -46,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:454px;top:33px;width:80px;height:19px;',
 		},
@@ -56,8 +29,10 @@
 			style: 'position:absolute;left:534px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:554px;top:33px;width:120px;height:19px;',
 		},
@@ -70,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:113px;top:33px;width:220px;height:19px;',
 		},
@@ -82,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:454px;top:58px;width:220px;height:19px;',
 		},
@@ -94,12 +71,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:113px;top:58px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Страхователь',
 			style: 'position:absolute;left:113px;top:83px;width:220px;height:19px;',
 		},
@@ -112,6 +91,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:275px;width:578px;height:19px;',
 		},
@@ -177,8 +157,70 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериодРаботыС',
+			text: 'Период работы с:',
+			style: 'position:absolute;left:361px;top:83px;width:92px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ПериодРаботыС',
+			style: 'position:absolute;left:454px;top:83px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодРаботыПо',
+			text: 'по:',
+			style: 'position:absolute;left:537px;top:83px;width:16px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ПериодРаботыПо',
+			style: 'position:absolute;left:554px;top:83px;width:80px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:302px;width:682px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:112px;width:666px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -208,30 +250,6 @@
 					text:'',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериодРаботыС',
-			text: 'Период работы с:',
-			style: 'position:absolute;left:361px;top:83px;width:92px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодРаботыС',
-			style: 'position:absolute;left:454px;top:83px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериодРаботыПо',
-			text: 'по:',
-			style: 'position:absolute;left:537px;top:83px;width:16px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодРаботыПо',
-			style: 'position:absolute;left:554px;top:83px;width:80px;height:19px;',
 		},
 	]
 });

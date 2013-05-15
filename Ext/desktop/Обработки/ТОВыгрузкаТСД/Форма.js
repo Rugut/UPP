@@ -184,20 +184,14 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:700px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				'-',
-			]
+			xtype: 'fieldset',
+			title: 'Выгружаемые товары',
+			style: 'position:absolute;left:8px;top:180px;width:684px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:8px;top:51px;width:684px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -222,6 +216,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиСклад',
 			style: 'position:absolute;left:336px;top:6px;width:342px;height:20px;',
 		},
@@ -237,6 +232,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиТипЦен',
 			style: 'position:absolute;left:336px;top:31px;width:342px;height:20px;',
 		},
@@ -252,6 +248,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
 			style: 'position:absolute;left:336px;top:56px;width:342px;height:20px;',
 		},
@@ -267,6 +264,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиГруппа',
 			style: 'position:absolute;left:336px;top:81px;width:342px;height:20px;',
 		},
@@ -283,6 +281,26 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:166px;top:28px;width:167px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:700px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
+			]
 		},
 	]
 });

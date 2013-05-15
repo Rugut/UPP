@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:155px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:258px;width:327px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:83px;width:327px;height:19px;',
 		},
@@ -66,12 +71,74 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:234px;width:327px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Месяц расчета:',
+			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: true,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:96px;top:58px;width:131px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:8px;top:109px;width:415px;height:30px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 000 "Вспомогательный"',
+			style: 'position:absolute;left:8px;top:144px;width:415px;height:35px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам по расчетам в у.е.',
+			style: 'position:absolute;left:8px;top:183px;width:415px;height:39px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 84 "Нераспределенная прибыль (непокрытый убыток)"',
+			style: 'position:absolute;left:8px;top:179px;width:415px;height:43px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -99,6 +166,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:289px;width:431px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -120,38 +188,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'Месяц расчета:',
-			style: 'position:absolute;left:8px;top:58px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:96px;top:58px;width:131px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: '',
-			style: 'position:absolute;left:8px;top:109px;width:415px;height:30px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 000 "Вспомогательный"',
-			style: 'position:absolute;left:8px;top:144px;width:415px;height:35px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 84 "Нераспределенная прибыль (непокрытый убыток)"',
-			style: 'position:absolute;left:8px;top:179px;width:415px;height:43px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам по расчетам в у.е.',
-			style: 'position:absolute;left:8px;top:183px;width:415px;height:39px;',
 		},
 	]
 });

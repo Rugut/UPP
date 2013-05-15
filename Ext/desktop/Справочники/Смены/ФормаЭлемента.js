@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:33px;width:80px;height:19px;',
 		},
@@ -30,15 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:430px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -87,8 +82,25 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Периоды смены:',
+			style: 'position:absolute;left:8px;top:60px;width:430px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:430px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:446px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -106,6 +118,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:446px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

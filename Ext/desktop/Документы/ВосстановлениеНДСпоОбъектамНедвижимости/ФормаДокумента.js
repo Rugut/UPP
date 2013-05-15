@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:181px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:203px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:58px;width:227px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:407px;width:540px;height:19px;',
 		},
@@ -61,58 +66,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отражать восстановление в книге продаж',
 			style: 'position:absolute;left:331px;top:58px;width:242px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:434px;width:644px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -135,14 +88,6 @@
 					title:'Объекты недвижимости',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:614px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:614px;height:115px;',
@@ -423,6 +368,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Счета-фактуры (объект недвижимости)',
+			style: 'position:absolute;left:6px;top:151px;width:614px;height:13px;',
+		},
 					]
 				},
 				{
@@ -438,6 +388,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:105px;top:6px;width:80px;height:19px;',
 		},
@@ -462,18 +413,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС1',
 			style: 'position:absolute;left:105px;top:35px;width:199px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС2',
 			style: 'position:absolute;left:105px;top:59px;width:199px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС3',
 			style: 'position:absolute;left:105px;top:82px;width:199px;height:19px;',
 		},
@@ -486,6 +440,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетСписанияНДСНУ',
 			style: 'position:absolute;left:421px;top:6px;width:80px;height:19px;',
 		},
@@ -498,6 +453,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ1',
 			style: 'position:absolute;left:420px;top:35px;width:200px;height:19px;',
 		},
@@ -510,6 +466,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ2',
 			style: 'position:absolute;left:420px;top:59px;width:200px;height:19px;',
 		},
@@ -522,6 +479,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ3',
 			style: 'position:absolute;left:420px;top:82px;width:200px;height:19px;',
 		},
@@ -540,10 +498,68 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:93px;top:6px;width:527px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:434px;width:644px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:274px;width:448px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Пропустить',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:104px;width:432px;height:162px;',
 			height: 162,width: 432,
@@ -68,8 +47,52 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьСтрокаДляНераспознанногоИмени',
+			text: 'Строка для нераспознанного имени',
+			style: 'position:absolute;left:8px;top:8px;width:432px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНераспознанногоИмени',
+			text: 'Нераспознанное имя',
+			style: 'position:absolute;left:8px;top:28px;width:432px;height:18px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДействияПользователя',
+			text: 'Подсказка действий пользователя',
+			style: 'position:absolute;left:8px;top:48px;width:432px;height:27px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:274px;width:448px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Пропустить',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:80px;width:432px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -92,24 +115,6 @@
 				},
 				'-',
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСтрокаДляНераспознанногоИмени',
-			text: 'Строка для нераспознанного имени',
-			style: 'position:absolute;left:8px;top:8px;width:432px;height:15px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНераспознанногоИмени',
-			text: 'Нераспознанное имя',
-			style: 'position:absolute;left:8px;top:28px;width:432px;height:18px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДействияПользователя',
-			text: 'Подсказка действий пользователя',
-			style: 'position:absolute;left:8px;top:48px;width:432px;height:27px;',
 		},
 	]
 });

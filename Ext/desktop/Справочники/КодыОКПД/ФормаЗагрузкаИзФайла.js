@@ -10,8 +10,31 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'ТекстПутьКФайлу',
+			text: 'Путь к файлу :',
+			style: 'position:absolute;left:8px;top:9px;width:304px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПутьКФайлу',
+			style: 'position:absolute;left:8px;top:33px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'СтрокаИнфо',
+			text: '',
+			style: 'position:absolute;left:8px;top:57px;width:304px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:121px;width:320px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -25,24 +48,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'ТекстПутьКФайлу',
-			text: 'Путь к файлу :',
-			style: 'position:absolute;left:8px;top:9px;width:304px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПутьКФайлу',
-			style: 'position:absolute;left:8px;top:33px;width:304px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'СтрокаИнфо',
-			text: '',
-			style: 'position:absolute;left:8px;top:57px;width:304px;height:19px;',
 		},
 	]
 });

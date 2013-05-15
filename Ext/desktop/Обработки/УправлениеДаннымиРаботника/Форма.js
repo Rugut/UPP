@@ -27,6 +27,11 @@
 			style: 'position:absolute;left:37px;top:289px;width:145px;height:25px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:31px;top:263px;width:251px;height:131px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:294px;top:312px;width:475px;height:76px;',
 			height: 76,width: 475,
@@ -155,6 +160,11 @@
 				},
 				'-',
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:288px;top:263px;width:487px;height:131px;',
 		},
 		{
 			xtype: 'label',
@@ -310,6 +320,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:31px;top:263px;width:251px;height:131px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:288px;top:263px;width:487px;height:131px;',
+		},
 					]
 				},
 				{
@@ -391,6 +411,16 @@
 					text:'Увольнение',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:31px;top:263px;width:251px;height:131px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:288px;top:263px;width:487px;height:131px;',
 		},
 		{
 			xtype: 'label',
@@ -514,6 +544,16 @@
 					text:'СЗВ-К',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:31px;top:263px;width:251px;height:131px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:288px;top:263px;width:487px;height:131px;',
 		},
 		{
 			xtype: 'label',
@@ -661,6 +701,16 @@
 			style: 'position:absolute;left:37px;top:269px;width:239px;height:18px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:31px;top:263px;width:251px;height:131px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:288px;top:263px;width:487px;height:131px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРасчетЕСН',
 			text: 'Рассчитать ЕСН',
@@ -677,8 +727,26 @@
 			]
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Физлицо',
+			style: 'position:absolute;left:151px;top:4px;width:229px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'МесяцСтрока',
+			style: 'position:absolute;left:4px;top:4px;width:136px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:26px;width:780px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -705,6 +773,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:727px;top:2px;width:53px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -720,14 +789,9 @@
 			]
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Физлицо',
-			style: 'position:absolute;left:151px;top:4px;width:229px;height:19px;',
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:380px;top:2px;width:201px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -742,12 +806,6 @@
 					text:'Ввести нового',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'МесяцСтрока',
-			style: 'position:absolute;left:4px;top:4px;width:136px;height:19px;',
 		},
 	]
 });

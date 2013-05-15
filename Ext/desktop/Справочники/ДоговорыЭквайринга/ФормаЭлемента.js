@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:369px;top:33px;width:60px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:148px;top:33px;width:184px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Эквайрер',
 			style: 'position:absolute;left:148px;top:56px;width:281px;height:19px;',
 		},
@@ -54,15 +57,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Договор',
 			style: 'position:absolute;left:148px;top:79px;width:281px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:121px;width:421px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -111,8 +108,25 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Тарифы за расчетное обслуживание',
+			style: 'position:absolute;left:8px;top:102px;width:421px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:121px;width:421px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -120,6 +134,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:439px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

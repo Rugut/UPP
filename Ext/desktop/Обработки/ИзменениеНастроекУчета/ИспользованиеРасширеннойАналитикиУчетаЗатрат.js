@@ -10,33 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:417px;width:498px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Изменить настройку',
-				},
-				{
-					text:'Назад',
-				},
-				{
-					text:'Далее',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:1px;width:498px;height:416px;',
 			height: 416,width: 498,
@@ -50,19 +23,8 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПояснениеВыборРежима',
-			text: 'Выберите вариант заполнения регистров, необходимых для использования расширенной аналитики учета затрат.
-После этого нажмите кнопку "Далее".',
+			text: 'Выберите вариант заполнения регистров, необходимых для использования расширенной аналитики учета затрат.\r\nПосле этого нажмите кнопку "Далее".',
 			style: 'position:absolute;left:6px;top:7px;width:487px;height:43px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Полный',
-			style: 'position:absolute;left:6px;top:70px;width:117px;height:34px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Выборочный',
-			style: 'position:absolute;left:6px;top:118px;width:117px;height:34px;',
 		},
 		{
 			xtype: 'label',
@@ -77,11 +39,36 @@
 			style: 'position:absolute;left:129px;top:118px;width:364px;height:44px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Вариант заполнения регистров',
+			style: 'position:absolute;left:6px;top:49px;width:487px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьВниманиеВыборРежима',
-			text: 'Внимание! При включении режима будут сформированы только входящие остатки по регистрам расширенной аналитики на дату начала использования.
-Для формирования движений потребуется перепроведение документов информационной базы после установки параметра учета.',
+			text: 'Внимание! При включении режима будут сформированы только входящие остатки по регистрам расширенной аналитики на дату начала использования.\r\nДля формирования движений потребуется перепроведение документов информационной базы после установки параметра учета.',
 			style: 'position:absolute;left:47px;top:197px;width:446px;height:69px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Полный',
+			style: 'position:absolute;left:6px;top:70px;width:117px;height:34px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выборочный',
+			style: 'position:absolute;left:6px;top:118px;width:117px;height:34px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Управленческий и регламентированный учет',
+			style: 'position:absolute;left:24px;top:150px;width:468px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -92,6 +79,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:304px;top:6px;width:137px;height:19px;',
 		},
@@ -187,25 +175,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:93px;width:370px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Рассчитать',
-				},
-				'-',
-				{
-					text:'Обновить статусы',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Данные для заполнения регистров',
+			style: 'position:absolute;left:6px;top:73px;width:486px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сформированные остатки',
+			style: 'position:absolute;left:6px;top:247px;width:486px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -303,6 +280,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеПериодаРегистрацииПолныйРежим',
 			style: 'position:absolute;left:355px;top:30px;width:137px;height:19px;',
 		},
@@ -338,10 +316,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРасчетНеОкончен',
-			text: 'Внимание! Расчет выполнен не для всех исходных данных.
-Остатки в регистрах расширенной аналитики сформированы не полностью. 
-Использование режима расширенной аналитики может привести к некорректным результатам.
-Чтобы вернуться к расчету, используйте кнопку "Назад"',
+			text: 'Внимание! Расчет выполнен не для всех исходных данных.\r\nОстатки в регистрах расширенной аналитики сформированы не полностью. \r\nИспользование режима расширенной аналитики может привести к некорректным результатам.\r\nЧтобы вернуться к расчету, используйте кнопку "Назад"',
 			style: 'position:absolute;left:47px;top:8px;width:433px;height:68px;',
 		},
 					]
@@ -365,9 +340,9 @@
 			style: 'position:absolute;left:24px;top:89px;width:468px;height:15px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Управленческий и регламентированный учет',
-			style: 'position:absolute;left:24px;top:150px;width:468px;height:15px;',
+			xtype: 'fieldset',
+			title: 'Режим использования расширенной аналитики:',
+			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -439,7 +414,43 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Детализация затрат:',
+			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;',
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:417px;width:498px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Изменить настройку',
+				},
+				{
+					text:'Назад',
+				},
+				{
+					text:'Далее',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

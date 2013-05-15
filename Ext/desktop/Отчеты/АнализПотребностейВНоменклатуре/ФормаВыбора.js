@@ -49,5 +49,8 @@
 			text: 'ОК',
 			style: 'position:absolute;left:96px;top:233px;width:71px;height:20px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

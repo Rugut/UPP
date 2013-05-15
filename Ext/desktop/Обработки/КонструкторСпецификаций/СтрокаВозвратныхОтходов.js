@@ -10,30 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:300px;width:406px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
 			text: 'Номенклатура:',
@@ -42,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:148px;top:81px;width:250px;height:19px;',
 		},
@@ -52,14 +29,18 @@
 			style: 'position:absolute;left:8px;top:129px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:148px;top:129px;width:89px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:309px;top:129px;width:89px;height:19px;',
 		},
@@ -72,6 +53,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:148px;top:153px;width:250px;height:19px;',
 		},
@@ -84,6 +66,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:148px;top:105px;width:250px;height:19px;',
 		},
@@ -94,8 +77,11 @@
 			style: 'position:absolute;left:8px;top:177px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:148px;top:177px;width:89px;height:19px;',
 		},
@@ -108,6 +94,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерОперацииМаршрута',
 			style: 'position:absolute;left:148px;top:33px;width:89px;height:19px;',
 		},
@@ -124,8 +111,11 @@
 			style: 'position:absolute;left:238px;top:177px;width:71px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаРегл',
 			style: 'position:absolute;left:309px;top:177px;width:89px;height:19px;',
 		},
@@ -138,6 +128,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидНорматива',
 			style: 'position:absolute;left:148px;top:57px;width:250px;height:19px;',
 		},
@@ -150,6 +141,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УказаниеНорматива',
 			style: 'position:absolute;left:148px;top:201px;width:250px;height:19px;',
 		},
@@ -162,6 +154,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Формула',
 			style: 'position:absolute;left:148px;top:225px;width:250px;height:19px;',
 		},
@@ -174,6 +167,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СписаниеКомплектующей',
 			style: 'position:absolute;left:148px;top:249px;width:250px;height:19px;',
 		},
@@ -186,8 +180,38 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СвойствоДляСписания',
 			style: 'position:absolute;left:148px;top:273px;width:250px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:300px;width:406px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

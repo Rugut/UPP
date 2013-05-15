@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:412px;top:33px;width:80px;height:19px;',
 		},
@@ -30,77 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:92px;top:33px;width:284px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:392px;width:500px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -111,28 +44,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:92px;top:57px;width:400px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:266px;top:113px;width:226px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -209,23 +123,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:113px;width:249px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Настройка доступа',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьRLS',
 			text: 'Ограничение доступа',
@@ -248,6 +145,119 @@
 			name: 'НадписьПредупреждениеОграниченияДоступа',
 			text: '',
 			style: 'position:absolute;left:8px;top:355px;width:249px;height:29px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:392px;width:500px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:266px;top:113px;width:226px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:113px;width:249px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Настройка доступа',
+				},
+			]
 		},
 	]
 });

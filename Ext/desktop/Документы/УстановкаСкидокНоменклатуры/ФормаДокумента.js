@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -48,6 +51,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:418px;width:536px;height:19px;',
 		},
@@ -60,15 +64,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:394px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -98,6 +96,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипСкидкиНаценки',
 			style: 'position:absolute;left:406px;top:81px;width:224px;height:19px;',
 		},
@@ -108,8 +107,11 @@
 			style: 'position:absolute;left:294px;top:182px;width:56px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:352px;top:182px;width:60px;height:19px;',
 		},
@@ -122,6 +124,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеУсловия',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
 		},
@@ -134,6 +137,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:406px;top:33px;width:224px;height:19px;',
 		},
@@ -144,8 +148,11 @@
 			style: 'position:absolute;left:414px;top:182px;width:108px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОграничениеСкидки',
 			style: 'position:absolute;left:524px;top:182px;width:106px;height:19px;',
 		},
@@ -158,6 +165,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Условие',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
@@ -171,25 +179,6 @@
 					title:'Товары',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
-			items:
-			[
-				{
-					text:'Поиск по штрихкоду',
-				},
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Изменить',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
@@ -351,17 +340,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -477,19 +455,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
-			items:
-			[
-				{
-					text:'Состав номенклатуры',
-				},
-				{
-					text:'Состав бонусов',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -548,18 +513,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-			]
-		},
 					]
 				},
 				{
@@ -567,14 +520,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ОбщееВремяНачало',
 			style: 'position:absolute;left:416px;top:135px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ОбщееВремяОкончание',
 			style: 'position:absolute;left:531px;top:135px;width:83px;height:19px;',
 		},
@@ -633,19 +590,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
-			items:
-			[
-				{
-					text:'Действие отметить все',
-				},
-				{
-					text:'Действие снять все',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -657,8 +601,10 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:94px;top:57px;width:80px;height:19px;',
 		},
@@ -669,8 +615,10 @@
 			style: 'position:absolute;left:176px;top:57px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:194px;top:57px;width:120px;height:19px;',
 		},
@@ -683,6 +631,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСкидки',
 			style: 'position:absolute;left:406px;top:57px;width:224px;height:19px;',
 		},
@@ -695,6 +644,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Для всех получателей',
 			style: 'position:absolute;left:162px;top:138px;width:137px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Значения по умолчанию для таблицы товаров и ценовых групп',
+			style: 'position:absolute;left:8px;top:161px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -710,8 +664,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Качество',
 			style: 'position:absolute;left:72px;top:182px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

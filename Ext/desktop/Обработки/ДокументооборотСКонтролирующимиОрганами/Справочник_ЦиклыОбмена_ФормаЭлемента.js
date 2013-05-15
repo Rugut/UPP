@@ -52,30 +52,14 @@
 			style: 'position:absolute;left:119px;top:133px;width:591px;height:15px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
-			items:
-			[
-				{
-					text:'Показать документы',
-				},
-				{
-					text:'Показать отчет о состоянии',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Субъекты переписки',
+			style: 'position:absolute;left:8px;top:112px;width:702px;height:16px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:599px;width:718px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Предмет переписки',
+			style: 'position:absolute;left:8px;top:172px;width:702px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -101,6 +85,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Сообщения',
+			style: 'position:absolute;left:0px;top:57px;width:702px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'ДатаПоследнегоСообщения',
 			text: '',
@@ -111,6 +100,11 @@
 			name: 'Надпись1',
 			text: 'Создан:',
 			style: 'position:absolute;left:6px;top:20px;width:54px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Активность',
+			style: 'position:absolute;left:0px;top:0px;width:702px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -1064,6 +1058,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:336px;width:702px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОткрытьЦиклОбмена',
 			text: 'Открыть',
@@ -1157,6 +1156,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Идентификатор',
 			style: 'position:absolute;left:118px;top:89px;width:513px;height:17px;',
 		},
@@ -1178,6 +1178,37 @@
 			style: 'position:absolute;left:6px;top:0px;width:696px;height:15px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Показать документы',
+				},
+				{
+					text:'Показать отчет о состоянии',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:599px;width:718px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

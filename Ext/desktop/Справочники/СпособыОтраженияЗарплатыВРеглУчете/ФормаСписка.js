@@ -209,13 +209,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:748px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:169px;height:280px;',
 			height: 280,width: 169,
@@ -242,6 +235,17 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:748px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

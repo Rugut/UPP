@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -42,64 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:368px;width:568px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Действие открыть свойства',
-				},
-				{
-					text:'Действие открыть категории',
-				},
-				'-',
-				{
-					text:'Выполнить планирование',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:395px;width:670px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -211,13 +159,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -297,34 +238,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
 					title:'Индивидуальные выпуски',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:247px;',
@@ -476,28 +395,6 @@
 					title:'Детальное планирование',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Свернуть дерево',
-				},
-				{
-					text:'Раскрыть дерево',
-				},
-				'-',
-				{
-					text:'Получить данные',
-				},
-				'-',
-				{
-					text:'Свернуть',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:200px;',
@@ -818,13 +715,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -958,13 +848,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -980,6 +863,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:426px;top:234px;width:220px;height:19px;',
 		},
@@ -992,8 +876,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:234px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:213px;width:640px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Доступные склады:',
+			style: 'position:absolute;left:6px;top:54px;width:640px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -1039,8 +934,10 @@
 			style: 'position:absolute;left:6px;top:30px;width:205px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'МоментЗапасов',
 			style: 'position:absolute;left:211px;top:30px;width:80px;height:19px;',
 		},
@@ -1051,17 +948,12 @@
 			style: 'position:absolute;left:6px;top:6px;width:205px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачальнаяГраница',
 			style: 'position:absolute;left:211px;top:6px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:75px;width:640px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'label',
@@ -1072,10 +964,72 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:96px;top:258px;width:220px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Действие открыть свойства',
+				},
+				{
+					text:'Действие открыть категории',
+				},
+				'-',
+				{
+					text:'Выполнить планирование',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:395px;width:670px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

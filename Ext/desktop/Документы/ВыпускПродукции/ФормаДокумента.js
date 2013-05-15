@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:354px;width:568px;height:19px;',
 		},
@@ -71,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -83,6 +88,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:424px;top:57px;width:240px;height:19px;',
 		},
@@ -101,6 +107,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -113,6 +120,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:329px;width:568px;height:19px;',
 		},
@@ -150,6 +158,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:81px;width:240px;height:19px;',
 		},
@@ -367,17 +376,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:642px;height:26px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -387,6 +385,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетЗатрат',
 			style: 'position:absolute;left:86px;top:6px;width:88px;height:19px;',
 		},
@@ -399,6 +398,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетЗатратНУ',
 			style: 'position:absolute;left:86px;top:30px;width:88px;height:19px;',
 		},
@@ -406,5 +406,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

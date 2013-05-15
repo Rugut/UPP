@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:858px;height:25px;',
-			items:
-			[
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:82px;width:410px;height:490px;',
 			height: 490,width: 410,
@@ -85,44 +75,6 @@
 			name: 'НадписьСтруктураПодразделенийОрганизаций',
 			text: ' Подразделения организаций (юридических лиц)',
 			style: 'position:absolute;left:433px;top:33px;width:417px;height:20px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:433px;top:58px;width:322px;height:24px;',
-			items:
-			[
-				{
-					text:'Упорядочить по: Код',
-				},
-				{
-					text:'Упорядочить по: Наименование',
-				},
-				{
-					text:'Упорядочить по: Порядок',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:58px;width:410px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -197,9 +149,64 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:858px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:433px;top:58px;width:322px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Упорядочить по: Код',
+				},
+				{
+					text:'Упорядочить по: Наименование',
+				},
+				{
+					text:'Упорядочить по: Порядок',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:58px;width:410px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:755px;top:58px;width:95px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

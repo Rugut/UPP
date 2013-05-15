@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:342px;width:470px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:53px;width:454px;height:281px;',
 			height: 281,width: 454,
@@ -77,8 +56,40 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНастройкиДополнительныхПрав',
+			text: 'Настройки дополнительных прав',
+			style: 'position:absolute;left:8px;top:32px;width:454px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:342px;width:470px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -88,12 +99,6 @@
 					text:'Снять флажки',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНастройкиДополнительныхПрав',
-			text: 'Настройки дополнительных прав',
-			style: 'position:absolute;left:8px;top:32px;width:454px;height:19px;',
 		},
 	]
 });

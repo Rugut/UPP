@@ -10,53 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				'-',
-				{
-					text:'Расшифровать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:122px;width:654px;height:310px;',
 			height: 310,width: 654,
@@ -85,14 +38,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел1',
 			style: 'position:absolute;left:227px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел1',
 			style: 'position:absolute;left:353px;top:5px;width:287px;height:19px;',
 		},
@@ -122,14 +79,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел2',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел2',
 			style: 'position:absolute;left:353px;top:5px;width:287px;height:19px;',
 		},
@@ -197,14 +158,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел31',
 			style: 'position:absolute;left:226px;top:4px;width:120px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел31',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
@@ -268,14 +233,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел32',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел32',
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
@@ -305,14 +274,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел33',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел33',
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
@@ -348,14 +321,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел34',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел34',
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
@@ -381,14 +358,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел35',
 			style: 'position:absolute;left:226px;top:4px;width:120px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел35',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
@@ -430,14 +411,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел36',
 			style: 'position:absolute;left:226px;top:4px;width:120px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел36',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
@@ -467,14 +452,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел37',
 			style: 'position:absolute;left:226px;top:4px;width:120px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел37',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
@@ -504,14 +493,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел38',
 			style: 'position:absolute;left:226px;top:4px;width:120px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел38',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
@@ -541,14 +534,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел4',
 			style: 'position:absolute;left:226px;top:4px;width:120px;height:20px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел4',
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
@@ -594,14 +591,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел5',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел5',
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
@@ -643,8 +644,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:23px;width:80px;height:19px;',
 		},
@@ -658,8 +661,11 @@
 			style: 'position:absolute;left:433px;top:23px;width:116px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:564px;top:23px;width:49px;height:19px;',
 		},
@@ -692,12 +698,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:263px;top:7px;width:391px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Статус',
 			style: 'position:absolute;left:47px;top:7px;width:119px;height:19px;',
 		},
@@ -732,6 +740,58 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Расшифровать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
 				},
 			]
 		},

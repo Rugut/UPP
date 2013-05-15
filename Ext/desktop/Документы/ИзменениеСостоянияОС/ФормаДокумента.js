@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:422px;top:56px;width:232px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:357px;width:564px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Событие',
 			style: 'position:absolute;left:90px;top:79px;width:220px;height:19px;',
 		},
@@ -105,16 +112,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Начислять амортизацию в текущем месяце',
 			style: 'position:absolute;left:336px;top:145px;width:242px;height:15px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:182px;width:646px;height:24px;',
-			items:
-			[
-				{
-					text:'По наименованию',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -164,33 +161,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:384px;width:662px;height:25px;',
 			items:
 			[
@@ -231,10 +201,17 @@
 			style: 'position:absolute;left:336px;top:79px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВремяНапоминания',
 			style: 'position:absolute;left:422px;top:79px;width:140px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:8px;top:166px;width:646px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -245,8 +222,51 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеРегл',
 			style: 'position:absolute;left:90px;top:102px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:182px;width:646px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 	]
 });

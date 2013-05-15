@@ -110,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:121px;top:8px;width:290px;height:19px;',
 		},
@@ -128,6 +129,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:121px;top:32px;width:290px;height:19px;',
 		},
@@ -144,8 +146,10 @@
 			style: 'position:absolute;left:318px;top:56px;width:93px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОстатков',
 			style: 'position:absolute;left:416px;top:56px;width:81px;height:19px;',
 		},
@@ -159,5 +163,8 @@
 			boxLabel: 'Регл. учета',
 			style: 'position:absolute;left:202px;top:56px;width:79px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

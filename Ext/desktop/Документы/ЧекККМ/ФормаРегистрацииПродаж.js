@@ -205,6 +205,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:271px;width:766px;height:65px;',
+		},
 					]
 				},
 			]
@@ -214,6 +219,16 @@
 			name: 'СкидкиИтогоСумма',
 			text: '',
 			style: 'position:absolute;left:175px;top:395px;width:114px;height:19px;text-align:right;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:345px;width:284px;height:74px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:295px;top:345px;width:479px;height:74px;',
 		},
 		{
 			xtype: 'label',
@@ -227,5 +242,8 @@
 			text: 'Владелец дисконтной карты',
 			style: 'position:absolute;left:13px;top:371px;width:276px;height:18px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

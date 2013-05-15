@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:466px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:450px;height:408px;',
 			height: 408,width: 450,
@@ -152,14 +131,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:206px;width:436px;height:24px;',
 			items:
 			[
@@ -232,25 +203,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Контрагенты (Контактные лица)',
-				},
-				{
-					text:'Физические лица',
-				},
-				{
-					text:'Прочие контактные лица',
-				},
-				{
-					text:'Организации',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
@@ -307,25 +259,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Контрагенты (Контактные лица)',
-				},
-				{
-					text:'Физические лица',
-				},
-				{
-					text:'Прочие контактные лица',
-				},
-				{
-					text:'Организации',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
@@ -380,25 +313,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Контрагенты (Контактные лица)',
-				},
-				{
-					text:'Физические лица',
-				},
-				{
-					text:'Прочие контактные лица',
-				},
-				{
-					text:'Организации',
-				},
-			]
 		},
 		{
 			xtype: 'combobox',
@@ -574,17 +488,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:435px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:212px;width:435px;height:146px;',
 			height: 146,width: 435,
@@ -634,6 +537,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтрокаПоиска',
 			style: 'position:absolute;left:6px;top:30px;width:361px;height:19px;',
 		},
@@ -706,37 +610,37 @@
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:54px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'КнопкаНайти',
 			text: 'Найти',
 			style: 'position:absolute;left:372px;top:30px;width:70px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:466px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

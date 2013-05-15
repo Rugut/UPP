@@ -10,14 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:611px;height:291px;',
 			height: 291,width: 611,
@@ -112,8 +104,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСтраницы',
-			text: 'Настройка групп доступа к контрагентам недоступна, 
-т.к. вид объекта доступа "Контрагенты" не используется.',
+			text: 'Настройка групп доступа к контрагентам недоступна, \r\nт.к. вид объекта доступа "Контрагенты" не используется.',
 			style: 'position:absolute;left:0px;top:3px;width:381px;height:33px;',
 		},
 		{
@@ -223,8 +214,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСтраницы1',
-			text: 'Настройка групп доступа к физическим лицам недоступна, 
-т.к. вид объекта доступа "Физические лица"  не используется.',
+			text: 'Настройка групп доступа к физическим лицам недоступна, \r\nт.к. вид объекта доступа "Физические лица"  не используется.',
 			style: 'position:absolute;left:0px;top:3px;width:384px;height:33px;',
 		},
 		{
@@ -334,8 +324,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСтраницы2',
-			text: 'Настройка групп доступа к заявкам кандидатов недоступна, 
-т.к. вид объекта доступа "Заявки кандидатов" не используется.',
+			text: 'Настройка групп доступа к заявкам кандидатов недоступна, \r\nт.к. вид объекта доступа "Заявки кандидатов" не используется.',
 			style: 'position:absolute;left:6px;top:3px;width:399px;height:33px;',
 		},
 		{
@@ -356,6 +345,18 @@
 		},
 					]
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
 			]
 		},
 	]

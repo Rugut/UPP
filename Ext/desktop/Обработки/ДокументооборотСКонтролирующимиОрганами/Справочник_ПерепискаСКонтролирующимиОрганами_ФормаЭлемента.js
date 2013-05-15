@@ -10,52 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			items:
-			[
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Перечитать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:518px;width:654px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:157px;width:638px;height:353px;',
 			height: 353,width: 638,
@@ -68,6 +22,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Содержание',
 			style: 'position:absolute;left:6px;top:6px;width:624px;height:321px;',
 		},
@@ -206,6 +161,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:85px;top:0px;width:553px;height:19px;',
 		},
@@ -218,6 +174,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отправитель',
 			style: 'position:absolute;left:85px;top:26px;width:553px;height:19px;',
 		},
@@ -230,6 +187,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Получатель',
 			style: 'position:absolute;left:85px;top:52px;width:553px;height:19px;',
 		},
@@ -264,6 +222,57 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Ответить',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:518px;width:654px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

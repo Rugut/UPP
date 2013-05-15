@@ -164,6 +164,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:92px;top:0px;width:220px;height:19px;',
 		},
@@ -171,9 +172,13 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

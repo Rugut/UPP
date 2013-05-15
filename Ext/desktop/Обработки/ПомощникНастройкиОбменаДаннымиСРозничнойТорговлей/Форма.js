@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Назад',
-				},
-				'-',
-				{
-					text:'Далее',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
 			height: 399,width: 557,
@@ -44,16 +27,6 @@
 			style: 'position:absolute;left:6px;top:6px;width:546px;height:39px;text-align:center;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Создать новую настройку обмена данными',
-			style: 'position:absolute;left:6px;top:50px;width:244px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Продолжить настройку обмена данными (для второй инф. базы)',
-			style: 'position:absolute;left:6px;top:70px;width:352px;height:16px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПояснениеПользователя',
 			text: 'Имя и пароль пользователя для подключения к инф. базе - приемнику',
@@ -63,6 +36,22 @@
 			xtype: 'radio',
 			boxLabel: 'Изменить существующую настройку обмена',
 			style: 'position:absolute;left:7px;top:90px;width:250px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Создать новую настройку обмена данными',
+			style: 'position:absolute;left:6px;top:50px;width:244px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Продолжить настройку обмена данными (для второй инф. базы)',
+			style: 'position:absolute;left:6px;top:70px;width:352px;height:16px;',
+		},
+			]
 		},
 					]
 				},
@@ -110,13 +99,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКаталогИБ1',
-			text: 'Каталог базы:
-',
+			text: 'Каталог базы:\r\n',
 			style: 'position:absolute;left:0px;top:0px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения1',
 			style: 'position:absolute;left:85px;top:0px;width:305px;height:19px;',
 		},
@@ -141,12 +130,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения1',
 			style: 'position:absolute;left:84px;top:0px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения1',
 			style: 'position:absolute;left:269px;top:0px;width:120px;height:19px;',
 		},
@@ -162,12 +153,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения1',
 			style: 'position:absolute;left:246px;top:152px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения1',
 			style: 'position:absolute;left:431px;top:152px;width:120px;height:19px;',
 		},
@@ -218,6 +211,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеИнформационнойБазыДляОбмена',
 			style: 'position:absolute;left:28px;top:117px;width:413px;height:19px;',
 		},
@@ -321,13 +315,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:532px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -371,13 +358,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:532px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -385,8 +365,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаВыгрузкиСебестоимости',
 			style: 'position:absolute;left:232px;top:30px;width:81px;height:19px;',
 		},
@@ -399,6 +381,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодичностьПередачиСебестоимости',
 			style: 'position:absolute;left:232px;top:54px;width:81px;height:19px;',
 		},
@@ -417,6 +400,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособВыгрузкиСебестоимости',
 			style: 'position:absolute;left:232px;top:6px;width:191px;height:19px;',
 		},
@@ -622,13 +606,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -707,13 +684,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -794,13 +764,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -880,13 +843,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -933,6 +889,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаНастроекОбменаПервойИнформационнойБазы',
 			style: 'position:absolute;left:32px;top:101px;width:452px;height:19px;',
 		},
@@ -992,6 +949,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогОбменаИнформацией',
 			style: 'position:absolute;left:87px;top:0px;width:452px;height:19px;',
 		},
@@ -1070,6 +1028,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'FTPАдресОбмена',
 			style: 'position:absolute;left:87px;top:0px;width:278px;height:19px;',
 		},
@@ -1082,48 +1041,65 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательFTPСоединения',
 			style: 'position:absolute;left:87px;top:24px;width:278px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольFTPСоединения',
 			style: 'position:absolute;left:419px;top:24px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортFTPСоединения',
 			style: 'position:absolute;left:419px;top:0px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Настройки прокси-сервера',
+			style: 'position:absolute;left:6px;top:72px;width:533px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательПроксиFTP',
 			style: 'position:absolute;left:87px;top:139px;width:278px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольПроксиFTP',
 			style: 'position:absolute;left:419px;top:139px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерверПроксиFTP',
 			style: 'position:absolute;left:87px;top:115px;width:278px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортПроксиFTP',
 			style: 'position:absolute;left:419px;top:115px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПротоколПроксиFTP',
 			style: 'position:absolute;left:87px;top:92px;width:111px;height:19px;',
 		},
@@ -1133,8 +1109,11 @@
 			style: 'position:absolute;left:6px;top:48px;width:165px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимальныйРазмерОтправляемогоПолучаемогоПакетаЧерезFTP1',
 			style: 'position:absolute;left:302px;top:48px;width:95px;height:19px;',
 		},
@@ -1162,13 +1141,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКаталогИБ',
-			text: 'Каталог базы:
-',
+			text: 'Каталог базы:\r\n',
 			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:148px;top:0px;width:385px;height:19px;',
 		},
@@ -1187,6 +1166,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:148px;top:0px;width:180px;height:19px;',
 		},
@@ -1199,6 +1179,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения',
 			style: 'position:absolute;left:398px;top:0px;width:135px;height:19px;',
 		},
@@ -1214,12 +1195,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:154px;top:98px;width:178px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:403px;top:98px;width:136px;height:19px;',
 		},
@@ -1262,6 +1245,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УчетнаяЗаписьПриемаОтправкиСообщений',
 			style: 'position:absolute;left:100px;top:72px;width:304px;height:19px;',
 		},
@@ -1274,6 +1258,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПочтовыйАдресПолучателя',
 			style: 'position:absolute;left:100px;top:24px;width:304px;height:19px;',
 		},
@@ -1298,16 +1283,6 @@
 			name: 'НадписьПояснениеКПроцедуреОбмена',
 			text: 'Надпись пояснение к процедуре обмена',
 			style: 'position:absolute;left:224px;top:141px;width:328px;height:60px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Единый файловый ресурс (каталог обмена)',
-			style: 'position:absolute;left:224px;top:72px;width:242px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Единый FTP ресурс',
-			style: 'position:absolute;left:224px;top:94px;width:119px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -1351,9 +1326,25 @@
 			]
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Единый файловый ресурс (каталог обмена)',
+			style: 'position:absolute;left:224px;top:72px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Единый FTP ресурс',
+			style: 'position:absolute;left:224px;top:94px;width:119px;height:19px;',
+		},
+		{
 			xtype: 'radio',
 			boxLabel: 'Электронная почта',
 			style: 'position:absolute;left:223px;top:117px;width:119px;height:21px;',
+		},
+			]
 		},
 					]
 				},
@@ -1409,6 +1400,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СозданнаяНастройкаОбмена1',
 			style: 'position:absolute;left:36px;top:228px;width:390px;height:19px;',
 		},
@@ -1421,6 +1413,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаНастроекОбменаПервойИнформационнойБазы1',
 			style: 'position:absolute;left:36px;top:154px;width:516px;height:19px;',
 		},
@@ -1457,6 +1450,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СозданнаяНастройкаОбмена',
 			style: 'position:absolute;left:39px;top:73px;width:385px;height:19px;',
 		},
@@ -1503,8 +1497,10 @@
 			style: 'position:absolute;left:6px;top:50px;width:270px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаВыгрузкиДокументов',
 			style: 'position:absolute;left:282px;top:50px;width:100px;height:19px;',
 		},
@@ -1609,42 +1605,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
-			items:
-			[
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Изменить настройку',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Сопоставление объектов',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
-			items:
-			[
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:531px;height:212px;',
@@ -1743,6 +1709,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПрефиксДляЗагружаемыхДокументов',
 			style: 'position:absolute;left:376px;top:73px;width:64px;height:19px;',
 		},
@@ -1755,6 +1722,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПрефиксДляДокументовВТекущейИБ',
 			style: 'position:absolute;left:376px;top:97px;width:64px;height:19px;',
 		},
@@ -1783,6 +1751,27 @@
 				},
 				{
 					title:'Страница готово',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Назад',
+				},
+				'-',
+				{
+					text:'Далее',
 				},
 			]
 		},

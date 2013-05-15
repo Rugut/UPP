@@ -21,13 +21,14 @@ Ext.define('MyDesktop.App', {
     'Ext.form.field.Text',
     'Ext.form.Label',
     'Ext.form.field.Radio',
+    'Ext.form.field.Number',
+    'Ext.form.field.Time',
     'Ext.button.Split',
     'Ext.layout.container.Absolute',
     'Ext.toolbar.Toolbar',
     'Ext.toolbar.Fill',
     'Ext.grid.Panel',
-    'Ext.form.field.Time',
-    'Ext.form.field.Number',
+
         
     'Ext.data.Model',
     'Ext.data.Store',
@@ -50,8 +51,8 @@ Ext.define('MyDesktop.App', {
 
 //        'MyDesktop.Blockalanche',
         'MyDesktop.Settings',
-        'Ext.grid.*',
-        'Ext.data.*',
+        //'Ext.grid.*',
+        //'Ext.data.*',
     ],
 
     init: function() {

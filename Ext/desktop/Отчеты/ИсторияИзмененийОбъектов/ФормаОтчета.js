@@ -64,12 +64,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СсылкаНаОбъект',
 			style: 'position:absolute;left:52px;top:32px;width:425px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:485px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

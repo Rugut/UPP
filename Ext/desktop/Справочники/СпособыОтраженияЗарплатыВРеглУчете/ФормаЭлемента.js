@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:33px;width:481px;height:19px;',
 		},
@@ -30,36 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:96px;top:56px;width:481px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:585px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:383px;width:585px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -75,6 +49,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетДт',
 			style: 'position:absolute;left:98px;top:27px;width:80px;height:19px;',
 		},
@@ -87,6 +62,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт1',
 			style: 'position:absolute;left:98px;top:50px;width:180px;height:19px;',
 		},
@@ -99,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт2',
 			style: 'position:absolute;left:98px;top:73px;width:180px;height:19px;',
 		},
@@ -111,12 +88,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт3',
 			style: 'position:absolute;left:98px;top:96px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетКт',
 			style: 'position:absolute;left:389px;top:27px;width:80px;height:19px;',
 		},
@@ -129,6 +108,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКт1',
 			style: 'position:absolute;left:389px;top:50px;width:180px;height:19px;',
 		},
@@ -141,6 +121,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКт2',
 			style: 'position:absolute;left:389px;top:73px;width:180px;height:19px;',
 		},
@@ -153,12 +134,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКт3',
 			style: 'position:absolute;left:389px;top:96px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетДтНУ',
 			style: 'position:absolute;left:98px;top:162px;width:80px;height:19px;',
 		},
@@ -171,6 +154,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ1',
 			style: 'position:absolute;left:98px;top:185px;width:180px;height:19px;',
 		},
@@ -183,6 +167,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ2',
 			style: 'position:absolute;left:98px;top:208px;width:180px;height:19px;',
 		},
@@ -195,12 +180,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ3',
 			style: 'position:absolute;left:98px;top:231px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетКтНУ',
 			style: 'position:absolute;left:389px;top:162px;width:80px;height:19px;',
 		},
@@ -213,6 +200,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКтНУ1',
 			style: 'position:absolute;left:389px;top:185px;width:180px;height:19px;',
 		},
@@ -225,6 +213,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКтНУ2',
 			style: 'position:absolute;left:389px;top:208px;width:180px;height:19px;',
 		},
@@ -237,14 +226,31 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКтНУ3',
 			style: 'position:absolute;left:389px;top:231px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтражениеВУСН',
 			style: 'position:absolute;left:98px;top:277px;width:471px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Бухгалтерский учет',
+			style: 'position:absolute;left:0px;top:7px;width:569px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Налоговый учет',
+			style: 'position:absolute;left:0px;top:142px;width:569px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Налоговый учет УСН',
+			style: 'position:absolute;left:0px;top:257px;width:569px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -279,72 +285,84 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКт1Строка',
 			style: 'position:absolute;left:389px;top:50px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКтНУ1Строка',
 			style: 'position:absolute;left:389px;top:185px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКт2Строка',
 			style: 'position:absolute;left:389px;top:73px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКт3Строка',
 			style: 'position:absolute;left:389px;top:96px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКтНУ2Строка',
 			style: 'position:absolute;left:389px;top:208px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоКтНУ3Строка',
 			style: 'position:absolute;left:389px;top:231px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ1Строка',
 			style: 'position:absolute;left:98px;top:185px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ2Строка',
 			style: 'position:absolute;left:98px;top:208px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ3Строка',
 			style: 'position:absolute;left:98px;top:231px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт1Строка',
 			style: 'position:absolute;left:98px;top:50px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт2Строка',
 			style: 'position:absolute;left:98px;top:73px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт3Строка',
 			style: 'position:absolute;left:98px;top:96px;width:180px;height:19px;',
 		},
@@ -357,6 +375,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособРаспределенияЗатрат',
 			style: 'position:absolute;left:98px;top:119px;width:180px;height:19px;',
 		},
@@ -382,6 +401,39 @@
 				},
 				{
 					title:'Распределять по базовым начислениям',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:585px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:383px;width:585px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

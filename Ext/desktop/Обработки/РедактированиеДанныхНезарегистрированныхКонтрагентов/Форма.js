@@ -10,38 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:548px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:345px;width:548px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Зарегистрировать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Наименование:',
@@ -50,12 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеКонтрагента',
 			style: 'position:absolute;left:128px;top:33px;width:412px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЮрФизЛицо',
 			style: 'position:absolute;left:128px;top:58px;width:144px;height:19px;',
 		},
@@ -68,6 +38,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОсновнойВидДеятельностиКонтрагента',
 			style: 'position:absolute;left:128px;top:129px;width:412px;height:19px;',
 		},
@@ -80,6 +51,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеКонтрагентаПолное',
 			style: 'position:absolute;left:128px;top:106px;width:412px;height:19px;',
 		},
@@ -112,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительноеОписание',
 			style: 'position:absolute;left:89px;top:138px;width:435px;height:19px;',
 		},
@@ -124,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидТелефонаКонтрагента',
 			style: 'position:absolute;left:60px;top:10px;width:94px;height:19px;',
 		},
@@ -136,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодГородаТелефонаКонтрагента',
 			style: 'position:absolute;left:204px;top:10px;width:39px;height:19px;',
 		},
@@ -148,6 +123,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерТелефонаКонтрагента',
 			style: 'position:absolute;left:293px;top:10px;width:80px;height:19px;',
 		},
@@ -160,6 +136,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДобавочныйНомерТелефонаКонтрагента',
 			style: 'position:absolute;left:419px;top:10px;width:42px;height:19px;',
 		},
@@ -172,6 +149,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидАдресаКонтрагента',
 			style: 'position:absolute;left:60px;top:38px;width:94px;height:19px;',
 		},
@@ -184,6 +162,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГородКонтрагента',
 			style: 'position:absolute;left:204px;top:38px;width:320px;height:19px;',
 		},
@@ -196,6 +175,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УлицаКонтрагента',
 			style: 'position:absolute;left:204px;top:62px;width:320px;height:19px;',
 		},
@@ -208,6 +188,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДомКонтрагента',
 			style: 'position:absolute;left:204px;top:86px;width:38px;height:19px;',
 		},
@@ -220,6 +201,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КорпусКонтрагента',
 			style: 'position:absolute;left:293px;top:86px;width:39px;height:19px;',
 		},
@@ -232,12 +214,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЭлектроннойПочтыКонтрагента',
 			style: 'position:absolute;left:60px;top:112px;width:94px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочтыКонтрагента',
 			style: 'position:absolute;left:204px;top:112px;width:320px;height:19px;',
 		},
@@ -268,6 +252,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФИОКонтактногоЛица',
 			style: 'position:absolute;left:123px;top:34px;width:401px;height:19px;',
 		},
@@ -280,6 +265,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидТелефонаКонтактногоЛица',
 			style: 'position:absolute;left:123px;top:90px;width:94px;height:19px;',
 		},
@@ -292,6 +278,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодГородаТелефонаКонтактногоЛица',
 			style: 'position:absolute;left:264px;top:90px;width:42px;height:19px;',
 		},
@@ -304,6 +291,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерТелефонаКонтактногоЛица',
 			style: 'position:absolute;left:357px;top:90px;width:80px;height:19px;',
 		},
@@ -316,12 +304,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДобавочныйНомерТелефонаКонтактногоЛица',
 			style: 'position:absolute;left:482px;top:90px;width:42px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЭлектроннойПочтыКонтактногоЛица',
 			style: 'position:absolute;left:123px;top:115px;width:94px;height:19px;',
 		},
@@ -334,6 +324,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочтыКонтактногоЛица',
 			style: 'position:absolute;left:264px;top:115px;width:132px;height:19px;',
 		},
@@ -346,6 +337,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьКонтактногоЛица',
 			style: 'position:absolute;left:123px;top:58px;width:401px;height:19px;',
 		},
@@ -358,12 +350,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяКонтактногоЛица',
 			style: 'position:absolute;left:273px;top:10px;width:121px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчествоКонтактногоЛица',
 			style: 'position:absolute;left:399px;top:10px;width:125px;height:19px;',
 		},
@@ -376,6 +370,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФамилияКонтактногоЛица',
 			style: 'position:absolute;left:123px;top:10px;width:145px;height:19px;',
 		},
@@ -412,6 +407,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОКОПФ',
 			style: 'position:absolute;left:128px;top:82px;width:144px;height:19px;',
 		},
@@ -424,6 +420,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН1',
 			style: 'position:absolute;left:313px;top:82px;width:80px;height:19px;',
 		},
@@ -436,6 +433,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:461px;top:82px;width:62px;height:19px;',
 		},
@@ -444,6 +442,43 @@
 			name: 'КнопкаГенарацииКПП',
 			text: '',
 			style: 'position:absolute;left:399px;top:82px;width:20px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:548px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:345px;width:548px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Зарегистрировать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

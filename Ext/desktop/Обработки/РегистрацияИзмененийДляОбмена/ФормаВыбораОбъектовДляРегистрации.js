@@ -35,6 +35,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СписокРедактирования',
 			style: 'position:absolute;left:196px;top:6px;width:209px;height:19px;',
 		},
@@ -44,5 +45,8 @@
 			text: 'Выбрать из запроса',
 			style: 'position:absolute;left:195px;top:29px;width:210px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

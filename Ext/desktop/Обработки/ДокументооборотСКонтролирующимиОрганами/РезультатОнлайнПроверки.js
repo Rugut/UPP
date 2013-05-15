@@ -10,17 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:631px;width:863px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Электронное представление отчета',
+			style: 'position:absolute;left:8px;top:8px;width:847px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -36,6 +28,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеТекст',
 			style: 'position:absolute;left:0px;top:0px;width:847px;height:200px;',
 		},
@@ -58,8 +51,14 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Протокол проверки',
+			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;',
+		},
+		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Протокол',
 			style: 'position:absolute;left:0px;top:20px;width:847px;height:369px;',
 		},
@@ -70,12 +69,34 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Протокол проверки',
+			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСохранить1',
 			text: 'Выгрузить',
 			style: 'position:absolute;left:791px;top:1px;width:56px;height:15px;text-align:right;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:631px;width:863px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

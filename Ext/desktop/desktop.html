@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ExtTop - Desktop Sample App</title>
+    <title>Rugut(UPP)</title>
 
     <link rel="stylesheet" type="text/css" href="packages/extjs.4.1.1/ext-4.1.1a/resources/css/ext-all.css" />
     <link rel="stylesheet" type="text/css" href="css/desktop.css" />
@@ -11,7 +11,7 @@
 
     <!-- <x-compile> -->
     <!-- <x-bootstrap> -->
-    <script type="text/javascript" src="packages/extjs.4.1.1/ext-4.1.1a/ext.js"></script>
+    <script type="text/javascript" src="packages/extjs.4.1.1/ext-4.1.1a/ext-all.js"></script>
     
    
  
@@ -19,22 +19,23 @@
     <script type="text/javascript">
         Ext.Loader.setPath({
             'Ext.ux.desktop': 'js',
-           // MyDesktop: ''
+             MyDesktop: ''
         });
-        Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
-            enabled: true,  //Загрузчик активен
-            disableCaching: false,   //Не кеширует файлы
-            paths: {
-                MyDesktop: '',
-                Base: "js/Base", //Путь в пространству данных Base
-                Меню: "Меню",
-                Метаданные: "Метаданные",
-                Справочники: "Справочники",
-                Документы: "Документы",
-                Отчеты: "Отчеты",
-                Обработки: "Обработки",
-            }
-        });
+        
+        //Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
+        //    enabled: true,  //Загрузчик активен
+        //    disableCaching: false,   //Не кеширует файлы
+        //    paths: {
+        //        MyDesktop: '',
+        //        Base: "js/Base", //Путь в пространству данных Base
+        //        Меню: "Меню",
+        //        Метаданные: "Метаданные",
+        //        Справочники: "Справочники",
+        //        Документы: "Документы",
+        //        Отчеты: "Отчеты",
+        //        Обработки: "Обработки",
+        //    }
+        //});
 
         Ext.require('MyDesktop.App');
 

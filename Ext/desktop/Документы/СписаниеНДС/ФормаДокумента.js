@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -70,6 +73,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:418px;width:607px;height:19px;',
 		},
@@ -82,6 +86,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
@@ -196,14 +201,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьСчетСписанияНДСНУ',
 			text: 'Счет:',
@@ -242,6 +239,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:103px;top:28px;width:101px;height:19px;',
 		},
@@ -254,6 +252,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС1',
 			style: 'position:absolute;left:103px;top:52px;width:205px;height:19px;',
 		},
@@ -266,6 +265,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС2',
 			style: 'position:absolute;left:103px;top:76px;width:205px;height:19px;',
 		},
@@ -278,32 +278,47 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС3',
 			style: 'position:absolute;left:103px;top:100px;width:205px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Счет списания НДС в БУ',
+			style: 'position:absolute;left:6px;top:6px;width:329px;height:19px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетСписанияНДСНУ',
 			style: 'position:absolute;left:473px;top:28px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ1',
 			style: 'position:absolute;left:473px;top:52px;width:209px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ2',
 			style: 'position:absolute;left:473px;top:76px;width:209px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ3',
 			style: 'position:absolute;left:473px;top:100px;width:209px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Счет списания НДС в НУ',
+			style: 'position:absolute;left:356px;top:6px;width:329px;height:19px;',
 		},
 					]
 				},
@@ -318,6 +333,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный1',
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
 		},
@@ -332,5 +348,8 @@
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:419px;top:33px;width:74px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

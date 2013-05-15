@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:493px;width:742px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:106px;width:726px;height:379px;',
 			height: 379,width: 726,
@@ -198,6 +181,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:142px;top:8px;width:592px;height:19px;',
 		},
@@ -208,18 +192,9 @@
 			style: 'position:absolute;left:8px;top:35px;width:131px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Все',
-			style: 'position:absolute;left:142px;top:35px;width:41px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Заданный:',
-			style: 'position:absolute;left:214px;top:35px;width:75px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЦиклаОбмена',
 			style: 'position:absolute;left:296px;top:35px;width:438px;height:19px;',
 		},
@@ -229,8 +204,56 @@
 			style: 'position:absolute;left:509px;top:61px;width:225px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:80px;width:726px;height:3px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Формировать подтверждения на нераспакованные сообщения',
+			style: 'position:absolute;left:142px;top:61px;width:359px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Все',
+			style: 'position:absolute;left:142px;top:35px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заданный:',
+			style: 'position:absolute;left:214px;top:35px;width:75px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:493px;width:742px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -244,11 +267,6 @@
 					text:'Обновить',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Формировать подтверждения на нераспакованные сообщения',
-			style: 'position:absolute;left:142px;top:61px;width:359px;height:15px;',
 		},
 	]
 });

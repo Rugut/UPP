@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:352px;width:568px;height:19px;',
 		},
@@ -71,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -89,6 +94,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:328px;width:220px;height:19px;',
 		},
@@ -130,6 +136,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:424px;top:328px;width:240px;height:19px;',
 		},
@@ -307,14 +314,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:641px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
@@ -329,12 +328,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:94px;top:6px;width:212px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетЗатрат',
 			style: 'position:absolute;left:94px;top:54px;width:88px;height:19px;',
 		},
@@ -347,18 +348,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:416px;top:6px;width:231px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:94px;top:30px;width:212px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетЗатратНУ',
 			style: 'position:absolute;left:94px;top:78px;width:88px;height:19px;',
 		},
@@ -375,6 +379,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:424px;top:57px;width:240px;height:19px;',
 		},
@@ -384,5 +389,8 @@
 			text: '',
 			style: 'position:absolute;left:424px;top:79px;width:240px;height:15px;text-align:right;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

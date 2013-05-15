@@ -10,24 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:576px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'По умолчанию',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Поля поиска',
+			style: 'position:absolute;left:8px;top:4px;width:560px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -142,11 +127,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:17px;width:560px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Дополнительные ограничения на область поиска',
+			style: 'position:absolute;left:0px;top:0px;width:560px;height:16px;',
 		},
 					]
 				},
@@ -162,6 +145,30 @@
 				},
 				{
 					text:'Выключить все',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:576px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'По умолчанию',
 				},
 			]
 		},

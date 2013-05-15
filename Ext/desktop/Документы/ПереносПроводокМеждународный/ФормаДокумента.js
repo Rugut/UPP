@@ -18,85 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:327px;width:552px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:85px;width:468px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-				'-',
-				{
-					text:'Выполнить перенос проводок',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Открыть соответствия счетов',
-				},
-				'-',
-				{
-					text:'Открыть исключения проводок',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:354px;width:654px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -297,6 +221,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -307,8 +232,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -321,6 +248,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
 		},
@@ -333,6 +261,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:426px;top:56px;width:220px;height:19px;',
 		},
@@ -343,8 +272,10 @@
 			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:426px;top:33px;width:88px;height:19px;',
 		},
@@ -355,8 +286,10 @@
 			style: 'position:absolute;left:516px;top:33px;width:15px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодКонец',
 			style: 'position:absolute;left:533px;top:33px;width:88px;height:19px;',
 		},
@@ -370,6 +303,89 @@
 			xtype: 'checkbox',
 			boxLabel: 'Показать протокол переноса',
 			style: 'position:absolute;left:477px;top:85px;width:169px;height:24px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:85px;width:468px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+				'-',
+				{
+					text:'Выполнить перенос проводок',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Открыть соответствия счетов',
+				},
+				'-',
+				{
+					text:'Открыть исключения проводок',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:354px;width:654px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

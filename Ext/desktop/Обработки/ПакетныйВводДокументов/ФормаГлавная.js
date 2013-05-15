@@ -26,8 +26,10 @@
 			style: 'position:absolute;left:417px;top:6px;width:92px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаАктуальности',
 			style: 'position:absolute;left:545px;top:6px;width:85px;height:19px;',
 		},
@@ -40,6 +42,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаОрганизация',
 			style: 'position:absolute;left:113px;top:110px;width:294px;height:19px;',
 		},
@@ -62,6 +65,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаСклад',
 			style: 'position:absolute;left:113px;top:86px;width:294px;height:19px;',
 		},
@@ -76,6 +80,11 @@
 			style: 'position:absolute;left:113px;top:6px;width:294px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры цен',
+			style: 'position:absolute;left:6px;top:155px;width:669px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Тип цен:',
@@ -84,6 +93,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТипЦен',
 			style: 'position:absolute;left:113px;top:199px;width:294px;height:19px;',
 		},
@@ -104,8 +114,14 @@
 			style: 'position:absolute;left:535px;top:201px;width:128px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:252px;width:669px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаПодразделение',
 			style: 'position:absolute;left:113px;top:272px;width:294px;height:19px;',
 		},
@@ -118,8 +134,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаОтветственный',
 			style: 'position:absolute;left:504px;top:272px;width:171px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры документов',
+			style: 'position:absolute;left:6px;top:42px;width:669px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -132,6 +154,11 @@
 			name: 'Надпись11',
 			text: 'Ответственный:',
 			style: 'position:absolute;left:417px;top:272px;width:82px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Действия с документами',
+			style: 'position:absolute;left:6px;top:330px;width:669px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -149,16 +176,6 @@
 			style: 'position:absolute;left:113px;top:350px;width:315px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Без просмотра',
-			style: 'position:absolute;left:229px;top:374px;width:101px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'С просмотром',
-			style: 'position:absolute;left:113px;top:374px;width:101px;height:15px;',
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'По значениям по умолчанию из договора',
 			style: 'position:absolute;left:113px;top:175px;width:233px;height:19px;',
@@ -170,14 +187,20 @@
 			style: 'position:absolute;left:11px;top:223px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаПроцентСкидкиНаценки',
 			style: 'position:absolute;left:113px;top:223px;width:101px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаКоличествоЭкземпляров',
 			style: 'position:absolute;left:431px;top:350px;width:85px;height:19px;',
 		},
@@ -190,6 +213,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаСтруктурнаяЕдиница',
 			style: 'position:absolute;left:113px;top:134px;width:294px;height:19px;',
 		},
@@ -205,8 +229,10 @@
 			style: 'position:absolute;left:11px;top:296px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПоступления',
 			style: 'position:absolute;left:113px;top:296px;width:101px;height:19px;',
 		},
@@ -226,10 +252,28 @@
 			style: 'position:absolute;left:417px;top:30px;width:122px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: true,
+			value: 0,
 			name: 'ПолеВводаДатаРасчетаОстатков',
 			style: 'position:absolute;left:545px;top:30px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Без просмотра',
+			style: 'position:absolute;left:229px;top:374px;width:101px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'С просмотром',
+			style: 'position:absolute;left:113px;top:374px;width:101px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -405,5 +449,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -10,37 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:311px;width:343px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Настройка по умолчанию',
-				},
-				{
-					text:'Загрузить настройку из файла',
-				},
-				{
-					text:'Сохранить настройку в файл',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:152px;width:327px;height:151px;',
 			height: 151,width: 327,
@@ -87,8 +56,14 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Пользователи',
+			style: 'position:absolute;left:8px;top:112px;width:327px;height:13px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:95px;top:6px;width:240px;height:19px;',
 		},
@@ -107,6 +82,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Описание',
 			style: 'position:absolute;left:95px;top:30px;width:240px;height:72px;',
 		},
@@ -120,6 +96,41 @@
 				},
 				{
 					text:'Группу пользователей',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:311px;width:343px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Настройка по умолчанию',
+				},
+				{
+					text:'Загрузить настройку из файла',
+				},
+				{
+					text:'Сохранить настройку в файл',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

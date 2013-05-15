@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:139px;width:416px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Зарегистрировать',
-				},
-				'-',
-				{
-					text:'Зарегистрировать и открыть объект',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:8px;width:258px;height:19px;',
 		},
@@ -49,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеОбъекта',
 			style: 'position:absolute;left:150px;top:56px;width:258px;height:19px;',
 		},
@@ -61,6 +41,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидКонтактнойИнформации',
 			style: 'position:absolute;left:150px;top:88px;width:258px;height:19px;',
 		},
@@ -73,6 +54,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочты',
 			style: 'position:absolute;left:150px;top:112px;width:258px;height:19px;',
 		},
@@ -90,10 +72,36 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтрагентВладелец',
 			style: 'position:absolute;left:142px;top:0px;width:258px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:139px;width:416px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Зарегистрировать',
+				},
+				'-',
+				{
+					text:'Зарегистрировать и открыть объект',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

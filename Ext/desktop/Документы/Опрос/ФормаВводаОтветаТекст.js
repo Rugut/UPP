@@ -23,10 +23,19 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Текст',
+			style: 'position:absolute;left:8px;top:8px;width:325px;height:16px;',
+		},
+		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТекст',
 			style: 'position:absolute;left:8px;top:29px;width:325px;height:91px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

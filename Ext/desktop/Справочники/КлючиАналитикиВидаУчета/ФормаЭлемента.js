@@ -18,29 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:97px;top:33px;width:270px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:375px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:273px;width:375px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -51,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:97px;top:81px;width:270px;height:19px;',
 		},
@@ -63,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:97px;top:222px;width:270px;height:19px;',
 		},
@@ -75,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:97px;top:151px;width:270px;height:19px;',
 		},
@@ -87,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчета',
 			style: 'position:absolute;left:97px;top:246px;width:81px;height:19px;',
 		},
@@ -99,8 +83,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаНУ',
 			style: 'position:absolute;left:286px;top:246px;width:81px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Аналитика регламентированного учета',
+			style: 'position:absolute;left:8px;top:200px;width:359px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Аналитика управленческого учета',
+			style: 'position:absolute;left:8px;top:130px;width:359px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -111,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:97px;top:175px;width:270px;height:19px;',
 		},
@@ -123,6 +119,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:97px;top:105px;width:270px;height:19px;',
 		},
@@ -135,8 +132,35 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РазделУчета',
 			style: 'position:absolute;left:97px;top:57px;width:270px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:375px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:273px;width:375px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

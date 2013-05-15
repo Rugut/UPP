@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле1',
 			style: 'position:absolute;left:102px;top:129px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле2',
 			style: 'position:absolute;left:102px;top:153px;width:80px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле3',
 			style: 'position:absolute;left:102px;top:105px;width:80px;height:19px;',
 		},
@@ -54,12 +57,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле4',
 			style: 'position:absolute;left:262px;top:105px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:205px;width:220px;height:19px;',
 		},
@@ -98,6 +103,11 @@
 			style: 'position:absolute;left:8px;top:205px;width:94px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Телефон',
+			style: 'position:absolute;left:8px;top:85px;width:314px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОбъект',
 			text: 'Объект:',
@@ -112,12 +122,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Вид',
 			style: 'position:absolute;left:102px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Объект',
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
@@ -130,8 +142,12 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Представление',
 			style: 'position:absolute;left:102px;top:177px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

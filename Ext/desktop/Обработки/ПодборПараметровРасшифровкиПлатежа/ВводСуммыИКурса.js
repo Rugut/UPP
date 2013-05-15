@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:113px;width:260px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
 			text: 'ДоговорКонтрагента',
@@ -56,20 +39,29 @@
 			style: 'position:absolute;left:0px;top:54px;width:126px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
 		},
@@ -98,20 +90,29 @@
 			style: 'position:absolute;left:0px;top:6px;width:126px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПлатежа1',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
 		},
@@ -122,6 +123,27 @@
 			style: 'position:absolute;left:0px;top:54px;width:126px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:113px;width:260px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -16,19 +16,6 @@
 			style: 'position:absolute;left:8px;top:33px;width:38px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
-			items:
-			[
-				{
-					text:'Лицевые счета',
-				},
-				{
-					text:'Медицинские страховые полисы',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьФИО',
 			text: 'ФИО:',
@@ -72,30 +59,36 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:176px;top:99px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР',
 			style: 'position:absolute;left:388px;top:99px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодИМНС',
 			style: 'position:absolute;left:100px;top:99px;width:32px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Пол',
 			style: 'position:absolute;left:224px;top:6px;width:96px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРождения',
 			style: 'position:absolute;left:100px;top:6px;width:80px;height:19px;',
 		},
@@ -248,14 +241,26 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МестоРождения',
 			style: 'position:absolute;left:100px;top:30px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Удостоверение',
 			style: 'position:absolute;left:100px;top:54px;width:388px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Адреса и телефоны:',
+			style: 'position:absolute;left:6px;top:126px;width:578px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Индивидуальные номера',
+			style: 'position:absolute;left:6px;top:78px;width:482px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -266,6 +271,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МестоРожденияКодПоОКАТО',
 			style: 'position:absolute;left:400px;top:30px;width:88px;height:19px;',
 		},
@@ -446,6 +452,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СемейноеПоложение',
 			style: 'position:absolute;left:124px;top:198px;width:182px;height:19px;',
 		},
@@ -458,8 +465,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВоинскийУчет',
 			style: 'position:absolute;left:89px;top:30px;width:495px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Семья',
+			style: 'position:absolute;left:6px;top:103px;width:300px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Учеба',
+			style: 'position:absolute;left:6px;top:226px;width:360px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -470,8 +488,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Гражданство',
 			style: 'position:absolute;left:89px;top:6px;width:495px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Языки',
+			style: 'position:absolute;left:312px;top:103px;width:272px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Профессии',
+			style: 'position:absolute;left:372px;top:226px;width:212px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -504,6 +533,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Инвалидность',
 			style: 'position:absolute;left:89px;top:54px;width:495px;height:19px;',
 		},
@@ -522,6 +552,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЛьготаПриНачисленииПособий',
 			style: 'position:absolute;left:428px;top:78px;width:156px;height:19px;',
 		},
@@ -610,6 +641,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Ученые степени',
+			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:136px;width:578px;height:118px;',
 			height: 118,width: 578,
@@ -683,6 +719,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Ученые звания',
+			style: 'position:absolute;left:6px;top:118px;width:578px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Имеет научные труды',
 			style: 'position:absolute;left:6px;top:268px;width:142px;height:15px;',
@@ -705,38 +746,9 @@
 			style: 'position:absolute;left:182px;top:6px;width:40px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:578px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Награды',
+			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -843,13 +855,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:10px;top:101px;width:270px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:298px;top:24px;width:286px;height:311px;',
 			height: 311,width: 286,
@@ -891,19 +896,6 @@
 			name: 'НадписьКатегории',
 			text: 'Категории',
 			style: 'position:absolute;left:298px;top:6px;width:286px;height:17px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:307px;top:101px;width:269px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить новую категорию',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
 		},
 					]
 				},
@@ -976,21 +968,21 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:46px;width:578px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Заметки',
+			style: 'position:absolute;left:6px;top:30px;width:578px;height:16px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:6px;top:250px;width:578px;height:85px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДоступа',
 			style: 'position:absolute;left:97px;top:6px;width:487px;height:19px;',
 		},
@@ -1007,12 +999,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:48px;top:33px;width:436px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:48px;top:57px;width:182px;height:19px;',
 		},
@@ -1031,18 +1025,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:520px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:236px;top:57px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:362px;top:57px;width:120px;height:19px;',
 		},
@@ -1055,8 +1052,26 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:98px;top:81px;width:502px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Лицевые счета',
+				},
+				{
+					text:'Медицинские страховые полисы',
+				},
+			]
 		},
 	]
 });

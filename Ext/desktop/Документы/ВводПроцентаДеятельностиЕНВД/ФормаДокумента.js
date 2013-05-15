@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -42,110 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:58px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:161px;width:634px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:437px;width:650px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -156,12 +58,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:92px;top:410px;width:550px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Период',
 			style: 'position:absolute;left:126px;top:101px;width:120px;height:19px;',
 		},
@@ -275,8 +179,14 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Сотрудники организации',
+			style: 'position:absolute;left:8px;top:145px;width:634px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:422px;top:58px;width:220px;height:19px;',
 		},
@@ -287,6 +197,15 @@
 			style: 'position:absolute;left:336px;top:58px;width:84px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '% ЕНВД - деятельности',
+			style: 'position:absolute;left:8px;top:82px;width:634px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Регистрируется на:',
 			style: 'position:absolute;left:8px;top:101px;width:116px;height:19px;',
@@ -295,6 +214,116 @@
 			xtype: 'radio',
 			boxLabel: 'Месяц регистрации задается для каждой строки табличной части',
 			style: 'position:absolute;left:8px;top:122px;width:357px;height:17px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:161px;width:634px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:437px;width:650px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

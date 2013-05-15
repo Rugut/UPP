@@ -12,6 +12,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:162px;top:33px;width:84px;height:19px;',
 		},
@@ -41,14 +42,20 @@
 			style: 'position:absolute;left:8px;top:82px;width:68px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:78px;top:33px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Цена',
 			style: 'position:absolute;left:78px;top:58px;width:82px;height:19px;',
 		},
@@ -110,8 +117,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Серия',
 			style: 'position:absolute;left:78px;top:106px;width:166px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

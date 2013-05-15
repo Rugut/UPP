@@ -18,15 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:33px;width:308px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:63px;width:771px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -236,8 +230,38 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: '',
+			style: 'position:absolute;left:470px;top:33px;width:100px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаПредыдущийПериод',
+			text: '',
+			style: 'position:absolute;left:445px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаСледующийПериод',
+			text: '',
+			style: 'position:absolute;left:576px;top:33px;width:20px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:63px;width:771px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:787px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -265,6 +289,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:787px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -278,24 +303,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериодСоставленияОтчета',
-			text: '',
-			style: 'position:absolute;left:470px;top:33px;width:100px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаПредыдущийПериод',
-			text: '',
-			style: 'position:absolute;left:445px;top:33px;width:20px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаСледующийПериод',
-			text: '',
-			style: 'position:absolute;left:576px;top:33px;width:20px;height:19px;',
 		},
 	]
 });

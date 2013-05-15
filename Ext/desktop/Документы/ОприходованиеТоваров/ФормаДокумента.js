@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:383px;width:562px;height:19px;',
 		},
@@ -71,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:335px;width:220px;height:19px;',
 		},
@@ -83,6 +88,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:428px;top:335px;width:232px;height:19px;',
 		},
@@ -95,20 +101,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Основание',
 			style: 'position:absolute;left:98px;top:359px;width:562px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОснование',
-			text: 'Основание:
-',
+			text: 'Основание:\r\n',
 			style: 'position:absolute;left:8px;top:359px;width:88px;height:19px;',
 		},
 		{
@@ -120,6 +127,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:428px;top:57px;width:232px;height:19px;',
 		},
@@ -142,8 +150,11 @@
 			style: 'position:absolute;left:490px;top:313px;width:68px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:561px;top:313px;width:99px;height:17px;',
 		},
@@ -156,6 +167,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИнвентаризацияТоваровНаСкладе',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
 		},
@@ -453,30 +465,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:638px;height:24px;',
-			items:
-			[
-				{
-					text:'Поиск по штрихкоду',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Серийные номера',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьКоррСчетНУ',
 			text: 'Корр. счет (НУ):',
@@ -497,6 +485,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоррСчет',
 			style: 'position:absolute;left:152px;top:6px;width:101px;height:19px;',
 		},
@@ -509,6 +498,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто1',
 			style: 'position:absolute;left:152px;top:29px;width:165px;height:19px;',
 		},
@@ -521,6 +511,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто2',
 			style: 'position:absolute;left:152px;top:52px;width:165px;height:19px;',
 		},
@@ -533,12 +524,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто3',
 			style: 'position:absolute;left:152px;top:75px;width:165px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоррСчетНУ',
 			style: 'position:absolute;left:479px;top:6px;width:101px;height:19px;',
 		},
@@ -551,6 +544,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоНУ1',
 			style: 'position:absolute;left:479px;top:29px;width:165px;height:19px;',
 		},
@@ -563,6 +557,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоНУ2',
 			style: 'position:absolute;left:479px;top:52px;width:165px;height:19px;',
 		},
@@ -575,6 +570,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоНУ3',
 			style: 'position:absolute;left:479px;top:75px;width:165px;height:19px;',
 		},
@@ -582,5 +578,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -18,12 +18,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:254px;top:33px;width:342px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:61px;top:33px;width:109px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -65,18 +83,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериод',
-			text: 'Период:',
-			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:61px;top:33px;width:109px;height:19px;',
 		},
 	]
 });

@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Обновить',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:588px;height:320px;',
 			height: 320,width: 588,
@@ -102,6 +81,31 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 	]
 });

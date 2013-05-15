@@ -10,54 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
-			items:
-			[
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Показать цикл обмена, связанный с документом',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:413px;width:640px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
 			text: 'Налоговый орган:',
@@ -83,8 +35,14 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Содержание',
 			style: 'position:absolute;left:0px;top:18px;width:624px;height:271px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Содержание',
+			style: 'position:absolute;left:0px;top:0px;width:624px;height:16px;',
 		},
 					]
 				},
@@ -110,6 +68,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеВложенныеДокументы',
 			style: 'position:absolute;left:125px;top:5px;width:390px;height:17px;',
 		},
@@ -146,6 +105,59 @@
 			name: 'Номер',
 			text: '',
 			style: 'position:absolute;left:134px;top:33px;width:132px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Показать цикл обмена, связанный с документом',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Ответить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:413px;width:640px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

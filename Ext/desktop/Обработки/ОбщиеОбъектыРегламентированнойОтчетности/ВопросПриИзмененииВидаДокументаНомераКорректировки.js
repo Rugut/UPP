@@ -30,8 +30,12 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстСообщения',
 			style: 'position:absolute;left:16px;top:18px;width:383px;height:77px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

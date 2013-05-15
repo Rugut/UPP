@@ -33,12 +33,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:96px;top:54px;width:370px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяБаланса',
 			style: 'position:absolute;left:96px;top:78px;width:370px;height:19px;',
 		},
@@ -55,8 +57,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:96px;top:6px;width:96px;height:19px;',
 		},
@@ -67,8 +71,10 @@
 			style: 'position:absolute;left:194px;top:6px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:212px;top:6px;width:96px;height:19px;',
 		},
@@ -116,28 +122,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:164px;width:142px;height:24px;',
-			items:
-			[
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Выводить в разных колонках',
 			style: 'position:absolute;left:294px;top:169px;width:172px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:148px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -147,6 +139,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДанныхОтчета',
 			style: 'position:absolute;left:96px;top:30px;width:370px;height:19px;',
 		},
@@ -200,20 +193,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:254px;top:24px;width:212px;height:291px;',
 			height: 291,width: 212,
@@ -249,19 +228,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:224px;top:100px;width:24px;height:80px;',
-			items:
-			[
-				{
-					text:' >',
-				},
-				{
-					text:' <',
-				},
-			]
 		},
 					]
 				},
@@ -342,13 +308,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -388,13 +347,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:28px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -420,5 +372,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

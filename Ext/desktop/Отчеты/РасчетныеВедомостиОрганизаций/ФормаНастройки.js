@@ -355,6 +355,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Доступные поля',
+			style: 'position:absolute;left:8px;top:6px;width:222px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:258px;top:9px;width:379px;height:420px;',
 			height: 420,width: 379,
@@ -431,24 +436,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:18px;width:365px;height:24px;',
-			items:
-			[
-				{
-					text:'Добавить поле',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Строки',
+			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
 		},
 		{
 			xtype: 'grid',
@@ -558,6 +548,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатели и дополнительные поля',
+			style: 'position:absolute;left:0px;top:147px;width:365px;height:17px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:9px;top:275px;width:348px;height:24px;',
 			items:
@@ -620,6 +615,11 @@
 					title:'Страница без параметров',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:0px;top:0px;width:365px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:365px;height:144px;',
@@ -748,32 +748,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:18px;width:365px;height:24px;',
-			items:
-			[
-				{
-					text:'Добавить поле',
-				},
-				'-',
-				{
-					text:'Добавить группу',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Упорядочивание',
+			style: 'position:absolute;left:0px;top:194px;width:365px;height:17px;',
 		},
 		{
 			xtype: 'grid',
@@ -974,28 +951,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:86px;width:365px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Условное оформление',
+			style: 'position:absolute;left:0px;top:68px;width:365px;height:17px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Общее',
+			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
 		},
 					]
 				},
@@ -1077,9 +1040,13 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:21px;top:110px;width:203px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

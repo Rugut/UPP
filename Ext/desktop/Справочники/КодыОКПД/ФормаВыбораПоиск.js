@@ -47,30 +47,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:788px;height:25px;',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Иерархический просмотр',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:448px;width:788px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:466px;top:33px;width:314px;height:407px;',
 			height: 407,width: 314,
@@ -116,28 +92,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаПоиска',
 			style: 'position:absolute;left:6px;top:6px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:175px;top:26px;width:127px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:113px;height:24px;',
-			items:
-			[
-				{
-					text:'Поиск',
-				},
-			]
 		},
 					]
 				},
@@ -152,8 +109,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДатаАктуальностиИндекса',
-			text: 'Дата актуальности индекса
-Признак актуальности индекса',
+			text: 'Дата актуальности индекса\r\nПризнак актуальности индекса',
 			style: 'position:absolute;left:13px;top:343px;width:294px;height:38px;',
 		},
 					]
@@ -165,6 +121,35 @@
 			name: 'НадписьИнформация',
 			text: '',
 			style: 'position:absolute;left:472px;top:33px;width:308px;height:112px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:788px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Иерархический просмотр',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:448px;width:788px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+			]
 		},
 	]
 });

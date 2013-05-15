@@ -10,31 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:395px;width:767px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<< Назад',
-				},
-				'-',
-				{
-					text:'Далее >>',
-				},
-				'-',
-				{
-					text:'Готово',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:7px;width:752px;height:360px;',
 			height: 360,width: 752,
@@ -113,6 +88,11 @@
 					text:'Настройка формирования наименования объекта',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройка соответствия полей файла и контактных данных объектов',
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;',
 		},
 					]
 				},
@@ -209,6 +189,11 @@
 					text:'Снять флажки',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройка критериев поиска объектов в текущей информационной базе',
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;',
 		},
 					]
 				},
@@ -329,8 +314,14 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Настройка загрузки данных в текущую информационную базу',
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РодительДляЗагрузки',
 			style: 'position:absolute;left:200px;top:21px;width:252px;height:19px;',
 		},
@@ -348,6 +339,35 @@
 			xtype: 'checkbox',
 			boxLabel: 'Сохранять соответствие параметров и настройки поиска объектов для последующих загрузок',
 			style: 'position:absolute;left:8px;top:372px;width:506px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:395px;width:767px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<< Назад',
+				},
+				'-',
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'Готово',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

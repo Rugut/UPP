@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:77px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:181px;top:33px;width:33px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:214px;top:33px;width:102px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -52,8 +56,10 @@
 			style: 'position:absolute;left:8px;top:129px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:96px;top:129px;width:97px;height:19px;',
 		},
@@ -66,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЦФО',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -78,6 +85,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
@@ -90,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:153px;width:220px;height:19px;',
 		},
@@ -102,12 +111,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:177px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -128,6 +142,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:204px;width:324px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

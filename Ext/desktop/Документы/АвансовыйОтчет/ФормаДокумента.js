@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:110px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:210px;top:33px;width:120px;height:19px;',
 		},
@@ -103,12 +106,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:110px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладОрдер',
 			style: 'position:absolute;left:443px;top:57px;width:236px;height:19px;',
 		},
@@ -200,14 +205,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
-			items:
-			[
-				'-',
-			]
 		},
 					]
 				},
@@ -532,30 +529,26 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
-			items:
-			[
-				{
-					text:'Штрихкоды',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'ИнфНадписьТоварыИтоги',
 			text: 'Оптовые цены, Скидка 20%',
 			style: 'position:absolute;left:6px;top:161px;width:468px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:161px;width:80px;height:17px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:181px;width:80px;height:17px;',
 		},
@@ -764,17 +757,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:656px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -943,13 +925,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'label',
@@ -1432,16 +1407,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
-			items:
-			[
-				{
-					text:'Зарегистрировать предъявленные счета-фактуры',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1463,12 +1428,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:435px;top:6px;width:228px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:101px;top:31px;width:218px;height:19px;',
 		},
@@ -1487,6 +1454,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:102px;top:6px;width:218px;height:19px;',
 		},
@@ -1503,6 +1471,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:110px;top:81px;width:220px;height:19px;',
 		},
@@ -1515,6 +1484,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:382px;width:588px;height:19px;',
 		},
@@ -1525,8 +1495,11 @@
 			style: 'position:absolute;left:490px;top:359px;width:84px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоПоОтчету',
 			style: 'position:absolute;left:575px;top:359px;width:103px;height:17px;',
 		},
@@ -1537,8 +1510,11 @@
 			style: 'position:absolute;left:414px;top:339px;width:160px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоАвансов',
 			style: 'position:absolute;left:575px;top:339px;width:104px;height:17px;',
 		},
@@ -1566,6 +1542,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидПоступления',
 			style: 'position:absolute;left:354px;top:57px;width:88px;height:19px;',
 		},
@@ -1577,6 +1554,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НазначениеАванса',
 			style: 'position:absolute;left:443px;top:81px;width:236px;height:19px;',
 		},
@@ -1607,14 +1585,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоличествоДокументов',
 			style: 'position:absolute;left:96px;top:339px;width:50px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоличествоЛистов',
 			style: 'position:absolute;left:231px;top:339px;width:40px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

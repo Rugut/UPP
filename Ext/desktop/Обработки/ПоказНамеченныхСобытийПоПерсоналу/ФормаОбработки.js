@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:91px;top:8px;width:80px;height:19px;',
 		},
@@ -28,8 +30,10 @@
 			style: 'position:absolute;left:173px;top:8px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:191px;top:8px;width:80px;height:19px;',
 		},
@@ -150,7 +154,45 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:349px;width:541px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Создать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:32px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:91px;top:32px;width:442px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:56px;width:525px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				'-',
@@ -185,39 +227,6 @@
 					text:'Инвертировать',
 				},
 			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:349px;width:541px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Создать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:32px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:91px;top:32px;width:442px;height:19px;',
 		},
 	]
 });

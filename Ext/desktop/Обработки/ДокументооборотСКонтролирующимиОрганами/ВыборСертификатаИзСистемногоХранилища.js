@@ -10,24 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Показывать просроченные',
-				},
-				'-',
-				{
-					text:'Открыть справку',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:729px;height:269px;',
 			height: 269,width: 729,
@@ -182,6 +164,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Подробнее',
+			style: 'position:absolute;left:8px;top:329px;width:729px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
@@ -265,9 +252,32 @@
 			text: '',
 			style: 'position:absolute;left:91px;top:390px;width:275px;height:16px;',
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Показывать просроченные',
+				},
+				'-',
+				{
+					text:'Открыть справку',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:33px;width:729px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

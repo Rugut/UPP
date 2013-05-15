@@ -428,13 +428,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -1028,13 +1021,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -1114,13 +1100,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -1228,13 +1207,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -1268,13 +1240,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -1373,13 +1338,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -1405,5 +1363,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:331px;width:548px;height:19px;',
 		},
@@ -102,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -350,18 +355,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:123px;width:636px;height:26px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьСклад',
 			text: 'Склад:',
@@ -370,6 +363,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
@@ -388,6 +382,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:82px;width:220px;height:19px;',
 		},
@@ -400,6 +395,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:306px;width:548px;height:19px;',
 		},
@@ -437,6 +433,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:82px;width:220px;height:19px;',
 		},
@@ -444,6 +441,27 @@
 			xtype: 'checkbox',
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:571px;top:33px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Материалы',
+			style: 'position:absolute;left:8px;top:107px;width:636px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:123px;width:636px;height:26px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 	]
 });

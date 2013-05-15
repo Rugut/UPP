@@ -10,41 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:601px;height:25px;',
-			items:
-			[
-				{
-					text:'Проверить',
-				},
-				'-',
-				{
-					text:'Произвольный запрос',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:415px;width:601px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
@@ -53,12 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:370px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеРегистра',
 			style: 'position:absolute;left:94px;top:57px;width:499px;height:19px;',
 		},
@@ -150,6 +117,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:133px;width:264px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -248,6 +220,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:571px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:276px;top:149px;width:300px;height:24px;',
 			items:
@@ -263,19 +240,17 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:276px;top:133px;width:300px;height:16px;',
+		},
 					]
 				},
 				{
 					title:'Отбор',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:380px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:380px;height:273px;',
@@ -389,40 +364,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:539px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:539px;height:253px;',
 			height: 253,width: 539,
@@ -476,8 +417,49 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:512px;top:33px;width:81px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:601px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Проверить',
+				},
+				'-',
+				{
+					text:'Произвольный запрос',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:415px;width:601px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

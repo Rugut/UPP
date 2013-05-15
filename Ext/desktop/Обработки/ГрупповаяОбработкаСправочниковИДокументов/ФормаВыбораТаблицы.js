@@ -10,36 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:438px;width:344px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:9px;width:328px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:328px;height:397px;',
 			height: 397,width: 328,
@@ -75,6 +45,41 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:438px;width:344px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:9px;width:328px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+			]
 		},
 	]
 });

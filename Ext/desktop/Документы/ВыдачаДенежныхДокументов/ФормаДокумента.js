@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:204px;top:33px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:319px;width:560px;height:19px;',
 		},
@@ -82,6 +86,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСКонтрагентом',
 			style: 'position:absolute;left:82px;top:80px;width:80px;height:19px;',
 		},
@@ -94,12 +99,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:82px;top:54px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:82px;top:0px;width:220px;height:19px;',
 		},
@@ -118,6 +125,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Выдано',
 			style: 'position:absolute;left:82px;top:26px;width:558px;height:19px;',
 		},
@@ -136,6 +144,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСКонтрагентомПрочее',
 			style: 'position:absolute;left:83px;top:28px;width:80px;height:19px;',
 		},
@@ -148,6 +157,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт1',
 			style: 'position:absolute;left:83px;top:53px;width:220px;height:19px;',
 		},
@@ -160,6 +170,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт2',
 			style: 'position:absolute;left:83px;top:78px;width:220px;height:19px;',
 		},
@@ -172,6 +183,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт3',
 			style: 'position:absolute;left:83px;top:103px;width:220px;height:19px;',
 		},
@@ -184,6 +196,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВыданоПрочее',
 			style: 'position:absolute;left:82px;top:0px;width:558px;height:19px;',
 		},
@@ -202,6 +215,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодотчетноеЛицо',
 			style: 'position:absolute;left:83px;top:0px;width:220px;height:19px;',
 		},
@@ -214,6 +228,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВыданоПодотчетноеЛицо',
 			style: 'position:absolute;left:83px;top:29px;width:557px;height:19px;',
 		},
@@ -306,6 +321,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Счета учета разниц между учетной стоимостью денежных документов и суммой возврата',
+			style: 'position:absolute;left:6px;top:13px;width:640px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСчетУчетаДоходов',
 			text: 'Счет учета доходов:',
@@ -314,6 +334,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДоходов',
 			style: 'position:absolute;left:160px;top:57px;width:80px;height:19px;',
 		},
@@ -326,6 +347,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходов',
 			style: 'position:absolute;left:160px;top:80px;width:80px;height:19px;',
 		},
@@ -338,6 +360,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДоходовИРасходов',
 			style: 'position:absolute;left:160px;top:34px;width:357px;height:19px;',
 		},
@@ -350,6 +373,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДоходовНУ',
 			style: 'position:absolute;left:437px;top:57px;width:80px;height:19px;',
 		},
@@ -362,6 +386,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовНУ',
 			style: 'position:absolute;left:437px;top:80px;width:80px;height:19px;',
 		},
@@ -378,6 +403,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:295px;width:560px;height:19px;',
 		},
@@ -390,6 +416,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:542px;top:271px;width:120px;height:19px;',
 		},
@@ -423,6 +450,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -435,6 +463,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДенежныхДокументов',
 			style: 'position:absolute;left:96px;top:81px;width:80px;height:19px;',
 		},
@@ -447,8 +476,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:236px;top:81px;width:80px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

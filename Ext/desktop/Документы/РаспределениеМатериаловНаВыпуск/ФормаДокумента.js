@@ -11,41 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-				'-',
-				{
-					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:383px;width:652px;height:25px;',
 			items:
 			[
@@ -78,6 +43,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -88,8 +54,10 @@
 			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -106,6 +74,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
@@ -124,6 +93,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
@@ -136,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Заказ',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -148,6 +119,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:356px;width:548px;height:19px;',
 		},
@@ -161,18 +133,6 @@
 					title:'Продукция',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
@@ -360,29 +320,6 @@
 					title:'Материалы',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-				{
-					text:'Заполнить по остаткам',
-				},
-				{
-					text:'Заполнить по инвентаризации',
-				},
-				'-',
-				{
-					text:'Добавить из требование - накладная...',
-				},
-				{
-					text:'Добавить из документа выпуска...',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
@@ -814,18 +751,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1031,37 +956,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-				{
-					text:'Заполнить по остаткам',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Распределение возвратных отходов',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
@@ -1305,8 +1205,10 @@
 			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаПериода',
 			style: 'position:absolute;left:96px;top:57px;width:80px;height:19px;',
 		},
@@ -1325,6 +1227,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:105px;width:220px;height:19px;',
 		},
@@ -1342,6 +1245,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:332px;width:548px;height:19px;',
 		},
@@ -1354,14 +1258,56 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокИнвентаризация',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияПериода',
 			style: 'position:absolute;left:196px;top:57px;width:120px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка',
+				},
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
+				},
+			]
 		},
 	]
 });

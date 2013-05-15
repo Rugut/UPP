@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:110px;top:404px;width:549px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
@@ -66,104 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:438px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Ввести на основании)',
-				},
-					]
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:429px;width:664px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -175,18 +85,6 @@
 					title:'Основные средства',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:637px;height:24px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:637px;height:265px;',
@@ -329,6 +227,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:100px;top:270px;width:543px;height:19px;',
 		},
@@ -379,31 +278,24 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:117px;width:637px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснованиеВид',
 			style: 'position:absolute;left:89px;top:27px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДокументОснованиеДата',
 			style: 'position:absolute;left:229px;top:51px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснованиеНомер',
 			style: 'position:absolute;left:89px;top:51px;width:115px;height:19px;',
 		},
@@ -420,20 +312,34 @@
 			style: 'position:absolute;left:12px;top:51px;width:69px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Инвентаризационная комиссия',
+			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Проведение инвентаризации',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДатаНачалаИнвентаризации',
 			text: 'Дата начала:',
 			style: 'position:absolute;left:328px;top:27px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаИнвентаризации',
 			style: 'position:absolute;left:429px;top:27px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияИнвентаризации',
 			style: 'position:absolute;left:429px;top:51px;width:80px;height:19px;',
 		},
@@ -446,10 +352,112 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПричинаИнвентаризации',
 			style: 'position:absolute;left:89px;top:75px;width:554px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Ввести на основании)',
+				},
+					]
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:429px;width:664px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

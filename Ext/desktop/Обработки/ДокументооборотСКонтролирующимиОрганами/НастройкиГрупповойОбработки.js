@@ -10,46 +10,19 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:370px;width:534px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Приступить к обработке',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Действие при некритичных уведомлениях',
+			style: 'position:absolute;left:8px;top:100px;width:518px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Игнорировать и продолжать групповую обработку',
-			style: 'position:absolute;left:14px;top:171px;width:278px;height:15px;',
+			xtype: 'fieldset',
+			title: 'Действие при возникновении ошибок',
+			style: 'position:absolute;left:8px;top:243px;width:518px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Прерывать текущее действие, но продолжать групповую обработку',
-			style: 'position:absolute;left:14px;top:195px;width:367px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Прерывать групповую обработку',
-			style: 'position:absolute;left:14px;top:219px;width:191px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Прерывать групповую обработку',
-			style: 'position:absolute;left:14px;top:337px;width:197px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Продолжать групповую обработку',
-			style: 'position:absolute;left:14px;top:314px;width:197px;height:15px;',
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:29px;width:518px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -104,6 +77,79 @@
 			name: 'Действие',
 			text: '',
 			style: 'position:absolute;left:268px;top:75px;width:258px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:93px;width:518px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:359px;width:518px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:8px;width:518px;height:3px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Игнорировать и продолжать групповую обработку',
+			style: 'position:absolute;left:14px;top:171px;width:278px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прерывать текущее действие, но продолжать групповую обработку',
+			style: 'position:absolute;left:14px;top:195px;width:367px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прерывать групповую обработку',
+			style: 'position:absolute;left:14px;top:219px;width:191px;height:15px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Продолжать групповую обработку',
+			style: 'position:absolute;left:14px;top:314px;width:197px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прерывать групповую обработку',
+			style: 'position:absolute;left:14px;top:337px;width:197px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:370px;width:534px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Приступить к обработке',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

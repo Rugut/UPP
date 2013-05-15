@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
-			items:
-			[
-				{
-					text:'Доступ к текущему элементу',
-				},
-				{
-					text:'Доступ к справочнику в целом',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:167px;top:33px;width:433px;height:280px;',
 			height: 280,width: 433,
@@ -122,6 +109,23 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Доступ к текущему элементу',
+				},
+				{
+					text:'Доступ к справочнику в целом',
+				},
+			]
 		},
 	]
 });

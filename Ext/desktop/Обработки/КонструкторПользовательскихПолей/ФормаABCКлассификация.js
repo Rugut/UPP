@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:186px;width:511px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПоле',
 			text: 'Анализируемый объект:',
@@ -43,8 +26,11 @@
 			style: 'position:absolute;left:8px;top:34px;width:142px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Процент1',
 			style: 'position:absolute;left:157px;top:109px;width:54px;height:19px;',
 		},
@@ -55,8 +41,11 @@
 			style: 'position:absolute;left:8px;top:109px;width:142px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Процент2',
 			style: 'position:absolute;left:157px;top:134px;width:54px;height:19px;',
 		},
@@ -67,8 +56,11 @@
 			style: 'position:absolute;left:8px;top:134px;width:142px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Процент3',
 			style: 'position:absolute;left:157px;top:159px;width:54px;height:19px;',
 		},
@@ -77,6 +69,11 @@
 			name: 'НадписьПроцент3',
 			text: 'C-класс',
 			style: 'position:absolute;left:8px;top:159px;width:142px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Критерии распределения (процент от общей суммы параметров распределения)',
+			style: 'position:absolute;left:8px;top:86px;width:495px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -105,14 +102,37 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:156px;top:8px;width:347px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле',
 			style: 'position:absolute;left:156px;top:60px;width:347px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:186px;width:511px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:342px;width:476px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:89px;width:460px;height:245px;',
 			height: 245,width: 460,
@@ -92,8 +79,31 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогВыгрузкиДанных',
 			style: 'position:absolute;left:151px;top:45px;width:317px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выгруженные файлы',
+			style: 'position:absolute;left:8px;top:69px;width:460px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:342px;width:476px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

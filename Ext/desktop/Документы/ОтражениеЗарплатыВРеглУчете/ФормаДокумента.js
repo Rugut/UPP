@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:431px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:513px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:531px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:431px;top:57px;width:220px;height:19px;',
 		},
@@ -54,67 +58,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:431px;top:81px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:454px;width:659px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -132,51 +78,6 @@
 					title:'Проводки',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:629px;height:24px;',
-			items:
-			[
-				{
-					text:'Все проводки',
-				},
-				'-',
-				{
-					text:'Начисления',
-				},
-				{
-					text:'Пособия за счет ФСС',
-				},
-				{
-					text:'Удержания',
-				},
-				{
-					text:'НДФЛ',
-				},
-				{
-					text:'ЕСН и взносы в ПФР',
-				},
-				{
-					text:'Взносы в ФСС на НС и ПЗ',
-				},
-				{
-					text:'Списание РБП',
-				},
-				{
-					text:'Отчисления в резервы',
-				},
-				'-',
-				{
-					text:'Прочие',
-				},
-				{
-					text:'Пустой счет дебета',
-				},
-				{
-					text:'Пустой счет кредита',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:629px;height:262px;',
@@ -463,45 +364,6 @@
 					title:'Основные начисления',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:629px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:629px;height:262px;',
@@ -825,45 +687,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:629px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:629px;height:262px;',
 			height: 262,width: 629,
@@ -1183,12 +1006,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:86px;top:427px;width:548px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:113px;top:33px;width:120px;height:19px;',
 		},
@@ -1197,6 +1022,70 @@
 			name: 'КнопкаЗаполнить',
 			text: 'Заполнить',
 			style: 'position:absolute;left:8px;top:64px;width:120px;height:36px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Открыть свойства',
+				},
+				{
+					text:'Открыть категории',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:454px;width:659px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

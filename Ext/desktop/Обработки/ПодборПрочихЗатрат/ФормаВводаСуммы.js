@@ -16,8 +16,11 @@
 			style: 'position:absolute;left:8px;top:8px;width:80px;height:21px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаУпр',
 			style: 'position:absolute;left:88px;top:8px;width:88px;height:21px;',
 		},
@@ -34,8 +37,11 @@
 			style: 'position:absolute;left:8px;top:33px;width:80px;height:21px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаРегл',
 			style: 'position:absolute;left:88px;top:33px;width:88px;height:21px;',
 		},
@@ -45,9 +51,13 @@
 			text: '',
 			style: 'position:absolute;left:180px;top:33px;width:52px;height:21px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:62px;width:241px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

@@ -10,17 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Данные по организациям',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:370px;top:33px;width:367px;height:497px;',
 			height: 497,width: 367,
@@ -31,6 +20,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Основные начисления',
+			style: 'position:absolute;left:0px;top:0px;width:367px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:367px;height:256px;',
@@ -150,6 +144,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительные начисления',
+			style: 'position:absolute;left:0px;top:285px;width:367px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:304px;width:367px;height:193px;',
 			height: 193,width: 367,
@@ -247,6 +246,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Начисления предприятия',
+			style: 'position:absolute;left:0px;top:0px;width:352px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:352px;height:476px;',
 			height: 476,width: 352,
@@ -311,6 +315,21 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Данные по организациям',
 				},
 			]
 		},

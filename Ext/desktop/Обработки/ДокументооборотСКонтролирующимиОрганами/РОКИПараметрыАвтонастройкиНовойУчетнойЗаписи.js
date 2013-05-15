@@ -10,44 +10,22 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:311px;width:456px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Продолжить',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Организация:',
-			style: 'position:absolute;left:8px;top:177px;width:93px;height:15px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
-			text: 'Укажите организацию, для которой необходимо настроить параметры учетной записи налогоплательщика, или задайте ее ИНН/КПП.
-Эти параметры необходимы для обращения к серверу Интернет, на котором хранятся настройки.',
+			text: 'Укажите организацию, для которой необходимо настроить параметры учетной записи налогоплательщика, или задайте ее ИНН/КПП.\r\nЭти параметры необходимы для обращения к серверу Интернет, на котором хранятся настройки.',
 			style: 'position:absolute;left:8px;top:103px;width:440px;height:57px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:95px;width:440px;height:3px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:23px;top:200px;width:425px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Параметры:',
-			style: 'position:absolute;left:8px;top:227px;width:93px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -75,12 +53,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:74px;top:0px;width:97px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:74px;top:25px;width:97px;height:19px;',
 		},
@@ -95,10 +75,57 @@
 			style: 'position:absolute;left:8px;top:60px;width:440px;height:32px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:168px;width:440px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:58px;width:440px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Возможность автоматической настройки параметров учетной записи доступна только абонентам специализированного оператора связи - компании "Такском".',
 			style: 'position:absolute;left:71px;top:12px;width:377px;height:40px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:8px;top:177px;width:93px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Параметры:',
+			style: 'position:absolute;left:8px;top:227px;width:93px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:311px;width:456px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Продолжить',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

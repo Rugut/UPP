@@ -146,8 +146,40 @@
 			},
 		},
 		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
+			height: 320,width: 160,
+			columns:
+			[
+				{
+					text:'Наименование',
+					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:677px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -178,34 +210,6 @@
 					text:'Групповое добавление',
 				},
 			]
-		},
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
-			height: 320,width: 160,
-			columns:
-			[
-				{
-					text:'Наименование',
-					width:'160',
-					dataIndex:'Наименование',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'Наименование',
-					},
-				]
-			},
 		},
 	]
 });

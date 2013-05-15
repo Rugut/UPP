@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:100px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:200px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:100px;top:393px;width:567px;height:19px;',
 		},
@@ -55,8 +59,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСчетФактура',
-			text: 'Счет-фактура:
-',
+			text: 'Счет-фактура:\r\n',
 			style: 'position:absolute;left:8px;top:104px;width:92px;height:19px;',
 		},
 		{
@@ -83,15 +86,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент1',
-			text: 'Контрагент:
-',
+			text: 'Контрагент:\r\n',
 			style: 'position:absolute;left:8px;top:80px;width:92px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
-			text: 'Договор:
-',
+			text: 'Договор:\r\n',
 			style: 'position:absolute;left:355px;top:80px;width:92px;height:19px;',
 		},
 		{
@@ -103,18 +104,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:100px;top:56px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:100px;top:80px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:447px;top:80px;width:220px;height:19px;',
 		},
@@ -127,12 +131,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:100px;top:369px;width:567px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетФактура',
 			style: 'position:absolute;left:100px;top:104px;width:567px;height:19px;',
 		},
@@ -149,12 +155,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСчетаФактуры',
 			style: 'position:absolute;left:138px;top:30px;width:112px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВходящего',
 			style: 'position:absolute;left:278px;top:30px;width:80px;height:19px;',
 		},
@@ -179,6 +188,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерВходящегоДокумента',
 			style: 'position:absolute;left:138px;top:6px;width:112px;height:19px;',
 		},
@@ -189,8 +199,10 @@
 			style: 'position:absolute;left:257px;top:6px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВходящегоДокумента',
 			style: 'position:absolute;left:278px;top:6px;width:80px;height:19px;',
 		},
@@ -201,8 +213,11 @@
 			style: 'position:absolute;left:6px;top:128px;width:132px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазницаСНДСКУменьшению',
 			style: 'position:absolute;left:138px;top:128px;width:120px;height:19px;',
 		},
@@ -213,8 +228,11 @@
 			style: 'position:absolute;left:278px;top:128px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазницаНДСКУменьшению',
 			style: 'position:absolute;left:418px;top:128px;width:120px;height:19px;',
 		},
@@ -227,6 +245,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПродавца',
 			style: 'position:absolute;left:138px;top:54px;width:513px;height:19px;',
 		},
@@ -239,12 +258,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННПродавца',
 			style: 'position:absolute;left:138px;top:79px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:138px;top:104px;width:80px;height:19px;',
 		},
@@ -257,6 +278,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПППродавца',
 			style: 'position:absolute;left:278px;top:79px;width:80px;height:19px;',
 		},
@@ -273,8 +295,11 @@
 			style: 'position:absolute;left:6px;top:152px;width:132px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазницаСНДСКДоплате',
 			style: 'position:absolute;left:138px;top:152px;width:120px;height:19px;',
 		},
@@ -285,8 +310,11 @@
 			style: 'position:absolute;left:278px;top:152px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазницаНДСКДоплате',
 			style: 'position:absolute;left:418px;top:152px;width:120px;height:19px;',
 		},
@@ -365,13 +393,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -453,13 +474,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьИтогиКДоплате',
 			text: 'К доплате по счету-фактуре: 118 000 руб., в том числе НДС: 18 000 руб. ',
@@ -469,5 +483,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

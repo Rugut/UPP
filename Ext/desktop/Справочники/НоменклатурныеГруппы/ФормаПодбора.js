@@ -56,8 +56,22 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Запрашивать',
+			style: 'position:absolute;left:8px;top:396px;width:468px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Количество',
+			style: 'position:absolute;left:14px;top:417px;width:82px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:484px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -65,11 +79,6 @@
 				},
 				'-',
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Количество',
-			style: 'position:absolute;left:14px;top:417px;width:82px;height:19px;',
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:350px;top:33px;width:80px;height:19px;',
 		},
@@ -30,12 +31,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:89px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПоказатьБазу',
+			text: 'Показать расчетную базу…',
+			style: 'position:absolute;left:8px;top:57px;width:254px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:438px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -53,6 +65,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:80px;width:438px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -70,12 +83,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПоказатьБазу',
-			text: 'Показать расчетную базу…',
-			style: 'position:absolute;left:8px;top:57px;width:254px;height:15px;',
 		},
 	]
 });

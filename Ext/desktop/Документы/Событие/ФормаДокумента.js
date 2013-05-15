@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:99px;top:33px;width:73px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:172px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:192px;top:33px;width:128px;height:19px;',
 		},
@@ -42,15 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:99px;top:354px;width:511px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -86,12 +83,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:99px;top:378px;width:511px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОбъекта',
 			style: 'position:absolute;left:422px;top:33px;width:188px;height:19px;',
 		},
@@ -112,20 +111,25 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоСобытия',
 			style: 'position:absolute;left:414px;top:6px;width:180px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ОкончаниеСобытия',
 			style: 'position:absolute;left:414px;top:30px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'СодержаниеСобытия',
 			style: 'position:absolute;left:90px;top:126px;width:504px;height:114px;',
 		},
@@ -137,6 +141,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеСобытия',
 			style: 'position:absolute;left:90px;top:102px;width:504px;height:19px;',
 		},
@@ -160,6 +165,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:84px;top:0px;width:220px;height:19px;',
 		},
@@ -172,18 +178,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактноеЛицо',
 			style: 'position:absolute;left:84px;top:48px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактнаяИнформацияКонтактногоЛица',
 			style: 'position:absolute;left:84px;top:72px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактнаяИнформацияКонтрагента',
 			style: 'position:absolute;left:84px;top:24px;width:220px;height:19px;',
 		},
@@ -196,12 +205,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактноеЛицо1',
 			style: 'position:absolute;left:84px;top:0px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактнаяИнформацияКонтактногоЛица1',
 			style: 'position:absolute;left:84px;top:24px;width:220px;height:19px;',
 		},
@@ -220,12 +231,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактноеЛицо2',
 			style: 'position:absolute;left:84px;top:0px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактнаяИнформацияКонтактногоЛица2',
 			style: 'position:absolute;left:84px;top:24px;width:220px;height:19px;',
 		},
@@ -259,6 +272,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИсточникИнформацииПриОбращении',
 			style: 'position:absolute;left:92px;top:0px;width:180px;height:19px;',
 		},
@@ -291,12 +305,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Важность',
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Основание',
 			style: 'position:absolute;left:90px;top:6px;width:504px;height:19px;',
 		},
@@ -309,6 +325,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Помещение',
 			style: 'position:absolute;left:414px;top:56px;width:180px;height:19px;',
 		},
@@ -321,6 +338,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Территория',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
@@ -333,6 +351,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:414px;top:81px;width:180px;height:19px;',
 		},
@@ -345,6 +364,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Предмет',
 			style: 'position:absolute;left:90px;top:31px;width:504px;height:19px;',
 		},
@@ -438,18 +458,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:252px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Работники',
+			style: 'position:absolute;left:6px;top:6px;width:252px;height:16px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:263px;top:22px;width:331px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Сторонние лица',
+			style: 'position:absolute;left:263px;top:6px;width:331px;height:16px;',
 		},
 					]
 				},
@@ -464,6 +480,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СостояниеСобытия',
 			style: 'position:absolute;left:422px;top:58px;width:188px;height:19px;',
 		},
@@ -476,8 +493,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаСобытия',
 			style: 'position:absolute;left:99px;top:58px;width:221px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

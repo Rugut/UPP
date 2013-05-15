@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Представление',
 			style: 'position:absolute;left:106px;top:109px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:106px;top:137px;width:220px;height:19px;',
 		},
@@ -62,6 +64,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Веб-страница',
+			style: 'position:absolute;left:8px;top:89px;width:318px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОбъект',
 			text: 'Объект:',
@@ -70,6 +77,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Объект',
 			style: 'position:absolute;left:106px;top:33px;width:220px;height:19px;',
 		},
@@ -82,8 +90,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Вид',
 			style: 'position:absolute;left:106px;top:61px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

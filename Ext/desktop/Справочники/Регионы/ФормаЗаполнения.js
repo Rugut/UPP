@@ -10,31 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:722px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Заполнить / Обновить список',
-				},
-				'-',
-				{
-					text:'Дополнить справочник',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:234px;top:32px;width:480px;height:385px;',
 			height: 385,width: 480,
@@ -94,8 +69,51 @@
 			style: 'position:absolute;left:8px;top:32px;width:220px;height:385px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРегионРодитель',
+			text: 'Родительский элемент для вставки:',
+			style: 'position:absolute;left:8px;top:8px;width:190px;height:18px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'РодительскийРегион',
+			style: 'position:absolute;left:199px;top:8px;width:515px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:722px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Заполнить / Обновить список',
+				},
+				'-',
+				{
+					text:'Дополнить справочник',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:422px;top:231px;width:155px;height:129px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -112,18 +130,6 @@
 					text:'Сбросить текущий уровень',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьРегионРодитель',
-			text: 'Родительский элемент для вставки:',
-			style: 'position:absolute;left:8px;top:8px;width:190px;height:18px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'РодительскийРегион',
-			style: 'position:absolute;left:199px;top:8px;width:515px;height:19px;',
 		},
 	]
 });

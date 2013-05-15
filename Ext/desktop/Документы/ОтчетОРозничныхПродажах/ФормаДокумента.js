@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:405px;width:570px;height:19px;',
 		},
@@ -71,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:94px;top:357px;width:220px;height:19px;',
 		},
@@ -83,6 +88,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:381px;width:220px;height:19px;',
 		},
@@ -95,20 +101,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаККМ',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКассаККМ',
-			text: 'ККМ:
-',
+			text: 'ККМ:\r\n',
 			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
 		{
@@ -126,6 +133,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:428px;top:57px;width:236px;height:19px;',
 		},
@@ -138,6 +146,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИнвентаризацияТоваровНаСкладе',
 			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
 		},
@@ -180,12 +189,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДвиженияДенежныхСредств',
 			style: 'position:absolute;left:428px;top:381px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:428px;top:356px;width:236px;height:20px;',
 		},
@@ -513,27 +524,17 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по инвентаризации',
-				},
-				{
-					text:'Заполнить из терминала сбора данных',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьВсего',
 			text: 'Всего,USD:',
 			style: 'position:absolute;left:480px;top:180px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:553px;top:180px;width:95px;height:17px;',
 		},
@@ -544,8 +545,11 @@
 			style: 'position:absolute;left:6px;top:180px;width:467px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:552px;top:201px;width:96px;height:17px;',
 		},
@@ -626,21 +630,20 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:48px;width:642px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоОплатаПлатежнымиКартами',
 			style: 'position:absolute;left:568px;top:180px;width:80px;height:17px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоТорговаяУступка',
 			style: 'position:absolute;left:568px;top:201px;width:80px;height:17px;',
 		},
@@ -653,6 +656,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорЭквайринга',
 			style: 'position:absolute;left:121px;top:6px;width:240px;height:19px;',
 		},
@@ -677,6 +681,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСЭквайрером',
 			style: 'position:absolute;left:566px;top:6px;width:80px;height:19px;',
 		},
@@ -784,21 +789,20 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоОплатаБанковскимиКредитами',
 			style: 'position:absolute;left:568px;top:180px;width:80px;height:17px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоСуммаКомиссии',
 			style: 'position:absolute;left:568px;top:201px;width:80px;height:17px;',
 		},
@@ -869,16 +873,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

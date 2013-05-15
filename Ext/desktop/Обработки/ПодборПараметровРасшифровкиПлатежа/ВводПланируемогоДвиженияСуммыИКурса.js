@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:203px;width:302px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
 			text: 'ДоговорКонтрагента',
@@ -35,28 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументПланируемогоДвиженияДС',
 			style: 'position:absolute;left:8px;top:151px;width:283px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Ручной выбор',
-			style: 'position:absolute;left:8px;top:130px;width:93px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Автоподбор',
-			style: 'position:absolute;left:136px;top:130px;width:98px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По сумме платежа',
-			style: 'position:absolute;left:8px;top:151px;width:118px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По сумме взаиморасчетов',
-			style: 'position:absolute;left:136px;top:151px;width:158px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Планируемое поступление денежных средств',
+			style: 'position:absolute;left:8px;top:109px;width:286px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -87,20 +56,29 @@
 			style: 'position:absolute;left:0px;top:54px;width:126px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
 		},
@@ -135,24 +113,86 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПлатежа1',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Ручной выбор',
+			style: 'position:absolute;left:8px;top:130px;width:93px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Автоподбор',
+			style: 'position:absolute;left:136px;top:130px;width:98px;height:15px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'По сумме платежа',
+			style: 'position:absolute;left:8px;top:151px;width:118px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По сумме взаиморасчетов',
+			style: 'position:absolute;left:136px;top:151px;width:158px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:203px;width:302px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:106px;top:58px;width:644px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:106px;top:108px;width:644px;height:19px;',
 		},
@@ -42,65 +44,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:106px;top:674px;width:644px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
-			items:
-			[
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				'-',
-				{
-					text:'Просмотр печатной формы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:668px;width:742px;height:4px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:701px;width:758px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Реквизиты отчета',
+			style: 'position:absolute;left:8px;top:85px;width:742px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -111,6 +67,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Периодичность',
 			style: 'position:absolute;left:106px;top:186px;width:116px;height:19px;',
 		},
@@ -125,8 +82,11 @@
 			style: 'position:absolute;left:480px;top:186px;width:27px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:511px;top:186px;width:59px;height:19px;',
 		},
@@ -139,6 +99,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:106px;top:33px;width:116px;height:19px;',
 		},
@@ -149,8 +110,10 @@
 			style: 'position:absolute;left:233px;top:33px;width:78px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИмпорта',
 			style: 'position:absolute;left:324px;top:33px;width:138px;height:19px;',
 		},
@@ -169,6 +132,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчета',
 			style: 'position:absolute;left:106px;top:160px;width:644px;height:19px;',
 		},
@@ -206,8 +170,11 @@
 			style: 'position:absolute;left:98px;top:0px;width:116px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:225px;top:0px;width:49px;height:19px;',
 		},
@@ -218,12 +185,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипПолучателя',
 			style: 'position:absolute;left:106px;top:134px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Получатель',
 			style: 'position:absolute;left:232px;top:134px;width:120px;height:19px;',
 		},
@@ -238,39 +207,6 @@
 					title:'',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:17px;width:742px;height:25px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:43px;width:742px;height:380px;',
@@ -326,12 +262,22 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Файлы комплекта',
+			style: 'position:absolute;left:0px;top:0px;width:742px;height:16px;',
+		},
 					]
 				},
 				{
 					title:'',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Электронное представление',
+			style: 'position:absolute;left:0px;top:2px;width:742px;height:16px;',
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:51px;width:742px;height:261px;',
@@ -346,6 +292,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеТекст',
 			style: 'position:absolute;left:0px;top:0px;width:742px;height:261px;',
 		},
@@ -365,6 +312,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайла',
 			style: 'position:absolute;left:98px;top:25px;width:644px;height:19px;',
 		},
@@ -380,20 +328,28 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Приложения к бухгалтерской отчетности',
+			style: 'position:absolute;left:0px;top:11px;width:742px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлПояснительнойЗаписки',
 			style: 'position:absolute;left:296px;top:36px;width:446px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлАудиторскогоЗаключения',
 			style: 'position:absolute;left:296px;top:64px;width:446px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлЗаявленияРевизионногоСоюза',
 			style: 'position:absolute;left:296px;top:92px;width:446px;height:19px;',
 		},
@@ -420,6 +376,68 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				'-',
+				{
+					text:'Просмотр печатной формы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:701px;width:758px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

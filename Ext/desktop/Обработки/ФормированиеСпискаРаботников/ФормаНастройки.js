@@ -33,8 +33,10 @@
 			style: 'position:absolute;left:8px;top:8px;width:101px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаАктуальности',
 			style: 'position:absolute;left:173px;top:8px;width:120px;height:19px;',
 		},
@@ -132,6 +134,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Отборы',
+			style: 'position:absolute;left:8px;top:56px;width:413px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:204px;width:413px;height:167px;',
 			height: 167,width: 413,
@@ -142,6 +149,11 @@
 					title:'Премии сотрудников организаций',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:413px;height:121px;',
@@ -353,6 +365,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОсновнойВидРасчета',
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
@@ -363,8 +376,10 @@
 			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:200px;top:49px;width:85px;height:19px;',
 		},
@@ -375,10 +390,17 @@
 			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -595,8 +617,10 @@
 			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала4',
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
@@ -607,8 +631,11 @@
 			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОплачиватьЧасовНачисления',
 			style: 'position:absolute;left:90px;top:73px;width:85px;height:19px;',
 		},
@@ -621,8 +648,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчетаВнутрисменный',
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 					]
 				},
@@ -639,6 +672,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительныйВидРасчета',
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
@@ -649,8 +683,10 @@
 			style: 'position:absolute;left:179px;top:49px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания1',
 			style: 'position:absolute;left:199px;top:49px;width:85px;height:19px;',
 		},
@@ -661,14 +697,17 @@
 			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала1',
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодВычета',
 			style: 'position:absolute;left:90px;top:74px;width:85px;height:19px;',
 		},
@@ -677,6 +716,11 @@
 			name: 'НадписьКодВычета',
 			text: 'Код вычета:',
 			style: 'position:absolute;left:6px;top:77px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -887,8 +931,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПодпадаетПодЕНВД',
 			style: 'position:absolute;left:139px;top:25px;width:80px;height:19px;',
 		},
@@ -899,8 +946,14 @@
 			style: 'position:absolute;left:6px;top:25px;width:128px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетДт',
 			style: 'position:absolute;left:139px;top:49px;width:80px;height:19px;',
 		},
@@ -923,8 +976,10 @@
 			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала2',
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
@@ -935,8 +990,10 @@
 			style: 'position:absolute;left:180px;top:49px;width:15px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания2',
 			style: 'position:absolute;left:200px;top:49px;width:85px;height:19px;',
 		},
@@ -949,8 +1006,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчетаЦелосменныйНевыход',
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -971,8 +1034,10 @@
 			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала3',
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
@@ -983,8 +1048,11 @@
 			style: 'position:absolute;left:6px;top:73px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОплачиватьЧасовНевыхода',
 			style: 'position:absolute;left:90px;top:73px;width:85px;height:19px;',
 		},
@@ -997,8 +1065,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчетаВнутрисменныйНевыход',
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 					]
 				},
@@ -1007,8 +1081,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВыхода',
 			style: 'position:absolute;left:147px;top:25px;width:90px;height:19px;',
 		},
@@ -1019,14 +1095,20 @@
 			style: 'position:absolute;left:6px;top:25px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЧасовПолуторных',
 			style: 'position:absolute;left:147px;top:49px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЧасовДвойных',
 			style: 'position:absolute;left:147px;top:73px;width:90px;height:19px;',
 		},
@@ -1042,6 +1124,11 @@
 			text: 'Часы в 2-ом размере:',
 			style: 'position:absolute;left:6px;top:73px;width:140px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+		},
 					]
 				},
 				{
@@ -1049,16 +1136,26 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПраздника',
 			style: 'position:absolute;left:166px;top:25px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ОтработаноЧасов',
 			style: 'position:absolute;left:166px;top:49px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -1079,6 +1176,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияВРЕглУчете',
 			text: 'Бух. учет:',
@@ -1087,6 +1189,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияВБухучете',
 			style: 'position:absolute;left:109px;top:51px;width:304px;height:19px;',
 		},
@@ -1097,8 +1200,10 @@
 			style: 'position:absolute;left:6px;top:25px;width:101px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИзменения',
 			style: 'position:absolute;left:109px;top:25px;width:95px;height:19px;',
 		},
@@ -1111,6 +1216,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияВБухучетеБольничногоЗаСчетРаботодателя',
 			style: 'position:absolute;left:109px;top:77px;width:304px;height:19px;',
 		},
@@ -1120,6 +1226,11 @@
 					title:'Ввод распределения основного заработка',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Распределение основного заработка',
+			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:49px;width:413px;height:118px;',
@@ -1175,25 +1286,17 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:25px;width:413px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Перенос задолженности',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьПериодВозникновения',
@@ -1203,6 +1306,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаПериодВозникновения',
 			style: 'position:absolute;left:207px;top:25px;width:206px;height:19px;',
 		},
@@ -1221,6 +1325,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОсновнойВидРасчета1',
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
@@ -1231,8 +1336,10 @@
 			style: 'position:absolute;left:180px;top:49px;width:17px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания3',
 			style: 'position:absolute;left:200px;top:49px;width:85px;height:19px;',
 		},
@@ -1243,10 +1350,17 @@
 			style: 'position:absolute;left:6px;top:49px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала5',
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -1457,6 +1571,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Распределение заработка',
+			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:413px;height:121px;',
 			height: 121,width: 413,
@@ -1493,19 +1612,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:22px;width:413px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1513,8 +1619,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазмерВзносов',
 			style: 'position:absolute;left:124px;top:36px;width:80px;height:19px;',
 		},
@@ -1523,6 +1632,11 @@
 			name: 'НадписьРазмерВзносов',
 			text: 'Взносы работодателя:',
 			style: 'position:absolute;left:6px;top:36px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:11px;width:413px;height:16px;',
 		},
 					]
 				},
@@ -1841,14 +1955,21 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:8px;width:407px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДатыНачала6',
 			text: 'Период с:',
 			style: 'position:absolute;left:12px;top:30px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала6',
 			style: 'position:absolute;left:102px;top:30px;width:85px;height:19px;',
 		},
@@ -1859,8 +1980,10 @@
 			style: 'position:absolute;left:192px;top:30px;width:15px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания4',
 			style: 'position:absolute;left:212px;top:30px;width:85px;height:19px;',
 		},
@@ -1873,6 +1996,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:102px;top:55px;width:195px;height:19px;',
 		},
@@ -1885,6 +2009,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:102px;top:80px;width:195px;height:19px;',
 		},
@@ -1897,6 +2022,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикРаботы',
 			style: 'position:absolute;left:102px;top:105px;width:195px;height:19px;',
 		},
@@ -1922,8 +2048,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаУволенных',
 			style: 'position:absolute;left:165px;top:0px;width:120px;height:19px;',
 		},
@@ -1936,5 +2064,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -10,8 +10,17 @@
 	items:
 	[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Не открывать это окно автоматически',
+			style: 'position:absolute;left:5px;top:430px;width:220px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:720px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -25,11 +34,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Не открывать это окно автоматически',
-			style: 'position:absolute;left:5px;top:430px;width:220px;height:15px;',
 		},
 	]
 });

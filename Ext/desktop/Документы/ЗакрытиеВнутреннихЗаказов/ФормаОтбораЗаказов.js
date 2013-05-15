@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:372px;width:595px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Перенести',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:30px;width:579px;height:120px;',
 			height: 120,width: 579,
@@ -41,8 +20,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеДатаОтгрузки',
 			style: 'position:absolute;left:250px;top:68px;width:102px;height:19px;',
 		},
@@ -81,8 +62,11 @@
 			style: 'position:absolute;left:356px;top:12px;width:160px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеПросроченоДнейОтгрузки',
 			style: 'position:absolute;left:310px;top:68px;width:42px;height:19px;',
 		},
@@ -164,13 +148,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -393,6 +370,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заказы',
+			style: 'position:absolute;left:8px;top:188px;width:579px;height:16px;',
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:408px;top:6px;width:179px;height:19px;',
 		},
@@ -403,14 +385,18 @@
 			style: 'position:absolute;left:317px;top:6px;width:87px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:76px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:180px;top:6px;width:80px;height:19px;',
 		},
@@ -435,6 +421,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаПричинаЗакрытия',
 			style: 'position:absolute;left:160px;top:164px;width:200px;height:19px;',
 		},
@@ -443,6 +430,31 @@
 			name: 'НадписьПричинаЗакрытия',
 			text: 'Причина закрытия заказов:',
 			style: 'position:absolute;left:8px;top:164px;width:148px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:372px;width:595px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Перенести',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

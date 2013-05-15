@@ -92,12 +92,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:93px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:193px;top:33px;width:120px;height:19px;',
 		},
@@ -147,6 +150,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:93px;top:371px;width:448px;height:19px;',
 		},
@@ -180,12 +184,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:93px;top:347px;width:448px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИзменений',
 			style: 'position:absolute;left:421px;top:33px;width:120px;height:19px;',
 		},
@@ -194,6 +201,11 @@
 			name: 'НадписьОтветственный1',
 			text: 'Дата изменений:',
 			style: 'position:absolute;left:331px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рабочие места',
+			style: 'position:absolute;left:8px;top:82px;width:533px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -215,6 +227,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:85px;top:0px;width:448px;height:19px;',
 		},
@@ -222,5 +235,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

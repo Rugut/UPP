@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:420px;width:502px;height:19px;',
 		},
@@ -282,6 +286,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:397px;width:502px;height:19px;',
 		},
@@ -294,6 +299,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -306,6 +312,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:376px;top:57px;width:220px;height:19px;',
 		},
@@ -316,8 +323,11 @@
 			style: 'position:absolute;left:360px;top:349px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПоФакту',
 			style: 'position:absolute;left:474px;top:349px;width:122px;height:19px;',
 		},
@@ -328,8 +338,11 @@
 			style: 'position:absolute;left:360px;top:373px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаПоУчету',
 			style: 'position:absolute;left:474px;top:373px;width:122px;height:19px;',
 		},
@@ -359,6 +372,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Товары',
+			style: 'position:absolute;left:8px;top:174px;width:588px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:102px;width:588px;height:48px;',
 			height: 48,width: 588,
@@ -372,6 +390,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
 			style: 'position:absolute;left:317px;top:0px;width:271px;height:19px;',
 		},
@@ -387,6 +406,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
 			style: 'position:absolute;left:317px;top:24px;width:271px;height:19px;',
 		},
@@ -404,9 +424,17 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Условия проведения инвентаризации',
+			style: 'position:absolute;left:8px;top:80px;width:588px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Учитывать серии',
 			style: 'position:absolute;left:8px;top:154px;width:109px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

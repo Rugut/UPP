@@ -74,13 +74,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:244px;width:588px;height:154px;',
 			height: 154,width: 588,
@@ -359,6 +352,22 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Список способов:',
+			style: 'position:absolute;left:8px;top:225px;width:588px;height:13px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:242px;width:513px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Рег. номер заявления в НО:',
@@ -31,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегНомДок',
 			style: 'position:absolute;left:202px;top:85px;width:303px;height:19px;',
 		},
@@ -43,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаОснОтз',
 			style: 'position:absolute;left:202px;top:185px;width:303px;height:19px;',
 		},
@@ -55,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаРегЭл',
 			style: 'position:absolute;left:202px;top:115px;width:303px;height:19px;',
 		},
@@ -67,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаРегБум',
 			style: 'position:absolute;left:202px;top:150px;width:303px;height:19px;',
 		},
@@ -79,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДокНП',
 			style: 'position:absolute;left:202px;top:35px;width:303px;height:19px;',
 		},
@@ -91,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодСтранПрод1',
 			style: 'position:absolute;left:202px;top:215px;width:303px;height:19px;',
 		},
@@ -103,6 +96,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПричЗам',
 			style: 'position:absolute;left:202px;top:10px;width:303px;height:19px;',
 		},
@@ -115,8 +109,26 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаДокНП',
 			style: 'position:absolute;left:202px;top:60px;width:303px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:242px;width:513px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

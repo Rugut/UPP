@@ -102,8 +102,23 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОписаниеОтчета',
+			text: '',
+			style: 'position:absolute;left:8px;top:342px;width:786px;height:40px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание',
+			style: 'position:absolute;left:8px;top:321px;width:786px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:802px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -154,12 +169,6 @@
 					text:'Восстановить исходные реквизиты',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписаниеОтчета',
-			text: '',
-			style: 'position:absolute;left:8px;top:342px;width:786px;height:40px;',
 		},
 	]
 });

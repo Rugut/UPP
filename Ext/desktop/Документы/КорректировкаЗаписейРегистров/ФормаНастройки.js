@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:340px;width:365px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:349px;height:324px;',
 			height: 324,width: 349,
@@ -40,22 +23,6 @@
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
-			items:
-			[
-				{
-					text:'Отметить все регистры',
-				},
-				{
-					text:'Снять отметку со всех регистров',
-				},
-				{
-					text:'Инвертировать отметки',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -65,22 +32,6 @@
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
-			items:
-			[
-				{
-					text:'Отметить все регистры',
-				},
-				{
-					text:'Снять отметку со всех регистров',
-				},
-				{
-					text:'Инвертировать отметки',
-				},
-			]
 		},
 					]
 				},
@@ -92,23 +43,28 @@
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
-			items:
-			[
-				{
-					text:'Отметить все регистры',
-				},
-				{
-					text:'Снять отметку со всех регистров',
-				},
-				{
-					text:'Инвертировать отметки',
+					]
 				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:340px;width:365px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
 				},
 			]
 		},

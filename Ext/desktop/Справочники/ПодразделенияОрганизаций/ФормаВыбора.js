@@ -47,8 +47,25 @@
 			},
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:233px;top:33px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Подразделения организации',
+			style: 'position:absolute;left:8px;top:33px;width:223px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:441px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -115,18 +132,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:233px;top:33px;width:200px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Подразделения организации',
-			style: 'position:absolute;left:8px;top:33px;width:223px;height:19px;text-align:left;',
 		},
 	]
 });

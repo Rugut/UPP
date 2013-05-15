@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:115px;top:33px;width:76px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:115px;top:58px;width:277px;height:43px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтрольноеЧисло',
 			style: 'position:absolute;left:308px;top:33px;width:33px;height:19px;',
 		},
@@ -54,12 +57,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:115px;top:108px;width:277px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -67,6 +75,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:135px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

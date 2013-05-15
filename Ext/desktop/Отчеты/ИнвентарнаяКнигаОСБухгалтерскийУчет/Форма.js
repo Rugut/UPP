@@ -10,38 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:674px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Организация:',
@@ -54,8 +22,10 @@
 			style: 'position:absolute;left:8px;top:34px;width:50px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:63px;top:34px;width:80px;height:19px;',
 		},
@@ -66,8 +36,10 @@
 			style: 'position:absolute;left:148px;top:34px;width:15px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:168px;top:34px;width:80px;height:19px;',
 		},
@@ -100,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:110px;top:82px;width:220px;height:19px;',
 		},
@@ -112,6 +85,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МОЛ',
 			style: 'position:absolute;left:110px;top:107px;width:220px;height:19px;',
 		},
@@ -124,14 +98,62 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:446px;top:82px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Отбор:',
+			style: 'position:absolute;left:8px;top:61px;width:322px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:446px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно:',
+			style: 'position:absolute;left:344px;top:61px;width:322px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:674px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

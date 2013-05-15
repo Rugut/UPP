@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:360px;top:33px;width:80px;height:19px;',
 		},
@@ -30,60 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:230px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:448px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -150,14 +100,26 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Продолжительность',
+			style: 'position:absolute;left:8px;top:60px;width:432px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Состав мероприятия',
+			style: 'position:absolute;left:8px;top:132px;width:432px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
 			text: 'Начало:',
 			style: 'position:absolute;left:14px;top:81px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:94px;top:81px;width:80px;height:19px;',
 		},
@@ -168,14 +130,98 @@
 			style: 'position:absolute;left:14px;top:105px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:94px;top:105px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:400px;width:448px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:448px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:148px;width:432px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -220,31 +266,6 @@
 				'-',
 				{
 					text:'Обновить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:400px;width:448px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
 				},
 			]
 		},

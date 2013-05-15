@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:90px;top:129px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РасчетныйДокумент',
 			style: 'position:absolute;left:429px;top:105px;width:224px;height:19px;',
 		},
@@ -90,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:421px;width:563px;height:19px;',
 		},
@@ -172,8 +180,10 @@
 			style: 'position:absolute;left:319px;top:33px;width:288px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВходящегоДокумента',
 			style: 'position:absolute;left:190px;top:57px;width:120px;height:19px;',
 		},
@@ -186,6 +196,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерВходящегоДокумента',
 			style: 'position:absolute;left:90px;top:57px;width:80px;height:19px;',
 		},
@@ -210,19 +221,6 @@
 					title:'Товары и услуги',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по расчетному документу',
-				},
-				{
-					text:'Добавить из расчетного документа',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:631px;height:163px;',
@@ -456,14 +454,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
 					]
 				},
 			]
@@ -483,6 +473,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:537px;top:377px;width:116px;height:17px;',
 		},
@@ -495,6 +486,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:537px;top:399px;width:116px;height:17px;',
 		},
@@ -504,8 +496,10 @@
 			style: 'position:absolute;left:319px;top:57px;width:169px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КорректируемыйПериод',
 			style: 'position:absolute;left:491px;top:57px;width:96px;height:19px;',
 		},
@@ -514,5 +508,8 @@
 			boxLabel: 'Использовать документ расчетов как счет-фактуру',
 			style: 'position:absolute;left:319px;top:129px;width:284px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

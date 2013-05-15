@@ -23,6 +23,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Строка',
 			style: 'position:absolute;left:0px;top:6px;width:350px;height:19px;',
 		},
@@ -43,11 +44,6 @@
 					items:
 					[
 		{
-			xtype: 'radio',
-			boxLabel: 'Переключатель',
-			style: 'position:absolute;left:8px;top:0px;width:342px;height:19px;',
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:24px;width:342px;height:19px;',
 		},
@@ -56,6 +52,17 @@
 			name: 'НадписьРазвернутыйОтвет',
 			text: 'Развернутый ответ:',
 			style: 'position:absolute;left:8px;top:48px;width:342px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Переключатель',
+			style: 'position:absolute;left:8px;top:0px;width:342px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -133,6 +140,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Регион',
 			style: 'position:absolute;left:94px;top:0px;width:250px;height:19px;',
 		},
@@ -145,6 +153,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Район',
 			style: 'position:absolute;left:94px;top:24px;width:250px;height:19px;',
 		},
@@ -157,6 +166,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Город',
 			style: 'position:absolute;left:94px;top:48px;width:250px;height:19px;',
 		},
@@ -169,6 +179,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаселенныйПункт',
 			style: 'position:absolute;left:94px;top:72px;width:250px;height:19px;',
 		},
@@ -181,6 +192,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Улица',
 			style: 'position:absolute;left:94px;top:96px;width:250px;height:19px;',
 		},
@@ -193,6 +205,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Дом',
 			style: 'position:absolute;left:94px;top:120px;width:35px;height:19px;',
 		},
@@ -205,6 +218,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Корпус',
 			style: 'position:absolute;left:192px;top:120px;width:35px;height:19px;',
 		},
@@ -217,12 +231,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Квартира',
 			style: 'position:absolute;left:309px;top:120px;width:35px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КомментарийАдрес',
 			style: 'position:absolute;left:94px;top:168px;width:250px;height:19px;',
 		},
@@ -241,6 +257,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Индекс',
 			style: 'position:absolute;left:94px;top:144px;width:60px;height:19px;',
 		},
@@ -259,6 +276,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле1',
 			style: 'position:absolute;left:79px;top:24px;width:140px;height:19px;',
 		},
@@ -271,6 +289,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле2',
 			style: 'position:absolute;left:79px;top:48px;width:140px;height:19px;',
 		},
@@ -283,6 +302,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле3',
 			style: 'position:absolute;left:79px;top:0px;width:124px;height:19px;',
 		},
@@ -295,12 +315,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле4',
 			style: 'position:absolute;left:287px;top:0px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КомментарийТелефон',
 			style: 'position:absolute;left:79px;top:72px;width:268px;height:19px;',
 		},
@@ -353,6 +375,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТекст',
 			style: 'position:absolute;left:0px;top:0px;width:350px;height:238px;',
 		},
@@ -365,6 +388,16 @@
 			name: 'Вопрос',
 			text: '',
 			style: 'position:absolute;left:8px;top:195px;width:350px;height:38px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Вопрос:',
+			style: 'position:absolute;left:8px;top:10px;width:350px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Ответ:',
+			style: 'position:absolute;left:8px;top:240px;width:350px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -424,5 +457,8 @@
 			text: 'Осталось:',
 			style: 'position:absolute;left:115px;top:515px;width:59px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

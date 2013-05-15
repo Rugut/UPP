@@ -33,12 +33,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:64px;top:30px;width:402px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОтчета',
 			style: 'position:absolute;left:64px;top:6px;width:96px;height:19px;',
 		},
@@ -89,33 +92,21 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:162px;width:264px;height:25px;',
-			items:
-			[
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:146px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидКонтролируемыхЗначений',
 			style: 'position:absolute;left:100px;top:75px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИспользованиеКонтролируемыхЗначений',
 			style: 'position:absolute;left:100px;top:99px;width:180px;height:19px;',
 		},
@@ -123,6 +114,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Выводить в разных колонках',
 			style: 'position:absolute;left:290px;top:167px;width:176px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Контролируемые значения',
+			style: 'position:absolute;left:6px;top:54px;width:460px;height:16px;',
 		},
 					]
 				},
@@ -168,20 +164,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:254px;top:24px;width:212px;height:283px;',
 			height: 283,width: 212,
@@ -217,19 +199,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:224px;top:117px;width:24px;height:109px;',
-			items:
-			[
-				{
-					text:' >',
-				},
-				{
-					text:' <',
-				},
-			]
 		},
 					]
 				},
@@ -310,13 +279,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -357,13 +319,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:29px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись37',
 			text: 'На дату:',
@@ -394,5 +349,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

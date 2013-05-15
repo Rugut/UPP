@@ -10,8 +10,24 @@
 	items:
 	[
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:9px;width:464px;height:243px;',
+			height: 243,width: 464,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:260px;width:480px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -23,18 +39,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:9px;width:464px;height:243px;',
-			height: 243,width: 464,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Страница1',
 				},
 			]
 		},

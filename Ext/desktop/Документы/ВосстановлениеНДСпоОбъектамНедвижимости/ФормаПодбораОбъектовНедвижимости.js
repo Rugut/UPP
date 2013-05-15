@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:278px;width:538px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сохранить',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:79px;width:522px;height:191px;',
 			height: 191,width: 522,
@@ -99,12 +82,40 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппыУчетаОС',
 			style: 'position:absolute;left:103px;top:7px;width:427px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать только объекты недвижимости, введенные в эксплуатацию в 2006 году',
+			style: 'position:absolute;left:8px;top:31px;width:440px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:278px;width:538px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сохранить',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:55px;width:522px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				'-',
@@ -123,11 +134,6 @@
 					text:'Очистить',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Отбирать только объекты недвижимости, введенные в эксплуатацию в 2006 году',
-			style: 'position:absolute;left:8px;top:31px;width:440px;height:19px;',
 		},
 	]
 });

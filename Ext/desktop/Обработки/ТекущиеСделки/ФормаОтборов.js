@@ -48,12 +48,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияКонтрагент',
 			style: 'position:absolute;left:111px;top:30px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораКонтрагент',
 			style: 'position:absolute;left:234px;top:30px;width:220px;height:19px;',
 		},
@@ -65,12 +67,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ВидСравненияПользователь',
 			style: 'position:absolute;left:111px;top:54px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораПользователь',
 			style: 'position:absolute;left:234px;top:54px;width:220px;height:19px;',
 		},
@@ -82,12 +86,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияСумма',
 			style: 'position:absolute;left:111px;top:78px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораСумма',
 			style: 'position:absolute;left:234px;top:78px;width:220px;height:19px;',
 		},
@@ -99,12 +107,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияТипДокумента',
 			style: 'position:absolute;left:111px;top:102px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораТипДокумента',
 			style: 'position:absolute;left:234px;top:102px;width:220px;height:19px;',
 		},
@@ -116,6 +126,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияДоговор',
 			style: 'position:absolute;left:111px;top:126px;width:118px;height:19px;',
 		},
@@ -127,12 +138,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияНомер',
 			style: 'position:absolute;left:111px;top:150px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораНомер',
 			style: 'position:absolute;left:234px;top:150px;width:220px;height:19px;',
 		},
@@ -144,12 +157,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияВидОперации',
 			style: 'position:absolute;left:111px;top:174px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораВидОперации',
 			style: 'position:absolute;left:234px;top:174px;width:220px;height:19px;',
 		},
@@ -161,30 +176,37 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСравненияДата',
 			style: 'position:absolute;left:111px;top:6px;width:118px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораДата',
 			style: 'position:absolute;left:234px;top:6px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДатаНач',
 			style: 'position:absolute;left:234px;top:6px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗначениеОтбораДатаКон',
 			style: 'position:absolute;left:348px;top:6px;width:106px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораДоговор',
 			style: 'position:absolute;left:234px;top:126px;width:220px;height:19px;',
 		},
@@ -192,5 +214,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

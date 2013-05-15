@@ -10,8 +10,83 @@
 	items:
 	[
 		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаНач',
+			style: 'position:absolute;left:62px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'На дату:',
+			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:416px;top:33px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Тип диаграммы:',
+			style: 'position:absolute;left:326px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:58px;width:588px;height:49px;',
+			height: 49,width: 588,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Поля',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиОрганизация',
+			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:128px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:0px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиВидВзаиморасчетов',
+			style: 'position:absolute;left:292px;top:23px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Вид взаиморасчетов:',
+			style: 'position:absolute;left:0px;top:23px;width:128px;height:18px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:130px;top:23px;width:160px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -72,73 +147,6 @@
 				},
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаНач',
-			style: 'position:absolute;left:62px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДатаНач',
-			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:33px;width:52px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:416px;top:33px;width:180px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись8',
-			text: 'Тип диаграммы:',
-			style: 'position:absolute;left:326px;top:33px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:58px;width:588px;height:49px;',
-			height: 49,width: 588,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Поля',
-					items:
-					[
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиОрганизация',
-			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Организация:',
-			style: 'position:absolute;left:0px;top:0px;width:128px;height:18px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:130px;top:0px;width:160px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиВидВзаиморасчетов',
-			style: 'position:absolute;left:292px;top:23px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Вид взаиморасчетов:',
-			style: 'position:absolute;left:0px;top:23px;width:128px;height:18px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:130px;top:23px;width:160px;height:19px;',
-		},
-					]
 				},
 			]
 		},

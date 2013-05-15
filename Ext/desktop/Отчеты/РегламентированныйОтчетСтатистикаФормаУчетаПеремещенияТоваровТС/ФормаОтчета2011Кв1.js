@@ -10,41 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			items:
-			[
-				{
-					text:'Выгрузить',
-				},
-				{
-					text:'Проверить выгрузку',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:395px;width:716px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: '_ИндикаторВнешнегоОтчета',
 			text: 'Внешний отчет',
@@ -70,12 +35,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:263px;top:3px;width:437px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Статус',
 			style: 'position:absolute;left:47px;top:3px;width:119px;height:19px;',
 		},
@@ -99,14 +66,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиФормаОтчета',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийФормаОтчета',
 			style: 'position:absolute;left:353px;top:5px;width:347px;height:19px;',
 		},
@@ -126,8 +97,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:89px;top:6px;width:80px;height:19px;',
 		},
@@ -148,8 +121,11 @@
 			style: 'position:absolute;left:188px;top:6px;width:116px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:319px;top:6px;width:49px;height:19px;',
 		},
@@ -179,6 +155,46 @@
 			name: 'НадписьДопСтроки',
 			text: 'Дополнительные строки:',
 			style: 'position:absolute;left:408px;top:343px;width:132px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выгрузить',
+				},
+				{
+					text:'Проверить выгрузку',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:395px;width:716px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

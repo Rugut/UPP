@@ -10,8 +10,118 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'НачалоПериода',
+			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:right;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'КонецПериода',
+			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаВыбораПериода',
+			text: '...',
+			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:364px;top:33px;width:267px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Сформировать отчет по стандартной форме',
+			style: 'position:absolute;left:8px;top:56px;width:247px;height:15px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:73px;width:623px;height:48px;',
+			height: 48,width: 623,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Дополнительные настройки',
+					items:
+					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отображать счета-фактуры на предв.оплату (до 2009 года)',
+			style: 'position:absolute;left:6px;top:6px;width:316px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Группировать по контрагентам',
+			style: 'position:absolute;left:399px;top:28px;width:183px;height:18px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отбирать по контрагенту',
+			style: 'position:absolute;left:6px;top:28px;width:149px;height:15px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'КонтрагентДляОтбора',
+			style: 'position:absolute;left:157px;top:28px;width:240px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Отображать только счета-фактуры на предв. оплату',
+			style: 'position:absolute;left:330px;top:6px;width:287px;height:15px;',
+		},
+					]
+				},
+				{
+					title:'Стандартные настройки',
+					items:
+					[
+		{
+			xtype: 'label',
+			name: 'ОписаниеСтандартныхНастроек',
+			text: 'Выбранный режим формирования отчета соответствует правилам ведения журнала учета выданных счетов-фактур и книги продаж. Для использования дополнительных возможностей отчета снимите установленный флажок "Сформировать отчет по стандартной форме".',
+			style: 'position:absolute;left:6px;top:0px;width:611px;height:48px;',
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -51,106 +161,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НачалоПериода',
-			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'по:',
-			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:right;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КонецПериода',
-			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаВыбораПериода',
-			text: '...',
-			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Организация:',
-			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:364px;top:33px;width:267px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Сформировать отчет по стандартной форме',
-			style: 'position:absolute;left:8px;top:56px;width:247px;height:15px;',
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:73px;width:623px;height:48px;',
-			height: 48,width: 623,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Дополнительные настройки',
-					items:
-					[
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Отображать счета-фактуры на предв.оплату (до 2009 года)',
-			style: 'position:absolute;left:6px;top:6px;width:316px;height:15px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Группировать по контрагентам',
-			style: 'position:absolute;left:399px;top:28px;width:183px;height:18px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Отбирать по контрагенту',
-			style: 'position:absolute;left:6px;top:28px;width:149px;height:15px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КонтрагентДляОтбора',
-			style: 'position:absolute;left:157px;top:28px;width:240px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Отображать только счета-фактуры на предв. оплату',
-			style: 'position:absolute;left:330px;top:6px;width:287px;height:15px;',
-		},
-					]
-				},
-				{
-					title:'Стандартные настройки',
-					items:
-					[
-		{
-			xtype: 'label',
-			name: 'ОписаниеСтандартныхНастроек',
-			text: 'Выбранный режим формирования отчета соответствует правилам ведения журнала учета выданных счетов-фактур и книги продаж. Для использования дополнительных возможностей отчета снимите установленный флажок "Сформировать отчет по стандартной форме".',
-			style: 'position:absolute;left:6px;top:0px;width:611px;height:48px;',
-		},
-					]
 				},
 			]
 		},

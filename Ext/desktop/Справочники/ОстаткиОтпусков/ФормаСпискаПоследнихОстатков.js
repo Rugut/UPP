@@ -10,24 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:477px;height:25px;',
-			items:
-			[
-				{
-					text:'Заполнить остатки отпусков',
-				},
-				'-',
-				{
-					text:'Настроить автоматическое заполнение...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:225px;height:256px;',
 			height: 256,width: 225,
@@ -136,6 +118,28 @@
 			name: 'Изменить',
 			text: 'Изменить',
 			style: 'position:absolute;left:239px;top:268px;width:101px;height:21px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:477px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить остатки отпусков',
+				},
+				'-',
+				{
+					text:'Настроить автоматическое заполнение...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

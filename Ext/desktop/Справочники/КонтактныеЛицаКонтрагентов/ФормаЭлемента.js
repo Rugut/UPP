@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:519px;top:85px;width:68px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:103px;top:84px;width:372px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:103px;top:58px;width:484px;height:19px;',
 		},
@@ -54,36 +57,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактноеЛицо',
 			style: 'position:absolute;left:103px;top:33px;width:484px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:388px;width:595px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -160,90 +136,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:565px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-					]
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Командная панель контактной информации редактировать в диалоге',
-				},
-				'-',
-				{
-					text:'Основная',
-				},
-				'-',
-				{
-					text:'Переместить в список КИ личная',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Работника контрагента',
+			style: 'position:absolute;left:6px;top:8px;width:565px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -391,6 +286,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Личная',
+			style: 'position:absolute;left:6px;top:120px;width:565px;height:16px;',
+		},
 					]
 				},
 				{
@@ -488,139 +388,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить интервал дат...',
-				},
-				{
-					text:'Поиск по номеру...',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Сортировка',
-					menu: [
-				{
-					text:'(Поля сортировки)',
-				},
-					]
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'На основании',
-					menu: [
-					]
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-					]
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить интервал дат...',
-				},
-				{
-					text:'Поиск по номеру...',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-				'-',
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'На основании',
-					menu: [
-				{
-					text:'(Ввести на основании)',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -628,8 +395,14 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Комментарий',
+			style: 'position:absolute;left:6px;top:82px;width:565px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:6px;top:104px;width:565px;height:103px;',
 		},
@@ -642,6 +415,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РольКонтактногоЛица',
 			style: 'position:absolute;left:135px;top:33px;width:436px;height:19px;',
 		},
@@ -654,6 +428,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:134px;top:7px;width:437px;height:19px;',
 		},
@@ -721,13 +496,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -780,25 +548,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -812,8 +561,42 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КомментарийПросмотр',
 			style: 'position:absolute;left:87px;top:361px;width:500px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:388px;width:595px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -12,12 +12,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:134px;top:84px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:394px;top:84px;width:40px;height:19px;',
 		},
@@ -36,6 +38,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:134px;top:32px;width:300px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:134px;top:56px;width:300px;height:19px;',
 		},
@@ -85,5 +89,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

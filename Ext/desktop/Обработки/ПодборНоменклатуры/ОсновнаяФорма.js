@@ -616,6 +616,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаЦены',
 			style: 'position:absolute;left:344px;top:73px;width:101px;height:19px;',
 		},
@@ -759,8 +760,10 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРасчетов',
 			style: 'position:absolute;left:336px;top:414px;width:120px;height:19px;',
 		},
@@ -769,6 +772,11 @@
 			name: 'НадписьДатаРасчетов',
 			text: 'Остатки и цены на:',
 			style: 'position:absolute;left:234px;top:414px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:379px;width:208px;height:64px;',
 		},
 		{
 			xtype: 'label',
@@ -783,6 +791,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПоиска',
 			style: 'position:absolute;left:193px;top:57px;width:262px;height:19px;',
 		},
@@ -796,13 +805,6 @@
 			name: 'ИнфНадписьПараметрыПодбора',
 			text: 'Здесь будет отображаться информация о способе подбора',
 			style: 'position:absolute;left:97px;top:79px;width:358px;height:24px;text-align:right;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -920,28 +922,15 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Изображение',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись2',
-			text: 'Номенклат.
-группа:',
+			text: 'Номенклат.\r\nгруппа:',
 			style: 'position:absolute;left:8px;top:28px;width:60px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:70px;top:32px;width:385px;height:19px;',
 		},
@@ -955,6 +944,31 @@
 			name: 'кнСправка',
 			text: '',
 			style: 'position:absolute;left:355px;top:8px;width:18px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Изображение',
+				},
+			]
 		},
 	]
 });

@@ -20,6 +20,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:125px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:166px;width:460px;height:90px;',
 			height: 90,width: 460,
@@ -62,14 +67,18 @@
 			style: 'position:absolute;left:12px;top:80px;width:156px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонца',
 			style: 'position:absolute;left:192px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:92px;top:6px;width:80px;height:19px;',
 		},
@@ -82,32 +91,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Периодичность',
 			style: 'position:absolute;left:92px;top:56px;width:160px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:141px;width:200px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все',
-				},
-			]
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:12px;top:100px;width:213px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;',
 		},
 					]
 				},
@@ -151,13 +147,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -279,13 +268,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -329,13 +311,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -361,5 +336,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

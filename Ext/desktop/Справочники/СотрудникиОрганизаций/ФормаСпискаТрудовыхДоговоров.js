@@ -119,8 +119,24 @@
 			},
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:97px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:707px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -240,17 +256,6 @@
 					text:'Печать',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:97px;top:33px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
 		},
 	]
 });

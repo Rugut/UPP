@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:390px;width:658px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Далее>>',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:41px;width:644px;height:167px;',
 			height: 167,width: 644,
@@ -37,8 +20,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеДатаОтгрузки',
 			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
 		},
@@ -77,8 +62,11 @@
 			style: 'position:absolute;left:364px;top:8px;width:160px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеПросроченоДнейОтгрузки',
 			style: 'position:absolute;left:318px;top:64px;width:42px;height:19px;',
 		},
@@ -87,8 +75,11 @@
 			style: 'position:absolute;left:150px;top:96px;width:210px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеПросроченоДнейОплаты',
 			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
 		},
@@ -109,8 +100,10 @@
 			style: 'position:absolute;left:16px;top:120px;width:132px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеДатаОплаты',
 			style: 'position:absolute;left:258px;top:120px;width:102px;height:19px;',
 		},
@@ -194,13 +187,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:406px;top:4px;width:219px;height:17px;',
@@ -220,14 +206,18 @@
 			style: 'position:absolute;left:325px;top:17px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:17px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:188px;top:17px;width:80px;height:19px;',
 		},
@@ -554,6 +544,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заказы',
+			style: 'position:absolute;left:8px;top:212px;width:644px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:390px;width:660px;height:25px;',
 			items:
@@ -594,19 +589,6 @@
 					title:'Товары',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
-			items:
-			[
-				{
-					text:'Обнулить столбец добавляемых в документ',
-				},
-				{
-					text:'Заполнить столбец добавляемых в документ',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
@@ -802,6 +784,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заполнение табличных частей',
+			style: 'position:absolute;left:8px;top:14px;width:644px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Товары',
 			style: 'position:absolute;left:23px;top:38px;width:102px;height:19px;',
@@ -815,6 +802,27 @@
 			name: 'НадписьЗаполнениеСкладов',
 			text: 'Приоритет складов:',
 			style: 'position:absolute;left:311px;top:61px;width:104px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:390px;width:658px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Далее>>',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:92px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:174px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:192px;top:33px;width:120px;height:19px;',
 		},
@@ -332,6 +335,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:422px;top:57px;width:240px;height:19px;',
 		},
@@ -344,6 +348,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:92px;top:343px;width:570px;height:19px;',
 		},
@@ -377,6 +382,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:92px;top:57px;width:220px;height:19px;',
 		},
@@ -384,6 +390,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:576px;top:33px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:8px;top:138px;width:654px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -394,6 +405,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Событие',
 			style: 'position:absolute;left:92px;top:83px;width:220px;height:19px;',
 		},
@@ -406,8 +418,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеРегл',
 			style: 'position:absolute;left:92px;top:108px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

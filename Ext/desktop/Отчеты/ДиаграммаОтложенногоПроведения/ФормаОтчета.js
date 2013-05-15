@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:947px;height:25px;',
-			items:
-			[
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДопроведено',
 			text: '',
@@ -66,6 +56,20 @@
 			name: 'НадписьТекущаяДатаОписание',
 			text: 'текущая дата',
 			style: 'position:absolute;left:223px;top:266px;width:118px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:947px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+			]
 		},
 	]
 });

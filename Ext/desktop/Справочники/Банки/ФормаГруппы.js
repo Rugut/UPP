@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:61px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:61px;width:220px;height:19px;',
 		},
@@ -42,12 +44,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:344px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:446px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -55,6 +62,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:88px;width:446px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

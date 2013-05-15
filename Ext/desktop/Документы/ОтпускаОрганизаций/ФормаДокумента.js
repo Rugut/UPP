@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:86px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:186px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:86px;top:57px;width:220px;height:19px;',
 		},
@@ -54,76 +58,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:86px;top:348px;width:548px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:642px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Открыть начисления',
-				},
-				'-',
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:268px;top:375px;width:374px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -289,20 +226,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:626px;height:24px;',
-			items:
-			[
-				{
-					text:'По графику отпусков',
-				},
-				'-',
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
@@ -311,8 +234,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:414px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:84px;width:626px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -426,9 +355,98 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:642px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Открыть начисления',
+				},
+				'-',
+				{
+					text:'Открыть свойства',
+				},
+				{
+					text:'Открыть категории',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:268px;top:375px;width:374px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:626px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'По графику отпусков',
+				},
+				'-',
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:375px;width:268px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				'-',

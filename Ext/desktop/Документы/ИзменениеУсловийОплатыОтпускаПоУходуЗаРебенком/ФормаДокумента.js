@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:477px;width:560px;height:19px;',
 		},
@@ -42,39 +44,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:436px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
-			items:
-			[
-				{
-					text:'Плановые начисления и удержания',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:251px;top:504px;width:413px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -85,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -99,8 +72,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияПособияДоПолутораЛет',
 			style: 'position:absolute;left:110px;top:26px;width:88px;height:19px;',
 		},
@@ -111,8 +86,11 @@
 			style: 'position:absolute;left:6px;top:50px;width:102px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоДетей',
 			style: 'position:absolute;left:110px;top:50px;width:88px;height:19px;',
 		},
@@ -122,8 +100,20 @@
 			style: 'position:absolute;left:207px;top:50px;width:237px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Пособие до 1,5 лет (за счет ФСС)',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Пособие до 3 лет (за счет работодателя)',
+			style: 'position:absolute;left:6px;top:169px;width:634px;height:16px;',
+		},
+		{
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияПособияДоТрехЛет',
 			style: 'position:absolute;left:110px;top:190px;width:88px;height:19px;',
 		},
@@ -506,41 +496,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:74px;top:156px;width:389px;height:24px;',
 			items:
 			[
@@ -846,41 +801,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:74px;top:156px;width:389px;height:24px;',
 			items:
 			[
@@ -948,8 +868,10 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИзменения',
 			style: 'position:absolute;left:152px;top:148px;width:90px;height:19px;',
 		},
@@ -962,18 +884,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснование',
 			style: 'position:absolute;left:118px;top:101px;width:538px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Изменить оплату с:',
-			style: 'position:absolute;left:22px;top:125px;width:130px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Прекратить отпуск с:',
-			style: 'position:absolute;left:22px;top:148px;width:130px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -984,6 +897,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:436px;top:33px;width:80px;height:19px;',
 		},
@@ -994,14 +908,23 @@
 			style: 'position:absolute;left:520px;top:33px;width:15px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:536px;top:33px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Отпуск',
+			style: 'position:absolute;left:8px;top:80px;width:648px;height:16px;',
+		},
+		{
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИзменения1',
 			style: 'position:absolute;left:152px;top:125px;width:90px;height:19px;',
 		},
@@ -1059,8 +982,61 @@
 			]
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Изменить оплату с:',
+			style: 'position:absolute;left:22px;top:125px;width:130px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Прекратить отпуск с:',
+			style: 'position:absolute;left:22px;top:148px;width:130px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Плановые начисления и удержания',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:251px;top:504px;width:413px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:504px;width:251px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

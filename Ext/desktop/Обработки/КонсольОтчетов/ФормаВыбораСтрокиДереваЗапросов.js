@@ -43,5 +43,8 @@
 			text: 'Перенести на верхний уровень',
 			style: 'position:absolute;left:6px;top:6px;width:324px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

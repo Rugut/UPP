@@ -40,37 +40,6 @@
 			style: 'position:absolute;left:8px;top:127px;width:97px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
-			items:
-			[
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:379px;width:810px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НалоговыйОрган',
 			text: '',
@@ -181,6 +150,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Файлы документа',
+			style: 'position:absolute;left:8px;top:203px;width:794px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:794px;height:44px;',
 			height: 44,width: 794,
@@ -213,8 +187,45 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДокумента',
 			style: 'position:absolute;left:111px;top:77px;width:691px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:379px;width:810px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

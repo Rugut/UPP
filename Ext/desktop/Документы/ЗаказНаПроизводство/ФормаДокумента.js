@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:371px;width:559px;height:19px;',
 		},
@@ -460,6 +464,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:35px;width:223px;height:19px;',
 		},
@@ -469,14 +474,17 @@
 			style: 'position:absolute;left:9px;top:60px;width:78px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВремяНапоминания',
 			style: 'position:absolute;left:94px;top:60px;width:126px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:94px;top:10px;width:223px;height:19px;',
 		},
@@ -493,6 +501,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:450px;top:56px;width:199px;height:19px;',
 		},
@@ -505,6 +514,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
@@ -515,8 +525,10 @@
 			style: 'position:absolute;left:13px;top:106px;width:71px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсполнения',
 			style: 'position:absolute;left:90px;top:106px;width:80px;height:19px;',
 		},
@@ -554,6 +566,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОсновнойЗаказНаПроизводство',
 			style: 'position:absolute;left:450px;top:81px;width:199px;height:19px;',
 		},
@@ -564,10 +577,20 @@
 			style: 'position:absolute;left:13px;top:82px;width:71px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаЗапуска',
 			style: 'position:absolute;left:90px;top:81px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:73px;width:168px;height:59px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

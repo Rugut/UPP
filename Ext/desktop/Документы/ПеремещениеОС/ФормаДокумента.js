@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:87px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:204px;top:33px;width:120px;height:19px;',
 		},
@@ -36,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:56px;width:228px;height:19px;',
 		},
@@ -48,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:412px;width:561px;height:19px;',
 		},
@@ -60,6 +65,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:389px;width:561px;height:19px;',
 		},
@@ -72,12 +78,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:104px;top:99px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:429px;top:99px;width:228px;height:19px;',
 		},
@@ -90,24 +98,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МОЛ',
 			style: 'position:absolute;left:104px;top:122px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МОЛОрганизации',
 			style: 'position:absolute;left:429px;top:122px;width:228px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:184px;width:649px;height:24px;',
-			items:
-			[
-				{
-					text:'По наименованию',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -156,8 +156,98 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:183px;top:33px;width:20px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:429px;top:33px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:508px;top:33px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:338px;top:33px;width:86px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Данные для управленческого учета:',
+			style: 'position:absolute;left:8px;top:79px;width:319px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства:',
+			style: 'position:absolute;left:8px;top:169px;width:649px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Подразделение:',
+			style: 'position:absolute;left:338px;top:99px;width:86px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись11',
+			text: 'МОЛ:',
+			style: 'position:absolute;left:338px;top:122px;width:86px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Данные для бухгалтерского учета:',
+			style: 'position:absolute;left:338px;top:79px;width:319px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытие',
+			text: 'Событие:',
+			style: 'position:absolute;left:18px;top:145px;width:79px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Событие',
+			style: 'position:absolute;left:104px;top:145px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие:',
+			style: 'position:absolute;left:338px;top:145px;width:86px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СобытиеРегл',
+			style: 'position:absolute;left:429px;top:145px;width:228px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:184px;width:649px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -184,6 +274,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:665px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -205,64 +296,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДата',
-			text: 'от:',
-			style: 'position:absolute;left:183px;top:33px;width:20px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Флажок',
-			style: 'position:absolute;left:429px;top:33px;width:76px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Флажок',
-			style: 'position:absolute;left:508px;top:33px;width:71px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтраженияВУчете',
-			text: 'Отразить в:',
-			style: 'position:absolute;left:338px;top:33px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись10',
-			text: 'Подразделение:',
-			style: 'position:absolute;left:338px;top:99px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись11',
-			text: 'МОЛ:',
-			style: 'position:absolute;left:338px;top:122px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСобытие',
-			text: 'Событие:',
-			style: 'position:absolute;left:18px;top:145px;width:79px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Событие',
-			style: 'position:absolute;left:104px;top:145px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСобытиеРегл',
-			text: 'Событие:',
-			style: 'position:absolute;left:338px;top:145px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СобытиеРегл',
-			style: 'position:absolute;left:429px;top:145px;width:228px;height:19px;',
 		},
 	]
 });

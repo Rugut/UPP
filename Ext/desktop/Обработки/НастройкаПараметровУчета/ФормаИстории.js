@@ -10,20 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:415px;height:227px;',
 			height: 227,width: 415,
@@ -44,22 +30,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:37px;top:128px;width:145px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:268px;width:431px;height:24px;',
 			items:
 			[
@@ -72,6 +42,41 @@
 				'-',
 				{
 					text:'Закрыть',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:37px;top:128px;width:145px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Вывести список...',
 				},
 			]
 		},

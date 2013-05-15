@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:197px;top:32px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:96px;top:56px;width:410px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:291px;width:409px;height:19px;',
 		},
@@ -66,75 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:97px;top:267px;width:409px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:514px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-					]
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Провести',
-				},
-				{
-					text:'Отмена проведения',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -173,21 +112,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:47px;width:497px;height:26px;',
-			items:
-			[
-				{
-					text:'Поиск по штрихкоду',
-				},
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Тип цен:',
@@ -196,6 +120,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СписокТиповЦен',
 			style: 'position:absolute;left:88px;top:0px;width:409px;height:19px;',
 		},
@@ -269,6 +194,77 @@
 			style: 'position:absolute;left:0px;top:25px;width:337px;height:15px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:514px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+					]
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				{
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка',
 				},
 			]
 		},

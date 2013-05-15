@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:51px;top:33px;width:127px;height:19px;',
 		},
@@ -28,17 +29,12 @@
 			style: 'position:absolute;left:183px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:204px;top:33px;width:163px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:62px;width:384px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -141,8 +137,46 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:7px;top:244px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:95px;top:244px;width:636px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:269px;width:73px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:95px;top:269px;width:636px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:62px;width:384px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:739px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -163,6 +197,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:296px;width:739px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -184,30 +219,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтветственный',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:7px;top:244px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:95px;top:244px;width:636px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКомментарий',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:269px;width:73px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:95px;top:269px;width:636px;height:19px;',
 		},
 	]
 });

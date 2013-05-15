@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:294px;width:530px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Аутентификация Windows:',
@@ -48,39 +31,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:216px;top:21px;width:49px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				{
-					text:'СнятьФлажки',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:473px;top:147px;width:49px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				{
-					text:'СнятьФлажки',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:473px;top:21px;width:49px;height:24px;',
 			items:
 			[
 				{
@@ -179,8 +130,78 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Роли',
+			style: 'position:absolute;left:8px;top:5px;width:257px;height:16px;',
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:23px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Интерфейсы',
+			style: 'position:absolute;left:270px;top:5px;width:252px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Языки',
+			style: 'position:absolute;left:270px;top:131px;width:252px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:294px;width:530px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:216px;top:21px;width:49px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				{
+					text:'СнятьФлажки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:473px;top:21px;width:49px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				{
+					text:'СнятьФлажки',
+				},
+			]
 		},
 	]
 });

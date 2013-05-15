@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:39px;width:309px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипПоказателя',
 			style: 'position:absolute;left:166px;top:104px;width:230px;height:19px;',
 		},
@@ -42,81 +44,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВозможностьИзменения',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:413px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:368px;width:413px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Основное',
+			style: 'position:absolute;left:8px;top:88px;width:397px;height:99px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидПоказателя',
 			style: 'position:absolute;left:166px;top:132px;width:230px;height:19px;',
 		},
@@ -129,6 +69,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Идентификатор',
 			style: 'position:absolute;left:96px;top:65px;width:309px;height:19px;',
 		},
@@ -156,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФактическийПоказатель',
 			style: 'position:absolute;left:28px;top:122px;width:336px;height:19px;',
 		},
@@ -164,16 +106,6 @@
 			name: 'НадписьРасшифровкаПоказательЭффективности',
 			text: '',
 			style: 'position:absolute;left:34px;top:30px;width:355px;height:21px;text-align:left;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'фактический показатель',
-			style: 'position:absolute;left:12px;top:77px;width:231px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'плановый показатель, соответствует фактическому показателю:',
-			style: 'position:absolute;left:12px;top:99px;width:352px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -186,6 +118,22 @@
 			name: 'Надпись1',
 			text: 'В отчёте "Анализ показателей" отражается как:',
 			style: 'position:absolute;left:6px;top:55px;width:253px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'фактический показатель',
+			style: 'position:absolute;left:12px;top:77px;width:231px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'плановый показатель, соответствует фактическому показателю:',
+			style: 'position:absolute;left:12px;top:99px;width:352px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -265,13 +213,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:383px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -304,6 +245,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:56px;top:6px;width:333px;height:19px;',
 		},
@@ -332,6 +274,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособРасчетаСуммы',
 			style: 'position:absolute;left:166px;top:132px;width:230px;height:19px;',
 		},
@@ -344,6 +287,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммируемыйПоказатель',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
@@ -356,6 +300,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСтажа',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
@@ -364,6 +309,80 @@
 			name: 'НадписьСтажРаботы',
 			text: 'Стаж работы с момента приема на работу',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:413px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:368px;width:413px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

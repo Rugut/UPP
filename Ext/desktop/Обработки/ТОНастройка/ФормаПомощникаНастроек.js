@@ -57,24 +57,35 @@
 			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Дисплей покупателя',
-			style: 'position:absolute;left:203px;top:154px;width:177px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:286px;width:460px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'ККМ в режиме Offline',
-			style: 'position:absolute;left:430px;top:80px;width:177px;height:19px;',
+			xtype: 'label',
+			name: 'НадписьПоддерживаемоеТО',
+			text: 'Со списком поддерживаемого ТО можно ознакомиться на сайте:',
+			style: 'position:absolute;left:203px;top:307px;width:423px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'ККМ в режиме Online',
-			style: 'position:absolute;left:430px;top:117px;width:177px;height:19px;',
+			xtype: 'label',
+			name: 'НадписьСсылкаПоддерживаемоеТО',
+			text: '',
+			style: 'position:absolute;left:203px;top:326px;width:423px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Сканер штрихкода',
 			style: 'position:absolute;left:203px;top:43px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Фискальный регистратор',
+			style: 'position:absolute;left:203px;top:80px;width:177px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -83,8 +94,13 @@
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Фискальный регистратор',
-			style: 'position:absolute;left:203px;top:80px;width:177px;height:19px;',
+			boxLabel: 'Дисплей покупателя',
+			style: 'position:absolute;left:203px;top:154px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Считыватель магнитных карт',
+			style: 'position:absolute;left:203px;top:191px;width:177px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -98,8 +114,13 @@
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Считыватель RFID меток',
-			style: 'position:absolute;left:430px;top:186px;width:177px;height:19px;',
+			boxLabel: 'ККМ в режиме Offline',
+			style: 'position:absolute;left:430px;top:80px;width:177px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'ККМ в режиме Online',
+			style: 'position:absolute;left:430px;top:117px;width:177px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -108,20 +129,10 @@
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Считыватель магнитных карт',
-			style: 'position:absolute;left:203px;top:191px;width:177px;height:19px;',
+			boxLabel: 'Считыватель RFID меток',
+			style: 'position:absolute;left:430px;top:186px;width:177px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьПоддерживаемоеТО',
-			text: 'Со списком поддерживаемого ТО можно ознакомиться на сайте:',
-			style: 'position:absolute;left:203px;top:307px;width:423px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСсылкаПоддерживаемоеТО',
-			text: '',
-			style: 'position:absolute;left:203px;top:326px;width:423px;height:19px;',
+			]
 		},
 					]
 				},
@@ -144,6 +155,11 @@
 			xtype: 'radio',
 			boxLabel: 'Добавить новую обработку обслуживания',
 			style: 'position:absolute;left:166px;top:41px;width:307px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:250px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -191,6 +207,10 @@
 			style: 'position:absolute;left:183px;top:89px;width:202px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Из каталога',
 			style: 'position:absolute;left:390px;top:89px;width:108px;height:19px;',
@@ -199,6 +219,8 @@
 			xtype: 'radio',
 			boxLabel: 'С сайта',
 			style: 'position:absolute;left:503px;top:89px;width:108px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -209,6 +231,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Каталог',
 			style: 'position:absolute;left:256px;top:41px;width:370px;height:19px;',
 		},
@@ -250,11 +273,14 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:214px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись133',
-			text: 'Если список пуст, то это значит, что: 
-- В указанном каталоге не обнаружены обработки обслуживания, совместимые с текущей версией конфигурации - выберите другой каталог;
-- Последние версии данных обработок уже загружены - вернитесь назад и выберите обработку из списка добавленных.',
+			text: 'Если список пуст, то это значит, что: \r\n- В указанном каталоге не обнаружены обработки обслуживания, совместимые с текущей версией конфигурации - выберите другой каталог;\r\n- Последние версии данных обработок уже загружены - вернитесь назад и выберите обработку из списка добавленных.',
 			style: 'position:absolute;left:203px;top:235px;width:423px;height:67px;',
 		},
 		{
@@ -314,6 +340,11 @@
 			style: 'position:absolute;left:166px;top:41px;width:228px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:283px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись131',
 			text: 'Если необходимое устройство отсутствует в списке уже созданных или список пуст, то Вы можете самостоятельно добавить новое устройство, выбрав его из списка поддерживаемых моделей',
@@ -365,6 +396,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаККМ',
 			style: 'position:absolute;left:232px;top:259px;width:394px;height:19px;',
 		},
@@ -411,6 +443,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:251px;top:302px;width:375px;height:19px;',
 		},
@@ -429,6 +462,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаККМДобавлениеНовогоУстройства',
 			style: 'position:absolute;left:251px;top:326px;width:375px;height:19px;',
 		},
@@ -456,5 +490,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

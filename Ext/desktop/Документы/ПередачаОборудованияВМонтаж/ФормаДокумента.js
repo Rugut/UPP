@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -42,19 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:148px;width:644px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -185,7 +178,165 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:388px;width:660px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Объект строительства:',
+			style: 'position:absolute;left:8px;top:78px;width:84px;height:27px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ОбъектВнеоборотныхАктивов',
+			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Статья затрат:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СтатьяЗатрат',
+			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Склад:',
+			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Склад',
+			style: 'position:absolute;left:416px;top:57px;width:236px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Отражать:',
+			style: 'position:absolute;left:334px;top:33px;width:79px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:416px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:494px;top:33px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'налог. учете',
+			style: 'position:absolute;left:572px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаБУОбъектаСтроительства',
+			text: 'Счет БУ:',
+			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СчетУчетаБУОбъектаСтроительства',
+			style: 'position:absolute;left:416px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетУчетаНУОбъектаСтроительства',
+			text: 'Счет НУ:',
+			style: 'position:absolute;left:334px;top:105px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СчетУчетаНУОбъектаСтроительства',
+			style: 'position:absolute;left:416px;top:105px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:337px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:94px;top:337px;width:558px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментари��:',
+			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:94px;top:361px;width:558px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Оборудование',
+			style: 'position:absolute;left:8px;top:132px;width:644px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:148px;width:644px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -220,136 +371,6 @@
 					text:'Показать/скрыть счета учета',
 				},
 			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:388px;width:660px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Объект строительства:',
-			style: 'position:absolute;left:8px;top:78px;width:84px;height:27px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ОбъектВнеоборотныхАктивов',
-			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись5',
-			text: 'Статья затрат:',
-			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СтатьяЗатрат',
-			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'Склад:',
-			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Склад',
-			style: 'position:absolute;left:416px;top:57px;width:236px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись7',
-			text: 'Отражать:',
-			style: 'position:absolute;left:334px;top:33px;width:79px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'упр. учете',
-			style: 'position:absolute;left:416px;top:33px;width:72px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'бух. учете',
-			style: 'position:absolute;left:494px;top:33px;width:72px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'налог. учете',
-			style: 'position:absolute;left:572px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСчетУчетаБУОбъектаСтроительства',
-			text: 'Счет БУ:',
-			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СчетУчетаБУОбъектаСтроительства',
-			style: 'position:absolute;left:416px;top:81px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСчетУчетаНУОбъектаСтроительства',
-			text: 'Счет НУ:',
-			style: 'position:absolute;left:334px;top:105px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СчетУчетаНУОбъектаСтроительства',
-			style: 'position:absolute;left:416px;top:105px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтветственный',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:337px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:94px;top:337px;width:558px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКомментарий',
-			text: 'Комментари��:',
-			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:94px;top:361px;width:558px;height:19px;',
 		},
 	]
 });

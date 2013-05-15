@@ -129,6 +129,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнения для текущей версии конфигурации',
+			style: 'position:absolute;left:0px;top:15px;width:423px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:38px;width:423px;height:24px;',
 			height: 24,width: 423,
@@ -158,6 +163,11 @@
 			name: 'КнопкаПерейтиКФормеОбновленияКонфигурации',
 			text: 'Перейти к обновлению ...',
 			style: 'position:absolute;left:8px;top:83px;width:423px;height:26px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Обновление конфигурации',
+			style: 'position:absolute;left:8px;top:12px;width:423px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -219,5 +229,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

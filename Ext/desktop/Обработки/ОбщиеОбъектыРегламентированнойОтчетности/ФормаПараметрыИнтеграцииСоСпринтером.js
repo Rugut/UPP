@@ -10,33 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:103px;width:598px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Прочитать данные с настроечной дискеты',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодАбонента',
 			style: 'position:absolute;left:189px;top:11px;width:64px;height:19px;',
 		},
@@ -61,14 +37,50 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогОтправкиДанныхОтчетности',
 			style: 'position:absolute;left:189px;top:76px;width:401px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогПрограммыЭлектроннойПочты',
 			style: 'position:absolute;left:189px;top:53px;width:401px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Каталоги',
+			style: 'position:absolute;left:8px;top:35px;width:582px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:103px;width:598px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Прочитать данные с настроечной дискеты',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:328px;width:548px;height:19px;',
 		},
@@ -49,16 +50,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить план',
 				},
 			]
 		},
@@ -259,8 +250,11 @@
 			style: 'position:absolute;left:492px;top:284px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:284px;width:80px;height:17px;',
 		},
@@ -271,8 +265,11 @@
 			style: 'position:absolute;left:492px;top:306px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:306px;width:80px;height:17px;',
 		},
@@ -308,6 +305,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Состав плана',
+			style: 'position:absolute;left:8px;top:131px;width:636px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -322,12 +324,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -338,8 +343,10 @@
 			style: 'position:absolute;left:336px;top:81px;width:226px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПланирования',
 			style: 'position:absolute;left:564px;top:81px;width:80px;height:19px;',
 		},
@@ -352,6 +359,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -364,6 +372,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -376,6 +385,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:424px;top:33px;width:220px;height:19px;',
 		},
@@ -388,6 +398,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
@@ -400,8 +411,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодичностьДетализации',
 			style: 'position:absolute;left:493px;top:57px;width:151px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить план',
+				},
+			]
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:280px;width:444px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
 		},
@@ -40,20 +42,13 @@
 			style: 'position:absolute;left:334px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:422px;top:57px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:124px;width:534px;height:24px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -102,8 +97,81 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Номер',
+			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'Дата',
+			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Месяц:',
+			style: 'position:absolute;left:334px;top:33px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Период',
+			style: 'position:absolute;left:422px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:108px;width:534px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:534px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:550px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -141,6 +209,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:307px;width:550px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -158,54 +227,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНомер',
-			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Номер',
-			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Дата',
-			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДата',
-			text: 'от:',
-			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериод',
-			text: 'Месяц:',
-			style: 'position:absolute;left:334px;top:33px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Период',
-			style: 'position:absolute;left:422px;top:33px;width:120px;height:19px;',
 		},
 	]
 });

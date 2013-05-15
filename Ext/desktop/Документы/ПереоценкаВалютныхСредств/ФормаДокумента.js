@@ -12,12 +12,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:149px;height:19px;',
 		},
@@ -30,6 +33,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:366px;width:249px;height:19px;',
 		},
@@ -42,6 +46,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:318px;width:249px;height:19px;',
 		},
@@ -64,40 +69,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Переоценивать взаиморасчеты с подотчетными лицами',
 			style: 'position:absolute;left:20px;top:162px;width:325px;height:16px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -145,6 +116,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:342px;width:249px;height:19px;',
 		},
@@ -156,8 +128,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:228px;width:249px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Управленческий учет ',
+			style: 'position:absolute;left:8px;top:57px;width:337px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Регламентированный учет ',
+			style: 'position:absolute;left:8px;top:186px;width:337px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -166,14 +149,9 @@
 			style: 'position:absolute;left:8px;top:228px;width:77px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Отражать в управленческом учете',
-			style: 'position:absolute;left:8px;top:78px;width:200px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Отражать в бухгалтерском учете',
-			style: 'position:absolute;left:8px;top:207px;width:189px;height:16px;',
+			xtype: 'fieldset',
+			title: 'Прочее ',
+			style: 'position:absolute;left:8px;top:297px;width:337px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -184,6 +162,60 @@
 			xtype: 'checkbox',
 			boxLabel: 'Переоценка расчетов в условных единицах',
 			style: 'position:absolute;left:96px;top:273px;width:249px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Отражать в управленческом учете',
+			style: 'position:absolute;left:8px;top:78px;width:200px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отражать в бухгалтерском учете',
+			style: 'position:absolute;left:8px;top:207px;width:189px;height:16px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
 		},
 	]
 });

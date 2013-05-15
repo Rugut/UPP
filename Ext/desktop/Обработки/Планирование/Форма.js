@@ -10,41 +10,18 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:790px;top:2px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон',
 			style: 'position:absolute;left:890px;top:2px;width:80px;height:19px;',
 		},
@@ -250,22 +227,16 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:242px;top:22px;width:734px;height:24px;',
-			items:
-			[
-				{
-					text:'Редактировать',
-				},
-				'-',
-				'-',
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаПериодичность',
 			style: 'position:absolute;left:882px;top:24px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Состав плана',
+			style: 'position:absolute;left:242px;top:6px;width:734px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -405,18 +376,14 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:230px;height:24px;',
-			items:
-			[
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Обновить',
-				},
-				'-',
-			]
+			xtype: 'fieldset',
+			title: 'Потребности',
+			style: 'position:absolute;left:242px;top:241px;width:734px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Планы',
+			style: 'position:absolute;left:6px;top:6px;width:230px;height:16px;',
 		},
 					]
 				},
@@ -434,16 +401,6 @@
 					title:'Плановые задания',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
-			items:
-			[
-				{
-					text:'(История отборов)',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:956px;height:451px;',
@@ -587,24 +544,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
-			items:
-			[
-				{
-					text:'Свернуть все',
-				},
-				{
-					text:'Развернуть все',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьЗагрузкаОписание',
 			text: '- загрузка',
@@ -651,6 +590,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаСценарий',
 			style: 'position:absolute;left:458px;top:2px;width:200px;height:19px;',
 		},
@@ -659,6 +599,37 @@
 			name: 'НадписьСценарий',
 			text: 'Сценарий:',
 			style: 'position:absolute;left:401px;top:2px;width:55px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

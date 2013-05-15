@@ -10,6 +10,16 @@
 	items:
 	[
 		{
+			xtype: 'fieldset',
+			title: 'Всего за налоговый период',
+			style: 'position:absolute;left:12px;top:172px;width:599px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Удержано и перечислено по физическим лицам',
+			style: 'position:absolute;left:12px;top:8px;width:599px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:12px;top:26px;width:599px;height:140px;',
 			height: 140,width: 599,
@@ -155,5 +165,8 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -31,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле1',
 			style: 'position:absolute;left:87px;top:53px;width:106px;height:19px;',
 		},
@@ -43,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле2',
 			style: 'position:absolute;left:87px;top:77px;width:106px;height:19px;',
 		},
@@ -55,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле3',
 			style: 'position:absolute;left:87px;top:29px;width:106px;height:19px;',
 		},
@@ -67,12 +70,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле4',
 			style: 'position:absolute;left:273px;top:29px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:101px;width:246px;height:19px;',
 		},
@@ -82,5 +87,13 @@
 			text: 'Комментарий:',
 			style: 'position:absolute;left:8px;top:101px;width:79px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Телефон',
+			style: 'position:absolute;left:8px;top:8px;width:325px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

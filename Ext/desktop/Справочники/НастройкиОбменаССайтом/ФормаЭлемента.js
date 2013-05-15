@@ -10,55 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Монитор обменов',
-				},
-				{
-					text:'Выполнить обмен',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Монитор обменов',
-				},
-				'-',
-				{
-					text:'Выполнить обмен',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:554px;width:690px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:190px;top:58px;width:492px;height:464px;',
 			height: 464,width: 492,
@@ -68,16 +19,6 @@
 					title:'Основные',
 					items:
 					[
-		{
-			xtype: 'radio',
-			boxLabel: 'Выгрузка на сайт',
-			style: 'position:absolute;left:126px;top:54px;width:112px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Выгрузка в каталог',
-			style: 'position:absolute;left:270px;top:54px;width:124px;height:19px;',
-		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:79px;width:478px;height:116px;',
@@ -92,6 +33,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогВыгрузки',
 			style: 'position:absolute;left:84px;top:0px;width:394px;height:20px;',
 		},
@@ -122,6 +64,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'HTTPВыгрузкаПароль',
 			style: 'position:absolute;left:311px;top:26px;width:167px;height:19px;',
 		},
@@ -140,12 +83,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'HTTPВыгрузкаИмяПользователя',
 			style: 'position:absolute;left:84px;top:26px;width:176px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'HTTPОбменАдресСкрипта',
 			style: 'position:absolute;left:84px;top:0px;width:394px;height:20px;',
 		},
@@ -163,12 +108,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'HTTPОбменПроксиИмяПользователя',
 			style: 'position:absolute;left:84px;top:97px;width:176px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'HTTPОбменПроксиПорт',
 			style: 'position:absolute;left:311px;top:74px;width:167px;height:19px;',
 		},
@@ -181,6 +130,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'HTTPОбменПроксиСервер',
 			style: 'position:absolute;left:84px;top:74px;width:176px;height:19px;',
 		},
@@ -193,6 +143,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'HTTPОбменПроксиПароль',
 			style: 'position:absolute;left:311px;top:97px;width:167px;height:19px;',
 		},
@@ -205,16 +156,6 @@
 					]
 				},
 			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Полная выгрузка',
-			style: 'position:absolute;left:126px;top:201px;width:110px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Только изменения',
-			style: 'position:absolute;left:270px;top:201px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -269,6 +210,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелОбменаТоварами',
 			style: 'position:absolute;left:135px;top:0px;width:268px;height:19px;',
 		},
@@ -290,11 +232,44 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелОбменаЗаказами',
 			style: 'position:absolute;left:135px;top:0px;width:268px;height:19px;',
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка на сайт',
+			style: 'position:absolute;left:126px;top:54px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка в каталог',
+			style: 'position:absolute;left:270px;top:54px;width:124px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Полная выгрузка',
+			style: 'position:absolute;left:126px;top:201px;width:110px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Только изменения',
+			style: 'position:absolute;left:270px;top:201px;width:116px;height:19px;',
+		},
 			]
 		},
 					]
@@ -307,13 +282,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Выгружать картинки',
 			style: 'position:absolute;left:6px;top:6px;width:128px;height:15px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:52px;width:478px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -445,18 +413,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:185px;top:51px;width:299px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:185px;top:75px;width:299px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:185px;top:99px;width:299px;height:19px;',
 		},
@@ -467,50 +438,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДляНовыхКонтрагентов',
 			style: 'position:absolute;left:185px;top:144px;width:299px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДляНовойНоменклатуры',
 			style: 'position:absolute;left:185px;top:168px;width:299px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмеренияНовойНоменклатуры',
 			style: 'position:absolute;left:185px;top:192px;width:299px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По информации документа с сайта',
-			style: 'position:absolute;left:16px;top:260px;width:199px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Устанавливать у документов текущую дату',
-			style: 'position:absolute;left:16px;top:284px;width:246px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Только записывать документы',
-			style: 'position:absolute;left:16px;top:330px;width:181px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Записывать и проводить документы',
-			style: 'position:absolute;left:16px;top:353px;width:207px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Проводить оперативно',
-			style: 'position:absolute;left:38px;top:376px;width:159px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Проводить НЕ оперативно',
-			style: 'position:absolute;left:40px;top:399px;width:157px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -523,6 +467,69 @@
 			name: 'НадписьПроведениеДокумента',
 			text: 'Проведение документа:',
 			style: 'position:absolute;left:6px;top:307px;width:124px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры для подстановки в заказы с WEB-сайта',
+			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры для создания новых элементов',
+			style: 'position:absolute;left:6px;top:123px;width:478px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Действия с документами, пришедшими с WEB-сайта',
+			style: 'position:absolute;left:6px;top:216px;width:478px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'По информации документа с сайта',
+			style: 'position:absolute;left:16px;top:260px;width:199px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Устанавливать у документов текущую дату',
+			style: 'position:absolute;left:16px;top:284px;width:246px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Только записывать документы',
+			style: 'position:absolute;left:16px;top:330px;width:181px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Записывать и проводить документы',
+			style: 'position:absolute;left:16px;top:353px;width:207px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Проводить оперативно',
+			style: 'position:absolute;left:38px;top:376px;width:159px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Проводить НЕ оперативно',
+			style: 'position:absolute;left:40px;top:399px;width:157px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -537,6 +544,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:269px;top:527px;width:413px;height:19px;',
 		},
@@ -549,6 +557,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:642px;top:33px;width:40px;height:19px;',
 		},
@@ -561,6 +570,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:276px;top:33px;width:323px;height:19px;',
 		},
@@ -599,6 +609,60 @@
 			name: 'НадписьПодробнееОТехнологииОбмена',
 			text: 'Подробнее о технологии обмена',
 			style: 'position:absolute;left:8px;top:129px;width:174px;height:15px;text-align:center;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Монитор обменов',
+				},
+				{
+					text:'Выполнить обмен',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Монитор обменов',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:554px;width:690px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -90,6 +90,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТемаСообщения',
 			style: 'position:absolute;left:47px;top:8px;width:520px;height:19px;',
 		},
@@ -99,5 +100,13 @@
 			text: 'Тема:',
 			style: 'position:absolute;left:8px;top:8px;width:36px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Вложения',
+			style: 'position:absolute;left:8px;top:297px;width:764px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

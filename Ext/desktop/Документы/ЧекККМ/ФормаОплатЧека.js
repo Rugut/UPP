@@ -39,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОплаты',
 			style: 'position:absolute;left:143px;top:33px;width:237px;height:22px;',
 		},
@@ -49,18 +50,11 @@
 			style: 'position:absolute;left:8px;top:33px;width:111px;height:22px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: '',
-			style: 'position:absolute;left:121px;top:33px;width:20px;height:22px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Списком',
-			style: 'position:absolute;left:390px;top:33px;width:82px;height:22px;',
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:362px;top:7px;width:110px;height:22px;',
 		},
@@ -71,8 +65,11 @@
 			style: 'position:absolute;left:8px;top:175px;width:111px;height:22px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаОплаты',
 			style: 'position:absolute;left:143px;top:175px;width:110px;height:22px;',
 		},
@@ -89,8 +86,11 @@
 			style: 'position:absolute;left:263px;top:175px;width:96px;height:22px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Сдача',
 			style: 'position:absolute;left:362px;top:175px;width:110px;height:22px;',
 		},
@@ -151,16 +151,28 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:464px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:121px;top:33px;width:20px;height:22px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Списком',
+			style: 'position:absolute;left:390px;top:33px;width:82px;height:22px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:79px;width:370px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокВыбор',
 			style: 'position:absolute;left:157px;top:5px;width:205px;height:19px;',
 		},
@@ -39,14 +23,17 @@
 			style: 'position:absolute;left:8px;top:5px;width:144px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДокДата',
 			style: 'position:absolute;left:157px;top:53px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокНомер',
 			style: 'position:absolute;left:157px;top:29px;width:205px;height:19px;',
 		},
@@ -61,6 +48,27 @@
 			name: 'НадписьДокНомер',
 			text: 'Номер документа',
 			style: 'position:absolute;left:8px;top:29px;width:144px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:79px;width:370px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

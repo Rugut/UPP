@@ -10,24 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:106px;width:298px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'ТекстПутьКФайлуВыгрузки',
 			text: 'Путь к файлу выгрузки:',
@@ -36,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПутьКФайлуВыгрузки',
 			style: 'position:absolute;left:8px;top:34px;width:282px;height:19px;',
 		},
@@ -50,6 +33,28 @@
 			name: 'ТекстВыгружено',
 			text: 'Выгружено:',
 			style: 'position:absolute;left:8px;top:57px;width:160px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:106px;width:298px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

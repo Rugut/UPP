@@ -10,31 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:346px;width:486px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Отчет за период с:',
 			style: 'position:absolute;left:8px;top:6px;width:102px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:113px;top:6px;width:80px;height:19px;',
 		},
@@ -45,8 +30,10 @@
 			style: 'position:absolute;left:196px;top:6px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонца',
 			style: 'position:absolute;left:214px;top:6px;width:80px;height:19px;',
 		},
@@ -88,8 +75,62 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:8px;top:77px;width:470px;height:17px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Менеджер:',
+			style: 'position:absolute;left:14px;top:50px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиМенеджер',
+			style: 'position:absolute;left:258px;top:50px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:8px;top:29px;width:470px;height:16px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:296px;top:6px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:96px;top:50px;width:160px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:346px;width:486px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:93px;width:470px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -106,27 +147,6 @@
 					text:'Снять флажки',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Менеджер:',
-			style: 'position:absolute;left:14px;top:50px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиМенеджер',
-			style: 'position:absolute;left:258px;top:50px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаНастройкаПериода',
-			text: '...',
-			style: 'position:absolute;left:296px;top:6px;width:20px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:96px;top:50px;width:160px;height:19px;',
 		},
 	]
 });

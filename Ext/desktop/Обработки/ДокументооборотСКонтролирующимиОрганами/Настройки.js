@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:384px;width:398px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Персональные настройки',
+			style: 'position:absolute;left:8px;top:186px;width:382px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -83,18 +67,45 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПользователяПрокси',
 			style: 'position:absolute;left:84px;top:0px;width:174px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольПользователяПрокси',
 			style: 'position:absolute;left:84px;top:26px;width:174px;height:19px;',
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:13px;top:21px;width:3px;height:73px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:14px;top:92px;width:19px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:33px;top:81px;width:2px;height:26px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:35px;top:81px;width:20px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:35px;top:106px;width:20px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -118,18 +129,14 @@
 					items:
 					[
 		{
-			xtype: 'radio',
-			boxLabel: 'Использовать встроенный модуль документооборота',
-			style: 'position:absolute;left:8px;top:45px;width:296px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Использовать внешний модуль:',
-			style: 'position:absolute;left:8px;top:69px;width:182px;height:16px;',
+			xtype: 'fieldset',
+			title: 'Общие настройки',
+			style: 'position:absolute;left:0px;top:0px;width:382px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МодульДокументооборотаПредставление',
 			style: 'position:absolute;left:8px;top:92px;width:374px;height:19px;',
 		},
@@ -138,6 +145,11 @@
 			name: 'Надпись12',
 			text: 'Задаются администратором информационной базы.',
 			style: 'position:absolute;left:0px;top:17px;width:382px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:124px;width:374px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -149,7 +161,48 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:111px;top:138px;width:271px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать встроенный модуль документооборота',
+			style: 'position:absolute;left:8px;top:45px;width:296px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Использовать внешний модуль:',
+			style: 'position:absolute;left:8px;top:69px;width:182px;height:16px;',
+		},
+			]
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:384px;width:398px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

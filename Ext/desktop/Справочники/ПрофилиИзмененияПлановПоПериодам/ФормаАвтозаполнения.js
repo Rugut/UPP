@@ -10,24 +10,11 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:243px;width:296px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоПериодовРаспределения',
 			style: 'position:absolute;left:168px;top:54px;width:76px;height:19px;',
 		},
@@ -38,8 +25,11 @@
 			style: 'position:absolute;left:14px;top:54px;width:152px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СмещениеПервогоПериодаРаспределения',
 			style: 'position:absolute;left:168px;top:30px;width:76px;height:19px;',
 		},
@@ -50,8 +40,11 @@
 			style: 'position:absolute;left:14px;top:30px;width:152px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовыйКоэффициент',
 			style: 'position:absolute;left:124px;top:192px;width:140px;height:19px;',
 		},
@@ -62,8 +55,11 @@
 			style: 'position:absolute;left:14px;top:192px;width:108px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПриращениеЗаПериод',
 			style: 'position:absolute;left:124px;top:216px;width:140px;height:19px;',
 		},
@@ -82,6 +78,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипРаспределения',
 			style: 'position:absolute;left:124px;top:111px;width:164px;height:19px;',
 		},
@@ -94,8 +91,44 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипИзменения',
 			style: 'position:absolute;left:124px;top:135px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Периоды:',
+			style: 'position:absolute;left:8px;top:8px;width:280px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Установки:',
+			style: 'position:absolute;left:8px;top:90px;width:280px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Значения:',
+			style: 'position:absolute;left:8px;top:171px;width:280px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:243px;width:296px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

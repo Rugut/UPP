@@ -150,8 +150,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаВеличиныИзменения',
 			style: 'position:absolute;left:464px;top:6px;width:48px;height:19px;',
 		},
@@ -168,6 +171,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаВариантаЗачения',
 			style: 'position:absolute;left:228px;top:6px;width:200px;height:19px;',
 		},
@@ -182,8 +186,10 @@
 			style: 'position:absolute;left:492px;top:37px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаЦен',
 			style: 'position:absolute;left:582px;top:37px;width:80px;height:19px;',
 		},
@@ -209,5 +215,8 @@
 			boxLabel: 'Подставлять валюту из диапазона',
 			style: 'position:absolute;left:466px;top:283px;width:196px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

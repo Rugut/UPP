@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:424px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:504px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:524px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
 		},
@@ -54,66 +58,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:169px;top:443px;width:636px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:813px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:470px;width:813px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -271,43 +218,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Учет доходов по всем ставкам и налогов по ставкам 9% и 35%',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
 		},
 					]
 				},
@@ -315,45 +228,6 @@
 					title:'НДФЛ по ставке 13%',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:117px;',
@@ -444,6 +318,16 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Исчислено налога',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Предоставлено вычетов',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -591,16 +475,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'суммами исчисленного налога',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:301px;',
 			height: 301,width: 622,
@@ -708,6 +582,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Учет удержанных сумм НДФЛ по всем ставкам ',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
 		},
 					]
 				},
@@ -1024,14 +903,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'по данным для исчисления НДФЛ',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Учет доходов ',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Исчислено взносов в ПФР, ФСС и ФОМС',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -1127,45 +1006,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -1351,6 +1191,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Исчислено налога',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Учет доходов ',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+		},
 					]
 				},
 				{
@@ -1474,45 +1324,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -1680,6 +1491,16 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Пособия по уходу за ребенком до 1.5 лет',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Пособия по временной нетрудоспособности и другие пособия',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+		},
 					]
 				},
 			]
@@ -1693,6 +1514,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
@@ -1703,8 +1525,11 @@
 			style: 'position:absolute;left:8px;top:57px;width:168px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:182px;top:57px;width:80px;height:19px;',
 		},
@@ -1713,6 +1538,69 @@
 			name: 'НадписьГод',
 			text: 'год',
 			style: 'position:absolute;left:270px;top:57px;width:25px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:813px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:470px;width:813px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

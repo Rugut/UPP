@@ -74,8 +74,25 @@
 			},
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Мероприятие',
+			style: 'position:absolute;left:88px;top:32px;width:389px;height:20px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Мероприятие:',
+			style: 'position:absolute;left:8px;top:32px;width:80px;height:20px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:485px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -185,18 +202,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Мероприятие',
-			style: 'position:absolute;left:88px;top:32px;width:389px;height:20px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Мероприятие:',
-			style: 'position:absolute;left:8px;top:32px;width:80px;height:20px;',
 		},
 	]
 });

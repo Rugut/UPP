@@ -245,16 +245,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:246px;top:105px;width:420px;height:24px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:418px;width:674px;height:25px;',
 			items:
 			[
@@ -291,6 +281,20 @@
 			name: 'НадписьДополнительныеПрава',
 			text: 'Дополнительные права',
 			style: 'position:absolute;left:246px;top:237px;width:420px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:246px;top:105px;width:420px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+			]
 		},
 	]
 });

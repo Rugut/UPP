@@ -10,8 +10,18 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Обработка выполняет загрузку предопределенных настроек типовых отчетов',
+			style: 'position:absolute;left:8px;top:33px;width:403px;height:23px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:419px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -19,6 +29,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:65px;width:419px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -32,12 +43,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Обработка выполняет загрузку предопределенных настроек типовых отчетов',
-			style: 'position:absolute;left:8px;top:33px;width:403px;height:23px;',
 		},
 	]
 });

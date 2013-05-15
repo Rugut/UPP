@@ -12,18 +12,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:344px;top:33px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:138px;top:33px;width:162px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:138px;top:56px;width:366px;height:19px;',
 		},
@@ -82,8 +85,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодАльфа2',
 			style: 'position:absolute;left:464px;top:33px;width:40px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

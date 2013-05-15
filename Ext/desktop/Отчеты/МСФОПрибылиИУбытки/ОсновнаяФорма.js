@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:244px;width:276px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
 			text: '',
@@ -55,6 +34,38 @@
 			style: 'position:absolute;left:14px;top:173px;width:254px;height:40px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Период составления отчета',
+			style: 'position:absolute;left:8px;top:53px;width:260px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Форма',
+			style: 'position:absolute;left:8px;top:152px;width:260px;height:16px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:8px;top:27px;width:260px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Организация',
+			style: 'position:absolute;left:8px;top:8px;width:260px;height:15px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаВыбораФормы',
+			text: 'Выбрать форму',
+			style: 'position:absolute;left:8px;top:217px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Годовая отчетность',
 			style: 'position:absolute;left:8px;top:76px;width:124px;height:15px;',
@@ -64,17 +75,32 @@
 			boxLabel: 'Промежуточная отчетность',
 			style: 'position:absolute;left:8px;top:98px;width:164px;height:15px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:8px;top:27px;width:260px;height:19px;',
+			]
 		},
+	],
+	dockedItems:
+	[
 		{
-			xtype: 'button',
-			name: 'КнопкаВыбораФормы',
-			text: 'Выбрать форму',
-			style: 'position:absolute;left:8px;top:217px;width:100px;height:19px;',
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:244px;width:276px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
 		},
 	]
 });

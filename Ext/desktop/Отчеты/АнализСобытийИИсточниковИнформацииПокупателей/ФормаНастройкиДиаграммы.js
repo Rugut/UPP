@@ -10,21 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:276px;width:602px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Серии и точки диаграммы',
+			style: 'position:absolute;left:8px;top:8px;width:340px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Показатель диаграммы',
+			style: 'position:absolute;left:354px;top:8px;width:240px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -108,6 +101,27 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:276px;width:602px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

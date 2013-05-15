@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
@@ -52,8 +56,10 @@
 			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:98px;top:81px;width:80px;height:19px;',
 		},
@@ -64,17 +70,12 @@
 			style: 'position:absolute;left:180px;top:81px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:198px;top:81px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -159,6 +160,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Список номенклатурных или ценовых групп и соответствующих типов цен',
+			style: 'position:absolute;left:8px;top:105px;width:640px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'Комментарий:',
@@ -167,12 +173,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:331px;width:552px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:354px;width:552px;height:19px;',
 		},
@@ -181,6 +189,17 @@
 			name: 'НадписьОтветственный',
 			text: 'Ответственный:',
 			style: 'position:absolute;left:8px;top:354px;width:88px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

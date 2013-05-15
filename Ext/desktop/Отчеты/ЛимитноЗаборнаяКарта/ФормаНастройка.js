@@ -57,20 +57,20 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:88px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:6px;top:52px;width:212px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Группировки',
+			style: 'position:absolute;left:6px;top:72px;width:460px;height:16px;',
+		},
+		{
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:77px;top:4px;width:80px;height:19px;',
 		},
@@ -89,6 +89,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Периодичность',
 			style: 'position:absolute;left:291px;top:4px;width:175px;height:19px;',
 		},
@@ -101,6 +102,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:77px;top:28px;width:389px;height:19px;',
 		},
@@ -183,13 +185,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -233,13 +228,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -265,5 +253,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

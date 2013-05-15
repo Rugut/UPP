@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:547px;top:33px;width:65px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:177px;top:33px;width:326px;height:19px;',
 		},
@@ -42,36 +44,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:412px;width:522px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:438px;width:620px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -92,6 +67,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БазаРаспределенияЗатрат',
 			style: 'position:absolute;left:132px;top:6px;width:180px;height:19px;',
 		},
@@ -104,6 +80,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПоказательБазыРаспределения',
 			style: 'position:absolute;left:132px;top:30px;width:180px;height:19px;',
 		},
@@ -116,6 +93,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:416px;top:30px;width:180px;height:19px;',
 		},
@@ -128,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОсновноеСырье',
 			style: 'position:absolute;left:416px;top:6px;width:180px;height:19px;',
 		},
@@ -140,6 +119,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособРаспределенияЗатратПоПодразделениям',
 			style: 'position:absolute;left:132px;top:173px;width:464px;height:19px;',
 		},
@@ -164,20 +144,27 @@
 			style: 'position:absolute;left:6px;top:150px;width:306px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Процент',
 			style: 'position:absolute;left:482px;top:54px;width:114px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:482px;top:78px;width:114px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокОкругления',
 			style: 'position:absolute;left:482px;top:102px;width:114px;height:19px;',
 		},
@@ -212,13 +199,6 @@
 			name: 'НадписьТипФильтраПриРаспределенииЗатратНаВыпуск',
 			text: 'Тип фильтра:',
 			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:590px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -302,15 +282,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипФильтраПриРаспределенииЗатратНаВыпуск',
 			style: 'position:absolute;left:168px;top:6px;width:278px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:42px;width:590px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -367,6 +341,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Фильтры',
+			style: 'position:absolute;left:6px;top:26px;width:590px;height:16px;',
+		},
 					]
 				},
 			]
@@ -380,6 +359,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'КогдаПрименять',
 			style: 'position:absolute;left:177px;top:58px;width:435px;height:70px;',
 		},
@@ -402,8 +382,42 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаправлениеРаспределения',
 			style: 'position:absolute;left:177px;top:158px;width:135px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:438px;width:620px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

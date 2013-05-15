@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:102px;top:129px;width:240px;height:19px;',
 		},
@@ -36,6 +37,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:256px;top:307px;width:86px;height:19px;',
 		},
@@ -46,8 +48,11 @@
 			style: 'position:absolute;left:14px;top:307px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаЗаРаботу',
 			style: 'position:absolute;left:102px;top:307px;width:99px;height:19px;',
 		},
@@ -60,6 +65,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:428px;width:240px;height:19px;',
 		},
@@ -72,6 +78,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:102px;top:403px;width:240px;height:19px;',
 		},
@@ -88,8 +95,10 @@
 			style: 'position:absolute;left:14px;top:235px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:102px;top:235px;width:86px;height:19px;',
 		},
@@ -100,38 +109,12 @@
 			style: 'position:absolute;left:192px;top:235px;width:41px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:236px;top:235px;width:86px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:350px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:350px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -142,6 +125,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
 		},
@@ -152,14 +136,17 @@
 			style: 'position:absolute;left:184px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:202px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:102px;top:81px;width:240px;height:19px;',
 		},
@@ -172,12 +159,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:102px;top:105px;width:240px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:102px;top:259px;width:240px;height:19px;',
 		},
@@ -188,6 +177,11 @@
 			style: 'position:absolute;left:14px;top:259px;width:85px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Стороны',
+			style: 'position:absolute;left:8px;top:59px;width:334px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись14',
 			text: 'Оплата:',
@@ -196,12 +190,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактерОплаты',
 			style: 'position:absolute;left:102px;top:283px;width:240px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодВычета',
 			style: 'position:absolute;left:102px;top:379px;width:240px;height:19px;',
 		},
@@ -220,6 +216,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеОтраженияВУчета',
 			style: 'position:absolute;left:102px;top:355px;width:240px;height:19px;',
 		},
@@ -228,6 +225,16 @@
 			name: 'НадписьОписаниеОтраженияВУчета',
 			text: 'Учет:',
 			style: 'position:absolute;left:14px;top:355px;width:85px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Условия договора',
+			style: 'position:absolute;left:8px;top:158px;width:334px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Прочее',
+			style: 'position:absolute;left:8px;top:335px;width:334px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -249,6 +256,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидАвторскогоДоговора',
 			style: 'position:absolute;left:88px;top:6px;width:240px;height:19px;',
 		},
@@ -264,6 +272,39 @@
 			style: 'position:absolute;left:0px;top:4px;width:328px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:350px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:350px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

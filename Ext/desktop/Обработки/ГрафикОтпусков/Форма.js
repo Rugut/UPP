@@ -52,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:88px;top:0px;width:234px;height:19px;',
 		},
@@ -70,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:77px;top:0px;width:245px;height:19px;',
 		},
@@ -78,8 +80,10 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВыборГода',
 			style: 'position:absolute;left:20px;top:3px;width:48px;height:19px;',
 		},
@@ -98,6 +102,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаРежимПланированияОтпусков',
 			style: 'position:absolute;left:521px;top:3px;width:243px;height:19px;',
 		},
@@ -111,9 +116,13 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:926px;top:0px;width:74px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -127,6 +136,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:926px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				'-',

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,45 +29,12 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:488px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -143,7 +111,99 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:373px;width:504px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:94px;top:322px;width:402px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:322px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:346px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:94px;top:346px;width:402px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Затраты',
+			style: 'position:absolute;left:8px;top:57px;width:488px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:488px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:504px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -177,51 +237,6 @@
 					text:'',
 				},
 			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:373px;width:504px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:94px;top:322px;width:402px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтветственный',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:322px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:346px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:94px;top:346px;width:402px;height:19px;',
 		},
 	]
 });

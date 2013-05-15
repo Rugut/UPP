@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:169px;width:325px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодДоступаНаСервер',
 			style: 'position:absolute;left:74px;top:98px;width:243px;height:19px;',
 		},
@@ -41,6 +25,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольДоступаНаСервер',
 			style: 'position:absolute;left:74px;top:122px;width:243px;height:19px;',
 		},
@@ -66,6 +51,27 @@
 			name: 'НадписьЗаголовок',
 			text: 'Авторизация на сервере',
 			style: 'position:absolute;left:8px;top:8px;width:309px;height:40px;text-align:center;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:169px;width:325px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

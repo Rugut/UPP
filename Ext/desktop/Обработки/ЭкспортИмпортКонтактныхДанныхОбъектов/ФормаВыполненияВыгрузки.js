@@ -10,31 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:436px;width:496px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<< Назад',
-				},
-				'-',
-				{
-					text:'Далее >>',
-				},
-				'-',
-				{
-					text:'Готово',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:480px;height:400px;',
 			height: 400,width: 480,
@@ -125,6 +100,11 @@
 					text:'Снять флажки',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройка списка полей выгрузки',
+			style: 'position:absolute;left:0px;top:0px;width:480px;height:16px;',
 		},
 					]
 				},
@@ -224,6 +204,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройка списка объектов выгрузки',
+			style: 'position:absolute;left:0px;top:0px;width:480px;height:16px;',
+		},
 					]
 				},
 			]
@@ -232,6 +217,35 @@
 			xtype: 'checkbox',
 			boxLabel: 'Сохранять соответствие параметров для последующих выгрузок',
 			style: 'position:absolute;left:8px;top:413px;width:369px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:436px;width:496px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<< Назад',
+				},
+				'-',
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'Готово',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

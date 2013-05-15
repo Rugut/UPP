@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:231px;width:563px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Имя принятого файла:',
@@ -31,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПринятФайла',
 			style: 'position:absolute;left:193px;top:47px;width:362px;height:19px;',
 		},
@@ -43,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаВремяПредст',
 			style: 'position:absolute;left:193px;top:73px;width:362px;height:19px;',
 		},
@@ -55,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПост',
 			style: 'position:absolute;left:193px;top:152px;width:362px;height:19px;',
 		},
@@ -67,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КНД',
 			style: 'position:absolute;left:193px;top:99px;width:362px;height:19px;',
 		},
@@ -79,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимВидДок',
 			style: 'position:absolute;left:193px;top:125px;width:362px;height:19px;',
 		},
@@ -91,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегНом',
 			style: 'position:absolute;left:193px;top:204px;width:362px;height:19px;',
 		},
@@ -103,6 +96,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПрин',
 			style: 'position:absolute;left:193px;top:178px;width:362px;height:19px;',
 		},
@@ -115,8 +109,31 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НалоговыйОрган',
 			style: 'position:absolute;left:193px;top:9px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:36px;width:547px;height:3px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:231px;width:563px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

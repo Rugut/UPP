@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:436px;width:574px;height:19px;',
 		},
@@ -868,6 +872,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:121px;top:48px;width:194px;height:19px;',
 		},
@@ -880,12 +885,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:433px;top:48px;width:215px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:99px;top:26px;width:80px;height:19px;',
 		},
@@ -904,18 +916,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчетОрганизации',
 			style: 'position:absolute;left:121px;top:71px;width:194px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДисконтнаяКарта',
 			style: 'position:absolute;left:433px;top:25px;width:215px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:433px;top:71px;width:215px;height:19px;',
 		},
@@ -925,14 +940,21 @@
 			style: 'position:absolute;left:6px;top:179px;width:354px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:163px;width:642px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрузоотправительДополнительно',
 			style: 'position:absolute;left:121px;top:94px;width:194px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрузополучательДополнительно',
 			style: 'position:absolute;left:433px;top:94px;width:215px;height:19px;',
 		},
@@ -945,14 +967,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресДоставки',
 			style: 'position:absolute;left:121px;top:117px;width:527px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнениеКАдресуДоставки',
 			style: 'position:absolute;left:121px;top:140px;width:527px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:202px;width:642px;height:16px;',
 		},
 					]
 				},
@@ -963,48 +992,61 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСКонтрагентом',
 			style: 'position:absolute;left:194px;top:7px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовПоАвансам',
 			style: 'position:absolute;left:546px;top:7px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовПоТаре',
 			style: 'position:absolute;left:194px;top:104px;width:100px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Отражение разницы между залоговой и фактической стоимостью тары',
+			style: 'position:absolute;left:6px;top:36px;width:636px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДоходовПоТареБУ',
 			style: 'position:absolute;left:194px;top:57px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовПоТареБУ',
 			style: 'position:absolute;left:194px;top:81px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДоходовПоТареНУ',
 			style: 'position:absolute;left:546px;top:57px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовПоТареНУ',
 			style: 'position:absolute;left:546px;top:81px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяПрочихДоходовРасходовПоТаре',
 			style: 'position:absolute;left:546px;top:105px;width:100px;height:19px;',
 		},
@@ -1109,14 +1151,26 @@
 			style: 'position:absolute;left:6px;top:57px;width:186px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:646px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:101px;width:642px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтпускРазрешил',
 			style: 'position:absolute;left:107px;top:26px;width:199px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтпускПроизвел',
 			style: 'position:absolute;left:107px;top:74px;width:199px;height:19px;',
 		},
@@ -1129,24 +1183,29 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоверенностьВыдана',
 			style: 'position:absolute;left:107px;top:145px;width:541px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоверенностьЧерезКого',
 			style: 'position:absolute;left:107px;top:169px;width:541px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоверенностьНомер',
 			style: 'position:absolute;left:107px;top:121px;width:115px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДоверенностьДата',
 			style: 'position:absolute;left:246px;top:121px;width:100px;height:19px;',
 		},
@@ -1165,6 +1224,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаРуководителяПоПриказу',
 			style: 'position:absolute;left:107px;top:50px;width:199px;height:19px;',
 		},
@@ -1177,6 +1237,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГлавныйБухгалтер',
 			style: 'position:absolute;left:437px;top:26px;width:215px;height:19px;',
 		},
@@ -1189,6 +1250,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаГлавногоБухгалтераПоПриказу',
 			style: 'position:absolute;left:437px;top:50px;width:215px;height:19px;',
 		},
@@ -1284,36 +1346,42 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПоДокументуВал',
 			style: 'position:absolute;left:120px;top:173px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПоДокументуРегл',
 			style: 'position:absolute;left:277px;top:173px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредоплатаВал',
 			style: 'position:absolute;left:121px;top:196px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредоплатаРегл',
 			style: 'position:absolute;left:278px;top:196px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОстатокРегл',
 			style: 'position:absolute;left:278px;top:219px;width:134px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОстатокВал',
 			style: 'position:absolute;left:121px;top:219px;width:134px;height:19px;',
 		},
@@ -1336,12 +1404,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:98px;top:81px;width:220px;height:19px;',
 		},
@@ -1354,25 +1424,27 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сделка',
 			style: 'position:absolute;left:98px;top:105px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСделка',
-			text: 'Сделка:
-',
+			text: 'Сделка:\r\n',
 			style: 'position:absolute;left:8px;top:102px;width:88px;height:22px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:428px;top:57px;width:236px;height:19px;',
 		},
@@ -1421,6 +1493,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:542px;top:392px;width:122px;height:17px;',
 		},
@@ -1433,6 +1506,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:542px;top:414px;width:122px;height:17px;',
 		},
@@ -1464,6 +1538,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидПередачи',
 			style: 'position:absolute;left:338px;top:57px;width:88px;height:19px;',
 		},
@@ -1472,5 +1547,8 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

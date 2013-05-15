@@ -18,42 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:502px;width:670px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Проверить в CheckXML',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -71,16 +38,6 @@
 					title:'АДВ11',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:27px;width:875px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить расчетами с ПФР',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:55px;width:875px;height:292px;',
@@ -153,6 +110,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Расчеты с ПФР за 2002 - 2009 годы',
+			style: 'position:absolute;left:0px;top:6px;width:875px;height:16px;',
 		},
 					]
 				},
@@ -306,6 +268,16 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Состав пачки (реестра)',
+			style: 'position:absolute;left:523px;top:68px;width:352px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Пачки СЗВ-6-1 и Реестры СЗВ-6-2',
+			style: 'position:absolute;left:0px;top:68px;width:514px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:523px;top:84px;width:352px;height:24px;',
 			items:
@@ -384,6 +356,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РасчетСтраховыхВзносов',
 			style: 'position:absolute;left:200px;top:0px;width:212px;height:19px;',
 		},
@@ -407,45 +380,6 @@
 					title:'Пачки',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:503px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Провести пачку',
-				},
-				{
-					text:'Отменить проведение пачки',
-				},
-				'-',
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:503px;height:242px;',
@@ -566,51 +500,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:515px;top:22px;width:352px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Открыть СЗВ-4',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Состав пачки',
+			style: 'position:absolute;left:515px;top:6px;width:352px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Пачки СЗВ-4',
+			style: 'position:absolute;left:6px;top:6px;width:503px;height:16px;',
 		},
 					]
 				},
@@ -618,16 +515,6 @@
 					title:'Расчеты с ПФР',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:861px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить расчетами с ПФР',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:861px;height:264px;',
@@ -723,11 +610,23 @@
 			style: 'position:absolute;left:206px;top:0px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДействия',
 			style: 'position:absolute;left:288px;top:0px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Тип сведений:',
+			style: 'position:absolute;left:0px;top:0px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'ИСХД',
@@ -738,11 +637,7 @@
 			boxLabel: 'ПЕНС',
 			style: 'position:absolute;left:146px;top:0px;width:53px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Тип сведений:',
-			style: 'position:absolute;left:0px;top:0px;width:83px;height:19px;',
+			]
 		},
 					]
 				},
@@ -814,6 +709,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:529px;top:0px;width:80px;height:19px;',
 		},
@@ -824,8 +720,10 @@
 			style: 'position:absolute;left:611px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:629px;top:0px;width:120px;height:19px;',
 		},
@@ -838,6 +736,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:0px;width:318px;height:19px;',
 		},
@@ -850,6 +749,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:529px;top:24px;width:220px;height:19px;',
 		},
@@ -862,6 +762,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:94px;top:48px;width:120px;height:19px;',
 		},
@@ -874,6 +775,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:286px;top:48px;width:126px;height:19px;',
 		},
@@ -886,6 +788,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:94px;top:24px;width:318px;height:19px;',
 		},
@@ -898,6 +801,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерПачки',
 			style: 'position:absolute;left:529px;top:48px;width:80px;height:19px;',
 		},
@@ -919,6 +823,10 @@
 			style: 'position:absolute;left:6px;top:0px;width:55px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Сведения СЗВ-6',
 			style: 'position:absolute;left:66px;top:0px;width:106px;height:19px;',
@@ -928,11 +836,52 @@
 			boxLabel: 'АДВ-11',
 			style: 'position:absolute;left:178px;top:0px;width:59px;height:19px;',
 		},
+			]
+		},
 					]
 				},
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Проверить в CheckXML',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

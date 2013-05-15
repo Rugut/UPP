@@ -18,36 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:95px;top:33px;width:506px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:610px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:334px;width:610px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -58,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчета',
 			style: 'position:absolute;left:95px;top:212px;width:81px;height:19px;',
 		},
@@ -70,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаНУ',
 			style: 'position:absolute;left:401px;top:212px;width:81px;height:19px;',
 		},
@@ -94,18 +69,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто1',
 			style: 'position:absolute;left:95px;top:238px;width:200px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто2',
 			style: 'position:absolute;left:95px;top:261px;width:200px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто3',
 			style: 'position:absolute;left:95px;top:286px;width:200px;height:19px;',
 		},
@@ -130,20 +108,33 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоНУ1',
 			style: 'position:absolute;left:401px;top:238px;width:200px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоНУ2',
 			style: 'position:absolute;left:401px;top:261px;width:200px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоНУ3',
 			style: 'position:absolute;left:401px;top:286px;width:200px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Аналитика управленческого учета',
+			style: 'position:absolute;left:8px;top:110px;width:593px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Аналитика регламентированного учета',
+			style: 'position:absolute;left:8px;top:189px;width:593px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -154,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбъектСтроительства',
 			style: 'position:absolute;left:95px;top:134px;width:506px;height:19px;',
 		},
@@ -166,6 +158,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособСтроительства',
 			style: 'position:absolute;left:95px;top:161px;width:506px;height:19px;',
 		},
@@ -178,6 +171,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:95px;top:59px;width:506px;height:19px;',
 		},
@@ -188,8 +182,10 @@
 			style: 'position:absolute;left:120px;top:84px;width:160px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсправительнойЗаписи',
 			style: 'position:absolute;left:280px;top:84px;width:120px;height:19px;',
 		},
@@ -214,6 +210,39 @@
 			name: 'Надпись1',
 			text: 'Считать разницы в оценке доходов и расходов постоянными',
 			style: 'position:absolute;left:27px;top:311px;width:574px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:610px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:334px;width:610px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

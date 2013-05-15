@@ -10,117 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:560px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Отчет',
-				},
-				'-',
-				{
-					text:'Файлы',
-				},
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Список событий',
-				},
-				{
-					text:'Электронные письма (контрагент + контактные лица)',
-				},
-				{
-					text:'Электронные письма (контрагент)',
-				},
-					]
-				},
-				'-',
-				'-',
-				{
-					text:'Файлы',
-				},
-				'-',
-				{
-					text:'Написать письмо',
-				},
-				'-',
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:429px;width:560px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:61px;width:544px;height:336px;',
 			height: 336,width: 544,
@@ -149,6 +38,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГоловнойКонтрагент',
 			style: 'position:absolute;left:238px;top:130px;width:298px;height:19px;',
 		},
@@ -161,6 +51,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЮрФизЛицо',
 			style: 'position:absolute;left:118px;top:6px;width:105px;height:19px;',
 		},
@@ -184,12 +75,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодПоОКПО',
 			style: 'position:absolute;left:418px;top:27px;width:112px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:242px;top:29px;width:81px;height:19px;',
 		},
@@ -202,12 +95,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:112px;top:0px;width:418px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН1',
 			style: 'position:absolute;left:112px;top:29px;width:80px;height:19px;',
 		},
@@ -238,6 +133,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолноеФизЛицо',
 			style: 'position:absolute;left:112px;top:0px;width:418px;height:19px;',
 		},
@@ -250,12 +146,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:286px;top:24px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументУдостоверяющийЛичность2',
 			style: 'position:absolute;left:112px;top:24px;width:131px;height:19px;',
 		},
@@ -268,6 +166,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодПоОКПО1',
 			style: 'position:absolute;left:450px;top:24px;width:80px;height:19px;',
 		},
@@ -330,17 +229,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:516px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Установить основным',
-				},
-			]
 		},
 					]
 				},
@@ -443,16 +331,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:502px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить основным',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -476,8 +354,11 @@
 			style: 'position:absolute;left:6px;top:33px;width:252px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокВыполненияЗаказаПоставщиком',
 			style: 'position:absolute;left:260px;top:33px;width:60px;height:19px;',
 		},
@@ -488,6 +369,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РасписаниеРаботыСтрокой',
 			style: 'position:absolute;left:118px;top:106px;width:202px;height:19px;',
 		},
@@ -500,6 +382,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:362px;top:30px;width:174px;height:19px;',
 		},
@@ -517,6 +400,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Регион',
 			style: 'position:absolute;left:424px;top:106px;width:112px;height:19px;',
 		},
@@ -529,6 +413,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОКОПФ',
 			style: 'position:absolute;left:118px;top:30px;width:105px;height:19px;',
 		},
@@ -543,6 +428,16 @@
 					title:'Контакты',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Контактные лица:',
+			style: 'position:absolute;left:6px;top:162px;width:530px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Адреса и телефоны:',
+			style: 'position:absolute;left:6px;top:6px;width:530px;height:16px;',
+		},
 		{
 			xtype: 'label',
 			name: 'ТелефоныКонтактногоЛица',
@@ -612,88 +507,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:530px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-					]
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Командная панель контактной информации редактировать в диалоге',
-				},
-				'-',
-				{
-					text:'Основная',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -1092,120 +905,20 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:530px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Просмотр по владельцу',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Сортировка',
-					menu: [
-				{
-					text:'(Поля сортировки)',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-					]
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-				'-',
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Основной',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьРасписаниеРаботыСтрокой',
 			text: 'Расписание работы:',
 			style: 'position:absolute;left:6px;top:106px;width:110px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Банковские счета:',
+			style: 'position:absolute;left:6px;top:6px;width:530px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Договоры контрагентов:',
+			style: 'position:absolute;left:6px;top:162px;width:530px;height:16px;',
 		},
 					]
 				},
@@ -1313,13 +1026,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:530px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -1371,13 +1077,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:530px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -1431,25 +1130,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:530px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1459,6 +1139,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДоступаКонтрагента',
 			style: 'position:absolute;left:170px;top:14px;width:366px;height:19px;',
 		},
@@ -1475,12 +1156,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:472px;top:33px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:338px;height:19px;',
 		},
@@ -1505,8 +1188,125 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КомментарийСтрокой',
 			style: 'position:absolute;left:94px;top:402px;width:458px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:560px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Отчет',
+				},
+				'-',
+				{
+					text:'Файлы',
+				},
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Список событий',
+				},
+				{
+					text:'Электронные письма (контрагент + контактные лица)',
+				},
+				{
+					text:'Электронные письма (контрагент)',
+				},
+					]
+				},
+				'-',
+				'-',
+				{
+					text:'Файлы',
+				},
+				'-',
+				{
+					text:'Написать письмо',
+				},
+				'-',
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:429px;width:560px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
-			items:
-			[
-				{
-					text:'Открыть документ занятости',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Наименование',
 			text: '',
@@ -54,6 +44,20 @@
 			name: 'Телефоны',
 			text: '',
 			style: 'position:absolute;left:207px;top:107px;width:426px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Открыть документ занятости',
+				},
+			]
 		},
 	]
 });

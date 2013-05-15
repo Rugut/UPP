@@ -44,8 +44,10 @@
 			style: 'position:absolute;left:6px;top:148px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаДополнительногоОтпуска',
 			style: 'position:absolute;left:114px;top:148px;width:80px;height:19px;',
 		},
@@ -58,8 +60,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокРасчетаОсновногоОтпуска',
 			style: 'position:absolute;left:114px;top:77px;width:270px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Ежегодный оплачиваемый отпуск',
+			style: 'position:absolute;left:0px;top:55px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -70,6 +78,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчетаДополнительногоОтпуска',
 			style: 'position:absolute;left:114px;top:172px;width:270px;height:19px;',
 		},
@@ -80,14 +89,24 @@
 			style: 'position:absolute;left:6px;top:196px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплаты',
 			style: 'position:absolute;left:114px;top:196px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Дополнительный (другой) отпуск',
+			style: 'position:absolute;left:0px;top:126px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'РабочийГодС',
 			style: 'position:absolute;left:114px;top:101px;width:80px;height:19px;',
 		},
@@ -98,8 +117,10 @@
 			style: 'position:absolute;left:6px;top:101px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'РабочийГодПо',
 			style: 'position:absolute;left:217px;top:101px;width:80px;height:19px;',
 		},
@@ -116,8 +137,10 @@
 			style: 'position:absolute;left:0px;top:4px;width:112px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаСобытияОтпуска',
 			style: 'position:absolute;left:114px;top:4px;width:80px;height:19px;',
 		},
@@ -142,24 +165,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПричинаНетрудоспособности',
 			style: 'position:absolute;left:105px;top:68px;width:279px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПервичныйБольничныйЛист',
 			style: 'position:absolute;left:128px;top:20px;width:256px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерВходящего',
 			style: 'position:absolute;left:253px;top:44px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияВходящего',
 			style: 'position:absolute;left:105px;top:44px;width:92px;height:19px;',
 		},
@@ -176,6 +203,11 @@
 			style: 'position:absolute;left:202px;top:44px;width:44px;height:19px;text-align:center;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Временная нетрудоспособность',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСлучайУходаЗаБольнымРебенком',
 			text: 'Уход за ребенком:',
@@ -184,6 +216,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СлучайУходаЗаБольнымРебенком',
 			style: 'position:absolute;left:105px;top:93px;width:279px;height:19px;',
 		},
@@ -199,8 +232,10 @@
 			style: 'position:absolute;left:6px;top:118px;width:175px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаОплаты',
 			style: 'position:absolute;left:183px;top:142px;width:88px;height:19px;',
 		},
@@ -211,8 +246,11 @@
 			style: 'position:absolute;left:6px;top:142px;width:175px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДнейОплаты',
 			style: 'position:absolute;left:296px;top:142px;width:40px;height:19px;',
 		},
@@ -229,8 +267,10 @@
 			style: 'position:absolute;left:276px;top:142px;width:16px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаСобытия',
 			style: 'position:absolute;left:183px;top:118px;width:88px;height:19px;',
 		},
@@ -252,8 +292,11 @@
 			style: 'position:absolute;left:6px;top:30px;width:98px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплатыБольничного',
 			style: 'position:absolute;left:105px;top:30px;width:80px;height:19px;',
 		},
@@ -266,6 +309,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОграничениеПособия',
 			style: 'position:absolute;left:261px;top:30px;width:123px;height:19px;',
 		},
@@ -276,8 +320,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:53px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтажЛет',
 			style: 'position:absolute;left:64px;top:6px;width:32px;height:19px;',
 		},
@@ -288,8 +335,11 @@
 			style: 'position:absolute;left:105px;top:6px;width:47px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтажМесяцев',
 			style: 'position:absolute;left:153px;top:6px;width:32px;height:19px;',
 		},
@@ -306,8 +356,11 @@
 			style: 'position:absolute;left:6px;top:30px;width:98px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплатыБольничного1',
 			style: 'position:absolute;left:105px;top:30px;width:80px;height:19px;',
 		},
@@ -320,6 +373,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОграничениеПособия1',
 			style: 'position:absolute;left:261px;top:30px;width:123px;height:19px;',
 		},
@@ -330,8 +384,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:53px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтажЛет1',
 			style: 'position:absolute;left:61px;top:6px;width:32px;height:19px;',
 		},
@@ -342,8 +399,11 @@
 			style: 'position:absolute;left:105px;top:6px;width:47px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтажМесяцев1',
 			style: 'position:absolute;left:153px;top:6px;width:32px;height:19px;',
 		},
@@ -358,14 +418,22 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Оплата по среднему заработку',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты1',
 			text: 'Процент оплаты:',
 			style: 'position:absolute;left:6px;top:45px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплатыПоСреднему',
 			style: 'position:absolute;left:94px;top:45px;width:74px;height:19px;',
 		},
@@ -378,6 +446,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:94px;top:22px;width:290px;height:19px;',
 		},
@@ -396,8 +465,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидПростоя',
 			style: 'position:absolute;left:76px;top:22px;width:308px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Простой',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
 		},
 					]
 				},
@@ -414,8 +489,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидНевыхода',
 			style: 'position:absolute;left:84px;top:22px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Неоплачиваемый невыход',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
 		},
 					]
 				},
@@ -424,14 +505,22 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Оплата учебного отпуска',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПроцентОплаты2',
 			text: 'Процент оплаты:',
 			style: 'position:absolute;left:6px;top:45px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентОплатыУчебногоОтпуска',
 			style: 'position:absolute;left:94px;top:45px;width:74px;height:19px;',
 		},
@@ -444,12 +533,18 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчетаУчебногоОтпуска',
 			style: 'position:absolute;left:94px;top:22px;width:290px;height:19px;',
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Документы',
+			style: 'position:absolute;left:8px;top:31px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -460,6 +555,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКадровыйДокумент',
 			style: 'position:absolute;left:76px;top:50px;width:316px;height:19px;',
 		},
@@ -472,6 +568,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаРасчетныйДокумент',
 			style: 'position:absolute;left:76px;top:72px;width:316px;height:19px;',
 		},
@@ -484,8 +581,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:76px;top:8px;width:316px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:779px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:483px;height:408px;',
 			height: 408,width: 483,
@@ -152,14 +131,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:206px;width:436px;height:24px;',
 			items:
 			[
@@ -256,25 +227,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Контрагенты (Контактные лица)',
-				},
-				{
-					text:'Физические лица',
-				},
-				{
-					text:'Прочие контактные лица',
-				},
-				{
-					text:'Организации',
-				},
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьФизЛица',
 			text: '>',
@@ -341,25 +293,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Контрагенты (Контактные лица)',
-				},
-				{
-					text:'Физические лица',
-				},
-				{
-					text:'Прочие контактные лица',
-				},
-				{
-					text:'Организации',
-				},
-			]
 		},
 		{
 			xtype: 'button',
@@ -430,25 +363,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-				{
-					text:'Контрагенты (Контактные лица)',
-				},
-				{
-					text:'Физические лица',
-				},
-				{
-					text:'Прочие контактные лица',
-				},
-				{
-					text:'Организации',
-				},
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьОрганизации',
 			text: '>',
@@ -517,13 +431,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'КнопкаДобавитьЛичныеКонтакты',
 			text: '>',
@@ -590,13 +497,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'button',
@@ -754,6 +654,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтрокаПоиска',
 			style: 'position:absolute;left:6px;top:30px;width:361px;height:19px;',
 		},
@@ -917,32 +818,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'КнопкаУдалитьКому',
 			text: '<',
@@ -966,32 +841,6 @@
 					title:'Копии',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:40px;top:30px;width:228px;height:352px;',
@@ -1063,32 +912,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:40px;top:30px;width:228px;height:352px;',
 			height: 352,width: 228,
@@ -1159,26 +982,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:40px;top:30px;width:228px;height:352px;',
 			height: 352,width: 228,
@@ -1228,6 +1031,31 @@
 			style: 'position:absolute;left:6px;top:193px;width:28px;height:17px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:779px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

@@ -11,40 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:706px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:534px;width:706px;height:25px;',
 			items:
 			[
@@ -77,6 +43,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
@@ -87,8 +54,10 @@
 			style: 'position:absolute;left:172px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
@@ -107,6 +76,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
@@ -129,6 +99,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:507px;width:608px;height:19px;',
 		},
@@ -235,6 +206,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:402px;top:0px;width:274px;height:19px;',
 		},
@@ -247,12 +219,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:90px;top:23px;width:206px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияНоменклатуры',
 			style: 'position:absolute;left:90px;top:46px;width:206px;height:19px;',
 		},
@@ -265,18 +239,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:90px;top:0px;width:206px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаБУВнеоборотногоАктива',
 			style: 'position:absolute;left:402px;top:23px;width:79px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаНУВнеоборотногоАктива',
 			style: 'position:absolute;left:402px;top:46px;width:79px;height:19px;',
 		},
@@ -295,6 +272,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбъектСтроительства',
 			style: 'position:absolute;left:451px;top:0px;width:225px;height:19px;',
 		},
@@ -305,8 +283,11 @@
 			style: 'position:absolute;left:162px;top:0px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Стоимость',
 			style: 'position:absolute;left:228px;top:0px;width:80px;height:19px;',
 		},
@@ -319,6 +300,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаБУВнеоборотногоАктива1',
 			style: 'position:absolute;left:62px;top:24px;width:80px;height:19px;',
 		},
@@ -331,6 +313,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаНУВнеоборотногоАктива1',
 			style: 'position:absolute;left:62px;top:48px;width:80px;height:19px;',
 		},
@@ -341,8 +324,11 @@
 			style: 'position:absolute;left:162px;top:24px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьБУ',
 			style: 'position:absolute;left:228px;top:24px;width:80px;height:19px;',
 		},
@@ -371,8 +357,11 @@
 			style: 'position:absolute;left:162px;top:48px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьНУ',
 			style: 'position:absolute;left:228px;top:48px;width:80px;height:19px;',
 		},
@@ -389,8 +378,11 @@
 			style: 'position:absolute;left:389px;top:24px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьБУХоз',
 			style: 'position:absolute;left:534px;top:24px;width:80px;height:19px;',
 		},
@@ -407,8 +399,11 @@
 			style: 'position:absolute;left:389px;top:48px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьНУХоз',
 			style: 'position:absolute;left:534px;top:48px;width:80px;height:19px;',
 		},
@@ -421,12 +416,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНДС',
 			style: 'position:absolute;left:457px;top:120px;width:75px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:596px;top:120px;width:80px;height:19px;',
 		},
@@ -454,8 +453,11 @@
 			style: 'position:absolute;left:162px;top:72px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьПР',
 			style: 'position:absolute;left:228px;top:72px;width:80px;height:19px;',
 		},
@@ -472,8 +474,11 @@
 			style: 'position:absolute;left:389px;top:72px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьПРХоз',
 			style: 'position:absolute;left:534px;top:72px;width:80px;height:19px;',
 		},
@@ -490,8 +495,11 @@
 			style: 'position:absolute;left:162px;top:96px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьВР',
 			style: 'position:absolute;left:228px;top:96px;width:80px;height:19px;',
 		},
@@ -508,8 +516,11 @@
 			style: 'position:absolute;left:389px;top:96px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьВРХоз',
 			style: 'position:absolute;left:534px;top:96px;width:80px;height:19px;',
 		},
@@ -538,8 +549,11 @@
 			style: 'position:absolute;left:0px;top:1px;width:116px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьУУ',
 			style: 'position:absolute;left:118px;top:0px;width:80px;height:19px;',
 		},
@@ -556,9 +570,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСпособыОтраженияРасходовПоАмортизации',
-			text: 'Способы отражения расходов
-по амортизации (погашению стоимости):',
+			text: 'Способы отражения расходов\r\nпо амортизации (погашению стоимости):',
 			style: 'position:absolute;left:6px;top:33px;width:225px;height:32px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:6px;top:173px;width:676px;height:16px;',
 		},
 					]
 				},
@@ -569,12 +587,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособыОтраженияРасходовПоАмортизации',
 			style: 'position:absolute;left:233px;top:46px;width:295px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ШифрПоЕНАОФ',
 			style: 'position:absolute;left:233px;top:6px;width:295px;height:19px;',
 		},
@@ -587,6 +607,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СоставОсновногоСредства',
 			style: 'position:absolute;left:210px;top:30px;width:186px;height:19px;',
 		},
@@ -599,6 +620,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:210px;top:6px;width:186px;height:19px;',
 		},
@@ -611,6 +633,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МОЛУУ',
 			style: 'position:absolute;left:494px;top:18px;width:188px;height:19px;',
 		},
@@ -627,36 +650,50 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособНачисленияАмортизацииУУ',
 			style: 'position:absolute;left:210px;top:147px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокПолезногоИспользованияУУ',
 			style: 'position:absolute;left:210px;top:219px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПредполагаемыйОбъемПродукцииУУ',
 			style: 'position:absolute;left:210px;top:195px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГодоваяНормаАмортизацииУУ',
 			style: 'position:absolute;left:210px;top:243px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикАмортизацииПоГодуУУ',
 			style: 'position:absolute;left:210px;top:267px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоэффициентУскоренияУУ',
 			style: 'position:absolute;left:585px;top:195px;width:80px;height:19px;',
 		},
@@ -669,6 +706,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндивидуальныйГрафикАмортизации',
 			style: 'position:absolute;left:495px;top:267px;width:187px;height:19px;',
 		},
@@ -681,6 +719,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПараметрВыработкиУУ',
 			style: 'position:absolute;left:210px;top:171px;width:220px;height:19px;',
 		},
@@ -691,10 +730,20 @@
 			style: 'position:absolute;left:6px;top:6px;width:74px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры и графики амортизации:',
+			style: 'position:absolute;left:6px;top:126px;width:676px;height:16px;',
+		},
+		{
 			xtype: 'button',
 			name: 'ЗаполнитьУУ',
 			text: 'Заполнить по данным бух. учета',
 			style: 'position:absolute;left:480px;top:147px;width:196px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'События основного средства:',
+			style: 'position:absolute;left:6px;top:54px;width:676px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -705,6 +754,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеПринятиеКУчету',
 			style: 'position:absolute;left:210px;top:74px;width:186px;height:19px;',
 		},
@@ -722,6 +772,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеВводаВЭксплуатацию',
 			style: 'position:absolute;left:210px;top:98px;width:186px;height:19px;',
 		},
@@ -740,12 +791,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МОЛБУ',
 			style: 'position:absolute;left:210px;top:30px;width:186px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:210px;top:6px;width:186px;height:19px;',
 		},
@@ -758,12 +811,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособПоступления',
 			style: 'position:absolute;left:494px;top:18px;width:188px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокПолезногоИспользованияБУ',
 			style: 'position:absolute;left:210px;top:219px;width:80px;height:19px;',
 		},
@@ -775,42 +832,55 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособНачисленияАмортизацииБУ',
 			style: 'position:absolute;left:210px;top:147px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаБУ',
 			style: 'position:absolute;left:585px;top:267px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетНачисленияАмортизацииБУ',
 			style: 'position:absolute;left:585px;top:246px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГодоваяНормаАмортизацииБУ',
 			style: 'position:absolute;left:210px;top:243px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоэффициентУскоренияБУ',
 			style: 'position:absolute;left:585px;top:195px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПредполагаемыйОбъемПродукцииБУ',
 			style: 'position:absolute;left:210px;top:195px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикАмортизацииПоГодуБУ',
 			style: 'position:absolute;left:210px;top:267px;width:220px;height:19px;',
 		},
@@ -821,10 +891,21 @@
 			style: 'position:absolute;left:480px;top:147px;width:196px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры и графики амортизации:',
+			style: 'position:absolute;left:6px;top:126px;width:676px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПараметрВыработкиБУ',
 			style: 'position:absolute;left:210px;top:171px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'События основного средства:',
+			style: 'position:absolute;left:6px;top:54px;width:676px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -835,6 +916,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеПринятиеКУчетуРегл',
 			style: 'position:absolute;left:210px;top:74px;width:186px;height:19px;',
 		},
@@ -852,6 +934,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеВводаВЭксплуатациюРегл',
 			style: 'position:absolute;left:210px;top:98px;width:186px;height:19px;',
 		},
@@ -876,19 +959,25 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаНУ',
 			style: 'position:absolute;left:243px;top:29px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Общие сведения',
+			style: 'position:absolute;left:6px;top:6px;width:676px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПорядокВключенияСтоимостиВСоставРасходовНУ',
-			text: 'Порядок включения стоимости
-в состав расходов:',
+			text: 'Порядок включения стоимости\r\nв состав расходов:',
 			style: 'position:absolute;left:12px;top:53px;width:226px;height:27px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокВключенияСтоимостиВСоставРасходовНУ',
 			style: 'position:absolute;left:243px;top:53px;width:240px;height:19px;',
 		},
@@ -917,6 +1006,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетНачисленияАмортизацииНУ',
 			style: 'position:absolute;left:241px;top:23px;width:80px;height:19px;',
 		},
@@ -927,8 +1017,11 @@
 			style: 'position:absolute;left:6px;top:71px;width:226px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокПолезногоИспользованияНУ',
 			style: 'position:absolute;left:241px;top:71px;width:80px;height:19px;',
 		},
@@ -939,15 +1032,28 @@
 			style: 'position:absolute;left:6px;top:95px;width:226px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СпециальныйКоэффициентНУ',
 			style: 'position:absolute;left:241px;top:95px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры амортизации',
+			style: 'position:absolute;left:0px;top:0px;width:676px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Включить амортизационную премию в состав расходов',
 			style: 'position:absolute;left:6px;top:144px;width:427px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Амортизационная премия',
+			style: 'position:absolute;left:0px;top:123px;width:676px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -973,14 +1079,18 @@
 			style: 'position:absolute;left:6px;top:0px;width:226px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентКапитальныхВложенийВключаемыхВРасходыНУ',
 			style: 'position:absolute;left:241px;top:0px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаЗатратПоАмортизационнойПремии',
 			style: 'position:absolute;left:241px;top:24px;width:80px;height:19px;',
 		},
@@ -1011,18 +1121,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоПоАмортизационнойПремии1',
 			style: 'position:absolute;left:241px;top:48px;width:238px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоПоАмортизационнойПремии2',
 			style: 'position:absolute;left:241px;top:72px;width:238px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоПоАмортизационнойПремии3',
 			style: 'position:absolute;left:241px;top:96px;width:238px;height:19px;',
 		},
@@ -1050,6 +1163,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособНачисленияАмортизацииНУ',
 			style: 'position:absolute;left:235px;top:0px;width:240px;height:19px;',
 		},
@@ -1087,8 +1201,11 @@
 			style: 'position:absolute;left:6px;top:21px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьНУ1',
 			style: 'position:absolute;left:72px;top:21px;width:80px;height:19px;',
 		},
@@ -1097,6 +1214,11 @@
 			name: 'РеглВалюта9',
 			text: 'РеглВалюта',
 			style: 'position:absolute;left:154px;top:21px;width:60px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Со счета учета списать сумму',
+			style: 'position:absolute;left:6px;top:0px;width:664px;height:16px;',
 		},
 					]
 				},
@@ -1111,6 +1233,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияРасходовПриВключенииВСтоимость',
 			style: 'position:absolute;left:237px;top:0px;width:433px;height:19px;',
 		},
@@ -1134,8 +1257,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:226px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьУСН',
 			style: 'position:absolute;left:304px;top:6px;width:80px;height:19px;',
 		},
@@ -1146,8 +1272,11 @@
 			style: 'position:absolute;left:6px;top:31px;width:226px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокПолезногоИспользованияУСН',
 			style: 'position:absolute;left:304px;top:31px;width:80px;height:19px;',
 		},
@@ -1158,8 +1287,10 @@
 			style: 'position:absolute;left:437px;top:6px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПриобретения',
 			style: 'position:absolute;left:562px;top:6px;width:120px;height:19px;',
 		},
@@ -1280,6 +1411,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокВключенияСтоимостиВСоставРасходовУСН',
 			style: 'position:absolute;left:304px;top:56px;width:378px;height:19px;',
 		},
@@ -1298,6 +1430,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:92px;top:7px;width:210px;height:19px;',
 		},
@@ -1327,6 +1460,44 @@
 			name: 'ГиперссылкаСчетФактура',
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:90px;top:485px;width:608px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:706px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
 		},
 	]
 });

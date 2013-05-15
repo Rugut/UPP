@@ -320,6 +320,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Остатки товаров на складах',
+			style: 'position:absolute;left:0px;top:0px;width:611px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:20px;width:143px;height:124px;',
 			height: 124,width: 143,
@@ -404,6 +409,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаЦены',
 			style: 'position:absolute;left:476px;top:125px;width:135px;height:19px;',
 		},
@@ -430,6 +436,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораСпискаНоменклатуры',
 			style: 'position:absolute;left:234px;top:33px;width:552px;height:19px;',
 		},
@@ -440,8 +447,16 @@
 			style: 'position:absolute;left:175px;top:33px;width:57px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:357px;top:95px;width:157px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -461,10 +476,6 @@
 					text:'Переместить вниз',
 				},
 			]
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
 		},
 	]
 });

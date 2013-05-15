@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:369px;width:270px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:254px;height:353px;',
 			height: 353,width: 254,
@@ -74,11 +57,20 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатель',
+			style: 'position:absolute;left:6px;top:68px;width:240px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Тип',
 			text: 'Тип:',
 			style: 'position:absolute;left:6px;top:6px;width:37px;height:15px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Диаграмма',
@@ -88,6 +80,8 @@
 			xtype: 'radio',
 			boxLabel: 'Гистограмма',
 			style: 'position:absolute;left:21px;top:43px;width:153px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -113,8 +107,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимальноеЗначение',
 			style: 'position:absolute;left:135px;top:0px;width:105px;height:19px;',
 		},
@@ -125,8 +122,11 @@
 			style: 'position:absolute;left:0px;top:24px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Интервал',
 			style: 'position:absolute;left:135px;top:24px;width:105px;height:19px;',
 		},
@@ -142,8 +142,11 @@
 			style: 'position:absolute;left:0px;top:48px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВысотаГистрограммы',
 			style: 'position:absolute;left:135px;top:48px;width:105px;height:19px;',
 		},
@@ -154,6 +157,10 @@
 			style: 'position:absolute;left:0px;top:101px;width:130px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'количество объектов',
 			style: 'position:absolute;left:19px;top:121px;width:206px;height:19px;',
@@ -163,11 +170,34 @@
 			boxLabel: 'сумму параметров анализа',
 			style: 'position:absolute;left:19px;top:140px;width:206px;height:19px;',
 		},
+			]
+		},
 					]
 				},
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:369px;width:270px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

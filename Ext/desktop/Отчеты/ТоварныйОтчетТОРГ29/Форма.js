@@ -10,18 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:437px;top:33px;width:335px;height:19px;',
 		},
@@ -32,14 +23,18 @@
 			style: 'position:absolute;left:362px;top:33px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:88px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:188px;top:33px;width:80px;height:19px;',
 		},
@@ -62,8 +57,11 @@
 			style: 'position:absolute;left:270px;top:33px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерОтчета',
 			style: 'position:absolute;left:88px;top:56px;width:80px;height:19px;',
 		},
@@ -76,6 +74,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:437px;top:56px;width:335px;height:19px;',
 		},
@@ -84,6 +83,20 @@
 			name: 'НадписьСклад',
 			text: 'Склад:',
 			style: 'position:absolute;left:362px;top:56px;width:70px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+			]
 		},
 	]
 });

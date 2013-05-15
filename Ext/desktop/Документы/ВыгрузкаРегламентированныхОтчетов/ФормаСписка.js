@@ -92,8 +92,131 @@
 			},
 		},
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:190px;width:688px;height:193px;',
+			height: 193,width: 688,
+			items:
+			[
+				{
+					title:'Отчеты',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:674px;height:161px;',
+			height: 161,width: 674,
+			columns:
+			[
+				{
+					text:'N',
+					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
+				},
+				{
+					text:'Отчеты',
+					width:'595',
+					dataIndex:'Основание',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Основание',
+					},
+				]
+			},
+		},
+					]
+				},
+				{
+					title:'Тексты выгрузки',
+					items:
+					[
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:6px;top:6px;width:182px;height:161px;',
+			height: 161,width: 182,
+			columns:
+			[
+				{
+					text:'N',
+					width:'28',
+					dataIndex:'НомерСтроки',
+					flex:1,
+				},
+				{
+					text:'Тип',
+					width:'100',
+					dataIndex:'Тип',
+					flex:1,
+				},
+				{
+					text:'Имя файла',
+					width:'100',
+					dataIndex:'ИмяФайла',
+					flex:1,
+				},
+				{
+					text:'Текст',
+					width:'100',
+					dataIndex:'Текст',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'НомерСтроки',
+					},
+					{
+						name:'Тип',
+					},
+					{
+						name:'ИмяФайла',
+					},
+					{
+						name:'Текст',
+					},
+				]
+			},
+		},
+		{
+			xtype: 'textarea',
+			hideLabel: true,
+			disabled: false,
+			name: 'ТекстВыгрузки',
+			style: 'position:absolute;left:194px;top:6px;width:486px;height:161px;',
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:704px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -234,124 +357,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:190px;width:688px;height:193px;',
-			height: 193,width: 688,
-			items:
-			[
-				{
-					title:'Отчеты',
-					items:
-					[
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:6px;top:6px;width:674px;height:161px;',
-			height: 161,width: 674,
-			columns:
-			[
-				{
-					text:'N',
-					width:'28',
-					dataIndex:'НомерСтроки',
-					flex:1,
-				},
-				{
-					text:'Отчеты',
-					width:'595',
-					dataIndex:'Основание',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'НомерСтроки',
-					},
-					{
-						name:'Основание',
-					},
-				]
-			},
-		},
-					]
-				},
-				{
-					title:'Тексты выгрузки',
-					items:
-					[
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:6px;top:6px;width:182px;height:161px;',
-			height: 161,width: 182,
-			columns:
-			[
-				{
-					text:'N',
-					width:'28',
-					dataIndex:'НомерСтроки',
-					flex:1,
-				},
-				{
-					text:'Тип',
-					width:'100',
-					dataIndex:'Тип',
-					flex:1,
-				},
-				{
-					text:'Имя файла',
-					width:'100',
-					dataIndex:'ИмяФайла',
-					flex:1,
-				},
-				{
-					text:'Текст',
-					width:'100',
-					dataIndex:'Текст',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'НомерСтроки',
-					},
-					{
-						name:'Тип',
-					},
-					{
-						name:'ИмяФайла',
-					},
-					{
-						name:'Текст',
-					},
-				]
-			},
-		},
-		{
-			xtype: 'textarea',
-			hideLabel: true,
-			name: 'ТекстВыгрузки',
-			style: 'position:absolute;left:194px;top:6px;width:486px;height:161px;',
-		},
-					]
 				},
 			]
 		},

@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:393px;width:646px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:630px;height:377px;',
 			height: 377,width: 630,
@@ -118,33 +101,15 @@
 			style: 'position:absolute;left:31px;top:35px;width:599px;height:40px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:99px;width:213px;height:25px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьЗаголовокПерерасчетов',
 			text: 'Перерасчет начисленных пособий на детей',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:165px;width:213px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'История индексации пособий на детей',
+			style: 'position:absolute;left:0px;top:83px;width:630px;height:16px;',
 		},
 					]
 				},
@@ -161,6 +126,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:185px;top:35px;width:120px;height:19px;',
 		},
@@ -173,6 +139,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОкончаниеПериода',
 			style: 'position:absolute;left:333px;top:35px;width:120px;height:19px;',
 		},
@@ -279,32 +246,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:483px;top:19px;width:147px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:519px;top:19px;width:111px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'КнопкаЗаполнить',
 			text: 'Заполнить',
@@ -377,42 +318,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:322px;top:0px;width:202px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -426,10 +331,32 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:185px;top:61px;width:120px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:393px;width:646px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

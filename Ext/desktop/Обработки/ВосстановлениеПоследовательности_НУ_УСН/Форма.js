@@ -10,8 +10,39 @@
 	items:
 	[
 		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаАктуализации',
+			style: 'position:absolute;left:121px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:57px;width:106px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:121px;top:57px;width:273px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаКон',
+			text: 'Дата актуализации',
+			style: 'position:absolute;left:8px;top:33px;width:106px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:402px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -19,6 +50,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:84px;width:402px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -32,30 +64,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаАктуализации',
-			style: 'position:absolute;left:121px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:57px;width:106px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:121px;top:57px;width:273px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДатаКон',
-			text: 'Дата актуализации',
-			style: 'position:absolute;left:8px;top:33px;width:106px;height:19px;',
 		},
 	]
 });

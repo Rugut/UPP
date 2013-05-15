@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:142px;top:58px;width:250px;height:19px;',
 		},
@@ -28,8 +29,19 @@
 			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Объект',
+			style: 'position:absolute;left:142px;top:33px;width:250px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				'-',
@@ -80,6 +92,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:361px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -97,12 +110,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Объект',
-			style: 'position:absolute;left:142px;top:33px;width:250px;height:19px;',
 		},
 	]
 });

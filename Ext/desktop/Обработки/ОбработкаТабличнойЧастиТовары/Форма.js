@@ -300,6 +300,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаВариантаЗачения',
 			style: 'position:absolute;left:234px;top:4px;width:400px;height:19px;',
 		},
@@ -312,6 +313,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:640px;top:353px;width:80px;height:19px;',
 		},
@@ -324,6 +326,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:448px;top:353px;width:80px;height:19px;',
 		},
@@ -347,6 +350,11 @@
 					text:'Справка',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Товары',
+			style: 'position:absolute;left:8px;top:89px;width:712px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -373,6 +381,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтранаПроисхождения',
 			style: 'position:absolute;left:226px;top:0px;width:400px;height:19px;',
 		},
@@ -423,5 +432,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

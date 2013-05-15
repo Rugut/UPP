@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:506px;',
 			height: 506,width: 497,
@@ -127,6 +114,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегНомДок',
 			style: 'position:absolute;left:191px;top:60px;width:298px;height:19px;',
 		},
@@ -139,6 +127,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаРегЭл',
 			style: 'position:absolute;left:191px;top:90px;width:298px;height:19px;',
 		},
@@ -151,6 +140,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаРегБум',
 			style: 'position:absolute;left:191px;top:125px;width:298px;height:19px;',
 		},
@@ -163,6 +153,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДокНП',
 			style: 'position:absolute;left:191px;top:10px;width:298px;height:19px;',
 		},
@@ -175,6 +166,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодСтранПрод1',
 			style: 'position:absolute;left:191px;top:155px;width:298px;height:19px;',
 		},
@@ -187,6 +179,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаДокНП',
 			style: 'position:absolute;left:191px;top:35px;width:298px;height:19px;',
 		},
@@ -199,6 +192,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФЛК',
 			style: 'position:absolute;left:191px;top:180px;width:298px;height:19px;',
 		},
@@ -211,6 +205,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаФЛК',
 			style: 'position:absolute;left:191px;top:205px;width:298px;height:19px;',
 		},
@@ -223,10 +218,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаИД',
 			style: 'position:absolute;left:191px;top:230px;width:298px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

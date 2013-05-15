@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:62px;top:33px;width:80px;height:19px;',
 		},
@@ -28,62 +29,12 @@
 			style: 'position:absolute;left:142px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:162px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:405px;width:660px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -102,8 +53,10 @@
 			style: 'position:absolute;left:439px;top:6px;width:96px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:537px;top:6px;width:99px;height:19px;',
 		},
@@ -116,6 +69,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Периодичность',
 			style: 'position:absolute;left:97px;top:6px;width:124px;height:19px;',
 		},
@@ -126,20 +80,13 @@
 			style: 'position:absolute;left:232px;top:6px;width:118px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:358px;top:6px;width:66px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:32px;width:630px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -263,14 +210,20 @@
 			style: 'position:absolute;left:24px;top:74px;width:234px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазовыйПокупательНач',
 			style: 'position:absolute;left:109px;top:98px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазовыйПокупательКон',
 			style: 'position:absolute;left:227px;top:98px;width:86px;height:19px;',
 		},
@@ -281,14 +234,20 @@
 			style: 'position:absolute;left:41px;top:154px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'XКлассНач',
 			style: 'position:absolute;left:109px;top:154px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'XКлассКон',
 			style: 'position:absolute;left:227px;top:154px;width:86px;height:19px;',
 		},
@@ -299,14 +258,20 @@
 			style: 'position:absolute;left:41px;top:179px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'YКлассНач',
 			style: 'position:absolute;left:109px;top:179px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'YКлассКон',
 			style: 'position:absolute;left:227px;top:179px;width:86px;height:19px;',
 		},
@@ -317,14 +282,20 @@
 			style: 'position:absolute;left:41px;top:204px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ZКлассНач',
 			style: 'position:absolute;left:109px;top:204px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ZКлассКон',
 			style: 'position:absolute;left:227px;top:204px;width:86px;height:19px;',
 		},
@@ -333,6 +304,16 @@
 			name: 'НадписьПараметраРаспределения',
 			text: 'ПараметрРаспределения',
 			style: 'position:absolute;left:23px;top:27px;width:613px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Критерии распределения',
+			style: 'position:absolute;left:6px;top:53px;width:630px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметр распределения (из учетной политики)',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -383,6 +364,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:378px;width:556px;height:19px;',
 		},
@@ -395,8 +377,66 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:354px;width:556px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:405px;width:660px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

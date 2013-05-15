@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:93px;top:33px;width:81px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:58px;width:299px;height:19px;',
 		},
@@ -65,9 +67,13 @@
 			text: 'Цвет фона:',
 			style: 'position:absolute;left:8px;top:108px;width:79px;height:19px;text-align:left;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -75,6 +81,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:184px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

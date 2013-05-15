@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:179px;height:19px;',
 		},
@@ -30,29 +31,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:317px;top:33px;width:81px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:311px;width:406px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Статьи оборотов',
+			style: 'position:absolute;left:8px;top:103px;width:390px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -135,6 +121,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеДляОтчета',
 			style: 'position:absolute;left:94px;top:55px;width:304px;height:40px;',
 		},
@@ -143,6 +130,31 @@
 			name: 'НадписьНаименованиеДляОтчета',
 			text: 'Наименование для отчета:',
 			style: 'position:absolute;left:8px;top:55px;width:84px;height:27px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:311px;width:406px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:108px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:208px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:323px;width:548px;height:19px;',
 		},
@@ -383,6 +387,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:26px;width:210px;height:19px;',
 		},
@@ -395,8 +400,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:414px;top:26px;width:214px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
 		},
 					]
 				},
@@ -411,6 +422,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:108px;top:56px;width:220px;height:19px;',
 		},
@@ -423,6 +435,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:424px;top:56px;width:220px;height:19px;',
 		},
@@ -476,6 +489,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументПеремещения',
 			style: 'position:absolute;left:100px;top:4px;width:220px;height:19px;',
 		},
@@ -494,6 +508,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:100px;top:4px;width:220px;height:19px;',
 		},
@@ -521,6 +536,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:100px;top:0px;width:220px;height:19px;',
 		},
@@ -539,6 +555,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаказПоставщику',
 			style: 'position:absolute;left:100px;top:0px;width:220px;height:19px;',
 		},
@@ -546,5 +563,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

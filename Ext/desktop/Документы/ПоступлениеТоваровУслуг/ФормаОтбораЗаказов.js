@@ -37,8 +37,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеДатаПоступления',
 			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
 		},
@@ -77,8 +79,11 @@
 			style: 'position:absolute;left:364px;top:8px;width:273px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеПросроченоДнейОтгрузки',
 			style: 'position:absolute;left:318px;top:64px;width:42px;height:19px;',
 		},
@@ -87,8 +92,11 @@
 			style: 'position:absolute;left:150px;top:96px;width:210px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеПросроченоДнейОплаты',
 			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
 		},
@@ -109,8 +117,10 @@
 			style: 'position:absolute;left:16px;top:120px;width:132px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеДатаОплаты',
 			style: 'position:absolute;left:258px;top:120px;width:102px;height:19px;',
 		},
@@ -194,13 +204,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:406px;top:4px;width:219px;height:17px;',
@@ -220,14 +223,18 @@
 			style: 'position:absolute;left:325px;top:17px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:17px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:188px;top:17px;width:80px;height:19px;',
 		},
@@ -536,6 +543,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заказы',
+			style: 'position:absolute;left:8px;top:212px;width:767px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:493px;width:783px;height:25px;',
 			items:
@@ -576,19 +588,6 @@
 					title:'Товары',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:753px;height:24px;',
-			items:
-			[
-				{
-					text:'Обнулить столбец добавляемых в документ',
-				},
-				{
-					text:'Заполнить столбец добавляемых в документ',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:753px;height:332px;',
@@ -750,19 +749,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:753px;height:24px;',
-			items:
-			[
-				{
-					text:'Обнулить столбец добавляемых в документ',
-				},
-				{
-					text:'Заполнить столбец добавляемых в документ',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:753px;height:334px;',
 			height: 334,width: 753,
@@ -914,19 +900,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:753px;height:24px;',
-			items:
-			[
-				{
-					text:'Обнулить столбец добавляемых в документ',
-				},
-				{
-					text:'Заполнить столбец добавляемых в документ',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:753px;height:332px;',
 			height: 332,width: 753,
@@ -1050,19 +1023,6 @@
 					title:'Оборудование',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:753px;height:24px;',
-			items:
-			[
-				{
-					text:'Обнулить столбец добавляемых в документ',
-				},
-				{
-					text:'Заполнить столбец добавляемых в документ',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:753px;height:332px;',
@@ -1204,6 +1164,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Заполнение табличных частей',
+			style: 'position:absolute;left:8px;top:14px;width:767px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Товары',
 			style: 'position:absolute;left:23px;top:38px;width:102px;height:19px;',
@@ -1233,5 +1198,8 @@
 			boxLabel: 'Оборудование',
 			style: 'position:absolute;left:145px;top:61px;width:106px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

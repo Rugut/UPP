@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:58px;width:64px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:58px;width:220px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:328px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БазоваяЕдиницаИзмерения',
 			style: 'position:absolute;left:164px;top:106px;width:80px;height:19px;',
 		},
@@ -66,12 +70,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БазаЗаданияПотребности',
 			style: 'position:absolute;left:164px;top:130px;width:258px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Характеристики',
+			style: 'position:absolute;left:8px;top:85px;width:414px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -79,6 +93,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:157px;width:430px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

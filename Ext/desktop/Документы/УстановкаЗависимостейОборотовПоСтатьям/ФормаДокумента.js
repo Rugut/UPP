@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:77px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:179px;top:33px;width:33px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:212px;top:33px;width:102px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяОборотовВлияющая',
 			style: 'position:absolute;left:428px;top:57px;width:220px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЦФО',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:428px;top:81px;width:220px;height:19px;',
 		},
@@ -90,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
 		},
@@ -102,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:428px;top:105px;width:220px;height:19px;',
 		},
@@ -114,15 +123,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:129px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:172px;width:640px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -234,8 +237,38 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Зависимые обороты',
+			style: 'position:absolute;left:8px;top:156px;width:640px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись10',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:94px;top:361px;width:554px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:172px;width:640px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -256,6 +289,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:656px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -277,18 +311,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись10',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:361px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:94px;top:361px;width:554px;height:19px;',
 		},
 	]
 });

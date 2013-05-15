@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:309px;width:669px;height:19px;',
 		},
@@ -608,16 +612,30 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:86px;top:30px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:743px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:412px;top:102px;width:337px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:78px;width:743px;height:16px;',
 		},
 					]
 				},
@@ -730,8 +748,11 @@
 			style: 'position:absolute;left:594px;top:265px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:667px;top:265px;width:98px;height:17px;',
 		},
@@ -744,6 +765,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаказПокупателя',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -760,8 +782,11 @@
 			style: 'position:absolute;left:594px;top:285px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:668px;top:285px;width:97px;height:17px;',
 		},
@@ -842,5 +867,8 @@
 			text: 'Б/счет, касса из заказа',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

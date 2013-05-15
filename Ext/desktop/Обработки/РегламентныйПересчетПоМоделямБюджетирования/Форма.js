@@ -10,38 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:457px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:303px;width:457px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Период с:',
 			style: 'position:absolute;left:8px;top:57px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:70px;top:57px;width:96px;height:19px;',
 		},
@@ -52,8 +30,10 @@
 			style: 'position:absolute;left:168px;top:57px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:186px;top:57px;width:96px;height:19px;',
 		},
@@ -72,18 +52,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:70px;top:33px;width:233px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Автоматически по указанным параметрам',
-			style: 'position:absolute;left:14px;top:102px;width:268px;height:16px;',
+			xtype: 'fieldset',
+			title: 'Выбор документов для обработки',
+			style: 'position:absolute;left:8px;top:81px;width:441px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Вручную',
-			style: 'position:absolute;left:14px;top:123px;width:268px;height:16px;',
+			xtype: 'fieldset',
+			title: 'Документы для обработки',
+			style: 'position:absolute;left:8px;top:144px;width:441px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -132,8 +113,54 @@
 			},
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Автоматически по указанным параметрам',
+			style: 'position:absolute;left:14px;top:102px;width:268px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Вручную',
+			style: 'position:absolute;left:14px;top:123px;width:268px;height:16px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:303px;width:457px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:165px;width:441px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

@@ -89,9 +89,23 @@
 					items:
 					[
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Повышение должностных окладов сотрудников доп. категории',
 			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение окладов сотрудников доп. категории',
+			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Повышение окладов сотрудникам по трудовым договорам',
+			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -103,15 +117,7 @@
 			boxLabel: 'Просмотр истории, отмена последнего повышения',
 			style: 'position:absolute;left:40px;top:116px;width:284px;height:19px;',
 		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Повышение окладов сотрудников доп. категории',
-			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Повышение окладов сотрудникам по трудовым договорам',
-			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
+			]
 		},
 					]
 				},
@@ -239,6 +245,11 @@
 			text: 'Надпись описание истории индексации',
 			style: 'position:absolute;left:211px;top:32px;width:442px;height:81px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'История повышения окладов',
+			style: 'position:absolute;left:6px;top:6px;width:647px;height:16px;',
+		},
 					]
 				},
 			]
@@ -269,6 +280,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация1',
 			style: 'position:absolute;left:114px;top:6px;width:351px;height:19px;',
 		},
@@ -367,6 +379,11 @@
 			text: 'Надпись описание истории индексации',
 			style: 'position:absolute;left:228px;top:182px;width:431px;height:112px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'История повышения окладов',
+			style: 'position:absolute;left:0px;top:160px;width:659px;height:16px;',
+		},
 					]
 				},
 				{
@@ -398,6 +415,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:114px;top:6px;width:351px;height:19px;',
 		},
@@ -408,8 +426,10 @@
 			style: 'position:absolute;left:20px;top:30px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПовышения',
 			style: 'position:absolute;left:114px;top:30px;width:80px;height:19px;',
 		},
@@ -425,8 +445,11 @@
 			style: 'position:absolute;left:243px;top:30px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоэффициентПовышения',
 			style: 'position:absolute;left:385px;top:30px;width:80px;height:19px;',
 		},
@@ -455,8 +478,10 @@
 			style: 'position:absolute;left:22px;top:14px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПовышения1',
 			style: 'position:absolute;left:116px;top:14px;width:80px;height:19px;',
 		},
@@ -467,8 +492,11 @@
 			style: 'position:absolute;left:245px;top:14px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоэффициентПовышения1',
 			style: 'position:absolute;left:387px;top:14px;width:80px;height:19px;',
 		},
@@ -495,6 +523,10 @@
 			style: 'position:absolute;left:12px;top:199px;width:204px;height:16px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'до рубля',
 			style: 'position:absolute;left:216px;top:199px;width:71px;height:16px;',
@@ -504,6 +536,12 @@
 			boxLabel: 'не округлять новые оклады',
 			style: 'position:absolute;left:216px;top:262px;width:173px;height:17px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'в сторону увеличения',
@@ -513,6 +551,8 @@
 			xtype: 'radio',
 			boxLabel: 'по правилам математики',
 			style: 'position:absolute;left:235px;top:235px;width:160px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -621,43 +661,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:46px;top:109px;width:402px;height:24px;',
-			items:
-			[
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
-			items:
-			[
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Проверить по штатному расписанию',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -746,39 +749,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:121px;top:101px;width:385px;height:26px;',
-			items:
-			[
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -849,39 +819,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:113px;top:122px;width:267px;height:24px;',
-			items:
-			[
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -906,39 +843,6 @@
 				[
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:114px;top:94px;width:222px;height:26px;',
-			items:
-			[
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
 		},
 					]
 				},
@@ -978,5 +882,8 @@
 			text: 'Помощник повышения зарплаты',
 			style: 'position:absolute;left:8px;top:8px;width:659px;height:28px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

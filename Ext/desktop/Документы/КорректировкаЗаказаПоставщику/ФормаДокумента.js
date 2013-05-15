@@ -30,12 +30,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -885,8 +888,16 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
+		},
+		{
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:91px;top:30px;width:80px;height:19px;',
 		},
@@ -899,8 +910,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:412px;top:82px;width:216px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:58px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -925,8 +942,11 @@
 			style: 'position:absolute;left:469px;top:342px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:548px;top:342px;width:96px;height:17px;',
 		},
@@ -937,8 +957,11 @@
 			style: 'position:absolute;left:469px;top:366px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:549px;top:366px;width:95px;height:17px;',
 		},
@@ -957,6 +980,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаказПоставщику',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -1000,6 +1024,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:390px;width:548px;height:19px;',
 		},
@@ -1027,5 +1052,8 @@
 			text: 'Б/счет, касса из заказа',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

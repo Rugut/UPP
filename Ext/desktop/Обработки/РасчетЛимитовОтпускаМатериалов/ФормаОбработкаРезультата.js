@@ -53,6 +53,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Периодичность',
 			style: 'position:absolute;left:81px;top:4px;width:265px;height:19px;',
 		},
@@ -71,5 +72,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

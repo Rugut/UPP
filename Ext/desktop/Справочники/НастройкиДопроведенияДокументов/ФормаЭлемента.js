@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:103px;top:33px;width:347px;height:19px;',
 		},
@@ -30,36 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:103px;top:191px;width:347px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:458px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:218px;width:458px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -84,6 +58,16 @@
 			style: 'position:absolute;left:6px;top:8px;width:185px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:6px;top:79px;width:44px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'только требующие допроведения',
 			style: 'position:absolute;left:20px;top:32px;width:194px;height:19px;',
@@ -93,11 +77,7 @@
 			boxLabel: 'все',
 			style: 'position:absolute;left:20px;top:55px;width:40px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериод',
-			text: 'Период:',
-			style: 'position:absolute;left:6px;top:79px;width:44px;height:19px;text-align:left;',
+			]
 		},
 					]
 				},
@@ -122,8 +102,11 @@
 			style: 'position:absolute;left:20px;top:78px;width:117px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерДняНачалоЗапуска',
 			style: 'position:absolute;left:148px;top:78px;width:22px;height:19px;',
 		},
@@ -134,8 +117,11 @@
 			style: 'position:absolute;left:172px;top:78px;width:16px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерДняКонецЗапуска',
 			style: 'position:absolute;left:187px;top:78px;width:22px;height:19px;',
 		},
@@ -146,6 +132,39 @@
 			style: 'position:absolute;left:133px;top:78px;width:10px;height:19px;text-align:right;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:458px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:218px;width:458px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

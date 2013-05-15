@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:101px;top:33px;width:116px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:223px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:244px;top:33px;width:254px;height:19px;',
 		},
@@ -42,15 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:101px;top:57px;width:397px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:105px;width:490px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -117,8 +114,52 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:312px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:101px;top:312px;width:397px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:288px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:101px;top:288px;width:397px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБазовыйТипЦен',
+			text: 'Надпись базовый тип цен',
+			style: 'position:absolute;left:101px;top:81px;width:397px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:105px;width:490px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:506px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -136,6 +177,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:339px;width:506px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -157,36 +199,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКомментарий',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:312px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:101px;top:312px;width:397px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:288px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:101px;top:288px;width:397px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьБазовыйТипЦен',
-			text: 'Надпись базовый тип цен',
-			style: 'position:absolute;left:101px;top:81px;width:397px;height:19px;text-align:left;',
 		},
 	]
 });

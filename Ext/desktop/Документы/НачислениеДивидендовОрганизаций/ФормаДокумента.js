@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:423px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:505px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:523px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:113px;top:33px;width:205px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:417px;width:547px;height:19px;',
 		},
@@ -66,25 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:423px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
-			items:
-			[
-				{
-					text:'Рассчитать все',
-				},
-				'-',
-				{
-					text:'Рассчитать дивиденды',
-				},
-				{
-					text:'Рассчитать НДФЛ',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -190,18 +179,11 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:173px;width:635px;height:24px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДивидендыОбщаяСумма',
 			style: 'position:absolute;left:111px;top:107px;width:100px;height:19px;',
 		},
@@ -212,8 +194,11 @@
 			style: 'position:absolute;left:336px;top:107px;width:126px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДивидендыПолученные',
 			style: 'position:absolute;left:464px;top:107px;width:100px;height:19px;',
 		},
@@ -226,24 +211,33 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:113px;top:57px;width:205px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Общая сумма:',
-			style: 'position:absolute;left:13px;top:107px;width:96px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Дивиденды к распределению',
+			style: 'position:absolute;left:8px;top:86px;width:310px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'На одну акцию:',
-			style: 'position:absolute;left:13px;top:131px;width:96px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДивидендыНаОднуАкцию',
 			style: 'position:absolute;left:111px;top:131px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Вычет по НДФЛ',
+			style: 'position:absolute;left:336px;top:86px;width:307px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Начисления',
+			style: 'position:absolute;left:8px;top:157px;width:635px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -305,8 +299,57 @@
 			]
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Общая сумма:',
+			style: 'position:absolute;left:13px;top:107px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'На одну акцию:',
+			style: 'position:absolute;left:13px;top:131px;width:96px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Рассчитать все',
+				},
+				'-',
+				{
+					text:'Рассчитать дивиденды',
+				},
+				{
+					text:'Рассчитать НДФЛ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:173px;width:635px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:241px;width:635px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

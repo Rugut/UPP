@@ -10,26 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:33px;width:310px;height:24px;',
-			items:
-			[
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:310px;height:297px;',
 			height: 297,width: 310,
@@ -66,9 +46,34 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:33px;width:310px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:326px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]

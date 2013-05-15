@@ -10,26 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Материал',
 			style: 'position:absolute;left:88px;top:57px;width:220px;height:19px;',
 		},
@@ -48,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:33px;width:220px;height:19px;',
 		},
@@ -60,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:416px;top:57px;width:220px;height:19px;',
 		},
@@ -70,8 +55,10 @@
 			style: 'position:absolute;left:336px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачДата',
 			style: 'position:absolute;left:416px;top:33px;width:84px;height:19px;',
 		},
@@ -82,8 +69,10 @@
 			style: 'position:absolute;left:505px;top:33px;width:18px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонДата',
 			style: 'position:absolute;left:527px;top:33px;width:84px;height:19px;',
 		},
@@ -92,6 +81,28 @@
 			name: 'КнопкаВыборПериода',
 			text: '...',
 			style: 'position:absolute;left:617px;top:33px;width:19px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+			]
 		},
 	]
 });

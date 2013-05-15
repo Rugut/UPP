@@ -20,32 +20,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:420px;height:24px;',
-			items:
-			[
-				{
-					text:'Параметры',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Из списка',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:420px;height:244px;',
 			height: 244,width: 420,
@@ -89,8 +63,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаТекДата',
 			style: 'position:absolute;left:94px;top:26px;width:88px;height:19px;',
 		},
@@ -118,6 +94,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКаталог',
 			style: 'position:absolute;left:150px;top:168px;width:276px;height:19px;',
 		},
@@ -129,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаАдресаЭлПочты',
 			style: 'position:absolute;left:150px;top:192px;width:276px;height:19px;',
 		},
@@ -138,8 +116,11 @@
 			style: 'position:absolute;left:12px;top:99px;width:108px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаИнтервалАвтообновления',
 			style: 'position:absolute;left:122px;top:99px;width:60px;height:19px;',
 		},
@@ -147,6 +128,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Учитывать выходные',
 			style: 'position:absolute;left:297px;top:50px;width:129px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дата формирования',
+			style: 'position:absolute;left:6px;top:6px;width:420px;height:16px;',
 		},
 		{
 			xtype: 'combobox',
@@ -169,6 +155,16 @@
 			name: 'НадписьДатаОтчета',
 			text: '',
 			style: 'position:absolute;left:126px;top:50px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры публикации',
+			style: 'position:absolute;left:6px;top:146px;width:420px;height:17px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:77px;width:420px;height:17px;',
 		},
 		{
 			xtype: 'label',
@@ -211,28 +207,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:150px;top:248px;width:276px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Формировать при старте системы',
 			style: 'position:absolute;left:12px;top:123px;width:204px;height:15px;',
@@ -246,6 +220,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочтыУчетнойЗаписи',
 			style: 'position:absolute;left:150px;top:216px;width:276px;height:19px;',
 		},
@@ -272,5 +247,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -11,37 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Серверы документооборота',
-				},
-				{
-					text:'Налоговые органы',
-				},
-				{
-					text:'Органы ПФР',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Расширенные настройки',
-				},
-				'-',
-				{
-					text:'Проверить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
 			items:
 			[
@@ -70,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочты',
 			style: 'position:absolute;left:155px;top:84px;width:499px;height:19px;',
 		},
@@ -109,6 +79,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НалоговыйОрган',
 			style: 'position:absolute;left:147px;top:0px;width:499px;height:19px;',
 		},
@@ -130,36 +101,46 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'SMTPСервер',
 			style: 'position:absolute;left:147px;top:28px;width:124px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'POP3Сервер',
 			style: 'position:absolute;left:147px;top:62px;width:124px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортSMTP',
 			style: 'position:absolute;left:287px;top:28px;width:58px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортPOP3',
 			style: 'position:absolute;left:287px;top:62px;width:58px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Логин',
 			style: 'position:absolute;left:362px;top:62px;width:81px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольPOP3',
 			style: 'position:absolute;left:458px;top:62px;width:67px;height:19px;',
 		},
@@ -171,12 +152,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПользователяSMTP',
 			style: 'position:absolute;left:382px;top:28px;width:61px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольSMTP',
 			style: 'position:absolute;left:458px;top:28px;width:67px;height:19px;',
 		},
@@ -189,8 +172,34 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатРуководителя',
 			style: 'position:absolute;left:147px;top:118px;width:499px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:20px;width:646px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:54px;width:532px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:278px;top:0px;width:2px;height:81px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:353px;top:0px;width:2px;height:81px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:449px;top:0px;width:2px;height:81px;',
 		},
 		{
 			xtype: 'button',
@@ -199,6 +208,16 @@
 параметры
 доступа',
 			style: 'position:absolute;left:539px;top:28px;width:107px;height:53px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:530px;top:0px;width:2px;height:81px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Цифровые сертификаты ответственных лиц организации',
+			style: 'position:absolute;left:0px;top:95px;width:646px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -220,6 +239,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатДляШифрования',
 			style: 'position:absolute;left:147px;top:0px;width:499px;height:19px;',
 		},
@@ -247,6 +267,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатГлавногоБухгалтера',
 			style: 'position:absolute;left:147px;top:0px;width:499px;height:19px;',
 		},
@@ -272,6 +293,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерверДокументооборота',
 			style: 'position:absolute;left:147px;top:23px;width:499px;height:19px;',
 		},
@@ -280,6 +302,11 @@
 			name: 'Надпись23',
 			text: 'Сервер документооборота:',
 			style: 'position:absolute;left:0px;top:23px;width:140px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Участники документооборота',
+			style: 'position:absolute;left:0px;top:0px;width:646px;height:16px;',
 		},
 					]
 				},
@@ -306,6 +333,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Пользователи',
+			style: 'position:absolute;left:0px;top:0px;width:239px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:14px;width:239px;height:424px;',
@@ -367,6 +399,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдентификаторАбонента',
 			style: 'position:absolute;left:147px;top:0px;width:290px;height:19px;',
 		},
@@ -379,6 +412,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдентификаторСпецоператора',
 			style: 'position:absolute;left:610px;top:0px;width:36px;height:19px;',
 		},
@@ -410,6 +444,11 @@
 			style: 'position:absolute;left:147px;top:40px;width:499px;height:15px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:147px;top:31px;width:499px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Автонастройка:',
@@ -429,6 +468,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РежимАвтонастройки',
 			style: 'position:absolute;left:0px;top:0px;width:290px;height:19px;',
 		},
@@ -455,6 +495,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпецоператорСвязи',
 			style: 'position:absolute;left:254px;top:57px;width:400px;height:19px;',
 		},
@@ -472,6 +513,41 @@
 			xtype: 'checkbox',
 			boxLabel: 'Документооборот с Росстатом',
 			style: 'position:absolute;left:477px;top:34px;width:177px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Серверы документооборота',
+				},
+				{
+					text:'Налоговые органы',
+				},
+				{
+					text:'Органы ПФР',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Расширенные настройки',
+				},
+				'-',
+				{
+					text:'Проверить',
+				},
+			]
 		},
 	]
 });

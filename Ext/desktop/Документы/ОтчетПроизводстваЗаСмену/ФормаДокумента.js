@@ -11,52 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
 			items:
 			[
@@ -89,6 +43,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -99,8 +54,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -117,6 +74,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -129,6 +87,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
@@ -147,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -159,6 +119,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаданиеНаПроизводство',
 			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
 		},
@@ -171,6 +132,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:369px;width:548px;height:19px;',
 		},
@@ -464,42 +426,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по заданию на производство',
-				},
-				{
-					text:'Добавить из заказа покупателя',
-				},
-				'-',
-				{
-					text:'Заполнить по заказу на производство',
-				},
-				{
-					text:'Добавить по заказу на производство',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Получатели',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
-			items:
-			[
-				{
-					text:'Заполнить из шаблона',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:147px;',
@@ -843,6 +775,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:353px;top:6px;width:275px;height:19px;',
 		},
@@ -851,29 +784,6 @@
 			name: 'НадписьСтатьяЗатрат',
 			text: 'Статья затрат:',
 			style: 'position:absolute;left:270px;top:6px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:25px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-				{
-					text:'Заполнить с подбором аналогов',
-				},
-				{
-					text:'Заполнить по остаткам',
-				},
-				{
-					text:'Заполнить по потребностям',
-				},
-				'-',
-				{
-					text:'Добавить из требование - накладная...',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -1320,18 +1230,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1591,16 +1489,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по тех. карте',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1681,15 +1569,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:42px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Рассчитать',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Порядок расчета',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -1870,16 +1752,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1994,16 +1866,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по остаткам',
-				},
-			]
 		},
 					]
 				},
@@ -2191,14 +2053,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-			]
 		},
 					]
 				},
@@ -2496,16 +2350,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:337px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по спецификации',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьСкладОтходов',
 			text: 'Склад:',
@@ -2514,6 +2358,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладОтходов',
 			style: 'position:absolute;left:386px;top:8px;width:242px;height:19px;',
 		},
@@ -2731,16 +2576,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить распределение возвратных отходов',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -2760,6 +2595,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
@@ -2777,6 +2613,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:345px;width:548px;height:19px;',
 		},
@@ -2784,6 +2621,56 @@
 			xtype: 'checkbox',
 			boxLabel: 'Разрешить превышение лимита',
 			style: 'position:absolute;left:424px;top:105px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
+				},
+			]
 		},
 	]
 });

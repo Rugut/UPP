@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:517px;top:33px;width:57px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:100px;top:57px;width:474px;height:19px;',
 		},
@@ -42,36 +44,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочты',
 			style: 'position:absolute;left:100px;top:33px;width:368px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:582px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -92,6 +67,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'SMTPСервер',
 			style: 'position:absolute;left:98px;top:26px;width:350px;height:19px;',
 		},
@@ -104,6 +80,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'POP3Сервер',
 			style: 'position:absolute;left:98px;top:120px;width:350px;height:19px;',
 		},
@@ -114,8 +91,11 @@
 			style: 'position:absolute;left:455px;top:26px;width:33px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортSMTP',
 			style: 'position:absolute;left:492px;top:26px;width:66px;height:19px;',
 		},
@@ -126,8 +106,11 @@
 			style: 'position:absolute;left:455px;top:120px;width:33px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортPOP3',
 			style: 'position:absolute;left:492px;top:120px;width:66px;height:19px;',
 		},
@@ -140,6 +123,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Логин',
 			style: 'position:absolute;left:98px;top:144px;width:198px;height:19px;',
 		},
@@ -152,8 +136,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Пароль',
 			style: 'position:absolute;left:354px;top:144px;width:204px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отправка почты',
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Получение почты',
+			style: 'position:absolute;left:6px;top:99px;width:552px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -169,6 +164,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЛогинSMTP',
 			style: 'position:absolute;left:98px;top:70px;width:198px;height:19px;',
 		},
@@ -181,6 +177,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольSMTP',
 			style: 'position:absolute;left:354px;top:70px;width:204px;height:19px;',
 		},
@@ -191,8 +188,11 @@
 			style: 'position:absolute;left:6px;top:178px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВремяОжиданияСервера',
 			style: 'position:absolute;left:157px;top:178px;width:44px;height:19px;',
 		},
@@ -231,8 +231,11 @@
 			style: 'position:absolute;left:262px;top:25px;width:28px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоДнейУдаленияПисемССервера',
 			style: 'position:absolute;left:212px;top:25px;width:44px;height:19px;',
 		},
@@ -248,8 +251,11 @@
 			style: 'position:absolute;left:18px;top:71px;width:42px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалАвтоПолученияОтправкиСообщений',
 			style: 'position:absolute;left:63px;top:71px;width:44px;height:19px;',
 		},
@@ -262,6 +268,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтветственныйЗаАвтоПолучениеОтправкуСообщений',
 			style: 'position:absolute;left:429px;top:71px;width:129px;height:19px;',
 		},
@@ -280,6 +287,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДействиеАвтополученияОтправкиСообщений',
 			style: 'position:absolute;left:212px;top:71px;width:114px;height:19px;',
 		},
@@ -289,8 +297,11 @@
 			style: 'position:absolute;left:6px;top:145px;width:203px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалАвтоматическойУстановкиОтметкиРассмотрено',
 			style: 'position:absolute;left:212px;top:145px;width:44px;height:19px;',
 		},
@@ -306,8 +317,11 @@
 			style: 'position:absolute;left:6px;top:95px;width:141px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалАвтосохраненияПисем',
 			style: 'position:absolute;left:212px;top:95px;width:44px;height:19px;',
 		},
@@ -322,6 +336,11 @@
 			name: '_ИнтервалАвтосохраненияПисем',
 			text: 'каждые',
 			style: 'position:absolute;left:162px;top:95px;width:47px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Помечать письмо как "Рассмотрено":',
+			style: 'position:absolute;left:6px;top:124px;width:552px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -339,6 +358,11 @@
 					title:'Предметы',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Классификация писем по предметам',
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать классификацию писем по предметам',
@@ -363,6 +387,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Для входящих "ответов" и "переадресаций" заполнять группу писем из письма-основания',
 			style: 'position:absolute;left:18px;top:106px;width:488px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Классификация писем по объектам',
+			style: 'position:absolute;left:6px;top:130px;width:552px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -439,13 +468,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -497,33 +519,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:552px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Помещать новые письма с ответами и переадресациями в одну группу с исходными',
 			style: 'position:absolute;left:6px;top:6px;width:455px;height:15px;',
@@ -543,6 +538,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаВходящие',
 			style: 'position:absolute;left:157px;top:27px;width:401px;height:19px;',
 		},
@@ -555,6 +551,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаИсходящие',
 			style: 'position:absolute;left:157px;top:51px;width:401px;height:19px;',
 		},
@@ -567,6 +564,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаУдаленные',
 			style: 'position:absolute;left:157px;top:75px;width:401px;height:19px;',
 		},
@@ -579,6 +577,11 @@
 			name: 'Надпись18',
 			text: 'Формат текста письма:',
 			style: 'position:absolute;left:6px;top:175px;width:146px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Значения по умолчанию',
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -594,6 +597,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаЧерновики',
 			style: 'position:absolute;left:157px;top:99px;width:401px;height:19px;',
 		},
@@ -679,33 +683,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -735,8 +712,42 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НазначениеУчетнойЗаписи',
 			style: 'position:absolute;left:100px;top:81px;width:474px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:582px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

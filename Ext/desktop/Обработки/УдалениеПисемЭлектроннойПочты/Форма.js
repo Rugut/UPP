@@ -11,31 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				'-',
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:433px;width:682px;height:25px;',
 			items:
 			[
@@ -205,6 +180,35 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Открыть',
+				},
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

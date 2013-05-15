@@ -56,8 +56,63 @@
 			},
 		},
 		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:176px;width:384px;height:116px;',
+			height: 116,width: 384,
+			columns:
+			[
+				{
+					text:'Количество',
+					width:'100',
+					dataIndex:'Количество',
+					flex:1,
+				},
+				{
+					text:'Дата начала рабочего года',
+					width:'100',
+					dataIndex:'ДатаНачалаРабочегоГода',
+					flex:1,
+				},
+				{
+					text:'Дата окончания рабочего года',
+					width:'100',
+					dataIndex:'ДатаОкончанияРабочегоГода',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Количество',
+					},
+					{
+						name:'ДатаНачалаРабочегоГода',
+					},
+					{
+						name:'ДатаОкончанияРабочегоГода',
+					},
+				]
+			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Остатки',
+			style: 'position:absolute;left:8px;top:156px;width:384px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -141,52 +196,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:176px;width:384px;height:116px;',
-			height: 116,width: 384,
-			columns:
-			[
-				{
-					text:'Количество',
-					width:'100',
-					dataIndex:'Количество',
-					flex:1,
-				},
-				{
-					text:'Дата начала рабочего года',
-					width:'100',
-					dataIndex:'ДатаНачалаРабочегоГода',
-					flex:1,
-				},
-				{
-					text:'Дата окончания рабочего года',
-					width:'100',
-					dataIndex:'ДатаОкончанияРабочегоГода',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'Количество',
-					},
-					{
-						name:'ДатаНачалаРабочегоГода',
-					},
-					{
-						name:'ДатаОкончанияРабочегоГода',
-					},
-				]
-			},
 		},
 	]
 });

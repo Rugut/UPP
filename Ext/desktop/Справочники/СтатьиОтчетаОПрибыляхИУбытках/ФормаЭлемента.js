@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодДляОтчета',
 			style: 'position:absolute;left:96px;top:33px;width:81px;height:19px;',
 		},
@@ -80,25 +82,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:311px;width:324px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Статьи оборотов',
+			style: 'position:absolute;left:8px;top:124px;width:308px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -126,8 +112,47 @@
 			]
 		},
 		{
+			xtype: 'textarea',
+			hideLabel: true,
+			disabled: false,
+			name: 'НаименованиеДляОтчета',
+			style: 'position:absolute;left:96px;top:81px;width:220px;height:38px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование для отчета:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:38px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:311px;width:324px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -175,18 +200,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'textarea',
-			hideLabel: true,
-			name: 'НаименованиеДляОтчета',
-			style: 'position:absolute;left:96px;top:81px;width:220px;height:38px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Наименование для отчета:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:38px;text-align:left;',
 		},
 	]
 });

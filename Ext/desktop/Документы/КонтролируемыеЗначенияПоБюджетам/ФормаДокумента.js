@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:208px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:94px;top:57px;width:308px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидКонтролируемыхЗначений',
 			style: 'position:absolute;left:182px;top:85px;width:220px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИспользованиеКонтролируемыхЗначений',
 			style: 'position:absolute;left:182px;top:109px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОграниченияОборотов',
 			style: 'position:absolute;left:182px;top:133px;width:220px;height:19px;',
 		},
@@ -90,28 +97,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтролирующийСценарий',
 			style: 'position:absolute;left:182px;top:157px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -149,13 +137,6 @@
 					title:'Выборочно',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:8px;width:394px;height:25px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:33px;width:394px;height:144px;',
@@ -269,8 +250,10 @@
 			style: 'position:absolute;left:0px;top:5px;width:172px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонцаКонтролирующегоСценария',
 			style: 'position:absolute;left:174px;top:29px;width:100px;height:19px;',
 		},
@@ -281,8 +264,11 @@
 			style: 'position:absolute;left:0px;top:29px;width:172px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Отклонение',
 			style: 'position:absolute;left:174px;top:77px;width:80px;height:19px;',
 		},
@@ -315,6 +301,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтклоненияКонтролируемыхЗначений',
 			style: 'position:absolute;left:174px;top:53px;width:220px;height:19px;',
 		},
@@ -325,8 +312,10 @@
 			style: 'position:absolute;left:0px;top:53px;width:172px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаКонтролирующегоСценария',
 			style: 'position:absolute;left:174px;top:5px;width:100px;height:19px;',
 		},
@@ -343,6 +332,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:93px;top:382px;width:309px;height:19px;',
 		},
@@ -355,6 +345,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:93px;top:358px;width:309px;height:19px;',
 		},
@@ -367,8 +358,33 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:93px;top:406px;width:309px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+			]
 		},
 	]
 });

@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:390px;width:564px;height:19px;',
 		},
@@ -252,19 +256,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить  по поступлению',
-				},
-				{
-					text:'Добавить из поступления',
-				},
-			]
 		},
 					]
 				},
@@ -707,8 +698,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьИнформацияОСчетеФактуре',
-			text: 'При снятом флаге возврат отражается по счету-фактуре поступления. Если во всех или отдельных строках табличной части ценностей не указан документ поступления, на основании возврата может быть введен счет-фактура для указания реквизитов входящего документа.
-При установленном флаге выписывается отдельный счет-фактура на возвращаемые ценности. Один экземпляр счета-фактуры передается поставщику.',
+			text: 'При снятом флаге возврат отражается по счету-фактуре поступления. Если во всех или отдельных строках табличной части ценностей не указан документ поступления, на основании возврата может быть введен счет-фактура для указания реквизитов входящего документа.\r\nПри установленном флаге выписывается отдельный счет-фактура на возвращаемые ценности. Один экземпляр счета-фактуры передается поставщику.',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
 		},
 					]
@@ -720,6 +710,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:110px;top:70px;width:209px;height:19px;',
 		},
@@ -732,18 +723,33 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:418px;top:70px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:50px;width:632px;height:16px;',
+		},
+		{
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:90px;top:27px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Грузополучатель',
 			style: 'position:absolute;left:110px;top:124px;width:209px;height:19px;',
 		},
@@ -756,12 +762,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчетОрганизации',
 			style: 'position:absolute;left:418px;top:97px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Грузоотправитель',
 			style: 'position:absolute;left:110px;top:97px;width:209px;height:19px;',
 		},
@@ -774,6 +782,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Проект',
 			style: 'position:absolute;left:418px;top:124px;width:220px;height:19px;',
 		},
@@ -798,18 +807,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовСКонтрагентом',
 			style: 'position:absolute;left:201px;top:25px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовПоАвансам',
 			style: 'position:absolute;left:201px;top:48px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовПоТаре',
 			style: 'position:absolute;left:538px;top:48px;width:100px;height:19px;',
 		},
@@ -822,8 +834,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасчетовПоПретензиям',
 			style: 'position:absolute;left:538px;top:25px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Счета учета расчетов',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Разница стоимости возврата и фактической стоимости товаров (залоговой и фактической стоимости тары)',
+			style: 'position:absolute;left:6px;top:92px;width:632px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -834,6 +857,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДоходовБУ',
 			style: 'position:absolute;left:201px;top:111px;width:100px;height:19px;',
 		},
@@ -846,6 +870,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовБУ',
 			style: 'position:absolute;left:201px;top:134px;width:100px;height:19px;',
 		},
@@ -858,6 +883,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаДоходовНУ',
 			style: 'position:absolute;left:538px;top:111px;width:100px;height:19px;',
 		},
@@ -870,6 +896,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаРасходовНУ',
 			style: 'position:absolute;left:538px;top:134px;width:100px;height:19px;',
 		},
@@ -882,6 +909,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяДоходовИРасходов',
 			style: 'position:absolute;left:201px;top:157px;width:437px;height:19px;',
 		},
@@ -955,16 +983,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить документы расчетов с контрагентом',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -1001,12 +1019,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:418px;top:81px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
@@ -1019,25 +1039,27 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сделка',
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСделка',
-			text: 'Сделка:
-',
+			text: 'Сделка:\r\n',
 			style: 'position:absolute;left:8px;top:101px;width:80px;height:28px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:418px;top:57px;width:236px;height:19px;',
 		},
@@ -1072,8 +1094,11 @@
 			style: 'position:absolute;left:500px;top:346px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:574px;top:346px;width:80px;height:17px;',
 		},
@@ -1084,8 +1109,11 @@
 			style: 'position:absolute;left:500px;top:366px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:574px;top:366px;width:80px;height:17px;',
 		},
@@ -1122,6 +1150,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидПередачи',
 			style: 'position:absolute;left:330px;top:57px;width:86px;height:19px;',
 		},
@@ -1137,5 +1166,8 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:152px;top:366px;width:336px;height:17px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

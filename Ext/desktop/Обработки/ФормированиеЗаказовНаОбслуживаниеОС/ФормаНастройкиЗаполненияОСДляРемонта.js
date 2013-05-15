@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:54px;width:294px;height:24px;',
-			items:
-			[
-				{
-					text:'По наименованию',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:78px;width:294px;height:263px;',
 			height: 263,width: 294,
@@ -55,17 +45,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:306px;top:54px;width:294px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -105,8 +84,59 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Дата окончания интервала планирования:',
+			style: 'position:absolute;left:8px;top:8px;width:221px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаОкончанияПланирования',
+			style: 'position:absolute;left:233px;top:8px;width:112px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор по основным средствам',
+			style: 'position:absolute;left:8px;top:33px;width:294px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор по услугам обслуживания ОС',
+			style: 'position:absolute;left:306px;top:33px;width:294px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:54px;width:294px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:306px;top:54px;width:294px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:349px;width:608px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -120,18 +150,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Дата окончания интервала планирования:',
-			style: 'position:absolute;left:8px;top:8px;width:221px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаОкончанияПланирования',
-			style: 'position:absolute;left:233px;top:8px;width:112px;height:19px;',
 		},
 	]
 });

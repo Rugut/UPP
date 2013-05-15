@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:302px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:176px;top:82px;width:220px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:176px;top:106px;width:220px;height:19px;',
 		},
@@ -54,12 +57,35 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбъектСтроительства',
 			style: 'position:absolute;left:176px;top:154px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Учет',
+			style: 'position:absolute;left:8px;top:60px;width:388px;height:17px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСпособРаспределенияЗатрат',
+			text: 'Способ распределения затрат:',
+			style: 'position:absolute;left:14px;top:130px;width:160px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СпособРаспределенияЗатрат',
+			style: 'position:absolute;left:176px;top:130px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -67,6 +93,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:181px;width:404px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -84,18 +111,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСпособРаспределенияЗатрат',
-			text: 'Способ распределения затрат:',
-			style: 'position:absolute;left:14px;top:130px;width:160px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СпособРаспределенияЗатрат',
-			style: 'position:absolute;left:176px;top:130px;width:220px;height:19px;',
 		},
 	]
 });

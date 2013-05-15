@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:296px;width:801px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:785px;height:222px;',
 			height: 222,width: 785,
@@ -158,8 +137,46 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТекстОписания',
+			text: '',
+			style: 'position:absolute;left:69px;top:260px;width:723px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:260px;width:58px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:296px;width:801px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:8px;width:785px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -203,18 +220,6 @@
 					text:'Подбор',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьТекстОписания',
-			text: '',
-			style: 'position:absolute;left:69px;top:260px;width:723px;height:28px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписание',
-			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:260px;width:58px;height:19px;',
 		},
 	]
 });

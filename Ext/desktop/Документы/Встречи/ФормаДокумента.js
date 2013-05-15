@@ -10,34 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:675px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:421px;width:675px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -46,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:300px;top:394px;width:80px;height:19px;',
 		},
@@ -56,8 +29,10 @@
 			style: 'position:absolute;left:8px;top:394px;width:107px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:116px;top:394px;width:128px;height:19px;',
 		},
@@ -70,8 +45,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:495px;top:394px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Прочее',
+			style: 'position:absolute;left:8px;top:373px;width:659px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -86,6 +67,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:6px;top:6px;width:645px;height:194px;',
 		},
@@ -100,36 +82,6 @@
 			name: 'НадписьДатаПланирования',
 			text: '12 октября 2007 г',
 			style: 'position:absolute;left:379px;top:6px;width:130px;height:24px;text-align:center;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:245px;top:6px;width:130px;height:24px;',
-			items:
-			[
-				{
-					text:'Предыдущий день',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:527px;top:6px;width:123px;height:24px;',
-			items:
-			[
-				{
-					text:'Следующий день',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:27px;width:75px;height:24px;',
-			items:
-			[
-				{
-					text:'Подобрать',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -160,31 +112,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:81px;top:27px;width:147px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Отображать занятость',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:18px;top:111px;width:175px;height:24px;',
-			items:
-			[
-				{
-					text:'Подобрать',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Участники ',
+			style: 'position:absolute;left:6px;top:6px;width:222px;height:16px;',
 		},
 					]
 				},
@@ -199,6 +129,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Помещение',
 			style: 'position:absolute;left:58px;top:63px;width:186px;height:19px;',
 		},
@@ -209,8 +140,10 @@
 			style: 'position:absolute;left:257px;top:33px;width:74px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Продолжительность',
 			style: 'position:absolute;left:331px;top:33px;width:49px;height:19px;',
 		},
@@ -221,8 +154,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:50px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРезервирования',
 			style: 'position:absolute;left:58px;top:33px;width:76px;height:19px;',
 		},
@@ -233,8 +168,10 @@
 			style: 'position:absolute;left:147px;top:33px;width:45px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВремяНачала',
 			style: 'position:absolute;left:192px;top:33px;width:52px;height:19px;',
 		},
@@ -252,6 +189,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаявкаКандидата',
 			style: 'position:absolute;left:495px;top:57px;width:172px;height:19px;',
 		},
@@ -260,6 +198,39 @@
 			name: 'КнопкаПодобратьСвободноеПомещение',
 			text: 'Подобрать свободное помещение',
 			style: 'position:absolute;left:257px;top:63px;width:123px;height:36px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:675px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:421px;width:675px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

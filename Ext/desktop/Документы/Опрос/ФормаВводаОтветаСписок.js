@@ -10,8 +10,33 @@
 	items:
 	[
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:32px;width:376px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРазвернутыйОтвет',
+			text: 'Развернутый ответ:',
+			style: 'position:absolute;left:8px;top:56px;width:376px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Переключатель',
+			style: 'position:absolute;left:8px;top:8px;width:376px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:601px;width:392px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -25,21 +50,6 @@
 					text:'Отмена',
 				},
 			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Переключатель',
-			style: 'position:absolute;left:8px;top:8px;width:376px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:8px;top:32px;width:376px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьРазвернутыйОтвет',
-			text: 'Развернутый ответ:',
-			style: 'position:absolute;left:8px;top:56px;width:376px;height:19px;',
 		},
 	]
 });

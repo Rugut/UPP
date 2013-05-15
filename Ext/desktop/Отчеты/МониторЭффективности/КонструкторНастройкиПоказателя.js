@@ -10,30 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:341px;width:446px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Назад',
-				},
-				{
-					text:'Далее',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:54px;width:430px;height:279px;',
 			height: 279,width: 430,
@@ -44,21 +20,6 @@
 					title:'Настройка выбор вида показателя',
 					items:
 					[
-		{
-			xtype: 'radio',
-			boxLabel: 'Стандартный показатель',
-			style: 'position:absolute;left:34px;top:51px;width:149px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'План-факт',
-			style: 'position:absolute;left:34px;top:111px;width:74px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'План (прогноз)',
-			style: 'position:absolute;left:34px;top:174px;width:282px;height:19px;',
-		},
 		{
 			xtype: 'label',
 			name: 'Надпись100',
@@ -83,6 +44,27 @@
 			text: 'Показатель, содержащий поля: "Текущее значение", "Прогноз"',
 			style: 'position:absolute;left:49px;top:195px;width:335px;height:18px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Стандартный показатель',
+			style: 'position:absolute;left:34px;top:51px;width:149px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'План-факт',
+			style: 'position:absolute;left:34px;top:111px;width:74px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'План (прогноз)',
+			style: 'position:absolute;left:34px;top:174px;width:282px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 				{
@@ -104,12 +86,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НачалоТекущегоПериода',
 			style: 'position:absolute;left:129px;top:123px;width:279px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекущееЗначение',
 			style: 'position:absolute;left:129px;top:99px;width:279px;height:19px;',
 		},
@@ -122,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонецТекущегоПериода',
 			style: 'position:absolute;left:129px;top:147px;width:279px;height:19px;',
 		},
@@ -140,12 +125,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НачалоПредыдущегоПериода',
 			style: 'position:absolute;left:129px;top:228px;width:279px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредыдущееЗначение',
 			style: 'position:absolute;left:129px;top:204px;width:279px;height:19px;',
 		},
@@ -158,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонецПредыдущегоПериода',
 			style: 'position:absolute;left:129px;top:252px;width:279px;height:19px;',
 		},
@@ -170,6 +158,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаборДанныхЗначениеПоказателя',
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
@@ -194,12 +183,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НачалоТекущегоПериода1',
 			style: 'position:absolute;left:129px;top:102px;width:279px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекущееЗначение1',
 			style: 'position:absolute;left:129px;top:78px;width:279px;height:19px;',
 		},
@@ -212,6 +203,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонецТекущегоПериода1',
 			style: 'position:absolute;left:129px;top:126px;width:279px;height:19px;',
 		},
@@ -224,6 +216,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаборДанныхЗначениеПоказателяПрогноз',
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
@@ -254,6 +247,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НачалоПериодаПлан',
 			style: 'position:absolute;left:129px;top:102px;width:279px;height:19px;',
 		},
@@ -266,18 +260,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонецПериодаПлан',
 			style: 'position:absolute;left:129px;top:126px;width:279px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеПлан',
 			style: 'position:absolute;left:129px;top:78px;width:279px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаборДанныхЗначениеПлан',
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
@@ -296,6 +293,34 @@
 			name: 'НадписьПодсказка',
 			text: '',
 			style: 'position:absolute;left:45px;top:8px;width:393px;height:43px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:341px;width:446px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Назад',
+				},
+				{
+					text:'Далее',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

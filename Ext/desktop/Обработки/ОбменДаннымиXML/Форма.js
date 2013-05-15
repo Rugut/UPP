@@ -10,31 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:626px;height:25px;',
-			items:
-			[
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Настройки',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:28px;width:618px;height:545px;',
 			height: 545,width: 618,
@@ -53,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаПравил',
 			style: 'position:absolute;left:111px;top:6px;width:323px;height:19px;',
 		},
@@ -114,28 +90,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:273px;height:25px;',
-			items:
-			[
-				{
-					text:'Установить для правил',
-				},
-				{
-					text:'Снять для правил',
-				},
-				'-',
-				{
-					text:'Загрузить правила',
-				},
-				'-',
-				{
-					text:'Очистить отборы',
-				},
-				'-',
-			]
 		},
 		{
 			xtype: 'grid',
@@ -210,17 +164,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:285px;top:6px;width:311px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Показать выбранные записи',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -273,6 +216,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:218px;',
 		},
@@ -289,6 +233,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелДляОбмена',
 			style: 'position:absolute;left:158px;top:151px;width:322px;height:19px;',
 		},
@@ -317,6 +262,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаДанных',
 			style: 'position:absolute;left:105px;top:0px;width:322px;height:19px;',
 		},
@@ -377,13 +323,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКаталогИБ',
-			text: 'Каталог информационной базы:
-',
+			text: 'Каталог информационной базы:\r\n',
 			style: 'position:absolute;left:0px;top:0px;width:167px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:172px;top:0px;width:432px;height:19px;',
 		},
@@ -408,12 +354,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:172px;top:0px;width:149px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения',
 			style: 'position:absolute;left:453px;top:0px;width:151px;height:19px;',
 		},
@@ -429,12 +377,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:172px;top:73px;width:202px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:454px;top:73px;width:150px;height:19px;',
 		},
@@ -449,16 +399,6 @@
 			]
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Выгрузка в файл обмена',
-			style: 'position:absolute;left:6px;top:30px;width:156px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Подключение и выгрузка данных в ИБ приемник',
-			style: 'position:absolute;left:167px;top:30px;width:272px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьУзелДляФоновогоОбмена',
 			text: 'Узел для фонового обмена:',
@@ -467,6 +407,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелДляФоновогоОбмена',
 			style: 'position:absolute;left:158px;top:175px;width:322px;height:19px;',
 		},
@@ -487,8 +428,11 @@
 			style: 'position:absolute;left:350px;top:199px;width:130px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоОбъектовДляФоновогоОбмена',
 			style: 'position:absolute;left:485px;top:199px;width:125px;height:19px;',
 		},
@@ -502,6 +446,22 @@
 			name: 'КнопкаНастройкаОтладкиВыгрузки',
 			text: 'Настройка отладки выгрузки...',
 			style: 'position:absolute;left:239px;top:498px;width:200px;height:21px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузка в файл обмена',
+			style: 'position:absolute;left:6px;top:30px;width:156px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Подключение и выгрузка данных в ИБ приемник',
+			style: 'position:absolute;left:167px;top:30px;width:272px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -518,6 +478,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаОбмена',
 			style: 'position:absolute;left:146px;top:6px;width:464px;height:19px;',
 		},
@@ -551,8 +512,11 @@
 			style: 'position:absolute;left:6px;top:30px;width:157px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоОбъектовНаТранзакцию',
 			style: 'position:absolute;left:304px;top:54px;width:107px;height:19px;',
 		},
@@ -603,6 +567,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаПротоколаОбмена',
 			style: 'position:absolute;left:209px;top:211px;width:401px;height:19px;',
 		},
@@ -617,6 +582,11 @@
 			style: 'position:absolute;left:6px;top:258px;width:266px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Протокол обмена',
+			style: 'position:absolute;left:6px;top:167px;width:604px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Вывод информационных сообщений в окно сообщений',
 			style: 'position:absolute;left:6px;top:187px;width:303px;height:19px;',
@@ -625,6 +595,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Режим отладки',
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройки выгрузки данных',
+			style: 'position:absolute;left:6px;top:54px;width:604px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -638,8 +613,11 @@
 			style: 'position:absolute;left:25px;top:98px;width:317px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииПриВыгрузкеДляПлановОбмена',
 			style: 'position:absolute;left:352px;top:98px;width:137px;height:19px;',
 		},
@@ -650,8 +628,11 @@
 			style: 'position:absolute;left:6px;top:30px;width:337px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоОбъектовЗагрузкиДляОбновленияСтатуса',
 			style: 'position:absolute;left:352px;top:30px;width:137px;height:19px;',
 		},
@@ -666,6 +647,35 @@
 			style: 'position:absolute;left:6px;top:143px;width:413px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:626px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Настройки',
 				},
 			]
 		},

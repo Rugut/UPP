@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:588px;top:33px;width:64px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:33px;width:446px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:98px;top:57px;width:304px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:98px;top:81px;width:120px;height:19px;',
 		},
@@ -64,17 +68,12 @@
 			style: 'position:absolute;left:220px;top:81px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаУтверждения',
 			style: 'position:absolute;left:322px;top:81px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:123px;width:644px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -276,8 +275,25 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Маршрут',
+			style: 'position:absolute;left:8px;top:107px;width:644px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:123px;width:644px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -285,6 +301,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:381px;width:660px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

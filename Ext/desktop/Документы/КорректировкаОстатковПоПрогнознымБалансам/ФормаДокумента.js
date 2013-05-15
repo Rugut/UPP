@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -52,8 +56,10 @@
 			style: 'position:absolute;left:336px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:422px;top:33px;width:100px;height:19px;',
 		},
@@ -66,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:393px;width:220px;height:19px;',
 		},
@@ -78,18 +85,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:441px;width:428px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -201,8 +199,74 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьБалансУпр',
+			text: 'Баланс (сумма упр.):',
+			style: 'position:absolute;left:336px;top:393px;width:186px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБалансСценарий',
+			text: 'Баланс (сумма упр.):',
+			style: 'position:absolute;left:336px;top:417px;width:186px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Состояние',
+			style: 'position:absolute;left:94px;top:417px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'Состояние:',
+			style: 'position:absolute;left:8px;top:417px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Новые остатки по счетам бюджетирования',
+			style: 'position:absolute;left:8px;top:127px;width:514px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Способ корректировки остатков',
+			style: 'position:absolute;left:8px;top:81px;width:514px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Только по счетам, указанным в табличной части',
+			style: 'position:absolute;left:13px;top:102px;width:271px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По всем счетам',
+			style: 'position:absolute;left:291px;top:102px;width:110px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:530px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -230,6 +294,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:468px;width:530px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -247,40 +312,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьБалансУпр',
-			text: 'Баланс (сумма упр.):',
-			style: 'position:absolute;left:336px;top:393px;width:186px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьБалансСценарий',
-			text: 'Баланс (сумма упр.):',
-			style: 'position:absolute;left:336px;top:417px;width:186px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Состояние',
-			style: 'position:absolute;left:94px;top:417px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись9',
-			text: 'Состояние:',
-			style: 'position:absolute;left:8px;top:417px;width:84px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Только по счетам, указанным в табличной части',
-			style: 'position:absolute;left:13px;top:102px;width:271px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По всем счетам',
-			style: 'position:absolute;left:291px;top:102px;width:110px;height:15px;',
 		},
 	]
 });

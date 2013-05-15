@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -42,15 +45,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:208px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -92,12 +89,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:436px;top:208px;width:220px;height:19px;',
 		},
@@ -110,6 +109,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОприходования',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -122,6 +122,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:96px;top:132px;width:220px;height:19px;',
 		},
@@ -134,6 +135,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияНоменклатуры',
 			style: 'position:absolute;left:436px;top:132px;width:220px;height:19px;',
 		},
@@ -146,8 +148,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НормативныйДокумент',
 			style: 'position:absolute;left:96px;top:156px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Номенклатура',
+			style: 'position:absolute;left:8px;top:111px;width:648px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -158,12 +166,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОрганПоСертификации',
 			style: 'position:absolute;left:436px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:235px;width:560px;height:19px;',
 		},
@@ -182,6 +192,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертифицирующееПодразделение',
 			style: 'position:absolute;left:436px;top:81px;width:220px;height:19px;',
 		},
@@ -194,8 +205,25 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:436px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительно',
+			style: 'position:absolute;left:8px;top:187px;width:648px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

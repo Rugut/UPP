@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:427px;top:448px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:448px;width:220px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Событие',
 			style: 'position:absolute;left:421px;top:57px;width:226px;height:19px;',
 		},
@@ -164,6 +171,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОперацийСОсновнымиСредствами',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
@@ -182,6 +190,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СобытиеРегл',
 			style: 'position:absolute;left:421px;top:81px;width:226px;height:19px;',
 		},
@@ -195,19 +204,6 @@
 					title:'Основные средства',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:625px;height:24px;',
-			items:
-			[
-				{
-					text:'Для списка ОС',
-				},
-				{
-					text:'По наименованию',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:625px;height:217px;',
@@ -629,6 +625,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбъектСтроительства',
 			style: 'position:absolute;left:85px;top:6px;width:220px;height:19px;',
 		},
@@ -656,8 +653,11 @@
 			style: 'position:absolute;left:0px;top:6px;width:74px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Стоимость',
 			style: 'position:absolute;left:79px;top:6px;width:120px;height:19px;',
 		},
@@ -691,6 +691,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаБУВнеоборотногоАктива',
 			style: 'position:absolute;left:79px;top:29px;width:80px;height:19px;',
 		},
@@ -701,8 +702,11 @@
 			style: 'position:absolute;left:6px;top:53px;width:68px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьБУ',
 			style: 'position:absolute;left:79px;top:53px;width:120px;height:19px;',
 		},
@@ -719,8 +723,11 @@
 			style: 'position:absolute;left:269px;top:53px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьБУХоз',
 			style: 'position:absolute;left:404px;top:53px;width:120px;height:19px;',
 		},
@@ -729,6 +736,11 @@
 			name: 'РеглВалюта2',
 			text: 'РеглВалюта',
 			style: 'position:absolute;left:529px;top:53px;width:60px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Бухгалтерский учет',
+			style: 'position:absolute;left:0px;top:8px;width:625px;height:16px;',
 		},
 					]
 				},
@@ -754,6 +766,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаНУВнеоборотногоАктива',
 			style: 'position:absolute;left:79px;top:28px;width:80px;height:19px;',
 		},
@@ -764,8 +777,11 @@
 			style: 'position:absolute;left:7px;top:52px;width:68px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьНУ',
 			style: 'position:absolute;left:79px;top:52px;width:120px;height:19px;',
 		},
@@ -788,10 +804,18 @@
 			style: 'position:absolute;left:269px;top:52px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьНУХоз',
 			style: 'position:absolute;left:404px;top:52px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Налоговый учет (по налогу на прибыль)',
+			style: 'position:absolute;left:0px;top:7px;width:625px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -800,8 +824,11 @@
 			style: 'position:absolute;left:7px;top:76px;width:68px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьПР',
 			style: 'position:absolute;left:79px;top:76px;width:120px;height:19px;',
 		},
@@ -824,8 +851,11 @@
 			style: 'position:absolute;left:269px;top:76px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьПРХоз',
 			style: 'position:absolute;left:404px;top:76px;width:120px;height:19px;',
 		},
@@ -836,8 +866,11 @@
 			style: 'position:absolute;left:7px;top:100px;width:68px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьВР',
 			style: 'position:absolute;left:79px;top:100px;width:120px;height:19px;',
 		},
@@ -860,8 +893,11 @@
 			style: 'position:absolute;left:269px;top:100px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьВРХоз',
 			style: 'position:absolute;left:404px;top:100px;width:120px;height:19px;',
 		},
@@ -878,10 +914,18 @@
 			style: 'position:absolute;left:6px;top:26px;width:69px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтоимостьУСН',
 			style: 'position:absolute;left:79px;top:26px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Расходы УСН',
+			style: 'position:absolute;left:0px;top:6px;width:625px;height:17px;',
 		},
 		{
 			xtype: 'grid',
@@ -929,64 +973,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:2px;top:47px;width:623px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Установить отбор...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -1000,31 +986,34 @@
 		{
 			xtype: 'label',
 			name: 'Надпись1',
-			text: 'Сумма амортизационной премии указывается в табличном поле "Основные средства"
-индивидуально для каждого основного средства.',
+			text: 'Сумма амортизационной премии указывается в табличном поле "Основные средства"\r\nиндивидуально для каждого основного средства.',
 			style: 'position:absolute;left:6px;top:6px;width:452px;height:27px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаЗатратПоАмортизационнойПремии',
 			style: 'position:absolute;left:131px;top:41px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоПоАмортизационнойПремии1',
 			style: 'position:absolute;left:131px;top:65px;width:184px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоПоАмортизационнойПремии2',
 			style: 'position:absolute;left:131px;top:89px;width:184px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоПоАмортизационнойПремии3',
 			style: 'position:absolute;left:131px;top:113px;width:184px;height:19px;',
 		},
@@ -1076,8 +1065,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВключатьАПВСоставРасходовПриОтраженииМодернизации',
 			style: 'position:absolute;left:334px;top:125px;width:313px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

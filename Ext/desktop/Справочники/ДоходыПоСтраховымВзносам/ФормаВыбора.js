@@ -47,8 +47,18 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидаДохода',
+			text: '',
+			style: 'position:absolute;left:8px;top:379px;width:750px;height:39px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:766px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -56,12 +66,6 @@
 				},
 				'-',
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьВидаДохода',
-			text: '',
-			style: 'position:absolute;left:8px;top:379px;width:750px;height:39px;',
 		},
 	]
 });

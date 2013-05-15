@@ -11,13 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:644px;height:25px;',
 			items:
 			[
@@ -41,6 +34,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:412px;width:546px;height:19px;',
 		},
@@ -64,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
 		},
@@ -74,8 +69,10 @@
 			style: 'position:absolute;left:164px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:182px;top:0px;width:120px;height:19px;',
 		},
@@ -88,18 +85,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:82px;top:24px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Об обмене страхового свидетельства (АДВ-2)',
-			style: 'position:absolute;left:6px;top:72px;width:252px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'О выдаче дубликата страхового свидетельства (АДВ-3)',
-			style: 'position:absolute;left:6px;top:92px;width:300px;height:15px;',
+			xtype: 'fieldset',
+			title: 'Вид заявлений',
+			style: 'position:absolute;left:0px;top:51px;width:628px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -110,6 +103,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:413px;top:0px;width:215px;height:19px;',
 		},
@@ -122,8 +116,25 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерПачки',
 			style: 'position:absolute;left:413px;top:24px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Об обмене страхового свидетельства (АДВ-2)',
+			style: 'position:absolute;left:6px;top:72px;width:252px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'О выдаче дубликата страхового свидетельства (АДВ-3)',
+			style: 'position:absolute;left:6px;top:92px;width:300px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -150,46 +161,6 @@
 					title:'Сотрудники',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
@@ -351,32 +322,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-			]
-		},
 					]
 				},
 				{
@@ -528,35 +473,14 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-			]
-		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Список заявлений',
+			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;',
 		},
 					]
 				},
@@ -596,6 +520,17 @@
 			xtype: 'checkbox',
 			boxLabel: 'Заменять букву "ё"',
 			style: 'position:absolute;left:8px;top:394px;width:614px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

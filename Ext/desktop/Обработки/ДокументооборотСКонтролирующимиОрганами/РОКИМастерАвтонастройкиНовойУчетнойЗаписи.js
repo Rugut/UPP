@@ -10,26 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:375px;width:600px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<  Назад',
-				},
-				{
-					text:'Далее  >',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:375px;',
 			height: 375,width: 600,
@@ -62,6 +42,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
@@ -83,11 +68,14 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
-			text: 'Мастер автоматической настройки поможет настроить параметры учетной записи по информации с "сервера ресурсов общей ключевой информации" специализированного оператора связи компании "Такском".
-
-На данном сервере Интернета в зашифрованном виде размещается информация о параметрах учетных записей налогоплательщиков - абонентов компании.',
+			text: 'Мастер автоматической настройки поможет настроить параметры учетной записи по информации с "сервера ресурсов общей ключевой информации" специализированного оператора связи компании "Такском".\r\n\r\nНа данном сервере Интернета в зашифрованном виде размещается информация о параметрах учетных записей налогоплательщиков - абонентов компании.',
 			style: 'position:absolute;left:10px;top:99px;width:581px;height:66px;',
 		},
 					]
@@ -118,6 +106,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
@@ -131,10 +124,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись29',
-			text: 'Укажите организацию, для которой необходимо настроить параметры учетной записи,
-или задайте ее ИНН и КПП.
-
-Эти параметры необходимы для обращения к серверу Интернет, на котором хранятся настройки.',
+			text: 'Укажите организацию, для которой необходимо настроить параметры учетной записи,\r\nили задайте ее ИНН и КПП.\r\n\r\nЭти параметры необходимы для обращения к серверу Интернет, на котором хранятся настройки.',
 			style: 'position:absolute;left:12px;top:9px;width:578px;height:82px;',
 		},
 					]
@@ -142,20 +132,11 @@
 			]
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Организация:',
-			style: 'position:absolute;left:13px;top:119px;width:93px;height:15px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:28px;top:141px;width:560px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Параметры:',
-			style: 'position:absolute;left:13px;top:169px;width:93px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -183,17 +164,40 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:74px;top:0px;width:97px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:275px;top:1px;width:97px;height:19px;',
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:13px;top:119px;width:93px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Параметры:',
+			style: 'position:absolute;left:13px;top:169px;width:93px;height:15px;',
+		},
 			]
 		},
 					]
@@ -224,6 +228,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
@@ -237,8 +246,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись31',
-			text: 'Один из сертификатов ответственных лиц организации, изданных для налогоплательщика удостоверяющим центром, предназначен для целей шифрования. Необходимо зарегистрировать этот личный сертификат в системе перед обращением за информацией о настройках к серверу "Такском".
-Для этого укажите файл с сертификатом и соответствующий ему ключевой контейнер (контейнер должен быть доступен в момент выбора).',
+			text: 'Один из сертификатов ответственных лиц организации, изданных для налогоплательщика удостоверяющим центром, предназначен для целей шифрования. Необходимо зарегистрировать этот личный сертификат в системе перед обращением за информацией о настройках к серверу "Такском".\r\nДля этого укажите файл с сертификатом и соответствующий ему ключевой контейнер (контейнер должен быть доступен в момент выбора).',
 			style: 'position:absolute;left:12px;top:9px;width:578px;height:82px;',
 		},
 					]
@@ -260,14 +268,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатШифрованиеФайл',
 			style: 'position:absolute;left:130px;top:143px;width:458px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатШифрованиеКонтейнер',
 			style: 'position:absolute;left:130px;top:170px;width:458px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;',
 		},
 					]
 				},
@@ -290,12 +305,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатРуководителя',
 			style: 'position:absolute;left:130px;top:143px;width:458px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатРуководителяКонтейнер',
 			style: 'position:absolute;left:130px;top:170px;width:458px;height:19px;',
 		},
@@ -321,6 +338,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
@@ -334,14 +356,17 @@
 		{
 			xtype: 'label',
 			name: 'Надпись37',
-			text: 'Выберите ключевой контейнер и нажмите кнопку "Далее >" для регистрации сертификата руководителя с привязкой к соответствующему закрытому ключу.
-
-В момент регистрации ключевой носитель (дискета или USB-устройство), содержащий контейнер с закрытым ключом, должен быть вставлен в дисковод для гибких дисков или USB-порт компьютера.',
+			text: 'Выберите ключевой контейнер и нажмите кнопку "Далее >" для регистрации сертификата руководителя с привязкой к соответствующему закрытому ключу.\r\n\r\nВ момент регистрации ключевой носитель (дискета или USB-устройство), содержащий контейнер с закрытым ключом, должен быть вставлен в дисковод для гибких дисков или USB-порт компьютера.',
 			style: 'position:absolute;left:12px;top:9px;width:578px;height:82px;',
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;',
 		},
 					]
 				},
@@ -364,12 +389,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатБухгалтера',
 			style: 'position:absolute;left:130px;top:143px;width:458px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СертификатБухгалтераКонтейнер',
 			style: 'position:absolute;left:130px;top:170px;width:458px;height:19px;',
 		},
@@ -386,6 +413,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
@@ -399,14 +431,17 @@
 		{
 			xtype: 'label',
 			name: 'Надпись41',
-			text: 'Выберите ключ��вой контейнер и нажмите кнопку "Далее >" для регистрации сертификата главного бухгалтера с привязкой к соответствующему закрытому ключу.
-
-В момент регистрации ключевой носитель (дискета или USB-устройство), содержащий контейнер с закрытым ключом, должен быть вставлен в дисковод для гибких дисков или USB-порт компьютера.',
+			text: 'Выберите ключ��вой контейнер и нажмите кнопку "Далее >" для регистрации сертификата главного бухгалтера с привязкой к соответствующему закрытому ключу.\r\n\r\nВ момент регистрации ключевой носитель (дискета или USB-устройство), содержащий контейнер с закрытым ключом, должен быть вставлен в дисковод для гибких дисков или USB-порт компьютера.',
 			style: 'position:absolute;left:12px;top:9px;width:578px;height:82px;',
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;',
 		},
 					]
 				},
@@ -436,6 +471,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			height: 99,width: 600,
@@ -457,6 +497,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись45',
 			text: 'Настройка учетной записи успешно завершена.',
@@ -473,6 +518,30 @@
 			style: 'position:absolute;left:12px;top:212px;width:582px;height:15px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:375px;width:600px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<  Назад',
+				},
+				{
+					text:'Далее  >',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

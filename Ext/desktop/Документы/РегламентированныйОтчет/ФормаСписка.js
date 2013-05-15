@@ -92,39 +92,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:688px;height:25px;',
-			items:
-			[
-				{
-					text:'Новый',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Журнал выгрузки',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:107px;top:36px;width:573px;height:19px;',
 		},
@@ -137,6 +107,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:110px;top:398px;width:570px;height:19px;',
 		},
@@ -196,8 +167,10 @@
 			style: 'position:absolute;left:231px;top:6px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаПериодаОтчета',
 			style: 'position:absolute;left:21px;top:6px;width:80px;height:19px;',
 		},
@@ -208,8 +181,10 @@
 			style: 'position:absolute;left:111px;top:6px;width:21px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонцаПериодаОтчета',
 			style: 'position:absolute;left:134px;top:6px;width:80px;height:19px;',
 		},
@@ -238,6 +213,41 @@
 			style: 'position:absolute;left:229px;top:6px;width:20px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:688px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Новый',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Журнал выгрузки',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

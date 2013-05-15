@@ -10,13 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:482px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:57px;width:300px;height:296px;',
 			height: 296,width: 300,
@@ -111,6 +104,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УчетнаяЗапись',
 			style: 'position:absolute;left:100px;top:33px;width:374px;height:19px;',
 		},
@@ -119,6 +113,17 @@
 			name: 'Надпись1',
 			text: 'Учетная запись:',
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:482px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

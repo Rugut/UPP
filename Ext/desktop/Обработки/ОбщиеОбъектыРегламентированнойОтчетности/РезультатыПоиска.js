@@ -10,20 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:728px;height:25px;',
-			items:
-			[
-				{
-					text:'Назад',
-				},
-				{
-					text:'Вперед',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:728px;height:210px;',
 			height: 210,width: 728,
@@ -101,6 +87,24 @@
 			name: 'НадписьНайдено',
 			text: '',
 			style: 'position:absolute;left:100px;top:5px;width:622px;height:15px;text-align:right;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:728px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Назад',
+				},
+				{
+					text:'Вперед',
+				},
+				'-',
+			]
 		},
 	]
 });

@@ -48,6 +48,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Адрес',
+			style: 'position:absolute;left:8px;top:131px;width:314px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:152px;width:314px;height:228px;',
 			height: 228,width: 314,
@@ -67,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Регион',
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
 		},
@@ -79,6 +85,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Район',
 			style: 'position:absolute;left:88px;top:24px;width:226px;height:19px;',
 		},
@@ -91,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Город',
 			style: 'position:absolute;left:88px;top:48px;width:226px;height:19px;',
 		},
@@ -103,6 +111,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаселенныйПункт',
 			style: 'position:absolute;left:88px;top:72px;width:226px;height:19px;',
 		},
@@ -115,24 +124,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Улица',
 			style: 'position:absolute;left:88px;top:96px;width:226px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Дом',
 			style: 'position:absolute;left:88px;top:120px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Корпус',
 			style: 'position:absolute;left:200px;top:120px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Квартира',
 			style: 'position:absolute;left:282px;top:120px;width:32px;height:19px;',
 		},
@@ -145,6 +158,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Индекс',
 			style: 'position:absolute;left:88px;top:144px;width:60px;height:19px;',
 		},
@@ -157,24 +171,28 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Представление',
 			style: 'position:absolute;left:88px;top:168px;width:226px;height:60px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипКвартиры',
 			style: 'position:absolute;left:238px;top:120px;width:42px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипКорпуса',
 			style: 'position:absolute;left:126px;top:120px;width:72px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипДома',
 			style: 'position:absolute;left:0px;top:120px;width:86px;height:19px;',
 		},
@@ -193,6 +211,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Представление1',
 			style: 'position:absolute;left:88px;top:24px;width:226px;height:204px;',
 		},
@@ -205,6 +224,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Поле1',
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
 		},
@@ -238,15 +258,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Вид',
 			style: 'position:absolute;left:88px;top:27px;width:226px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Объект',
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Российский адрес',
@@ -256,6 +282,8 @@
 			xtype: 'radio',
 			boxLabel: 'Адрес за пределами РФ',
 			style: 'position:absolute;left:0px;top:77px;width:147px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -272,6 +300,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодРегиона',
 			style: 'position:absolute;left:88px;top:27px;width:40px;height:19px;',
 		},
@@ -284,8 +313,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодСтраны',
 			style: 'position:absolute;left:88px;top:51px;width:40px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Коды',
+			style: 'position:absolute;left:0px;top:6px;width:314px;height:19px;',
 		},
 					]
 				},
@@ -305,6 +340,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:88px;top:1px;width:226px;height:19px;',
 		},
@@ -318,5 +354,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

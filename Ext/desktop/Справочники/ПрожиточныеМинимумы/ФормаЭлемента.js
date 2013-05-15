@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:374px;top:33px;width:80px;height:19px;',
 		},
@@ -30,12 +31,68 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:240px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Величина прожиточного минимума',
+			style: 'position:absolute;left:8px;top:65px;width:446px;height:16px;',
+		},
+		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:84px;width:446px;height:177px;',
+			height: 177,width: 446,
+			columns:
+			[
+				{
+					text:'',
+					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
+				},
+				{
+					text:'Дата',
+					width:'120',
+					dataIndex:'Период',
+					flex:1,
+				},
+				{
+					text:'Размер',
+					width:'100',
+					dataIndex:'Размер',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:462px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -88,6 +145,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:269px;width:462px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -105,52 +163,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:84px;width:446px;height:177px;',
-			height: 177,width: 446,
-			columns:
-			[
-				{
-					text:'',
-					width:'32',
-					dataIndex:'Картинка',
-					flex:1,
-				},
-				{
-					text:'Дата',
-					width:'120',
-					dataIndex:'Период',
-					flex:1,
-				},
-				{
-					text:'Размер',
-					width:'100',
-					dataIndex:'Размер',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'Картинка',
-					},
-					{
-						name:'Период',
-					},
-					{
-						name:'Размер',
-					},
-				]
-			},
 		},
 	]
 });

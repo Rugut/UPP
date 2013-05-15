@@ -58,18 +58,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДенежныхСредств',
 			style: 'position:absolute;left:492px;top:33px;width:68px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСчета',
 			style: 'position:absolute;left:336px;top:33px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСчета',
 			style: 'position:absolute;left:102px;top:33px;width:155px;height:19px;',
 		},
@@ -82,8 +85,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:102px;top:469px;width:374px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Банк, в котором открыт счет',
+			style: 'position:absolute;left:8px;top:60px;width:552px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -100,12 +109,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БИКБанка',
 			style: 'position:absolute;left:102px;top:82px;width:155px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоррсчетБанка',
 			style: 'position:absolute;left:336px;top:82px;width:224px;height:19px;',
 		},
@@ -144,24 +155,28 @@
 			style: 'position:absolute;left:265px;top:21px;width:57px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Банк для непрямых расчетов',
+			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БИКБанкаДляРасчетов',
 			style: 'position:absolute;left:93px;top:21px;width:153px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоррсчетБанкаДляРасчетов',
 			style: 'position:absolute;left:328px;top:21px;width:224px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарийНепрямыхРасчетов',
-			text: 'Снимите флажок "Прямые расчеты", если банк, в котором открыт счет, проводит платежи 
-через корреспондентский счет, открытый в другом банке (банке для расчетов).
-В платежных поручениях в поле "Банк получателя" будет указываться банк для расчетов, 
-а номер счета и наименование банка, в котором открыт счет, будут выводиться в поле "Получатель".',
+			text: 'Снимите флажок "Прямые расчеты", если банк, в котором открыт счет, проводит платежи \r\nчерез корреспондентский счет, открытый в другом банке (банке для расчетов).\r\nВ платежных поручениях в поле "Банк получателя" будет указываться банк для расчетов, \r\nа номер счета и наименование банка, в котором открыт счет, будут выводиться в поле "Получатель".',
 			style: 'position:absolute;left:15px;top:0px;width:533px;height:64px;',
 		},
 		{
@@ -191,19 +206,20 @@
 		{
 			xtype: 'label',
 			name: 'НадписьНомерИДатаРазрешения',
-			text: 'Номер и дата разрешения ЦБ
-на открытие валютного счета:',
+			text: 'Номер и дата разрешения ЦБ\r\nна открытие валютного счета:',
 			style: 'position:absolute;left:205px;top:170px;width:327px;height:19px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИДатаРазрешения',
 			style: 'position:absolute;left:205px;top:194px;width:346px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстПлательщика',
 			style: 'position:absolute;left:0px;top:21px;width:551px;height:33px;',
 		},
@@ -211,6 +227,11 @@
 			xtype: 'checkbox',
 			boxLabel: 'Флажок',
 			style: 'position:absolute;left:0px;top:118px;width:311px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительная информация о счете',
+			style: 'position:absolute;left:0px;top:149px;width:551px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -231,8 +252,10 @@
 			style: 'position:absolute;left:0px;top:170px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОткрытия',
 			style: 'position:absolute;left:94px;top:170px;width:96px;height:19px;',
 		},
@@ -243,8 +266,10 @@
 			style: 'position:absolute;left:0px;top:194px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаЗакрытия',
 			style: 'position:absolute;left:94px;top:194px;width:96px;height:19px;',
 		},
@@ -266,6 +291,10 @@
 			style: 'position:absolute;left:0px;top:57px;width:205px;height:16px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Числом',
 			style: 'position:absolute;left:13px;top:75px;width:166px;height:16px;',
@@ -274,6 +303,8 @@
 			xtype: 'radio',
 			boxLabel: 'Прописью',
 			style: 'position:absolute;left:12px;top:94px;width:183px;height:16px;',
+		},
+			]
 		},
 					]
 				},
@@ -284,12 +315,14 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстНазначения',
 			style: 'position:absolute;left:0px;top:76px;width:550px;height:53px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстПолучателя',
 			style: 'position:absolute;left:0px;top:21px;width:550px;height:33px;',
 		},
@@ -303,8 +336,14 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Настройки печати платежных поручений',
+			style: 'position:absolute;left:8px;top:229px;width:552px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:520px;top:469px;width:40px;height:19px;',
 		},
@@ -314,5 +353,8 @@
 			text: 'Код:',
 			style: 'position:absolute;left:482px;top:471px;width:37px;height:15px;text-align:center;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

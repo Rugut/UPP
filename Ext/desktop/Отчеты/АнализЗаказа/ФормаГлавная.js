@@ -10,27 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Новое окно',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗаказПокупателя',
 			style: 'position:absolute;left:50px;top:33px;width:320px;height:19px;',
 		},
@@ -47,10 +29,35 @@
 			style: 'position:absolute;left:390px;top:33px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВремяАнализа',
 			style: 'position:absolute;left:512px;top:33px;width:120px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Новое окно',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

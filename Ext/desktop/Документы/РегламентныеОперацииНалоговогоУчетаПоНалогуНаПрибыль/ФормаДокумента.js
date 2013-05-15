@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:97px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:182px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:203px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:97px;top:81px;width:279px;height:19px;',
 		},
@@ -61,8 +65,56 @@
 			style: 'position:absolute;left:8px;top:184px;width:368px;height:15px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Распределение расходов по видам деятельности (ЕНВД / не ЕНВД)',
+			style: 'position:absolute;left:8px;top:109px;width:368px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:57px;width:70px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: true,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:97px;top:57px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:208px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:97px;top:208px;width:279px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:233px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:97px;top:233px;width:279px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -86,6 +138,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:262px;width:384px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -107,47 +160,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Распределение расходов по видам деятельности (ЕНВД / не ЕНВД)',
-			style: 'position:absolute;left:8px;top:109px;width:368px;height:15px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'За период:',
-			style: 'position:absolute;left:8px;top:57px;width:70px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:97px;top:57px;width:119px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтветственный',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:208px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:97px;top:208px;width:279px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКомментарий',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:233px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:97px;top:233px;width:279px;height:19px;',
 		},
 	]
 });

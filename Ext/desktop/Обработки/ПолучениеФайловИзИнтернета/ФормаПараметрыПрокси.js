@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:129px;width:284px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПользователя',
 			style: 'position:absolute;left:93px;top:32px;width:183px;height:19px;',
 		},
@@ -41,6 +25,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольПользователя',
 			style: 'position:absolute;left:93px;top:56px;width:183px;height:19px;',
 		},
@@ -64,6 +49,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресПроксиСервера',
 			style: 'position:absolute;left:93px;top:8px;width:183px;height:19px;',
 		},
@@ -74,10 +60,34 @@
 			style: 'position:absolute;left:8px;top:81px;width:42px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортПроксиСервера',
 			style: 'position:absolute;left:93px;top:81px;width:183px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:129px;width:284px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

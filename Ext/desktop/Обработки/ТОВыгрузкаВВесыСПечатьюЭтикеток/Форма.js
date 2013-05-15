@@ -10,40 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Выгрузить в весы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Выгрузить в весы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Настройки',
+			style: 'position:absolute;left:8px;top:33px;width:684px;height:17px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -63,12 +32,18 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:391px;top:1px;width:293px;height:19px;',
 		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:8px;top:78px;width:684px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -153,13 +128,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:15px;width:684px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -292,6 +260,46 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Выгрузить в весы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Выгрузить в весы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

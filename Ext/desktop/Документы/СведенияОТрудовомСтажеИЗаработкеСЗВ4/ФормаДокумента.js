@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:553px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:633px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:653px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:102px;top:33px;width:318px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:553px;top:57px;width:220px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:468px;width:778px;height:19px;',
 		},
@@ -259,44 +265,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:495px;width:1000px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Проверить в CheckXML',
-				},
-				'-',
-				{
-					text:'Показать файл',
-				},
-				'-',
-				{
-					text:'Записать файл на диск',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Застрахованные лица',
+			style: 'position:absolute;left:8px;top:246px;width:984px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -312,6 +283,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:102px;top:81px;width:120px;height:19px;',
 		},
@@ -324,6 +296,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:294px;top:81px;width:126px;height:19px;',
 		},
@@ -336,6 +309,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:102px;top:57px;width:318px;height:19px;',
 		},
@@ -359,6 +333,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КатегорияЗастрахованныхЛиц',
 			style: 'position:absolute;left:182px;top:50px;width:206px;height:19px;',
 		},
@@ -371,6 +346,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КорректируемыйПериод',
 			style: 'position:absolute;left:537px;top:25px;width:206px;height:19px;',
 		},
@@ -391,16 +367,6 @@
 			style: 'position:absolute;left:182px;top:0px;width:109px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Исходные',
-			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Корректирующие',
-			style: 'position:absolute;left:182px;top:25px;width:109px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьТипСведений1',
 			text: 'Тип сведений:',
@@ -415,6 +381,22 @@
 			xtype: 'checkbox',
 			boxLabel: 'Передавать доуплаченные суммы',
 			style: 'position:absolute;left:754px;top:25px;width:206px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующие',
+			style: 'position:absolute;left:182px;top:25px;width:109px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -443,43 +425,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТерриториальныеУсловия',
 			style: 'position:absolute;left:415px;top:0px;width:66px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Исходные',
-			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Назначение пенсии',
-			style: 'position:absolute;left:182px;top:25px;width:119px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'СЗВ-4-1',
-			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'СЗВ-4-2',
-			style: 'position:absolute;left:182px;top:0px;width:59px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Отсутствует',
-			style: 'position:absolute;left:94px;top:50px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Корректирующая',
-			style: 'position:absolute;left:182px;top:50px;width:119px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Отменяющая',
-			style: 'position:absolute;left:308px;top:50px;width:87px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -499,6 +447,59 @@
 			text: 'Корректировка:',
 			style: 'position:absolute;left:0px;top:50px;width:88px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-4-1',
+			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'СЗВ-4-2',
+			style: 'position:absolute;left:182px;top:0px;width:59px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Исходные',
+			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Назначение пенсии',
+			style: 'position:absolute;left:182px;top:25px;width:119px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Отсутствует',
+			style: 'position:absolute;left:94px;top:50px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Корректирующая',
+			style: 'position:absolute;left:182px;top:50px;width:119px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отменяющая',
+			style: 'position:absolute;left:308px;top:50px;width:87px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 			]
@@ -512,6 +513,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерПачки',
 			style: 'position:absolute;left:553px;top:81px;width:80px;height:19px;',
 		},
@@ -539,6 +541,51 @@
 			style: 'position:absolute;left:0px;top:35px;width:267px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:495px;width:1000px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Проверить в CheckXML',
+				},
+				'-',
+				{
+					text:'Показать файл',
+				},
+				'-',
+				{
+					text:'Записать файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

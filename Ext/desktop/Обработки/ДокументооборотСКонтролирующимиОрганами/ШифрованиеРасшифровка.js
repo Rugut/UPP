@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:505px;width:704px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:128px;width:688px;height:369px;',
 			height: 369,width: 688,
@@ -198,6 +181,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:142px;top:8px;width:554px;height:19px;',
 		},
@@ -214,18 +198,9 @@
 			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Все',
-			style: 'position:absolute;left:142px;top:57px;width:41px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Заданный:',
-			style: 'position:absolute;left:214px;top:57px;width:75px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЦиклаОбмена',
 			style: 'position:absolute;left:296px;top:57px;width:400px;height:19px;',
 		},
@@ -245,8 +220,56 @@
 			style: 'position:absolute;left:142px;top:83px;width:225px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:102px;width:688px;height:3px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Режим шифрования первичных сообщений',
+			style: 'position:absolute;left:441px;top:34px;width:241px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Все',
+			style: 'position:absolute;left:142px;top:57px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Заданный:',
+			style: 'position:absolute;left:214px;top:57px;width:75px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:505px;width:704px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:104px;width:688px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -260,11 +283,6 @@
 					text:'Обновить',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Режим шифрования первичных сообщений',
-			style: 'position:absolute;left:441px;top:34px;width:241px;height:15px;',
 		},
 	]
 });

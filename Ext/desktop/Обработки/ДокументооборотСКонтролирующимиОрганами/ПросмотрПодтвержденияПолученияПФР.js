@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:428px;width:473px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:258px;width:457px;height:162px;',
 			height: 162,width: 457,
@@ -70,6 +57,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Было получено следующее содержимое:',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+		},
 					]
 				},
 			]
@@ -113,8 +105,14 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Причина отказа в приеме',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+		},
+		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПричинаОтказаВПриеме',
 			style: 'position:absolute;left:0px;top:20px;width:457px;height:52px;',
 		},
@@ -161,6 +159,16 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:81px;width:457px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Протоколы проверки',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:457px;height:52px;',
 			height: 52,width: 457,
@@ -198,6 +206,23 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:428px;width:473px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

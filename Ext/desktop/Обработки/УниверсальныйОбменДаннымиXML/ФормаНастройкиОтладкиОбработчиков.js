@@ -10,14 +10,24 @@
 	items:
 	[
 		{
-			xtype: 'radio',
-			boxLabel: 'без отладки алгоритмов',
-			style: 'position:absolute;left:8px;top:29px;width:279px;height:15px;',
+			xtype: 'fieldset',
+			title: '1. Выберите режим отладки кода алгоритмов',
+			style: 'position:absolute;left:8px;top:5px;width:551px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'подставлять код алгоритмов по месту вызова',
-			style: 'position:absolute;left:8px;top:69px;width:279px;height:15px;',
+			xtype: 'fieldset',
+			title: '2. Выгрузите код обработчиков',
+			style: 'position:absolute;left:8px;top:97px;width:551px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '3. Пояснения к созданию файла внешней обработки',
+			style: 'position:absolute;left:8px;top:157px;width:551px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '4. Создайте (обновите) файл внешней обработки',
+			style: 'position:absolute;left:8px;top:265px;width:551px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -34,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаВнешнейОбработкиОбработчиковСобытий',
 			style: 'position:absolute;left:8px;top:311px;width:551px;height:19px;',
 		},
@@ -105,16 +116,32 @@
 		{
 			xtype: 'label',
 			name: 'Надпись6',
-			text: '1. После формирования модуля отладки необходимо скопировать в буфер обмена полученный код обработчиков.
-2. Открыть конфигуратор и создать новую внешнюю обработку. В модуль обработки вставить содержимое буфера обмена. Сохранить обработку.
-3. На завершающем четвертом шаге указать вновь созданную обработку как обработку с экспортными процедурами обработчиков.
-',
+			text: '1. После формирования модуля отладки необходимо скопировать в буфер обмена полученный код обработчиков.\r\n2. Открыть конфигуратор и создать новую внешнюю обработку. В модуль обработки вставить содержимое буфера обмена. Сохранить обработку.\r\n3. На завершающем четвертом шаге указать вновь созданную обработку как обработку с экспортными процедурами обработчиков.\r\n',
 			style: 'position:absolute;left:8px;top:179px;width:489px;height:80px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'без отладки алгоритмов',
+			style: 'position:absolute;left:8px;top:29px;width:279px;height:15px;',
 		},
 		{
 			xtype: 'radio',
 			boxLabel: 'вызывать алгоритмы как процедуры',
 			style: 'position:absolute;left:8px;top:49px;width:279px;height:15px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'подставлять код алгоритмов по месту вызова',
+			style: 'position:absolute;left:8px;top:69px;width:279px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
 	]
 });

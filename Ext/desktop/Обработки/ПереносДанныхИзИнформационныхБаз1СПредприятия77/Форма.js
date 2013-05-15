@@ -47,8 +47,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЗаголовок',
-			text: 'Выберите вариант загрузки данных из информационной базы
-на платформе 1С:Предприятие 7.7',
+			text: 'Выберите вариант загрузки данных из информационной базы\r\nна платформе 1С:Предприятие 7.7',
 			style: 'position:absolute;left:0px;top:0px;width:594px;height:60px;text-align:center;',
 		},
 					]
@@ -60,8 +59,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЗаголовок1',
-			text: 'Укажите информационную базу, из которой
-требуется загрузить данные',
+			text: 'Укажите информационную базу, из которой\r\nтребуется загрузить данные',
 			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
@@ -123,21 +121,6 @@
 			style: 'position:absolute;left:382px;top:372px;width:103px;height:22px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: '2007 года',
-			style: 'position:absolute;left:158px;top:262px;width:295px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: '2008 года',
-			style: 'position:absolute;left:158px;top:281px;width:295px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: '2006 года',
-			style: 'position:absolute;left:158px;top:243px;width:295px;height:15px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись49',
 			text: 'Расчетные данные будут перенесены с:',
@@ -170,6 +153,27 @@
 			name: 'НадписьНомерМинимальногоРелиза',
 			text: '7.70.000',
 			style: 'position:absolute;left:378px;top:36px;width:58px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: '2006 года',
+			style: 'position:absolute;left:158px;top:243px;width:295px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '2007 года',
+			style: 'position:absolute;left:158px;top:262px;width:295px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '2008 года',
+			style: 'position:absolute;left:158px;top:281px;width:295px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -204,6 +208,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаВыгруженныхДанных',
 			style: 'position:absolute;left:138px;top:73px;width:456px;height:19px;',
 		},
@@ -212,6 +217,11 @@
 			name: 'НадписьШапкаТаблицы1',
 			text: 'Путь к файлу данных:',
 			style: 'position:absolute;left:166px;top:51px;width:335px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание загружаемых данных',
+			style: 'position:absolute;left:138px;top:102px;width:456px;height:183px;',
 		},
 		{
 			xtype: 'label',
@@ -272,6 +282,11 @@
 			name: 'НадписьДата',
 			text: '',
 			style: 'position:absolute;left:294px;top:256px;width:292px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:171px;top:246px;width:410px;height:2px;',
 		},
 					]
 				},
@@ -715,5 +730,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

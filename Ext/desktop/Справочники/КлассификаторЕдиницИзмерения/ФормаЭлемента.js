@@ -12,18 +12,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:236px;top:57px;width:40px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:160px;top:33px;width:233px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:160px;top:84px;width:233px;height:19px;',
 		},
@@ -76,6 +79,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МеждународноеСокращение',
 			style: 'position:absolute;left:160px;top:57px;width:40px;height:19px;',
 		},
@@ -85,5 +89,8 @@
 			text: 'Международное сокращение:',
 			style: 'position:absolute;left:8px;top:57px;width:152px;height:19px;text-align:left;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

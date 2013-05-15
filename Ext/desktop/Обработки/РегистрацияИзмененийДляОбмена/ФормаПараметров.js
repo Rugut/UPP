@@ -10,44 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:380px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Получить из запроса',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:34px;width:380px;height:229px;',
 			height: 229,width: 380,
@@ -92,6 +54,48 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:380px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Получить из запроса',
+				},
+			]
 		},
 	]
 });

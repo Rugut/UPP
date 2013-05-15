@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:103px;top:429px;width:669px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:426px;top:33px;width:346px;height:19px;',
 		},
@@ -156,31 +161,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				{
-					text:'',
-				},
-				'-',
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -319,22 +299,18 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:764px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Данные по счетам-фактурам',
+			style: 'position:absolute;left:0px;top:0px;width:764px;height:16px;',
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Данные по партиям',
+			style: 'position:absolute;left:8px;top:63px;width:764px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -345,8 +321,46 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:103px;top:405px;width:669px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				{
+					text:'',
+				},
+				'-',
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

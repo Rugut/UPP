@@ -41,14 +41,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:124px;top:30px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон',
 			style: 'position:absolute;left:224px;top:30px;width:80px;height:19px;',
 		},
@@ -61,6 +65,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:124px;top:54px;width:262px;height:19px;',
 		},
@@ -71,12 +76,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Счет',
 			style: 'position:absolute;left:124px;top:6px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидУчета',
 			style: 'position:absolute;left:124px;top:102px;width:120px;height:19px;',
 		},
@@ -86,13 +93,6 @@
 					title:'Отбор',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:380px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:380px;height:160px;',
@@ -176,5 +176,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

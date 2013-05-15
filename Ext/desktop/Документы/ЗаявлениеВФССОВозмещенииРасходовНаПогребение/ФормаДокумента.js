@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:507px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:595px;top:33px;width:26px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:627px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:33px;width:296px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:57px;width:296px;height:19px;',
 		},
@@ -66,36 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:528px;width:796px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:555px;width:900px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -107,16 +85,6 @@
 					title:'Сотрудники',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:870px;height:380px;',
@@ -187,6 +155,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:119px;top:275px;width:320px;height:19px;',
 		},
@@ -199,6 +168,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:554px;top:275px;width:320px;height:19px;',
 		},
@@ -211,6 +181,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрационныйНомерФСС',
 			style: 'position:absolute;left:146px;top:53px;width:110px;height:19px;',
 		},
@@ -223,6 +194,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительныйКодФСС',
 			style: 'position:absolute;left:379px;top:53px;width:110px;height:19px;',
 		},
@@ -235,6 +207,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодПодчиненностиФСС',
 			style: 'position:absolute;left:599px;top:53px;width:60px;height:19px;',
 		},
@@ -247,8 +220,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
 			style: 'position:absolute;left:258px;top:27px;width:618px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Регистрация в ФСС',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Подписи',
+			style: 'position:absolute;left:6px;top:254px;width:868px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -259,6 +243,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Адрес',
 			style: 'position:absolute;left:58px;top:79px;width:818px;height:19px;',
 		},
@@ -269,8 +254,14 @@
 			style: 'position:absolute;left:6px;top:394px;width:82px;height:21px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Банковские реквизиты',
+			style: 'position:absolute;left:8px;top:112px;width:868px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Банк',
 			style: 'position:absolute;left:58px;top:133px;width:611px;height:19px;',
 		},
@@ -283,6 +274,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСчета',
 			style: 'position:absolute;left:740px;top:133px;width:136px;height:19px;',
 		},
@@ -295,6 +287,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеБанка',
 			style: 'position:absolute;left:113px;top:159px;width:430px;height:19px;',
 		},
@@ -307,6 +300,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БИКБанка',
 			style: 'position:absolute;left:581px;top:159px;width:88px;height:19px;',
 		},
@@ -319,6 +313,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоррСчет',
 			style: 'position:absolute;left:740px;top:159px;width:136px;height:19px;',
 		},
@@ -337,6 +332,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерЛицевогоСчета',
 			style: 'position:absolute;left:113px;top:185px;width:150px;height:19px;',
 		},
@@ -357,8 +353,11 @@
 			style: 'position:absolute;left:662px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:750px;top:57px;width:46px;height:19px;',
 		},
@@ -371,8 +370,42 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Телефон',
 			style: 'position:absolute;left:535px;top:57px;width:120px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:555px;width:900px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

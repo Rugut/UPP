@@ -107,8 +107,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВалютаРегУчета',
-			text: 'По отношению к этой валюте указываются курсы других валют.
-Для РФ валюта регламентированного учета - рубль.',
+			text: 'По отношению к этой валюте указываются курсы других валют.\r\nДля РФ валюта регламентированного учета - рубль.',
 			style: 'position:absolute;left:12px;top:68px;width:336px;height:31px;text-align:left;',
 		},
 		{
@@ -320,10 +319,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись60',
-			text: 'На счетах бухгалтерского и налогового учета:
-70      "Расчеты с персоналом по оплате труда"
-76.04 "Расчеты по депонированным суммам"
-97.01 "Расходы на оплату труда будущих периодов"',
+			text: 'На счетах бухгалтерского и налогового учета:\r\n70      "Расчеты с персоналом по оплате труда"\r\n76.04 "Расчеты по депонированным суммам"\r\n97.01 "Расходы на оплату труда будущих периодов"',
 			style: 'position:absolute;left:12px;top:108px;width:333px;height:62px;text-align:left;',
 		},
 		{
@@ -361,6 +357,25 @@
 			style: 'position:absolute;left:12px;top:228px;width:224px;height:19px;',
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Для документов поступления',
+			style: 'position:absolute;left:28px;top:168px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Для документов реализации',
+			style: 'position:absolute;left:28px;top:192px;width:172px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Учитывать возвраты товара покупателем',
+			style: 'position:absolute;left:12px;top:300px;width:269px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Не указана',
 			style: 'position:absolute;left:28px;top:68px;width:84px;height:19px;',
@@ -375,20 +390,7 @@
 			boxLabel: 'Сначала на складах, потом в заказах поставщикам',
 			style: 'position:absolute;left:28px;top:88px;width:291px;height:19px;',
 		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Для документов поступления',
-			style: 'position:absolute;left:28px;top:168px;width:172px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Для документов реализации',
-			style: 'position:absolute;left:28px;top:192px;width:172px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Учитывать возвраты товара покупателем',
-			style: 'position:absolute;left:12px;top:300px;width:269px;height:19px;',
+			]
 		},
 					]
 				},
@@ -407,6 +409,10 @@
 			style: 'position:absolute;left:28px;top:72px;width:450px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Явно (с помощью документа "Корректировка заказа на производство")',
 			style: 'position:absolute;left:60px;top:116px;width:400px;height:19px;',
@@ -415,6 +421,8 @@
 			xtype: 'radio',
 			boxLabel: 'Автоматически при распределении материалов на выпуск продукции',
 			style: 'position:absolute;left:60px;top:140px;width:400px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -425,6 +433,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодичностьДоступностиКлючевыхРесурсовПредприятия',
 			style: 'position:absolute;left:343px;top:48px;width:190px;height:19px;',
 		},
@@ -442,18 +451,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаУправленческогоУчета',
 			style: 'position:absolute;left:212px;top:111px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаРегламентированногоУчета',
 			style: 'position:absolute;left:212px;top:48px;width:83px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаМеждународногоУчета',
 			style: 'position:absolute;left:212px;top:144px;width:83px;height:19px;',
 		},
@@ -502,18 +514,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительнаяКолонкаПечатныхФормДокументов',
 			style: 'position:absolute;left:300px;top:48px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмеренияВеса',
 			style: 'position:absolute;left:300px;top:112px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмеренияОбъема',
 			style: 'position:absolute;left:300px;top:176px;width:104px;height:19px;',
 		},
@@ -540,16 +555,6 @@
 			style: 'position:absolute;left:344px;top:272px;width:178px;height:22px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Сначала принятые, потом собственные',
-			style: 'position:absolute;left:48px;top:204px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Сначала собственные, потом принятые',
-			style: 'position:absolute;left:48px;top:224px;width:220px;height:19px;',
-		},
-		{
 			xtype: 'button',
 			name: 'ДетализацияРасширеннойАналитикиУчетаНоменклатурыИЗатрат',
 			text: 'Детализация учета ...',
@@ -561,6 +566,26 @@
 			style: 'position:absolute;left:32px;top:248px;width:250px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала принятые, потом собственные',
+			style: 'position:absolute;left:48px;top:204px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сначала собственные, потом принятые',
+			style: 'position:absolute;left:48px;top:224px;width:220px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Использовать расширенную аналитику учета затрат с:',
 			style: 'position:absolute;left:12px;top:48px;width:304px;height:19px;',
@@ -569,6 +594,8 @@
 			xtype: 'radio',
 			boxLabel: 'Использовать партионный учет',
 			style: 'position:absolute;left:12px;top:96px;width:248px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -605,9 +632,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособКонтроляДнейЗадолженности',
 			style: 'position:absolute;left:224px;top:48px;width:190px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'По времени регистрации документа',
@@ -618,6 +650,8 @@
 			boxLabel: 'В конце дня даты регистрации документа',
 			style: 'position:absolute;left:28px;top:116px;width:240px;height:19px;',
 		},
+			]
+		},
 					]
 				},
 				{
@@ -626,13 +660,19 @@
 					[
 		{
 			xtype: 'radio',
+			boxLabel: 'Сводно по всем работникам',
+			style: 'position:absolute;left:28px;top:88px;width:166px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
 			boxLabel: 'По каждому работнику',
 			style: 'position:absolute;left:28px;top:68px;width:166px;height:19px;',
 		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Сводно по всем работникам',
-			style: 'position:absolute;left:28px;top:88px;width:166px;height:19px;',
+			]
 		},
 					]
 				},
@@ -647,20 +687,10 @@
 			style: 'position:absolute;left:12px;top:6px;width:354px;height:25px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Только полное наименование',
-			style: 'position:absolute;left:23px;top:72px;width:406px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись88',
 			text: 'Указание наименования продавца в счете-фактуре:',
 			style: 'position:absolute;left:12px;top:48px;width:354px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Полное и сокращенное наименование',
-			style: 'position:absolute;left:23px;top:96px;width:406px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -669,21 +699,24 @@
 			style: 'position:absolute;left:39px;top:215px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаУказанияСокращенногоНаименованияПродавцаВСчетеФактуре',
 			style: 'position:absolute;left:128px;top:215px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись90',
-			text: 'В соответствии с Постановлением Правительства РФ от 26 мая 2009 г. № 451 «О внесении изменений в Постановление Правительства Российской Федерации от 2 декабря 2000 г. № 914» в счете-фактуре необходимо указывать полное и сокращенное наименование продавца в соответствии с учредительными документами. Это изменение вступает в силу с 9 июня 2009 г. и действует до даты вступления в силу постановления Правительства РФ 
-от 26 декабря 2011 г. № 1137.',
+			text: 'В соответствии с Постановлением Правительства РФ от 26 мая 2009 г. № 451 «О внесении изменений в Постановление Правительства Российской Федерации от 2 декабря 2000 г. № 914» в счете-фактуре необходимо указывать полное и сокращенное наименование продавца в соответствии с учредительными документами. Это изменение вступает в силу с 9 июня 2009 г. и действует до даты вступления в силу постановления Правительства РФ \r\nот 26 декабря 2011 г. № 1137.',
 			style: 'position:absolute;left:39px;top:120px;width:414px;height:92px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПримененияИсправленныхСчетовФактур',
 			style: 'position:absolute;left:128px;top:297px;width:80px;height:19px;',
 		},
@@ -705,6 +738,22 @@
 			text: 'Учет НДС ведется в соответствии с постановлением Правительства РФ от 26 декабря 2011 г. № 1137 "О формах и правилах заполнения (ведения) документов, применяемых при расчетах по налогу на добавленную стоимость"',
 			style: 'position:absolute;left:12px;top:244px;width:490px;height:44px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Только полное наименование',
+			style: 'position:absolute;left:23px;top:72px;width:406px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Полное и сокращенное наименование',
+			style: 'position:absolute;left:23px;top:96px;width:406px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 				{
@@ -723,8 +772,10 @@
 			style: 'position:absolute;left:29px;top:73px;width:390px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаПересчетаСуммыНДСвРубляхПоДокументамВИностраннойВалютеПоСтавкеНДС',
 			style: 'position:absolute;left:131px;top:148px;width:80px;height:19px;',
 		},
@@ -776,8 +827,10 @@
 			style: 'position:absolute;left:36px;top:123px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоОценкиДоходовИРасходовВНУПоКурсуАвансов',
 			style: 'position:absolute;left:132px;top:123px;width:80px;height:19px;',
 		},
@@ -810,16 +863,17 @@
 			style: 'position:absolute;left:46px;top:273px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаУчетаПостоянныхРазницВКурсовыхРазницахПоРасчетамВУЕ',
 			style: 'position:absolute;left:142px;top:273px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИнфоНалогНаПрибыльАвансы3',
-			text: 'Суммовая разница определяется без учета НДС.
-НДС не учитывается в составе расходов для целей налогообложения прибыли',
+			text: 'Суммовая разница определяется без учета НДС.\r\nНДС не учитывается в составе расходов для целей налогообложения прибыли',
 			style: 'position:absolute;left:46px;top:293px;width:413px;height:30px;',
 		},
 		{
@@ -829,14 +883,26 @@
 			style: 'position:absolute;left:6px;top:198px;width:375px;height:19px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Признавать постоянные разницы',
 			style: 'position:absolute;left:22px;top:250px;width:387px;height:19px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Признавать временные разницы',
 			style: 'position:absolute;left:22px;top:227px;width:387px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -897,6 +963,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦенПлановойСебестоимостиНоменклатуры',
 			style: 'position:absolute;left:270px;top:48px;width:196px;height:19px;',
 		},
@@ -926,8 +993,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись65',
-			text: 'Данные настройки используются в режиме расширенной аналитики учета и затрат.
-Режим расширенной аналитики устанавливается в разделе "Режим учета затрат".',
+			text: 'Данные настройки используются в режиме расширенной аналитики учета и затрат.\r\nРежим расширенной аналитики устанавливается в разделе "Режим учета затрат".',
 			style: 'position:absolute;left:0px;top:0px;width:468px;height:60px;',
 		},
 		{
@@ -952,5 +1018,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

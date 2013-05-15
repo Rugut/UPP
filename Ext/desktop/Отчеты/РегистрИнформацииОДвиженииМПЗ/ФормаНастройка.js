@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:167px;width:490px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:147px;',
 			height: 147,width: 474,
@@ -47,16 +30,6 @@
 			style: 'position:absolute;left:6px;top:57px;width:77px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Регистр информации по МПЗ на складе',
-			style: 'position:absolute;left:6px;top:81px;width:248px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Регистр информации по МПЗ отгруженным',
-			style: 'position:absolute;left:6px;top:98px;width:246px;height:18px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
@@ -65,6 +38,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:32px;width:219px;height:19px;',
 		},
@@ -75,8 +49,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:57px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:6px;width:80px;height:19px;',
 		},
@@ -87,8 +63,10 @@
 			style: 'position:absolute;left:186px;top:6px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:217px;top:6px;width:85px;height:19px;',
 		},
@@ -97,6 +75,22 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:310px;top:6px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Регистр информации по МПЗ на складе',
+			style: 'position:absolute;left:6px;top:81px;width:248px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Регистр информации по МПЗ отгруженным',
+			style: 'position:absolute;left:6px;top:98px;width:246px;height:18px;',
+		},
+			]
 		},
 					]
 				},
@@ -177,14 +171,28 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:10px;top:6px;width:456px;height:24px;',
-			items:
-			[
+					]
+				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:167px;width:490px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -20,14 +20,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:64px;top:6px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:164px;top:6px;width:80px;height:19px;',
 		},
@@ -50,6 +54,11 @@
 			style: 'position:absolute;left:246px;top:6px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:106px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства и категории',
 			style: 'position:absolute;left:6px;top:78px;width:210px;height:15px;',
@@ -57,36 +66,6 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:96px;top:54px;width:370px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Показатель 1',
-			style: 'position:absolute;left:12px;top:127px;width:220px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Показатель 2',
-			style: 'position:absolute;left:12px;top:147px;width:220px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Показатель 3',
-			style: 'position:absolute;left:12px;top:167px;width:220px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Показатель 4',
-			style: 'position:absolute;left:12px;top:187px;width:220px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Показатель 5',
-			style: 'position:absolute;left:12px;top:207px;width:220px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Показатель 6',
-			style: 'position:absolute;left:12px;top:227px;width:220px;height:15px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -114,9 +93,23 @@
 			]
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 1',
+			style: 'position:absolute;left:12px;top:127px;width:220px;height:16px;',
+		},
+		{
 			xtype: 'radio',
 			boxLabel: 'Показатель 7',
 			style: 'position:absolute;left:237px;top:127px;width:220px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 2',
+			style: 'position:absolute;left:12px;top:147px;width:220px;height:15px;',
 		},
 		{
 			xtype: 'radio',
@@ -125,8 +118,18 @@
 		},
 		{
 			xtype: 'radio',
+			boxLabel: 'Показатель 3',
+			style: 'position:absolute;left:12px;top:167px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
 			boxLabel: 'Показатель 9',
 			style: 'position:absolute;left:237px;top:167px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Показатель 4',
+			style: 'position:absolute;left:12px;top:187px;width:220px;height:15px;',
 		},
 		{
 			xtype: 'radio',
@@ -135,13 +138,25 @@
 		},
 		{
 			xtype: 'radio',
+			boxLabel: 'Показатель 5',
+			style: 'position:absolute;left:12px;top:207px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
 			boxLabel: 'Показатель 11',
 			style: 'position:absolute;left:237px;top:207px;width:220px;height:15px;',
 		},
 		{
 			xtype: 'radio',
+			boxLabel: 'Показатель 6',
+			style: 'position:absolute;left:12px;top:227px;width:220px;height:15px;',
+		},
+		{
+			xtype: 'radio',
 			boxLabel: 'Показатель 12',
 			style: 'position:absolute;left:237px;top:229px;width:220px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -254,8 +269,11 @@
 			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение',
 			style: 'position:absolute;left:130px;top:24px;width:82px;height:19px;',
 		},
@@ -291,8 +309,11 @@
 			style: 'position:absolute;left:0px;top:24px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение1',
 			style: 'position:absolute;left:130px;top:24px;width:80px;height:19px;',
 		},
@@ -325,8 +346,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение5',
 			style: 'position:absolute;left:130px;top:0px;width:80px;height:19px;',
 		},
@@ -343,8 +367,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение3',
 			style: 'position:absolute;left:130px;top:0px;width:80px;height:19px;',
 		},
@@ -391,8 +418,11 @@
 			style: 'position:absolute;left:0px;top:48px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'БазовоеЗначение4',
 			style: 'position:absolute;left:130px;top:48px;width:82px;height:19px;',
 		},
@@ -464,19 +494,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:254px;top:24px;width:212px;height:195px;',
 			height: 195,width: 212,
@@ -514,33 +531,13 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимумСерийКоличество',
 			style: 'position:absolute;left:398px;top:225px;width:68px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:224px;top:24px;width:24px;height:195px;',
-			items:
-			[
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'combobox',
@@ -631,13 +628,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -681,13 +671,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -713,5 +696,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -10,38 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
-			items:
-			[
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'День',
-				},
-				'-',
-				{
-					text:'Неделя',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДляОрганизации',
 			text: 'Для организации:',
@@ -50,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДляОрганизации',
 			style: 'position:absolute;left:110px;top:33px;width:180px;height:19px;',
 		},
@@ -64,8 +33,11 @@
 			style: 'position:absolute;left:533px;top:66px;width:23px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:573px;top:63px;width:89px;height:19px;',
 		},
@@ -152,22 +124,6 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:295px;top:28px;width:218px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				{
-					text:'Оповещение',
-				},
-				{
-					text:'Перейти к дате',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: '  Сдача отчетности',
@@ -190,6 +146,65 @@
 			name: 'Надпись4',
 			text: '  Напомнить',
 			style: 'position:absolute;left:522px;top:522px;width:140px;height:21px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Легенда',
+			style: 'position:absolute;left:522px;top:429px;width:140px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'День',
+				},
+				'-',
+				{
+					text:'Неделя',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:295px;top:28px;width:218px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Открыть',
+				},
+				{
+					text:'Оповещение',
+				},
+				{
+					text:'Перейти к дате',
+				},
+			]
 		},
 	]
 });

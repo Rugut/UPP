@@ -29,18 +29,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:338px;top:7px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:57px;top:7px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:155px;top:7px;width:80px;height:19px;',
 		},
@@ -80,44 +85,12 @@
 					title:'Дополнительная',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:787px;top:2px;width:261px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Настройка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:2px;top:2px;width:551px;height:24px;',
-			items:
-			[
-				{
-					text:'Назад',
-				},
-				'-',
-				{
-					text:'Структура налоговой базы',
-				},
-				'-',
-				{
-					text:'Печать...',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
 					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -9,9 +9,13 @@
 	
 	items:
 	[
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:518px;width:408px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

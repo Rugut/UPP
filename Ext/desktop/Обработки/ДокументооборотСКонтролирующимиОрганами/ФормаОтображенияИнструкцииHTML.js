@@ -33,10 +33,18 @@
 			style: 'position:absolute;left:8px;top:515px;width:166px;height:22px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:505px;width:984px;height:3px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьЗаголовок',
 			text: 'Перед отправкой заявления необходимо создать ключевой контейнер. Ниже приведена инструкция по его созданию. Ознакомьтесь с инструкцией и, при необходимости, распечатайте ее. Обратите внимание, в момент создания ключевого контейнера инструкция будет недоступна.',
 			style: 'position:absolute;left:8px;top:4px;width:984px;height:36px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

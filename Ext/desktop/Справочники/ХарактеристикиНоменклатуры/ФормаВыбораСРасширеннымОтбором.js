@@ -27,19 +27,6 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:29px;width:380px;height:24px;',
-			items:
-			[
-				{
-					text:'Равенство',
-				},
-				{
-					text:'Содержит',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:53px;width:380px;height:172px;',
 			height: 172,width: 380,
@@ -150,6 +137,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Значения свойств для отбора характеристик номенклатуры',
+			style: 'position:absolute;left:8px;top:8px;width:380px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:257px;width:380px;height:24px;',
 			items:
@@ -183,6 +175,28 @@
 				'-',
 				{
 					text:'Отображать активные',
+				},
+			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Характеристики, отобранные по значениям свойств',
+			style: 'position:absolute;left:8px;top:236px;width:380px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:29px;width:380px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Равенство',
+				},
+				{
+					text:'Содержит',
 				},
 			]
 		},

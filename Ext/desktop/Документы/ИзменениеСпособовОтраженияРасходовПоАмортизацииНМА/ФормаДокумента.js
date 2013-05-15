@@ -11,33 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:392px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:434px;width:392px;height:25px;',
 			items:
 			[
@@ -70,6 +43,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -80,8 +54,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -94,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:98px;top:383px;width:286px;height:19px;',
 		},
@@ -106,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:98px;top:407px;width:286px;height:19px;',
 		},
@@ -118,19 +96,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:81px;width:286px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:194px;width:376px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -192,6 +160,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияРасходовБУ',
 			style: 'position:absolute;left:120px;top:129px;width:264px;height:19px;',
 		},
@@ -202,6 +171,16 @@
 			style: 'position:absolute;left:8px;top:129px;width:109px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Способ отражения расходов по амортизации:',
+			style: 'position:absolute;left:8px;top:108px;width:376px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Нематериальные активы и НИОКР',
+			style: 'position:absolute;left:8px;top:178px;width:376px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'бух. учете',
 			style: 'position:absolute;left:98px;top:57px;width:80px;height:19px;',
@@ -209,6 +188,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияРасходовНУ',
 			style: 'position:absolute;left:120px;top:152px;width:264px;height:19px;',
 		},
@@ -217,6 +197,49 @@
 			name: 'НадписьСпособОтраженияРасходовНУ',
 			text: 'Способ (налог. учет):',
 			style: 'position:absolute;left:8px;top:152px;width:109px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:392px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:194px;width:376px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 	]
 });

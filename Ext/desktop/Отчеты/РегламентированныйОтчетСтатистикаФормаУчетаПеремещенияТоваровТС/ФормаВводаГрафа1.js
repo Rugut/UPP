@@ -10,31 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:219px;width:395px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительНаименование',
 			style: 'position:absolute;left:121px;top:8px;width:266px;height:30px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительУлицаНомерДома',
 			style: 'position:absolute;left:121px;top:144px;width:266px;height:19px;',
 		},
@@ -53,24 +38,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтправительСтранаНаименование',
 			style: 'position:absolute;left:147px;top:72px;width:240px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительИндекс',
 			style: 'position:absolute;left:121px;top:48px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительОбласть',
 			style: 'position:absolute;left:121px;top:96px;width:266px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительРФ_ОГРН',
 			style: 'position:absolute;left:121px;top:192px;width:101px;height:19px;',
 		},
@@ -95,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительНаселенныйПункт',
 			style: 'position:absolute;left:121px;top:120px;width:266px;height:19px;',
 		},
@@ -113,12 +103,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительРФ_ИНН',
 			style: 'position:absolute;left:121px;top:168px;width:101px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительРФ_КПП',
 			style: 'position:absolute;left:286px;top:168px;width:101px;height:19px;',
 		},
@@ -137,6 +129,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительРБ_УНП',
 			style: 'position:absolute;left:121px;top:168px;width:101px;height:19px;',
 		},
@@ -149,6 +142,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительРК_БИН',
 			style: 'position:absolute;left:286px;top:168px;width:101px;height:19px;',
 		},
@@ -161,6 +155,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительРК_ИИН',
 			style: 'position:absolute;left:121px;top:168px;width:101px;height:19px;',
 		},
@@ -173,8 +168,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ОтправительСтранаКод',
 			style: 'position:absolute;left:121px;top:72px;width:23px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:219px;width:395px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

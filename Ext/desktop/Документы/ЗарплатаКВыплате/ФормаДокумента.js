@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:118px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:198px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:218px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:118px;top:59px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:472px;width:433px;height:19px;',
 		},
@@ -156,8 +161,107 @@
 			},
 		},
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:88px;width:521px;height:60px;',
+			height: 60,width: 521,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ХарактерВыплаты',
+			style: 'position:absolute;left:110px;top:31px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Подразделение',
+			style: 'position:absolute;left:110px;top:6px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьХарактерВыплаты',
+			text: 'Выплачивать:',
+			style: 'position:absolute;left:6px;top:31px;width:80px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаЗаполнить',
+			text: 'Заполнить',
+			style: 'position:absolute;left:8px;top:159px;width:116px;height:35px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПараметрыЗаполнения',
+			text: '',
+			style: 'position:absolute;left:157px;top:159px;width:372px;height:35px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:206px;width:521px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:49px;top:341px;width:458px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:537px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -258,6 +362,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:537px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -273,94 +378,6 @@
 				'-',
 				{
 					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:88px;width:521px;height:60px;',
-			height: 60,width: 521,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Страница1',
-					items:
-					[
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ХарактерВыплаты',
-			style: 'position:absolute;left:110px;top:31px;width:400px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Подразделение',
-			style: 'position:absolute;left:110px;top:6px;width:400px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьХарактерВыплаты',
-			text: 'Выплачивать:',
-			style: 'position:absolute;left:6px;top:31px;width:80px;height:19px;',
-		},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаЗаполнить',
-			text: 'Заполнить',
-			style: 'position:absolute;left:8px;top:159px;width:116px;height:35px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПараметрыЗаполнения',
-			text: '',
-			style: 'position:absolute;left:157px;top:159px;width:372px;height:35px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:49px;top:341px;width:458px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
 				},
 			]
 		},

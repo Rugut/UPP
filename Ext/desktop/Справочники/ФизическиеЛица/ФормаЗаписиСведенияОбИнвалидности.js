@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:8px;top:147px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Период',
 			style: 'position:absolute;left:142px;top:147px;width:92px;height:19px;',
 		},
@@ -35,6 +37,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияСправки',
 			style: 'position:absolute;left:142px;top:32px;width:120px;height:19px;',
 		},
@@ -47,6 +50,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСправки',
 			style: 'position:absolute;left:142px;top:56px;width:120px;height:19px;',
 		},
@@ -57,8 +61,10 @@
 			style: 'position:absolute;left:8px;top:80px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВыдачи',
 			style: 'position:absolute;left:142px;top:80px;width:120px;height:19px;',
 		},
@@ -69,14 +75,24 @@
 			style: 'position:absolute;left:8px;top:104px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокДействияСправки',
 			style: 'position:absolute;left:142px;top:104px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:142px;top:8px;width:66px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:174px;width:270px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -94,10 +110,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:142px;top:8px;width:66px;height:19px;',
 		},
 	]
 });

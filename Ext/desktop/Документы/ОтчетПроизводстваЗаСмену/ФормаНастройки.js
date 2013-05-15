@@ -30,23 +30,6 @@
 			style: 'position:absolute;left:8px;top:106px;width:384px;height:15px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:409px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать материалы',
 			style: 'position:absolute;left:8px;top:26px;width:384px;height:15px;',
@@ -77,9 +60,34 @@
 			style: 'position:absolute;left:8px;top:286px;width:384px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Материалы',
+			style: 'position:absolute;left:8px;top:6px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Технологические операции',
+			style: 'position:absolute;left:8px;top:66px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Прочие затраты',
+			style: 'position:absolute;left:8px;top:126px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Возвратные отходы',
+			style: 'position:absolute;left:8px;top:186px;width:384px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать заказы на обслуживание ОС',
 			style: 'position:absolute;left:8px;top:326px;width:384px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Другие настройки',
+			style: 'position:absolute;left:8px;top:246px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -100,6 +108,27 @@
 			xtype: 'checkbox',
 			boxLabel: 'Использовать аналитику НЗП',
 			style: 'position:absolute;left:8px;top:386px;width:384px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:409px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

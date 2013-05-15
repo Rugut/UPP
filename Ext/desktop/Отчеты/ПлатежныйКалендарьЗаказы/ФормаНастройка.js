@@ -26,8 +26,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:96px;top:6px;width:96px;height:19px;',
 		},
@@ -38,8 +40,10 @@
 			style: 'position:absolute;left:194px;top:6px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:212px;top:6px;width:96px;height:19px;',
 		},
@@ -52,6 +56,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДетализацияПоПериодам',
 			style: 'position:absolute;left:193px;top:30px;width:137px;height:19px;',
 		},
@@ -108,23 +113,14 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:98px;width:324px;height:24px;',
-			items:
-			[
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Основные группировки',
+			style: 'position:absolute;left:6px;top:78px;width:324px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительные группировки',
+			style: 'position:absolute;left:6px;top:210px;width:324px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -270,13 +266,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:324px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -302,5 +291,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -35,6 +35,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВариантАвтоподбора',
 			style: 'position:absolute;left:150px;top:6px;width:342px;height:19px;',
 		},
@@ -47,6 +48,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Свойство',
 			style: 'position:absolute;left:150px;top:30px;width:342px;height:19px;',
 		},
@@ -62,13 +64,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:484px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:484px;height:129px;',
 			height: 129,width: 484,
@@ -131,6 +126,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Значения свойства',
+			style: 'position:absolute;left:0px;top:0px;width:484px;height:16px;',
 		},
 					]
 				},
@@ -139,11 +139,9 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:484px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Значения свойства',
+			style: 'position:absolute;left:0px;top:0px;width:484px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -213,5 +211,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

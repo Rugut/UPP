@@ -18,43 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:411px;top:33px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -63,8 +29,10 @@
 			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:91px;top:33px;width:80px;height:19px;',
 		},
@@ -75,8 +43,10 @@
 			style: 'position:absolute;left:173px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:191px;top:33px;width:80px;height:19px;',
 		},
@@ -108,6 +78,16 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьПоследнийЛист',
+			text: 'Последний лист:',
+			style: 'position:absolute;left:0px;top:0px;width:88px;height:16px;text-align:left;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Обычный',
 			style: 'position:absolute;left:92px;top:0px;width:72px;height:16px;',
@@ -122,11 +102,7 @@
 			boxLabel: 'Последний в году',
 			style: 'position:absolute;left:92px;top:42px;width:112px;height:16px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьПоследнийЛист',
-			text: 'Последний лист:',
-			style: 'position:absolute;left:0px;top:0px;width:88px;height:16px;text-align:left;',
+			]
 		},
 					]
 				},
@@ -136,6 +112,45 @@
 			xtype: 'checkbox',
 			boxLabel: 'Всегда выводить листы на начало и конец периода',
 			style: 'position:absolute;left:8px;top:102px;width:284px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

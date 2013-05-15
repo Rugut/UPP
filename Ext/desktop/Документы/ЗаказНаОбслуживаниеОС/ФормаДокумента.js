@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:146px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:228px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:246px;top:33px;width:132px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:369px;width:282px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:346px;width:282px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Услуга',
 			style: 'position:absolute;left:146px;top:57px;width:232px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПричинаЗаказаНаОбслуживаниеОС',
 			style: 'position:absolute;left:146px;top:81px;width:232px;height:19px;',
 		},
@@ -88,22 +95,12 @@
 			style: 'position:absolute;left:8px;top:129px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаОбслуживанияОС',
 			style: 'position:absolute;left:146px;top:129px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:172px;width:370px;height:24px;',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -161,8 +158,43 @@
 			},
 		},
 		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ВидОбслуживанияОС',
+			style: 'position:absolute;left:146px;top:105px;width:232px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись14',
+			text: 'Вид обслуживания:',
+			style: 'position:absolute;left:8px;top:105px;width:136px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:8px;top:156px;width:370px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:172px;width:370px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:386px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -190,6 +222,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:386px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -211,18 +244,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ВидОбслуживанияОС',
-			style: 'position:absolute;left:146px;top:105px;width:232px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись14',
-			text: 'Вид обслуживания:',
-			style: 'position:absolute;left:8px;top:105px;width:136px;height:19px;text-align:left;',
 		},
 	]
 });

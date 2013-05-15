@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:59px;width:242px;height:19px;',
 		},
@@ -50,6 +51,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Единицы измерения',
+			style: 'position:absolute;left:8px;top:110px;width:436px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСтавкаНДС',
 			text: 'Ставка НДС:',
@@ -58,6 +64,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНДС',
 			style: 'position:absolute;left:94px;top:83px;width:80px;height:19px;',
 		},
@@ -70,6 +77,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:380px;top:59px;width:64px;height:19px;',
 		},
@@ -82,12 +90,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БазоваяЕдиницаИзмерения',
 			style: 'position:absolute;left:114px;top:131px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаХраненияОстатков',
 			style: 'position:absolute;left:364px;top:131px;width:80px;height:19px;',
 		},
@@ -118,6 +128,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:33px;width:350px;height:19px;',
 		},
@@ -195,71 +206,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-			]
-		},
 					]
 				},
 				{
@@ -311,13 +257,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -371,28 +310,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

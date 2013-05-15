@@ -10,50 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:405px;width:640px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Запрос',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:624px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:37px;width:624px;height:185px;',
 			height: 185,width: 624,
@@ -290,6 +246,55 @@
 			name: 'ПодборЕдиницыИзмерения',
 			text: 'Подобрать единицу измерения',
 			style: 'position:absolute;left:464px;top:336px;width:168px;height:17px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:405px;width:640px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Запрос',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:624px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 	]
 });

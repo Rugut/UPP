@@ -10,8 +10,18 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Данная форма используется в регламентных операциях и не предназначена для визуального показа.',
+			style: 'position:absolute;left:8px;top:9px;width:384px;height:40px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:58px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -22,12 +32,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Данная форма используется в регламентных операциях и не предназначена для визуального показа.',
-			style: 'position:absolute;left:8px;top:9px;width:384px;height:40px;text-align:left;',
 		},
 	]
 });

@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:346px;width:522px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:506px;height:330px;',
 			height: 330,width: 506,
@@ -43,8 +26,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:68px;top:6px;width:80px;height:19px;',
 		},
@@ -65,8 +50,10 @@
 			style: 'position:absolute;left:150px;top:6px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:168px;top:6px;width:80px;height:19px;',
 		},
@@ -112,33 +99,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:140px;width:492px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:148px;top:74px;width:350px;height:19px;',
 		},
@@ -159,6 +119,11 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:250px;top:6px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:124px;width:492px;height:16px;',
 		},
 					]
 				},
@@ -202,13 +167,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -290,13 +248,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:49px;width:492px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'АВС-класс',
 			style: 'position:absolute;left:6px;top:6px;width:91px;height:19px;',
@@ -304,12 +255,18 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборЗначениеКласс',
 			style: 'position:absolute;left:234px;top:6px;width:264px;height:19px;',
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:6px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:6px;top:33px;width:492px;height:16px;',
 		},
 					]
 				},
@@ -354,13 +311,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -374,8 +324,11 @@
 			style: 'position:absolute;left:12px;top:27px;width:48px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентAКласса',
 			style: 'position:absolute;left:65px;top:27px;width:80px;height:19px;',
 		},
@@ -386,8 +339,11 @@
 			style: 'position:absolute;left:12px;top:51px;width:48px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентBКласса',
 			style: 'position:absolute;left:65px;top:51px;width:80px;height:19px;',
 		},
@@ -398,8 +354,11 @@
 			style: 'position:absolute;left:12px;top:75px;width:48px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВвода3',
 			style: 'position:absolute;left:65px;top:75px;width:80px;height:19px;',
 		},
@@ -421,7 +380,33 @@
 			text: '%',
 			style: 'position:absolute;left:147px;top:75px;width:13px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Критерии распределения (процент от общей суммы параметров распределения)',
+			style: 'position:absolute;left:6px;top:6px;width:492px;height:16px;',
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:346px;width:522px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

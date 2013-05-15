@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:424px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:512px;top:33px;width:26px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:544px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -66,44 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:524px;width:796px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Показать файл',
-				},
-				'-',
-				{
-					text:'Записать файл на диск',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -115,16 +85,6 @@
 					title:'Пособия',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить детьми',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:214px;height:376px;',
@@ -235,18 +195,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:65px;top:6px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:261px;top:6px;width:160px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:483px;top:6px;width:160px;height:19px;',
 		},
@@ -265,6 +228,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДокументаУдостоверяющегоЛичность',
 			style: 'position:absolute;left:96px;top:130px;width:273px;height:19px;',
 		},
@@ -277,6 +241,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияДокументаУдостоверяющегоЛичность',
 			style: 'position:absolute;left:416px;top:130px;width:88px;height:19px;',
 		},
@@ -289,6 +254,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДокументаУдостоверяющегоЛичность',
 			style: 'position:absolute;left:553px;top:130px;width:90px;height:19px;',
 		},
@@ -299,8 +265,10 @@
 			style: 'position:absolute;left:6px;top:154px;width:40px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВыдачиДокументаУдостоверяющегоЛичность',
 			style: 'position:absolute;left:50px;top:154px;width:88px;height:19px;',
 		},
@@ -311,8 +279,10 @@
 			style: 'position:absolute;left:473px;top:154px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокДействияДокументаУдостоверяющегоЛичность',
 			style: 'position:absolute;left:555px;top:154px;width:88px;height:19px;',
 		},
@@ -325,6 +295,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресРегистрацииВФорме',
 			style: 'position:absolute;left:150px;top:178px;width:342px;height:19px;',
 		},
@@ -337,6 +308,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Банк',
 			style: 'position:absolute;left:194px;top:256px;width:255px;height:19px;',
 		},
@@ -349,6 +321,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерЛицевогоСчета',
 			style: 'position:absolute;left:507px;top:256px;width:136px;height:19px;',
 		},
@@ -361,6 +334,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеБанка',
 			style: 'position:absolute;left:124px;top:280px;width:187px;height:19px;',
 		},
@@ -373,22 +347,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БИК',
 			style: 'position:absolute;left:555px;top:280px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Перечислением на счет в банке:',
-			style: 'position:absolute;left:6px;top:256px;width:184px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Почтовым переводом по адресу:',
-			style: 'position:absolute;left:6px;top:303px;width:184px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресПочтовыйВФорме',
 			style: 'position:absolute;left:194px;top:303px;width:227px;height:19px;',
 		},
@@ -401,6 +367,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР',
 			style: 'position:absolute;left:65px;top:30px;width:160px;height:19px;',
 		},
@@ -413,6 +380,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННСотрудника',
 			style: 'position:absolute;left:65px;top:54px;width:160px;height:19px;',
 		},
@@ -435,8 +403,10 @@
 			style: 'position:absolute;left:229px;top:30px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРождения',
 			style: 'position:absolute;left:323px;top:30px;width:88px;height:19px;',
 		},
@@ -449,6 +419,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Пол',
 			style: 'position:absolute;left:483px;top:30px;width:160px;height:19px;',
 		},
@@ -457,16 +428,6 @@
 			name: 'ОбновитьДанныеСотрудника',
 			text: 'Обновить',
 			style: 'position:absolute;left:6px;top:328px;width:82px;height:21px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Основное место работы',
-			style: 'position:absolute;left:96px;top:78px;width:142px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Совместительство',
-			style: 'position:absolute;left:245px;top:78px;width:116px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -483,6 +444,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатусНалогоплательщика',
 			style: 'position:absolute;left:376px;top:54px;width:267px;height:19px;',
 		},
@@ -495,6 +457,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КемВыданДокумент',
 			style: 'position:absolute;left:208px;top:154px;width:257px;height:19px;',
 		},
@@ -507,6 +470,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КоррСчет',
 			style: 'position:absolute;left:376px;top:280px;width:136px;height:19px;',
 		},
@@ -519,6 +483,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеДокументаНаПроживание',
 			style: 'position:absolute;left:150px;top:202px;width:493px;height:19px;',
 		},
@@ -531,6 +496,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТелефонПолучателя',
 			style: 'position:absolute;left:555px;top:178px;width:88px;height:19px;',
 		},
@@ -543,12 +509,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресПочтовыйКодПоКЛАДР',
 			style: 'position:absolute;left:507px;top:303px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РайонныйКоэффициент',
 			style: 'position:absolute;left:472px;top:78px;width:40px;height:19px;',
 		},
@@ -561,6 +531,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Район',
 			style: 'position:absolute;left:553px;top:78px;width:90px;height:19px;',
 		},
@@ -569,6 +540,50 @@
 			name: 'Надпись43',
 			text: 'Район:',
 			style: 'position:absolute;left:515px;top:78px;width:37px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Основное место работы',
+			style: 'position:absolute;left:96px;top:78px;width:142px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Совместительство',
+			style: 'position:absolute;left:245px;top:78px;width:116px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Перечислением на счет в банке:',
+			style: 'position:absolute;left:6px;top:256px;width:184px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Почтовым переводом по адресу:',
+			style: 'position:absolute;left:6px;top:303px;width:184px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -583,8 +598,10 @@
 			style: 'position:absolute;left:6px;top:25px;width:111px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаСправки',
 			style: 'position:absolute;left:381px;top:25px;width:80px;height:19px;',
 		},
@@ -595,8 +612,10 @@
 			style: 'position:absolute;left:14px;top:49px;width:365px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаСвидетельстваОРождении',
 			style: 'position:absolute;left:381px;top:49px;width:80px;height:19px;',
 		},
@@ -607,8 +626,10 @@
 			style: 'position:absolute;left:14px;top:73px;width:367px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИногоПодтвержденияРождения',
 			style: 'position:absolute;left:381px;top:73px;width:80px;height:19px;',
 		},
@@ -619,8 +640,10 @@
 			style: 'position:absolute;left:6px;top:116px;width:345px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаСправкиОтДругогоРодителя',
 			style: 'position:absolute;left:381px;top:116px;width:80px;height:19px;',
 		},
@@ -631,8 +654,10 @@
 			style: 'position:absolute;left:6px;top:140px;width:345px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРешенияОбОпеке',
 			style: 'position:absolute;left:381px;top:140px;width:80px;height:19px;',
 		},
@@ -643,8 +668,10 @@
 			style: 'position:absolute;left:14px;top:164px;width:345px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРешенияОбУсыновлении',
 			style: 'position:absolute;left:381px;top:164px;width:80px;height:19px;',
 		},
@@ -655,8 +682,10 @@
 			style: 'position:absolute;left:14px;top:188px;width:365px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДоговораОПередачеНаВоспитание',
 			style: 'position:absolute;left:381px;top:188px;width:80px;height:19px;',
 		},
@@ -669,12 +698,14 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументыОснования',
 			style: 'position:absolute;left:6px;top:277px;width:316px;height:51px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИнаяПолезнаяИнформация',
 			style: 'position:absolute;left:327px;top:277px;width:316px;height:73px;',
 		},
@@ -703,8 +734,11 @@
 			style: 'position:absolute;left:6px;top:231px;width:112px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:120px;top:231px;width:80px;height:19px;',
 		},
@@ -717,6 +751,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСправки',
 			style: 'position:absolute;left:484px;top:25px;width:159px;height:19px;',
 		},
@@ -729,6 +764,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСвидетельстваОРождении',
 			style: 'position:absolute;left:575px;top:49px;width:68px;height:19px;',
 		},
@@ -741,6 +777,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИногоПодтвержденияРождения',
 			style: 'position:absolute;left:575px;top:73px;width:68px;height:19px;',
 		},
@@ -753,6 +790,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерСправкиОтДругогоРодителя',
 			style: 'position:absolute;left:484px;top:116px;width:159px;height:19px;',
 		},
@@ -765,6 +803,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерРешенияОбОпеке',
 			style: 'position:absolute;left:484px;top:140px;width:159px;height:19px;',
 		},
@@ -777,6 +816,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерРешенияОбУсыновлении',
 			style: 'position:absolute;left:484px;top:164px;width:159px;height:19px;',
 		},
@@ -789,6 +829,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДоговораОПередачеНаВоспитание',
 			style: 'position:absolute;left:484px;top:188px;width:159px;height:19px;',
 		},
@@ -805,8 +846,10 @@
 			style: 'position:absolute;left:215px;top:231px;width:213px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПредставленияПакетаДокументов',
 			style: 'position:absolute;left:432px;top:231px;width:80px;height:19px;',
 		},
@@ -819,6 +862,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияСвидетельстваОРождении',
 			style: 'position:absolute;left:499px;top:49px;width:60px;height:19px;',
 		},
@@ -831,6 +875,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияИногоПодтвержденияРождения',
 			style: 'position:absolute;left:499px;top:73px;width:60px;height:19px;',
 		},
@@ -843,6 +888,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСправкиОРожденииРебенка',
 			style: 'position:absolute;left:118px;top:25px;width:84px;height:19px;',
 		},
@@ -865,6 +911,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:121px;top:140px;width:320px;height:19px;',
 		},
@@ -877,6 +924,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:555px;top:140px;width:320px;height:19px;',
 		},
@@ -889,6 +937,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрационныйНомерФСС',
 			style: 'position:absolute;left:146px;top:96px;width:110px;height:19px;',
 		},
@@ -901,6 +950,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительныйКодФСС',
 			style: 'position:absolute;left:379px;top:96px;width:110px;height:19px;',
 		},
@@ -913,6 +963,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодПодчиненностиФСС',
 			style: 'position:absolute;left:599px;top:96px;width:60px;height:19px;',
 		},
@@ -925,8 +976,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
 			style: 'position:absolute;left:258px;top:70px;width:617px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Регистрация в ФСС',
+			style: 'position:absolute;left:6px;top:49px;width:869px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Подписи',
+			style: 'position:absolute;left:8px;top:119px;width:867px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -943,6 +1005,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:58px;top:26px;width:120px;height:19px;',
 		},
@@ -955,12 +1018,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:215px;top:26px;width:120px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Основные',
+			style: 'position:absolute;left:6px;top:6px;width:869px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОГРН',
 			style: 'position:absolute;left:384px;top:26px;width:88px;height:19px;',
 		},
@@ -979,6 +1049,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГлавныйБухгалтер',
 			style: 'position:absolute;left:121px;top:166px;width:320px;height:19px;',
 		},
@@ -1000,6 +1071,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РеестрСоставил',
 			style: 'position:absolute;left:424px;top:57px;width:172px;height:19px;',
 		},
@@ -1012,6 +1084,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Телефон',
 			style: 'position:absolute;left:657px;top:57px;width:84px;height:19px;',
 		},
@@ -1024,8 +1097,50 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочтыСоставителя',
 			style: 'position:absolute;left:808px;top:57px;width:84px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Показать файл',
+				},
+				'-',
+				{
+					text:'Записать файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

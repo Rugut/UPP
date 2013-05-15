@@ -18,12 +18,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:107px;top:33px;width:263px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьТекстОснования',
+			text: 'Текст основания:',
+			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textarea',
+			hideLabel: true,
+			disabled: false,
+			name: 'ТекстОснования',
+			style: 'position:absolute;left:8px;top:76px;width:362px;height:54px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:378px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -31,6 +49,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:138px;width:378px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -48,18 +67,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьТекстОснования',
-			text: 'Текст основания:',
-			style: 'position:absolute;left:8px;top:57px;width:94px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textarea',
-			hideLabel: true,
-			name: 'ТекстОснования',
-			style: 'position:absolute;left:8px;top:76px;width:362px;height:54px;',
 		},
 	]
 });

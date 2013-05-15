@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:266px;width:359px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:132px;width:343px;height:126px;',
 			height: 126,width: 343,
@@ -103,6 +82,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяИсточника',
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
 		},
@@ -115,6 +95,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НастройкаОтчета',
 			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
 		},
@@ -139,12 +120,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СохраненнаяНастройка',
 			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПроизвольныйОтчет',
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
 		},
@@ -163,6 +146,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВнешняяОбработка',
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
 		},
@@ -171,8 +155,38 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:8px;top:111px;width:343px;height:19px;',
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:95px;top:32px;width:256px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:266px;width:359px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

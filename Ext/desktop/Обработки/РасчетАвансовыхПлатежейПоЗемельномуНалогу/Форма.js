@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:33px;width:308px;height:19px;',
 		},
@@ -73,50 +74,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:787px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-					]
-				},
-				{
-					text:'Регистрация земельных участков',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:377px;width:787px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -304,6 +261,55 @@
 			style: 'position:absolute;left:8px;top:61px;width:771px;height:24px;',
 			items:
 			[
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:787px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+					]
+				},
+				{
+					text:'Регистрация земельных участков',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:377px;width:787px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 			]
 		},
 	]

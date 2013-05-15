@@ -10,8 +10,39 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'ТекстВопроса',
+			text: 'Текст вопроса',
+			style: 'position:absolute;left:8px;top:8px;width:448px;height:70px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры обновления регистрации',
+			style: 'position:absolute;left:8px;top:81px;width:448px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Только для элементов, для которых включена авторегистрация изменений',
+			style: 'position:absolute;left:8px;top:102px;width:448px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Для всех элементов',
+			style: 'position:absolute;left:8px;top:123px;width:448px;height:16px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:147px;width:464px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -24,22 +55,6 @@
 					text:'Отмена',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'ТекстВопроса',
-			text: 'Текст вопроса',
-			style: 'position:absolute;left:8px;top:8px;width:448px;height:70px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Только для элементов, для которых включена авторегистрация изменений',
-			style: 'position:absolute;left:8px;top:102px;width:448px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Для всех элементов',
-			style: 'position:absolute;left:8px;top:123px;width:448px;height:16px;',
 		},
 	]
 });

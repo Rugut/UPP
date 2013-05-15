@@ -10,64 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Редактировать список выгрузки',
-				},
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Загрузить в ККМ',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Редактировать список выгрузки',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Загрузить в ККМ',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекущийСклад',
 			style: 'position:absolute;left:115px;top:33px;width:404px;height:19px;',
 		},
@@ -86,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ККМOffline',
 			style: 'position:absolute;left:115px;top:57px;width:404px;height:19px;',
 		},
@@ -93,13 +39,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Только имеющиеся на складе',
 			style: 'position:absolute;left:8px;top:105px;width:188px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:132px;width:764px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -192,6 +131,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:115px;top:81px;width:404px;height:19px;',
 		},
@@ -200,6 +140,74 @@
 			name: 'НадписьИнформацияОККМ',
 			text: 'Информация о ККМ',
 			style: 'position:absolute;left:523px;top:33px;width:249px;height:97px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Редактировать список выгрузки',
+				},
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Загрузить в ККМ',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Редактировать список выгрузки',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Загрузить в ККМ',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:132px;width:764px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

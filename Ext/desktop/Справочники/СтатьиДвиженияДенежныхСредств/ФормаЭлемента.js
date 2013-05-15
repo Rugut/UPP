@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:409px;top:33px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:119px;top:33px;width:244px;height:19px;',
 		},
@@ -42,25 +44,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:119px;top:91px;width:205px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьВидДвиженияДенежныхСредств',
-			text: 'Вид движения 
-денежных средств:',
+			text: 'Вид движения \r\nденежных средств:',
 			style: 'position:absolute;left:8px;top:54px;width:106px;height:31px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДвиженияДенежныхСредств',
 			style: 'position:absolute;left:119px;top:56px;width:370px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:497px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -109,6 +116,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:118px;width:497px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

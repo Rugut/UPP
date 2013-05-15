@@ -10,33 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:573px;height:25px;',
-			items:
-			[
-				{
-					text:'Настройка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:389px;width:573px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Отобрать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:557px;height:348px;',
 			height: 348,width: 557,
@@ -167,23 +140,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:41px;width:543px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Отбор',
+			style: 'position:absolute;left:6px;top:163px;width:543px;height:15px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -203,20 +162,6 @@
 					title:'Обработка',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:543px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Установить все флажки',
-				},
-				{
-					text:'Снять все флажки',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:543px;height:231px;',
@@ -252,6 +197,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаДействия',
 			style: 'position:absolute;left:291px;top:286px;width:174px;height:19px;',
 		},
@@ -261,7 +207,44 @@
 			text: 'Выполнить',
 			style: 'position:absolute;left:469px;top:286px;width:80px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Действие',
+			style: 'position:absolute;left:6px;top:266px;width:543px;height:16px;',
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:573px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Настройка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:389px;width:573px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Отобрать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

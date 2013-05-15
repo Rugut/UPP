@@ -171,5 +171,8 @@
 			boxLabel: 'Показывать остатки',
 			style: 'position:absolute;left:260px;top:183px;width:123px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

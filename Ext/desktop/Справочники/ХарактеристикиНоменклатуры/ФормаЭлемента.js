@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:275px;height:19px;',
 		},
@@ -158,6 +159,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОКП',
 			style: 'position:absolute;left:93px;top:57px;width:275px;height:19px;',
 		},
@@ -166,5 +168,8 @@
 			boxLabel: 'Активная характеристика',
 			style: 'position:absolute;left:8px;top:81px;width:155px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -18,12 +18,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:312px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОписаниеКурса',
 			style: 'position:absolute;left:8px;top:110px;width:398px;height:60px;',
 		},
@@ -34,8 +36,11 @@
 			style: 'position:absolute;left:8px;top:175px;width:180px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДлительностьКурса',
 			style: 'position:absolute;left:188px;top:175px;width:60px;height:19px;',
 		},
@@ -46,8 +51,11 @@
 			style: 'position:absolute;left:8px;top:200px;width:180px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗатратыНаОдногоОбучающегося',
 			style: 'position:absolute;left:188px;top:200px;width:61px;height:19px;',
 		},
@@ -60,6 +68,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДокументаОбОбразовании',
 			style: 'position:absolute;left:8px;top:243px;width:398px;height:19px;',
 		},
@@ -72,44 +81,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:312px;top:200px;width:94px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:452px;width:414px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'*Составить по занятиям',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -121,13 +95,6 @@
 					title:'Состав курса',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:384px;height:120px;',
@@ -171,17 +138,6 @@
 					title:'Изучаемые компетенции*',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Коррекция весов',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:384px;height:120px;',
@@ -244,6 +200,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Описание курса:',
+			style: 'position:absolute;left:8px;top:94px;width:398px;height:14px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРодитель',
 			text: 'Группа:',
@@ -252,8 +213,50 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:94px;top:56px;width:312px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:452px;width:414px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'*Составить по занятиям',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:212px;width:428px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:412px;height:204px;',
 			height: 204,width: 412,
@@ -43,6 +22,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:31px;width:219px;height:19px;',
 		},
@@ -58,14 +38,18 @@
 			style: 'position:absolute;left:16px;top:128px;width:214px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:4px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:197px;top:4px;width:80px;height:19px;',
 		},
@@ -80,6 +64,11 @@
 			name: 'Надпись7',
 			text: 'по:',
 			style: 'position:absolute;left:170px;top:4px;width:20px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выводить данные:',
+			style: 'position:absolute;left:6px;top:90px;width:297px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -101,6 +90,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидУчета',
 			style: 'position:absolute;left:84px;top:57px;width:219px;height:19px;',
 		},
@@ -110,13 +100,6 @@
 					title:'Развернутое сальдо',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:4px;top:4px;width:400px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:28px;width:400px;height:152px;',
@@ -170,13 +153,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:4px;top:4px;width:400px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:28px;width:400px;height:152px;',
 			height: 152,width: 400,
@@ -223,6 +199,31 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:212px;width:428px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

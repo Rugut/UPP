@@ -10,29 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:640px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Зарегистрировать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатураДляРегистрации',
 			style: 'position:absolute;left:93px;top:8px;width:539px;height:19px;',
 		},
@@ -48,6 +28,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Описание товара',
+			style: 'position:absolute;left:0px;top:0px;width:392px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьТорговаяМарка',
 			text: 'Торговая марка:',
@@ -56,6 +41,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТорговаяМарка',
 			style: 'position:absolute;left:140px;top:20px;width:252px;height:19px;',
 		},
@@ -68,8 +54,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаОтличительныеСвойстваТовара',
 			style: 'position:absolute;left:140px;top:44px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Потребительская упаковка',
+			style: 'position:absolute;left:0px;top:68px;width:392px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -78,8 +70,11 @@
 			style: 'position:absolute;left:0px;top:88px;width:134px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаУникальныйНомерТовара',
 			style: 'position:absolute;left:140px;top:87px;width:68px;height:19px;',
 		},
@@ -92,6 +87,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТипУпаковки',
 			style: 'position:absolute;left:140px;top:111px;width:252px;height:19px;',
 		},
@@ -102,8 +98,11 @@
 			style: 'position:absolute;left:212px;top:159px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаКоличествоВес',
 			style: 'position:absolute;left:300px;top:159px;width:92px;height:19px;',
 		},
@@ -116,6 +115,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаЕдиницаИзмерения',
 			style: 'position:absolute;left:140px;top:159px;width:68px;height:19px;',
 		},
@@ -128,6 +128,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаОтличительныеСвойства',
 			style: 'position:absolute;left:140px;top:135px;width:252px;height:19px;',
 		},
@@ -140,6 +141,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаЕдиничнаяУпаковка',
 			style: 'position:absolute;left:300px;top:183px;width:92px;height:19px;',
 		},
@@ -152,6 +154,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКодЕАН13',
 			style: 'position:absolute;left:300px;top:88px;width:92px;height:19px;',
 		},
@@ -164,6 +167,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаРезультатРегистрации',
 			style: 'position:absolute;left:140px;top:207px;width:252px;height:41px;',
 		},
@@ -258,8 +262,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаОКП',
 			style: 'position:absolute;left:140px;top:183px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Транспортные упаковки',
+			style: 'position:absolute;left:0px;top:257px;width:392px;height:16px;',
 		},
 					]
 				},
@@ -447,8 +457,40 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНоменклатура',
+			text: 'Номенклатура:',
+			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:640px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Зарегистрировать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:32px;width:224px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -461,12 +503,6 @@
 					text:'Обновить',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНоменклатура',
-			text: 'Номенклатура:',
-			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;',
 		},
 	]
 });

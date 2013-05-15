@@ -92,17 +92,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:728px;height:25px;',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:280px;',
 			height: 280,width: 160,
@@ -129,6 +118,21 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:728px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+			]
 		},
 	]
 });

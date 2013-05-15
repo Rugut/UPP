@@ -10,35 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:608px;width:554px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'НП-заявитель',
-			style: 'position:absolute;left:12px;top:48px;width:90px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Уполномоченный представитель НП',
-			style: 'position:absolute;left:108px;top:48px;width:204px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Сведения об отправителе документа',
+			style: 'position:absolute;left:6px;top:30px;width:540px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтправительЯвляетсяЮЛ',
 			style: 'position:absolute;left:420px;top:48px;width:120px;height:19px;',
 		},
@@ -62,6 +41,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННЮЛОтпр',
 			style: 'position:absolute;left:162px;top:24px;width:120px;height:19px;',
 		},
@@ -74,6 +54,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КППОтпр',
 			style: 'position:absolute;left:162px;top:48px;width:120px;height:19px;',
 		},
@@ -86,6 +67,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимОтпр',
 			style: 'position:absolute;left:162px;top:0px;width:372px;height:19px;',
 		},
@@ -110,24 +92,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННФЛОтпр',
 			style: 'position:absolute;left:162px;top:0px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФамилияФЛОтпр',
 			style: 'position:absolute;left:162px;top:24px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФЛОтпр',
 			style: 'position:absolute;left:288px;top:24px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчествоФЛОтпр',
 			style: 'position:absolute;left:414px;top:24px;width:120px;height:19px;',
 		},
@@ -136,19 +122,19 @@
 			]
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'лично - ИП-покупатель',
-			style: 'position:absolute;left:12px;top:186px;width:108px;height:30px;',
+			xtype: 'fieldset',
+			title: 'Сведения о лицах, подписавших документ',
+			style: 'position:absolute;left:6px;top:150px;width:540px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Уполномоченный представитель',
-			style: 'position:absolute;left:282px;top:186px;width:126px;height:30px;',
+			xtype: 'fieldset',
+			title: 'Сведения о лице, представившем документ в налоговый орган',
+			style: 'position:absolute;left:6px;top:444px;width:540px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Законный представитель организации',
-			style: 'position:absolute;left:126px;top:186px;width:150px;height:30px;',
+			xtype: 'fieldset',
+			title: 'Подписант 1',
+			style: 'position:absolute;left:6px;top:168px;width:540px;height:162px;',
 		},
 		{
 			xtype: 'label',
@@ -159,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьПодп1',
 			style: 'position:absolute;left:168px;top:246px;width:120px;height:19px;',
 		},
@@ -171,9 +158,13 @@
 		{
 			xtype: 'label',
 			name: 'Наименование3',
-			text: 'Наименование, номер, дата
-доверенности',
+			text: 'Наименование, номер, дата\r\nдоверенности',
 			style: 'position:absolute;left:12px;top:294px;width:150px;height:30px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Подписант 2',
+			style: 'position:absolute;left:6px;top:336px;width:540px;height:96px;',
 		},
 		{
 			xtype: 'label',
@@ -184,6 +175,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьПодп2',
 			style: 'position:absolute;left:168px;top:378px;width:120px;height:19px;',
 		},
@@ -192,21 +184,6 @@
 			name: 'Наименование4',
 			text: 'Фамилия, имя, отчество:',
 			style: 'position:absolute;left:12px;top:402px;width:150px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'лично - ИП-покупатель',
-			style: 'position:absolute;left:12px;top:486px;width:108px;height:30px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Уполномоченный представитель',
-			style: 'position:absolute;left:282px;top:486px;width:126px;height:30px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Законный представитель организации',
-			style: 'position:absolute;left:126px;top:486px;width:150px;height:30px;',
 		},
 		{
 			xtype: 'label',
@@ -223,6 +200,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННФЛКурьер',
 			style: 'position:absolute;left:168px;top:522px;width:120px;height:19px;',
 		},
@@ -234,97 +212,113 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФамилияПодп1',
 			style: 'position:absolute;left:168px;top:270px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПодп1',
 			style: 'position:absolute;left:294px;top:270px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчествоПодп1',
 			style: 'position:absolute;left:420px;top:270px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФамилияПодп2',
 			style: 'position:absolute;left:168px;top:402px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПодп2',
 			style: 'position:absolute;left:294px;top:402px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчествоПодп2',
 			style: 'position:absolute;left:420px;top:402px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимДовПодп1',
 			style: 'position:absolute;left:168px;top:294px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДовПодп1',
 			style: 'position:absolute;left:294px;top:294px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДовПодп1',
 			style: 'position:absolute;left:420px;top:294px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФамилияКурьер',
 			style: 'position:absolute;left:168px;top:546px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяКурьер',
 			style: 'position:absolute;left:294px;top:546px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчествоКурьер',
 			style: 'position:absolute;left:420px;top:546px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Наименование6',
-			text: 'Наименование, номер, дата
-доверенности',
+			text: 'Наименование, номер, дата\r\nдоверенности',
 			style: 'position:absolute;left:12px;top:570px;width:150px;height:30px;text-align:left;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимДовКурьер',
 			style: 'position:absolute;left:168px;top:570px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДовКурьер',
 			style: 'position:absolute;left:294px;top:570px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДовКурьер',
 			style: 'position:absolute;left:420px;top:570px;width:120px;height:19px;',
 		},
@@ -337,6 +331,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННФЛПодп2',
 			style: 'position:absolute;left:168px;top:354px;width:120px;height:19px;',
 		},
@@ -349,6 +344,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННФЛПодп1',
 			style: 'position:absolute;left:168px;top:222px;width:120px;height:19px;',
 		},
@@ -361,8 +357,88 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодИФНС',
 			style: 'position:absolute;left:270px;top:6px;width:60px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'НП-заявитель',
+			style: 'position:absolute;left:12px;top:48px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уполномоченный представитель НП',
+			style: 'position:absolute;left:108px;top:48px;width:204px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'лично - ИП-покупатель',
+			style: 'position:absolute;left:12px;top:186px;width:108px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Законный представитель организации',
+			style: 'position:absolute;left:126px;top:186px;width:150px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уполномоченный представитель',
+			style: 'position:absolute;left:282px;top:186px;width:126px;height:30px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'лично - ИП-покупатель',
+			style: 'position:absolute;left:12px;top:486px;width:108px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Законный представитель организации',
+			style: 'position:absolute;left:126px;top:486px;width:150px;height:30px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уполномоченный представитель',
+			style: 'position:absolute;left:282px;top:486px;width:126px;height:30px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:608px;width:554px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

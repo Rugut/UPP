@@ -10,8 +10,26 @@
 	items:
 	[
 		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаНач',
+			style: 'position:absolute;left:64px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаНач',
+			text: 'На дату:',
+			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -64,18 +82,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаНач',
-			style: 'position:absolute;left:64px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДатаНач',
-			text: 'На дату:',
-			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;text-align:left;',
 		},
 	]
 });

@@ -10,81 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:508px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Новый отчет',
-				},
-				'-',
-				{
-					text:'Быстрые отборы',
-				},
-				{
-					text:'Заголовок отчета',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Новый отчет',
-				},
-				'-',
-				{
-					text:'Быстрые отборы',
-				},
-				{
-					text:'Заголовок отчета',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
 			height: 19,width: 259,
@@ -96,14 +21,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон',
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
@@ -150,8 +79,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНаДату',
 			style: 'position:absolute;left:179px;top:0px;width:80px;height:19px;',
 		},
@@ -178,11 +109,9 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:508px;top:0px;width:272px;height:25px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:33px;width:764px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -257,6 +186,93 @@
 				{
 					text:'Выбирать даты периодом',
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:508px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Новый отчет',
+				},
+				'-',
+				{
+					text:'Быстрые отборы',
+				},
+				{
+					text:'Заголовок отчета',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Новый отчет',
+				},
+				'-',
+				{
+					text:'Быстрые отборы',
+				},
+				{
+					text:'Заголовок отчета',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:508px;top:0px;width:272px;height:25px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

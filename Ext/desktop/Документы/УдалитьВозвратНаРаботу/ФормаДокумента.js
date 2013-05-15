@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -49,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:271px;width:342px;height:19px;',
 		},
@@ -118,16 +122,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:121px;width:428px;height:24px;',
-			items:
-			[
-				{
-					text:'Списком работников',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:298px;width:444px;height:25px;',
 			items:
 			[
@@ -156,8 +150,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Работники',
+			style: 'position:absolute;left:8px;top:105px;width:428px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -168,8 +168,23 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:121px;width:428px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком работников',
+				},
+			]
 		},
 	]
 });

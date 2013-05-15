@@ -10,46 +10,18 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:367px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Заголовок',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:139px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:251px;top:33px;width:80px;height:19px;',
 		},
@@ -62,6 +34,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:139px;top:57px;width:220px;height:19px;',
 		},
@@ -109,14 +82,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетФактура',
 			style: 'position:absolute;left:139px;top:81px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВсеКромеСпискаДокументов',
 			style: 'position:absolute;left:271px;top:126px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Список документов:',
+			style: 'position:absolute;left:8px;top:107px;width:351px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -141,6 +121,47 @@
 			name: 'КнопкаВыбораПериода',
 			text: '...',
 			style: 'position:absolute;left:340px;top:33px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Результат:',
+			style: 'position:absolute;left:8px;top:215px;width:351px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:367px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

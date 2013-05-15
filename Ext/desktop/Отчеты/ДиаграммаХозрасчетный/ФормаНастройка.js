@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:251px;',
 			height: 251,width: 384,
@@ -47,8 +26,10 @@
 			style: 'position:absolute;left:6px;top:32px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:88px;top:32px;width:80px;height:19px;',
 		},
@@ -59,8 +40,10 @@
 			style: 'position:absolute;left:172px;top:32px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:192px;top:32px;width:80px;height:19px;',
 		},
@@ -79,9 +62,37 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:58px;width:288px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчет',
+			text: 'Счет:',
+			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Счет',
+			style: 'position:absolute;left:88px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:6px;top:82px;width:78px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:88px;top:82px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Остаток на начало',
@@ -97,6 +108,12 @@
 			boxLabel: 'Оборот',
 			style: 'position:absolute;left:6px;top:210px;width:114px;height:15px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Дебет',
@@ -112,6 +129,12 @@
 			boxLabel: 'Дебет - Кредит',
 			style: 'position:absolute;left:134px;top:210px;width:114px;height:15px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Сумма',
@@ -127,27 +150,7 @@
 			boxLabel: 'Валютная сумма',
 			style: 'position:absolute;left:262px;top:210px;width:114px;height:15px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьСчет',
-			text: 'Счет:',
-			style: 'position:absolute;left:6px;top:6px;width:78px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Счет',
-			style: 'position:absolute;left:88px;top:6px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериод',
-			text: 'Период:',
-			style: 'position:absolute;left:6px;top:82px;width:78px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:88px;top:82px;width:120px;height:19px;',
+			]
 		},
 					]
 				},
@@ -230,26 +233,15 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:28px;width:182px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:194px;top:28px;width:182px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:104px;top:205px;width:176px;height:20px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксЗначСерий',
 			style: 'position:absolute;left:284px;top:205px;width:92px;height:20px;',
 		},
@@ -421,19 +413,37 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись4',
 			text: 'Точки',
 			style: 'position:absolute;left:194px;top:6px;width:182px;height:18px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:337px;top:33px;width:55px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:117px;top:33px;width:191px;height:19px;',
 		},
@@ -40,8 +42,11 @@
 			style: 'position:absolute;left:8px;top:56px;width:109px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РазмерСчетчика',
 			style: 'position:absolute;left:117px;top:56px;width:50px;height:19px;',
 		},
@@ -72,8 +77,11 @@
 			style: 'position:absolute;left:8px;top:79px;width:109px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НачальноеЗначение',
 			style: 'position:absolute;left:117px;top:79px;width:80px;height:19px;',
 		},
@@ -84,14 +92,21 @@
 			style: 'position:absolute;left:202px;top:79px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КонечноеЗначение',
 			style: 'position:absolute;left:312px;top:79px;width:80px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -99,6 +114,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:190px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

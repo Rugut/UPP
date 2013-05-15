@@ -10,13 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:51px;width:764px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:75px;width:764px;height:220px;',
 			height: 220,width: 764,
@@ -118,6 +111,16 @@
 			style: 'position:absolute;left:121px;top:317px;width:133px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:300px;width:664px;height:46px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Задолженность для оплаты',
+			style: 'position:absolute;left:8px;top:35px;width:764px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Планируемое поступление денежных средств',
 			style: 'position:absolute;left:408px;top:317px;width:257px;height:19px;',
@@ -142,6 +145,17 @@
 			name: 'НадписьВыбрано',
 			text: 'Всего выбрано:',
 			style: 'position:absolute;left:491px;top:8px;width:281px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:51px;width:764px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

@@ -10,63 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:850px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Документы регламентных операций',
-				},
-				{
-					text:'Отчеты регламентных операций',
-				},
-				{
-					text:'Переключить видимость справки формы',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:562px;width:850px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:834px;height:521px;',
 			height: 521,width: 834,
@@ -86,6 +29,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:4px;width:442px;height:19px;',
 		},
@@ -96,8 +40,10 @@
 			style: 'position:absolute;left:2px;top:27px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаДействияНастройки',
 			style: 'position:absolute;left:93px;top:28px;width:120px;height:19px;',
 		},
@@ -211,32 +157,12 @@
 					title:'Схема',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:20px;top:20px;width:229px;height:27px;',
-			items:
-			[
-				{
-					text:'Изменить ответственного',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Схема расчета НДС',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:26px;top:29px;width:229px;height:27px;',
-			items:
-			[
-				{
-					text:'Изменить ответственного',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -253,30 +179,6 @@
 					title:'Пользователи',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
-			items:
-			[
-				{
-					text:'Иерархический просмотр',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:286px;height:374px;',
@@ -347,30 +249,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
-			items:
-			[
-				{
-					text:'Иерархический просмотр',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
 		},
 					]
 				},
@@ -513,17 +391,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:820px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Проверить',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -539,6 +406,68 @@
 			style: 'position:absolute;left:598px;top:4px;width:236px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:850px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Документы регламентных операций',
+				},
+				{
+					text:'Отчеты регламентных операций',
+				},
+				{
+					text:'Переключить видимость справки формы',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:562px;width:850px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

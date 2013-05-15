@@ -10,53 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			items:
-			[
-				{
-					text:'Проверить в Интернете',
-				},
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Показать отправки',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:413px;width:716px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Дата подписи:',
 			style: 'position:absolute;left:8px;top:76px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:90px;top:76px;width:80px;height:19px;',
 		},
@@ -69,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:263px;top:386px;width:445px;height:19px;',
 		},
@@ -101,8 +65,11 @@
 			style: 'position:absolute;left:299px;top:78px;width:7px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:311px;top:76px;width:49px;height:19px;',
 		},
@@ -115,6 +82,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Статус',
 			style: 'position:absolute;left:58px;top:386px;width:119px;height:19px;',
 		},
@@ -145,6 +113,50 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Проверить в Интернете',
+				},
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Показать отправки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:413px;width:716px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -15,23 +15,6 @@
 			style: 'position:absolute;left:8px;top:46px;width:384px;height:15px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:209px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать возвратные отходы',
 			style: 'position:absolute;left:8px;top:26px;width:384px;height:15px;',
@@ -40,6 +23,16 @@
 			xtype: 'checkbox',
 			boxLabel: 'Использовать документацию',
 			style: 'position:absolute;left:8px;top:66px;width:384px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройка страниц',
+			style: 'position:absolute;left:8px;top:6px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройка реквизитов',
+			style: 'position:absolute;left:8px;top:86px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -65,6 +58,27 @@
 			xtype: 'checkbox',
 			boxLabel: 'Использовать вид воспроизводства',
 			style: 'position:absolute;left:8px;top:126px;width:384px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:209px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

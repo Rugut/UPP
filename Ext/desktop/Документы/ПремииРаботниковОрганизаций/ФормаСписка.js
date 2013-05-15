@@ -137,19 +137,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			items:
-			[
-				{
-					text:'Зарплата к выплате (начисленные суммы)',
-				},
-				{
-					text:'Зарплата к выплате (начисленные суммы за вычетом налогов)',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:984px;height:19px;',
 			height: 19,width: 984,
@@ -168,10 +155,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:92px;top:0px;width:220px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Зарплата к выплате (начисленные суммы)',
+				},
+				{
+					text:'Зарплата к выплате (начисленные суммы за вычетом налогов)',
 				},
 			]
 		},

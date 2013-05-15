@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:197px;top:33px;width:119px;height:19px;',
 		},
@@ -52,6 +55,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -64,6 +68,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:349px;width:539px;height:19px;',
 		},
@@ -218,12 +223,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтветственныйЗаДокумент',
 			style: 'position:absolute;left:415px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтражаемыйДокумент',
 			style: 'position:absolute;left:415px;top:33px;width:220px;height:19px;',
 		},
@@ -233,5 +240,13 @@
 			text: 'Основание:',
 			style: 'position:absolute;left:327px;top:33px;width:86px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники организации',
+			style: 'position:absolute;left:8px;top:81px;width:627px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -29,11 +29,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись3',
-			text: 'Следуя подсказкам мастера, создайте и отправьте заявление на подключение к системе электронного документооборота с контролирующими органами.
-
-На основании этого заявления будет создан и зарегистрирован сертификат ключа электронно-цифровой подписи и подключен защищенный документооборот с контролирующими органами (ФНС, ПФР, Росстат и ФСС), после чего вы сможете приступить к отправке отчетности и обмену прочими видами документов.
-
-Для того чтобы приступить к настройке, нажмите кнопку "Далее >"',
+			text: 'Следуя подсказкам мастера, создайте и отправьте заявление на подключение к системе электронного документооборота с контролирующими органами.\r\n\r\nНа основании этого заявления будет создан и зарегистрирован сертификат ключа электронно-цифровой подписи и подключен защищенный документооборот с контролирующими органами (ФНС, ПФР, Росстат и ФСС), после чего вы сможете приступить к отправке отчетности и обмену прочими видами документов.\r\n\r\nДля того чтобы приступить к настройке, нажмите кнопку "Далее >"',
 			style: 'position:absolute;left:8px;top:140px;width:652px;height:152px;',
 		},
 		{
@@ -69,6 +65,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерОсновнойПоставки1с',
 			style: 'position:absolute;left:160px;top:164px;width:164px;height:19px;',
 		},
@@ -81,9 +78,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись63',
-			text: 'Укажите регистрационный номер программы "1С:Предприятия 8".
-
-Обратите внимание! Наличие договора информационно-технологического сопровождения (1С:ИТС) уровня ПРОФ позволяет сдавать отчетность для одного юридического лица или индивидуального предпринимателя без дополнительной оплаты.',
+			text: 'Укажите регистрационный номер программы "1С:Предприятия 8".\r\n\r\nОбратите внимание! Наличие договора информационно-технологического сопровождения (1С:ИТС) уровня ПРОФ позволяет сдавать отчетность для одного юридического лица или индивидуального предпринимателя без дополнительной оплаты.',
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:84px;text-align:left;',
 		},
 		{
@@ -119,6 +114,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпецоператорИУЦ',
 			style: 'position:absolute;left:148px;top:140px;width:508px;height:19px;',
 		},
@@ -177,6 +173,21 @@
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:76px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Криптопровайдер',
+			style: 'position:absolute;left:16px;top:156px;width:644px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись43',
+			text: 'Справочная информация',
+			style: 'position:absolute;left:16px;top:328px;width:644px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'VipNet CSP',
 			style: 'position:absolute;left:16px;top:188px;width:644px;height:16px;',
@@ -186,11 +197,7 @@
 			boxLabel: 'CryptoPro CSP',
 			style: 'position:absolute;left:16px;top:244px;width:644px;height:16px;',
 		},
-		{
-			xtype: 'label',
-			name: 'Надпись43',
-			text: 'Справочная информация',
-			style: 'position:absolute;left:16px;top:328px;width:644px;height:16px;',
+			]
 		},
 					]
 				},
@@ -220,6 +227,11 @@
 			name: 'Надпись38',
 			text: 'Шаг 4 из 8. Соглашение о предоставлении услуг',
 			style: 'position:absolute;left:8px;top:5px;width:652px;height:50px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:424px;width:652px;height:4px;',
 		},
 		{
 			xtype: 'label',
@@ -254,6 +266,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:140px;top:116px;width:384px;height:19px;',
 		},
@@ -266,6 +279,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:140px;top:204px;width:520px;height:38px;',
 		},
@@ -278,6 +292,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КраткоеНаименование',
 			style: 'position:absolute;left:140px;top:180px;width:520px;height:19px;',
 		},
@@ -290,6 +305,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:140px;top:248px;width:110px;height:19px;',
 		},
@@ -302,6 +318,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:140px;top:276px;width:110px;height:19px;',
 		},
@@ -314,6 +331,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрационныйНомерПФР',
 			style: 'position:absolute;left:548px;top:248px;width:110px;height:19px;',
 		},
@@ -326,6 +344,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрационныйНомерФСС',
 			style: 'position:absolute;left:548px;top:276px;width:110px;height:19px;',
 		},
@@ -338,6 +357,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЮрАдрес',
 			style: 'position:absolute;left:140px;top:364px;width:520px;height:19px;',
 		},
@@ -350,6 +370,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФактАдрес',
 			style: 'position:absolute;left:140px;top:388px;width:520px;height:19px;',
 		},
@@ -362,6 +383,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектАдрес',
 			style: 'position:absolute;left:140px;top:436px;width:160px;height:19px;',
 		},
@@ -374,6 +396,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Телефон',
 			style: 'position:absolute;left:140px;top:412px;width:160px;height:19px;',
 		},
@@ -386,6 +409,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТелефонМобильный',
 			style: 'position:absolute;left:504px;top:412px;width:156px;height:19px;',
 		},
@@ -398,6 +422,16 @@
 			xtype: 'checkbox',
 			boxLabel: ' Обособленным подразделением',
 			style: 'position:absolute;left:140px;top:320px;width:193px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные сведения',
+			style: 'position:absolute;left:8px;top:156px;width:652px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Контактная информация',
+			style: 'position:absolute;left:8px;top:340px;width:652px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -426,6 +460,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительныйКодФСС',
 			style: 'position:absolute;left:548px;top:300px;width:110px;height:19px;',
 		},
@@ -438,6 +473,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:264px;top:160px;width:396px;height:19px;',
 		},
@@ -450,6 +486,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументВидСотрудника',
 			style: 'position:absolute;left:116px;top:327px;width:544px;height:19px;',
 		},
@@ -462,6 +499,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументСерияСотрудника',
 			style: 'position:absolute;left:116px;top:353px;width:140px;height:19px;',
 		},
@@ -474,6 +512,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументНомерСотрудника',
 			style: 'position:absolute;left:304px;top:353px;width:140px;height:19px;',
 		},
@@ -484,8 +523,10 @@
 			style: 'position:absolute;left:448px;top:353px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДокументДатаВыдачиСотрудника',
 			style: 'position:absolute;left:520px;top:353px;width:140px;height:19px;',
 		},
@@ -498,8 +539,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументКемВыданСотрудника',
 			style: 'position:absolute;left:116px;top:379px;width:544px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Кадровые данные',
+			style: 'position:absolute;left:8px;top:247px;width:652px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -510,6 +557,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеСотрудника',
 			style: 'position:absolute;left:444px;top:269px;width:216px;height:19px;',
 		},
@@ -522,24 +570,33 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьСотрудника',
 			style: 'position:absolute;left:116px;top:269px;width:188px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Документ, удостоверяющий личность',
+			style: 'position:absolute;left:8px;top:305px;width:652px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:116px;top:211px;width:140px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:300px;top:211px;width:108px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:476px;top:211px;width:100px;height:19px;',
 		},
@@ -554,21 +611,6 @@
 			name: 'Надпись40',
 			text: 'Шаг 6 из 8. Выбор сотрудника - владельца ЭЦП',
 			style: 'position:absolute;left:8px;top:5px;width:652px;height:50px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Руководитель',
-			style: 'position:absolute;left:116px;top:116px;width:120px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Главный бухгалтер',
-			style: 'position:absolute;left:116px;top:139px;width:120px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Другой сотрудник:',
-			style: 'position:absolute;left:116px;top:162px;width:112px;height:15px;',
 		},
 		{
 			xtype: 'label',
@@ -601,10 +643,36 @@
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:40px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:196px;width:652px;height:4px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаВызоваДанныхФИО',
 			text: 'Подробнее...',
 			style: 'position:absolute;left:584px;top:211px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Руководитель',
+			style: 'position:absolute;left:116px;top:116px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Главный бухгалтер',
+			style: 'position:absolute;left:116px;top:139px;width:120px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Другой сотрудник:',
+			style: 'position:absolute;left:116px;top:162px;width:112px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -668,29 +736,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:115px;width:652px;height:24px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Востановить',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись34',
 			text: ' ',
@@ -708,22 +753,17 @@
 			text: 'Укажите все контролирующие органы, с которыми будет осуществляться документооборот',
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:24px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Контролирующие органы (направления документооборота)',
+			style: 'position:absolute;left:8px;top:96px;width:652px;height:16px;',
+		},
 					]
 				},
 				{
 					title:'Подтверждение',
 					items:
 					[
-		{
-			xtype: 'radio',
-			boxLabel: 'Отправить заявление сейчас',
-			style: 'position:absolute;left:8px;top:180px;width:172px;height:20px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Не отправлять (сохранить черновик)',
-			style: 'position:absolute;left:8px;top:156px;width:204px;height:20px;',
-		},
 		{
 			xtype: 'label',
 			name: 'Надпись35',
@@ -747,6 +787,22 @@
 			name: 'Надпись58',
 			text: 'Заявление на подключение сформировано. Его необходимо отправить на сервер удостоверяющего центра для обработки и создания учетной записи электронного документооборота',
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:56px;text-align:left;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Отправить заявление сейчас',
+			style: 'position:absolute;left:8px;top:180px;width:172px;height:20px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Не отправлять (сохранить черновик)',
+			style: 'position:absolute;left:8px;top:156px;width:204px;height:20px;',
+		},
+			]
 		},
 					]
 				},
@@ -772,5 +828,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

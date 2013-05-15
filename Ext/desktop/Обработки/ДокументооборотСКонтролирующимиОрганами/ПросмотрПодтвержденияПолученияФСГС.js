@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:266px;width:473px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:457px;height:250px;',
 			height: 250,width: 457,
@@ -79,6 +66,11 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Было получено следующее содержимое:',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+		},
 					]
 				},
 			]
@@ -94,6 +86,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Протоколы входного контроля отчетности',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:457px;height:229px;',
@@ -141,6 +138,23 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:266px;width:473px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:359px;top:60px;width:55px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:117px;top:60px;width:211px;height:19px;',
 		},
@@ -42,12 +44,43 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:117px;top:33px;width:297px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВидНоменклатуры',
+			text: 'Вид номенклатуры:',
+			style: 'position:absolute;left:8px;top:87px;width:108px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ВидНоменклатуры',
+			style: 'position:absolute;left:117px;top:87px;width:297px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
+			text: 'Порядок присвоения серийного номера:',
+			style: 'position:absolute;left:8px;top:109px;width:108px;height:27px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПорядокПрисвоенияСерийногоНомера',
+			style: 'position:absolute;left:117px;top:114px;width:297px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:422px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				'-',
@@ -59,6 +92,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:144px;width:422px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -76,30 +110,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьВидНоменклатуры',
-			text: 'Вид номенклатуры:',
-			style: 'position:absolute;left:8px;top:87px;width:108px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ВидНоменклатуры',
-			style: 'position:absolute;left:117px;top:87px;width:297px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПорядокПрисвоенияСерийногоНомера',
-			text: 'Порядок присвоения серийного номера:',
-			style: 'position:absolute;left:8px;top:109px;width:108px;height:27px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПорядокПрисвоенияСерийногоНомера',
-			style: 'position:absolute;left:117px;top:114px;width:297px;height:19px;',
 		},
 	]
 });

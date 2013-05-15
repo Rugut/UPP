@@ -38,8 +38,52 @@
 			},
 		},
 		{
+			xtype: 'grid',
+			style: 'position:absolute;left:457px;top:33px;width:200px;height:305px;',
+			height: 305,width: 200,
+			columns:
+			[
+				{
+					text:'Вариант отчета',
+					width:'161',
+					dataIndex:'Ссылка',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+				]
+			},
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: '',
+			style: 'position:absolute;left:66px;top:343px;width:591px;height:31px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание1',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:343px;width:56px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -161,46 +205,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:457px;top:33px;width:200px;height:305px;',
-			height: 305,width: 200,
-			columns:
-			[
-				{
-					text:'Вариант отчета',
-					width:'161',
-					dataIndex:'Ссылка',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'Ссылка',
-					},
-				]
-			},
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписание',
-			text: '',
-			style: 'position:absolute;left:66px;top:343px;width:591px;height:31px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписание1',
-			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:343px;width:56px;height:19px;',
 		},
 	]
 });

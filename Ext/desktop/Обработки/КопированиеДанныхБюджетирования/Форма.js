@@ -10,59 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:440px;width:732px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СценарийИсточник',
 			style: 'position:absolute;left:79px;top:97px;width:267px;height:19px;',
 		},
@@ -73,8 +23,10 @@
 			style: 'position:absolute;left:14px;top:121px;width:62px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаИсточник',
 			style: 'position:absolute;left:78px;top:121px;width:96px;height:19px;',
 		},
@@ -85,8 +37,10 @@
 			style: 'position:absolute;left:176px;top:121px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонцаИсточник',
 			style: 'position:absolute;left:194px;top:121px;width:96px;height:19px;',
 		},
@@ -103,8 +57,14 @@
 			style: 'position:absolute;left:14px;top:97px;width:62px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Исходные данные',
+			style: 'position:absolute;left:8px;top:79px;width:344px;height:69px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СценарийПриемник',
 			style: 'position:absolute;left:451px;top:99px;width:267px;height:19px;',
 		},
@@ -115,8 +75,10 @@
 			style: 'position:absolute;left:378px;top:123px;width:71px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаПриемник',
 			style: 'position:absolute;left:451px;top:123px;width:96px;height:19px;',
 		},
@@ -127,8 +89,10 @@
 			style: 'position:absolute;left:549px;top:123px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонцаПриемник',
 			style: 'position:absolute;left:567px;top:123px;width:96px;height:19px;',
 		},
@@ -145,6 +109,11 @@
 			style: 'position:absolute;left:378px;top:99px;width:71px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Новые данные',
+			style: 'position:absolute;left:372px;top:79px;width:352px;height:69px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:157px;width:716px;height:251px;',
 			height: 251,width: 716,
@@ -157,32 +126,47 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЦФОПриемник',
 			style: 'position:absolute;left:482px;top:50px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПроектПриемник',
 			style: 'position:absolute;left:482px;top:74px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтрагентПриемник',
 			style: 'position:absolute;left:482px;top:98px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатураПриемник',
 			style: 'position:absolute;left:482px;top:122px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяОборотовПриемник',
 			style: 'position:absolute;left:482px;top:26px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Установить новые значения',
+			style: 'position:absolute;left:366px;top:6px;width:342px;height:141px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры копирования',
+			style: 'position:absolute;left:6px;top:156px;width:702px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -196,8 +180,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоэффициентПериоды',
 			style: 'position:absolute;left:505px;top:5px;width:118px;height:19px;',
 		},
@@ -225,8 +212,11 @@
 			style: 'position:absolute;left:363px;top:5px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'АбсолютноеЗначениеПериодыСумма',
 			style: 'position:absolute;left:212px;top:5px;width:118px;height:19px;',
 		},
@@ -237,8 +227,11 @@
 			style: 'position:absolute;left:6px;top:5px;width:200px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'АбсолютноеЗначениеПериодыКоличество',
 			style: 'position:absolute;left:212px;top:29px;width:118px;height:19px;',
 		},
@@ -255,8 +248,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоэффициентБазовый',
 			style: 'position:absolute;left:117px;top:5px;width:100px;height:19px;',
 		},
@@ -267,8 +263,11 @@
 			style: 'position:absolute;left:6px;top:5px;width:109px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИзменениеЗаПериод',
 			style: 'position:absolute;left:481px;top:29px;width:100px;height:19px;',
 		},
@@ -281,12 +280,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипИзменения',
 			style: 'position:absolute;left:117px;top:29px;width:214px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипРаспределения',
 			style: 'position:absolute;left:481px;top:5px;width:220px;height:19px;',
 		},
@@ -393,23 +394,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:339px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Включить все',
-				},
-				{
-					text:'Выключить все',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Отбор данных',
+			style: 'position:absolute;left:6px;top:6px;width:339px;height:13px;',
 		},
 					]
 				},
@@ -417,30 +404,6 @@
 					title:'Новые бюджетные операции',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
-			items:
-			[
-				{
-					text:'Установить пометки',
-				},
-				{
-					text:'Снять пометки',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Провести',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:702px;height:200px;',
@@ -511,30 +474,6 @@
 					title:'Новые документы расчетов по моделям',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
-			items:
-			[
-				{
-					text:'Установить пометки',
-				},
-				{
-					text:'Снять пометки',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Рассчитать и провести',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:702px;height:200px;',
@@ -613,6 +552,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособКопированияДанных',
 			style: 'position:absolute;left:120px;top:33px;width:232px;height:19px;',
 		},
@@ -625,6 +565,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:164px;top:413px;width:182px;height:19px;',
 		},
@@ -637,6 +578,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:497px;top:413px;width:227px;height:19px;',
 		},
@@ -645,6 +587,62 @@
 			name: 'Надпись61',
 			text: 'Копировать:',
 			style: 'position:absolute;left:372px;top:33px;width:72px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:440px;width:732px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

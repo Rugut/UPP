@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:475px;width:512px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:496px;height:154px;',
 			height: 154,width: 496,
@@ -41,6 +20,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Общие настройки',
+			style: 'position:absolute;left:1px;top:0px;width:495px;height:16px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Выполнять проверки регламентированной отчетности',
@@ -57,6 +41,11 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:7px;top:72px;width:20px;height:3px;',
+		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Уведомлять пользователей об ошибках получения сведений из Интернет',
@@ -78,9 +67,19 @@
 			text: 'Задаются администратором информационной базы и действительны для всех пользователей.',
 			style: 'position:absolute;left:0px;top:17px;width:496px;height:16px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:59px;width:2px;height:75px;',
+		},
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Индивидуальные настройки',
+			style: 'position:absolute;left:9px;top:166px;width:495px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -105,9 +104,19 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:0px;width:2px;height:221px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Для доступа в Интернет необходима авторизация на прокси-сервере',
 			style: 'position:absolute;left:27px;top:75px;width:469px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:82px;width:19px;height:3px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -135,12 +144,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПользователяПрокси',
 			style: 'position:absolute;left:84px;top:0px;width:174px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольПользователяПрокси',
 			style: 'position:absolute;left:84px;top:26px;width:174px;height:19px;',
 		},
@@ -149,10 +160,40 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:32px;top:90px;width:2px;height:74px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:34px;top:163px;width:20px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:52px;top:150px;width:2px;height:26px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:54px;top:150px;width:20px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:54px;top:175px;width:20px;height:3px;',
+		},
+		{
 			xtype: 'button',
 			name: 'КнопкаПроверитьИнтернет',
 			text: 'Проверить параметры доступа в Интернет',
 			style: 'position:absolute;left:34px;top:200px;width:462px;height:41px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:220px;width:26px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -167,6 +208,31 @@
 			style: 'position:absolute;left:16px;top:2px;width:480px;height:54px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:475px;width:512px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

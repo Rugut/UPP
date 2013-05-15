@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:494px;width:866px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Проверить все подключенное оборудование',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:88px;width:850px;height:398px;',
 			height: 398,width: 850,
@@ -36,29 +19,6 @@
 					title:'Сканеры штрихкода',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
@@ -102,29 +62,6 @@
 					title:'Фискальные регистраторы',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
@@ -178,29 +115,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -243,29 +157,6 @@
 					title:'Дисплеи покупателя',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
@@ -319,29 +210,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -384,29 +252,6 @@
 					title:'Электронные весы',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
@@ -451,29 +296,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -516,29 +338,6 @@
 					title:'ККМ в режиме Offline',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
@@ -592,29 +391,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -667,29 +443,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -732,29 +485,6 @@
 					title:'Считыватели RFID меток',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Параметры',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
@@ -825,6 +555,27 @@
 			name: 'Справка',
 			text: 'Справка',
 			style: 'position:absolute;left:778px;top:57px;width:80px;height:25px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:494px;width:866px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Проверить все подключенное оборудование',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

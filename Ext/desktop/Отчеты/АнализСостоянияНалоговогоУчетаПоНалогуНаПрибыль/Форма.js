@@ -10,14 +10,18 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоПериода',
 			style: 'position:absolute;left:194px;top:3px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецПериода',
 			style: 'position:absolute;left:315px;top:3px;width:90px;height:19px;',
 		},
@@ -42,6 +46,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:520px;top:3px;width:252px;height:19px;',
 		},
@@ -111,5 +116,8 @@
 			text: '',
 			style: 'position:absolute;left:812px;top:3px;width:22px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

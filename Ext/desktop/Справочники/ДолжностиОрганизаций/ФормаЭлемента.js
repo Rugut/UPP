@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
 		},
@@ -37,44 +39,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Административно-управленческий персонал',
 			style: 'position:absolute;left:184px;top:59px;width:256px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:448px;width:565px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -85,6 +49,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодПоОКПДТР',
 			style: 'position:absolute;left:98px;top:59px;width:80px;height:19px;',
 		},
@@ -107,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодПозицииСписка',
 			style: 'position:absolute;left:140px;top:124px;width:401px;height:19px;',
 		},
@@ -119,6 +85,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОснованиеВыслугиЛет',
 			style: 'position:absolute;left:140px;top:148px;width:401px;height:19px;',
 		},
@@ -131,8 +98,24 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КатегорияВоинскогоУчета',
 			style: 'position:absolute;left:167px;top:51px;width:374px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Персонифицированный учет ПФР',
+			style: 'position:absolute;left:6px;top:102px;width:535px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Категории регламентированного учета',
+			style: 'position:absolute;left:6px;top:6px;width:535px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание должности, используемое при наборе персонала',
+			style: 'position:absolute;left:6px;top:274px;width:535px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -143,6 +126,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:140px;top:295px;width:401px;height:19px;',
 		},
@@ -155,6 +139,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КатегорияСтатистическогоУчета',
 			style: 'position:absolute;left:167px;top:27px;width:374px;height:19px;',
 		},
@@ -167,6 +152,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КатегорияУчетаЗабронированных',
 			style: 'position:absolute;left:167px;top:75px;width:374px;height:19px;',
 		},
@@ -220,6 +206,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Страховые взносы во внебюджетные фонды',
+			style: 'position:absolute;left:0px;top:6px;width:535px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -325,26 +316,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:275px;top:89px;width:266px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить новую категорию',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:89px;width:263px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -388,19 +359,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:535px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -414,6 +372,49 @@
 			[
 				{
 					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:448px;width:565px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -10,21 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:201px;width:256px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Параметры обрабатываемых писем',
+			style: 'position:absolute;left:8px;top:8px;width:240px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -67,6 +55,27 @@
 			xtype: 'checkbox',
 			boxLabel: 'Не рассмотрено',
 			style: 'position:absolute;left:38px;top:177px;width:105px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:201px;width:256px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

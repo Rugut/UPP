@@ -38,17 +38,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:398px;height:25px;',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОписание',
 			text: '',
@@ -59,6 +48,21 @@
 			name: 'НадписьОписание1',
 			text: 'Описание:',
 			style: 'position:absolute;left:8px;top:306px;width:56px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:398px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+			]
 		},
 	]
 });

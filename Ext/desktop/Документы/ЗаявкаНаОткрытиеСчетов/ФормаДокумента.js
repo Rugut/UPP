@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:86px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:168px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:186px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:86px;top:57px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:419px;top:57px;width:220px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчет',
 			style: 'position:absolute;left:419px;top:103px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДоговора',
 			style: 'position:absolute;left:86px;top:129px;width:80px;height:19px;',
 		},
@@ -90,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:86px;top:398px;width:553px;height:19px;',
 		},
@@ -98,49 +106,6 @@
 			name: 'НадписьКодВида',
 			text: 'Код вида:',
 			style: 'position:absolute;left:14px;top:202px;width:64px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:244px;width:631px;height:24px;',
-			items:
-			[
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -495,8 +460,155 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Сотрудники ',
+			style: 'position:absolute;left:8px;top:228px;width:631px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Банк',
+			style: 'position:absolute;left:8px;top:81px;width:631px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьБанк',
+			text: 'Контрагент:',
+			style: 'position:absolute;left:14px;top:102px;width:70px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сведения о вкладе',
+			style: 'position:absolute;left:8px;top:156px;width:298px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодПодвида',
+			text: 'Код подвида:',
+			style: 'position:absolute;left:164px;top:202px;width:70px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКодВалюты',
+			text: 'Код валюты:',
+			style: 'position:absolute;left:164px;top:177px;width:70px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Банк',
+			style: 'position:absolute;left:86px;top:102px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'КодВида',
+			style: 'position:absolute;left:78px;top:202px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'КодПодВида',
+			style: 'position:absolute;left:234px;top:202px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'КодВалюты',
+			style: 'position:absolute;left:234px;top:177px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидВклада',
+			text: 'Вид вклада:',
+			style: 'position:absolute;left:14px;top:177px;width:64px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ВидВкладаСтрокой',
+			style: 'position:absolute;left:78px;top:177px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Ввод начальных сведений',
+			style: 'position:absolute;left:325px;top:33px;width:162px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительные сведения для банка',
+			style: 'position:absolute;left:325px;top:155px;width:314px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДатаВыплатыЗаработнойПлаты',
+			text: 'День выплаты заработной платы:',
+			style: 'position:absolute;left:325px;top:177px;width:177px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаВыплатыЗаработнойПлаты',
+			style: 'position:absolute;left:504px;top:177px;width:49px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:244px;width:631px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:647px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -545,6 +657,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:647px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -562,77 +675,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьБанк',
-			text: 'Контрагент:',
-			style: 'position:absolute;left:14px;top:102px;width:70px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКодПодвида',
-			text: 'Код подвида:',
-			style: 'position:absolute;left:164px;top:202px;width:70px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКодВалюты',
-			text: 'Код валюты:',
-			style: 'position:absolute;left:164px;top:177px;width:70px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Банк',
-			style: 'position:absolute;left:86px;top:102px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КодВида',
-			style: 'position:absolute;left:78px;top:202px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КодПодВида',
-			style: 'position:absolute;left:234px;top:202px;width:72px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'КодВалюты',
-			style: 'position:absolute;left:234px;top:177px;width:72px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьВидВклада',
-			text: 'Вид вклада:',
-			style: 'position:absolute;left:14px;top:177px;width:64px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ВидВкладаСтрокой',
-			style: 'position:absolute;left:78px;top:177px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Ввод начальных сведений',
-			style: 'position:absolute;left:325px;top:33px;width:162px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДатаВыплатыЗаработнойПлаты',
-			text: 'День выплаты заработной платы:',
-			style: 'position:absolute;left:325px;top:177px;width:177px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаВыплатыЗаработнойПлаты',
-			style: 'position:absolute;left:504px;top:177px;width:49px;height:19px;',
 		},
 	]
 });

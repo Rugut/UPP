@@ -46,6 +46,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:291px;top:0px;width:78px;height:19px;',
 		},
@@ -58,6 +59,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:85px;top:1px;width:144px;height:19px;',
 		},
@@ -70,12 +72,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:85px;top:25px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:328px;top:25px;width:174px;height:19px;',
 		},
@@ -88,6 +92,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:463px;width:415px;height:19px;',
 		},
@@ -716,10 +721,17 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:396px;top:0px;width:106px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники организации',
+			style: 'position:absolute;left:0px;top:194px;width:502px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -735,18 +747,45 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:46px;top:8px;width:183px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'По дням периода',
-			style: 'position:absolute;left:255px;top:35px;width:236px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Способ ввода времени',
+			style: 'position:absolute;left:255px;top:11px;width:236px;height:16px;',
 		},
 		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаНачалаПериода',
+			style: 'position:absolute;left:46px;top:98px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаОкончанияПериода',
+			style: 'position:absolute;left:149px;top:98px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'по:',
+			style: 'position:absolute;left:130px;top:98px;width:15px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
-			boxLabel: 'Сводно, в целом за период',
-			style: 'position:absolute;left:255px;top:56px;width:236px;height:19px;',
+			boxLabel: 'Весь месяц (Май 2007 г)',
+			style: 'position:absolute;left:8px;top:35px;width:221px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -763,28 +802,23 @@
 			boxLabel: 'с:',
 			style: 'position:absolute;left:8px;top:98px;width:29px;height:19px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаНачалаПериода',
-			style: 'position:absolute;left:46px;top:98px;width:80px;height:19px;',
+			]
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаОкончанияПериода',
-			style: 'position:absolute;left:149px;top:98px;width:80px;height:19px;',
-		},
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'по:',
-			style: 'position:absolute;left:130px;top:98px;width:15px;height:19px;',
+			xtype: 'radio',
+			boxLabel: 'По дням периода',
+			style: 'position:absolute;left:255px;top:35px;width:236px;height:19px;',
 		},
 		{
 			xtype: 'radio',
-			boxLabel: 'Весь месяц (Май 2007 г)',
-			style: 'position:absolute;left:8px;top:35px;width:221px;height:19px;',
+			boxLabel: 'Сводно, в целом за период',
+			style: 'position:absolute;left:255px;top:56px;width:236px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -815,9 +849,13 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:676px;top:0px;width:50px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

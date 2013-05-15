@@ -20,25 +20,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:646px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Включить все',
-				},
-				{
-					text:'Выключить все',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:646px;height:220px;',
 			height: 220,width: 646,
@@ -152,5 +133,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

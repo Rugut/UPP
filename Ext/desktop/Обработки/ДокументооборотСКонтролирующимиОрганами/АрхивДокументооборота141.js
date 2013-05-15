@@ -10,70 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
-			items:
-			[
-				{
-					text:'Исходящие документы',
-				},
-				{
-					text:'Входящие документы',
-				},
-				{
-					text:'Запросы на информационное обслуживание',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сегодня',
-				},
-				{
-					text:'Текущая неделя',
-				},
-				{
-					text:'Текущий месяц',
-				},
-				{
-					text:'Текущий квартал',
-				},
-				{
-					text:'Текущий год',
-				},
-				'-',
-				{
-					text:'Вчера',
-				},
-				{
-					text:'Предыдущая неделя',
-				},
-				{
-					text:'Предыдущий месяц',
-				},
-				{
-					text:'Предыдущий квартал',
-				},
-				{
-					text:'Предыдущий год',
-				},
-				'-',
-				{
-					text:'Произвольный период',
-				},
-				{
-					text:'Без ограничений',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
 			height: 23,width: 778,
@@ -93,6 +29,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборУчетнаяЗапись',
 			style: 'position:absolute;left:97px;top:0px;width:681px;height:19px;',
 		},
@@ -318,6 +255,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтбораЦикловОбмена',
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
@@ -335,12 +273,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбора',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетДляОтбораСтрока',
 			style: 'position:absolute;left:0px;top:0px;width:382px;height:19px;',
 		},
@@ -353,6 +293,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчета',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
@@ -366,6 +307,24 @@
 					items:
 					[
 		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НомерКорректировки',
+			style: 'position:absolute;left:310px;top:0px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: '№ корректировки:',
+			style: 'position:absolute;left:195px;top:2px;width:111px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'первичный',
 			style: 'position:absolute;left:2px;top:2px;width:74px;height:15px;',
@@ -375,16 +334,7 @@
 			boxLabel: 'корректирующий',
 			style: 'position:absolute;left:81px;top:2px;width:106px;height:15px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерКорректировки',
-			style: 'position:absolute;left:310px;top:0px;width:41px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: '№ корректировки:',
-			style: 'position:absolute;left:195px;top:2px;width:111px;height:15px;',
+			]
 		},
 					]
 				},
@@ -395,6 +345,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектронноеПредставлениеДляОтбора',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
@@ -418,29 +369,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:93px;top:4px;width:55px;height:20px;',
 		},
 					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:562px;height:24px;',
-			items:
-			[
-				{
-					text:'Выгрузить контейнеры и их содержимое',
-				},
-				'-',
-				{
-					text:'Выгрузить контейнеры',
-				},
-				{
-					text:'Выгрузить содержимое',
 				},
 			]
 		},
@@ -575,6 +512,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборИсходящийДокумент',
 			style: 'position:absolute;left:153px;top:1px;width:410px;height:19px;',
 		},
@@ -689,6 +627,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборВходящийДокумент',
 			style: 'position:absolute;left:153px;top:1px;width:410px;height:19px;',
 		},
@@ -708,20 +647,6 @@
 					title:'Запросы',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть основание',
-				},
-				'-',
-				{
-					text:'Журнал запросов на информационное обслуживание',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:55px;width:563px;height:375px;',
@@ -908,6 +833,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтбораЦикловОбменаЗапросы',
 			style: 'position:absolute;left:0px;top:1px;width:148px;height:19px;',
 		},
@@ -925,6 +851,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборЗапрос',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
@@ -937,6 +864,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборВидУслуги',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
@@ -1005,17 +933,96 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Учетные записи',
+			style: 'position:absolute;left:0px;top:2px;width:195px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:23px;width:195px;height:24px;',
 			items:
 			[
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:21px;width:195px;height:3px;',
+		},
 					]
 				},
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Исходящие документы',
+				},
+				{
+					text:'Входящие документы',
+				},
+				{
+					text:'Запросы на информационное обслуживание',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сегодня',
+				},
+				{
+					text:'Текущая неделя',
+				},
+				{
+					text:'Текущий месяц',
+				},
+				{
+					text:'Текущий квартал',
+				},
+				{
+					text:'Текущий год',
+				},
+				'-',
+				{
+					text:'Вчера',
+				},
+				{
+					text:'Предыдущая неделя',
+				},
+				{
+					text:'Предыдущий месяц',
+				},
+				{
+					text:'Предыдущий квартал',
+				},
+				{
+					text:'Предыдущий год',
+				},
+				'-',
+				{
+					text:'Произвольный период',
+				},
+				{
+					text:'Без ограничений',
 				},
 			]
 		},

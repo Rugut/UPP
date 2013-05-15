@@ -23,6 +23,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИнформацияДляПоиска',
 			style: 'position:absolute;left:84px;top:24px;width:459px;height:19px;',
 		},
@@ -31,6 +32,11 @@
 			name: 'НадписьСтрокаПоиска',
 			text: 'Строка поиска:',
 			style: 'position:absolute;left:0px;top:24px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройки поиска',
+			style: 'position:absolute;left:0px;top:49px;width:627px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -106,29 +112,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:92px;width:627px;height:24px;',
-			items:
-			[
-				{
-					text:'Включить все',
-				},
-				{
-					text:'Выключить все',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Дополнительно...',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПринципыОтбора',
 			text: 'Вхождение',
@@ -169,35 +152,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:19px;width:627px;height:24px;',
-			items:
-			[
-				{
-					text:'Раскрыть',
-				},
-				{
-					text:'Свернуть',
-				},
-				'-',
-				{
-					text:'Показать детально',
-				},
-				'-',
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Результаты поиска',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
 		},
 					]
 				},
@@ -225,23 +182,6 @@
 			style: 'position:absolute;left:547px;top:24px;width:80px;height:19px;',
 		},
 					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
-			items:
-			[
-				{
-					text:'Загрузить настройку поиска',
-				},
-				{
-					text:'Сохранить настройки поиска',
-				},
-				'-',
-				{
-					text:'Справка',
 				},
 			]
 		},
@@ -274,6 +214,27 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Загрузить настройку поиска',
+				},
+				{
+					text:'Сохранить настройки поиска',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

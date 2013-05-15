@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:185px;width:413px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:399px;height:172px;',
 			height: 172,width: 399,
@@ -45,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:30px;width:306px;height:19px;',
 		},
@@ -54,6 +38,22 @@
 			text: 'Период',
 			style: 'position:absolute;left:6px;top:6px;width:57px;height:19px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:57px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:84px;top:6px;width:126px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Бухгалтерского учета',
@@ -69,11 +69,7 @@
 			boxLabel: 'Бухгалтерского учета с постоянными разницами',
 			style: 'position:absolute;left:6px;top:117px;width:384px;height:16px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:84px;top:6px;width:126px;height:19px;',
+			]
 		},
 					]
 				},
@@ -154,14 +150,28 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:385px;height:24px;',
-			items:
-			[
+					]
+				},
 			]
 		},
-					]
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:185px;width:413px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

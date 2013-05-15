@@ -18,81 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:183px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:280px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -159,8 +87,127 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Шкала тарифа',
+			style: 'position:absolute;left:8px;top:126px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:284px;top:33px;width:23px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Код',
+			style: 'position:absolute;left:309px;top:33px;width:83px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокРасчетаПоТарифу',
+			text: 'Порядок расчета по тарифу',
+			style: 'position:absolute;left:8px;top:61px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Процент исчисляется с суммы превышения',
+			style: 'position:absolute;left:20px;top:82px;width:372px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Процент исчисляется со всей пересылаемой суммы',
+			style: 'position:absolute;left:20px;top:102px;width:372px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:280px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:142px;width:384px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				'-',
@@ -187,34 +234,6 @@
 					text:'',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКод',
-			text: 'Код:',
-			style: 'position:absolute;left:284px;top:33px;width:23px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Код',
-			style: 'position:absolute;left:309px;top:33px;width:83px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Процент исчисляется с суммы превышения',
-			style: 'position:absolute;left:20px;top:82px;width:372px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Процент исчисляется со всей пересылаемой суммы',
-			style: 'position:absolute;left:20px;top:102px;width:372px;height:15px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПорядокРасчетаПоТарифу',
-			text: 'Порядок расчета по тарифу',
-			style: 'position:absolute;left:8px;top:61px;width:384px;height:16px;',
 		},
 	]
 });

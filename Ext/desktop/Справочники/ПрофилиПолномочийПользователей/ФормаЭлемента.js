@@ -10,37 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:631px;height:25px;',
-			items:
-			[
-				{
-					text:'Групповая обработка пользователей',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:376px;width:631px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОсновнойИнтерфейс',
 			text: 'Основной интерфейс:',
@@ -59,6 +28,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:93px;top:33px;width:186px;height:19px;',
 		},
@@ -128,33 +98,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:290px;top:108px;width:333px;height:24px;',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Копировать',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:108px;width:271px;height:24px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьРолиПрофиля',
 			text: 'Роли профиля',
@@ -175,8 +118,74 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:93px;top:57px;width:186px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:631px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Групповая обработка пользователей',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:376px;width:631px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:290px;top:108px;width:333px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Копировать',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:108px;width:271px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+			]
 		},
 	]
 });

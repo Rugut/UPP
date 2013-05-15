@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:149px;top:33px;width:48px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:149px;top:58px;width:537px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:149px;top:133px;width:537px;height:19px;',
 		},
@@ -54,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Вид',
 			style: 'position:absolute;left:149px;top:108px;width:537px;height:19px;',
 		},
@@ -66,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолноеНаименование',
 			style: 'position:absolute;left:149px;top:83px;width:537px;height:19px;',
 		},
@@ -88,6 +93,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:96px;top:181px;width:104px;height:19px;',
 		},
@@ -100,6 +106,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:265px;top:181px;width:96px;height:19px;',
 		},
@@ -112,6 +119,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Адрес',
 			style: 'position:absolute;left:96px;top:229px;width:590px;height:19px;',
 		},
@@ -124,6 +132,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Телефон',
 			style: 'position:absolute;left:96px;top:254px;width:290px;height:19px;',
 		},
@@ -136,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресЭлектроннойПочты',
 			style: 'position:absolute;left:442px;top:254px;width:244px;height:19px;',
 		},
@@ -148,6 +158,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресСайта',
 			style: 'position:absolute;left:96px;top:279px;width:590px;height:19px;',
 		},
@@ -160,12 +171,68 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:431px;width:590px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Реквизиты',
+			style: 'position:absolute;left:8px;top:159px;width:678px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Контакты',
+			style: 'position:absolute;left:8px;top:206px;width:678px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:424px;width:678px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Функции',
+			style: 'position:absolute;left:8px;top:305px;width:678px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Информационное взаимодействие с налогоплательщиками по каналам связи (защищенный документооборот)',
+			style: 'position:absolute;left:8px;top:352px;width:678px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьАдресЭлектроннойПочты1',
+			text: 'Адрес электронной почты:',
+			style: 'position:absolute;left:14px;top:373px;width:157px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'АдресЭлектроннойПочтыДляПриемаОтчетности',
+			style: 'position:absolute;left:188px;top:373px;width:498px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСертификат',
+			text: 'Сертификат:',
+			style: 'position:absolute;left:14px;top:398px;width:157px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Сертификат',
+			style: 'position:absolute;left:188px;top:398px;width:498px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:694px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -173,6 +240,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:458px;width:694px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -190,30 +258,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьАдресЭлектроннойПочты1',
-			text: 'Адрес электронной почты:',
-			style: 'position:absolute;left:14px;top:373px;width:157px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'АдресЭлектроннойПочтыДляПриемаОтчетности',
-			style: 'position:absolute;left:188px;top:373px;width:498px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСертификат',
-			text: 'Сертификат:',
-			style: 'position:absolute;left:14px;top:398px;width:157px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Сертификат',
-			style: 'position:absolute;left:188px;top:398px;width:498px;height:19px;',
 		},
 	]
 });

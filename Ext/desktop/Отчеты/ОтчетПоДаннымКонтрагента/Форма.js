@@ -10,35 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:461px;width:810px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НачОтчета',
 			text: 'На дату:',
 			style: 'position:absolute;left:8px;top:7px;width:52px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОтчета',
 			style: 'position:absolute;left:62px;top:7px;width:80px;height:19px;',
 		},
@@ -51,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтрагентОтчета',
 			style: 'position:absolute;left:234px;top:7px;width:220px;height:19px;',
 		},
@@ -70,6 +52,11 @@
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:46px;width:780px;height:324px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Состав и порядок отчета',
+			style: 'position:absolute;left:6px;top:6px;width:780px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -97,6 +84,31 @@
 			]
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:461px;width:810px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

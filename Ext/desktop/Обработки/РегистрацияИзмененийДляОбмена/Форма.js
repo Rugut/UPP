@@ -10,34 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:420px;width:702px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Показать изменения',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьУзелОбмена',
 			text: 'Узел обмена:',
@@ -46,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелОбмена',
 			style: 'position:absolute;left:85px;top:4px;width:609px;height:19px;',
 		},
@@ -105,33 +78,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:686px;height:24px;',
-			items:
-			[
-				{
-					text:'Развернуть дерево',
-				},
-				{
-					text:'Свернуть дерево',
-				},
-				'-',
-				{
-					text:'Отменить регистрацию',
-				},
-				{
-					text:'Добавить регистрацию',
-				},
-				{
-					text:'Показать зарегистрированные изменения данного типа',
-				},
-				'-',
-				{
-					text:'Результат стандартной выгрузки',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Отображать объекты, для которых зарегистрированы изменения',
 			style: 'position:absolute;left:8px;top:52px;width:419px;height:19px;',
@@ -164,6 +110,66 @@
 			name: 'КнопкаИзменитьНомера',
 			text: 'Изменить номера сообщений...',
 			style: 'position:absolute;left:500px;top:76px;width:167px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:420px;width:702px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Показать изменения',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:686px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Развернуть дерево',
+				},
+				{
+					text:'Свернуть дерево',
+				},
+				'-',
+				{
+					text:'Отменить регистрацию',
+				},
+				{
+					text:'Добавить регистрацию',
+				},
+				{
+					text:'Показать зарегистрированные изменения данного типа',
+				},
+				'-',
+				{
+					text:'Результат стандартной выгрузки',
+				},
+			]
 		},
 	]
 });

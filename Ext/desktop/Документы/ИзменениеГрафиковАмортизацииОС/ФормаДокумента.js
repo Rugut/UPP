@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:79px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -36,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:81px;width:242px;height:19px;',
 		},
@@ -48,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:390px;width:242px;height:19px;',
 		},
@@ -60,18 +65,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:367px;width:242px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:191px;width:328px;height:24px;',
-			items:
-			[
-				{
-					text:'По наименованию',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -120,8 +116,89 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьДата',
+			text: 'от:',
+			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:94px;top:57px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Флажок',
+			style: 'position:absolute;left:183px;top:57px;width:71px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ГрафикАмортизации',
+			style: 'position:absolute;left:94px;top:104px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'График:',
+			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:8px;top:175px;width:328px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Событие:',
+			style: 'position:absolute;left:8px;top:126px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Событие',
+			style: 'position:absolute;left:94px;top:127px;width:242px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие регл:',
+			style: 'position:absolute;left:8px;top:151px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СобытиеРегл',
+			style: 'position:absolute;left:94px;top:150px;width:242px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:191px;width:328px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:344px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -149,6 +226,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:417px;width:344px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -170,64 +248,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьДата',
-			text: 'от:',
-			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Флажок',
-			style: 'position:absolute;left:94px;top:57px;width:76px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Флажок',
-			style: 'position:absolute;left:183px;top:57px;width:71px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтраженияВУчете',
-			text: 'Отразить в:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ГрафикАмортизации',
-			style: 'position:absolute;left:94px;top:104px;width:242px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'График:',
-			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись7',
-			text: 'Событие:',
-			style: 'position:absolute;left:8px;top:126px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Событие',
-			style: 'position:absolute;left:94px;top:127px;width:242px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСобытиеРегл',
-			text: 'Событие регл:',
-			style: 'position:absolute;left:8px;top:151px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СобытиеРегл',
-			style: 'position:absolute;left:94px;top:150px;width:242px;height:19px;',
 		},
 	]
 });

@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:486px;width:618px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Произвести автоматическую настройку',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:64px;width:602px;height:414px;',
 			height: 414,width: 602,
@@ -93,9 +76,34 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВнимание',
-			text: 'Внимание!
-По информации на сервере автоматической настройки необходимо произвести следующие изменения в параметрах документооборота по учетной записи <УчетнаяЗапись>.',
+			text: 'Внимание!\r\nПо информации на сервере автоматической настройки необходимо произвести следующие изменения в параметрах документооборота по учетной записи <УчетнаяЗапись>.',
 			style: 'position:absolute;left:8px;top:8px;width:602px;height:46px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:57px;width:602px;height:3px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:486px;width:618px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Произвести автоматическую настройку',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
 		},
 	]
 });

@@ -24,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -85,6 +88,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:246px;width:343px;height:19px;',
 		},
@@ -181,20 +185,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:431px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по графику отпусков',
-				},
-				'-',
-				{
-					text:'Списком работников',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:273px;width:447px;height:25px;',
 			items:
 			[
@@ -223,8 +213,32 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:222px;width:343px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Работники',
+			style: 'position:absolute;left:8px;top:57px;width:431px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:431px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить по графику отпусков',
+				},
+				'-',
+				{
+					text:'Списком работников',
+				},
+			]
 		},
 	]
 });

@@ -33,5 +33,13 @@
 			text: '',
 			style: 'position:absolute;left:91px;top:29px;width:521px;height:16px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:52px;width:604px;height:3px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

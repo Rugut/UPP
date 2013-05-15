@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:130px;top:33px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БуквенныйКод',
 			style: 'position:absolute;left:69px;top:142px;width:28px;height:19px;',
 		},
@@ -42,18 +44,40 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЦифровойКод',
 			style: 'position:absolute;left:189px;top:142px;width:25px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолноеНаименование',
 			style: 'position:absolute;left:130px;top:57px;width:220px;height:45px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Условные обозначения (коды) использования рабочего времени',
+			style: 'position:absolute;left:8px;top:121px;width:450px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Рабочее время',
+			style: 'position:absolute;left:360px;top:33px;width:98px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПолноеНаименование',
+			text: 'Полное наименование:',
+			style: 'position:absolute;left:8px;top:57px;width:122px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:466px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -61,6 +85,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:169px;width:466px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -78,17 +103,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Рабочее время',
-			style: 'position:absolute;left:360px;top:33px;width:98px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПолноеНаименование',
-			text: 'Полное наименование:',
-			style: 'position:absolute;left:8px;top:57px;width:122px;height:19px;',
 		},
 	]
 });

@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:944px;height:25px;',
-			items:
-			[
-				{
-					text:'Состояние кадрового плана',
-				},
-				{
-					text:'Исполнение кадрового плана',
-				},
-				'-',
-				{
-					text:'Коэффициент текучести кадров',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:539px;',
 			height: 539,width: 764,
@@ -87,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:79px;top:6px;width:115px;height:19px;',
 		},
@@ -285,82 +269,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:764px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Вакансии',
-					menu: [
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-					]
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-			]
-		},
 					]
 				},
 			]
@@ -457,19 +365,6 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:854px;top:0px;width:146px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:778px;top:33px;width:214px;height:539px;',
 			height: 539,width: 214,
@@ -478,6 +373,41 @@
 			[
 				{
 					title:'Страница1',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:944px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Состояние кадрового плана',
+				},
+				{
+					text:'Исполнение кадрового плана',
+				},
+				'-',
+				{
+					text:'Коэффициент текучести кадров',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:854px;top:0px;width:146px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
 				},
 			]
 		},

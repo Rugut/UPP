@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:263px;width:513px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись18',
 			text: 'Рег. номер заявления в НО:',
@@ -31,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегНомДок',
 			style: 'position:absolute;left:202px;top:165px;width:303px;height:19px;',
 		},
@@ -43,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отметка',
 			style: 'position:absolute;left:202px;top:10px;width:303px;height:19px;',
 		},
@@ -55,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаРегЭл',
 			style: 'position:absolute;left:202px;top:195px;width:303px;height:19px;',
 		},
@@ -67,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаРегБум',
 			style: 'position:absolute;left:202px;top:230px;width:303px;height:19px;',
 		},
@@ -79,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДокНП',
 			style: 'position:absolute;left:202px;top:115px;width:303px;height:19px;',
 		},
@@ -91,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаДокНП',
 			style: 'position:absolute;left:202px;top:140px;width:303px;height:19px;',
 		},
@@ -114,6 +107,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерУведОткз',
 			style: 'position:absolute;left:194px;top:25px;width:303px;height:19px;',
 		},
@@ -126,10 +120,38 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаУведОткз',
 			style: 'position:absolute;left:194px;top:50px;width:303px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Уведомление об отказе',
+			style: 'position:absolute;left:0px;top:0px;width:495px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:2px;top:75px;width:495px;height:3px;',
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:263px;width:513px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
 				},
 			]
 		},

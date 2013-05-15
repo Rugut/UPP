@@ -10,24 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Загрузить данные',
-				},
-				'-',
-				{
-					text:'Соответствия объектов',
-				},
-				{
-					text:'Настройки',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:210px;width:648px;height:250px;',
 			height: 250,width: 648,
@@ -110,19 +92,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
-			items:
-			[
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
 		},
 					]
 				},
@@ -247,29 +216,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
-			items:
-			[
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-			]
 		},
 					]
 				},
@@ -458,29 +404,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
-			items:
-			[
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -532,29 +455,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
-			items:
-			[
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-			]
 		},
 					]
 				},
@@ -908,6 +808,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаДанных',
 			style: 'position:absolute;left:114px;top:0px;width:534px;height:19px;',
 		},
@@ -924,8 +825,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:187px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:190px;top:0px;width:110px;height:19px;',
 		},
@@ -936,8 +839,10 @@
 			style: 'position:absolute;left:310px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:334px;top:0px;width:110px;height:19px;',
 		},
@@ -958,16 +863,6 @@
 			]
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Загрузить данные из файла',
-			style: 'position:absolute;left:8px;top:33px;width:170px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Загрузить данные из электронной почты',
-			style: 'position:absolute;left:183px;top:33px;width:232px;height:19px;',
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:664px;height:25px;',
 			items:
@@ -981,6 +876,44 @@
 				'-',
 				{
 					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Загрузить данные из файла',
+			style: 'position:absolute;left:8px;top:33px;width:170px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Загрузить данные из электронной почты',
+			style: 'position:absolute;left:183px;top:33px;width:232px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Загрузить данные',
+				},
+				'-',
+				{
+					text:'Соответствия объектов',
+				},
+				{
+					text:'Настройки',
 				},
 			]
 		},

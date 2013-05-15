@@ -91,6 +91,16 @@
 			style: 'position:absolute;left:290px;top:105px;width:176px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:84px;width:460px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:6px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:14px;top:22px;width:452px;height:20px;',
 			height: 20,width: 452,
@@ -154,20 +164,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:258px;top:0px;width:208px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:258px;top:24px;width:208px;height:265px;',
 			height: 265,width: 208,
@@ -228,28 +224,6 @@
 			name: 'Надпись1',
 			text: 'Наименование:',
 			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -371,13 +345,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -416,13 +383,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -467,13 +427,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -499,5 +452,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

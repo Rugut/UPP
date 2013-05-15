@@ -132,39 +132,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:18px;width:219px;height:24px;',
-			items:
-			[
-				{
-					text:'Новый',
-				},
-				'-',
-				{
-					text:'Снять пометки',
-				},
-				{
-					text:'Установить пометки',
-				},
-				{
-					text:'Развернуть все узлы',
-				},
-				{
-					text:'Свернуть все узлы',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Подробнее об отчете',
-				},
-				'-',
-				{
-					text:'Иерархический просмотр',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Виды отчетов',
+			style: 'position:absolute;left:0px;top:0px;width:219px;height:16px;',
 		},
 					]
 				},
@@ -199,6 +169,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:5px;width:328px;height:19px;',
 		},
@@ -211,6 +182,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодИФНС',
 			style: 'position:absolute;left:479px;top:5px;width:56px;height:19px;',
 		},
@@ -253,14 +225,18 @@
 			style: 'position:absolute;left:304px;top:23px;width:20px;height:20px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаПериодаОтчета',
 			style: 'position:absolute;left:123px;top:23px;width:76px;height:20px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонцаПериодаОтчета',
 			style: 'position:absolute;left:223px;top:23px;width:76px;height:20px;',
 		},
@@ -349,8 +325,11 @@
 			style: 'position:absolute;left:0px;top:7px;width:23px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:29px;top:4px;width:60px;height:20px;',
 		},
@@ -369,6 +348,10 @@
 			]
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'по итогам:',
 			style: 'position:absolute;left:10px;top:52px;width:72px;height:15px;',
@@ -377,6 +360,8 @@
 			xtype: 'radio',
 			boxLabel: 'произвольный',
 			style: 'position:absolute;left:10px;top:70px;width:96px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -527,41 +512,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:5px;top:1px;width:526px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Групповой режим',
-				},
-				'-',
-				'-',
-				'-',
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -793,19 +743,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
-			items:
-			[
-				{
-					text:'Обменяться',
-				},
-				'-',
-				'-',
-				'-',
-			]
-		},
 					]
 				},
 				{
@@ -1018,19 +955,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
-			items:
-			[
-				{
-					text:'Обменяться',
-				},
-				'-',
-				'-',
-				'-',
-			]
-		},
 					]
 				},
 				{
@@ -1136,19 +1060,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
-			items:
-			[
-				{
-					text:'Обменяться',
-				},
-				'-',
-				'-',
-				'-',
-			]
 		},
 					]
 				},
@@ -1304,9 +1215,13 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

@@ -10,8 +10,39 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьОсновнойТекст',
+			text: '',
+			style: 'position:absolute;left:92px;top:14px;width:551px;height:92px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:21px;top:114px;width:622px;height:6px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:92px;top:132px;width:551px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: '',
+			style: 'position:absolute;left:92px;top:158px;width:551px;height:16px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:193px;width:663px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -25,22 +56,6 @@
 					text:'Отмена',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОсновнойТекст',
-			text: '',
-			style: 'position:absolute;left:92px;top:14px;width:551px;height:92px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: '',
-			style: 'position:absolute;left:92px;top:132px;width:551px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: '',
-			style: 'position:absolute;left:92px;top:158px;width:551px;height:16px;',
 		},
 	]
 });

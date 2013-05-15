@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОГРН',
 			style: 'position:absolute;left:55px;top:84px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Адрес',
 			style: 'position:absolute;left:55px;top:59px;width:326px;height:19px;',
 		},
@@ -42,12 +44,43 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресКодПоКЛАДР',
 			style: 'position:absolute;left:477px;top:59px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Код',
+			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНаименование',
+			text: 'Наименование:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Наименование',
+			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -65,6 +98,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:111px;width:565px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -82,30 +116,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКод',
-			text: 'Код:',
-			style: 'position:absolute;left:443px;top:33px;width:32px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Код',
-			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНаименование',
-			text: 'Наименование:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Наименование',
-			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
 		},
 	]
 });

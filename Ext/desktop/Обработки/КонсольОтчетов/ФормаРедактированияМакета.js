@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:267px;',
 			height: 267,width: 400,
@@ -36,24 +19,6 @@
 					title:'Макет',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:398px;height:25px;',
-			items:
-			[
-				{
-					text:'Получить макет',
-				},
-				'-',
-				{
-					text:'Получить макет с оформлением',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -71,6 +36,27 @@
 			style: 'position:absolute;left:15px;top:34px;width:171px;height:15px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
 				},
 			]
 		},

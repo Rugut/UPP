@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:230px;width:220px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:380px;width:432px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФизЛицо',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -52,8 +55,11 @@
 			style: 'position:absolute;left:14px;top:129px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаЗайма',
 			style: 'position:absolute;left:94px;top:129px;width:120px;height:19px;',
 		},
@@ -66,6 +72,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:94px;top:155px;width:120px;height:19px;',
 		},
@@ -76,8 +83,11 @@
 			style: 'position:absolute;left:221px;top:155px;width:55px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:278px;top:155px;width:80px;height:19px;',
 		},
@@ -88,8 +98,11 @@
 			style: 'position:absolute;left:221px;top:129px;width:55px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентЗаПользованиеЗаймом',
 			style: 'position:absolute;left:278px;top:129px;width:80px;height:19px;',
 		},
@@ -105,38 +118,13 @@
 			style: 'position:absolute;left:14px;top:182px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СрокПогашения',
 			style: 'position:absolute;left:405px;top:182px;width:40px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:407px;width:534px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -147,6 +135,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -157,8 +146,10 @@
 			style: 'position:absolute;left:174px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -171,8 +162,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Условия займа',
+			style: 'position:absolute;left:8px;top:108px;width:518px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -181,14 +178,9 @@
 			style: 'position:absolute;left:447px;top:182px;width:47px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Ежемесячно',
-			style: 'position:absolute;left:221px;top:182px;width:86px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По истечении',
-			style: 'position:absolute;left:308px;top:182px;width:95px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Регламентированный учет',
+			style: 'position:absolute;left:8px;top:209px;width:518px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -205,6 +197,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетУчетаПроцентовПоЗайму',
 			style: 'position:absolute;left:94px;top:281px;width:100px;height:19px;',
 		},
@@ -217,6 +210,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто1',
 			style: 'position:absolute;left:94px;top:305px;width:220px;height:19px;',
 		},
@@ -229,6 +223,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто2',
 			style: 'position:absolute;left:94px;top:329px;width:220px;height:19px;',
 		},
@@ -241,18 +236,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Субконто3',
 			style: 'position:absolute;left:94px;top:353px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНалогообложенияРезидента',
 			style: 'position:absolute;left:268px;top:254px;width:46px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:94px;top:182px;width:120px;height:19px;',
 		},
@@ -268,16 +266,76 @@
 					items:
 					[
 		{
-			xtype: 'radio',
-			boxLabel: 'Управленческий',
-			style: 'position:absolute;left:8px;top:48px;width:112px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Учет',
+			style: 'position:absolute;left:0px;top:0px;width:192px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Бухгалтерский',
 			style: 'position:absolute;left:8px;top:24px;width:112px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Управленческий',
+			style: 'position:absolute;left:8px;top:48px;width:112px;height:19px;',
+		},
+			]
+		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Ежемесячно',
+			style: 'position:absolute;left:221px;top:182px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По истечении',
+			style: 'position:absolute;left:308px;top:182px;width:95px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:407px;width:534px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:312px;width:700px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номенклатура',
 			style: 'position:absolute;left:89px;top:32px;width:220px;height:19px;',
 		},
@@ -47,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
 			style: 'position:absolute;left:465px;top:32px;width:227px;height:19px;',
 		},
@@ -115,15 +100,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Фактический расход материалов за месяц',
+			style: 'position:absolute;left:8px;top:90px;width:684px;height:17px;',
 		},
 		{
 			xtype: 'label',
@@ -134,6 +113,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Спецификация',
 			style: 'position:absolute;left:89px;top:56px;width:220px;height:19px;',
 		},
@@ -146,6 +126,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:465px;top:8px;width:227px;height:19px;',
 		},
@@ -156,8 +137,10 @@
 			style: 'position:absolute;left:8px;top:8px;width:81px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаПериода',
 			style: 'position:absolute;left:89px;top:8px;width:80px;height:19px;',
 		},
@@ -168,14 +151,19 @@
 			style: 'position:absolute;left:179px;top:8px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияПериода',
 			style: 'position:absolute;left:203px;top:8px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:325px;top:56px;width:80px;height:19px;',
 		},
@@ -188,6 +176,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаИзмерения',
 			style: 'position:absolute;left:465px;top:56px;width:80px;height:19px;',
 		},
@@ -196,6 +185,39 @@
 			name: 'КнопкаНастройкаПериода',
 			text: '...',
 			style: 'position:absolute;left:290px;top:8px;width:19px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:312px;width:700px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 	]
 });

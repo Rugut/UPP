@@ -18,12 +18,32 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:86px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НалоговыйПериод',
+			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Налоговый период:',
+			style: 'position:absolute;left:326px;top:33px;width:104px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -70,18 +90,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НалоговыйПериод',
-			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'Налоговый период:',
-			style: 'position:absolute;left:326px;top:33px;width:104px;height:19px;',
 		},
 	]
 });

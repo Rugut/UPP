@@ -10,47 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Открыть список заказов на обслуживание ОС',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:366px;width:736px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:227px;top:57px;width:501px;height:301px;',
 			height: 301,width: 501,
@@ -196,9 +155,56 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Открыть список заказов на обслуживание ОС',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:366px;width:736px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:227px;top:33px;width:501px;height:24px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -206,6 +212,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:33px;width:215px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

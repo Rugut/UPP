@@ -10,8 +10,132 @@
 	items:
 	[
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:81px;width:552px;height:72px;',
+			height: 72,width: 552,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Поля',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиНоменклатура',
+			style: 'position:absolute;left:272px;top:0px;width:280px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:0px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Номенклатура:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиСклад',
+			style: 'position:absolute;left:272px;top:24px;width:280px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:24px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Склад:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиКомиссионер',
+			style: 'position:absolute;left:272px;top:48px;width:280px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:48px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Комиссионер:',
+			style: 'position:absolute;left:0px;top:48px;width:108px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаКонца',
+			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаНачала',
+			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Период с:',
+			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'по:',
+			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:248px;top:33px;width:19px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодичность',
+			text: 'Периодичность:',
+			style: 'position:absolute;left:314px;top:33px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Периодичность',
+			style: 'position:absolute;left:400px;top:33px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСтатусТоваров',
+			text: 'Статус товаров:',
+			style: 'position:absolute;left:314px;top:57px;width:83px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:400px;top:57px;width:160px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -53,118 +177,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:81px;width:552px;height:72px;',
-			height: 72,width: 552,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Поля',
-					items:
-					[
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиНоменклатура',
-			style: 'position:absolute;left:272px;top:0px;width:280px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:0px;width:160px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Номенклатура:',
-			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиСклад',
-			style: 'position:absolute;left:272px;top:24px;width:280px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:24px;width:160px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Склад:',
-			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиКомиссионер',
-			style: 'position:absolute;left:272px;top:48px;width:280px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:48px;width:160px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Комиссионер:',
-			style: 'position:absolute;left:0px;top:48px;width:108px;height:19px;',
-		},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаКонца',
-			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаНачала',
-			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Период с:',
-			style: 'position:absolute;left:8px;top:33px;width:56px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'по:',
-			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаНастройкаПериода',
-			text: '...',
-			style: 'position:absolute;left:248px;top:33px;width:19px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПериодичность',
-			text: 'Периодичность:',
-			style: 'position:absolute;left:314px;top:33px;width:84px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Периодичность',
-			style: 'position:absolute;left:400px;top:33px;width:160px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСтатусТоваров',
-			text: 'Статус товаров:',
-			style: 'position:absolute;left:314px;top:57px;width:83px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:400px;top:57px;width:160px;height:19px;',
 		},
 	]
 });

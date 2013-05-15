@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:90px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:190px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:344px;width:559px;height:19px;',
 		},
@@ -343,6 +347,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:72px;width:204px;height:19px;',
 		},
@@ -355,8 +360,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:410px;top:72px;width:223px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:51px;width:627px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -364,14 +375,27 @@
 			style: 'position:absolute;left:12px;top:117px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ВремяНапоминания',
 			style: 'position:absolute;left:100px;top:117px;width:126px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:96px;width:627px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:627px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:410px;top:27px;width:223px;height:19px;',
 		},
@@ -384,12 +408,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеИсполнитель',
 			style: 'position:absolute;left:98px;top:27px;width:204px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Основание',
 			style: 'position:absolute;left:100px;top:141px;width:202px;height:19px;',
 		},
@@ -406,12 +432,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:487px;top:81px;width:162px;height:19px;',
 		},
@@ -422,8 +450,10 @@
 			style: 'position:absolute;left:14px;top:81px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОтгрузки',
 			style: 'position:absolute;left:90px;top:81px;width:80px;height:19px;',
 		},
@@ -455,6 +485,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидЗаказа',
 			style: 'position:absolute;left:391px;top:81px;width:93px;height:19px;',
 		},
@@ -464,5 +495,13 @@
 			text: 'Заказчик:',
 			style: 'position:absolute;left:337px;top:81px;width:54px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:75px;width:174px;height:32px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

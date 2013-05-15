@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:276px;width:384px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Создать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:26px;width:368px;height:221px;',
 			height: 221,width: 368,
@@ -64,8 +47,35 @@
 			},
 		},
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Открывать форму контрагента после записи',
+			style: 'position:absolute;left:8px;top:247px;width:327px;height:21px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:276px;width:384px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Создать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:1px;width:97px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -75,11 +85,6 @@
 					text:'Снять все пометки',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Открывать форму контрагента после записи',
-			style: 'position:absolute;left:8px;top:247px;width:327px;height:21px;',
 		},
 	]
 });

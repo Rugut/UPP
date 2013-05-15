@@ -10,86 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:478px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройки...',
-				},
-				'-',
-				{
-					text:'На принтер',
-				},
-				'-',
-				{
-					text:'Новый отчет',
-				},
-				{
-					text:'Быстрые отборы',
-				},
-				'-',
-				{
-					text:'Восстановить настройки',
-				},
-				{
-					text:'Сохранить настройки',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройки...',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Загрузить настройки отчета',
-				},
-				{
-					text:'Сохранить настройки отчета',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:345px;top:33px;width:397px;height:107px;',
 			height: 107,width: 397,
@@ -250,8 +170,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНачалоПериода',
 			style: 'position:absolute;left:52px;top:0px;width:80px;height:19px;',
 		},
@@ -262,8 +184,10 @@
 			style: 'position:absolute;left:136px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаКонецПериода',
 			style: 'position:absolute;left:153px;top:0px;width:80px;height:19px;',
 		},
@@ -292,8 +216,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаПериод',
 			style: 'position:absolute;left:178px;top:0px;width:80px;height:19px;',
 		},
@@ -322,8 +248,10 @@
 			style: 'position:absolute;left:11px;top:19px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРасходовС',
 			style: 'position:absolute;left:121px;top:19px;width:80px;height:19px;',
 		},
@@ -334,8 +262,10 @@
 			style: 'position:absolute;left:206px;top:19px;width:15px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРасходовПо',
 			style: 'position:absolute;left:226px;top:19px;width:80px;height:19px;',
 		},
@@ -352,8 +282,10 @@
 			style: 'position:absolute;left:13px;top:43px;width:105px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПриходовС',
 			style: 'position:absolute;left:122px;top:43px;width:80px;height:19px;',
 		},
@@ -364,8 +296,10 @@
 			style: 'position:absolute;left:207px;top:43px;width:15px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПриходовПо',
 			style: 'position:absolute;left:227px;top:43px;width:80px;height:19px;',
 		},
@@ -376,8 +310,14 @@
 			style: 'position:absolute;left:310px;top:43px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Периоды затрат и оценки результатов',
+			style: 'position:absolute;left:0px;top:0px;width:331px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Данные',
 			style: 'position:absolute;left:122px;top:67px;width:185px;height:19px;',
 		},
@@ -390,11 +330,96 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:122px;top:90px;width:185px;height:19px;',
 		},
 					]
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:478px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'На принтер',
+				},
+				'-',
+				{
+					text:'Новый отчет',
+				},
+				{
+					text:'Быстрые отборы',
+				},
+				'-',
+				{
+					text:'Восстановить настройки',
+				},
+				{
+					text:'Сохранить настройки',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Загрузить настройки отчета',
+				},
+				{
+					text:'Сохранить настройки отчета',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
 			]
 		},
 	]

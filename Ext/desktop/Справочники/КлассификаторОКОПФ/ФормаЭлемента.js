@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:325px;top:33px;width:67px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:140px;top:33px;width:141px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:140px;top:57px;width:252px;height:19px;',
 		},
@@ -50,9 +53,13 @@
 			boxLabel: 'Включить элемент в список быстрого выбора',
 			style: 'position:absolute;left:8px;top:82px;width:258px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -60,6 +67,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:105px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

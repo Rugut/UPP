@@ -18,18 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:324px;width:559px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:83px;width:638px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить за период',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -267,8 +258,110 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Номер',
+			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'от:',
+			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'Дата',
+			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись7',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:426px;top:56px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись8',
+			text: 'Период  с:',
+			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ПериодНачало',
+			style: 'position:absolute;left:426px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись9',
+			text: 'по:',
+			style: 'position:absolute;left:516px;top:33px;width:15px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ПериодКонец',
+			style: 'position:absolute;left:533px;top:33px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаВыбораПериода',
+			text: '...',
+			style: 'position:absolute;left:625px;top:33px;width:19px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:83px;width:638px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить за период',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -296,6 +389,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:351px;width:654px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -317,84 +411,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Номер',
-			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'от:',
-			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Дата',
-			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:56px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:94px;top:56px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись7',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:336px;top:56px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:426px;top:56px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись8',
-			text: 'Период  с:',
-			style: 'position:absolute;left:336px;top:33px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодНачало',
-			style: 'position:absolute;left:426px;top:33px;width:88px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись9',
-			text: 'по:',
-			style: 'position:absolute;left:516px;top:33px;width:15px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодКонец',
-			style: 'position:absolute;left:533px;top:33px;width:88px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаВыбораПериода',
-			text: '...',
-			style: 'position:absolute;left:625px;top:33px;width:19px;height:19px;',
 		},
 	]
 });

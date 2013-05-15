@@ -10,47 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройки...',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Открыть в новом окне',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Заголовок',
-				},
-				'-',
-				{
-					text:'Загрузить настройки отчета',
-				},
-				{
-					text:'Сохранить настройки отчета',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:678px;height:103px;',
 			height: 103,width: 678,
@@ -211,8 +170,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаНачалоПериода',
 			style: 'position:absolute;left:52px;top:0px;width:80px;height:19px;',
 		},
@@ -223,8 +184,10 @@
 			style: 'position:absolute;left:136px;top:0px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаКонецПериода',
 			style: 'position:absolute;left:153px;top:0px;width:80px;height:19px;',
 		},
@@ -253,8 +216,10 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаПериод',
 			style: 'position:absolute;left:178px;top:0px;width:80px;height:19px;',
 		},
@@ -274,6 +239,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипДанных',
 			style: 'position:absolute;left:79px;top:33px;width:140px;height:19px;',
 		},
@@ -286,6 +252,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяОбъекта',
 			style: 'position:absolute;left:276px;top:33px;width:188px;height:19px;',
 		},
@@ -298,8 +265,54 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяТаблицы',
 			style: 'position:absolute;left:521px;top:33px;width:165px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Открыть в новом окне',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Загрузить настройки отчета',
+				},
+				{
+					text:'Сохранить настройки отчета',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+			]
 		},
 	]
 });

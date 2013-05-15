@@ -83,13 +83,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:16px;top:132px;width:515px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Обновлять диаграмму после изменения заказов',
 			style: 'position:absolute;left:8px;top:21px;width:274px;height:15px;',
@@ -237,6 +230,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'График',
 			style: 'position:absolute;left:388px;top:90px;width:248px;height:21px;',
 		},
@@ -245,16 +239,6 @@
 			name: 'НадписьГрафик',
 			text: 'График:',
 			style: 'position:absolute;left:340px;top:90px;width:43px;height:21px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По регламентированному производственному календарю',
-			style: 'position:absolute;left:8px;top:68px;width:317px;height:21px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По графику',
-			style: 'position:absolute;left:8px;top:90px;width:317px;height:21px;',
 		},
 		{
 			xtype: 'label',
@@ -331,6 +315,33 @@
 			name: 'НадписьВнутреннийЗаказ',
 			text: 'Внутренний заказ',
 			style: 'position:absolute;left:643px;top:259px;width:165px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'По регламентированному производственному календарю',
+			style: 'position:absolute;left:8px;top:68px;width:317px;height:21px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По графику',
+			style: 'position:absolute;left:8px;top:90px;width:317px;height:21px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:16px;top:132px;width:515px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

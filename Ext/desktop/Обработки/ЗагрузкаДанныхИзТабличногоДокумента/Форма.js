@@ -10,16 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:548px;width:683px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:667px;height:466px;',
 			height: 466,width: 667,
@@ -29,87 +19,12 @@
 					title:'Табличный документ',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:653px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть файл...',
-				},
-				{
-					text:'Сохранить в файл...',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Контроль заполнения',
-				},
-				'-',
-				{
-					text:'Следующее примечание',
-				},
-				{
-					text:'Предыдущее примечание',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:398px;top:6px;width:214px;height:24px;',
-			items:
-			[
-				{
-					text:'Выбрать значение',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Настройка',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:30px;width:653px;height:24px;',
-			items:
-			[
-				{
-					text:'Восстановить настройки из файла...',
-				},
-				{
-					text:'Сохранить настройки в файл...',
-				},
-				'-',
-				{
-					text:'Восстановить настройки...',
-				},
-				{
-					text:'Сохранить настройки...',
-				},
-				'-',
-				{
-					text:'Перечитать ',
-				},
-				'-',
-				'-',
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				'-',
-				{
-					text:'События...',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:54px;width:653px;height:386px;',
@@ -280,8 +195,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:239px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПерваяСтрокаДанныхТабличногоДокумента',
 			style: 'position:absolute;left:249px;top:6px;width:41px;height:19px;',
 		},
@@ -329,12 +247,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СсылкаИсточника',
 			style: 'position:absolute;left:95px;top:0px;width:247px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТабличнаяЧастьИсточника',
 			style: 'position:absolute;left:439px;top:0px;width:193px;height:19px;',
 		},
@@ -373,6 +293,20 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:8px;width:247px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:548px;width:683px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+			]
 		},
 	]
 });

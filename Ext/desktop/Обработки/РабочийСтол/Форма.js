@@ -81,6 +81,11 @@
 			style: 'position:absolute;left:56px;top:298px;width:311px;height:48px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:317px;width:684px;height:6px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:516px;top:42px;width:163px;height:102px;',
 			height: 102,width: 163,
@@ -106,9 +111,13 @@
 		{
 			xtype: 'label',
 			name: 'ИмяПользователя',
-			text: 'Пользователь
-(имя не задано)',
+			text: 'Пользователь\r\n(имя не задано)',
 			style: 'position:absolute;left:40px;top:8px;width:115px;height:42px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:0px;width:163px;height:101px;',
 		},
 					]
 				},
@@ -129,8 +138,7 @@
 		{
 			xtype: 'label',
 			name: 'СайтБУХру',
-			text: 'Интернет-ресурс
-БУХ.1С',
+			text: 'Интернет-ресурс\r\nБУХ.1С',
 			style: 'position:absolute;left:413px;top:474px;width:182px;height:17px;text-align:left;',
 		},
 		{
@@ -389,6 +397,21 @@
 			style: 'position:absolute;left:306px;top:90px;width:150px;height:42px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Воинский учет сотрудников',
+			style: 'position:absolute;left:459px;top:263px;width:203px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:250px;width:386px;height:5px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:467px;top:303px;width:223px;height:7px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НовыйСотрудник',
 			text: 'Новый сотрудник',
@@ -617,6 +640,16 @@
 			name: 'Подразделения4',
 			text: 'Подразделения',
 			style: 'position:absolute;left:48px;top:223px;width:133px;height:17px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'По организациям',
+			style: 'position:absolute;left:248px;top:49px;width:138px;height:14px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'По компании',
+			style: 'position:absolute;left:48px;top:49px;width:138px;height:14px;',
 		},
 		{
 			xtype: 'label',
@@ -926,6 +959,11 @@
 			style: 'position:absolute;left:56px;top:512px;width:126px;height:17px;text-align:left;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:324px;width:684px;height:6px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСмТакже10',
 			text: 'См. также',
@@ -1007,6 +1045,16 @@
 			name: 'СводНачисленнойЗарплатыОрганизаций7',
 			text: 'Свод начисленной зарплаты',
 			style: 'position:absolute;left:265px;top:97px;width:148px;height:17px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'По организациям',
+			style: 'position:absolute;left:265px;top:43px;width:138px;height:14px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'По компании',
+			style: 'position:absolute;left:48px;top:43px;width:138px;height:14px;',
 		},
 					]
 				},
@@ -1544,6 +1592,11 @@
 			style: 'position:absolute;left:56px;top:298px;width:150px;height:48px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:292px;width:684px;height:6px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСмТакже15',
 			text: 'См. также',
@@ -1706,6 +1759,11 @@
 			style: 'position:absolute;left:56px;top:425px;width:162px;height:32px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:312px;width:684px;height:6px;',
+		},
+		{
 			xtype: 'label',
 			name: 'АрхивДанныхРегламентированнойОтчетности7',
 			text: 'Архив регламентированной отчетности',
@@ -1844,6 +1902,11 @@
 			style: 'position:absolute;left:56px;top:425px;width:162px;height:32px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:292px;width:682px;height:6px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НоменклатурныеГруппы',
 			text: 'Номенклатурные группы',
@@ -1926,6 +1989,11 @@
 			name: 'НадписьСмТакже18',
 			text: 'См. также',
 			style: 'position:absolute;left:56px;top:425px;width:167px;height:32px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:292px;width:688px;height:6px;',
 		},
 		{
 			xtype: 'label',
@@ -2150,6 +2218,11 @@
 			style: 'position:absolute;left:56px;top:425px;width:142px;height:32px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:292px;width:682px;height:6px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Вакансии1',
 			text: 'Вакансии',
@@ -2274,6 +2347,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтрокаПоискаИТС',
 			style: 'position:absolute;left:6px;top:28px;width:167px;height:19px;',
 		},
@@ -2357,5 +2431,8 @@
 			boxLabel: 'Показывать статьи на сайте ИТС',
 			style: 'position:absolute;left:802px;top:5px;width:116px;height:33px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

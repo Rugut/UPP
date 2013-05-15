@@ -109,6 +109,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:99px;top:6px;width:202px;height:19px;',
 		},
@@ -121,12 +122,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:391px;top:6px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:99px;top:30px;width:80px;height:19px;',
 		},
@@ -137,8 +141,10 @@
 			style: 'position:absolute;left:182px;top:30px;width:15px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:198px;top:30px;width:80px;height:19px;',
 		},
@@ -149,14 +155,9 @@
 			style: 'position:absolute;left:281px;top:30px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:94px;width:603px;height:24px;',
-			items:
-			[
-				{
-					text:'Состояния сотрудников',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Неявки',
+			style: 'position:absolute;left:8px;top:78px;width:603px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -176,24 +177,16 @@
 			]
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'За период с:',
-			style: 'position:absolute;left:8px;top:30px;width:90px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'По документу:',
-			style: 'position:absolute;left:8px;top:54px;width:90px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КадровыйДокумент',
 			style: 'position:absolute;left:304px;top:54px;width:307px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипДокумента',
 			style: 'position:absolute;left:99px;top:54px;width:202px;height:19px;',
 		},
@@ -206,8 +199,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодРегистрации',
 			style: 'position:absolute;left:110px;top:361px;width:133px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Формирование расчетных документов',
+			style: 'position:absolute;left:8px;top:339px;width:603px;height:16px;',
 		},
 		{
 			xtype: 'button',
@@ -226,6 +225,36 @@
 			name: 'Провести',
 			text: 'Провести',
 			style: 'position:absolute;left:466px;top:361px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'За период с:',
+			style: 'position:absolute;left:8px;top:30px;width:90px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'По документу:',
+			style: 'position:absolute;left:8px;top:54px;width:90px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:94px;width:603px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Состояния сотрудников',
+				},
+			]
 		},
 	]
 });

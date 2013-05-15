@@ -36,6 +36,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПутьКФайлу',
 			style: 'position:absolute;left:182px;top:57px;width:269px;height:19px;',
 		},
@@ -85,5 +86,8 @@
 			text: 'Формат файла:',
 			style: 'position:absolute;left:8px;top:33px;width:172px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

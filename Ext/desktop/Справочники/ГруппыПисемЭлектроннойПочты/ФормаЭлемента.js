@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:57px;width:54px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:93px;top:33px;width:319px;height:19px;',
 		},
@@ -50,9 +53,13 @@
 			boxLabel: 'Использовать предметы писем',
 			style: 'position:absolute;left:8px;top:81px;width:184px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:420px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -60,6 +67,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:104px;width:420px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

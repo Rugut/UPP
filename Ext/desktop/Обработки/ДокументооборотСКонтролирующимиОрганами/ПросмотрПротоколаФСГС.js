@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:273px;width:403px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Дата и время отправки:',
@@ -33,6 +20,11 @@
 			name: 'Надпись2',
 			text: 'Протокол положительный?',
 			style: 'position:absolute;left:8px;top:33px;width:150px;height:18px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Содержимое',
+			style: 'position:absolute;left:8px;top:60px;width:387px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -49,8 +41,26 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстПротокола',
 			style: 'position:absolute;left:8px;top:80px;width:387px;height:185px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:273px;width:403px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

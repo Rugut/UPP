@@ -112,6 +112,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокНазначенияPLU',
 			style: 'position:absolute;left:237px;top:48px;width:219px;height:20px;',
 		},
@@ -148,12 +149,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'EAN13ПрефиксШтучногоТовара',
 			style: 'position:absolute;left:213px;top:48px;width:52px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'EAN13ПрефиксВесовогоТовара',
 			style: 'position:absolute;left:213px;top:108px;width:52px;height:19px;',
 		},
@@ -187,8 +190,11 @@
 			style: 'position:absolute;left:12px;top:165px;width:199px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'EAN13ДлинаКодаВесовогоТовара',
 			style: 'position:absolute;left:213px;top:165px;width:52px;height:19px;',
 		},
@@ -208,5 +214,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

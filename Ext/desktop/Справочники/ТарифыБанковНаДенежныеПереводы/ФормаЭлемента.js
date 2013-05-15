@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:312px;top:33px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:33px;width:181px;height:19px;',
 		},
@@ -40,8 +42,11 @@
 			style: 'position:absolute;left:8px;top:91px;width:116px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МинимальныйТариф',
 			style: 'position:absolute;left:130px;top:91px;width:100px;height:19px;',
 		},
@@ -52,8 +57,11 @@
 			style: 'position:absolute;left:8px;top:116px;width:116px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимальныйТариф',
 			style: 'position:absolute;left:130px;top:116px;width:100px;height:19px;',
 		},
@@ -64,14 +72,21 @@
 			style: 'position:absolute;left:8px;top:62px;width:116px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Процент',
 			style: 'position:absolute;left:130px;top:62px;width:100px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -89,6 +104,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:143px;width:400px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

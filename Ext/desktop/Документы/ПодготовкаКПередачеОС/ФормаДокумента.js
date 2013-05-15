@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:178px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:200px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:346px;width:619px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:371px;width:619px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:56px;width:225px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Событие',
 			style: 'position:absolute;left:96px;top:80px;width:225px;height:19px;',
 		},
@@ -90,19 +97,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'бух. учете',
 			style: 'position:absolute;left:506px;top:33px;width:71px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:123px;width:707px;height:24px;',
-			items:
-			[
-				{
-					text:'Для списка ОС',
-				},
-				{
-					text:'По наименованию',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -268,8 +262,55 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтражать',
+			text: 'Отражать:',
+			style: 'position:absolute;left:346px;top:33px;width:79px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:580px;top:33px;width:69px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСобытиеРегл',
+			text: 'Событие (регл.):',
+			style: 'position:absolute;left:344px;top:80px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СобытиеРегл',
+			style: 'position:absolute;left:432px;top:80px;width:283px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:8px;top:107px;width:707px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:123px;width:707px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Для списка ОС',
+				},
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -304,6 +345,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:398px;width:723px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -325,29 +367,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтражать',
-			text: 'Отражать:',
-			style: 'position:absolute;left:346px;top:33px;width:79px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'нал. учете',
-			style: 'position:absolute;left:580px;top:33px;width:69px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСобытиеРегл',
-			text: 'Событие (регл.):',
-			style: 'position:absolute;left:344px;top:80px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СобытиеРегл',
-			style: 'position:absolute;left:432px;top:80px;width:283px;height:19px;',
 		},
 	]
 });

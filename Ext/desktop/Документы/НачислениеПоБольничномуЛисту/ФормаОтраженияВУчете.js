@@ -10,33 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:319px;width:644px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'документом Отражение в учете, в конце месяца',
-			style: 'position:absolute;left:107px;top:8px;width:296px;height:18px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'по данным текущего документа',
-			style: 'position:absolute;left:107px;top:29px;width:296px;height:18px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись11',
 			text: 'Отражать в учете:',
@@ -382,8 +355,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПодпадаетПодЕНВД',
 			style: 'position:absolute;left:153px;top:37px;width:74px;height:19px;',
 		},
@@ -400,10 +376,9 @@
 			style: 'position:absolute;left:230px;top:37px;width:19px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'определяется по состоянию на дату события',
-			style: 'position:absolute;left:71px;top:19px;width:258px;height:18px;',
-		},
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'определяется по базовым начислениям',
@@ -411,10 +386,59 @@
 		},
 		{
 			xtype: 'radio',
+			boxLabel: 'определяется по состоянию на дату события',
+			style: 'position:absolute;left:71px;top:19px;width:258px;height:18px;',
+		},
+		{
+			xtype: 'radio',
 			boxLabel: 'составляет',
 			style: 'position:absolute;left:71px;top:38px;width:80px;height:18px;',
 		},
+			]
+		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Проводки и данные для ЕСН',
+			style: 'position:absolute;left:8px;top:116px;width:628px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'документом Отражение в учете, в конце месяца',
+			style: 'position:absolute;left:107px;top:8px;width:296px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по данным текущего документа',
+			style: 'position:absolute;left:107px;top:29px;width:296px;height:18px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:319px;width:644px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

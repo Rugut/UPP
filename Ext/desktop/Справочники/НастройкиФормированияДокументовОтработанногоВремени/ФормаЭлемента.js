@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:101px;top:58px;width:307px;height:19px;',
 		},
@@ -30,36 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:101px;top:33px;width:307px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:416px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:310px;width:416px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -68,8 +42,10 @@
 			style: 'position:absolute;left:8px;top:82px;width:190px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВвода2',
 			style: 'position:absolute;left:203px;top:82px;width:80px;height:19px;',
 		},
@@ -92,18 +68,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода4',
 			style: 'position:absolute;left:99px;top:6px;width:293px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'По дням периода',
-			style: 'position:absolute;left:6px;top:103px;width:168px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Сводно, в целом за период',
-			style: 'position:absolute;left:6px;top:127px;width:168px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Способ ввода времени',
+			style: 'position:absolute;left:6px;top:79px;width:386px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -114,6 +86,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодДетализации',
 			style: 'position:absolute;left:99px;top:54px;width:293px;height:19px;',
 		},
@@ -126,8 +99,25 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода5',
 			style: 'position:absolute;left:99px;top:30px;width:293px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'По дням периода',
+			style: 'position:absolute;left:6px;top:103px;width:168px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Сводно, в целом за период',
+			style: 'position:absolute;left:6px;top:127px;width:168px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -147,8 +137,11 @@
 			style: 'position:absolute;left:22px;top:30px;width:296px;height:43px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Задержка',
 			style: 'position:absolute;left:278px;top:78px;width:40px;height:19px;',
 		},
@@ -176,6 +169,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода6',
 			style: 'position:absolute;left:101px;top:283px;width:307px;height:19px;',
 		},
@@ -184,6 +178,39 @@
 			name: 'НадписьКомментарий',
 			text: 'Комментарий',
 			style: 'position:absolute;left:8px;top:283px;width:88px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:416px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:310px;width:416px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

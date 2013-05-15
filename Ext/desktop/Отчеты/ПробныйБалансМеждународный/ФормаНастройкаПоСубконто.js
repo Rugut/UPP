@@ -49,5 +49,8 @@
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:8px;width:220px;height:220px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

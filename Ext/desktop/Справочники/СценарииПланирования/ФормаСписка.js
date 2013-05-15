@@ -119,9 +119,13 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:775px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]

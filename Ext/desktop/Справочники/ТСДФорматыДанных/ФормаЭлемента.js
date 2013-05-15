@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:330px;top:33px;width:60px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:90px;top:33px;width:200px;height:19px;',
 		},
@@ -88,13 +90,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
 			items:
 			[
@@ -112,6 +107,17 @@
 				{
 					text:'Закрыть',
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

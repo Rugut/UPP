@@ -10,38 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:338px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:373px;width:338px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПериодС',
 			text: 'Период с:',
 			style: 'position:absolute;left:8px;top:53px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:70px;top:53px;width:80px;height:19px;',
 		},
@@ -52,8 +30,10 @@
 			style: 'position:absolute;left:152px;top:53px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:171px;top:53px;width:80px;height:19px;',
 		},
@@ -86,6 +66,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Организации',
+			style: 'position:absolute;left:8px;top:137px;width:322px;height:16px;',
+		},
+		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:178px;width:322px;height:187px;',
 		},
@@ -103,6 +88,35 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отразить суммовые и курсовые разницы в регистрах НДС',
 			style: 'position:absolute;left:8px;top:117px;width:322px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:338px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:373px;width:338px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

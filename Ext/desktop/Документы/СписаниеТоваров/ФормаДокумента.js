@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:103px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:203px;top:32px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:357px;width:548px;height:19px;',
 		},
@@ -71,6 +75,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:96px;top:333px;width:220px;height:19px;',
 		},
@@ -83,6 +88,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:424px;top:333px;width:220px;height:19px;',
 		},
@@ -95,20 +101,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:103px;top:56px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Основание',
 			style: 'position:absolute;left:424px;top:80px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОснование',
-			text: 'Основание:
-',
+			text: 'Основание:\r\n',
 			style: 'position:absolute;left:336px;top:80px;width:88px;height:19px;',
 		},
 		{
@@ -120,6 +127,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладКомпании',
 			style: 'position:absolute;left:424px;top:56px;width:220px;height:19px;',
 		},
@@ -136,8 +144,11 @@
 			style: 'position:absolute;left:492px;top:309px;width:72px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:309px;width:80px;height:17px;',
 		},
@@ -150,6 +161,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИнвентаризацияТоваровНаСкладе',
 			style: 'position:absolute;left:103px;top:80px;width:220px;height:19px;',
 		},
@@ -410,26 +422,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				{
-					text:'Поиск по штрихкоду',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'Изменить',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -536,17 +528,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -560,8 +541,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НДСвСтоимостиТоваров',
 			style: 'position:absolute;left:103px;top:104px;width:220px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -100,6 +100,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПрефиксУзлаРаспределеннойИнформационнойБазы',
 			style: 'position:absolute;left:268px;top:48px;width:44px;height:19px;',
 		},
@@ -110,8 +111,11 @@
 			style: 'position:absolute;left:12px;top:88px;width:248px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПрефиксВнутреннегоШтрихкода',
 			style: 'position:absolute;left:268px;top:88px;width:44px;height:19px;',
 		},
@@ -147,6 +151,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'GLNПредприятия',
 			style: 'position:absolute;left:291px;top:48px;width:165px;height:19px;',
 		},
@@ -159,6 +164,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПрефиксШтрихКодаРегистрацииНоменклатуры',
 			style: 'position:absolute;left:291px;top:96px;width:165px;height:19px;',
 		},
@@ -171,6 +177,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольРегистрацииВЮнискан',
 			style: 'position:absolute;left:291px;top:72px;width:165px;height:19px;',
 		},
@@ -184,5 +191,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

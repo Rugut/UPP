@@ -33,6 +33,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаТекДатаСтандартная',
 			style: 'position:absolute;left:89px;top:32px;width:172px;height:19px;',
 		},
@@ -91,8 +92,11 @@
 			style: 'position:absolute;left:8px;top:131px;width:129px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СмещениеПериодаПоУмолчанию',
 			style: 'position:absolute;left:210px;top:155px;width:54px;height:19px;',
 		},
@@ -109,18 +113,9 @@
 			style: 'position:absolute;left:8px;top:224px;width:202px;height:18px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Отображать индикаторы',
-			style: 'position:absolute;left:8px;top:202px;width:145px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Выделять цветом',
-			style: 'position:absolute;left:160px;top:202px;width:114px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодичностьПоУмолчанию',
 			style: 'position:absolute;left:150px;top:131px;width:114px;height:19px;',
 		},
@@ -163,13 +158,31 @@
 			style: 'position:absolute;left:4px;top:4px;width:78px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаТекДатаПроизвольная',
 			style: 'position:absolute;left:84px;top:4px;width:90px;height:19px;',
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Отображать индикаторы',
+			style: 'position:absolute;left:8px;top:202px;width:145px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выделять цветом',
+			style: 'position:absolute;left:160px;top:202px;width:114px;height:19px;',
+		},
 			]
 		},
 					]
@@ -1024,6 +1037,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:86px;top:0px;width:2px;height:56px;',
+		},
 					]
 				},
 			]
@@ -1075,5 +1093,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

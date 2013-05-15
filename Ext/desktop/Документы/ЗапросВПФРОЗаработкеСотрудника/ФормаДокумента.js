@@ -10,34 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:510px;width:682px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -46,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:454px;top:33px;width:80px;height:19px;',
 		},
@@ -56,8 +29,10 @@
 			style: 'position:absolute;left:534px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:554px;top:33px;width:120px;height:19px;',
 		},
@@ -70,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:93px;top:33px;width:220px;height:19px;',
 		},
@@ -82,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:454px;top:58px;width:220px;height:19px;',
 		},
@@ -94,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:93px;top:58px;width:220px;height:19px;',
 		},
@@ -106,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:483px;width:578px;height:19px;',
 		},
@@ -118,6 +97,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:93px;top:161px;width:220px;height:19px;',
 		},
@@ -130,6 +110,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:454px;top:161px;width:220px;height:19px;',
 		},
@@ -142,6 +123,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
 			style: 'position:absolute;left:254px;top:136px;width:420px;height:19px;',
 		},
@@ -154,6 +136,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Адрес',
 			style: 'position:absolute;left:93px;top:344px;width:581px;height:19px;',
 		},
@@ -178,6 +161,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресОрганизации',
 			style: 'position:absolute;left:93px;top:186px;width:581px;height:19px;',
 		},
@@ -196,6 +180,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:93px;top:293px;width:160px;height:19px;',
 		},
@@ -208,6 +193,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:293px;top:293px;width:160px;height:19px;',
 		},
@@ -220,6 +206,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:514px;top:293px;width:160px;height:19px;',
 		},
@@ -232,6 +219,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР',
 			style: 'position:absolute;left:357px;top:318px;width:96px;height:19px;',
 		},
@@ -242,8 +230,10 @@
 			style: 'position:absolute;left:8px;top:318px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРождения',
 			style: 'position:absolute;left:93px;top:318px;width:96px;height:19px;',
 		},
@@ -256,6 +246,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДокумента',
 			style: 'position:absolute;left:93px;top:398px;width:256px;height:19px;',
 		},
@@ -268,6 +259,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СерияДокумента',
 			style: 'position:absolute;left:400px;top:398px;width:96px;height:19px;',
 		},
@@ -280,6 +272,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДокумента',
 			style: 'position:absolute;left:578px;top:398px;width:96px;height:19px;',
 		},
@@ -290,8 +283,10 @@
 			style: 'position:absolute;left:503px;top:423px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВыдачиДокумента',
 			style: 'position:absolute;left:578px;top:423px;width:96px;height:19px;',
 		},
@@ -304,6 +299,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КемВыданДокумент',
 			style: 'position:absolute;left:93px;top:423px;width:403px;height:19px;',
 		},
@@ -328,6 +324,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТелефонОрганизации',
 			style: 'position:absolute;left:94px;top:211px;width:220px;height:19px;',
 		},
@@ -340,6 +337,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Страхователь',
 			style: 'position:absolute;left:93px;top:83px;width:220px;height:19px;',
 		},
@@ -350,8 +348,11 @@
 			style: 'position:absolute;left:368px;top:83px;width:111px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГодС',
 			style: 'position:absolute;left:485px;top:83px;width:80px;height:19px;',
 		},
@@ -362,10 +363,46 @@
 			style: 'position:absolute;left:572px;top:83px;width:21px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГодПо',
 			style: 'position:absolute;left:594px;top:83px;width:80px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:510px;width:682px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

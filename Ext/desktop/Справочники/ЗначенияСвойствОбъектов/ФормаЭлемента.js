@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:81px;width:40px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
@@ -42,12 +44,30 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Владелец',
 			style: 'position:absolute;left:94px;top:33px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьРодитель',
+			text: 'Группа:',
+			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Родитель',
+			style: 'position:absolute;left:94px;top:57px;width:304px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -55,6 +75,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:108px;width:406px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -72,18 +93,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьРодитель',
-			text: 'Группа:',
-			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Родитель',
-			style: 'position:absolute;left:94px;top:57px;width:304px;height:19px;',
 		},
 	]
 });

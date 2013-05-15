@@ -10,41 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:981px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Выбрать все',
-				},
-				{
-					text:'Снять все',
-				},
-				'-',
-				{
-					text:'Обновить список обработок с сайта',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:528px;width:981px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:965px;height:248px;',
 			height: 248,width: 965,
@@ -230,6 +195,56 @@
 			xtype: 'checkbox',
 			boxLabel: 'Проверять наличие обновлений обработок обслуживания при запуске',
 			style: 'position:absolute;left:14px;top:329px;width:381px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:8px;top:287px;width:965px;height:63px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Легенда',
+			style: 'position:absolute;left:8px;top:355px;width:965px;height:165px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:981px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Выбрать все',
+				},
+				{
+					text:'Снять все',
+				},
+				'-',
+				{
+					text:'Обновить список обработок с сайта',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:528px;width:981px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:348px;width:692px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:676px;height:332px;',
 			height: 332,width: 676,
@@ -40,6 +19,16 @@
 					title:'Вычеты',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Право на личный стандартный вычет',
+			style: 'position:absolute;left:6px;top:6px;width:285px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Применение вычетов',
+			style: 'position:absolute;left:6px;top:182px;width:662px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:222px;width:662px;height:82px;',
@@ -103,25 +92,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:285px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -214,6 +184,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Право на стандартные вычеты на детей',
+			style: 'position:absolute;left:297px;top:6px;width:371px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -315,25 +290,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:297px;top:22px;width:371px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -359,6 +315,60 @@
 			style: 'position:absolute;left:332px;top:51px;width:114px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
+			text: '',
+			style: 'position:absolute;left:226px;top:51px;width:100px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
+			style: 'position:absolute;left:104px;top:51px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Статус налогоплательщика по НДФЛ задается с точностью до месяца и определяет порядок представления налоговых вычетов и ставку налога.',
+			style: 'position:absolute;left:6px;top:6px;width:662px;height:31px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:37px;width:662px;height:5px;',
+		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:29px;top:172px;width:553px;height:28px;',
+			height: 28,width: 553,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
+			style: 'position:absolute;left:0px;top:0px;width:374px;height:19px;',
+		},
+			]
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Резидент',
 			style: 'position:absolute;left:29px;top:76px;width:86px;height:19px;',
@@ -374,46 +384,10 @@
 			style: 'position:absolute;left:29px;top:124px;width:302px;height:19px;',
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
-			text: '',
-			style: 'position:absolute;left:226px;top:51px;width:100px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
-			style: 'position:absolute;left:104px;top:51px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Статус налогоплательщика по НДФЛ задается с точностью до месяца и определяет порядок представления налоговых вычетов и ставку налога.',
-			style: 'position:absolute;left:6px;top:6px;width:662px;height:31px;',
-		},
-		{
 			xtype: 'radio',
 			boxLabel: 'Участник программы по переселению соотечественников',
 			style: 'position:absolute;left:29px;top:148px;width:319px;height:19px;',
 		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:29px;top:172px;width:553px;height:28px;',
-			height: 28,width: 553,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Страница1',
-					items:
-					[
-		{
-			xtype: 'radio',
-			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
-			style: 'position:absolute;left:0px;top:0px;width:374px;height:19px;',
-		},
-					]
-				},
 			]
 		},
 					]
@@ -460,8 +434,11 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:404px;top:6px;width:60px;height:19px;',
 		},
@@ -480,10 +457,36 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:140px;top:6px;width:220px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:348px;width:692px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

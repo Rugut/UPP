@@ -25,6 +25,11 @@
 			boxLabel: 'Продолжить действие, несмотря на предупреждение (не рекомендуется).',
 			style: 'position:absolute;left:0px;top:9px;width:396px;height:15px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:0px;top:32px;width:529px;height:3px;',
+		},
 					]
 				},
 			]
@@ -92,5 +97,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

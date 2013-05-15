@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:111px;height:19px;',
 		},
@@ -28,14 +29,122 @@
 			style: 'position:absolute;left:209px;top:33px;width:37px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:249px;top:33px;width:142px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтраженияВУчете',
+			text: 'Отразить в:',
+			style: 'position:absolute;left:8px;top:103px;width:72px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:80px;width:70px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:96px;top:80px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'За период:',
+			style: 'position:absolute;left:8px;top:57px;width:73px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: true,
+			name: 'ПредставлениеПериодаРегистрации',
+			style: 'position:absolute;left:96px;top:57px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКомментарий',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:151px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:96px;top:151px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:126px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:96px;top:126px;width:295px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:86px;top:103px;width:70px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'бух. учете',
+			style: 'position:absolute;left:161px;top:103px;width:70px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:236px;top:103px;width:70px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'меж. учете',
+			style: 'position:absolute;left:311px;top:103px;width:80px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:399px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -63,6 +172,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:178px;width:399px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -84,80 +194,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтраженияВУчете',
-			text: 'Отразить в:',
-			style: 'position:absolute;left:8px;top:103px;width:72px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:80px;width:70px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:96px;top:80px;width:295px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'За период:',
-			style: 'position:absolute;left:8px;top:57px;width:73px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПредставлениеПериодаРегистрации',
-			style: 'position:absolute;left:96px;top:57px;width:295px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКомментарий',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:151px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:96px;top:151px;width:295px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтветственный',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:126px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:96px;top:126px;width:295px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'упр. учете',
-			style: 'position:absolute;left:86px;top:103px;width:70px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'бух. учете',
-			style: 'position:absolute;left:161px;top:103px;width:70px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'нал. учете',
-			style: 'position:absolute;left:236px;top:103px;width:70px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'меж. учете',
-			style: 'position:absolute;left:311px;top:103px;width:80px;height:19px;',
 		},
 	]
 });

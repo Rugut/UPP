@@ -107,8 +107,10 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКурса',
 			style: 'position:absolute;left:74px;top:33px;width:80px;height:19px;',
 		},
@@ -118,5 +120,8 @@
 			text: 'Дата курса:',
 			style: 'position:absolute;left:8px;top:33px;width:64px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

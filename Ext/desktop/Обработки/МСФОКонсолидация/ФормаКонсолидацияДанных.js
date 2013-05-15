@@ -10,34 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:367px;width:656px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<< Назад',
-				},
-				'-',
-				{
-					text:'Далее >>',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:640px;height:326px;',
 			height: 326,width: 640,
@@ -55,8 +27,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:155px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Период',
 			style: 'position:absolute;left:164px;top:0px;width:96px;height:19px;',
 		},
@@ -69,6 +43,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НазваниеКонсолидируемойГруппы',
 			style: 'position:absolute;left:164px;top:24px;width:476px;height:19px;',
 		},
@@ -254,15 +229,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:67px;width:640px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Список консолидируемых организаций',
+			style: 'position:absolute;left:0px;top:51px;width:640px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -285,8 +254,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Операция',
 			style: 'position:absolute;left:70px;top:22px;width:570px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Элиминирование статей отчетности',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -404,6 +379,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Сформированная консолидированная отчетность',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:640px;height:305px;',
 			height: 305,width: 640,
@@ -441,6 +421,39 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:367px;width:656px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<< Назад',
+				},
+				'-',
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

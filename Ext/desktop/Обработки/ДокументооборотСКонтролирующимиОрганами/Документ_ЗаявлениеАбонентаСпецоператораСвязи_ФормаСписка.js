@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:988px;height:25px;',
-			items:
-			[
-				{
-					text:'Мастер заполнения',
-				},
-				{
-					text:'Ручное заполнение',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:972px;height:399px;',
 			height: 399,width: 972,
@@ -112,6 +99,23 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:988px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Мастер заполнения',
+				},
+				{
+					text:'Ручное заполнение',
+				},
+			]
 		},
 	]
 });

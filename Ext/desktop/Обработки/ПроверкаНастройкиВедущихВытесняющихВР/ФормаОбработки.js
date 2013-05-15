@@ -47,6 +47,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:33px;width:610px;height:7px;',
+		},
 					]
 				},
 				{
@@ -97,6 +102,11 @@
 			style: 'position:absolute;left:6px;top:6px;width:610px;height:27px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:33px;width:610px;height:7px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:191px;width:610px;height:130px;',
 			height: 130,width: 610,
@@ -108,6 +118,16 @@
 					items:
 					[
 		{
+			xtype: 'label',
+			name: 'НадписьВРЦиклическаяССылка',
+			text: 'Вид расчета: "Районный коэффициент"',
+			style: 'position:absolute;left:6px;top:6px;width:597px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Переключатель1',
 			style: 'position:absolute;left:11px;top:21px;width:563px;height:37px;',
@@ -117,11 +137,7 @@
 			boxLabel: 'Переключатель2',
 			style: 'position:absolute;left:11px;top:58px;width:563px;height:65px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьВРЦиклическаяССылка',
-			text: 'Вид расчета: "Районный коэффициент"',
-			style: 'position:absolute;left:6px;top:6px;width:597px;height:15px;',
+			]
 		},
 					]
 				},
@@ -130,11 +146,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись5',
-			text: 'Порядок исправления ошибок:
-- в левом списке выберите вид расчета; 
-- выберите действие для исправления ошибки;
-- нажмите кнопку «Исправить».
-Выполните эти действия для всего списка.',
+			text: 'Порядок исправления ошибок:\r\n- в левом списке выберите вид расчета; \r\n- выберите действие для исправления ошибки;\r\n- нажмите кнопку «Исправить».\r\nВыполните эти действия для всего списка.',
 			style: 'position:absolute;left:337px;top:40px;width:279px;height:80px;',
 		},
 					]
@@ -148,6 +160,11 @@
 			name: 'ЗаголовокРедактированиеСписка',
 			text: 'Исправление ошибок в списке вытесняющих расчетов',
 			style: 'position:absolute;left:6px;top:6px;width:568px;height:27px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:33px;width:610px;height:7px;',
 		},
 		{
 			xtype: 'grid',
@@ -180,12 +197,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись1',
-			text: 'Порядок исправления ошибок:
-- в левом списке выберите вид расчета; 
-- выберите действие для исправления ошибки «удалить из списка…» или «добавить в список…»;
-- нажмите кнопку «Исправить».
-Выполните эти действия для всего списка «Виды расчет с ошибками настройки».
-',
+			text: 'Порядок исправления ошибок:\r\n- в левом списке выберите вид расчета; \r\n- выберите действие для исправления ошибки «удалить из списка…» или «добавить в список…»;\r\n- нажмите кнопку «Исправить».\r\nВыполните эти действия для всего списка «Виды расчет с ошибками настройки».\r\n',
 			style: 'position:absolute;left:329px;top:43px;width:287px;height:130px;',
 		},
 		{
@@ -262,6 +274,10 @@
 			},
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'удалить из списка вытесняющих',
 			style: 'position:absolute;left:10px;top:24px;width:202px;height:15px;',
@@ -270,6 +286,8 @@
 			xtype: 'radio',
 			boxLabel: 'добавить в список вытесняющих',
 			style: 'position:absolute;left:317px;top:24px;width:200px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -308,6 +326,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:6px;top:33px;width:610px;height:7px;',
+		},
 					]
 				},
 			]
@@ -324,5 +347,8 @@
 			text: 'Отмена',
 			style: 'position:absolute;left:495px;top:336px;width:130px;height:32px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

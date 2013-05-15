@@ -38,8 +38,18 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьПодразделения',
+			text: 'Подразделения',
+			style: 'position:absolute;left:8px;top:33px;width:123px;height:19px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:391px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -103,12 +113,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПодразделения',
-			text: 'Подразделения',
-			style: 'position:absolute;left:8px;top:33px;width:123px;height:19px;text-align:left;',
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:180px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:468px;width:676px;height:19px;',
 		},
@@ -54,15 +58,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:455px;top:33px;width:317px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'toolbar',
@@ -551,19 +549,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:22px;width:748px;height:24px;',
-			items:
-			[
-				{
-					text:'Сформировать счета-фактуры',
-				},
-				{
-					text:'Сформировать счета-фактуры и заполнить расчеты с контрагентами',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:216px;width:748px;height:139px;',
 			height: 139,width: 748,
@@ -949,6 +934,16 @@
 			[
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Данные по остаткам',
+			style: 'position:absolute;left:6px;top:6px;width:748px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дополнительные сведения',
+			style: 'position:absolute;left:6px;top:176px;width:748px;height:16px;',
+		},
 					]
 				},
 				{
@@ -1082,28 +1077,12 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:6px;width:746px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
 					]
 				},
 				{
 					title:'Авансы',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:6px;width:746px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:746px;height:325px;',
@@ -1240,8 +1219,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:444px;width:676px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

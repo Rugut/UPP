@@ -11,19 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
 			items:
 			[
@@ -85,8 +72,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Документ',
 			style: 'position:absolute;left:211px;top:33px;width:176px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Группировки',
+			style: 'position:absolute;left:8px;top:57px;width:379px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Поля',
+			style: 'position:absolute;left:8px;top:179px;width:378px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -115,6 +113,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сортировка',
+			style: 'position:absolute;left:393px;top:57px;width:379px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -165,18 +168,9 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:393px;top:72px;width:379px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:379px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Печать',
+			style: 'position:absolute;left:393px;top:179px;width:379px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -270,6 +264,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СписокСкладов',
 			style: 'position:absolute;left:530px;top:33px;width:242px;height:19px;',
 		},
@@ -284,6 +279,11 @@
 			style: 'position:absolute;left:397px;top:385px;width:294px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:393px;top:322px;width:379px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать свойства',
 			style: 'position:absolute;left:397px;top:362px;width:140px;height:19px;',
@@ -295,10 +295,18 @@
 			style: 'position:absolute;left:397px;top:338px;width:186px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоУровнейМестХранения',
 			style: 'position:absolute;left:587px;top:338px;width:104px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:8px;top:322px;width:379px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -343,6 +351,39 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:393px;top:72px;width:379px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:379px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

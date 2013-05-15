@@ -10,8 +10,31 @@
 	items:
 	[
 		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:700px;height:418px;',
+			height: 418,width: 700,
+			columns:
+			[
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетБухОтчетность/ВыбратьПоСсылке/100'},
+				fields:
+				[
+				]
+			},
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -40,6 +63,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -53,25 +77,6 @@
 					text:'',
 				},
 			]
-		},
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:33px;width:700px;height:418px;',
-			height: 418,width: 700,
-			columns:
-			[
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетБухОтчетность/ВыбратьПоСсылке/100'},
-				fields:
-				[
-				]
-			},
 		},
 	]
 });

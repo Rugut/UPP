@@ -10,38 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:363px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:439px;width:363px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -56,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:107px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:207px;top:33px;width:120px;height:19px;',
 		},
@@ -74,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:107px;top:109px;width:248px;height:19px;',
 		},
@@ -86,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:412px;width:265px;height:19px;',
 		},
@@ -98,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:107px;top:58px;width:220px;height:19px;',
 		},
@@ -148,16 +122,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:333px;height:24px;',
-			items:
-			[
-				{
-					text:'Список действий',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -173,8 +137,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:89px;top:6px;width:250px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Распределение продукции и затрат по переделам',
+			style: 'position:absolute;left:6px;top:31px;width:333px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -225,6 +195,10 @@
 			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'упр. учете',
 			style: 'position:absolute;left:82px;top:0px;width:69px;height:19px;',
@@ -244,6 +218,8 @@
 			boxLabel: 'МСФО',
 			style: 'position:absolute;left:289px;top:0px;width:57px;height:19px;',
 		},
+			]
+		},
 					]
 				},
 			]
@@ -257,8 +233,46 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НастройкаЗакрытияМесяца',
 			style: 'position:absolute;left:107px;top:137px;width:248px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:363px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:439px;width:363px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

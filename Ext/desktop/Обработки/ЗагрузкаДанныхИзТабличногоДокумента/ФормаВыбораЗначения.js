@@ -12,6 +12,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Значение',
 			style: 'position:absolute;left:8px;top:8px;width:300px;height:19px;',
 		},
@@ -27,5 +28,8 @@
 			text: 'Отмена',
 			style: 'position:absolute;left:228px;top:34px;width:80px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

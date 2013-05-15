@@ -20,14 +20,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:8px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
@@ -109,6 +113,11 @@
 			style: 'position:absolute;left:290px;top:164px;width:176px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Показатели',
+			style: 'position:absolute;left:6px;top:143px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
 			height: 24,width: 460,
@@ -132,6 +141,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:59px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -215,20 +229,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:258px;top:0px;width:208px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:258px;top:24px;width:208px;height:265px;',
 			height: 265,width: 208,
@@ -295,28 +295,6 @@
 			name: 'Надпись1',
 			text: 'Наименование:',
 			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -444,13 +422,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -489,13 +460,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:26px;width:460px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -540,13 +504,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -572,5 +529,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

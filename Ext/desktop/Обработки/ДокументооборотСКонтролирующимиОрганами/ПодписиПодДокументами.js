@@ -94,12 +94,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументПредставление',
 			style: 'position:absolute;left:149px;top:97px;width:675px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТранспортноеСообщениеПредставление',
 			style: 'position:absolute;left:149px;top:70px;width:675px;height:19px;',
 		},
@@ -116,8 +118,48 @@
 			style: 'position:absolute;left:8px;top:97px;width:136px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:126px;width:816px;height:3px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Обратите внимание, что изменения, производимые в форме, вступают в силу незамедлительно. Отмена изменений невозможна.',
+			style: 'position:absolute;left:8px;top:8px;width:816px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:32px;width:816px;height:3px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ЦиклОбмена',
+			style: 'position:absolute;left:149px;top:43px;width:675px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Цикл обмена:',
+			style: 'position:absolute;left:8px;top:43px;width:136px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ТранспортноеСообщение',
+			style: 'position:absolute;left:149px;top:70px;width:675px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:133px;width:816px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -135,30 +177,6 @@
 					text:'Показать сертификат',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Обратите внимание, что изменения, производимые в форме, вступают в силу незамедлительно. Отмена изменений невозможна.',
-			style: 'position:absolute;left:8px;top:8px;width:816px;height:15px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ЦиклОбмена',
-			style: 'position:absolute;left:149px;top:43px;width:675px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Цикл обмена:',
-			style: 'position:absolute;left:8px;top:43px;width:136px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ТранспортноеСообщение',
-			style: 'position:absolute;left:149px;top:70px;width:675px;height:19px;',
 		},
 	]
 });

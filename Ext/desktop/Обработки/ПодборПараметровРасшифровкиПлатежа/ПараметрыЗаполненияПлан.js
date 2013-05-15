@@ -10,22 +10,33 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:212px;width:314px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Заполнение',
+			style: 'position:absolute;left:8px;top:25px;width:298px;height:16px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Порядок погашения',
+			style: 'position:absolute;left:8px;top:95px;width:298px;height:16px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подбирать сумму:',
+			style: 'position:absolute;left:8px;top:185px;width:116px;height:19px;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'СуммаДляПодбора',
+			style: 'position:absolute;left:126px;top:185px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'По фактической задолженности',
@@ -36,6 +47,12 @@
 			boxLabel: 'По оперативной задолженности (с учетом заказов)',
 			style: 'position:absolute;left:14px;top:67px;width:280px;height:15px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Сначала ранние задолженности',
@@ -51,20 +68,33 @@
 			boxLabel: 'По табличной части документа',
 			style: 'position:absolute;left:14px;top:156px;width:180px;height:15px;',
 		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Подбирать сумму:',
-			style: 'position:absolute;left:8px;top:185px;width:116px;height:19px;',
+			]
 		},
+	],
+	dockedItems:
+	[
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СуммаДляПодбора',
-			style: 'position:absolute;left:126px;top:185px;width:120px;height:19px;',
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:212px;width:314px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:314px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

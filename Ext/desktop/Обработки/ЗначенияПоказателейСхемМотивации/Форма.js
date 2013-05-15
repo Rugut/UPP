@@ -10,53 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Справочник показателей',
-				},
-				'-',
-				{
-					text:'Плановые начисления',
-				},
-				{
-					text:'Плановые удержания',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Справочник показателей',
-				},
-				'-',
-				{
-					text:'Плановые начисления',
-				},
-				'-',
-				{
-					text:'Плановые удержания',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:29px;width:676px;height:324px;',
 			height: 324,width: 676,
@@ -160,6 +113,32 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Что вводим',
+			style: 'position:absolute;left:6px;top:6px;width:242px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Режим ввода',
+			style: 'position:absolute;left:320px;top:6px;width:126px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Период',
+			style: 'position:absolute;left:504px;top:6px;width:133px;height:16px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПериодДействия',
+			style: 'position:absolute;left:504px;top:27px;width:133px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'Данные по сотрудникам',
 			style: 'position:absolute;left:6px;top:27px;width:242px;height:19px;',
@@ -169,6 +148,12 @@
 			boxLabel: 'Данные по организациям и подразделениям',
 			style: 'position:absolute;left:6px;top:51px;width:259px;height:16px;',
 		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'По показателям',
@@ -179,11 +164,7 @@
 			boxLabel: '',
 			style: 'position:absolute;left:320px;top:51px;width:126px;height:16px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПериодДействия',
-			style: 'position:absolute;left:504px;top:27px;width:133px;height:19px;',
+			]
 		},
 					]
 				},
@@ -275,6 +256,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОрганизацияСотрудников',
 			style: 'position:absolute;left:75px;top:0px;width:159px;height:19px;',
 		},
@@ -472,20 +454,32 @@
 					items:
 					[
 		{
-			xtype: 'radio',
-			boxLabel: 'Общие данные',
-			style: 'position:absolute;left:6px;top:51px;width:148px;height:16px;',
+			xtype: 'fieldset',
+			title: 'Что вводим',
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:16px;',
 		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ОрганизацияПериодические',
+			style: 'position:absolute;left:164px;top:26px;width:226px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Данные по организации:',
 			style: 'position:absolute;left:6px;top:27px;width:155px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ОрганизацияПериодические',
-			style: 'position:absolute;left:164px;top:26px;width:226px;height:19px;',
+			xtype: 'radio',
+			boxLabel: 'Общие данные',
+			style: 'position:absolute;left:6px;top:51px;width:148px;height:16px;',
+		},
+			]
 		},
 					]
 				},
@@ -556,26 +550,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:240px;top:1px;width:422px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -715,31 +689,62 @@
 				]
 			},
 		},
+					]
+				},
+			]
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
+			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
-					text:'&Добавить',
-				},
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
 				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
+					text:'Справочник показателей',
 				},
 				'-',
 				{
-					text:'Вывести список...',
+					text:'Плановые начисления',
 				},
-			]
-		},
+				{
+					text:'Плановые удержания',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
 					]
 				},
-			]
-		},
-					]
+				'-',
+				{
+					text:'Справочник показателей',
+				},
+				'-',
+				{
+					text:'Плановые начисления',
+				},
+				'-',
+				{
+					text:'Плановые удержания',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

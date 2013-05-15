@@ -11,20 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			items:
-			[
-				{
-					text:'Очистить все отчеты',
-				},
-				'-',
-				{
-					text:'Очистить бухгалтерский баланс',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
 			items:
 			[
@@ -55,14 +41,19 @@
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаСдачи',
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
@@ -71,8 +62,11 @@
 			style: 'position:absolute;left:170px;top:24px;width:116px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:299px;top:24px;width:49px;height:19px;',
 		},
@@ -115,12 +109,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:263px;top:3px;width:437px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Статус',
 			style: 'position:absolute;left:47px;top:3px;width:119px;height:19px;',
 		},
@@ -184,14 +180,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиБаланс',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийБаланс',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -239,14 +239,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиФормаОтчета',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийФормаОтчета',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -294,14 +298,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиОИК',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийОИК',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -343,14 +351,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиОДДС',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийОДДС',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -446,14 +458,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиОЦИПС',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийОЦИПС',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -507,14 +523,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРасчетАктивов',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийРасчетАктивов',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -556,14 +576,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения1',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения1',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -605,14 +629,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения2',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения2',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -654,14 +682,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения3',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения3',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -703,14 +735,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения4',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения4',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -752,14 +788,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения5',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения5',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -801,14 +841,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения6',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения6',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -850,14 +894,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения7',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения7',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -899,14 +947,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения8',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения8',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -948,14 +1000,18 @@
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПояснения9',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВводаКомментарийПояснения9',
 			style: 'position:absolute;left:353px;top:5px;width:333px;height:19px;',
 		},
@@ -988,42 +1044,10 @@
 			style: 'position:absolute;left:6px;top:120px;width:518px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:608px;top:28px;width:83px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'КомментарийКФайлуПояснительнойЗаписки',
 			text: '',
 			style: 'position:absolute;left:6px;top:28px;width:598px;height:27px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:609px;top:87px;width:83px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -1032,28 +1056,30 @@
 			style: 'position:absolute;left:6px;top:84px;width:598px;height:27px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:609px;top:144px;width:83px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'КомментарийКФайлуЗаявленияСоюзаСельхозпроизводетелей',
 			text: '',
 			style: 'position:absolute;left:6px;top:141px;width:598px;height:27px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Очистить все отчеты',
+				},
+				'-',
+				{
+					text:'Очистить бухгалтерский баланс',
 				},
 			]
 		},

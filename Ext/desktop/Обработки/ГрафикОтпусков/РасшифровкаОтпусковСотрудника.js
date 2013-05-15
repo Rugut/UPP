@@ -92,30 +92,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
-			items:
-			[
-				{
-					text:'Запланировать отпуск',
-				},
-				{
-					text:'Открыть документ',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Остатки отпусков сотрудника',
-				},
-				'-',
-				{
-					text:'Дополнительные дни отпуска',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'ФИО',
 			text: 'Иванов Иван Иванович',
@@ -168,6 +144,34 @@
 			name: 'СправкаПоОтпуску',
 			text: 'Справка по отпуску',
 			style: 'position:absolute;left:495px;top:297px;width:138px;height:22px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Запланировать отпуск',
+				},
+				{
+					text:'Открыть документ',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Остатки отпусков сотрудника',
+				},
+				'-',
+				{
+					text:'Дополнительные дни отпуска',
+				},
+			]
 		},
 	]
 });

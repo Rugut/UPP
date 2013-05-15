@@ -10,8 +10,18 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Обработка выполняет обновление пользовательских настроек произвольных отчетов.\r\n\r\nВ пользовательские настройки добавляются:\r\n- Параметр "Период"\r\n- Параметры "Смещение периода", "Периодичность" (для показателей монитора эффективности)\r\n- Группировки\r\n- Отбор',
+			style: 'position:absolute;left:8px;top:33px;width:575px;height:100px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:591px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -19,6 +29,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:141px;width:591px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -32,18 +43,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Обработка выполняет обновление пользовательских настроек произвольных отчетов.
-
-В пользовательские настройки добавляются:
-- Параметр "Период"
-- Параметры "Смещение периода", "Периодичность" (для показателей монитора эффективности)
-- Группировки
-- Отбор',
-			style: 'position:absolute;left:8px;top:33px;width:575px;height:100px;',
 		},
 	]
 });

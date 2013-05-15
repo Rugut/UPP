@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:113px;top:82px;width:220px;height:19px;',
 		},
@@ -30,47 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:113px;top:340px;width:500px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:149px;width:605px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -173,8 +136,118 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьНомер',
+			text: 'Номер:',
+			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Номер',
+			style: 'position:absolute;left:113px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'Дата',
+			style: 'position:absolute;left:213px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОт',
+			text: 'от:',
+			style: 'position:absolute;left:195px;top:33px;width:16px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники учреждения',
+			style: 'position:absolute;left:8px;top:133px;width:605px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Учреждение:',
+			style: 'position:absolute;left:8px;top:57px;width:102px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:113px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНалоговыйПериод',
+			text: 'Вычет по налогу за:',
+			style: 'position:absolute;left:8px;top:107px;width:102px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НалоговыйПериод',
+			style: 'position:absolute;left:113px;top:107px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьГод',
+			text: 'год',
+			style: 'position:absolute;left:201px;top:107px;width:25px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:149px;width:605px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:621px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -212,6 +285,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:621px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -229,60 +303,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНомер',
-			text: 'Номер:',
-			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Номер',
-			style: 'position:absolute;left:113px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Дата',
-			style: 'position:absolute;left:213px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОт',
-			text: 'от:',
-			style: 'position:absolute;left:195px;top:33px;width:16px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Учреждение:',
-			style: 'position:absolute;left:8px;top:57px;width:102px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:113px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьНалоговыйПериод',
-			text: 'Вычет по налогу за:',
-			style: 'position:absolute;left:8px;top:107px;width:102px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НалоговыйПериод',
-			style: 'position:absolute;left:113px;top:107px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьГод',
-			text: 'год',
-			style: 'position:absolute;left:201px;top:107px;width:25px;height:19px;',
 		},
 	]
 });

@@ -22,6 +22,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:80px;top:6px;width:377px;height:20px;',
 		},
@@ -40,6 +41,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Валюта',
 			style: 'position:absolute;left:297px;top:50px;width:80px;height:19px;',
 		},
@@ -54,8 +56,10 @@
 			style: 'position:absolute;left:6px;top:92px;width:167px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:524px;top:6px;width:80px;height:19px;',
 		},
@@ -66,14 +70,19 @@
 			style: 'position:absolute;left:471px;top:6px;width:48px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'В валютах цен',
-			style: 'position:absolute;left:6px;top:50px;width:92px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Не включать в прайс-лист товары',
+			style: 'position:absolute;left:6px;top:73px;width:598px;height:16px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'В выбранной валюте',
-			style: 'position:absolute;left:119px;top:50px;width:124px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Показать',
+			style: 'position:absolute;left:6px;top:31px;width:598px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры',
+			style: 'position:absolute;left:6px;top:161px;width:598px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -86,10 +95,28 @@
 			style: 'position:absolute;left:6px;top:138px;width:182px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаЦеныНеИзменились',
 			style: 'position:absolute;left:193px;top:138px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'В валютах цен',
+			style: 'position:absolute;left:6px;top:50px;width:92px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'В выбранной валюте',
+			style: 'position:absolute;left:119px;top:50px;width:124px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -133,13 +160,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -220,13 +240,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -260,13 +273,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -310,13 +316,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -380,13 +379,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Раскрашивать иерархию групп',
 			style: 'position:absolute;left:6px;top:239px;width:175px;height:19px;',
@@ -421,5 +413,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

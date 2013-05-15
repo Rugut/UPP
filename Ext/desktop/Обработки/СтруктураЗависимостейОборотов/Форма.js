@@ -52,6 +52,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:90px;top:33px;width:220px;height:19px;',
 		},
@@ -68,8 +69,10 @@
 			style: 'position:absolute;left:330px;top:33px;width:48px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:379px;top:33px;width:132px;height:19px;',
 		},
@@ -96,5 +99,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

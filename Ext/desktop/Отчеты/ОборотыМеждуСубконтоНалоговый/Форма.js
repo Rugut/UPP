@@ -16,8 +16,10 @@
 			style: 'position:absolute;left:20px;top:33px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:80px;top:33px;width:84px;height:19px;',
 		},
@@ -28,8 +30,10 @@
 			style: 'position:absolute;left:168px;top:33px;width:28px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:200px;top:33px;width:84px;height:19px;',
 		},
@@ -42,12 +46,36 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:392px;top:33px;width:180px;height:19px;',
 		},
 		{
+			xtype: 'button',
+			name: 'НастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:288px;top:33px;width:24px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидУчета',
+			text: 'Вид учета:',
+			style: 'position:absolute;left:576px;top:33px;width:56px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ВидУчета',
+			style: 'position:absolute;left:636px;top:33px;width:72px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -71,24 +99,6 @@
 					text:'Затвори',
 				},
 			]
-		},
-		{
-			xtype: 'button',
-			name: 'НастройкаПериода',
-			text: '...',
-			style: 'position:absolute;left:288px;top:33px;width:24px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьВидУчета',
-			text: 'Вид учета:',
-			style: 'position:absolute;left:576px;top:33px;width:56px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ВидУчета',
-			style: 'position:absolute;left:636px;top:33px;width:72px;height:19px;',
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеНастройки',
 			style: 'position:absolute;left:8px;top:27px;width:309px;height:19px;',
 		},
@@ -72,5 +73,8 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
 	]
 });

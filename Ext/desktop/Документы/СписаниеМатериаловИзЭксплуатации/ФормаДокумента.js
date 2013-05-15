@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:314px;width:548px;height:19px;',
 		},
@@ -325,6 +329,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособСписанияРасходов',
 			style: 'position:absolute;left:100px;top:6px;width:210px;height:19px;',
 		},
@@ -348,6 +353,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетДт',
 			style: 'position:absolute;left:94px;top:26px;width:80px;height:19px;',
 		},
@@ -372,18 +378,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт1',
 			style: 'position:absolute;left:94px;top:50px;width:211px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт2',
 			style: 'position:absolute;left:94px;top:74px;width:211px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДт3',
 			style: 'position:absolute;left:94px;top:97px;width:211px;height:19px;',
 		},
@@ -396,6 +405,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетДтНУ',
 			style: 'position:absolute;left:412px;top:26px;width:80px;height:19px;',
 		},
@@ -408,6 +418,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ1',
 			style: 'position:absolute;left:412px;top:50px;width:210px;height:19px;',
 		},
@@ -420,6 +431,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ2',
 			style: 'position:absolute;left:412px;top:74px;width:210px;height:19px;',
 		},
@@ -432,6 +444,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоДтНУ3',
 			style: 'position:absolute;left:412px;top:97px;width:210px;height:19px;',
 		},
@@ -444,6 +457,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:95px;top:0px;width:210px;height:19px;',
 		},
@@ -456,6 +470,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:412px;top:0px;width:210px;height:19px;',
 		},
@@ -472,6 +487,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПричинаСписания',
 			style: 'position:absolute;left:418px;top:6px;width:210px;height:19px;',
 		},
@@ -488,6 +504,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -506,6 +523,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -518,6 +536,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:290px;width:548px;height:19px;',
 		},
@@ -555,6 +574,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипСтоимости',
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
@@ -567,6 +587,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
@@ -575,5 +596,8 @@
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:573px;top:33px;width:71px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

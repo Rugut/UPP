@@ -10,21 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:378px;width:527px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Формы отчета',
+			style: 'position:absolute;left:8px;top:9px;width:511px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Возможные периоды представления отчета',
+			style: 'position:absolute;left:8px;top:284px;width:511px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -98,6 +91,11 @@
 			text: 'Утверждена',
 			style: 'position:absolute;left:6px;top:189px;width:505px;height:67px;text-align:left;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание формы',
+			style: 'position:absolute;left:0px;top:169px;width:511px;height:16px;',
+		},
 					]
 				},
 				{
@@ -119,6 +117,27 @@
 			name: 'НадписьВозможныеПериоды',
 			text: '',
 			style: 'position:absolute;left:14px;top:304px;width:505px;height:66px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:378px;width:527px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:318px;top:33px;width:80px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:180px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Период',
 			style: 'position:absolute;left:94px;top:60px;width:120px;height:19px;',
 		},
@@ -54,15 +57,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подпериод',
 			style: 'position:absolute;left:94px;top:84px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:127px;width:390px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -111,8 +108,25 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Доли подпериодов в периоде',
+			style: 'position:absolute;left:8px;top:111px;width:390px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:127px;width:390px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -120,6 +134,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:379px;width:406px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

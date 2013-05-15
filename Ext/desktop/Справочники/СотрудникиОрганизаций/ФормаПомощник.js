@@ -10,24 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:600px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				'-',
-				{
-					text:'Далее',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:182px;top:0px;width:418px;height:425px;',
 			height: 425,width: 418,
@@ -41,6 +23,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:105px;top:44px;width:280px;height:19px;',
 		},
@@ -51,8 +34,10 @@
 			style: 'position:absolute;left:20px;top:116px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРождения',
 			style: 'position:absolute;left:105px;top:116px;width:104px;height:19px;',
 		},
@@ -77,18 +62,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Пол',
 			style: 'position:absolute;left:105px;top:140px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:105px;top:68px;width:280px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:105px;top:92px;width:280px;height:19px;',
 		},
@@ -105,16 +93,6 @@
 			style: 'position:absolute;left:20px;top:92px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Штатный сотрудник',
-			style: 'position:absolute;left:20px;top:174px;width:118px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Работник по договору гражданско-правового характера',
-			style: 'position:absolute;left:20px;top:198px;width:314px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьТабельныйНомер',
 			text: 'Таб. номер:',
@@ -123,13 +101,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТабельныйНомер',
 			style: 'position:absolute;left:105px;top:280px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Без договора',
-			style: 'position:absolute;left:20px;top:222px;width:96px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -145,6 +119,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:95px;top:0px;width:280px;height:19px;',
 		},
@@ -156,6 +131,27 @@
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Штатный сотрудник',
+			style: 'position:absolute;left:20px;top:174px;width:118px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Работник по договору гражданско-правового характера',
+			style: 'position:absolute;left:20px;top:198px;width:314px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Без договора',
+			style: 'position:absolute;left:20px;top:222px;width:96px;height:19px;',
+		},
 			]
 		},
 					]
@@ -196,6 +192,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерДоговора',
 			style: 'position:absolute;left:97px;top:303px;width:90px;height:19px;',
 		},
@@ -206,8 +203,10 @@
 			style: 'position:absolute;left:188px;top:303px;width:23px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаДоговора',
 			style: 'position:absolute;left:213px;top:303px;width:90px;height:19px;',
 		},
@@ -218,8 +217,10 @@
 			style: 'position:absolute;left:11px;top:250px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачала',
 			style: 'position:absolute;left:97px;top:250px;width:90px;height:19px;',
 		},
@@ -230,8 +231,10 @@
 			style: 'position:absolute;left:27px;top:328px;width:184px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончания',
 			style: 'position:absolute;left:213px;top:328px;width:90px;height:19px;',
 		},
@@ -242,8 +245,11 @@
 			style: 'position:absolute;left:192px;top:226px;width:165px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИспытательныйСрок',
 			style: 'position:absolute;left:359px;top:226px;width:43px;height:19px;',
 		},
@@ -256,6 +262,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:97px;top:154px;width:305px;height:19px;',
 		},
@@ -268,6 +275,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Должность',
 			style: 'position:absolute;left:97px;top:178px;width:305px;height:19px;',
 		},
@@ -280,6 +288,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикРаботы',
 			style: 'position:absolute;left:97px;top:202px;width:305px;height:19px;',
 		},
@@ -290,25 +299,13 @@
 			style: 'position:absolute;left:11px;top:226px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗанимаемыхСтавок',
 			style: 'position:absolute;left:97px;top:226px;width:43px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Основное место работы',
-			style: 'position:absolute;left:21px;top:59px;width:146px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Совместительство',
-			style: 'position:absolute;left:21px;top:83px;width:117px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Внутреннее совместительство',
-			style: 'position:absolute;left:21px;top:106px;width:180px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -330,6 +327,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбособленноеПодразделение',
 			style: 'position:absolute;left:97px;top:5px;width:304px;height:19px;',
 		},
@@ -368,6 +366,27 @@
 			boxLabel: 'Является студентом работающим в студенческом отряде',
 			style: 'position:absolute;left:10px;top:356px;width:320px;height:15px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Основное место работы',
+			style: 'position:absolute;left:21px;top:59px;width:146px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Совместительство',
+			style: 'position:absolute;left:21px;top:83px;width:117px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внутреннее совместительство',
+			style: 'position:absolute;left:21px;top:106px;width:180px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 				{
@@ -379,11 +398,6 @@
 			name: 'НадписьВидЗанятости1',
 			text: 'Вид договора гражданско-правового характера',
 			style: 'position:absolute;left:10px;top:0px;width:305px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Договор подряда (выполнение работ, оказание услуг)',
-			style: 'position:absolute;left:20px;top:24px;width:305px;height:19px;',
 		},
 		{
 			xtype: 'radio',
@@ -419,8 +433,10 @@
 			style: 'position:absolute;left:20px;top:74px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачалаДоговораГПХ',
 			style: 'position:absolute;left:107px;top:74px;width:91px;height:19px;',
 		},
@@ -431,8 +447,10 @@
 			style: 'position:absolute;left:204px;top:74px;width:41px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаОкончанияДоговораГПХ',
 			style: 'position:absolute;left:248px;top:74px;width:100px;height:19px;',
 		},
@@ -445,6 +463,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДоговораГПХ',
 			style: 'position:absolute;left:262px;top:146px;width:86px;height:19px;',
 		},
@@ -455,14 +474,18 @@
 			style: 'position:absolute;left:20px;top:146px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаЗаРаботу',
 			style: 'position:absolute;left:107px;top:146px;width:95px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчетаДоговорГПХ',
 			style: 'position:absolute;left:107px;top:98px;width:295px;height:19px;',
 		},
@@ -481,12 +504,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ХарактерОплаты',
 			style: 'position:absolute;left:107px;top:122px;width:295px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодВычета',
 			style: 'position:absolute;left:107px;top:170px;width:241px;height:19px;',
 		},
@@ -505,6 +530,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособОтраженияВБухучете',
 			style: 'position:absolute;left:10px;top:211px;width:392px;height:19px;',
 		},
@@ -517,6 +543,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
 			style: 'position:absolute;left:10px;top:247px;width:392px;height:19px;',
 		},
@@ -540,6 +567,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбособленноеПодразделение1',
 			style: 'position:absolute;left:97px;top:5px;width:305px;height:19px;',
 		},
@@ -550,6 +578,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации1',
 			style: 'position:absolute;left:97px;top:29px;width:305px;height:19px;',
 		},
@@ -566,8 +595,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидАвторскогоДоговора',
 			style: 'position:absolute;left:100px;top:48px;width:302px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Договор подряда (выполнение работ, оказание услуг)',
+			style: 'position:absolute;left:20px;top:24px;width:305px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -609,30 +650,38 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеУпр',
 			style: 'position:absolute;left:97px;top:0px;width:305px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьУпр',
 			style: 'position:absolute;left:97px;top:25px;width:305px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГрафикРаботыУпр',
 			style: 'position:absolute;left:97px;top:49px;width:305px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПриемаУпр',
 			style: 'position:absolute;left:97px;top:73px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ЗанимаемыхСтавокУпр',
 			style: 'position:absolute;left:97px;top:97px;width:43px;height:19px;',
 		},
@@ -676,6 +725,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидРасчета',
 			style: 'position:absolute;left:149px;top:10px;width:253px;height:19px;',
 		},
@@ -1007,8 +1057,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТарифнаяСтавка',
 			style: 'position:absolute;left:150px;top:5px;width:91px;height:19px;',
 		},
@@ -1021,6 +1074,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаТарифнойСтавки',
 			style: 'position:absolute;left:325px;top:5px;width:77px;height:19px;',
 		},
@@ -1045,6 +1099,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТарифныйРазряд',
 			style: 'position:absolute;left:149px;top:5px;width:199px;height:19px;',
 		},
@@ -1614,36 +1669,6 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:18px;width:402px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:74px;top:136px;width:217px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:222px;width:402px;height:24px;',
 			items:
 			[
@@ -1708,6 +1733,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДоступа',
 			style: 'position:absolute;left:10px;top:51px;width:372px;height:19px;',
 		},
@@ -1804,12 +1830,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтраховойНомерПФР',
 			style: 'position:absolute;left:84px;top:27px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:84px;top:5px;width:104px;height:19px;',
 		},
@@ -1838,6 +1866,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПостфиксНаименования',
 			style: 'position:absolute;left:72px;top:121px;width:93px;height:19px;',
 		},
@@ -1862,6 +1891,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеСотрудника',
 			style: 'position:absolute;left:10px;top:61px;width:402px;height:19px;',
 		},
@@ -1964,9 +1994,32 @@
 			text: '',
 			style: 'position:absolute;left:181px;top:0px;width:28px;height:425px;',
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:600px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				'-',
+				{
+					text:'Далее',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:324px;top:425px;width:151px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

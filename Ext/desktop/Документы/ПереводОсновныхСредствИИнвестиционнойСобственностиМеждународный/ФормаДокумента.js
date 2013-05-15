@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:67px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:183px;top:33px;width:32px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:218px;top:33px;width:132px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:466px;top:33px;width:251px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:324px;width:630px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:466px;top:57px;width:251px;height:19px;',
 		},
@@ -76,8 +82,10 @@
 			style: 'position:absolute;left:8px;top:57px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодНачало',
 			style: 'position:absolute;left:67px;top:58px;width:132px;height:19px;',
 		},
@@ -88,20 +96,12 @@
 			style: 'position:absolute;left:201px;top:57px;width:15px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодКонец',
 			style: 'position:absolute;left:218px;top:57px;width:132px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:83px;width:709px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить ОС',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -294,8 +294,29 @@
 			},
 		},
 		{
+			xtype: 'button',
+			name: 'КнопкаВыбораПериода',
+			text: '...',
+			style: 'position:absolute;left:354px;top:57px;width:20px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:83px;width:709px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить ОС',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:725px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -323,6 +344,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:351px;width:725px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -344,12 +366,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаВыбораПериода',
-			text: '...',
-			style: 'position:absolute;left:354px;top:57px;width:20px;height:19px;',
 		},
 	]
 });

@@ -10,24 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:261px;width:670px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:654px;height:222px;',
 			height: 222,width: 654,
@@ -77,6 +59,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Программа',
 			style: 'position:absolute;left:129px;top:41px;width:348px;height:19px;',
 		},
@@ -95,24 +78,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлЗагрузки',
 			style: 'position:absolute;left:353px;top:92px;width:293px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлВыгрузки',
 			style: 'position:absolute;left:353px;top:135px;width:293px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'DOS',
-			style: 'position:absolute;left:418px;top:154px;width:51px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Windows',
-			style: 'position:absolute;left:418px;top:174px;width:66px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -123,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БанковскийСчет',
 			style: 'position:absolute;left:129px;top:12px;width:348px;height:19px;',
 		},
@@ -143,6 +119,22 @@
 			name: 'Надпись7',
 			text: 'Файл выгрузки:',
 			style: 'position:absolute;left:353px;top:115px;width:293px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'DOS',
+			style: 'position:absolute;left:418px;top:154px;width:51px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Windows',
+			style: 'position:absolute;left:418px;top:174px;width:66px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -206,6 +198,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппаДляНовыхКонтрагентов',
 			style: 'position:absolute;left:184px;top:173px;width:240px;height:19px;',
 		},
@@ -217,6 +210,28 @@
 			xtype: 'checkbox',
 			boxLabel: 'Не контролировать окончание номера на 000',
 			style: 'position:absolute;left:8px;top:236px;width:254px;height:25px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:261px;width:670px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+			]
 		},
 	]
 });

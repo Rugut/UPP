@@ -24,24 +24,17 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:477px;height:25px;',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -52,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:376px;width:373px;height:19px;',
 		},
@@ -159,8 +153,54 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтветственный',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ОтветственныйЗаДокумент',
+			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОснование',
+			text: 'Основание:',
+			style: 'position:absolute;left:8px;top:81px;width:86px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ДокументОснование',
+			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:108px;width:461px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:477px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:124px;width:461px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -196,30 +236,6 @@
 					text:'Подбор',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтветственный',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ОтветственныйЗаДокумент',
-			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОснование',
-			text: 'Основание:',
-			style: 'position:absolute;left:8px;top:81px;width:86px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДокументОснование',
-			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
 	]
 });

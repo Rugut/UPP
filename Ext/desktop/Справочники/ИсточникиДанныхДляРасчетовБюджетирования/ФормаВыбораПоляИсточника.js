@@ -39,7 +39,28 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:360px;width:236px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:8px;width:220px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -53,23 +74,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:360px;width:236px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
 				},
 			]
 		},

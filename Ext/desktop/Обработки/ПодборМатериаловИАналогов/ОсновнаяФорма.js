@@ -185,20 +185,6 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:30px;width:706px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Автозамена',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Склад остатков:',
@@ -207,6 +193,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладОстатков',
 			style: 'position:absolute;left:101px;top:6px;width:220px;height:19px;',
 		},
@@ -264,6 +251,24 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:30px;width:706px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Автозамена',
+				},
+			]
 		},
 	]
 });

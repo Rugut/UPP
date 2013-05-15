@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:472px;width:446px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Открыть справку',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Прочие общие настройки',
+			style: 'position:absolute;left:8px;top:357px;width:430px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -36,8 +20,11 @@
 			style: 'position:absolute;left:19px;top:383px;width:148px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалАвтосохранения',
 			style: 'position:absolute;left:169px;top:381px;width:54px;height:19px;',
 		},
@@ -46,6 +33,11 @@
 			name: 'НадписьМинут',
 			text: 'минут',
 			style: 'position:absolute;left:228px;top:383px;width:39px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Настройки формы управления отчетностью',
+			style: 'position:absolute;left:8px;top:12px;width:430px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -74,8 +66,16 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'fieldset',
+			title: 'Настройки календаря',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;',
+		},
+		{
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ИнтервалНапоминаний',
 			style: 'position:absolute;left:218px;top:77px;width:54px;height:19px;',
 		},
@@ -104,6 +104,11 @@
 					]
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Печать машиночитаемых форм',
+			style: 'position:absolute;left:8px;top:227px;width:430px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -181,6 +186,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Оповещения',
+			style: 'position:absolute;left:8px;top:303px;width:430px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Для настройки оповещений нажмите',
@@ -210,6 +220,11 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Документооборот с контролирующими органами',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Для настройки параметров документооборота нажмите',
@@ -228,6 +243,31 @@
 			style: 'position:absolute;left:335px;top:25px;width:5px;height:15px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:472px;width:446px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Открыть справку',
 				},
 			]
 		},

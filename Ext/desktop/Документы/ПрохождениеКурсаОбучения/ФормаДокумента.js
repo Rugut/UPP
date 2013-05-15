@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:178px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КурсОбучения',
 			style: 'position:absolute;left:96px;top:58px;width:220px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:281px;width:406px;height:19px;',
 		},
@@ -66,22 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:256px;width:406px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:99px;width:494px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить даты',
-				},
-				'-',
-				{
-					text:'Списком сотрудников',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -149,7 +141,65 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:308px;width:510px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			name: 'ДатаЗавершенияКурса',
+			style: 'position:absolute;left:422px;top:58px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Курс пройден:',
+			style: 'position:absolute;left:328px;top:58px;width:91px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Обучающиеся',
+			style: 'position:absolute;left:8px;top:83px;width:494px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:99px;width:494px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заполнить даты',
+				},
+				'-',
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:510px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -183,38 +233,6 @@
 					text:'',
 				},
 			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:308px;width:510px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДатаЗавершенияКурса',
-			style: 'position:absolute;left:422px;top:58px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Курс пройден:',
-			style: 'position:absolute;left:328px;top:58px;width:91px;height:19px;',
 		},
 	]
 });

@@ -10,29 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:271px;width:404px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОсновнаяРасшифровка',
 			style: 'position:absolute;left:94px;top:33px;width:302px;height:19px;',
 		},
@@ -96,14 +76,20 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТрендНижняяГраница',
 			style: 'position:absolute;left:63px;top:27px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ТрендВерхняяГраница',
 			style: 'position:absolute;left:243px;top:27px;width:90px;height:19px;',
 		},
@@ -128,30 +114,39 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндикаторТрендНижняяГраница',
 			style: 'position:absolute;left:6px;top:27px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндикаторТрендСредняяГраница',
 			style: 'position:absolute;left:174px;top:27px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндикаторТрендВерхняяГраница',
 			style: 'position:absolute;left:344px;top:27px;width:36px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СостояниеНижняяГраница',
 			style: 'position:absolute;left:63px;top:81px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СостояниеВерхняяГраница',
 			style: 'position:absolute;left:243px;top:81px;width:90px;height:19px;',
 		},
@@ -170,18 +165,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндикаторСостояниеНижняяГраница',
 			style: 'position:absolute;left:6px;top:81px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндикаторСостояниеСредняяГраница',
 			style: 'position:absolute;left:174px;top:81px;width:36px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИндикаторСостояниеВерхняяГраница',
 			style: 'position:absolute;left:344px;top:81px;width:36px;height:19px;',
 		},
@@ -237,32 +235,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -276,6 +248,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПредставлениеПоказателя',
 			style: 'position:absolute;left:94px;top:9px;width:302px;height:19px;',
 		},
@@ -288,8 +261,34 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НастройкаОсновнойРасшифровки',
 			style: 'position:absolute;left:94px;top:57px;width:302px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:271px;width:404px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

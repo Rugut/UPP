@@ -57,23 +57,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:118px;width:460px;height:24px;',
-			items:
-			[
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Показатели отчета',
+			style: 'position:absolute;left:6px;top:102px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -82,8 +68,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:68px;top:6px;width:96px;height:19px;',
 		},
@@ -94,8 +82,10 @@
 			style: 'position:absolute;left:166px;top:6px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:6px;width:96px;height:19px;',
 		},
@@ -108,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:68px;top:54px;width:398px;height:19px;',
 		},
@@ -120,6 +111,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:68px;top:78px;width:398px;height:19px;',
 		},
@@ -132,6 +124,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДанныхОтчета',
 			style: 'position:absolute;left:68px;top:30px;width:398px;height:19px;',
 		},
@@ -185,15 +178,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:154px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГруппировкаГоризонтальная',
 			style: 'position:absolute;left:346px;top:3px;width:120px;height:19px;',
 		},
@@ -277,13 +264,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись39',
 			text: 'Развернуть по горизонтали по:',
@@ -314,5 +294,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

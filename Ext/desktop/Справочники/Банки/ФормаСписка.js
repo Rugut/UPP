@@ -120,17 +120,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Добавить из классификатора банков РФ',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьТелефоны',
 			text: 'Надпись',
@@ -141,6 +130,21 @@
 			name: 'ИнформационнаяНадписьАдрес',
 			text: 'Надпись',
 			style: 'position:absolute;left:8px;top:378px;width:726px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Добавить из классификатора банков РФ',
+				},
+			]
 		},
 	]
 });

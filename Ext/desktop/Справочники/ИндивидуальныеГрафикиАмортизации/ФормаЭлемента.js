@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:358px;top:33px;width:39px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
@@ -42,15 +44,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:325px;width:303px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:389px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -99,8 +95,25 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'График',
+			style: 'position:absolute;left:8px;top:60px;width:389px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:389px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:405px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -108,6 +121,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:405px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

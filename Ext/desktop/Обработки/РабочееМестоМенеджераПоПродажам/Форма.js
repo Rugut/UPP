@@ -10,29 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Оформить новый заказ (F11)',
-				},
-				'-',
-				{
-					text:'Оформить счет на оплату (F12)',
-				},
-				'-',
-				{
-					text:'Оформить реализацию (Ctrl+F12)',
-				},
-				'-',
-				{
-					text:'Изображение',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:80px;width:328px;height:181px;',
 			height: 181,width: 328,
@@ -162,6 +139,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЗначениеОтбораСпискаНоменклатуры',
 			style: 'position:absolute;left:208px;top:56px;width:128px;height:19px;',
 		},
@@ -483,16 +461,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:417px;height:27px;',
-			items:
-			[
-				{
-					text:'Отображать склады',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьВалютаЦены',
 			text: 'Валюта:',
@@ -511,6 +479,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаЦены',
 			style: 'position:absolute;left:259px;top:296px;width:164px;height:19px;',
 		},
@@ -596,35 +565,17 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:66px;top:54px;width:157px;height:24px;',
-			items:
-			[
-				{
-					text:'Пометить все типы цен',
-				},
-				{
-					text:'Отменить пометку всех типов цен',
-				},
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Переместить вверх',
-				},
-				{
-					text:'Переместить вниз',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Заказы',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Остатки неотгруженного товара по заказам покупателя',
+			style: 'position:absolute;left:6px;top:6px;width:417px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:27px;width:417px;height:129px;',
@@ -708,6 +659,11 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Товар текущего покупателя размещенный в заказах поставщикам',
+			style: 'position:absolute;left:6px;top:161px;width:417px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:182px;width:417px;height:133px;',
 			height: 133,width: 417,
@@ -778,6 +734,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:412px;top:33px;width:360px;height:19px;',
 		},
@@ -786,6 +743,11 @@
 			name: 'Надпись1',
 			text: 'Покупатель:',
 			style: 'position:absolute;left:341px;top:33px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Номенклатура',
+			style: 'position:absolute;left:8px;top:33px;width:328px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -811,6 +773,33 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:56px;width:140px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Оформить новый заказ (F11)',
+				},
+				'-',
+				{
+					text:'Оформить счет на оплату (F12)',
+				},
+				'-',
+				{
+					text:'Оформить реализацию (Ctrl+F12)',
+				},
+				'-',
+				{
+					text:'Изображение',
+				},
+			]
 		},
 	]
 });

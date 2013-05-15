@@ -10,21 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:208px;width:312px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:84px;top:35px;width:220px;height:19px;',
 		},
@@ -35,14 +23,18 @@
 			style: 'position:absolute;left:8px;top:35px;width:76px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:84px;top:8px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
@@ -65,21 +57,6 @@
 			style: 'position:absolute;left:266px;top:8px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Авансы по обычным ставкам НДС ',
-			style: 'position:absolute;left:8px;top:134px;width:296px;height:18px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Авансы по ставке НДС 0%',
-			style: 'position:absolute;left:8px;top:157px;width:296px;height:18px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Авансы по всем ставкам НДС ',
-			style: 'position:absolute;left:8px;top:180px;width:296px;height:18px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
@@ -94,12 +71,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:84px;top:86px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Договор',
 			style: 'position:absolute;left:84px;top:110px;width:220px;height:19px;',
 		},
@@ -107,6 +86,44 @@
 			xtype: 'checkbox',
 			boxLabel: 'Показывать только сводные итоги ',
 			style: 'position:absolute;left:8px;top:61px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Авансы по обычным ставкам НДС ',
+			style: 'position:absolute;left:8px;top:134px;width:296px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Авансы по ставке НДС 0%',
+			style: 'position:absolute;left:8px;top:157px;width:296px;height:18px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Авансы по всем ставкам НДС ',
+			style: 'position:absolute;left:8px;top:180px;width:296px;height:18px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:208px;width:312px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

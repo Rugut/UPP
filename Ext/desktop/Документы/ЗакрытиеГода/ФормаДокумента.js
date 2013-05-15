@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
@@ -36,6 +39,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:98px;top:81px;width:239px;height:19px;',
 		},
@@ -105,6 +109,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: true,
 			name: 'ПредставлениеПериодаРегистрации',
 			style: 'position:absolute;left:98px;top:57px;width:239px;height:19px;',
 		},
@@ -117,6 +122,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:184px;width:241px;height:19px;',
 		},
@@ -129,6 +135,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:160px;width:241px;height:19px;',
 		},
@@ -142,5 +149,8 @@
 			boxLabel: 'Закрытие счетов налогового учета',
 			style: 'position:absolute;left:8px;top:138px;width:213px;height:15px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

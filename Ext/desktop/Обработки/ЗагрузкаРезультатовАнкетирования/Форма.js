@@ -160,28 +160,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:74px;width:222px;height:25px;',
-			items:
-			[
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Загрузить',
-				},
-				'-',
-				{
-					text:'Пометить все файлы для загрузки',
-				},
-				'-',
-				{
-					text:'Пометить все файлы как незагружаемые',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Отображать письма по указанной анкете',
 			style: 'position:absolute;left:6px;top:26px;width:234px;height:19px;',
@@ -189,6 +167,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:245px;top:26px;width:304px;height:19px;',
 		},
@@ -205,6 +184,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УчетнаяЗапись',
 			style: 'position:absolute;left:245px;top:48px;width:304px;height:19px;',
 		},
@@ -277,37 +257,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяКаталога',
 			style: 'position:absolute;left:65px;top:5px;width:484px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:105px;width:273px;height:24px;',
-			items:
-			[
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Пометить все файлы для загрузки',
-				},
-				{
-					text:'Пометить все файлы как незагружаемые',
-				},
-				'-',
-				{
-					text:'Удалить текущий файл с данными опроса после загрузки',
-				},
-				'-',
-				{
-					text:'Предварительный просмотр файла',
-				},
-				'-',
-				{
-					text:'Загрузить',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -356,14 +308,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:285px;top:105px;width:264px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Результаты опросов ',
+			style: 'position:absolute;left:6px;top:66px;width:543px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -396,6 +343,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АнкетаОтбораФайлы',
 			style: 'position:absolute;left:245px;top:44px;width:304px;height:19px;',
 		},
@@ -403,9 +351,13 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:573px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

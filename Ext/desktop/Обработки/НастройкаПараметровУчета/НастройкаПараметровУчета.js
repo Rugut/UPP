@@ -10,27 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:387px;top:522px;width:317px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Применить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:8px;width:689px;height:506px;',
 			height: 506,width: 689,
@@ -53,20 +32,9 @@
 			style: 'position:absolute;left:10px;top:175px;width:342px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Месячную норму времени по графику сотрудника',
-			style: 'position:absolute;left:26px;top:199px;width:281px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Среднее за год количество часов в месяце',
-			style: 'position:absolute;left:26px;top:223px;width:281px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПорядокРасчетаЧасовойСтавки',
-			text: 'Пересчет месячного оклада в часовую ставку применяется для расчета оплаты сверхурочных часов.
-Часовая ставка будет рассчитана путем деления оклада на количество рабочих часов в месяце по графику работы сотрудника.',
+			text: 'Пересчет месячного оклада в часовую ставку применяется для расчета оплаты сверхурочных часов.\r\nЧасовая ставка будет рассчитана путем деления оклада на количество рабочих часов в месяце по графику работы сотрудника.',
 			style: 'position:absolute;left:42px;top:277px;width:438px;height:76px;text-align:left;',
 		},
 		{
@@ -74,16 +42,6 @@
 			name: 'НадписьУдержаниеЗаОтпускУменьшаетНалоги',
 			text: 'Удержание за неотработанный отпуск при увольнении:',
 			style: 'position:absolute;left:10px;top:52px;width:287px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Не уменьшает налоги и взносы (НДФЛ, страховые взносы и пр.)',
-			style: 'position:absolute;left:26px;top:76px;width:357px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Уменьшает налоги и взносы',
-			style: 'position:absolute;left:26px;top:100px;width:281px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -95,6 +53,43 @@
 			xtype: 'radio',
 			boxLabel: 'Месячную норму по производственному календарю',
 			style: 'position:absolute;left:26px;top:247px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Не уменьшает налоги и взносы (НДФЛ, страховые взносы и пр.)',
+			style: 'position:absolute;left:26px;top:76px;width:357px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Уменьшает налоги и взносы',
+			style: 'position:absolute;left:26px;top:100px;width:281px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Месячную норму времени по графику сотрудника',
+			style: 'position:absolute;left:26px;top:199px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Среднее за год количество часов в месяце',
+			style: 'position:absolute;left:26px;top:223px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по центрам ответственности',
+			style: 'position:absolute;left:42px;top:348px;width:179px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -117,6 +112,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация3',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
@@ -144,15 +140,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЕдиныйНумераторКадровыхДокументов',
-			text: 'Единый нумератор используется для документов:
-"Прием на работу", "Кадровое перемещение", "Увольнение".',
+			text: 'Единый нумератор используется для документов:\r\n"Прием на работу", "Кадровое перемещение", "Увольнение".',
 			style: 'position:absolute;left:42px;top:228px;width:438px;height:28px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПоказыватьТабельныеНомераВДокументах',
-			text: 'При выборе этой настройки в формах документов
-будет показываться колонка с табельным номером сотрудников.',
+			text: 'При выборе этой настройки в формах документов\r\nбудет показываться колонка с табельным номером сотрудников.',
 			style: 'position:absolute;left:42px;top:277px;width:438px;height:29px;',
 		},
 		{
@@ -163,8 +157,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПроставлятьАвтоматическиДатуОзнакомленияВКадровыхПриказах',
-			text: 'При выборе этой настройки в печатных формах документов
-будет проставляться дата ознакомления сотрудника с приказом.',
+			text: 'При выборе этой настройки в печатных формах документов\r\nбудет проставляться дата ознакомления сотрудника с приказом.',
 			style: 'position:absolute;left:42px;top:327px;width:438px;height:28px;',
 		},
 		{
@@ -172,16 +165,6 @@
 			name: 'НадписьПорядокСписанияФактическихОтпусков',
 			text: 'Остатки отпусков будут уменьшаться при регистрации фактических отпусков',
 			style: 'position:absolute;left:26px;top:412px;width:424px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Кадровыми приказами',
-			style: 'position:absolute;left:42px;top:430px;width:158px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Расчетными документами',
-			style: 'position:absolute;left:42px;top:449px;width:158px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -193,6 +176,16 @@
 			name: 'ПодсказкаОкруглятьДниОтпускаПриКомпенсации',
 			text: 'При выборе этой настройки результат расчета количества дней компенсации отпуска при увольнении сотрудника будет округляться до целых дней.',
 			style: 'position:absolute;left:42px;top:376px;width:404px;height:28px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:26px;top:408px;width:460px;height:3px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:26px;top:203px;width:460px;height:3px;',
 		},
 		{
 			xtype: 'label',
@@ -210,6 +203,22 @@
 			name: 'НадписьГруппаКонтролироватьШтатноеРасписание',
 			text: 'Контролировать по штатному расписанию при кадровых изменениях:',
 			style: 'position:absolute;left:26px;top:82px;width:422px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Кадровыми приказами',
+			style: 'position:absolute;left:42px;top:430px;width:158px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Расчетными документами',
+			style: 'position:absolute;left:42px;top:449px;width:158px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -253,6 +262,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация2',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
@@ -274,8 +284,11 @@
 			style: 'position:absolute;left:40px;top:383px;width:154px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентДоплатыЗаРаботуВНочноеВремя',
 			style: 'position:absolute;left:200px;top:383px;width:49px;height:19px;',
 		},
@@ -286,8 +299,11 @@
 			style: 'position:absolute;left:282px;top:383px;width:164px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентДоплатыЗаРаботуВВечернееВремя',
 			style: 'position:absolute;left:457px;top:383px;width:49px;height:19px;',
 		},
@@ -312,6 +328,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТарифПочтовогоСбора',
 			style: 'position:absolute;left:179px;top:427px;width:327px;height:19px;',
 		},
@@ -361,8 +378,11 @@
 			style: 'position:absolute;left:42px;top:342px;width:178px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРасчетаПлановогоАванса',
 			style: 'position:absolute;left:222px;top:342px;width:55px;height:19px;',
 		},
@@ -375,17 +395,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация6',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись83',
-			text: 'В список получателей планового аванса не будут включаться сотрудники, которые с начала месяца по расчетную дату планового аванса не имеют отработанных дней по причинам:
-- отпуск (очередной, учебный, за свой счет, без оплаты, по беременности и родам,      по уходу за ребенком)
-- невыходы по не выясненной причине, прогул
-- болезнь, карантин, долечивание и т.д.
-- исполнение государственных или др. общественных обязанностей',
+			text: 'В список получателей планового аванса не будут включаться сотрудники, которые с начала месяца по расчетную дату планового аванса не имеют отработанных дней по причинам:\r\n- отпуск (очередной, учебный, за свой счет, без оплаты, по беременности и родам,      по уходу за ребенком)\r\n- невыходы по не выясненной причине, прогул\r\n- болезнь, карантин, долечивание и т.д.\r\n- исполнение государственных или др. общественных обязанностей',
 			style: 'position:absolute;left:62px;top:228px;width:444px;height:111px;text-align:left;',
 		},
 		{
@@ -431,12 +448,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация8',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодРБП',
 			style: 'position:absolute;left:123px;top:263px;width:60px;height:19px;',
 		},
@@ -471,6 +492,10 @@
 			style: 'position:absolute;left:58px;top:183px;width:428px;height:73px;',
 		},
 		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'в месяце начисления',
 			style: 'position:absolute;left:42px;top:119px;width:391px;height:19px;',
@@ -484,6 +509,8 @@
 			xtype: 'radio',
 			boxLabel: 'в месяце, на который приходится отпуск',
 			style: 'position:absolute;left:42px;top:159px;width:391px;height:19px;',
+		},
+			]
 		},
 					]
 				},
@@ -538,6 +565,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОценочноеОбязательствоДляОтпуска',
 			style: 'position:absolute;left:46px;top:158px;width:460px;height:19px;',
 		},
@@ -550,12 +578,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация9',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодОО',
 			style: 'position:absolute;left:112px;top:300px;width:60px;height:19px;',
 		},
@@ -630,17 +662,18 @@
 			style: 'position:absolute;left:473px;top:337px;width:22px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ГодРазмерыОО',
 			style: 'position:absolute;left:402px;top:337px;width:62px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Надпись94',
-			text: 'Если оценочное обязательство выбрано, отпуска отражаются в учете по дебету
-счета 96 и этому оценочному обязательству, иначе отпуска отражаются в учете
-так как задано в виде расчета.',
+			text: 'Если оценочное обязательство выбрано, отпуска отражаются в учете по дебету\r\nсчета 96 и этому оценочному обязательству, иначе отпуска отражаются в учете\r\nтак как задано в виде расчета.',
 			style: 'position:absolute;left:64px;top:179px;width:442px;height:43px;',
 		},
 		{
@@ -648,36 +681,6 @@
 			name: 'Надпись95',
 			text: 'Оценочные обязательства и резервы, размеры отчислений на:',
 			style: 'position:absolute;left:10px;top:337px;width:381px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:10px;top:356px;width:496px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Удалить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:351px;top:430px;width:133px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
 		},
 					]
 				},
@@ -692,8 +695,11 @@
 			style: 'position:absolute;left:10px;top:6px;width:396px;height:25px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодПредельнаяВеличинаБазыСтраховыхВзносов',
 			style: 'position:absolute;left:109px;top:284px;width:90px;height:19px;',
 		},
@@ -722,8 +728,11 @@
 			style: 'position:absolute;left:10px;top:238px;width:246px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПредельнаяВеличинаБазыСтраховыхВзносов',
 			style: 'position:absolute;left:109px;top:260px;width:90px;height:19px;',
 		},
@@ -818,28 +827,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидТарифаСтраховыхВзносов',
 			style: 'position:absolute;left:10px;top:58px;width:496px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:281px;top:193px;width:192px;height:27px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -938,6 +928,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация4',
 			style: 'position:absolute;left:104px;top:347px;width:402px;height:19px;',
 		},
@@ -1029,12 +1020,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация5',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодНДФЛ',
 			style: 'position:absolute;left:109px;top:231px;width:60px;height:19px;',
 		},
@@ -1057,16 +1052,6 @@
 			style: 'position:absolute;left:366px;top:231px;width:114px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'нарастающим итогом в течение налогового периода',
-			style: 'position:absolute;left:26px;top:108px;width:298px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'в пределах месячного дохода налогоплательщика',
-			style: 'position:absolute;left:26px;top:128px;width:298px;height:15px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Стандартные вычеты применяются',
@@ -1083,6 +1068,22 @@
 			name: 'НадписьНастроитьВычетыПоНДФЛ',
 			text: 'Настроить вычеты по НДФЛ',
 			style: 'position:absolute;left:26px;top:294px;width:194px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'нарастающим итогом в течение налогового периода',
+			style: 'position:absolute;left:26px;top:108px;width:298px;height:15px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'в пределах месячного дохода налогоплательщика',
+			style: 'position:absolute;left:26px;top:128px;width:298px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -1143,16 +1144,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:323px;top:215px;width:122px;height:24px;',
-			items:
-			[
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПрочиеПособияФСС',
 			text: 'Размеры государственных пособий',
@@ -1173,12 +1164,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОбособленноеПодразделение',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПередачиФССВыплатыПособий',
 			style: 'position:absolute;left:208px;top:76px;width:100px;height:19px;',
 		},
@@ -1206,8 +1200,11 @@
 			style: 'position:absolute;left:16px;top:27px;width:186px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПособиеПоВременнойНетрудоспособности',
 			style: 'position:absolute;left:204px;top:27px;width:100px;height:19px;',
 		},
@@ -1218,14 +1215,19 @@
 			style: 'position:absolute;left:16px;top:52px;width:186px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПособиеПоБеременности',
 			style: 'position:absolute;left:204px;top:52px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаРазмеровОграниченияПособий',
 			style: 'position:absolute;left:105px;top:74px;width:80px;height:19px;',
 		},
@@ -1270,26 +1272,36 @@
 			style: 'position:absolute;left:26px;top:73px;width:58px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СтавкаРефинансированияЦБ',
 			style: 'position:absolute;left:110px;top:74px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'СтавкаРефинансированияЦБДата',
 			style: 'position:absolute;left:110px;top:98px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МинимальнаяОплатаТрудаРФ',
 			style: 'position:absolute;left:110px;top:157px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'МинимальнаяОплатаТрудаРФДата',
 			style: 'position:absolute;left:110px;top:181px;width:80px;height:19px;',
 		},
@@ -1374,6 +1386,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:87px;top:52px;width:419px;height:19px;',
 		},
@@ -1403,6 +1416,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодЛьготаЕСН',
 			style: 'position:absolute;left:109px;top:133px;width:120px;height:19px;',
 		},
@@ -1436,11 +1450,6 @@
 			style: 'position:absolute;left:42px;top:327px;width:179px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'по центрам ответственности',
-			style: 'position:absolute;left:42px;top:348px;width:179px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись81',
 			text: 'Набор персонала ведется:',
@@ -1455,6 +1464,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'МетодПланированияУчетаЗатратНаПерсонал',
 			style: 'position:absolute;left:190px;top:43px;width:316px;height:19px;',
 		},
@@ -1477,8 +1487,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПоказыватьТабельныеНомераВДокументах1',
-			text: 'При выборе этой настройки в формах документов
-будет показываться колонка с табельным номером сотрудников.',
+			text: 'При выборе этой настройки в формах документов\r\nбудет показываться колонка с табельным номером сотрудников.',
 			style: 'position:absolute;left:42px;top:155px;width:438px;height:30px;',
 		},
 		{
@@ -1493,8 +1502,11 @@
 			style: 'position:absolute;left:26px;top:277px;width:247px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоДнейОтпускаВГод',
 			style: 'position:absolute;left:278px;top:277px;width:43px;height:19px;',
 		},
@@ -1536,6 +1548,31 @@
 			style: 'position:absolute;left:6px;top:3px;width:283px;height:15px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:387px;top:522px;width:317px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Применить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Действие1',
 				},
 			]
 		},

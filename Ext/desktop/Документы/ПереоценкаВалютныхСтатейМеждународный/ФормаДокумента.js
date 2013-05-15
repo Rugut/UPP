@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:51px;top:33px;width:80px;height:19px;',
 		},
@@ -28,14 +29,72 @@
 			style: 'position:absolute;left:135px;top:33px;width:37px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:175px;top:33px;width:132px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'Надпись3',
+			text: 'Ответственный:',
+			style: 'position:absolute;left:8px;top:83px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Ответственный',
+			style: 'position:absolute;left:91px;top:83px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись4',
+			text: 'Комментарий:',
+			style: 'position:absolute;left:8px;top:108px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Комментарий',
+			style: 'position:absolute;left:91px;top:108px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись5',
+			text: 'Организация:',
+			style: 'position:absolute;left:8px;top:58px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			style: 'position:absolute;left:91px;top:58px;width:257px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись6',
+			text: 'Статья отнесения курсовых разниц:',
+			style: 'position:absolute;left:8px;top:134px;width:189px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СтатьяОтнесенияКурсовыхРазниц',
+			style: 'position:absolute;left:197px;top:134px;width:151px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:356px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -63,6 +122,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:161px;width:356px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -84,54 +144,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись3',
-			text: 'Ответственный:',
-			style: 'position:absolute;left:8px;top:83px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Ответственный',
-			style: 'position:absolute;left:91px;top:83px;width:257px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись4',
-			text: 'Комментарий:',
-			style: 'position:absolute;left:8px;top:108px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Комментарий',
-			style: 'position:absolute;left:91px;top:108px;width:257px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись5',
-			text: 'Организация:',
-			style: 'position:absolute;left:8px;top:58px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Организация',
-			style: 'position:absolute;left:91px;top:58px;width:257px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись6',
-			text: 'Статья отнесения курсовых разниц:',
-			style: 'position:absolute;left:8px;top:134px;width:189px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СтатьяОтнесенияКурсовыхРазниц',
-			style: 'position:absolute;left:197px;top:134px;width:151px;height:19px;',
 		},
 	]
 });

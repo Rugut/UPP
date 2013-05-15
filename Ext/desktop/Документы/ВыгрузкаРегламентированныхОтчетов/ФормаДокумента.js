@@ -10,60 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:720px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Зашифровать и отправить',
-				},
-				'-',
-				{
-					text:'Сформировать тексты выгрузки',
-				},
-				'-',
-				{
-					text:'Проверить',
-				},
-				'-',
-				{
-					text:'Сохранить',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНомер1',
 			text: 'Номер:',
@@ -78,12 +24,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:93px;top:33px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:216px;top:33px;width:127px;height:19px;',
 		},
@@ -96,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:93px;top:57px;width:251px;height:19px;',
 		},
@@ -199,25 +149,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:19px;width:704px;height:24px;',
-			items:
-			[
-				{
-					text:'Пометить все',
-				},
-				{
-					text:'Снять пометки у всех',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Текст',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Отчеты',
+			style: 'position:absolute;left:0px;top:0px;width:704px;height:16px;',
 		},
 					]
 				},
@@ -226,6 +160,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодИМНС',
 			style: 'position:absolute;left:424px;top:57px;width:62px;height:19px;',
 		},
@@ -238,6 +173,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:90px;top:398px;width:622px;height:19px;',
 		},
@@ -314,8 +250,11 @@
 			style: 'position:absolute;left:8px;top:84px;width:80px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:93px;top:81px;width:60px;height:20px;',
 		},
@@ -329,6 +268,65 @@
 			xtype: 'checkbox',
 			boxLabel: 'Отбор по коду ИФНС',
 			style: 'position:absolute;left:354px;top:33px;width:132px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:720px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Зашифровать и отправить',
+				},
+				'-',
+				{
+					text:'Сформировать тексты выгрузки',
+				},
+				'-',
+				{
+					text:'Проверить',
+				},
+				'-',
+				{
+					text:'Сохранить',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

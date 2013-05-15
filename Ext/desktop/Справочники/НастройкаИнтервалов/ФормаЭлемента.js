@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:283px;height:19px;',
 		},
@@ -82,6 +83,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Границы интервала',
+			style: 'position:absolute;left:8px;top:60px;width:369px;height:16px;',
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:348px;width:384px;height:25px;',
 			items:
@@ -102,5 +108,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

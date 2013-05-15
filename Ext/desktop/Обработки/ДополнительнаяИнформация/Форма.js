@@ -11,20 +11,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:730px;height:25px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:529px;width:730px;height:25px;',
 			items:
 			[
@@ -41,6 +27,24 @@
 			xtype: 'checkbox',
 			boxLabel: 'Показывать при начале работы',
 			style: 'position:absolute;left:12px;top:534px;width:191px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:730px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+			]
 		},
 	]
 });

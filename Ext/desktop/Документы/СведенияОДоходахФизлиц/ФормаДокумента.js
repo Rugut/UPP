@@ -18,12 +18,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
@@ -36,37 +39,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:555px;width:630px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Получить файл',
-				},
-				'-',
-				{
-					text:'Получить файл на диск',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -83,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -95,18 +71,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:96px;top:527px;width:526px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:239px;width:614px;height:24px;',
-			items:
-			[
-				{
-					text:'физ.лицами, получавшими доходы',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -197,8 +164,11 @@
 			style: 'position:absolute;left:336px;top:57px;width:101px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:437px;top:57px;width:82px;height:19px;',
 		},
@@ -211,9 +181,50 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КонтактныйТелефонОтветственного',
 			style: 'position:absolute;left:437px;top:105px;width:82px;height:19px;',
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Сведения формируются для ...',
+			style: 'position:absolute;left:8px;top:131px;width:614px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжностьОтветственного',
+			text: 'Должность:',
+			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ДолжностьОтветственного',
+			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ИдентификаторФайла',
+			style: 'position:absolute;left:267px;top:152px;width:252px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'ОбновитьИдентификаторФайла',
+			text: '',
+			style: 'position:absolute;left:519px;top:152px;width:22px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Справки о доходах',
+			style: 'position:absolute;left:8px;top:223px;width:614px;height:16px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'передачи в ИФНС с идентификатором файла:',
@@ -225,37 +236,60 @@
 			style: 'position:absolute;left:14px;top:174px;width:251px;height:19px;',
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьДолжностьОтветственного',
-			text: 'Должность:',
-			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ДолжностьОтветственного',
-			style: 'position:absolute;left:96px;top:105px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ИдентификаторФайла',
-			style: 'position:absolute;left:267px;top:152px;width:252px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'ОбновитьИдентификаторФайла',
-			text: '',
-			style: 'position:absolute;left:519px;top:152px;width:22px;height:19px;',
-		},
-		{
 			xtype: 'radio',
 			boxLabel: 'выдачи на руки сотрудникам - в разрезе ставок и кодов по ОКАТО',
 			style: 'position:absolute;left:14px;top:196px;width:478px;height:19px;',
 		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:555px;width:630px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Получить файл',
+				},
+				'-',
+				{
+					text:'Получить файл на диск',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:239px;width:614px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'физ.лицами, получавшими доходы',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]

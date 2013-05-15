@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:354px;width:600px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:76px;width:584px;height:270px;',
 			height: 270,width: 584,
@@ -60,8 +47,32 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьЗагруженныхДокументов',
+			text: 'Надпись загрузки документов. Информация по загруженным документам приведена ниже:',
+			style: 'position:absolute;left:47px;top:8px;width:545px;height:32px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:354px;width:600px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:46px;width:584px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -90,12 +101,6 @@
 					text:'Обновить',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьЗагруженныхДокументов',
-			text: 'Надпись загрузки документов. Информация по загруженным документам приведена ниже:',
-			style: 'position:absolute;left:47px;top:8px;width:545px;height:32px;',
 		},
 	]
 });

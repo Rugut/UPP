@@ -182,8 +182,40 @@
 			},
 		},
 		{
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:244px;height:344px;',
+			height: 344,width: 244,
+			columns:
+			[
+				{
+					text:'Наименование',
+					width:'350',
+					dataIndex:'Наименование',
+					flex:1,
+				},
+			],
+			store:
+			{
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке/100'},
+				fields:
+				[
+					{
+						name:'Наименование',
+					},
+				]
+			},
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:754px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -273,34 +305,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:33px;width:244px;height:344px;',
-			height: 344,width: 244,
-			columns:
-			[
-				{
-					text:'Наименование',
-					width:'350',
-					dataIndex:'Наименование',
-					flex:1,
-				},
-			],
-			store:
-			{
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке/100'},
-				fields:
-				[
-					{
-						name:'Наименование',
-					},
-				]
-			},
 		},
 	]
 });

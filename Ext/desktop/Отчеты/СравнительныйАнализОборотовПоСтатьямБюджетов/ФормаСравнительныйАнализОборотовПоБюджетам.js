@@ -10,8 +10,72 @@
 	items:
 	[
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:60px;width:588px;height:48px;',
+			height: 48,width: 588,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Поля',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиЦФО',
+			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'ЦФО:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:24px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиСтатьяОборотов',
+			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Статья оборотов:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:0px;width:180px;height:20px;',
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СтатьяБаланса',
+			style: 'position:absolute;left:98px;top:33px;width:498px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Статья баланса:',
+			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -72,63 +136,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:60px;width:588px;height:48px;',
-			height: 48,width: 588,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Поля',
-					items:
-					[
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиЦФО',
-			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'ЦФО:',
-			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:24px;width:180px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиСтатьяОборотов',
-			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Статья оборотов:',
-			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:0px;width:180px;height:20px;',
-		},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СтатьяБаланса',
-			style: 'position:absolute;left:98px;top:33px;width:498px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'Статья баланса:',
-			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 	]
 });

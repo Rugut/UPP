@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:94px;top:337px;width:587px;height:19px;',
 		},
@@ -54,6 +58,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:361px;width:587px;height:19px;',
 		},
@@ -66,6 +71,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
@@ -78,6 +84,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Событие',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
 		},
@@ -90,19 +97,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'бух. учете',
 			style: 'position:absolute;left:494px;top:33px;width:72px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:148px;width:673px;height:24px;',
-			items:
-			[
-				{
-					text:'Для списка ОС',
-				},
-				{
-					text:'По наименованию',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -286,8 +280,120 @@
 			},
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьОтражать',
+			text: 'Отражать:',
+			style: 'position:absolute;left:334px;top:33px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'нал. учете',
+			style: 'position:absolute;left:572px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПричинаСписания',
+			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьПричина',
+			text: 'Причина:',
+			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияБУ',
+			text: 'Счет (БУ):',
+			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СчетСписанияБУ',
+			style: 'position:absolute;left:416px;top:57px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСчетСписанияНУ',
+			text: 'Счет (НУ):',
+			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СчетСписанияНУ',
+			style: 'position:absolute;left:416px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоБУ',
+			text: 'Субконто :',
+			style: 'position:absolute;left:498px;top:57px;width:59px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СубконтоБУ',
+			style: 'position:absolute;left:561px;top:57px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСубконтоНУ',
+			text: 'Субконто :',
+			style: 'position:absolute;left:498px;top:81px;width:59px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СубконтоНУ',
+			style: 'position:absolute;left:561px;top:81px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Основные средства',
+			style: 'position:absolute;left:8px;top:132px;width:673px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСписаниеРегл',
+			text: 'Событие (регл.):',
+			style: 'position:absolute;left:334px;top:105px;width:82px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СобытиеРегл',
+			style: 'position:absolute;left:416px;top:105px;width:265px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:148px;width:673px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Для списка ОС',
+				},
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:689px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -322,6 +428,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:689px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -343,89 +450,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтражать',
-			text: 'Отражать:',
-			style: 'position:absolute;left:334px;top:33px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'нал. учете',
-			style: 'position:absolute;left:572px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПричинаСписания',
-			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьПричина',
-			text: 'Причина:',
-			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСчетСписанияБУ',
-			text: 'Счет (БУ):',
-			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СчетСписанияБУ',
-			style: 'position:absolute;left:416px;top:57px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСчетСписанияНУ',
-			text: 'Счет (НУ):',
-			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СчетСписанияНУ',
-			style: 'position:absolute;left:416px;top:81px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСубконтоБУ',
-			text: 'Субконто :',
-			style: 'position:absolute;left:498px;top:57px;width:59px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СубконтоБУ',
-			style: 'position:absolute;left:561px;top:57px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСубконтоНУ',
-			text: 'Субконто :',
-			style: 'position:absolute;left:498px;top:81px;width:59px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СубконтоНУ',
-			style: 'position:absolute;left:561px;top:81px;width:120px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСписаниеРегл',
-			text: 'Событие (регл.):',
-			style: 'position:absolute;left:334px;top:105px;width:82px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СобытиеРегл',
-			style: 'position:absolute;left:416px;top:105px;width:265px;height:19px;',
 		},
 	]
 });

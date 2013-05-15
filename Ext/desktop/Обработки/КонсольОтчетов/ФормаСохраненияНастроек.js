@@ -24,6 +24,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеНастройки',
 			style: 'position:absolute;left:8px;top:31px;width:260px;height:19px;',
 		},
@@ -83,5 +84,8 @@
 			text: 'Справка',
 			style: 'position:absolute;left:291px;top:89px;width:99px;height:22px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

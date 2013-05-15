@@ -18,57 +18,24 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:461px;top:33px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:571px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:8px;top:201px;width:683px;height:78px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:699px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -106,8 +73,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:461px;top:57px;width:230px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Комментарий',
+			style: 'position:absolute;left:8px;top:181px;width:683px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -118,6 +91,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:104px;top:33px;width:247px;height:19px;',
 		},
@@ -128,25 +102,17 @@
 			style: 'position:absolute;left:260px;top:104px;width:94px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИзменения',
 			style: 'position:absolute;left:356px;top:104px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'Прошел испытательный срок',
-			style: 'position:absolute;left:8px;top:108px;width:192px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Не прошел испытательный срок',
-			style: 'position:absolute;left:8px;top:132px;width:192px;height:15px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Испытательный срок продлен',
-			style: 'position:absolute;left:8px;top:156px;width:192px;height:15px;',
+			xtype: 'fieldset',
+			title: 'Решение по испытательному сроку',
+			style: 'position:absolute;left:8px;top:80px;width:683px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -157,6 +123,80 @@
 			[
 				{
 					title:'Страница1',
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Прошел испытательный срок',
+			style: 'position:absolute;left:8px;top:108px;width:192px;height:15px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Не прошел испытательный срок',
+			style: 'position:absolute;left:8px;top:132px;width:192px;height:15px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Испытательный срок продлен',
+			style: 'position:absolute;left:8px;top:156px;width:192px;height:15px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:699px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
 				},
 			]
 		},

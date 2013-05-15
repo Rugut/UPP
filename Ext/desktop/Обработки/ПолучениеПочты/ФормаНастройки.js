@@ -10,8 +10,22 @@
 	items:
 	[
 		{
+			xtype: 'checkbox',
+			boxLabel: 'Получать только непрочитанные',
+			style: 'position:absolute;left:8px;top:8px;width:187px;height:15px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Получать письма без вложенных файлов',
+			style: 'position:absolute;left:8px;top:27px;width:232px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:50px;width:248px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -25,16 +39,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Получать только непрочитанные',
-			style: 'position:absolute;left:8px;top:8px;width:187px;height:15px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Получать письма без вложенных файлов',
-			style: 'position:absolute;left:8px;top:27px;width:232px;height:15px;',
 		},
 	]
 });

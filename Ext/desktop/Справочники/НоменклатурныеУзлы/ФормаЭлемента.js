@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:569px;top:33px;width:64px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:431px;height:19px;',
 		},
@@ -42,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Состояние',
 			style: 'position:absolute;left:94px;top:57px;width:120px;height:19px;',
 		},
@@ -52,17 +55,12 @@
 			style: 'position:absolute;left:216px;top:57px;width:108px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаУтверждения',
 			style: 'position:absolute;left:326px;top:57px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:625px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -147,8 +145,25 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Исходные комплектующие:',
+			style: 'position:absolute;left:8px;top:84px;width:625px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:625px;height:24px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -156,6 +171,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:641px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

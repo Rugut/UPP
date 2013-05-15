@@ -36,6 +36,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяЗатрат',
 			style: 'position:absolute;left:89px;top:31px;width:265px;height:19px;',
 		},
@@ -63,8 +64,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:82px;top:0px;width:102px;height:19px;',
 		},
@@ -83,6 +87,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоваяСтатьяЗатрат',
 			style: 'position:absolute;left:81px;top:0px;width:265px;height:19px;',
 		},
@@ -90,5 +95,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

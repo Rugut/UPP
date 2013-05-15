@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:334px;top:33px;width:64px;height:19px;',
 		},
@@ -30,19 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:196px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:390px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -82,8 +73,29 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Материалы и их аналоги',
+			style: 'position:absolute;left:8px;top:60px;width:390px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:390px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -91,6 +103,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:406px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:179px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:317px;top:33px;width:81px;height:19px;',
 		},
@@ -53,6 +55,11 @@
 					text:'Закрыть',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Счета бюджетирования',
+			style: 'position:absolute;left:8px;top:105px;width:390px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -153,6 +160,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеДляОтчета',
 			style: 'position:absolute;left:94px;top:57px;width:304px;height:40px;',
 		},
@@ -162,5 +170,8 @@
 			text: 'Наименование для отчета:',
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:27px;text-align:left;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

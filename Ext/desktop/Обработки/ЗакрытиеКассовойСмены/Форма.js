@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КассаККМ',
 			style: 'position:absolute;left:74px;top:32px;width:232px;height:19px;',
 		},
@@ -28,8 +29,10 @@
 			style: 'position:absolute;left:8px;top:8px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Организация',
 			style: 'position:absolute;left:74px;top:8px;width:80px;height:19px;',
 		},
@@ -59,6 +62,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Склад',
 			style: 'position:absolute;left:74px;top:56px;width:232px;height:19px;',
 		},
@@ -67,5 +71,8 @@
 			boxLabel: 'Сверка итогов по картам',
 			style: 'position:absolute;left:159px;top:8px;width:147px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

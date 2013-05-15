@@ -10,13 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:44px;top:56px;width:428px;height:19px;',
 		},
@@ -139,11 +132,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Отбор для выгрузки информации о товарах',
+			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -154,6 +145,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяКаталога',
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
@@ -172,6 +164,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПрайса',
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
@@ -249,11 +242,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Отбор для выгрузки прайс-листа',
+			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;',
 		},
 					]
 				},
@@ -262,39 +253,13 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:66px;width:591px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Очистить',
-				},
-			]
-		},
-		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:101px;top:0px;width:150px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеНастройкиКонтрагент',
 			style: 'position:absolute;left:256px;top:0px;width:201px;height:19px;',
 		},
@@ -311,14 +276,18 @@
 			style: 'position:absolute;left:0px;top:23px;width:97px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеНастройкиСДокументДата',
 			style: 'position:absolute;left:101px;top:23px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеНастройкиПоДокументДата',
 			style: 'position:absolute;left:212px;top:23px;width:84px;height:19px;',
 		},
@@ -364,6 +333,11 @@
 					},
 				]
 			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Документы для выгрузки',
+			style: 'position:absolute;left:0px;top:46px;width:591px;height:16px;',
 		},
 					]
 				},
@@ -482,13 +456,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:248px;top:108px;width:343px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Выгружать каталог товаров',
 			style: 'position:absolute;left:0px;top:23px;width:167px;height:15px;',
@@ -499,8 +466,14 @@
 			style: 'position:absolute;left:171px;top:23px;width:208px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Отбор для прайс-листа',
+			style: 'position:absolute;left:248px;top:89px;width:343px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяПрайсаCML_1',
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
@@ -513,6 +486,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЕдиницаПоУмолчанию',
 			style: 'position:absolute;left:130px;top:42px;width:102px;height:19px;',
 		},
@@ -521,6 +495,11 @@
 			name: 'Надпись13',
 			text: 'Единица по умолчанию:',
 			style: 'position:absolute;left:0px;top:42px;width:127px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выгружать свойства',
+			style: 'position:absolute;left:0px;top:89px;width:242px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -541,14 +520,18 @@
 			style: 'position:absolute;left:356px;top:66px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДействительноС',
 			style: 'position:absolute;left:130px;top:66px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДействительноПо',
 			style: 'position:absolute;left:257px;top:66px;width:91px;height:19px;',
 		},
@@ -565,18 +548,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:107px;top:48px;width:355px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Выгрузить данные в файл',
-			style: 'position:absolute;left:6px;top:0px;width:164px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Выгрузить данные по электронной почте',
-			style: 'position:absolute;left:175px;top:0px;width:234px;height:19px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -592,6 +566,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаВыгрузки',
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
@@ -616,6 +591,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяКаталогаВыгрузки',
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
@@ -623,11 +599,38 @@
 				},
 			]
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузить данные в файл',
+			style: 'position:absolute;left:6px;top:0px;width:164px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Выгрузить данные по электронной почте',
+			style: 'position:absolute;left:175px;top:0px;width:234px;height:19px;',
+		},
+			]
+		},
 					]
 				},
 				{
 					title:'Пустая страница',
 				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
+			dock: 'top',
+			items:
+			[
 			]
 		},
 	]

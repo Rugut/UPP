@@ -55,9 +55,13 @@
 				]
 			},
 		},
+	],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:24px;',
+			dock: 'top',
 			items:
 			[
 				{

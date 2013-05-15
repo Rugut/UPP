@@ -95,8 +95,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:233px;top:33px;width:271px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

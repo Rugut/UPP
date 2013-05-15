@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:236px;width:432px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:416px;height:220px;',
 			height: 220,width: 416,
@@ -37,14 +20,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:88px;top:7px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:188px;top:7px;width:80px;height:19px;',
 		},
@@ -57,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:88px;top:31px;width:200px;height:19px;',
 		},
@@ -71,9 +59,19 @@
 			style: 'position:absolute;left:266px;top:141px;width:142px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Выводить данные',
+			style: 'position:absolute;left:260px;top:100px;width:148px;height:16px;',
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'По субсчетам',
 			style: 'position:absolute;left:266px;top:76px;width:142px;height:15px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Показывать обороты',
+			style: 'position:absolute;left:260px;top:56px;width:148px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -113,11 +111,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:72px;width:242px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Виды субконто',
+			style: 'position:absolute;left:8px;top:56px;width:240px;height:16px;',
 		},
 					]
 				},
@@ -197,13 +193,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:402px;height:24px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -289,23 +278,6 @@
 			style: 'position:absolute;left:6px;top:6px;width:90px;height:18px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:24px;width:182px;height:24px;',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Направление',
-				},
-			]
-		},
-		{
 			xtype: 'button',
 			name: 'ДобавитьСортировку',
 			text: '',
@@ -318,6 +290,27 @@
 			style: 'position:absolute;left:192px;top:96px;width:24px;height:24px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:236px;width:432px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

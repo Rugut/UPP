@@ -10,19 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:386px;width:563px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Имя обработанного файла:',
@@ -31,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяОбрабФайла',
 			style: 'position:absolute;left:193px;top:47px;width:362px;height:19px;',
 		},
@@ -43,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдФайл',
 			style: 'position:absolute;left:193px;top:73px;width:362px;height:19px;',
 		},
@@ -55,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдДок',
 			style: 'position:absolute;left:193px;top:99px;width:362px;height:19px;',
 		},
@@ -67,6 +57,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаВремяПредст',
 			style: 'position:absolute;left:193px;top:125px;width:362px;height:19px;',
 		},
@@ -79,6 +70,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПост',
 			style: 'position:absolute;left:193px;top:281px;width:362px;height:19px;',
 		},
@@ -91,6 +83,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КНД',
 			style: 'position:absolute;left:193px;top:151px;width:362px;height:19px;',
 		},
@@ -103,6 +96,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаимОтч',
 			style: 'position:absolute;left:193px;top:177px;width:362px;height:19px;',
 		},
@@ -115,6 +109,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомКорр',
 			style: 'position:absolute;left:193px;top:203px;width:362px;height:19px;',
 		},
@@ -127,6 +122,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетГод',
 			style: 'position:absolute;left:193px;top:255px;width:362px;height:19px;',
 		},
@@ -139,6 +135,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:193px;top:229px;width:362px;height:19px;',
 		},
@@ -151,6 +148,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегНом',
 			style: 'position:absolute;left:193px;top:333px;width:362px;height:19px;',
 		},
@@ -163,6 +161,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПрогрКомпл',
 			style: 'position:absolute;left:193px;top:359px;width:362px;height:19px;',
 		},
@@ -175,6 +174,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДатаПрин',
 			style: 'position:absolute;left:193px;top:307px;width:362px;height:19px;',
 		},
@@ -187,8 +187,31 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НалоговыйОрган',
 			style: 'position:absolute;left:193px;top:9px;width:362px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:36px;width:547px;height:3px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:386px;width:563px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

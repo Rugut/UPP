@@ -30,18 +30,22 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:196px;top:33px;width:120px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:365px;width:557px;height:19px;',
 		},
@@ -498,6 +502,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НДСвСтоимостиТоваров',
 			style: 'position:absolute;left:100px;top:6px;width:209px;height:19px;',
 		},
@@ -521,6 +526,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетСписанияНДС',
 			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
 		},
@@ -545,18 +551,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС1',
 			style: 'position:absolute;left:94px;top:24px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС2',
 			style: 'position:absolute;left:94px;top:48px;width:210px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДС3',
 			style: 'position:absolute;left:94px;top:71px;width:210px;height:19px;',
 		},
@@ -572,6 +581,11 @@
 					title:'Надпись',
 				},
 			]
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Счет и аналитика списания НДС',
+			style: 'position:absolute;left:6px;top:36px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'tabpanel',
@@ -593,6 +607,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетСписанияНДСНУ',
 			style: 'position:absolute;left:93px;top:0px;width:80px;height:19px;',
 		},
@@ -605,6 +620,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ1',
 			style: 'position:absolute;left:93px;top:24px;width:211px;height:19px;',
 		},
@@ -617,6 +633,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ2',
 			style: 'position:absolute;left:93px;top:48px;width:211px;height:19px;',
 		},
@@ -629,6 +646,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СубконтоСписанияНДСНУ3',
 			style: 'position:absolute;left:93px;top:71px;width:211px;height:19px;',
 		},
@@ -654,6 +672,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтатьяЗатратСписанияНДС',
 			style: 'position:absolute;left:100px;top:82px;width:210px;height:19px;',
 		},
@@ -666,6 +685,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НоменклатурнаяГруппа',
 			style: 'position:absolute;left:416px;top:82px;width:212px;height:19px;',
 		},
@@ -678,6 +698,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеОрганизации',
 			style: 'position:absolute;left:100px;top:57px;width:210px;height:19px;',
 		},
@@ -696,14 +717,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеКомпании',
 			style: 'position:absolute;left:98px;top:50px;width:209px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:415px;top:50px;width:213px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Рамка',
+			style: 'position:absolute;left:6px;top:30px;width:622px;height:16px;',
 		},
 		{
 			xtype: 'checkbox',
@@ -723,6 +751,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
@@ -735,6 +764,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладОтправитель',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
@@ -753,6 +783,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СкладПолучатель',
 			style: 'position:absolute;left:406px;top:81px;width:238px;height:19px;',
 		},
@@ -795,6 +826,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВнутреннийЗаказ',
 			style: 'position:absolute;left:406px;top:57px;width:238px;height:19px;',
 		},
@@ -807,8 +839,12 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:342px;width:80px;height:17px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

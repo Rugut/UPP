@@ -20,57 +20,6 @@
 					items:
 					[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:113px;width:757px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отметить все',
-				},
-				{
-					text:'Снять отметку у всех',
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Упорядочить по убыванию',
-				},
-				{
-					text:'Упорядочить по возрастанию',
-				},
-			]
-		},
-		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:138px;width:757px;height:340px;',
 			height: 340,width: 757,
@@ -666,67 +615,16 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:200px;top:220px;width:380px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
-					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Упорядочить по возрастанию',
-				},
-				{
-					text:'Упорядочить по убыванию',
-				},
-				'-',
-				{
-					text:'Настройка списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Период с:',
 			style: 'position:absolute;left:8px;top:87px;width:65px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачПериода',
 			style: 'position:absolute;left:113px;top:87px;width:92px;height:19px;',
 		},
@@ -737,8 +635,10 @@
 			style: 'position:absolute;left:222px;top:87px;width:16px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонПериода',
 			style: 'position:absolute;left:241px;top:87px;width:92px;height:19px;',
 		},
@@ -751,12 +651,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлВыгрузки',
 			style: 'position:absolute;left:113px;top:62px;width:323px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:113px;top:12px;width:323px;height:19px;',
 		},
@@ -775,6 +677,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетОрганизации',
 			style: 'position:absolute;left:113px;top:37px;width:323px;height:19px;',
 		},
@@ -807,10 +710,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись9',
-			text: 'Укажите реквизиты для отбора выгружаемых документов. Снимите отметки с тех документов, которые не должны выгружаться. 
-Проверьте, что все отмеченные документы введены корректно и готовы к выгрузке.
-Выгрузите документы в файл. Для контроля результатов выгрузки сформируйте отчет.
-',
+			text: 'Укажите реквизиты для отбора выгружаемых документов. Снимите отметки с тех документов, которые не должны выгружаться. \r\nПроверьте, что все отмеченные документы введены корректно и готовы к выгрузке.\r\nВыгрузите документы в файл. Для контроля результатов выгрузки сформируйте отчет.\r\n',
 			style: 'position:absolute;left:485px;top:12px;width:280px;height:97px;',
 		},
 					]
@@ -819,43 +719,6 @@
 					title:'  Загрузка  ',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:113px;width:757px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Отметить все',
-				},
-				{
-					text:'Снять отметку у всех',
-				},
-				'-',
-				{
-					text:'Создать не найденное ...',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Упорядочить по возрастанию',
-				},
-				{
-					text:'Упорядочить по убыванию',
-				},
-				'-',
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:138px;width:757px;height:340px;',
@@ -1038,37 +901,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:38px;top:187px;width:228px;height:24px;',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Упорядочить по возрастанию',
-				},
-				{
-					text:'Упорядочить по убыванию',
-				},
-				'-',
-				{
-					text:'Настройка списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФайлЗагрузки',
 			style: 'position:absolute;left:113px;top:62px;width:323px;height:19px;',
 		},
@@ -1081,6 +916,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация1',
 			style: 'position:absolute;left:113px;top:12px;width:323px;height:19px;',
 		},
@@ -1099,6 +935,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетОрганизации1',
 			style: 'position:absolute;left:113px;top:37px;width:323px;height:19px;',
 		},
@@ -1131,15 +968,15 @@
 		{
 			xtype: 'label',
 			name: 'Надпись8',
-			text: 'Прочитайте из файла данные о движениях по указанному банковскому счету. 
-Проверьте, что все  документы получены корректно и готовы к загрузке.
-Загрузите документы в информационную базу. Для контроля результатов загрузки сформируйте отчет.
-',
+			text: 'Прочитайте из файла данные о движениях по указанному банковскому счету. \r\nПроверьте, что все  документы получены корректно и готовы к загрузке.\r\nЗагрузите документы в информационную базу. Для контроля результатов загрузки сформируйте отчет.\r\n',
 			style: 'position:absolute;left:485px;top:12px;width:280px;height:97px;',
 		},
 					]
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

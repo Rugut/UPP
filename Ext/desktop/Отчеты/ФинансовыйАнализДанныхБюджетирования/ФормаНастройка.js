@@ -10,31 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:238px;width:356px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись36',
 			text: 'Период с:',
 			style: 'position:absolute;left:8px;top:8px;width:104px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНач',
 			style: 'position:absolute;left:114px;top:8px;width:96px;height:19px;',
 		},
@@ -45,8 +30,10 @@
 			style: 'position:absolute;left:212px;top:8px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКон',
 			style: 'position:absolute;left:230px;top:8px;width:96px;height:19px;',
 		},
@@ -59,6 +46,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сценарий',
 			style: 'position:absolute;left:114px;top:32px;width:234px;height:19px;',
 		},
@@ -71,6 +59,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВариантНастройки',
 			style: 'position:absolute;left:114px;top:56px;width:234px;height:19px;',
 		},
@@ -135,6 +124,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СценарийСравнениеПрибыли',
 			style: 'position:absolute;left:64px;top:30px;width:268px;height:19px;',
 		},
@@ -145,8 +135,10 @@
 			style: 'position:absolute;left:6px;top:6px;width:56px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаНачСравнениеПрибыли',
 			style: 'position:absolute;left:64px;top:6px;width:96px;height:19px;',
 		},
@@ -157,8 +149,10 @@
 			style: 'position:absolute;left:162px;top:6px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаКонСравнениеПрибыли',
 			style: 'position:absolute;left:180px;top:6px;width:96px;height:19px;',
 		},
@@ -169,6 +163,27 @@
 			style: 'position:absolute;left:278px;top:6px;width:19px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:238px;width:356px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

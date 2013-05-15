@@ -10,112 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Ввести на основании...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Выполнить обмен',
-				},
-				{
-					text:'Монитор обменов',
-				},
-				'-',
-				{
-					text:'Зарегистрировать для обмена',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				{
-					text:'Ввести на основании...',
-				},
-				'-',
-				{
-					text:'Выполнить обмен',
-				},
-				'-',
-				{
-					text:'Монитор обменов',
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:526px;width:507px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьКод',
 			text: 'Код:',
@@ -124,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:460px;top:33px;width:40px;height:19px;',
 		},
@@ -136,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:94px;top:33px;width:323px;height:19px;',
 		},
@@ -148,6 +44,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:102px;top:500px;width:398px;height:19px;',
 		},
@@ -170,6 +67,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелИнформационнойБазы',
 			style: 'position:absolute;left:93px;top:6px;width:391px;height:19px;',
 		},
@@ -182,6 +80,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипНастройки',
 			style: 'position:absolute;left:93px;top:160px;width:391px;height:19px;',
 		},
@@ -205,6 +104,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогОбменаИнформацией',
 			style: 'position:absolute;left:87px;top:0px;width:391px;height:19px;',
 		},
@@ -235,6 +135,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'FTPАдресОбмена',
 			style: 'position:absolute;left:87px;top:0px;width:185px;height:19px;',
 		},
@@ -253,6 +154,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательFTPСоединения',
 			style: 'position:absolute;left:87px;top:24px;width:391px;height:19px;',
 		},
@@ -265,12 +167,16 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольFTPСоединения',
 			style: 'position:absolute;left:87px;top:48px;width:185px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПортFTPСоединения',
 			style: 'position:absolute;left:358px;top:0px;width:120px;height:19px;',
 		},
@@ -281,8 +187,11 @@
 			style: 'position:absolute;left:6px;top:72px;width:79px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимальныйРазмерОтправляемогоПолучаемогоПакетаЧерезFTP',
 			style: 'position:absolute;left:87px;top:72px;width:185px;height:19px;',
 		},
@@ -306,6 +215,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УчетнаяЗаписьПриемаОтправкиСообщений',
 			style: 'position:absolute;left:106px;top:24px;width:372px;height:19px;',
 		},
@@ -318,6 +228,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПочтовыйАдресПолучателя',
 			style: 'position:absolute;left:106px;top:0px;width:372px;height:19px;',
 		},
@@ -333,8 +244,11 @@
 			style: 'position:absolute;left:6px;top:68px;width:245px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'МаксимальныйРазмерОтправляемогоПакетаЧерезПочту',
 			style: 'position:absolute;left:256px;top:68px;width:100px;height:19px;',
 		},
@@ -368,6 +282,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:133px;top:0px;width:339px;height:19px;',
 		},
@@ -380,6 +295,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:133px;top:0px;width:145px;height:19px;',
 		},
@@ -392,6 +308,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения',
 			style: 'position:absolute;left:357px;top:0px;width:115px;height:19px;',
 		},
@@ -413,6 +330,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:139px;top:94px;width:146px;height:19px;',
 		},
@@ -425,6 +343,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения',
 			style: 'position:absolute;left:362px;top:94px;width:116px;height:19px;',
 		},
@@ -469,6 +388,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УзелФоновогоОбмена',
 			style: 'position:absolute;left:93px;top:116px;width:391px;height:19px;',
 		},
@@ -489,8 +409,11 @@
 			style: 'position:absolute;left:351px;top:93px;width:65px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоОбъектовДляФоновогоОбмена',
 			style: 'position:absolute;left:419px;top:93px;width:65px;height:19px;',
 		},
@@ -518,14 +441,30 @@
 			style: 'position:absolute;left:338px;top:69px;width:139px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Передача данных между информационными базами',
+			style: 'position:absolute;left:6px;top:140px;width:478px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Обмен данными по правилам обмена',
+			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;',
+		},
+		{
 			xtype: 'button',
 			name: 'ИнформацияОПравилах',
 			text: '',
 			style: 'position:absolute;left:309px;top:69px;width:25px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Дополнительные настройки обмена',
+			style: 'position:absolute;left:6px;top:297px;width:478px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольНаПрием',
 			style: 'position:absolute;left:250px;top:317px;width:120px;height:19px;',
 		},
@@ -543,6 +482,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПарольНаОтправку',
 			style: 'position:absolute;left:250px;top:363px;width:120px;height:19px;',
 		},
@@ -578,6 +518,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИмяФайлаПротоколаОбмена',
 			style: 'position:absolute;left:140px;top:29px;width:344px;height:19px;',
 		},
@@ -593,8 +534,11 @@
 			style: 'position:absolute;left:21px;top:98px;width:191px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоОшибокОтложенногоПроведенияДляПрекращенияОперации',
 			style: 'position:absolute;left:220px;top:98px;width:98px;height:19px;',
 		},
@@ -716,27 +660,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:464px;height:24px;',
-			items:
-			[
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Изменить настройку',
-				},
-				'-',
-				{
-					text:'Загрузить настройки',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -834,23 +757,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:5px;top:6px;width:465px;height:24px;',
-			items:
-			[
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-				{
-					text:'Загрузить параметры выбора',
-				},
-			]
-		},
 					]
 				},
 			]
@@ -877,14 +783,22 @@
 			style: 'position:absolute;left:16px;top:93px;width:279px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Действия при интерактивном обмене',
+			style: 'position:absolute;left:6px;top:6px;width:478px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьКоличествоЭлементовВТранзакцииНаЗапись1',
 			text: 'Элементов в транзакции при загрузке данных:',
 			style: 'position:absolute;left:6px;top:118px;width:245px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЗапись1',
 			style: 'position:absolute;left:260px;top:118px;width:120px;height:19px;',
 		},
@@ -895,10 +809,18 @@
 			style: 'position:absolute;left:6px;top:142px;width:245px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЧтение1',
 			style: 'position:absolute;left:260px;top:142px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Отправлять сообщения при ошибке обмена',
+			style: 'position:absolute;left:6px;top:166px;width:478px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -909,6 +831,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УчетнаяЗаписьОтправкиСообщенияОбОшибке',
 			style: 'position:absolute;left:148px;top:187px;width:336px;height:19px;',
 		},
@@ -921,6 +844,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресДляОтправкиСообщенийОбОшибке',
 			style: 'position:absolute;left:148px;top:211px;width:336px;height:19px;',
 		},
@@ -951,28 +875,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:16px;top:234px;width:468px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -1040,50 +942,118 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:50px;width:478px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				'-',
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Отбор по значению в текущей колонке',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'История отборов',
-					menu: [
-				{
-					text:'(Список отборов)',
-				},
-				'-',
-				{
-					text:'(История отборов)',
-				},
 					]
-				},
-				{
-					text:'Отключить отбор',
-				},
-				'-',
-				{
-					text:'Обновить',
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Ввести на основании...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
+				},
+				{
+					text:'Монитор обменов',
+				},
+				'-',
+				{
+					text:'Зарегистрировать для обмена',
+				},
 					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				{
+					text:'Ввести на основании...',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
+				},
+				'-',
+				{
+					text:'Монитор обменов',
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:526px;width:507px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
 				},
 			]
 		},

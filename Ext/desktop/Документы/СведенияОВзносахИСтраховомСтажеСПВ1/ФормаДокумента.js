@@ -18,31 +18,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:428px;width:621px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Программой CheckXML',
-				},
-				{
-					text:'Программой CheckUFA',
-				},
-			]
 		},
 		{
 			xtype: 'checkbox',
@@ -99,12 +77,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:525px;top:0px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:625px;top:0px;width:120px;height:19px;',
 		},
@@ -117,6 +98,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:94px;top:0px;width:318px;height:19px;',
 		},
@@ -129,6 +111,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Исполнитель',
 			style: 'position:absolute;left:525px;top:24px;width:220px;height:19px;',
 		},
@@ -141,6 +124,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:94px;top:48px;width:120px;height:19px;',
 		},
@@ -153,6 +137,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьРуководителя',
 			style: 'position:absolute;left:286px;top:48px;width:126px;height:19px;',
 		},
@@ -165,6 +150,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КатегорияЗастрахованныхЛиц',
 			style: 'position:absolute;left:182px;top:103px;width:206px;height:19px;',
 		},
@@ -177,9 +163,33 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:94px;top:24px;width:318px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьТипСведений1',
+			text: 'Тип сведений:',
+			style: 'position:absolute;left:0px;top:79px;width:93px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьНомерПачки',
+			text: 'Номер пачки:',
+			style: 'position:absolute;left:439px;top:48px;width:85px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'НомерПачки',
+			style: 'position:absolute;left:525px;top:48px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Исходные',
@@ -191,27 +201,11 @@
 			style: 'position:absolute;left:182px;top:79px;width:109px;height:19px;',
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьТипСведений1',
-			text: 'Тип сведений:',
-			style: 'position:absolute;left:0px;top:79px;width:93px;height:19px;',
-		},
-		{
 			xtype: 'radio',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:299px;top:79px;width:89px;height:19px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьНомерПачки',
-			text: 'Номер пачки:',
-			style: 'position:absolute;left:439px;top:48px;width:85px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерПачки',
-			style: 'position:absolute;left:525px;top:48px;width:80px;height:19px;',
+			]
 		},
 					]
 				},
@@ -228,16 +222,6 @@
 					title:'Страница1',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:16px;width:830px;height:24px;',
-			items:
-			[
-				{
-					text:'Суммы взносов',
-				},
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:830px;height:177px;',
@@ -374,7 +358,40 @@
 				]
 			},
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Застрахованные лица',
+			style: 'position:absolute;left:0px;top:0px;width:830px;height:16px;',
+		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Программой CheckXML',
+				},
+				{
+					text:'Программой CheckUFA',
 				},
 			]
 		},

@@ -18,6 +18,7 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'НазначениеПлатежа',
 			style: 'position:absolute;left:8px;top:31px;width:428px;height:121px;',
 		},
@@ -34,5 +35,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

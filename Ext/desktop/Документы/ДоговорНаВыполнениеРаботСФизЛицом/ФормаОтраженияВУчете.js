@@ -10,8 +10,44 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьСпособОтраженияВБухучете',
+			text: 'Способ отражения в бухучете:',
+			style: 'position:absolute;left:8px;top:8px;width:157px;height:15px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'СпособОтраженияВБухучете',
+			style: 'position:absolute;left:8px;top:27px;width:498px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОтнесениеРасходовКДеятельностиЕНВД',
+			text: 'Отнесение расходов к деятельности ЕНВД:',
+			style: 'position:absolute;left:8px;top:106px;width:224px;height:15px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
+			style: 'position:absolute;left:8px;top:121px;width:498px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьРасшифровкаОтражениеВБухучете',
+			text: '',
+			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;text-align:left;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:148px;width:514px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -25,36 +61,6 @@
 					text:'Справка',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСпособОтраженияВБухучете',
-			text: 'Способ отражения в бухучете:',
-			style: 'position:absolute;left:8px;top:8px;width:157px;height:15px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'СпособОтраженияВБухучете',
-			style: 'position:absolute;left:8px;top:27px;width:498px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОтнесениеРасходовКДеятельностиЕНВД',
-			text: 'Отнесение расходов к деятельности ЕНВД:',
-			style: 'position:absolute;left:8px;top:106px;width:224px;height:15px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
-			style: 'position:absolute;left:8px;top:121px;width:498px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьРасшифровкаОтражениеВБухучете',
-			text: '',
-			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;text-align:left;',
 		},
 	]
 });

@@ -12,12 +12,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстТемы',
 			style: 'position:absolute;left:50px;top:60px;width:438px;height:19px;',
 		},
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТекстПисьма',
 			style: 'position:absolute;left:8px;top:84px;width:480px;height:180px;',
 		},
@@ -64,6 +66,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресОтправителя',
 			style: 'position:absolute;left:118px;top:8px;width:370px;height:19px;',
 		},
@@ -76,8 +79,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отправитель',
 			style: 'position:absolute;left:118px;top:32px;width:370px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Вложенные файлы',
+			style: 'position:absolute;left:8px;top:270px;width:480px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -128,5 +137,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

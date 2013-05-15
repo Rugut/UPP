@@ -155,24 +155,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
-			items:
-			[
-				{
-					text:'Пакетный ввод бюджетных операций',
-				},
-				'-',
-				{
-					text:'Изменение документов бюджетирования',
-				},
-				'-',
-				{
-					text:'Обороты по статьям бюджетов',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:702px;height:99px;',
 			height: 99,width: 702,
@@ -186,6 +168,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборСценарийЗначение',
 			style: 'position:absolute;left:105px;top:0px;width:220px;height:19px;',
 		},
@@ -197,6 +180,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборЦФОЗначение',
 			style: 'position:absolute;left:445px;top:48px;width:257px;height:19px;',
 		},
@@ -208,6 +192,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборСтатьяОборотовЗначение',
 			style: 'position:absolute;left:105px;top:24px;width:220px;height:19px;',
 		},
@@ -219,6 +204,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборПроектЗначение',
 			style: 'position:absolute;left:105px;top:48px;width:220px;height:19px;',
 		},
@@ -228,14 +214,18 @@
 			style: 'position:absolute;left:0px;top:48px;width:105px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодПланированияС',
 			style: 'position:absolute;left:445px;top:0px;width:105px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПериодПланированияПо',
 			style: 'position:absolute;left:573px;top:0px;width:105px;height:19px;',
 		},
@@ -253,6 +243,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборОтветственный',
 			style: 'position:absolute;left:445px;top:24px;width:257px;height:19px;',
 		},
@@ -264,6 +255,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборКонтрагент',
 			style: 'position:absolute;left:105px;top:72px;width:220px;height:19px;',
 		},
@@ -275,6 +267,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОтборНоменклатура',
 			style: 'position:absolute;left:445px;top:72px;width:257px;height:19px;',
 		},
@@ -290,6 +283,28 @@
 			style: 'position:absolute;left:682px;top:0px;width:20px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Пакетный ввод бюджетных операций',
+				},
+				'-',
+				{
+					text:'Изменение документов бюджетирования',
+				},
+				'-',
+				{
+					text:'Обороты по статьям бюджетов',
 				},
 			]
 		},

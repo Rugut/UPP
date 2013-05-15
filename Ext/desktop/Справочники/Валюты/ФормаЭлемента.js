@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:364px;top:33px;width:60px;height:19px;',
 		},
@@ -30,6 +31,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:98px;top:33px;width:222px;height:19px;',
 		},
@@ -49,6 +51,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:98px;top:57px;width:326px;height:19px;',
 		},
@@ -128,6 +131,11 @@
 			style: 'position:absolute;left:48px;top:105px;width:76px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Параметры прописи целой части для русского языка',
+			style: 'position:absolute;left:8px;top:85px;width:416px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьПолеПрописи4наРусском',
 			text: 'Род:',
@@ -142,6 +150,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПрописи1наРусском',
 			style: 'position:absolute;left:164px;top:105px;width:60px;height:19px;',
 		},
@@ -154,6 +163,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПрописи2наРусском',
 			style: 'position:absolute;left:264px;top:105px;width:60px;height:19px;',
 		},
@@ -166,12 +176,18 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПрописи3наРусском',
 			style: 'position:absolute;left:364px;top:105px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:48px;top:153px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Параметры прописи дробной части для русского языка',
+			style: 'position:absolute;left:8px;top:133px;width:416px;height:16px;',
 		},
 		{
 			xtype: 'label',
@@ -188,6 +204,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПрописи5наРусском',
 			style: 'position:absolute;left:164px;top:153px;width:60px;height:19px;',
 		},
@@ -200,6 +217,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПрописи6наРусском',
 			style: 'position:absolute;left:264px;top:153px;width:60px;height:19px;',
 		},
@@ -212,6 +230,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеПрописи7наРусском',
 			style: 'position:absolute;left:364px;top:153px;width:60px;height:19px;',
 		},
@@ -246,5 +265,13 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'История курсов',
+			style: 'position:absolute;left:8px;top:204px;width:416px;height:16px;',
+		},
+	],
+	dockedItems:
+	[
 	]
 });

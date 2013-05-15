@@ -65,17 +65,21 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:681px;height:26px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОтбор',
 			text: '',
 			style: 'position:absolute;left:8px;top:386px;width:667px;height:15px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:681px;height:26px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

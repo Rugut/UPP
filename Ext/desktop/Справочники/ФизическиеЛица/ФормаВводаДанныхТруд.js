@@ -74,47 +74,24 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			items:
-			[
-				{
-					text:'Форма СЗВ-К',
-				},
-				'-',
-				{
-					text:'Заполнить по данным СЗВ-К',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Трудовая деятельность',
+			style: 'position:absolute;left:8px;top:33px;width:384px;height:16px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:346px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Стажи общего характера',
+			style: 'position:absolute;left:8px;top:177px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Работа на Севере',
+			style: 'position:absolute;left:8px;top:298px;width:384px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СеверныйСтаж',
 			style: 'position:absolute;left:8px;top:319px;width:384px;height:19px;',
 		},
@@ -181,6 +158,50 @@
 					},
 				]
 			},
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Форма СЗВ-К',
+				},
+				'-',
+				{
+					text:'Заполнить по данным СЗВ-К',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:346px;width:400px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

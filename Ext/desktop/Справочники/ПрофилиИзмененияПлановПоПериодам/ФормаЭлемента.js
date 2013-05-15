@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:110px;top:34px;width:220px;height:19px;',
 		},
@@ -30,19 +31,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПериодСмещения',
 			style: 'position:absolute;left:110px;top:57px;width:100px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:446px;height:24px;',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -91,8 +82,42 @@
 			},
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Профиль изменения:',
+			style: 'position:absolute;left:8px;top:84px;width:446px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьКод',
+			text: 'Код:',
+			style: 'position:absolute;left:332px;top:33px;width:40px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Код',
+			style: 'position:absolute;left:374px;top:33px;width:80px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:446px;height:24px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:462px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -100,6 +125,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:462px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -117,18 +143,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьКод',
-			text: 'Код:',
-			style: 'position:absolute;left:332px;top:33px;width:40px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'Код',
-			style: 'position:absolute;left:374px;top:33px;width:80px;height:19px;',
 		},
 	]
 });

@@ -10,57 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:878px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Кадровое планирование...',
-				},
-				{
-					text:'Вакансии...',
-				},
-				{
-					text:'Источники информации...',
-				},
-				{
-					text:'Состояния кандидатов...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				'-',
-				{
-					text:'Кадровое планирование...',
-				},
-				'-',
-				{
-					text:'Вакансии...',
-				},
-				'-',
-				{
-					text:'Источники информации...',
-				},
-				'-',
-				{
-					text:'Состояния кандидатов...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:703px;top:33px;width:214px;height:539px;',
 			height: 539,width: 214,
@@ -195,43 +144,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:609px;height:24px;',
-			items:
-			[
-				{
-					text:'Принять как кандидата...',
-				},
-				{
-					text:'Привязать к существующему кандидату',
-				},
-				'-',
-				{
-					text:'Открыть...',
-				},
-				{
-					text:'Пометить как прочтенное',
-				},
-				'-',
-				{
-					text:'Переместить в нежелательную почту',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:609px;top:0px;width:80px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Все письма...',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьИнформацияОПисьме',
 			text: 'С данным отправителем ранее уже велась переписка',
@@ -315,27 +227,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:25px;width:596px;height:24px;',
-			items:
-			[
-				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:588px;top:25px;width:101px;height:24px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Все кандидаты...',
-				},
-			]
 		},
 		{
 			xtype: 'grid',
@@ -449,9 +340,65 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:878px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Кадровое планирование...',
+				},
+				{
+					text:'Вакансии...',
+				},
+				{
+					text:'Источники информации...',
+				},
+				{
+					text:'Состояния кандидатов...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				'-',
+				{
+					text:'Кадровое планирование...',
+				},
+				'-',
+				{
+					text:'Вакансии...',
+				},
+				'-',
+				{
+					text:'Источники информации...',
+				},
+				'-',
+				{
+					text:'Состояния кандидатов...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:878px;top:0px;width:47px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{

@@ -27,5 +27,8 @@
 			text: 'Запретить',
 			style: 'position:absolute;left:8px;top:277px;width:642px;height:27px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

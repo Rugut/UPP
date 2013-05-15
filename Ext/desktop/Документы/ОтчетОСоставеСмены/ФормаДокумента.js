@@ -10,127 +10,16 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Провести',
-				},
-				{
-					text:'Отмена проведения',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-					]
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'На основании',
-					menu: [
-				{
-					text:'(Ввести на основании)',
-				},
-					]
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:342px;width:750px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
 			style: 'position:absolute;left:130px;top:33px;width:16px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:148px;top:33px;width:120px;height:19px;',
 		},
@@ -143,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Подразделение',
 			style: 'position:absolute;left:522px;top:33px;width:220px;height:19px;',
 		},
@@ -155,12 +45,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Смена',
 			style: 'position:absolute;left:48px;top:57px;width:220px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:522px;top:57px;width:220px;height:19px;',
 		},
@@ -177,12 +69,9 @@
 			style: 'position:absolute;left:116px;top:82px;width:626px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:125px;width:734px;height:25px;',
-			items:
-			[
-				'-',
-			]
+			xtype: 'fieldset',
+			title: 'Состав смены',
+			style: 'position:absolute;left:8px;top:109px;width:734px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -275,6 +164,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:84px;top:315px;width:658px;height:19px;',
 		},
@@ -287,6 +177,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:48px;top:33px;width:80px;height:19px;',
 		},
@@ -301,6 +192,133 @@
 			name: 'ПериодСмены',
 			text: '01.01.0001 (00:00 - 23:59)',
 			style: 'position:absolute;left:273px;top:57px;width:156px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				{
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'На основании',
+					menu: [
+				{
+					text:'(Ввести на основании)',
+				},
+					]
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:342px;width:750px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:125px;width:734px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+			]
 		},
 	]
 });

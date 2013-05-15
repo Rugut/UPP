@@ -87,6 +87,11 @@
 			]
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Сценарии для сравнения',
+			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;',
+		},
+		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:73px;width:460px;height:100px;',
 			height: 100,width: 460,
@@ -161,36 +166,14 @@
 			style: 'position:absolute;left:286px;top:241px;width:152px;height:15px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:49px;width:460px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-			]
+			xtype: 'fieldset',
+			title: 'Показатели для сравнения',
+			style: 'position:absolute;left:6px;top:181px;width:460px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Бюджет',
 			style: 'position:absolute;left:99px;top:6px;width:367px;height:19px;',
 		},
@@ -241,13 +224,6 @@
 					},
 				]
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:25px;',
-			items:
-			[
-			]
 		},
 					]
 				},
@@ -328,13 +304,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -369,13 +338,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 			]
@@ -401,5 +363,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

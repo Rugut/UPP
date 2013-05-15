@@ -10,8 +10,18 @@
 	items:
 	[
 		{
+			xtype: 'label',
+			name: 'НадписьИнформация',
+			text: 'Снятие  на фискальном регистраторе отчета кассовой смены без гашения',
+			style: 'position:absolute;left:8px;top:33px;width:298px;height:27px;',
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:314px;height:25px;',
+			dock: 'top',
 			items:
 			[
 			]
@@ -19,6 +29,7 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:68px;width:314px;height:25px;',
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -33,12 +44,6 @@
 					text:'Закрыть',
 				},
 			]
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьИнформация',
-			text: 'Снятие  на фискальном регистраторе отчета кассовой смены без гашения',
-			style: 'position:absolute;left:8px;top:33px;width:298px;height:27px;',
 		},
 	]
 });

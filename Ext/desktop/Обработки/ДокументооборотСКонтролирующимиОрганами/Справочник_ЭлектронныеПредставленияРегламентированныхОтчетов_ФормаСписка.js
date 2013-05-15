@@ -137,60 +137,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:848px;height:25px;',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'&Загрузить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Дополнительный отбор',
-				},
-				'-',
-				{
-					text:'Отображать панель обмена',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Журнал обмена',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:832px;height:25px;',
 			height: 25,width: 832,
@@ -215,6 +161,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидОтчета',
 			style: 'position:absolute;left:0px;top:1px;width:596px;height:19px;',
 		},
@@ -228,6 +175,24 @@
 					items:
 					[
 		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НомерКорректировки',
+			style: 'position:absolute;left:310px;top:1px;width:41px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: '№ корректировки:',
+			style: 'position:absolute;left:195px;top:3px;width:111px;height:15px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
 			xtype: 'radio',
 			boxLabel: 'первичный',
 			style: 'position:absolute;left:2px;top:3px;width:74px;height:15px;',
@@ -237,16 +202,7 @@
 			boxLabel: 'корректирующий',
 			style: 'position:absolute;left:81px;top:3px;width:106px;height:15px;',
 		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерКорректировки',
-			style: 'position:absolute;left:310px;top:1px;width:41px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: '№ корректировки:',
-			style: 'position:absolute;left:195px;top:3px;width:111px;height:15px;',
+			]
 		},
 					]
 				},
@@ -261,6 +217,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидДополнительногоОтбора',
 			style: 'position:absolute;left:82px;top:2px;width:147px;height:19px;',
 		},
@@ -280,8 +237,11 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:174px;top:4px;width:55px;height:20px;',
 		},
@@ -309,18 +269,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Получатель',
 			style: 'position:absolute;left:732px;top:1px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:82px;top:1px;width:488px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипПолучателя',
 			style: 'position:absolute;left:646px;top:1px;width:80px;height:19px;',
 		},
@@ -864,6 +827,64 @@
 			},
 		},
 					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:848px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'&Загрузить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Дополнительный отбор',
+				},
+				'-',
+				{
+					text:'Отображать панель обмена',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Журнал обмена',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

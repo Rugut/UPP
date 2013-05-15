@@ -864,6 +864,11 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:86px;top:0px;width:2px;height:56px;',
+		},
 					]
 				},
 			]
@@ -915,5 +920,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

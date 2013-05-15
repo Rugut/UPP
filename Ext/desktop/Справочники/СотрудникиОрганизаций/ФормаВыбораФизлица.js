@@ -97,5 +97,8 @@
 			text: 'Выбрать отмеченное в списке',
 			style: 'position:absolute;left:299px;top:173px;width:180px;height:28px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

@@ -12,12 +12,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Код',
 			style: 'position:absolute;left:424px;top:33px;width:60px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:113px;top:33px;width:256px;height:19px;',
 		},
@@ -30,6 +32,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаЦены',
 			style: 'position:absolute;left:113px;top:61px;width:80px;height:19px;',
 		},
@@ -42,6 +45,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'БазовыйТипЦен',
 			style: 'position:absolute;left:113px;top:201px;width:220px;height:19px;',
 		},
@@ -52,8 +56,11 @@
 			style: 'position:absolute;left:333px;top:201px;width:80px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:424px;top:201px;width:60px;height:19px;',
 		},
@@ -71,6 +78,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПорядокОкругления',
 			style: 'position:absolute;left:424px;top:249px;width:60px;height:19px;',
 		},
@@ -83,6 +91,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:113px;top:283px;width:371px;height:19px;',
 		},
@@ -99,13 +108,6 @@
 			style: 'position:absolute;left:371px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОкруглятьВБольшуюСторону',
 			text: 'Метод округления:',
@@ -114,8 +116,19 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ОкруглятьВБольшуюСторону',
 			style: 'position:absolute;left:113px;top:249px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Порядок назначения цен',
+			style: 'position:absolute;left:8px;top:89px;width:476px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Порядок округления цен',
+			style: 'position:absolute;left:8px;top:229px;width:476px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -147,6 +160,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидТипаЦен',
 			style: 'position:absolute;left:113px;top:110px;width:256px;height:19px;',
 		},
@@ -165,8 +179,20 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпособРасчетаЦены',
 			style: 'position:absolute;left:113px;top:173px;width:256px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
 		},
 	]
 });

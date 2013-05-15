@@ -24,6 +24,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:115px;top:32px;width:80px;height:19px;',
 		},
@@ -66,8 +67,10 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:215px;top:32px;width:120px;height:19px;',
 		},
@@ -91,6 +94,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИсходногоДокумента',
 			style: 'position:absolute;left:133px;top:44px;width:91px;height:19px;',
 		},
@@ -101,14 +105,19 @@
 			style: 'position:absolute;left:227px;top:44px;width:14px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсходногоДокумента',
 			style: 'position:absolute;left:246px;top:44px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерИсправленияИсходногоДокумента',
 			style: 'position:absolute;left:133px;top:66px;width:91px;height:19px;',
 		},
@@ -119,8 +128,10 @@
 			style: 'position:absolute;left:227px;top:66px;width:14px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсправленияИсходногоДокумента',
 			style: 'position:absolute;left:246px;top:66px;width:91px;height:19px;',
 		},
@@ -132,6 +143,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИсправляемогоКорректировочногоДокумента',
 			style: 'position:absolute;left:133px;top:0px;width:91px;height:19px;',
 		},
@@ -142,8 +154,10 @@
 			style: 'position:absolute;left:227px;top:0px;width:14px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсправляемогоКорректировочногоДокумента',
 			style: 'position:absolute;left:246px;top:0px;width:91px;height:19px;',
 		},
@@ -174,6 +188,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИсходногоДокумента3',
 			style: 'position:absolute;left:132px;top:0px;width:91px;height:19px;',
 		},
@@ -184,8 +199,10 @@
 			style: 'position:absolute;left:226px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсходногоДокумента3',
 			style: 'position:absolute;left:246px;top:0px;width:91px;height:19px;',
 		},
@@ -204,6 +221,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПолеКомитент',
 			style: 'position:absolute;left:74px;top:66px;width:263px;height:19px;',
 		},
@@ -216,6 +234,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерИсходногоДокументаИсправление',
 			style: 'position:absolute;left:132px;top:0px;width:91px;height:19px;',
 		},
@@ -226,8 +245,10 @@
 			style: 'position:absolute;left:226px;top:0px;width:20px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаИсходногоДокументаИсправление',
 			style: 'position:absolute;left:246px;top:0px;width:91px;height:19px;',
 		},
@@ -240,6 +261,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комитент',
 			style: 'position:absolute;left:74px;top:66px;width:263px;height:19px;',
 		},
@@ -264,8 +286,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:125px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'НомерИсправления',
 			style: 'position:absolute;left:132px;top:0px;width:91px;height:19px;',
 		},
@@ -287,15 +312,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
-			text: 'Контрагент:
-',
+			text: 'Контрагент:\r\n',
 			style: 'position:absolute;left:0px;top:22px;width:88px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
-			text: 'Договор:
-',
+			text: 'Договор:\r\n',
 			style: 'position:absolute;left:0px;top:44px;width:88px;height:19px;',
 		},
 		{
@@ -307,18 +330,21 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:106px;top:0px;width:327px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:106px;top:22px;width:327px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:106px;top:44px;width:327px;height:19px;',
 		},
@@ -331,6 +357,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВидСчетаФактуры',
 			style: 'position:absolute;left:106px;top:66px;width:327px;height:19px;',
 		},
@@ -359,6 +386,11 @@
 					title:'На реализацию',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:776px;height:64px;',
@@ -434,11 +466,9 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
-			items:
-			[
-			]
+			xtype: 'fieldset',
+			title: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:129px;width:776px;height:16px;',
 		},
 		{
 			xtype: 'toolbar',
@@ -459,10 +489,21 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснованиеНаАванс',
 			style: 'position:absolute;left:0px;top:20px;width:494px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Реквизиты счета-фактуры на аванс',
+			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -538,14 +579,22 @@
 			},
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерПРДокументаНаАванс',
-			style: 'position:absolute;left:167px;top:215px;width:269px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:192px;width:776px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
+			name: 'НомерПРДокументаНаАванс',
+			style: 'position:absolute;left:167px;top:215px;width:269px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПРДокументаНаАванс',
 			style: 'position:absolute;left:40px;top:215px;width:80px;height:19px;',
 		},
@@ -561,13 +610,6 @@
 			text: 'Дата:',
 			style: 'position:absolute;left:0px;top:215px;width:36px;height:19px;text-align:left;',
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
-			items:
-			[
-			]
-		},
 					]
 				},
 				{
@@ -575,20 +617,34 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснованиеНаСуммовуюРазницу',
 			style: 'position:absolute;left:0px;top:20px;width:494px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерПРДокументаНаСуммовуюРазницу',
-			style: 'position:absolute;left:167px;top:118px;width:269px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:98px;width:776px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
+			name: 'НомерПРДокументаНаСуммовуюРазницу',
+			style: 'position:absolute;left:167px;top:118px;width:269px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПРДокументаНаСуммовуюРазницу',
 			style: 'position:absolute;left:40px;top:118px;width:80px;height:19px;',
 		},
@@ -613,6 +669,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СтавкаНДС',
 			style: 'position:absolute;left:282px;top:44px;width:96px;height:19px;',
 		},
@@ -623,8 +680,11 @@
 			style: 'position:absolute;left:0px;top:44px;width:73px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:79px;top:44px;width:120px;height:19px;',
 		},
@@ -635,8 +695,11 @@
 			style: 'position:absolute;left:0px;top:74px;width:73px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:79px;top:74px;width:120px;height:19px;',
 		},
@@ -647,10 +710,21 @@
 					items:
 					[
 		{
+			xtype: 'fieldset',
+			title: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументОснованиеНалоговыйАгент',
 			style: 'position:absolute;left:0px;top:20px;width:494px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Реквизиты счета-фактуры налогового агента',
+			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;',
 		},
 		{
 			xtype: 'grid',
@@ -726,14 +800,22 @@
 			},
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'НомерПРДокументаНалоговыйАгент',
-			style: 'position:absolute;left:167px;top:218px;width:269px;height:19px;',
+			xtype: 'fieldset',
+			title: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:194px;width:776px;height:16px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
+			name: 'НомерПРДокументаНалоговыйАгент',
+			style: 'position:absolute;left:167px;top:218px;width:269px;height:19px;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПРДокументаНалоговыйАгент',
 			style: 'position:absolute;left:40px;top:218px;width:80px;height:19px;',
 		},
@@ -749,22 +831,17 @@
 			text: 'Дата:',
 			style: 'position:absolute;left:0px;top:218px;width:36px;height:19px;text-align:left;',
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить суммы по основанию',
-				},
-			]
-		},
 					]
 				},
 				{
 					title:'Корректировочный',
 					items:
 					[
+		{
+			xtype: 'fieldset',
+			title: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:776px;height:177px;',
@@ -803,13 +880,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Реализация не подлежит налогообложению (освобождается от налогообложения) ',
 			style: 'position:absolute;left:0px;top:226px;width:478px;height:15px;',
@@ -832,8 +902,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСуммаДокумента',
-			text: 'Всего:
-',
+			text: 'Всего:\r\n',
 			style: 'position:absolute;left:0px;top:0px;width:40px;height:19px;',
 		},
 		{
@@ -843,8 +912,11 @@
 			style: 'position:absolute;left:154px;top:0px;width:47px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:40px;top:0px;width:108px;height:19px;',
 		},
@@ -855,8 +927,11 @@
 			style: 'position:absolute;left:255px;top:0px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДСДокумента',
 			style: 'position:absolute;left:328px;top:0px;width:108px;height:19px;',
 		},
@@ -873,8 +948,11 @@
 			style: 'position:absolute;left:0px;top:0px;width:69px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаУвеличение',
 			style: 'position:absolute;left:72px;top:0px;width:95px;height:19px;',
 		},
@@ -885,8 +963,11 @@
 			style: 'position:absolute;left:389px;top:0px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаУменьшение',
 			style: 'position:absolute;left:475px;top:0px;width:95px;height:19px;',
 		},
@@ -909,8 +990,11 @@
 			style: 'position:absolute;left:628px;top:0px;width:62px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДСУменьшение',
 			style: 'position:absolute;left:694px;top:0px;width:69px;height:19px;',
 		},
@@ -921,8 +1005,11 @@
 			style: 'position:absolute;left:225px;top:0px;width:62px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'СуммаНДСУвеличение',
 			style: 'position:absolute;left:291px;top:0px;width:69px;height:19px;',
 		},
@@ -950,12 +1037,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КодВидаОперации',
 			style: 'position:absolute;left:113px;top:20px;width:50px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаВыставления',
 			style: 'position:absolute;left:314px;top:47px;width:91px;height:19px;',
 		},
@@ -964,6 +1054,26 @@
 			boxLabel: 'Выставлен:',
 			style: 'position:absolute;left:201px;top:47px;width:108px;height:19px;',
 		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Не выставляется',
+			style: 'position:absolute;left:201px;top:21px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Выставление счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:775px;height:16px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьСостояниеЭД',
+			text: 'Состояние ЭД:',
+			style: 'position:absolute;left:2px;top:72px;width:106px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'На бумажном носителе',
@@ -974,16 +1084,7 @@
 			boxLabel: 'В электронном виде',
 			style: 'position:absolute;left:565px;top:47px;width:124px;height:19px;',
 		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Не выставляется',
-			style: 'position:absolute;left:201px;top:21px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьСостояниеЭД',
-			text: 'Состояние ЭД:',
-			style: 'position:absolute;left:2px;top:72px;width:106px;height:19px;',
+			]
 		},
 					]
 				},
@@ -998,6 +1099,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:97px;top:338px;width:685px;height:37px;',
 		},
@@ -1010,6 +1112,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:114px;top:6px;width:668px;height:19px;',
 		},
@@ -1022,6 +1125,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Руководитель',
 			style: 'position:absolute;left:114px;top:30px;width:668px;height:19px;',
 		},
@@ -1034,6 +1138,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ГлавныйБухгалтер',
 			style: 'position:absolute;left:114px;top:54px;width:668px;height:19px;',
 		},
@@ -1041,5 +1146,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

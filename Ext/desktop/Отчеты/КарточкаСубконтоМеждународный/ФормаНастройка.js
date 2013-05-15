@@ -40,14 +40,18 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаНач',
 			style: 'position:absolute;left:124px;top:6px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ПолеВводаДатаКон',
 			style: 'position:absolute;left:234px;top:6px;width:86px;height:19px;',
 		},
@@ -60,6 +64,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:124px;top:30px;width:218px;height:19px;',
 		},
@@ -71,13 +76,6 @@
 			xtype: 'checkbox',
 			boxLabel: 'Все периоды',
 			style: 'position:absolute;left:251px;top:54px;width:91px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:104px;width:336px;height:24px;',
-			items:
-			[
-			]
 		},
 		{
 			xtype: 'grid',
@@ -122,13 +120,6 @@
 					title:'Отбор',
 					items:
 					[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:336px;height:24px;',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:336px;height:210px;',
@@ -206,5 +197,8 @@
 				},
 			]
 		},
+	],
+	dockedItems:
+	[
 	]
 });

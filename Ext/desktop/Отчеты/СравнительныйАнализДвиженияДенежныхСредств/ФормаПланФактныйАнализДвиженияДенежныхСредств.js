@@ -10,8 +10,59 @@
 	items:
 	[
 		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:33px;width:588px;height:48px;',
+			height: 48,width: 588,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Поля',
+					items:
+					[
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиЦФО',
+			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Подразделение:',
+			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:24px;width:180px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиВидДенежныхСредств',
+			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Форма оплаты:',
+			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:110px;top:0px;width:180px;height:20px;',
+		},
+					]
+				},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			dock: 'top',
 			items:
 			[
 				{
@@ -70,51 +121,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:33px;width:588px;height:48px;',
-			height: 48,width: 588,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Поля',
-					items:
-					[
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиЦФО',
-			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Подразделение:',
-			style: 'position:absolute;left:0px;top:24px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:24px;width:180px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			name: 'ПолеНастройкиВидДенежныхСредств',
-			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Форма оплаты:',
-			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:110px;top:0px;width:180px;height:20px;',
-		},
-					]
 				},
 			]
 		},

@@ -28,66 +28,77 @@
 		{
 			xtype: 'textarea',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПолное',
 			style: 'position:absolute;left:136px;top:61px;width:700px;height:38px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КраткоеНаименование',
 			style: 'position:absolute;left:136px;top:33px;width:700px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИНН',
 			style: 'position:absolute;left:136px;top:108px;width:110px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПП',
 			style: 'position:absolute;left:136px;top:136px;width:110px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрационныйНомерПФР',
 			style: 'position:absolute;left:432px;top:108px;width:110px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'РегистрационныйНомерФСС',
 			style: 'position:absolute;left:432px;top:136px;width:110px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЮрАдрес',
 			style: 'position:absolute;left:136px;top:228px;width:700px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФактАдрес',
 			style: 'position:absolute;left:136px;top:256px;width:700px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ЭлектАдрес',
 			style: 'position:absolute;left:136px;top:312px;width:408px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Телефон',
 			style: 'position:absolute;left:136px;top:284px;width:110px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТелефонМобильный',
 			style: 'position:absolute;left:432px;top:284px;width:110px;height:19px;',
 		},
@@ -102,6 +113,16 @@
 			style: 'position:absolute;left:136px;top:184px;width:193px;height:15px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Основные сведения',
+			style: 'position:absolute;left:8px;top:8px;width:828px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Контактная информация',
+			style: 'position:absolute;left:8px;top:204px;width:828px;height:16px;',
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДополнительныйКодФСС',
 			text: 'Дополнительный номер ФСС:',
@@ -110,6 +131,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДополнительныйКодФСС',
 			style: 'position:absolute;left:726px;top:136px;width:110px;height:19px;',
 		},
@@ -122,69 +144,112 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументВидСотрудника',
 			style: 'position:absolute;left:124px;top:211px;width:708px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументСерияСотрудника',
 			style: 'position:absolute;left:124px;top:237px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументНомерСотрудника',
 			style: 'position:absolute;left:392px;top:236px;width:144px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДокументДатаВыдачиСотрудника',
 			style: 'position:absolute;left:688px;top:236px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДокументКемВыданСотрудника',
 			style: 'position:absolute;left:124px;top:268px;width:408px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Кадровые данные',
+			style: 'position:absolute;left:8px;top:132px;width:824px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПодразделениеСотрудника',
 			style: 'position:absolute;left:392px;top:155px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДолжностьСотрудника',
 			style: 'position:absolute;left:124px;top:155px;width:144px;height:19px;',
 		},
 		{
+			xtype: 'fieldset',
+			title: 'Документ, удостоверяющий личность',
+			style: 'position:absolute;left:8px;top:188px;width:824px;height:16px;',
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Фамилия',
 			style: 'position:absolute;left:124px;top:100px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Имя',
 			style: 'position:absolute;left:392px;top:101px;width:144px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Отчество',
 			style: 'position:absolute;left:608px;top:101px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Сотрудник',
 			style: 'position:absolute;left:288px;top:50px;width:544px;height:19px;',
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьДолжность6',
+			text: 'Сотрудник:',
+			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:84px;width:824px;height:4px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаВызоваДанныхФИО',
+			text: 'Подробнее...',
+			style: 'position:absolute;left:756px;top:101px;width:76px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'Руководитель',
@@ -200,17 +265,7 @@
 			boxLabel: 'Другой сотрудник:',
 			style: 'position:absolute;left:124px;top:52px;width:124px;height:15px;',
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьДолжность6',
-			text: 'Сотрудник:',
-			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаВызоваДанныхФИО',
-			text: 'Подробнее...',
-			style: 'position:absolute;left:756px;top:101px;width:76px;height:19px;',
+			]
 		},
 					]
 				},
@@ -279,29 +334,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:828px;height:24px;',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Редактировать',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Востановить',
-				},
-			]
-		},
 					]
 				},
 				{
@@ -317,6 +349,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СпецоператорИУЦ',
 			style: 'position:absolute;left:136px;top:8px;width:700px;height:19px;',
 		},
@@ -331,6 +364,11 @@
 			name: 'ОткрытьСтраницуУЦ',
 			text: 'Подробнее об услугах на сайте удостоверяющего центра...',
 			style: 'position:absolute;left:136px;top:32px;width:316px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Соглашение о предоставлении услуг удостоверяющего центра',
+			style: 'position:absolute;left:8px;top:64px;width:828px;height:16px;',
 		},
 					]
 				},
@@ -387,6 +425,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ПутьКонтейнерЗакрытогоКлюча',
 			style: 'position:absolute;left:208px;top:8px;width:628px;height:19px;',
 		},
@@ -399,6 +438,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИдентификаторДокументооборота',
 			style: 'position:absolute;left:208px;top:36px;width:628px;height:19px;',
 		},
@@ -411,6 +451,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'УчетнаяЗапись',
 			style: 'position:absolute;left:208px;top:64px;width:628px;height:19px;',
 		},
@@ -436,29 +477,6 @@
 				'-',
 				{
 					text:'Закрыть',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:860px;height:25px;',
-			items:
-			[
-				{
-					text:'Заявление  на подключение',
-				},
-				{
-					text:'Соглашение об оказании услуг',
-				},
-				{
-					text:'Лицензия на использование ПО',
-				},
-				{
-					text:'Сертификат пользователя',
-				},
-				'-',
-				{
-					text:'Пакет документов',
 				},
 			]
 		},
@@ -492,12 +510,15 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:108px;top:80px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:219px;top:80px;width:130px;height:19px;',
 		},
@@ -510,12 +531,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:108px;top:107px;width:744px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НомерОсновнойПоставки1с',
 			style: 'position:absolute;left:656px;top:80px;width:196px;height:19px;',
 		},
@@ -524,6 +547,33 @@
 			name: 'НадписьНомерОсновнойПоставки1с',
 			text: 'Номер основной поставки 1с:',
 			style: 'position:absolute;left:472px;top:80px;width:172px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:860px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					text:'Заявление  на подключение',
+				},
+				{
+					text:'Соглашение об оказании услуг',
+				},
+				{
+					text:'Лицензия на использование ПО',
+				},
+				{
+					text:'Сертификат пользователя',
+				},
+				'-',
+				{
+					text:'Пакет документов',
+				},
+			]
 		},
 	]
 });

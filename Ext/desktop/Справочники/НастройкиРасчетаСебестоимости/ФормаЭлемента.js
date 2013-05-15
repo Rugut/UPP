@@ -18,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:105px;top:83px;width:281px;height:19px;',
 		},
@@ -26,34 +27,6 @@
 			name: 'НадписьВидОтраженияВУчете',
 			text: 'Отразить в:',
 			style: 'position:absolute;left:8px;top:146px;width:94px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:394px;height:25px;',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:393px;width:394px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -93,26 +66,6 @@
 				]
 			},
 		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:363px;height:24px;',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				'-',
-			]
-		},
 					]
 				},
 				{
@@ -131,8 +84,11 @@
 			style: 'position:absolute;left:22px;top:41px;width:348px;height:43px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'Задержка',
 			style: 'position:absolute;left:218px;top:89px;width:25px;height:19px;',
 		},
@@ -166,6 +122,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:105px;top:57px;width:281px;height:19px;',
 		},
@@ -178,18 +135,9 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:105px;top:33px;width:281px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'упр. учете',
-			style: 'position:absolute;left:105px;top:146px;width:72px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'регл. учете',
-			style: 'position:absolute;left:190px;top:146px;width:80px;height:19px;',
 		},
 		{
 			xtype: 'label',
@@ -200,6 +148,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:105px;top:366px;width:281px;height:19px;',
 		},
@@ -212,8 +161,58 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НастройкаЗакрытияМесяца',
 			style: 'position:absolute;left:105px;top:109px;width:281px;height:19px;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учете',
+			style: 'position:absolute;left:105px;top:146px;width:72px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'регл. учете',
+			style: 'position:absolute;left:190px;top:146px;width:80px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:394px;height:25px;',
+			dock: 'top',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:393px;width:394px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

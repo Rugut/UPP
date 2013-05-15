@@ -10,23 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:266px;width:427px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить допроведение',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНастройкаДопроведения',
 			text: 'Настройка:',
@@ -35,6 +18,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НастройкаДопроведенияДокументов',
 			style: 'position:absolute;left:74px;top:33px;width:345px;height:19px;',
 		},
@@ -45,8 +29,10 @@
 			style: 'position:absolute;left:8px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'НачалоИнтервалаДопроведения',
 			style: 'position:absolute;left:78px;top:126px;width:80px;height:19px;',
 		},
@@ -57,8 +43,10 @@
 			style: 'position:absolute;left:163px;top:126px;width:15px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'КонецИнтервалаДопроведения',
 			style: 'position:absolute;left:183px;top:126px;width:80px;height:19px;',
 		},
@@ -67,27 +55,6 @@
 			name: 'КнопкаВыбораПериода',
 			text: '...',
 			style: 'position:absolute;left:268px;top:126px;width:19px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'только требующие допроведения',
-			style: 'position:absolute;left:31px;top:81px;width:194px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'все',
-			style: 'position:absolute;left:31px;top:102px;width:40px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
-			items:
-			[
-				'-',
-				{
-					text:'Справка',
-				},
-			]
 		},
 		{
 			xtype: 'itemselector',
@@ -104,6 +71,55 @@
 			name: 'НадписьПериод',
 			text: 'За период с:',
 			style: 'position:absolute;left:8px;top:126px;width:69px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'только требующие допроведения',
+			style: 'position:absolute;left:31px;top:81px;width:194px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'все',
+			style: 'position:absolute;left:31px;top:102px;width:40px;height:19px;',
+		},
+			]
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:266px;width:427px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить допроведение',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 	]
 });

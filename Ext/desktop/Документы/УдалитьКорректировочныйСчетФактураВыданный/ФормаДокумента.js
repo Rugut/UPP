@@ -30,12 +30,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Номер',
 			style: 'position:absolute;left:112px;top:32px;width:100px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:120px;top:500px;width:653px;height:19px;',
 		},
@@ -76,27 +78,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Ответственный',
 			style: 'position:absolute;left:120px;top:476px;width:653px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'Дата',
 			style: 'position:absolute;left:234px;top:32px;width:136px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьКонтрагент',
-			text: 'Контрагент:
-',
+			text: 'Контрагент:\r\n',
 			style: 'position:absolute;left:8px;top:80px;width:104px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДоговорКонтрагента',
-			text: 'Договор:
-',
+			text: 'Договор:\r\n',
 			style: 'position:absolute;left:430px;top:80px;width:90px;height:19px;',
 		},
 		{
@@ -108,24 +111,28 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Организация',
 			style: 'position:absolute;left:112px;top:56px;width:258px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Контрагент',
 			style: 'position:absolute;left:112px;top:80px;width:258px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ДоговорКонтрагента',
 			style: 'position:absolute;left:520px;top:80px;width:253px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СчетФактура',
 			style: 'position:absolute;left:112px;top:104px;width:661px;height:19px;',
 		},
@@ -374,16 +381,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:6px;width:751px;height:24px;',
-			items:
-			[
-				{
-					text:'Заполнить по счету-фактуре',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьФИОГлавногоБухгалтера',
 			text: 'Главный бухгалтер:',
@@ -404,6 +401,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПродавца',
 			style: 'position:absolute;left:150px;top:6px;width:607px;height:19px;',
 		},
@@ -416,6 +414,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресПродавца',
 			style: 'position:absolute;left:150px;top:30px;width:607px;height:19px;',
 		},
@@ -428,6 +427,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННПродавца',
 			style: 'position:absolute;left:150px;top:54px;width:120px;height:19px;',
 		},
@@ -440,6 +440,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПППродавца',
 			style: 'position:absolute;left:290px;top:54px;width:100px;height:19px;',
 		},
@@ -452,6 +453,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НаименованиеПокупателя',
 			style: 'position:absolute;left:150px;top:82px;width:607px;height:19px;',
 		},
@@ -464,6 +466,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'АдресПокупателя',
 			style: 'position:absolute;left:150px;top:106px;width:607px;height:19px;',
 		},
@@ -476,6 +479,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ИННПокупателя',
 			style: 'position:absolute;left:150px;top:130px;width:120px;height:19px;',
 		},
@@ -488,6 +492,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КПППокупателя',
 			style: 'position:absolute;left:290px;top:130px;width:100px;height:19px;',
 		},
@@ -500,12 +505,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФИОРуководителя',
 			style: 'position:absolute;left:150px;top:186px;width:240px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ФИОГлавногоБухгалтера',
 			style: 'position:absolute;left:517px;top:186px;width:240px;height:19px;',
 		},
@@ -518,12 +525,14 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'СвидетельствоИП',
 			style: 'position:absolute;left:150px;top:210px;width:607px;height:19px;',
 		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ВалютаДокумента',
 			style: 'position:absolute;left:150px;top:158px;width:80px;height:19px;',
 		},
@@ -548,5 +557,8 @@
 			boxLabel: 'Отразить вычет НДС',
 			style: 'position:absolute;left:8px;top:452px;width:212px;height:19px;',
 		},
+	],
+	dockedItems:
+	[
 	]
 });

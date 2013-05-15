@@ -10,25 +10,9 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:63px;width:458px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Распределить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'КурсОбученияДляРаспределения',
 			style: 'position:absolute;left:151px;top:8px;width:299px;height:19px;',
 		},
@@ -45,8 +29,11 @@
 			style: 'position:absolute;left:8px;top:36px;width:141px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'numberfield',
 			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
 			name: 'РаспределяемоеКоличество',
 			style: 'position:absolute;left:151px;top:36px;width:31px;height:19px;',
 		},
@@ -57,8 +44,10 @@
 			style: 'position:absolute;left:186px;top:36px;width:50px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаС',
 			style: 'position:absolute;left:241px;top:36px;width:80px;height:19px;',
 		},
@@ -69,8 +58,10 @@
 			style: 'position:absolute;left:329px;top:36px;width:15px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'datefield',
 			hideLabel: true,
+			disabled: false,
+			value: 0,
 			name: 'ДатаПо',
 			style: 'position:absolute;left:346px;top:36px;width:80px;height:19px;',
 		},
@@ -79,6 +70,27 @@
 			name: 'КнопкаВыбораПериода',
 			text: '...',
 			style: 'position:absolute;left:431px;top:36px;width:19px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:63px;width:458px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Распределить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });

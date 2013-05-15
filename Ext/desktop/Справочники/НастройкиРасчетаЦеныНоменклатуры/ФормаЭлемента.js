@@ -10,44 +10,6 @@
 	items:
 	[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Выполнить расчет',
-				},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:394px;width:531px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-			]
-		},
-		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:84px;width:515px;height:275px;',
 			height: 275,width: 515,
@@ -623,34 +585,15 @@
 			style: 'position:absolute;left:6px;top:30px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'упр. учета',
-			style: 'position:absolute;left:133px;top:30px;width:127px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'регл. учета',
-			style: 'position:absolute;left:267px;top:30px;width:106px;height:19px;',
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Рассчитывать цены:',
 			style: 'position:absolute;left:6px;top:181px;width:121px;height:19px;',
 		},
 		{
-			xtype: 'radio',
-			boxLabel: 'по поступлению',
-			style: 'position:absolute;left:133px;top:181px;width:127px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'по списанию',
-			style: 'position:absolute;left:267px;top:181px;width:106px;height:19px;',
-		},
-		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'НастройкаРасчетаСебестоимости',
 			style: 'position:absolute;left:267px;top:6px;width:240px;height:19px;',
 		},
@@ -668,9 +611,46 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'ТипЦен',
 			style: 'position:absolute;left:133px;top:206px;width:240px;height:19px;',
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'упр. учета',
+			style: 'position:absolute;left:133px;top:30px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'регл. учета',
+			style: 'position:absolute;left:267px;top:30px;width:106px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'по поступлению',
+			style: 'position:absolute;left:133px;top:181px;width:127px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'по списанию',
+			style: 'position:absolute;left:267px;top:181px;width:106px;height:19px;',
+		},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
 		{
 			xtype: 'radio',
 			boxLabel: 'в новый документ',
@@ -680,6 +660,8 @@
 			xtype: 'radio',
 			boxLabel: 'в существующий',
 			style: 'position:absolute;left:267px;top:234px;width:106px;height:15px;',
+		},
+			]
 		},
 					]
 				},
@@ -711,6 +693,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Наименование',
 			style: 'position:absolute;left:99px;top:57px;width:424px;height:19px;',
 		},
@@ -723,6 +706,7 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Родитель',
 			style: 'position:absolute;left:99px;top:33px;width:424px;height:19px;',
 		},
@@ -735,8 +719,52 @@
 		{
 			xtype: 'textfield',
 			hideLabel: true,
+			disabled: false,
 			name: 'Комментарий',
 			style: 'position:absolute;left:87px;top:367px;width:436px;height:19px;',
+		},
+	],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
+			dock: 'top',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Выполнить расчет',
+				},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:394px;width:531px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+			]
 		},
 	]
 });
