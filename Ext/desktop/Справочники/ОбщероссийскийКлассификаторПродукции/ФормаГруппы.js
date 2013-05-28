@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 76,
+			height: 19,
 			style: 'position:absolute;left:115px;top:33px;width:76px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 277,
+			height: 43,
 			style: 'position:absolute;left:115px;top:58px;width:277px;height:43px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтрольноеЧисло',
+			width: 33,
+			height: 19,
 			style: 'position:absolute;left:308px;top:33px;width:33px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 277,
+			height: 19,
 			style: 'position:absolute;left:115px;top:108px;width:277px;height:19px;',
 		},
 	],

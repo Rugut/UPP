@@ -41,6 +41,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочты',
+			width: 499,
+			height: 19,
 			style: 'position:absolute;left:155px;top:84px;width:499px;height:19px;',
 		},
 		{
@@ -77,10 +79,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:95px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'НалоговыйОрган',
+			width: 499,
+			height: 19,
 			style: 'position:absolute;left:147px;top:0px;width:499px;height:19px;',
 		},
 					]
@@ -103,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'SMTPСервер',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:147px;top:28px;width:124px;height:19px;',
 		},
 		{
@@ -110,6 +119,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'POP3Сервер',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:147px;top:62px;width:124px;height:19px;',
 		},
 		{
@@ -135,6 +146,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Логин',
+			width: 81,
+			height: 19,
 			style: 'position:absolute;left:362px;top:62px;width:81px;height:19px;',
 		},
 		{
@@ -142,6 +155,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольPOP3',
+			width: 67,
+			height: 19,
 			style: 'position:absolute;left:458px;top:62px;width:67px;height:19px;',
 		},
 		{
@@ -154,6 +169,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПользователяSMTP',
+			width: 61,
+			height: 19,
 			style: 'position:absolute;left:382px;top:28px;width:61px;height:19px;',
 		},
 		{
@@ -161,6 +178,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольSMTP',
+			width: 67,
+			height: 19,
 			style: 'position:absolute;left:458px;top:28px;width:67px;height:19px;',
 		},
 		{
@@ -174,6 +193,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатРуководителя',
+			width: 499,
+			height: 19,
 			style: 'position:absolute;left:147px;top:118px;width:499px;height:19px;',
 		},
 		{
@@ -241,6 +262,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатДляШифрования',
+			width: 499,
+			height: 19,
 			style: 'position:absolute;left:147px;top:0px;width:499px;height:19px;',
 		},
 					]
@@ -269,6 +292,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатГлавногоБухгалтера',
+			width: 499,
+			height: 19,
 			style: 'position:absolute;left:147px;top:0px;width:499px;height:19px;',
 		},
 					]
@@ -291,10 +316,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СерверДокументооборота',
+			width: 499,
+			height: 19,
 			style: 'position:absolute;left:147px;top:23px;width:499px;height:19px;',
 		},
 		{
@@ -401,6 +431,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдентификаторАбонента',
+			width: 290,
+			height: 19,
 			style: 'position:absolute;left:147px;top:0px;width:290px;height:19px;',
 		},
 		{
@@ -414,6 +446,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдентификаторСпецоператора',
+			width: 36,
+			height: 19,
 			style: 'position:absolute;left:610px;top:0px;width:36px;height:19px;',
 		},
 					]
@@ -466,10 +500,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'РежимАвтонастройки',
+			width: 290,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:290px;height:19px;',
 		},
 		{
@@ -493,10 +530,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СпецоператорСвязи',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:254px;top:57px;width:400px;height:19px;',
 		},
 		{

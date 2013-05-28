@@ -16,10 +16,13 @@
 			style: 'position:absolute;left:8px;top:8px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ДокументВид',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:118px;top:8px;width:204px;height:19px;',
 		},
 		{
@@ -33,6 +36,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументСерия',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:118px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -46,6 +51,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументНомер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:242px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -59,7 +66,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДокументДатаВыдачи',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:118px;top:58px;width:80px;height:19px;',
 		},
 		{
@@ -73,6 +83,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументКемВыдан',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:118px;top:83px;width:204px;height:19px;',
 		},
 		{
@@ -86,6 +98,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументКодПодразделения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:118px;top:108px;width:80px;height:19px;',
 		},
 		{

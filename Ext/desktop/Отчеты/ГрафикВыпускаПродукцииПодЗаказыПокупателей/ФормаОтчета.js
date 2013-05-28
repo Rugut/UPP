@@ -174,7 +174,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаНачалоПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:52px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -188,7 +191,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаКонецПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:153px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -220,7 +226,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаПериод',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:178px;top:0px;width:80px;height:19px;',
 		},
 					]

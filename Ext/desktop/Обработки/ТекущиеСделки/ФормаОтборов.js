@@ -46,10 +46,13 @@
 			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияКонтрагент',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:30px;width:118px;height:19px;',
 		},
 		{
@@ -57,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораКонтрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:30px;width:220px;height:19px;',
 		},
 		{
@@ -65,17 +70,24 @@
 			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: true,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияПользователь',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:54px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ЗначениеОтбораПользователь',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:54px;width:220px;height:19px;',
 		},
 		{
@@ -84,10 +96,13 @@
 			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияСумма',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:78px;width:118px;height:19px;',
 		},
 		{
@@ -105,10 +120,13 @@
 			style: 'position:absolute;left:6px;top:102px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияТипДокумента',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:102px;width:118px;height:19px;',
 		},
 		{
@@ -116,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораТипДокумента',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:102px;width:220px;height:19px;',
 		},
 		{
@@ -124,10 +144,13 @@
 			style: 'position:absolute;left:6px;top:126px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияДоговор',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:126px;width:118px;height:19px;',
 		},
 		{
@@ -136,10 +159,13 @@
 			style: 'position:absolute;left:6px;top:150px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияНомер',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:150px;width:118px;height:19px;',
 		},
 		{
@@ -147,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораНомер',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:150px;width:220px;height:19px;',
 		},
 		{
@@ -155,10 +183,13 @@
 			style: 'position:absolute;left:6px;top:174px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияВидОперации',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:174px;width:118px;height:19px;',
 		},
 		{
@@ -166,6 +197,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораВидОперации',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:174px;width:220px;height:19px;',
 		},
 		{
@@ -174,10 +207,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияДата',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:111px;top:6px;width:118px;height:19px;',
 		},
 		{
@@ -185,6 +221,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораДата',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:6px;width:220px;height:19px;',
 		},
 		{
@@ -192,7 +230,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ЗначениеОтбораДатаНач',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:234px;top:6px;width:106px;height:19px;',
 		},
 		{
@@ -200,7 +241,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ЗначениеОтбораДатаКон',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:348px;top:6px;width:106px;height:19px;',
 		},
 		{
@@ -208,6 +252,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораДоговор',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:126px;width:220px;height:19px;',
 		},
 					]

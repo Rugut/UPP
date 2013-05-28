@@ -31,6 +31,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 442,
+			height: 19,
 			style: 'position:absolute;left:93px;top:4px;width:442px;height:19px;',
 		},
 		{
@@ -44,7 +46,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаДействияНастройки',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:93px;top:28px;width:120px;height:19px;',
 		},
 		{

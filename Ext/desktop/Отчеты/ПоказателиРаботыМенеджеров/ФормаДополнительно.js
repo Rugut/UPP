@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:113px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонца',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:214px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -89,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиМенеджер',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:258px;top:50px;width:220px;height:19px;',
 		},
 		{

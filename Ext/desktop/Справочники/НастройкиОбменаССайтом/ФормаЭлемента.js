@@ -35,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогВыгрузки',
+			width: 394,
+			height: 20,
 			style: 'position:absolute;left:84px;top:0px;width:394px;height:20px;',
 		},
 		{
@@ -66,6 +68,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'HTTPВыгрузкаПароль',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:311px;top:26px;width:167px;height:19px;',
 		},
 		{
@@ -85,6 +89,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'HTTPВыгрузкаИмяПользователя',
+			width: 176,
+			height: 19,
 			style: 'position:absolute;left:84px;top:26px;width:176px;height:19px;',
 		},
 		{
@@ -92,6 +98,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'HTTPОбменАдресСкрипта',
+			width: 394,
+			height: 20,
 			style: 'position:absolute;left:84px;top:0px;width:394px;height:20px;',
 		},
 		{
@@ -110,6 +118,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'HTTPОбменПроксиИмяПользователя',
+			width: 176,
+			height: 19,
 			style: 'position:absolute;left:84px;top:97px;width:176px;height:19px;',
 		},
 		{
@@ -132,6 +142,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'HTTPОбменПроксиСервер',
+			width: 176,
+			height: 19,
 			style: 'position:absolute;left:84px;top:74px;width:176px;height:19px;',
 		},
 		{
@@ -145,6 +157,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'HTTPОбменПроксиПароль',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:311px;top:97px;width:167px;height:19px;',
 		},
 		{
@@ -208,10 +222,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'УзелОбменаТоварами',
+			width: 268,
+			height: 19,
 			style: 'position:absolute;left:135px;top:0px;width:268px;height:19px;',
 		},
 					]
@@ -230,10 +248,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'УзелОбменаЗаказами',
+			width: 268,
+			height: 19,
 			style: 'position:absolute;left:135px;top:0px;width:268px;height:19px;',
 		},
 					]
@@ -411,24 +433,36 @@
 			style: 'position:absolute;left:6px;top:99px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:185px;top:51px;width:299px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:185px;top:75px;width:299px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:185px;top:99px;width:299px;height:19px;',
 		},
 		{
@@ -436,24 +470,36 @@
 			style: 'position:absolute;left:185px;top:6px;width:178px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ГруппаДляНовыхКонтрагентов',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:185px;top:144px;width:299px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ГруппаДляНовойНоменклатуры',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:185px;top:168px;width:299px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ЕдиницаИзмеренияНовойНоменклатуры',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:185px;top:192px;width:299px;height:19px;',
 		},
 		{
@@ -546,6 +592,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 413,
+			height: 19,
 			style: 'position:absolute;left:269px;top:527px;width:413px;height:19px;',
 		},
 		{
@@ -559,6 +607,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:642px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -572,6 +622,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 323,
+			height: 19,
 			style: 'position:absolute;left:276px;top:33px;width:323px;height:19px;',
 		},
 		{

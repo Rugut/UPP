@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:135px;top:57px;width:257px;height:19px;',
 		},
 		{
@@ -29,10 +31,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:135px;top:33px;width:257px;height:19px;',
 		},
 		{
@@ -42,10 +48,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:135px;top:81px;width:257px;height:19px;',
 		},
 		{
@@ -59,6 +68,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:135px;top:186px;width:257px;height:19px;',
 		},
 		{

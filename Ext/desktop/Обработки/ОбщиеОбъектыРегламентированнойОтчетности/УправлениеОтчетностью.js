@@ -167,10 +167,16 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
+			trigger3Cls: 'x-form-clear-trigger',
+			trigger4Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 328,
+			height: 19,
 			style: 'position:absolute;left:84px;top:5px;width:328px;height:19px;',
 		},
 		{
@@ -184,6 +190,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИФНС',
+			width: 56,
+			height: 19,
 			style: 'position:absolute;left:479px;top:5px;width:56px;height:19px;',
 		},
 		{
@@ -229,7 +237,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаПериодаОтчета',
+			width: 76,
+			height: 20,
 			style: 'position:absolute;left:123px;top:23px;width:76px;height:20px;',
 		},
 		{
@@ -237,7 +248,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонцаПериодаОтчета',
+			width: 76,
+			height: 20,
 			style: 'position:absolute;left:223px;top:23px;width:76px;height:20px;',
 		},
 		{

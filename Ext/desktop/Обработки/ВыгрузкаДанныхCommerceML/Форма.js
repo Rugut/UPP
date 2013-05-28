@@ -147,6 +147,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяКаталога',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 					]
@@ -166,6 +168,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПрайса',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 		{
@@ -257,10 +261,14 @@
 			style: 'position:absolute;left:101px;top:0px;width:150px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПолеНастройкиКонтрагент',
+			width: 201,
+			height: 19,
 			style: 'position:absolute;left:256px;top:0px;width:201px;height:19px;',
 		},
 		{
@@ -280,7 +288,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеНастройкиСДокументДата',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:101px;top:23px;width:84px;height:19px;',
 		},
 		{
@@ -288,7 +299,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеНастройкиПоДокументДата',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:212px;top:23px;width:84px;height:19px;',
 		},
 		{
@@ -475,6 +489,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПрайсаCML_1',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 		{
@@ -484,10 +500,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:98px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаПоУмолчанию',
+			width: 102,
+			height: 19,
 			style: 'position:absolute;left:130px;top:42px;width:102px;height:19px;',
 		},
 		{
@@ -524,7 +543,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДействительноС',
+			width: 91,
+			height: 19,
 			style: 'position:absolute;left:130px;top:66px;width:91px;height:19px;',
 		},
 		{
@@ -532,7 +554,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДействительноПо',
+			width: 91,
+			height: 19,
 			style: 'position:absolute;left:257px;top:66px;width:91px;height:19px;',
 		},
 					]
@@ -546,10 +571,14 @@
 			style: 'position:absolute;left:6px;top:48px;width:97px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:107px;top:48px;width:355px;height:19px;',
 		},
 		{
@@ -568,6 +597,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаВыгрузки',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 					]
@@ -593,6 +624,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяКаталогаВыгрузки',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 					]

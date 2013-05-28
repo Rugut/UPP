@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:547px;top:57px;width:40px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:400px;height:19px;',
 		},
 		{
@@ -138,7 +142,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРождения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -283,6 +290,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 201,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:201px;height:19px;',
 		},
 		{
@@ -290,6 +299,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 139,
+			height: 19,
 			style: 'position:absolute;left:304px;top:33px;width:139px;height:19px;',
 		},
 		{
@@ -297,6 +308,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 139,
+			height: 19,
 			style: 'position:absolute;left:448px;top:33px;width:139px;height:19px;',
 		},
 	],

@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Период',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:142px;top:147px;width:92px;height:19px;',
 		},
 		{
@@ -39,6 +42,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СерияСправки',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:142px;top:32px;width:120px;height:19px;',
 		},
 		{
@@ -52,6 +57,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерСправки',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:142px;top:56px;width:120px;height:19px;',
 		},
 		{
@@ -65,7 +72,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаВыдачи',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:142px;top:80px;width:120px;height:19px;',
 		},
 		{
@@ -79,7 +89,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'СрокДействияСправки',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:142px;top:104px;width:120px;height:19px;',
 		},
 		{

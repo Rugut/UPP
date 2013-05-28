@@ -76,6 +76,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдентификаторСистемыОтправителяПФР',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:372px;top:0px;width:80px;height:19px;',
 		},
 					]
@@ -109,6 +111,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолноеНаименованиеУполномоченногоПредставителя',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:184px;top:6px;width:246px;height:19px;',
 		},
 		{
@@ -122,6 +126,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИННУполномоченногоПредставителя',
+			width: 130,
+			height: 19,
 			style: 'position:absolute;left:184px;top:31px;width:130px;height:19px;',
 		},
 		{
@@ -135,6 +141,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КППУполномоченногоПредставителя',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:329px;top:31px;width:101px;height:19px;',
 		},
 					]
@@ -162,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдентификаторСистемыОтправителяФСГС',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:372px;top:0px;width:80px;height:19px;',
 		},
 					]

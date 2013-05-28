@@ -102,6 +102,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрефиксУзлаРаспределеннойИнформационнойБазы',
+			width: 44,
+			height: 19,
 			style: 'position:absolute;left:268px;top:48px;width:44px;height:19px;',
 		},
 		{
@@ -153,6 +155,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'GLNПредприятия',
+			width: 165,
+			height: 19,
 			style: 'position:absolute;left:291px;top:48px;width:165px;height:19px;',
 		},
 		{
@@ -166,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрефиксШтрихКодаРегистрацииНоменклатуры',
+			width: 165,
+			height: 19,
 			style: 'position:absolute;left:291px;top:96px;width:165px;height:19px;',
 		},
 		{
@@ -179,6 +185,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольРегистрацииВЮнискан',
+			width: 165,
+			height: 19,
 			style: 'position:absolute;left:291px;top:72px;width:165px;height:19px;',
 		},
 		{

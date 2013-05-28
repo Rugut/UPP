@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 54,
+			height: 19,
 			style: 'position:absolute;left:446px;top:33px;width:54px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 319,
+			height: 19,
 			style: 'position:absolute;left:90px;top:33px;width:319px;height:19px;',
 		},
 		{
@@ -80,10 +84,14 @@
 			style: 'position:absolute;left:6px;top:26px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответственный',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:93px;top:26px;width:391px;height:19px;',
 		},
 		{
@@ -106,6 +114,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогПроверкиДоступности',
+			width: 316,
+			height: 19,
 			style: 'position:absolute;left:168px;top:97px;width:316px;height:19px;',
 		},
 		{
@@ -118,6 +128,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВыполнятьОбменПриПоявленииФайла',
+			width: 316,
+			height: 19,
 			style: 'position:absolute;left:168px;top:121px;width:316px;height:19px;',
 		},
 		{
@@ -178,10 +190,14 @@
 			style: 'position:absolute;left:16px;top:93px;width:130px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'УчетнаяЗаписьОтправкиСообщенияОбОшибке',
+			width: 336,
+			height: 19,
 			style: 'position:absolute;left:148px;top:93px;width:336px;height:19px;',
 		},
 		{
@@ -195,6 +211,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресДляОтправкиСообщенийОбОшибке',
+			width: 336,
+			height: 19,
 			style: 'position:absolute;left:148px;top:116px;width:336px;height:19px;',
 		},
 		{
@@ -336,6 +354,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:102px;top:528px;width:398px;height:19px;',
 		},
 	],

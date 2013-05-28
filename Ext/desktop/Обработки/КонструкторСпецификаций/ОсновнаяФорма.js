@@ -666,7 +666,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:190px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -721,10 +724,14 @@
 			style: 'position:absolute;left:6px;top:120px;width:258px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВыводитьДляНоменклатуры',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:274px;top:120px;width:110px;height:19px;',
 		},
 		{
@@ -739,10 +746,14 @@
 			style: 'position:absolute;left:6px;top:303px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: true,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'КонечнаяПродукция',
+			width: 255,
+			height: 19,
 			style: 'position:absolute;left:129px;top:303px;width:255px;height:19px;',
 		},
 		{
@@ -752,10 +763,14 @@
 			style: 'position:absolute;left:6px;top:327px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: true,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'КонечнаяХарактеристикаПродукции',
+			width: 255,
+			height: 19,
 			style: 'position:absolute;left:129px;top:327px;width:255px;height:19px;',
 		},
 		{

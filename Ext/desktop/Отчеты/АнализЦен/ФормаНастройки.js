@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:60px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -105,10 +108,13 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:208px;top:6px;width:80px;height:19px;',
 		},
 					]

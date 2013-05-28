@@ -33,6 +33,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаВремяНапр',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:193px;top:57px;width:295px;height:19px;',
 		},
 		{
@@ -46,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПост',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:193px;top:81px;width:295px;height:19px;',
 		},
 		{
@@ -59,6 +63,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимВидДок',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:193px;top:9px;width:295px;height:19px;',
 		},
 		{
@@ -72,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПрин',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:193px;top:105px;width:295px;height:19px;',
 		},
 		{
@@ -89,6 +97,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:193px;top:33px;width:295px;height:19px;',
 		},
 		{

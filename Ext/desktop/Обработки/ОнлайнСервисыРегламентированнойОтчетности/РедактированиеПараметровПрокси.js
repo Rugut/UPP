@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПользователя',
+			width: 190,
+			height: 19,
 			style: 'position:absolute;left:125px;top:56px;width:190px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Пароль',
+			width: 190,
+			height: 19,
 			style: 'position:absolute;left:125px;top:81px;width:190px;height:19px;',
 		},
 		{

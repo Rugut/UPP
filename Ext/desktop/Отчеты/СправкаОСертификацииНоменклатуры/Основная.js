@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:157px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:368px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -44,10 +50,14 @@
 			style: 'position:absolute;left:8px;top:58px;width:65px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Контрагент',
+			width: 175,
+			height: 19,
 			style: 'position:absolute;left:78px;top:58px;width:175px;height:19px;',
 		},
 		{
@@ -57,10 +67,14 @@
 			style: 'position:absolute;left:284px;top:58px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Номенклатура',
+			width: 175,
+			height: 19,
 			style: 'position:absolute;left:368px;top:58px;width:175px;height:19px;',
 		},
 		{

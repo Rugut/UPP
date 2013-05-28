@@ -810,6 +810,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаДанных',
+			width: 534,
+			height: 19,
 			style: 'position:absolute;left:114px;top:0px;width:534px;height:19px;',
 		},
 					]
@@ -829,7 +831,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:190px;top:0px;width:110px;height:19px;',
 		},
 		{
@@ -843,7 +848,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:334px;top:0px;width:110px;height:19px;',
 		},
 		{

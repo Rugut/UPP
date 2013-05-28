@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:207px;top:33px;width:103px;height:19px;',
 		},
 		{

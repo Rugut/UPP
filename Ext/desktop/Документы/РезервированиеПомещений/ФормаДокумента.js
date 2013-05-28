@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРезервирования',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:96px;top:109px;width:120px;height:19px;',
 		},
 		{
@@ -34,6 +37,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 362,
+			height: 41,
 			style: 'position:absolute;left:8px;top:182px;width:362px;height:41px;',
 		},
 		{
@@ -43,10 +48,13 @@
 			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Помещение',
+			width: 274,
+			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:274px;height:19px;',
 		},
 		{
@@ -86,7 +94,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ВремяОкончания',
+			width: 50,
+			height: 19,
 			style: 'position:absolute;left:312px;top:0px;width:50px;height:19px;',
 		},
 					]
@@ -106,7 +117,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончанияРезервирования',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:88px;top:0px;width:120px;height:19px;',
 		},
 					]
@@ -124,7 +138,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:114px;top:233px;width:120px;height:19px;',
 		},
 		{
@@ -134,10 +151,15 @@
 			style: 'position:absolute;left:8px;top:257px;width:98px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:114px;top:257px;width:256px;height:19px;',
 		},
 		{
@@ -151,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:290px;top:233px;width:80px;height:19px;',
 		},
 		{

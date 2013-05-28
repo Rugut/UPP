@@ -54,7 +54,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаСдачи',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:82px;top:25px;width:80px;height:19px;',
 		},
 		{
@@ -90,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КомментарийОбщий',
+			width: 441,
+			height: 19,
 			style: 'position:absolute;left:263px;top:3px;width:441px;height:19px;',
 		},
 		{
@@ -99,10 +104,13 @@
 			style: 'position:absolute;left:183px;top:5px;width:80px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Статус',
+			width: 119,
+			height: 19,
 			style: 'position:absolute;left:47px;top:3px;width:119px;height:19px;',
 		},
 					]
@@ -138,6 +146,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийФормаОтчета',
+			width: 342,
+			height: 19,
 			style: 'position:absolute;left:362px;top:268px;width:342px;height:19px;',
 		},
 		{

@@ -31,6 +31,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОпрашиваемоеЛицо',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:114px;top:1px;width:296px;height:19px;',
 		},
 		{
@@ -40,10 +42,14 @@
 			style: 'position:absolute;left:0px;top:26px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТиповаяАнкета',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:114px;top:26px;width:296px;height:19px;',
 		},
 					]
@@ -61,6 +67,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:312px;top:399px;width:106px;height:19px;',
 		},
 		{
@@ -74,7 +82,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:122px;top:399px;width:120px;height:19px;',
 		},
 		{
@@ -84,10 +95,15 @@
 			style: 'position:absolute;left:8px;top:424px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:122px;top:424px;width:296px;height:19px;',
 		},
 		{
@@ -106,6 +122,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:122px;top:472px;width:296px;height:19px;',
 		},
 		{
@@ -220,10 +238,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Рассылка',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:114px;top:0px;width:296px;height:19px;',
 		},
 					]

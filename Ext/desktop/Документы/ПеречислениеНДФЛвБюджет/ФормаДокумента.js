@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:455px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:555px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -56,10 +65,15 @@
 			style: 'position:absolute;left:367px;top:58px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:455px;top:58px;width:220px;height:19px;',
 		},
 		{
@@ -73,6 +87,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 579,
+			height: 19,
 			style: 'position:absolute;left:96px;top:428px;width:579px;height:19px;',
 		},
 		{
@@ -162,7 +178,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаПлатежа',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:84px;top:23px;width:80px;height:19px;',
 		},
 		{
@@ -170,6 +189,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МесяцНалоговогоПериода',
+			width: 115,
+			height: 19,
 			style: 'position:absolute;left:193px;top:23px;width:115px;height:19px;',
 		},
 		{
@@ -183,6 +204,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПлатежноеПоручениеНомер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:447px;top:23px;width:80px;height:19px;',
 		},
 		{
@@ -190,7 +213,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПлатежноеПоручениеДата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:547px;top:23px;width:120px;height:19px;',
 		},
 		{
@@ -210,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКАТО',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:392px;top:48px;width:160px;height:19px;',
 		},
 		{
@@ -219,10 +247,13 @@
 			style: 'position:absolute;left:170px;top:48px;width:44px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Ставка',
+			width: 93,
+			height: 19,
 			style: 'position:absolute;left:215px;top:48px;width:93px;height:19px;',
 		},
 		{

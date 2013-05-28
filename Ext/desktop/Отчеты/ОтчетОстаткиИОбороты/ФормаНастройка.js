@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:84px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -32,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
 		{

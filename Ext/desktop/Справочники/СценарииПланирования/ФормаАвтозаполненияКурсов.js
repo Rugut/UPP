@@ -29,7 +29,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаУстановкиКурсов',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:240px;top:8px;width:100px;height:19px;',
 		},
 		{
@@ -84,10 +87,13 @@
 			style: 'position:absolute;left:8px;top:56px;width:230px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СпособЗаполнения',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:240px;top:80px;width:100px;height:19px;',
 		},
 		{

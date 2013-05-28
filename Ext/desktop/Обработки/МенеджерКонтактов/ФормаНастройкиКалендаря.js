@@ -47,7 +47,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОграничитьВремяС',
+			width: 38,
+			height: 19,
 			style: 'position:absolute;left:142px;top:72px;width:38px;height:19px;',
 		},
 		{
@@ -55,7 +58,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОграничитьВремяПо',
+			width: 38,
+			height: 19,
 			style: 'position:absolute;left:202px;top:72px;width:38px;height:19px;',
 		},
 		{
@@ -81,10 +87,13 @@
 			style: 'position:absolute;left:18px;top:156px;width:136px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Ответственные',
+			width: 326,
+			height: 19,
 			style: 'position:absolute;left:6px;top:27px;width:326px;height:19px;',
 		},
 		{

@@ -52,7 +52,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Период',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:182px;top:21px;width:120px;height:19px;',
 		},
 		{

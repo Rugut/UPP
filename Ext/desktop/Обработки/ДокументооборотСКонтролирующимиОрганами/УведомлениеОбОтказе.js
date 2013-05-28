@@ -145,6 +145,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяОбрабФайла',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:6px;width:298px;height:19px;',
 		},
 		{
@@ -158,6 +160,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдФайл',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:30px;width:298px;height:19px;',
 		},
 		{
@@ -171,6 +175,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдДок',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:54px;width:298px;height:19px;',
 		},
 		{
@@ -184,6 +190,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаВремяПредст',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:78px;width:298px;height:19px;',
 		},
 		{
@@ -197,6 +205,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПрием',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:102px;width:298px;height:19px;',
 		},
 		{
@@ -210,6 +220,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:126px;width:298px;height:19px;',
 		},
 		{
@@ -223,6 +235,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимОтч',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:150px;width:298px;height:19px;',
 		},
 		{
@@ -236,6 +250,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомКорр',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:174px;width:298px;height:19px;',
 		},
 		{
@@ -249,6 +265,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетГод',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:198px;width:298px;height:19px;',
 		},
 		{
@@ -262,6 +280,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Период',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:222px;width:298px;height:19px;',
 		},
 		{
@@ -275,6 +295,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВерсФорм',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:246px;width:298px;height:19px;',
 		},
 		{
@@ -288,6 +310,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрогрКомпл',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:270px;width:298px;height:19px;',
 		},
 		{
@@ -301,6 +325,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаФормУвед',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:294px;width:298px;height:19px;',
 		},
 					]

@@ -33,10 +33,13 @@
 			style: 'position:absolute;left:8px;top:6px;width:142px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВариантАвтоподбора',
+			width: 342,
+			height: 19,
 			style: 'position:absolute;left:150px;top:6px;width:342px;height:19px;',
 		},
 		{
@@ -46,10 +49,14 @@
 			style: 'position:absolute;left:8px;top:28px;width:142px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Свойство',
+			width: 342,
+			height: 19,
 			style: 'position:absolute;left:150px;top:30px;width:342px;height:19px;',
 		},
 		{

@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:236px;top:57px;width:40px;height:19px;',
 		},
 		{
@@ -21,6 +23,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:160px;top:33px;width:233px;height:19px;',
 		},
 		{
@@ -28,6 +32,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолное',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:160px;top:84px;width:233px;height:19px;',
 		},
 		{
@@ -81,6 +87,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МеждународноеСокращение',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:160px;top:57px;width:40px;height:19px;',
 		},
 		{

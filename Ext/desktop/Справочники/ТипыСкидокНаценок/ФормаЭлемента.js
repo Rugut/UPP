@@ -45,6 +45,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеУсловия',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:115px;top:153px;width:226px;height:19px;',
 		},
 		{
@@ -54,10 +56,13 @@
 			style: 'position:absolute;left:345px;top:6px;width:41px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Валюта',
+			width: 68,
+			height: 19,
 			style: 'position:absolute;left:391px;top:6px;width:68px;height:19px;',
 		},
 		{
@@ -82,10 +87,13 @@
 			style: 'position:absolute;left:6px;top:128px;width:99px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'Условие',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:115px;top:129px;width:344px;height:19px;',
 		},
 		{
@@ -106,10 +114,13 @@
 			style: 'position:absolute;left:6px;top:61px;width:99px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Качество',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:115px;top:61px;width:344px;height:19px;',
 		},
 		{
@@ -134,10 +145,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:99px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидСкидки',
+			width: 219,
+			height: 19,
 			style: 'position:absolute;left:115px;top:6px;width:219px;height:19px;',
 		},
 					]
@@ -151,7 +165,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОбщееВремяНачало',
+			width: 91,
+			height: 19,
 			style: 'position:absolute;left:250px;top:181px;width:91px;height:19px;',
 		},
 		{
@@ -159,7 +176,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОбщееВремяОкончание',
+			width: 91,
+			height: 19,
 			style: 'position:absolute;left:368px;top:181px;width:91px;height:19px;',
 		},
 		{
@@ -232,6 +252,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:435px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -245,6 +267,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 307,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:307px;height:19px;',
 		},
 	],

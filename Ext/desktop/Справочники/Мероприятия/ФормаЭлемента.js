@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:360px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:230px;height:19px;',
 		},
 		{
@@ -120,7 +124,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:81px;width:80px;height:19px;',
 		},
 		{
@@ -134,7 +141,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:105px;width:80px;height:19px;',
 		},
 		{

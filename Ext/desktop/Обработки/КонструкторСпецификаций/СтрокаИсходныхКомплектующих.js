@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номенклатура',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:81px;width:209px;height:19px;',
 		},
 		{
@@ -38,10 +40,13 @@
 			style: 'position:absolute;left:148px;top:129px;width:89px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаИзмерения',
+			width: 66,
+			height: 19,
 			style: 'position:absolute;left:291px;top:129px;width:66px;height:19px;',
 		},
 		{
@@ -51,10 +56,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидНорматива',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:57px;width:209px;height:19px;',
 		},
 		{
@@ -64,10 +72,14 @@
 			style: 'position:absolute;left:8px;top:153px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СтатьяЗатрат',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:153px;width:209px;height:19px;',
 		},
 		{
@@ -81,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:105px;width:209px;height:19px;',
 		},
 		{
@@ -109,6 +123,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерОперацииМаршрута',
+			width: 89,
+			height: 19,
 			style: 'position:absolute;left:148px;top:33px;width:89px;height:19px;',
 		},
 		{
@@ -118,10 +134,14 @@
 			style: 'position:absolute;left:8px;top:225px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Спецификация',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:225px;width:209px;height:19px;',
 		},
 		{
@@ -141,6 +161,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПозицияПоСпецификации',
+			width: 67,
+			height: 19,
 			style: 'position:absolute;left:290px;top:33px;width:67px;height:19px;',
 		},
 		{
@@ -150,10 +172,13 @@
 			style: 'position:absolute;left:8px;top:201px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидВоспроизводства',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:201px;width:209px;height:19px;',
 		},
 		{
@@ -163,10 +188,13 @@
 			style: 'position:absolute;left:8px;top:249px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'УказаниеНорматива',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:249px;width:209px;height:19px;',
 		},
 		{
@@ -180,6 +208,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Формула',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:273px;width:209px;height:19px;',
 		},
 		{
@@ -189,10 +219,13 @@
 			style: 'position:absolute;left:8px;top:297px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СписаниеКомплектующей',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:297px;width:209px;height:19px;',
 		},
 		{
@@ -202,10 +235,14 @@
 			style: 'position:absolute;left:8px;top:321px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СвойствоДляСписания',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:148px;top:321px;width:209px;height:19px;',
 		},
 	],

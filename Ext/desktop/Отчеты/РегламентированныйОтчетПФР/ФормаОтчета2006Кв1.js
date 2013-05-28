@@ -108,6 +108,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел2',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:358px;top:5px;width:333px;height:19px;',
 		},
 					]
@@ -149,6 +151,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел21',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:358px;top:5px;width:333px;height:19px;',
 		},
 					]
@@ -190,6 +194,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел22',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:358px;top:5px;width:333px;height:19px;',
 		},
 					]
@@ -231,6 +237,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел23',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:358px;top:5px;width:333px;height:19px;',
 		},
 					]
@@ -266,7 +274,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаСдачи',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:24px;width:80px;height:19px;',
 		},
 		{
@@ -322,13 +333,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 442,
+			height: 19,
 			style: 'position:absolute;left:263px;top:5px;width:442px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Статус',
+			width: 119,
+			height: 19,
 			style: 'position:absolute;left:47px;top:5px;width:119px;height:19px;',
 		},
 					]

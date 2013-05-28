@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:430px;top:33px;width:88px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:91px;top:33px;width:300px;height:19px;',
 		},
 		{
@@ -54,10 +58,14 @@
 			style: 'position:absolute;left:8px;top:93px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидПодразделения',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:93px;top:93px;width:295px;height:19px;',
 		},
 		{
@@ -67,10 +75,14 @@
 			style: 'position:absolute;left:8px;top:120px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидЦФО',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:93px;top:120px;width:295px;height:19px;',
 		},
 		{
@@ -84,6 +96,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОсновнойПроект',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:93px;top:143px;width:295px;height:19px;',
 		},
 		{

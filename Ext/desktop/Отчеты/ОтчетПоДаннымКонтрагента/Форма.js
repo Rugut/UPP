@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:62px;top:7px;width:80px;height:19px;',
 		},
 		{
@@ -30,10 +33,14 @@
 			style: 'position:absolute;left:144px;top:7px;width:88px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'КонтрагентОтчета',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:234px;top:7px;width:220px;height:19px;',
 		},
 		{

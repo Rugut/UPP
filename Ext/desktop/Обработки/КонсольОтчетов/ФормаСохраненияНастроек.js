@@ -26,6 +26,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеНастройки',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:8px;top:31px;width:260px;height:19px;',
 		},
 		{

@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:78px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -39,6 +42,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиКонтрагент',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:317px;top:0px;width:317px;height:19px;',
 		},
 		{
@@ -51,6 +56,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСКонтрагент',
+			width: 156,
+			height: 19,
 			style: 'position:absolute;left:317px;top:0px;width:156px;height:19px;',
 		},
 		{
@@ -58,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоКонтрагент',
+			width: 156,
+			height: 19,
 			style: 'position:absolute;left:478px;top:0px;width:156px;height:19px;',
 		},
 		{
@@ -69,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиABCКлассПокупателя',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:317px;top:25px;width:317px;height:19px;',
 		},
 		{
@@ -81,6 +92,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСABCКлассПокупателя',
+			width: 156,
+			height: 19,
 			style: 'position:absolute;left:317px;top:25px;width:156px;height:19px;',
 		},
 		{
@@ -88,6 +101,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоABCКлассПокупателя',
+			width: 156,
+			height: 19,
 			style: 'position:absolute;left:478px;top:25px;width:156px;height:19px;',
 		},
 		{

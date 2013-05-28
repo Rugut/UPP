@@ -80,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МесяцСтрока',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:91px;top:33px;width:160px;height:19px;',
 		},
 		{
@@ -92,6 +94,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиМенеджер',
+			width: 206,
+			height: 19,
 			style: 'position:absolute;left:190px;top:74px;width:206px;height:19px;',
 		},
 		{

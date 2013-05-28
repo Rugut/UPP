@@ -50,10 +50,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Сценарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -73,7 +77,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 132,
+			height: 19,
 			style: 'position:absolute;left:379px;top:33px;width:132px;height:19px;',
 		},
 		{

@@ -26,6 +26,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерСтатьи',
+			width: 49,
+			height: 19,
 			style: 'position:absolute;left:88px;top:54px;width:49px;height:19px;',
 		},
 		{
@@ -39,6 +41,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Пункт',
+			width: 49,
+			height: 19,
 			style: 'position:absolute;left:88px;top:78px;width:49px;height:19px;',
 		},
 		{
@@ -52,6 +56,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Подпункт',
+			width: 49,
+			height: 19,
 			style: 'position:absolute;left:88px;top:102px;width:49px;height:19px;',
 		},
 	],

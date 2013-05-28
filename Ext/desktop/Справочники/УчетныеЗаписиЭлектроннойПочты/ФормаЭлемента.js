@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 57,
+			height: 19,
 			style: 'position:absolute;left:517px;top:33px;width:57px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 474,
+			height: 19,
 			style: 'position:absolute;left:100px;top:57px;width:474px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочты',
+			width: 368,
+			height: 19,
 			style: 'position:absolute;left:100px;top:33px;width:368px;height:19px;',
 		},
 		{
@@ -69,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'SMTPСервер',
+			width: 350,
+			height: 19,
 			style: 'position:absolute;left:98px;top:26px;width:350px;height:19px;',
 		},
 		{
@@ -82,6 +90,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'POP3Сервер',
+			width: 350,
+			height: 19,
 			style: 'position:absolute;left:98px;top:120px;width:350px;height:19px;',
 		},
 		{
@@ -125,6 +135,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Логин',
+			width: 198,
+			height: 19,
 			style: 'position:absolute;left:98px;top:144px;width:198px;height:19px;',
 		},
 		{
@@ -138,6 +150,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Пароль',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:354px;top:144px;width:204px;height:19px;',
 		},
 		{
@@ -166,6 +180,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЛогинSMTP',
+			width: 198,
+			height: 19,
 			style: 'position:absolute;left:98px;top:70px;width:198px;height:19px;',
 		},
 		{
@@ -179,6 +195,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольSMTP',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:354px;top:70px;width:204px;height:19px;',
 		},
 		{
@@ -266,10 +284,13 @@
 			style: 'position:absolute;left:341px;top:71px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОтветственныйЗаАвтоПолучениеОтправкуСообщений',
+			width: 129,
+			height: 19,
 			style: 'position:absolute;left:429px;top:71px;width:129px;height:19px;',
 		},
 		{
@@ -285,10 +306,13 @@
 			style: 'position:absolute;left:154px;top:71px;width:55px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ДействиеАвтополученияОтправкиСообщений',
+			width: 114,
+			height: 19,
 			style: 'position:absolute;left:212px;top:71px;width:114px;height:19px;',
 		},
 		{
@@ -536,10 +560,14 @@
 			style: 'position:absolute;left:6px;top:27px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаВходящие',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:157px;top:27px;width:401px;height:19px;',
 		},
 		{
@@ -549,10 +577,14 @@
 			style: 'position:absolute;left:6px;top:51px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаИсходящие',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:157px;top:51px;width:401px;height:19px;',
 		},
 		{
@@ -562,10 +594,14 @@
 			style: 'position:absolute;left:6px;top:75px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаУдаленные',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:157px;top:75px;width:401px;height:19px;',
 		},
 		{
@@ -595,10 +631,14 @@
 			style: 'position:absolute;left:6px;top:99px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаЧерновики',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:157px;top:99px;width:401px;height:19px;',
 		},
 		{
@@ -710,10 +750,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'НазначениеУчетнойЗаписи',
+			width: 474,
+			height: 19,
 			style: 'position:absolute;left:100px;top:81px;width:474px;height:19px;',
 		},
 	],

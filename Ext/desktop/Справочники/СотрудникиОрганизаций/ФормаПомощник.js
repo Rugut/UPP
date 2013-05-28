@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:105px;top:44px;width:280px;height:19px;',
 		},
 		{
@@ -38,7 +40,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРождения',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:105px;top:116px;width:104px;height:19px;',
 		},
 		{
@@ -60,10 +65,13 @@
 			style: 'position:absolute;left:20px;top:140px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Пол',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:105px;top:140px;width:104px;height:19px;',
 		},
 		{
@@ -71,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:105px;top:68px;width:280px;height:19px;',
 		},
 		{
@@ -78,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:105px;top:92px;width:280px;height:19px;',
 		},
 		{
@@ -103,6 +115,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТабельныйНомер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:105px;top:280px;width:80px;height:19px;',
 		},
 		{
@@ -117,10 +131,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:95px;top:0px;width:280px;height:19px;',
 		},
 		{
@@ -194,6 +211,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДоговора',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:97px;top:303px;width:90px;height:19px;',
 		},
 		{
@@ -207,7 +226,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДоговора',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:213px;top:303px;width:90px;height:19px;',
 		},
 		{
@@ -221,7 +243,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:97px;top:250px;width:90px;height:19px;',
 		},
 		{
@@ -235,7 +260,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:213px;top:328px;width:90px;height:19px;',
 		},
 		{
@@ -260,10 +288,14 @@
 			style: 'position:absolute;left:10px;top:154px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
 			name: 'ПодразделениеОрганизации',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:154px;width:305px;height:19px;',
 		},
 		{
@@ -273,10 +305,14 @@
 			style: 'position:absolute;left:11px;top:178px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
 			name: 'Должность',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:178px;width:305px;height:19px;',
 		},
 		{
@@ -286,10 +322,13 @@
 			style: 'position:absolute;left:11px;top:202px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ГрафикРаботы',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:202px;width:305px;height:19px;',
 		},
 		{
@@ -325,10 +364,13 @@
 			style: 'position:absolute;left:10px;top:5px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОбособленноеПодразделение',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:97px;top:5px;width:304px;height:19px;',
 		},
 					]
@@ -437,7 +479,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаДоговораГПХ',
+			width: 91,
+			height: 19,
 			style: 'position:absolute;left:107px;top:74px;width:91px;height:19px;',
 		},
 		{
@@ -451,7 +496,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончанияДоговораГПХ',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:248px;top:74px;width:100px;height:19px;',
 		},
 		{
@@ -461,10 +509,14 @@
 			style: 'position:absolute;left:218px;top:146px;width:41px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ВалютаДоговораГПХ',
+			width: 86,
+			height: 19,
 			style: 'position:absolute;left:262px;top:146px;width:86px;height:19px;',
 		},
 		{
@@ -483,10 +535,14 @@
 			style: 'position:absolute;left:107px;top:146px;width:95px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ВидРасчетаДоговорГПХ',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:107px;top:98px;width:295px;height:19px;',
 		},
 		{
@@ -502,17 +558,24 @@
 			style: 'position:absolute;left:20px;top:122px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ХарактерОплаты',
+			width: 295,
+			height: 19,
 			style: 'position:absolute;left:107px;top:122px;width:295px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КодВычета',
+			width: 241,
+			height: 19,
 			style: 'position:absolute;left:107px;top:170px;width:241px;height:19px;',
 		},
 		{
@@ -528,10 +591,15 @@
 			style: 'position:absolute;left:10px;top:193px;width:68px;height:18px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СпособОтраженияВБухучете',
+			width: 392,
+			height: 19,
 			style: 'position:absolute;left:10px;top:211px;width:392px;height:19px;',
 		},
 		{
@@ -541,10 +609,13 @@
 			style: 'position:absolute;left:10px;top:232px;width:224px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
+			width: 392,
+			height: 19,
 			style: 'position:absolute;left:10px;top:247px;width:392px;height:19px;',
 		},
 		{
@@ -565,10 +636,14 @@
 			style: 'position:absolute;left:10px;top:5px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОбособленноеПодразделение1',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:5px;width:305px;height:19px;',
 		},
 					]
@@ -576,10 +651,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеОрганизации1',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:29px;width:305px;height:19px;',
 		},
 		{
@@ -593,10 +672,13 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидАвторскогоДоговора',
+			width: 302,
+			height: 19,
 			style: 'position:absolute;left:100px;top:48px;width:302px;height:19px;',
 		},
 		{
@@ -648,24 +730,36 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеУпр',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:0px;width:305px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ДолжностьУпр',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:25px;width:305px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ГрафикРаботыУпр',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:97px;top:49px;width:305px;height:19px;',
 		},
 		{
@@ -673,7 +767,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаПриемаУпр',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:97px;top:73px;width:90px;height:19px;',
 		},
 		{
@@ -723,10 +820,14 @@
 			style: 'position:absolute;left:10px;top:10px;width:137px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ВидРасчета',
+			width: 253,
+			height: 19,
 			style: 'position:absolute;left:149px;top:10px;width:253px;height:19px;',
 		},
 		{
@@ -1072,10 +1173,13 @@
 			style: 'position:absolute;left:280px;top:5px;width:43px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаТарифнойСтавки',
+			width: 77,
+			height: 19,
 			style: 'position:absolute;left:325px;top:5px;width:77px;height:19px;',
 		},
 		{
@@ -1097,10 +1201,14 @@
 			style: 'position:absolute;left:10px;top:5px;width:137px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТарифныйРазряд',
+			width: 199,
+			height: 19,
 			style: 'position:absolute;left:149px;top:5px;width:199px;height:19px;',
 		},
 					]
@@ -1731,10 +1839,13 @@
 			style: 'position:absolute;left:10px;top:9px;width:392px;height:39px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ГруппаДоступа',
+			width: 372,
+			height: 19,
 			style: 'position:absolute;left:10px;top:51px;width:372px;height:19px;',
 		},
 		{
@@ -1832,6 +1943,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтраховойНомерПФР',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:84px;top:27px;width:104px;height:19px;',
 		},
 		{
@@ -1839,6 +1952,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:84px;top:5px;width:104px;height:19px;',
 		},
 		{
@@ -1868,6 +1983,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПостфиксНаименования',
+			width: 93,
+			height: 19,
 			style: 'position:absolute;left:72px;top:121px;width:93px;height:19px;',
 		},
 		{
@@ -1893,6 +2010,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеСотрудника',
+			width: 402,
+			height: 19,
 			style: 'position:absolute;left:10px;top:61px;width:402px;height:19px;',
 		},
 		{

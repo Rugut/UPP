@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 368,
+			height: 19,
 			style: 'position:absolute;left:94px;top:35px;width:368px;height:19px;',
 		},
 		{
@@ -33,13 +35,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИсточникОтчета',
+			width: 367,
+			height: 19,
 			style: 'position:absolute;left:95px;top:98px;width:367px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 368,
+			height: 19,
 			style: 'position:absolute;left:94px;top:8px;width:368px;height:19px;',
 		},
 		{
@@ -53,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИсточникОтчетаФайл',
+			width: 368,
+			height: 19,
 			style: 'position:absolute;left:94px;top:125px;width:368px;height:19px;',
 		},
 		{

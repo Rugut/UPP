@@ -26,7 +26,7 @@ namespace Rest
 
 		public static void Запустить()
 		{
-			const string listeningOn = "http://*:1337/";
+			const string listeningOn = "https://*:1337/";
 			var appHost = new AppHost();
 			appHost.Init();
 			appHost.Start(listeningOn);

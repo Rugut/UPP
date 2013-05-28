@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Кому',
+			width: 552,
+			height: 19,
 			style: 'position:absolute;left:102px;top:57px;width:552px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Копии',
+			width: 552,
+			height: 19,
 			style: 'position:absolute;left:102px;top:81px;width:552px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СкрытыеКопии',
+			width: 552,
+			height: 19,
 			style: 'position:absolute;left:95px;top:0px;width:552px;height:19px;',
 		},
 					]
@@ -68,6 +74,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Тема',
+			width: 552,
+			height: 19,
 			style: 'position:absolute;left:102px;top:129px;width:552px;height:19px;',
 		},
 		{
@@ -155,10 +163,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаУчетнойЗаписи',
+			width: 277,
+			height: 19,
 			style: 'position:absolute;left:101px;top:6px;width:277px;height:19px;',
 		},
 		{
@@ -168,10 +180,14 @@
 			style: 'position:absolute;left:6px;top:212px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответственный',
+			width: 538,
+			height: 19,
 			style: 'position:absolute;left:101px;top:212px;width:538px;height:19px;',
 		},
 		{
@@ -185,6 +201,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 538,
+			height: 19,
 			style: 'position:absolute;left:101px;top:190px;width:538px;height:19px;',
 		},
 		{
@@ -192,7 +210,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтправления',
+			width: 151,
+			height: 19,
 			style: 'position:absolute;left:488px;top:83px;width:151px;height:19px;',
 		},
 		{
@@ -200,7 +221,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 151,
+			height: 19,
 			style: 'position:absolute;left:488px;top:59px;width:151px;height:19px;',
 		},
 		{
@@ -208,6 +232,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 151,
+			height: 19,
 			style: 'position:absolute;left:488px;top:6px;width:151px;height:19px;',
 		},
 		{
@@ -221,6 +247,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Основание',
+			width: 538,
+			height: 19,
 			style: 'position:absolute;left:101px;top:166px;width:538px;height:19px;',
 		},
 		{
@@ -228,7 +256,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаТранспорта',
+			width: 151,
+			height: 19,
 			style: 'position:absolute;left:488px;top:107px;width:151px;height:19px;',
 		},
 		{
@@ -240,6 +271,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Предмет',
+			width: 538,
+			height: 19,
 			style: 'position:absolute;left:101px;top:31px;width:538px;height:19px;',
 		},
 					]
@@ -355,6 +388,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отправитель',
+			width: 552,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:552px;height:19px;',
 		},
 		{
@@ -367,7 +402,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'РассмотретьПосле',
+			width: 150,
+			height: 19,
 			style: 'position:absolute;left:222px;top:153px;width:150px;height:19px;',
 		},
 	],

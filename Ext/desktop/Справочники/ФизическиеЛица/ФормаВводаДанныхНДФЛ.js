@@ -325,6 +325,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:104px;top:51px;width:120px;height:19px;',
 		},
 		{
@@ -455,10 +457,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:132px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:140px;top:6px;width:220px;height:19px;',
 		},
 					]

@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВидаСравненияОбъект',
+			width: 132,
+			height: 19,
 			style: 'position:absolute;left:81px;top:0px;width:132px;height:19px;',
 		},
 		{
@@ -37,6 +39,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиОбъект',
+			width: 370,
+			height: 19,
 			style: 'position:absolute;left:218px;top:0px;width:370px;height:19px;',
 		},
 					]

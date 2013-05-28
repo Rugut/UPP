@@ -141,6 +141,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораСпискаНоменклатуры',
+			width: 128,
+			height: 19,
 			style: 'position:absolute;left:208px;top:56px;width:128px;height:19px;',
 		},
 		{
@@ -477,10 +479,14 @@
 			style: 'position:absolute;left:82px;top:296px;width:125px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВалютаЦены',
+			width: 164,
+			height: 19,
 			style: 'position:absolute;left:259px;top:296px;width:164px;height:19px;',
 		},
 		{
@@ -736,6 +742,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Контрагент',
+			width: 360,
+			height: 19,
 			style: 'position:absolute;left:412px;top:33px;width:360px;height:19px;',
 		},
 		{

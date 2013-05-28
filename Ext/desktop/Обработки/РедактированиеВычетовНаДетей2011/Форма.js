@@ -141,10 +141,14 @@
 			style: 'position:absolute;left:8px;top:39px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:39px;width:220px;height:19px;',
 		},
 		{

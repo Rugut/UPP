@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаПравил',
+			width: 323,
+			height: 19,
 			style: 'position:absolute;left:111px;top:6px;width:323px;height:19px;',
 		},
 		{
@@ -231,10 +233,14 @@
 			style: 'position:absolute;left:6px;top:151px;width:146px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'УзелДляОбмена',
+			width: 322,
+			height: 19,
 			style: 'position:absolute;left:158px;top:151px;width:322px;height:19px;',
 		},
 		{
@@ -264,6 +270,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаДанных',
+			width: 322,
+			height: 19,
 			style: 'position:absolute;left:105px;top:0px;width:322px;height:19px;',
 		},
 		{
@@ -331,6 +339,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения',
+			width: 432,
+			height: 19,
 			style: 'position:absolute;left:172px;top:0px;width:432px;height:19px;',
 		},
 		{
@@ -356,6 +366,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
+			width: 149,
+			height: 19,
 			style: 'position:absolute;left:172px;top:0px;width:149px;height:19px;',
 		},
 		{
@@ -363,6 +375,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения',
+			width: 151,
+			height: 19,
 			style: 'position:absolute;left:453px;top:0px;width:151px;height:19px;',
 		},
 					]
@@ -379,6 +393,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения',
+			width: 202,
+			height: 19,
 			style: 'position:absolute;left:172px;top:73px;width:202px;height:19px;',
 		},
 		{
@@ -386,6 +402,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения',
+			width: 150,
+			height: 19,
 			style: 'position:absolute;left:454px;top:73px;width:150px;height:19px;',
 		},
 		{
@@ -405,10 +423,14 @@
 			style: 'position:absolute;left:6px;top:175px;width:146px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'УзелДляФоновогоОбмена',
+			width: 322,
+			height: 19,
 			style: 'position:absolute;left:158px;top:175px;width:322px;height:19px;',
 		},
 		{
@@ -480,6 +502,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаОбмена',
+			width: 464,
+			height: 19,
 			style: 'position:absolute;left:146px;top:6px;width:464px;height:19px;',
 		},
 		{
@@ -569,6 +593,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаПротоколаОбмена',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:209px;top:211px;width:401px;height:19px;',
 		},
 		{

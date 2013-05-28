@@ -38,6 +38,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПутьКФайлу',
+			width: 269,
+			height: 19,
 			style: 'position:absolute;left:182px;top:57px;width:269px;height:19px;',
 		},
 		{

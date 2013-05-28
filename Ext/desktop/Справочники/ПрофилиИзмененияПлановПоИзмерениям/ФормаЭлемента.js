@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:122px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -29,10 +31,13 @@
 			style: 'position:absolute;left:8px;top:84px;width:112px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидРаспределения',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:122px;top:84px;width:344px;height:19px;',
 		},
 		{
@@ -42,10 +47,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:112px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ИзмерениеБюджетирования',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:122px;top:57px;width:344px;height:19px;',
 		},
 		{
@@ -55,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:108px;width:112px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ИсточникДанных',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:122px;top:108px;width:344px;height:19px;',
 		},
 		{
@@ -72,6 +84,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПоказательИсточника',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:122px;top:132px;width:344px;height:19px;',
 		},
 		{
@@ -146,6 +160,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:386px;top:33px;width:80px;height:19px;',
 		},
 	],

@@ -94,6 +94,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -101,7 +103,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:193px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -152,6 +157,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 448,
+			height: 19,
 			style: 'position:absolute;left:93px;top:371px;width:448px;height:19px;',
 		},
 		{
@@ -182,10 +189,15 @@
 			style: 'position:absolute;left:8px;top:347px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 448,
+			height: 19,
 			style: 'position:absolute;left:93px;top:347px;width:448px;height:19px;',
 		},
 		{
@@ -193,7 +205,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаИзменений',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:421px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -225,10 +240,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 448,
+			height: 19,
 			style: 'position:absolute;left:85px;top:0px;width:448px;height:19px;',
 		},
 					]

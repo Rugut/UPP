@@ -30,7 +30,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтчета',
+			width: 93,
+			height: 19,
 			style: 'position:absolute;left:77px;top:6px;width:93px;height:19px;',
 		},
 		{

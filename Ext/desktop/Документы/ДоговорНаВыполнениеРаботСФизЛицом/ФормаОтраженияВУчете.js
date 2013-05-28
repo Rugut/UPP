@@ -16,10 +16,15 @@
 			style: 'position:absolute;left:8px;top:8px;width:157px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СпособОтраженияВБухучете',
+			width: 498,
+			height: 19,
 			style: 'position:absolute;left:8px;top:27px;width:498px;height:19px;',
 		},
 		{
@@ -29,10 +34,14 @@
 			style: 'position:absolute;left:8px;top:106px;width:224px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
+			width: 498,
+			height: 19,
 			style: 'position:absolute;left:8px;top:121px;width:498px;height:19px;',
 		},
 		{

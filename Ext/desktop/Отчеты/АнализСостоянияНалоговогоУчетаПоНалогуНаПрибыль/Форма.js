@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоПериода',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:194px;top:3px;width:90px;height:19px;',
 		},
 		{
@@ -22,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонецПериода',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:315px;top:3px;width:90px;height:19px;',
 		},
 		{
@@ -44,10 +50,14 @@
 			style: 'position:absolute;left:410px;top:3px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:520px;top:3px;width:252px;height:19px;',
 		},
 		{

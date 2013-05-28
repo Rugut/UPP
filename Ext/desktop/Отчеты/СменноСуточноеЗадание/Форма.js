@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -22,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиРабочийЦентр',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:284px;top:0px;width:304px;height:19px;',
 		},
 		{
@@ -75,6 +83,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиЗаказ',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:284px;top:24px;width:304px;height:19px;',
 		},
 		{
@@ -87,6 +97,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПроект',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:284px;top:48px;width:304px;height:19px;',
 		},
 		{
@@ -107,6 +119,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:284px;top:72px;width:304px;height:19px;',
 		},
 		{

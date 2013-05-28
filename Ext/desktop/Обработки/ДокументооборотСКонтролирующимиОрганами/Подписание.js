@@ -240,6 +240,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Сертификат',
+			width: 534,
+			height: 19,
 			style: 'position:absolute;left:88px;top:10px;width:534px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеНастройки',
+			width: 309,
+			height: 19,
 			style: 'position:absolute;left:8px;top:27px;width:309px;height:19px;',
 		},
 		{

@@ -93,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СеверныйСтаж',
+			width: 384,
+			height: 19,
 			style: 'position:absolute;left:8px;top:319px;width:384px;height:19px;',
 		},
 		{

@@ -170,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборСценарийЗначение',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:105px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -182,6 +184,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборЦФОЗначение',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:445px;top:48px;width:257px;height:19px;',
 		},
 		{
@@ -194,6 +198,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборСтатьяОборотовЗначение',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:105px;top:24px;width:220px;height:19px;',
 		},
 		{
@@ -206,6 +212,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборПроектЗначение',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:105px;top:48px;width:220px;height:19px;',
 		},
 		{
@@ -218,7 +226,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПериодПланированияС',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:445px;top:0px;width:105px;height:19px;',
 		},
 		{
@@ -226,7 +237,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПериодПланированияПо',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:573px;top:0px;width:105px;height:19px;',
 		},
 		{
@@ -245,6 +259,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборОтветственный',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:445px;top:24px;width:257px;height:19px;',
 		},
 		{
@@ -257,6 +273,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборКонтрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:105px;top:72px;width:220px;height:19px;',
 		},
 		{
@@ -269,6 +287,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборНоменклатура',
+			width: 257,
+			height: 19,
 			style: 'position:absolute;left:445px;top:72px;width:257px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:384px;top:57px;width:60px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 263,
+			height: 19,
 			style: 'position:absolute;left:89px;top:57px;width:263px;height:19px;',
 		},
 		{
@@ -42,10 +46,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Владелец',
+			width: 355,
+			height: 19,
 			style: 'position:absolute;left:89px;top:33px;width:355px;height:19px;',
 		},
 		{
@@ -55,7 +64,8 @@
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Ручной режим формирования чека',
+			fieldLabel: 'Ручной режим формирования чека',
+			labelWidth: 50,
 			style: 'position:absolute;left:223px;top:105px;width:221px;height:19px;',
 		},
 		{

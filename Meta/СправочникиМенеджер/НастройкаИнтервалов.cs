@@ -14,6 +14,47 @@ namespace V82.Справочники//Менеджер
 	public partial class НастройкаИнтервалов:СправочникМенеджер
 	{
 		
+		public static СправочникиСсылка.НастройкаИнтервалов НайтиПоСсылке(Guid _Ссылка)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					From _Reference147(NOLOCK)
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.НастройкаИнтервалов();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Наименование = Читалка.GetString(4);
+							return Ссылка;
+						}
+						else
+						{
+							return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public static СправочникиВыборка.НастройкаИнтервалов Выбрать()
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))

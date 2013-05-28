@@ -100,6 +100,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Организация',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:341px;top:33px;width:300px;height:19px;',
 		},
 		{

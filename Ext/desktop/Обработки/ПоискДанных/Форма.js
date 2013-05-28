@@ -110,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаПоиска',
+			width: 259,
+			height: 19,
 			style: 'position:absolute;left:6px;top:5px;width:259px;height:19px;',
 		},
 					]

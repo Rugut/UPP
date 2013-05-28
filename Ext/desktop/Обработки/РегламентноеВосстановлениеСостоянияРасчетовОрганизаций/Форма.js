@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаАктуализации',
+			width: 99,
+			height: 19,
 			style: 'position:absolute;left:306px;top:33px;width:99px;height:19px;',
 		},
 		{

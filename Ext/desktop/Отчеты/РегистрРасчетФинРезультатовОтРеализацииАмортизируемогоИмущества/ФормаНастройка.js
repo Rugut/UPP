@@ -21,10 +21,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 219,
+			height: 19,
 			style: 'position:absolute;left:94px;top:41px;width:219px;height:19px;',
 		},
 		{
@@ -38,7 +42,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:14px;width:80px;height:19px;',
 		},
 		{
@@ -46,7 +53,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:207px;top:14px;width:80px;height:19px;',
 		},
 		{

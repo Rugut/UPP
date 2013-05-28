@@ -158,6 +158,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерВерсииКонфигурации',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:142px;top:72px;width:88px;height:19px;',
 		},
 		{
@@ -171,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗаголовокСистемы',
+			width: 392,
+			height: 19,
 			style: 'position:absolute;left:142px;top:48px;width:392px;height:19px;',
 		},
 		{
@@ -293,10 +297,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПользовательДляВыполненияРегламентныхЗаданийВФайловомВарианте',
+			width: 278,
+			height: 19,
 			style: 'position:absolute;left:256px;top:48px;width:278px;height:19px;',
 		},
 		{

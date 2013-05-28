@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяОбрабФайла',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:47px;width:362px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдФайл',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:73px;width:362px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдДок',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:99px;width:362px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаВремяПредст',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:125px;width:362px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПост',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:281px;width:362px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:151px;width:362px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимОтч',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:177px;width:362px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомКорр',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:203px;width:362px;height:19px;',
 		},
 		{
@@ -124,6 +140,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетГод',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:255px;width:362px;height:19px;',
 		},
 		{
@@ -137,6 +155,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетныйПериод',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:229px;width:362px;height:19px;',
 		},
 		{
@@ -150,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегНом',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:333px;width:362px;height:19px;',
 		},
 		{
@@ -163,6 +185,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрогрКомпл',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:359px;width:362px;height:19px;',
 		},
 		{
@@ -176,6 +200,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПрин',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:307px;width:362px;height:19px;',
 		},
 		{
@@ -189,6 +215,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НалоговыйОрган',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:9px;width:362px;height:19px;',
 		},
 		{

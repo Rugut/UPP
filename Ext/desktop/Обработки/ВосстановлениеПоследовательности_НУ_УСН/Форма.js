@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаАктуализации',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:121px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -24,10 +27,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 273,
+			height: 19,
 			style: 'position:absolute;left:121px;top:57px;width:273px;height:19px;',
 		},
 		{

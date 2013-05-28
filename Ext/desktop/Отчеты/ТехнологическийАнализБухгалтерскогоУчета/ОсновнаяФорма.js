@@ -27,10 +27,15 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 288,
+			height: 19,
 			style: 'position:absolute;left:363px;top:37px;width:288px;height:19px;',
 		},
 		{

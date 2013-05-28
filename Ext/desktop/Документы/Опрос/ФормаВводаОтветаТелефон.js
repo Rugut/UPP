@@ -33,6 +33,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле1',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:87px;top:53px;width:106px;height:19px;',
 		},
 		{
@@ -46,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле2',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:87px;top:77px;width:106px;height:19px;',
 		},
 		{
@@ -59,6 +63,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле3',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:87px;top:29px;width:106px;height:19px;',
 		},
 		{
@@ -72,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле4',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:273px;top:29px;width:60px;height:19px;',
 		},
 		{
@@ -79,6 +87,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:87px;top:101px;width:246px;height:19px;',
 		},
 		{

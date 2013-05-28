@@ -108,10 +108,13 @@
 			style: 'position:absolute;left:8px;top:8px;width:113px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Подразделение',
+			width: 290,
+			height: 19,
 			style: 'position:absolute;left:121px;top:8px;width:290px;height:19px;',
 		},
 		{
@@ -127,10 +130,14 @@
 			style: 'position:absolute;left:8px;top:28px;width:113px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
 			name: 'ПодразделениеОрганизации',
+			width: 290,
+			height: 19,
 			style: 'position:absolute;left:121px;top:32px;width:290px;height:19px;',
 		},
 		{
@@ -150,7 +157,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОстатков',
+			width: 81,
+			height: 19,
 			style: 'position:absolute;left:416px;top:56px;width:81px;height:19px;',
 		},
 		{

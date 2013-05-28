@@ -22,10 +22,14 @@
 			style: 'position:absolute;left:346px;top:33px;width:76px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:424px;top:33px;width:220px;height:19px;',
 		},
 		{

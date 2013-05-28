@@ -61,6 +61,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:176px;top:99px;width:100px;height:19px;',
 		},
 		{
@@ -68,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтраховойНомерПФР',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:388px;top:99px;width:100px;height:19px;',
 		},
 		{
@@ -75,13 +79,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИМНС',
+			width: 32,
+			height: 19,
 			style: 'position:absolute;left:100px;top:99px;width:32px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Пол',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:224px;top:6px;width:96px;height:19px;',
 		},
 		{
@@ -89,7 +98,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРождения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:100px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -243,6 +255,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МестоРождения',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:100px;top:30px;width:220px;height:19px;',
 		},
 		{
@@ -250,6 +264,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Удостоверение',
+			width: 388,
+			height: 19,
 			style: 'position:absolute;left:100px;top:54px;width:388px;height:19px;',
 		},
 		{
@@ -273,6 +289,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МестоРожденияКодПоОКАТО',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:400px;top:30px;width:88px;height:19px;',
 		},
 					]
@@ -454,6 +472,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СемейноеПоложение',
+			width: 182,
+			height: 19,
 			style: 'position:absolute;left:124px;top:198px;width:182px;height:19px;',
 		},
 		{
@@ -467,6 +487,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВоинскийУчет',
+			width: 495,
+			height: 19,
 			style: 'position:absolute;left:89px;top:30px;width:495px;height:19px;',
 		},
 		{
@@ -490,6 +512,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Гражданство',
+			width: 495,
+			height: 19,
 			style: 'position:absolute;left:89px;top:6px;width:495px;height:19px;',
 		},
 		{
@@ -550,10 +574,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:286px;height:17px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ЛьготаПриНачисленииПособий',
+			width: 156,
+			height: 19,
 			style: 'position:absolute;left:428px;top:78px;width:156px;height:19px;',
 		},
 		{
@@ -980,10 +1008,14 @@
 			style: 'position:absolute;left:6px;top:250px;width:578px;height:85px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаДоступа',
+			width: 487,
+			height: 19,
 			style: 'position:absolute;left:97px;top:6px;width:487px;height:19px;',
 		},
 		{
@@ -1001,6 +1033,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 436,
+			height: 19,
 			style: 'position:absolute;left:48px;top:33px;width:436px;height:19px;',
 		},
 		{
@@ -1008,6 +1042,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 182,
+			height: 19,
 			style: 'position:absolute;left:48px;top:57px;width:182px;height:19px;',
 		},
 		{
@@ -1027,6 +1063,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:520px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -1034,6 +1072,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:236px;top:57px;width:120px;height:19px;',
 		},
 		{
@@ -1041,6 +1081,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:362px;top:57px;width:120px;height:19px;',
 		},
 		{
@@ -1050,10 +1092,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 502,
+			height: 19,
 			style: 'position:absolute;left:98px;top:81px;width:502px;height:19px;',
 		},
 	],

@@ -11,12 +11,14 @@
 	[
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Выполнять в транзакции',
+			fieldLabel: 'Выполнять в транзакции',
+			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:8px;width:263px;height:20px;',
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Разрешить изменение реквизитов объектов',
+			fieldLabel: 'Разрешить изменение реквизитов объектов',
+			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:28px;width:263px;height:20px;',
 		},
 		{
@@ -36,17 +38,20 @@
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Показывать все колонки',
+			fieldLabel: 'Показывать все колонки',
+			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:48px;width:263px;height:20px;',
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Отбор по свойствам',
+			fieldLabel: 'Отбор по свойствам',
+			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:68px;width:263px;height:20px;',
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Отбор по категориям',
+			fieldLabel: 'Отбор по категориям',
+			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:88px;width:263px;height:20px;',
 		},
 	],

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:438px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:91px;top:33px;width:300px;height:19px;',
 		},
 		{
@@ -56,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКАТО',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:102px;top:39px;width:100px;height:19px;',
 		},
 		{
@@ -69,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:248px;top:39px;width:80px;height:19px;',
 		},
 		{
@@ -90,10 +98,14 @@
 			style: 'position:absolute;left:248px;top:113px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТерриториальныеУсловияПФР',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:248px;top:137px;width:80px;height:19px;',
 		},
 		{
@@ -305,10 +317,14 @@
 			style: 'position:absolute;left:91px;top:59px;width:427px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидПодразделения',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:91px;top:96px;width:300px;height:19px;',
 		},
 		{

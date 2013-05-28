@@ -72,7 +72,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:68px;top:6px;width:96px;height:19px;',
 		},
 		{
@@ -86,7 +89,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:184px;top:6px;width:96px;height:19px;',
 		},
 		{
@@ -96,10 +102,14 @@
 			style: 'position:absolute;left:282px;top:6px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Сценарий',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:68px;top:54px;width:398px;height:19px;',
 		},
 		{
@@ -109,10 +119,13 @@
 			style: 'position:absolute;left:6px;top:54px;width:60px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПолеВвода1',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:68px;top:78px;width:398px;height:19px;',
 		},
 		{
@@ -122,10 +135,13 @@
 			style: 'position:absolute;left:6px;top:78px;width:60px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидДанныхОтчета',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:68px;top:30px;width:398px;height:19px;',
 		},
 		{
@@ -182,6 +198,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ГруппировкаГоризонтальная',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:346px;top:3px;width:120px;height:19px;',
 		},
 					]

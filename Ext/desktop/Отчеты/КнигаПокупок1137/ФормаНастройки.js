@@ -20,10 +20,14 @@
 			style: 'position:absolute;left:32px;top:107px;width:149px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КонтрагентДляОтбора',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:183px;top:107px;width:230px;height:19px;',
 		},
 		{
@@ -37,10 +41,14 @@
 			style: 'position:absolute;left:32px;top:155px;width:381px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Руководитель',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:89px;top:28px;width:324px;height:19px;',
 		},
 		{

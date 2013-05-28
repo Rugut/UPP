@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:588px;top:33px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 446,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:446px;height:19px;',
 		},
 		{
@@ -42,10 +46,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Подразделение',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:304px;height:19px;',
 		},
 		{
@@ -55,10 +63,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Состояние',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:98px;top:81px;width:120px;height:19px;',
 		},
 		{
@@ -72,7 +83,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаУтверждения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:322px;top:81px;width:80px;height:19px;',
 		},
 		{

@@ -10,10 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:35px;width:220px;height:19px;',
 		},
 		{
@@ -27,7 +31,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:84px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -35,7 +42,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:184px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -69,17 +79,27 @@
 			style: 'position:absolute;left:8px;top:110px;width:76px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Контрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:86px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Договор',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:110px;width:220px;height:19px;',
 		},
 		{

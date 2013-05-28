@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:496px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -27,7 +29,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:612px;top:33px;width:100px;height:19px;',
 		},
 		{
@@ -41,6 +46,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодРегистрации',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:110px;top:57px;width:200px;height:19px;',
 		},
 		{
@@ -50,10 +57,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:110px;top:33px;width:200px;height:19px;',
 		},
 		{
@@ -67,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 616,
+			height: 19,
 			style: 'position:absolute;left:96px;top:503px;width:616px;height:19px;',
 		},
 		{
@@ -76,10 +90,15 @@
 			style: 'position:absolute;left:411px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 216,
+			height: 19,
 			style: 'position:absolute;left:496px;top:57px;width:216px;height:19px;',
 		},
 		{
@@ -665,10 +684,13 @@
 			style: 'position:absolute;left:0px;top:5px;width:225px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидСхемыМотивации',
+			width: 477,
+			height: 19,
 			style: 'position:absolute;left:227px;top:5px;width:477px;height:19px;',
 		},
 					]

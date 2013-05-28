@@ -29,6 +29,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеКонтрагент',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:56px;width:238px;height:19px;',
 		},
 		{
@@ -41,6 +43,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеДатаПотребности',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:131px;width:238px;height:19px;',
 		},
 		{
@@ -48,7 +52,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ЗначениеДатаПотребностиНач',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:295px;top:131px;width:118px;height:19px;',
 		},
 		{
@@ -56,7 +63,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ЗначениеДатаПотребностиКон',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:415px;top:131px;width:118px;height:19px;',
 		},
 		{
@@ -64,6 +74,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеНоменклатура',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:6px;width:238px;height:19px;',
 		},
 		{
@@ -76,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеЗаказПоставщику',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:81px;width:238px;height:19px;',
 		},
 		{
@@ -88,6 +102,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеКоличествоПотребности',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:156px;width:238px;height:19px;',
 		},
 		{
@@ -118,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеКоличествоЗаказов',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:181px;width:238px;height:19px;',
 		},
 		{
@@ -177,6 +195,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеХарактеристикаНоменклатуры',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:31px;width:238px;height:19px;',
 		},
 		{
@@ -193,6 +213,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеЗаказПокупателя',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:295px;top:106px;width:238px;height:19px;',
 		},
 		{

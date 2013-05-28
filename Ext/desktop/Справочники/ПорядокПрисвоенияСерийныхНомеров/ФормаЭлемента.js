@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 65,
+			height: 19,
 			style: 'position:absolute;left:527px;top:33px;width:65px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:89px;top:33px;width:398px;height:19px;',
 		},
 		{
@@ -115,6 +119,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПримерСерийногоНомера',
+			width: 267,
+			height: 19,
 			style: 'position:absolute;left:157px;top:240px;width:267px;height:19px;',
 		},
 		{
@@ -128,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 503,
+			height: 19,
 			style: 'position:absolute;left:89px;top:264px;width:503px;height:19px;',
 		},
 		{

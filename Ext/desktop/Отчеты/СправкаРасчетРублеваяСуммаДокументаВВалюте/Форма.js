@@ -10,10 +10,15 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПолеВвода1',
+			width: 341,
+			height: 21,
 			style: 'position:absolute;left:81px;top:33px;width:341px;height:21px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДовер',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:107px;top:58px;width:90px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаВыдачи',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:220px;top:58px;width:84px;height:19px;',
 		},
 		{
@@ -41,7 +46,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:407px;top:58px;width:84px;height:19px;',
 		},
 		{
@@ -85,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительЯвляетсяЮЛ',
+			width: 85,
+			height: 19,
 			style: 'position:absolute;left:6px;top:6px;width:85px;height:19px;',
 		},
 		{
@@ -109,6 +119,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:234px;height:19px;',
 		},
 		{
@@ -122,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительЮЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:114px;width:90px;height:19px;',
 		},
 		{
@@ -135,6 +149,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительЮЛ_КПП',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:141px;width:90px;height:19px;',
 		},
 		{
@@ -148,6 +164,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительЮЛ_ОГРН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:168px;width:90px;height:19px;',
 		},
 		{
@@ -161,6 +179,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительЮЛ_Адрес',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
@@ -185,6 +205,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительФЛ_ФИО',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:234px;height:19px;',
 		},
 		{
@@ -198,6 +220,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительФЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:95px;top:185px;width:90px;height:19px;',
 		},
 		{
@@ -205,6 +229,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительФЛ_ОГРН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:95px;top:239px;width:90px;height:19px;',
 		},
 		{
@@ -214,10 +240,14 @@
 			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПредставительФЛ_Гражданство',
+			width: 139,
+			height: 19,
 			style: 'position:absolute;left:95px;top:158px;width:139px;height:19px;',
 		},
 		{
@@ -231,7 +261,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПредставительФЛ_ДатаРождения',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:95px;top:212px;width:90px;height:19px;',
 		},
 		{
@@ -245,6 +278,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительФЛ_Адрес',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
@@ -258,6 +293,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительФЛ_Удост',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:131px;width:234px;height:19px;',
 		},
 		{
@@ -297,6 +334,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительУЛ_ФИО',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:228px;height:19px;',
 		},
 		{
@@ -310,6 +349,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительУЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:88px;top:185px;width:90px;height:19px;',
 		},
 		{
@@ -324,10 +365,14 @@
 			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПредставительУЛ_Гражданство',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:88px;top:158px;width:140px;height:19px;',
 		},
 		{
@@ -341,7 +386,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПредставительУЛ_ДатаРождения',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:88px;top:212px;width:90px;height:19px;',
 		},
 		{
@@ -355,6 +403,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительУЛ_Адрес',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:228px;height:19px;',
 		},
 		{
@@ -368,6 +418,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставительУЛ_Удост',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:131px;width:228px;height:19px;',
 		},
 					]
@@ -390,6 +442,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительЯвляетсяЮЛ',
+			width: 85,
+			height: 19,
 			style: 'position:absolute;left:6px;top:6px;width:85px;height:19px;',
 		},
 		{
@@ -414,6 +468,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительЮЛ_НаимОрг',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:234px;height:19px;',
 		},
 		{
@@ -427,6 +483,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительЮЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:114px;width:90px;height:19px;',
 		},
 		{
@@ -440,6 +498,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительЮЛ_КПП',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:141px;width:90px;height:19px;',
 		},
 		{
@@ -453,6 +513,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительЮЛ_ОГРН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:168px;width:90px;height:19px;',
 		},
 		{
@@ -466,6 +528,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительЮЛ_Адрес',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
@@ -526,6 +590,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительРук_ФИО',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:212px;width:234px;height:19px;',
 		},
 		{
@@ -539,6 +605,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительРук_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:106px;top:239px;width:90px;height:19px;',
 		},
 					]
@@ -552,6 +620,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительФЛ_ФИО',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:234px;height:19px;',
 		},
 		{
@@ -559,6 +629,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительФЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:95px;top:185px;width:90px;height:19px;',
 		},
 		{
@@ -566,13 +638,19 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительФЛ_ОГРН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:95px;top:239px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ДоверительФЛ_Гражданство',
+			width: 139,
+			height: 19,
 			style: 'position:absolute;left:95px;top:158px;width:139px;height:19px;',
 		},
 		{
@@ -580,7 +658,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДоверительФЛ_ДатаРождения',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:95px;top:212px;width:90px;height:19px;',
 		},
 		{
@@ -588,6 +669,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительФЛ_Адрес',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
@@ -595,6 +678,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительФЛ_Удост',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:131px;width:234px;height:19px;',
 		},
 		{
@@ -633,6 +718,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительУЛ_ФИО',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:228px;height:19px;',
 		},
 		{
@@ -646,6 +733,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительУЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:88px;top:185px;width:90px;height:19px;',
 		},
 		{
@@ -660,10 +749,14 @@
 			style: 'position:absolute;left:0px;top:158px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ДоверительУЛ_Гражданство',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:88px;top:158px;width:140px;height:19px;',
 		},
 		{
@@ -677,7 +770,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДоверительУЛ_ДатаРождения',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:88px;top:212px;width:90px;height:19px;',
 		},
 		{
@@ -691,6 +787,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительУЛ_Адрес',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:228px;height:19px;',
 		},
 		{
@@ -704,6 +802,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДоверительУЛ_Удост',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:131px;width:228px;height:19px;',
 		},
 					]
@@ -721,6 +821,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусЯвляетсяЮЛ',
+			width: 85,
+			height: 19,
 			style: 'position:absolute;left:6px;top:6px;width:85px;height:19px;',
 		},
 		{
@@ -745,6 +847,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусЮЛ_НаимОрг',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:234px;height:19px;',
 		},
 		{
@@ -758,6 +862,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусЮЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:70px;width:90px;height:19px;',
 		},
 		{
@@ -771,6 +877,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусЮЛ_КПП',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:97px;width:90px;height:19px;',
 		},
 		{
@@ -784,6 +892,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусЮЛ_ОГРН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:39px;top:124px;width:90px;height:19px;',
 		},
 		{
@@ -820,6 +930,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусФЛ_ФИО',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:234px;height:19px;',
 		},
 		{
@@ -827,6 +939,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусФЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:38px;top:114px;width:90px;height:19px;',
 		},
 		{
@@ -834,6 +948,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусФЛ_Адрес',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
@@ -867,6 +983,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусУЛ_ФИО',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:43px;width:228px;height:19px;',
 		},
 		{
@@ -880,6 +998,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусУЛ_ИНН',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:38px;top:114px;width:90px;height:19px;',
 		},
 		{
@@ -898,6 +1018,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НотариусУЛ_Адрес',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:0px;top:87px;width:228px;height:19px;',
 		},
 					]
@@ -915,10 +1037,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 384,
+			height: 19,
 			style: 'position:absolute;left:107px;top:33px;width:384px;height:19px;',
 		},
 		{

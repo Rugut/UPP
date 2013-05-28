@@ -25,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +36,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -83,7 +89,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаНаДату',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:179px;top:0px;width:80px;height:19px;',
 		},
 					]
@@ -109,10 +118,15 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:61px;top:33px;width:180px;height:19px;',
 		},
 		{

@@ -16,10 +16,13 @@
 			style: 'position:absolute;left:8px;top:33px;width:68px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Номенклатура',
+			width: 515,
+			height: 19,
 			style: 'position:absolute;left:77px;top:33px;width:515px;height:19px;',
 		},
 		{
@@ -44,10 +47,12 @@
 			style: 'position:absolute;left:175px;top:57px;width:110px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'ЕдиницаИзмерения',
+			width: 69,
+			height: 19,
 			style: 'position:absolute;left:290px;top:57px;width:69px;height:19px;',
 		},
 		{

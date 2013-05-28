@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:358px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -21,13 +23,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'НазначениеКатегории',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:304px;height:19px;',
 		},
 		{

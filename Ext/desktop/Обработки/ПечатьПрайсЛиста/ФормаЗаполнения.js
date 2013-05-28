@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 441,
+			height: 19,
 			style: 'position:absolute;left:216px;top:1px;width:441px;height:19px;',
 		},
 		{
@@ -50,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиЦеноваяГруппа',
+			width: 441,
+			height: 20,
 			style: 'position:absolute;left:216px;top:24px;width:441px;height:20px;',
 		},
 					]
@@ -61,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиТипЦен',
+			width: 441,
+			height: 19,
 			style: 'position:absolute;left:223px;top:105px;width:441px;height:19px;',
 		},
 		{
@@ -73,10 +79,15 @@
 			style: 'position:absolute;left:7px;top:105px;width:103px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 365,
+			height: 20,
 			style: 'position:absolute;left:299px;top:33px;width:365px;height:20px;',
 		},
 		{
@@ -90,7 +101,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 102,
+			height: 19,
 			style: 'position:absolute;left:116px;top:33px;width:102px;height:19px;',
 		},
 		{

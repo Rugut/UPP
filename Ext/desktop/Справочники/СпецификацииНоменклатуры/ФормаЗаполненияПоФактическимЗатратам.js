@@ -10,10 +10,13 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Номенклатура',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:89px;top:32px;width:220px;height:19px;',
 		},
 		{
@@ -29,10 +32,13 @@
 			style: 'position:absolute;left:325px;top:28px;width:140px;height:27px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ХарактеристикаНоменклатуры',
+			width: 227,
+			height: 19,
 			style: 'position:absolute;left:465px;top:32px;width:227px;height:19px;',
 		},
 		{
@@ -111,10 +117,14 @@
 			style: 'position:absolute;left:8px;top:56px;width:81px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Спецификация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:89px;top:56px;width:220px;height:19px;',
 		},
 		{
@@ -124,10 +134,14 @@
 			style: 'position:absolute;left:325px;top:8px;width:140px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 227,
+			height: 19,
 			style: 'position:absolute;left:465px;top:8px;width:227px;height:19px;',
 		},
 		{
@@ -141,7 +155,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:89px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -155,7 +172,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончанияПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:203px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -174,10 +194,13 @@
 			style: 'position:absolute;left:409px;top:56px;width:56px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ЕдиницаИзмерения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:465px;top:56px;width:80px;height:19px;',
 		},
 		{

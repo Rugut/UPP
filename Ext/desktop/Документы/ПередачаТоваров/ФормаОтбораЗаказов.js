@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеДатаОтгрузки',
+			width: 102,
+			height: 19,
 			style: 'position:absolute;left:258px;top:64px;width:102px;height:19px;',
 		},
 		{
@@ -104,7 +107,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеДатаОплаты',
+			width: 102,
+			height: 19,
 			style: 'position:absolute;left:258px;top:120px;width:102px;height:19px;',
 		},
 					]
@@ -210,7 +216,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:84px;top:17px;width:80px;height:19px;',
 		},
 		{
@@ -218,7 +227,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:188px;top:17px;width:80px;height:19px;',
 		},
 		{

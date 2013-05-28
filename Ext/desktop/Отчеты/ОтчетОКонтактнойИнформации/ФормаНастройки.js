@@ -115,6 +115,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтрокаПерсональныхВидовКИ',
+			width: 459,
+			height: 19,
 			style: 'position:absolute;left:7px;top:311px;width:459px;height:19px;',
 		},
 		{

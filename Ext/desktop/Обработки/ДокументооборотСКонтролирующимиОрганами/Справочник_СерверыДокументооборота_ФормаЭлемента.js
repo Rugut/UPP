@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 63,
+			height: 19,
 			style: 'position:absolute;left:208px;top:33px;width:63px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:208px;top:58px;width:338px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочты',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:208px;top:164px;width:338px;height:19px;',
 		},
 		{
@@ -74,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Сертификат',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:208px;top:83px;width:338px;height:19px;',
 		},
 		{
@@ -92,6 +100,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочтыПФР',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:208px;top:189px;width:338px;height:19px;',
 		},
 		{
@@ -105,6 +115,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочтыФСГС',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:208px;top:214px;width:338px;height:19px;',
 		},
 	],

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 68,
+			height: 19,
 			style: 'position:absolute;left:519px;top:85px;width:68px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 372,
+			height: 19,
 			style: 'position:absolute;left:103px;top:84px;width:372px;height:19px;',
 		},
 		{
@@ -42,10 +46,14 @@
 			style: 'position:absolute;left:8px;top:58px;width:89px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Владелец',
+			width: 484,
+			height: 19,
 			style: 'position:absolute;left:103px;top:58px;width:484px;height:19px;',
 		},
 		{
@@ -55,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:89px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'КонтактноеЛицо',
+			width: 484,
+			height: 19,
 			style: 'position:absolute;left:103px;top:33px;width:484px;height:19px;',
 		},
 		{
@@ -404,6 +416,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 565,
+			height: 103,
 			style: 'position:absolute;left:6px;top:104px;width:565px;height:103px;',
 		},
 		{
@@ -413,10 +427,14 @@
 			style: 'position:absolute;left:6px;top:33px;width:121px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'РольКонтактногоЛица',
+			width: 436,
+			height: 19,
 			style: 'position:absolute;left:135px;top:33px;width:436px;height:19px;',
 		},
 		{
@@ -430,6 +448,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Должность',
+			width: 437,
+			height: 19,
 			style: 'position:absolute;left:134px;top:7px;width:437px;height:19px;',
 		},
 		{
@@ -563,6 +583,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КомментарийПросмотр',
+			width: 500,
+			height: 19,
 			style: 'position:absolute;left:87px;top:361px;width:500px;height:19px;',
 		},
 	],

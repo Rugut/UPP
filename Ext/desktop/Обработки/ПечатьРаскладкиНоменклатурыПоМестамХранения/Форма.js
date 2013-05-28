@@ -70,10 +70,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:55px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Документ',
+			width: 176,
+			height: 19,
 			style: 'position:absolute;left:211px;top:33px;width:176px;height:19px;',
 		},
 		{
@@ -262,10 +266,14 @@
 			style: 'position:absolute;left:393px;top:33px;width:132px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СписокСкладов',
+			width: 242,
+			height: 19,
 			style: 'position:absolute;left:530px;top:33px;width:242px;height:19px;',
 		},
 		{

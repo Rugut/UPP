@@ -10,10 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:86px;top:30px;width:220px;height:19px;',
 		},
 		{
@@ -27,7 +31,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -35,7 +42,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:186px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -63,10 +73,13 @@
 			style: 'position:absolute;left:8px;top:54px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'НематериальныйАктив',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:86px;top:54px;width:220px;height:19px;',
 		},
 	],

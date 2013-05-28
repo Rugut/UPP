@@ -145,6 +145,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяОбрабФайла',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:6px;width:298px;height:19px;',
 		},
 		{
@@ -158,6 +160,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаВремяПредст',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:30px;width:298px;height:19px;',
 		},
 		{
@@ -171,6 +175,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПрием',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:54px;width:298px;height:19px;',
 		},
 		{
@@ -184,6 +190,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:78px;width:298px;height:19px;',
 		},
 		{
@@ -197,6 +205,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимВидДок',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:102px;width:298px;height:19px;',
 		},
 					]

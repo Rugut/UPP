@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегНомДок',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:85px;width:303px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаОснОтз',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:185px;width:303px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаРегЭл',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:115px;width:303px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаРегБум',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:150px;width:303px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДокНП',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:35px;width:303px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодСтранПрод1',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:215px;width:303px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПричЗам',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:10px;width:303px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаДокНП',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:60px;width:303px;height:19px;',
 		},
 	],

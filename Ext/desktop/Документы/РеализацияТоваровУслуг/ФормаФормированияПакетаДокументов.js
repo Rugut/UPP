@@ -156,6 +156,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОснованиеПКО',
+			width: 235,
+			height: 19,
 			style: 'position:absolute;left:126px;top:321px;width:235px;height:19px;',
 		},
 		{

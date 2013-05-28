@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончанияПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:176px;top:32px;width:80px;height:19px;',
 		},
 		{
@@ -40,7 +43,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:76px;top:32px;width:80px;height:19px;',
 		},
 		{
@@ -214,6 +220,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Настройка',
+			width: 448,
+			height: 19,
 			style: 'position:absolute;left:76px;top:8px;width:448px;height:19px;',
 		},
 		{

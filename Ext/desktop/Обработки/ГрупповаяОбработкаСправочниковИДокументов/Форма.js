@@ -199,6 +199,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаДействия',
+			width: 174,
+			height: 19,
 			style: 'position:absolute;left:291px;top:286px;width:174px;height:19px;',
 		},
 		{

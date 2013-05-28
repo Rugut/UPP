@@ -220,6 +220,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист02',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 		{
@@ -258,6 +260,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист02_Прил1',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -284,6 +288,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист02_Прил2',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:266px;width:291px;height:19px;',
 		},
 		{
@@ -322,6 +328,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист02_Прил4',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -387,6 +395,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист02_Прил6',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -413,6 +423,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист02_Прил7',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -601,6 +613,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист04_РазделА',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 		{
@@ -657,6 +671,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист04_РазделБ',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -683,6 +699,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист05',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -709,6 +727,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист06',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -735,6 +755,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист07',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -761,6 +783,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийЛист08',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:355px;top:265px;width:291px;height:19px;',
 		},
 					]
@@ -887,7 +911,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаСдачи',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:82px;top:24px;width:80px;height:19px;',
 		},
 		{
@@ -938,13 +965,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:263px;top:6px;width:391px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Статус',
+			width: 119,
+			height: 19,
 			style: 'position:absolute;left:47px;top:6px;width:119px;height:19px;',
 		},
 					]

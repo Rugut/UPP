@@ -614,10 +614,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВалютаЦены',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:344px;top:73px;width:101px;height:19px;',
 		},
 		{
@@ -764,7 +768,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРасчетов',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:336px;top:414px;width:120px;height:19px;',
 		},
 		{
@@ -793,6 +800,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПоиска',
+			width: 262,
+			height: 19,
 			style: 'position:absolute;left:193px;top:57px;width:262px;height:19px;',
 		},
 		{
@@ -928,10 +937,15 @@
 			style: 'position:absolute;left:8px;top:28px;width:60px;height:27px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'НоменклатурнаяГруппа',
+			width: 385,
+			height: 19,
 			style: 'position:absolute;left:70px;top:32px;width:385px;height:19px;',
 		},
 		{

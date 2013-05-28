@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИМНС',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:94px;top:81px;width:40px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПФР',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:120px;height:19px;',
 		},
 	],

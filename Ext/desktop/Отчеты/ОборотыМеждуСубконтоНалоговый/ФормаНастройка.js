@@ -30,7 +30,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:88px;top:6px;width:120px;height:19px;',
 		},
 		{
@@ -44,7 +47,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:232px;top:6px;width:120px;height:19px;',
 		},
 		{
@@ -60,10 +66,14 @@
 			style: 'position:absolute;left:6px;top:32px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 288,
+			height: 19,
 			style: 'position:absolute;left:88px;top:32px;width:288px;height:19px;',
 		},
 		{
@@ -141,10 +151,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидУчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:88px;top:56px;width:80px;height:19px;',
 		},
 					]

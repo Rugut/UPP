@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:318px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:180px;height:19px;',
 		},
 		{
@@ -42,10 +46,13 @@
 			style: 'position:absolute;left:8px;top:60px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Период',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:94px;top:60px;width:120px;height:19px;',
 		},
 		{
@@ -55,10 +62,13 @@
 			style: 'position:absolute;left:8px;top:84px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Подпериод',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:94px;top:84px;width:120px;height:19px;',
 		},
 		{

@@ -71,7 +71,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонца',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:192px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -79,7 +82,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:92px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -89,10 +95,14 @@
 			style: 'position:absolute;left:274px;top:6px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Периодичность',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:92px;top:56px;width:160px;height:19px;',
 		},
 		{

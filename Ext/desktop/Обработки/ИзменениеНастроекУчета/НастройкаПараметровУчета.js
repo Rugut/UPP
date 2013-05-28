@@ -431,10 +431,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПериодичностьДоступностиКлючевыхРесурсовПредприятия',
+			width: 190,
+			height: 19,
 			style: 'position:absolute;left:343px;top:48px;width:190px;height:19px;',
 		},
 		{
@@ -449,24 +453,36 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВалютаУправленческогоУчета',
+			width: 83,
+			height: 19,
 			style: 'position:absolute;left:212px;top:111px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВалютаРегламентированногоУчета',
+			width: 83,
+			height: 19,
 			style: 'position:absolute;left:212px;top:48px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВалютаМеждународногоУчета',
+			width: 83,
+			height: 19,
 			style: 'position:absolute;left:212px;top:144px;width:83px;height:19px;',
 		},
 					]
@@ -512,24 +528,36 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ДополнительнаяКолонкаПечатныхФормДокументов',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:300px;top:48px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ЕдиницаИзмеренияВеса',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:300px;top:112px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ЕдиницаИзмеренияОбъема',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:300px;top:176px;width:104px;height:19px;',
 		},
 					]
@@ -630,10 +658,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СпособКонтроляДнейЗадолженности',
+			width: 190,
+			height: 19,
 			style: 'position:absolute;left:224px;top:48px;width:190px;height:19px;',
 		},
 		{
@@ -703,7 +735,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаУказанияСокращенногоНаименованияПродавцаВСчетеФактуре',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:128px;top:215px;width:80px;height:19px;',
 		},
 		{
@@ -717,7 +752,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоПримененияИсправленныхСчетовФактур',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:128px;top:297px;width:80px;height:19px;',
 		},
 		{
@@ -776,7 +814,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаПересчетаСуммыНДСвРубляхПоДокументамВИностраннойВалютеПоСтавкеНДС',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:131px;top:148px;width:80px;height:19px;',
 		},
 		{
@@ -831,7 +872,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоОценкиДоходовИРасходовВНУПоКурсуАвансов',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:132px;top:123px;width:80px;height:19px;',
 		},
 		{
@@ -867,7 +911,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаУчетаПостоянныхРазницВКурсовыхРазницахПоРасчетамВУЕ',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:142px;top:273px;width:80px;height:19px;',
 		},
 		{
@@ -961,10 +1008,14 @@
 			style: 'position:absolute;left:12px;top:48px;width:260px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТипЦенПлановойСебестоимостиНоменклатуры',
+			width: 196,
+			height: 19,
 			style: 'position:absolute;left:270px;top:48px;width:196px;height:19px;',
 		},
 					]

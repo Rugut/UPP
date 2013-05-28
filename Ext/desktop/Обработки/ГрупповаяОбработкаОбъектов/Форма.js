@@ -26,10 +26,13 @@
 			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОписаниеТипаОбъектов',
+			width: 386,
+			height: 19,
 			style: 'position:absolute;left:88px;top:8px;width:386px;height:19px;',
 		},
 		{

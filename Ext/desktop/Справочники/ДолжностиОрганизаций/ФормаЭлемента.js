@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 342,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКПДТР',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:98px;top:59px;width:80px;height:19px;',
 		},
 		{
@@ -70,10 +76,14 @@
 			style: 'position:absolute;left:12px;top:124px;width:126px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КодПозицииСписка',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:140px;top:124px;width:401px;height:19px;',
 		},
 		{
@@ -83,10 +93,14 @@
 			style: 'position:absolute;left:12px;top:148px;width:126px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОснованиеВыслугиЛет',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:140px;top:148px;width:401px;height:19px;',
 		},
 		{
@@ -96,10 +110,14 @@
 			style: 'position:absolute;left:12px;top:51px;width:150px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КатегорияВоинскогоУчета',
+			width: 374,
+			height: 19,
 			style: 'position:absolute;left:167px;top:51px;width:374px;height:19px;',
 		},
 		{
@@ -124,10 +142,15 @@
 			style: 'position:absolute;left:12px;top:295px;width:126px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Должность',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:140px;top:295px;width:401px;height:19px;',
 		},
 		{
@@ -137,10 +160,14 @@
 			style: 'position:absolute;left:12px;top:27px;width:150px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КатегорияСтатистическогоУчета',
+			width: 374,
+			height: 19,
 			style: 'position:absolute;left:167px;top:27px;width:374px;height:19px;',
 		},
 		{
@@ -150,10 +177,14 @@
 			style: 'position:absolute;left:12px;top:75px;width:150px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КатегорияУчетаЗабронированных',
+			width: 374,
+			height: 19,
 			style: 'position:absolute;left:167px;top:75px;width:374px;height:19px;',
 		},
 		{

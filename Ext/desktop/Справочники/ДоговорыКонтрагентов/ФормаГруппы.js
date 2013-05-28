@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:134px;top:84px;width:220px;height:19px;',
 		},
 		{
@@ -21,6 +23,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:394px;top:84px;width:40px;height:19px;',
 		},
 		{
@@ -36,10 +40,14 @@
 			style: 'position:absolute;left:354px;top:84px;width:40px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Владелец',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:134px;top:32px;width:300px;height:19px;',
 		},
 		{
@@ -55,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:56px;width:124px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:134px;top:56px;width:300px;height:19px;',
 		},
 		{

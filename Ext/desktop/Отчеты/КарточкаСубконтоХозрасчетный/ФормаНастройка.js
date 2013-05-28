@@ -45,7 +45,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 86,
+			height: 19,
 			style: 'position:absolute;left:124px;top:6px;width:86px;height:19px;',
 		},
 		{
@@ -53,7 +56,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаКон',
+			width: 86,
+			height: 19,
 			style: 'position:absolute;left:234px;top:6px;width:86px;height:19px;',
 		},
 		{
@@ -63,10 +69,13 @@
 			style: 'position:absolute;left:322px;top:6px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 218,
+			height: 19,
 			style: 'position:absolute;left:124px;top:30px;width:218px;height:19px;',
 		},
 		{

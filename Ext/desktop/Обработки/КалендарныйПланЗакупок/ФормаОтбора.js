@@ -29,6 +29,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеКонтрагент',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:56px;width:246px;height:19px;',
 		},
 		{
@@ -41,6 +43,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеДатаПотребности',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:106px;width:246px;height:19px;',
 		},
 		{
@@ -48,7 +52,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ЗначениеДатаПотребностиНач',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:382px;top:106px;width:120px;height:19px;',
 		},
 		{
@@ -56,7 +63,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ЗначениеДатаПотребностиКон',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:508px;top:106px;width:120px;height:19px;',
 		},
 		{
@@ -64,6 +74,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеНоменклатура',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:6px;width:246px;height:19px;',
 		},
 		{
@@ -76,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеЗаказПоставщику',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:81px;width:246px;height:19px;',
 		},
 		{
@@ -88,6 +102,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеНеобходимоеКоличество',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:131px;width:246px;height:19px;',
 		},
 		{
@@ -118,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеЗаказанноеКоличество',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:156px;width:246px;height:19px;',
 		},
 		{
@@ -148,6 +166,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеЦенаУпрУчета',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:181px;width:246px;height:19px;',
 		},
 		{
@@ -178,6 +198,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеСуммаУпрУчета',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:206px;width:246px;height:19px;',
 		},
 		{
@@ -208,6 +230,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеСуммаВзаиморасчетов',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:231px;width:246px;height:19px;',
 		},
 		{
@@ -279,6 +303,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеХарактеристикаНоменклатуры',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:382px;top:31px;width:246px;height:19px;',
 		},
 		{

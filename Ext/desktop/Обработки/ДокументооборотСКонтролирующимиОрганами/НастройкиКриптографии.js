@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Криптопровайдер',
+			width: 478,
+			height: 19,
 			style: 'position:absolute;left:120px;top:45px;width:478px;height:19px;',
 		},
 		{
@@ -32,6 +34,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АлгоритмПодписание',
+			width: 478,
+			height: 19,
 			style: 'position:absolute;left:120px;top:89px;width:478px;height:19px;',
 		},
 		{
@@ -45,6 +49,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АлгоритмШифрование',
+			width: 478,
+			height: 19,
 			style: 'position:absolute;left:120px;top:167px;width:478px;height:19px;',
 		},
 		{
@@ -58,6 +64,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АлгоритмХеширование',
+			width: 478,
+			height: 19,
 			style: 'position:absolute;left:120px;top:141px;width:478px;height:19px;',
 		},
 		{
@@ -71,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АлгоритмКлючи',
+			width: 478,
+			height: 19,
 			style: 'position:absolute;left:120px;top:115px;width:478px;height:19px;',
 		},
 		{

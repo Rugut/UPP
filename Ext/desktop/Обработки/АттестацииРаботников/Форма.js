@@ -82,10 +82,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 501,
+			height: 19,
 			style: 'position:absolute;left:90px;top:6px;width:501px;height:19px;',
 		},
 					]
@@ -178,10 +182,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Должность',
+			width: 203,
+			height: 19,
 			style: 'position:absolute;left:400px;top:36px;width:203px;height:19px;',
 		},
 		{
@@ -197,10 +206,14 @@
 			style: 'position:absolute;left:6px;top:36px;width:87px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Компетенция',
+			width: 203,
+			height: 19,
 			style: 'position:absolute;left:97px;top:36px;width:203px;height:19px;',
 		},
 		{
@@ -224,7 +237,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -232,7 +248,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
 		{

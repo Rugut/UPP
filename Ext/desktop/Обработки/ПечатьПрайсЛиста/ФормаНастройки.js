@@ -20,10 +20,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 377,
+			height: 20,
 			style: 'position:absolute;left:80px;top:6px;width:377px;height:20px;',
 		},
 		{
@@ -39,10 +44,13 @@
 			style: 'position:absolute;left:249px;top:50px;width:43px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Валюта',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:297px;top:50px;width:80px;height:19px;',
 		},
 		{
@@ -60,7 +68,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:524px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -99,7 +110,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаЦеныНеИзменились',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:193px;top:138px;width:80px;height:19px;',
 		},
 		{

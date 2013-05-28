@@ -31,6 +31,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Субъект',
+			width: 222,
+			height: 19,
 			style: 'position:absolute;left:330px;top:541px;width:222px;height:19px;',
 		},
 		{
@@ -317,6 +319,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборСубъект',
+			width: 179,
+			height: 19,
 			style: 'position:absolute;left:280px;top:27px;width:179px;height:19px;',
 		},
 		{

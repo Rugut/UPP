@@ -102,10 +102,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'УчетнаяЗапись',
+			width: 374,
+			height: 19,
 			style: 'position:absolute;left:100px;top:33px;width:374px;height:19px;',
 		},
 		{

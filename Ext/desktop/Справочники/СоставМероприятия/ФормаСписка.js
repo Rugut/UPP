@@ -78,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Мероприятие',
+			width: 389,
+			height: 20,
 			style: 'position:absolute;left:88px;top:32px;width:389px;height:20px;',
 		},
 		{

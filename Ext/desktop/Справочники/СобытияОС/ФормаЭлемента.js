@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:403px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:110px;top:33px;width:256px;height:19px;',
 		},
 		{
@@ -55,10 +59,14 @@
 			style: 'position:absolute;left:8px;top:60px;width:96px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидСобытияОС',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:110px;top:60px;width:333px;height:19px;',
 		},
 	],

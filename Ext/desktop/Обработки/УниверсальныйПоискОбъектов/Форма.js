@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИнформацияДляПоиска',
+			width: 459,
+			height: 19,
 			style: 'position:absolute;left:84px;top:24px;width:459px;height:19px;',
 		},
 		{

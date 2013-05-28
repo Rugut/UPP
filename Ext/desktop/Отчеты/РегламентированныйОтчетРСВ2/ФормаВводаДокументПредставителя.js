@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеУд',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:31px;top:62px;width:300px;height:19px;',
 		},
 		{
@@ -21,6 +23,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СерияРимские',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:31px;top:113px;width:101px;height:19px;',
 		},
 		{
@@ -28,6 +32,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СерияРусские',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:31px;top:165px;width:101px;height:19px;',
 		},
 		{
@@ -44,7 +50,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:31px;top:271px;width:101px;height:19px;',
 		},
 		{
@@ -52,6 +61,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Кем',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:31px;top:324px;width:300px;height:19px;',
 		},
 		{

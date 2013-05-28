@@ -67,6 +67,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерОсновнойПоставки1с',
+			width: 164,
+			height: 19,
 			style: 'position:absolute;left:160px;top:164px;width:164px;height:19px;',
 		},
 		{
@@ -116,6 +118,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СпецоператорИУЦ',
+			width: 508,
+			height: 19,
 			style: 'position:absolute;left:148px;top:140px;width:508px;height:19px;',
 		},
 		{
@@ -264,10 +268,15 @@
 			style: 'position:absolute;left:8px;top:116px;width:89px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 384,
+			height: 19,
 			style: 'position:absolute;left:140px;top:116px;width:384px;height:19px;',
 		},
 		{
@@ -294,6 +303,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КраткоеНаименование',
+			width: 520,
+			height: 19,
 			style: 'position:absolute;left:140px;top:180px;width:520px;height:19px;',
 		},
 		{
@@ -307,6 +318,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:140px;top:248px;width:110px;height:19px;',
 		},
 		{
@@ -320,6 +333,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:140px;top:276px;width:110px;height:19px;',
 		},
 		{
@@ -333,6 +348,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерПФР',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:548px;top:248px;width:110px;height:19px;',
 		},
 		{
@@ -346,6 +363,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:548px;top:276px;width:110px;height:19px;',
 		},
 		{
@@ -359,6 +378,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЮрАдрес',
+			width: 520,
+			height: 19,
 			style: 'position:absolute;left:140px;top:364px;width:520px;height:19px;',
 		},
 		{
@@ -372,6 +393,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФактАдрес',
+			width: 520,
+			height: 19,
 			style: 'position:absolute;left:140px;top:388px;width:520px;height:19px;',
 		},
 		{
@@ -385,6 +408,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЭлектАдрес',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:140px;top:436px;width:160px;height:19px;',
 		},
 		{
@@ -398,6 +423,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Телефон',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:140px;top:412px;width:160px;height:19px;',
 		},
 		{
@@ -411,6 +438,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТелефонМобильный',
+			width: 156,
+			height: 19,
 			style: 'position:absolute;left:504px;top:412px;width:156px;height:19px;',
 		},
 		{
@@ -462,6 +491,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДополнительныйКодФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:548px;top:300px;width:110px;height:19px;',
 		},
 					]
@@ -475,6 +506,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Сотрудник',
+			width: 396,
+			height: 19,
 			style: 'position:absolute;left:264px;top:160px;width:396px;height:19px;',
 		},
 		{
@@ -484,10 +517,14 @@
 			style: 'position:absolute;left:8px;top:327px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ДокументВидСотрудника',
+			width: 544,
+			height: 19,
 			style: 'position:absolute;left:116px;top:327px;width:544px;height:19px;',
 		},
 		{
@@ -501,6 +538,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументСерияСотрудника',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:116px;top:353px;width:140px;height:19px;',
 		},
 		{
@@ -514,6 +553,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументНомерСотрудника',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:304px;top:353px;width:140px;height:19px;',
 		},
 		{
@@ -527,7 +568,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДокументДатаВыдачиСотрудника',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:520px;top:353px;width:140px;height:19px;',
 		},
 		{
@@ -541,6 +585,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументКемВыданСотрудника',
+			width: 544,
+			height: 19,
 			style: 'position:absolute;left:116px;top:379px;width:544px;height:19px;',
 		},
 		{
@@ -559,6 +605,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПодразделениеСотрудника',
+			width: 216,
+			height: 19,
 			style: 'position:absolute;left:444px;top:269px;width:216px;height:19px;',
 		},
 		{
@@ -572,6 +620,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДолжностьСотрудника',
+			width: 188,
+			height: 19,
 			style: 'position:absolute;left:116px;top:269px;width:188px;height:19px;',
 		},
 		{
@@ -584,6 +634,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:116px;top:211px;width:140px;height:19px;',
 		},
 		{
@@ -591,6 +643,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 108,
+			height: 19,
 			style: 'position:absolute;left:300px;top:211px;width:108px;height:19px;',
 		},
 		{
@@ -598,6 +652,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:476px;top:211px;width:100px;height:19px;',
 		},
 		{

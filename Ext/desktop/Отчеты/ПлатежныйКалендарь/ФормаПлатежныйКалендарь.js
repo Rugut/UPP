@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:182px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиВидДенежныхСредств',
+			width: 369,
+			height: 20,
 			style: 'position:absolute;left:313px;top:0px;width:369px;height:20px;',
 		},
 		{
@@ -71,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиБанковскийСчетКасса',
+			width: 369,
+			height: 20,
 			style: 'position:absolute;left:313px;top:24px;width:369px;height:20px;',
 		},
 		{
@@ -91,10 +101,13 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ДетализацияПоПериодам',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:470px;top:33px;width:220px;height:19px;',
 		},
 		{

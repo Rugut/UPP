@@ -278,10 +278,13 @@
 			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация1',
+			width: 351,
+			height: 19,
 			style: 'position:absolute;left:114px;top:6px;width:351px;height:19px;',
 		},
 		{
@@ -413,10 +416,13 @@
 			style: 'position:absolute;left:20px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 351,
+			height: 19,
 			style: 'position:absolute;left:114px;top:6px;width:351px;height:19px;',
 		},
 		{
@@ -430,7 +436,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаПовышения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:114px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -482,7 +491,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаПовышения1',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:116px;top:14px;width:80px;height:19px;',
 		},
 		{

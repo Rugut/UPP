@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Регион',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:99px;top:57px;width:226px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Район',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:99px;top:105px;width:226px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Город',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:99px;top:129px;width:226px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаселенныйПункт',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:99px;top:153px;width:226px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Улица',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:99px;top:177px;width:226px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Дом',
+			width: 45,
+			height: 19,
 			style: 'position:absolute;left:99px;top:201px;width:45px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Корпус',
+			width: 45,
+			height: 19,
 			style: 'position:absolute;left:201px;top:201px;width:45px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Квартира',
+			width: 45,
+			height: 19,
 			style: 'position:absolute;left:280px;top:201px;width:45px;height:19px;',
 		},
 		{
@@ -137,6 +153,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Индекс',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:265px;top:33px;width:60px;height:19px;',
 		},
 		{
@@ -150,6 +168,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодСтраны',
+			width: 43,
+			height: 19,
 			style: 'position:absolute;left:99px;top:33px;width:43px;height:19px;',
 		},
 		{
@@ -163,6 +183,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодРегиона',
+			width: 27,
+			height: 19,
 			style: 'position:absolute;left:99px;top:81px;width:27px;height:19px;',
 		},
 	],

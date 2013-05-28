@@ -93,7 +93,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:143px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -107,7 +110,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:243px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -178,10 +184,13 @@
 			style: 'position:absolute;left:8px;top:84px;width:684px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПолеВводаОтветственный',
+			width: 183,
+			height: 19,
 			style: 'position:absolute;left:509px;top:33px;width:183px;height:19px;',
 		},
 		{

@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -22,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -69,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПокупатель',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:288px;top:0px;width:300px;height:19px;',
 		},
 		{
@@ -85,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:288px;top:24px;width:300px;height:19px;',
 		},
 		{
@@ -101,6 +111,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПодразделение',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:288px;top:48px;width:300px;height:19px;',
 		},
 		{

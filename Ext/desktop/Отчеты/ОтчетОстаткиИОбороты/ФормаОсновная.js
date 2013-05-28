@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -22,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -69,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройки1',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:324px;top:0px;width:252px;height:19px;',
 		},
 		{
@@ -81,6 +89,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиС1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:324px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -88,6 +98,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПо1',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:452px;top:0px;width:124px;height:19px;',
 		},
 		{
@@ -99,6 +111,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройки5',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:326px;top:98px;width:250px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиС5',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:324px;top:98px;width:120px;height:19px;',
 		},
 		{
@@ -118,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПо5',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:452px;top:98px;width:124px;height:19px;',
 		},
 		{
@@ -129,6 +147,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройки4',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:326px;top:72px;width:250px;height:19px;',
 		},
 		{
@@ -141,6 +161,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиС4',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:324px;top:72px;width:120px;height:19px;',
 		},
 		{
@@ -148,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПо4',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:452px;top:72px;width:124px;height:19px;',
 		},
 		{
@@ -159,6 +183,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройки3',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:326px;top:48px;width:250px;height:19px;',
 		},
 		{
@@ -171,6 +197,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиС3',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:324px;top:48px;width:120px;height:19px;',
 		},
 		{
@@ -178,6 +206,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПо3',
+			width: 123,
+			height: 19,
 			style: 'position:absolute;left:453px;top:48px;width:123px;height:19px;',
 		},
 		{
@@ -189,6 +219,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройки2',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:324px;top:24px;width:252px;height:19px;',
 		},
 		{
@@ -201,6 +233,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиС2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:324px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -208,6 +242,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПо2',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:452px;top:24px;width:124px;height:19px;',
 		},
 		{

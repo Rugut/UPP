@@ -117,6 +117,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения1',
+			width: 305,
+			height: 19,
 			style: 'position:absolute;left:85px;top:0px;width:305px;height:19px;',
 		},
 		{
@@ -142,6 +144,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения1',
+			width: 112,
+			height: 19,
 			style: 'position:absolute;left:84px;top:0px;width:112px;height:19px;',
 		},
 		{
@@ -149,6 +153,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:269px;top:0px;width:120px;height:19px;',
 		},
 					]
@@ -165,6 +171,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения1',
+			width: 112,
+			height: 19,
 			style: 'position:absolute;left:246px;top:152px;width:112px;height:19px;',
 		},
 		{
@@ -172,6 +180,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:431px;top:152px;width:120px;height:19px;',
 		},
 		{
@@ -223,6 +233,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеИнформационнойБазыДляОбмена',
+			width: 413,
+			height: 19,
 			style: 'position:absolute;left:28px;top:117px;width:413px;height:19px;',
 		},
 		{
@@ -348,6 +360,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаНастроекОбменаПервойИнформационнойБазы',
+			width: 452,
+			height: 19,
 			style: 'position:absolute;left:32px;top:101px;width:452px;height:19px;',
 		},
 		{
@@ -390,6 +404,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогОбменаИнформацией',
+			width: 452,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:452px;height:19px;',
 		},
 		{
@@ -445,6 +461,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'FTPАдресОбмена',
+			width: 278,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:278px;height:19px;',
 		},
 		{
@@ -458,6 +476,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПользовательFTPСоединения',
+			width: 278,
+			height: 19,
 			style: 'position:absolute;left:87px;top:24px;width:278px;height:19px;',
 		},
 		{
@@ -465,6 +485,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольFTPСоединения',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:419px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -522,6 +544,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения',
+			width: 385,
+			height: 19,
 			style: 'position:absolute;left:148px;top:0px;width:385px;height:19px;',
 		},
 		{
@@ -541,6 +565,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:148px;top:0px;width:180px;height:19px;',
 		},
 		{
@@ -554,6 +580,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения',
+			width: 135,
+			height: 19,
 			style: 'position:absolute;left:398px;top:0px;width:135px;height:19px;',
 		},
 					]
@@ -570,6 +598,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения',
+			width: 178,
+			height: 19,
 			style: 'position:absolute;left:154px;top:98px;width:178px;height:19px;',
 		},
 		{
@@ -577,6 +607,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:403px;top:98px;width:136px;height:19px;',
 		},
 		{
@@ -703,10 +735,13 @@
 			style: 'position:absolute;left:6px;top:205px;width:173px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'СозданнаяНастройкаОбмена1',
+			width: 390,
+			height: 19,
 			style: 'position:absolute;left:36px;top:228px;width:390px;height:19px;',
 		},
 		{
@@ -720,6 +755,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаНастроекОбменаПервойИнформационнойБазы1',
+			width: 516,
+			height: 19,
 			style: 'position:absolute;left:36px;top:154px;width:516px;height:19px;',
 		},
 		{
@@ -771,10 +808,13 @@
 			style: 'position:absolute;left:6px;top:50px;width:173px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'СозданнаяНастройкаОбмена',
+			width: 385,
+			height: 19,
 			style: 'position:absolute;left:39px;top:73px;width:385px;height:19px;',
 		},
 		{
@@ -824,7 +864,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаВыгрузкиДокументов',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:282px;top:50px;width:100px;height:19px;',
 		},
 		{
@@ -832,6 +875,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрефиксДляЗагружаемыхДокументов',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:376px;top:73px;width:64px;height:19px;',
 		},
 		{
@@ -845,6 +890,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрефиксДляДокументовВТекущейИБ',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:376px;top:97px;width:64px;height:19px;',
 		},
 		{

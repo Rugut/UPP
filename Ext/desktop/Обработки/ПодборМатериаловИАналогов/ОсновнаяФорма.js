@@ -191,10 +191,15 @@
 			style: 'position:absolute;left:8px;top:6px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СкладОстатков',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:101px;top:6px;width:220px;height:19px;',
 		},
 		{

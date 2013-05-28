@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:70px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:170px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -73,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборЗначениеКласс',
+			width: 343,
+			height: 19,
 			style: 'position:absolute;left:313px;top:0px;width:343px;height:19px;',
 		},
 		{

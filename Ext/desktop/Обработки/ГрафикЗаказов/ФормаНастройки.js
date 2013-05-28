@@ -228,10 +228,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'График',
+			width: 248,
+			height: 21,
 			style: 'position:absolute;left:388px;top:90px;width:248px;height:21px;',
 		},
 		{

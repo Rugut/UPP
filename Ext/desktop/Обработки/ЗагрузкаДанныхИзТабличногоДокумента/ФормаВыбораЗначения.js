@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Значение',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:8px;top:8px;width:300px;height:19px;',
 		},
 		{

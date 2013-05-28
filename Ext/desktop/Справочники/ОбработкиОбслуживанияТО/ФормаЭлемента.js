@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:113px;top:33px;width:244px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:385px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Обработка',
+			width: 302,
+			height: 19,
 			style: 'position:absolute;left:113px;top:78px;width:302px;height:19px;',
 		},
 		{
@@ -60,10 +66,12 @@
 			style: 'position:absolute;left:8px;top:102px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'Вид',
+			width: 352,
+			height: 19,
 			style: 'position:absolute;left:113px;top:102px;width:352px;height:19px;',
 		},
 		{
@@ -147,6 +155,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Идентификатор',
+			width: 352,
+			height: 19,
 			style: 'position:absolute;left:113px;top:225px;width:352px;height:19px;',
 		},
 		{

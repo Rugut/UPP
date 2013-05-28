@@ -176,17 +176,23 @@
 			style: 'position:absolute;left:17px;top:69px;width:236px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияНадежность',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:258px;top:45px;width:118px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидСравненияСрокВыполненияЗаказа',
+			width: 118,
+			height: 19,
 			style: 'position:absolute;left:258px;top:69px;width:118px;height:19px;',
 		},
 		{
@@ -194,6 +200,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеНадежность',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:381px;top:45px;width:238px;height:19px;',
 		},
 		{
@@ -201,6 +209,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеСрокВыполненияЗаказа',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:381px;top:69px;width:238px;height:19px;',
 		},
 		{

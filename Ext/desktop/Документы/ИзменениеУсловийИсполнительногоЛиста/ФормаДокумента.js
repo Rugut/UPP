@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:454px;top:33px;width:104px;height:19px;',
 		},
 		{
@@ -27,7 +29,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:580px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -37,10 +42,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Физлицо',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:100px;top:57px;width:246px;height:19px;',
 		},
 		{
@@ -50,10 +59,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:100px;top:33px;width:246px;height:19px;',
 		},
 		{
@@ -61,7 +74,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 79,
+			height: 19,
 			style: 'position:absolute;left:100px;top:150px;width:79px;height:19px;',
 		},
 		{
@@ -90,6 +106,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 600,
+			height: 19,
 			style: 'position:absolute;left:100px;top:420px;width:600px;height:19px;',
 		},
 		{
@@ -120,10 +138,14 @@
 			style: 'position:absolute;left:370px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПолеВвода5',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:454px;top:57px;width:246px;height:19px;',
 		},
 		{
@@ -142,7 +164,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаИзменения',
+			width: 79,
+			height: 19,
 			style: 'position:absolute;left:522px;top:80px;width:79px;height:19px;',
 		},
 		{
@@ -162,10 +187,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТарифБанкаНаДенежныеПереводы',
+			width: 182,
+			height: 19,
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
 		},
 					]
@@ -184,10 +213,14 @@
 			style: 'position:absolute;left:180px;top:46px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Тариф',
+			width: 182,
+			height: 19,
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
 		},
 		{
@@ -229,10 +262,15 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПрожиточныйМинимум',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:265px;top:243px;width:232px;height:19px;',
 		},
 		{
@@ -242,10 +280,14 @@
 			style: 'position:absolute;left:8px;top:80px;width:90px;height:31px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ИсполнительныйЛист',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:100px;top:86px;width:246px;height:19px;',
 		},
 		{
@@ -253,7 +295,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаИзменения1',
+			width: 79,
+			height: 19,
 			style: 'position:absolute;left:522px;top:102px;width:79px;height:19px;',
 		},
 		{

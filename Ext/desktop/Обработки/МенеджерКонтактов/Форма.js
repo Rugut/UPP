@@ -35,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВыбКонтрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:89px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -698,6 +700,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеОтправитель',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:64px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -705,6 +709,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеТема',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:64px;top:24px;width:220px;height:19px;',
 		},
 		{
@@ -724,6 +730,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеКому',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:336px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -731,6 +739,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеКопии',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:336px;top:24px;width:220px;height:19px;',
 		},
 		{

@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:328px;top:0px;width:246px;height:19px;',
 		},
 		{
@@ -37,6 +39,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСНоменклатура',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:328px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -44,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоНоменклатура',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:454px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -55,6 +61,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиДатаПотребности',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:328px;top:25px;width:246px;height:19px;',
 		},
 		{
@@ -67,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСДатаПотребности',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:328px;top:25px;width:120px;height:19px;',
 		},
 		{
@@ -74,6 +84,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоДатаПотребности',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:454px;top:25px;width:120px;height:19px;',
 		},
 		{

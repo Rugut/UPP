@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 307,
+			height: 19,
 			style: 'position:absolute;left:101px;top:58px;width:307px;height:19px;',
 		},
 		{
@@ -29,10 +31,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 307,
+			height: 19,
 			style: 'position:absolute;left:101px;top:33px;width:307px;height:19px;',
 		},
 		{
@@ -46,7 +53,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВвода2',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:203px;top:82px;width:80px;height:19px;',
 		},
 		{
@@ -66,10 +76,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПолеВвода4',
+			width: 293,
+			height: 19,
 			style: 'position:absolute;left:99px;top:6px;width:293px;height:19px;',
 		},
 		{
@@ -88,6 +102,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодДетализации',
+			width: 293,
+			height: 19,
 			style: 'position:absolute;left:99px;top:54px;width:293px;height:19px;',
 		},
 		{
@@ -97,10 +113,14 @@
 			style: 'position:absolute;left:6px;top:26px;width:88px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПолеВвода5',
+			width: 293,
+			height: 19,
 			style: 'position:absolute;left:99px;top:30px;width:293px;height:19px;',
 		},
 		{
@@ -171,6 +191,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВвода6',
+			width: 307,
+			height: 19,
 			style: 'position:absolute;left:101px;top:283px;width:307px;height:19px;',
 		},
 		{

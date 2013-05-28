@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:553px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:653px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:93px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 318,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:318px;height:19px;',
 		},
 		{
@@ -56,10 +65,14 @@
 			style: 'position:absolute;left:465px;top:57px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Исполнитель',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:553px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -73,6 +86,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 778,
+			height: 19,
 			style: 'position:absolute;left:97px;top:468px;width:778px;height:19px;',
 		},
 		{
@@ -281,10 +296,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:93px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Руководитель',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:102px;top:81px;width:120px;height:19px;',
 		},
 		{
@@ -294,10 +312,13 @@
 			style: 'position:absolute;left:226px;top:81px;width:65px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ДолжностьРуководителя',
+			width: 126,
+			height: 19,
 			style: 'position:absolute;left:294px;top:81px;width:126px;height:19px;',
 		},
 		{
@@ -311,6 +332,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетныйПериод',
+			width: 318,
+			height: 19,
 			style: 'position:absolute;left:102px;top:57px;width:318px;height:19px;',
 		},
 		{
@@ -331,10 +354,13 @@
 			style: 'position:absolute;left:0px;top:50px;width:174px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'КатегорияЗастрахованныхЛиц',
+			width: 206,
+			height: 19,
 			style: 'position:absolute;left:182px;top:50px;width:206px;height:19px;',
 		},
 		{
@@ -348,6 +374,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КорректируемыйПериод',
+			width: 206,
+			height: 19,
 			style: 'position:absolute;left:537px;top:25px;width:206px;height:19px;',
 		},
 		{
@@ -423,10 +451,14 @@
 			style: 'position:absolute;left:241px;top:0px;width:171px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТерриториальныеУсловия',
+			width: 66,
+			height: 19,
 			style: 'position:absolute;left:415px;top:0px;width:66px;height:19px;',
 		},
 		{
@@ -515,6 +547,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерПачки',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:553px;top:81px;width:80px;height:19px;',
 		},
 		{

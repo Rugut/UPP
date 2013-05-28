@@ -19,6 +19,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительЯвляетсяЮЛ',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:48px;width:120px;height:19px;',
 		},
 		{
@@ -43,6 +45,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИННЮЛОтпр',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:162px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -56,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КППОтпр',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:162px;top:48px;width:120px;height:19px;',
 		},
 		{
@@ -69,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимОтпр',
+			width: 372,
+			height: 19,
 			style: 'position:absolute;left:162px;top:0px;width:372px;height:19px;',
 		},
 					]
@@ -94,6 +102,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИННФЛОтпр',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:162px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -101,6 +111,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФамилияФЛОтпр',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:162px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -108,6 +120,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФЛОтпр',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:288px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -115,6 +129,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчествоФЛОтпр',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:414px;top:24px;width:120px;height:19px;',
 		},
 					]
@@ -147,6 +163,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДолжностьПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:246px;width:120px;height:19px;',
 		},
 		{
@@ -177,6 +195,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДолжностьПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:378px;width:120px;height:19px;',
 		},
 		{
@@ -202,6 +222,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИННФЛКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:558px;width:120px;height:19px;',
 		},
 		{
@@ -214,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФамилияПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:270px;width:120px;height:19px;',
 		},
 		{
@@ -221,6 +245,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:294px;top:270px;width:120px;height:19px;',
 		},
 		{
@@ -228,6 +254,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчествоПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:270px;width:120px;height:19px;',
 		},
 		{
@@ -235,6 +263,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФамилияПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:402px;width:120px;height:19px;',
 		},
 		{
@@ -242,6 +272,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:294px;top:402px;width:120px;height:19px;',
 		},
 		{
@@ -249,6 +281,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчествоПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:402px;width:120px;height:19px;',
 		},
 		{
@@ -256,6 +290,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимДовПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:294px;width:120px;height:19px;',
 		},
 		{
@@ -263,6 +299,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДовПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:294px;top:294px;width:120px;height:19px;',
 		},
 		{
@@ -270,7 +308,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДовПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:294px;width:120px;height:19px;',
 		},
 		{
@@ -278,6 +319,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФамилияКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:582px;width:120px;height:19px;',
 		},
 		{
@@ -285,6 +328,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:294px;top:582px;width:120px;height:19px;',
 		},
 		{
@@ -292,6 +337,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчествоКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:582px;width:120px;height:19px;',
 		},
 		{
@@ -305,6 +352,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимДовКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:606px;width:120px;height:19px;',
 		},
 		{
@@ -312,6 +361,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДовКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:294px;top:606px;width:120px;height:19px;',
 		},
 		{
@@ -319,7 +370,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДовКурьер',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:606px;width:120px;height:19px;',
 		},
 		{
@@ -333,6 +387,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИННФЛПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:354px;width:120px;height:19px;',
 		},
 		{
@@ -346,6 +402,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИННФЛПодп1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:222px;width:120px;height:19px;',
 		},
 		{
@@ -359,6 +417,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИФНС',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:270px;top:6px;width:60px;height:19px;',
 		},
 		{
@@ -372,6 +432,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимДовПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:168px;top:426px;width:120px;height:19px;',
 		},
 		{
@@ -379,6 +441,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДовПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:294px;top:426px;width:120px;height:19px;',
 		},
 		{
@@ -386,7 +450,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДовПодп2',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:420px;top:426px;width:120px;height:19px;',
 		},
 		{

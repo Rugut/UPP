@@ -326,10 +326,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВалютаЦены',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:418px;top:125px;width:133px;height:19px;',
 		},
 		{
@@ -357,6 +361,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораСпискаНоменклатуры',
+			width: 489,
+			height: 19,
 			style: 'position:absolute;left:228px;top:0px;width:489px;height:19px;',
 		},
 		{

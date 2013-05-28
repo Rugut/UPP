@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:190px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -56,10 +65,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Контрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -69,10 +82,14 @@
 			style: 'position:absolute;left:8px;top:105px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ДоговорКонтрагента',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:105px;width:220px;height:19px;',
 		},
 		{
@@ -86,6 +103,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РасчетныйДокумент',
+			width: 192,
+			height: 19,
 			style: 'position:absolute;left:118px;top:129px;width:192px;height:19px;',
 		},
 		{
@@ -99,6 +118,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 574,
+			height: 19,
 			style: 'position:absolute;left:90px;top:421px;width:574px;height:19px;',
 		},
 		{
@@ -401,10 +422,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:96px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Грузоотправитель',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:108px;top:6px;width:209px;height:19px;',
 		},
 		{
@@ -414,10 +439,14 @@
 			style: 'position:absolute;left:6px;top:31px;width:96px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Грузополучатель',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:108px;top:31px;width:209px;height:19px;',
 		},
 					]
@@ -441,6 +470,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Всего',
+			width: 122,
+			height: 17,
 			style: 'position:absolute;left:542px;top:377px;width:122px;height:17px;',
 		},
 		{
@@ -454,6 +485,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВсегоНДС',
+			width: 122,
+			height: 17,
 			style: 'position:absolute;left:542px;top:399px;width:122px;height:17px;',
 		},
 		{
@@ -466,7 +499,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КорректируемыйПериод',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:490px;top:57px;width:80px;height:19px;',
 		},
 		{

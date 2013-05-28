@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:193px;width:220px;height:19px;',
 		},
 		{
@@ -85,6 +87,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Вид',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:61px;width:220px;height:19px;',
 		},
 		{
@@ -92,6 +96,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Объект',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
 	],

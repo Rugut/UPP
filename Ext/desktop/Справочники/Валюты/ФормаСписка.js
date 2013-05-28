@@ -111,7 +111,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКурса',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:74px;top:33px;width:80px;height:19px;',
 		},
 		{

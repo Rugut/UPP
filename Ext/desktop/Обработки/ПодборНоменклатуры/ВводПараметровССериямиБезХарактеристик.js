@@ -10,10 +10,13 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаИзмерения',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:162px;top:33px;width:84px;height:19px;',
 		},
 		{
@@ -115,10 +118,15 @@
 			style: 'position:absolute;left:8px;top:106px;width:68px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
+			trigger3Cls: 'x-form-clear-trigger',
 			name: 'Серия',
+			width: 166,
+			height: 19,
 			style: 'position:absolute;left:78px;top:106px;width:166px;height:19px;',
 		},
 	],

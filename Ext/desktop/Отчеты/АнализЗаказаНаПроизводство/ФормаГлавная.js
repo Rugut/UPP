@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:135px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Заказ',
+			width: 611,
+			height: 19,
 			style: 'position:absolute;left:148px;top:33px;width:611px;height:19px;',
 		},
 		{
@@ -38,7 +42,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаНаДату',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:57px;top:2px;width:80px;height:19px;',
 		},
 		{

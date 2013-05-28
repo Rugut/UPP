@@ -74,10 +74,13 @@
 			style: 'position:absolute;left:1px;top:0px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'АвансЗаПервуюПоловинуМесяца_Округление',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
 		},
 					]
@@ -133,10 +136,13 @@
 			style: 'position:absolute;left:0px;top:30px;width:336px;height:3px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Зарплата_Округление',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
 		},
 					]
@@ -171,10 +177,14 @@
 			style: 'position:absolute;left:0px;top:30px;width:336px;height:3px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Дивиденды_Округление',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
 		},
 					]
@@ -221,10 +231,13 @@
 			style: 'position:absolute;left:266px;top:74px;width:40px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПрочиеВыплаты_Округление',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:107px;top:0px;width:133px;height:19px;',
 		},
 					]
@@ -260,10 +273,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПрочиеВыплатыБезУдержаний_Округление',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:101px;top:0px;width:133px;height:19px;',
 		},
 					]

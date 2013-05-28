@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле1',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:102px;top:129px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле2',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:102px;top:153px;width:80px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле3',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:102px;top:105px;width:80px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле4',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:262px;top:105px;width:60px;height:19px;',
 		},
 		{
@@ -66,6 +74,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:205px;width:220px;height:19px;',
 		},
 		{
@@ -124,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Вид',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -131,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Объект',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
 		{

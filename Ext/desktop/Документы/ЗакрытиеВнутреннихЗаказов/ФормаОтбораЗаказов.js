@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеДатаОтгрузки',
+			width: 102,
+			height: 19,
 			style: 'position:absolute;left:250px;top:68px;width:102px;height:19px;',
 		},
 		{
@@ -389,7 +392,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:76px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -397,7 +403,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:180px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -419,10 +428,14 @@
 			style: 'position:absolute;left:268px;top:6px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПолеВводаПричинаЗакрытия',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:160px;top:164px;width:200px;height:19px;',
 		},
 		{

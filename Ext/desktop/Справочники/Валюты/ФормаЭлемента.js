@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:364px;top:33px;width:60px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 222,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:222px;height:19px;',
 		},
 		{
@@ -53,6 +57,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолное',
+			width: 326,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:326px;height:19px;',
 		},
 		{
@@ -152,6 +158,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПрописи1наРусском',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:164px;top:105px;width:60px;height:19px;',
 		},
 		{
@@ -165,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПрописи2наРусском',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:264px;top:105px;width:60px;height:19px;',
 		},
 		{
@@ -178,6 +188,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПрописи3наРусском',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:364px;top:105px;width:60px;height:19px;',
 		},
 		{
@@ -206,6 +218,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПрописи5наРусском',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:164px;top:153px;width:60px;height:19px;',
 		},
 		{
@@ -219,6 +233,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПрописи6наРусском',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:264px;top:153px;width:60px;height:19px;',
 		},
 		{
@@ -232,6 +248,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеПрописи7наРусском',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:364px;top:153px;width:60px;height:19px;',
 		},
 		{

@@ -94,7 +94,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончанияПланирования',
+			width: 112,
+			height: 19,
 			style: 'position:absolute;left:233px;top:8px;width:112px;height:19px;',
 		},
 		{

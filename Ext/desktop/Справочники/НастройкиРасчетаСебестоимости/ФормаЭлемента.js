@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:8px;top:83px;width:94px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:105px;top:83px;width:281px;height:19px;',
 		},
 		{
@@ -124,6 +128,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:105px;top:57px;width:281px;height:19px;',
 		},
 		{
@@ -133,10 +139,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:105px;top:33px;width:281px;height:19px;',
 		},
 		{
@@ -150,6 +160,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:105px;top:366px;width:281px;height:19px;',
 		},
 		{
@@ -159,10 +171,15 @@
 			style: 'position:absolute;left:8px;top:109px;width:94px;height:30px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'НастройкаЗакрытияМесяца',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:105px;top:109px;width:281px;height:19px;',
 		},
 		{

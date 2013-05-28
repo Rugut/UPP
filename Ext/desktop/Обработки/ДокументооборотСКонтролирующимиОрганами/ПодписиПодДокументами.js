@@ -96,6 +96,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументПредставление',
+			width: 675,
+			height: 19,
 			style: 'position:absolute;left:149px;top:97px;width:675px;height:19px;',
 		},
 		{
@@ -103,6 +105,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТранспортноеСообщениеПредставление',
+			width: 675,
+			height: 19,
 			style: 'position:absolute;left:149px;top:70px;width:675px;height:19px;',
 		},
 		{
@@ -134,10 +138,15 @@
 			style: 'position:absolute;left:8px;top:32px;width:816px;height:3px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ЦиклОбмена',
+			width: 675,
+			height: 19,
 			style: 'position:absolute;left:149px;top:43px;width:675px;height:19px;',
 		},
 		{
@@ -147,10 +156,12 @@
 			style: 'position:absolute;left:8px;top:43px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'ТранспортноеСообщение',
+			width: 675,
+			height: 19,
 			style: 'position:absolute;left:149px;top:70px;width:675px;height:19px;',
 		},
 	],

@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПользователя',
+			width: 183,
+			height: 19,
 			style: 'position:absolute;left:93px;top:32px;width:183px;height:19px;',
 		},
 		{
@@ -27,6 +29,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольПользователя',
+			width: 183,
+			height: 19,
 			style: 'position:absolute;left:93px;top:56px;width:183px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресПроксиСервера',
+			width: 183,
+			height: 19,
 			style: 'position:absolute;left:93px;top:8px;width:183px;height:19px;',
 		},
 		{

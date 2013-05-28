@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:821px;top:2px;width:64px;height:19px;',
 		},
 		{
@@ -22,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:908px;top:2px;width:64px;height:19px;',
 		},
 		{

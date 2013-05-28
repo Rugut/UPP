@@ -210,6 +210,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаВыгруженныхДанных',
+			width: 456,
+			height: 19,
 			style: 'position:absolute;left:138px;top:73px;width:456px;height:19px;',
 		},
 		{

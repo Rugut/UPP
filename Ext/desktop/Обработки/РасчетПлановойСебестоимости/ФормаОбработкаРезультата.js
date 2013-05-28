@@ -34,10 +34,14 @@
 			style: 'position:absolute;left:8px;top:31px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СтатьяЗатрат',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:89px;top:31px;width:265px;height:19px;',
 		},
 		{
@@ -85,10 +89,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'НоваяСтатьяЗатрат',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:81px;top:0px;width:265px;height:19px;',
 		},
 					]

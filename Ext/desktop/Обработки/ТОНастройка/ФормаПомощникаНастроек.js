@@ -233,6 +233,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Каталог',
+			width: 370,
+			height: 19,
 			style: 'position:absolute;left:256px;top:41px;width:370px;height:19px;',
 		},
 		{
@@ -394,10 +396,13 @@
 			style: 'position:absolute;left:166px;top:259px;width:61px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'КассаККМ',
+			width: 394,
+			height: 19,
 			style: 'position:absolute;left:232px;top:259px;width:394px;height:19px;',
 		},
 					]
@@ -445,6 +450,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 375,
+			height: 19,
 			style: 'position:absolute;left:251px;top:302px;width:375px;height:19px;',
 		},
 		{
@@ -460,10 +467,14 @@
 			style: 'position:absolute;left:166px;top:326px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КассаККМДобавлениеНовогоУстройства',
+			width: 375,
+			height: 19,
 			style: 'position:absolute;left:251px;top:326px;width:375px;height:19px;',
 		},
 					]

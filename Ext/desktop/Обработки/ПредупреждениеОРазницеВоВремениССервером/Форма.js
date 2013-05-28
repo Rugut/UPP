@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ВремяНаСервере',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:178px;top:36px;width:120px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ВремяНаКлиенте',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:178px;top:61px;width:120px;height:19px;',
 		},
 		{

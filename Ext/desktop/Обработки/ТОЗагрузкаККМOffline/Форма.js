@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТекущийСклад',
+			width: 404,
+			height: 19,
 			style: 'position:absolute;left:115px;top:33px;width:404px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ККМOffline',
+			width: 404,
+			height: 19,
 			style: 'position:absolute;left:115px;top:57px;width:404px;height:19px;',
 		},
 		{
@@ -129,10 +133,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:94px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 404,
+			height: 19,
 			style: 'position:absolute;left:115px;top:81px;width:404px;height:19px;',
 		},
 		{

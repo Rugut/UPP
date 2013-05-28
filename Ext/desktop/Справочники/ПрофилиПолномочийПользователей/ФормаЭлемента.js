@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 186,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:186px;height:19px;',
 		},
 		{
@@ -116,10 +118,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Родитель',
+			width: 186,
+			height: 19,
 			style: 'position:absolute;left:93px;top:57px;width:186px;height:19px;',
 		},
 	],

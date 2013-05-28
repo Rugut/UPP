@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 97,
+			height: 19,
 			style: 'position:absolute;left:68px;top:33px;width:97px;height:19px;',
 		},
 		{
@@ -49,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиВидДенежныхСредств',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:288px;top:0px;width:300px;height:19px;',
 		},
 		{
@@ -65,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиВалютаДенежныхСредств',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:288px;top:24px;width:300px;height:19px;',
 		},
 		{
@@ -81,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиБанковскийСчетКасса',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:288px;top:48px;width:300px;height:19px;',
 		},
 		{

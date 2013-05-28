@@ -66,10 +66,14 @@
 			style: 'position:absolute;left:14px;top:105px;width:45px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 284,
+			height: 19,
 			style: 'position:absolute;left:8px;top:27px;width:284px;height:19px;',
 		},
 		{

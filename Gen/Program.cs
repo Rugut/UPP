@@ -47,7 +47,8 @@ namespace Gen
                     var Сообщение = (Исключение.InnerException == null) ? Исключение.Message : Исключение.InnerException.Message;
                     Console.WriteLine("Ошибка формирования: "+Сообщение);
                 }
-                //break;
+                //
+                break;
                 Console.ReadLine();                
             }
 

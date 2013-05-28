@@ -128,6 +128,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НачалоПериода',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:185px;top:35px;width:120px;height:19px;',
 		},
 		{
@@ -141,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОкончаниеПериода',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:333px;top:35px;width:120px;height:19px;',
 		},
 		{
@@ -333,6 +337,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодРегистрации',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:185px;top:61px;width:120px;height:19px;',
 		},
 					]

@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:80px;top:33px;width:84px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:200px;top:33px;width:84px;height:19px;',
 		},
 		{
@@ -44,10 +50,14 @@
 			style: 'position:absolute;left:340px;top:33px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 216,
+			height: 19,
 			style: 'position:absolute;left:416px;top:33px;width:216px;height:19px;',
 		},
 		{

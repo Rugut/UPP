@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиЦФО',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:292px;top:24px;width:296px;height:19px;',
 		},
 		{
@@ -41,6 +43,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиВидДенежныхСредств',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:292px;top:0px;width:296px;height:19px;',
 		},
 		{

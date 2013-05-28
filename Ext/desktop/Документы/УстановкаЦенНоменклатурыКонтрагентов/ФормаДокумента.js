@@ -26,6 +26,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:96px;top:32px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:197px;top:32px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:56px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Контрагент',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:96px;top:56px;width:410px;height:19px;',
 		},
 		{
@@ -60,6 +69,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 409,
+			height: 19,
 			style: 'position:absolute;left:97px;top:291px;width:409px;height:19px;',
 		},
 		{
@@ -69,10 +80,15 @@
 			style: 'position:absolute;left:8px;top:267px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 409,
+			height: 19,
 			style: 'position:absolute;left:97px;top:267px;width:409px;height:19px;',
 		},
 		{
@@ -118,10 +134,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СписокТиповЦен',
+			width: 409,
+			height: 19,
 			style: 'position:absolute;left:88px;top:0px;width:409px;height:19px;',
 		},
 		{

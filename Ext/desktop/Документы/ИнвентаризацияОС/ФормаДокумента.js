@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 549,
+			height: 19,
 			style: 'position:absolute;left:110px;top:404px;width:549px;height:19px;',
 		},
 		{
@@ -56,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -69,10 +80,14 @@
 			style: 'position:absolute;left:337px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:438px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -225,10 +240,14 @@
 			style: 'position:absolute;left:6px;top:270px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответственный',
+			width: 543,
+			height: 19,
 			style: 'position:absolute;left:100px;top:270px;width:543px;height:19px;',
 		},
 		{
@@ -282,6 +301,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументОснованиеВид',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:89px;top:27px;width:220px;height:19px;',
 		},
 		{
@@ -289,7 +310,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДокументОснованиеДата',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:229px;top:51px;width:80px;height:19px;',
 		},
 		{
@@ -297,6 +321,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументОснованиеНомер',
+			width: 115,
+			height: 19,
 			style: 'position:absolute;left:89px;top:51px;width:115px;height:19px;',
 		},
 		{
@@ -332,7 +358,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаИнвентаризации',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:429px;top:27px;width:80px;height:19px;',
 		},
 		{
@@ -340,7 +369,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончанияИнвентаризации',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:429px;top:51px;width:80px;height:19px;',
 		},
 		{
@@ -354,6 +386,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПричинаИнвентаризации',
+			width: 554,
+			height: 19,
 			style: 'position:absolute;left:89px;top:75px;width:554px;height:19px;',
 		},
 					]

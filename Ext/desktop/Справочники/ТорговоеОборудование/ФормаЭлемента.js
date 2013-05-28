@@ -41,6 +41,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:250px;height:19px;',
 		},
 		{
@@ -54,6 +56,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:380px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -68,10 +72,14 @@
 			style: 'position:absolute;left:8px;top:78px;width:135px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОбработкаОбслуживания',
+			width: 312,
+			height: 19,
 			style: 'position:absolute;left:148px;top:78px;width:312px;height:19px;',
 		},
 		{
@@ -85,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Модель',
+			width: 312,
+			height: 19,
 			style: 'position:absolute;left:148px;top:102px;width:312px;height:19px;',
 		},
 	],

@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодАбонента',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:189px;top:11px;width:64px;height:19px;',
 		},
 		{
@@ -39,6 +41,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогОтправкиДанныхОтчетности',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:189px;top:76px;width:401px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогПрограммыЭлектроннойПочты',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:189px;top:53px;width:401px;height:19px;',
 		},
 		{

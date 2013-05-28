@@ -26,6 +26,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:110px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:210px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -104,10 +109,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:110px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -115,6 +124,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СкладОрдер',
+			width: 236,
+			height: 19,
 			style: 'position:absolute;left:443px;top:57px;width:236px;height:19px;',
 		},
 		{
@@ -1426,10 +1437,15 @@
 			style: 'position:absolute;left:339px;top:6px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 228,
+			height: 19,
 			style: 'position:absolute;left:435px;top:6px;width:228px;height:19px;',
 		},
 		{
@@ -1437,6 +1453,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Проект',
+			width: 218,
+			height: 19,
 			style: 'position:absolute;left:101px;top:31px;width:218px;height:19px;',
 		},
 		{
@@ -1452,10 +1470,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПодразделениеКомпании',
+			width: 218,
+			height: 19,
 			style: 'position:absolute;left:102px;top:6px;width:218px;height:19px;',
 		},
 					]
@@ -1469,10 +1491,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:98px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ФизЛицо',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:110px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -1486,6 +1512,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 588,
+			height: 19,
 			style: 'position:absolute;left:96px;top:382px;width:588px;height:19px;',
 		},
 		{
@@ -1540,10 +1568,13 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидПоступления',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:354px;top:57px;width:88px;height:19px;',
 		},
 		{
@@ -1556,6 +1587,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НазначениеАванса',
+			width: 236,
+			height: 19,
 			style: 'position:absolute;left:443px;top:81px;width:236px;height:19px;',
 		},
 		{
@@ -1587,6 +1620,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КоличествоДокументов',
+			width: 50,
+			height: 19,
 			style: 'position:absolute;left:96px;top:339px;width:50px;height:19px;',
 		},
 		{
@@ -1594,6 +1629,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КоличествоЛистов',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:231px;top:339px;width:40px;height:19px;',
 		},
 	],

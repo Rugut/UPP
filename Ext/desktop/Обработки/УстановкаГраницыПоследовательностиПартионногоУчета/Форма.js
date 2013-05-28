@@ -24,6 +24,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаДокумент',
+			width: 240,
+			height: 19,
 			style: 'position:absolute;left:152px;top:68px;width:240px;height:19px;',
 		},
 		{
@@ -39,10 +41,14 @@
 			style: 'position:absolute;left:8px;top:92px;width:138px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 240,
+			height: 19,
 			style: 'position:absolute;left:152px;top:92px;width:240px;height:19px;',
 		},
 		{

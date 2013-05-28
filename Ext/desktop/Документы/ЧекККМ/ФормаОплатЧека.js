@@ -37,10 +37,14 @@
 			style: 'position:absolute;left:8px;top:7px;width:111px;height:22px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ВидОплаты',
+			width: 237,
+			height: 22,
 			style: 'position:absolute;left:143px;top:33px;width:237px;height:22px;',
 		},
 		{

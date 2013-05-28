@@ -42,6 +42,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СпецоператорИУЦ',
+			width: 337,
+			height: 19,
 			style: 'position:absolute;left:252px;top:77px;width:337px;height:19px;',
 		},
 		{
@@ -61,6 +63,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдентификаторАбонента',
+			width: 337,
+			height: 19,
 			style: 'position:absolute;left:252px;top:143px;width:337px;height:19px;',
 		},
 		{
@@ -70,10 +74,15 @@
 			style: 'position:absolute;left:8px;top:99px;width:581px;height:30px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 337,
+			height: 19,
 			style: 'position:absolute;left:252px;top:197px;width:337px;height:19px;',
 		},
 		{

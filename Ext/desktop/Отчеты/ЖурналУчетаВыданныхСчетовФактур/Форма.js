@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонецПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -50,10 +56,14 @@
 			style: 'position:absolute;left:288px;top:33px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 267,
+			height: 19,
 			style: 'position:absolute;left:364px;top:33px;width:267px;height:19px;',
 		},
 		{
@@ -88,10 +98,14 @@
 			style: 'position:absolute;left:6px;top:28px;width:149px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КонтрагентДляОтбора',
+			width: 240,
+			height: 19,
 			style: 'position:absolute;left:157px;top:28px;width:240px;height:19px;',
 		},
 		{

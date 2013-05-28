@@ -97,7 +97,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:189px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -122,10 +125,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:115px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Периодичность',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:121px;top:6px;width:148px;height:19px;',
 		},
 		{
@@ -309,6 +316,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборЗначениеКласс',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:254px;top:6px;width:244px;height:19px;',
 		},
 		{
@@ -325,6 +334,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтборЗначениеКлассABC',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:254px;top:29px;width:244px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:358px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:212px;height:19px;',
 		},
 		{
@@ -91,10 +95,15 @@
 			style: 'position:absolute;left:6px;top:289px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'АнкетаРезюмеКандидата',
+			width: 272,
+			height: 19,
 			style: 'position:absolute;left:150px;top:289px;width:272px;height:19px;',
 		},
 					]

@@ -10,10 +10,15 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Документ',
+			width: 340,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:340px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 455,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:455px;height:19px;',
 		},
 		{
@@ -29,10 +31,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 455,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:455px;height:19px;',
 		},
 		{
@@ -46,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 455,
+			height: 19,
 			style: 'position:absolute;left:98px;top:265px;width:455px;height:19px;',
 		},
 		{
@@ -63,7 +71,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоОбработки',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:457px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -642,6 +653,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодДетализации',
+			width: 150,
+			height: 19,
 			style: 'position:absolute;left:94px;top:54px;width:150px;height:19px;',
 		},
 		{
@@ -670,6 +683,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ШаблонРегулярногоДокумента',
+			width: 443,
+			height: 19,
 			style: 'position:absolute;left:94px;top:30px;width:443px;height:19px;',
 		},
 		{
@@ -683,6 +698,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидРегулярногоДокумента',
+			width: 443,
+			height: 19,
 			style: 'position:absolute;left:94px;top:6px;width:443px;height:19px;',
 		},
 					]

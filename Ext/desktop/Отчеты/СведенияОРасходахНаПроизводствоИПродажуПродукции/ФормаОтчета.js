@@ -25,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:8px;top:20px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +36,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонецПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:98px;top:20px;width:80px;height:19px;',
 		},
 		{

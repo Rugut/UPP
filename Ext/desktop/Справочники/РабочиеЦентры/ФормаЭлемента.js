@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:367px;top:33px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 225,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:225px;height:19px;',
 		},
 		{
@@ -42,10 +46,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеКомпании',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:333px;height:19px;',
 		},
 		{

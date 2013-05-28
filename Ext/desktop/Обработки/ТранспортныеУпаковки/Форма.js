@@ -21,10 +21,14 @@
 			style: 'position:absolute;left:8px;top:54px;width:63px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Документы',
+			width: 496,
+			height: 19,
 			style: 'position:absolute;left:76px;top:54px;width:496px;height:19px;',
 		},
 		{

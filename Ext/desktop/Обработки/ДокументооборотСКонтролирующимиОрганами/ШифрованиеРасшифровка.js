@@ -179,10 +179,15 @@
 			style: 'position:absolute;left:8px;top:8px;width:131px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
+			trigger3Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 554,
+			height: 19,
 			style: 'position:absolute;left:142px;top:8px;width:554px;height:19px;',
 		},
 		{
@@ -198,10 +203,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:131px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидЦиклаОбмена',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:296px;top:57px;width:400px;height:19px;',
 		},
 		{

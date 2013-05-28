@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:369px;top:33px;width:60px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 184,
+			height: 19,
 			style: 'position:absolute;left:148px;top:33px;width:184px;height:19px;',
 		},
 		{
@@ -42,10 +46,14 @@
 			style: 'position:absolute;left:8px;top:56px;width:53px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Эквайрер',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:148px;top:56px;width:281px;height:19px;',
 		},
 		{
@@ -55,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:79px;width:135px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Договор',
+			width: 281,
+			height: 19,
 			style: 'position:absolute;left:148px;top:79px;width:281px;height:19px;',
 		},
 		{

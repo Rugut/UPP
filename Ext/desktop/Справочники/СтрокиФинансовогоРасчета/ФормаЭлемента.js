@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 182,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:182px;height:19px;',
 		},
 		{
@@ -29,10 +31,13 @@
 			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидСтроки',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:94px;top:61px;width:304px;height:19px;',
 		},
 		{
@@ -46,6 +51,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Измерение',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:94px;top:85px;width:304px;height:19px;',
 		},
 		{
@@ -59,6 +66,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Формула',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:94px;top:109px;width:304px;height:19px;',
 		},
 		{
@@ -66,6 +75,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 81,
+			height: 19,
 			style: 'position:absolute;left:317px;top:33px;width:81px;height:19px;',
 		},
 		{

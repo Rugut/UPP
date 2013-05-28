@@ -30,7 +30,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:169px;top:24px;width:110px;height:19px;',
 		},
 		{
@@ -225,10 +228,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'МетодРасчета',
+			width: 231,
+			height: 19,
 			style: 'position:absolute;left:178px;top:30px;width:231px;height:19px;',
 		},
 		{
@@ -265,10 +271,13 @@
 			style: 'position:absolute;left:309px;top:105px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДо',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:309px;top:130px;width:100px;height:19px;',
 		},
 		{
@@ -276,7 +285,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:178px;top:55px;width:90px;height:19px;',
 		},
 		{
@@ -284,7 +296,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:295px;top:55px;width:90px;height:19px;',
 		},
 		{
@@ -342,10 +357,13 @@
 			style: 'position:absolute;left:6px;top:25px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'МетодРасчетаМатериальные',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:136px;top:25px;width:205px;height:19px;',
 		},
 		{
@@ -382,10 +400,13 @@
 			style: 'position:absolute;left:516px;top:47px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоМатериальные',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:516px;top:69px;width:100px;height:19px;',
 		},
 		{
@@ -393,7 +414,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачМатериальные',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:47px;width:80px;height:19px;',
 		},
 		{
@@ -401,7 +425,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонМатериальные',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:47px;width:80px;height:19px;',
 		},
 		{
@@ -423,10 +450,13 @@
 			style: 'position:absolute;left:216px;top:47px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'МетодОпределенияСтоимости',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:136px;top:69px;width:205px;height:19px;',
 		},
 		{
@@ -469,10 +499,13 @@
 			style: 'position:absolute;left:516px;top:153px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоОплатаТруда',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:516px;top:175px;width:100px;height:19px;',
 		},
 		{
@@ -509,10 +542,13 @@
 			style: 'position:absolute;left:516px;top:235px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоАмортизация',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:516px;top:257px;width:100px;height:19px;',
 		},
 		{
@@ -549,10 +585,13 @@
 			style: 'position:absolute;left:516px;top:317px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоПрочие',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:516px;top:339px;width:100px;height:19px;',
 		},
 		{
@@ -562,10 +601,13 @@
 			style: 'position:absolute;left:6px;top:131px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'МетодРасчетаОплатаТруда',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:136px;top:131px;width:205px;height:19px;',
 		},
 		{
@@ -573,7 +615,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачОплатаТруда',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:153px;width:80px;height:19px;',
 		},
 		{
@@ -581,7 +626,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонОплатаТруда',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:153px;width:80px;height:19px;',
 		},
 		{
@@ -613,6 +661,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МетодРасчетаАмортизация',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:136px;top:213px;width:205px;height:19px;',
 		},
 		{
@@ -620,7 +670,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачАмортизация',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:235px;width:80px;height:19px;',
 		},
 		{
@@ -628,7 +681,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонАмортизация',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:235px;width:80px;height:19px;',
 		},
 		{
@@ -660,6 +716,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МетодРасчетаПрочие',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:136px;top:295px;width:205px;height:19px;',
 		},
 		{
@@ -667,7 +725,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачПрочие',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:317px;width:80px;height:19px;',
 		},
 		{
@@ -675,7 +736,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонПрочие',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:317px;width:80px;height:19px;',
 		},
 		{
@@ -697,10 +761,14 @@
 			style: 'position:absolute;left:216px;top:317px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:136px;top:91px;width:205px;height:19px;',
 		},
 		{
@@ -769,10 +837,13 @@
 			style: 'position:absolute;left:517px;top:48px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоОбщепроизводственные',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:517px;top:70px;width:100px;height:19px;',
 		},
 		{
@@ -809,10 +880,13 @@
 			style: 'position:absolute;left:517px;top:131px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоОбщехозяйственные',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:517px;top:153px;width:100px;height:19px;',
 		},
 		{
@@ -849,10 +923,13 @@
 			style: 'position:absolute;left:517px;top:214px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОкруглитьДоБракВПроизводстве',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:517px;top:236px;width:100px;height:19px;',
 		},
 		{
@@ -866,6 +943,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МетодРасчетаОбщепроизводственные',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:136px;top:26px;width:204px;height:19px;',
 		},
 		{
@@ -873,7 +952,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачОбщепроизводственные',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:48px;width:80px;height:19px;',
 		},
 		{
@@ -881,7 +963,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонОбщепроизводственные',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:48px;width:80px;height:19px;',
 		},
 		{
@@ -913,6 +998,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МетодРасчетаОбщехозяйственные',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:136px;top:111px;width:204px;height:19px;',
 		},
 		{
@@ -920,7 +1007,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачОбщехозяйственные',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:133px;width:80px;height:19px;',
 		},
 		{
@@ -928,7 +1018,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонОбщехозяйственные',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:133px;width:80px;height:19px;',
 		},
 		{
@@ -960,6 +1053,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МетодРасчетаБракВПроизводстве',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:136px;top:192px;width:204px;height:19px;',
 		},
 		{
@@ -967,7 +1062,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачБракВПроизводстве',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:136px;top:214px;width:80px;height:19px;',
 		},
 		{
@@ -975,7 +1073,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонБракВПроизводстве',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:236px;top:214px;width:80px;height:19px;',
 		},
 		{

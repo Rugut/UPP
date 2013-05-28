@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:344px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -21,6 +23,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 162,
+			height: 19,
 			style: 'position:absolute;left:138px;top:33px;width:162px;height:19px;',
 		},
 		{
@@ -28,6 +32,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолное',
+			width: 366,
+			height: 19,
 			style: 'position:absolute;left:138px;top:56px;width:366px;height:19px;',
 		},
 		{
@@ -87,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодАльфа2',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:464px;top:33px;width:40px;height:19px;',
 		},
 	],

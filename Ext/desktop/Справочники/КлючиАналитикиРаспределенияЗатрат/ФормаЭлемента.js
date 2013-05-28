@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:33px;width:233px;height:19px;',
 		},
 		{
@@ -29,10 +31,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:151px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'НоменклатурнаяГруппа',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:57px;width:233px;height:19px;',
 		},
 		{
@@ -42,10 +47,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:151px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Продукция',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:81px;width:233px;height:19px;',
 		},
 		{
@@ -55,10 +63,13 @@
 			style: 'position:absolute;left:8px;top:105px;width:151px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ХарактеристикаПродукции',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:105px;width:233px;height:19px;',
 		},
 		{
@@ -68,10 +79,13 @@
 			style: 'position:absolute;left:8px;top:129px;width:151px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'СерияПродукции',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:129px;width:233px;height:19px;',
 		},
 		{
@@ -81,10 +95,13 @@
 			style: 'position:absolute;left:8px;top:153px;width:151px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Спецификация',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:153px;width:233px;height:19px;',
 		},
 		{
@@ -94,10 +111,12 @@
 			style: 'position:absolute;left:8px;top:178px;width:151px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'ВариантВыпускаПродукции',
+			width: 233,
+			height: 19,
 			style: 'position:absolute;left:159px;top:178px;width:233px;height:19px;',
 		},
 	],

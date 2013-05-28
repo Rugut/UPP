@@ -195,6 +195,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФорматЭтикетки',
+			width: 201,
+			height: 19,
 			style: 'position:absolute;left:64px;top:206px;width:201px;height:19px;',
 		},
 		{
@@ -259,6 +261,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номенклатура',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:213px;top:13px;width:250px;height:19px;',
 		},
 		{
@@ -268,10 +272,14 @@
 			style: 'position:absolute;left:6px;top:13px;width:81px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Единица',
+			width: 113,
+			height: 19,
 			style: 'position:absolute;left:90px;top:37px;width:113px;height:19px;',
 		},
 		{
@@ -281,10 +289,14 @@
 			style: 'position:absolute;left:6px;top:37px;width:47px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Качество',
+			width: 173,
+			height: 19,
 			style: 'position:absolute;left:290px;top:37px;width:173px;height:19px;',
 		},
 		{
@@ -308,6 +320,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТипШтрихкода',
+			width: 113,
+			height: 19,
 			style: 'position:absolute;left:90px;top:61px;width:113px;height:19px;',
 		},
 		{
@@ -317,10 +331,14 @@
 			style: 'position:absolute;left:6px;top:61px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТипЦены',
+			width: 373,
+			height: 19,
 			style: 'position:absolute;left:90px;top:105px;width:373px;height:19px;',
 		},
 		{
@@ -333,10 +351,14 @@
 			style: 'position:absolute;left:90px;top:13px;width:113px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Валюта',
+			width: 126,
+			height: 19,
 			style: 'position:absolute;left:631px;top:105px;width:126px;height:19px;',
 		},
 		{

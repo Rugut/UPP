@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -208,10 +217,13 @@
 			style: 'position:absolute;left:8px;top:78px;width:84px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОбъектВнеоборотныхАктивов',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -221,10 +233,14 @@
 			style: 'position:absolute;left:8px;top:105px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СтатьяЗатрат',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
 		},
 		{
@@ -234,10 +250,14 @@
 			style: 'position:absolute;left:334px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Склад',
+			width: 236,
+			height: 19,
 			style: 'position:absolute;left:416px;top:57px;width:236px;height:19px;',
 		},
 		{
@@ -268,10 +288,13 @@
 			style: 'position:absolute;left:334px;top:81px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СчетУчетаБУОбъектаСтроительства',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:416px;top:81px;width:80px;height:19px;',
 		},
 		{
@@ -281,10 +304,13 @@
 			style: 'position:absolute;left:334px;top:105px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СчетУчетаНУОбъектаСтроительства',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:416px;top:105px;width:80px;height:19px;',
 		},
 		{
@@ -294,10 +320,14 @@
 			style: 'position:absolute;left:8px;top:337px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 558,
+			height: 19,
 			style: 'position:absolute;left:94px;top:337px;width:558px;height:19px;',
 		},
 		{
@@ -311,6 +341,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 558,
+			height: 19,
 			style: 'position:absolute;left:94px;top:361px;width:558px;height:19px;',
 		},
 		{

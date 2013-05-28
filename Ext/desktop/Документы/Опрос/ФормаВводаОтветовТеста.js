@@ -21,10 +21,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Строка',
+			width: 350,
+			height: 19,
 			style: 'position:absolute;left:0px;top:6px;width:350px;height:19px;',
 		},
 					]
@@ -142,6 +146,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Регион',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:94px;top:0px;width:250px;height:19px;',
 		},
 		{
@@ -155,6 +161,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Район',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:94px;top:24px;width:250px;height:19px;',
 		},
 		{
@@ -168,6 +176,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Город',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:94px;top:48px;width:250px;height:19px;',
 		},
 		{
@@ -181,6 +191,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаселенныйПункт',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:94px;top:72px;width:250px;height:19px;',
 		},
 		{
@@ -194,6 +206,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Улица',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:94px;top:96px;width:250px;height:19px;',
 		},
 		{
@@ -207,6 +221,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Дом',
+			width: 35,
+			height: 19,
 			style: 'position:absolute;left:94px;top:120px;width:35px;height:19px;',
 		},
 		{
@@ -220,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Корпус',
+			width: 35,
+			height: 19,
 			style: 'position:absolute;left:192px;top:120px;width:35px;height:19px;',
 		},
 		{
@@ -233,6 +251,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Квартира',
+			width: 35,
+			height: 19,
 			style: 'position:absolute;left:309px;top:120px;width:35px;height:19px;',
 		},
 		{
@@ -240,6 +260,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КомментарийАдрес',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:94px;top:168px;width:250px;height:19px;',
 		},
 		{
@@ -259,6 +281,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Индекс',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:94px;top:144px;width:60px;height:19px;',
 		},
 					]
@@ -278,6 +302,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле1',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:79px;top:24px;width:140px;height:19px;',
 		},
 		{
@@ -291,6 +317,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле2',
+			width: 140,
+			height: 19,
 			style: 'position:absolute;left:79px;top:48px;width:140px;height:19px;',
 		},
 		{
@@ -304,6 +332,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле3',
+			width: 124,
+			height: 19,
 			style: 'position:absolute;left:79px;top:0px;width:124px;height:19px;',
 		},
 		{
@@ -317,6 +347,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле4',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:287px;top:0px;width:60px;height:19px;',
 		},
 		{
@@ -324,6 +356,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КомментарийТелефон',
+			width: 268,
+			height: 19,
 			style: 'position:absolute;left:79px;top:72px;width:268px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:99px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 144,
+			height: 19,
 			style: 'position:absolute;left:199px;top:33px;width:144px;height:19px;',
 		},
 		{
@@ -43,10 +48,15 @@
 			style: 'position:absolute;left:8px;top:110px;width:89px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:99px;top:110px;width:244px;height:19px;',
 		},
 		{
@@ -60,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:99px;top:135px;width:244px;height:19px;',
 		},
 		{
@@ -69,10 +81,14 @@
 			style: 'position:absolute;left:8px;top:85px;width:89px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:99px;top:85px;width:244px;height:19px;',
 		},
 		{
@@ -86,7 +102,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПериодНачало',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:99px;top:59px;width:101px;height:19px;',
 		},
 		{
@@ -100,7 +119,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПериодКонец',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:219px;top:59px;width:101px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:386px;top:33px;width:60px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:148px;top:33px;width:204px;height:19px;',
 		},
 		{
@@ -42,10 +46,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:134px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ТипОплаты',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:148px;top:57px;width:298px;height:19px;',
 		},
 		{
@@ -66,10 +73,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:134px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'БанкКредитор',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:140px;top:0px;width:298px;height:19px;',
 		},
 		{
@@ -79,10 +90,14 @@
 			style: 'position:absolute;left:0px;top:24px;width:134px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ДоговорВзаиморасчетовБанкаКредитора',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:140px;top:24px;width:298px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегНомДок',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:165px;width:303px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отметка',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:10px;width:303px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаРегЭл',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:195px;width:303px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаРегБум',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:230px;width:303px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДокНП',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:115px;width:303px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаДокНП',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:202px;top:140px;width:303px;height:19px;',
 		},
 		{
@@ -109,6 +121,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерУведОткз',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:194px;top:25px;width:303px;height:19px;',
 		},
 		{
@@ -122,6 +136,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаУведОткз',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:194px;top:50px;width:303px;height:19px;',
 		},
 		{

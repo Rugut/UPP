@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПутьДляВыгрузки',
+			width: 448,
+			height: 19,
 			style: 'position:absolute;left:148px;top:33px;width:448px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:142px;top:58px;width:250px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Объект',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:142px;top:33px;width:250px;height:19px;',
 		},
 	],

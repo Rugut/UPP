@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 65,
+			height: 19,
 			style: 'position:absolute;left:547px;top:33px;width:65px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 326,
+			height: 19,
 			style: 'position:absolute;left:177px;top:33px;width:326px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 522,
+			height: 19,
 			style: 'position:absolute;left:90px;top:412px;width:522px;height:19px;',
 		},
 		{
@@ -65,10 +71,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:126px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'БазаРаспределенияЗатрат',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:132px;top:6px;width:180px;height:19px;',
 		},
 		{
@@ -78,10 +87,13 @@
 			style: 'position:absolute;left:6px;top:25px;width:126px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ПоказательБазыРаспределения',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:132px;top:30px;width:180px;height:19px;',
 		},
 		{
@@ -91,10 +103,14 @@
 			style: 'position:absolute;left:324px;top:30px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:416px;top:30px;width:180px;height:19px;',
 		},
 		{
@@ -104,10 +120,14 @@
 			style: 'position:absolute;left:324px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОсновноеСырье',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:416px;top:6px;width:180px;height:19px;',
 		},
 		{
@@ -117,10 +137,15 @@
 			style: 'position:absolute;left:6px;top:169px;width:126px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СпособРаспределенияЗатратПоПодразделениям',
+			width: 464,
+			height: 19,
 			style: 'position:absolute;left:132px;top:173px;width:464px;height:19px;',
 		},
 		{
@@ -162,10 +187,13 @@
 			style: 'position:absolute;left:482px;top:78px;width:114px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПорядокОкругления',
+			width: 114,
+			height: 19,
 			style: 'position:absolute;left:482px;top:102px;width:114px;height:19px;',
 		},
 		{
@@ -280,10 +308,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ТипФильтраПриРаспределенииЗатратНаВыпуск',
+			width: 278,
+			height: 19,
 			style: 'position:absolute;left:168px;top:6px;width:278px;height:19px;',
 		},
 		{
@@ -380,10 +411,13 @@
 			style: 'position:absolute;left:8px;top:158px;width:164px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'НаправлениеРаспределения',
+			width: 135,
+			height: 19,
 			style: 'position:absolute;left:177px;top:158px;width:135px;height:19px;',
 		},
 	],

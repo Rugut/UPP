@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Регион',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:29px;width:220px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Район',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:53px;width:220px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Город',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:77px;width:220px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаселенныйПункт',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:101px;width:220px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Улица',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:125px;width:220px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Дом',
+			width: 36,
+			height: 19,
 			style: 'position:absolute;left:102px;top:149px;width:36px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Корпус',
+			width: 36,
+			height: 19,
 			style: 'position:absolute;left:190px;top:149px;width:36px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Квартира',
+			width: 36,
+			height: 19,
 			style: 'position:absolute;left:286px;top:149px;width:36px;height:19px;',
 		},
 		{
@@ -118,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:197px;width:220px;height:19px;',
 		},
 		{
@@ -150,6 +168,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Индекс',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:102px;top:173px;width:60px;height:19px;',
 		},
 		{

@@ -92,10 +92,13 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 573,
+			height: 19,
 			style: 'position:absolute;left:107px;top:36px;width:573px;height:19px;',
 		},
 		{
@@ -109,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВвода1',
+			width: 570,
+			height: 19,
 			style: 'position:absolute;left:110px;top:398px;width:570px;height:19px;',
 		},
 		{
@@ -171,7 +176,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаПериодаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:21px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -185,7 +193,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонцаПериодаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:134px;top:6px;width:80px;height:19px;',
 		},
 		{

@@ -21,10 +21,14 @@
 			style: 'position:absolute;left:8px;top:95px;width:440px;height:3px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 425,
+			height: 19,
 			style: 'position:absolute;left:23px;top:200px;width:425px;height:19px;',
 		},
 		{
@@ -55,6 +59,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 97,
+			height: 19,
 			style: 'position:absolute;left:74px;top:0px;width:97px;height:19px;',
 		},
 		{
@@ -62,6 +68,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 97,
+			height: 19,
 			style: 'position:absolute;left:74px;top:25px;width:97px;height:19px;',
 		},
 					]

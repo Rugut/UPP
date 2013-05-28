@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:415px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:515px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -56,10 +65,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -418,6 +431,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 548,
+			height: 19,
 			style: 'position:absolute;left:87px;top:521px;width:548px;height:19px;',
 		},
 		{
@@ -436,6 +451,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидРасчета',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:296px;top:26px;width:220px;height:19px;',
 		},
 		{
@@ -443,7 +460,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДействия',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:296px;top:72px;width:96px;height:19px;',
 		},
 		{
@@ -451,7 +471,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДействияКонец',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:420px;top:72px;width:96px;height:19px;',
 		},
 		{

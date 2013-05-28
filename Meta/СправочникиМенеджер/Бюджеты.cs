@@ -14,6 +14,53 @@ namespace V82.Справочники//Менеджер
 	public partial class Бюджеты:СправочникМенеджер
 	{
 		
+		public static СправочникиСсылка.Бюджеты НайтиПоСсылке(Guid _Ссылка)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld1868 [НаименованиеПолное]
+					,_Fld1869RRef [ВидБюджета]
+					,_Fld1870 [Комментарий]
+					From _Reference38(NOLOCK)
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.Бюджеты();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Ссылка.НаименованиеПолное = Читалка.GetString(5);
+							Ссылка.ВидБюджета = V82.Перечисления/*Ссылка*/.ВидыБюджетов.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
+							Ссылка.Комментарий = Читалка.GetString(7);
+							return Ссылка;
+						}
+						else
+						{
+							return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public static СправочникиВыборка.Бюджеты Выбрать()
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))

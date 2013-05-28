@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 116,
+			height: 19,
 			style: 'position:absolute;left:101px;top:33px;width:116px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 254,
+			height: 19,
 			style: 'position:absolute;left:244px;top:33px;width:254px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:101px;top:57px;width:397px;height:19px;',
 		},
 		{
@@ -124,6 +133,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:101px;top:312px;width:397px;height:19px;',
 		},
 		{
@@ -133,10 +144,15 @@
 			style: 'position:absolute;left:8px;top:288px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:101px;top:288px;width:397px;height:19px;',
 		},
 		{

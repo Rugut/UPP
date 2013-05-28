@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:62px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -39,6 +42,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСклад',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:264px;top:0px;width:324px;height:19px;',
 		},
 		{
@@ -55,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:264px;top:24px;width:324px;height:19px;',
 		},
 		{
@@ -71,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПодразделение',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:264px;top:48px;width:324px;height:19px;',
 		},
 		{
@@ -93,10 +102,13 @@
 			style: 'position:absolute;left:144px;top:33px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Периодичность',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:272px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -106,10 +118,13 @@
 			style: 'position:absolute;left:371px;top:33px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 152,
+			height: 19,
 			style: 'position:absolute;left:444px;top:33px;width:152px;height:19px;',
 		},
 	],

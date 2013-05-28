@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Период',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:218px;top:89px;width:80px;height:19px;',
 		},
 		{
@@ -34,6 +37,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:78px;top:8px;width:220px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:78px;top:30px;width:220px;height:19px;',
 		},
 		{
@@ -60,6 +67,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:78px;top:54px;width:220px;height:19px;',
 		},
 		{

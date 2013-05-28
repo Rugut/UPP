@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 543,
+			height: 19,
 			style: 'position:absolute;left:94px;top:418px;width:543px;height:19px;',
 		},
 		{
@@ -44,6 +46,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -51,7 +55,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:186px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -61,10 +68,14 @@
 			style: 'position:absolute;left:0px;top:24px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:86px;top:24px;width:220px;height:19px;',
 		},
 		{
@@ -80,10 +91,14 @@
 			style: 'position:absolute;left:324px;top:24px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Исполнитель',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:409px;top:24px;width:220px;height:19px;',
 		},
 		{
@@ -97,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерПачки',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:409px;top:0px;width:80px;height:19px;',
 		},
 					]

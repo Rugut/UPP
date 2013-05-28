@@ -92,6 +92,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФорматЭтикетки',
+			width: 143,
+			height: 19,
 			style: 'position:absolute;left:223px;top:57px;width:143px;height:19px;',
 		},
 		{

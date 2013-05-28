@@ -71,7 +71,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:77px;top:4px;width:80px;height:19px;',
 		},
 		{
@@ -87,10 +90,13 @@
 			style: 'position:absolute;left:163px;top:4px;width:128px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Периодичность',
+			width: 175,
+			height: 19,
 			style: 'position:absolute;left:291px;top:4px;width:175px;height:19px;',
 		},
 		{
@@ -100,10 +106,13 @@
 			style: 'position:absolute;left:6px;top:28px;width:71px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 389,
+			height: 19,
 			style: 'position:absolute;left:77px;top:28px;width:389px;height:19px;',
 		},
 					]

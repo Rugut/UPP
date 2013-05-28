@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 322,
+			height: 19,
 			style: 'position:absolute;left:40px;top:6px;width:322px;height:19px;',
 		},
 		{
@@ -204,6 +206,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетРасшифровкиРедактор',
+			width: 145,
+			height: 19,
 			style: 'position:absolute;left:148px;top:156px;width:145px;height:19px;',
 		},
 		{

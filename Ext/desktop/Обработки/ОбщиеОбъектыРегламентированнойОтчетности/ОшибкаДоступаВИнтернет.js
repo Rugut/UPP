@@ -58,6 +58,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПользователя',
+			width: 153,
+			height: 19,
 			style: 'position:absolute;left:110px;top:3px;width:153px;height:19px;',
 		},
 		{
@@ -71,6 +73,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Пароль',
+			width: 153,
+			height: 19,
 			style: 'position:absolute;left:110px;top:28px;width:153px;height:19px;',
 		},
 					]

@@ -32,6 +32,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:90px;top:32px;width:80px;height:19px;',
 		},
 		{
@@ -39,7 +41,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:190px;top:32px;width:120px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 542,
+			height: 19,
 			style: 'position:absolute;left:90px;top:299px;width:542px;height:19px;',
 		},
 		{
@@ -522,17 +529,27 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеКомпании',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:98px;top:27px;width:204px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:412px;top:27px;width:204px;height:19px;',
 		},
 		{
@@ -555,6 +572,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Заказ',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
 		{
@@ -568,6 +587,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтрагентПодразделениеЗаказа',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:412px;top:56px;width:220px;height:19px;',
 		},
 		{

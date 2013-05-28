@@ -61,6 +61,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Программа',
+			width: 348,
+			height: 19,
 			style: 'position:absolute;left:129px;top:41px;width:348px;height:19px;',
 		},
 		{
@@ -80,6 +82,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФайлЗагрузки',
+			width: 293,
+			height: 19,
 			style: 'position:absolute;left:353px;top:92px;width:293px;height:19px;',
 		},
 		{
@@ -87,6 +91,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФайлВыгрузки',
+			width: 293,
+			height: 19,
 			style: 'position:absolute;left:353px;top:135px;width:293px;height:19px;',
 		},
 		{
@@ -96,10 +102,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:120px;height:32px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'БанковскийСчет',
+			width: 348,
+			height: 19,
 			style: 'position:absolute;left:129px;top:12px;width:348px;height:19px;',
 		},
 		{
@@ -196,10 +206,14 @@
 			style: 'position:absolute;left:6px;top:173px;width:177px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаДляНовыхКонтрагентов',
+			width: 240,
+			height: 19,
 			style: 'position:absolute;left:184px;top:173px;width:240px;height:19px;',
 		},
 					]

@@ -81,6 +81,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел12',
+			width: 287,
+			height: 19,
 			style: 'position:absolute;left:353px;top:5px;width:287px;height:19px;',
 		},
 					]
@@ -122,6 +124,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел30',
+			width: 287,
+			height: 19,
 			style: 'position:absolute;left:353px;top:5px;width:287px;height:19px;',
 		},
 					]
@@ -177,6 +181,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел41',
+			width: 289,
+			height: 20,
 			style: 'position:absolute;left:351px;top:4px;width:289px;height:20px;',
 		},
 		{
@@ -228,6 +234,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел42',
+			width: 289,
+			height: 19,
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
 					]
@@ -264,6 +272,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел43',
+			width: 289,
+			height: 19,
 			style: 'position:absolute;left:357px;top:265px;width:289px;height:19px;',
 		},
 					]
@@ -301,6 +311,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел50',
+			width: 289,
+			height: 19,
 			style: 'position:absolute;left:351px;top:5px;width:289px;height:19px;',
 		},
 					]
@@ -342,7 +354,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаСдачи',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:82px;top:23px;width:80px;height:19px;',
 		},
 		{
@@ -398,13 +413,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:263px;top:7px;width:391px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Статус',
+			width: 119,
+			height: 19,
 			style: 'position:absolute;left:47px;top:7px;width:119px;height:19px;',
 		},
 					]

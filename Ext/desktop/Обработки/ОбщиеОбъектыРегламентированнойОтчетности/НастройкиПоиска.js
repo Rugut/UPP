@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИскомоеЗначение',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:57px;top:9px;width:338px;height:19px;',
 		},
 		{

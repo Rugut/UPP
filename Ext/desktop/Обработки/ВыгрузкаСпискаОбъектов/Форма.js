@@ -51,6 +51,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаОбмена',
+			width: 318,
+			height: 19,
 			style: 'position:absolute;left:100px;top:33px;width:318px;height:19px;',
 		},
 		{

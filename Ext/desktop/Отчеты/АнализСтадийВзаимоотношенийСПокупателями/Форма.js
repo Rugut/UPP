@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:78px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -39,6 +42,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиКонтрагент',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:396px;top:0px;width:246px;height:19px;',
 		},
 		{
@@ -51,6 +56,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСКонтрагент',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:396px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -58,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоКонтрагент',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:522px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -69,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСтадияПокупателя',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:396px;top:24px;width:246px;height:19px;',
 		},
 		{
@@ -81,6 +92,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиССтадияПокупателя',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:396px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -88,6 +101,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоСтадияПокупателя',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:522px;top:24px;width:120px;height:19px;',
 		},
 		{
@@ -99,6 +114,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиКлассПостоянногоПокупателя',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:396px;top:48px;width:246px;height:19px;',
 		},
 		{
@@ -111,6 +128,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСКлассПостоянногоПокупателя',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:396px;top:48px;width:120px;height:19px;',
 		},
 		{
@@ -118,6 +137,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоКлассПостоянногоПокупателя',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:522px;top:48px;width:120px;height:19px;',
 		},
 		{

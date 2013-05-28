@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:424px;top:33px;width:60px;height:19px;',
 		},
 		{
@@ -21,6 +23,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:113px;top:33px;width:256px;height:19px;',
 		},
 		{
@@ -30,10 +34,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:100px;height:28px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаЦены',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:113px;top:61px;width:80px;height:19px;',
 		},
 		{
@@ -43,10 +50,15 @@
 			style: 'position:absolute;left:8px;top:201px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'БазовыйТипЦен',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:113px;top:201px;width:220px;height:19px;',
 		},
 		{
@@ -76,10 +88,13 @@
 			style: 'position:absolute;left:333px;top:249px;width:80px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПорядокОкругления',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:424px;top:249px;width:60px;height:19px;',
 		},
 		{
@@ -93,6 +108,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 371,
+			height: 19,
 			style: 'position:absolute;left:113px;top:283px;width:371px;height:19px;',
 		},
 		{
@@ -118,6 +135,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОкруглятьВБольшуюСторону',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:113px;top:249px;width:220px;height:19px;',
 		},
 		{
@@ -162,6 +181,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидТипаЦен',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:113px;top:110px;width:256px;height:19px;',
 		},
 		{
@@ -177,10 +198,13 @@
 			style: 'position:absolute;left:8px;top:168px;width:100px;height:28px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СпособРасчетаЦены',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:113px;top:173px;width:256px;height:19px;',
 		},
 	],

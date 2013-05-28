@@ -88,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НачалоТекущегоПериода',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:123px;width:279px;height:19px;',
 		},
 		{
@@ -95,6 +97,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТекущееЗначение',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:99px;width:279px;height:19px;',
 		},
 		{
@@ -108,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонецТекущегоПериода',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:147px;width:279px;height:19px;',
 		},
 		{
@@ -127,6 +133,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НачалоПредыдущегоПериода',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:228px;width:279px;height:19px;',
 		},
 		{
@@ -134,6 +142,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредыдущееЗначение',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:204px;width:279px;height:19px;',
 		},
 		{
@@ -147,6 +157,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонецПредыдущегоПериода',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:252px;width:279px;height:19px;',
 		},
 		{
@@ -160,6 +172,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаборДанныхЗначениеПоказателя',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
 					]
@@ -185,6 +199,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НачалоТекущегоПериода1',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:102px;width:279px;height:19px;',
 		},
 		{
@@ -192,6 +208,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТекущееЗначение1',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:78px;width:279px;height:19px;',
 		},
 		{
@@ -205,6 +223,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонецТекущегоПериода1',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:126px;width:279px;height:19px;',
 		},
 		{
@@ -218,6 +238,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаборДанныхЗначениеПоказателяПрогноз',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
 					]
@@ -249,6 +271,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НачалоПериодаПлан',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:102px;width:279px;height:19px;',
 		},
 		{
@@ -262,6 +286,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонецПериодаПлан',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:126px;width:279px;height:19px;',
 		},
 		{
@@ -269,6 +295,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеПлан',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:78px;width:279px;height:19px;',
 		},
 		{
@@ -276,6 +304,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаборДанныхЗначениеПлан',
+			width: 279,
+			height: 19,
 			style: 'position:absolute;left:129px;top:48px;width:279px;height:19px;',
 		},
 		{

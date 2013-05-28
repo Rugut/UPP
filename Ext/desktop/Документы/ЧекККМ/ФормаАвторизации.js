@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Пользователь',
+			width: 343,
+			height: 19,
 			style: 'position:absolute;left:117px;top:8px;width:343px;height:19px;',
 		},
 		{

@@ -36,10 +36,14 @@
 			style: 'position:absolute;left:119px;top:130px;width:117px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГоловнойКонтрагент',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:238px;top:130px;width:298px;height:19px;',
 		},
 		{
@@ -49,10 +53,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:110px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЮрФизЛицо',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:118px;top:6px;width:105px;height:19px;',
 		},
 		{
@@ -77,6 +84,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКПО',
+			width: 112,
+			height: 19,
 			style: 'position:absolute;left:418px;top:27px;width:112px;height:19px;',
 		},
 		{
@@ -84,6 +93,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 81,
+			height: 19,
 			style: 'position:absolute;left:242px;top:29px;width:81px;height:19px;',
 		},
 		{
@@ -97,6 +108,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолное',
+			width: 418,
+			height: 19,
 			style: 'position:absolute;left:112px;top:0px;width:418px;height:19px;',
 		},
 		{
@@ -104,6 +117,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН1',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:112px;top:29px;width:80px;height:19px;',
 		},
 		{
@@ -135,6 +150,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолноеФизЛицо',
+			width: 418,
+			height: 19,
 			style: 'position:absolute;left:112px;top:0px;width:418px;height:19px;',
 		},
 		{
@@ -148,6 +165,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:286px;top:24px;width:80px;height:19px;',
 		},
 		{
@@ -155,6 +174,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументУдостоверяющийЛичность2',
+			width: 131,
+			height: 19,
 			style: 'position:absolute;left:112px;top:24px;width:131px;height:19px;',
 		},
 		{
@@ -168,6 +189,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКПО1',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:450px;top:24px;width:80px;height:19px;',
 		},
 					]
@@ -371,6 +394,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РасписаниеРаботыСтрокой',
+			width: 202,
+			height: 19,
 			style: 'position:absolute;left:118px;top:106px;width:202px;height:19px;',
 		},
 		{
@@ -380,10 +405,14 @@
 			style: 'position:absolute;left:247px;top:30px;width:112px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 174,
+			height: 19,
 			style: 'position:absolute;left:362px;top:30px;width:174px;height:19px;',
 		},
 		{
@@ -398,10 +427,14 @@
 			style: 'position:absolute;left:345px;top:106px;width:44px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Регион',
+			width: 112,
+			height: 19,
 			style: 'position:absolute;left:424px;top:106px;width:112px;height:19px;',
 		},
 		{
@@ -411,10 +444,15 @@
 			style: 'position:absolute;left:6px;top:30px;width:110px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
+			trigger3Cls: 'x-form-clear-trigger',
 			name: 'ОКОПФ',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:118px;top:30px;width:105px;height:19px;',
 		},
 		{
@@ -1137,10 +1175,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ГруппаДоступаКонтрагента',
+			width: 366,
+			height: 19,
 			style: 'position:absolute;left:170px;top:14px;width:366px;height:19px;',
 		},
 		{
@@ -1158,6 +1199,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:472px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -1165,6 +1208,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:338px;height:19px;',
 		},
 		{
@@ -1190,6 +1235,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КомментарийСтрокой',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:94px;top:402px;width:458px;height:19px;',
 		},
 	],

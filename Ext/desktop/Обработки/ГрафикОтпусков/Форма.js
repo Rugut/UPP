@@ -50,10 +50,14 @@
 			style: 'position:absolute;left:0px;top:2px;width:83px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Подразделение',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:88px;top:0px;width:234px;height:19px;',
 		},
 		{
@@ -69,10 +73,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 245,
+			height: 19,
 			style: 'position:absolute;left:77px;top:0px;width:245px;height:19px;',
 		},
 					]
@@ -84,7 +92,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ВыборГода',
+			width: 48,
+			height: 19,
 			style: 'position:absolute;left:20px;top:3px;width:48px;height:19px;',
 		},
 		{
@@ -100,10 +111,13 @@
 			style: 'position:absolute;left:72px;top:2px;width:22px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПолеВводаРежимПланированияОтпусков',
+			width: 243,
+			height: 19,
 			style: 'position:absolute;left:521px;top:3px;width:243px;height:19px;',
 		},
 		{

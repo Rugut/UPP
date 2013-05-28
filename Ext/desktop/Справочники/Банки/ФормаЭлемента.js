@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:274px;top:85px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:94px;top:61px;width:260px;height:19px;',
 		},
 		{
@@ -42,10 +46,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:260px;height:19px;',
 		},
 		{
@@ -59,6 +68,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КоррСчет',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:94px;top:85px;width:136px;height:19px;',
 		},
 		{
@@ -72,6 +83,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Город',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:94px;top:117px;width:260px;height:19px;',
 		},
 		{
@@ -85,6 +98,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Адрес',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:94px;top:142px;width:260px;height:19px;',
 		},
 		{
@@ -98,6 +113,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Телефоны',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:94px;top:167px;width:260px;height:19px;',
 		},
 	],

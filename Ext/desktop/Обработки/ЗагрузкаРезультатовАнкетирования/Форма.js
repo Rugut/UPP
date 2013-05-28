@@ -165,10 +165,15 @@
 			style: 'position:absolute;left:6px;top:26px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПолеВвода1',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:245px;top:26px;width:304px;height:19px;',
 		},
 		{
@@ -182,10 +187,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'УчетнаяЗапись',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:245px;top:48px;width:304px;height:19px;',
 		},
 		{
@@ -259,6 +268,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяКаталога',
+			width: 484,
+			height: 19,
 			style: 'position:absolute;left:65px;top:5px;width:484px;height:19px;',
 		},
 		{
@@ -341,10 +352,15 @@
 			style: 'position:absolute;left:6px;top:44px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'АнкетаОтбораФайлы',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:245px;top:44px;width:304px;height:19px;',
 		},
 					]

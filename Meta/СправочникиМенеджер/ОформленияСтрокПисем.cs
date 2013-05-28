@@ -11,6 +11,59 @@ namespace V82.Справочники//Менеджер
 	public partial class ОформленияСтрокПисем:СправочникМенеджер
 	{
 		
+		public static СправочникиСсылка.ОформленияСтрокПисем НайтиПоСсылке(Guid _Ссылка)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3147 [Жирный]
+					,_Fld3148 [Зачеркнутый]
+					,_Fld3149 [Наклонный]
+					,_Fld3150 [Подчеркнутый]
+					,_Fld3151 [ЦветТекста]
+					,_Fld3152 [ЦветФона]
+					From _Reference186(NOLOCK)
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ОформленияСтрокПисем();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.Жирный = ((byte[])Читалка.GetValue(6))[0]==1;
+							Ссылка.Зачеркнутый = ((byte[])Читалка.GetValue(7))[0]==1;
+							Ссылка.Наклонный = ((byte[])Читалка.GetValue(8))[0]==1;
+							Ссылка.Подчеркнутый = ((byte[])Читалка.GetValue(9))[0]==1;
+							return Ссылка;
+						}
+						else
+						{
+							return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public static СправочникиСсылка.ОформленияСтрокПисем НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))

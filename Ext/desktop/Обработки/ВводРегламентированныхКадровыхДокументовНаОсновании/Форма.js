@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументОснование',
+			width: 319,
+			height: 19,
 			style: 'position:absolute;left:73px;top:4px;width:319px;height:19px;',
 		},
 		{

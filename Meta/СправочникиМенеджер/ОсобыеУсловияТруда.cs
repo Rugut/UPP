@@ -14,6 +14,51 @@ namespace V82.Справочники//Менеджер
 	public partial class ОсобыеУсловияТруда:СправочникМенеджер
 	{
 		
+		public static СправочникиСсылка.ОсобыеУсловияТруда НайтиПоСсылке(Guid _Ссылка)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3109 [КодДляОтчетности2010]
+					From _Reference181(NOLOCK)
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ОсобыеУсловияТруда();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.КодДляОтчетности2010 = Читалка.GetString(6);
+							return Ссылка;
+						}
+						else
+						{
+							return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public static СправочникиСсылка.ОсобыеУсловияТруда НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))

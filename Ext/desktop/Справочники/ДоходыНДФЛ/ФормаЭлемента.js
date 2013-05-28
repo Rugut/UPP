@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:38px;top:33px;width:60px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:183px;top:33px;width:280px;height:19px;',
 		},
 		{
@@ -42,10 +46,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:172px;height:31px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СтавкаНалогообложенияРезидента',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:183px;top:86px;width:60px;height:19px;',
 		},
 		{
@@ -59,6 +66,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодДляОтчетности',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:183px;top:57px;width:60px;height:19px;',
 		},
 		{

@@ -163,6 +163,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 553,
+			height: 19,
 			style: 'position:absolute;left:85px;top:0px;width:553px;height:19px;',
 		},
 		{
@@ -176,6 +178,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отправитель',
+			width: 553,
+			height: 19,
 			style: 'position:absolute;left:85px;top:26px;width:553px;height:19px;',
 		},
 		{
@@ -189,6 +193,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Получатель',
+			width: 553,
+			height: 19,
 			style: 'position:absolute;left:85px;top:52px;width:553px;height:19px;',
 		},
 					]

@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодДоступаНаСервер',
+			width: 243,
+			height: 19,
 			style: 'position:absolute;left:74px;top:98px;width:243px;height:19px;',
 		},
 		{
@@ -27,6 +29,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольДоступаНаСервер',
+			width: 243,
+			height: 19,
 			style: 'position:absolute;left:74px;top:122px;width:243px;height:19px;',
 		},
 		{

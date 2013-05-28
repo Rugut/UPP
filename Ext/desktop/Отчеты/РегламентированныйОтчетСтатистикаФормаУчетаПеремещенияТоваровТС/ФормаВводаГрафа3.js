@@ -38,6 +38,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрУлицаНомерДома',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:126px;top:173px;width:265px;height:19px;',
 		},
 		{
@@ -57,6 +59,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтвЛицоФинУрСтранаНаименование',
+			width: 239,
+			height: 19,
 			style: 'position:absolute;left:152px;top:101px;width:239px;height:19px;',
 		},
 		{
@@ -64,6 +68,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрИндекс',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:126px;top:77px;width:101px;height:19px;',
 		},
 		{
@@ -71,6 +77,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрОбласть',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:126px;top:125px;width:265px;height:19px;',
 		},
 		{
@@ -96,6 +104,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрНаселенныйПункт',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:126px;top:149px;width:265px;height:19px;',
 		},
 		{
@@ -109,6 +119,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтвЛицоФинУрСтранаКод',
+			width: 23,
+			height: 19,
 			style: 'position:absolute;left:126px;top:101px;width:23px;height:19px;',
 		},
 		{
@@ -116,6 +128,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрРФ_ОГРН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:126px;top:221px;width:101px;height:19px;',
 		},
 		{
@@ -129,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрРФ_ИНН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:126px;top:197px;width:101px;height:19px;',
 		},
 		{
@@ -136,6 +152,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрРФ_КПП',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:290px;top:197px;width:101px;height:19px;',
 		},
 		{
@@ -173,6 +191,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодУлицаНомерДома',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:120px;top:144px;width:265px;height:19px;',
 		},
 		{
@@ -186,6 +206,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтвЛицоФинУрПодСтранаНаименование',
+			width: 239,
+			height: 19,
 			style: 'position:absolute;left:146px;top:74px;width:239px;height:19px;',
 		},
 		{
@@ -193,6 +215,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодИндекс',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:120px;top:50px;width:101px;height:19px;',
 		},
 		{
@@ -200,6 +224,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодОбласть',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:120px;top:96px;width:265px;height:19px;',
 		},
 		{
@@ -213,6 +239,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодНаселенныйПункт',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:120px;top:120px;width:265px;height:19px;',
 		},
 		{
@@ -220,6 +248,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтвЛицоФинУрПодСтранаКод',
+			width: 23,
+			height: 19,
 			style: 'position:absolute;left:120px;top:74px;width:23px;height:19px;',
 		},
 		{
@@ -227,6 +257,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодРФ_ОГРН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:120px;top:192px;width:101px;height:19px;',
 		},
 		{
@@ -234,6 +266,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодРФ_ИНН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:120px;top:168px;width:101px;height:19px;',
 		},
 		{
@@ -241,6 +275,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПодРФ_КПП',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:284px;top:168px;width:101px;height:19px;',
 		},
 					]
@@ -263,6 +299,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтвЛицоФинУрПасВидДок',
+			width: 23,
+			height: 19,
 			style: 'position:absolute;left:120px;top:2px;width:23px;height:19px;',
 		},
 		{
@@ -276,6 +314,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПасНаименование',
+			width: 239,
+			height: 19,
 			style: 'position:absolute;left:146px;top:2px;width:239px;height:19px;',
 		},
 		{
@@ -283,6 +323,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтвЛицоФинУрПасНомерДок',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:120px;top:26px;width:265px;height:19px;',
 		},
 		{
@@ -296,7 +338,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОтвЛицоФинУрПасДатаДок',
+			width: 85,
+			height: 19,
 			style: 'position:absolute;left:120px;top:50px;width:85px;height:19px;',
 		},
 		{

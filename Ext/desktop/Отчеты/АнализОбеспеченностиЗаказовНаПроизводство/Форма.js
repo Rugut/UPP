@@ -25,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:57px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +36,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:157px;top:0px;width:80px;height:19px;',
 		},
 		{
@@ -83,7 +89,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаНаДату',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:179px;top:0px;width:80px;height:19px;',
 		},
 					]

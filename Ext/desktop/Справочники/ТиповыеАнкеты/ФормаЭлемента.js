@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:358px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 217,
+			height: 19,
 			style: 'position:absolute;left:95px;top:33px;width:217px;height:19px;',
 		},
 		{
@@ -95,10 +99,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидАнкеты',
+			width: 336,
+			height: 19,
 			style: 'position:absolute;left:86px;top:6px;width:336px;height:19px;',
 		},
 		{
@@ -284,6 +291,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеАнкеты',
+			width: 343,
+			height: 19,
 			style: 'position:absolute;left:95px;top:57px;width:343px;height:19px;',
 		},
 		{

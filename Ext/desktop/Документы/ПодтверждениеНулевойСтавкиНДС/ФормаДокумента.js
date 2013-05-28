@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 555,
+			height: 19,
 			style: 'position:absolute;left:91px;top:319px;width:555px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -46,7 +50,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -56,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:61px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:61px;width:220px;height:19px;',
 		},
 		{
@@ -191,10 +202,14 @@
 			style: 'position:absolute;left:6px;top:50px;width:153px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответственный',
+			width: 467,
+			height: 19,
 			style: 'position:absolute;left:163px;top:50px;width:467px;height:19px;',
 		},
 		{
@@ -204,10 +219,15 @@
 			style: 'position:absolute;left:6px;top:6px;width:152px;height:38px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СтатьяПрочихРасходов',
+			width: 467,
+			height: 19,
 			style: 'position:absolute;left:163px;top:15px;width:467px;height:19px;',
 		},
 					]

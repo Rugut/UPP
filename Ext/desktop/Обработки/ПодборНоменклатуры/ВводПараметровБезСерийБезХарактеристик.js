@@ -10,10 +10,13 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаИзмерения',
+			width: 84,
+			height: 19,
 			style: 'position:absolute;left:162px;top:33px;width:84px;height:19px;',
 		},
 		{

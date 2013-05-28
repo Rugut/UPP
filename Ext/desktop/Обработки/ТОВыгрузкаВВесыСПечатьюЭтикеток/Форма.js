@@ -30,10 +30,14 @@
 			style: 'position:absolute;left:40px;top:1px;width:286px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 293,
+			height: 19,
 			style: 'position:absolute;left:391px;top:1px;width:293px;height:19px;',
 		},
 					]

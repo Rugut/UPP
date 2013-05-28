@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:430px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:132px;top:33px;width:260px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолное',
+			width: 378,
+			height: 48,
 			style: 'position:absolute;left:132px;top:58px;width:378px;height:48px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:66px;top:137px;width:120px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:271px;top:137px;width:110px;height:19px;',
 		},
 		{
@@ -79,6 +89,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерФСС1',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:66px;top:162px;width:120px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДополнительныйКодФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:271px;top:162px;width:110px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПодчиненностиФСС',
+			width: 51,
+			height: 19,
 			style: 'position:absolute;left:459px;top:162px;width:51px;height:19px;',
 		},
 		{
@@ -124,6 +140,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
+			width: 378,
+			height: 43,
 			style: 'position:absolute;left:132px;top:188px;width:378px;height:43px;',
 		},
 		{

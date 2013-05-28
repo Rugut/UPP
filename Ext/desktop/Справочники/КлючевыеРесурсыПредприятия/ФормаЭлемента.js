@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:358px;top:58px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:58px;width:220px;height:19px;',
 		},
 		{
@@ -42,10 +46,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 328,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:328px;height:19px;',
 		},
 		{
@@ -55,10 +64,13 @@
 			style: 'position:absolute;left:8px;top:106px;width:154px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'БазоваяЕдиницаИзмерения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:164px;top:106px;width:80px;height:19px;',
 		},
 		{
@@ -68,10 +80,13 @@
 			style: 'position:absolute;left:8px;top:130px;width:154px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'БазаЗаданияПотребности',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:164px;top:130px;width:258px;height:19px;',
 		},
 		{

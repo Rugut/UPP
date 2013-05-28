@@ -218,6 +218,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСклад',
+			width: 342,
+			height: 20,
 			style: 'position:absolute;left:336px;top:6px;width:342px;height:20px;',
 		},
 		{
@@ -234,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиТипЦен',
+			width: 342,
+			height: 20,
 			style: 'position:absolute;left:336px;top:31px;width:342px;height:20px;',
 		},
 		{
@@ -250,6 +254,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 342,
+			height: 20,
 			style: 'position:absolute;left:336px;top:56px;width:342px;height:20px;',
 		},
 		{
@@ -266,6 +272,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиГруппа',
+			width: 342,
+			height: 20,
 			style: 'position:absolute;left:336px;top:81px;width:342px;height:20px;',
 		},
 					]

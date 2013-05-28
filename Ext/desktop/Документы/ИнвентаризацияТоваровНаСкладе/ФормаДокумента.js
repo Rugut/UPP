@@ -32,6 +32,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -39,7 +41,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 502,
+			height: 19,
 			style: 'position:absolute;left:94px;top:420px;width:502px;height:19px;',
 		},
 		{
@@ -284,10 +291,15 @@
 			style: 'position:absolute;left:8px;top:397px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 502,
+			height: 19,
 			style: 'position:absolute;left:94px;top:397px;width:502px;height:19px;',
 		},
 		{
@@ -297,10 +309,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -310,10 +326,14 @@
 			style: 'position:absolute;left:334px;top:57px;width:40px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Склад',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:376px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -392,6 +412,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 271,
+			height: 19,
 			style: 'position:absolute;left:317px;top:0px;width:271px;height:19px;',
 		},
 		{
@@ -408,6 +430,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
+			width: 271,
+			height: 19,
 			style: 'position:absolute;left:317px;top:24px;width:271px;height:19px;',
 		},
 		{

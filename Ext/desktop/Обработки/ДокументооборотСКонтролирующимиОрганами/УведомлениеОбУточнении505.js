@@ -151,6 +151,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяОбрабФайла',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:6px;width:291px;height:19px;',
 		},
 		{
@@ -164,6 +166,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдФайл',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:32px;width:291px;height:19px;',
 		},
 		{
@@ -177,6 +181,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдДок',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:58px;width:291px;height:19px;',
 		},
 		{
@@ -190,6 +196,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПрием',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:84px;width:291px;height:19px;',
 		},
 		{
@@ -203,6 +211,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаФормУвед',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:240px;width:291px;height:19px;',
 		},
 		{
@@ -216,6 +226,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:110px;width:291px;height:19px;',
 		},
 		{
@@ -229,6 +241,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимОтч',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:136px;width:291px;height:19px;',
 		},
 		{
@@ -242,6 +256,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомКорр',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:162px;width:291px;height:19px;',
 		},
 		{
@@ -255,6 +271,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетГод',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:214px;width:291px;height:19px;',
 		},
 		{
@@ -268,6 +286,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетныйПериод',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:188px;width:291px;height:19px;',
 		},
 		{
@@ -281,6 +301,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегНом',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:267px;width:291px;height:19px;',
 		},
 		{
@@ -294,6 +316,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПрогрКомпл',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:165px;top:293px;width:291px;height:19px;',
 		},
 					]

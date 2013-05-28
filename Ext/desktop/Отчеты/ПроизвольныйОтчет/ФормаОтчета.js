@@ -31,10 +31,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПроизвольныйОтчет',
+			width: 290,
+			height: 19,
 			style: 'position:absolute;left:9px;top:7px;width:290px;height:19px;',
 		},
 					]

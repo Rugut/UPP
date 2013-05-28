@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаУтверждения',
+			width: 98,
+			height: 19,
 			style: 'position:absolute;left:189px;top:41px;width:98px;height:19px;',
 		},
 		{
@@ -30,10 +33,13 @@
 			style: 'position:absolute;left:295px;top:41px;width:122px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидСхемыМотивации',
+			width: 199,
+			height: 19,
 			style: 'position:absolute;left:422px;top:41px;width:199px;height:19px;',
 		},
 		{

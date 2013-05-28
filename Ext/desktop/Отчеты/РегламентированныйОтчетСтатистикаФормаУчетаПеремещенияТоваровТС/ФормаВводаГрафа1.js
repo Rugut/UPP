@@ -21,6 +21,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительУлицаНомерДома',
+			width: 266,
+			height: 19,
 			style: 'position:absolute;left:121px;top:144px;width:266px;height:19px;',
 		},
 		{
@@ -40,6 +42,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтправительСтранаНаименование',
+			width: 240,
+			height: 19,
 			style: 'position:absolute;left:147px;top:72px;width:240px;height:19px;',
 		},
 		{
@@ -47,6 +51,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительИндекс',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:121px;top:48px;width:101px;height:19px;',
 		},
 		{
@@ -54,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительОбласть',
+			width: 266,
+			height: 19,
 			style: 'position:absolute;left:121px;top:96px;width:266px;height:19px;',
 		},
 		{
@@ -61,6 +69,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительРФ_ОГРН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:121px;top:192px;width:101px;height:19px;',
 		},
 		{
@@ -86,6 +96,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительНаселенныйПункт',
+			width: 266,
+			height: 19,
 			style: 'position:absolute;left:121px;top:120px;width:266px;height:19px;',
 		},
 		{
@@ -105,6 +117,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительРФ_ИНН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:121px;top:168px;width:101px;height:19px;',
 		},
 		{
@@ -112,6 +126,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительРФ_КПП',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:286px;top:168px;width:101px;height:19px;',
 		},
 		{
@@ -131,6 +147,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительРБ_УНП',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:121px;top:168px;width:101px;height:19px;',
 		},
 		{
@@ -144,6 +162,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительРК_БИН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:286px;top:168px;width:101px;height:19px;',
 		},
 		{
@@ -157,6 +177,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтправительРК_ИИН',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:121px;top:168px;width:101px;height:19px;',
 		},
 		{
@@ -170,6 +192,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ОтправительСтранаКод',
+			width: 23,
+			height: 19,
 			style: 'position:absolute;left:121px;top:72px;width:23px;height:19px;',
 		},
 	],

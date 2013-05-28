@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Каталог',
+			width: 528,
+			height: 19,
 			style: 'position:absolute;left:66px;top:10px;width:528px;height:19px;',
 		},
 		{

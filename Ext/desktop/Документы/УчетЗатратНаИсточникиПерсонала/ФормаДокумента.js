@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -131,10 +136,15 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 402,
+			height: 19,
 			style: 'position:absolute;left:94px;top:322px;width:402px;height:19px;',
 		},
 		{
@@ -154,6 +164,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 402,
+			height: 19,
 			style: 'position:absolute;left:94px;top:346px;width:402px;height:19px;',
 		},
 		{

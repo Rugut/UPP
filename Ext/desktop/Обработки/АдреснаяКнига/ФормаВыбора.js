@@ -539,6 +539,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтрокаПоиска',
+			width: 361,
+			height: 19,
 			style: 'position:absolute;left:6px;top:30px;width:361px;height:19px;',
 		},
 		{

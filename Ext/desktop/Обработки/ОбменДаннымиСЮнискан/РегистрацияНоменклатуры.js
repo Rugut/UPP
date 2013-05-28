@@ -10,10 +10,15 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'НоменклатураДляРегистрации',
+			width: 539,
+			height: 19,
 			style: 'position:absolute;left:93px;top:8px;width:539px;height:19px;',
 		},
 		{
@@ -43,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаТорговаяМарка',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:140px;top:20px;width:252px;height:19px;',
 		},
 		{
@@ -56,6 +63,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаОтличительныеСвойстваТовара',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:140px;top:44px;width:252px;height:19px;',
 		},
 		{
@@ -89,6 +98,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаТипУпаковки',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:140px;top:111px;width:252px;height:19px;',
 		},
 		{
@@ -117,6 +128,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаЕдиницаИзмерения',
+			width: 68,
+			height: 19,
 			style: 'position:absolute;left:140px;top:159px;width:68px;height:19px;',
 		},
 		{
@@ -130,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаОтличительныеСвойства',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:140px;top:135px;width:252px;height:19px;',
 		},
 		{
@@ -143,6 +158,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаЕдиничнаяУпаковка',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:300px;top:183px;width:92px;height:19px;',
 		},
 		{
@@ -156,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКодЕАН13',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:300px;top:88px;width:92px;height:19px;',
 		},
 		{
@@ -264,6 +283,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаОКП',
+			width: 68,
+			height: 19,
 			style: 'position:absolute;left:140px;top:183px;width:68px;height:19px;',
 		},
 		{

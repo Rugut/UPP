@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:146px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 132,
+			height: 19,
 			style: 'position:absolute;left:246px;top:33px;width:132px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 282,
+			height: 19,
 			style: 'position:absolute;left:96px;top:369px;width:282px;height:19px;',
 		},
 		{
@@ -56,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:346px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 282,
+			height: 19,
 			style: 'position:absolute;left:96px;top:346px;width:282px;height:19px;',
 		},
 		{
@@ -69,10 +80,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Услуга',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:146px;top:57px;width:232px;height:19px;',
 		},
 		{
@@ -82,10 +97,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПричинаЗаказаНаОбслуживаниеОС',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:146px;top:81px;width:232px;height:19px;',
 		},
 		{
@@ -99,7 +118,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаОбслуживанияОС',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:146px;top:129px;width:80px;height:19px;',
 		},
 		{
@@ -158,10 +180,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидОбслуживанияОС',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:146px;top:105px;width:232px;height:19px;',
 		},
 		{

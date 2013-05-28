@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 309,
+			height: 19,
 			style: 'position:absolute;left:96px;top:39px;width:309px;height:19px;',
 		},
 		{
@@ -29,10 +31,13 @@
 			style: 'position:absolute;left:16px;top:104px;width:89px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ТипПоказателя',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:166px;top:104px;width:230px;height:19px;',
 		},
 		{
@@ -42,10 +47,13 @@
 			style: 'position:absolute;left:16px;top:161px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВозможностьИзменения',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
 		{
@@ -54,10 +62,13 @@
 			style: 'position:absolute;left:8px;top:88px;width:397px;height:99px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидПоказателя',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:166px;top:132px;width:230px;height:19px;',
 		},
 		{
@@ -71,6 +82,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Идентификатор',
+			width: 309,
+			height: 19,
 			style: 'position:absolute;left:96px;top:65px;width:309px;height:19px;',
 		},
 		{
@@ -95,10 +108,15 @@
 			style: 'position:absolute;left:6px;top:6px;width:230px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ФактическийПоказатель',
+			width: 336,
+			height: 19,
 			style: 'position:absolute;left:28px;top:122px;width:336px;height:19px;',
 		},
 		{
@@ -243,10 +261,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:41px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Валюта',
+			width: 333,
+			height: 19,
 			style: 'position:absolute;left:56px;top:6px;width:333px;height:19px;',
 		},
 					]
@@ -272,10 +294,14 @@
 			style: 'position:absolute;left:16px;top:132px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СпособРасчетаСуммы',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:166px;top:132px;width:230px;height:19px;',
 		},
 		{
@@ -285,10 +311,14 @@
 			style: 'position:absolute;left:16px;top:161px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СуммируемыйПоказатель',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
 		{
@@ -298,10 +328,13 @@
 			style: 'position:absolute;left:16px;top:161px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидСтажа',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
 		},
 		{

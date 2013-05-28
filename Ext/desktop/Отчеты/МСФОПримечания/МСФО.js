@@ -47,6 +47,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийПримечания',
+			width: 290,
+			height: 19,
 			style: 'position:absolute;left:298px;top:251px;width:290px;height:19px;',
 		},
 		{
@@ -85,6 +87,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийПримечанияСД',
+			width: 289,
+			height: 19,
 			style: 'position:absolute;left:298px;top:252px;width:289px;height:19px;',
 		},
 		{
@@ -123,6 +127,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийДСОтОперДеят',
+			width: 459,
+			height: 19,
 			style: 'position:absolute;left:298px;top:253px;width:459px;height:19px;',
 		},
 					]
@@ -164,14 +170,19 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаСдачи',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:80px;top:24px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтчета',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:545px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -205,6 +216,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 680,
+			height: 19,
 			style: 'position:absolute;left:85px;top:2px;width:680px;height:19px;',
 		},
 					]

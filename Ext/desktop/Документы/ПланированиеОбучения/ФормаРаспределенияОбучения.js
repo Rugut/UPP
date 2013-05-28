@@ -10,10 +10,14 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КурсОбученияДляРаспределения',
+			width: 299,
+			height: 19,
 			style: 'position:absolute;left:151px;top:8px;width:299px;height:19px;',
 		},
 		{
@@ -48,7 +52,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаС',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:241px;top:36px;width:80px;height:19px;',
 		},
 		{
@@ -62,7 +69,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаПо',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:346px;top:36px;width:80px;height:19px;',
 		},
 		{

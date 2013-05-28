@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:82px;top:8px;width:220px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:82px;top:32px;width:220px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:82px;top:56px;width:220px;height:19px;',
 		},
 	],

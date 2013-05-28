@@ -273,6 +273,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаОрганизация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
 	],

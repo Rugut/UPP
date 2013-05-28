@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Регион',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:102px;top:79px;width:226px;height:19px;',
 		},
 		{
@@ -38,6 +40,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Район',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:102px;top:103px;width:226px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Город',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:102px;top:127px;width:226px;height:19px;',
 		},
 		{
@@ -64,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаселенныйПункт',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:102px;top:151px;width:226px;height:19px;',
 		},
 		{
@@ -86,10 +94,13 @@
 			style: 'position:absolute;left:8px;top:33px;width:92px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Страна',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:226px;height:19px;',
 		},
 	],

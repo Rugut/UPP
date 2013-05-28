@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:25px;top:109px;width:261px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВопросУсловия',
+			width: 261,
+			height: 19,
 			style: 'position:absolute;left:25px;top:140px;width:261px;height:19px;',
 		},
 		{
@@ -29,10 +33,14 @@
 			style: 'position:absolute;left:25px;top:163px;width:80px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответ',
+			width: 126,
+			height: 19,
 			style: 'position:absolute;left:160px;top:183px;width:126px;height:19px;',
 		},
 		{
@@ -70,10 +78,13 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'УсловиеОтвета',
+			width: 129,
+			height: 19,
 			style: 'position:absolute;left:25px;top:183px;width:129px;height:19px;',
 		},
 		{

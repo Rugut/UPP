@@ -173,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаВариантаЗачения',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:228px;top:6px;width:200px;height:19px;',
 		},
 		{
@@ -190,7 +192,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаЦен',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:582px;top:37px;width:80px;height:19px;',
 		},
 		{

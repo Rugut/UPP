@@ -27,10 +27,15 @@
 			style: 'position:absolute;left:0px;top:2px;width:92px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ОтборУчетнаяЗапись',
+			width: 681,
+			height: 19,
 			style: 'position:absolute;left:97px;top:0px;width:681px;height:19px;',
 		},
 					]
@@ -265,6 +270,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтбораЦикловОбмена',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
 		{
@@ -283,6 +290,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбора',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
@@ -290,6 +299,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораСтрока',
+			width: 331,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
 					]
@@ -299,10 +310,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидОтчета',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]
@@ -351,10 +366,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ЭлектронноеПредставлениеДляОтбора',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]
@@ -601,6 +620,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтбораЦикловОбменаЗаявление',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
 		{
@@ -619,6 +640,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораЗаявление',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
@@ -698,6 +721,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораЗаявлениеСтрока',
+			width: 331,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
 					]
@@ -710,10 +735,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ЭлектронноеПредставлениеДляОтбораЗаявление',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]
@@ -1812,6 +1841,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтбораЦикловОбменаПФР',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
 		{
@@ -1830,6 +1861,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораПФР',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
@@ -1837,6 +1870,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораСтрокаПФР',
+			width: 331,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
 					]
@@ -1846,10 +1881,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидОтчетаПФР',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]
@@ -1859,10 +1898,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ЭлектронноеПредставлениеДляОтбораПФР',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]
@@ -2422,6 +2465,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтбораЦикловОбменаФСГС',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
 		{
@@ -2440,6 +2485,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораФСГС',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 		{
@@ -2447,6 +2494,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораСтрокаФСГС',
+			width: 331,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:331px;height:19px;',
 		},
 					]
@@ -2456,10 +2505,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидОтчетаФСГС',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]
@@ -2469,10 +2522,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ЭлектронноеПредставлениеДляОтбораФСГС',
+			width: 376,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
 		},
 					]

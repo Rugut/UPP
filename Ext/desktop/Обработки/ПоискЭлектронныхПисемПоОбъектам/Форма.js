@@ -150,10 +150,14 @@
 			style: 'position:absolute;left:50px;top:33px;width:180px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПолеНастройкиОбъектПоиска',
+			width: 452,
+			height: 19,
 			style: 'position:absolute;left:236px;top:33px;width:452px;height:19px;',
 		},
 		{

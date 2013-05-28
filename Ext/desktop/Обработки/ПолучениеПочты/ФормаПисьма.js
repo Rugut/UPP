@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТекстТемы',
+			width: 438,
+			height: 19,
 			style: 'position:absolute;left:50px;top:60px;width:438px;height:19px;',
 		},
 		{
@@ -68,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресОтправителя',
+			width: 370,
+			height: 19,
 			style: 'position:absolute;left:118px;top:8px;width:370px;height:19px;',
 		},
 		{
@@ -81,6 +85,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отправитель',
+			width: 370,
+			height: 19,
 			style: 'position:absolute;left:118px;top:32px;width:370px;height:19px;',
 		},
 		{

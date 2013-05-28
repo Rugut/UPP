@@ -16,10 +16,13 @@
 			style: 'position:absolute;left:406px;top:77px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ПериодичностьОтставанияКонецИнтервала',
+			width: 76,
+			height: 19,
 			style: 'position:absolute;left:325px;top:77px;width:76px;height:19px;',
 		},
 		{
@@ -42,7 +45,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаДопроведения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:34px;top:53px;width:80px;height:19px;',
 		},
 		{
@@ -55,10 +61,13 @@
 			style: 'position:absolute;left:34px;top:77px;width:32px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ПериодичностьОтставанияНачалоИнтервала',
+			width: 76,
+			height: 19,
 			style: 'position:absolute;left:73px;top:77px;width:76px;height:19px;',
 		},
 		{
@@ -82,7 +91,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонцаДопроведения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:290px;top:53px;width:80px;height:19px;',
 		},
 		{

@@ -727,10 +727,12 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'Физлицо',
+			width: 229,
+			height: 19,
 			style: 'position:absolute;left:151px;top:4px;width:229px;height:19px;',
 		},
 		{
@@ -738,6 +740,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МесяцСтрока',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:4px;top:4px;width:136px;height:19px;',
 		},
 	],

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:392px;top:35px;width:92px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 253,
+			height: 19,
 			style: 'position:absolute;left:96px;top:35px;width:253px;height:19px;',
 		},
 		{
@@ -61,10 +65,13 @@
 			style: 'position:absolute;left:366px;top:438px;width:118px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ФизЛицо',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:490px;top:438px;width:167px;height:19px;',
 		},
 		{
@@ -74,10 +81,13 @@
 			style: 'position:absolute;left:366px;top:414px;width:118px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ГруппаЗадач',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:490px;top:414px;width:167px;height:19px;',
 		},
 		{
@@ -87,10 +97,13 @@
 			style: 'position:absolute;left:366px;top:390px;width:118px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ИсточникИнформации',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:490px;top:390px;width:167px;height:19px;',
 		},
 		{
@@ -116,10 +129,12 @@
 			style: 'position:absolute;left:359px;top:28px;width:57px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'Состояние',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:421px;top:28px;width:220px;height:19px;',
 		},
 		{
@@ -133,7 +148,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОткрытия',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:520px;top:76px;width:80px;height:19px;',
 		},
 		{
@@ -143,10 +161,13 @@
 			style: 'position:absolute;left:359px;top:52px;width:57px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Важность',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:421px;top:52px;width:220px;height:19px;',
 		},
 		{
@@ -156,10 +177,14 @@
 			style: 'position:absolute;left:6px;top:28px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Вакансия',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:111px;top:28px;width:230px;height:19px;',
 		},
 		{
@@ -179,10 +204,14 @@
 			style: 'position:absolute;left:6px;top:52px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Должность',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:111px;top:52px;width:230px;height:19px;',
 		},
 		{
@@ -203,10 +232,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:105px;top:0px;width:230px;height:19px;',
 		},
 					]
@@ -220,10 +253,14 @@
 			style: 'position:absolute;left:6px;top:100px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:111px;top:100px;width:230px;height:19px;',
 		},
 					]
@@ -313,10 +350,13 @@
 			style: 'position:absolute;left:366px;top:462px;width:118px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Ответственный',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:490px;top:462px;width:167px;height:19px;',
 		},
 		{

@@ -14,6 +14,54 @@ namespace V82.Справочники//Менеджер
 	public partial class СтрокиФинансовогоРасчета:СправочникМенеджер
 	{
 		
+		public static СправочникиСсылка.СтрокиФинансовогоРасчета НайтиПоСсылке(Guid _Ссылка)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld3852RRef [ВидСтроки]
+					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
+					,_Fld3854 [Формула]
+					From _Reference253(NOLOCK)
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.СтрокиФинансовогоРасчета();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+							Ссылка.ВидСтроки = V82.Перечисления/*Ссылка*/.ВидыСтрокФинансовогоРасчета.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
+							Ссылка.Формула = Читалка.GetString(10);
+							return Ссылка;
+						}
+						else
+						{
+							return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public static СправочникиСсылка.СтрокиФинансовогоРасчета НайтиПоКоду(string Код)
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))

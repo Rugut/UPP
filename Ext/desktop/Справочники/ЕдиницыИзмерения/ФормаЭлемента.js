@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:382px;top:79px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:118px;top:79px;width:220px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Владелец',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:118px;top:33px;width:344px;height:19px;',
 		},
 		{
@@ -55,10 +61,13 @@
 			style: 'position:absolute;left:8px;top:56px;width:108px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаПоКлассификатору',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:118px;top:56px;width:220px;height:19px;',
 		},
 		{

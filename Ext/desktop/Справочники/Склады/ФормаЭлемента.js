@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:481px;top:58px;width:40px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 338,
+			height: 19,
 			style: 'position:absolute;left:103px;top:58px;width:338px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 418,
+			height: 19,
 			style: 'position:absolute;left:103px;top:267px;width:418px;height:19px;',
 		},
 		{
@@ -55,10 +61,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 418,
+			height: 19,
 			style: 'position:absolute;left:103px;top:33px;width:418px;height:19px;',
 		},
 		{
@@ -78,10 +89,14 @@
 			style: 'position:absolute;left:6px;top:62px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦенРозничнойТорговли',
+			width: 411,
+			height: 19,
 			style: 'position:absolute;left:94px;top:62px;width:411px;height:19px;',
 		},
 		{
@@ -91,10 +106,15 @@
 			style: 'position:absolute;left:6px;top:110px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 411,
+			height: 19,
 			style: 'position:absolute;left:94px;top:110px;width:411px;height:19px;',
 		},
 		{
@@ -104,10 +124,13 @@
 			style: 'position:absolute;left:6px;top:38px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидСклада',
+			width: 411,
+			height: 19,
 			style: 'position:absolute;left:94px;top:38px;width:411px;height:19px;',
 		},
 		{
@@ -137,10 +160,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:86px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОтветственноеЛицо',
+			width: 326,
+			height: 19,
 			style: 'position:absolute;left:94px;top:9px;width:326px;height:19px;',
 		},
 		{

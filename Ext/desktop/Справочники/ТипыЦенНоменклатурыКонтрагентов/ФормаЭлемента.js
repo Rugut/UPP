@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:361px;top:61px;width:40px;height:19px;',
 		},
 		{
@@ -21,6 +23,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 219,
+			height: 19,
 			style: 'position:absolute;left:98px;top:61px;width:219px;height:19px;',
 		},
 		{
@@ -30,10 +34,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Владелец',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:303px;height:19px;',
 		},
 		{
@@ -43,10 +51,14 @@
 			style: 'position:absolute;left:8px;top:87px;width:88px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТипЦеныНоменклатуры',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:98px;top:89px;width:303px;height:19px;',
 		},
 		{
@@ -67,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 303,
+			height: 19,
 			style: 'position:absolute;left:98px;top:186px;width:303px;height:19px;',
 		},
 		{
@@ -97,10 +111,13 @@
 			style: 'position:absolute;left:8px;top:117px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаЦены',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:98px;top:117px;width:80px;height:19px;',
 		},
 		{

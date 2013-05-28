@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВведитеКодОКВЭД',
+			width: 66,
+			height: 19,
 			style: 'position:absolute;left:92px;top:7px;width:66px;height:19px;',
 		},
 	],

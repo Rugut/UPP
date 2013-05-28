@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиДолжность',
+			width: 486,
+			height: 19,
 			style: 'position:absolute;left:218px;top:28px;width:486px;height:19px;',
 		},
 		{
@@ -42,6 +44,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПодразделение',
+			width: 486,
+			height: 19,
 			style: 'position:absolute;left:218px;top:4px;width:486px;height:19px;',
 		},
 		{
@@ -67,7 +71,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:633px;top:2px;width:80px;height:19px;',
 		},
 	],

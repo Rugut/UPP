@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонца',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -58,6 +64,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиКонтрагент',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:384px;top:0px;width:280px;height:19px;',
 		},
 		{
@@ -70,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиИсточникИнформацииПриОбращении',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:384px;top:24px;width:280px;height:19px;',
 		},
 		{

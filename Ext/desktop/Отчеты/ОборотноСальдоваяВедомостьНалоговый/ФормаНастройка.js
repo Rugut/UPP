@@ -20,10 +20,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 219,
+			height: 19,
 			style: 'position:absolute;left:84px;top:31px;width:219px;height:19px;',
 		},
 		{
@@ -42,7 +45,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:84px;top:4px;width:80px;height:19px;',
 		},
 		{
@@ -50,7 +56,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:197px;top:4px;width:80px;height:19px;',
 		},
 		{
@@ -88,10 +97,14 @@
 			style: 'position:absolute;left:6px;top:57px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидУчета',
+			width: 219,
+			height: 19,
 			style: 'position:absolute;left:84px;top:57px;width:219px;height:19px;',
 		},
 					]

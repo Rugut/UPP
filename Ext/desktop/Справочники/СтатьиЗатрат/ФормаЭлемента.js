@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:428px;top:57px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 273,
+			height: 19,
 			style: 'position:absolute;left:110px;top:57px;width:273px;height:19px;',
 		},
 		{
@@ -42,10 +46,13 @@
 			style: 'position:absolute;left:8px;top:105px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидЗатрат',
+			width: 106,
+			height: 19,
 			style: 'position:absolute;left:110px;top:105px;width:106px;height:19px;',
 		},
 		{
@@ -55,10 +62,13 @@
 			style: 'position:absolute;left:231px;top:105px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СтатусМатериальныхЗатрат',
+			width: 158,
+			height: 19,
 			style: 'position:absolute;left:334px;top:105px;width:158px;height:19px;',
 		},
 		{
@@ -68,10 +78,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ХарактерЗатрат',
+			width: 382,
+			height: 19,
 			style: 'position:absolute;left:110px;top:81px;width:382px;height:19px;',
 		},
 		{
@@ -81,10 +94,13 @@
 			style: 'position:absolute;left:8px;top:129px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОсновнойВидЗатратНалоговогоУчета',
+			width: 382,
+			height: 19,
 			style: 'position:absolute;left:110px;top:129px;width:382px;height:19px;',
 		},
 		{
@@ -94,10 +110,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 382,
+			height: 19,
 			style: 'position:absolute;left:110px;top:33px;width:382px;height:19px;',
 		},
 	],

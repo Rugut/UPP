@@ -116,6 +116,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегНомДок',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:60px;width:298px;height:19px;',
 		},
 		{
@@ -129,6 +131,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаРегЭл',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:90px;width:298px;height:19px;',
 		},
 		{
@@ -142,6 +146,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаРегБум',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:125px;width:298px;height:19px;',
 		},
 		{
@@ -155,6 +161,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДокНП',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:10px;width:298px;height:19px;',
 		},
 		{
@@ -168,6 +176,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодСтранПрод1',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:155px;width:298px;height:19px;',
 		},
 		{
@@ -181,6 +191,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаДокНП',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:35px;width:298px;height:19px;',
 		},
 		{
@@ -194,6 +206,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФЛК',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:180px;width:298px;height:19px;',
 		},
 		{
@@ -207,6 +221,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаФЛК',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:205px;width:298px;height:19px;',
 		},
 		{
@@ -220,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаИД',
+			width: 298,
+			height: 19,
 			style: 'position:absolute;left:191px;top:230px;width:298px;height:19px;',
 		},
 					]

@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеОбъекта',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:150px;top:56px;width:258px;height:19px;',
 		},
 		{
@@ -43,6 +45,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидКонтактнойИнформации',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:150px;top:88px;width:258px;height:19px;',
 		},
 		{
@@ -56,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочты',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:150px;top:112px;width:258px;height:19px;',
 		},
 		{
@@ -70,10 +76,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КонтрагентВладелец',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:142px;top:0px;width:258px;height:19px;',
 		},
 					]

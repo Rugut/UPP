@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:33px;width:285px;height:19px;',
 		},
 		{
@@ -29,10 +31,12 @@
 			style: 'position:absolute;left:8px;top:226px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			name: 'СтатусПартии',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:226px;width:285px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Заказ',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:57px;width:285px;height:19px;',
 		},
 		{
@@ -55,10 +61,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ДоговорКомитента',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:81px;width:285px;height:19px;',
 		},
 		{
@@ -68,10 +77,13 @@
 			style: 'position:absolute;left:8px;top:130px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ДоговорКомиссионера',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:130px;width:285px;height:19px;',
 		},
 		{
@@ -81,10 +93,13 @@
 			style: 'position:absolute;left:8px;top:154px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ДокументПередачи',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:154px;width:285px;height:19px;',
 		},
 		{
@@ -94,10 +109,13 @@
 			style: 'position:absolute;left:8px;top:178px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'ФизЛицо',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:178px;width:285px;height:19px;',
 		},
 		{
@@ -107,10 +125,13 @@
 			style: 'position:absolute;left:8px;top:198px;width:138px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'НазначениеИспользования',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:202px;width:285px;height:19px;',
 		},
 		{
@@ -120,10 +141,13 @@
 			style: 'position:absolute;left:8px;top:105px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Комиссионер',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:146px;top:105px;width:285px;height:19px;',
 		},
 	],

@@ -48,10 +48,14 @@
 			style: 'position:absolute;left:229px;top:48px;width:57px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОграничениеПособияБезЛьгот1',
+			width: 351,
+			height: 19,
 			style: 'position:absolute;left:229px;top:73px;width:351px;height:19px;',
 		},
 		{
@@ -123,10 +127,14 @@
 			style: 'position:absolute;left:0px;top:48px;width:178px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОграничениеПособия',
+			width: 172,
+			height: 19,
 			style: 'position:absolute;left:217px;top:48px;width:172px;height:19px;',
 		},
 		{
@@ -151,10 +159,14 @@
 			style: 'position:absolute;left:408px;top:23px;width:57px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОграничениеПособияБезЛьгот2',
+			width: 172,
+			height: 19,
 			style: 'position:absolute;left:408px;top:48px;width:172px;height:19px;',
 		},
 					]

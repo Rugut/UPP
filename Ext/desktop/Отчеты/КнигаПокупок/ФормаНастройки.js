@@ -20,10 +20,14 @@
 			style: 'position:absolute;left:32px;top:92px;width:149px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КонтрагентДляОтбора',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:183px;top:92px;width:230px;height:19px;',
 		},
 		{

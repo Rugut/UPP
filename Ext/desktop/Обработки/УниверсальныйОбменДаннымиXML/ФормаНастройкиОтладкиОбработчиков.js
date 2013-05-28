@@ -46,6 +46,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаВнешнейОбработкиОбработчиковСобытий',
+			width: 551,
+			height: 19,
 			style: 'position:absolute;left:8px;top:311px;width:551px;height:19px;',
 		},
 		{

@@ -31,10 +31,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПолеВводаТекДатаСтандартная',
+			width: 172,
+			height: 19,
 			style: 'position:absolute;left:89px;top:32px;width:172px;height:19px;',
 		},
 		{
@@ -113,10 +116,13 @@
 			style: 'position:absolute;left:8px;top:224px;width:202px;height:18px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПериодичностьПоУмолчанию',
+			width: 114,
+			height: 19,
 			style: 'position:absolute;left:150px;top:131px;width:114px;height:19px;',
 		},
 		{
@@ -162,7 +168,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаТекДатаПроизвольная',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:84px;top:4px;width:90px;height:19px;',
 		},
 					]

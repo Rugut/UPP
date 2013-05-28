@@ -132,10 +132,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 560,
+			height: 19,
 			style: 'position:absolute;left:28px;top:141px;width:560px;height:19px;',
 		},
 		{
@@ -166,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 97,
+			height: 19,
 			style: 'position:absolute;left:74px;top:0px;width:97px;height:19px;',
 		},
 		{
@@ -173,6 +179,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 97,
+			height: 19,
 			style: 'position:absolute;left:275px;top:1px;width:97px;height:19px;',
 		},
 					]
@@ -270,6 +278,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатШифрованиеФайл',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:130px;top:143px;width:458px;height:19px;',
 		},
 		{
@@ -277,6 +287,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатШифрованиеКонтейнер',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:130px;top:170px;width:458px;height:19px;',
 		},
 		{
@@ -307,6 +319,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатРуководителя',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:130px;top:143px;width:458px;height:19px;',
 		},
 		{
@@ -314,6 +328,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатРуководителяКонтейнер',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:130px;top:170px;width:458px;height:19px;',
 		},
 		{
@@ -391,6 +407,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатБухгалтера',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:130px;top:143px;width:458px;height:19px;',
 		},
 		{
@@ -398,6 +416,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатБухгалтераКонтейнер',
+			width: 458,
+			height: 19,
 			style: 'position:absolute;left:130px;top:170px;width:458px;height:19px;',
 		},
 		{

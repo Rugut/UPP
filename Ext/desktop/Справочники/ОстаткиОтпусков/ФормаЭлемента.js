@@ -31,7 +31,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОстатков',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:96px;top:0px;width:80px;height:19px;',
 		},
 		{

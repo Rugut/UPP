@@ -76,10 +76,13 @@
 			style: 'position:absolute;left:14px;top:111px;width:108px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ТипРаспределения',
+			width: 164,
+			height: 19,
 			style: 'position:absolute;left:124px;top:111px;width:164px;height:19px;',
 		},
 		{
@@ -89,10 +92,13 @@
 			style: 'position:absolute;left:14px;top:135px;width:108px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ТипИзменения',
+			width: 164,
+			height: 19,
 			style: 'position:absolute;left:124px;top:135px;width:164px;height:19px;',
 		},
 		{

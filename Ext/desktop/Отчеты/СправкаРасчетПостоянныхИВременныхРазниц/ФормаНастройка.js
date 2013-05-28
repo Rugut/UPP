@@ -26,10 +26,14 @@
 			style: 'position:absolute;left:6px;top:32px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 306,
+			height: 19,
 			style: 'position:absolute;left:84px;top:30px;width:306px;height:19px;',
 		},
 		{
@@ -48,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставлениеПериодаРегистрации',
+			width: 98,
+			height: 19,
 			style: 'position:absolute;left:84px;top:6px;width:98px;height:19px;',
 		},
 		{

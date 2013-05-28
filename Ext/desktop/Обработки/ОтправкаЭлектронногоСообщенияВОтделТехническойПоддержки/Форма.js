@@ -92,6 +92,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТемаСообщения',
+			width: 520,
+			height: 19,
 			style: 'position:absolute;left:47px;top:8px;width:520px;height:19px;',
 		},
 		{

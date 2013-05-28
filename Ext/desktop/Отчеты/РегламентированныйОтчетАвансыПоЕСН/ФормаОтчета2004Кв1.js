@@ -69,6 +69,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел2',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:365px;top:5px;width:397px;height:19px;',
 		},
 					]
@@ -110,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел2_1',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:365px;top:5px;width:397px;height:19px;',
 		},
 					]
@@ -163,6 +167,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел2_3',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:365px;top:5px;width:397px;height:19px;',
 		},
 					]
@@ -234,6 +240,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКомментарийРаздел3',
+			width: 397,
+			height: 19,
 			style: 'position:absolute;left:365px;top:5px;width:397px;height:19px;',
 		},
 					]
@@ -299,7 +307,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаСдачи',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:116px;top:24px;width:96px;height:19px;',
 		},
 		{

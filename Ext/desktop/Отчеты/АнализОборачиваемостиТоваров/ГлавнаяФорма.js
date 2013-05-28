@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:272px;top:0px;width:280px;height:19px;',
 		},
 		{
@@ -41,6 +43,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСклад',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:272px;top:24px;width:280px;height:19px;',
 		},
 		{
@@ -57,6 +61,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиКомиссионер',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:272px;top:48px;width:280px;height:19px;',
 		},
 		{
@@ -77,7 +83,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонца',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -85,7 +94,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -113,10 +125,14 @@
 			style: 'position:absolute;left:314px;top:33px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Периодичность',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:400px;top:33px;width:160px;height:19px;',
 		},
 		{

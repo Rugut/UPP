@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:186px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:86px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -56,10 +65,14 @@
 			style: 'position:absolute;left:325px;top:57px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:419px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -69,10 +82,14 @@
 			style: 'position:absolute;left:325px;top:103px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'БанковскийСчет',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:419px;top:103px;width:220px;height:19px;',
 		},
 		{
@@ -86,6 +103,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДоговора',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:129px;width:80px;height:19px;',
 		},
 		{
@@ -99,6 +118,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 553,
+			height: 19,
 			style: 'position:absolute;left:86px;top:398px;width:553px;height:19px;',
 		},
 		{
@@ -493,10 +514,14 @@
 			style: 'position:absolute;left:164px;top:177px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Банк',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:86px;top:102px;width:220px;height:19px;',
 		},
 		{
@@ -504,6 +529,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодВида',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:78px;top:202px;width:80px;height:19px;',
 		},
 		{
@@ -511,6 +538,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПодВида',
+			width: 72,
+			height: 19,
 			style: 'position:absolute;left:234px;top:202px;width:72px;height:19px;',
 		},
 		{
@@ -518,6 +547,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодВалюты',
+			width: 72,
+			height: 19,
 			style: 'position:absolute;left:234px;top:177px;width:72px;height:19px;',
 		},
 		{
@@ -531,6 +562,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидВкладаСтрокой',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:78px;top:177px;width:80px;height:19px;',
 		},
 		{

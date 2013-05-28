@@ -14,6 +14,51 @@ namespace V82.Справочники//Менеджер
 	public partial class ДокументыУдостоверяющиеЛичность:СправочникМенеджер
 	{
 		
+		public static СправочникиСсылка.ДокументыУдостоверяющиеЛичность НайтиПоСсылке(Guid _Ссылка)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Description [Наименование]
+					,_Fld2267 [КодИМНС]
+					,_Fld2268 [КодПФР]
+					From _Reference90(NOLOCK)
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ДокументыУдостоверяющиеЛичность();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Наименование = Читалка.GetString(4);
+							Ссылка.КодИМНС = Читалка.GetString(5);
+							Ссылка.КодПФР = Читалка.GetString(6);
+							return Ссылка;
+						}
+						else
+						{
+							return null;
+						}
+					}
+				}
+			}
+		}
+		
 		public static СправочникиВыборка.ДокументыУдостоверяющиеЛичность Выбрать()
 		{
 			using (var Подключение = new SqlConnection(СтрокаСоединения))

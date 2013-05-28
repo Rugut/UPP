@@ -33,10 +33,14 @@
 			style: 'position:absolute;left:8px;top:6px;width:182px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СписокРедактирования',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:196px;top:6px;width:209px;height:19px;',
 		},
 		{

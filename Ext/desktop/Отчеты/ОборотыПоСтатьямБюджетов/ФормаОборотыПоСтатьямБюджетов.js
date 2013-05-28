@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиЦФО',
+			width: 349,
+			height: 20,
 			style: 'position:absolute;left:272px;top:0px;width:349px;height:20px;',
 		},
 		{
@@ -37,6 +39,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПроект',
+			width: 349,
+			height: 20,
 			style: 'position:absolute;left:272px;top:24px;width:349px;height:20px;',
 		},
 		{
@@ -57,10 +61,15 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Сценарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -70,10 +79,15 @@
 			style: 'position:absolute;left:8px;top:57px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СтатьяБаланса',
+			width: 137,
+			height: 19,
 			style: 'position:absolute;left:492px;top:57px;width:137px;height:19px;',
 		},
 		{
@@ -93,7 +107,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:396px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -107,7 +124,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:511px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -117,10 +137,13 @@
 			style: 'position:absolute;left:609px;top:33px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидДанныхОтчета',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:220px;height:19px;',
 		},
 		{

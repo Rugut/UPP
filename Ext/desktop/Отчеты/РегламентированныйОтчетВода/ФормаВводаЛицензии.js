@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаСерия',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:99px;top:33px;width:105px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаНомер',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:99px;top:57px;width:105px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаВид',
+			width: 105,
+			height: 19,
 			style: 'position:absolute;left:99px;top:81px;width:105px;height:19px;',
 		},
 		{

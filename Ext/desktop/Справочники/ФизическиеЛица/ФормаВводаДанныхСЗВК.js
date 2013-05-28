@@ -481,10 +481,14 @@
 			style: 'position:absolute;left:8px;top:8px;width:143px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТерриториальныеУсловияДляСЗВК',
+			width: 97,
+			height: 19,
 			style: 'position:absolute;left:151px;top:8px;width:97px;height:19px;',
 		},
 		{

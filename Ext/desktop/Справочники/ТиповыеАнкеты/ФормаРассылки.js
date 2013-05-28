@@ -136,10 +136,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Анкета',
+			width: 375,
+			height: 19,
 			style: 'position:absolute;left:90px;top:33px;width:375px;height:19px;',
 		},
 		{
@@ -169,6 +173,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЭлектронныйАдресОтветов',
+			width: 375,
+			height: 19,
 			style: 'position:absolute;left:82px;top:0px;width:375px;height:19px;',
 		},
 					]
@@ -194,6 +200,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент',
+			width: 368,
+			height: 19,
 			style: 'position:absolute;left:89px;top:24px;width:368px;height:19px;',
 		},
 		{

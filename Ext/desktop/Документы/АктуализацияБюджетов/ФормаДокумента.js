@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 116,
+			height: 19,
 			style: 'position:absolute;left:194px;top:33px;width:116px;height:19px;',
 		},
 		{
@@ -24,10 +27,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Сценарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -37,10 +44,14 @@
 			style: 'position:absolute;left:330px;top:57px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 234,
+			height: 19,
 			style: 'position:absolute;left:419px;top:57px;width:234px;height:19px;',
 		},
 		{
@@ -54,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 563,
+			height: 19,
 			style: 'position:absolute;left:90px;top:125px;width:563px;height:19px;',
 		},
 		{
@@ -88,7 +101,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:419px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -102,7 +118,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонца',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:535px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -116,6 +135,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -131,10 +152,13 @@
 			style: 'position:absolute;left:172px;top:33px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Состояние',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:101px;width:220px;height:19px;',
 		},
 		{

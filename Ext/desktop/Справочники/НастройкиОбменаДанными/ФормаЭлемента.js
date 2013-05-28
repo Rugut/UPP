@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:460px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 323,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:323px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:102px;top:500px;width:398px;height:19px;',
 		},
 		{
@@ -65,10 +71,15 @@
 			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'УзелИнформационнойБазы',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:93px;top:6px;width:391px;height:19px;',
 		},
 		{
@@ -78,10 +89,13 @@
 			style: 'position:absolute;left:6px;top:160px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ТипНастройки',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:93px;top:160px;width:391px;height:19px;',
 		},
 		{
@@ -106,6 +120,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогОбменаИнформацией',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:391px;height:19px;',
 		},
 		{
@@ -137,6 +153,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'FTPАдресОбмена',
+			width: 185,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:185px;height:19px;',
 		},
 		{
@@ -156,6 +174,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПользовательFTPСоединения',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:87px;top:24px;width:391px;height:19px;',
 		},
 		{
@@ -169,6 +189,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольFTPСоединения',
+			width: 185,
+			height: 19,
 			style: 'position:absolute;left:87px;top:48px;width:185px;height:19px;',
 		},
 		{
@@ -213,10 +235,14 @@
 			style: 'position:absolute;left:6px;top:24px;width:98px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'УчетнаяЗаписьПриемаОтправкиСообщений',
+			width: 372,
+			height: 19,
 			style: 'position:absolute;left:106px;top:24px;width:372px;height:19px;',
 		},
 		{
@@ -230,6 +256,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПочтовыйАдресПолучателя',
+			width: 372,
+			height: 19,
 			style: 'position:absolute;left:106px;top:0px;width:372px;height:19px;',
 		},
 		{
@@ -284,6 +312,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогИнформационнойБазыДляПодключения',
+			width: 339,
+			height: 19,
 			style: 'position:absolute;left:133px;top:0px;width:339px;height:19px;',
 		},
 					]
@@ -297,6 +327,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяСервераИнформационнойБазыДляПодключения',
+			width: 145,
+			height: 19,
 			style: 'position:absolute;left:133px;top:0px;width:145px;height:19px;',
 		},
 		{
@@ -310,6 +342,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяИнформационнойБазыНаСервереДляПодключения',
+			width: 115,
+			height: 19,
 			style: 'position:absolute;left:357px;top:0px;width:115px;height:19px;',
 		},
 					]
@@ -332,6 +366,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПользовательИнформационнойБазыДляПодключения',
+			width: 146,
+			height: 19,
 			style: 'position:absolute;left:139px;top:94px;width:146px;height:19px;',
 		},
 		{
@@ -345,6 +381,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольИнформационнойБазыДляПодключения',
+			width: 116,
+			height: 19,
 			style: 'position:absolute;left:362px;top:94px;width:116px;height:19px;',
 		},
 		{
@@ -386,10 +424,15 @@
 			style: 'position:absolute;left:6px;top:116px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'УзелФоновогоОбмена',
+			width: 391,
+			height: 19,
 			style: 'position:absolute;left:93px;top:116px;width:391px;height:19px;',
 		},
 		{
@@ -466,6 +509,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольНаПрием',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:250px;top:317px;width:120px;height:19px;',
 		},
 		{
@@ -484,6 +529,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольНаОтправку',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:250px;top:363px;width:120px;height:19px;',
 		},
 		{
@@ -520,6 +567,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаПротоколаОбмена',
+			width: 344,
+			height: 19,
 			style: 'position:absolute;left:140px;top:29px;width:344px;height:19px;',
 		},
 		{
@@ -829,10 +878,15 @@
 			style: 'position:absolute;left:16px;top:187px;width:130px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'УчетнаяЗаписьОтправкиСообщенияОбОшибке',
+			width: 336,
+			height: 19,
 			style: 'position:absolute;left:148px;top:187px;width:336px;height:19px;',
 		},
 		{
@@ -846,6 +900,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресДляОтправкиСообщенийОбОшибке',
+			width: 336,
+			height: 19,
 			style: 'position:absolute;left:148px;top:211px;width:336px;height:19px;',
 		},
 		{

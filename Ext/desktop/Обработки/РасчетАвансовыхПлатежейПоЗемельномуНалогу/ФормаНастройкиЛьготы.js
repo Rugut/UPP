@@ -88,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодНалоговойЛьготыОсвобождениеОтНалогообложенияПоСтатье395',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:380px;top:79px;width:120px;height:19px;',
 		},
 		{
@@ -100,6 +102,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодНалоговойЛьготыУменьшениеНалоговойБазыПоСтатье391',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:301px;top:154px;width:120px;height:19px;',
 		},
 		{

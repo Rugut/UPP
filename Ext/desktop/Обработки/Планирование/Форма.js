@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:790px;top:2px;width:80px;height:19px;',
 		},
 		{
@@ -22,7 +25,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:890px;top:2px;width:80px;height:19px;',
 		},
 		{
@@ -227,10 +233,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПолеВводаПериодичность',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:882px;top:24px;width:92px;height:19px;',
 		},
 		{
@@ -588,10 +598,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ПолеВводаСценарий',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:458px;top:2px;width:200px;height:19px;',
 		},
 		{

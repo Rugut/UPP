@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОКАТО',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:54px;top:10px;width:90px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:195px;top:10px;width:90px;height:19px;',
 		},
 		{

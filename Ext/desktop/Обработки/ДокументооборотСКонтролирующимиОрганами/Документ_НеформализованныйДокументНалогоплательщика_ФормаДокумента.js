@@ -16,10 +16,15 @@
 			style: 'position:absolute;left:8px;top:57px;width:95px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
+			trigger2Cls: 'x-form-select-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 477,
+			height: 19,
 			style: 'position:absolute;left:106px;top:57px;width:477px;height:19px;',
 		},
 		{
@@ -59,6 +64,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 107,
+			height: 19,
 			style: 'position:absolute;left:106px;top:33px;width:107px;height:19px;',
 		},
 		{
@@ -66,7 +73,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 119,
+			height: 19,
 			style: 'position:absolute;left:251px;top:33px;width:119px;height:19px;',
 		},
 		{
@@ -116,6 +126,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Тема',
+			width: 426,
+			height: 19,
 			style: 'position:absolute;left:98px;top:4px;width:426px;height:19px;',
 		},
 					]
@@ -141,10 +153,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:95px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'РегистрацияВИФНС',
+			width: 477,
+			height: 19,
 			style: 'position:absolute;left:106px;top:81px;width:477px;height:19px;',
 		},
 		{

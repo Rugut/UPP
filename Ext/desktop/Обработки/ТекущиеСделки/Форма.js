@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВыбКонтрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
 		},
 		{

@@ -56,10 +56,13 @@
 			style: 'position:absolute;left:447px;top:35px;width:45px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаДенежныхСредств',
+			width: 68,
+			height: 19,
 			style: 'position:absolute;left:492px;top:33px;width:68px;height:19px;',
 		},
 		{
@@ -67,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидСчета',
+			width: 101,
+			height: 19,
 			style: 'position:absolute;left:336px;top:33px;width:101px;height:19px;',
 		},
 		{
@@ -74,6 +79,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерСчета',
+			width: 155,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:155px;height:19px;',
 		},
 		{
@@ -87,6 +94,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 374,
+			height: 19,
 			style: 'position:absolute;left:102px;top:469px;width:374px;height:19px;',
 		},
 		{
@@ -111,6 +120,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'БИКБанка',
+			width: 155,
+			height: 19,
 			style: 'position:absolute;left:102px;top:82px;width:155px;height:19px;',
 		},
 		{
@@ -118,6 +129,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КоррсчетБанка',
+			width: 224,
+			height: 19,
 			style: 'position:absolute;left:336px;top:82px;width:224px;height:19px;',
 		},
 		{
@@ -164,6 +177,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'БИКБанкаДляРасчетов',
+			width: 153,
+			height: 19,
 			style: 'position:absolute;left:93px;top:21px;width:153px;height:19px;',
 		},
 		{
@@ -171,6 +186,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КоррсчетБанкаДляРасчетов',
+			width: 224,
+			height: 19,
 			style: 'position:absolute;left:328px;top:21px;width:224px;height:19px;',
 		},
 		{
@@ -214,6 +231,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерИДатаРазрешения',
+			width: 346,
+			height: 19,
 			style: 'position:absolute;left:205px;top:194px;width:346px;height:19px;',
 		},
 		{
@@ -256,7 +275,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОткрытия',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:94px;top:170px;width:96px;height:19px;',
 		},
 		{
@@ -270,7 +292,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаЗакрытия',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:94px;top:194px;width:96px;height:19px;',
 		},
 		{
@@ -345,6 +370,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:520px;top:469px;width:40px;height:19px;',
 		},
 		{

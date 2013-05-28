@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Документ',
+			width: 430,
+			height: 19,
 			style: 'position:absolute;left:90px;top:4px;width:430px;height:19px;',
 		},
 		{
@@ -48,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МаркаАвтомобиля',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:112px;top:21px;width:200px;height:19px;',
 		},
 		{
@@ -61,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'МаркаПрицепа',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:112px;top:45px;width:200px;height:19px;',
 		},
 		{
@@ -74,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ГосНомерАвтомобиля',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:376px;top:21px;width:136px;height:19px;',
 		},
 		{
@@ -87,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ГосНомерПрицепа',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:376px;top:45px;width:136px;height:19px;',
 		},
 		{
@@ -105,6 +115,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПунктПогрузки',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:252px;width:400px;height:19px;',
 		},
 		{
@@ -118,6 +130,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Перевозчик',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:159px;width:400px;height:19px;',
 		},
 		{
@@ -131,6 +145,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Заказчик',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:183px;width:400px;height:19px;',
 		},
 		{
@@ -144,6 +160,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПунктРазгрузки',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:228px;width:400px;height:19px;',
 		},
 		{
@@ -167,7 +185,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'СрокДоставки',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:112px;top:297px;width:88px;height:19px;',
 		},
 		{
@@ -181,6 +202,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Водитель',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:90px;width:400px;height:19px;',
 		},
 		{
@@ -194,6 +217,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидПеревозки',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:321px;width:400px;height:19px;',
 		},
 		{
@@ -222,6 +247,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВодительскоеУдостоверение',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:114px;width:400px;height:19px;',
 		},
 		{
@@ -229,6 +256,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ГосНомерАвтомобиля2',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:376px;top:21px;width:136px;height:19px;',
 		},
 		{
@@ -243,10 +272,14 @@
 			style: 'position:absolute;left:6px;top:366px;width:104px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТипЦен',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:112px;top:366px;width:400px;height:19px;',
 		},
 		{

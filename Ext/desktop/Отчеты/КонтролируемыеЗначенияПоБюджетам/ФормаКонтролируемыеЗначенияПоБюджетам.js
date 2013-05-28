@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиЦФО',
+			width: 315,
+			height: 19,
 			style: 'position:absolute;left:238px;top:21px;width:315px;height:19px;',
 		},
 		{
@@ -37,6 +39,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСЦФО',
+			width: 154,
+			height: 19,
 			style: 'position:absolute;left:238px;top:21px;width:154px;height:19px;',
 		},
 		{
@@ -44,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоЦФО',
+			width: 154,
+			height: 19,
 			style: 'position:absolute;left:399px;top:21px;width:154px;height:19px;',
 		},
 		{
@@ -51,6 +57,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПроект',
+			width: 315,
+			height: 19,
 			style: 'position:absolute;left:238px;top:45px;width:315px;height:19px;',
 		},
 		{
@@ -63,6 +71,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСПроект',
+			width: 154,
+			height: 19,
 			style: 'position:absolute;left:238px;top:45px;width:154px;height:19px;',
 		},
 		{
@@ -70,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоПроект',
+			width: 154,
+			height: 19,
 			style: 'position:absolute;left:399px;top:45px;width:154px;height:19px;',
 		},
 		{
@@ -100,7 +112,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтчета',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:58px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -110,10 +125,14 @@
 			style: 'position:absolute;left:174px;top:33px;width:56px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Сценарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:232px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -123,10 +142,13 @@
 			style: 'position:absolute;left:14px;top:78px;width:42px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидКонтролируемыхЗначений',
+			width: 181,
+			height: 19,
 			style: 'position:absolute;left:58px;top:78px;width:181px;height:19px;',
 		},
 		{
@@ -136,10 +158,13 @@
 			style: 'position:absolute;left:259px;top:78px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ИспользованиеКонтролируемыхЗначений',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:349px;top:78px;width:212px;height:19px;',
 		},
 		{

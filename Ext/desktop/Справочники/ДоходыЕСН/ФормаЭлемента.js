@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:304px;height:19px;',
 		},
 		{

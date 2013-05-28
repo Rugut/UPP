@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:308px;top:0px;width:280px;height:19px;',
 		},
 		{
@@ -41,6 +43,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСтатьяЗатрат',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:308px;top:24px;width:280px;height:19px;',
 		},
 		{
@@ -57,6 +61,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатурнаяГруппа',
+			width: 280,
+			height: 19,
 			style: 'position:absolute;left:308px;top:48px;width:280px;height:19px;',
 		},
 		{

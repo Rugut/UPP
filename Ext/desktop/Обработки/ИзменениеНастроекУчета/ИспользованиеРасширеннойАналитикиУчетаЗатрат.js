@@ -81,6 +81,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставлениеПериодаРегистрации',
+			width: 137,
+			height: 19,
 			style: 'position:absolute;left:304px;top:6px;width:137px;height:19px;',
 		},
 		{
@@ -282,6 +284,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставлениеПериодаРегистрацииПолныйРежим',
+			width: 137,
+			height: 19,
 			style: 'position:absolute;left:355px;top:30px;width:137px;height:19px;',
 		},
 		{

@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:8px;top:8px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 249,
+			height: 19,
 			style: 'position:absolute;left:93px;top:8px;width:249px;height:19px;',
 		},
 		{
@@ -114,7 +118,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаСоставления',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:96px;top:0px;width:136px;height:19px;',
 		},
 		{
@@ -128,6 +135,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерПачки',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:320px;top:0px;width:92px;height:19px;',
 		},
 		{
@@ -141,7 +150,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаДействия',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:546px;top:24px;width:92px;height:19px;',
 		},
 		{
@@ -168,10 +180,13 @@
 			style: 'position:absolute;left:0px;top:24px;width:96px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Исполнитель1',
+			width: 316,
+			height: 19,
 			style: 'position:absolute;left:96px;top:24px;width:316px;height:19px;',
 		},
 		{
@@ -281,10 +296,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТерриториальныеУсловия',
+			width: 66,
+			height: 19,
 			style: 'position:absolute;left:167px;top:120px;width:66px;height:19px;',
 		},
 		{
@@ -304,7 +323,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаСоставления1',
+			width: 117,
+			height: 19,
 			style: 'position:absolute;left:98px;top:0px;width:117px;height:19px;',
 		},
 		{
@@ -318,13 +340,19 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерПачки1',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:306px;top:0px;width:92px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Исполнитель',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:98px;top:24px;width:300px;height:19px;',
 		},
 		{
@@ -384,10 +412,13 @@
 			style: 'position:absolute;left:487px;top:8px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ФорматФайла',
+			width: 123,
+			height: 19,
 			style: 'position:absolute;left:576px;top:8px;width:123px;height:19px;',
 		},
 		{
@@ -685,7 +716,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'СтажРаботыНачалоПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:106px;top:13px;width:80px;height:19px;',
 		},
 		{
@@ -693,7 +727,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'СтажРаботыОкончаниеПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:106px;top:37px;width:80px;height:19px;',
 		},
 					]
@@ -803,6 +840,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресДляИнформирования',
+			width: 188,
+			height: 19,
 			style: 'position:absolute;left:476px;top:89px;width:188px;height:19px;',
 		},
 		{
@@ -1037,6 +1076,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресДляИнформирования1',
+			width: 225,
+			height: 19,
 			style: 'position:absolute;left:439px;top:65px;width:225px;height:19px;',
 		},
 		{
@@ -1196,6 +1237,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВвода1',
+			width: 45,
+			height: 19,
 			style: 'position:absolute;left:43px;top:148px;width:45px;height:19px;',
 		},
 		{

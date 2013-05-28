@@ -1158,6 +1158,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Идентификатор',
+			width: 513,
+			height: 17,
 			style: 'position:absolute;left:118px;top:89px;width:513px;height:17px;',
 		},
 		{

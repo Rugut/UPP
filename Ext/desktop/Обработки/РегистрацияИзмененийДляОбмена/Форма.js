@@ -16,10 +16,15 @@
 			style: 'position:absolute;left:8px;top:4px;width:74px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'УзелОбмена',
+			width: 609,
+			height: 19,
 			style: 'position:absolute;left:85px;top:4px;width:609px;height:19px;',
 		},
 		{

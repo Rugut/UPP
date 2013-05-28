@@ -67,7 +67,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПолеВводаТекДата',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:94px;top:26px;width:88px;height:19px;',
 		},
 		{
@@ -96,6 +99,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаКаталог',
+			width: 276,
+			height: 19,
 			style: 'position:absolute;left:150px;top:168px;width:276px;height:19px;',
 		},
 		{
@@ -108,6 +113,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаАдресаЭлПочты',
+			width: 276,
+			height: 19,
 			style: 'position:absolute;left:150px;top:192px;width:276px;height:19px;',
 		},
 		{
@@ -222,6 +229,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресЭлектроннойПочтыУчетнойЗаписи',
+			width: 276,
+			height: 19,
 			style: 'position:absolute;left:150px;top:216px;width:276px;height:19px;',
 		},
 					]

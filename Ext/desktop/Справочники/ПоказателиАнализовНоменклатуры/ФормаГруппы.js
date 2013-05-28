@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:304px;top:33px;width:88px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 177,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:177px;height:19px;',
 		},
 	],

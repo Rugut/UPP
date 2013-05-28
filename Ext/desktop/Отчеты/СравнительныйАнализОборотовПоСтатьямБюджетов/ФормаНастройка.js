@@ -25,10 +25,15 @@
 			style: 'position:absolute;left:286px;top:281px;width:160px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СтатьяБаланса',
+			width: 370,
+			height: 19,
 			style: 'position:absolute;left:96px;top:6px;width:370px;height:19px;',
 		},
 		{

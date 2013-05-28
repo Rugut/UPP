@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяОбрабФайла',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:46px;width:362px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдФайл',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:72px;width:362px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдДок',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:98px;width:362px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:124px;width:362px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимОтч',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:150px;width:362px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомКорр',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:176px;width:362px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетГод',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:228px;width:362px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетныйПериод',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:202px;width:362px;height:19px;',
 		},
 		{
@@ -124,6 +140,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НалоговыйОрган',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:8px;width:362px;height:19px;',
 		},
 		{

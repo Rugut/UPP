@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПутьКФайлу',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:8px;top:33px;width:304px;height:19px;',
 		},
 		{

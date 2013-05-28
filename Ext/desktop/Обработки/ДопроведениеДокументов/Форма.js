@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:63px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'НастройкаДопроведенияДокументов',
+			width: 345,
+			height: 19,
 			style: 'position:absolute;left:74px;top:33px;width:345px;height:19px;',
 		},
 		{
@@ -33,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоИнтервалаДопроведения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:78px;top:126px;width:80px;height:19px;',
 		},
 		{
@@ -47,7 +54,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонецИнтервалаДопроведения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:183px;top:126px;width:80px;height:19px;',
 		},
 		{

@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяКаталога',
+			width: 428,
+			height: 19,
 			style: 'position:absolute;left:76px;top:8px;width:428px;height:19px;',
 		},
 		{

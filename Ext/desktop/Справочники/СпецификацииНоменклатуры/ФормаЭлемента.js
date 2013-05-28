@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:468px;top:58px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 330,
+			height: 19,
 			style: 'position:absolute;left:94px;top:58px;width:330px;height:19px;',
 		},
 		{
@@ -42,10 +46,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Родитель',
+			width: 550,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:550px;height:19px;',
 		},
 		{
@@ -59,6 +68,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодВерсии',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:604px;top:58px;width:40px;height:19px;',
 		},
 		{
@@ -77,6 +88,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 550,
+			height: 19,
 			style: 'position:absolute;left:94px;top:392px;width:550px;height:19px;',
 		},
 		{
@@ -606,10 +619,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Состояние',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:108px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -617,7 +633,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаУтверждения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:108px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -627,10 +646,14 @@
 			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 198,
+			height: 19,
 			style: 'position:absolute;left:108px;top:54px;width:198px;height:19px;',
 		},
 		{
@@ -640,10 +663,13 @@
 			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ГруппаДоступа',
+			width: 198,
+			height: 19,
 			style: 'position:absolute;left:108px;top:78px;width:198px;height:19px;',
 		},
 					]
@@ -673,10 +699,14 @@
 			style: 'position:absolute;left:6px;top:22px;width:78px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Номенклатура',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:86px;top:22px;width:220px;height:19px;',
 		},
 		{
@@ -686,10 +716,14 @@
 			style: 'position:absolute;left:326px;top:22px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ХарактеристикаНоменклатуры',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:416px;top:22px;width:220px;height:19px;',
 		},
 		{
@@ -702,10 +736,13 @@
 			style: 'position:absolute;left:86px;top:46px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаИзмерения',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:226px;top:46px;width:80px;height:19px;',
 		},
 		{
@@ -713,13 +750,19 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерОперацииМаршрута',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:70px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТочкаМаршрута',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:416px;top:46px;width:220px;height:19px;',
 		},
 		{
@@ -1107,10 +1150,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СостояниеУзел',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:108px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -1124,7 +1170,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаУтвержденияУзел',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:108px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -1134,10 +1183,14 @@
 			style: 'position:absolute;left:6px;top:54px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОтветственныйУзел',
+			width: 198,
+			height: 19,
 			style: 'position:absolute;left:108px;top:54px;width:198px;height:19px;',
 		},
 		{
@@ -1147,10 +1200,13 @@
 			style: 'position:absolute;left:6px;top:78px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ГруппаДоступаУзел',
+			width: 198,
+			height: 19,
 			style: 'position:absolute;left:108px;top:78px;width:198px;height:19px;',
 		},
 					]

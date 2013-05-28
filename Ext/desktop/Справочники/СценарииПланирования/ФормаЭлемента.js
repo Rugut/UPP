@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 240,
+			height: 19,
 			style: 'position:absolute;left:157px;top:6px;width:240px;height:19px;',
 		},
 		{
@@ -39,10 +41,14 @@
 			style: 'position:absolute;left:6px;top:58px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Периодичность',
+			width: 364,
+			height: 19,
 			style: 'position:absolute;left:157px;top:58px;width:364px;height:19px;',
 		},
 		{
@@ -52,10 +58,14 @@
 			style: 'position:absolute;left:6px;top:32px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ДетализацияПланирования',
+			width: 364,
+			height: 19,
 			style: 'position:absolute;left:157px;top:32px;width:364px;height:19px;',
 		},
 		{
@@ -75,10 +85,14 @@
 			style: 'position:absolute;left:6px;top:84px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Валюта',
+			width: 107,
+			height: 19,
 			style: 'position:absolute;left:157px;top:84px;width:107px;height:19px;',
 		},
 		{
@@ -97,6 +111,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:441px;top:6px;width:80px;height:19px;',
 		},
 					]
@@ -106,10 +122,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаКурсов',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:58px;top:6px;width:80px;height:19px;',
 		},
 		{

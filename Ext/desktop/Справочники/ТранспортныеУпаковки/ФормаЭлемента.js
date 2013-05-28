@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:101px;top:57px;width:291px;height:19px;',
 		},
 		{
@@ -29,10 +31,14 @@
 			style: 'position:absolute;left:8px;top:81px;width:87px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Владелец',
+			width: 291,
+			height: 19,
 			style: 'position:absolute;left:101px;top:81px;width:291px;height:19px;',
 		},
 		{

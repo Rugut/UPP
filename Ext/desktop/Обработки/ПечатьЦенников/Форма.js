@@ -98,10 +98,14 @@
 			style: 'position:absolute;left:341px;top:33px;width:44px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ТипЦен',
+			width: 236,
+			height: 19,
 			style: 'position:absolute;left:390px;top:33px;width:236px;height:19px;',
 		},
 		{
@@ -218,10 +222,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Валюта',
+			width: 92,
+			height: 19,
 			style: 'position:absolute;left:680px;top:33px;width:92px;height:19px;',
 		},
 		{
@@ -231,10 +239,14 @@
 			style: 'position:absolute;left:632px;top:33px;width:43px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 244,
+			height: 19,
 			style: 'position:absolute;left:83px;top:33px;width:244px;height:19px;',
 		},
 		{

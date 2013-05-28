@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОГРН',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:55px;top:84px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Адрес',
+			width: 326,
+			height: 19,
 			style: 'position:absolute;left:55px;top:59px;width:326px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресКодПоКЛАДР',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:477px;top:59px;width:80px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:477px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 342,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
 		},
 	],

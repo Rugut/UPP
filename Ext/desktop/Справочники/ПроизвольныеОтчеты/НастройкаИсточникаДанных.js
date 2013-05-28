@@ -84,6 +84,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяИсточника',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
 		},
 		{
@@ -97,6 +99,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НастройкаОтчета',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
 		},
 		{
@@ -118,17 +122,24 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СохраненнаяНастройка',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПроизвольныйОтчет',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
 		},
 					]
@@ -144,10 +155,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ВнешняяОбработка',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
 		},
 					]

@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:100px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -32,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:204px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -60,10 +66,14 @@
 			style: 'position:absolute;left:6px;top:32px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Организация',
+			width: 248,
+			height: 19,
 			style: 'position:absolute;left:100px;top:32px;width:248px;height:19px;',
 		},
 		{
@@ -192,10 +202,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Валюта',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:116px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -208,6 +222,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерЖурнала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:116px;top:32px;width:80px;height:19px;',
 		},
 		{
@@ -220,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Подстрока',
+			width: 364,
+			height: 19,
 			style: 'position:absolute;left:72px;top:125px;width:364px;height:19px;',
 		},
 		{
@@ -249,10 +267,15 @@
 			style: 'position:absolute;left:6px;top:59px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Регистратор',
+			width: 320,
+			height: 19,
 			style: 'position:absolute;left:116px;top:59px;width:320px;height:19px;',
 		},
 					]

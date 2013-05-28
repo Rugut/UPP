@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 90,
+			height: 19,
 			style: 'position:absolute;left:461px;top:33px;width:90px;height:19px;',
 		},
 		{
@@ -27,7 +29,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:571px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -71,10 +76,15 @@
 			style: 'position:absolute;left:375px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 230,
+			height: 19,
 			style: 'position:absolute;left:461px;top:57px;width:230px;height:19px;',
 		},
 		{
@@ -89,10 +99,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:94px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Сотрудник',
+			width: 247,
+			height: 19,
 			style: 'position:absolute;left:104px;top:33px;width:247px;height:19px;',
 		},
 		{
@@ -106,7 +120,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаИзменения',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:356px;top:104px;width:100px;height:19px;',
 		},
 		{

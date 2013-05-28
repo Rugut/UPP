@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 49,
+			height: 19,
 			style: 'position:absolute;left:90px;top:58px;width:49px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 406,
+			height: 19,
 			style: 'position:absolute;left:90px;top:106px;width:406px;height:19px;',
 		},
 		{
@@ -42,10 +46,14 @@
 			style: 'position:absolute;left:8px;top:34px;width:79px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 406,
+			height: 19,
 			style: 'position:absolute;left:90px;top:34px;width:406px;height:19px;',
 		},
 		{
@@ -59,6 +67,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 406,
+			height: 45,
 			style: 'position:absolute;left:90px;top:154px;width:406px;height:45px;',
 		},
 		{
@@ -72,6 +82,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование1',
+			width: 49,
+			height: 19,
 			style: 'position:absolute;left:90px;top:82px;width:49px;height:19px;',
 		},
 		{
@@ -100,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЖДСтанцияНазначения',
+			width: 406,
+			height: 19,
 			style: 'position:absolute;left:90px;top:130px;width:406px;height:19px;',
 		},
 	],

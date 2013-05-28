@@ -31,7 +31,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Период',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:164px;top:0px;width:96px;height:19px;',
 		},
 		{
@@ -45,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НазваниеКонсолидируемойГруппы',
+			width: 476,
+			height: 19,
 			style: 'position:absolute;left:164px;top:24px;width:476px;height:19px;',
 		},
 		{
@@ -252,10 +257,13 @@
 			style: 'position:absolute;left:0px;top:22px;width:60px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-search-trigger',
 			name: 'Операция',
+			width: 570,
+			height: 19,
 			style: 'position:absolute;left:70px;top:22px;width:570px;height:19px;',
 		},
 		{

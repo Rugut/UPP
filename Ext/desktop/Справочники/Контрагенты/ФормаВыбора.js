@@ -297,6 +297,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеОтбораСпискаКонтрагентов',
+			width: 442,
+			height: 19,
 			style: 'position:absolute;left:226px;top:0px;width:442px;height:19px;',
 		},
 		{

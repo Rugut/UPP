@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:200px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:346px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 619,
+			height: 19,
 			style: 'position:absolute;left:96px;top:346px;width:619px;height:19px;',
 		},
 		{
@@ -60,6 +69,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 619,
+			height: 19,
 			style: 'position:absolute;left:96px;top:371px;width:619px;height:19px;',
 		},
 		{
@@ -69,10 +80,14 @@
 			style: 'position:absolute;left:8px;top:56px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 225,
+			height: 19,
 			style: 'position:absolute;left:96px;top:56px;width:225px;height:19px;',
 		},
 		{
@@ -82,10 +97,13 @@
 			style: 'position:absolute;left:8px;top:80px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Событие',
+			width: 225,
+			height: 19,
 			style: 'position:absolute;left:96px;top:80px;width:225px;height:19px;',
 		},
 		{
@@ -279,10 +297,14 @@
 			style: 'position:absolute;left:344px;top:80px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СобытиеРегл',
+			width: 283,
+			height: 19,
 			style: 'position:absolute;left:432px;top:80px;width:283px;height:19px;',
 		},
 		{

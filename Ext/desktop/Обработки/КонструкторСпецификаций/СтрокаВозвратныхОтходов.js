@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номенклатура',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:81px;width:250px;height:19px;',
 		},
 		{
@@ -38,10 +40,13 @@
 			style: 'position:absolute;left:148px;top:129px;width:89px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЕдиницаИзмерения',
+			width: 89,
+			height: 19,
 			style: 'position:absolute;left:309px;top:129px;width:89px;height:19px;',
 		},
 		{
@@ -51,10 +56,15 @@
 			style: 'position:absolute;left:8px;top:153px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СтатьяЗатрат',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:153px;width:250px;height:19px;',
 		},
 		{
@@ -68,6 +78,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ХарактеристикаНоменклатуры',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:105px;width:250px;height:19px;',
 		},
 		{
@@ -96,6 +108,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерОперацииМаршрута',
+			width: 89,
+			height: 19,
 			style: 'position:absolute;left:148px;top:33px;width:89px;height:19px;',
 		},
 		{
@@ -130,6 +144,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидНорматива',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:57px;width:250px;height:19px;',
 		},
 		{
@@ -139,10 +155,13 @@
 			style: 'position:absolute;left:8px;top:201px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'УказаниеНорматива',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:201px;width:250px;height:19px;',
 		},
 		{
@@ -156,6 +175,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Формула',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:225px;width:250px;height:19px;',
 		},
 		{
@@ -165,10 +186,13 @@
 			style: 'position:absolute;left:8px;top:249px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СписаниеКомплектующей',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:249px;width:250px;height:19px;',
 		},
 		{
@@ -178,10 +202,14 @@
 			style: 'position:absolute;left:8px;top:273px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'СвойствоДляСписания',
+			width: 250,
+			height: 19,
 			style: 'position:absolute;left:148px;top:273px;width:250px;height:19px;',
 		},
 	],

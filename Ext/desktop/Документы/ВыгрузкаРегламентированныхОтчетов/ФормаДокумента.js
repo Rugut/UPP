@@ -26,6 +26,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 102,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:102px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 127,
+			height: 19,
 			style: 'position:absolute;left:216px;top:33px;width:127px;height:19px;',
 		},
 		{
@@ -43,10 +48,15 @@
 			style: 'position:absolute;left:8px;top:57px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 251,
+			height: 19,
 			style: 'position:absolute;left:93px;top:57px;width:251px;height:19px;',
 		},
 		{
@@ -162,6 +172,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИМНС',
+			width: 62,
+			height: 19,
 			style: 'position:absolute;left:424px;top:57px;width:62px;height:19px;',
 		},
 		{
@@ -175,6 +187,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 622,
+			height: 19,
 			style: 'position:absolute;left:90px;top:398px;width:622px;height:19px;',
 		},
 		{

@@ -27,10 +27,15 @@
 			style: 'position:absolute;left:0px;top:2px;width:92px;height:15px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ОтборУчетнаяЗапись',
+			width: 681,
+			height: 19,
 			style: 'position:absolute;left:97px;top:0px;width:681px;height:19px;',
 		},
 					]
@@ -257,6 +262,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтбораЦикловОбмена',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
 		{
@@ -275,6 +282,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбора',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
 		{
@@ -282,6 +291,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтчетДляОтбораСтрока',
+			width: 382,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:382px;height:19px;',
 		},
 					]
@@ -291,10 +302,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидОтчета',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
 					]
@@ -343,10 +358,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ЭлектронноеПредставлениеДляОтбора',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
 					]
@@ -510,10 +529,14 @@
 			style: 'position:absolute;left:4px;top:1px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОтборИсходящийДокумент',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:153px;top:1px;width:410px;height:19px;',
 		},
 					]
@@ -625,10 +648,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОтборВходящийДокумент',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:153px;top:1px;width:410px;height:19px;',
 		},
 		{
@@ -835,6 +862,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтбораЦикловОбменаЗапросы',
+			width: 148,
+			height: 19,
 			style: 'position:absolute;left:0px;top:1px;width:148px;height:19px;',
 		},
 		{
@@ -849,10 +878,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОтборЗапрос',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
 					]
@@ -862,10 +895,13 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОтборВидУслуги',
+			width: 410,
+			height: 19,
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:19px;',
 		},
 					]

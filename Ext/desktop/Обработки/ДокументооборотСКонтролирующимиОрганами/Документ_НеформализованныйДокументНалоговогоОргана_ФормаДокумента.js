@@ -70,6 +70,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПредставлениеВложенныеДокументы',
+			width: 390,
+			height: 17,
 			style: 'position:absolute;left:125px;top:5px;width:390px;height:17px;',
 		},
 					]

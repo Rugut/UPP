@@ -112,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИдентификаторОтправкиНаСервере',
+			width: 249,
+			height: 19,
 			style: 'position:absolute;left:95px;top:33px;width:249px;height:19px;',
 		},
 		{

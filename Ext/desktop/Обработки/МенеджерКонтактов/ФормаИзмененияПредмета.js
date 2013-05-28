@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Предмет',
+			width: 384,
+			height: 19,
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:19px;',
 		},
 	],

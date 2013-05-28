@@ -66,6 +66,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СсылкаНаОбъект',
+			width: 425,
+			height: 19,
 			style: 'position:absolute;left:52px;top:32px;width:425px;height:19px;',
 		},
 	],

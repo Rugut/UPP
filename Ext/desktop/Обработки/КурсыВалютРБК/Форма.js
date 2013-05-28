@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачДата',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:114px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонДата',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:214px;top:33px;width:80px;height:19px;',
 		},
 		{

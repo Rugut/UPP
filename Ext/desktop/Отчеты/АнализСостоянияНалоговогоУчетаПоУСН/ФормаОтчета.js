@@ -27,10 +27,13 @@
 			style: 'position:absolute;left:265px;top:8px;width:70px;height:18px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:338px;top:7px;width:220px;height:19px;',
 		},
 		{
@@ -38,7 +41,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:57px;top:7px;width:80px;height:19px;',
 		},
 		{
@@ -46,7 +52,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'КонецПериода',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:155px;top:7px;width:80px;height:19px;',
 		},
 		{

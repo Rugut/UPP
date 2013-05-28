@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатСтрахователяПредставление',
+			width: 419,
+			height: 19,
 			style: 'position:absolute;left:157px;top:8px;width:419px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СертификатФССПредставление',
+			width: 419,
+			height: 19,
 			style: 'position:absolute;left:157px;top:34px;width:419px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогВыгрузки',
+			width: 419,
+			height: 19,
 			style: 'position:absolute;left:157px;top:68px;width:419px;height:19px;',
 		},
 	],

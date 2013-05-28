@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:507px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:627px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:296px;height:19px;',
 		},
 		{
@@ -56,10 +65,15 @@
 			style: 'position:absolute;left:8px;top:57px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 296,
+			height: 19,
 			style: 'position:absolute;left:96px;top:57px;width:296px;height:19px;',
 		},
 		{
@@ -73,6 +87,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 796,
+			height: 19,
 			style: 'position:absolute;left:96px;top:528px;width:796px;height:19px;',
 		},
 		{
@@ -153,10 +169,15 @@
 			style: 'position:absolute;left:12px;top:275px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Руководитель',
+			width: 320,
+			height: 19,
 			style: 'position:absolute;left:119px;top:275px;width:320px;height:19px;',
 		},
 		{
@@ -166,10 +187,15 @@
 			style: 'position:absolute;left:444px;top:275px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ДолжностьРуководителя',
+			width: 320,
+			height: 19,
 			style: 'position:absolute;left:554px;top:275px;width:320px;height:19px;',
 		},
 		{
@@ -183,6 +209,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:146px;top:53px;width:110px;height:19px;',
 		},
 		{
@@ -196,6 +224,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДополнительныйКодФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:379px;top:53px;width:110px;height:19px;',
 		},
 		{
@@ -209,6 +239,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПодчиненностиФСС',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:599px;top:53px;width:60px;height:19px;',
 		},
 		{
@@ -222,6 +254,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
+			width: 618,
+			height: 19,
 			style: 'position:absolute;left:258px;top:27px;width:618px;height:19px;',
 		},
 		{
@@ -245,6 +279,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Адрес',
+			width: 818,
+			height: 19,
 			style: 'position:absolute;left:58px;top:79px;width:818px;height:19px;',
 		},
 		{
@@ -259,10 +295,14 @@
 			style: 'position:absolute;left:8px;top:112px;width:868px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Банк',
+			width: 611,
+			height: 19,
 			style: 'position:absolute;left:58px;top:133px;width:611px;height:19px;',
 		},
 		{
@@ -276,6 +316,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерСчета',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:740px;top:133px;width:136px;height:19px;',
 		},
 		{
@@ -289,6 +331,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеБанка',
+			width: 430,
+			height: 19,
 			style: 'position:absolute;left:113px;top:159px;width:430px;height:19px;',
 		},
 		{
@@ -302,6 +346,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'БИКБанка',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:581px;top:159px;width:88px;height:19px;',
 		},
 		{
@@ -315,6 +361,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КоррСчет',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:740px;top:159px;width:136px;height:19px;',
 		},
 		{
@@ -334,6 +382,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерЛицевогоСчета',
+			width: 150,
+			height: 19,
 			style: 'position:absolute;left:113px;top:185px;width:150px;height:19px;',
 		},
 		{
@@ -372,6 +422,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Телефон',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:535px;top:57px;width:120px;height:19px;',
 		},
 	],

@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -53,6 +59,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиКонтрагент',
+			width: 322,
+			height: 19,
 			style: 'position:absolute;left:296px;top:0px;width:322px;height:19px;',
 		},
 		{
@@ -65,6 +73,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСКонтрагент',
+			width: 159,
+			height: 19,
 			style: 'position:absolute;left:296px;top:0px;width:159px;height:19px;',
 		},
 		{
@@ -72,6 +82,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоКонтрагент',
+			width: 159,
+			height: 19,
 			style: 'position:absolute;left:459px;top:0px;width:159px;height:19px;',
 		},
 		{
@@ -83,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиДоговорКонтрагента',
+			width: 322,
+			height: 19,
 			style: 'position:absolute;left:296px;top:24px;width:322px;height:19px;',
 		},
 		{
@@ -95,6 +109,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиСДоговорКонтрагента',
+			width: 159,
+			height: 19,
 			style: 'position:absolute;left:296px;top:24px;width:159px;height:19px;',
 		},
 		{
@@ -102,6 +118,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиПоДоговорКонтрагента',
+			width: 159,
+			height: 19,
 			style: 'position:absolute;left:459px;top:24px;width:159px;height:19px;',
 		},
 		{

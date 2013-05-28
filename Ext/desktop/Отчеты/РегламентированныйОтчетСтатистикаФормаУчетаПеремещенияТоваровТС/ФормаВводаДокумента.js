@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокВыбор',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:157px;top:5px;width:205px;height:19px;',
 		},
 		{
@@ -27,7 +29,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДокДата',
+			width: 83,
+			height: 19,
 			style: 'position:absolute;left:157px;top:53px;width:83px;height:19px;',
 		},
 		{
@@ -35,6 +40,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокНомер',
+			width: 205,
+			height: 19,
 			style: 'position:absolute;left:157px;top:29px;width:205px;height:19px;',
 		},
 		{

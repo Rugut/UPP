@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:382px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 251,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:251px;height:19px;',
 		},
 		{
@@ -57,7 +61,8 @@
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Предоставлять отпуск всем сотрудникам',
+			fieldLabel: 'Предоставлять отпуск всем сотрудникам',
+			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:131px;width:232px;height:19px;',
 		},
 		{

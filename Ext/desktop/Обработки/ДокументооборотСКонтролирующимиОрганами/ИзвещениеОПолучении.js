@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаВремяПолучения',
+			width: 467,
+			height: 19,
 			style: 'position:absolute;left:173px;top:8px;width:467px;height:19px;',
 		},
 		{

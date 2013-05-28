@@ -160,6 +160,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаРежимСложенияОбъединения',
+			width: 286,
+			height: 19,
 			style: 'position:absolute;left:504px;top:430px;width:286px;height:19px;',
 		},
 		{

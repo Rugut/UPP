@@ -80,10 +80,14 @@
 			style: 'position:absolute;left:8px;top:7px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппыУчетаОС',
+			width: 427,
+			height: 19,
 			style: 'position:absolute;left:103px;top:7px;width:427px;height:19px;',
 		},
 		{

@@ -20,7 +20,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоСобытия',
+			width: 122,
+			height: 19,
 			style: 'position:absolute;left:204px;top:36px;width:122px;height:19px;',
 		},
 		{
@@ -34,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОкончаниеСобытия',
+			width: 122,
+			height: 19,
 			style: 'position:absolute;left:204px;top:60px;width:122px;height:19px;',
 		},
 		{

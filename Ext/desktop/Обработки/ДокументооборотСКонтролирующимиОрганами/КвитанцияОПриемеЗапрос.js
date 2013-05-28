@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПринятФайла',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:47px;width:362px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаВремяПредст',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:73px;width:362px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПост',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:152px;width:362px;height:19px;',
 		},
 		{
@@ -59,6 +65,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КНД',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:99px;width:362px;height:19px;',
 		},
 		{
@@ -72,6 +80,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаимВидДок',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:125px;width:362px;height:19px;',
 		},
 		{
@@ -85,6 +95,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегНом',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:204px;width:362px;height:19px;',
 		},
 		{
@@ -98,6 +110,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаПрин',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:178px;width:362px;height:19px;',
 		},
 		{
@@ -111,6 +125,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НалоговыйОрган',
+			width: 362,
+			height: 19,
 			style: 'position:absolute;left:193px;top:9px;width:362px;height:19px;',
 		},
 		{

@@ -146,6 +146,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПользователяПрокси',
+			width: 174,
+			height: 19,
 			style: 'position:absolute;left:84px;top:0px;width:174px;height:19px;',
 		},
 		{
@@ -153,6 +155,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольПользователяПрокси',
+			width: 174,
+			height: 19,
 			style: 'position:absolute;left:84px;top:26px;width:174px;height:19px;',
 		},
 					]

@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:8px;top:32px;width:64px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'КассаККМ',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:74px;top:32px;width:232px;height:19px;',
 		},
 		{
@@ -33,7 +37,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Организация',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:74px;top:8px;width:80px;height:19px;',
 		},
 		{
@@ -64,6 +71,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Склад',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:74px;top:56px;width:232px;height:19px;',
 		},
 		{

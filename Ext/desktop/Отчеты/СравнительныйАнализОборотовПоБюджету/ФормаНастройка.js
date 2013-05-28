@@ -171,10 +171,13 @@
 			style: 'position:absolute;left:6px;top:181px;width:460px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Бюджет',
+			width: 367,
+			height: 19,
 			style: 'position:absolute;left:99px;top:6px;width:367px;height:19px;',
 		},
 		{

@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:66px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -39,6 +42,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиНоменклатура',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:264px;top:0px;width:232px;height:19px;',
 		},
 		{
@@ -55,6 +60,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеНастройкиТипЦен',
+			width: 232,
+			height: 19,
 			style: 'position:absolute;left:264px;top:24px;width:232px;height:19px;',
 		},
 		{
@@ -77,10 +84,13 @@
 			style: 'position:absolute;left:148px;top:33px;width:64px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВалютаОтчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:214px;top:33px;width:80px;height:19px;',
 		},
 	],

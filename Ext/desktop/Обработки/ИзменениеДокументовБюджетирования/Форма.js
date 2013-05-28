@@ -103,10 +103,15 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Сценарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:88px;top:6px;width:220px;height:19px;',
 		},
 		{
@@ -126,7 +131,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:386px;top:6px;width:96px;height:19px;',
 		},
 		{
@@ -140,7 +148,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:502px;top:6px;width:96px;height:19px;',
 		},
 		{

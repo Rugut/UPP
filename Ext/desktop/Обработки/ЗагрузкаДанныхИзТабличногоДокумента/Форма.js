@@ -205,12 +205,14 @@
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Не создавать новых элементов',
+			fieldLabel: 'Не создавать новых элементов',
+			labelWidth: 50,
 			style: 'position:absolute;left:295px;top:6px;width:191px;height:19px;',
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Замещать существующие записи',
+			fieldLabel: 'Замещать существующие записи',
+			labelWidth: 50,
 			style: 'position:absolute;left:295px;top:6px;width:191px;height:19px;',
 		},
 					]
@@ -245,10 +247,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СсылкаИсточника',
+			width: 247,
+			height: 19,
 			style: 'position:absolute;left:95px;top:0px;width:247px;height:19px;',
 		},
 		{
@@ -256,6 +263,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТабличнаяЧастьИсточника',
+			width: 193,
+			height: 19,
 			style: 'position:absolute;left:439px;top:0px;width:193px;height:19px;',
 		},
 		{

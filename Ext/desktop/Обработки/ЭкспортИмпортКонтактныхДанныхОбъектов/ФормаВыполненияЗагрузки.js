@@ -323,6 +323,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РодительДляЗагрузки',
+			width: 252,
+			height: 19,
 			style: 'position:absolute;left:200px;top:21px;width:252px;height:19px;',
 		},
 		{

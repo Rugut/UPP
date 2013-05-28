@@ -110,10 +110,13 @@
 			style: 'position:absolute;left:12px;top:49px;width:222px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ПорядокНазначенияPLU',
+			width: 219,
+			height: 20,
 			style: 'position:absolute;left:237px;top:48px;width:219px;height:20px;',
 		},
 		{
@@ -151,6 +154,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'EAN13ПрефиксШтучногоТовара',
+			width: 52,
+			height: 19,
 			style: 'position:absolute;left:213px;top:48px;width:52px;height:19px;',
 		},
 		{
@@ -158,6 +163,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'EAN13ПрефиксВесовогоТовара',
+			width: 52,
+			height: 19,
 			style: 'position:absolute;left:213px;top:108px;width:52px;height:19px;',
 		},
 		{

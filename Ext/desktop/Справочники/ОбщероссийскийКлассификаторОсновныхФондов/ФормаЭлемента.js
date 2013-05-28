@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 261,
+			height: 19,
 			style: 'position:absolute;left:48px;top:33px;width:261px;height:19px;',
 		},
 		{
@@ -46,6 +48,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтрольноеЧисло',
+			width: 43,
+			height: 19,
 			style: 'position:absolute;left:439px;top:33px;width:43px;height:19px;',
 		},
 		{
@@ -68,10 +72,14 @@
 			style: 'position:absolute;left:8px;top:185px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'АмортизационнаяГруппа',
+			width: 325,
+			height: 19,
 			style: 'position:absolute;left:160px;top:185px;width:325px;height:19px;',
 		},
 	],

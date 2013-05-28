@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:544px;top:33px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 406,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:406px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 514,
+			height: 19,
 			style: 'position:absolute;left:94px;top:398px;width:514px;height:19px;',
 		},
 		{
@@ -354,10 +360,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 514,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:514px;height:19px;',
 		},
 		{

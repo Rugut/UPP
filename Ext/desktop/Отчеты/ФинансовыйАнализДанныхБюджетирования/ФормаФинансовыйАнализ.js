@@ -10,10 +10,15 @@
 	items:
 	[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Сценарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:114px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -23,10 +28,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВариантНастройки',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:114px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -46,7 +55,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:412px;top:33px;width:96px;height:19px;',
 		},
 		{
@@ -60,7 +72,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:528px;top:33px;width:96px;height:19px;',
 		},
 		{

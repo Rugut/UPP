@@ -302,6 +302,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаВариантаЗачения',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:234px;top:4px;width:400px;height:19px;',
 		},
 		{
@@ -315,6 +317,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Всего',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:640px;top:353px;width:80px;height:19px;',
 		},
 		{
@@ -328,6 +332,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВсегоНДС',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:448px;top:353px;width:80px;height:19px;',
 		},
 		{
@@ -379,10 +385,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:220px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СтранаПроисхождения',
+			width: 400,
+			height: 19,
 			style: 'position:absolute;left:226px;top:0px;width:400px;height:19px;',
 		},
 					]

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 64,
+			height: 19,
 			style: 'position:absolute;left:507px;top:33px;width:64px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 332,
+			height: 19,
 			style: 'position:absolute;left:134px;top:33px;width:332px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Префикс',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:279px;top:57px;width:40px;height:19px;',
 		},
 		{
@@ -76,10 +82,14 @@
 			style: 'position:absolute;left:8px;top:280px;width:124px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГоловнаяОрганизация',
+			width: 437,
+			height: 19,
 			style: 'position:absolute;left:134px;top:280px;width:437px;height:19px;',
 		},
 		{
@@ -102,10 +112,14 @@
 			style: 'position:absolute;left:8px;top:304px;width:124px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОсновнойБанковскийСчет',
+			width: 437,
+			height: 19,
 			style: 'position:absolute;left:134px;top:304px;width:437px;height:19px;',
 		},
 		{
@@ -129,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 98,
+			height: 19,
 			style: 'position:absolute;left:107px;top:25px;width:98px;height:19px;',
 		},
 		{
@@ -142,6 +158,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:350px;top:25px;width:100px;height:19px;',
 		},
 		{
@@ -160,6 +178,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИМНС',
+			width: 49,
+			height: 19,
 			style: 'position:absolute;left:107px;top:92px;width:49px;height:19px;',
 		},
 		{
@@ -173,6 +193,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СвидетельствоСерияНомер',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:255px;top:139px;width:300px;height:19px;',
 		},
 		{
@@ -186,7 +208,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'СвидетельствоДатаВыдачи',
+			width: 75,
+			height: 19,
 			style: 'position:absolute;left:107px;top:139px;width:75px;height:19px;',
 		},
 		{
@@ -200,6 +225,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СвидетельствоНаименованиеОргана',
+			width: 367,
+			height: 19,
 			style: 'position:absolute;left:188px;top:178px;width:367px;height:19px;',
 		},
 		{
@@ -213,6 +240,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СвидетельствоКодОргана',
+			width: 34,
+			height: 19,
 			style: 'position:absolute;left:57px;top:178px;width:34px;height:19px;',
 		},
 		{
@@ -236,7 +265,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРегистрации',
+			width: 77,
+			height: 19,
 			style: 'position:absolute;left:373px;top:49px;width:77px;height:19px;',
 		},
 		{
@@ -250,6 +282,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОГРН',
+			width: 98,
+			height: 19,
 			style: 'position:absolute;left:107px;top:49px;width:98px;height:19px;',
 		},
 		{
@@ -263,6 +297,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеИМНС',
+			width: 300,
+			height: 19,
 			style: 'position:absolute;left:255px;top:92px;width:300px;height:19px;',
 		},
 		{
@@ -377,6 +413,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКПО',
+			width: 107,
+			height: 19,
 			style: 'position:absolute;left:257px;top:25px;width:107px;height:19px;',
 		},
 		{
@@ -396,6 +434,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодОКОПФ',
+			width: 28,
+			height: 19,
 			style: 'position:absolute;left:66px;top:72px;width:28px;height:19px;',
 		},
 		{
@@ -409,6 +449,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеОКОПФ',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:231px;top:72px;width:324px;height:19px;',
 		},
 		{
@@ -427,6 +469,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодОКОПФ1',
+			width: 28,
+			height: 19,
 			style: 'position:absolute;left:66px;top:118px;width:28px;height:19px;',
 		},
 		{
@@ -440,6 +484,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеОКОПФ1',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:231px;top:118px;width:324px;height:19px;',
 		},
 		{
@@ -463,6 +509,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодОКОПФ2',
+			width: 73,
+			height: 19,
 			style: 'position:absolute;left:66px;top:164px;width:73px;height:19px;',
 		},
 		{
@@ -476,6 +524,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеОКОПФ2',
+			width: 324,
+			height: 19,
 			style: 'position:absolute;left:231px;top:164px;width:324px;height:19px;',
 		},
 		{
@@ -494,6 +544,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодОКОНХ',
+			width: 91,
+			height: 19,
 			style: 'position:absolute;left:464px;top:25px;width:91px;height:19px;',
 		},
 		{
@@ -501,6 +553,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПоОКАТО',
+			width: 100,
+			height: 19,
 			style: 'position:absolute;left:66px;top:25px;width:100px;height:19px;',
 		},
 					]
@@ -520,6 +574,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерПФР',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:88px;top:130px;width:110px;height:19px;',
 		},
 		{
@@ -557,6 +613,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:88px;top:178px;width:110px;height:19px;',
 		},
 		{
@@ -572,10 +630,14 @@
 			style: 'position:absolute;left:6px;top:81px;width:181px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ТерриториальныеУсловияПФР',
+			width: 82,
+			height: 19,
 			style: 'position:absolute;left:216px;top:81px;width:82px;height:19px;',
 		},
 		{
@@ -584,10 +646,14 @@
 			style: 'position:absolute;left:6px;top:108px;width:549px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидСтавокЕСНиПФР',
+			width: 339,
+			height: 19,
 			style: 'position:absolute;left:216px;top:6px;width:339px;height:19px;',
 		},
 		{
@@ -607,6 +673,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаПФР',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:297px;top:154px;width:258px;height:19px;',
 		},
 		{
@@ -620,6 +688,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодОрганаПФР',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:297px;top:130px;width:110px;height:19px;',
 		},
 		{
@@ -639,6 +709,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДополнительныйКодФСС',
+			width: 104,
+			height: 19,
 			style: 'position:absolute;left:297px;top:178px;width:104px;height:19px;',
 		},
 		{
@@ -646,6 +718,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПодчиненностиФСС',
+			width: 50,
+			height: 19,
 			style: 'position:absolute;left:505px;top:178px;width:50px;height:19px;',
 		},
 		{
@@ -653,6 +727,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
+			width: 258,
+			height: 19,
 			style: 'position:absolute;left:297px;top:202px;width:258px;height:19px;',
 		},
 		{
@@ -672,6 +748,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерТФОМС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:88px;top:221px;width:110px;height:19px;',
 		},
 					]
@@ -708,6 +786,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИПРегистрационныйНомерПФР',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:198px;top:0px;width:120px;height:19px;',
 		},
 		{
@@ -721,6 +801,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИПРегистрационныйНомерФСС',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:198px;top:82px;width:120px;height:19px;',
 		},
 		{
@@ -734,6 +816,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИПКодПодчиненностиФСС',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:198px;top:108px;width:120px;height:19px;',
 		},
 		{
@@ -747,6 +831,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИПРегистрационныйНомерТФОМС',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:198px;top:26px;width:120px;height:19px;',
 		},
 		{
@@ -796,10 +882,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:231px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СтранаРегистрации',
+			width: 315,
+			height: 19,
 			style: 'position:absolute;left:240px;top:7px;width:315px;height:19px;',
 		},
 		{
@@ -813,6 +903,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодВСтранеРегистрации',
+			width: 315,
+			height: 19,
 			style: 'position:absolute;left:240px;top:57px;width:315px;height:19px;',
 		},
 		{
@@ -822,10 +914,14 @@
 			style: 'position:absolute;left:6px;top:31px;width:232px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СтранаПостоянногоМестонахождения',
+			width: 315,
+			height: 19,
 			style: 'position:absolute;left:240px;top:32px;width:315px;height:19px;',
 		},
 		{
@@ -839,6 +935,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеИнострОрганизации',
+			width: 549,
+			height: 53,
 			style: 'position:absolute;left:6px;top:99px;width:549px;height:53px;',
 		},
 					]
@@ -859,10 +957,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'УчетнаяЗаписьОбмена',
+			width: 424,
+			height: 19,
 			style: 'position:absolute;left:125px;top:0px;width:424px;height:19px;',
 		},
 		{
@@ -984,6 +1087,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодИФНСПолучателя',
+			width: 54,
+			height: 19,
 			style: 'position:absolute;left:289px;top:71px;width:54px;height:19px;',
 		},
 		{
@@ -1003,6 +1108,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодОрганаФСГС',
+			width: 54,
+			height: 19,
 			style: 'position:absolute;left:289px;top:41px;width:54px;height:19px;',
 		},
 					]
@@ -1138,10 +1245,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:120px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ЮрФизЛицо',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:134px;top:57px;width:80px;height:19px;',
 		},
 		{
@@ -1151,10 +1261,14 @@
 			style: 'position:absolute;left:8px;top:280px;width:124px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ИндивидуальныйПредприниматель',
+			width: 437,
+			height: 19,
 			style: 'position:absolute;left:134px;top:280px;width:437px;height:19px;',
 		},
 		{
@@ -1168,6 +1282,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеСокращенное',
+			width: 437,
+			height: 34,
 			style: 'position:absolute;left:134px;top:152px;width:437px;height:34px;',
 		},
 	],

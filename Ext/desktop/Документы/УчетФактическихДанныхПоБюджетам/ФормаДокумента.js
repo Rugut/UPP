@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:202px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -235,10 +240,14 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ЦФО',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -248,10 +257,15 @@
 			style: 'position:absolute;left:8px;top:57px;width:92px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'СтатьиОборотов',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -271,7 +285,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:422px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -285,7 +302,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонца',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:522px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -301,10 +321,14 @@
 			style: 'position:absolute;left:8px;top:334px;width:92px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:102px;top:334px;width:220px;height:19px;',
 		},
 		{
@@ -314,10 +338,14 @@
 			style: 'position:absolute;left:340px;top:81px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Состояние',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:422px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -331,6 +359,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 540,
+			height: 19,
 			style: 'position:absolute;left:102px;top:358px;width:540px;height:19px;',
 		},
 		{

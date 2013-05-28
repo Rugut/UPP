@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОрганизацияСтр',
+			width: 402,
+			height: 19,
 			style: 'position:absolute;left:173px;top:34px;width:402px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяПоступившегоФайла',
+			width: 402,
+			height: 19,
 			style: 'position:absolute;left:173px;top:59px;width:402px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДатаОтправки',
+			width: 402,
+			height: 19,
 			style: 'position:absolute;left:173px;top:8px;width:402px;height:19px;',
 		},
 	],

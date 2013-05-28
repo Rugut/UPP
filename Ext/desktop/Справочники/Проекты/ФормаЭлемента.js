@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 81,
+			height: 19,
 			style: 'position:absolute;left:321px;top:33px;width:81px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:180px;height:19px;',
 		},
 		{
@@ -46,7 +50,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:88px;height:19px;',
 		},
 		{
@@ -60,7 +67,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:98px;top:81px;width:88px;height:19px;',
 		},
 		{
@@ -70,10 +80,15 @@
 			style: 'position:absolute;left:8px;top:105px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:98px;top:105px;width:304px;height:19px;',
 		},
 		{

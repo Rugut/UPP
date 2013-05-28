@@ -132,6 +132,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодДействия',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:504px;top:27px;width:133px;height:19px;',
 		},
 		{
@@ -254,10 +256,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ОрганизацияСотрудников',
+			width: 159,
+			height: 19,
 			style: 'position:absolute;left:75px;top:0px;width:159px;height:19px;',
 		},
 					]
@@ -459,10 +464,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:384px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ОрганизацияПериодические',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:164px;top:26px;width:226px;height:19px;',
 		},
 		{

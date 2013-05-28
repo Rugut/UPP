@@ -26,10 +26,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Счет',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:89px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -37,7 +40,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:89px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -45,7 +51,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:198px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -73,10 +82,13 @@
 			style: 'position:absolute;left:6px;top:54px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Организация',
+			width: 318,
+			height: 19,
 			style: 'position:absolute;left:89px;top:54px;width:318px;height:19px;',
 		},
 		{
@@ -90,10 +102,14 @@
 			style: 'position:absolute;left:6px;top:119px;width:401px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидУчета',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:89px;top:78px;width:80px;height:19px;',
 		},
 		{

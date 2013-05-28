@@ -51,10 +51,13 @@
 			style: 'position:absolute;left:0px;top:4px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Периодичность',
+			width: 265,
+			height: 19,
 			style: 'position:absolute;left:81px;top:4px;width:265px;height:19px;',
 		},
 					]

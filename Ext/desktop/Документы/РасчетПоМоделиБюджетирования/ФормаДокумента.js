@@ -14,7 +14,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРасчета',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:121px;top:59px;width:96px;height:19px;',
 		},
 		{
@@ -24,10 +27,14 @@
 			style: 'position:absolute;left:8px;top:84px;width:113px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Сценарий',
+			width: 236,
+			height: 19,
 			style: 'position:absolute;left:121px;top:84px;width:236px;height:19px;',
 		},
 		{
@@ -52,10 +59,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'СтатьяОборотов',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:30px;width:208px;height:19px;',
 		},
 		{
@@ -65,10 +76,14 @@
 			style: 'position:absolute;left:6px;top:30px;width:176px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ЗначениеИзмененияПоПериодам',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:54px;width:208px;height:19px;',
 		},
 		{
@@ -82,6 +97,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФормулаКоличество',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:30px;width:212px;height:19px;',
 		},
 		{
@@ -95,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФормулаСумма',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:54px;width:212px;height:19px;',
 		},
 		{
@@ -104,10 +123,13 @@
 			style: 'position:absolute;left:410px;top:54px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидИзмененияПоЦФО',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:102px;width:208px;height:19px;',
 		},
 		{
@@ -121,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеИзмененияПоЦФО',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:102px;width:212px;height:19px;',
 		},
 		{
@@ -130,10 +154,13 @@
 			style: 'position:absolute;left:410px;top:102px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидИзмененияПоПроектам',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:126px;width:208px;height:19px;',
 		},
 		{
@@ -147,6 +174,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеИзмененияПоПроектам',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:126px;width:212px;height:19px;',
 		},
 		{
@@ -156,10 +185,13 @@
 			style: 'position:absolute;left:410px;top:126px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидИзмененияПоКонтрагентам',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:150px;width:208px;height:19px;',
 		},
 		{
@@ -173,6 +205,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеИзмененияПоКонтрагентам',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:150px;width:212px;height:19px;',
 		},
 		{
@@ -182,10 +216,13 @@
 			style: 'position:absolute;left:410px;top:150px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидИзмененияПоНоменклатуре',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:174px;width:208px;height:19px;',
 		},
 		{
@@ -199,6 +236,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗначениеИзмененияПоНоменклатуре',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:174px;width:212px;height:19px;',
 		},
 		{
@@ -220,10 +259,13 @@
 			style: 'position:absolute;left:6px;top:78px;width:176px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ВидИзмененияПоВалюте',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:182px;top:78px;width:208px;height:19px;',
 		},
 		{
@@ -233,10 +275,15 @@
 			style: 'position:absolute;left:410px;top:78px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ЗначениеИзмененияПоВалюте',
+			width: 212,
+			height: 19,
 			style: 'position:absolute;left:514px;top:78px;width:212px;height:19px;',
 		},
 					]
@@ -410,6 +457,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 720,
+			height: 187,
 			style: 'position:absolute;left:6px;top:6px;width:720px;height:187px;',
 		},
 					]
@@ -423,10 +472,14 @@
 			style: 'position:absolute;left:8px;top:419px;width:181px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 209,
+			height: 19,
 			style: 'position:absolute;left:191px;top:419px;width:209px;height:19px;',
 		},
 		{
@@ -436,10 +489,13 @@
 			style: 'position:absolute;left:422px;top:419px;width:102px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Состояние',
+			width: 217,
+			height: 19,
 			style: 'position:absolute;left:526px;top:419px;width:217px;height:19px;',
 		},
 		{
@@ -453,6 +509,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:121px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -460,7 +518,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 136,
+			height: 19,
 			style: 'position:absolute;left:221px;top:33px;width:136px;height:19px;',
 		},
 		{
@@ -586,6 +647,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОсновнойИсточникДанных',
+			width: 236,
+			height: 19,
 			style: 'position:absolute;left:121px;top:108px;width:236px;height:19px;',
 		},
 		{

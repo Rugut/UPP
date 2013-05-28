@@ -30,7 +30,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНач',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:96px;top:6px;width:96px;height:19px;',
 		},
 		{
@@ -44,7 +47,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКон',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:212px;top:6px;width:96px;height:19px;',
 		},
 		{
@@ -54,10 +60,13 @@
 			style: 'position:absolute;left:310px;top:6px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ДетализацияПоПериодам',
+			width: 137,
+			height: 19,
 			style: 'position:absolute;left:193px;top:30px;width:137px;height:19px;',
 		},
 		{

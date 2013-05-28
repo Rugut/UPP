@@ -34,6 +34,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольНаПрием',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:161px;top:89px;width:120px;height:19px;',
 		},
 		{
@@ -47,6 +49,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПарольНаОтправку',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:161px;top:192px;width:120px;height:19px;',
 		},
 		{
@@ -81,6 +85,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайлаПротоколаОбмена',
+			width: 325,
+			height: 19,
 			style: 'position:absolute;left:161px;top:8px;width:325px;height:19px;',
 		},
 		{

@@ -107,10 +107,14 @@
 			style: 'position:absolute;left:8px;top:6px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 202,
+			height: 19,
 			style: 'position:absolute;left:99px;top:6px;width:202px;height:19px;',
 		},
 		{
@@ -120,10 +124,15 @@
 			style: 'position:absolute;left:304px;top:6px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеОрганизации',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:391px;top:6px;width:220px;height:19px;',
 		},
 		{
@@ -131,7 +140,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачала',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:99px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -145,7 +157,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОкончания',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:198px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -181,6 +196,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КадровыйДокумент',
+			width: 307,
+			height: 19,
 			style: 'position:absolute;left:304px;top:54px;width:307px;height:19px;',
 		},
 		{
@@ -188,6 +205,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТипДокумента',
+			width: 202,
+			height: 19,
 			style: 'position:absolute;left:99px;top:54px;width:202px;height:19px;',
 		},
 		{
@@ -201,6 +220,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодРегистрации',
+			width: 133,
+			height: 19,
 			style: 'position:absolute;left:110px;top:361px;width:133px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -27,7 +29,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -37,10 +42,14 @@
 			style: 'position:absolute;left:336px;top:57px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -54,6 +63,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:525px;width:220px;height:19px;',
 		},
 		{
@@ -63,10 +74,14 @@
 			style: 'position:absolute;left:336px;top:525px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Ответственный',
+			width: 260,
+			height: 19,
 			style: 'position:absolute;left:424px;top:525px;width:260px;height:19px;',
 		},
 		{
@@ -76,10 +91,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
@@ -93,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Заказ',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -976,10 +997,14 @@
 			style: 'position:absolute;left:8px;top:77px;width:84px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеОрганизации',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -998,6 +1023,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодРегистрации',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:228px;top:51px;width:110px;height:19px;',
 		},
 		{
@@ -1005,7 +1032,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачалаПериода',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:228px;top:27px;width:110px;height:19px;',
 		},
 		{

@@ -81,6 +81,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогВыгрузкиДанных',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:151px;top:45px;width:317px;height:19px;',
 		},
 		{

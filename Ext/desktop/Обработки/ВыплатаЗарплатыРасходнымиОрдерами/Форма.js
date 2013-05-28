@@ -16,10 +16,14 @@
 			style: 'position:absolute;left:8px;top:6px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 192,
+			height: 19,
 			style: 'position:absolute;left:80px;top:6px;width:192px;height:19px;',
 		},
 		{
@@ -29,10 +33,14 @@
 			style: 'position:absolute;left:280px;top:6px;width:118px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПлатежнаяВедомость',
+			width: 192,
+			height: 19,
 			style: 'position:absolute;left:400px;top:6px;width:192px;height:19px;',
 		},
 		{
@@ -115,7 +123,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРКО',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:263px;top:299px;width:120px;height:19px;',
 		},
 		{
@@ -129,6 +140,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерПервогоРКО',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:86px;top:299px;width:80px;height:19px;',
 		},
 		{
@@ -143,10 +156,15 @@
 			style: 'position:absolute;left:400px;top:323px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Касса',
+			width: 297,
+			height: 19,
 			style: 'position:absolute;left:86px;top:323px;width:297px;height:19px;',
 		},
 		{

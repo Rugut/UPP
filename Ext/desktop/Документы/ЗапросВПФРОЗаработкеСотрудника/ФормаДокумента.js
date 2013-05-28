@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:454px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:554px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -56,10 +65,15 @@
 			style: 'position:absolute;left:368px;top:58px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:454px;top:58px;width:220px;height:19px;',
 		},
 		{
@@ -69,10 +83,14 @@
 			style: 'position:absolute;left:8px;top:58px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Сотрудник',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:93px;top:58px;width:220px;height:19px;',
 		},
 		{
@@ -86,6 +104,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 578,
+			height: 19,
 			style: 'position:absolute;left:96px;top:483px;width:578px;height:19px;',
 		},
 		{
@@ -95,10 +115,15 @@
 			style: 'position:absolute;left:8px;top:161px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Руководитель',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:93px;top:161px;width:220px;height:19px;',
 		},
 		{
@@ -108,10 +133,15 @@
 			style: 'position:absolute;left:368px;top:161px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ДолжностьРуководителя',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:454px;top:161px;width:220px;height:19px;',
 		},
 		{
@@ -125,6 +155,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
+			width: 420,
+			height: 19,
 			style: 'position:absolute;left:254px;top:136px;width:420px;height:19px;',
 		},
 		{
@@ -138,6 +170,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Адрес',
+			width: 581,
+			height: 19,
 			style: 'position:absolute;left:93px;top:344px;width:581px;height:19px;',
 		},
 		{
@@ -163,6 +197,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'АдресОрганизации',
+			width: 581,
+			height: 19,
 			style: 'position:absolute;left:93px;top:186px;width:581px;height:19px;',
 		},
 		{
@@ -182,6 +218,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:93px;top:293px;width:160px;height:19px;',
 		},
 		{
@@ -195,6 +233,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:293px;top:293px;width:160px;height:19px;',
 		},
 		{
@@ -208,6 +248,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:514px;top:293px;width:160px;height:19px;',
 		},
 		{
@@ -221,6 +263,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтраховойНомерПФР',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:357px;top:318px;width:96px;height:19px;',
 		},
 		{
@@ -234,7 +278,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРождения',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:93px;top:318px;width:96px;height:19px;',
 		},
 		{
@@ -244,10 +291,14 @@
 			style: 'position:absolute;left:8px;top:398px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидДокумента',
+			width: 256,
+			height: 19,
 			style: 'position:absolute;left:93px;top:398px;width:256px;height:19px;',
 		},
 		{
@@ -261,6 +312,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СерияДокумента',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:400px;top:398px;width:96px;height:19px;',
 		},
 		{
@@ -274,6 +327,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДокумента',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:578px;top:398px;width:96px;height:19px;',
 		},
 		{
@@ -287,7 +342,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаВыдачиДокумента',
+			width: 96,
+			height: 19,
 			style: 'position:absolute;left:578px;top:423px;width:96px;height:19px;',
 		},
 		{
@@ -301,6 +359,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КемВыданДокумент',
+			width: 403,
+			height: 19,
 			style: 'position:absolute;left:93px;top:423px;width:403px;height:19px;',
 		},
 		{
@@ -326,6 +386,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ТелефонОрганизации',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:94px;top:211px;width:220px;height:19px;',
 		},
 		{
@@ -335,10 +397,14 @@
 			style: 'position:absolute;left:8px;top:83px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Страхователь',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:93px;top:83px;width:220px;height:19px;',
 		},
 		{

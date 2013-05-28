@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:452px;top:56px;width:40px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 312,
+			height: 19,
 			style: 'position:absolute;left:94px;top:56px;width:312px;height:19px;',
 		},
 		{
@@ -42,10 +46,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Родитель',
+			width: 398,
+			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:398px;height:19px;',
 		},
 		{
@@ -68,10 +76,14 @@
 			style: 'position:absolute;left:14px;top:176px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ВидНМА',
+			width: 340,
+			height: 19,
 			style: 'position:absolute;left:152px;top:176px;width:340px;height:19px;',
 		},
 		{
@@ -81,10 +93,14 @@
 			style: 'position:absolute;left:14px;top:199px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'АмортизационнаяГруппа',
+			width: 340,
+			height: 19,
 			style: 'position:absolute;left:152px;top:199px;width:340px;height:19px;',
 		},
 		{
@@ -94,10 +110,13 @@
 			style: 'position:absolute;left:14px;top:153px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидОбъектаУчета',
+			width: 340,
+			height: 19,
 			style: 'position:absolute;left:152px;top:153px;width:340px;height:19px;',
 		},
 		{

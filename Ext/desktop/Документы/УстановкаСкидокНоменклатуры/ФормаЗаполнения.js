@@ -14,6 +14,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Группы',
+			width: 304,
+			height: 19,
 			style: 'position:absolute;left:234px;top:8px;width:304px;height:19px;',
 		},
 		{
@@ -27,6 +29,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидСравненияГрупп',
+			width: 127,
+			height: 19,
 			style: 'position:absolute;left:102px;top:8px;width:127px;height:19px;',
 		},
 		{

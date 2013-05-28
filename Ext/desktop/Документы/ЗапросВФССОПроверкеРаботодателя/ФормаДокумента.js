@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:454px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:554px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:33px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:113px;top:33px;width:220px;height:19px;',
 		},
 		{
@@ -56,10 +65,15 @@
 			style: 'position:absolute;left:368px;top:58px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:454px;top:58px;width:220px;height:19px;',
 		},
 		{
@@ -69,10 +83,14 @@
 			style: 'position:absolute;left:8px;top:58px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Сотрудник',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:113px;top:58px;width:220px;height:19px;',
 		},
 		{
@@ -86,6 +104,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 578,
+			height: 19,
 			style: 'position:absolute;left:96px;top:358px;width:578px;height:19px;',
 		},
 		{
@@ -155,7 +175,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПериодРаботыС',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:405px;top:196px;width:80px;height:19px;',
 		},
 		{
@@ -169,7 +192,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ПериодРаботыПо',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:505px;top:196px;width:80px;height:19px;',
 		},
 		{
@@ -183,6 +209,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИНН',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:393px;top:58px;width:110px;height:19px;',
 		},
 		{
@@ -196,6 +224,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КПП',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:549px;top:58px;width:110px;height:19px;',
 		},
 		{
@@ -203,6 +233,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерФСССтрахователя',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:393px;top:83px;width:110px;height:19px;',
 		},
 		{
@@ -222,6 +254,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДополнительныйКодФСССтрахователя',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:393px;top:108px;width:110px;height:19px;',
 		},
 		{
@@ -235,6 +269,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПодчиненностиФСССтрахователя',
+			width: 46,
+			height: 19,
 			style: 'position:absolute;left:613px;top:108px;width:46px;height:19px;',
 		},
 		{
@@ -248,6 +284,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСССтрахователя',
+			width: 347,
+			height: 35,
 			style: 'position:absolute;left:312px;top:154px;width:347px;height:35px;',
 		},
 		{
@@ -269,10 +307,15 @@
 			style: 'position:absolute;left:14px;top:129px;width:106px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Руководитель',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:121px;top:129px;width:220px;height:19px;',
 		},
 		{
@@ -282,10 +325,15 @@
 			style: 'position:absolute;left:358px;top:129px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ДолжностьРуководителя',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:439px;top:129px;width:220px;height:19px;',
 		},
 		{
@@ -299,6 +347,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'РегистрационныйНомерФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:146px;top:53px;width:110px;height:19px;',
 		},
 		{
@@ -312,6 +362,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДополнительныйКодФСС',
+			width: 110,
+			height: 19,
 			style: 'position:absolute;left:379px;top:53px;width:110px;height:19px;',
 		},
 		{
@@ -325,6 +377,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодПодчиненностиФСС',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:599px;top:53px;width:60px;height:19px;',
 		},
 		{
@@ -338,6 +392,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеТерриториальногоОрганаФСС',
+			width: 401,
+			height: 19,
 			style: 'position:absolute;left:258px;top:27px;width:401px;height:19px;',
 		},
 		{
@@ -367,6 +423,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Адрес1',
+			width: 601,
+			height: 19,
 			style: 'position:absolute;left:58px;top:79px;width:601px;height:19px;',
 		},
 					]
@@ -386,6 +444,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Фамилия',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:112px;top:6px;width:160px;height:19px;',
 		},
 		{
@@ -399,6 +459,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Имя',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:112px;top:31px;width:160px;height:19px;',
 		},
 		{
@@ -412,6 +474,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Отчество',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:112px;top:56px;width:160px;height:19px;',
 		},
 		{
@@ -425,6 +489,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтраховойНомерПФР',
+			width: 160,
+			height: 19,
 			style: 'position:absolute;left:112px;top:81px;width:160px;height:19px;',
 		},
 		{
@@ -438,6 +504,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Адрес',
+			width: 531,
+			height: 19,
 			style: 'position:absolute;left:112px;top:106px;width:531px;height:19px;',
 		},
 		{
@@ -457,10 +525,13 @@
 			style: 'position:absolute;left:8px;top:83px;width:100px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидПособия',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:113px;top:83px;width:220px;height:19px;',
 		},
 	],

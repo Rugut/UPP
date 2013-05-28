@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 644,
+			height: 19,
 			style: 'position:absolute;left:106px;top:58px;width:644px;height:19px;',
 		},
 		{
@@ -29,10 +31,14 @@
 			style: 'position:absolute;left:8px;top:108px;width:95px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 644,
+			height: 19,
 			style: 'position:absolute;left:106px;top:108px;width:644px;height:19px;',
 		},
 		{
@@ -46,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 644,
+			height: 19,
 			style: 'position:absolute;left:106px;top:674px;width:644px;height:19px;',
 		},
 		{
@@ -65,10 +73,13 @@
 			style: 'position:absolute;left:8px;top:187px;width:95px;height:17px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Периодичность',
+			width: 116,
+			height: 19,
 			style: 'position:absolute;left:106px;top:186px;width:116px;height:19px;',
 		},
 		{
@@ -101,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 116,
+			height: 19,
 			style: 'position:absolute;left:106px;top:33px;width:116px;height:19px;',
 		},
 		{
@@ -114,7 +127,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаИмпорта',
+			width: 138,
+			height: 19,
 			style: 'position:absolute;left:324px;top:33px;width:138px;height:19px;',
 		},
 		{
@@ -134,6 +150,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ВидОтчета',
+			width: 644,
+			height: 19,
 			style: 'position:absolute;left:106px;top:160px;width:644px;height:19px;',
 		},
 		{
@@ -183,10 +201,13 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ТипПолучателя',
+			width: 116,
+			height: 19,
 			style: 'position:absolute;left:106px;top:134px;width:116px;height:19px;',
 		},
 		{
@@ -194,6 +215,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Получатель',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:232px;top:134px;width:120px;height:19px;',
 		},
 		{
@@ -314,6 +337,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайла',
+			width: 644,
+			height: 19,
 			style: 'position:absolute;left:98px;top:25px;width:644px;height:19px;',
 		},
 		{
@@ -337,6 +362,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФайлПояснительнойЗаписки',
+			width: 446,
+			height: 19,
 			style: 'position:absolute;left:296px;top:36px;width:446px;height:19px;',
 		},
 		{
@@ -344,6 +371,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФайлАудиторскогоЗаключения',
+			width: 446,
+			height: 19,
 			style: 'position:absolute;left:296px;top:64px;width:446px;height:19px;',
 		},
 		{
@@ -351,6 +380,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФайлЗаявленияРевизионногоСоюза',
+			width: 446,
+			height: 19,
 			style: 'position:absolute;left:296px;top:92px;width:446px;height:19px;',
 		},
 		{

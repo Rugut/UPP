@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 73,
+			height: 19,
 			style: 'position:absolute;left:99px;top:33px;width:73px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 128,
+			height: 19,
 			style: 'position:absolute;left:192px;top:33px;width:128px;height:19px;',
 		},
 		{
@@ -43,10 +48,15 @@
 			style: 'position:absolute;left:8px;top:354px;width:91px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 511,
+			height: 19,
 			style: 'position:absolute;left:99px;top:354px;width:511px;height:19px;',
 		},
 		{
@@ -85,13 +95,18 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 511,
+			height: 19,
 			style: 'position:absolute;left:99px;top:378px;width:511px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидОбъекта',
+			width: 188,
+			height: 19,
 			style: 'position:absolute;left:422px;top:33px;width:188px;height:19px;',
 		},
 		{
@@ -115,7 +130,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'НачалоСобытия',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:414px;top:6px;width:180px;height:19px;',
 		},
 		{
@@ -123,7 +141,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОкончаниеСобытия',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:414px;top:30px;width:180px;height:19px;',
 		},
 		{
@@ -143,6 +164,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОписаниеСобытия',
+			width: 504,
+			height: 19,
 			style: 'position:absolute;left:90px;top:102px;width:504px;height:19px;',
 		},
 		{
@@ -167,6 +190,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Контрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -180,6 +205,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтактноеЛицо',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:48px;width:220px;height:19px;',
 		},
 		{
@@ -187,6 +214,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтактнаяИнформацияКонтактногоЛица',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:72px;width:220px;height:19px;',
 		},
 		{
@@ -194,6 +223,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтактнаяИнформацияКонтрагента',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:24px;width:220px;height:19px;',
 		},
 					]
@@ -203,10 +234,14 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КонтактноеЛицо1',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -214,6 +249,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтактнаяИнформацияКонтактногоЛица1',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:24px;width:220px;height:19px;',
 		},
 		{
@@ -233,6 +270,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтактноеЛицо2',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:0px;width:220px;height:19px;',
 		},
 		{
@@ -240,6 +279,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонтактнаяИнформацияКонтактногоЛица2',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:84px;top:24px;width:220px;height:19px;',
 		},
 		{
@@ -270,10 +311,14 @@
 			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ИсточникИнформацииПриОбращении',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:92px;top:0px;width:180px;height:19px;',
 		},
 					]
@@ -303,10 +348,13 @@
 			style: 'position:absolute;left:6px;top:81px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Важность',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:81px;width:220px;height:19px;',
 		},
 		{
@@ -314,6 +362,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Основание',
+			width: 504,
+			height: 19,
 			style: 'position:absolute;left:90px;top:6px;width:504px;height:19px;',
 		},
 		{
@@ -323,10 +373,14 @@
 			style: 'position:absolute;left:330px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Помещение',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:414px;top:56px;width:180px;height:19px;',
 		},
 		{
@@ -336,10 +390,14 @@
 			style: 'position:absolute;left:6px;top:56px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Территория',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
 		{
@@ -349,10 +407,14 @@
 			style: 'position:absolute;left:330px;top:81px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Проект',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:414px;top:81px;width:180px;height:19px;',
 		},
 		{
@@ -366,6 +428,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Предмет',
+			width: 504,
+			height: 19,
 			style: 'position:absolute;left:90px;top:31px;width:504px;height:19px;',
 		},
 					]
@@ -478,10 +542,13 @@
 			style: 'position:absolute;left:332px;top:58px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СостояниеСобытия',
+			width: 188,
+			height: 19,
 			style: 'position:absolute;left:422px;top:58px;width:188px;height:19px;',
 		},
 		{
@@ -491,10 +558,14 @@
 			style: 'position:absolute;left:8px;top:58px;width:91px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаСобытия',
+			width: 221,
+			height: 19,
 			style: 'position:absolute;left:99px;top:58px;width:221px;height:19px;',
 		},
 	],

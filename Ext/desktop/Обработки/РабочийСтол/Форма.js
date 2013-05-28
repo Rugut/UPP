@@ -2349,6 +2349,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СтрокаПоискаИТС',
+			width: 167,
+			height: 19,
 			style: 'position:absolute;left:6px;top:28px;width:167px;height:19px;',
 		},
 		{

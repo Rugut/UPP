@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ИмяФайла',
+			width: 341,
+			height: 19,
 			style: 'position:absolute;left:72px;top:29px;width:341px;height:19px;',
 		},
 		{

@@ -1182,7 +1182,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаФормирования',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:118px;top:27px;width:80px;height:19px;',
 		},
 		{
@@ -1205,10 +1208,15 @@
 			style: 'position:absolute;left:649px;top:27px;width:45px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'График',
+			width: 180,
+			height: 19,
 			style: 'position:absolute;left:696px;top:27px;width:180px;height:19px;',
 		},
 		{

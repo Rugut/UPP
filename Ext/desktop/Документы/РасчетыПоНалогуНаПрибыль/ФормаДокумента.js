@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 155,
+			height: 19,
 			style: 'position:absolute;left:196px;top:33px;width:155px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 327,
+			height: 19,
 			style: 'position:absolute;left:96px;top:258px;width:327px;height:19px;',
 		},
 		{
@@ -56,10 +63,14 @@
 			style: 'position:absolute;left:8px;top:83px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 327,
+			height: 19,
 			style: 'position:absolute;left:96px;top:83px;width:327px;height:19px;',
 		},
 		{
@@ -69,10 +80,15 @@
 			style: 'position:absolute;left:8px;top:234px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 327,
+			height: 19,
 			style: 'position:absolute;left:96px;top:234px;width:327px;height:19px;',
 		},
 		{
@@ -86,6 +102,8 @@
 			hideLabel: true,
 			disabled: true,
 			name: 'ПредставлениеПериодаРегистрации',
+			width: 131,
+			height: 19,
 			style: 'position:absolute;left:96px;top:58px;width:131px;height:19px;',
 		},
 		{

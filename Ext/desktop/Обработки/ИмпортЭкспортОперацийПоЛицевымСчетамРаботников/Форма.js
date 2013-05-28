@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаФормированияФайлов',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:120px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -38,6 +41,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогЭкспорта',
+			width: 442,
+			height: 19,
 			style: 'position:absolute;left:120px;top:6px;width:442px;height:19px;',
 		},
 		{
@@ -158,6 +163,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтделениеБанка',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:297px;top:30px;width:40px;height:19px;',
 		},
 		{
@@ -171,6 +178,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФилиалОтделенияБанка',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:297px;top:54px;width:40px;height:19px;',
 		},
 		{
@@ -219,6 +228,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерРеестра',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
 		},
 		{
@@ -232,7 +243,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРеестра',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 		{
@@ -251,6 +265,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерРеестра1',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
 		},
 		{
@@ -264,7 +280,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРеестра1',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 		{
@@ -283,6 +302,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерРеестра2',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
 		},
 		{
@@ -296,7 +317,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРеестра2',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 		{
@@ -315,6 +339,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерРеестра3',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:31px;width:103px;height:19px;',
 		},
 		{
@@ -328,7 +354,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаРеестра3',
+			width: 103,
+			height: 19,
 			style: 'position:absolute;left:448px;top:55px;width:103px;height:19px;',
 		},
 					]
@@ -353,6 +382,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерДоговораЗачисленияЗарплаты',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:456px;top:54px;width:80px;height:19px;',
 		},
 		{
@@ -360,7 +391,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаФормированияЗачислениеЗарплаты',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:120px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -374,6 +408,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогЭкспортаЗачислениеЗарплаты',
+			width: 442,
+			height: 19,
 			style: 'position:absolute;left:120px;top:6px;width:442px;height:19px;',
 		},
 		{
@@ -493,6 +529,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ОтделениеБанкаЗЗ',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:297px;top:30px;width:40px;height:19px;',
 		},
 		{
@@ -506,6 +544,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ФилиалОтделенияБанкаЗЗ',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:297px;top:54px;width:40px;height:19px;',
 		},
 		{
@@ -559,6 +599,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КаталогИмпорта',
+			width: 655,
+			height: 19,
 			style: 'position:absolute;left:103px;top:6px;width:655px;height:19px;',
 		},
 		{

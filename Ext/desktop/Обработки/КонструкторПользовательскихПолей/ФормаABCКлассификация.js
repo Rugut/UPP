@@ -104,6 +104,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 347,
+			height: 19,
 			style: 'position:absolute;left:156px;top:8px;width:347px;height:19px;',
 		},
 		{
@@ -111,6 +113,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле',
+			width: 347,
+			height: 19,
 			style: 'position:absolute;left:156px;top:60px;width:347px;height:19px;',
 		},
 	],

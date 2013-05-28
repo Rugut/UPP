@@ -24,7 +24,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонПродаж',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:248px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -32,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачПродаж',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:148px;top:6px;width:80px;height:19px;',
 		},
 		{
@@ -58,7 +64,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаКонЗакупок',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:248px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -66,7 +75,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаНачЗакупок',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:148px;top:30px;width:80px;height:19px;',
 		},
 		{
@@ -100,6 +112,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВводаОкруглятьВБольшуюСторону',
+			width: 190,
+			height: 19,
 			style: 'position:absolute;left:586px;top:54px;width:190px;height:19px;',
 		},
 		{
@@ -108,10 +122,14 @@
 			style: 'position:absolute;left:6px;top:54px;width:222px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'ПолеВводаТипЦенНоменклатуры',
+			width: 201,
+			height: 19,
 			style: 'position:absolute;left:148px;top:78px;width:201px;height:19px;',
 		},
 		{

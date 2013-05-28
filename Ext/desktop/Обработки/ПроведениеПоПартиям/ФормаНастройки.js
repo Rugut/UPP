@@ -51,7 +51,8 @@
 		},
 		{
 			xtype: 'checkbox',
-			boxLabel: 'Выполнять на сервере',
+			fieldLabel: 'Выполнять на сервере',
+			labelWidth: 50,
 			style: 'position:absolute;left:65px;top:158px;width:313px;height:15px;',
 		},
 		{

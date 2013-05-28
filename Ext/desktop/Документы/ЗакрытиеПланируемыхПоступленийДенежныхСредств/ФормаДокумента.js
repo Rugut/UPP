@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:80px;height:19px;',
 		},
 		{
@@ -33,7 +35,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
@@ -43,10 +48,14 @@
 			style: 'position:absolute;left:8px;top:351px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:98px;top:351px;width:220px;height:19px;',
 		},
 		{
@@ -184,10 +193,15 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Подразделение',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:444px;top:78px;width:220px;height:19px;',
 		},
 		{
@@ -196,10 +210,15 @@
 			style: 'position:absolute;left:338px;top:78px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Контрагент',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:98px;top:102px;width:220px;height:19px;',
 		},
 		{
@@ -213,10 +232,14 @@
 			style: 'position:absolute;left:8px;top:57px;width:656px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ОтветственныйПоступление',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:444px;top:102px;width:220px;height:19px;',
 		},
 		{
@@ -230,10 +253,13 @@
 			style: 'position:absolute;left:8px;top:126px;width:656px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'Состояние',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:444px;top:351px;width:220px;height:19px;',
 		},
 		{
@@ -247,6 +273,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПолеВвода3',
+			width: 566,
+			height: 19,
 			style: 'position:absolute;left:98px;top:375px;width:566px;height:19px;',
 		},
 		{
@@ -266,7 +294,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОтборДатаНач',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:98px;top:78px;width:88px;height:19px;',
 		},
 		{
@@ -280,7 +311,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ОтборДатаКон',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:207px;top:78px;width:88px;height:19px;',
 		},
 		{

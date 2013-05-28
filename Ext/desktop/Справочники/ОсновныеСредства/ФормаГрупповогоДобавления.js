@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:125px;width:246px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаименованиеПолное',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:149px;width:246px;height:19px;',
 		},
 		{
@@ -46,6 +50,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Изготовитель',
+			width: 245,
+			height: 19,
 			style: 'position:absolute;left:161px;top:173px;width:245px;height:19px;',
 		},
 		{
@@ -59,7 +65,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаВыпуска',
+			width: 76,
+			height: 19,
 			style: 'position:absolute;left:160px;top:245px;width:76px;height:19px;',
 		},
 		{
@@ -69,10 +78,14 @@
 			style: 'position:absolute;left:14px;top:293px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'КодПоОКОФ',
+			width: 245,
+			height: 19,
 			style: 'position:absolute;left:161px;top:293px;width:245px;height:19px;',
 		},
 		{
@@ -82,10 +95,14 @@
 			style: 'position:absolute;left:14px;top:341px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'АмортизационнаяГруппа',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:341px;width:246px;height:19px;',
 		},
 		{
@@ -95,10 +112,14 @@
 			style: 'position:absolute;left:14px;top:317px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'ГруппаОС',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:317px;width:246px;height:19px;',
 		},
 		{
@@ -122,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ЗаводскойНомер',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:197px;width:246px;height:19px;',
 		},
 		{
@@ -135,6 +158,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерПаспорта',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:221px;width:246px;height:19px;',
 		},
 		{
@@ -153,6 +178,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НачальныйКод',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:160px;top:53px;width:80px;height:19px;',
 		},
 		{
@@ -182,10 +209,14 @@
 			style: 'position:absolute;left:14px;top:29px;width:138px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Группа',
+			width: 246,
+			height: 19,
 			style: 'position:absolute;left:160px;top:29px;width:246px;height:19px;',
 		},
 		{
@@ -193,6 +224,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КонечныйКод',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:272px;top:53px;width:80px;height:19px;',
 		},
 		{

@@ -47,10 +47,14 @@
 			},
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 200,
+			height: 19,
 			style: 'position:absolute;left:233px;top:33px;width:200px;height:19px;',
 		},
 		{

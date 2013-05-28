@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ДокументПланируемогоДвиженияДС',
+			width: 283,
+			height: 19,
 			style: 'position:absolute;left:8px;top:151px;width:283px;height:19px;',
 		},
 		{

@@ -25,6 +25,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 403,
+			height: 19,
 			style: 'position:absolute;left:31px;top:80px;width:403px;height:19px;',
 		},
 		{

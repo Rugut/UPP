@@ -214,7 +214,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаПредоставленияВычетов',
+			width: 85,
+			height: 19,
 			style: 'position:absolute;left:256px;top:303px;width:85px;height:19px;',
 		},
 					]
@@ -252,6 +255,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'ПериодСтатусаНалогоплательщикаПоНДФЛ',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:115px;top:62px;width:120px;height:19px;',
 		},
 		{

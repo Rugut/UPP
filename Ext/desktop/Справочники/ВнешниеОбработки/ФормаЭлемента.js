@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:325px;top:33px;width:285px;height:19px;',
 		},
 		{
@@ -29,10 +31,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:31px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидОбработки',
+			width: 185,
+			height: 19,
 			style: 'position:absolute;left:39px;top:57px;width:185px;height:19px;',
 		},
 		{
@@ -46,6 +51,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 185,
+			height: 19,
 			style: 'position:absolute;left:39px;top:33px;width:185px;height:19px;',
 		},
 		{
@@ -206,6 +213,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 285,
+			height: 19,
 			style: 'position:absolute;left:325px;top:57px;width:285px;height:19px;',
 		},
 		{

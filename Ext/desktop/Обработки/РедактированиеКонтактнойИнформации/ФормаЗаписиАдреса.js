@@ -74,6 +74,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Регион',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
 		},
 		{
@@ -87,6 +89,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Район',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:24px;width:226px;height:19px;',
 		},
 		{
@@ -100,6 +104,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Город',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:48px;width:226px;height:19px;',
 		},
 		{
@@ -113,6 +119,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НаселенныйПункт',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:72px;width:226px;height:19px;',
 		},
 		{
@@ -126,6 +134,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Улица',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:96px;width:226px;height:19px;',
 		},
 		{
@@ -133,6 +143,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Дом',
+			width: 36,
+			height: 19,
 			style: 'position:absolute;left:88px;top:120px;width:36px;height:19px;',
 		},
 		{
@@ -140,6 +152,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Корпус',
+			width: 36,
+			height: 19,
 			style: 'position:absolute;left:200px;top:120px;width:36px;height:19px;',
 		},
 		{
@@ -147,6 +161,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Квартира',
+			width: 32,
+			height: 19,
 			style: 'position:absolute;left:282px;top:120px;width:32px;height:19px;',
 		},
 		{
@@ -160,6 +176,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Индекс',
+			width: 60,
+			height: 19,
 			style: 'position:absolute;left:88px;top:144px;width:60px;height:19px;',
 		},
 		{
@@ -176,24 +194,33 @@
 			style: 'position:absolute;left:88px;top:168px;width:226px;height:60px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ТипКвартиры',
+			width: 42,
+			height: 19,
 			style: 'position:absolute;left:238px;top:120px;width:42px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ТипКорпуса',
+			width: 72,
+			height: 19,
 			style: 'position:absolute;left:126px;top:120px;width:72px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-trigger-square',
 			name: 'ТипДома',
+			width: 86,
+			height: 19,
 			style: 'position:absolute;left:0px;top:120px;width:86px;height:19px;',
 		},
 					]
@@ -226,6 +253,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Поле1',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
 		},
 					]
@@ -260,6 +289,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Вид',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:27px;width:226px;height:19px;',
 		},
 		{
@@ -267,6 +298,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Объект',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:0px;width:226px;height:19px;',
 		},
 		{
@@ -302,6 +335,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодРегиона',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:88px;top:27px;width:40px;height:19px;',
 		},
 		{
@@ -315,6 +350,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'КодСтраны',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:88px;top:51px;width:40px;height:19px;',
 		},
 		{
@@ -342,6 +379,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 226,
+			height: 19,
 			style: 'position:absolute;left:88px;top:1px;width:226px;height:19px;',
 		},
 		{

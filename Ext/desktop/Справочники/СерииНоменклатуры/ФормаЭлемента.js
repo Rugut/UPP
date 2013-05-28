@@ -30,6 +30,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 40,
+			height: 19,
 			style: 'position:absolute;left:397px;top:33px;width:40px;height:19px;',
 		},
 		{
@@ -43,6 +45,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 238,
+			height: 19,
 			style: 'position:absolute;left:120px;top:33px;width:238px;height:19px;',
 		},
 		{
@@ -52,10 +56,14 @@
 			style: 'position:absolute;left:6px;top:6px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'Владелец',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:120px;top:6px;width:317px;height:19px;',
 		},
 		{
@@ -69,6 +77,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'СерийныйНомер',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:120px;top:61px;width:317px;height:19px;',
 		},
 		{
@@ -82,7 +92,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'СрокГодности',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:120px;top:162px;width:88px;height:19px;',
 		},
 		{
@@ -92,10 +105,14 @@
 			style: 'position:absolute;left:6px;top:86px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
 			name: 'НомерГТД',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:120px;top:86px;width:317px;height:19px;',
 		},
 		{
@@ -105,10 +122,13 @@
 			style: 'position:absolute;left:6px;top:112px;width:114px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'СтранаПроисхождения',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:120px;top:112px;width:317px;height:19px;',
 		},
 		{
@@ -122,6 +142,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 317,
+			height: 19,
 			style: 'position:absolute;left:120px;top:137px;width:317px;height:19px;',
 		},
 					]
@@ -141,6 +163,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерСертификата',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:120px;top:27px;width:208px;height:19px;',
 		},
 		{
@@ -154,7 +178,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаСертификата',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:349px;top:27px;width:88px;height:19px;',
 		},
 		{
@@ -167,7 +194,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаСертификации',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:120px;top:53px;width:88px;height:19px;',
 		},
 		{
@@ -198,6 +228,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'НомерСертификатаВнутр',
+			width: 208,
+			height: 19,
 			style: 'position:absolute;left:120px;top:137px;width:208px;height:19px;',
 		},
 		{
@@ -211,7 +243,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаСертификатаВнутр',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:349px;top:137px;width:88px;height:19px;',
 		},
 		{
@@ -219,7 +254,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаСертификацииВнутр',
+			width: 88,
+			height: 19,
 			style: 'position:absolute;left:120px;top:162px;width:88px;height:19px;',
 		},
 		{

@@ -20,6 +20,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Код',
+			width: 68,
+			height: 19,
 			style: 'position:absolute;left:152px;top:33px;width:68px;height:19px;',
 		},
 		{
@@ -33,6 +35,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Наименование',
+			width: 375,
+			height: 19,
 			style: 'position:absolute;left:152px;top:58px;width:375px;height:19px;',
 		},
 		{
@@ -51,6 +55,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Сертификат',
+			width: 375,
+			height: 19,
 			style: 'position:absolute;left:152px;top:92px;width:375px;height:19px;',
 		},
 	],

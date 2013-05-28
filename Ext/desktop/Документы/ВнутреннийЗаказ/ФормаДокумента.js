@@ -32,6 +32,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Номер',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:90px;top:32px;width:80px;height:19px;',
 		},
 		{
@@ -39,7 +41,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'Дата',
+			width: 120,
+			height: 19,
 			style: 'position:absolute;left:190px;top:32px;width:120px;height:19px;',
 		},
 		{
@@ -47,6 +52,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Комментарий',
+			width: 559,
+			height: 19,
 			style: 'position:absolute;left:90px;top:344px;width:559px;height:19px;',
 		},
 		{
@@ -345,10 +352,15 @@
 					items:
 					[
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеКомпании',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:98px;top:72px;width:204px;height:19px;',
 		},
 		{
@@ -358,10 +370,15 @@
 			style: 'position:absolute;left:322px;top:72px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Ответственный',
+			width: 223,
+			height: 19,
 			style: 'position:absolute;left:410px;top:72px;width:223px;height:19px;',
 		},
 		{
@@ -379,7 +396,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ВремяНапоминания',
+			width: 126,
+			height: 19,
 			style: 'position:absolute;left:100px;top:117px;width:126px;height:19px;',
 		},
 		{
@@ -393,10 +413,15 @@
 			style: 'position:absolute;left:6px;top:6px;width:627px;height:16px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Исполнитель',
+			width: 223,
+			height: 19,
 			style: 'position:absolute;left:410px;top:27px;width:223px;height:19px;',
 		},
 		{
@@ -406,17 +431,27 @@
 			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'ПодразделениеИсполнитель',
+			width: 204,
+			height: 19,
 			style: 'position:absolute;left:98px;top:27px;width:204px;height:19px;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-clear-trigger',
+			trigger3Cls: 'x-form-search-trigger',
 			name: 'Основание',
+			width: 202,
+			height: 19,
 			style: 'position:absolute;left:100px;top:141px;width:202px;height:19px;',
 		},
 					]
@@ -430,10 +465,14 @@
 			style: 'position:absolute;left:14px;top:56px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
 			name: 'Организация',
+			width: 220,
+			height: 19,
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
 		},
 		{
@@ -441,6 +480,8 @@
 			hideLabel: true,
 			disabled: false,
 			name: 'Склад',
+			width: 162,
+			height: 19,
 			style: 'position:absolute;left:487px;top:81px;width:162px;height:19px;',
 		},
 		{
@@ -454,7 +495,10 @@
 			hideLabel: true,
 			disabled: false,
 			value: 0,
+			format: 'd.m.Y',
 			name: 'ДатаОтгрузки',
+			width: 80,
+			height: 19,
 			style: 'position:absolute;left:90px;top:81px;width:80px;height:19px;',
 		},
 		{
@@ -483,10 +527,13 @@
 			]
 		},
 		{
-			xtype: 'textfield',
+			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
 			name: 'ВидЗаказа',
+			width: 93,
+			height: 19,
 			style: 'position:absolute;left:391px;top:81px;width:93px;height:19px;',
 		},
 		{
