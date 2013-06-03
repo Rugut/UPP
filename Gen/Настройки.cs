@@ -11,7 +11,10 @@ namespace Gen
     {
         public static readonly Dictionary<string,string> Проекты = ПолучитьКаталоги(); 
         public static readonly Dictionary<string,string> Токены = ПолучитьТокены();
+        public static readonly bool АвтоЗавершение = СтрокаВБулевоПоУмолчаниюЛожь(ConfigurationManager.AppSettings["АвтоЗавершение"]);
         public static readonly string ИдентификаторБазы = ConfigurationManager.AppSettings["ИдентификаторБазы"];
+        public static readonly bool ВыводитьNet = СтрокаВБулевоПоУмолчаниюЛожь(ConfigurationManager.AppSettings["ВыводитьNet"]);
+        public static readonly bool Выводить1C = СтрокаВБулевоПоУмолчаниюЛожь(ConfigurationManager.AppSettings["Выводить1C"]);
         private static Dictionary<string, string> ЧитатьНастройки(string Имя)
         {
             var Настройки = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
@@ -36,5 +39,15 @@ namespace Gen
         {
             return ЧитатьНастройки("Токен");
         }
+
+        private static bool СтрокаВБулевоПоУмолчаниюЛожь(string стрБулево)
+        {
+            if (string.IsNullOrEmpty(стрБулево))
+            {
+                return false;
+            }
+            return стрБулево[0] == '1';
+        }
+
     }
 }

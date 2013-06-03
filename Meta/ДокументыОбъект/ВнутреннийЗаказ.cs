@@ -1,62 +1,235 @@
 ﻿
 using System;
+using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
-using V82.СправочникиСсылка;
 using V82.ДокументыСсылка;
 using V82.ДокументыОбъект;
+using V82.ДокументыСсылка;
 using V82.Перечисления;//Ссылка;
 namespace V82.ДокументыОбъект
 {
 	///<summary>
 	///(Общ)
 	///</summary>
+	[ProtoContract]
+	[DataContract]
 	public partial class ВнутреннийЗаказ:ДокументОбъект
 	{
+		public bool _ЭтоНовый;
+		public bool ЭтоНовый()
+		{
+			return _ЭтоНовый;
+		}
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		[DataMember]
+		[ProtoMember(3)]
+		public string ВерсияДанных {get;set;}
+		/*static хэш сумма состава и порядка реквизитов*/
+		/*версия класса восстановленного из пакета*/
+		[DataMember]
+		[ProtoMember(4)]
+		public bool ПометкаУдаления {get;set;}
+		[DataMember]
+		[ProtoMember(5)]
+		public DateTime Дата {get;set;}
+		[DataMember]
+		[ProtoMember(6)]
+		public DateTime ПрефиксНомера {get;set;}
+		[DataMember]
+		[ProtoMember(7)]
+		public string/*11*/ Номер {get;set;}
+		[DataMember]
+		[ProtoMember(8)]
+		public bool Проведен {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		public V82.Перечисления/*Ссылка*/.ВидыВнутреннегоЗаказа ВидЗаказа;//Вид заказа
+		[DataMember]
+		[ProtoMember(9)]
+		public V82.Перечисления/*Ссылка*/.ВидыВнутреннегоЗаказа ВидЗаказа {get;set;}//Вид заказа
 		///<summary>
 		///(Упр)
 		///</summary>
-		public DateTime ВремяНапоминания;//Время напоминания
+		[DataMember]
+		[ProtoMember(10)]
+		public DateTime ВремяНапоминания {get;set;}//Время напоминания
 		///<summary>
 		///(Упр)
 		///</summary>
-		public DateTime ДатаОтгрузки;//Дата отгрузки
+		[DataMember]
+		[ProtoMember(11)]
+		public DateTime ДатаОтгрузки {get;set;}//Дата отгрузки
 		///<summary>
 		///(Общ)
 		///</summary>
-		public object Заказчик;
+		[DataMember]
+		[ProtoMember(12)]
+		public object Заказчик {get;set;}
 		///<summary>
 		///(Общ) Любая дополнительная информация
 		///</summary>
-		public string/*(0)*/ Комментарий;
+		[DataMember]
+		[ProtoMember(13)]
+		public string/*(0)*/ Комментарий {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		public bool НапомнитьОСобытии;//Напомнить о событии
+		[DataMember]
+		[ProtoMember(14)]
+		public bool НапомнитьОСобытии {get;set;}//Напомнить о событии
 		///<summary>
 		///(Общ)
 		///</summary>
-		public V82.СправочникиСсылка.Организации Организация;
+		[DataMember]
+		[ProtoMember(15)]
+		public V82.СправочникиСсылка.Организации Организация {get;set;}
 		///<summary>
 		///(Общ)
 		///</summary>
-		public V82.СправочникиСсылка.Пользователи Ответственный;
+		[DataMember]
+		[ProtoMember(16)]
+		public V82.СправочникиСсылка.Пользователи Ответственный {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		public V82.СправочникиСсылка.Подразделения Подразделение;
+		[DataMember]
+		[ProtoMember(17)]
+		public V82.СправочникиСсылка.Подразделения Подразделение {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		public V82.СправочникиСсылка.ФизическиеЛица Исполнитель;
+		[DataMember]
+		[ProtoMember(18)]
+		public V82.СправочникиСсылка.ФизическиеЛица Исполнитель {get;set;}
 		///<summary>
 		///(Упр)
 		///</summary>
-		public V82.СправочникиСсылка.Подразделения ПодразделениеИсполнитель;//Подразделение исполнитель
-		public V82.ДокументыСсылка.Событие ДокументОснование;//Документ основание
+		[DataMember]
+		[ProtoMember(19)]
+		public V82.СправочникиСсылка.Подразделения ПодразделениеИсполнитель {get;set;}//Подразделение исполнитель
+		[DataMember]
+		[ProtoMember(20)]
+		public V82.ДокументыСсылка.Событие ДокументОснование {get;set;}//Документ основание
+		public void Записать()
+		{
+			//Установка блокировки элемента на горизантально масштабированный кластер.
+			//Опционально введение тайм аута на запись одного и того же объекта, не чаще раза в 5-секунд. Защита от спама. упращение алгоритма блокировки.
+			//Выделение сервиса для блокировки элемента и генерации кода
+			//Выполнение операций контроля без обращений к sql-серверу.
+			//Контроль конфликта блокировок.
+			//Контроль загрузки булкинсертом гетерогенной коллекции.
+			//Контроль уникальности кода для Документов.
+			//Контроль уникальности номера для документов, в границах префикса.
+			//Контроль владельца, он не может быть группой.
+			//Контроль владельца он должен быть задан.
+			//Контроль родителя он должен быть группой.
+			//Контроль количества уровней, должен соотвествовать метаданным.
+			//Контроль версии, объект не должен был быть записан перед чтением текущей записи, алгоритм версионника.
+			//Контроль уникальности ссылки
+			//Контроль зацикливания
+			//Опционально контроль битых ссылок.
+			//Соблюдейние транзакционности. ПередЗаписью. Открытие транзации. Валидации. ПриЗаписи. Фиксация транзакции. Информирование о записи элемента.
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					if(_ЭтоНовый)
+					{
+						Команда.CommandText = @"
+						Insert Into _Document333(
+						_IDRRef
+						/*,_Version*/
+						,_Marked
+						,_IsMetadata
+						,_Number
+						,_Fld5995RRef
+						,_Fld5996
+						,_Fld5997
+						,_Fld5999
+						,_Fld6000
+						,_Fld6001RRef
+						,_Fld6002RRef
+						,_Fld6003RRef
+						,_Fld6004RRef
+						,_Fld6005RRef
+						,_Fld6006RRef)
+						Values(
+						@Ссылка
+						/*,@Версия*/
+						,@ПометкаУдаления
+						,@Номер
+						,@ВидЗаказа
+						,@ВремяНапоминания
+						,@ДатаОтгрузки
+						,@Комментарий
+						,@НапомнитьОСобытии
+						,@Организация
+						,@Ответственный
+						,@Подразделение
+						,@Исполнитель
+						,@ПодразделениеИсполнитель
+						,@ДокументОснование)";
+					}
+					else
+					{
+						Команда.CommandText = @"
+						Update _Document333
+						Set
+						/*_IDRRef	= @Ссылка*/
+						/*,_Version	= @Версия*/
+						_Marked	= @ПометкаУдаления
+						,_Number	= @Номер
+						,_Fld5995RRef	= @ВидЗаказа
+						,_Fld5996	= @ВремяНапоминания
+						,_Fld5997	= @ДатаОтгрузки
+						,_Fld5999	= @Комментарий
+						,_Fld6000	= @НапомнитьОСобытии
+						,_Fld6001RRef	= @Организация
+						,_Fld6002RRef	= @Ответственный
+						,_Fld6003RRef	= @Подразделение
+						,_Fld6004RRef	= @Исполнитель
+						,_Fld6005RRef	= @ПодразделениеИсполнитель
+						,_Fld6006RRef	= @ДокументОснование
+						Where _IDRRef = @Ссылка";
+					}
+					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
+					/*Команда.Parameters.AddWithValue("Версия", Версия);*/
+					Команда.Parameters.AddWithValue("ПометкаУдаления", ПометкаУдаления);
+					Команда.Parameters.AddWithValue("Номер", Номер);
+					Команда.Parameters.AddWithValue("ВидЗаказа", ВидЗаказа.Ключ());
+					Команда.Parameters.AddWithValue("ВремяНапоминания", ВремяНапоминания);
+					Команда.Parameters.AddWithValue("ДатаОтгрузки", ДатаОтгрузки);
+					Команда.Parameters.AddWithValue("Комментарий", Комментарий);
+					Команда.Parameters.AddWithValue("НапомнитьОСобытии", НапомнитьОСобытии);
+					Команда.Parameters.AddWithValue("ДокументОснование", ДокументОснование.Ссылка);
+					Команда.ExecuteNonQuery();
+				}
+			}
+		}
+		public void Удалить()
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Delete _Document333
+					Where _IDRRef=@Ссылка";
+					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
+					Команда.ExecuteNonQuery();
+				}
+			}
+		}
 	}
 }

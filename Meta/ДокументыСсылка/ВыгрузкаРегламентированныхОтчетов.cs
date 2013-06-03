@@ -1,25 +1,140 @@
 ﻿
 using System;
+using System.Collections;
+using System.IO;
+using System.Data.SqlClient;
+using System.Globalization;
+using System.Runtime.Serialization;
+using ProtoBuf;/*https://github.com/ServiceStack/ServiceStack/tree/master/lib*/
+using ServiceStack.Text;/*https://github.com/ServiceStack/ServiceStack.Text*/
 using V82;
 using V82.ОбщиеОбъекты;
-using V82.СправочникиСсылка;
+using V82.ДокументыСсылка;
 using V82.ДокументыСсылка;
 using V82.Перечисления;//Ссылка;
 namespace V82.ДокументыСсылка
 {
-	public partial class ВыгрузкаРегламентированныхОтчетов:ДокументСсылка
+	[ProtoContract]
+	[DataContract]
+	public partial class ВыгрузкаРегламентированныхОтчетов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
-		public Guid Ссылка;
-		public ulong Версия;
-		public bool ПометкаУдаления;
-		public DateTime Дата;
-		public DateTime ПрефиксНомера;
-		public string Номер;
-		public bool Проведен;
-		public DateTime ПериодПо;//Период По
-		public V82.СправочникиСсылка.Организации Организация;
-		public string/*(4)*/ КодИМНС;//Код ИФНС
-		public string/*(0)*/ Комментарий;
-		public bool флОтборИФНС;//Фл отбор ИФНС
+		public static readonly Guid ГуидКласса = new Guid("05421ed4-0701-49f9-9529-1693c8e17cf7");
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191639.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly long КонтрольнаяСуммаКласса = 123;
+		[DataMember]
+		[ProtoMember(1)]
+		public Guid Ссылка {get;set;}
+		[DataMember]
+		[ProtoMember(2)]
+		public long Версия {get;set;}
+		public string ВерсияДанных {get;set;}
+		/*static хэш сумма состава и порядка реквизитов*/
+		/*версия класса восстановленного из пакета*/
+		public bool ПометкаУдаления {get;set;}
+		public DateTime Дата {get;set;}
+		public DateTime ПрефиксНомера {get;set;}
+		public string/*13*/ Номер {get;set;}
+		public bool Проведен {get;set;}
+		public DateTime ПериодПо {get;set;}//Период По
+		public V82.СправочникиСсылка.Организации Организация {get;set;}
+		public string/*(4)*/ КодИМНС {get;set;}//Код ИФНС
+		public string/*(0)*/ Комментарий {get;set;}
+		public bool флОтборИФНС {get;set;}//Фл отбор ИФНС
+		
+		public ВыгрузкаРегламентированныхОтчетов()
+		{
+		}
+		
+		public ВыгрузкаРегламентированныхОтчетов(byte[] УникальныйИдентификатор)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_Number [Номер]
+					,_Fld6574 [ПериодПо]
+					,_Fld6575RRef [Организация]
+					,_Fld6576 [КодИМНС]
+					,_Fld6577 [Комментарий]
+					,_Fld6578 [флОтборИФНС]
+					From _Document346(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор";
+					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						if (Читалка.Read())
+						{
+							//ToDo: Читать нужно через GetValues()
+							Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Номер = Читалка.GetString(3);
+							ПериодПо = Читалка.GetDateTime(4);
+							КодИМНС = Читалка.GetString(6);
+							Комментарий = Читалка.GetString(7);
+							флОтборИФНС = ((byte[])Читалка.GetValue(8))[0]==1;
+							//return Ссылка;
+						}
+						else
+						{
+							//return null;
+						}
+					}
+				}
+			}
+		}
+		
+		public V82.ДокументыОбъект.ВыгрузкаРегламентированныхОтчетов  ПолучитьОбъект()
+		{
+			var Объект = new V82.ДокументыОбъект.ВыгрузкаРегламентированныхОтчетов();
+			Объект._ЭтоНовый = false;
+			Объект.Ссылка = Ссылка;
+			Объект.Версия = Версия;
+			Объект.ПометкаУдаления = ПометкаУдаления;
+			Объект.Номер = Номер;
+			Объект.ПериодПо = ПериодПо;
+			Объект.Организация = Организация;
+			Объект.КодИМНС = КодИМНС;
+			Объект.Комментарий = Комментарий;
+			Объект.флОтборИФНС = флОтборИФНС;
+			return Объект;
+		}
+		
+		private static readonly Hashtable Кэш = new Hashtable(1000);
+		
+		public static V82.ДокументыСсылка.ВыгрузкаРегламентированныхОтчетов ВзятьИзКэша(byte[] УникальныйИдентификатор)
+		{
+			var УИ = new Guid(УникальныйИдентификатор);
+			if (Кэш.ContainsKey(УИ))
+			{
+				return (V82.ДокументыСсылка.ВыгрузкаРегламентированныхОтчетов)Кэш[УИ];
+			}
+			var Ссылка = new V82.ДокументыСсылка.ВыгрузкаРегламентированныхОтчетов(УникальныйИдентификатор);
+			Кэш.Add(УИ, Ссылка);
+			return Ссылка;
+		}
+		
+		public void СериализацияProtoBuf(Stream Поток)
+		{
+			Serializer.Serialize(Поток,this);
+		}
+		
+		public string СериализацияJson()
+		{
+			return this.ToJson();
+		}
+		
+		public string СериализацияXml()
+		{
+			return this.ToXml();
+		}
 	}
 }

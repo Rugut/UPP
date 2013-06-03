@@ -1,0 +1,57 @@
+
+$theme-name: 'gray';
+
+$base-color: #3B6D9F;
+// ===============================
+// ========= GRID =========
+// ===============================
+$grid-header-background-color:rgba(97, 136, 221, 0.75) !default;
+$grid-header-background-gradient: flat !default;
+$grid-header-border-color: rgba(56, 113, 213, 0.61) !default;
+$grid-header-over-background-color: rgba(105, 135, 201, 0.8) !default;
+$grid-header-over-border-color: darken($grid-header-over-background-color, 20%) !default;
+$grid-header-over-background-gradient: $grid-header-background-gradient !default;
+$grid-header-color:rgba(252, 252, 252, 0.78) !default;//color-by-background($grid-header-background-color) !default;
+
+
+// ===============================
+// ========= PANEL =========
+// ===============================
+
+
+
+// ===============================
+// ========= BASE PANEL ==========
+// ===============================
+
+
+
+// ===============================
+// ========= PANEL BODY ==========
+// ===============================
+$panel-body-border-style: solid !default;
+$panel-body-background-color: #F0F1F4 !default;
+$panel-body-color: #000 !default;
+
+
+// ===============================
+// ======== PANEL TOOLS ==========
+// ===============================
+$tool-size: 15px !default;
+
+// ===============================
+// ======== PANEL HEADER =========
+// ===============================
+
+//background
+
+$panel-header-background: -webkit-gradient(linear, left top, left bottom, color-stop(0.02, #C7D3EC), color-stop(0.51, #5E7FE2)) !default;
+$panel-header-color:rgba(97, 136, 221, 0.75) !default;
+$panel-header-background-color: rgba(97, 136, 221, 0.75) !default;
+
+
+
+
+
+@import 'compass';
+@import 'ext4/default/all';

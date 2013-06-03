@@ -1,0 +1,9 @@
+/* Добавим свою кнопку */
+.x-form-select-trigger {
+  background-image: url('../../resources/themes/images/default/form/select-trigger.gif'); }
+/* Добавим свою кнопку */
+.x-form-spinner {
+  background-image: url('../../resources/themes/images/default/form/spinner.gif'); }
+/* Добавим свою кнопку */
+.x-form-trigger-square {
+  background-image: url('../../resources/themes/images/default/form/trigger-square.gif'); }

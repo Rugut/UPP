@@ -8,5 +8,6 @@ namespace V82.ДокументыОбъект
 {
 	public partial class ДокументОбъект
 	{
+		public static string СтрокаСоединения = "server=10.2.66.29,59635;Database=UPP;Trusted_Connection=True;";
 	}
 }
