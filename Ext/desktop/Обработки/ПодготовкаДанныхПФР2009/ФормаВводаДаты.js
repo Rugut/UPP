@@ -8,7 +8,10 @@
 	title: 'Окончание межрасчетного периода',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -43,6 +46,7 @@
 			]
 		},
 		{
+			id: 'ТаблицаСотрудников',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:83px;width:343px;height:178px;',
 			height: 178,width: 343,
@@ -61,13 +65,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСотрудников');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -76,7 +97,8 @@
 			text: 'Выберите сотрудников, выходящих на пенсию',
 			style: 'position:absolute;left:8px;top:38px;width:258px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

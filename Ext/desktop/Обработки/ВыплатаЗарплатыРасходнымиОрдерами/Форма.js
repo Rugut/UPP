@@ -8,7 +8,10 @@
 	title: 'Выплата зарплаты расходными ордерами',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -44,6 +47,7 @@
 			style: 'position:absolute;left:400px;top:6px;width:192px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеРКО',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:73px;width:584px;height:198px;',
 			height: 198,width: 584,
@@ -63,7 +67,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -75,7 +79,7 @@
 				},
 				{
 					text:'Проведено по кассе документом',
-					width:'220',
+					width:'2200',
 					dataIndex:'РКО',
 					flex:1,
 				},
@@ -86,7 +90,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыплатаЗарплатыРасходнымиОрдерами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыплатаЗарплатыРасходнымиОрдерами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -105,6 +109,23 @@
 						name:'РКО',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеРКО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -173,7 +194,8 @@
 			text: 'Касса:',
 			style: 'position:absolute;left:8px;top:323px;width:78px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

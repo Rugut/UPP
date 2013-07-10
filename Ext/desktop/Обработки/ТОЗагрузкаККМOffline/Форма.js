@@ -8,7 +8,10 @@
 	title: 'Обработка  Загрузка ККМ Off-Line',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -45,6 +48,7 @@
 			style: 'position:absolute;left:8px;top:105px;width:188px;height:19px;',
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:157px;width:764px;height:277px;',
 			height: 277,width: 764,
@@ -58,13 +62,13 @@
 				},
 				{
 					text:'Код товара',
-					width:'120',
+					width:'1200',
 					dataIndex:'КодТовара',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -76,13 +80,13 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'Серия',
 					flex:1,
 				},
@@ -99,7 +103,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОЗагрузкаККМOffline/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОЗагрузкаККМOffline/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -125,6 +129,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -149,7 +170,8 @@
 			text: 'Информация о ККМ',
 			style: 'position:absolute;left:523px;top:33px;width:249px;height:97px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

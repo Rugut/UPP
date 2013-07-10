@@ -8,7 +8,10 @@
 	title: 'Отражение НДС к вычету',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -248,6 +251,7 @@
 					items:
 					[
 		{
+			id: 'ТоварыИУслуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:631px;height:163px;',
 			height: 163,width: 631,
@@ -267,7 +271,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -291,7 +295,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -303,13 +307,13 @@
 				},
 				{
 					text:'Сумма НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДС',
 					flex:1,
 				},
 				{
 					text:'Всего',
-					width:'120',
+					width:'1200',
 					dataIndex:'Всего',
 					flex:1,
 				},
@@ -321,19 +325,19 @@
 				},
 				{
 					text:'Субконто 1',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -368,7 +372,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеПоступленияТоваровИУслугНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеПоступленияТоваровИУслугНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -427,6 +431,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТоварыИУслуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -435,6 +456,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыОплаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:631px;height:163px;',
 			height: 163,width: 631,
@@ -454,7 +476,7 @@
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -465,7 +487,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеПоступленияТоваровИУслугНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеПоступленияТоваровИУслугНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -478,6 +500,23 @@
 						name:'ДокументОплаты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыОплаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -541,7 +580,8 @@
 			boxLabel: 'Использовать документ расчетов как счет-фактуру',
 			style: 'position:absolute;left:319px;top:129px;width:284px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

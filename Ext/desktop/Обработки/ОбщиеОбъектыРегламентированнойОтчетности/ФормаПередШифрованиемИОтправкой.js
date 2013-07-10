@@ -8,7 +8,10 @@
 	title: 'Шифрование и отправка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:362px;height:74px;',
@@ -30,7 +33,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

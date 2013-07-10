@@ -8,7 +8,10 @@
 	title: 'Акцизы: извещение об уплате авансового платежа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
@@ -65,7 +68,8 @@
 			height: 19,
 			style: 'position:absolute;left:8px;top:27px;width:260px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

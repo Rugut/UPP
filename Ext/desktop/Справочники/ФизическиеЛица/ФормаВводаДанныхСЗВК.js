@@ -8,8 +8,12 @@
 	title: 'Ввод данных СЗВ-К',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЗаписиОСтаже',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:165px;width:740px;height:152px;',
 			height: 152,width: 740,
@@ -17,7 +21,7 @@
 			[
 				{
 					text:'',
-					width:'120',
+					width:'1200',
 					dataIndex:'НевидимаяКолонка',
 					flex:1,
 				},
@@ -35,7 +39,7 @@
 				},
 				{
 					text:'',
-					width:'180',
+					width:'1800',
 					dataIndex:'НевидимаяКолонка1',
 					flex:1,
 				},
@@ -65,13 +69,13 @@
 				},
 				{
 					text:'',
-					width:'180',
+					width:'1800',
 					dataIndex:'НевидимаяКолонка5',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'180',
+					width:'1800',
 					dataIndex:'ПодписьДолжности',
 					flex:1,
 				},
@@ -83,7 +87,7 @@
 				},
 				{
 					text:'Исчисляемый трудовой стаж',
-					width:'190',
+					width:'1900',
 					dataIndex:'НевидимаяКолонка3',
 					flex:1,
 				},
@@ -125,19 +129,19 @@
 				},
 				{
 					text:'Код позиции списка',
-					width:'270',
+					width:'2700',
 					dataIndex:'КодПозицииСписка',
 					flex:1,
 				},
 				{
 					text:'Должность',
-					width:'270',
+					width:'2700',
 					dataIndex:'Должность',
 					flex:1,
 				},
 				{
 					text:'Выслуга лет',
-					width:'150',
+					width:'1500',
 					dataIndex:'НевидимаяКолонка4',
 					flex:1,
 				},
@@ -168,11 +172,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -252,8 +257,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаписиОСтаже');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ИтоговыйСтаж',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:363px;width:740px;height:60px;',
 			height: 60,width: 740,
@@ -261,13 +284,13 @@
 			[
 				{
 					text:'Вид стажа',
-					width:'220',
+					width:'2200',
 					dataIndex:'ВидСтажа',
 					flex:1,
 				},
 				{
 					text:'Код стажа',
-					width:'120',
+					width:'1200',
 					dataIndex:'КодСтажа',
 					flex:1,
 				},
@@ -292,11 +315,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -315,6 +339,23 @@
 						name:'Дней',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИтоговыйСтаж');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -525,6 +566,7 @@
 			style: 'position:absolute;left:8px;top:32px;width:352px;height:15px;',
 		},
 		{
+			id: 'ПериодыДеятельности',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:50px;width:740px;height:68px;',
 			height: 68,width: 740,
@@ -532,30 +574,31 @@
 			[
 				{
 					text:'Организация',
-					width:'320',
+					width:'3200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Вид общественно полезной деятельности',
-					width:'220',
+					width:'2200',
 					dataIndex:'ВидДеятельности',
 					flex:1,
 				},
 				{
 					text:'Период',
-					width:'180',
+					width:'1800',
 					dataIndex:'Период',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -569,8 +612,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПериодыДеятельности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

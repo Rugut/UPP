@@ -8,7 +8,10 @@
 	title: 'Классификатор стран мира',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -97,7 +100,8 @@
 			height: 19,
 			style: 'position:absolute;left:464px;top:33px;width:40px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

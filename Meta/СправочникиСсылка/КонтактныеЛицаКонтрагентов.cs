@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class КонтактныеЛицаКонтрагентов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("73fad1f0-e174-4c7d-9132-e00ad2212966");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191620.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КонтактныеЛицаКонтрагентов(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КонтактныеЛицаКонтрагентов(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,12 +76,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -86,8 +99,8 @@ namespace V82.СправочникиСсылка
 							Наименование = Читалка.GetString(5);
 							Должность = Читалка.GetString(6);
 							Комментарий = Читалка.GetString(7);
-							КонтактноеЛицо = new V82.СправочникиСсылка.КонтактныеЛица((byte[])Читалка.GetValue(8));
-							РольКонтактногоЛица = new V82.СправочникиСсылка.РолиКонтактныхЛиц((byte[])Читалка.GetValue(9));
+							КонтактноеЛицо = new V82.СправочникиСсылка.КонтактныеЛица((byte[])Читалка.GetValue(8),Глубина+1);
+							РольКонтактногоЛица = new V82.СправочникиСсылка.РолиКонтактныхЛиц((byte[])Читалка.GetValue(9),Глубина+1);
 							//return Ссылка;
 						}
 						else

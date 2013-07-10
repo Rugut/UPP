@@ -8,7 +8,10 @@
 	title: 'Регистр учета прямых расходов на производство',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -77,7 +80,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:70px;top:56px;width:526px;height:20px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

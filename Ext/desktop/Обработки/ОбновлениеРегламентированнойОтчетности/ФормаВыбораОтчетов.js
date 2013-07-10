@@ -8,7 +8,10 @@
 	title: 'Выберите обновляемые отчеты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'КнопкаУстановитьВсе',
@@ -22,6 +25,7 @@
 			style: 'position:absolute;left:450px;top:37px;width:24px;height:24px;',
 		},
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:440px;height:280px;',
 			height: 280,width: 440,
@@ -46,7 +50,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбновлениеРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбновлениеРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -57,8 +61,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

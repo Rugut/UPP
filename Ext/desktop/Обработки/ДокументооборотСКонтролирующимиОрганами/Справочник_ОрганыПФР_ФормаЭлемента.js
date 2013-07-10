@@ -8,7 +8,10 @@
 	title: 'Органы ПФР',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -59,7 +62,8 @@
 			height: 19,
 			style: 'position:absolute;left:152px;top:92px;width:375px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗаказНаПроизводство:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("4cb8b0ff-6cc4-4c9b-80ce-b5ae7c82d44a");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191831.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012026.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -92,17 +92,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6919 [ВремяНапоминания]
-					,_Fld6920 [ДатаИсполнения]
-					,_Fld6921 [Комментарий]
-					,_Fld6922 [НапомнитьОСобытии]
-					,_Fld6923RRef [Организация]
-					,_Fld6924RRef [Ответственный]
-					,_Fld6925RRef [Подразделение]
-					,_Fld6926RRef [Исполнитель]
-					,_Fld6927RRef [ОсновнойЗаказНаПроизводство]
-					,_Fld6928 [ДатаЗапуска]
-					From _Document361(NOLOCK)
+					,_Fld4262 [ВремяНапоминания]
+					,_Fld4263 [ДатаИсполнения]
+					,_Fld4264 [Комментарий]
+					,_Fld4265 [НапомнитьОСобытии]
+					,_Fld4266RRef [Организация]
+					,_Fld4267RRef [Ответственный]
+					,_Fld4268RRef [Подразделение]
+					,_Fld4269RRef [Исполнитель]
+					,_Fld18601RRef [ОсновнойЗаказНаПроизводство]
+					,_Fld19477 [ДатаЗапуска]
+					From _Document256(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

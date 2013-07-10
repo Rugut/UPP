@@ -8,8 +8,12 @@
 	title: 'Справочник Учетные записи электронной почты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:550px;height:320px;',
 			height: 320,width: 550,
@@ -29,19 +33,19 @@
 				},
 				{
 					text:'Наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'SMTPСервер',
-					width:'120',
+					width:'1200',
 					dataIndex:'SMTPСервер',
 					flex:1,
 				},
 				{
 					text:'POP3 сервер',
-					width:'350',
+					width:'3500',
 					dataIndex:'POP3Сервер',
 					flex:1,
 				},
@@ -59,13 +63,13 @@
 				},
 				{
 					text:'Логин',
-					width:'350',
+					width:'3500',
 					dataIndex:'Логин',
 					flex:1,
 				},
 				{
 					text:'Пароль',
-					width:'350',
+					width:'3500',
 					dataIndex:'Пароль',
 					flex:1,
 				},
@@ -77,13 +81,13 @@
 				},
 				{
 					text:'Логин SMTP',
-					width:'350',
+					width:'3500',
 					dataIndex:'ЛогинSMTP',
 					flex:1,
 				},
 				{
 					text:'Пароль SMTP',
-					width:'350',
+					width:'3500',
 					dataIndex:'ПарольSMTP',
 					flex:1,
 				},
@@ -113,7 +117,7 @@
 				},
 				{
 					text:'Адрес электронной почты',
-					width:'350',
+					width:'3500',
 					dataIndex:'АдресЭлектроннойПочты',
 					flex:1,
 				},
@@ -179,7 +183,7 @@
 				},
 				{
 					text:'Ответственный за авто получение отправку сообщений',
-					width:'350',
+					width:'3500',
 					dataIndex:'ОтветственныйЗаАвтоПолучениеОтправкуСообщений',
 					flex:1,
 				},
@@ -269,7 +273,7 @@
 				},
 				{
 					text:'Кодировка писем по умолчанию',
-					width:'350',
+					width:'3500',
 					dataIndex:'КодировкаПисемПоУмолчанию',
 					flex:1,
 				},
@@ -282,11 +286,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -423,8 +428,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

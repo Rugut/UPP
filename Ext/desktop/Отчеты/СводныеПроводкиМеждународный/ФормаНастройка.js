@@ -8,7 +8,10 @@
 	title: 'Настройка Сводные проводки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:212px;',
@@ -118,7 +121,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

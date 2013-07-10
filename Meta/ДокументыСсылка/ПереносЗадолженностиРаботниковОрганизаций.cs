@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПереносЗадолженностиРаботниковОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e76a798e-13c2-45c0-982a-b2f2d3c0485d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191231.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011953.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12515 [ПериодРегистрации]
-					,_Fld12516RRef [Организация]
-					,_Fld12517RRef [ПодразделениеОрганизации]
-					,_Fld12518 [Комментарий]
-					,_Fld12519RRef [Ответственный]
-					,_Fld12520 [КраткийСоставДокумента]
-					,_Fld12521 [СуммаДокумента]
-					From _Document494(NOLOCK)
+					,_Fld20183 [ПериодРегистрации]
+					,_Fld20184RRef [Организация]
+					,_Fld20185RRef [ПодразделениеОрганизации]
+					,_Fld20186 [Комментарий]
+					,_Fld20187RRef [Ответственный]
+					,_Fld20188 [КраткийСоставДокумента]
+					,_Fld27211 [СуммаДокумента]
+					From _Document19662(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

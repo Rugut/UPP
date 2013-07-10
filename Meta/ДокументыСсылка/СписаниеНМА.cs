@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СписаниеНМА:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("5e9eec91-ca5f-4e81-afd0-e43ba3407253");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191739.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012018.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -84,18 +84,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17367 [Комментарий]
-					,_Fld17368RRef [НематериальныйАктив]
-					,_Fld17369RRef [Организация]
-					,_Fld17370RRef [Ответственный]
-					,_Fld17371 [ОтражатьВБухгалтерскомУчете]
-					,_Fld17372 [ОтражатьВНалоговомУчете]
-					,_Fld17373 [ОтражатьВУправленческомУчете]
-					,_Fld17374RRef [СубконтоБУ]
-					,_Fld17375RRef [СубконтоНУ]
-					,_Fld17376RRef [СчетСписанияБУ]
-					,_Fld17377RRef [СчетСписанияНУ]
-					From _Document594(NOLOCK)
+					,_Fld11662 [Комментарий]
+					,_Fld11663RRef [НематериальныйАктив]
+					,_Fld11664RRef [Организация]
+					,_Fld11665RRef [Ответственный]
+					,_Fld11666 [ОтражатьВБухгалтерскомУчете]
+					,_Fld11667 [ОтражатьВНалоговомУчете]
+					,_Fld11668 [ОтражатьВУправленческомУчете]
+					,_Fld11669RRef [СубконтоБУ]
+					,_Fld11670RRef [СубконтоНУ]
+					,_Fld11671RRef [СчетСписанияБУ]
+					,_Fld11672RRef [СчетСписанияНУ]
+					From _Document457(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class УслугиСобственнымПодразделениям:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("594d3679-b2a0-41de-b416-7743dbce01d0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191207.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011951.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -68,20 +68,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18489RRef [Организация]
-					,_Fld18490RRef [Номенклатура]
-					,_Fld18491RRef [НоменклатурнаяГруппа]
-					,_Fld18492RRef [Подразделение]
-					,_Fld18493 [ОтражатьВУправленческомУчете]
-					,_Fld18494 [ОтражатьВБухгалтерскомУчете]
-					,_Fld18495 [ОтражатьВНалоговомУчете]
-					,_Fld18496RRef [ПодразделениеОрганизации]
-					,_Fld18497RRef [СчетЗатрат]
-					,_Fld18498RRef [СчетЗатратНУ]
-					,_Fld18499RRef [Проект]
-					,_Fld18500RRef [Ответственный]
-					,_Fld18501 [Комментарий]
-					From _Document617(NOLOCK)
+					,_Fld25704RRef [Организация]
+					,_Fld25705RRef [Номенклатура]
+					,_Fld25706RRef [НоменклатурнаяГруппа]
+					,_Fld25707RRef [Подразделение]
+					,_Fld25708 [ОтражатьВУправленческомУчете]
+					,_Fld25709 [ОтражатьВБухгалтерскомУчете]
+					,_Fld25710 [ОтражатьВНалоговомУчете]
+					,_Fld25711RRef [ПодразделениеОрганизации]
+					,_Fld25712RRef [СчетЗатрат]
+					,_Fld25713RRef [СчетЗатратНУ]
+					,_Fld25714RRef [Проект]
+					,_Fld25715RRef [Ответственный]
+					,_Fld25716 [Комментарий]
+					From _Document23179(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

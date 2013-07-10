@@ -8,8 +8,12 @@
 	title: 'Просмотр XML',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

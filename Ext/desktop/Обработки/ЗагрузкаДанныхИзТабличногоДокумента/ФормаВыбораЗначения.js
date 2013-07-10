@@ -8,7 +8,10 @@
 	title: 'Выберите значение',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -30,7 +33,8 @@
 			text: 'Отмена',
 			style: 'position:absolute;left:228px;top:34px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

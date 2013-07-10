@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class НачислениеЕдиновременныхПособийЗаСчетФСС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("0b58b53e-192e-4df0-bd5c-5ddec6574bd9");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191945.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9672RRef [Организация]
-					,_Fld9673 [Комментарий]
-					,_Fld9674RRef [Ответственный]
-					,_Fld9675 [КраткийСоставДокумента]
-					,_Fld9676 [ПериодРегистрации]
-					,_Fld9677RRef [ПерерассчитываемыйДокумент]
-					From _Document435(NOLOCK)
+					,_Fld6159RRef [Организация]
+					,_Fld6160 [Комментарий]
+					,_Fld6161RRef [Ответственный]
+					,_Fld6162 [КраткийСоставДокумента]
+					,_Fld21528 [ПериодРегистрации]
+					,_Fld22998RRef [ПерерассчитываемыйДокумент]
+					From _Document318(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

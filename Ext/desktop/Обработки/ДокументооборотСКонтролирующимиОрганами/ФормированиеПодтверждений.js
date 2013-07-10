@@ -8,8 +8,12 @@
 	title: 'Формирование подтверждений',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЦиклыОбмена',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:106px;width:726px;height:379px;',
 			height: 379,width: 726,
@@ -101,13 +105,13 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Налоговый орган',
-					width:'120',
+					width:'1200',
 					dataIndex:'НалоговыйОрган',
 					flex:1,
 				},
@@ -118,7 +122,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -170,6 +174,23 @@
 						name:'НалоговыйОрган',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбмена');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -237,7 +258,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

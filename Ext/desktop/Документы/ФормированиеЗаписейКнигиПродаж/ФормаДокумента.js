@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -107,6 +110,7 @@
 					items:
 					[
 		{
+			id: 'Реализация',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
 			height: 230,width: 679,
@@ -120,19 +124,19 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Покупатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'Покупатель',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -144,25 +148,25 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Договор комиссии',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -174,13 +178,13 @@
 				},
 				{
 					text:'Событие',
-					width:'120',
+					width:'1200',
 					dataIndex:'Событие',
 					flex:1,
 				},
 				{
 					text:'Состояние',
-					width:'120',
+					width:'1200',
 					dataIndex:'Состояние',
 					flex:1,
 				},
@@ -209,7 +213,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -259,6 +263,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Реализация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -267,6 +288,7 @@
 					items:
 					[
 		{
+			id: 'Авансы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
 			height: 230,width: 679,
@@ -280,25 +302,25 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Покупатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'Покупатель',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -310,19 +332,19 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Событие',
-					width:'120',
+					width:'1200',
 					dataIndex:'Событие',
 					flex:1,
 				},
@@ -351,7 +373,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -392,6 +414,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Авансы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -400,6 +439,7 @@
 					items:
 					[
 		{
+			id: 'НачисленКУплате',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
 			height: 230,width: 679,
@@ -425,19 +465,19 @@
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -449,13 +489,13 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -467,7 +507,7 @@
 				},
 				{
 					text:'Событие',
-					width:'120',
+					width:'1200',
 					dataIndex:'Событие',
 					flex:1,
 				},
@@ -478,7 +518,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -516,6 +556,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НачисленКУплате');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -524,6 +581,7 @@
 					items:
 					[
 		{
+			id: 'ВосстановленПоАвансам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
 			height: 230,width: 679,
@@ -537,25 +595,25 @@
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -567,7 +625,7 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -602,7 +660,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -640,6 +698,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВосстановленПоАвансам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -648,6 +723,7 @@
 					items:
 					[
 		{
+			id: 'Восстановлен',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
 			height: 230,width: 679,
@@ -691,13 +767,13 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -714,7 +790,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -746,6 +822,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Восстановлен');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -754,6 +847,7 @@
 					items:
 					[
 		{
+			id: 'НеОтражаетсяВКниге',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:230px;',
 			height: 230,width: 679,
@@ -767,25 +861,25 @@
 				},
 				{
 					text:'Вид начисления',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидНачисления',
 					flex:1,
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Покупатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'Покупатель',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -797,19 +891,19 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -821,7 +915,7 @@
 				},
 				{
 					text:'Событие',
-					width:'120',
+					width:'1200',
 					dataIndex:'Событие',
 					flex:1,
 				},
@@ -832,7 +926,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -870,6 +964,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НеОтражаетсяВКниге');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -880,7 +991,8 @@
 			boxLabel: 'Формировать сторнирующие записи доп. листов вручную',
 			style: 'position:absolute;left:329px;top:33px;width:372px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

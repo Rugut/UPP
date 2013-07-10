@@ -8,7 +8,10 @@
 	title: 'Встреча',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -96,6 +99,7 @@
 			style: 'position:absolute;left:379px;top:6px;width:130px;height:24px;text-align:center;',
 		},
 		{
+			id: 'Участники',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:56px;width:222px;height:144px;',
 			height: 144,width: 222,
@@ -114,13 +118,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Встречи/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Встречи/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Физлицо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Участники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -228,7 +249,8 @@
 			text: 'Подобрать свободное помещение',
 			style: 'position:absolute;left:257px;top:63px;width:123px;height:36px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

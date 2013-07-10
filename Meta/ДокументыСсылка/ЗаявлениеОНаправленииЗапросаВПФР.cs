@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗаявлениеОНаправленииЗапросаВПФР:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("21917dba-aa67-4510-b782-60a9c49964b9");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191910.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012030.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -93,30 +93,30 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7744RRef [Организация]
-					,_Fld7745RRef [Сотрудник]
-					,_Fld7746RRef [ФизЛицо]
-					,_Fld7747RRef [Страхователь]
-					,_Fld7748RRef [ВидПособия]
-					,_Fld7749 [ПериодРаботыС]
-					,_Fld7750 [ПериодРаботыПо]
-					,_Fld7751 [СтраховательПрекратилДеятельность]
-					,_Fld7752 [ИныеПричиныОтсутствияСправки]
-					,_Fld7753 [СтраховойНомерПФР]
-					,_Fld7754 [ДатаРождения]
-					,_Fld7755 [Фамилия]
-					,_Fld7756 [Имя]
-					,_Fld7757 [Отчество]
-					,_Fld7758 [Адрес]
-					,_Fld7759 [Телефон]
-					,_Fld7760RRef [ВидДокумента]
-					,_Fld7761 [СерияДокумента]
-					,_Fld7762 [НомерДокумента]
-					,_Fld7763 [ДатаВыдачиДокумента]
-					,_Fld7764 [КемВыданДокумент]
-					,_Fld7765 [Комментарий]
-					,_Fld7766RRef [Ответственный]
-					From _Document386(NOLOCK)
+					,_Fld24332RRef [Организация]
+					,_Fld24333RRef [Сотрудник]
+					,_Fld24334RRef [ФизЛицо]
+					,_Fld24335RRef [Страхователь]
+					,_Fld24336RRef [ВидПособия]
+					,_Fld24337 [ПериодРаботыС]
+					,_Fld24338 [ПериодРаботыПо]
+					,_Fld24339 [СтраховательПрекратилДеятельность]
+					,_Fld24340 [ИныеПричиныОтсутствияСправки]
+					,_Fld24341 [СтраховойНомерПФР]
+					,_Fld24342 [ДатаРождения]
+					,_Fld24343 [Фамилия]
+					,_Fld24344 [Имя]
+					,_Fld24345 [Отчество]
+					,_Fld24346 [Адрес]
+					,_Fld24347 [Телефон]
+					,_Fld24348RRef [ВидДокумента]
+					,_Fld24349 [СерияДокумента]
+					,_Fld24350 [НомерДокумента]
+					,_Fld24351 [ДатаВыдачиДокумента]
+					,_Fld24352 [КемВыданДокумент]
+					,_Fld24353 [Комментарий]
+					,_Fld24354RRef [Ответственный]
+					From _Document23149(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

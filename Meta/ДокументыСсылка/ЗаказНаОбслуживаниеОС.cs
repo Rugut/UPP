@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗаказНаОбслуживаниеОС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("fb0acbd0-a6bb-4b06-a0e2-57b58ec3e8a7");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191628.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012011.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -79,13 +79,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6908 [Комментарий]
-					,_Fld6909RRef [Ответственный]
-					,_Fld6910RRef [Услуга]
-					,_Fld6911RRef [ПричинаЗаказаНаОбслуживаниеОС]
-					,_Fld6912 [ДатаОбслуживанияОС]
-					,_Fld6913RRef [ВидОбслуживанияОС]
-					From _Document360(NOLOCK)
+					,_Fld4249 [Комментарий]
+					,_Fld4250RRef [Ответственный]
+					,_Fld4251RRef [Услуга]
+					,_Fld4252RRef [ПричинаЗаказаНаОбслуживаниеОС]
+					,_Fld4253 [ДатаОбслуживанияОС]
+					,_Fld4254RRef [ВидОбслуживанияОС]
+					From _Document255(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

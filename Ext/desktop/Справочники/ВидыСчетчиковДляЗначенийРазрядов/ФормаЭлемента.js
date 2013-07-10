@@ -8,7 +8,10 @@
 	title: 'Виды счетчиков для значений разрядов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -104,7 +107,8 @@
 			name: 'КонечноеЗначение',
 			style: 'position:absolute;left:312px;top:79px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

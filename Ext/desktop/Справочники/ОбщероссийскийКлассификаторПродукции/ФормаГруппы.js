@@ -8,7 +8,10 @@
 	title: 'Группа Общероссийский классификатор продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -69,7 +72,8 @@
 			height: 19,
 			style: 'position:absolute;left:115px;top:108px;width:277px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

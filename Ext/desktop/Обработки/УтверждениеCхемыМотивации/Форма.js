@@ -8,7 +8,10 @@
 	title: 'Утверждение схемы мотивации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -53,6 +56,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:599px;height:199px;',
 			height: 199,width: 599,
@@ -66,25 +70,25 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'150',
+					width:'1500',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Начисление',
-					width:'150',
+					width:'1500',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
 				{
 					text:'Показатели для расчета начисления',
-					width:'250',
+					width:'2500',
 					dataIndex:'Показатели',
 					flex:1,
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
@@ -102,7 +106,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказательТР1',
 					flex:1,
 				},
@@ -114,7 +118,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
@@ -132,7 +136,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказательТР2',
 					flex:1,
 				},
@@ -144,7 +148,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
@@ -162,7 +166,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказательТР3',
 					flex:1,
 				},
@@ -174,7 +178,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
@@ -192,7 +196,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказательТР4',
 					flex:1,
 				},
@@ -222,7 +226,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказательТР5',
 					flex:1,
 				},
@@ -234,7 +238,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -252,7 +256,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказательТР6',
 					flex:1,
 				},
@@ -269,7 +273,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УтверждениеCхемыМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УтверждениеCхемыМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -376,6 +380,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -384,6 +405,7 @@
 					items:
 					[
 		{
+			id: 'Удержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:599px;height:199px;',
 			height: 199,width: 599,
@@ -397,25 +419,25 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'150',
+					width:'1500',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Вид расчета',
-					width:'150',
+					width:'1500',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
 				{
 					text:'Показатели для расчета удержаний',
-					width:'250',
+					width:'2500',
 					dataIndex:'Показатели',
 					flex:1,
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
@@ -433,7 +455,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
@@ -451,7 +473,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
@@ -469,7 +491,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
@@ -487,7 +509,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель5',
 					flex:1,
 				},
@@ -505,7 +527,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -528,7 +550,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УтверждениеCхемыМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УтверждениеCхемыМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -599,12 +621,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Удержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -25,11 +25,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -75,11 +75,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -125,11 +125,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)";
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.ПоказателиАнализовНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -171,12 +171,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -221,11 +221,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -271,11 +271,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -321,11 +321,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)";
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПоказателиАнализовНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -367,11 +367,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)";
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПоказателиАнализовНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -413,11 +413,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)";
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПоказателиАнализовНоменклатуры();
 					using (var Читалка = Команда.ExecuteReader())
 					{

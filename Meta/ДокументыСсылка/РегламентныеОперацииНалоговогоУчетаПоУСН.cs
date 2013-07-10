@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РегламентныеОперацииНалоговогоУчетаПоУСН:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6e96dba5-c1f4-4d4d-8525-22711b568550");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191644.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -78,15 +78,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16265RRef [Организация]
-					,_Fld16266 [РаспределениеРасходовПоВидамДеятельности]
-					,_Fld16267 [ПериодРегистрации]
-					,_Fld16268 [ПризнаниеРасходовНаПриобретениеОСУСН]
-					,_Fld16269RRef [Ответственный]
-					,_Fld16270 [Комментарий]
-					,_Fld16271 [ПризнаниеРасходовНаПриобретениеНМАУСН]
-					,_Fld16272 [СписаниеДопРасходовУСН]
-					From _Document572(NOLOCK)
+					,_Fld11291RRef [Организация]
+					,_Fld11292 [РаспределениеРасходовПоВидамДеятельности]
+					,_Fld11293 [ПериодРегистрации]
+					,_Fld11294 [ПризнаниеРасходовНаПриобретениеОСУСН]
+					,_Fld11295RRef [Ответственный]
+					,_Fld11296 [Комментарий]
+					,_Fld11297 [ПризнаниеРасходовНаПриобретениеНМАУСН]
+					,_Fld22025 [СписаниеДопРасходовУСН]
+					From _Document443(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

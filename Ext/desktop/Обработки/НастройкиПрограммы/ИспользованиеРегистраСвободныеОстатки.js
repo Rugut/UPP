@@ -8,7 +8,10 @@
 	title: 'Установка параметра программы - Использовать регистр ""Свободные остатки""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать регистр "Свободные остатки"',
@@ -43,7 +46,8 @@
 			text: 'Подробнее...',
 			style: 'position:absolute;left:12px;top:122px;width:513px;height:25px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

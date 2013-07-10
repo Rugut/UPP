@@ -8,7 +8,10 @@
 	title: 'Сотрудники',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:276px;top:159px;width:716px;height:249px;',
@@ -21,6 +24,7 @@
 					items:
 					[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:716px;height:150px;',
 			height: 150,width: 716,
@@ -58,13 +62,13 @@
 				},
 				{
 					text:'Должность',
-					width:'120',
+					width:'1200',
 					dataIndex:'Должность',
 					flex:1,
 				},
 				{
 					text:'Вид договора',
-					width:'140',
+					width:'1400',
 					dataIndex:'Состояние',
 					flex:1,
 				},
@@ -88,7 +92,7 @@
 				},
 				{
 					text:'Номер лицевого счета',
-					width:'120',
+					width:'1200',
 					dataIndex:'НомерЛицевогоСчета',
 					flex:1,
 				},
@@ -101,11 +105,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +150,23 @@
 						name:'Банк',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -229,6 +251,7 @@
 					items:
 					[
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:262px;height:515px;',
 			height: 515,width: 262,
@@ -243,17 +266,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -292,6 +333,7 @@
 					items:
 					[
 		{
+			id: 'ПодразделенияОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:262px;height:515px;',
 			height: 515,width: 262,
@@ -318,11 +360,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -335,6 +378,23 @@
 						name:'Код',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПодразделенияОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -370,6 +430,7 @@
 					items:
 					[
 		{
+			id: 'ВидыДоговоров',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:262px;height:515px;',
 			height: 515,width: 262,
@@ -390,11 +451,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -404,6 +466,23 @@
 						name:'ВидДоговора',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВидыДоговоров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -430,6 +509,7 @@
 					items:
 					[
 		{
+			id: 'МедицинскиеСтраховыеПолисы',
 			xtype: 'grid',
 			style: 'position:absolute;left:1px;top:50px;width:715px;height:108px;',
 			height: 108,width: 715,
@@ -467,24 +547,25 @@
 				},
 				{
 					text:'Программа страхования',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПрограммаСтрахования',
 					flex:1,
 				},
 				{
 					text:'Родственник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Родственник',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -510,6 +591,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('МедицинскиеСтраховыеПолисы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -518,6 +616,7 @@
 					items:
 					[
 		{
+			id: 'ОстаткиОтпусковТекущегоСотрудника',
 			xtype: 'grid',
 			style: 'position:absolute;left:1px;top:81px;width:715px;height:77px;',
 			height: 77,width: 715,
@@ -556,11 +655,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -580,6 +680,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОстаткиОтпусковТекущегоСотрудника');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -597,7 +714,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

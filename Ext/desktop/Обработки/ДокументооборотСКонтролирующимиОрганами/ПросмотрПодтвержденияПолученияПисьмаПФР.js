@@ -8,7 +8,10 @@
 	title: 'Подтверждение получения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -21,7 +24,8 @@
 			text: '',
 			style: 'position:absolute;left:218px;top:9px;width:247px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

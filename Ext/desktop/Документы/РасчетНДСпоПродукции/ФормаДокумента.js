@@ -8,7 +8,10 @@
 	title: 'Расчет НДС по продукции (работам, услугам)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -106,7 +109,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:58px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

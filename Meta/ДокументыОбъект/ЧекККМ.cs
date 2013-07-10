@@ -129,27 +129,27 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document643(
+						Insert Into _Document496(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld19170RRef
-						,_Fld19171RRef
-						,_Fld19172RRef
-						,_Fld19173RRef
-						,_Fld19174
-						,_Fld19175
-						,_Fld19176RRef
-						,_Fld19177
-						,_Fld19178
-						,_Fld19179RRef
-						,_Fld19180RRef
-						,_Fld19181
-						,_Fld19182RRef
-						,_Fld19183RRef
-						,_Fld19184RRef)
+						,_Fld12648RRef
+						,_Fld12649RRef
+						,_Fld12650RRef
+						,_Fld12651RRef
+						,_Fld12652
+						,_Fld12653
+						,_Fld12654RRef
+						,_Fld12655
+						,_Fld12656
+						,_Fld12657RRef
+						,_Fld12658RRef
+						,_Fld12659
+						,_Fld12663RRef
+						,_Fld12664RRef
+						,_Fld12665RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -174,27 +174,27 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document643
+						Update _Document496
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld19170RRef	= @ВидОперации
-						,_Fld19171RRef	= @Склад
-						,_Fld19172RRef	= @КассаККМ
-						,_Fld19173RRef	= @ТипЦен
-						,_Fld19174	= @СуммаДокумента
-						,_Fld19175	= @Комментарий
-						,_Fld19176RRef	= @ЧекККМПродажа
-						,_Fld19177	= @ЧекПробитНаККМ
-						,_Fld19178	= @НомерЧекаККМ
-						,_Fld19179RRef	= @Ответственный
-						,_Fld19180RRef	= @ДисконтнаяКарта
-						,_Fld19181	= @НомерСменыККМ
-						,_Fld19182RRef	= @УсловиеПродаж
-						,_Fld19183RRef	= @Организация
-						,_Fld19184RRef	= @ВладелецДисконтнойКарты
+						,_Fld12648RRef	= @ВидОперации
+						,_Fld12649RRef	= @Склад
+						,_Fld12650RRef	= @КассаККМ
+						,_Fld12651RRef	= @ТипЦен
+						,_Fld12652	= @СуммаДокумента
+						,_Fld12653	= @Комментарий
+						,_Fld12654RRef	= @ЧекККМПродажа
+						,_Fld12655	= @ЧекПробитНаККМ
+						,_Fld12656	= @НомерЧекаККМ
+						,_Fld12657RRef	= @Ответственный
+						,_Fld12658RRef	= @ДисконтнаяКарта
+						,_Fld12659	= @НомерСменыККМ
+						,_Fld12663RRef	= @УсловиеПродаж
+						,_Fld12664RRef	= @Организация
+						,_Fld12665RRef	= @ВладелецДисконтнойКарты
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -219,7 +219,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document643
+					Команда.CommandText = @"Delete _Document496
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

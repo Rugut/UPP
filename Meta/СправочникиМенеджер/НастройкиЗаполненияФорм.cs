@@ -24,9 +24,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2708 [Объект]
-					,_Fld2709 [Данные]
-					From _Reference152(NOLOCK)
+					,_Fld23597 [Объект]
+					,_Fld23598 [Данные]
+					From _Reference23109(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -68,9 +68,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2708 [Объект]
-					,_Fld2709 [Данные]
-					From _Reference152(NOLOCK)";
+					,_Fld23597 [Объект]
+					,_Fld23598 [Данные]
+					From _Reference23109(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.НастройкиЗаполненияФорм();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -108,10 +108,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2708 [Объект]
-					,_Fld2709 [Данные]
-					From _Reference152(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld23597 [Объект]
+					,_Fld23598 [Данные]
+					From _Reference23109(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -152,9 +152,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2708 [Объект]
-					,_Fld2709 [Данные]
-					From _Reference152(NOLOCK)
+					,_Fld23597 [Объект]
+					,_Fld23598 [Данные]
+					From _Reference23109(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -196,9 +196,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2708 [Объект]
-					,_Fld2709 [Данные]
-					From _Reference152(NOLOCK)";
+					,_Fld23597 [Объект]
+					,_Fld23598 [Данные]
+					From _Reference23109(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НастройкиЗаполненияФорм();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -236,9 +236,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2708 [Объект]
-					,_Fld2709 [Данные]
-					From _Reference152(NOLOCK)";
+					,_Fld23597 [Объект]
+					,_Fld23598 [Данные]
+					From _Reference23109(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НастройкиЗаполненияФорм();
 					using (var Читалка = Команда.ExecuteReader())
 					{

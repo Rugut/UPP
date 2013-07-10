@@ -8,14 +8,18 @@
 	title: 'Загрузка настроек типовых отчетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Обработка выполняет загрузку предопределенных настроек типовых отчетов',
 			style: 'position:absolute;left:8px;top:33px;width:403px;height:23px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

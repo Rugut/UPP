@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class АвансовыйОтчет:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f4cab3fd-5c51-482f-b082-c181d247ea89");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191701.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012015.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -134,29 +134,29 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld4373RRef [ВалютаДокумента]
-					,_Fld4374 [Комментарий]
-					,_Fld4375 [КурсДокумента]
-					,_Fld4376 [КратностьДокумента]
-					,_Fld4377RRef [Организация]
-					,_Fld4378 [ОтражатьВУправленческомУчете]
-					,_Fld4379 [ОтражатьВБухгалтерскомУчете]
-					,_Fld4380 [ОтражатьВНалоговомУчете]
-					,_Fld4381RRef [Подразделение]
-					,_Fld4382_TYPE [СкладОрдер_Тип],_Fld4382_RRRef [СкладОрдер],_Fld4382_RTRef [СкладОрдер_Вид]
-					,_Fld4383 [СуммаВключаетНДС]
-					,_Fld4384 [СуммаДокумента]
-					,_Fld4385RRef [ТипЦен]
-					,_Fld4386 [УчитыватьНДС]
-					,_Fld4387RRef [ФизЛицо]
-					,_Fld4388RRef [Ответственный]
-					,_Fld4389RRef [ВидПоступления]
-					,_Fld4390 [НДСВключенВСтоимость]
-					,_Fld4391 [НазначениеАванса]
-					,_Fld4392_TYPE [Проект_Тип],_Fld4392_RRRef [Проект],_Fld4392_RTRef [Проект_Вид]
-					,_Fld4393 [КоличествоДокументов]
-					,_Fld4394 [КоличествоЛистов]
-					From _Document298(NOLOCK)
+					,_Fld2295RRef [ВалютаДокумента]
+					,_Fld2296 [Комментарий]
+					,_Fld2297 [КурсДокумента]
+					,_Fld2298 [КратностьДокумента]
+					,_Fld2299RRef [Организация]
+					,_Fld2300 [ОтражатьВУправленческомУчете]
+					,_Fld2301 [ОтражатьВБухгалтерскомУчете]
+					,_Fld2302 [ОтражатьВНалоговомУчете]
+					,_Fld2303RRef [Подразделение]
+					,_Fld2304_TYPE [СкладОрдер_Тип],_Fld2304_RRRef [СкладОрдер],_Fld2304_RTRef [СкладОрдер_Вид]
+					,_Fld2305 [СуммаВключаетНДС]
+					,_Fld2306 [СуммаДокумента]
+					,_Fld2307RRef [ТипЦен]
+					,_Fld2308 [УчитыватьНДС]
+					,_Fld2309RRef [ФизЛицо]
+					,_Fld2310RRef [Ответственный]
+					,_Fld2311RRef [ВидПоступления]
+					,_Fld2312 [НДСВключенВСтоимость]
+					,_Fld2313 [НазначениеАванса]
+					,_Fld2314_TYPE [Проект_Тип],_Fld2314_RRRef [Проект],_Fld2314_RTRef [Проект_Вид]
+					,_Fld18929 [КоличествоДокументов]
+					,_Fld18930 [КоличествоЛистов]
+					From _Document202(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

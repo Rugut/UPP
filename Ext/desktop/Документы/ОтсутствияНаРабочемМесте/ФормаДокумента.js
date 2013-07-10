@@ -8,7 +8,10 @@
 	title: 'Отсутствие на рабочем месте',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
@@ -169,7 +172,8 @@
 			height: 19,
 			style: 'position:absolute;left:290px;top:237px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

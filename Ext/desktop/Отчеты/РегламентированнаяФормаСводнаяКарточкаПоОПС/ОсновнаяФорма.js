@@ -8,7 +8,10 @@
 	title: 'Сводная карточка ОПС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -42,7 +45,8 @@
 			text: 'Налоговый период:',
 			style: 'position:absolute;left:326px;top:33px;width:104px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

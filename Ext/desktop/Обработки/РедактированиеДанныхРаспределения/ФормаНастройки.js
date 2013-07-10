@@ -8,8 +8,12 @@
 	title: 'Настройки отображения данных',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'КомпоновщикНастроекНастройки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:7px;width:749px;height:225px;',
 			height: 225,width: 749,
@@ -58,7 +62,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,6 +84,23 @@
 						name:'ПараметрыВывода',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КомпоновщикНастроекНастройки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -119,6 +140,7 @@
 					items:
 					[
 		{
+			id: 'ПараметрыДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:735px;height:187px;',
 			height: 187,width: 735,
@@ -179,7 +201,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -208,6 +230,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -223,6 +262,7 @@
 					items:
 					[
 		{
+			id: 'ДоступныеПоляПолейГруппировок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:262px;height:187px;',
 			height: 187,width: 262,
@@ -241,7 +281,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -249,8 +289,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоляПолейГруппировок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПоляГруппировки',
 			xtype: 'grid',
 			style: 'position:absolute;left:275px;top:6px;width:466px;height:187px;',
 			height: 187,width: 466,
@@ -305,7 +363,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -331,6 +389,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоляГруппировки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -346,6 +421,7 @@
 					items:
 					[
 		{
+			id: 'ДоступныеПоляВыбора',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:262px;height:187px;',
 			height: 187,width: 262,
@@ -364,7 +440,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -372,8 +448,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоляВыбора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Выбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:275px;top:6px;width:466px;height:187px;',
 			height: 187,width: 466,
@@ -410,7 +504,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -427,6 +521,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Выбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -435,6 +546,7 @@
 					items:
 					[
 		{
+			id: 'ДоступныеПоляОтбора',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:262px;height:187px;',
 			height: 187,width: 262,
@@ -453,7 +565,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -461,8 +573,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоляОтбора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:275px;top:6px;width:466px;height:187px;',
 			height: 187,width: 466,
@@ -835,7 +965,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1020,6 +1150,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1028,6 +1175,7 @@
 					items:
 					[
 		{
+			id: 'ДоступныеПоляПорядка',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:262px;height:187px;',
 			height: 187,width: 262,
@@ -1046,7 +1194,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1054,8 +1202,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоляПорядка');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:275px;top:6px;width:466px;height:187px;',
 			height: 187,width: 466,
@@ -1086,7 +1252,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1100,6 +1266,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1108,6 +1291,7 @@
 					items:
 					[
 		{
+			id: 'УсловноеОформление',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:735px;height:187px;',
 			height: 187,width: 735,
@@ -1174,7 +1358,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1206,6 +1390,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УсловноеОформление');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1214,6 +1415,7 @@
 					items:
 					[
 		{
+			id: 'ПользовательскиеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:735px;height:187px;',
 			height: 187,width: 735,
@@ -1232,13 +1434,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Заголовок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПользовательскиеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1248,6 +1467,7 @@
 					items:
 					[
 		{
+			id: 'ПараметрыВывода',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:735px;height:187px;',
 			height: 187,width: 735,
@@ -1308,7 +1528,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеДанныхРаспределения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1337,6 +1557,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыВывода');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1363,7 +1600,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

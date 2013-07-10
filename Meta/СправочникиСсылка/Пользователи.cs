@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class Пользователи:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("39cb59ea-9735-433b-bf1d-8eb9e4b96cc0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191947.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Пользователи(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Пользователи(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,11 +76,11 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -83,8 +96,8 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							ПрофильПолномочийПользователя = new V82.СправочникиСсылка.ПрофилиПолномочийПользователей((byte[])Читалка.GetValue(6));
-							ФизЛицо = new V82.СправочникиСсылка.ФизическиеЛица((byte[])Читалка.GetValue(7));
+							ПрофильПолномочийПользователя = new V82.СправочникиСсылка.ПрофилиПолномочийПользователей((byte[])Читалка.GetValue(6),Глубина+1);
+							ФизЛицо = new V82.СправочникиСсылка.ФизическиеЛица((byte[])Читалка.GetValue(7),Глубина+1);
 							//return Ссылка;
 						}
 						else

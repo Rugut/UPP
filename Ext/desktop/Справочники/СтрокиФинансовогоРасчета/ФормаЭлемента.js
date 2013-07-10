@@ -8,7 +8,10 @@
 	title: 'Строки финансового расчета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -85,7 +88,8 @@
 			text: 'Код:',
 			style: 'position:absolute;left:277px;top:33px;width:40px;height:19px;text-align:center;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

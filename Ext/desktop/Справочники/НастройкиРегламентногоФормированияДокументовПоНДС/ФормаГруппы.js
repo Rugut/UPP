@@ -8,7 +8,10 @@
 	title: 'Группа Настройки регламентного формирования документов по НДС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -41,7 +44,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:58px;width:299px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

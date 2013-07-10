@@ -8,7 +8,10 @@
 	title: 'Программа медицинского страхования',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -52,7 +55,8 @@
 			name: 'Описание',
 			style: 'position:absolute;left:8px;top:77px;width:495px;height:108px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

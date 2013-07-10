@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class НалоговыеОрганы:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("31248f0c-d7f3-45dc-be41-d892b0833ef9");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190933.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011937.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -56,7 +56,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public НалоговыеОрганы(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public НалоговыеОрганы(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -69,21 +82,21 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2574RRef [Вид]
-					,_Fld2575 [ПолноеНаименование]
-					,_Fld2576 [УчетНалогоплательщиков]
-					,_Fld2577 [ПриемНалоговойОтчетности]
-					,_Fld2578 [ИНН]
-					,_Fld2579 [КПП]
-					,_Fld2580 [Адрес]
-					,_Fld2581 [Телефон]
-					,_Fld2582 [АдресЭлектроннойПочты]
-					,_Fld2583 [АдресСайта]
-					,_Fld2584 [Комментарий]
-					,_Fld2585 [УдалитьСертификат]
-					,_Fld2586 [АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками]
-					From _Reference144(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23549RRef [Вид]
+					,_Fld23550 [ПолноеНаименование]
+					,_Fld23551 [УчетНалогоплательщиков]
+					,_Fld23552 [ПриемНалоговойОтчетности]
+					,_Fld23553 [ИНН]
+					,_Fld23554 [КПП]
+					,_Fld23555 [Адрес]
+					,_Fld23556 [Телефон]
+					,_Fld23557 [АдресЭлектроннойПочты]
+					,_Fld23558 [АдресСайта]
+					,_Fld23559 [Комментарий]
+					,_Fld23560 [УдалитьСертификат]
+					,_Fld23561 [АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками]
+					From _Reference23107(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -99,7 +112,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							Вид = new V82.СправочникиСсылка.ВидыНалоговыхОрганов((byte[])Читалка.GetValue(6));
+							Вид = new V82.СправочникиСсылка.ВидыНалоговыхОрганов((byte[])Читалка.GetValue(6),Глубина+1);
 							ПолноеНаименование = Читалка.GetString(7);
 							УчетНалогоплательщиков = ((byte[])Читалка.GetValue(8))[0]==1;
 							ПриемНалоговойОтчетности = ((byte[])Читалка.GetValue(9))[0]==1;

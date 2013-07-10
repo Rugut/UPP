@@ -8,8 +8,12 @@
 	title: 'Выберите отчет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЖурналОтчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:9px;width:684px;height:344px;',
 			height: 344,width: 684,
@@ -23,19 +27,19 @@
 				},
 				{
 					text:'Наименование отчета',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеОтчета',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Период',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -53,7 +57,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'120',
+					width:'1200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -77,7 +81,7 @@
 				},
 				{
 					text:'Источник отчета',
-					width:'350',
+					width:'3500',
 					dataIndex:'ИсточникОтчета',
 					flex:1,
 				},
@@ -88,7 +92,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -126,8 +130,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЖурналОтчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

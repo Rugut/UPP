@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОтменаСкидокНоменклатуры:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("45b884b2-7b7a-4780-8c77-2f32e536dfac");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191548.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012008.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -63,9 +63,9 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10959 [Комментарий]
-					,_Fld10960RRef [Ответственный]
-					From _Document465(NOLOCK)
+					,_Fld6952 [Комментарий]
+					,_Fld6953RRef [Ответственный]
+					From _Document344(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

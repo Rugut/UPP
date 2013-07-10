@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОтправитель',
@@ -1158,6 +1161,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр23',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1212,7 +1216,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1237,6 +1241,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр23');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1246,6 +1267,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр24',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1300,7 +1322,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1326,6 +1348,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр24');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1334,6 +1373,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр25',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -1388,7 +1428,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1413,6 +1453,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр25');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1439,6 +1496,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр26',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1493,7 +1551,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1519,6 +1577,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр26');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1540,6 +1615,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр28',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -1594,7 +1670,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1619,6 +1695,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр28');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1645,6 +1738,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр29',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1699,7 +1793,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1724,6 +1818,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр29');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1733,6 +1844,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр30',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1787,7 +1899,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1812,6 +1924,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр30');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1821,6 +1950,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСтр31',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1875,7 +2005,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1900,6 +2030,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСтр31');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1909,6 +2056,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеДекларацияНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -1963,7 +2111,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1988,6 +2136,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеДекларацияНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1997,6 +2162,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеДекларацияНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -2051,7 +2217,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2077,6 +2243,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеДекларацияНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2085,6 +2268,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатПриемаДекларацияНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -2139,7 +2323,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2164,6 +2348,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатПриемаДекларацияНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2190,6 +2391,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеРезультатПриемаНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -2244,7 +2446,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2270,6 +2472,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеРезультатПриемаНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2278,6 +2497,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатОбработкиДекларацияНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -2332,7 +2552,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2357,6 +2577,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатОбработкиДекларацияНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2383,6 +2620,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеРезультатОбработкиНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -2437,7 +2675,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2463,6 +2701,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеРезультатОбработкиНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2471,6 +2726,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеПодтверждениеДекларацияНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -2525,7 +2781,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2550,6 +2806,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеПодтверждениеДекларацияНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2576,6 +2849,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеПодтверждениеНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -2630,7 +2904,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2655,6 +2929,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеПодтверждениеНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -2664,6 +2955,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеФорма2НДФЛНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -2718,7 +3010,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2744,6 +3036,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеФорма2НДФЛНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2752,6 +3061,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеПодтверждениеФорма2НДФЛНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -2806,7 +3116,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2831,6 +3141,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеПодтверждениеФорма2НДФЛНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2857,6 +3184,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеФорма2НДФЛНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -2911,7 +3239,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2937,6 +3265,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеФорма2НДФЛНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2945,6 +3290,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатПриемаФорма2НДФЛНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -2999,7 +3345,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3024,6 +3370,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатПриемаФорма2НДФЛНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3050,6 +3413,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеОбращениеНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -3104,7 +3468,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3129,6 +3493,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеОбращениеНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -3138,6 +3519,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеОбращениеНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -3192,7 +3574,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3218,6 +3600,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеОбращениеНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -3226,6 +3625,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатПриемаОбращениеНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -3280,7 +3680,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3305,6 +3705,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатПриемаОбращениеНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3331,6 +3748,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеПодтверждениеОбращениеНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -3385,7 +3803,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3410,6 +3828,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеПодтверждениеОбращениеНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3436,6 +3871,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеПисьмоНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -3490,7 +3926,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3515,6 +3951,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеПисьмоНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3541,6 +3994,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеПисьмоНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -3595,7 +4049,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3621,6 +4075,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеПисьмоНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -3629,6 +4100,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРассылкаНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -3683,7 +4155,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3708,6 +4180,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРассылкаНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3734,6 +4223,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеРассылкаНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -3788,7 +4278,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3814,6 +4304,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеРассылкаНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -3822,6 +4329,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРассылкаНОИндивидуальная',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -3876,7 +4384,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3902,6 +4410,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРассылкаНОИндивидуальная');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -3910,6 +4435,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеЗапросНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -3964,7 +4490,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3990,6 +4516,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеЗапросНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -3998,6 +4541,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеПодтверждениеЗапросНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -4052,7 +4596,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4077,6 +4621,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеПодтверждениеЗапросНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -4103,6 +4664,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеЗапросНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -4157,7 +4719,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4183,6 +4745,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеЗапросНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -4191,6 +4770,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатПриемаЗапросНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -4245,7 +4825,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4270,6 +4850,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатПриемаЗапросНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -4296,6 +4893,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатОбработкиЗапросНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -4350,7 +4948,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4375,6 +4973,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатОбработкиЗапросНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -4401,6 +5016,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеЗаявлениеНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -4455,7 +5071,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4481,6 +5097,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеЗаявлениеНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -4489,6 +5122,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеПодтверждениеЗаявлениеНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -4543,7 +5177,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4568,6 +5202,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеПодтверждениеЗаявлениеНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -4594,6 +5245,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеЗаявлениеНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -4648,7 +5300,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4674,6 +5326,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеЗаявлениеНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -4682,6 +5351,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатПриемаЗаявлениеНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -4736,7 +5406,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4761,6 +5431,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатПриемаЗаявлениеНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -4787,6 +5474,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатОбработкиЗаявлениеРФНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -4841,7 +5529,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4866,6 +5554,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатОбработкиЗаявлениеРФНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -4892,6 +5597,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеРезультатОбработкиРФНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -4946,7 +5652,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -4971,6 +5677,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеРезультатОбработкиРФНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -4980,6 +5703,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеОбОтзывеЗаявлениеРФНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5034,7 +5758,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5059,6 +5783,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеОбОтзывеЗаявлениеРФНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -5068,6 +5809,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеРезультатОбработкиТСНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5122,7 +5864,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5148,6 +5890,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеРезультатОбработкиТСНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -5156,6 +5915,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеСообщениеОбОтзывеЗаявлениеРФНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -5210,7 +5970,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5235,6 +5995,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеСообщениеОбОтзывеЗаявлениеРФНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -5261,6 +6038,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатОбработкиЗаявлениеТСНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -5315,7 +6093,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5340,6 +6118,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатОбработкиЗаявлениеТСНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -5366,6 +6161,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеДокументНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:117px;',
 			height: 117,width: 566,
@@ -5420,7 +6216,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5445,6 +6241,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеДокументНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -5483,6 +6296,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеДокументНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5537,7 +6351,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5562,6 +6376,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеДокументНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -5571,6 +6402,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеРезультатПриемаДокументНП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5625,7 +6457,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5650,6 +6482,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеРезультатПриемаДокументНП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -5659,6 +6508,7 @@
 					items:
 					[
 		{
+			id: 'СодержимоеИзвещениеРезультатПриемаНО',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5713,7 +6563,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5738,6 +6588,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СодержимоеИзвещениеРезультатПриемаНО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -5747,6 +6614,7 @@
 					items:
 					[
 		{
+			id: 'ПервичноеСообщениеСодержащееОтчетностьФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5801,7 +6669,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5827,6 +6695,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПервичноеСообщениеСодержащееОтчетностьФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -5835,6 +6720,7 @@
 					items:
 					[
 		{
+			id: 'ПодтверждениеДатыОтправкиФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -5889,7 +6775,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -5914,6 +6800,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПодтверждениеДатыОтправкиФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -5940,6 +6843,7 @@
 					items:
 					[
 		{
+			id: 'ИзвещениеПодтверждениеДатыОтправкиФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -5994,7 +6898,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6019,6 +6923,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзвещениеПодтверждениеДатыОтправкиФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -6028,6 +6949,7 @@
 					items:
 					[
 		{
+			id: 'ИзвещениеОПолученииОтчетностиФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -6082,7 +7004,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6108,6 +7030,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзвещениеОПолученииОтчетностиФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -6116,6 +7055,7 @@
 					items:
 					[
 		{
+			id: 'ПротоколВходногоКонтроляОтчетностиФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -6170,7 +7110,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6195,6 +7135,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПротоколВходногоКонтроляОтчетностиФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -6221,6 +7178,7 @@
 					items:
 					[
 		{
+			id: 'ИзвещениеПротоколВходногоКонтроляОтчетностиФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -6275,7 +7233,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6301,6 +7259,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзвещениеПротоколВходногоКонтроляОтчетностиФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -6309,6 +7284,7 @@
 					items:
 					[
 		{
+			id: 'ПисьмоВходящееФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:147px;',
 			height: 147,width: 566,
@@ -6363,7 +7339,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6388,6 +7364,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПисьмоВходящееФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -6414,6 +7407,7 @@
 					items:
 					[
 		{
+			id: 'ИзвещениеПисьмоВходящееФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -6468,7 +7462,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6493,6 +7487,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзвещениеПисьмоВходящееФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -6502,6 +7513,7 @@
 					items:
 					[
 		{
+			id: 'ПисьмоИсходящееФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -6556,7 +7568,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6582,6 +7594,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПисьмоИсходящееФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -6590,6 +7619,7 @@
 					items:
 					[
 		{
+			id: 'ИзвещениеПисьмоИсходящееФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:6px;width:566px;height:185px;',
 			height: 185,width: 566,
@@ -6644,7 +7674,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -6669,6 +7699,23 @@
 						name:'ТипФайлаОтчетности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзвещениеПисьмоИсходящееФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -6686,7 +7733,8 @@
 			text: 'Тип:',
 			style: 'position:absolute;left:8px;top:64px;width:73px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

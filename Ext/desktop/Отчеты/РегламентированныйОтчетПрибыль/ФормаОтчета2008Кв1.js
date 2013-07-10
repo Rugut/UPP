@@ -8,7 +8,10 @@
 	title: 'Прибыль',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: '_ИндикаторВнешнегоОтчета',
@@ -875,7 +878,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

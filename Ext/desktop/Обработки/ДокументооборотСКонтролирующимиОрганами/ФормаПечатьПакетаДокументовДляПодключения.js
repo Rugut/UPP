@@ -8,7 +8,10 @@
 	title: 'Печать пакета документов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Заявление  на подключение',
@@ -40,7 +43,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:116px;width:200px;height:4px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

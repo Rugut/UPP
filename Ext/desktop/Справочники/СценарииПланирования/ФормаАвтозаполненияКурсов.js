@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'numberfield',
 			hideLabel: true,
@@ -102,7 +105,8 @@
 			text: 'Вид изменения курсов при заполнении:',
 			style: 'position:absolute;left:8px;top:80px;width:230px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Структура зависимостей оборотов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:519px;height:25px;',
@@ -31,6 +34,7 @@
 			]
 		},
 		{
+			id: 'ТабДеревоЗависимостей',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:503px;height:320px;',
 			height: 320,width: 503,
@@ -43,10 +47,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтруктураЗависимостейОборотов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтруктураЗависимостейОборотов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабДеревоЗависимостей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -106,7 +127,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

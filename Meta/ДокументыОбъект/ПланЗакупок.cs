@@ -129,27 +129,27 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document507(
+						Insert Into _Document381(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld12747RRef
-						,_Fld12748
-						,_Fld12749
-						,_Fld12750
-						,_Fld12751
-						,_Fld12752RRef
-						,_Fld12753RRef
-						,_Fld12754RRef
-						,_Fld12755RRef
-						,_Fld12756
-						,_Fld12757RRef
-						,_Fld12758
-						,_Fld12759
-						,_Fld12760
-						,_Fld12761RRef)
+						,_Fld8318RRef
+						,_Fld8319
+						,_Fld8320
+						,_Fld8321
+						,_Fld8322
+						,_Fld8323RRef
+						,_Fld8324RRef
+						,_Fld8325RRef
+						,_Fld8326RRef
+						,_Fld8327
+						,_Fld8328RRef
+						,_Fld8329
+						,_Fld8330
+						,_Fld8331
+						,_Fld8332RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -174,27 +174,27 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document507
+						Update _Document381
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld12747RRef	= @ВалютаДокумента
-						,_Fld12748	= @ДатаПланирования
-						,_Fld12749	= @Комментарий
-						,_Fld12750	= @КратностьДокумента
-						,_Fld12751	= @КурсДокумента
-						,_Fld12752RRef	= @Ответственный
-						,_Fld12753RRef	= @Подразделение
-						,_Fld12754RRef	= @Проект
-						,_Fld12755RRef	= @Сценарий
-						,_Fld12756	= @СуммаДокумента
-						,_Fld12757RRef	= @ТипЦен
-						,_Fld12758	= @СуммаВключаетНДС
-						,_Fld12759	= @УчитыватьНДС
-						,_Fld12760	= @НастройкиПомощникаПланирования
-						,_Fld12761RRef	= @ПериодичностьДетализации
+						,_Fld8318RRef	= @ВалютаДокумента
+						,_Fld8319	= @ДатаПланирования
+						,_Fld8320	= @Комментарий
+						,_Fld8321	= @КратностьДокумента
+						,_Fld8322	= @КурсДокумента
+						,_Fld8323RRef	= @Ответственный
+						,_Fld8324RRef	= @Подразделение
+						,_Fld8325RRef	= @Проект
+						,_Fld8326RRef	= @Сценарий
+						,_Fld8327	= @СуммаДокумента
+						,_Fld8328RRef	= @ТипЦен
+						,_Fld8329	= @СуммаВключаетНДС
+						,_Fld8330	= @УчитыватьНДС
+						,_Fld8331	= @НастройкиПомощникаПланирования
+						,_Fld8332RRef	= @ПериодичностьДетализации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -221,7 +221,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document507
+					Команда.CommandText = @"Delete _Document381
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

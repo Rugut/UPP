@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ЕдиницыИзмерения:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1dec52fd-9ee2-4d32-bf13-245265ae5381");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012033.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,7 +64,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ЕдиницыИзмерения(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ЕдиницыИзмерения(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -77,14 +90,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2307RRef [ЕдиницаПоКлассификатору]
-					,_Fld2308 [Вес]
-					,_Fld2309 [Объем]
-					,_Fld2310 [Коэффициент]
-					,_Fld2311 [ПорогОкругления]
-					,_Fld2312 [ПредупреждатьОНецелыхМестах]
-					From _Reference97(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1134RRef [ЕдиницаПоКлассификатору]
+					,_Fld1135 [Вес]
+					,_Fld1136 [Объем]
+					,_Fld1137 [Коэффициент]
+					,_Fld21237 [ПорогОкругления]
+					,_Fld21238 [ПредупреждатьОНецелыхМестах]
+					From _Reference55(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -100,7 +113,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							ЕдиницаПоКлассификатору = new V82.СправочникиСсылка.КлассификаторЕдиницИзмерения((byte[])Читалка.GetValue(6));
+							ЕдиницаПоКлассификатору = new V82.СправочникиСсылка.КлассификаторЕдиницИзмерения((byte[])Читалка.GetValue(6),Глубина+1);
 							Вес = Читалка.GetDecimal(7);
 							Объем = Читалка.GetDecimal(8);
 							Коэффициент = Читалка.GetDecimal(9);

@@ -8,7 +8,10 @@
 	title: 'Регистр информации о движении МПЗ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -73,7 +76,8 @@
 			text: 'Организация:',
 			style: 'position:absolute;left:283px;top:33px;width:70px;height:19px;text-align:right;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

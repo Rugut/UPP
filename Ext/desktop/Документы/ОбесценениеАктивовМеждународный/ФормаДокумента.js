@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -65,6 +68,7 @@
 			]
 		},
 		{
+			id: 'Состав',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:156px;width:428px;height:220px;',
 			height: 220,width: 428,
@@ -78,13 +82,13 @@
 				},
 				{
 					text:'Счет учета',
-					width:'160',
+					width:'1600',
 					dataIndex:'СчетУчета',
 					flex:1,
 				},
 				{
 					text:'Статья прочих расходов',
-					width:'160',
+					width:'1600',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
@@ -96,19 +100,19 @@
 				},
 				{
 					text:'Актив',
-					width:'160',
+					width:'1600',
 					dataIndex:'Объект',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'160',
+					width:'1600',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'160',
+					width:'1600',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -125,7 +129,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбесценениеАктивовМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбесценениеАктивовМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,6 +157,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Состав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -230,7 +251,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:381px;width:342px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

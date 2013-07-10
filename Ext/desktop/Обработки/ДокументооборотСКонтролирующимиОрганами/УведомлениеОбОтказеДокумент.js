@@ -8,7 +8,10 @@
 	title: 'Уведомление об отказе',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:506px;',
@@ -20,6 +23,7 @@
 					items:
 					[
 		{
+			id: 'Ошибки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:483px;height:474px;',
 			height: 474,width: 483,
@@ -44,7 +48,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +58,23 @@
 						name:'Описание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Ошибки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -135,7 +156,8 @@
 			title: 'Полученные файлы',
 			style: 'position:absolute;left:8px;top:130px;width:497px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

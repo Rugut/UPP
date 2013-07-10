@@ -8,7 +8,10 @@
 	title: 'Электронное письмо',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -282,6 +285,7 @@
 					items:
 					[
 		{
+			id: 'ВложенияПисьма',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:201px;',
 			height: 201,width: 632,
@@ -301,7 +305,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'350',
+					width:'3500',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -312,7 +316,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -326,6 +330,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВложенияПисьма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -334,6 +355,7 @@
 					items:
 					[
 		{
+			id: 'ВложенияПисьмаТЗ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:201px;',
 			height: 201,width: 632,
@@ -353,7 +375,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'350',
+					width:'3500',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -364,7 +386,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -377,6 +399,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВложенияПисьмаТЗ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -408,7 +447,8 @@
 			height: 19,
 			style: 'position:absolute;left:222px;top:153px;width:150px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

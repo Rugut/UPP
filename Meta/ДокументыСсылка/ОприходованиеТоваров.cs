@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОприходованиеТоваров:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("01444f4c-39fd-410c-af83-016b24724e87");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191539.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012007.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -144,30 +144,30 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10881RRef [Организация]
-					,_Fld10882RRef [Подразделение]
-					,_Fld10883RRef [Склад]
-					,_Fld10884 [ОтражатьВУправленческомУчете]
-					,_Fld10885 [ОтражатьВБухгалтерскомУчете]
-					,_Fld10886 [ОтражатьВНалоговомУчете]
-					,_Fld10887RRef [ТипЦен]
-					,_Fld10888 [СуммаДокумента]
-					,_Fld10889 [Основание]
-					,_Fld10890 [Комментарий]
-					,_Fld10891RRef [ИнвентаризацияТоваровНаСкладе]
-					,_Fld10892RRef [Ответственный]
-					,_Fld10893 [СуммаДокументаРегл]
-					,_Fld10894RRef [КоррСчет]
-					,_Fld10895RRef [Субконто1]
-					,_Fld10896RRef [Субконто2]
-					,_Fld10897RRef [Субконто3]
-					,_Fld10898RRef [КоррСчетНУ]
-					,_Fld10899RRef [СубконтоНУ1]
-					,_Fld10900RRef [СубконтоНУ2]
-					,_Fld10901RRef [СубконтоНУ3]
-					,_Fld10902 [УчитыватьНДС]
-					,_Fld10903RRef [ВидОперации]
-					From _Document463(NOLOCK)
+					,_Fld6879RRef [Организация]
+					,_Fld6880RRef [Подразделение]
+					,_Fld6881RRef [Склад]
+					,_Fld6882 [ОтражатьВУправленческомУчете]
+					,_Fld6883 [ОтражатьВБухгалтерскомУчете]
+					,_Fld6884 [ОтражатьВНалоговомУчете]
+					,_Fld6885RRef [ТипЦен]
+					,_Fld6886 [СуммаДокумента]
+					,_Fld6887 [Основание]
+					,_Fld6888 [Комментарий]
+					,_Fld6889RRef [ИнвентаризацияТоваровНаСкладе]
+					,_Fld6890RRef [Ответственный]
+					,_Fld6891 [СуммаДокументаРегл]
+					,_Fld6892RRef [КоррСчет]
+					,_Fld6893RRef [Субконто1]
+					,_Fld6894RRef [Субконто2]
+					,_Fld6895RRef [Субконто3]
+					,_Fld6896RRef [КоррСчетНУ]
+					,_Fld6897RRef [СубконтоНУ1]
+					,_Fld6898RRef [СубконтоНУ2]
+					,_Fld6899RRef [СубконтоНУ3]
+					,_Fld6900 [УчитыватьНДС]
+					,_Fld21711RRef [ВидОперации]
+					From _Document342(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

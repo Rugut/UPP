@@ -8,7 +8,10 @@
 	title: 'Группа Склады (места хранения)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:445px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

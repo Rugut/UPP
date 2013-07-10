@@ -8,7 +8,10 @@
 	title: 'Регистр учета прямых расходов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:8px;width:358px;height:312px;',
@@ -81,6 +84,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:320px;height:280px;',
 		},
 		{
+			id: 'СписокПоказателей',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:125px;width:344px;height:161px;',
 			height: 161,width: 344,
@@ -94,7 +98,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'220',
+					width:'2200',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -105,7 +109,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрУчетаПрямыхРасходовНаПроизводство/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрУчетаПрямыхРасходовНаПроизводство/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -115,6 +119,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПоказателей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -155,7 +176,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Ввод основания применения льготы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСтатья',
@@ -60,7 +63,8 @@
 			height: 19,
 			style: 'position:absolute;left:88px;top:102px;width:49px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

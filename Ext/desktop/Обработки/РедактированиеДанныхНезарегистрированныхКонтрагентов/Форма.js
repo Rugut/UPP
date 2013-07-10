@@ -8,7 +8,10 @@
 	title: 'Регистрация данных нового клиента',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -515,7 +518,8 @@
 			text: '',
 			style: 'position:absolute;left:399px;top:82px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

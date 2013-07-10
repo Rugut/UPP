@@ -8,7 +8,10 @@
 	title: 'АВС-анализ продаж',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -102,7 +105,8 @@
 			text: '...',
 			style: 'position:absolute;left:256px;top:33px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

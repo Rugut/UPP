@@ -120,25 +120,25 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document455(
+						Insert Into _Document23156(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld10601RRef
-						,_Fld10602RRef
-						,_Fld10603
-						,_Fld10604
-						,_Fld10605
-						,_Fld10606
-						,_Fld10607
-						,_Fld10608RRef
-						,_Fld10609RRef
-						,_Fld10610
-						,_Fld10611
-						,_Fld10612
-						,_Fld10613)
+						,_Fld24677RRef
+						,_Fld24678RRef
+						,_Fld24679
+						,_Fld24680
+						,_Fld24681
+						,_Fld24682
+						,_Fld24683
+						,_Fld24684RRef
+						,_Fld24685RRef
+						,_Fld24686
+						,_Fld24687
+						,_Fld24688
+						,_Fld24689)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -161,25 +161,25 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document455
+						Update _Document23156
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld10601RRef	= @Организация
-						,_Fld10602RRef	= @Ответственный
-						,_Fld10603	= @Комментарий
-						,_Fld10604	= @НаименованиеТерриториальногоОрганаФСС
-						,_Fld10605	= @РегистрационныйНомерФСС
-						,_Fld10606	= @ДополнительныйКодФСС
-						,_Fld10607	= @КодПодчиненностиФСС
-						,_Fld10608RRef	= @Руководитель
-						,_Fld10609RRef	= @ДолжностьРуководителя
-						,_Fld10610	= @КраткийСоставДокумента
-						,_Fld10611	= @ИНН
-						,_Fld10612	= @КПП
-						,_Fld10613	= @ТелефонСоставителя
+						,_Fld24677RRef	= @Организация
+						,_Fld24678RRef	= @Ответственный
+						,_Fld24679	= @Комментарий
+						,_Fld24680	= @НаименованиеТерриториальногоОрганаФСС
+						,_Fld24681	= @РегистрационныйНомерФСС
+						,_Fld24682	= @ДополнительныйКодФСС
+						,_Fld24683	= @КодПодчиненностиФСС
+						,_Fld24684RRef	= @Руководитель
+						,_Fld24685RRef	= @ДолжностьРуководителя
+						,_Fld24686	= @КраткийСоставДокумента
+						,_Fld24687	= @ИНН
+						,_Fld24688	= @КПП
+						,_Fld24689	= @ТелефонСоставителя
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -206,7 +206,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document455
+					Команда.CommandText = @"Delete _Document23156
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

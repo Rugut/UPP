@@ -22,10 +22,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -63,10 +63,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -104,10 +104,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)";
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.НеформализованныйДокументНалоговогоОргана();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -141,10 +141,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -182,10 +182,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -223,10 +223,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)";
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.НеформализованныйДокументНалоговогоОргана();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -260,10 +260,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)";
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.НеформализованныйДокументНалоговогоОргана();
 					using (var Читалка = Команда.ExecuteReader())
 					{

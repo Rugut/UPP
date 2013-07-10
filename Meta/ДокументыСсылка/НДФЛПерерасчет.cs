@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class НДФЛПерерасчет:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("af2e9faa-91b0-472a-8ce6-0426d56d789d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191533.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012006.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10434RRef [Организация]
-					,_Fld10435 [НалоговыйПериод]
-					,_Fld10436 [ПериодВзаиморасчетов]
-					,_Fld10437RRef [Ответственный]
-					,_Fld10438 [Комментарий]
-					,_Fld10439 [КраткийСоставДокумента]
-					From _Document445(NOLOCK)
+					,_Fld6541RRef [Организация]
+					,_Fld6542 [НалоговыйПериод]
+					,_Fld6543 [ПериодВзаиморасчетов]
+					,_Fld6544RRef [Ответственный]
+					,_Fld6545 [Комментарий]
+					,_Fld6546 [КраткийСоставДокумента]
+					From _Document328(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

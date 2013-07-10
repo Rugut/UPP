@@ -8,7 +8,10 @@
 	title: 'Декларация по косвенным налогам при ввозе товаров из государств - членов таможенного союза',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
@@ -293,7 +296,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Шкала оценок компетенций',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -40,6 +43,7 @@
 			style: 'position:absolute;left:98px;top:33px;width:220px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеОценок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:426px;height:165px;',
 			height: 165,width: 426,
@@ -53,24 +57,25 @@
 				},
 				{
 					text:'Приоритет оценки',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПриоритетОценки',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ШкалыОценокКомпетенций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ШкалыОценокКомпетенций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ШкалыОценокКомпетенций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -84,13 +89,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОценок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Наименования оценок',
 			style: 'position:absolute;left:8px;top:60px;width:426px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

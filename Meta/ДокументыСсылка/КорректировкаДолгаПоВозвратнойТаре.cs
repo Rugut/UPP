@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КорректировкаДолгаПоВозвратнойТаре:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("7d61bfad-5803-4da5-b24d-aebc5cad1569");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191047.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011945.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -115,22 +115,22 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8872RRef [ВалютаДокумента]
-					,_Fld8873RRef [ВидОперации]
-					,_Fld8874RRef [ДоговорКонтрагента]
-					,_Fld8875 [Комментарий]
-					,_Fld8876RRef [Контрагент]
-					,_Fld8877 [КурсВзаиморасчетов]
-					,_Fld8878 [КурсДокумента]
-					,_Fld8879RRef [Организация]
-					,_Fld8880 [Основание]
-					,_Fld8881RRef [Подразделение]
-					,_Fld8882_TYPE [Сделка_Тип],_Fld8882_RRRef [Сделка],_Fld8882_RTRef [Сделка_Вид]
-					,_Fld8883 [СуммаДокумента]
-					,_Fld8884 [КратностьДокумента]
-					,_Fld8885 [КратностьВзаиморасчетов]
-					,_Fld8886RRef [Ответственный]
-					From _Document420(NOLOCK)
+					,_Fld5651RRef [ВалютаДокумента]
+					,_Fld5652RRef [ВидОперации]
+					,_Fld5653RRef [ДоговорКонтрагента]
+					,_Fld5654 [Комментарий]
+					,_Fld5655RRef [Контрагент]
+					,_Fld5656 [КурсВзаиморасчетов]
+					,_Fld5657 [КурсДокумента]
+					,_Fld5658RRef [Организация]
+					,_Fld5659 [Основание]
+					,_Fld5660RRef [Подразделение]
+					,_Fld5661_TYPE [Сделка_Тип],_Fld5661_RRRef [Сделка],_Fld5661_RTRef [Сделка_Вид]
+					,_Fld5662 [СуммаДокумента]
+					,_Fld5663 [КратностьДокумента]
+					,_Fld5664 [КратностьВзаиморасчетов]
+					,_Fld5665RRef [Ответственный]
+					From _Document304(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

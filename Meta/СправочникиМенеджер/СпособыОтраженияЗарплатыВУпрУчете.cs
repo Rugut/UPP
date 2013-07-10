@@ -27,11 +27,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -76,11 +76,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)";
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.СпособыОтраженияЗарплатыВУпрУчете();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -121,12 +121,12 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -170,11 +170,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -219,11 +219,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)";
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СпособыОтраженияЗарплатыВУпрУчете();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -264,11 +264,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)";
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СпособыОтраженияЗарплатыВУпрУчете();
 					using (var Читалка = Команда.ExecuteReader())
 					{

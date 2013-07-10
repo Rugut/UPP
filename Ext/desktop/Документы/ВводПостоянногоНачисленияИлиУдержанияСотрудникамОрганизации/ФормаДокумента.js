@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -87,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:41px;width:627px;height:262px;',
 			height: 262,width: 627,
@@ -303,7 +307,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПостоянногоНачисленияИлиУдержанияСотрудникамОрганизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПостоянногоНачисленияИлиУдержанияСотрудникамОрганизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -409,6 +413,23 @@
 						name:'ДокументОснование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -534,7 +555,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

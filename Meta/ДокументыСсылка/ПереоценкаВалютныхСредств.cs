@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПереоценкаВалютныхСредств:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3a425acc-8dd7-41b4-a403-f526bac0d838");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191726.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012017.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -74,20 +74,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12592 [ОтражатьВУправленческомУчете]
-					,_Fld12593 [ОтражатьВБухгалтерскомУчете]
-					,_Fld12594 [ОтражатьВНалоговомУчете]
-					,_Fld12595RRef [Организация]
-					,_Fld12596 [ВзаиморасчетыСКонтрагентами]
-					,_Fld12597 [ВзаиморасчетыСПодотчетнымиЛицами]
-					,_Fld12598 [ДенежныеСредстваВКассах]
-					,_Fld12599 [ДенежныеСредстваНаБанковскихСчетах]
-					,_Fld12600 [Комментарий]
-					,_Fld12601RRef [Ответственный]
-					,_Fld12602RRef [Подразделение]
-					,_Fld12603 [ПереоценкаВалютныхСредствРегл]
-					,_Fld12604 [ПереоценкаРасчетовВУсловныхЕдиницахРегл]
-					From _Document499(NOLOCK)
+					,_Fld8188 [ОтражатьВУправленческомУчете]
+					,_Fld8189 [ОтражатьВБухгалтерскомУчете]
+					,_Fld8190 [ОтражатьВНалоговомУчете]
+					,_Fld8191RRef [Организация]
+					,_Fld8192 [ВзаиморасчетыСКонтрагентами]
+					,_Fld8193 [ВзаиморасчетыСПодотчетнымиЛицами]
+					,_Fld8194 [ДенежныеСредстваВКассах]
+					,_Fld8195 [ДенежныеСредстваНаБанковскихСчетах]
+					,_Fld8196 [Комментарий]
+					,_Fld8197RRef [Ответственный]
+					,_Fld8198RRef [Подразделение]
+					,_Fld18815 [ПереоценкаВалютныхСредствРегл]
+					,_Fld18816 [ПереоценкаРасчетовВУсловныхЕдиницахРегл]
+					From _Document374(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

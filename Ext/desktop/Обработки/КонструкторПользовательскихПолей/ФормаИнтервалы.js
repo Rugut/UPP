@@ -8,7 +8,10 @@
 	title: 'Конструктор пользовательского поля',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьЗначение',
@@ -31,6 +34,7 @@
 			style: 'position:absolute;left:96px;top:32px;width:203px;height:19px;',
 		},
 		{
+			id: 'Интервалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:97px;width:291px;height:284px;',
 			height: 284,width: 291,
@@ -55,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторПользовательскихПолей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторПользовательскихПолей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -65,6 +69,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Интервалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -81,7 +102,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:8px;width:203px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

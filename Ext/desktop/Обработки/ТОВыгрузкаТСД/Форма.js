@@ -8,7 +8,10 @@
 	title: 'Выгрузка данных в ТСД',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:700px;height:25px;',
@@ -26,6 +29,7 @@
 			]
 		},
 		{
+			id: 'ПолеТовары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:226px;width:684px;height:139px;',
 			height: 139,width: 684,
@@ -45,25 +49,25 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'220',
+					width:'2200',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Штрихкод',
-					width:'120',
+					width:'1200',
 					dataIndex:'Штрихкод',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'Характеристика',
 					flex:1,
 				},
@@ -75,13 +79,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'Серия',
 					flex:1,
 				},
@@ -122,7 +126,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаТСД/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаТСД/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -168,6 +172,23 @@
 						name:'Цена',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПолеТовары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -290,7 +311,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:166px;top:28px;width:167px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

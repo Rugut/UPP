@@ -8,7 +8,10 @@
 	title: 'Изменение лимитов возвратной тары',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -125,6 +128,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:636px;height:160px;',
 			height: 160,width: 636,
@@ -144,13 +148,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -173,7 +177,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЛимитовВозвратнойТары/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЛимитовВозвратнойТары/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -195,6 +199,23 @@
 						name:'Лимит',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -262,7 +283,8 @@
 			title: 'Возвратная тара',
 			style: 'position:absolute;left:8px;top:108px;width:636px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

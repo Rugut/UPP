@@ -8,7 +8,10 @@
 	title: 'Группа Контрагенты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -71,7 +74,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:85px;width:444px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

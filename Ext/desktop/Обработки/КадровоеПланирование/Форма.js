@@ -8,7 +8,10 @@
 	title: 'Кадровое планирование',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:539px;',
@@ -32,6 +35,7 @@
 					items:
 					[
 		{
+			id: 'Подразделения',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:32px;width:200px;height:252px;',
 			height: 252,width: 200,
@@ -44,10 +48,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Подразделения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -86,6 +107,7 @@
 			]
 		},
 		{
+			id: 'РабочиеМеста',
 			xtype: 'grid',
 			style: 'position:absolute;left:206px;top:255px;width:558px;height:147px;',
 			height: 147,width: 558,
@@ -99,13 +121,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Должность',
-					width:'120',
+					width:'1200',
 					dataIndex:'Должность',
 					flex:1,
 				},
@@ -134,7 +156,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -156,6 +178,23 @@
 						name:'Вакантно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РабочиеМеста');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -191,6 +230,7 @@
 					items:
 					[
 		{
+			id: 'Вакансии',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:30px;width:764px;height:137px;',
 			height: 137,width: 764,
@@ -216,7 +256,7 @@
 				},
 				{
 					text:'Должность',
-					width:'140',
+					width:'1400',
 					dataIndex:'Должность',
 					flex:1,
 				},
@@ -245,7 +285,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -271,6 +311,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Вакансии');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -287,6 +344,7 @@
 			]
 		},
 		{
+			id: 'ИзмененияКадровогоПлана',
 			xtype: 'grid',
 			style: 'position:absolute;left:206px;top:437px;width:558px;height:102px;',
 			height: 102,width: 558,
@@ -312,7 +370,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -329,7 +387,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПланирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -348,6 +406,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмененияКадровогоПлана');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -379,7 +454,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

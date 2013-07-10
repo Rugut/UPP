@@ -15,6 +15,7 @@ namespace Gen
         public static readonly string ИдентификаторБазы = ConfigurationManager.AppSettings["ИдентификаторБазы"];
         public static readonly bool ВыводитьNet = СтрокаВБулевоПоУмолчаниюЛожь(ConfigurationManager.AppSettings["ВыводитьNet"]);
         public static readonly bool Выводить1C = СтрокаВБулевоПоУмолчаниюЛожь(ConfigurationManager.AppSettings["Выводить1C"]);
+        public static readonly bool ВыводитьХд = СтрокаВБулевоПоУмолчаниюЛожь(ConfigurationManager.AppSettings["ВыводитьХД"]);
         private static Dictionary<string, string> ЧитатьНастройки(string Имя)
         {
             var Настройки = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);

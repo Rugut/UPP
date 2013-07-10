@@ -8,7 +8,10 @@
 	title: 'Настройка документа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Автоматически распределять материалы',
@@ -49,7 +52,8 @@
 			boxLabel: 'Использовать заказы',
 			style: 'position:absolute;left:8px;top:146px;width:384px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

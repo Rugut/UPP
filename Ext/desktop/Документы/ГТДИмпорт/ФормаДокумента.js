@@ -8,7 +8,10 @@
 	title: 'ГТД по импорту',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -232,6 +235,7 @@
 			]
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:131px;width:636px;height:76px;',
 			height: 76,width: 636,
@@ -251,7 +255,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -394,7 +398,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГТДИмпорт/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГТДИмпорт/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -474,6 +478,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -514,6 +535,7 @@
 					items:
 					[
 		{
+			id: 'Разделы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:80px;',
 			height: 80,width: 636,
@@ -586,7 +608,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГТДИмпорт/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГТДИмпорт/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -620,6 +642,23 @@
 						name:'НДСВВалюте',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Разделы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -990,7 +1029,8 @@
 			height: 19,
 			style: 'position:absolute;left:422px;top:81px;width:237px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

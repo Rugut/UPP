@@ -8,7 +8,10 @@
 	title: 'Расчет пособия за период после 1 января 2007 года',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПричинаНетрудоспособностиПереходногоПериода',
@@ -75,7 +78,8 @@
 			height: 19,
 			style: 'position:absolute;left:169px;top:90px;width:200px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

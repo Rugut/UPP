@@ -8,7 +8,10 @@
 	title: 'Основное сырье',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -40,6 +43,7 @@
 			style: 'position:absolute;left:94px;top:33px;width:196px;height:19px;',
 		},
 		{
+			id: 'Состав',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:390px;height:220px;',
 			height: 220,width: 390,
@@ -53,18 +57,19 @@
 				},
 				{
 					text:'Основной материал и его аналоги',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОсновноеСырье").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновноеСырье/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновноеСырье/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -75,13 +80,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Состав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Материалы и их аналоги',
 			style: 'position:absolute;left:8px;top:60px;width:390px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

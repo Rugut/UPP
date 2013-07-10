@@ -8,7 +8,10 @@
 	title: 'Справка о заработке для расчета пособий',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -119,6 +122,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеОЗаработке',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:58px;width:652px;height:161px;',
 			height: 161,width: 652,
@@ -155,7 +159,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаОЗаработкеДляРасчетаПособий/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаОЗаработкеДляРасчетаПособий/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -171,6 +175,23 @@
 						name:'ДнейБолезниУходаЗаДетьми',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеОЗаработке');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -564,7 +585,8 @@
 			name: 'ГодПо',
 			style: 'position:absolute;left:224px;top:83px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Загрузка курсов валют с РБК',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодС',
@@ -93,6 +96,7 @@
 			]
 		},
 		{
+			id: 'СписокВалют',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:97px;width:476px;height:220px;',
 			height: 220,width: 476,
@@ -100,7 +104,7 @@
 			[
 				{
 					text:'Валюта',
-					width:'120',
+					width:'1200',
 					dataIndex:'Валюта',
 					flex:1,
 				},
@@ -135,7 +139,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КурсыВалютРБК/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КурсыВалютРБК/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -154,6 +158,23 @@
 						name:'Кратность',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокВалют');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -183,7 +204,8 @@
 			title: 'Валюты',
 			style: 'position:absolute;left:8px;top:57px;width:476px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

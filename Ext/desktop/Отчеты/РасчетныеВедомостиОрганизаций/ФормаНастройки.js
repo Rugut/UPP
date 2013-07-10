@@ -8,7 +8,10 @@
 	title: 'Настройки отчета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:437px;width:645px;height:25px;',
@@ -35,6 +38,7 @@
 			]
 		},
 		{
+			id: 'НастройкиСкрытыеЭлемент',
 			xtype: 'grid',
 			style: 'position:absolute;left:34px;top:62px;width:182px;height:82px;',
 			height: 82,width: 182,
@@ -83,7 +87,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -106,8 +110,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиСкрытыеЭлемент');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'НастройкиСкрытыеГруппировкиСтрок',
 			xtype: 'grid',
 			style: 'position:absolute;left:34px;top:149px;width:182px;height:96px;',
 			height: 96,width: 182,
@@ -156,7 +178,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -179,8 +201,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиСкрытыеГруппировкиСтрок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'НастройкиСкрытыеГруппировкиКолонок',
 			xtype: 'grid',
 			style: 'position:absolute;left:38px;top:254px;width:178px;height:80px;',
 			height: 80,width: 178,
@@ -229,7 +269,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -252,8 +292,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиСкрытыеГруппировкиКолонок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеНастройкиСкрытые',
 			xtype: 'grid',
 			style: 'position:absolute;left:34px;top:347px;width:182px;height:74px;',
 			height: 74,width: 182,
@@ -302,7 +360,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -325,8 +383,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеНастройкиСкрытые');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеДоступныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:23px;width:222px;height:406px;',
 			height: 406,width: 222,
@@ -345,13 +421,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Заголовок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДоступныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -381,6 +474,7 @@
 					items:
 					[
 		{
+			id: 'ВыбранныеПоляСтраницаНеТаблица',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:193px;width:365px;height:191px;',
 			height: 191,width: 365,
@@ -417,7 +511,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -434,6 +528,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыбранныеПоляСтраницаНеТаблица');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -441,6 +552,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
 		},
 		{
+			id: 'ТабличноеПолеГруппировкиСтрокСтраницаНеТаблица',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:365px;height:95px;',
 			height: 95,width: 365,
@@ -495,7 +607,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -520,6 +632,23 @@
 						name:'КонецПериода',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеГруппировкиСтрокСтраницаНеТаблица');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -621,6 +750,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:365px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеОтборСтраницаБезПараметров',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:365px;height:144px;',
 			height: 144,width: 365,
@@ -705,7 +835,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -746,6 +876,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтборСтраницаБезПараметров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -753,6 +900,7 @@
 			style: 'position:absolute;left:0px;top:194px;width:365px;height:17px;',
 		},
 		{
+			id: 'ТабличноеПолеСортировкаСтраницаБезПараметров',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:240px;width:365px;height:144px;',
 			height: 144,width: 365,
@@ -783,7 +931,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -796,6 +944,23 @@
 						name:'ТипУпорядочивания',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСортировкаСтраницаБезПараметров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -851,6 +1016,7 @@
 			style: 'position:absolute;left:0px;top:22px;width:135px;height:19px;',
 		},
 		{
+			id: 'УсловноеОформлениеСтраницаОформление',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:114px;width:365px;height:271px;',
 			height: 271,width: 365,
@@ -917,7 +1083,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетныеВедомостиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -948,6 +1114,23 @@
 						name:'ПредставлениеДляПодробногоОтображенияЭлемента',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УсловноеОформлениеСтраницаОформление');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1040,7 +1223,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

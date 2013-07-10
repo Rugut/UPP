@@ -8,7 +8,10 @@
 	title: 'Отражение зарплаты в упр учете',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -119,6 +122,7 @@
 			]
 		},
 		{
+			id: 'ОтражениеВУчете',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:246px;width:550px;height:150px;',
 			height: 150,width: 550,
@@ -138,13 +142,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Статья затрат',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
@@ -185,7 +189,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВУпрУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВУпрУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -216,6 +220,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтражениеВУчете');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -330,7 +351,8 @@
 			text: 'Очистить',
 			style: 'position:absolute;left:113px;top:195px;width:80px;height:22px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

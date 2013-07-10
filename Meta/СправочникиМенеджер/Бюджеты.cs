@@ -27,10 +27,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1868 [НаименованиеПолное]
-					,_Fld1869RRef [ВидБюджета]
-					,_Fld1870 [Комментарий]
-					From _Reference38(NOLOCK)
+					,_Fld911 [НаименованиеПолное]
+					,_Fld912RRef [ВидБюджета]
+					,_Fld913 [Комментарий]
+					From _Reference9(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -74,10 +74,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1868 [НаименованиеПолное]
-					,_Fld1869RRef [ВидБюджета]
-					,_Fld1870 [Комментарий]
-					From _Reference38(NOLOCK)";
+					,_Fld911 [НаименованиеПолное]
+					,_Fld912RRef [ВидБюджета]
+					,_Fld913 [Комментарий]
+					From _Reference9(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.Бюджеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -117,11 +117,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1868 [НаименованиеПолное]
-					,_Fld1869RRef [ВидБюджета]
-					,_Fld1870 [Комментарий]
-					From _Reference38(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld911 [НаименованиеПолное]
+					,_Fld912RRef [ВидБюджета]
+					,_Fld913 [Комментарий]
+					From _Reference9(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -164,10 +164,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1868 [НаименованиеПолное]
-					,_Fld1869RRef [ВидБюджета]
-					,_Fld1870 [Комментарий]
-					From _Reference38(NOLOCK)
+					,_Fld911 [НаименованиеПолное]
+					,_Fld912RRef [ВидБюджета]
+					,_Fld913 [Комментарий]
+					From _Reference9(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -211,10 +211,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1868 [НаименованиеПолное]
-					,_Fld1869RRef [ВидБюджета]
-					,_Fld1870 [Комментарий]
-					From _Reference38(NOLOCK)";
+					,_Fld911 [НаименованиеПолное]
+					,_Fld912RRef [ВидБюджета]
+					,_Fld913 [Комментарий]
+					From _Reference9(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Бюджеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -254,10 +254,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1868 [НаименованиеПолное]
-					,_Fld1869RRef [ВидБюджета]
-					,_Fld1870 [Комментарий]
-					From _Reference38(NOLOCK)";
+					,_Fld911 [НаименованиеПолное]
+					,_Fld912RRef [ВидБюджета]
+					,_Fld913 [Комментарий]
+					From _Reference9(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Бюджеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{

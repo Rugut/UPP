@@ -8,8 +8,12 @@
 	title: 'Поддерживаемое торговое оборудование',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

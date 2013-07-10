@@ -8,7 +8,10 @@
 	title: 'Нормативы обслуживания ОС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -188,6 +191,7 @@
 			style: 'position:absolute;left:136px;top:250px;width:85px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:317px;width:390px;height:80px;',
 			height: 80,width: 390,
@@ -207,18 +211,19 @@
 				},
 				{
 					text:'Основное средство',
-					width:'220',
+					width:'2200',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НормативыОбслуживанияОС").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НормативыОбслуживанияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НормативыОбслуживанияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -231,6 +236,23 @@
 						name:'ОсновноеСредство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -285,7 +307,8 @@
 			text: 'ЕдиницаПараметраВыработки',
 			style: 'position:absolute;left:225px;top:250px;width:90px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

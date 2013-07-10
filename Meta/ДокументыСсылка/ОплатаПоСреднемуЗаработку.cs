@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОплатаПоСреднемуЗаработку:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1362f63b-cfcf-4fa8-94b1-53d54e2f8dfd");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191920.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -87,24 +87,24 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10674 [ПериодРегистрации]
-					,_Fld10675RRef [Организация]
-					,_Fld10676 [Комментарий]
-					,_Fld10677RRef [Ответственный]
-					,_Fld10678RRef [Сотрудник]
-					,_Fld10679RRef [Физлицо]
-					,_Fld10680RRef [ВидРасчета]
-					,_Fld10681 [ПроцентОплаты]
-					,_Fld10682 [ДатаНачала]
-					,_Fld10683 [ДатаОкончания]
-					,_Fld10684 [ОплачиватьЧасов]
-					,_Fld10685RRef [ПерерассчитываемыйДокумент]
-					,_Fld10686RRef [СпособРегистрацииВремени]
-					,_Fld10687RRef [УдалитьПриказ]
-					,_Fld10688 [ДатаНачалаСобытия]
-					,_Fld10689 [ПериодРасчетаСреднегоЗаработкаНачало]
-					,_Fld10690 [ПериодРасчетаСреднегоЗаработкаОкончание]
-					From _Document457(NOLOCK)
+					,_Fld6692 [ПериодРегистрации]
+					,_Fld6693RRef [Организация]
+					,_Fld6694 [Комментарий]
+					,_Fld6695RRef [Ответственный]
+					,_Fld21693RRef [Сотрудник]
+					,_Fld6696RRef [Физлицо]
+					,_Fld6698RRef [ВидРасчета]
+					,_Fld6699 [ПроцентОплаты]
+					,_Fld6700 [ДатаНачала]
+					,_Fld6701 [ДатаОкончания]
+					,_Fld6702 [ОплачиватьЧасов]
+					,_Fld6703RRef [ПерерассчитываемыйДокумент]
+					,_Fld21694RRef [СпособРегистрацииВремени]
+					,_Fld6697RRef [УдалитьПриказ]
+					,_Fld27062 [ДатаНачалаСобытия]
+					,_Fld27063 [ПериодРасчетаСреднегоЗаработкаНачало]
+					,_Fld27064 [ПериодРасчетаСреднегоЗаработкаОкончание]
+					From _Document336(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

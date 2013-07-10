@@ -8,7 +8,10 @@
 	title: 'Укажите каталог',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -38,7 +41,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

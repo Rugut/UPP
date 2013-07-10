@@ -8,7 +8,10 @@
 	title: 'Настройка получения почты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Получать только непрочитанные',
@@ -19,7 +22,8 @@
 			boxLabel: 'Получать письма без вложенных файлов',
 			style: 'position:absolute;left:8px;top:27px;width:232px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

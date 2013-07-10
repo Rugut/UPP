@@ -8,7 +8,10 @@
 	title: 'Настройка формирования документов по ордерам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -78,6 +81,7 @@
 			style: 'position:absolute;left:457px;top:8px;width:80px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:531px;height:116px;',
 			height: 116,width: 531,
@@ -446,11 +450,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиФормированияДокументовПоОрдерам").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовПоОрдерам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовПоОрдерам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -635,6 +640,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -755,7 +777,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

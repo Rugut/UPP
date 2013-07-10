@@ -8,7 +8,10 @@
 	title: 'Формирование показателей',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -39,6 +42,7 @@
 			style: 'position:absolute;left:8px;top:56px;width:388px;height:16px;',
 		},
 		{
+			id: 'ПоказателиОтчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:140px;width:388px;height:147px;',
 			height: 147,width: 388,
@@ -63,7 +67,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -73,6 +77,23 @@
 						name:'ПредставлениеПоказателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиОтчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -102,7 +123,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:91px;top:74px;width:92px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

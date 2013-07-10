@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class Должности:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("9c95fa50-177e-49ac-9169-d2b7960ad200");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191336.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011958.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -53,7 +53,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Должности(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Должности(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -66,13 +79,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2270 [Требования]
-					,_Fld2271 [Обязанности]
-					,_Fld2272 [Условия]
-					,_Fld2273 [УдалитьНазваниеВакансииВСМИ]
-					,_Fld2274RRef [АнкетаРезюмеКандидата]
-					From _Reference91(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1110 [Требования]
+					,_Fld1111 [Обязанности]
+					,_Fld21229 [Условия]
+					,_Fld1112 [УдалитьНазваниеВакансииВСМИ]
+					,_Fld21230RRef [АнкетаРезюмеКандидата]
+					From _Reference49(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -92,7 +105,7 @@ namespace V82.СправочникиСсылка
 							Обязанности = Читалка.GetString(7);
 							Условия = Читалка.GetString(8);
 							УдалитьНазваниеВакансииВСМИ = Читалка.GetString(9);
-							АнкетаРезюмеКандидата = new V82.СправочникиСсылка.ТиповыеАнкеты((byte[])Читалка.GetValue(10));
+							АнкетаРезюмеКандидата = new V82.СправочникиСсылка.ТиповыеАнкеты((byte[])Читалка.GetValue(10),Глубина+1);
 							//return Ссылка;
 						}
 						else

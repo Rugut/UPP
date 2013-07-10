@@ -28,13 +28,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -82,13 +82,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -136,13 +136,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)";
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ОбработкиОбслуживанияТО();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -186,14 +186,14 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -240,13 +240,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -294,13 +294,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -348,13 +348,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)";
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ОбработкиОбслуживанияТО();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -398,13 +398,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)";
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ОбработкиОбслуживанияТО();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -448,13 +448,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)";
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ОбработкиОбслуживанияТО();
 					using (var Читалка = Команда.ExecuteReader())
 					{

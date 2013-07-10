@@ -8,8 +8,12 @@
 	title: 'Планы продаж',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -35,7 +39,7 @@
 				},
 				{
 					text:'Сценарий',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сценарий',
 					flex:1,
 				},
@@ -59,25 +63,25 @@
 				},
 				{
 					text:'Тип цен',
-					width:'120',
+					width:'1200',
 					dataIndex:'ТипЦен',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'120',
+					width:'1200',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -88,7 +92,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -126,6 +130,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -151,7 +172,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

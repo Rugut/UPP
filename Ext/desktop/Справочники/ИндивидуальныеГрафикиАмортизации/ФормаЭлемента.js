@@ -8,7 +8,10 @@
 	title: 'Индивидуальные графики амортизации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -55,6 +58,7 @@
 			style: 'position:absolute;left:94px;top:325px;width:303px;height:19px;',
 		},
 		{
+			id: 'График',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:389px;height:220px;',
 			height: 220,width: 389,
@@ -68,24 +72,25 @@
 				},
 				{
 					text:'Месяц',
-					width:'120',
+					width:'1200',
 					dataIndex:'Месяц',
 					flex:1,
 				},
 				{
 					text:'Коэффициент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ИндивидуальныеГрафикиАмортизации").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндивидуальныеГрафикиАмортизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндивидуальныеГрафикиАмортизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,13 +104,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('График');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'График',
 			style: 'position:absolute;left:8px;top:60px;width:389px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

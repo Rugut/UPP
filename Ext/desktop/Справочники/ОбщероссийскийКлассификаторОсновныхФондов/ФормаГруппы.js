@@ -8,7 +8,10 @@
 	title: 'Группа Общероссийский классификатор основных фондов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -86,7 +89,8 @@
 			height: 19,
 			style: 'position:absolute;left:141px;top:167px;width:278px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

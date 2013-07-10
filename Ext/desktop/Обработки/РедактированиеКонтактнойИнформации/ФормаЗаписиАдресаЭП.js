@@ -8,7 +8,10 @@
 	title: 'Электронная почта',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -102,7 +105,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

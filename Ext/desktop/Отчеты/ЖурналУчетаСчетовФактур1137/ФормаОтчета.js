@@ -8,7 +8,10 @@
 	title: 'Журнал учета полученных и выставленных счетов-фактур по Постановлению № 1137',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'КнопкаКварталНазад',
@@ -44,7 +47,8 @@
 			height: 19,
 			style: 'position:absolute;left:258px;top:28px;width:228px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

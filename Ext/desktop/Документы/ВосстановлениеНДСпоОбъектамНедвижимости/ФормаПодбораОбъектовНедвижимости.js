@@ -8,8 +8,12 @@
 	title: 'Подбор объектов недвижимости',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ОбъектыНедвижимостиПодбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:79px;width:522px;height:191px;',
 			height: 191,width: 522,
@@ -23,7 +27,7 @@
 				},
 				{
 					text:'Объект недвижимости',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбъектНедвижимости',
 					flex:1,
 				},
@@ -41,7 +45,7 @@
 				},
 				{
 					text:'Стоимость объекта недвижимости',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтоимостьОбъектаНедвижимости',
 					flex:1,
 				},
@@ -52,7 +56,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -71,6 +75,23 @@
 						name:'СтоимостьОбъектаНедвижимости',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОбъектыНедвижимостиПодбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -95,7 +116,8 @@
 			boxLabel: 'Отбирать только объекты недвижимости, введенные в эксплуатацию в 2006 году',
 			style: 'position:absolute;left:8px;top:31px;width:440px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

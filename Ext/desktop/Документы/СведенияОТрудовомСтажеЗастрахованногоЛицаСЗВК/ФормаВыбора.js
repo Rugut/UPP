@@ -8,8 +8,12 @@
 	title: 'Сведения о трудовых стажах застрахованных лиц (СЗВ-К)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:530px;height:380px;',
 			height: 380,width: 530,
@@ -35,13 +39,13 @@
 				},
 				{
 					text:'Тип сведений',
-					width:'120',
+					width:'1200',
 					dataIndex:'ТипСведений',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -52,7 +56,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОТрудовомСтажеЗастрахованногоЛицаСЗВК/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОТрудовомСтажеЗастрахованногоЛицаСЗВК/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +76,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

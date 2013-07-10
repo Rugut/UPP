@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -131,6 +134,7 @@
 			style: 'position:absolute;left:625px;top:33px;width:19px;height:19px;',
 		},
 		{
+			id: 'ПартииТоваровНаСкладах',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:105px;width:638px;height:241px;',
 			height: 241,width: 638,
@@ -221,7 +225,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПартийМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПартийМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -265,6 +269,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПартииТоваровНаСкладах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -288,7 +309,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Настройка диаграммы ""Анализ событий и источников информации покупателей""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Серии и точки диаграммы',
@@ -20,6 +23,7 @@
 			style: 'position:absolute;left:354px;top:8px;width:240px;height:16px;',
 		},
 		{
+			id: 'СерииИТочкиДиаграммы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:28px;width:340px;height:240px;',
 			height: 240,width: 340,
@@ -39,7 +43,7 @@
 				},
 				{
 					text:'Представление',
-					width:'220',
+					width:'2200',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -50,7 +54,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСобытийИИсточниковИнформацииПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСобытийИИсточниковИнформацииПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -64,8 +68,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СерииИТочкиДиаграммы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПоказателиДиаграммы',
 			xtype: 'grid',
 			style: 'position:absolute;left:354px;top:28px;width:240px;height:240px;',
 			height: 240,width: 240,
@@ -79,7 +101,7 @@
 				},
 				{
 					text:'Представление',
-					width:'220',
+					width:'2200',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -90,7 +112,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСобытийИИсточниковИнформацииПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСобытийИИсточниковИнформацииПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -101,8 +123,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиДиаграммы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

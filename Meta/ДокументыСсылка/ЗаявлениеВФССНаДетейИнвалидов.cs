@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗаявлениеВФССНаДетейИнвалидов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("2d5c0753-5528-4a3b-bec5-c2219cb44dab");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191419.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -81,27 +81,27 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7648RRef [Организация]
-					,_Fld7649RRef [Ответственный]
-					,_Fld7650 [Комментарий]
-					,_Fld7651 [НаименованиеТерриториальногоОрганаФСС]
-					,_Fld7652 [РегистрационныйНомерФСС]
-					,_Fld7653 [ДополнительныйКодФСС]
-					,_Fld7654 [КодПодчиненностиФСС]
-					,_Fld7655 [АдресОрганизации]
-					,_Fld7656RRef [Руководитель]
-					,_Fld7657RRef [ДолжностьРуководителя]
-					,_Fld7658 [КраткийСоставДокумента]
-					,_Fld7659 [СуммаПособий]
-					,_Fld7660 [КоличествоСтраниц]
-					,_Fld7661 [ТелефонСоставителя]
-					,_Fld7662RRef [Банк]
-					,_Fld7663 [НаименованиеБанка]
-					,_Fld7664 [НомерЛицевогоСчета]
-					,_Fld7665 [НомерСчета]
-					,_Fld7666 [БИКБанка]
-					,_Fld7667 [КоррСчетБанка]
-					From _Document383(NOLOCK)
+					,_Fld24271RRef [Организация]
+					,_Fld24272RRef [Ответственный]
+					,_Fld24273 [Комментарий]
+					,_Fld24274 [НаименованиеТерриториальногоОрганаФСС]
+					,_Fld24275 [РегистрационныйНомерФСС]
+					,_Fld24276 [ДополнительныйКодФСС]
+					,_Fld24277 [КодПодчиненностиФСС]
+					,_Fld24278 [АдресОрганизации]
+					,_Fld24279RRef [Руководитель]
+					,_Fld24280RRef [ДолжностьРуководителя]
+					,_Fld24281 [КраткийСоставДокумента]
+					,_Fld24282 [СуммаПособий]
+					,_Fld24283 [КоличествоСтраниц]
+					,_Fld24284 [ТелефонСоставителя]
+					,_Fld24285RRef [Банк]
+					,_Fld24286 [НаименованиеБанка]
+					,_Fld24287 [НомерЛицевогоСчета]
+					,_Fld24288 [НомерСчета]
+					,_Fld24289 [БИКБанка]
+					,_Fld24290 [КоррСчетБанка]
+					From _Document23147(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

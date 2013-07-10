@@ -8,7 +8,10 @@
 	title: 'Контролируемые значения по бюджетам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -161,6 +164,7 @@
 					items:
 					[
 		{
+			id: 'ГраницыЗначений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:33px;width:394px;height:144px;',
 			height: 144,width: 394,
@@ -180,7 +184,7 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -198,25 +202,25 @@
 				},
 				{
 					text:'ЦФО',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'120',
+					width:'1200',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -227,7 +231,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтролируемыеЗначенияПоБюджетам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтролируемыеЗначенияПоБюджетам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -258,6 +262,23 @@
 						name:'Номенклатура',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГраницыЗначений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -404,7 +425,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:406px;width:309px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

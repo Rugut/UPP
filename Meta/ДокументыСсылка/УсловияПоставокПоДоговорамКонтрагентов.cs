@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УсловияПоставокПоДоговорамКонтрагентов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("46a859b0-7f2e-43d5-b407-453c39b6d6e5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191353.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011959.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -63,15 +63,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18466 [ДатаНачала]
-					,_Fld18467 [ДатаОкончания]
-					,_Fld18468RRef [ДоговорКонтрагента]
-					,_Fld18469RRef [Контрагент]
-					,_Fld18470RRef [Периодичность]
-					,_Fld18471 [СуммаУсловийДоговора]
-					,_Fld18472 [Комментарий]
-					,_Fld18473RRef [Ответственный]
-					From _Document616(NOLOCK)
+					,_Fld12095 [ДатаНачала]
+					,_Fld12096 [ДатаОкончания]
+					,_Fld12097RRef [ДоговорКонтрагента]
+					,_Fld12098RRef [Контрагент]
+					,_Fld12099RRef [Периодичность]
+					,_Fld12100 [СуммаУсловийДоговора]
+					,_Fld12101 [Комментарий]
+					,_Fld12102RRef [Ответственный]
+					From _Document471(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

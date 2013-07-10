@@ -8,7 +8,10 @@
 	title: 'Укажите кассу поступления денежных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -45,7 +48,8 @@
 			height: 19,
 			style: 'position:absolute;left:98px;top:56px;width:294px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

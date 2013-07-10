@@ -8,7 +8,10 @@
 	title: 'Автоматическая настройка параметров учетной записи абонентов ""Такском""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:375px;',
@@ -541,7 +544,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

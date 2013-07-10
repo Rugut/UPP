@@ -8,7 +8,10 @@
 	title: 'Свидетельство',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:60px;top:31px;width:113px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

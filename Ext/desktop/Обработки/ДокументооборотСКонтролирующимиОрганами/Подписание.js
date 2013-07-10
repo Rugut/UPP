@@ -8,8 +8,12 @@
 	title: 'Подписание исходных сообщений',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЦиклыОбмена',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:62px;width:614px;height:404px;',
 			height: 404,width: 614,
@@ -23,7 +27,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -101,13 +105,13 @@
 				},
 				{
 					text:'Вид отчета',
-					width:'120',
+					width:'1200',
 					dataIndex:'Отчет',
 					flex:1,
 				},
 				{
 					text:'Период',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -119,13 +123,13 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Налоговый орган',
-					width:'120',
+					width:'1200',
 					dataIndex:'НалоговыйОрган',
 					flex:1,
 				},
@@ -137,7 +141,7 @@
 				},
 				{
 					text:'Тип цикла обмена',
-					width:'120',
+					width:'1200',
 					dataIndex:'Тип',
 					flex:1,
 				},
@@ -160,7 +164,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -234,6 +238,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбмена');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -255,7 +276,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:35px;width:614px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

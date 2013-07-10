@@ -8,8 +8,12 @@
 	title: 'Заявление абонента Спецоператора Связи',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

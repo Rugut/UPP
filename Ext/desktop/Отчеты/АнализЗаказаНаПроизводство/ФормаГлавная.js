@@ -8,7 +8,10 @@
 	title: 'Анализ заказа на производство',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьЗаказ',
@@ -58,7 +61,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

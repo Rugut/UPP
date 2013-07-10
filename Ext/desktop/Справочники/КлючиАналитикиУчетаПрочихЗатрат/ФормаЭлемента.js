@@ -8,7 +8,10 @@
 	title: 'Ключ аналитики учета прочих затрат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -248,7 +251,8 @@
 			text: 'Считать разницы в оценке доходов и расходов постоянными',
 			style: 'position:absolute;left:27px;top:311px;width:574px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

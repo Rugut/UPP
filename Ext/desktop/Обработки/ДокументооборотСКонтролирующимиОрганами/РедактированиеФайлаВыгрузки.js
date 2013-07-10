@@ -8,7 +8,10 @@
 	title: 'Редактирование файла выгрузки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textarea',
 			hideLabel: true,
@@ -36,7 +39,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:33px;width:685px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

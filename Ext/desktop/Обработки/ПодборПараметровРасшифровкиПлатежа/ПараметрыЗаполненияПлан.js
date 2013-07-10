@@ -8,7 +8,10 @@
 	title: 'Настройка заполнения расшифровки платежа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Заполнение',
@@ -70,7 +73,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -25,12 +25,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -68,12 +68,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -111,12 +111,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)";
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.РазмещениеЗаказа();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -150,12 +150,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -193,12 +193,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -236,12 +236,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)";
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.РазмещениеЗаказа();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -275,12 +275,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld14931RRef [Организация]
-					,_Fld14932_TYPE [Заказ_Тип],_Fld14932_RRRef [Заказ],_Fld14932_RTRef [Заказ_Вид]
-					,_Fld14933RRef [Подразделение]
-					,_Fld14934 [Комментарий]
-					,_Fld14935RRef [Ответственный]
-					From _Document545(NOLOCK)";
+					,_Fld19517RRef [Организация]
+					,_Fld10264_TYPE [Заказ_Тип],_Fld10264_RRRef [Заказ],_Fld10264_RTRef [Заказ_Вид]
+					,_Fld10265RRef [Подразделение]
+					,_Fld10266 [Комментарий]
+					,_Fld10267RRef [Ответственный]
+					From _Document416(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.РазмещениеЗаказа();
 					using (var Читалка = Команда.ExecuteReader())
 					{

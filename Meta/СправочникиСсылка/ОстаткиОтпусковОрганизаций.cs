@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОстаткиОтпусковОрганизаций:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("caab4257-17d2-4823-9974-0671c3cc1d79");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191511.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012005.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -46,7 +46,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОстаткиОтпусковОрганизаций(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОстаткиОтпусковОрганизаций(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,10 +71,10 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -76,7 +89,7 @@ namespace V82.СправочникиСсылка
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Наименование = Читалка.GetString(4);
-							Сотрудник = new V82.СправочникиСсылка.СотрудникиОрганизаций((byte[])Читалка.GetValue(5));
+							Сотрудник = new V82.СправочникиСсылка.СотрудникиОрганизаций((byte[])Читалка.GetValue(5),Глубина+1);
 							ДатаАктуальности = Читалка.GetDateTime(6);
 							//return Ссылка;
 						}

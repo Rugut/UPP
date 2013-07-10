@@ -147,7 +147,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference283(
+						Insert Into _Reference190(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -156,19 +156,19 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld4121
-						,_Fld4122
-						,_Fld4123
-						,_Fld4124
-						,_Fld4125
-						,_Fld4126RRef
-						,_Fld4127
-						,_Fld4128RRef
-						,_Fld4129
-						,_Fld4130RRef
-						,_Fld4131RRef
-						,_Fld4132
-						,_Fld4133)
+						,_Fld2197
+						,_Fld2198
+						,_Fld2199
+						,_Fld2200
+						,_Fld2201
+						,_Fld2202RRef
+						,_Fld2203
+						,_Fld2204RRef
+						,_Fld2205
+						,_Fld21297RRef
+						,_Fld26650RRef
+						,_Fld26651
+						,_Fld26652)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -195,7 +195,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference283
+						Update _Reference190
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -205,19 +205,19 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld4121	= @ДатаРождения
-						,_Fld4122	= @ИНН
-						,_Fld4123	= @КодИМНС
-						,_Fld4124	= @Комментарий
-						,_Fld4125	= @СтраховойНомерПФР
-						,_Fld4126RRef	= @Пол
-						,_Fld4127	= @МестоРождения
-						,_Fld4128RRef	= @ОсновноеИзображение
-						,_Fld4129	= @МестоРожденияКодПоОКАТО
-						,_Fld4130RRef	= @ГруппаДоступаФизическогоЛица
-						,_Fld4131RRef	= @ЛьготаПриНачисленииПособий
-						,_Fld4132	= @ИмеетНаучныеТруды
-						,_Fld4133	= @ИмеетИзобретения
+						,_Fld2197	= @ДатаРождения
+						,_Fld2198	= @ИНН
+						,_Fld2199	= @КодИМНС
+						,_Fld2200	= @Комментарий
+						,_Fld2201	= @СтраховойНомерПФР
+						,_Fld2202RRef	= @Пол
+						,_Fld2203	= @МестоРождения
+						,_Fld2204RRef	= @ОсновноеИзображение
+						,_Fld2205	= @МестоРожденияКодПоОКАТО
+						,_Fld21297RRef	= @ГруппаДоступаФизическогоЛица
+						,_Fld26650RRef	= @ЛьготаПриНачисленииПособий
+						,_Fld26651	= @ИмеетНаучныеТруды
+						,_Fld26652	= @ИмеетИзобретения
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -252,7 +252,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference283
+					Команда.CommandText = @"Delete _Reference190
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

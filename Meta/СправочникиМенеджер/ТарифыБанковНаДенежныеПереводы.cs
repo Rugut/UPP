@@ -25,10 +25,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -74,10 +74,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -123,10 +123,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)";
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ТарифыБанковНаДенежныеПереводы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -168,11 +168,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -217,10 +217,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -266,10 +266,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -315,10 +315,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)";
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТарифыБанковНаДенежныеПереводы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -360,10 +360,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)";
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТарифыБанковНаДенежныеПереводы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -405,10 +405,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3877 [МинимальныйТариф]
-					,_Fld3878 [МаксимальныйТариф]
-					,_Fld3879 [Процент]
-					From _Reference259(NOLOCK)";
+					,_Fld23812 [МинимальныйТариф]
+					,_Fld23813 [МаксимальныйТариф]
+					,_Fld23814 [Процент]
+					From _Reference23129(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТарифыБанковНаДенежныеПереводы();
 					using (var Читалка = Команда.ExecuteReader())
 					{

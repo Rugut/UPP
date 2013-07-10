@@ -8,7 +8,10 @@
 	title: 'Сведения о сумме выплат и иных вознаграждений СЗВ-6-3',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -286,6 +289,7 @@
 					items:
 					[
 		{
+			id: 'СотрудникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:269px;height:211px;',
 			height: 211,width: 269,
@@ -299,7 +303,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -310,7 +314,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -320,6 +324,23 @@
 						name:'ФизЛицо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СотрудникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -340,6 +361,7 @@
 			style: 'position:absolute;left:283px;top:40px;width:148px;height:19px;',
 		},
 		{
+			id: 'СведенияОЗаработке',
 			xtype: 'grid',
 			style: 'position:absolute;left:283px;top:65px;width:329px;height:157px;',
 			height: 157,width: 329,
@@ -370,7 +392,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -383,6 +405,23 @@
 						name:'ОблагаетсяВзносами',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОЗаработке');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -455,7 +494,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

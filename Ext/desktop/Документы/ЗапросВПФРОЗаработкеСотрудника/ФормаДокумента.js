@@ -8,7 +8,10 @@
 	title: 'Запрос в ПФР о заработке сотрудника',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -437,7 +440,8 @@
 			name: 'ГодПо',
 			style: 'position:absolute;left:594px;top:83px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

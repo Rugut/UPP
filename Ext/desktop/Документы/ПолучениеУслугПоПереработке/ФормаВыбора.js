@@ -8,8 +8,12 @@
 	title: 'Получения услуг по переработке',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:584px;height:259px;',
 			height: 259,width: 584,
@@ -65,31 +69,31 @@
 				},
 				{
 					text:'Контрагент',
-					width:'220',
+					width:'2200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'220',
+					width:'2200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Сделка',
-					width:'220',
+					width:'2200',
 					dataIndex:'Сделка',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Номер вход. документа',
-					width:'250',
+					width:'2500',
 					dataIndex:'НомерВходящегоДокумента',
 					flex:1,
 				},
@@ -112,7 +116,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,8 +166,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

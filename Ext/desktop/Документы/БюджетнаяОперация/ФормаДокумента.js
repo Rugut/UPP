@@ -8,7 +8,10 @@
 	title: 'Бюджетная операция',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -292,6 +295,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:84px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ТабЗависимыеОбороты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:630px;height:160px;',
 			height: 160,width: 630,
@@ -323,13 +327,13 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -347,25 +351,25 @@
 				},
 				{
 					text:'Реквизит для расчета суммы',
-					width:'120',
+					width:'1200',
 					dataIndex:'РеквизитОперацииДляРасчетаСуммы',
 					flex:1,
 				},
 				{
 					text:'Коэффициент для расчета суммы',
-					width:'120',
+					width:'1200',
 					dataIndex:'КоэффициентДляРасчетаСуммы',
 					flex:1,
 				},
 				{
 					text:'Реквизит операции для расчета количества',
-					width:'120',
+					width:'1200',
 					dataIndex:'РеквизитОперацииДляРасчетаКоличества',
 					flex:1,
 				},
 				{
 					text:'Коэффициент для расчета количества',
-					width:'120',
+					width:'1200',
 					dataIndex:'КоэффициентДляРасчетаКоличества',
 					flex:1,
 				},
@@ -376,7 +380,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/БюджетнаяОперация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/БюджетнаяОперация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -416,6 +420,23 @@
 						name:'КоэффициентДляРасчетаКоличества',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабЗависимыеОбороты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -471,7 +492,8 @@
 			text: '',
 			style: 'position:absolute;left:616px;top:33px;width:15px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

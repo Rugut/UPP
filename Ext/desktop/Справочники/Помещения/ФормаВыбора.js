@@ -8,8 +8,12 @@
 	title: 'Помещения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:527px;height:307px;',
 			height: 307,width: 527,
@@ -17,13 +21,13 @@
 			[
 				{
 					text:'Территория',
-					width:'120',
+					width:'1200',
 					dataIndex:'Территория',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -36,11 +40,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Помещения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Помещения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Помещения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +59,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

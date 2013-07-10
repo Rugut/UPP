@@ -8,7 +8,10 @@
 	title: 'Оплата по среднему заработку',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -352,6 +355,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:656px;height:288px;',
 			height: 288,width: 656,
@@ -574,7 +578,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПоСреднемуЗаработку/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПоСреднемуЗаработку/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -684,6 +688,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -692,6 +713,7 @@
 					items:
 					[
 		{
+			id: 'РасчетСреднего',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:97px;width:656px;height:212px;',
 			height: 212,width: 656,
@@ -705,7 +727,7 @@
 				},
 				{
 					text:'Вид заработка',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
@@ -770,7 +792,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПоСреднемуЗаработку/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПоСреднемуЗаработку/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -807,6 +829,23 @@
 						name:'ЧислоМесяцев',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -938,7 +977,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

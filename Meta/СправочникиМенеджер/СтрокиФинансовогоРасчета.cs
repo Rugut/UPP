@@ -28,10 +28,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -76,10 +76,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -124,10 +124,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)";
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.СтрокиФинансовогоРасчета();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -168,11 +168,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -216,10 +216,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -264,10 +264,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -312,10 +312,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)";
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СтрокиФинансовогоРасчета();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -356,10 +356,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)";
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СтрокиФинансовогоРасчета();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -400,10 +400,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)";
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.СтрокиФинансовогоРасчета();
 					using (var Читалка = Команда.ExecuteReader())
 					{

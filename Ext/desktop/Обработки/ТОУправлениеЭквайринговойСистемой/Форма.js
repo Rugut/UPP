@@ -8,7 +8,10 @@
 	title: 'Управление эквайринговой системой',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'ВыполнитьСверкуИтогов',
@@ -38,7 +41,8 @@
 			text: 'Вернуть платеж по карте',
 			style: 'position:absolute;left:8px;top:111px;width:258px;height:24px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

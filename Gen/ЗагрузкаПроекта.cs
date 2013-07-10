@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Net;
+
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -72,6 +75,7 @@ namespace Gen
                 }
             }
         }
+
         public void ПолучитьМодулиОбъектов(ОбработатьФайл ОбработатьФайл)
         {
 
@@ -197,6 +201,87 @@ namespace Gen
             from dbo.v82Обработки(@ИдентификаторБазы)
             Where МодульОсновнойФормы!=''";
             ПолучитьМодулиОбъектовПоЗапросу(ОбработатьФайл, МодульОсновнойФормыОбработки);
+        }
+
+        public void ПолучитьДанныеОбъектовПоЗапросу(ОбработатьФайл ОбработатьФайл, string ТекстЗапроса)
+        {
+            //Console.WriteLine(ТекстЗапроса);
+            using (var Подключение = new SqlConnection(ConfigurationManager.ConnectionStrings["БазаДанныхПроекта"].ConnectionString))
+            {
+                Подключение.Open();
+                using (var Команда = Подключение.CreateCommand())
+                {
+                    Команда.CommandTimeout = 300;
+                    Команда.CommandText = ТекстЗапроса;
+                    Команда.Parameters.Add("ИдентификаторБазы", Настройки.ИдентификаторБазы);
+                    using (var РезультатЗапроса = Команда.ExecuteReader())
+                    {
+                        while (РезультатЗапроса.Read())
+                        {
+                            var Имя = РезультатЗапроса.GetString(0);
+                            var Запрос = @"https://localhost:1337/Справочники/" + Имя + @"/ВыбратьПоСсылке/100?format=json";
+                            try
+                            {
+                                var Request = WebRequest.Create(Запрос) as HttpWebRequest;
+                                {
+                                    using (var response = Request.GetResponse() as HttpWebResponse)
+                                    {
+                                        if (response.StatusCode != HttpStatusCode.OK)
+                                        {
+                                            throw new Exception(String.Format(
+                                                "Server error (HTTP {0}: {1}).",
+                                                response.StatusCode,
+                                                response.StatusDescription));
+                                        }
+                                        var receiveStream = response.GetResponseStream();
+                                        var encode = Encoding.GetEncoding("utf-8");
+                                        // Pipes the stream to a higher level stream reader with the required encoding format. 
+                                        var readStream = new StreamReader(receiveStream, encode);
+                                        var поток = new StringBuilder("");
+                                        while (!readStream.EndOfStream)
+                                        {
+                                            поток.Append(readStream.ReadLine());
+                                        }
+                                        var ответ = поток.ToString().Trim('{').Trim('}');
+                                        ответ = string.Format(@"
+                                    Ext.define('Данные.Справочники.{0}',
+                                    {{
+                                        data:
+                                        {1}
+                                    }});
+                                    ", Имя, ответ);
+
+
+                                        ОбработатьФайл("Данные", "Справочники", Имя + ".js", ответ);
+                                    }
+                                }
+                            }
+                            catch 
+                            {
+                            }
+
+                            //var Строка = new object[РезультатЗапроса.FieldCount];
+                            //РезультатЗапроса.GetValues(Строка);
+                            ////ОбработатьФайл((string)Строка[0], (string)Строка[1], (string)Строка[2], (string)Строка[3]);
+                            //var ИмяФайла = (string)Строка[2];
+                            //var Код = (string)Строка[3];
+                            //if (ИмяФайла.Length > 4 && string.Compare(ИмяФайла, ИмяФайла.Length - 4, ".Xml", 0, 4, StringComparison.OrdinalIgnoreCase) == 0)
+                            //{
+                            //    Код = XElement.Parse(Код).ToString();
+                            //}
+                            //var МаркерВызоваДелегата = ОбработатьФайл.BeginInvoke((string)Строка[0], (string)Строка[1], ИмяФайла, Код, null, null);
+                            //Ожидания.Add(МаркерВызоваДелегата.AsyncWaitHandle);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ПолучитьДанныеОбъектов(ОбработатьФайл ОбработатьФайл)
+        {
+
+            const string РазмерыОбъектов = @"Select Имя from dbo.v82Справочники(@ИдентификаторБазы)";
+            ПолучитьДанныеОбъектовПоЗапросу(ОбработатьФайл, РазмерыОбъектов);
         }
     }
 

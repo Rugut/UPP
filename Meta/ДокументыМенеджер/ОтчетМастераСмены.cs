@@ -25,12 +25,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -69,12 +69,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -113,12 +113,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)";
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОтчетМастераСмены();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -153,12 +153,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -197,12 +197,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -241,12 +241,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)";
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОтчетМастераСмены();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -281,12 +281,12 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld11577RRef [Подразделение]
-					,_Fld11578RRef [Ответственный]
-					,_Fld11579RRef [Смена]
-					,_Fld11580 [Комментарий]
-					,_Fld11581 [ГраницаСмены]
-					From _Document476(NOLOCK)";
+					,_Fld22741RRef [Подразделение]
+					,_Fld22742RRef [Ответственный]
+					,_Fld22743RRef [Смена]
+					,_Fld22744 [Комментарий]
+					,_Fld22745 [ГраницаСмены]
+					From _Document22679(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОтчетМастераСмены();
 					using (var Читалка = Команда.ExecuteReader())
 					{

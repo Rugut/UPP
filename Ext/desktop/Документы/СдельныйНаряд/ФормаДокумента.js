@@ -8,7 +8,10 @@
 	title: 'Сдельный наряд на выполненные работы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -133,6 +136,7 @@
 					items:
 					[
 		{
+			id: 'Выработка',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:662px;height:267px;',
 			height: 267,width: 662,
@@ -146,7 +150,7 @@
 				},
 				{
 					text:'Технологическая операция',
-					width:'150',
+					width:'1500',
 					dataIndex:'ТехнологическаяОперация',
 					flex:1,
 				},
@@ -218,7 +222,7 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'130',
+					width:'1300',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -277,7 +281,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СдельныйНаряд/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СдельныйНаряд/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -348,6 +352,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Выработка');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -369,6 +390,7 @@
 			]
 		},
 		{
+			id: 'Исполнители',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:165px;width:668px;height:137px;',
 			height: 137,width: 668,
@@ -388,7 +410,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -711,7 +733,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СдельныйНаряд/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СдельныйНаряд/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -880,6 +902,23 @@
 						name:'Часов5',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Исполнители');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1063,7 +1102,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

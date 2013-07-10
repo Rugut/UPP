@@ -198,7 +198,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference216(
+						Insert Into _Reference137(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -207,30 +207,30 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3333RRef
-						,_Fld3334
-						,_Fld3335
-						,_Fld3336RRef
-						,_Fld3337RRef
-						,_Fld3338RRef
-						,_Fld3339RRef
-						,_Fld3340RRef
-						,_Fld3341RRef
-						,_Fld3342RRef
-						,_Fld3343RRef
-						,_Fld3344RRef
-						,_Fld3345RRef
-						,_Fld3346RRef
-						,_Fld3347RRef
-						,_Fld3348RRef
-						,_Fld3349RRef
-						,_Fld3350RRef
-						,_Fld3351
-						,_Fld3352RRef
-						,_Fld3353RRef
-						,_Fld3354RRef
-						,_Fld3355RRef
-						,_Fld3356RRef)
+						,_Fld1691RRef
+						,_Fld1692
+						,_Fld1693
+						,_Fld1694RRef
+						,_Fld1695RRef
+						,_Fld1696RRef
+						,_Fld1697RRef
+						,_Fld1698RRef
+						,_Fld1699RRef
+						,_Fld1700RRef
+						,_Fld1701RRef
+						,_Fld1702RRef
+						,_Fld1703RRef
+						,_Fld1704RRef
+						,_Fld1705RRef
+						,_Fld1706RRef
+						,_Fld1707RRef
+						,_Fld1708RRef
+						,_Fld1709
+						,_Fld1710RRef
+						,_Fld1711RRef
+						,_Fld18717RRef
+						,_Fld18927RRef
+						,_Fld26590RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -268,7 +268,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference216
+						Update _Reference137
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -278,30 +278,30 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3333RRef	= @ВидРБП
-						,_Fld3334	= @ДатаНачалаСписания
-						,_Fld3335	= @ДатаОкончанияСписания
-						,_Fld3336RRef	= @НоменклатурнаяГруппа
-						,_Fld3337RRef	= @ОбъектСтроительства
-						,_Fld3338RRef	= @Подразделение
-						,_Fld3339RRef	= @ПодразделениеОрганизации
-						,_Fld3340RRef	= @Продукция
-						,_Fld3341RRef	= @СерияПродукции
-						,_Fld3342RRef	= @СтатьяЗатрат
-						,_Fld3343RRef	= @СчетБУ
-						,_Fld3344RRef	= @СубконтоБУ1
-						,_Fld3345RRef	= @СубконтоБУ2
-						,_Fld3346RRef	= @СубконтоБУ3
-						,_Fld3347RRef	= @СчетНУ
-						,_Fld3348RRef	= @СубконтоНУ1
-						,_Fld3349RRef	= @СубконтоНУ2
-						,_Fld3350RRef	= @СубконтоНУ3
-						,_Fld3351	= @Сумма
-						,_Fld3352RRef	= @ХарактеристикаПродукции
-						,_Fld3353RRef	= @СпособПризнанияРасходов
-						,_Fld3354RRef	= @СпособРаспределенияЗатратНаВыпуск
-						,_Fld3355RRef	= @СпособСтроительства
-						,_Fld3356RRef	= @ВидАктива
+						,_Fld1691RRef	= @ВидРБП
+						,_Fld1692	= @ДатаНачалаСписания
+						,_Fld1693	= @ДатаОкончанияСписания
+						,_Fld1694RRef	= @НоменклатурнаяГруппа
+						,_Fld1695RRef	= @ОбъектСтроительства
+						,_Fld1696RRef	= @Подразделение
+						,_Fld1697RRef	= @ПодразделениеОрганизации
+						,_Fld1698RRef	= @Продукция
+						,_Fld1699RRef	= @СерияПродукции
+						,_Fld1700RRef	= @СтатьяЗатрат
+						,_Fld1701RRef	= @СчетБУ
+						,_Fld1702RRef	= @СубконтоБУ1
+						,_Fld1703RRef	= @СубконтоБУ2
+						,_Fld1704RRef	= @СубконтоБУ3
+						,_Fld1705RRef	= @СчетНУ
+						,_Fld1706RRef	= @СубконтоНУ1
+						,_Fld1707RRef	= @СубконтоНУ2
+						,_Fld1708RRef	= @СубконтоНУ3
+						,_Fld1709	= @Сумма
+						,_Fld1710RRef	= @ХарактеристикаПродукции
+						,_Fld1711RRef	= @СпособПризнанияРасходов
+						,_Fld18717RRef	= @СпособРаспределенияЗатратНаВыпуск
+						,_Fld18927RRef	= @СпособСтроительства
+						,_Fld26590RRef	= @ВидАктива
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -347,7 +347,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference216
+					Команда.CommandText = @"Delete _Reference137
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

@@ -8,8 +8,12 @@
 	title: 'Документы, удостоверяющие личность',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

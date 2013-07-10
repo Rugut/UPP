@@ -8,7 +8,10 @@
 	title: 'Регистрация изменений',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'ТекстВопроса',
@@ -36,7 +39,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

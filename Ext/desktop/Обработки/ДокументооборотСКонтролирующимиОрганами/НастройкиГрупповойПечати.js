@@ -8,7 +8,10 @@
 	title: 'Настройки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -67,7 +70,8 @@
 			boxLabel: 'Подтверждение получения (ПФР)',
 			style: 'position:absolute;left:14px;top:113px;width:208px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

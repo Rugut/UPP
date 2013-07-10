@@ -8,8 +8,12 @@
 	title: 'Форма',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

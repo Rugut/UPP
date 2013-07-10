@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись4',
@@ -90,6 +93,7 @@
 					items:
 					[
 		{
+			id: 'Состав',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:624px;height:159px;',
 			height: 159,width: 624,
@@ -145,7 +149,7 @@
 				},
 				{
 					text:'Курсовая разница',
-					width:'120',
+					width:'1200',
 					dataIndex:'КурсоваяРазница',
 					flex:1,
 				},
@@ -156,7 +160,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодтверждениеНулевойСтавкиНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодтверждениеНулевойСтавкиНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -187,6 +191,23 @@
 						name:'КурсоваяРазница',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Состав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -239,7 +260,8 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:404px;top:33px;width:79px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
@@ -135,7 +138,8 @@
 			text: 'Использовать цены:',
 			style: 'position:absolute;left:8px;top:33px;width:110px;height:19px;text-align:center;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

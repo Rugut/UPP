@@ -8,7 +8,10 @@
 	title: 'Ввод начальных остатков НДС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -109,6 +112,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеПоСФ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:748px;height:124px;',
 			height: 124,width: 748,
@@ -248,121 +252,121 @@
 				},
 				{
 					text:'Сумма без НДС оплачено',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСОплата',
 					flex:1,
 				},
 				{
 					text:'НДС оплачено',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСОплата',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС по строительству',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДССтроительство',
 					flex:1,
 				},
 				{
 					text:'НДС по строительству',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДССтроительство',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС по ОС, введенному в эксплуатацию',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСВведеноВЭксплуатацию',
 					flex:1,
 				},
 				{
 					text:'НДС по ОС, введенному в эксплуатацию',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСВведеноВЭксплуатацию',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС включено в стоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСВключеноВСтоимость',
 					flex:1,
 				},
 				{
 					text:'НДС включено в стоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСВключеноВСтоимость',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС предъявлено к вычету',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПредъявлено',
 					flex:1,
 				},
 				{
 					text:'НДС предъявлено к вычету',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПредъявлено',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДССтавка0',
 					flex:1,
 				},
 				{
 					text:'НДС по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДССтавка0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'НДС подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС не подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСНеПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'НДС не подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСНеПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС предъявлено к вычету по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПредъявлено0',
 					flex:1,
 				},
 				{
 					text:'НДС предъявлено к вычету по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПредъявлено0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС предъявлено к вычету (не подтверждена ставка 0%)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПредъявленоНеПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'НДС предъявлено к вычету (не подтверждена ставка 0%)',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПредъявленоНеПодтверждено0',
 					flex:1,
 				},
@@ -392,13 +396,13 @@
 				},
 				{
 					text:'Сумма, руб.',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Сумма, вал.',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -409,7 +413,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -558,8 +562,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеПоСФ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДополнительныеСведения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:216px;width:748px;height:139px;',
 			height: 139,width: 748,
@@ -573,13 +595,13 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -603,37 +625,37 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Валютная сумма аванса с НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВалютнаяСуммаСНДС',
 					flex:1,
 				},
 				{
 					text:'Субконто 1',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -651,25 +673,25 @@
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
 				{
 					text:'Документ отгрузки',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОтгрузки',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС оплачено',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСОплата',
 					flex:1,
 				},
 				{
 					text:'НДС оплачено',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСОплата',
 					flex:1,
 				},
@@ -681,121 +703,121 @@
 				},
 				{
 					text:'Вид внеобротного актива',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидВнеоборотногоАктива',
 					flex:1,
 				},
 				{
 					text:'Объект Вн.А.',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС передано на Вн.А.',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДССтроительство',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС по Вн.А., принятому к учету',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСВведеноВЭксплуатацию',
 					flex:1,
 				},
 				{
 					text:'НДС передан на Вн.А.',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДССтроительство',
 					flex:1,
 				},
 				{
 					text:'НДС по Вн.А. принятому к учету',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСВведеноВЭксплуатацию',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС включено в стоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСВключеноВСтоимость',
 					flex:1,
 				},
 				{
 					text:'НДС включено в стоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСВключеноВСтоимость',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС предъявлено к вычету',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПредъявлено',
 					flex:1,
 				},
 				{
 					text:'НДС предъявлено к вычету',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПредъявлено',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДССтавка0',
 					flex:1,
 				},
 				{
 					text:'НДС по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДССтавка0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'НДС подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС не подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСНеПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'НДС не подтверждена ставка 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСНеПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС предъявлено к вычету по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПредъявлено0',
 					flex:1,
 				},
 				{
 					text:'НДС предъявлено к вычету по ставке 0%',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПредъявлено0',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС предъявлено к вычету (не подтверждена ставка 0%)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСПредъявленоНеПодтверждено0',
 					flex:1,
 				},
 				{
 					text:'НДС предъявлено к вычету (не подтверждена ставка 0%)',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСПредъявленоНеПодтверждено0',
 					flex:1,
 				},
@@ -812,7 +834,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -937,6 +959,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеСведения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -962,6 +1001,7 @@
 					items:
 					[
 		{
+			id: 'РасчетыСКонтрагентами',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:746px;height:325px;',
 			height: 325,width: 746,
@@ -975,13 +1015,13 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
@@ -993,7 +1033,7 @@
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -1005,25 +1045,25 @@
 				},
 				{
 					text:'Курс взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'КурсВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Кратность взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'КратностьВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма расчетов, руб.',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма расчетов, вал.',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВалютнаяСуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -1046,7 +1086,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1087,6 +1127,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетыСКонтрагентами');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1095,6 +1152,7 @@
 					items:
 					[
 		{
+			id: 'РасчетыСКонтрагентамиАвансы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:746px;height:325px;',
 			height: 325,width: 746,
@@ -1108,13 +1166,13 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
@@ -1126,7 +1184,7 @@
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -1138,25 +1196,25 @@
 				},
 				{
 					text:'Курс взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'КурсВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Кратность взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'КратностьВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма расчетов, руб.',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма расчетов, вал.',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВалютнаяСуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -1173,7 +1231,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1211,6 +1269,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетыСКонтрагентамиАвансы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1238,7 +1313,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:444px;width:676px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

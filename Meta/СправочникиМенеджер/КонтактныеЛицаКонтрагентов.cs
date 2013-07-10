@@ -28,11 +28,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -79,11 +79,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -130,11 +130,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)";
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛицаКонтрагентов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -177,12 +177,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -228,11 +228,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -279,11 +279,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -330,11 +330,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)";
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛицаКонтрагентов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -377,11 +377,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)";
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛицаКонтрагентов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -424,11 +424,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2458 [Должность]
-					,_Fld2459 [Комментарий]
-					,_Fld2460RRef [КонтактноеЛицо]
-					,_Fld2461RRef [РольКонтактногоЛица]
-					From _Reference129(NOLOCK)";
+					,_Fld1251 [Должность]
+					,_Fld1252 [Комментарий]
+					,_Fld1253RRef [КонтактноеЛицо]
+					,_Fld1254RRef [РольКонтактногоЛица]
+					From _Reference77(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.КонтактныеЛицаКонтрагентов();
 					using (var Читалка = Команда.ExecuteReader())
 					{

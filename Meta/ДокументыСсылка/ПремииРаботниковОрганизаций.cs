@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПремииРаботниковОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8376180f-36f0-4914-b19d-c8a82b9a7fc8");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191541.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012007.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -68,17 +68,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld14460 [ПериодРегистрации]
-					,_Fld14461RRef [Организация]
-					,_Fld14462 [Комментарий]
-					,_Fld14463RRef [ВидРасчета]
-					,_Fld14464 [ЧислоМесяцев]
-					,_Fld14465 [ДатаНачалаБП]
-					,_Fld14466 [ДатаОкончанияБП]
-					,_Fld14467RRef [Ответственный]
-					,_Fld14468 [КраткийСоставДокумента]
-					,_Fld14469RRef [ПерерассчитываемыйДокумент]
-					From _Document535(NOLOCK)
+					,_Fld9876 [ПериодРегистрации]
+					,_Fld9877RRef [Организация]
+					,_Fld9878 [Комментарий]
+					,_Fld9879RRef [ВидРасчета]
+					,_Fld9880 [ЧислоМесяцев]
+					,_Fld9881 [ДатаНачалаБП]
+					,_Fld9882 [ДатаОкончанияБП]
+					,_Fld9883RRef [Ответственный]
+					,_Fld9884 [КраткийСоставДокумента]
+					,_Fld9885RRef [ПерерассчитываемыйДокумент]
+					From _Document407(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

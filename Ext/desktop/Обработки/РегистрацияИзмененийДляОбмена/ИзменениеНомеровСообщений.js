@@ -8,7 +8,10 @@
 	title: 'Изменение номеров сообщений',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомерОтправленного',
@@ -39,7 +42,8 @@
 			name: 'НомерПринятого',
 			style: 'position:absolute;left:190px;top:35px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,8 +8,12 @@
 	title: 'Ежегодные отпуска сотрудника',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЕжегодныеОтпуска',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:31px;width:384px;height:202px;',
 			height: 202,width: 384,
@@ -17,24 +21,25 @@
 			[
 				{
 					text:'Вид ежегодного отпуска',
-					width:'140',
+					width:'1400',
 					dataIndex:'ВидЕжегодногоОтпуска',
 					flex:1,
 				},
 				{
 					text:'Количество дней отпуска в год',
-					width:'170',
+					width:'1700',
 					dataIndex:'КоличествоДнейОтпускаВГод',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +50,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЕжегодныеОтпуска');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

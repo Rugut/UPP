@@ -8,7 +8,10 @@
 	title: 'Номенклатурные узлы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -73,6 +76,7 @@
 			style: 'position:absolute;left:326px;top:57px;width:80px;height:19px;',
 		},
 		{
+			id: 'ИсходныеКомплектующие',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:625px;height:220px;',
 			height: 220,width: 625,
@@ -86,19 +90,19 @@
 				},
 				{
 					text:'Вид норматива',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидНорматива',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика',
-					width:'120',
+					width:'1200',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -116,18 +120,19 @@
 				},
 				{
 					text:'Статья затрат',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НоменклатурныеУзлы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеУзлы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеУзлы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,13 +158,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходныеКомплектующие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Исходные комплектующие:',
 			style: 'position:absolute;left:8px;top:84px;width:625px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

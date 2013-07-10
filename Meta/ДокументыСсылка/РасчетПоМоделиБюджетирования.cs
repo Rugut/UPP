@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РасчетПоМоделиБюджетирования:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("10b489ad-d7f4-4010-986e-cba1a52f3f37");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190737.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011927.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -66,15 +66,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15499 [ДатаРасчета]
-					,_Fld15500RRef [Сценарий]
-					,_Fld15501 [ПересчитыватьРегламентно]
-					,_Fld15502RRef [Ответственный]
-					,_Fld15503RRef [Состояние]
-					,_Fld15504 [Комментарий]
-					,_Fld15505_TYPE [ОсновнойИсточникДанных_Тип],_Fld15505_RRRef [ОсновнойИсточникДанных],_Fld15505_RTRef [ОсновнойИсточникДанных_Вид]
-					,_Fld15506 [КодОсновногоИсточника]
-					From _Document556(NOLOCK)
+					,_Fld10683 [ДатаРасчета]
+					,_Fld10684RRef [Сценарий]
+					,_Fld10685 [ПересчитыватьРегламентно]
+					,_Fld10686RRef [Ответственный]
+					,_Fld10687RRef [Состояние]
+					,_Fld10688 [Комментарий]
+					,_Fld10689_TYPE [ОсновнойИсточникДанных_Тип],_Fld10689_RRRef [ОсновнойИсточникДанных],_Fld10689_RTRef [ОсновнойИсточникДанных_Вид]
+					,_Fld10690 [КодОсновногоИсточника]
+					From _Document426(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

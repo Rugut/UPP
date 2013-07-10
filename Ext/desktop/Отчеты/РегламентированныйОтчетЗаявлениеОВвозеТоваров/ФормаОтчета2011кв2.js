@@ -8,7 +8,10 @@
 	title: 'Заявление о ввозе товаров и уплате косвенных налогов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:654px;height:310px;',
@@ -321,7 +324,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

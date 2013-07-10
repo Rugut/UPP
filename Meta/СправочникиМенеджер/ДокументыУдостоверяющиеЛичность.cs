@@ -27,9 +27,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2267 [КодИМНС]
-					,_Fld2268 [КодПФР]
-					From _Reference90(NOLOCK)
+					,_Fld1107 [КодИМНС]
+					,_Fld1108 [КодПФР]
+					From _Reference48(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -72,9 +72,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2267 [КодИМНС]
-					,_Fld2268 [КодПФР]
-					From _Reference90(NOLOCK)";
+					,_Fld1107 [КодИМНС]
+					,_Fld1108 [КодПФР]
+					From _Reference48(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ДокументыУдостоверяющиеЛичность();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -113,10 +113,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2267 [КодИМНС]
-					,_Fld2268 [КодПФР]
-					From _Reference90(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1107 [КодИМНС]
+					,_Fld1108 [КодПФР]
+					From _Reference48(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -158,9 +158,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2267 [КодИМНС]
-					,_Fld2268 [КодПФР]
-					From _Reference90(NOLOCK)
+					,_Fld1107 [КодИМНС]
+					,_Fld1108 [КодПФР]
+					From _Reference48(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -203,9 +203,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2267 [КодИМНС]
-					,_Fld2268 [КодПФР]
-					From _Reference90(NOLOCK)";
+					,_Fld1107 [КодИМНС]
+					,_Fld1108 [КодПФР]
+					From _Reference48(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ДокументыУдостоверяющиеЛичность();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -244,9 +244,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2267 [КодИМНС]
-					,_Fld2268 [КодПФР]
-					From _Reference90(NOLOCK)";
+					,_Fld1107 [КодИМНС]
+					,_Fld1108 [КодПФР]
+					From _Reference48(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ДокументыУдостоверяющиеЛичность();
 					using (var Читалка = Команда.ExecuteReader())
 					{

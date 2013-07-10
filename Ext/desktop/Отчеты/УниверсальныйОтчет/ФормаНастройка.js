@@ -8,7 +8,10 @@
 	title: 'Настройки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:459px;',
@@ -20,6 +23,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеПоказатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:119px;width:670px;height:310px;',
 			height: 310,width: 670,
@@ -38,13 +42,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'КолонкаПредставление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПоказатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -202,6 +223,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:320px;height:399px;',
 			height: 399,width: 320,
@@ -226,7 +248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -237,8 +259,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеИзмеренияКолонки',
 			xtype: 'grid',
 			style: 'position:absolute;left:356px;top:30px;width:320px;height:399px;',
 			height: 399,width: 320,
@@ -263,7 +303,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -273,6 +313,23 @@
 						name:'Тип',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеИзмеренияКолонки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -301,6 +358,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ТабличноеПолеОтобранныеИнтервалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:72px;width:670px;height:357px;',
 			height: 357,width: 670,
@@ -308,13 +366,13 @@
 			[
 				{
 					text:'Граница интервала',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВГраница',
 					flex:1,
 				},
 				{
 					text:'Название',
-					width:'120',
+					width:'1200',
 					dataIndex:'Название',
 					flex:1,
 				},
@@ -325,7 +383,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -335,6 +393,23 @@
 						name:'Название',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтобранныеИнтервалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -353,6 +428,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:399px;',
 			height: 399,width: 670,
@@ -401,7 +477,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -424,6 +500,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -432,6 +525,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеВыбранныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:399px;',
 			height: 399,width: 670,
@@ -462,7 +556,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -476,6 +570,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеВыбранныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -484,6 +595,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеПорядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:399px;',
 			height: 399,width: 670,
@@ -508,7 +620,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -519,6 +631,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПорядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -527,6 +656,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеУсловноеОформление',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:93px;width:670px;height:336px;',
 			height: 336,width: 670,
@@ -563,7 +693,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -579,6 +709,23 @@
 						name:'Оформление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеУсловноеОформление');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -606,6 +753,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеПоказатели1',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:121px;width:214px;height:149px;',
 			height: 149,width: 214,
@@ -624,13 +772,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'КолонкаПредставление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПоказатели1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -666,6 +831,7 @@
 			style: 'position:absolute;left:8px;top:81px;width:214px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеОтбор1',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:317px;width:684px;height:150px;',
 			height: 150,width: 684,
@@ -714,7 +880,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -736,6 +902,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -788,6 +971,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеИзмеренияСтроки1',
 			xtype: 'grid',
 			style: 'position:absolute;left:242px;top:121px;width:210px;height:149px;',
 			height: 149,width: 210,
@@ -812,7 +996,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -823,8 +1007,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеИзмеренияСтроки1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеИзмеренияКолонки1',
 			xtype: 'grid',
 			style: 'position:absolute;left:482px;top:121px;width:210px;height:149px;',
 			height: 149,width: 210,
@@ -849,7 +1051,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -859,6 +1061,23 @@
 						name:'Тип',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеИзмеренияКолонки1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -877,6 +1096,7 @@
 			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеПоказатели2',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:121px;width:332px;height:149px;',
 			height: 149,width: 332,
@@ -895,13 +1115,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'КолонкаПредставление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПоказатели2');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -937,6 +1174,7 @@
 			style: 'position:absolute;left:8px;top:81px;width:332px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеОтбор2',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:317px;width:684px;height:150px;',
 			height: 150,width: 684,
@@ -985,7 +1223,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1008,6 +1246,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор2');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -1017,6 +1272,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеИзмеренияСтроки2',
 			xtype: 'grid',
 			style: 'position:absolute;left:360px;top:121px;width:332px;height:149px;',
 			height: 149,width: 332,
@@ -1041,7 +1297,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1051,6 +1307,23 @@
 						name:'Тип',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеИзмеренияСтроки2');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1377,7 +1650,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

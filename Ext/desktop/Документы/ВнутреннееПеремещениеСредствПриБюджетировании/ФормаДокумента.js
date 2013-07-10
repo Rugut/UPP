@@ -8,7 +8,10 @@
 	title: 'Внутреннее перемещение средств при бюджетировании',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -460,7 +463,8 @@
 			text: '-',
 			style: 'position:absolute;left:462px;top:33px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

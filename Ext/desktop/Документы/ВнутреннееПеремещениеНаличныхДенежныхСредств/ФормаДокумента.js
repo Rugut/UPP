@@ -8,7 +8,10 @@
 	title: 'Внутреннее перемещение наличных денежных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись4',
@@ -184,7 +187,8 @@
 			height: 19,
 			style: 'position:absolute;left:118px;top:124px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

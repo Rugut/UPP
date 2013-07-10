@@ -8,8 +8,12 @@
 	title: 'Поиск дублирующихся элементов справочников',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'НайденныеОбъекты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:659px;height:119px;',
 			height: 119,width: 659,
@@ -22,10 +26,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НайденныеОбъекты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -34,7 +55,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:2px;width:659px;height:28px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

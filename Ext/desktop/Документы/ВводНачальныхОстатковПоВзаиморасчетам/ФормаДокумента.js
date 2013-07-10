@@ -8,7 +8,10 @@
 	title: 'Ввод начальных остатков по взаиморасчетам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -109,6 +112,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеПоРасчетам',
 			xtype: 'grid',
 			style: 'position:absolute;left:5px;top:30px;width:695px;height:201px;',
 			height: 201,width: 695,
@@ -122,25 +126,25 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Сделка',
-					width:'150',
+					width:'1500',
 					dataIndex:'Сделка',
 					flex:1,
 				},
 				{
 					text:'Документ расчетов',
-					width:'150',
+					width:'1500',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -152,7 +156,7 @@
 				},
 				{
 					text:'Сумма в валюте взаиморасчетов',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -170,19 +174,19 @@
 				},
 				{
 					text:'Сумма (упр)',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаУпр',
 					flex:1,
 				},
 				{
 					text:'Сумма (регл)',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаРегл',
 					flex:1,
 				},
 				{
 					text:'Сумма (регл) с учетом переоценки',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаРеглСУчетомПереоценки',
 					flex:1,
 				},
@@ -199,7 +203,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковПоВзаиморасчетам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковПоВзаиморасчетам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -243,6 +247,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеПоРасчетам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -251,6 +272,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеПоАвансам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:694px;height:201px;',
 			height: 201,width: 694,
@@ -264,25 +286,25 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Сделка',
-					width:'150',
+					width:'1500',
 					dataIndex:'Сделка',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'150',
+					width:'1500',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -294,7 +316,7 @@
 				},
 				{
 					text:'Сумма в валюте взаиморасчетов',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -312,19 +334,19 @@
 				},
 				{
 					text:'Сумма (упр)',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаУпр',
 					flex:1,
 				},
 				{
 					text:'Сумма (регл)',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаРегл',
 					flex:1,
 				},
 				{
 					text:'Сумма (регл) с учетом переоценки',
-					width:'110',
+					width:'1100',
 					dataIndex:'СуммаРеглСУчетомПереоценки',
 					flex:1,
 				},
@@ -341,7 +363,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковПоВзаиморасчетам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковПоВзаиморасчетам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -385,6 +407,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеПоАвансам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -393,6 +432,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеПоРезервамПоСомнительнымДолгам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:65px;width:693px;height:167px;',
 			height: 167,width: 693,
@@ -406,19 +446,19 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Документ расчетов',
-					width:'150',
+					width:'1500',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -447,7 +487,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковПоВзаиморасчетам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковПоВзаиморасчетам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -472,6 +512,23 @@
 						name:'СуммаНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеПоРезервамПоСомнительнымДолгам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -555,7 +612,8 @@
 			boxLabel: 'Отразить в регистре взаиморасчетов по документам',
 			style: 'position:absolute;left:416px;top:57px;width:299px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

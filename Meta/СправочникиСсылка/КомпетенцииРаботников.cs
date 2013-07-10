@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class КомпетенцииРаботников:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("bef30854-312a-4ad5-bfb3-f233575a4e8f");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191430.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012002.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -46,7 +46,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КомпетенцииРаботников(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КомпетенцииРаботников(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,11 +71,11 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2426 [ОписаниеКомпетенции]
-					,_Fld2427RRef [ШкалаОценок]
-					,_Fld2428RRef [ТиповаяАнкета]
-					From _Reference126(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1221 [ОписаниеКомпетенции]
+					,_Fld1222RRef [ШкалаОценок]
+					,_Fld1223RRef [ТиповаяАнкета]
+					From _Reference75(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -78,8 +91,8 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Наименование = Читалка.GetString(4);
 							ОписаниеКомпетенции = Читалка.GetString(5);
-							ШкалаОценок = new V82.СправочникиСсылка.ШкалыОценокКомпетенций((byte[])Читалка.GetValue(6));
-							ТиповаяАнкета = new V82.СправочникиСсылка.ТиповыеАнкеты((byte[])Читалка.GetValue(7));
+							ШкалаОценок = new V82.СправочникиСсылка.ШкалыОценокКомпетенций((byte[])Читалка.GetValue(6),Глубина+1);
+							ТиповаяАнкета = new V82.СправочникиСсылка.ТиповыеАнкеты((byte[])Читалка.GetValue(7),Глубина+1);
 							//return Ссылка;
 						}
 						else

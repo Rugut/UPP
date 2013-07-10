@@ -8,7 +8,10 @@
 	title: 'Настройка ABC-классификации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПоле',
@@ -117,7 +120,8 @@
 			height: 19,
 			style: 'position:absolute;left:156px;top:60px;width:347px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

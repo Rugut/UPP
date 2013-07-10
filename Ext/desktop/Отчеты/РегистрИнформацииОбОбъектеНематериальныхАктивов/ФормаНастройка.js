@@ -8,7 +8,10 @@
 	title: 'Обработка  Регистр учета операций приобретения имущества, работ, услуг, прав',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -82,7 +85,8 @@
 			height: 19,
 			style: 'position:absolute;left:86px;top:54px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

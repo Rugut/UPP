@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПоступлениеНМА:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("891b8cfb-f52f-4158-a370-0b8a7602263e");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191915.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -127,25 +127,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld13879RRef [ВалютаДокумента]
-					,_Fld13880 [ДатаВходящегоДокумента]
-					,_Fld13881RRef [ДоговорКонтрагента]
-					,_Fld13882 [Комментарий]
-					,_Fld13883RRef [Контрагент]
-					,_Fld13884 [КратностьВзаиморасчетов]
-					,_Fld13885 [КурсВзаиморасчетов]
-					,_Fld13886 [НДСВключенВСтоимость]
-					,_Fld13887 [НомерВходящегоДокумента]
-					,_Fld13888RRef [Организация]
-					,_Fld13889RRef [Ответственный]
-					,_Fld13890 [ОтражатьВБухгалтерскомУчете]
-					,_Fld13891 [ОтражатьВНалоговомУчете]
-					,_Fld13892 [СуммаВключаетНДС]
-					,_Fld13893 [СуммаДокумента]
-					,_Fld13894RRef [СчетУчетаРасчетовПоАвансам]
-					,_Fld13895RRef [СчетУчетаРасчетовСКонтрагентом]
-					,_Fld13896 [УчитыватьНДС]
-					From _Document528(NOLOCK)
+					,_Fld9319RRef [ВалютаДокумента]
+					,_Fld9320 [ДатаВходящегоДокумента]
+					,_Fld9321RRef [ДоговорКонтрагента]
+					,_Fld9322 [Комментарий]
+					,_Fld9323RRef [Контрагент]
+					,_Fld9324 [КратностьВзаиморасчетов]
+					,_Fld9325 [КурсВзаиморасчетов]
+					,_Fld9326 [НДСВключенВСтоимость]
+					,_Fld9327 [НомерВходящегоДокумента]
+					,_Fld9328RRef [Организация]
+					,_Fld9329RRef [Ответственный]
+					,_Fld9330 [ОтражатьВБухгалтерскомУчете]
+					,_Fld9331 [ОтражатьВНалоговомУчете]
+					,_Fld9332 [СуммаВключаетНДС]
+					,_Fld9333 [СуммаДокумента]
+					,_Fld9334RRef [СчетУчетаРасчетовПоАвансам]
+					,_Fld9335RRef [СчетУчетаРасчетовСКонтрагентом]
+					,_Fld9336 [УчитыватьНДС]
+					From _Document401(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

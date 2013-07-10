@@ -8,7 +8,10 @@
 	title: 'Классификатор использования рабочего времени',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -77,7 +80,8 @@
 			text: 'Полное наименование:',
 			style: 'position:absolute;left:8px;top:57px;width:122px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -25,14 +25,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -71,14 +71,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -117,14 +117,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)";
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ИзменениеЛимитовВозвратнойТары();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -159,14 +159,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -205,14 +205,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -251,14 +251,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)";
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ИзменениеЛимитовВозвратнойТары();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -293,14 +293,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld7868RRef [ВидОперации]
-					,_Fld7869RRef [ДоговорКонтрагента]
-					,_Fld7870 [Комментарий]
-					,_Fld7871RRef [Контрагент]
-					,_Fld7872RRef [Организация]
-					,_Fld7873RRef [Подразделение]
-					,_Fld7874RRef [Ответственный]
-					From _Document390(NOLOCK)";
+					,_Fld4854RRef [ВидОперации]
+					,_Fld4855RRef [ДоговорКонтрагента]
+					,_Fld4856 [Комментарий]
+					,_Fld4857RRef [Контрагент]
+					,_Fld4858RRef [Организация]
+					,_Fld4859RRef [Подразделение]
+					,_Fld4860RRef [Ответственный]
+					From _Document276(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ИзменениеЛимитовВозвратнойТары();
 					using (var Читалка = Команда.ExecuteReader())
 					{

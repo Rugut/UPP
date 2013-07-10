@@ -8,7 +8,10 @@
 	title: 'Детализация аналитического баланса',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -98,6 +101,7 @@
 			]
 		},
 		{
+			id: 'ОтборСчетовБюджетирования',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:145px;width:390px;height:160px;',
 			height: 160,width: 390,
@@ -117,13 +121,13 @@
 				},
 				{
 					text:'Наименование счета',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеСчета',
 					flex:1,
 				},
 				{
 					text:'Вид остатка',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидОстатка',
 					flex:1,
 				},
@@ -136,11 +140,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДетализацияАналитическогоБаланса").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДетализацияАналитическогоБаланса/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДетализацияАналитическогоБаланса/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -160,6 +165,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборСчетовБюджетирования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'textarea',
@@ -174,7 +196,8 @@
 			text: 'Наименование для отчета:',
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:27px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

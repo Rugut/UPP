@@ -8,7 +8,10 @@
 	title: 'Настройки диаграммы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:128px;top:30px;width:280px;height:19px;',
@@ -351,7 +354,8 @@
 			title: 'Индивидуальные, для текущего типа диаграммы',
 			style: 'position:absolute;left:8px;top:101px;width:471px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

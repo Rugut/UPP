@@ -141,24 +141,24 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document592(
+						Insert Into _Document22682(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld17301RRef
-						,_Fld17302RRef
-						,_Fld17303
-						,_Fld17304
-						,_Fld17305RRef
-						,_Fld17306RRef
-						,_Fld17307RRef
-						,_Fld17308RRef
-						,_Fld17309RRef
-						,_Fld17310RRef
-						,_Fld17311RRef
-						,_Fld17312RRef)
+						,_Fld22819RRef
+						,_Fld22820RRef
+						,_Fld22821
+						,_Fld22822
+						,_Fld22823RRef
+						,_Fld22824RRef
+						,_Fld22825RRef
+						,_Fld22826RRef
+						,_Fld22827RRef
+						,_Fld22828RRef
+						,_Fld22829RRef
+						,_Fld22830RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -180,24 +180,24 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document592
+						Update _Document22682
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld17301RRef	= @Организация
-						,_Fld17302RRef	= @Ответственный
-						,_Fld17303	= @Комментарий
-						,_Fld17304	= @ОтражатьВНалоговомУчете
-						,_Fld17305RRef	= @СчетСписанияНДС
-						,_Fld17306RRef	= @СубконтоСписанияНДС1
-						,_Fld17307RRef	= @СубконтоСписанияНДС2
-						,_Fld17308RRef	= @СубконтоСписанияНДС3
-						,_Fld17309RRef	= @СчетСписанияНДСНУ
-						,_Fld17310RRef	= @СубконтоСписанияНДСНУ1
-						,_Fld17311RRef	= @СубконтоСписанияНДСНУ2
-						,_Fld17312RRef	= @СубконтоСписанияНДСНУ3
+						,_Fld22819RRef	= @Организация
+						,_Fld22820RRef	= @Ответственный
+						,_Fld22821	= @Комментарий
+						,_Fld22822	= @ОтражатьВНалоговомУчете
+						,_Fld22823RRef	= @СчетСписанияНДС
+						,_Fld22824RRef	= @СубконтоСписанияНДС1
+						,_Fld22825RRef	= @СубконтоСписанияНДС2
+						,_Fld22826RRef	= @СубконтоСписанияНДС3
+						,_Fld22827RRef	= @СчетСписанияНДСНУ
+						,_Fld22828RRef	= @СубконтоСписанияНДСНУ1
+						,_Fld22829RRef	= @СубконтоСписанияНДСНУ2
+						,_Fld22830RRef	= @СубконтоСписанияНДСНУ3
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -225,7 +225,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document592
+					Команда.CommandText = @"Delete _Document22682
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

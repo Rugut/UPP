@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class МедицинскиеОрганизации:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("9d852d88-e4e4-4fc1-88f5-74ad54dbbee8");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190951.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011939.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -45,7 +45,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public МедицинскиеОрганизации(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public МедицинскиеОрганизации(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,11 +71,11 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

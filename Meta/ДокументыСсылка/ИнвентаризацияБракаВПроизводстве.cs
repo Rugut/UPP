@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИнвентаризацияБракаВПроизводстве:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("47a8baf0-29e1-4881-b4e9-054723700050");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191234.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011953.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -95,17 +95,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8149RRef [Подразделение]
-					,_Fld8150RRef [Организация]
-					,_Fld8151 [Комментарий]
-					,_Fld8152RRef [Ответственный]
-					,_Fld8153 [ОтражатьВУправленческомУчете]
-					,_Fld8154 [ОтражатьВБухгалтерскомУчете]
-					,_Fld8155 [ОтражатьВНалоговомУчете]
-					,_Fld8156RRef [Заказ]
-					,_Fld8157RRef [НоменклатурнаяГруппа]
-					,_Fld8158RRef [ПодразделениеОрганизации]
-					From _Document402(NOLOCK)
+					,_Fld5080RRef [Подразделение]
+					,_Fld5081RRef [Организация]
+					,_Fld5082 [Комментарий]
+					,_Fld5083RRef [Ответственный]
+					,_Fld5084 [ОтражатьВУправленческомУчете]
+					,_Fld5085 [ОтражатьВБухгалтерскомУчете]
+					,_Fld5086 [ОтражатьВНалоговомУчете]
+					,_Fld5087RRef [Заказ]
+					,_Fld5089RRef [НоменклатурнаяГруппа]
+					,_Fld5091RRef [ПодразделениеОрганизации]
+					From _Document288(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

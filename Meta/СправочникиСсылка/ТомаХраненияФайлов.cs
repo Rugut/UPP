@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ТомаХраненияФайлов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b9857000-21cf-4445-bd07-3fbcb0816986");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191412.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012000.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,7 +65,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ТомаХраненияФайлов(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ТомаХраненияФайлов(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -78,13 +91,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3985 [Комментарий]
-					,_Fld3986 [МаксимальныйРазмер]
-					,_Fld3987 [ПолныйПутьLinux]
-					,_Fld3988 [ПолныйПутьWindows]
-					,_Fld3989 [ПорядокЗаполнения]
-					From _Reference271(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23818 [Комментарий]
+					,_Fld23819 [МаксимальныйРазмер]
+					,_Fld23820 [ПолныйПутьLinux]
+					,_Fld23821 [ПолныйПутьWindows]
+					,_Fld23822 [ПорядокЗаполнения]
+					From _Reference23131(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

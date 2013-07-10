@@ -8,7 +8,10 @@
 	title: 'Регистр учета прочих и косвенных расходов (настройка)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:8px;width:484px;height:238px;',
@@ -106,7 +109,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

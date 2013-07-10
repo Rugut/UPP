@@ -8,7 +8,10 @@
 	title: 'Модуль отладки обработчиков и алгоритмов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:622px;height:534px;',
@@ -26,7 +29,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

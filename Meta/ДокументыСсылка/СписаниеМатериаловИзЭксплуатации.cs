@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СписаниеМатериаловИзЭксплуатации:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("682dffa4-3a71-4d0f-9c0c-1b2cf34f5e1e");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191939.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -133,28 +133,28 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17251 [ОтражатьВНалоговомУчете]
-					,_Fld17252RRef [НоменклатурнаяГруппа]
-					,_Fld17253RRef [Организация]
-					,_Fld17254RRef [ПодразделениеОрганизации]
-					,_Fld17255 [ОтражатьВБухгалтерскомУчете]
-					,_Fld17256 [Комментарий]
-					,_Fld17257 [ОтражатьВУправленческомУчете]
-					,_Fld17258RRef [Подразделение]
-					,_Fld17259RRef [Ответственный]
-					,_Fld17260RRef [СпособСписанияРасходов]
-					,_Fld17261RRef [СтатьяЗатрат]
-					,_Fld17262RRef [СчетДт]
-					,_Fld17263RRef [СубконтоДт1]
-					,_Fld17264RRef [СубконтоДт2]
-					,_Fld17265RRef [СубконтоДт3]
-					,_Fld17266RRef [СчетДтНУ]
-					,_Fld17267RRef [СубконтоДтНУ1]
-					,_Fld17268RRef [СубконтоДтНУ2]
-					,_Fld17269RRef [СубконтоДтНУ3]
-					,_Fld17270RRef [ТипСтоимости]
-					,_Fld17271RRef [ПричинаСписания]
-					From _Document590(NOLOCK)
+					,_Fld11577 [ОтражатьВНалоговомУчете]
+					,_Fld11573RRef [НоменклатурнаяГруппа]
+					,_Fld11574RRef [Организация]
+					,_Fld11580RRef [ПодразделениеОрганизации]
+					,_Fld11576 [ОтражатьВБухгалтерскомУчете]
+					,_Fld11572 [Комментарий]
+					,_Fld11578 [ОтражатьВУправленческомУчете]
+					,_Fld11579RRef [Подразделение]
+					,_Fld11575RRef [Ответственный]
+					,_Fld11581RRef [СпособСписанияРасходов]
+					,_Fld11582RRef [СтатьяЗатрат]
+					,_Fld11589RRef [СчетДт]
+					,_Fld11583RRef [СубконтоДт1]
+					,_Fld11584RRef [СубконтоДт2]
+					,_Fld11585RRef [СубконтоДт3]
+					,_Fld11590RRef [СчетДтНУ]
+					,_Fld11586RRef [СубконтоДтНУ1]
+					,_Fld11587RRef [СубконтоДтНУ2]
+					,_Fld11588RRef [СубконтоДтНУ3]
+					,_Fld11591RRef [ТипСтоимости]
+					,_Fld11592RRef [ПричинаСписания]
+					From _Document454(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

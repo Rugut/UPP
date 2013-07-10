@@ -102,7 +102,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference220(
+						Insert Into _Reference141(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -111,13 +111,13 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3373
-						,_Fld3374
-						,_Fld3375
-						,_Fld3376
-						,_Fld3377
-						,_Fld3378
-						,_Fld3379)
+						,_Fld1724
+						,_Fld1725
+						,_Fld1726
+						,_Fld1727
+						,_Fld1728
+						,_Fld1729
+						,_Fld26592)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -138,7 +138,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference220
+						Update _Reference141
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -148,13 +148,13 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3373	= @ИсточникОтчета
-						,_Fld3374	= @НеПоказыватьВСписке
-						,_Fld3375	= @Описание
-						,_Fld3376	= @ВнешнийОтчетИспользовать
-						,_Fld3377	= @ВнешнийОтчетХранилище
-						,_Fld3378	= @Периоды
-						,_Fld3379	= @ВнешнийОтчетВерсия
+						,_Fld1724	= @ИсточникОтчета
+						,_Fld1725	= @НеПоказыватьВСписке
+						,_Fld1726	= @Описание
+						,_Fld1727	= @ВнешнийОтчетИспользовать
+						,_Fld1728	= @ВнешнийОтчетХранилище
+						,_Fld1729	= @Периоды
+						,_Fld26592	= @ВнешнийОтчетВерсия
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -183,7 +183,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference220
+					Команда.CommandText = @"Delete _Reference141
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

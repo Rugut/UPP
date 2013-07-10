@@ -8,8 +8,12 @@
 	title: 'Основания увольнения (статьи ТК РФ)',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

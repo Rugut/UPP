@@ -8,7 +8,10 @@
 	title: 'Импорт / экспорт операций по лицевым счетам сотрудников',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:766px;height:429px;',
@@ -57,6 +60,7 @@
 			style: 'position:absolute;left:6px;top:81px;width:752px;height:16px;',
 		},
 		{
+			id: 'ЗявкиНаОткрытиеСчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:121px;width:752px;height:282px;',
 			height: 282,width: 752,
@@ -70,7 +74,7 @@
 				},
 				{
 					text:'Дата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -82,13 +86,13 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Зарплатный счет',
-					width:'160',
+					width:'1600',
 					dataIndex:'РасчетныйСчет',
 					flex:1,
 				},
@@ -117,7 +121,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +149,23 @@
 						name:'Документ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗявкиНаОткрытиеСчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -419,6 +440,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:112px;height:19px;',
 		},
 		{
+			id: 'ПлатежныеПорученияЗачислениеЗарплаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:121px;width:752px;height:282px;',
 			height: 282,width: 752,
@@ -438,7 +460,7 @@
 				},
 				{
 					text:'Дата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -456,7 +478,7 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -468,7 +490,7 @@
 				},
 				{
 					text:'№ счета',
-					width:'160',
+					width:'1600',
 					dataIndex:'РасчетныйСчет',
 					flex:1,
 				},
@@ -485,7 +507,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -516,6 +538,23 @@
 						name:'Документ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлатежныеПорученияЗачислениеЗарплаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -610,6 +649,7 @@
 			style: 'position:absolute;left:6px;top:7px;width:95px;height:19px;',
 		},
 		{
+			id: 'ФайлыДляИмпорта',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:72px;width:752px;height:331px;',
 			height: 331,width: 752,
@@ -623,19 +663,19 @@
 				},
 				{
 					text:'Файл',
-					width:'320',
+					width:'3200',
 					dataIndex:'Файл',
 					flex:1,
 				},
 				{
 					text:'Дата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Дата',
 					flex:1,
 				},
 				{
 					text:'Дата операции',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДатаОперации',
 					flex:1,
 				},
@@ -646,7 +686,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -663,8 +703,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФайлыДляИмпорта');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ОперацииПоСчетам',
 			xtype: 'grid',
 			style: 'position:absolute;left:408px;top:11px;width:193px;height:48px;',
 			height: 48,width: 193,
@@ -678,37 +736,37 @@
 				},
 				{
 					text:'Документ',
-					width:'220',
+					width:'2200',
 					dataIndex:'Документ',
 					flex:1,
 				},
 				{
 					text:'Операция',
-					width:'120',
+					width:'1200',
 					dataIndex:'Операция',
 					flex:1,
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Лицевой счет',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЛицевойСчет',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Результат',
-					width:'120',
+					width:'1200',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -737,7 +795,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -772,6 +830,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОперацииПоСчетам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -780,6 +855,7 @@
 					items:
 					[
 		{
+			id: 'РегистрСведенийСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:750px;height:373px;',
 			height: 373,width: 750,
@@ -799,7 +875,7 @@
 				},
 				{
 					text:'Дата',
-					width:'140',
+					width:'1400',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -816,7 +892,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИмпортЭкспортОперацийПоЛицевымСчетамРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -833,12 +909,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РегистрСведенийСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

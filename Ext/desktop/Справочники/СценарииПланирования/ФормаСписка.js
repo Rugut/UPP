@@ -8,8 +8,12 @@
 	title: 'Сценарии планирования',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:33px;width:593px;height:320px;',
 			height: 320,width: 593,
@@ -29,19 +33,19 @@
 				},
 				{
 					text:'Наименование',
-					width:'180',
+					width:'1800',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Периодичность',
-					width:'120',
+					width:'1200',
 					dataIndex:'Периодичность',
 					flex:1,
 				},
 				{
 					text:'Объект планирования',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбъектПланирования',
 					flex:1,
 				},
@@ -60,11 +64,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СценарииПланирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +95,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
 			height: 320,width: 160,
@@ -106,11 +129,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СценарииПланирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -118,8 +142,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

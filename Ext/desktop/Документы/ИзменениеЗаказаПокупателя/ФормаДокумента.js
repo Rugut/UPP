@@ -8,7 +8,10 @@
 	title: 'Изменение заказа покупателя',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -106,6 +109,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -125,19 +129,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -227,7 +231,7 @@
 				},
 				{
 					text:'Размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'Размещение',
 					flex:1,
 				},
@@ -262,7 +266,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -339,6 +343,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -379,6 +400,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -398,13 +420,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -428,7 +450,7 @@
 				},
 				{
 					text:'Размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'Размещение',
 					flex:1,
 				},
@@ -439,7 +461,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -468,6 +490,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -482,6 +521,7 @@
 			style: 'position:absolute;left:12px;top:30px;width:74px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -495,7 +535,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -560,7 +600,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -597,6 +637,23 @@
 						name:'Всего',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -662,6 +719,7 @@
 			style: 'position:absolute;left:167px;top:30px;width:57px;height:19px;text-align:center;',
 		},
 		{
+			id: 'ТаблицаАвтоСкидок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:743px;height:120px;',
 			height: 120,width: 743,
@@ -716,7 +774,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -741,6 +799,23 @@
 						name:'ЗначениеУсловияАвтоматическойСкидки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаАвтоСкидок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -883,7 +958,8 @@
 			text: 'Б/счет, касса из заказа',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,7 +8,10 @@
 	title: 'Регистр-расчет стоимости остатков незавершенного производства',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -103,7 +106,8 @@
 			height: 19,
 			style: 'position:absolute;left:366px;top:79px;width:230px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

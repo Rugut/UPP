@@ -8,7 +8,10 @@
 	title: 'Настройка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:654px;height:222px;',
@@ -20,6 +23,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:92px;width:317px;height:101px;',
 			height: 101,width: 317,
@@ -44,7 +48,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +58,23 @@
 						name:'Документ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -153,6 +174,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаНастроек',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:156px;',
 			height: 156,width: 640,
@@ -173,7 +195,7 @@
 				},
 				{
 					text:'Статья ДДС для новых документов',
-					width:'210',
+					width:'2100',
 					dataIndex:'СтатьяДДС',
 					flex:1,
 				},
@@ -184,7 +206,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -197,6 +219,23 @@
 						name:'СтатьяДДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастроек');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -225,7 +264,8 @@
 			boxLabel: 'Не контролировать окончание номера на 000',
 			style: 'position:absolute;left:8px;top:236px;width:254px;height:25px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

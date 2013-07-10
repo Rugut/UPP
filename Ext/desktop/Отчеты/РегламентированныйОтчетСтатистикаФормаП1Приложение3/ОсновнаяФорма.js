@@ -8,7 +8,10 @@
 	title: 'Статистика: Форма П-1 Приложение 3',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
@@ -81,7 +84,8 @@
 			title: 'Организация',
 			style: 'position:absolute;left:8px;top:8px;width:260px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

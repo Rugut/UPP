@@ -132,29 +132,29 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document400(
+						Insert Into _Document23151(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld8051RRef
-						,_Fld8052RRef
-						,_Fld8053RRef
-						,_Fld8054RRef
-						,_Fld8055
-						,_Fld8056
-						,_Fld8057RRef
-						,_Fld8058
-						,_Fld8059
-						,_Fld8060RRef
-						,_Fld8061
-						,_Fld8062RRef
-						,_Fld8063RRef
-						,_Fld8064RRef
-						,_Fld8065
-						,_Fld8066RRef
-						,_Fld8067)
+						,_Fld24367RRef
+						,_Fld24368RRef
+						,_Fld24369RRef
+						,_Fld24370RRef
+						,_Fld24371
+						,_Fld24372
+						,_Fld24373RRef
+						,_Fld24374
+						,_Fld24375
+						,_Fld24376RRef
+						,_Fld24377
+						,_Fld24378RRef
+						,_Fld24379RRef
+						,_Fld24380RRef
+						,_Fld24381
+						,_Fld24382RRef
+						,_Fld24383)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -181,29 +181,29 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document400
+						Update _Document23151
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld8051RRef	= @Физлицо
-						,_Fld8052RRef	= @Организация
-						,_Fld8053RRef	= @ИсполнительныйЛист
-						,_Fld8054RRef	= @Действие
-						,_Fld8055	= @ДатаИзменения
-						,_Fld8056	= @ДатаОкончания
-						,_Fld8057RRef	= @СпособРасчетаУдержания
-						,_Fld8058	= @Размер
-						,_Fld8059	= @Предел
-						,_Fld8060RRef	= @ПрожиточныйМинимум
-						,_Fld8061	= @ПроцентПочтовогоСбора
-						,_Fld8062RRef	= @Тариф
-						,_Fld8063RRef	= @СпособПеречисленияПоИсполнительномуЛисту
-						,_Fld8064RRef	= @ТарифБанкаНаДенежныеПереводы
-						,_Fld8065	= @ПочтовыйСборРассчитыватьПроцентом
-						,_Fld8066RRef	= @Ответственный
-						,_Fld8067	= @Комментарий
+						,_Fld24367RRef	= @Физлицо
+						,_Fld24368RRef	= @Организация
+						,_Fld24369RRef	= @ИсполнительныйЛист
+						,_Fld24370RRef	= @Действие
+						,_Fld24371	= @ДатаИзменения
+						,_Fld24372	= @ДатаОкончания
+						,_Fld24373RRef	= @СпособРасчетаУдержания
+						,_Fld24374	= @Размер
+						,_Fld24375	= @Предел
+						,_Fld24376RRef	= @ПрожиточныйМинимум
+						,_Fld24377	= @ПроцентПочтовогоСбора
+						,_Fld24378RRef	= @Тариф
+						,_Fld24379RRef	= @СпособПеречисленияПоИсполнительномуЛисту
+						,_Fld24380RRef	= @ТарифБанкаНаДенежныеПереводы
+						,_Fld24381	= @ПочтовыйСборРассчитыватьПроцентом
+						,_Fld24382RRef	= @Ответственный
+						,_Fld24383	= @Комментарий
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -232,7 +232,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document400
+					Команда.CommandText = @"Delete _Document23151
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

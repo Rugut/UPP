@@ -8,13 +8,17 @@
 	title: 'Дополнительная информация',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Показывать при начале работы программы',
 			style: 'position:absolute;left:133px;top:4px;width:241px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

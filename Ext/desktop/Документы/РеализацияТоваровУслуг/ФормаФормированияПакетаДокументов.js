@@ -8,7 +8,10 @@
 	title: 'Оформить документы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Печатать',
@@ -236,7 +239,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СоставМероприятия:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("eed55640-0e3e-44ff-ab6b-dece4c732f91");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191601.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012009.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -48,7 +48,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СоставМероприятия(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СоставМероприятия(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -61,10 +74,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3485 [ДатаНачала]
-					,_Fld3486 [ДатаОкончания]
-					From _Reference233(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1759 [ДатаНачала]
+					,_Fld1760 [ДатаОкончания]
+					From _Reference150(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

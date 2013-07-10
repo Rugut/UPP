@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КадровоеПеремещениеОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("2070eed0-f052-4868-98c9-34cba8395295");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190910.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011935.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -70,19 +70,19 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8558RRef [Организация]
-					,_Fld8559 [Комментарий]
-					,_Fld8560RRef [Ответственный]
-					,_Fld8561 [ИндексацияЗаработка]
-					,_Fld8562 [КоэффициентИндексацииЗаработка]
-					,_Fld8563 [УдалитьРайонныйКоэффициент]
-					,_Fld8564RRef [ОбособленноеПодразделениеОткуда]
-					,_Fld8565RRef [ОбособленноеПодразделениеКуда]
-					,_Fld8566 [КраткийСоставДокумента]
-					,_Fld8567 [ДанныеПрошлойВерсии]
-					,_Fld8568RRef [ИсправляемыйДокумент]
-					,_Fld8569 [ДвиженияИсправляемогоДокумента]
-					From _Document412(NOLOCK)
+					,_Fld5401RRef [Организация]
+					,_Fld5402 [Комментарий]
+					,_Fld5403RRef [Ответственный]
+					,_Fld5404 [ИндексацияЗаработка]
+					,_Fld5405 [КоэффициентИндексацииЗаработка]
+					,_Fld5406 [УдалитьРайонныйКоэффициент]
+					,_Fld5407RRef [ОбособленноеПодразделениеОткуда]
+					,_Fld5408RRef [ОбособленноеПодразделениеКуда]
+					,_Fld5409 [КраткийСоставДокумента]
+					,_Fld26800 [ДанныеПрошлойВерсии]
+					,_Fld26801RRef [ИсправляемыйДокумент]
+					,_Fld26802 [ДвиженияИсправляемогоДокумента]
+					From _Document296(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

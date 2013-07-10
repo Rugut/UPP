@@ -8,7 +8,10 @@
 	title: 'Регистр информации об объекте основных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -83,7 +86,8 @@
 			height: 19,
 			style: 'position:absolute;left:117px;top:57px;width:479px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

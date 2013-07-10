@@ -8,8 +8,12 @@
 	title: 'Выбор из списка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокКодов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:584px;height:246px;',
 			height: 246,width: 584,
@@ -17,7 +21,7 @@
 			[
 				{
 					text:'Код',
-					width:'130',
+					width:'1300',
 					dataIndex:'Код',
 					flex:1,
 				},
@@ -34,7 +38,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -44,6 +48,23 @@
 						name:'Название',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокКодов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -59,7 +80,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

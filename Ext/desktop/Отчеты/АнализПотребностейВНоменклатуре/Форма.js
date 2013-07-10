@@ -8,7 +8,10 @@
 	title: 'Анализ потребностей в номенклатуре',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:595px;height:49px;',
@@ -102,7 +105,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

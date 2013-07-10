@@ -24,10 +24,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -70,10 +70,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)";
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.ПроизвольныеОтчеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -112,11 +112,11 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -158,10 +158,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -204,10 +204,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)";
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПроизвольныеОтчеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -246,10 +246,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)";
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПроизвольныеОтчеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{

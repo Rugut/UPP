@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class РеестрСчетов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d12e5496-29e0-4094-8d79-7d934b96476a");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191220.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011952.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -79,19 +79,19 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16658RRef [ИсполняющийБанк]
-					,_Fld16659RRef [Организация]
-					,_Fld16660RRef [СчетОрганизации]
-					,_Fld16661RRef [Контрагент]
-					,_Fld16662RRef [СчетКонтрагента]
-					,_Fld16663 [НомерАккредитива]
-					,_Fld16664 [ДатаАккредитива]
-					,_Fld16665 [СуммаАккредитива]
-					,_Fld16666 [ДатаЗакрытия]
-					,_Fld16667 [Комментарий]
-					,_Fld16668RRef [Ответственный]
-					,_Fld16669RRef [ДокументОснование]
-					From _Document577(NOLOCK)
+					,_Fld11300RRef [ИсполняющийБанк]
+					,_Fld11301RRef [Организация]
+					,_Fld11302RRef [СчетОрганизации]
+					,_Fld11303RRef [Контрагент]
+					,_Fld11304RRef [СчетКонтрагента]
+					,_Fld11305 [НомерАккредитива]
+					,_Fld11306 [ДатаАккредитива]
+					,_Fld11307 [СуммаАккредитива]
+					,_Fld11308 [ДатаЗакрытия]
+					,_Fld11309 [Комментарий]
+					,_Fld11310RRef [Ответственный]
+					,_Fld11311RRef [ДокументОснование]
+					From _Document444(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

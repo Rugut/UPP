@@ -99,7 +99,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference105(
+						Insert Into _Reference61(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -108,11 +108,11 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld2351
-						,_Fld2353RRef
-						,_Fld2354RRef
-						,_Fld2355RRef
-						,_Fld2356RRef)
+						,_Fld1158
+						,_Fld1160RRef
+						,_Fld1161RRef
+						,_Fld1162RRef
+						,_Fld1165RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -131,7 +131,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference105
+						Update _Reference61
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -141,11 +141,11 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2351	= @КодКарты
-						,_Fld2353RRef	= @ВидКарты
-						,_Fld2354RRef	= @ТипКарты
-						,_Fld2355RRef	= @ТипШтрихКода
-						,_Fld2356RRef	= @ВидДисконтнойКарты
+						,_Fld1158	= @КодКарты
+						,_Fld1160RRef	= @ВидКарты
+						,_Fld1161RRef	= @ТипКарты
+						,_Fld1162RRef	= @ТипШтрихКода
+						,_Fld1165RRef	= @ВидДисконтнойКарты
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -172,7 +172,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference105
+					Команда.CommandText = @"Delete _Reference61
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

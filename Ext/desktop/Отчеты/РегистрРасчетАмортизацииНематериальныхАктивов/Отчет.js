@@ -8,7 +8,10 @@
 	title: 'Регистр-расчет амортизации нематериальных активов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -88,7 +91,8 @@
 			boxLabel: 'Группировать по объектам нематериальных активов',
 			style: 'position:absolute;left:8px;top:81px;width:296px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

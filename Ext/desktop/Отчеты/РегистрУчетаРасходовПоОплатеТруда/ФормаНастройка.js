@@ -8,7 +8,10 @@
 	title: 'Регистр учета расходов по оплате труда (настройка)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:8px;width:358px;height:288px;',
@@ -103,7 +106,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

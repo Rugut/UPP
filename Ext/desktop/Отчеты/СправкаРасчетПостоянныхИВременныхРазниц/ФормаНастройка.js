@@ -8,7 +8,10 @@
 	title: 'Настройка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:399px;height:162px;',
@@ -79,6 +82,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:385px;height:103px;',
 			height: 103,width: 385,
@@ -127,7 +131,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаРасчетПостоянныхИВременныхРазниц/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаРасчетПостоянныхИВременныхРазниц/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -150,12 +154,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Транспортные упаковки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -71,7 +74,8 @@
 			name: 'НомерУпаковки',
 			style: 'position:absolute;left:101px;top:33px;width:35px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

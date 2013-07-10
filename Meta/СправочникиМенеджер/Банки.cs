@@ -28,11 +28,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -79,11 +79,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -130,11 +130,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)";
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.Банки();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -177,12 +177,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -228,11 +228,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -279,11 +279,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -330,11 +330,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)";
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Банки();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -377,11 +377,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)";
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Банки();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -424,11 +424,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1847 [КоррСчет]
-					,_Fld1848 [Город]
-					,_Fld1849 [Адрес]
-					,_Fld1850 [Телефоны]
-					From _Reference35(NOLOCK)";
+					,_Fld886 [КоррСчет]
+					,_Fld887 [Город]
+					,_Fld888 [Адрес]
+					,_Fld889 [Телефоны]
+					From _Reference6(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Банки();
 					using (var Читалка = Команда.ExecuteReader())
 					{

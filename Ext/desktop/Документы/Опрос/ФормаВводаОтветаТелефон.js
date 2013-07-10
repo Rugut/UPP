@@ -8,7 +8,10 @@
 	title: 'Ответ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:128px;width:341px;height:25px;',
@@ -102,7 +105,8 @@
 			title: 'Телефон',
 			style: 'position:absolute;left:8px;top:8px;width:325px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

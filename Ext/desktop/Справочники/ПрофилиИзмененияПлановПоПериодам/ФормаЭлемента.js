@@ -8,7 +8,10 @@
 	title: 'Профили изменения планов по периодам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -42,6 +45,7 @@
 			style: 'position:absolute;left:110px;top:57px;width:100px;height:19px;',
 		},
 		{
+			id: 'ПрофильИзменения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:446px;height:220px;',
 			height: 220,width: 446,
@@ -55,7 +59,7 @@
 				},
 				{
 					text:'Номер периода',
-					width:'120',
+					width:'1200',
 					dataIndex:'НомерПериода',
 					flex:1,
 				},
@@ -68,11 +72,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоПериодам").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -85,6 +90,23 @@
 						name:'Коэффициент',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрофильИзменения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -107,7 +129,8 @@
 			height: 19,
 			style: 'position:absolute;left:374px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

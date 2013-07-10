@@ -8,8 +8,12 @@
 	title: 'Web-страница конфигурации',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

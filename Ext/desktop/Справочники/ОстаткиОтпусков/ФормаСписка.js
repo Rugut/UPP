@@ -8,8 +8,12 @@
 	title: 'Остатки отпусков прошлых лет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:384px;height:116px;',
 			height: 116,width: 384,
@@ -23,24 +27,25 @@
 				},
 				{
 					text:'Физлицо',
-					width:'120',
+					width:'1200',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Дата актуальности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДатаАктуальности',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +59,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПоле1',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:176px;width:384px;height:116px;',
 			height: 116,width: 384,
@@ -82,11 +105,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -100,13 +124,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПоле1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Остатки',
 			style: 'position:absolute;left:8px;top:156px;width:384px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

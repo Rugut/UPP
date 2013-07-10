@@ -8,7 +8,10 @@
 	title: 'Группа Статьи движения денежных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:57px;width:228px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

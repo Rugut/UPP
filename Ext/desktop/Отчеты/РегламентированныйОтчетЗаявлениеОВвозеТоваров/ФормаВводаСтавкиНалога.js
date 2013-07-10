@@ -8,7 +8,10 @@
 	title: 'Ставки налога',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'НДС',
@@ -110,7 +113,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

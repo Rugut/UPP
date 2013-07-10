@@ -8,7 +8,10 @@
 	title: 'Корректировочный счет-фактура полученный',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -376,6 +379,7 @@
 					items:
 					[
 		{
+			id: 'ВосстановлениеНДС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:53px;width:645px;height:153px;',
 			height: 153,width: 645,
@@ -389,7 +393,7 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
@@ -418,7 +422,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураПолученный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураПолученный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -438,6 +442,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВосстановлениеНДС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -446,6 +467,7 @@
 					items:
 					[
 		{
+			id: 'ВычетНДС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:53px;width:645px;height:153px;',
 			height: 153,width: 645,
@@ -459,7 +481,7 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
@@ -494,7 +516,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураПолученный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураПолученный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -517,6 +539,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВычетНДС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -528,7 +567,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

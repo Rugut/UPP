@@ -141,22 +141,22 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document562(
+						Insert Into _Document22681(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld15758RRef
-						,_Fld15759
-						,_Fld15760RRef
-						,_Fld15761
-						,_Fld15762
-						,_Fld15763
-						,_Fld15764RRef
-						,_Fld15765RRef
-						,_Fld15768
-						,_Fld15769RRef)
+						,_Fld22802RRef
+						,_Fld22803
+						,_Fld22801RRef
+						,_Fld22804
+						,_Fld22805
+						,_Fld22806
+						,_Fld22807RRef
+						,_Fld22808RRef
+						,_Fld22810
+						,_Fld22812RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -176,22 +176,22 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document562
+						Update _Document22681
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld15758RRef	= @Ответственный
-						,_Fld15759	= @Комментарий
-						,_Fld15760RRef	= @Организация
-						,_Fld15761	= @ОтражатьВБухгалтерскомУчете
-						,_Fld15762	= @ОтражатьВНалоговомУчете
-						,_Fld15763	= @ОтражатьВУправленческомУчете
-						,_Fld15764RRef	= @Контрагент
-						,_Fld15765RRef	= @ДоговорКонтрагента
-						,_Fld15768	= @СуммаДокумента
-						,_Fld15769RRef	= @ВалютаДокумента
+						,_Fld22802RRef	= @Ответственный
+						,_Fld22803	= @Комментарий
+						,_Fld22801RRef	= @Организация
+						,_Fld22804	= @ОтражатьВБухгалтерскомУчете
+						,_Fld22805	= @ОтражатьВНалоговомУчете
+						,_Fld22806	= @ОтражатьВУправленческомУчете
+						,_Fld22807RRef	= @Контрагент
+						,_Fld22808RRef	= @ДоговорКонтрагента
+						,_Fld22810	= @СуммаДокумента
+						,_Fld22812RRef	= @ВалютаДокумента
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -214,7 +214,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document562
+					Команда.CommandText = @"Delete _Document22681
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

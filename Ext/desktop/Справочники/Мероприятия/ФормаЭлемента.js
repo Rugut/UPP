@@ -8,7 +8,10 @@
 	title: 'Мероприятие предприятия',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -40,6 +43,7 @@
 			style: 'position:absolute;left:94px;top:33px;width:230px;height:19px;',
 		},
 		{
+			id: 'СоставМероприятия',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:172px;width:432px;height:220px;',
 			height: 220,width: 432,
@@ -59,30 +63,31 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Начало',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДатаНачала',
 					flex:1,
 				},
 				{
 					text:'Окончание',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДатаОкончания',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Мероприятия").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Мероприятия/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Мероприятия/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -101,6 +106,23 @@
 						name:'ДатаОкончания',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставМероприятия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -172,7 +194,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

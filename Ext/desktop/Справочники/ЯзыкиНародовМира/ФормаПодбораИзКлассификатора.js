@@ -8,8 +8,12 @@
 	title: 'Языки народов мира',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

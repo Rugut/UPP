@@ -8,7 +8,10 @@
 	title: 'Единая (упрощенная) налоговая декларация',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:103px;width:654px;height:332px;',
@@ -144,7 +147,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

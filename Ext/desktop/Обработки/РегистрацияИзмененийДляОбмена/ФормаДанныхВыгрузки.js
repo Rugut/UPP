@@ -8,8 +8,12 @@
 	title: 'Форма просмотра текста',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

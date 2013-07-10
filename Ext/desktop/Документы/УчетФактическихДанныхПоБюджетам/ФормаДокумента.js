@@ -8,7 +8,10 @@
 	title: 'Учет фактических данных по бюджетам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -93,6 +96,7 @@
 			]
 		},
 		{
+			id: 'БюджетныеОперации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:149px;width:634px;height:180px;',
 			height: 180,width: 634,
@@ -112,49 +116,49 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
 				{
 					text:'Валюта',
-					width:'120',
+					width:'1200',
 					dataIndex:'Валюта',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Количество',
-					width:'120',
+					width:'1200',
 					dataIndex:'Количество',
 					flex:1,
 				},
 				{
 					text:'ЦФО',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'120',
+					width:'1200',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -165,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетФактическихДанныхПоБюджетам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетФактическихДанныхПоБюджетам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -199,6 +203,23 @@
 						name:'Номенклатура',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('БюджетныеОперации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -368,7 +389,8 @@
 			title: 'БюджетныеОперации',
 			style: 'position:absolute;left:8px;top:108px;width:634px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

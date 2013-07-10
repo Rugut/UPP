@@ -8,14 +8,18 @@
 	title: 'Отчет кассовой смены без гашения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьИнформация',
 			text: 'Снятие  на фискальном регистраторе отчета кассовой смены без гашения',
 			style: 'position:absolute;left:8px;top:33px;width:298px;height:27px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

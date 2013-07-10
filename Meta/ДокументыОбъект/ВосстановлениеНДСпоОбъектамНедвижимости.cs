@@ -144,25 +144,25 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document341(
+						Insert Into _Document18532(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld6482RRef
-						,_Fld6483RRef
-						,_Fld6484
-						,_Fld6485
-						,_Fld6486
-						,_Fld6487RRef
-						,_Fld6488RRef
-						,_Fld6489RRef
-						,_Fld6490RRef
-						,_Fld6491RRef
-						,_Fld6492RRef
-						,_Fld6493RRef
-						,_Fld6494RRef)
+						,_Fld18534RRef
+						,_Fld18535RRef
+						,_Fld18536
+						,_Fld18537
+						,_Fld18538
+						,_Fld18539RRef
+						,_Fld18540RRef
+						,_Fld18541RRef
+						,_Fld18542RRef
+						,_Fld18543RRef
+						,_Fld18544RRef
+						,_Fld18545RRef
+						,_Fld18546RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -185,25 +185,25 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document341
+						Update _Document18532
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld6482RRef	= @Организация
-						,_Fld6483RRef	= @Ответственный
-						,_Fld6484	= @Комментарий
-						,_Fld6485	= @ОтражатьВосстановлениеВКнигеПродаж
-						,_Fld6486	= @ОтражатьВНалоговомУчете
-						,_Fld6487RRef	= @СчетСписанияНДС
-						,_Fld6488RRef	= @СубконтоСписанияНДС1
-						,_Fld6489RRef	= @СубконтоСписанияНДС2
-						,_Fld6490RRef	= @СубконтоСписанияНДС3
-						,_Fld6491RRef	= @СчетСписанияНДСНУ
-						,_Fld6492RRef	= @СубконтоСписанияНДСНУ1
-						,_Fld6493RRef	= @СубконтоСписанияНДСНУ2
-						,_Fld6494RRef	= @СубконтоСписанияНДСНУ3
+						,_Fld18534RRef	= @Организация
+						,_Fld18535RRef	= @Ответственный
+						,_Fld18536	= @Комментарий
+						,_Fld18537	= @ОтражатьВосстановлениеВКнигеПродаж
+						,_Fld18538	= @ОтражатьВНалоговомУчете
+						,_Fld18539RRef	= @СчетСписанияНДС
+						,_Fld18540RRef	= @СубконтоСписанияНДС1
+						,_Fld18541RRef	= @СубконтоСписанияНДС2
+						,_Fld18542RRef	= @СубконтоСписанияНДС3
+						,_Fld18543RRef	= @СчетСписанияНДСНУ
+						,_Fld18544RRef	= @СубконтоСписанияНДСНУ1
+						,_Fld18545RRef	= @СубконтоСписанияНДСНУ2
+						,_Fld18546RRef	= @СубконтоСписанияНДСНУ3
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -232,7 +232,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document341
+					Команда.CommandText = @"Delete _Document18532
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

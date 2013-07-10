@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -81,6 +84,7 @@
 			style: 'position:absolute;left:562px;top:33px;width:80px;height:19px;',
 		},
 		{
+			id: 'Состав',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:108px;width:634px;height:220px;',
 			height: 220,width: 634,
@@ -100,19 +104,19 @@
 				},
 				{
 					text:'Субконто 1...3',
-					width:'160',
+					width:'1600',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'160',
+					width:'1600',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'160',
+					width:'1600',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -130,7 +134,7 @@
 				},
 				{
 					text:'Содержание операции',
-					width:'220',
+					width:'2200',
 					dataIndex:'СодержаниеОперации',
 					flex:1,
 				},
@@ -141,7 +145,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеРасходовМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеРасходовМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -169,6 +173,23 @@
 						name:'СодержаниеОперации',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Состав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -204,7 +225,8 @@
 			height: 19,
 			style: 'position:absolute;left:422px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

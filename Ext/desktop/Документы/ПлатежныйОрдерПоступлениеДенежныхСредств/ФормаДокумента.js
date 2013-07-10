@@ -8,7 +8,10 @@
 	title: 'Платежный ордер на поступление денежных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -435,6 +438,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:636px;height:156px;',
 			height: 156,width: 636,
@@ -543,7 +547,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйОрдерПоступлениеДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйОрдерПоступлениеДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -595,6 +599,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1439,7 +1460,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

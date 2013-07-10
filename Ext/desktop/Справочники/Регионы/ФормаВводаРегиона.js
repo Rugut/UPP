@@ -8,7 +8,10 @@
 	title: 'Ввод региона',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Адрес',
@@ -103,7 +106,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:226px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Анализ субконто',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -77,6 +80,7 @@
 					items:
 					[
 		{
+			id: 'Субконто',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:320px;height:70px;',
 			height: 70,width: 320,
@@ -101,7 +105,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -112,8 +116,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Субконто');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:326px;top:44px;width:388px;height:70px;',
 			height: 70,width: 388,
@@ -162,7 +184,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -185,6 +207,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -200,7 +239,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

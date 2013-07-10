@@ -1,14 +1,17 @@
 ﻿Ext.define('Обработки.РегистрацияСчетовФактурНаАванс.Форма',
 	{
 	extend: 'Ext.window.Window',
-	style: 'position:absolute;width:736px;height:435px;',
+	style: 'position:absolute;width:736px;height:453px;',
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
 	title: 'Регистрация счетов-фактур на аванс',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -69,11 +72,12 @@
 		{
 			xtype: 'fieldset',
 			title: 'Список',
-			style: 'position:absolute;left:8px;top:82px;width:720px;height:16px;',
+			style: 'position:absolute;left:8px;top:100px;width:720px;height:16px;',
 		},
 		{
+			id: 'Список',
 			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:122px;width:720px;height:280px;',
+			style: 'position:absolute;left:8px;top:140px;width:720px;height:280px;',
 			height: 280,width: 720,
 			columns:
 			[
@@ -127,7 +131,7 @@
 				},
 				{
 					text:'Счет на оплату',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетНаОплату',
 					flex:1,
 				},
@@ -151,7 +155,7 @@
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -162,7 +166,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНаАванс/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНаАванс/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -206,6 +210,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -213,7 +234,14 @@
 			text: 'Регистрировать счета-фактуры всегда при получении аванса',
 			style: 'position:absolute;left:8px;top:58px;width:720px;height:19px;',
 		},
-	],
+		{
+			xtype: 'label',
+			name: 'НадписьПорядокНумерацииСчетовФактурНаАванс',
+			text: 'Надпись порядок нумерации счетов фактур на аванс',
+			style: 'position:absolute;left:8px;top:79px;width:720px;height:16px;',
+		},
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -230,7 +258,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:410px;width:736px;height:25px;',
+			style: 'position:absolute;left:0px;top:428px;width:736px;height:25px;',
 			dock: 'bottom',
 			items:
 			[
@@ -248,7 +276,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:98px;width:720px;height:24px;',
+			style: 'position:absolute;left:8px;top:116px;width:720px;height:24px;',
 			dock: 'top',
 			items:
 			[

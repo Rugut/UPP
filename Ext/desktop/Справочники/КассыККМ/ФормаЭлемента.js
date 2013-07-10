@@ -8,7 +8,10 @@
 	title: 'Кассы ККМ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -84,7 +87,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:129px;width:436px;height:54px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

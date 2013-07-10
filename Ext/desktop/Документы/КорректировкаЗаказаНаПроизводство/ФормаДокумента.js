@@ -8,7 +8,10 @@
 	title: 'Документ Корректировка заказа на производство',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +77,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
 			height: 177,width: 627,
@@ -93,19 +97,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'170',
+					width:'1700',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'170',
+					width:'1700',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -147,7 +151,7 @@
 				},
 				{
 					text:'Спецификация',
-					width:'150',
+					width:'1500',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -164,7 +168,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаНаПроизводство/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаНаПроизводство/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -207,6 +211,23 @@
 						name:'Заказ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -255,6 +276,7 @@
 			]
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:627px;height:176px;',
 			height: 176,width: 627,
@@ -274,19 +296,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'170',
+					width:'1700',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'170',
+					width:'1700',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -340,13 +362,13 @@
 				},
 				{
 					text:'Спецификация',
-					width:'150',
+					width:'1500',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -369,7 +391,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаНаПроизводство/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаНаПроизводство/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -424,6 +446,23 @@
 						name:'ХарактеристикаПродукции',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -553,7 +592,8 @@
 			height: 19,
 			style: 'position:absolute;left:90px;top:80px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

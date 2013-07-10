@@ -8,7 +8,10 @@
 	title: 'Показатели работы менеджеров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -82,7 +85,8 @@
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

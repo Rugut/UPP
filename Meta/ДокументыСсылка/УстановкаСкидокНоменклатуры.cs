@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УстановкаСкидокНоменклатуры:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("74b5b823-bb9e-4eb4-b66c-7ab06b75a693");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191637.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -73,25 +73,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18668 [Комментарий]
-					,_Fld18669RRef [Ответственный]
-					,_Fld18670RRef [Валюта]
-					,_Fld18671RRef [ВидСкидки]
-					,_Fld18672 [ДатаНачала]
-					,_Fld18673 [ДатаОкончания]
-					,_Fld18674 [ДляВсейНоменклатуры]
-					,_Fld18675 [ДляВсехПолучателей]
-					,_Fld18676_TYPE [ЗначениеУсловия_Тип],_Fld18676_RRRef [ЗначениеУсловия],_Fld18676_RTRef [ЗначениеУсловия_Вид]
-					,_Fld18677 [ОбщееВремяНачала]
-					,_Fld18678 [ОбщееВремяОкончания]
-					,_Fld18679 [ОграничениеСкидкиНаценки]
-					,_Fld18680 [ПроцентСкидкиНаценки]
-					,_Fld18681RRef [ТипСкидкиНаценки]
-					,_Fld18682RRef [Условие]
-					,_Fld18683 [ПоДнямНедели]
-					,_Fld18684RRef [ВидОперации]
-					,_Fld18685RRef [Качество]
-					From _Document627(NOLOCK)
+					,_Fld12226 [Комментарий]
+					,_Fld12227RRef [Ответственный]
+					,_Fld12228RRef [Валюта]
+					,_Fld12229RRef [ВидСкидки]
+					,_Fld12230 [ДатаНачала]
+					,_Fld12231 [ДатаОкончания]
+					,_Fld12232 [ДляВсейНоменклатуры]
+					,_Fld12233 [ДляВсехПолучателей]
+					,_Fld12234_TYPE [ЗначениеУсловия_Тип],_Fld12234_RRRef [ЗначениеУсловия],_Fld12234_RTRef [ЗначениеУсловия_Вид]
+					,_Fld12235 [ОбщееВремяНачала]
+					,_Fld12236 [ОбщееВремяОкончания]
+					,_Fld12237 [ОграничениеСкидкиНаценки]
+					,_Fld12238 [ПроцентСкидкиНаценки]
+					,_Fld12239RRef [ТипСкидкиНаценки]
+					,_Fld12240RRef [Условие]
+					,_Fld12241 [ПоДнямНедели]
+					,_Fld12242RRef [ВидОперации]
+					,_Fld12243RRef [Качество]
+					From _Document480(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

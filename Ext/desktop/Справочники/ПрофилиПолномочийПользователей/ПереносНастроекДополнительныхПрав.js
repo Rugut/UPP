@@ -8,8 +8,12 @@
 	title: 'Перенос настроек дополнительных прав',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СтарыеДопПрава',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:53px;width:454px;height:281px;',
 			height: 281,width: 454,
@@ -36,11 +40,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиПолномочийПользователей").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +59,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтарыеДопПрава');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -61,7 +83,8 @@
 			text: 'Настройки дополнительных прав',
 			style: 'position:absolute;left:8px;top:32px;width:454px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись4',
@@ -162,6 +165,7 @@
 					items:
 					[
 		{
+			id: 'СоставКосвенныхРасходов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:685px;height:148px;',
 			height: 148,width: 685,
@@ -175,19 +179,19 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -217,61 +221,61 @@
 				},
 				{
 					text:'Сумма по счету',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаВсего',
 					flex:1,
 				},
 				{
 					text:'НДС по счету',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСВсего',
 					flex:1,
 				},
 				{
 					text:'Сумма (НДС)',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДССумма',
 					flex:1,
 				},
 				{
 					text:'НДС (НДС)',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС18',
 					flex:1,
 				},
 				{
 					text:'Сумма (Без НДС)',
-					width:'120',
+					width:'1200',
 					dataIndex:'БезНДССумма',
 					flex:1,
 				},
 				{
 					text:'НДС (Без НДС)',
-					width:'120',
+					width:'1200',
 					dataIndex:'БезНДС',
 					flex:1,
 				},
 				{
 					text:'Сумма (ЕНВД)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЕНВДСумма',
 					flex:1,
 				},
 				{
 					text:'НДС (ЕНВД)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЕНВДНДС',
 					flex:1,
 				},
 				{
 					text:'0% (Сумма)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС0',
 					flex:1,
 				},
 				{
 					text:'0% (НДС)',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС0',
 					flex:1,
 				},
@@ -282,7 +286,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеНДСКосвенныхРасходов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеНДСКосвенныхРасходов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -341,6 +345,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставКосвенныхРасходов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -349,6 +370,7 @@
 			style: 'position:absolute;left:6px;top:33px;width:156px;height:19px;text-align:left;',
 		},
 		{
+			id: 'СчетаУчетаРасходов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:179px;width:685px;height:123px;',
 			height: 123,width: 685,
@@ -374,13 +396,13 @@
 				},
 				{
 					text:'Счет затрат',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетЗатрат',
 					flex:1,
 				},
 				{
 					text:'Счет затрат (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетЗатратНУ',
 					flex:1,
 				},
@@ -458,49 +480,49 @@
 				},
 				{
 					text:'Субконто1',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто2',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто3',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
 				{
 					text:'Субконто1 (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Субконто2 (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто3 (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -535,7 +557,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеНДСКосвенныхРасходов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеНДСКосвенныхРасходов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -626,6 +648,23 @@
 						name:'СерияЗатраты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчетаУчетаРасходов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -889,7 +928,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

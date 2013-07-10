@@ -8,7 +8,10 @@
 	title: 'Анализ цен',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -93,7 +96,8 @@
 			height: 19,
 			style: 'position:absolute;left:214px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

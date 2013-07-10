@@ -8,7 +8,10 @@
 	title: 'Серии номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:151px;top:33px;width:445px;height:251px;',
@@ -276,7 +279,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

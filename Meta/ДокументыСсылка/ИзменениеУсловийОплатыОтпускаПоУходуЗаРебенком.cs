@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d50ddf2f-2062-4d48-beeb-cdc181a09436");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191353.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011959.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -77,26 +77,26 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8072RRef [Сотрудник]
-					,_Fld8073RRef [Физлицо]
-					,_Fld8074RRef [Организация]
-					,_Fld8075 [Комментарий]
-					,_Fld8076RRef [Ответственный]
-					,_Fld8077RRef [УдалитьПриказ]
-					,_Fld8078 [ДатаОкончанияПособияДоПолутораЛет]
-					,_Fld8079 [ДатаОкончанияПособияДоТрехЛет]
-					,_Fld8080 [ДатаИзменения]
-					,_Fld8081 [КоличествоДетей]
-					,_Fld8082 [КоличествоПервыхДетей]
-					,_Fld8083RRef [ДокументОснование]
-					,_Fld8084RRef [Действие]
-					,_Fld8085 [ВыплачиватьПособиеДоПолутораЛет]
-					,_Fld8086 [ВыплачиватьПособиеДоТрехЛет]
-					,_Fld8087 [ОсвобождатьСтавку]
-					,_Fld8088 [ДанныеПрошлойВерсии]
-					,_Fld8089RRef [ИсправляемыйДокумент]
-					,_Fld8090 [ДвиженияИсправляемогоДокумента]
-					From _Document401(NOLOCK)
+					,_Fld21445RRef [Сотрудник]
+					,_Fld18669RRef [Физлицо]
+					,_Fld18666RRef [Организация]
+					,_Fld18667 [Комментарий]
+					,_Fld18668RRef [Ответственный]
+					,_Fld18670RRef [УдалитьПриказ]
+					,_Fld18671 [ДатаОкончанияПособияДоПолутораЛет]
+					,_Fld18672 [ДатаОкончанияПособияДоТрехЛет]
+					,_Fld18673 [ДатаИзменения]
+					,_Fld18674 [КоличествоДетей]
+					,_Fld18675 [КоличествоПервыхДетей]
+					,_Fld18676RRef [ДокументОснование]
+					,_Fld18677RRef [Действие]
+					,_Fld18678 [ВыплачиватьПособиеДоПолутораЛет]
+					,_Fld18679 [ВыплачиватьПособиеДоТрехЛет]
+					,_Fld22995 [ОсвобождатьСтавку]
+					,_Fld26773 [ДанныеПрошлойВерсии]
+					,_Fld26774RRef [ИсправляемыйДокумент]
+					,_Fld26775 [ДвиженияИсправляемогоДокумента]
+					From _Document18662(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

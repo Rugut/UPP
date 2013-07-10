@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class СертификацияНоменклатуры:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("ad41dd8a-d474-4c58-99dc-551ff1839aa5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191837.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012027.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -93,24 +93,24 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17154RRef [ВидОперации]
-					,_Fld17155 [ДатаНачалаИспытаний]
-					,_Fld17156 [ДатаОкончанияИспытаний]
-					,_Fld17157 [ДатаСертификата]
-					,_Fld17158_TYPE [ДокументОснование_Тип],_Fld17158_RRRef [ДокументОснование],_Fld17158_RTRef [ДокументОснование_Вид]
-					,_Fld17159 [Заключение]
-					,_Fld17160 [Комментарий]
-					,_Fld17161RRef [Номенклатура]
-					,_Fld17162 [НомерСертификата]
-					,_Fld17163RRef [НормативныйДокумент]
-					,_Fld17164RRef [Организация]
-					,_Fld17165RRef [ОрганПоСертификации]
-					,_Fld17166RRef [Ответственный]
-					,_Fld17167RRef [Подразделение]
-					,_Fld17168RRef [РезультатСертификации]
-					,_Fld17169RRef [СерияНоменклатуры]
-					,_Fld17170 [СрокГодностиСертификата]
-					From _Document587(NOLOCK)
+					,_Fld11477RRef [ВидОперации]
+					,_Fld11478 [ДатаНачалаИспытаний]
+					,_Fld11479 [ДатаОкончанияИспытаний]
+					,_Fld11480 [ДатаСертификата]
+					,_Fld11481_TYPE [ДокументОснование_Тип],_Fld11481_RRRef [ДокументОснование],_Fld11481_RTRef [ДокументОснование_Вид]
+					,_Fld11482 [Заключение]
+					,_Fld11483 [Комментарий]
+					,_Fld11484RRef [Номенклатура]
+					,_Fld11485 [НомерСертификата]
+					,_Fld11486RRef [НормативныйДокумент]
+					,_Fld11487RRef [Организация]
+					,_Fld11488RRef [ОрганПоСертификации]
+					,_Fld11489RRef [Ответственный]
+					,_Fld11490RRef [Подразделение]
+					,_Fld11491RRef [РезультатСертификации]
+					,_Fld11492RRef [СерияНоменклатуры]
+					,_Fld11493 [СрокГодностиСертификата]
+					From _Document451(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

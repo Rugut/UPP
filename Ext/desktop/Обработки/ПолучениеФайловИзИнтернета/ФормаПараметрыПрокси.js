@@ -8,7 +8,10 @@
 	title: 'Параметры прокси-сервера',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -74,7 +77,8 @@
 			name: 'ПортПроксиСервера',
 			style: 'position:absolute;left:93px;top:81px;width:183px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

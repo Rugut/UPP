@@ -8,7 +8,10 @@
 	title: 'Учет заработка сотрудников',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -78,6 +81,7 @@
 			]
 		},
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:461px;height:220px;',
 			height: 220,width: 461,
@@ -109,7 +113,7 @@
 				},
 				{
 					text:'Способ отражения в упр учете',
-					width:'160',
+					width:'1600',
 					dataIndex:'СпособОтраженияВУпрУчете',
 					flex:1,
 				},
@@ -132,7 +136,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗаработкаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗаработкаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,6 +161,23 @@
 						name:'Подразделение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -197,7 +218,8 @@
 			title: 'Сотрудники',
 			style: 'position:absolute;left:8px;top:108px;width:461px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

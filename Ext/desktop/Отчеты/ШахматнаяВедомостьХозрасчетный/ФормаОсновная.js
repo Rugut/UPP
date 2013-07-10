@@ -8,7 +8,10 @@
 	title: 'Шахматная оборотная ведомость',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -80,7 +83,8 @@
 			boxLabel: 'По валютам',
 			style: 'position:absolute;left:173px;top:59px;width:80px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Фамилия, имя, отчество сотрудника',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -54,7 +57,8 @@
 			height: 19,
 			style: 'position:absolute;left:82px;top:56px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

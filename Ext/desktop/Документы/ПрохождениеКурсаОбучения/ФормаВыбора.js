@@ -8,8 +8,12 @@
 	title: 'Прохождения курсов обучения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:705px;height:380px;',
 			height: 380,width: 705,
@@ -35,7 +39,7 @@
 				},
 				{
 					text:'Курс обучения',
-					width:'120',
+					width:'1200',
 					dataIndex:'КурсОбучения',
 					flex:1,
 				},
@@ -47,13 +51,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'120',
+					width:'1200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -64,7 +68,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрохождениеКурсаОбучения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрохождениеКурсаОбучения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +94,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

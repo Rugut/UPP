@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КорректировкаОстатковПоПрогнознымБалансам:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("a0bd6ad7-3fee-4708-b09b-2f62c98fb6f2");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191703.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012015.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9193RRef [Сценарий]
-					,_Fld9194 [ДатаНачала]
-					,_Fld9195RRef [Ответственный]
-					,_Fld9196RRef [Состояние]
-					,_Fld9197 [Комментарий]
-					,_Fld9198 [ВыборочнаяКорректировка]
-					From _Document427(NOLOCK)
+					,_Fld5980RRef [Сценарий]
+					,_Fld5981 [ДатаНачала]
+					,_Fld5982RRef [Ответственный]
+					,_Fld5983RRef [Состояние]
+					,_Fld5984 [Комментарий]
+					,_Fld5985 [ВыборочнаяКорректировка]
+					From _Document312(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

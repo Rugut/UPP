@@ -8,7 +8,10 @@
 	title: 'Сообщение об отзыве заявления',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись18',
@@ -129,7 +132,8 @@
 			height: 19,
 			style: 'position:absolute;left:202px;top:60px;width:303px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

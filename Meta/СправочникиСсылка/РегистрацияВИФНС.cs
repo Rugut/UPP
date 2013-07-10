@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class РегистрацияВИФНС:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("67230299-cc8c-48c3-87af-6812ca8526d2");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190818.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011930.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,7 +61,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public РегистрацияВИФНС(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public РегистрацияВИФНС(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -74,14 +87,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3366 [КПП]
-					,_Fld3367 [НаименованиеИФНС]
-					,_Fld3368_TYPE [Представитель_Тип],_Fld3368_RRRef [Представитель],_Fld3368_RTRef [Представитель_Вид]
-					,_Fld3369 [ДокументПредставителя]
-					,_Fld3370 [УполномоченноеЛицоПредставителя]
-					,_Fld3371RRef [Доверенность]
-					From _Reference219(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1722 [КПП]
+					,_Fld1723 [НаименованиеИФНС]
+					,_Fld18718_TYPE [Представитель_Тип],_Fld18718_RRRef [Представитель],_Fld18718_RTRef [Представитель_Вид]
+					,_Fld18719 [ДокументПредставителя]
+					,_Fld21285 [УполномоченноеЛицоПредставителя]
+					,_Fld26591RRef [Доверенность]
+					From _Reference140(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -101,7 +114,7 @@ namespace V82.СправочникиСсылка
 							НаименованиеИФНС = Читалка.GetString(7);
 							ДокументПредставителя = Читалка.GetString(11);
 							УполномоченноеЛицоПредставителя = Читалка.GetString(12);
-							Доверенность = new V82.СправочникиСсылка.ДоверенностиНалогоплательщика((byte[])Читалка.GetValue(13));
+							Доверенность = new V82.СправочникиСсылка.ДоверенностиНалогоплательщика((byte[])Читалка.GetValue(13),Глубина+1);
 							//return Ссылка;
 						}
 						else

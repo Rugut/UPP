@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РаспределениеМатериаловНаВыпуск:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("de4a09a6-6373-447c-ba3c-56490d8efab1");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191842.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -106,22 +106,22 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld14973 [ДатаНачалаПериода]
-					,_Fld14974 [ДатаОкончанияПериода]
-					,_Fld14975_TYPE [Заказ_Тип],_Fld14975_RRRef [Заказ],_Fld14975_RTRef [Заказ_Вид]
-					,_Fld14976 [Комментарий]
-					,_Fld14977RRef [НоменклатурнаяГруппа]
-					,_Fld14978RRef [Организация]
-					,_Fld14979RRef [Ответственный]
-					,_Fld14980 [ОтражатьВБухгалтерскомУчете]
-					,_Fld14981 [ОтражатьВНалоговомУчете]
-					,_Fld14982 [ОтражатьВУправленческомУчете]
-					,_Fld14983RRef [Подразделение]
-					,_Fld14984RRef [ПодразделениеОрганизации]
-					,_Fld14985RRef [ДокИнвентаризация]
-					,_Fld14986 [ИспользоватьПодразделенияНЗП]
-					,_Fld14987 [ИспользоватьНаработку]
-					From _Document546(NOLOCK)
+					,_Fld10291 [ДатаНачалаПериода]
+					,_Fld18833 [ДатаОкончанияПериода]
+					,_Fld10292_TYPE [Заказ_Тип],_Fld10292_RRRef [Заказ],_Fld10292_RTRef [Заказ_Вид]
+					,_Fld10293 [Комментарий]
+					,_Fld10294RRef [НоменклатурнаяГруппа]
+					,_Fld10295RRef [Организация]
+					,_Fld10296RRef [Ответственный]
+					,_Fld10297 [ОтражатьВБухгалтерскомУчете]
+					,_Fld10298 [ОтражатьВНалоговомУчете]
+					,_Fld10299 [ОтражатьВУправленческомУчете]
+					,_Fld10300RRef [Подразделение]
+					,_Fld10301RRef [ПодразделениеОрганизации]
+					,_Fld10302RRef [ДокИнвентаризация]
+					,_Fld18632 [ИспользоватьПодразделенияНЗП]
+					,_Fld19069 [ИспользоватьНаработку]
+					From _Document417(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

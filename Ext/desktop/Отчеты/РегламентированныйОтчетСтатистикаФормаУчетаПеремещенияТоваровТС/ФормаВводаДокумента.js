@@ -8,7 +8,10 @@
 	title: 'Графа 10. Документы (ввод реквизитов)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -56,7 +59,8 @@
 			text: 'Номер документа',
 			style: 'position:absolute;left:8px;top:29px;width:144px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

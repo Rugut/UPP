@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КлассификацияПокупателейПоСтадиямВзаимоотношений:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8b5a7039-3b1f-4a55-9858-05e0455ab3f9");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190946.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011938.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -71,20 +71,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8634 [ДатаОкончания]
-					,_Fld8635RRef [Периодичность]
-					,_Fld8636 [КоличествоПериодовАнализа]
-					,_Fld8637 [РазовыйПокупательНач]
-					,_Fld8638 [РазовыйПокупательКон]
-					,_Fld8639 [XКлассНач]
-					,_Fld8640 [XКлассКон]
-					,_Fld8641 [YКлассНач]
-					,_Fld8642 [YКлассКон]
-					,_Fld8643 [ZКлассНач]
-					,_Fld8644 [ZКлассКон]
-					,_Fld8645 [Комментарий]
-					,_Fld8646RRef [Ответственный]
-					From _Document413(NOLOCK)
+					,_Fld5450 [ДатаОкончания]
+					,_Fld5451RRef [Периодичность]
+					,_Fld5452 [КоличествоПериодовАнализа]
+					,_Fld5453 [РазовыйПокупательНач]
+					,_Fld5454 [РазовыйПокупательКон]
+					,_Fld5455 [XКлассНач]
+					,_Fld5456 [XКлассКон]
+					,_Fld5457 [YКлассНач]
+					,_Fld5458 [YКлассКон]
+					,_Fld5459 [ZКлассНач]
+					,_Fld5460 [ZКлассКон]
+					,_Fld5461 [Комментарий]
+					,_Fld5462RRef [Ответственный]
+					From _Document297(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

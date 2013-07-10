@@ -8,7 +8,10 @@
 	title: 'Поиск данных',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:44px;top:210px;width:183px;height:19px;',
@@ -145,7 +148,8 @@
 			text: 'Дата актуальности индекса\r\nПризнак актуальности индекса',
 			style: 'position:absolute;left:6px;top:432px;width:259px;height:27px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

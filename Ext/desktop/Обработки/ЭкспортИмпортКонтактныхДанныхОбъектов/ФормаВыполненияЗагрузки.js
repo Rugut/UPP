@@ -8,7 +8,10 @@
 	title: 'Выполнение загрузки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:7px;width:752px;height:360px;',
@@ -21,6 +24,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаПолей',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:752px;height:320px;',
 			height: 320,width: 752,
@@ -34,13 +38,13 @@
 				},
 				{
 					text:'Имя поля из файла',
-					width:'280',
+					width:'2800',
 					dataIndex:'ИмяРеквизита',
 					flex:1,
 				},
 				{
 					text:'Имя или вид реквизита в информационной базе',
-					width:'280',
+					width:'2800',
 					dataIndex:'НазначениеРеквизита1С',
 					flex:1,
 				},
@@ -51,7 +55,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -64,6 +68,23 @@
 						name:'НазначениеРеквизита1С',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаПолей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -101,6 +122,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаНастройкиПоискаОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:752px;height:320px;',
 			height: 320,width: 752,
@@ -120,7 +142,7 @@
 				},
 				{
 					text:'Имя реквизита в информационной базе',
-					width:'280',
+					width:'2800',
 					dataIndex:'Значение1С',
 					flex:1,
 				},
@@ -132,7 +154,7 @@
 				},
 				{
 					text:'Имя поля из файла',
-					width:'280',
+					width:'2800',
 					dataIndex:'ЗначениеФайла',
 					flex:1,
 				},
@@ -143,7 +165,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,6 +184,23 @@
 						name:'ЗначениеФайла',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастройкиПоискаОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -202,6 +241,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаЗагрузкиЗначений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:69px;width:752px;height:291px;',
 			height: 291,width: 752,
@@ -221,19 +261,19 @@
 				},
 				{
 					text:'Представление объекта файла',
-					width:'180',
+					width:'1800',
 					dataIndex:'ПредставлениеОбъектаФайла',
 					flex:1,
 				},
 				{
 					text:'Наименование объекта в ИБ',
-					width:'160',
+					width:'1600',
 					dataIndex:'ПредставлениеОбъекта1С',
 					flex:1,
 				},
 				{
 					text:'Объект в ИБ',
-					width:'120',
+					width:'1200',
 					dataIndex:'Объект1С',
 					flex:1,
 				},
@@ -245,7 +285,7 @@
 				},
 				{
 					text:'Контрагент',
-					width:'160',
+					width:'1600',
 					dataIndex:'Владелец',
 					flex:1,
 				},
@@ -256,7 +296,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -281,6 +321,23 @@
 						name:'Владелец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаЗагрузкиЗначений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -342,7 +399,8 @@
 			boxLabel: 'Сохранять соответствие параметров и настройки поиска объектов для последующих загрузок',
 			style: 'position:absolute;left:8px;top:372px;width:506px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

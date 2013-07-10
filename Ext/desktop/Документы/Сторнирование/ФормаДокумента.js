@@ -8,7 +8,10 @@
 	title: 'Сторнирование',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -125,7 +128,8 @@
 			height: 19,
 			style: 'position:absolute;left:447px;top:33px;width:173px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

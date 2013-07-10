@@ -8,7 +8,10 @@
 	title: 'Задание на производство',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -79,6 +82,7 @@
 			]
 		},
 		{
+			id: 'ВыпускТехПроцесс',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:614px;height:189px;',
 			height: 189,width: 614,
@@ -92,13 +96,13 @@
 				},
 				{
 					text:'Дата начала',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
 				{
 					text:'Дата окончания',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДатаОкончания',
 					flex:1,
 				},
@@ -128,7 +132,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -193,7 +197,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаданиеНаПроизводство/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаданиеНаПроизводство/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -248,6 +252,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыпускТехПроцесс');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -334,7 +355,8 @@
 			height: 19,
 			style: 'position:absolute;left:416px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

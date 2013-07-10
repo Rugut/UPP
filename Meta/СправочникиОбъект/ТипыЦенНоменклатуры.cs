@@ -126,22 +126,22 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference269(
+						Insert Into _Reference181(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld3965RRef
-						,_Fld3966RRef
-						,_Fld3967
-						,_Fld3968
-						,_Fld3969
-						,_Fld3970RRef
-						,_Fld3971
-						,_Fld3972
-						,_Fld3973RRef)
+						,_Fld2107RRef
+						,_Fld2108RRef
+						,_Fld2109
+						,_Fld2110
+						,_Fld2111
+						,_Fld2112RRef
+						,_Fld2113
+						,_Fld2114
+						,_Fld2115RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -162,7 +162,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference269
+						Update _Reference181
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -170,15 +170,15 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3965RRef	= @ВалютаЦены
-						,_Fld3966RRef	= @БазовыйТипЦен
-						,_Fld3967	= @Рассчитывается
-						,_Fld3968	= @ПроцентСкидкиНаценки
-						,_Fld3969	= @ЦенаВключаетНДС
-						,_Fld3970RRef	= @ПорядокОкругления
-						,_Fld3971	= @ОкруглятьВБольшуюСторону
-						,_Fld3972	= @Комментарий
-						,_Fld3973RRef	= @СпособРасчетаЦены
+						,_Fld2107RRef	= @ВалютаЦены
+						,_Fld2108RRef	= @БазовыйТипЦен
+						,_Fld2109	= @Рассчитывается
+						,_Fld2110	= @ПроцентСкидкиНаценки
+						,_Fld2111	= @ЦенаВключаетНДС
+						,_Fld2112RRef	= @ПорядокОкругления
+						,_Fld2113	= @ОкруглятьВБольшуюСторону
+						,_Fld2114	= @Комментарий
+						,_Fld2115RRef	= @СпособРасчетаЦены
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -207,7 +207,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference269
+					Команда.CommandText = @"Delete _Reference181
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

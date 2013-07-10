@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
@@ -133,7 +136,8 @@
 			height: 19,
 			style: 'position:absolute;left:136px;top:33px;width:125px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

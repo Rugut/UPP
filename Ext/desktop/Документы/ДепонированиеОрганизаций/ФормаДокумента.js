@@ -8,7 +8,10 @@
 	title: 'Депонирование организаций',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -101,6 +104,7 @@
 					items:
 					[
 		{
+			id: 'ДепонированиеЗаработнойПлаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:467px;height:159px;',
 			height: 159,width: 467,
@@ -114,13 +118,13 @@
 				},
 				{
 					text:'Ведомость',
-					width:'220',
+					width:'2200',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
 				{
 					text:'Сумма к депонированию',
-					width:'140',
+					width:'1400',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -131,7 +135,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДепонированиеОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДепонированиеОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +149,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДепонированиеЗаработнойПлаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -153,6 +174,7 @@
 					items:
 					[
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:467px;height:177px;',
 			height: 177,width: 467,
@@ -166,13 +188,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -183,7 +205,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДепонированиеОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДепонированиеОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -196,6 +218,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -287,7 +326,8 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:414px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

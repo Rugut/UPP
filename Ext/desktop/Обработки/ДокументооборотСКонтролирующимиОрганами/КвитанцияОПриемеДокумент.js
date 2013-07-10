@@ -8,7 +8,10 @@
 	title: 'Квитанция о приеме',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:436px;width:496px;height:25px;',
@@ -106,7 +109,8 @@
 			title: 'Полученные файлы',
 			style: 'position:absolute;left:8px;top:128px;width:480px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class КонтактныеЛица:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3789a6e5-800c-4b85-9e16-379a617595c6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191737.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012018.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -53,7 +53,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КонтактныеЛица(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КонтактныеЛица(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -66,16 +79,16 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2448 [Фамилия]
-					,_Fld2449 [Имя]
-					,_Fld2450 [КоличествоДнейДоНапоминания]
-					,_Fld2451 [НапоминатьОДнеРождения]
-					,_Fld2452 [Отчество]
-					,_Fld2453 [ДатаРождения]
-					,_Fld2454 [Описание]
-					,_Fld2455RRef [Пол]
-					From _Reference128(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1243 [Фамилия]
+					,_Fld1232 [Имя]
+					,_Fld1233 [КоличествоДнейДоНапоминания]
+					,_Fld1235 [НапоминатьОДнеРождения]
+					,_Fld1237 [Отчество]
+					,_Fld1231 [ДатаРождения]
+					,_Fld1236 [Описание]
+					,_Fld1244RRef [Пол]
+					From _Reference76(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

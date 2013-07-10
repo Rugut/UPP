@@ -8,7 +8,10 @@
 	title: 'Отчет  Проверка достаточности ключевых ресурсов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись3',
@@ -100,7 +103,8 @@
 			height: 19,
 			style: 'position:absolute;left:116px;top:110px;width:225px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

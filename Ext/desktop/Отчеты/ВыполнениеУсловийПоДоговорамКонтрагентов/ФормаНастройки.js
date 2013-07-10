@@ -8,7 +8,10 @@
 	title: 'Настройка Выполнение условий по договорам взаиморасчетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:270px;',
@@ -106,6 +109,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:220px;',
 			height: 220,width: 460,
@@ -154,7 +158,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыполнениеУсловийПоДоговорамКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыполнениеУсловийПоДоговорамКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -177,6 +181,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -188,7 +209,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

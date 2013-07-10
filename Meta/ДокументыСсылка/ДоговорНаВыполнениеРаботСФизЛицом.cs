@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ДоговорНаВыполнениеРаботСФизЛицом:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("48773c0b-9b62-4a44-8cc4-02e2f5c9ab4a");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191951.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -85,25 +85,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6849RRef [Сотрудник]
-					,_Fld6850RRef [ФизЛицо]
-					,_Fld6851RRef [Организация]
-					,_Fld6852RRef [ВалютаДокумента]
-					,_Fld6853 [СуммаЗаРаботу]
-					,_Fld6854RRef [ВидРасчета]
-					,_Fld6855 [Комментарий]
-					,_Fld6856RRef [Ответственный]
-					,_Fld6857_TYPE [ВидДоговора_Тип],_Fld6857_RRRef [ВидДоговора],_Fld6857_RTRef [ВидДоговора_Вид]
-					,_Fld6858RRef [ВидАвторскогоДоговора]
-					,_Fld6859 [ДатаНачала]
-					,_Fld6860 [ДатаОкончания]
-					,_Fld6861RRef [ПодразделениеОрганизации]
-					,_Fld6862RRef [ХарактерОплаты]
-					,_Fld6863RRef [ОтнесениеРасходовКДеятельностиЕНВД]
-					,_Fld6864RRef [СпособОтраженияВБухучете]
-					,_Fld6865RRef [КодВычета]
-					,_Fld6866 [ЗаключенСоСтудентомРаботающимВСтудотряде]
-					From _Document357(NOLOCK)
+					,_Fld21426RRef [Сотрудник]
+					,_Fld4198RRef [ФизЛицо]
+					,_Fld4199RRef [Организация]
+					,_Fld4200RRef [ВалютаДокумента]
+					,_Fld4201 [СуммаЗаРаботу]
+					,_Fld4202RRef [ВидРасчета]
+					,_Fld4203 [Комментарий]
+					,_Fld4204RRef [Ответственный]
+					,_Fld4205_TYPE [ВидДоговора_Тип],_Fld4205_RRRef [ВидДоговора],_Fld4205_RTRef [ВидДоговора_Вид]
+					,_Fld26724RRef [ВидАвторскогоДоговора]
+					,_Fld4206 [ДатаНачала]
+					,_Fld4207 [ДатаОкончания]
+					,_Fld4208RRef [ПодразделениеОрганизации]
+					,_Fld4209RRef [ХарактерОплаты]
+					,_Fld21428RRef [ОтнесениеРасходовКДеятельностиЕНВД]
+					,_Fld21427RRef [СпособОтраженияВБухучете]
+					,_Fld4210RRef [КодВычета]
+					,_Fld26725 [ЗаключенСоСтудентомРаботающимВСтудотряде]
+					From _Document252(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

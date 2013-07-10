@@ -8,7 +8,10 @@
 	title: 'Авансы по ЕСН',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: '_ИндикаторВнешнегоОтчета',
@@ -277,7 +280,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

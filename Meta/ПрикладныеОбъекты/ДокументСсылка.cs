@@ -14,7 +14,7 @@ namespace V82.ДокументыСсылка
 	[Serializable]
 	public partial class ДокументСсылка
 	{
-		public static string СтрокаСоединения = "server=10.2.66.29,59635;Database=UPP;Trusted_Connection=True;";//Чтение,ЧтениеКэш,Запись
+		public static string СтрокаСоединения = "server=tcp:10.2.66.29,59635;Database=UPP;uid=USER;pwd=PASSWORD;Connection Timeout=180;";//Чтение,ЧтениеКэш,Запись
 	}
 	public interface IСериализаторProtoBuf
 	{

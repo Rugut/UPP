@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПереоценкаВалютныхСтатейПриБюджетировании:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("26205f50-2795-4d4a-b8cc-be6367cad3cc");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191717.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012016.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,13 +61,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12613RRef [Сценарий]
-					,_Fld12614 [ДатаПереоценки]
-					,_Fld12615RRef [Ответственный]
-					,_Fld12616 [Комментарий]
-					,_Fld12617RRef [СтатьяОборотов]
-					,_Fld12618RRef [СчетОтнесенияКурсовыхРазниц]
-					From _Document501(NOLOCK)
+					,_Fld8208RRef [Сценарий]
+					,_Fld8209 [ДатаПереоценки]
+					,_Fld8210RRef [Ответственный]
+					,_Fld8211 [Комментарий]
+					,_Fld8212RRef [СтатьяОборотов]
+					,_Fld8213RRef [СчетОтнесенияКурсовыхРазниц]
+					From _Document376(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ПрофилиИзмененияПлановПоПериодам:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f7b4fff7-2d67-4dba-98a8-e8b559979f20");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191711.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012016.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -48,7 +48,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ПрофилиИзмененияПлановПоПериодам(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ПрофилиИзмененияПлановПоПериодам(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -61,9 +74,9 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3292RRef [ПериодСмещения]
-					From _Reference208(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1671RRef [ПериодСмещения]
+					From _Reference132(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

@@ -8,7 +8,10 @@
 	title: 'Сведения о взносах и страховом стаже для установления трудовой пенсии (СПВ-1)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -253,6 +256,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:830px;height:177px;',
 			height: 177,width: 830,
@@ -266,13 +270,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Страховой номер',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтраховойНомерПФР',
 					flex:1,
 				},
@@ -302,7 +306,7 @@
 				},
 				{
 					text:'Страховая часть',
-					width:'160',
+					width:'1600',
 					dataIndex:'КолонкаСтраховая',
 					flex:1,
 				},
@@ -320,7 +324,7 @@
 				},
 				{
 					text:'Накопительная часть',
-					width:'160',
+					width:'1600',
 					dataIndex:'КолонкаНакопительная',
 					flex:1,
 				},
@@ -343,7 +347,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОВзносахИСтраховомСтажеСПВ1/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОВзносахИСтраховомСтажеСПВ1/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -387,6 +391,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -397,7 +418,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

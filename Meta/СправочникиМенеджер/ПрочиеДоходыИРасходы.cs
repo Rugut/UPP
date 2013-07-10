@@ -28,9 +28,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -75,9 +75,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -122,9 +122,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)";
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.ПрочиеДоходыИРасходы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -165,10 +165,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -212,9 +212,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -259,9 +259,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -306,9 +306,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)";
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПрочиеДоходыИРасходы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -349,9 +349,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)";
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПрочиеДоходыИРасходы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -392,9 +392,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)";
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ПрочиеДоходыИРасходы();
 					using (var Читалка = Команда.ExecuteReader())
 					{

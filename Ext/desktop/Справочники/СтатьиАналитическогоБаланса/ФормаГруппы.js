@@ -8,7 +8,10 @@
 	title: 'Группа Статьи аналитического баланса',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:397px;top:8px;width:81px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

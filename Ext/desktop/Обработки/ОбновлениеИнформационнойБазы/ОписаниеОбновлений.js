@@ -8,8 +8,12 @@
 	title: 'Обновление информационной базы',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

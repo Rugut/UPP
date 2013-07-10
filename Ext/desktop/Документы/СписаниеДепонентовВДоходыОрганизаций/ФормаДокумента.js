@@ -8,7 +8,10 @@
 	title: 'Списание депонентов в доходы организаций',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -101,6 +104,7 @@
 					items:
 					[
 		{
+			id: 'ВыплатаДепонентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:646px;height:187px;',
 			height: 187,width: 646,
@@ -114,19 +118,19 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Ведомость',
-					width:'220',
+					width:'2200',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -137,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеДепонентовВДоходыОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеДепонентовВДоходыОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,6 +157,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыплатаДепонентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -352,7 +373,8 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:420px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИнвентаризацияРасчетовСконтрагентами:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("5ed48832-a295-46a6-b680-b72278fe47da");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191459.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012004.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -73,16 +73,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8244RRef [Организация]
-					,_Fld8245 [Комментарий]
-					,_Fld8246RRef [Ответственный]
-					,_Fld8247 [ДатаНачалаИнвентаризации]
-					,_Fld8248 [ДатаОкончанияИнвентаризации]
-					,_Fld8249 [ПричинаПроведенияИнвентаризации]
-					,_Fld8250 [ДокументОснованиеВид]
-					,_Fld8251 [ДокументОснованиеДата]
-					,_Fld8252 [ДокументОснованиеНомер]
-					From _Document405(NOLOCK)
+					,_Fld20150RRef [Организация]
+					,_Fld20151 [Комментарий]
+					,_Fld20152RRef [Ответственный]
+					,_Fld20153 [ДатаНачалаИнвентаризации]
+					,_Fld20154 [ДатаОкончанияИнвентаризации]
+					,_Fld20155 [ПричинаПроведенияИнвентаризации]
+					,_Fld20156 [ДокументОснованиеВид]
+					,_Fld20157 [ДокументОснованиеДата]
+					,_Fld20158 [ДокументОснованиеНомер]
+					From _Document19660(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

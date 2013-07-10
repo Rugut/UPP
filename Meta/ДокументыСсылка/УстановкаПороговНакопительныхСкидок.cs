@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УстановкаПороговНакопительныхСкидок:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("50421c50-c59f-4741-baf9-736c5f27b087");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191127.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011948.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -60,9 +60,9 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18652RRef [Ответственный]
-					,_Fld18653 [Комментарий]
-					From _Document625(NOLOCK)
+					,_Fld12211RRef [Ответственный]
+					,_Fld12212 [Комментарий]
+					From _Document478(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

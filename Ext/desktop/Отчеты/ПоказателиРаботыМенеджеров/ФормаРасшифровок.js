@@ -8,8 +8,12 @@
 	title: 'Отчет  Показатели работы менеджеров',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

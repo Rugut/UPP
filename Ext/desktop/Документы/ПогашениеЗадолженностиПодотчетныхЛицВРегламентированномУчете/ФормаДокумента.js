@@ -8,7 +8,10 @@
 	title: 'Погашение задолженности подотчетных лиц в регл. учете',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -108,6 +111,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:27px;width:622px;height:202px;',
 			height: 202,width: 622,
@@ -174,7 +178,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -206,6 +210,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -214,6 +235,7 @@
 					items:
 					[
 		{
+			id: 'Удержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:622px;height:211px;',
 			height: 211,width: 622,
@@ -280,7 +302,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -312,6 +334,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Удержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -326,7 +365,8 @@
 			height: 19,
 			style: 'position:absolute;left:441px;top:33px;width:203px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

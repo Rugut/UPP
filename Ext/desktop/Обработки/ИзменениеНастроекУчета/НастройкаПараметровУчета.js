@@ -8,7 +8,10 @@
 	title: 'Настройка параметров учета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:443px;width:765px;height:25px;',
@@ -39,6 +42,7 @@
 			]
 		},
 		{
+			id: 'СписокРазделов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:195px;height:427px;',
 			height: 427,width: 195,
@@ -63,7 +67,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -73,6 +77,23 @@
 						name:'ИмяРаздела',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокРазделов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -777,6 +798,17 @@
 			style: 'position:absolute;left:12px;top:244px;width:490px;height:44px;',
 		},
 		{
+			xtype: 'radio',
+			boxLabel: 'Единая нумерация всех выданных счетов-фактур',
+			style: 'position:absolute;left:23px;top:385px;width:347px;height:15px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись98',
+			text: 'Порядок нумерации выданных счетов-фактур:',
+			style: 'position:absolute;left:12px;top:357px;width:367px;height:20px;',
+		},
+		{
 			xtype: 'radiogroup',
 			defaults: {name: 'ccType'},
 			items: [
@@ -949,6 +981,11 @@
 			boxLabel: 'Признавать временные разницы',
 			style: 'position:absolute;left:22px;top:227px;width:387px;height:19px;',
 		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Отдельная нумерация счетов-фактур на аванс с префиксом "А"',
+			style: 'position:absolute;left:23px;top:404px;width:347px;height:15px;',
+		},
 			]
 		},
 					]
@@ -1069,7 +1106,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

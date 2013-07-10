@@ -8,7 +8,10 @@
 	title: 'Амортизация ОС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -126,7 +129,8 @@
 			height: 19,
 			style: 'position:absolute;left:451px;top:33px;width:137px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

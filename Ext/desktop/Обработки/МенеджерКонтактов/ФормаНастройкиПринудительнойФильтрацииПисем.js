@@ -8,7 +8,10 @@
 	title: 'Настройка фильтрации писем папки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Параметры обрабатываемых писем',
@@ -56,7 +59,8 @@
 			boxLabel: 'Не рассмотрено',
 			style: 'position:absolute;left:38px;top:177px;width:105px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

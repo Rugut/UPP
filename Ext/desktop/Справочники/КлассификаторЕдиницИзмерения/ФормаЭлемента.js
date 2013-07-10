@@ -8,7 +8,10 @@
 	title: 'Элемент Классификатор единиц измерения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -97,7 +100,8 @@
 			text: 'Международное сокращение:',
 			style: 'position:absolute;left:8px;top:57px;width:152px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

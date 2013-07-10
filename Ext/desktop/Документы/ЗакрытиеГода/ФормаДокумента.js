@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -167,7 +170,8 @@
 			boxLabel: 'Закрытие счетов налогового учета',
 			style: 'position:absolute;left:8px;top:138px;width:213px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

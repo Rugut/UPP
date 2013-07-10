@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ПоказателиАнализовНоменклатуры:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("42e63581-2485-4b82-a2ae-b3e78acc1c35");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191153.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011924.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -48,7 +48,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ПоказателиАнализовНоменклатуры(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ПоказателиАнализовНоменклатуры(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -61,12 +74,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3214RRef [ВидРезультатаАнализа]
-					,_Fld3215 [МинЗначение]
-					,_Fld3216 [МаксЗначение]
-					,_Fld3217RRef [ЕдиницаИзмерения]
-					From _Reference193(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1616RRef [ВидРезультатаАнализа]
+					,_Fld1617 [МинЗначение]
+					,_Fld1618 [МаксЗначение]
+					,_Fld1619RRef [ЕдиницаИзмерения]
+					From _Reference120(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -84,7 +97,7 @@ namespace V82.СправочникиСсылка
 							Наименование = Читалка.GetString(5);
 							МинЗначение = Читалка.GetDecimal(7);
 							МаксЗначение = Читалка.GetDecimal(8);
-							ЕдиницаИзмерения = new V82.СправочникиСсылка.КлассификаторЕдиницИзмерения((byte[])Читалка.GetValue(9));
+							ЕдиницаИзмерения = new V82.СправочникиСсылка.КлассификаторЕдиницИзмерения((byte[])Читалка.GetValue(9),Глубина+1);
 							//return Ссылка;
 						}
 						else

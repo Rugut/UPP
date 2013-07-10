@@ -8,7 +8,10 @@
 	title: 'Ошибка доступа в Интернет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОписаниеОшибки',
@@ -142,7 +145,8 @@
 			title: '',
 			style: 'position:absolute;left:358px;top:313px;width:2px;height:24px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Телефон',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись6',
@@ -160,7 +163,8 @@
 			name: 'Представление',
 			style: 'position:absolute;left:102px;top:177px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

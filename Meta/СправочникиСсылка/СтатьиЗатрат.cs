@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СтатьиЗатрат:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f50a2648-6dd4-4dfc-91f4-d6c4dc194736");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191029.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011943.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -63,7 +63,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СтатьиЗатрат(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СтатьиЗатрат(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -76,12 +89,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3811RRef [ВидЗатрат]
-					,_Fld3812RRef [СтатусМатериальныхЗатрат]
-					,_Fld3813RRef [ХарактерЗатрат]
-					,_Fld3814RRef [ВидРасходовНУ]
-					From _Reference248(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1963RRef [ВидЗатрат]
+					,_Fld1964RRef [СтатусМатериальныхЗатрат]
+					,_Fld1965RRef [ХарактерЗатрат]
+					,_Fld1966RRef [ВидРасходовНУ]
+					From _Reference162(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

@@ -8,7 +8,10 @@
 	title: 'Бухгалтерская отчетность',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',
@@ -286,7 +289,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

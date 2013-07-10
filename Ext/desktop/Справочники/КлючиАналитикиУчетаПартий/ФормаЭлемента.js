@@ -8,7 +8,10 @@
 	title: 'Ключ аналитики учета партий',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -150,7 +153,8 @@
 			height: 19,
 			style: 'position:absolute;left:146px;top:105px;width:285px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

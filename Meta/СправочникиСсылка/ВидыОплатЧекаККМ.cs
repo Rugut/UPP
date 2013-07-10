@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ВидыОплатЧекаККМ:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("ca370a34-3b49-45b9-8031-26befef1684d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191323.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011956.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -51,7 +51,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ВидыОплатЧекаККМ(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ВидыОплатЧекаККМ(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -64,12 +77,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1953RRef [ТипОплаты]
-					,_Fld1954RRef [БанкКредитор]
-					,_Fld1955RRef [ДоговорВзаиморасчетовБанкаКредитора]
-					,_Fld1956 [ПроцентБанковскойКомиссии]
-					From _Reference59(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld936RRef [ТипОплаты]
+					,_Fld937RRef [БанкКредитор]
+					,_Fld938RRef [ДоговорВзаиморасчетовБанкаКредитора]
+					,_Fld939 [ПроцентБанковскойКомиссии]
+					From _Reference22(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -86,8 +99,8 @@ namespace V82.СправочникиСсылка
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
 							ТипОплаты = V82.Перечисления/*Ссылка*/.ТипыОплатЧекаККМ.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
-							БанкКредитор = new V82.СправочникиСсылка.Контрагенты((byte[])Читалка.GetValue(7));
-							ДоговорВзаиморасчетовБанкаКредитора = new V82.СправочникиСсылка.ДоговорыКонтрагентов((byte[])Читалка.GetValue(8));
+							БанкКредитор = new V82.СправочникиСсылка.Контрагенты((byte[])Читалка.GetValue(7),Глубина+1);
+							ДоговорВзаиморасчетовБанкаКредитора = new V82.СправочникиСсылка.ДоговорыКонтрагентов((byte[])Читалка.GetValue(8),Глубина+1);
 							ПроцентБанковскойКомиссии = Читалка.GetDecimal(9);
 							//return Ссылка;
 						}

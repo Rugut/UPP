@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -54,7 +57,8 @@
 			boxLabel: 'Только просроченные',
 			style: 'position:absolute;left:344px;top:33px;width:134px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

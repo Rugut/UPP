@@ -8,7 +8,10 @@
 	title: 'Начисление дивидендов организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -113,6 +116,7 @@
 			]
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:197px;width:635px;height:180px;',
 			height: 180,width: 635,
@@ -132,7 +136,7 @@
 				},
 				{
 					text:'Акционер',
-					width:'220',
+					width:'2200',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
@@ -167,7 +171,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеДивидендовОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеДивидендовОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -192,6 +196,23 @@
 						name:'НДФЛ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -332,7 +353,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

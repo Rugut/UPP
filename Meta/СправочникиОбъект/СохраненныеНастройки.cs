@@ -96,20 +96,20 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference238(
+						Insert Into _Reference19651(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Description
-						,_Fld3564RRef
-						,_Fld3566
-						,_Fld3567
-						,_Fld3568
-						,_Fld3569
-						,_Fld3570
-						,_Fld3571
-						,_Fld3572)
+						,_Fld19877RRef
+						,_Fld19879
+						,_Fld19880
+						,_Fld19881
+						,_Fld19882
+						,_Fld19883
+						,_Fld19884
+						,_Fld26609)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -128,21 +128,21 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference238
+						Update _Reference19651
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
 						,_Description	= @Наименование
-						,_Fld3564RRef	= @ТипНастройки
-						,_Fld3566	= @СохранятьАвтоматически
-						,_Fld3567	= @ИспользоватьПриОткрытии
-						,_Fld3568	= @СохранятьПериод
-						,_Fld3569	= @ОткрыватьПриЗапуске
-						,_Fld3570	= @ХранилищеНастроек
-						,_Fld3571	= @Описание
-						,_Fld3572	= @КраткийСоставНастройки
+						,_Fld19877RRef	= @ТипНастройки
+						,_Fld19879	= @СохранятьАвтоматически
+						,_Fld19880	= @ИспользоватьПриОткрытии
+						,_Fld19881	= @СохранятьПериод
+						,_Fld19882	= @ОткрыватьПриЗапуске
+						,_Fld19883	= @ХранилищеНастроек
+						,_Fld19884	= @Описание
+						,_Fld26609	= @КраткийСоставНастройки
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -169,7 +169,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference238
+					Команда.CommandText = @"Delete _Reference19651
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

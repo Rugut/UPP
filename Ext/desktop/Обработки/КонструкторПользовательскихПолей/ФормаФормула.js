@@ -8,7 +8,10 @@
 	title: 'Пользовательское поле ""Формула""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:341px;top:124px;width:143px;height:19px;',
@@ -26,6 +29,7 @@
 			style: 'position:absolute;left:252px;top:128px;width:54px;height:15px;',
 		},
 		{
+			id: 'ДоступныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:7px;width:234px;height:310px;',
 			height: 310,width: 234,
@@ -44,13 +48,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторПользовательскихПолей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторПользовательскихПолей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Заголовок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -68,7 +89,8 @@
 			height: 19,
 			style: 'position:absolute;left:341px;top:7px;width:291px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

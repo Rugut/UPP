@@ -108,7 +108,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference266(
+						Insert Into _Reference178(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -117,15 +117,15 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3920
-						,_Fld3921
-						,_Fld3922RRef
-						,_Fld3923
-						,_Fld3924
-						,_Fld3925
-						,_Fld3926
-						,_Fld3927RRef
-						,_Fld3928)
+						,_Fld2066
+						,_Fld2067
+						,_Fld2068RRef
+						,_Fld2069
+						,_Fld2070
+						,_Fld2071
+						,_Fld21289
+						,_Fld21290RRef
+						,_Fld21291)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -148,7 +148,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference266
+						Update _Reference178
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -158,15 +158,15 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3920	= @ЗагружатьОбъекты
-						,_Fld3921	= @МакетАнкеты
-						,_Fld3922RRef	= @ВидСправочникаДляЗагрузки
-						,_Fld3923	= @Адресная
-						,_Fld3924	= @НаименованиеАнкеты
-						,_Fld3925	= @Вступление
-						,_Fld3926	= @ЗаполнятьАнкетуДанными
-						,_Fld3927RRef	= @ВидАнкеты
-						,_Fld3928	= @СекундОтвета
+						,_Fld2066	= @ЗагружатьОбъекты
+						,_Fld2067	= @МакетАнкеты
+						,_Fld2068RRef	= @ВидСправочникаДляЗагрузки
+						,_Fld2069	= @Адресная
+						,_Fld2070	= @НаименованиеАнкеты
+						,_Fld2071	= @Вступление
+						,_Fld21289	= @ЗаполнятьАнкетуДанными
+						,_Fld21290RRef	= @ВидАнкеты
+						,_Fld21291	= @СекундОтвета
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -197,7 +197,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference266
+					Команда.CommandText = @"Delete _Reference178
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

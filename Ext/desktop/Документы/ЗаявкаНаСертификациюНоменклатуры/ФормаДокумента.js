@@ -8,7 +8,10 @@
 	title: 'Заявка на сертификацию номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -264,7 +267,8 @@
 			title: 'Дополнительно',
 			style: 'position:absolute;left:8px;top:187px;width:648px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

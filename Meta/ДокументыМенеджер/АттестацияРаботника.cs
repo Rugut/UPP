@@ -25,11 +25,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -67,11 +67,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -109,11 +109,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)";
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.АттестацияРаботника();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -147,11 +147,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -189,11 +189,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -231,11 +231,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)";
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.АттестацияРаботника();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -269,11 +269,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld4974RRef [Физлицо]
-					,_Fld4975RRef [Ответственный]
-					,_Fld4976 [Комментарий]
-					,_Fld4977RRef [Сотрудник]
-					From _Document310(NOLOCK)";
+					,_Fld2852RRef [Физлицо]
+					,_Fld2853RRef [Ответственный]
+					,_Fld2854 [Комментарий]
+					,_Fld21309RRef [Сотрудник]
+					From _Document214(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.АттестацияРаботника();
 					using (var Читалка = Команда.ExecuteReader())
 					{

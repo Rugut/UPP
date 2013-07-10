@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ДокументыРеализацииПолномочийНалоговыхОрганов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("9deb49bc-6178-4b38-82e0-db3917dda901");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191412.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -54,7 +54,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ДокументыРеализацииПолномочийНалоговыхОрганов(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ДокументыРеализацииПолномочийНалоговыхОрганов(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -67,17 +80,17 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2249RRef [НалоговыйОрган]
-					,_Fld2250RRef [Организация]
-					,_Fld2251 [Идентификатор]
-					,_Fld2252 [ИдентификаторОснования]
-					,_Fld2253_TYPE [ВидДокумента_Тип],_Fld2253_RRRef [ВидДокумента],_Fld2253_RTRef [ВидДокумента_Вид]
-					,_Fld2254 [НомерДокумента]
-					,_Fld2255 [ДатаДокумента]
-					,_Fld2256 [ДатаСообщения]
-					,_Fld2257 [ДатаОтправки]
-					From _Reference89(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23477RRef [НалоговыйОрган]
+					,_Fld23478RRef [Организация]
+					,_Fld23479 [Идентификатор]
+					,_Fld23480 [ИдентификаторОснования]
+					,_Fld23481_TYPE [ВидДокумента_Тип],_Fld23481_RRRef [ВидДокумента],_Fld23481_RTRef [ВидДокумента_Вид]
+					,_Fld23482 [НомерДокумента]
+					,_Fld23483 [ДатаДокумента]
+					,_Fld23484 [ДатаСообщения]
+					,_Fld23485 [ДатаОтправки]
+					From _Reference23096(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -93,8 +106,8 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							НалоговыйОрган = new V82.СправочникиСсылка.НалоговыеОрганы((byte[])Читалка.GetValue(6));
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(7));
+							НалоговыйОрган = new V82.СправочникиСсылка.НалоговыеОрганы((byte[])Читалка.GetValue(6),Глубина+1);
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(7),Глубина+1);
 							Идентификатор = Читалка.GetString(8);
 							ИдентификаторОснования = Читалка.GetString(9);
 							НомерДокумента = Читалка.GetString(13);

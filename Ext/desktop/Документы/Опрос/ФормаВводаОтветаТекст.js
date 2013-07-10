@@ -8,7 +8,10 @@
 	title: 'Ответ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:128px;width:341px;height:25px;',
@@ -34,7 +37,8 @@
 			name: 'ПолеВводаТекст',
 			style: 'position:absolute;left:8px;top:29px;width:325px;height:91px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

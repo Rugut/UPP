@@ -8,7 +8,10 @@
 	title: 'Планирование обучения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -75,6 +78,7 @@
 			style: 'position:absolute;left:96px;top:262px;width:320px;height:19px;',
 		},
 		{
+			id: 'УчебныйПлан',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:97px;width:408px;height:160px;',
 			height: 160,width: 408,
@@ -88,7 +92,7 @@
 				},
 				{
 					text:'Курс обучения',
-					width:'220',
+					width:'2200',
 					dataIndex:'КурсОбучения',
 					flex:1,
 				},
@@ -111,7 +115,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланированиеОбучения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланированиеОбучения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -128,13 +132,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УчебныйПлан');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Учебный план',
 			style: 'position:absolute;left:8px;top:57px;width:408px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

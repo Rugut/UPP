@@ -25,11 +25,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -68,11 +68,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -111,11 +111,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)";
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОперацияМеждународная();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -150,11 +150,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -193,11 +193,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -236,11 +236,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)";
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОперацияМеждународная();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -275,11 +275,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld10595RRef [Организация]
-					,_Fld10596 [СуммаОперации]
-					,_Fld10597 [Комментарий]
-					,_Fld10598RRef [Ответственный]
-					From _Document454(NOLOCK)";
+					,_Fld6643RRef [Организация]
+					,_Fld6644 [СуммаОперации]
+					,_Fld6645 [Комментарий]
+					,_Fld6646RRef [Ответственный]
+					From _Document334(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОперацияМеждународная();
 					using (var Читалка = Команда.ExecuteReader())
 					{

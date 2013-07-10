@@ -8,7 +8,10 @@
 	title: 'Анализ состояния налогового учета по налогу на прибыль',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -126,7 +129,8 @@
 			text: '',
 			style: 'position:absolute;left:812px;top:3px;width:22px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

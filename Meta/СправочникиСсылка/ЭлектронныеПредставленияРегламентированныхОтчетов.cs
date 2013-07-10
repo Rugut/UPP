@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ЭлектронныеПредставленияРегламентированныхОтчетов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("231b77a9-a435-4ca7-a47e-331a839d6faa");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191534.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012007.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -51,7 +51,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ЭлектронныеПредставленияРегламентированныхОтчетов(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ЭлектронныеПредставленияРегламентированныхОтчетов(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -64,17 +77,17 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld4337RRef [Организация]
-					,_Fld4338_TYPE [Получатель_Тип],_Fld4338_RRRef [Получатель],_Fld4338_RTRef [Получатель_Вид]
-					,_Fld4339_TYPE [ВидОтчета_Тип],_Fld4339_RRRef [ВидОтчета],_Fld4339_RTRef [ВидОтчета_Вид]
-					,_Fld4340 [ДатаНачала]
-					,_Fld4341 [ДатаОкончания]
-					,_Fld4343 [Комментарий]
-					,_Fld4344RRef [Периодичность]
-					,_Fld4345 [ДатаИмпорта]
-					,_Fld4346RRef [ТипПолучателя]
-					From _Reference295(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23985RRef [Организация]
+					,_Fld23986_TYPE [Получатель_Тип],_Fld23986_RRRef [Получатель],_Fld23986_RTRef [Получатель_Вид]
+					,_Fld23987_TYPE [ВидОтчета_Тип],_Fld23987_RRRef [ВидОтчета],_Fld23987_RTRef [ВидОтчета_Вид]
+					,_Fld23988 [ДатаНачала]
+					,_Fld23989 [ДатаОкончания]
+					,_Fld23991 [Комментарий]
+					,_Fld23992RRef [Периодичность]
+					,_Fld23993 [ДатаИмпорта]
+					,_Fld23994RRef [ТипПолучателя]
+					From _Reference23138(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -90,7 +103,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(6));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(6),Глубина+1);
 							ДатаНачала = Читалка.GetDateTime(13);
 							ДатаОкончания = Читалка.GetDateTime(14);
 							Комментарий = Читалка.GetString(15);

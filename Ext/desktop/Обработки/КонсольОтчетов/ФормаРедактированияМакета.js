@@ -8,7 +8,10 @@
 	title: 'Редактирование макета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:267px;',
@@ -39,7 +42,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

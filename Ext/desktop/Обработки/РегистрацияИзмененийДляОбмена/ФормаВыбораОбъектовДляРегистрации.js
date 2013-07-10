@@ -8,7 +8,10 @@
 	title: 'Обработка  Регистрация изменений для обмена',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:56px;width:413px;height:25px;',
@@ -49,7 +52,8 @@
 			text: 'Выбрать из запроса',
 			style: 'position:absolute;left:195px;top:29px;width:210px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

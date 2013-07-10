@@ -25,10 +25,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -74,10 +74,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -123,10 +123,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)";
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.МедицинскиеОрганизации();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -168,11 +168,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -217,10 +217,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -266,10 +266,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -315,10 +315,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)";
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.МедицинскиеОрганизации();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -360,10 +360,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)";
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.МедицинскиеОрганизации();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -405,10 +405,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2534 [ОГРН]
-					,_Fld2535 [Адрес]
-					,_Fld2536 [АдресКодПоКЛАДР]
-					From _Reference135(NOLOCK)";
+					,_Fld23520 [ОГРН]
+					,_Fld23521 [Адрес]
+					,_Fld23522 [АдресКодПоКЛАДР]
+					From _Reference23102(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.МедицинскиеОрганизации();
 					using (var Читалка = Команда.ExecuteReader())
 					{

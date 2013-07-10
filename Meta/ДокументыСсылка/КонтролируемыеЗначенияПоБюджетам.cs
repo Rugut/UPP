@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КонтролируемыеЗначенияПоБюджетам:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("570556dc-d4d7-4209-8e50-29891e988cd7");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191625.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012011.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -95,23 +95,23 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8765RRef [Сценарий]
-					,_Fld8766RRef [ВидКонтролируемыхЗначений]
-					,_Fld8767RRef [ИспользованиеКонтролируемыхЗначений]
-					,_Fld8768RRef [ВидОграниченияОборотов]
-					,_Fld8769RRef [КонтролирующийСценарий]
-					,_Fld8770RRef [Ответственный]
-					,_Fld8771 [Комментарий]
-					,_Fld8772RRef [Состояние]
-					,_Fld8773 [ДатаНачалаКонтролирующегоСценария]
-					,_Fld8774 [ДатаКонцаКонтролирующегоСценария]
-					,_Fld8775 [КонтролироватьЦФО]
-					,_Fld8776 [КонтролироватьПроекты]
-					,_Fld8777 [КонтролироватьКонтрагентов]
-					,_Fld8778 [КонтролироватьНоменклатуру]
-					,_Fld8779RRef [ВидОтклоненияКонтролируемыхЗначений]
-					,_Fld8780 [Отклонение]
-					From _Document417(NOLOCK)
+					,_Fld5546RRef [Сценарий]
+					,_Fld5547RRef [ВидКонтролируемыхЗначений]
+					,_Fld5548RRef [ИспользованиеКонтролируемыхЗначений]
+					,_Fld5549RRef [ВидОграниченияОборотов]
+					,_Fld5550RRef [КонтролирующийСценарий]
+					,_Fld5551RRef [Ответственный]
+					,_Fld5552 [Комментарий]
+					,_Fld5553RRef [Состояние]
+					,_Fld5554 [ДатаНачалаКонтролирующегоСценария]
+					,_Fld5555 [ДатаКонцаКонтролирующегоСценария]
+					,_Fld5556 [КонтролироватьЦФО]
+					,_Fld5557 [КонтролироватьПроекты]
+					,_Fld5558 [КонтролироватьКонтрагентов]
+					,_Fld5559 [КонтролироватьНоменклатуру]
+					,_Fld5560RRef [ВидОтклоненияКонтролируемыхЗначений]
+					,_Fld5561 [Отклонение]
+					From _Document301(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

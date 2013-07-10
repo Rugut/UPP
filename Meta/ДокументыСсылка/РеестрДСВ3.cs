@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РеестрДСВ3:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("144a1c75-c3a5-4e8c-824d-65fd35ac1209");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191639.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -68,17 +68,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16275 [ПериодРегистрации]
-					,_Fld16276RRef [Организация]
-					,_Fld16277RRef [Ответственный]
-					,_Fld16278 [Комментарий]
-					,_Fld16279 [КраткийСоставДокумента]
-					,_Fld16280RRef [ФорматФайла]
-					,_Fld16281 [НомерПлатежногоПоручения]
-					,_Fld16282 [ДатаПлатежногоПоручения]
-					,_Fld16283 [ДатаИсполненияПлатежногоПоручения]
-					,_Fld16284 [НомерПачки]
-					From _Document573(NOLOCK)
+					,_Fld24963 [ПериодРегистрации]
+					,_Fld24964RRef [Организация]
+					,_Fld24965RRef [Ответственный]
+					,_Fld24966 [Комментарий]
+					,_Fld24967 [КраткийСоставДокумента]
+					,_Fld24968RRef [ФорматФайла]
+					,_Fld24969 [НомерПлатежногоПоручения]
+					,_Fld24970 [ДатаПлатежногоПоручения]
+					,_Fld24971 [ДатаИсполненияПлатежногоПоручения]
+					,_Fld24972 [НомерПачки]
+					From _Document23166(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

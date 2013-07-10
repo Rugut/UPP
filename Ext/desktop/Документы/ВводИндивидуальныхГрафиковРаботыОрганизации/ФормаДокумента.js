@@ -8,7 +8,10 @@
 	title: 'Ввод индивидуальных графиков работы организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -158,6 +161,7 @@
 			]
 		},
 		{
+			id: 'ГрафикРаботы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:220px;width:984px;height:208px;',
 			height: 208,width: 984,
@@ -819,7 +823,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводИндивидуальныхГрафиковРаботыОрганизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводИндивидуальныхГрафиковРаботыОрганизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1148,6 +1152,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГрафикРаботы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1205,7 +1226,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

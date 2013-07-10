@@ -8,7 +8,10 @@
 	title: 'Настройки формирования документов отработанного времени',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -201,7 +204,8 @@
 			text: 'Комментарий',
 			style: 'position:absolute;left:8px;top:283px;width:88px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,8 +8,12 @@
 	title: 'Налоговые органы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:815px;height:360px;',
 			height: 360,width: 815,
@@ -41,13 +45,13 @@
 				},
 				{
 					text:'Вид',
-					width:'120',
+					width:'1200',
 					dataIndex:'Вид',
 					flex:1,
 				},
 				{
 					text:'E-mail',
-					width:'120',
+					width:'1200',
 					dataIndex:'АдресЭлектроннойПочты',
 					flex:1,
 				},
@@ -89,30 +93,31 @@
 				},
 				{
 					text:'Адрес',
-					width:'120',
+					width:'1200',
 					dataIndex:'Адрес',
 					flex:1,
 				},
 				{
 					text:'Телефон',
-					width:'120',
+					width:'1200',
 					dataIndex:'Телефон',
 					flex:1,
 				},
 				{
 					text:'Адрес сайта',
-					width:'120',
+					width:'1200',
 					dataIndex:'АдресСайта',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НалоговыеОрганы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НалоговыеОрганы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НалоговыеОрганы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,8 +167,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

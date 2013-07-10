@@ -8,7 +8,10 @@
 	title: 'Оприходование товаров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -244,6 +247,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:638px;height:148px;',
 			height: 148,width: 638,
@@ -263,31 +267,31 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика',
-					width:'120',
+					width:'1200',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия',
-					width:'120',
+					width:'1200',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Статус партии',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатусПартии',
 					flex:1,
 				},
@@ -377,13 +381,13 @@
 				},
 				{
 					text:'Номер ГТД',
-					width:'120',
+					width:'1200',
 					dataIndex:'НомерГТД',
 					flex:1,
 				},
 				{
 					text:'Страна происхождения',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтранаПроисхождения',
 					flex:1,
 				},
@@ -401,7 +405,7 @@
 				},
 				{
 					text:'Качество',
-					width:'120',
+					width:'1200',
 					dataIndex:'Качество',
 					flex:1,
 				},
@@ -412,7 +416,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОприходованиеТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОприходованиеТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -494,6 +498,23 @@
 						name:'Качество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -642,7 +663,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

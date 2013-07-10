@@ -8,7 +8,10 @@
 	title: 'Регистр информации об объекте нематериальных активов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -82,7 +85,8 @@
 			height: 19,
 			style: 'position:absolute;left:138px;top:57px;width:458px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -111,20 +111,20 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference212(
+						Insert Into _Reference23123(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld3314
-						,_Fld3315
-						,_Fld3316
-						,_Fld3317
-						,_Fld3318
-						,_Fld3319
-						,_Fld3320)
+						,_Fld23731
+						,_Fld23732
+						,_Fld23733
+						,_Fld23734
+						,_Fld23735
+						,_Fld23736
+						,_Fld23737)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -143,7 +143,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference212
+						Update _Reference23123
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -151,13 +151,13 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3314	= @НаименованиеПолное
-						,_Fld3315	= @ИНН
-						,_Fld3316	= @КПП
-						,_Fld3317	= @НаименованиеТерриториальногоОрганаФСС
-						,_Fld3318	= @РегистрационныйНомерФСС
-						,_Fld3319	= @ДополнительныйКодФСС
-						,_Fld3320	= @КодПодчиненностиФСС
+						,_Fld23731	= @НаименованиеПолное
+						,_Fld23732	= @ИНН
+						,_Fld23733	= @КПП
+						,_Fld23734	= @НаименованиеТерриториальногоОрганаФСС
+						,_Fld23735	= @РегистрационныйНомерФСС
+						,_Fld23736	= @ДополнительныйКодФСС
+						,_Fld23737	= @КодПодчиненностиФСС
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -184,7 +184,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference212
+					Команда.CommandText = @"Delete _Reference23123
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

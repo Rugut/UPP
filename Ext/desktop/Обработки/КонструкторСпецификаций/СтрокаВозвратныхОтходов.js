@@ -8,7 +8,10 @@
 	title: 'Строка возвратных отходов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -212,7 +215,8 @@
 			height: 19,
 			style: 'position:absolute;left:148px;top:273px;width:250px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

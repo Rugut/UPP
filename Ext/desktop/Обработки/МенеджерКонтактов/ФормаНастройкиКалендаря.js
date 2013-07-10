@@ -8,7 +8,10 @@
 	title: 'Настройка параметров календаря',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:9px;top:7px;width:340px;height:431px;',
@@ -222,7 +225,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

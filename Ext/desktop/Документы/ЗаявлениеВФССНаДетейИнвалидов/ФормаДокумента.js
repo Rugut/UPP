@@ -8,7 +8,10 @@
 	title: 'Заявление в ФСС о возмещении выплат родителям детей-инвалидов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -102,6 +105,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:870px;height:352px;',
 			height: 352,width: 870,
@@ -115,19 +119,19 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Статус',
-					width:'120',
+					width:'1200',
 					dataIndex:'Статус',
 					flex:1,
 				},
 				{
 					text:'Среднедневной заработок',
-					width:'150',
+					width:'1500',
 					dataIndex:'СреднедневнойЗаработок',
 					flex:1,
 				},
@@ -138,7 +142,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеВФССНаДетейИнвалидов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеВФССНаДетейИнвалидов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -154,6 +158,23 @@
 						name:'СреднедневнойЗаработок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -435,7 +456,8 @@
 			height: 19,
 			style: 'position:absolute;left:535px;top:57px;width:120px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Декларация по НДС 0%',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:123px;width:654px;height:312px;',
@@ -258,7 +261,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

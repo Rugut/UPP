@@ -114,7 +114,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference229(
+						Insert Into _Reference147(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -123,12 +123,12 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3427
-						,_Fld3428RRef
-						,_Fld3429RRef
-						,_Fld3430RRef
-						,_Fld3431
-						,_Fld3432)
+						,_Fld1744
+						,_Fld1745RRef
+						,_Fld1746RRef
+						,_Fld1747RRef
+						,_Fld1748
+						,_Fld1749)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -148,7 +148,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference229
+						Update _Reference147
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -158,12 +158,12 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3427	= @Комментарий
-						,_Fld3428RRef	= @ТипЦенРозничнойТорговли
-						,_Fld3429RRef	= @Подразделение
-						,_Fld3430RRef	= @ВидСклада
-						,_Fld3431	= @НомерСекции
-						,_Fld3432	= @РасчетРозничныхЦенПоТорговойНаценке
+						,_Fld1744	= @Комментарий
+						,_Fld1745RRef	= @ТипЦенРозничнойТорговли
+						,_Fld1746RRef	= @Подразделение
+						,_Fld1747RRef	= @ВидСклада
+						,_Fld1748	= @НомерСекции
+						,_Fld1749	= @РасчетРозничныхЦенПоТорговойНаценке
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -191,7 +191,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference229
+					Команда.CommandText = @"Delete _Reference147
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

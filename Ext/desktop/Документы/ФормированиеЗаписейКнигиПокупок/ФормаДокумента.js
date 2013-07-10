@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -107,6 +110,7 @@
 					items:
 					[
 		{
+			id: 'ВычетПоПриобретеннымЦенностям',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
 			height: 211,width: 679,
@@ -120,37 +124,37 @@
 				},
 				{
 					text:'Документ отгрузки',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОтгрузки',
 					flex:1,
 				},
 				{
 					text:'Состояние',
-					width:'120',
+					width:'1200',
 					dataIndex:'Состояние',
 					flex:1,
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -162,13 +166,13 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -209,7 +213,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -259,6 +263,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВычетПоПриобретеннымЦенностям');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -267,6 +288,7 @@
 					items:
 					[
 		{
+			id: 'НДСсАвансов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
 			height: 211,width: 679,
@@ -280,31 +302,31 @@
 				},
 				{
 					text:'Покупатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'Покупатель',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Документ отгрузки',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОтгрузки',
 					flex:1,
 				},
 				{
 					text:'Состояние',
-					width:'120',
+					width:'1200',
 					dataIndex:'Состояние',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -316,7 +338,7 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -328,7 +350,7 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -340,7 +362,7 @@
 				},
 				{
 					text:'Сумма по документу-основанию',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВалютнаяСумма',
 					flex:1,
 				},
@@ -369,7 +391,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -419,6 +441,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДСсАвансов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -427,6 +466,7 @@
 					items:
 					[
 		{
+			id: 'НДСсАвансовВыданных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
 			height: 211,width: 679,
@@ -440,25 +480,25 @@
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -470,7 +510,7 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -499,7 +539,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -534,6 +574,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДСсАвансовВыданных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -542,6 +599,7 @@
 					items:
 					[
 		{
+			id: 'ВычетНДСПоНалоговомуАгенту',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
 			height: 211,width: 679,
@@ -555,31 +613,31 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Документ поступления',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -591,13 +649,13 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -609,13 +667,13 @@
 				},
 				{
 					text:'Документ отгрузки',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОтгрузки',
 					flex:1,
 				},
 				{
 					text:'Состояние',
-					width:'120',
+					width:'1200',
 					dataIndex:'Состояние',
 					flex:1,
 				},
@@ -650,7 +708,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -703,6 +761,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВычетНДСПоНалоговомуАгенту');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -711,6 +786,7 @@
 					items:
 					[
 		{
+			id: 'ВычетПриИзмененииСтоимостиВСторонуУменьшения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:211px;',
 			height: 211,width: 679,
@@ -777,7 +853,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаписейКнигиПокупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -809,6 +885,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВычетПриИзмененииСтоимостиВСторонуУменьшения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -819,7 +912,8 @@
 			boxLabel: 'Имеется решение о возмещении НДС',
 			style: 'position:absolute;left:190px;top:81px;width:215px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Серверы документооборота',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -119,7 +122,8 @@
 			height: 19,
 			style: 'position:absolute;left:208px;top:214px;width:338px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РассылкаАнкет:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b5490e25-4df6-46e8-8c50-958e9ff633c3");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191824.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012025.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -70,16 +70,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15230RRef [Анкета]
-					,_Fld15231_TYPE [ЭлектронныйАдресОтветов_Тип],_Fld15231_RRRef [ЭлектронныйАдресОтветов],_Fld15231_RTRef [ЭлектронныйАдресОтветов_Вид]
-					,_Fld15232 [СУведомлениемОПолучении]
-					,_Fld15233_TYPE [УчетнаяЗаписьДляОтправки_Тип],_Fld15233_RRRef [УчетнаяЗаписьДляОтправки],_Fld15233_RTRef [УчетнаяЗаписьДляОтправки_Вид]
-					,_Fld15234RRef [ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент]
-					,_Fld15235RRef [ПервичнаяРассылка]
-					,_Fld15236 [ТекстПисьма]
-					,_Fld15237RRef [Ответственный]
-					,_Fld15238 [Комментарий]
-					From _Document549(NOLOCK)
+					,_Fld10498RRef [Анкета]
+					,_Fld10499_TYPE [ЭлектронныйАдресОтветов_Тип],_Fld10499_RRRef [ЭлектронныйАдресОтветов],_Fld10499_RTRef [ЭлектронныйАдресОтветов_Вид]
+					,_Fld10500 [СУведомлениемОПолучении]
+					,_Fld10501_TYPE [УчетнаяЗаписьДляОтправки_Тип],_Fld10501_RRRef [УчетнаяЗаписьДляОтправки],_Fld10501_RTRef [УчетнаяЗаписьДляОтправки_Вид]
+					,_Fld10502RRef [ЭлектронныйАдресОтветовВстроенныйПочтовыйКлиент]
+					,_Fld10503RRef [ПервичнаяРассылка]
+					,_Fld10504 [ТекстПисьма]
+					,_Fld10505RRef [Ответственный]
+					,_Fld10506 [Комментарий]
+					From _Document420(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

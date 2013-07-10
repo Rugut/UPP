@@ -8,7 +8,10 @@
 	title: 'Статистика: Форма 11: ""Сведения о наличии и движении основных фондов (средств) и других нефинансовых активов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
@@ -65,7 +68,8 @@
 			title: 'Организация',
 			style: 'position:absolute;left:8px;top:8px;width:260px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

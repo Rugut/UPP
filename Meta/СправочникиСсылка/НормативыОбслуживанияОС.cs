@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class НормативыОбслуживанияОС:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("04151f13-c635-439e-8800-4e49bed66283");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221192000.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011941.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -83,7 +83,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public НормативыОбслуживанияОС(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public НормативыОбслуживанияОС(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -96,17 +109,17 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2975 [Комментарий]
-					,_Fld2976RRef [Состояние]
-					,_Fld2977 [ДатаУтверждения]
-					,_Fld2978RRef [Услуга]
-					,_Fld2979RRef [ПериодичностьОбслуживания]
-					,_Fld2980 [КоличествоПериодов]
-					,_Fld2981RRef [ПараметрВыработки]
-					,_Fld2982 [ЗначениеПараметраВыработки]
-					,_Fld2983 [Количество]
-					From _Reference167(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1489 [Комментарий]
+					,_Fld1490RRef [Состояние]
+					,_Fld1491 [ДатаУтверждения]
+					,_Fld1492RRef [Услуга]
+					,_Fld1493RRef [ПериодичностьОбслуживания]
+					,_Fld1494 [КоличествоПериодов]
+					,_Fld1495RRef [ПараметрВыработки]
+					,_Fld1496 [ЗначениеПараметраВыработки]
+					,_Fld1497 [Количество]
+					From _Reference100(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -125,10 +138,10 @@ namespace V82.СправочникиСсылка
 							Комментарий = Читалка.GetString(6);
 							Состояние = V82.Перечисления/*Ссылка*/.СостоянияОбъектов.ПустаяСсылка.Получить((byte[])Читалка.GetValue(7));
 							ДатаУтверждения = Читалка.GetDateTime(8);
-							Услуга = new V82.СправочникиСсылка.Номенклатура((byte[])Читалка.GetValue(9));
+							Услуга = new V82.СправочникиСсылка.Номенклатура((byte[])Читалка.GetValue(9),Глубина+1);
 							ПериодичностьОбслуживания = V82.Перечисления/*Ссылка*/.Периодичность.ПустаяСсылка.Получить((byte[])Читалка.GetValue(10));
 							КоличествоПериодов = Читалка.GetDecimal(11);
-							ПараметрВыработки = new V82.СправочникиСсылка.ПараметрыВыработкиОС((byte[])Читалка.GetValue(12));
+							ПараметрВыработки = new V82.СправочникиСсылка.ПараметрыВыработкиОС((byte[])Читалка.GetValue(12),Глубина+1);
 							ЗначениеПараметраВыработки = Читалка.GetDecimal(13);
 							Количество = Читалка.GetDecimal(14);
 							//return Ссылка;

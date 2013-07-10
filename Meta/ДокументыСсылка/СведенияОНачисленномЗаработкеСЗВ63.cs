@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СведенияОНачисленномЗаработкеСЗВ63:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6c9b82a8-b82a-4ee7-a332-b91a6ca9c14b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191438.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012002.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -75,21 +75,21 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16811RRef [Организация]
-					,_Fld16812 [Комментарий]
-					,_Fld16813RRef [Ответственный]
-					,_Fld16814 [КраткийСоставДокумента]
-					,_Fld16815 [ПринятоВПФР]
-					,_Fld16816 [НомерПачки]
-					,_Fld16817RRef [КатегорияЗастрахованныхЛиц]
-					,_Fld16818 [ОтчетныйПериод]
-					,_Fld16819RRef [ТипСведенийСЗВ]
-					,_Fld16820RRef [Руководитель]
-					,_Fld16821RRef [ДолжностьРуководителя]
-					,_Fld16822RRef [ФорматФайла]
-					,_Fld16823RRef [ТипДоговора]
-					,_Fld16824RRef [ОписьАДВ62]
-					From _Document583(NOLOCK)
+					,_Fld25373RRef [Организация]
+					,_Fld25374 [Комментарий]
+					,_Fld25375RRef [Ответственный]
+					,_Fld25376 [КраткийСоставДокумента]
+					,_Fld25377 [ПринятоВПФР]
+					,_Fld25378 [НомерПачки]
+					,_Fld25379RRef [КатегорияЗастрахованныхЛиц]
+					,_Fld25380 [ОтчетныйПериод]
+					,_Fld25381RRef [ТипСведенийСЗВ]
+					,_Fld25382RRef [Руководитель]
+					,_Fld25383RRef [ДолжностьРуководителя]
+					,_Fld25384RRef [ФорматФайла]
+					,_Fld25385RRef [ТипДоговора]
+					,_Fld25386RRef [ОписьАДВ62]
+					From _Document23171(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

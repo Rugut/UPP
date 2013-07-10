@@ -8,7 +8,10 @@
 	title: 'Номер ГТД',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:90px;top:61px;width:305px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

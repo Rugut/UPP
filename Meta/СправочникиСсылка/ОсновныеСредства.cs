@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОсновныеСредства:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("445ce11c-52df-46ef-945d-46be54138d89");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191633.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -99,7 +99,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОсновныеСредства(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОсновныеСредства(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -112,24 +125,24 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3092 [Автотранспорт]
-					,_Fld3093 [АдресМестонахождения]
-					,_Fld3094RRef [АмортизационнаяГруппа]
-					,_Fld3095RRef [ГруппаОС]
-					,_Fld3096 [ДатаВыпуска]
-					,_Fld3097 [ЗаводскойНомер]
-					,_Fld3098 [Изготовитель]
-					,_Fld3099RRef [КодПоОКОФ]
-					,_Fld3100 [КодРегиона]
-					,_Fld3101 [Комментарий]
-					,_Fld3102 [НаименованиеПолное]
-					,_Fld3103 [НомерПаспорта]
-					,_Fld3104 [Помещение]
-					,_Fld3105 [КадастровыйНомер]
-					,_Fld3106 [УсловныйНомер]
-					,_Fld3107RRef [НазначениеПомещения]
-					From _Reference180(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1584 [Автотранспорт]
+					,_Fld18594 [АдресМестонахождения]
+					,_Fld1581RRef [АмортизационнаяГруппа]
+					,_Fld1579RRef [ГруппаОС]
+					,_Fld1578 [ДатаВыпуска]
+					,_Fld1577 [ЗаводскойНомер]
+					,_Fld1575 [Изготовитель]
+					,_Fld1580RRef [КодПоОКОФ]
+					,_Fld18595 [КодРегиона]
+					,_Fld1583 [Комментарий]
+					,_Fld1574 [НаименованиеПолное]
+					,_Fld1576 [НомерПаспорта]
+					,_Fld26568 [Помещение]
+					,_Fld26569 [КадастровыйНомер]
+					,_Fld26570 [УсловныйНомер]
+					,_Fld26571RRef [НазначениеПомещения]
+					From _Reference111(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -152,7 +165,7 @@ namespace V82.СправочникиСсылка
 							ДатаВыпуска = Читалка.GetDateTime(10);
 							ЗаводскойНомер = Читалка.GetString(11);
 							Изготовитель = Читалка.GetString(12);
-							КодПоОКОФ = new V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов((byte[])Читалка.GetValue(13));
+							КодПоОКОФ = new V82.СправочникиСсылка.ОбщероссийскийКлассификаторОсновныхФондов((byte[])Читалка.GetValue(13),Глубина+1);
 							КодРегиона = Читалка.GetString(14);
 							Комментарий = Читалка.GetString(15);
 							НаименованиеПолное = Читалка.GetString(16);

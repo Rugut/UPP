@@ -27,9 +27,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -72,9 +72,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)";
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ОстаткиОтпусковОрганизаций();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -113,10 +113,10 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -158,9 +158,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -203,9 +203,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)";
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ОстаткиОтпусковОрганизаций();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -244,9 +244,9 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3121RRef [Сотрудник]
-					,_Fld3122 [ДатаАктуальности]
-					From _Reference183(NOLOCK)";
+					,_Fld19809RRef [Сотрудник]
+					,_Fld19810 [ДатаАктуальности]
+					From _Reference19647(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ОстаткиОтпусковОрганизаций();
 					using (var Читалка = Команда.ExecuteReader())
 					{

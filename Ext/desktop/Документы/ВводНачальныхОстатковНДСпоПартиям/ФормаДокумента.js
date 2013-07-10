@@ -8,7 +8,10 @@
 	title: 'Ввод начальных остатков НДС по партиям',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +77,7 @@
 			style: 'position:absolute;left:426px;top:33px;width:346px;height:19px;',
 		},
 		{
+			id: 'ДанныеПоПартиям',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:101px;width:764px;height:104px;',
 			height: 104,width: 764,
@@ -87,7 +91,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -111,19 +115,19 @@
 				},
 				{
 					text:'Партия',
-					width:'120',
+					width:'1200',
 					dataIndex:'Партия',
 					flex:1,
 				},
 				{
 					text:'Склад',
-					width:'120',
+					width:'1200',
 					dataIndex:'Склад',
 					flex:1,
 				},
 				{
 					text:'Количество',
-					width:'120',
+					width:'1200',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -140,7 +144,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДСпоПартиям/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДСпоПартиям/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -171,6 +175,23 @@
 						name:'Заказ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеПоПартиям');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -210,6 +231,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеПоСФ',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:764px;height:147px;',
 			height: 147,width: 764,
@@ -223,13 +245,13 @@
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
@@ -247,19 +269,19 @@
 				},
 				{
 					text:'Количество',
-					width:'120',
+					width:'1200',
 					dataIndex:'Количество',
 					flex:1,
 				},
 				{
 					text:'Стоимость с НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'Стоимость',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -276,7 +298,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДСпоПартиям/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковНДСпоПартиям/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -307,6 +329,23 @@
 						name:'НДСВключенВСтоимость',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеПоСФ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -340,7 +379,8 @@
 			height: 19,
 			style: 'position:absolute;left:103px;top:405px;width:669px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

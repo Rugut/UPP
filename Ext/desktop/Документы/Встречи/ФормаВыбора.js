@@ -8,8 +8,12 @@
 	title: 'Встречи',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:984px;height:380px;',
 			height: 380,width: 984,
@@ -35,31 +39,31 @@
 				},
 				{
 					text:'Период встречи',
-					width:'150',
+					width:'1500',
 					dataIndex:'ПериодВстречи',
 					flex:1,
 				},
 				{
 					text:'Кандидат',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЗаявкаКандидата',
 					flex:1,
 				},
 				{
 					text:'Помещение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Помещение',
 					flex:1,
 				},
 				{
 					text:'Краткий состав документа',
-					width:'150',
+					width:'1500',
 					dataIndex:'КраткийСоставДокумента',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -76,7 +80,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Встречи/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Встречи/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,8 +112,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

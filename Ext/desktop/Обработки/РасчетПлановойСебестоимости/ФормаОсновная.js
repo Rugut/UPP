@@ -8,7 +8,10 @@
 	title: 'Расчет плановой себестоимости',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:627px;height:384px;',
@@ -37,6 +40,7 @@
 			style: 'position:absolute;left:169px;top:24px;width:110px;height:19px;',
 		},
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:114px;width:613px;height:244px;',
 			height: 244,width: 613,
@@ -50,7 +54,7 @@
 				},
 				{
 					text:'Поле',
-					width:'120',
+					width:'1200',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -62,7 +66,7 @@
 				},
 				{
 					text:'Значение',
-					width:'240',
+					width:'2400',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -85,7 +89,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -107,6 +111,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -131,6 +152,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:609px;height:328px;',
 			height: 328,width: 609,
@@ -150,19 +172,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'150',
+					width:'1500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика',
-					width:'150',
+					width:'1500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -174,13 +196,13 @@
 				},
 				{
 					text:'Вид номенклатуры',
-					width:'110',
+					width:'1100',
 					dataIndex:'ВидНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'130',
+					width:'1300',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -191,7 +213,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -219,6 +241,23 @@
 						name:'НоменклатурнаяГруппа',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1119,6 +1158,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоРезультат',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:611px;height:328px;',
 			height: 328,width: 611,
@@ -1132,7 +1172,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -1185,7 +1225,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1216,6 +1256,23 @@
 						name:'Валюта',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоРезультат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1248,7 +1305,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Перенос задолженности из прошлых периодов в текущий',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -107,6 +110,7 @@
 			style: 'position:absolute;left:426px;top:33px;width:190px;height:19px;',
 		},
 		{
+			id: 'Задолженность',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:149px;width:608px;height:183px;',
 			height: 183,width: 608,
@@ -120,19 +124,19 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'180',
+					width:'1800',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Месяц возникновения',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПериодВозникновения',
 					flex:1,
 				},
 				{
 					text:'Перенести в размере',
-					width:'120',
+					width:'1200',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -143,7 +147,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносЗадолженностиРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносЗадолженностиРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -159,6 +163,23 @@
 						name:'Результат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Задолженность');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -183,7 +204,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:83px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

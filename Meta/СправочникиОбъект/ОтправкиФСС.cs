@@ -114,23 +114,23 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference184(
+						Insert Into _Reference23117(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld3133
-						,_Fld3134
-						,_Fld3135
-						,_Fld3136RRef
-						,_Fld3137
-						,_Fld3138
-						,_Fld3139
-						,_Fld3140RRef
-						,_Fld3141
-						,_Fld3142)
+						,_Fld23665
+						,_Fld23666
+						,_Fld23667
+						,_Fld23668RRef
+						,_Fld23669
+						,_Fld23670
+						,_Fld23671
+						,_Fld23672RRef
+						,_Fld23673
+						,_Fld23674)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -152,7 +152,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference184
+						Update _Reference23117
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -160,16 +160,16 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3133	= @ИдентификаторОтправкиНаСервере
-						,_Fld3134	= @ЗашифрованныйПакет
-						,_Fld3135	= @ИмяФайлаПакета
-						,_Fld3136RRef	= @СтатусОтправки
-						,_Fld3137	= @Протокол
-						,_Fld3138	= @ДатаОтправки
-						,_Fld3139	= @ДатаПолученияРезультата
-						,_Fld3140RRef	= @Организация
-						,_Fld3141	= @КодОрганаФСС
-						,_Fld3142	= @Квитанция
+						,_Fld23665	= @ИдентификаторОтправкиНаСервере
+						,_Fld23666	= @ЗашифрованныйПакет
+						,_Fld23667	= @ИмяФайлаПакета
+						,_Fld23668RRef	= @СтатусОтправки
+						,_Fld23669	= @Протокол
+						,_Fld23670	= @ДатаОтправки
+						,_Fld23671	= @ДатаПолученияРезультата
+						,_Fld23672RRef	= @Организация
+						,_Fld23673	= @КодОрганаФСС
+						,_Fld23674	= @Квитанция
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -199,7 +199,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference184
+					Команда.CommandText = @"Delete _Reference23117
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

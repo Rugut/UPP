@@ -8,7 +8,10 @@
 	title: 'Модернизация ОС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -232,6 +235,7 @@
 					items:
 					[
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:625px;height:217px;',
 			height: 217,width: 625,
@@ -245,79 +249,79 @@
 				},
 				{
 					text:'Основное средство',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
 				{
 					text:'Инв. №',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИнвентарныйНомер',
 					flex:1,
 				},
 				{
 					text:'Новый срок использ. (УУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СрокПолезногоИспользованияУУ',
 					flex:1,
 				},
 				{
 					text:'Факт. срок использ. (УУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ФактСрокИспользованияУУ',
 					flex:1,
 				},
 				{
 					text:'Ост. срок использ. (УУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ОстСрокИспользованияУУ',
 					flex:1,
 				},
 				{
 					text:'Новый объем работ (УУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ОбъемПродукцииРаботУУ',
 					flex:1,
 				},
 				{
 					text:'Факт. объем работ (УУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ФактОбъемПродукцииРаботУУ',
 					flex:1,
 				},
 				{
 					text:'Ост. объем работ (УУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ОстОбъемПродукцииРаботУУ',
 					flex:1,
 				},
 				{
 					text:'Стоимость (УУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтоимостьУУ',
 					flex:1,
 				},
 				{
 					text:'Сумма модерн. (УУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаМодернизацииУУ',
 					flex:1,
 				},
 				{
 					text:'Факт. аморт. (УУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'АмортизацияУУ',
 					flex:1,
 				},
 				{
 					text:'Аморт. за месяц (УУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'АмортизацияЗаМесяцУУ',
 					flex:1,
 				},
 				{
 					text:'Ост. стоимость (УУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОстСтоимостьУУ',
 					flex:1,
 				},
@@ -335,73 +339,73 @@
 				},
 				{
 					text:'Новый срок использ. (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СрокПолезногоИспользованияБУ',
 					flex:1,
 				},
 				{
 					text:'Факт. срок использ. (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ФактСрокИспользованияБУ',
 					flex:1,
 				},
 				{
 					text:'Ост. срок использ. (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ОстСрокИспользованияБУ',
 					flex:1,
 				},
 				{
 					text:'Новый объем работ (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ОбъемПродукцииРаботБУ',
 					flex:1,
 				},
 				{
 					text:'Факт. объем работ (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ФактОбъемПродукцииРаботБУ',
 					flex:1,
 				},
 				{
 					text:'Ост. объем работ (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'ОстОбъемПродукцииРаботБУ',
 					flex:1,
 				},
 				{
 					text:'Стоимость (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СтоимостьБУ',
 					flex:1,
 				},
 				{
 					text:'Сумма модерн. (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СуммаМодернизацииБУ',
 					flex:1,
 				},
 				{
 					text:'в т.ч. хоз. способом (БУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СуммаМодернизацииБУХоз',
 					flex:1,
 				},
 				{
 					text:'Факт. аморт. (БУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'АмортизацияБУ',
 					flex:1,
 				},
 				{
 					text:'Аморт. за месяц (БУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'АмортизацияЗаМесяцБУ',
 					flex:1,
 				},
 				{
 					text:'Ост. стоимость (БУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОстСтоимостьБУ',
 					flex:1,
 				},
@@ -419,37 +423,37 @@
 				},
 				{
 					text:'Новый срок использ. (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СрокПолезногоИспользованияНУ',
 					flex:1,
 				},
 				{
 					text:'Стоимость (НУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СтоимостьНУ',
 					flex:1,
 				},
 				{
 					text:'Сумма модерн. (НУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СуммаМодернизацииНУ',
 					flex:1,
 				},
 				{
 					text:'в т.ч. хоз. способом (НУ)',
-					width:'140',
+					width:'1400',
 					dataIndex:'СуммаМодернизацииНУХоз',
 					flex:1,
 				},
 				{
 					text:'Общая сумма (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбщаяСуммаНУ',
 					flex:1,
 				},
 				{
 					text:'Сумма амортизационной премии (НУ)',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
 					flex:1,
 				},
@@ -502,7 +506,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МодернизацияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МодернизацияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -635,6 +639,23 @@
 						name:'АмортизацияПР',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -966,6 +987,7 @@
 			style: 'position:absolute;left:0px;top:6px;width:625px;height:17px;',
 		},
 		{
+			id: 'Оплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:1px;top:71px;width:624px;height:48px;',
 			height: 48,width: 624,
@@ -996,7 +1018,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МодернизацияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МодернизацияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1009,6 +1031,23 @@
 						name:'СуммаОплаты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1125,7 +1164,8 @@
 			height: 19,
 			style: 'position:absolute;left:334px;top:125px;width:313px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

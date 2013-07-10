@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ВложенияЭлектронныхПисем:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e17fb3af-3331-4fa2-995a-a185ea2277c3");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191450.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012003.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -59,7 +59,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ВложенияЭлектронныхПисем(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ВложенияЭлектронныхПисем(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -71,14 +84,14 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

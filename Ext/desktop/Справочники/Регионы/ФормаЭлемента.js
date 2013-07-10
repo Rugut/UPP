@@ -8,7 +8,10 @@
 	title: 'Регионы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -116,7 +119,8 @@
 			height: 19,
 			style: 'position:absolute;left:90px;top:130px;width:406px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

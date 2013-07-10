@@ -8,7 +8,10 @@
 	title: 'Списание НМА',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -204,7 +207,8 @@
 			boxLabel: 'упр. учете',
 			style: 'position:absolute;left:402px;top:33px;width:70px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

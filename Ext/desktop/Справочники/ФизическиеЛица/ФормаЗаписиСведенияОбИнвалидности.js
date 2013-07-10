@@ -8,7 +8,10 @@
 	title: 'Сведения об инвалидности',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -99,7 +102,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:8px;width:66px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

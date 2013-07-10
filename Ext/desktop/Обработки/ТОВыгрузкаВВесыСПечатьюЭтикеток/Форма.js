@@ -8,7 +8,10 @@
 	title: 'Выгрузка данных в весы с печатью этикеток',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Настройки',
@@ -61,6 +64,7 @@
 					items:
 					[
 		{
+			id: 'Отборы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:39px;width:684px;height:69px;',
 			height: 69,width: 684,
@@ -109,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаВВесыСПечатьюЭтикеток/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаВВесыСПечатьюЭтикеток/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -131,6 +135,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отборы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -157,6 +178,7 @@
 			]
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:235px;width:684px;height:158px;',
 			height: 158,width: 684,
@@ -176,7 +198,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -188,7 +210,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -200,13 +222,13 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -229,7 +251,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаВВесыСПечатьюЭтикеток/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОВыгрузкаВВесыСПечатьюЭтикеток/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -264,8 +286,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

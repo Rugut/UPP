@@ -8,7 +8,10 @@
 	title: 'Результаты проверки соотношений показателей регламентированных отчетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:426px;width:580px;height:25px;',
@@ -40,7 +43,8 @@
 			boxLabel: 'Отобразить только ошибочные соотношения.',
 			style: 'position:absolute;left:8px;top:33px;width:257px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

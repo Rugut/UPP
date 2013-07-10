@@ -8,7 +8,10 @@
 	title: 'Настройка: Оборотно-сальдовая ведомость',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:412px;height:196px;',
@@ -107,6 +110,7 @@
 					items:
 					[
 		{
+			id: 'ПравилаРазвернутогоСальдо',
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:28px;width:400px;height:142px;',
 			height: 142,width: 400,
@@ -137,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -150,6 +154,23 @@
 						name:'ПредставлениеРазворотПоСубконто',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПравилаРазвернутогоСальдо');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -159,6 +180,7 @@
 					items:
 					[
 		{
+			id: 'ПравилаВыводаИтогов',
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:28px;width:400px;height:142px;',
 			height: 142,width: 400,
@@ -189,7 +211,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -203,12 +225,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПравилаВыводаИтогов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

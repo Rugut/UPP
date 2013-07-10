@@ -8,8 +8,12 @@
 	title: 'Валюты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокВалюты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:592px;height:220px;',
 			height: 220,width: 592,
@@ -29,13 +33,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Полное наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -53,18 +57,19 @@
 				},
 				{
 					text:'Параметры прописи на русском',
-					width:'220',
+					width:'2200',
 					dataIndex:'ПараметрыПрописиНаРусском',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Валюты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Валюты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Валюты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,6 +94,23 @@
 						name:'ПараметрыПрописиНаРусском',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокВалюты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -123,7 +145,8 @@
 			text: 'Дата курса:',
 			style: 'position:absolute;left:8px;top:33px;width:64px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("44b8410e-573d-41ea-ba0d-a69d0c636259");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190907.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011935.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -45,7 +45,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,8 +71,8 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					From _Reference240(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					From _Reference154(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

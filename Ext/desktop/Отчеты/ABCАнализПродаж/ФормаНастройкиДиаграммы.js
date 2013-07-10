@@ -8,8 +8,12 @@
 	title: 'Настройка диаграммы (ABC-анализ продаж)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ПоказателиДиаграммы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:29px;width:240px;height:280px;',
 			height: 280,width: 240,
@@ -34,7 +38,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,13 +49,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиДиаграммы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Показатели',
 			style: 'position:absolute;left:8px;top:8px;width:240px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

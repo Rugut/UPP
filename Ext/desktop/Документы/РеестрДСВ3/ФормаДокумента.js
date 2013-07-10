@@ -8,7 +8,10 @@
 	title: 'Реестр застрахованных лиц (форма ДСВ-3)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -237,6 +240,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:749px;height:16px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:749px;height:204px;',
 			height: 204,width: 749,
@@ -280,13 +284,13 @@
 				},
 				{
 					text:'Перечислено сотрудником',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВзносовРаботника',
 					flex:1,
 				},
 				{
 					text:'Перечислено работодателем',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВзносовРаботодателя',
 					flex:1,
 				},
@@ -297,7 +301,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрДСВ3/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрДСВ3/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -326,12 +330,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

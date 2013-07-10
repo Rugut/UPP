@@ -8,7 +8,10 @@
 	title: 'Декларация об объемах оборота этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
@@ -265,7 +268,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

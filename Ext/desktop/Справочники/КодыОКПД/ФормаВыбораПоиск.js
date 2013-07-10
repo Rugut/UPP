@@ -8,8 +8,12 @@
 	title: 'Коды ОКПД',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:451px;height:407px;',
 			height: 407,width: 451,
@@ -23,18 +27,19 @@
 				},
 				{
 					text:'Имя',
-					width:'350',
+					width:'3500',
 					dataIndex:'Имя',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КодыОКПД").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КодыОКПД/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КодыОКПД/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -44,6 +49,23 @@
 						name:'Имя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -124,7 +146,8 @@
 			text: '',
 			style: 'position:absolute;left:472px;top:33px;width:308px;height:112px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

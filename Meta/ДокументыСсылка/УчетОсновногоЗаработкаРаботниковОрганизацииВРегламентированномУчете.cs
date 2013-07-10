@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УчетОсновногоЗаработкаРаботниковОрганизацииВРегламентированномУчете:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6fb2dba6-4541-4005-b7fd-eee84e63fce1");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191722.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012017.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -63,12 +63,12 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18864RRef [Организация]
-					,_Fld18865 [Комментарий]
-					,_Fld18866RRef [Ответственный]
-					,_Fld18867_TYPE [ОтражаемыйДокумент_Тип],_Fld18867_RRRef [ОтражаемыйДокумент],_Fld18867_RTRef [ОтражаемыйДокумент_Вид]
-					,_Fld18868 [КраткийСоставДокумента]
-					From _Document636(NOLOCK)
+					,_Fld12421RRef [Организация]
+					,_Fld12422 [Комментарий]
+					,_Fld12423RRef [Ответственный]
+					,_Fld12424_TYPE [ОтражаемыйДокумент_Тип],_Fld12424_RRRef [ОтражаемыйДокумент],_Fld12424_RTRef [ОтражаемыйДокумент_Вид]
+					,_Fld12425 [КраткийСоставДокумента]
+					From _Document489(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

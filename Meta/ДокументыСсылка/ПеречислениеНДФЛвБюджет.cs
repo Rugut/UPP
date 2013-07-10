@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПеречислениеНДФЛвБюджет:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("93601fd1-e0b9-4680-a83f-dc0e22fe1aa4");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191045.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011945.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -72,18 +72,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12704RRef [Организация]
-					,_Fld12705 [Комментарий]
-					,_Fld12706RRef [Ответственный]
-					,_Fld12707 [ДатаПлатежа]
-					,_Fld12708 [МесяцНалоговогоПериода]
-					,_Fld12709 [Сумма]
-					,_Fld12710 [ПлатежноеПоручениеНомер]
-					,_Fld12711 [ПлатежноеПоручениеДата]
-					,_Fld12712RRef [Ставка]
-					,_Fld12713 [ОКАТО_КПП]
-					,_Fld12714 [КраткийСоставДокумента]
-					From _Document505(NOLOCK)
+					,_Fld24752RRef [Организация]
+					,_Fld24753 [Комментарий]
+					,_Fld24754RRef [Ответственный]
+					,_Fld24755 [ДатаПлатежа]
+					,_Fld24756 [МесяцНалоговогоПериода]
+					,_Fld24757 [Сумма]
+					,_Fld24758 [ПлатежноеПоручениеНомер]
+					,_Fld24759 [ПлатежноеПоручениеДата]
+					,_Fld24760RRef [Ставка]
+					,_Fld24761 [ОКАТО_КПП]
+					,_Fld24762 [КраткийСоставДокумента]
+					From _Document23160(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

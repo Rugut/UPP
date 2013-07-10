@@ -8,7 +8,10 @@
 	title: 'Изменение условий оплаты отпуска по уходу за ребенком',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -155,6 +158,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:634px;height:206px;',
 			height: 206,width: 634,
@@ -174,13 +178,13 @@
 				},
 				{
 					text:'',
-					width:'58',
+					width:'575',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'58',
+					width:'575',
 					dataIndex:'Должность',
 					flex:1,
 				},
@@ -395,7 +399,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -514,6 +518,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -586,6 +607,7 @@
 					items:
 					[
 		{
+			id: 'ПлановыеУдержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:207px;',
 			height: 207,width: 634,
@@ -742,7 +764,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -818,6 +840,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеУдержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1033,7 +1072,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

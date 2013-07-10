@@ -8,7 +8,10 @@
 	title: 'Категории',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:25px;',
@@ -39,6 +42,7 @@
 			]
 		},
 		{
+			id: 'КатегорииОбъекта',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:360px;height:234px;',
 			height: 234,width: 360,
@@ -69,7 +73,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КатегорииОбъекта/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КатегорииОбъекта/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -82,6 +86,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КатегорииОбъекта');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -101,7 +122,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

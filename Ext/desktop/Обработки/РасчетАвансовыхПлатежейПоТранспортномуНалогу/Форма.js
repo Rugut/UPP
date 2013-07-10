@@ -8,7 +8,10 @@
 	title: 'Обработка  Расчет авансовых платежей по транспортному налогу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -28,6 +31,7 @@
 			style: 'position:absolute;left:84px;top:33px;width:308px;height:19px;',
 		},
 		{
+			id: 'ТранспортныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:87px;width:771px;height:177px;',
 			height: 177,width: 771,
@@ -130,7 +134,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоТранспортномуНалогу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоТранспортномуНалогу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -180,6 +184,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТранспортныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -189,6 +210,7 @@
 			]
 		},
 		{
+			id: 'АвансовыеПлатежи',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:298px;width:771px;height:61px;',
 			height: 61,width: 771,
@@ -208,7 +230,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -219,7 +241,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоТранспортномуНалогу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоТранспортномуНалогу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -232,6 +254,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('АвансовыеПлатежи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -252,7 +291,8 @@
 			text: '',
 			style: 'position:absolute;left:576px;top:33px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

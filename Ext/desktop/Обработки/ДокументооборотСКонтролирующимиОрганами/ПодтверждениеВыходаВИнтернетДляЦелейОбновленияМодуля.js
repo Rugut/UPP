@@ -8,7 +8,10 @@
 	title: 'Обновление модуля документооборота с контролирующими органами',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:199px;width:529px;height:25px;',
@@ -47,7 +50,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:189px;width:529px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

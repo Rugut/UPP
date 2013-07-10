@@ -8,7 +8,10 @@
 	title: 'Неявка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:342px;width:400px;height:25px;',
@@ -652,7 +655,8 @@
 			height: 19,
 			style: 'position:absolute;left:76px;top:8px;width:316px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

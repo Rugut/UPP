@@ -102,7 +102,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference132(
+						Insert Into _Reference81(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -110,12 +110,12 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef
 						,_Folder
 						,_Description
-						,_Fld2505
-						,_Fld2506
-						,_Fld2507
-						,_Fld2508RRef
-						,_Fld2509RRef
-						,_Fld2510)
+						,_Fld1298
+						,_Fld1299
+						,_Fld1300
+						,_Fld1301RRef
+						,_Fld1302RRef
+						,_Fld1303)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -134,7 +134,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference132
+						Update _Reference81
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -143,12 +143,12 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef	= @Родитель
 						,_Folder	= @ЭтоГруппа
 						,_Description	= @Наименование
-						,_Fld2505	= @ОписаниеКурса
-						,_Fld2506	= @ДлительностьКурса
-						,_Fld2507	= @ЗатратыНаОдногоОбучающегося
-						,_Fld2508RRef	= @ВидДокументаОбОбразовании
-						,_Fld2509RRef	= @Валюта
-						,_Fld2510	= @ОтражатьВРегУчете
+						,_Fld1298	= @ОписаниеКурса
+						,_Fld1299	= @ДлительностьКурса
+						,_Fld1300	= @ЗатратыНаОдногоОбучающегося
+						,_Fld1301RRef	= @ВидДокументаОбОбразовании
+						,_Fld1302RRef	= @Валюта
+						,_Fld1303	= @ОтражатьВРегУчете
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -175,7 +175,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference132
+					Команда.CommandText = @"Delete _Reference81
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

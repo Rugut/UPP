@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВозвратПереданныхТоваров:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("782a9d94-ace7-41c9-8792-1ed163f35c7b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191937.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -127,25 +127,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6085RRef [ВалютаДокумента]
-					,_Fld6086RRef [ВидОперации]
-					,_Fld6087RRef [ВидПоступления]
-					,_Fld6088RRef [ДоговорКонтрагента]
-					,_Fld6089_TYPE [Заказ_Тип],_Fld6089_RRRef [Заказ],_Fld6089_RTRef [Заказ_Вид]
-					,_Fld6090 [Комментарий]
-					,_Fld6091RRef [Контрагент]
-					,_Fld6092 [КратностьВзаиморасчетов]
-					,_Fld6093 [КурсВзаиморасчетов]
-					,_Fld6094RRef [Организация]
-					,_Fld6095RRef [Ответственный]
-					,_Fld6096 [ОтражатьВБухгалтерскомУчете]
-					,_Fld6097 [ОтражатьВНалоговомУчете]
-					,_Fld6098 [ОтражатьВУправленческомУчете]
-					,_Fld6099_TYPE [СкладОрдер_Тип],_Fld6099_RRRef [СкладОрдер],_Fld6099_RTRef [СкладОрдер_Вид]
-					,_Fld6100 [СуммаДокумента]
-					,_Fld6101RRef [СчетУчетаРасчетовПоТаре]
-					,_Fld6102RRef [ТипЦен]
-					From _Document336(NOLOCK)
+					,_Fld3609RRef [ВалютаДокумента]
+					,_Fld3610RRef [ВидОперации]
+					,_Fld3611RRef [ВидПоступления]
+					,_Fld3612RRef [ДоговорКонтрагента]
+					,_Fld3613_TYPE [Заказ_Тип],_Fld3613_RRRef [Заказ],_Fld3613_RTRef [Заказ_Вид]
+					,_Fld3614 [Комментарий]
+					,_Fld3615RRef [Контрагент]
+					,_Fld3616 [КратностьВзаиморасчетов]
+					,_Fld3617 [КурсВзаиморасчетов]
+					,_Fld3619RRef [Организация]
+					,_Fld3620RRef [Ответственный]
+					,_Fld3621 [ОтражатьВБухгалтерскомУчете]
+					,_Fld3622 [ОтражатьВНалоговомУчете]
+					,_Fld3623 [ОтражатьВУправленческомУчете]
+					,_Fld3624_TYPE [СкладОрдер_Тип],_Fld3624_RRRef [СкладОрдер],_Fld3624_RTRef [СкладОрдер_Вид]
+					,_Fld3626 [СуммаДокумента]
+					,_Fld3627RRef [СчетУчетаРасчетовПоТаре]
+					,_Fld3628RRef [ТипЦен]
+					From _Document235(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

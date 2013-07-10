@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -26,7 +29,8 @@
 			text: 'На дату:',
 			style: 'position:absolute;left:8px;top:33px;width:51px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

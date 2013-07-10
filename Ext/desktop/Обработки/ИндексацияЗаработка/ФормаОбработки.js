@@ -8,7 +8,10 @@
 	title: 'Помощник повышения зарплаты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'Закрыть',
@@ -167,6 +170,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаИстории',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:191px;height:126px;',
 			height: 126,width: 191,
@@ -215,7 +219,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -237,6 +241,23 @@
 						name:'ДопТарифныеРазряды',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаИстории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -304,6 +325,7 @@
 			style: 'position:absolute;left:22px;top:0px;width:589px;height:16px;',
 		},
 		{
+			id: 'ТаблицаИстории1',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:182px;width:205px;height:148px;',
 			height: 148,width: 205,
@@ -352,7 +374,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -374,6 +396,23 @@
 						name:'ДопТарифныеРазряды',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаИстории1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -583,6 +622,7 @@
 					items:
 					[
 		{
+			id: 'ДолжностныеОклады',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:639px;height:229px;',
 			height: 229,width: 639,
@@ -596,13 +636,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'180',
+					width:'1800',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Вид расчета',
-					width:'180',
+					width:'1800',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
@@ -643,7 +683,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -672,6 +712,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДолжностныеОклады');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -680,6 +737,7 @@
 					items:
 					[
 		{
+			id: 'ШтатноеРасписание',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:639px;height:230px;',
 			height: 230,width: 639,
@@ -734,7 +792,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -760,6 +818,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ШтатноеРасписание');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -768,6 +843,7 @@
 					items:
 					[
 		{
+			id: 'ТарифныеРазряды',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:639px;height:230px;',
 			height: 230,width: 639,
@@ -810,7 +886,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -830,6 +906,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТарифныеРазряды');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -838,6 +931,7 @@
 					items:
 					[
 		{
+			id: 'ДопТарифныеРазряды',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:639px;height:230px;',
 			height: 230,width: 639,
@@ -850,10 +944,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДопТарифныеРазряды');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -894,7 +1005,8 @@
 			text: 'Помощник повышения зарплаты',
 			style: 'position:absolute;left:8px;top:8px;width:659px;height:28px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

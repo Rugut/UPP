@@ -8,7 +8,10 @@
 	title: 'Перенос данных из информационных баз 1С:Предприятия 7.7',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:594px;height:394px;',
@@ -63,6 +66,7 @@
 			style: 'position:absolute;left:138px;top:0px;width:456px;height:33px;text-align:center;',
 		},
 		{
+			id: 'ТаблицаПути',
 			xtype: 'grid',
 			style: 'position:absolute;left:138px;top:78px;width:456px;height:96px;',
 			height: 96,width: 456,
@@ -81,13 +85,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносДанныхИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносДанныхИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Имя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПути');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -732,7 +753,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

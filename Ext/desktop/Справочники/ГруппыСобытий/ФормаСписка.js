@@ -8,8 +8,12 @@
 	title: 'Справочник Группы событий',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:484px;height:259px;',
 			height: 259,width: 484,
@@ -35,24 +39,25 @@
 				},
 				{
 					text:'Вид объекта',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидОбъекта',
 					flex:1,
 				},
 				{
 					text:'Описание события',
-					width:'350',
+					width:'3500',
 					dataIndex:'ОписаниеСобытия',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыСобытий").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыСобытий/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыСобытий/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +77,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

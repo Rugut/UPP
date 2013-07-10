@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -92,6 +95,7 @@
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
 		},
 		{
+			id: 'СМРхозспособом',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:122px;width:693px;height:220px;',
 			height: 220,width: 693,
@@ -105,13 +109,13 @@
 				},
 				{
 					text:'Объект строительства',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -123,7 +127,7 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -134,7 +138,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеНДСпоСМРхозспособом/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеНДСпоСМРхозспособом/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,6 +157,23 @@
 						name:'НДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СМРхозспособом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -186,7 +207,8 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:90px;top:347px;width:611px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

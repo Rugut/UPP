@@ -8,7 +8,10 @@
 	title: 'Регистрация нового объекта',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:8px;width:258px;height:19px;',
@@ -90,7 +93,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СтатьиБюджета:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("186a24f5-a278-43d3-8f89-ef61d644af61");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191845.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012025.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СтатьиБюджета(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СтатьиБюджета(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,10 +76,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3806RRef [СтатьяОборотов]
-					,_Fld3807 [Знак]
-					From _Reference246(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1958RRef [СтатьяОборотов]
+					,_Fld1959 [Знак]
+					From _Reference160(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -82,7 +95,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							СтатьяОборотов = new V82.СправочникиСсылка.СтатьиОборотовПоБюджетам((byte[])Читалка.GetValue(6));
+							СтатьяОборотов = new V82.СправочникиСсылка.СтатьиОборотовПоБюджетам((byte[])Читалка.GetValue(6),Глубина+1);
 							Знак = Читалка.GetDecimal(7);
 							//return Ссылка;
 						}

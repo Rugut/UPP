@@ -8,7 +8,10 @@
 	title: 'Вложение электронного письма',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:111px;width:396px;height:25px;',
@@ -75,7 +78,8 @@
 			height: 19,
 			style: 'position:absolute;left:92px;top:33px;width:296px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Корректировка Серий и Характеристик товаров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +77,7 @@
 			style: 'position:absolute;left:485px;top:33px;width:71px;height:19px;',
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:109px;width:636px;height:108px;',
 			height: 108,width: 636,
@@ -93,25 +97,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры (старая)',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатурыСтарая',
 					flex:1,
 				},
 				{
 					text:'Серия (старая)',
-					width:'250',
+					width:'2500',
 					dataIndex:'СерияНоменклатурыСтарая',
 					flex:1,
 				},
@@ -159,13 +163,13 @@
 				},
 				{
 					text:'Новая характеристика номенклатуры ',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатурыНовая',
 					flex:1,
 				},
 				{
 					text:'Новая серия',
-					width:'250',
+					width:'2500',
 					dataIndex:'СерияНоменклатурыНовая',
 					flex:1,
 				},
@@ -218,7 +222,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаСерийИХарактеристикТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаСерийИХарактеристикТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -288,6 +292,23 @@
 						name:'СтранаПроисхожденияНовая',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -411,7 +432,8 @@
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:561px;top:33px;width:71px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

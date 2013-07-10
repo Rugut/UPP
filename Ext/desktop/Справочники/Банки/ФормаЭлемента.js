@@ -8,7 +8,10 @@
 	title: 'Банк',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -117,7 +120,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:167px;width:260px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

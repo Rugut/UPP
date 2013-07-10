@@ -8,7 +8,10 @@
 	title: 'Начисление зарплаты сотрудникам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -118,6 +121,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:690px;height:180px;',
 			height: 180,width: 690,
@@ -143,7 +147,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -155,13 +159,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Начисление',
-					width:'160',
+					width:'1600',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
@@ -179,13 +183,13 @@
 				},
 				{
 					text:'Показатели для расчета начисления',
-					width:'190',
+					width:'1900',
 					dataIndex:'Показатели',
 					flex:1,
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
@@ -197,7 +201,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
@@ -209,7 +213,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
@@ -221,7 +225,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
@@ -233,7 +237,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель5',
 					flex:1,
 				},
@@ -245,7 +249,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -280,7 +284,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЗарплатыРаботникам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЗарплатыРаботникам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -360,6 +364,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -368,6 +389,7 @@
 					items:
 					[
 		{
+			id: 'Удержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:690px;height:180px;',
 			height: 180,width: 690,
@@ -393,19 +415,19 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Удержание',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
@@ -423,13 +445,13 @@
 				},
 				{
 					text:'Показатели для расчета удержания',
-					width:'190',
+					width:'1900',
 					dataIndex:'Показатели',
 					flex:1,
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
@@ -441,7 +463,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
@@ -453,7 +475,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
@@ -465,7 +487,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
@@ -477,7 +499,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель5',
 					flex:1,
 				},
@@ -489,7 +511,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -512,7 +534,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЗарплатыРаботникам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЗарплатыРаботникам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -583,6 +605,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Удержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -591,6 +630,7 @@
 					items:
 					[
 		{
+			id: 'ПогашениеЗаймов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:690px;height:180px;',
 			height: 180,width: 690,
@@ -604,31 +644,31 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Договор займа',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорЗайма',
 					flex:1,
 				},
 				{
 					text:'Начислено %%',
-					width:'110',
+					width:'1100',
 					dataIndex:'НачисленоПроцентов',
 					flex:1,
 				},
 				{
 					text:'Погашено займа и %%',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПогашеноЗайма',
 					flex:1,
 				},
 				{
 					text:'В т.ч. погашено %%',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПогашеноПроцентов',
 					flex:1,
 				},
@@ -639,7 +679,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЗарплатыРаботникам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЗарплатыРаботникам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -661,6 +701,23 @@
 						name:'ПогашеноПроцентов',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПогашениеЗаймов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -739,7 +796,8 @@
 			text: 'Расчетный листок',
 			style: 'position:absolute;left:12px;top:389px;width:448px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

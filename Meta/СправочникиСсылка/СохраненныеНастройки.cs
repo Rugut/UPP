@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class СохраненныеНастройки:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f9f2b5a1-8050-4cb5-bdaa-d5e15d3f3ca1");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191256.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СохраненныеНастройки(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СохраненныеНастройки(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -62,17 +75,17 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3564RRef [ТипНастройки]
-					,_Fld3565_TYPE [НастраиваемыйОбъект_Тип],_Fld3565_RRRef [НастраиваемыйОбъект],_Fld3565_RTRef [НастраиваемыйОбъект_Вид]
-					,_Fld3566 [СохранятьАвтоматически]
-					,_Fld3567 [ИспользоватьПриОткрытии]
-					,_Fld3568 [СохранятьПериод]
-					,_Fld3569 [ОткрыватьПриЗапуске]
-					,_Fld3570 [ХранилищеНастроек]
-					,_Fld3571 [Описание]
-					,_Fld3572 [КраткийСоставНастройки]
-					From _Reference238(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld19877RRef [ТипНастройки]
+					,_Fld19878_TYPE [НастраиваемыйОбъект_Тип],_Fld19878_RRRef [НастраиваемыйОбъект],_Fld19878_RTRef [НастраиваемыйОбъект_Вид]
+					,_Fld19879 [СохранятьАвтоматически]
+					,_Fld19880 [ИспользоватьПриОткрытии]
+					,_Fld19881 [СохранятьПериод]
+					,_Fld19882 [ОткрыватьПриЗапуске]
+					,_Fld19883 [ХранилищеНастроек]
+					,_Fld19884 [Описание]
+					,_Fld26609 [КраткийСоставНастройки]
+					From _Reference19651(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

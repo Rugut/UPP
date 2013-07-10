@@ -8,7 +8,10 @@
 	title: 'Корректировочный счет-фактура выданный',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -174,6 +177,7 @@
 					items:
 					[
 		{
+			id: 'ТоварыИУслуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:751px;height:256px;',
 			height: 256,width: 751,
@@ -187,7 +191,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'180',
+					width:'1800',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -235,7 +239,7 @@
 				{
 					text:'Стоимость без НДС
 до изменения',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтоимостьБезНДСДоИзменения',
 					flex:1,
 				},
@@ -324,7 +328,7 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
@@ -335,7 +339,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -405,6 +409,23 @@
 						name:'ВидЦенности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТоварыИУслуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -608,7 +629,8 @@
 			boxLabel: 'Отразить вычет НДС',
 			style: 'position:absolute;left:8px;top:452px;width:212px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

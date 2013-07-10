@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:621px;height:49px;',
@@ -152,7 +155,8 @@
 			text: 'Вид данных:',
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

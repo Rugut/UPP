@@ -8,7 +8,10 @@
 	title: 'Протокол',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -45,7 +48,8 @@
 			name: 'ТекстПротокола',
 			style: 'position:absolute;left:8px;top:80px;width:387px;height:185px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Настройка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:13px;top:29px;width:230px;height:19px;',
@@ -53,7 +56,8 @@
 			boxLabel: 'периодов',
 			style: 'position:absolute;left:13px;top:194px;width:230px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

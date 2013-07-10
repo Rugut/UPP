@@ -8,8 +8,12 @@
 	title: 'Выберите сертификат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Сертификаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:641px;height:214px;',
 			height: 214,width: 641,
@@ -17,37 +21,37 @@
 			[
 				{
 					text:'Представление',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Начало действия',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДействителенС',
 					flex:1,
 				},
 				{
 					text:'Конец действия',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДействителенПо',
 					flex:1,
 				},
 				{
 					text:'Отпечаток',
-					width:'240',
+					width:'2400',
 					dataIndex:'Отпечаток',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Серийный номер',
-					width:'120',
+					width:'1200',
 					dataIndex:'СерийныйНомер',
 					flex:1,
 				},
@@ -58,7 +62,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчет4ФСС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчет4ФСС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +85,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Сертификаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

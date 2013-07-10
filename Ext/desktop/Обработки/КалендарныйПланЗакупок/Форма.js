@@ -8,8 +8,12 @@
 	title: 'Календарный план закупок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоПодбора',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:684px;height:280px;',
 			height: 280,width: 684,
@@ -17,7 +21,7 @@
 			[
 				{
 					text:'Номенклатура. Контрагент. Заказ.',
-					width:'220',
+					width:'2200',
 					dataIndex:'НоменклатураКонтрагентЗаказ',
 					flex:1,
 				},
@@ -58,7 +62,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,6 +84,23 @@
 						name:'СуммаВзаиморасчетовЗаказаПредставление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоПодбора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -199,7 +220,8 @@
 			text: 'Ответственный за закупки:',
 			style: 'position:absolute;left:364px;top:33px;width:144px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

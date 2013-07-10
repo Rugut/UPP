@@ -8,7 +8,10 @@
 	title: 'Ключ аналитики вида учета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -160,7 +163,8 @@
 			height: 19,
 			style: 'position:absolute;left:97px;top:57px;width:270px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

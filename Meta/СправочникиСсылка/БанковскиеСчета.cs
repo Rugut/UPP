@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class БанковскиеСчета:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("9c660244-5259-4f3b-b8bf-e1ab83c0de32");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191838.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011927.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -94,7 +94,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public БанковскиеСчета(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public БанковскиеСчета(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -107,20 +120,20 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1854 [НомерСчета]
-					,_Fld1855RRef [Банк]
-					,_Fld1856RRef [БанкДляРасчетов]
-					,_Fld1857 [ТекстКорреспондента]
-					,_Fld1858 [ТекстНазначения]
-					,_Fld1859 [ВидСчета]
-					,_Fld1860RRef [ВалютаДенежныхСредств]
-					,_Fld1861 [НомерИДатаРазрешения]
-					,_Fld1862 [ДатаОткрытия]
-					,_Fld1863 [ДатаЗакрытия]
-					,_Fld1864 [МесяцПрописью]
-					,_Fld1865 [СуммаБезКопеек]
-					From _Reference36(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld891 [НомерСчета]
+					,_Fld892RRef [Банк]
+					,_Fld893RRef [БанкДляРасчетов]
+					,_Fld894 [ТекстКорреспондента]
+					,_Fld895 [ТекстНазначения]
+					,_Fld896 [ВидСчета]
+					,_Fld897RRef [ВалютаДенежныхСредств]
+					,_Fld898 [НомерИДатаРазрешения]
+					,_Fld899 [ДатаОткрытия]
+					,_Fld900 [ДатаЗакрытия]
+					,_Fld901 [МесяцПрописью]
+					,_Fld902 [СуммаБезКопеек]
+					From _Reference7(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -137,12 +150,12 @@ namespace V82.СправочникиСсылка
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
 							НомерСчета = Читалка.GetString(6);
-							Банк = new V82.СправочникиСсылка.Банки((byte[])Читалка.GetValue(7));
-							БанкДляРасчетов = new V82.СправочникиСсылка.Банки((byte[])Читалка.GetValue(8));
+							Банк = new V82.СправочникиСсылка.Банки((byte[])Читалка.GetValue(7),Глубина+1);
+							БанкДляРасчетов = new V82.СправочникиСсылка.Банки((byte[])Читалка.GetValue(8),Глубина+1);
 							ТекстКорреспондента = Читалка.GetString(9);
 							ТекстНазначения = Читалка.GetString(10);
 							ВидСчета = Читалка.GetString(11);
-							ВалютаДенежныхСредств = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(12));
+							ВалютаДенежныхСредств = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(12),Глубина+1);
 							НомерИДатаРазрешения = Читалка.GetString(13);
 							ДатаОткрытия = Читалка.GetDateTime(14);
 							ДатаЗакрытия = Читалка.GetDateTime(15);

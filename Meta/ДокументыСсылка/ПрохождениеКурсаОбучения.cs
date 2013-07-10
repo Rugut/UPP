@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПрохождениеКурсаОбучения:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("baa24956-3add-44eb-883f-26fe561fb6be");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191915.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -63,15 +63,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld14870RRef [КурсОбучения]
-					,_Fld14871 [Комментарий]
-					,_Fld14872RRef [Ответственный]
-					,_Fld14873 [ДатаЗавершенияКурса]
-					,_Fld14874 [ФактЗавершенияКурса]
-					,_Fld14875RRef [Мероприятие]
-					,_Fld14876RRef [ДокументУчастияВМероприятии]
-					,_Fld14877 [КраткийСоставДокумента]
-					From _Document543(NOLOCK)
+					,_Fld10211RRef [КурсОбучения]
+					,_Fld10212 [Комментарий]
+					,_Fld10213RRef [Ответственный]
+					,_Fld10214 [ДатаЗавершенияКурса]
+					,_Fld10215 [ФактЗавершенияКурса]
+					,_Fld10216RRef [Мероприятие]
+					,_Fld10217RRef [ДокументУчастияВМероприятии]
+					,_Fld21913 [КраткийСоставДокумента]
+					From _Document414(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

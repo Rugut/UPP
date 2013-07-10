@@ -8,7 +8,10 @@
 	title: '<ФИО|Помещение>',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Наименование',
@@ -45,7 +48,8 @@
 			text: '',
 			style: 'position:absolute;left:207px;top:107px;width:426px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

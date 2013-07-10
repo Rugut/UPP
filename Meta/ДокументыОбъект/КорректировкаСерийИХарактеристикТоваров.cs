@@ -132,21 +132,21 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document431(
+						Insert Into _Document314(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld9547
-						,_Fld9548RRef
-						,_Fld9549RRef
-						,_Fld9550
-						,_Fld9551
-						,_Fld9552
-						,_Fld9553RRef
-						,_Fld9554RRef
-						,_Fld9555RRef)
+						,_Fld6048
+						,_Fld6049RRef
+						,_Fld6050RRef
+						,_Fld6051
+						,_Fld6052
+						,_Fld6053
+						,_Fld6054RRef
+						,_Fld6055RRef
+						,_Fld6056RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -165,21 +165,21 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document431
+						Update _Document314
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld9547	= @Комментарий
-						,_Fld9548RRef	= @Организация
-						,_Fld9549RRef	= @Ответственный
-						,_Fld9550	= @ОтражатьВБухгалтерскомУчете
-						,_Fld9551	= @ОтражатьВНалоговомУчете
-						,_Fld9552	= @ОтражатьВУправленческомУчете
-						,_Fld9553RRef	= @Подразделение
-						,_Fld9554RRef	= @Склад
-						,_Fld9555RRef	= @ВидОперации
+						,_Fld6048	= @Комментарий
+						,_Fld6049RRef	= @Организация
+						,_Fld6050RRef	= @Ответственный
+						,_Fld6051	= @ОтражатьВБухгалтерскомУчете
+						,_Fld6052	= @ОтражатьВНалоговомУчете
+						,_Fld6053	= @ОтражатьВУправленческомУчете
+						,_Fld6054RRef	= @Подразделение
+						,_Fld6055RRef	= @Склад
+						,_Fld6056RRef	= @ВидОперации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -202,7 +202,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document431
+					Команда.CommandText = @"Delete _Document314
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

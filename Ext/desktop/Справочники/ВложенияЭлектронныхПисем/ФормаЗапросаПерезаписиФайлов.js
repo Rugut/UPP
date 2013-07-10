@@ -8,7 +8,10 @@
 	title: 'Сохранение файла',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'КнопкаДаДляВсех',
@@ -45,7 +48,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:8px;width:492px;height:56px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,8 +8,12 @@
 	title: 'Помощник настройки соответствий заказов покупателей и заказов поставщикам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоСоответствияЗаказов',
 			xtype: 'grid',
 			style: 'position:absolute;left:151px;top:33px;width:621px;height:364px;',
 			height: 364,width: 621,
@@ -17,25 +21,25 @@
 			[
 				{
 					text:'Номенклатура/Дата потребности/Заказ покупателя/Заказ поставщику',
-					width:'380',
+					width:'3800',
 					dataIndex:'ОсновныеДанные',
 					flex:1,
 				},
 				{
 					text:'Заказчик/Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Количество потребности',
-					width:'120',
+					width:'1200',
 					dataIndex:'КоличествоПотребности',
 					flex:1,
 				},
 				{
 					text:'Количество заказов',
-					width:'120',
+					width:'1200',
 					dataIndex:'КоличествоЗаказов',
 					flex:1,
 				},
@@ -46,7 +50,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -62,6 +66,23 @@
 						name:'КоличествоЗаказов',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоСоответствияЗаказов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -93,7 +114,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

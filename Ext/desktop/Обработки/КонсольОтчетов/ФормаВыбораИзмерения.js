@@ -8,12 +8,16 @@
 	title: 'Выбор группировки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:9px;width:384px;height:250px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

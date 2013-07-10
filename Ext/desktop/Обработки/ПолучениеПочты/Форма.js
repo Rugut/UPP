@@ -8,8 +8,12 @@
 	title: 'Получение почты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаПисем',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:620px;height:380px;',
 			height: 380,width: 620,
@@ -35,13 +39,13 @@
 				},
 				{
 					text:'Отправитель',
-					width:'180',
+					width:'1800',
 					dataIndex:'Отправитель',
 					flex:1,
 				},
 				{
 					text:'Тема',
-					width:'220',
+					width:'2200',
 					dataIndex:'Тема',
 					flex:1,
 				},
@@ -52,7 +56,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +76,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПисем');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

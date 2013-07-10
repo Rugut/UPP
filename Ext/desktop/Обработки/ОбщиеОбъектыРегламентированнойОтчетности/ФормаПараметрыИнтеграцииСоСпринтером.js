@@ -8,7 +8,10 @@
 	title: 'Параметры интеграции с ПК ""Спринтер"" компании ""Такском""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -59,7 +62,8 @@
 			title: 'Каталоги',
 			style: 'position:absolute;left:8px;top:35px;width:582px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

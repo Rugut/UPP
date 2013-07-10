@@ -22,11 +22,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -64,11 +64,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -106,11 +106,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)";
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОценкаНезавершенногоПроизводства();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -144,11 +144,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -186,11 +186,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -228,11 +228,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)";
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОценкаНезавершенногоПроизводства();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -266,11 +266,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12053RRef [Организация]
-					,_Fld12054RRef [Подразделение]
-					,_Fld12055RRef [Ответственный]
-					,_Fld12056 [Комментарий]
-					From _Document480(NOLOCK)";
+					,_Fld24706RRef [Организация]
+					,_Fld24707RRef [Подразделение]
+					,_Fld24708RRef [Ответственный]
+					,_Fld24709 [Комментарий]
+					From _Document23157(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ОценкаНезавершенногоПроизводства();
 					using (var Читалка = Команда.ExecuteReader())
 					{

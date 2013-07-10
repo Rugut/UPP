@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class КлассификаторОКОПФ:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("c09e8940-0c71-46d2-8018-92aa561476d2");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190722.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011925.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -44,7 +44,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КлассификаторОКОПФ(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КлассификаторОКОПФ(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -57,10 +70,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2406 [НаименованиеПолное]
-					,_Fld2407 [БыстрыйВыбор]
-					From _Reference116(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1210 [НаименованиеПолное]
+					,_Fld1211 [БыстрыйВыбор]
+					From _Reference71(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

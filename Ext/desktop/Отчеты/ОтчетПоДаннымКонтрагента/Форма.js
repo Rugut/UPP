@@ -8,7 +8,10 @@
 	title: 'Отчет по данным контрагента',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НачОтчета',
@@ -94,7 +97,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

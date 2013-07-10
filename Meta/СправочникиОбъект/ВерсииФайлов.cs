@@ -180,31 +180,31 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference44(
+						Insert Into _Reference23089(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld1895RRef
-						,_Fld1896
-						,_Fld1897
-						,_Fld1898
-						,_Fld1899
-						,_Fld1900
-						,_Fld1901
-						,_Fld1902
-						,_Fld1903
-						,_Fld1904
-						,_Fld1905
-						,_Fld1906
-						,_Fld1907RRef
-						,_Fld1908RRef
-						,_Fld1909
-						,_Fld1910RRef
-						,_Fld1911RRef
-						,_Fld1912)
+						,_Fld23340RRef
+						,_Fld23341
+						,_Fld23342
+						,_Fld23343
+						,_Fld23344
+						,_Fld23345
+						,_Fld23346
+						,_Fld23347
+						,_Fld23348
+						,_Fld23349
+						,_Fld23350
+						,_Fld23351
+						,_Fld23352RRef
+						,_Fld23353RRef
+						,_Fld23354
+						,_Fld23355RRef
+						,_Fld23356RRef
+						,_Fld23357)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -234,7 +234,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference44
+						Update _Reference23089
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -242,24 +242,24 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld1895RRef	= @Автор
-						,_Fld1896	= @ДатаМодификацииУниверсальная
-						,_Fld1897	= @ДатаСоздания
-						,_Fld1898	= @Зашифрован
-						,_Fld1899	= @ИндексКартинки
-						,_Fld1900	= @Комментарий
-						,_Fld1901	= @НомерВерсии
-						,_Fld1902	= @ПодписанЭЦП
-						,_Fld1903	= @ПолноеНаименование
-						,_Fld1904	= @ПутьКФайлу
-						,_Fld1905	= @Размер
-						,_Fld1906	= @Расширение
-						,_Fld1907RRef	= @РодительскаяВерсия
-						,_Fld1908RRef	= @СтатусИзвлеченияТекста
-						,_Fld1909	= @ТекстХранилище
-						,_Fld1910RRef	= @ТипХраненияФайла
-						,_Fld1911RRef	= @Том
-						,_Fld1912	= @ФайлХранилище
+						,_Fld23340RRef	= @Автор
+						,_Fld23341	= @ДатаМодификацииУниверсальная
+						,_Fld23342	= @ДатаСоздания
+						,_Fld23343	= @Зашифрован
+						,_Fld23344	= @ИндексКартинки
+						,_Fld23345	= @Комментарий
+						,_Fld23346	= @НомерВерсии
+						,_Fld23347	= @ПодписанЭЦП
+						,_Fld23348	= @ПолноеНаименование
+						,_Fld23349	= @ПутьКФайлу
+						,_Fld23350	= @Размер
+						,_Fld23351	= @Расширение
+						,_Fld23352RRef	= @РодительскаяВерсия
+						,_Fld23353RRef	= @СтатусИзвлеченияТекста
+						,_Fld23354	= @ТекстХранилище
+						,_Fld23355RRef	= @ТипХраненияФайла
+						,_Fld23356RRef	= @Том
+						,_Fld23357	= @ФайлХранилище
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -297,7 +297,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference44
+					Команда.CommandText = @"Delete _Reference23089
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

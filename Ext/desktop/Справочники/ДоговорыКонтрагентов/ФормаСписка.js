@@ -8,8 +8,12 @@
 	title: 'Договоры контрагентов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:32px;width:598px;height:280px;',
 			height: 280,width: 598,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -41,19 +45,19 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Владелец',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Вид договора',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидДоговора',
 					flex:1,
 				},
@@ -71,37 +75,37 @@
 				},
 				{
 					text:'Ведение взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВедениеВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Вид взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Вид условий договора',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидУсловийДоговора',
 					flex:1,
 				},
 				{
 					text:'Держать резерв без оплаты ограниченное время',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДержатьРезервБезОплатыОграниченноеВремя',
 					flex:1,
 				},
 				{
 					text:'Допустимая сумма дебиторской задолженности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДопустимаяСуммаЗадолженности',
 					flex:1,
 				},
 				{
 					text:'Допустимое число дней дебиторской задолженности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДопустимоеЧислоДнейЗадолженности',
 					flex:1,
 				},
@@ -143,7 +147,7 @@
 				},
 				{
 					text:'Способ расчета комиссионного вознаграждения',
-					width:'120',
+					width:'1200',
 					dataIndex:'СпособРасчетаКомиссионногоВознаграждения',
 					flex:1,
 				},
@@ -203,7 +207,7 @@
 				},
 				{
 					text:'Основная статья движения денежных средств',
-					width:'350',
+					width:'3500',
 					dataIndex:'ОсновнаяСтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
@@ -216,11 +220,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -324,8 +329,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:160px;height:280px;',
 			height: 280,width: 160,
@@ -333,24 +356,42 @@
 			[
 				{
 					text:'Наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -380,7 +421,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

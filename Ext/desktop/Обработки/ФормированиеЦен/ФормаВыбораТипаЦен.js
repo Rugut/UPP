@@ -8,8 +8,12 @@
 	title: 'Форма выбора типа цен',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоТиповЦенСкидок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:247px;height:145px;',
 			height: 145,width: 247,
@@ -28,7 +32,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -36,13 +40,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоТиповЦенСкидок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Перемещать отмеченные элементы наверх',
 			style: 'position:absolute;left:8px;top:180px;width:247px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

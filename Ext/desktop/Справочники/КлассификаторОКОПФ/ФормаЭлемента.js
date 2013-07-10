@@ -8,7 +8,10 @@
 	title: 'Классификатор ОКОПФ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -59,7 +62,8 @@
 			boxLabel: 'Включить элемент в список быстрого выбора',
 			style: 'position:absolute;left:8px;top:82px;width:258px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

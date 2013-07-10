@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СписаниеНДС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("423def30-0585-46ce-b301-e86ffdc3026f");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191740.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012018.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -94,19 +94,19 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17301RRef [Организация]
-					,_Fld17302RRef [Ответственный]
-					,_Fld17303 [Комментарий]
-					,_Fld17304 [ОтражатьВНалоговомУчете]
-					,_Fld17305RRef [СчетСписанияНДС]
-					,_Fld17306RRef [СубконтоСписанияНДС1]
-					,_Fld17307RRef [СубконтоСписанияНДС2]
-					,_Fld17308RRef [СубконтоСписанияНДС3]
-					,_Fld17309RRef [СчетСписанияНДСНУ]
-					,_Fld17310RRef [СубконтоСписанияНДСНУ1]
-					,_Fld17311RRef [СубконтоСписанияНДСНУ2]
-					,_Fld17312RRef [СубконтоСписанияНДСНУ3]
-					From _Document592(NOLOCK)
+					,_Fld22819RRef [Организация]
+					,_Fld22820RRef [Ответственный]
+					,_Fld22821 [Комментарий]
+					,_Fld22822 [ОтражатьВНалоговомУчете]
+					,_Fld22823RRef [СчетСписанияНДС]
+					,_Fld22824RRef [СубконтоСписанияНДС1]
+					,_Fld22825RRef [СубконтоСписанияНДС2]
+					,_Fld22826RRef [СубконтоСписанияНДС3]
+					,_Fld22827RRef [СчетСписанияНДСНУ]
+					,_Fld22828RRef [СубконтоСписанияНДСНУ1]
+					,_Fld22829RRef [СубконтоСписанияНДСНУ2]
+					,_Fld22830RRef [СубконтоСписанияНДСНУ3]
+					From _Document22682(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

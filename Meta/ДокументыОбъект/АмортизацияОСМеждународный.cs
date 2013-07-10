@@ -93,16 +93,16 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document308(
+						Insert Into _Document212(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld4939RRef
-						,_Fld4940
-						,_Fld4941RRef
-						,_Fld4942)
+						,_Fld2821RRef
+						,_Fld2822
+						,_Fld2823RRef
+						,_Fld2824)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -116,16 +116,16 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document308
+						Update _Document212
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld4939RRef	= @Организация
-						,_Fld4940	= @Комментарий
-						,_Fld4941RRef	= @Ответственный
-						,_Fld4942	= @ПериодРегистрации
+						,_Fld2821RRef	= @Организация
+						,_Fld2822	= @Комментарий
+						,_Fld2823RRef	= @Ответственный
+						,_Fld2824	= @ПериодРегистрации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -145,7 +145,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document308
+					Команда.CommandText = @"Delete _Document212
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

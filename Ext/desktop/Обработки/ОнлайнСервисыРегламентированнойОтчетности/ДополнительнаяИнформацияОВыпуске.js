@@ -8,7 +8,10 @@
 	title: 'Отличия обновления от текущей версии',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textarea',
 			hideLabel: true,
@@ -16,7 +19,8 @@
 			name: 'ДополнительнаяИнформация',
 			style: 'position:absolute;left:8px;top:8px;width:516px;height:528px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

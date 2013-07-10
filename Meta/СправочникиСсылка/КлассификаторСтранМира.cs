@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class КлассификаторСтранМира:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("769cfdb2-c854-4d6b-aa3b-81517e5058c3");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190744.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011927.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КлассификаторСтранМира(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КлассификаторСтранМира(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,10 +76,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2411 [НаименованиеПолное]
-					,_Fld2412 [КодАльфа2]
-					From _Reference118(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1215 [НаименованиеПолное]
+					,_Fld1216 [КодАльфа2]
+					From _Reference73(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

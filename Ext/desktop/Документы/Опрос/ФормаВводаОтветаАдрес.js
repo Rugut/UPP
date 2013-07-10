@@ -8,7 +8,10 @@
 	title: 'Ответ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись6',
@@ -177,7 +180,8 @@
 			title: 'Адрес',
 			style: 'position:absolute;left:8px;top:8px;width:314px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВозвратНаРаботуОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8518d9e4-c8a0-4742-91ad-e3d12e7af186");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191644.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6065RRef [Организация]
-					,_Fld6066 [Комментарий]
-					,_Fld6067RRef [Ответственный]
-					,_Fld6068 [КраткийСоставДокумента]
-					,_Fld6069 [ДанныеПрошлойВерсии]
-					,_Fld6070RRef [ИсправляемыйДокумент]
-					,_Fld6071 [ДвиженияИсправляемогоДокумента]
-					From _Document335(NOLOCK)
+					,_Fld3595RRef [Организация]
+					,_Fld3596 [Комментарий]
+					,_Fld3597RRef [Ответственный]
+					,_Fld3598 [КраткийСоставДокумента]
+					,_Fld26714 [ДанныеПрошлойВерсии]
+					,_Fld26715RRef [ИсправляемыйДокумент]
+					,_Fld26716 [ДвиженияИсправляемогоДокумента]
+					From _Document234(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

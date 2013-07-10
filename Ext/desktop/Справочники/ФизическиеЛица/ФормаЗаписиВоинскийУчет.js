@@ -8,7 +8,10 @@
 	title: 'Воинский учет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -217,7 +220,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:313px;width:414px;height:6px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

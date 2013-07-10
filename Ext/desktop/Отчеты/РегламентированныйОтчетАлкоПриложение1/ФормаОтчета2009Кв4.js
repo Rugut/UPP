@@ -8,7 +8,10 @@
 	title: 'Декларация об объёмах производства и оборота этилового спирта',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:79px;width:784px;height:312px;',
@@ -252,7 +255,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

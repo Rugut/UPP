@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ТиповыеАнкеты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("92ef7e72-e19a-40ab-8194-21b5a7bb1005");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191231.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011953.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -56,7 +56,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ТиповыеАнкеты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ТиповыеАнкеты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -69,17 +82,17 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3920 [ЗагружатьОбъекты]
-					,_Fld3921 [МакетАнкеты]
-					,_Fld3922RRef [ВидСправочникаДляЗагрузки]
-					,_Fld3923 [Адресная]
-					,_Fld3924 [НаименованиеАнкеты]
-					,_Fld3925 [Вступление]
-					,_Fld3926 [ЗаполнятьАнкетуДанными]
-					,_Fld3927RRef [ВидАнкеты]
-					,_Fld3928 [СекундОтвета]
-					From _Reference266(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2066 [ЗагружатьОбъекты]
+					,_Fld2067 [МакетАнкеты]
+					,_Fld2068RRef [ВидСправочникаДляЗагрузки]
+					,_Fld2069 [Адресная]
+					,_Fld2070 [НаименованиеАнкеты]
+					,_Fld2071 [Вступление]
+					,_Fld21289 [ЗаполнятьАнкетуДанными]
+					,_Fld21290RRef [ВидАнкеты]
+					,_Fld21291 [СекундОтвета]
+					From _Reference178(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

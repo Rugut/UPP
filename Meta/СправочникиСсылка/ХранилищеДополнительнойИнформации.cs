@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ХранилищеДополнительнойИнформации:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("643bfde6-77a8-4438-874d-733071adf65e");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191529.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012006.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,7 +61,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ХранилищеДополнительнойИнформации(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ХранилищеДополнительнойИнформации(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -73,13 +86,13 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

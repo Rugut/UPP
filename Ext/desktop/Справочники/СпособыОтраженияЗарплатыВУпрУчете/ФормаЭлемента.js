@@ -8,7 +8,10 @@
 	title: 'Способы отражения зарплаты в управленческом учете',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -97,7 +100,8 @@
 			height: 19,
 			style: 'position:absolute;left:176px;top:130px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Расчет плановой себестоимости продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -95,6 +98,7 @@
 			style: 'position:absolute;left:6px;top:181px;width:101px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеОтборПродукции',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:578px;height:116px;',
 			height: 116,width: 578,
@@ -467,7 +471,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимостиПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимостиПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -652,6 +656,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтборПродукции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -660,6 +681,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:578px;height:170px;',
 			height: 170,width: 578,
@@ -679,25 +701,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Продукция (услуга)',
-					width:'170',
+					width:'1700',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'170',
+					width:'1700',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Спецификация',
-					width:'150',
+					width:'1500',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -715,7 +737,7 @@
 				},
 				{
 					text:'Себестоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'Себестоимость',
 					flex:1,
 				},
@@ -726,7 +748,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимостиПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимостиПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -758,6 +780,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -766,6 +805,7 @@
 					items:
 					[
 		{
+			id: 'ИсходныеКомплектующие',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:578px;height:170px;',
 			height: 170,width: 578,
@@ -785,37 +825,37 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Продукция (услуга)',
-					width:'120',
+					width:'1200',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'120',
+					width:'1200',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Спецификация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
 				{
 					text:'Затрата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика затраты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -839,7 +879,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Себестоимость',
 					flex:1,
 				},
@@ -850,7 +890,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимостиПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимостиПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -891,6 +931,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходныеКомплектующие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -927,7 +984,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:318px;width:504px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

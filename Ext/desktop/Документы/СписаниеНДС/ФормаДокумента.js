@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -112,6 +115,7 @@
 					items:
 					[
 		{
+			id: 'Состав',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:679px;height:227px;',
 			height: 227,width: 679,
@@ -125,19 +129,19 @@
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
@@ -149,7 +153,7 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -161,13 +165,13 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -178,7 +182,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -209,6 +213,23 @@
 						name:'ДокументОплаты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Состав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -395,7 +416,8 @@
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:419px;top:33px;width:74px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,8 +8,12 @@
 	title: 'Форма',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ПерсональныеНадбавки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:31px;width:408px;height:216px;',
 			height: 216,width: 408,
@@ -23,7 +27,7 @@
 				},
 				{
 					text:'Надбавка',
-					width:'120',
+					width:'1200',
 					dataIndex:'Надбавка',
 					flex:1,
 				},
@@ -35,7 +39,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
@@ -53,7 +57,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказательТР1',
 					flex:1,
 				},
@@ -65,7 +69,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
@@ -83,7 +87,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказательТР2',
 					flex:1,
 				},
@@ -95,7 +99,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
@@ -113,7 +117,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказательТР3',
 					flex:1,
 				},
@@ -125,7 +129,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
@@ -143,7 +147,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказательТР4',
 					flex:1,
 				},
@@ -155,7 +159,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказатель5',
 					flex:1,
 				},
@@ -173,7 +177,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказательТР5',
 					flex:1,
 				},
@@ -185,7 +189,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -203,7 +207,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеПоказательТР6',
 					flex:1,
 				},
@@ -216,11 +220,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -324,6 +329,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПерсональныеНадбавки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -346,7 +368,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

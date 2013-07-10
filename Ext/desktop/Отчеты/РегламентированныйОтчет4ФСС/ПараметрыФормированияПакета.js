@@ -8,7 +8,10 @@
 	title: 'Параметры формирования пакета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -59,7 +62,8 @@
 			height: 19,
 			style: 'position:absolute;left:157px;top:68px;width:419px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

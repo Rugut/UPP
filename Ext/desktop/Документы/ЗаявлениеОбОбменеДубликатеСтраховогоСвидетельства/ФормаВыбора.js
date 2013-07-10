@@ -8,8 +8,12 @@
 	title: 'Заявление об обмене, дубликате страхового свидетельства',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:531px;height:220px;',
 			height: 220,width: 531,
@@ -35,7 +39,7 @@
 				},
 				{
 					text:'Организация',
-					width:'180',
+					width:'1800',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -47,7 +51,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'180',
+					width:'1800',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -64,7 +68,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +94,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Субконто',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'УстановитьВсе',
@@ -58,7 +61,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

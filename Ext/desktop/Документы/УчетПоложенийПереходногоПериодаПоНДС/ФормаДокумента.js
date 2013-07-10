@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -92,6 +95,7 @@
 			style: 'position:absolute;left:419px;top:57px;width:282px;height:19px;',
 		},
 		{
+			id: 'НДСпоСтроительству',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:119px;width:693px;height:246px;',
 			height: 246,width: 693,
@@ -105,7 +109,7 @@
 				},
 				{
 					text:'Объект строительства',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
@@ -129,7 +133,7 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -141,7 +145,7 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -158,7 +162,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетПоложенийПереходногоПериодаПоНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетПоложенийПереходногоПериодаПоНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -190,6 +194,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДСпоСтроительству');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -210,7 +231,8 @@
 			text: '',
 			style: 'position:absolute;left:329px;top:33px;width:261px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

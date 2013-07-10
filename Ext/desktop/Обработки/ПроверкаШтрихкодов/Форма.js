@@ -8,7 +8,10 @@
 	title: 'Обработка  Проверка штрихкодов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Таблица проверяемых товаров',
@@ -20,6 +23,7 @@
 			style: 'position:absolute;left:8px;top:56px;width:327px;height:19px;',
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:119px;width:484px;height:148px;',
 			height: 148,width: 484,
@@ -33,13 +37,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -51,13 +55,13 @@
 				},
 				{
 					text:'Серия',
-					width:'250',
+					width:'2500',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Характеристика',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -86,7 +90,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаШтрихкодов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаШтрихкодов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -118,6 +122,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -131,7 +152,8 @@
 			text: '',
 			style: 'position:absolute;left:140px;top:33px;width:352px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

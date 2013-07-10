@@ -8,7 +8,10 @@
 	title: 'Контактные лица контрагентов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьВладелец',
@@ -354,7 +357,8 @@
 			height: 19,
 			style: 'position:absolute;left:458px;top:267px;width:42px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

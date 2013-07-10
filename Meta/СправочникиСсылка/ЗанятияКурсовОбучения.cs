@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ЗанятияКурсовОбучения:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1ba3b507-c263-4a5f-b639-2e6b393108c8");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011943.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -47,7 +47,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ЗанятияКурсовОбучения(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ЗанятияКурсовОбучения(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -59,11 +72,11 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2317 [ОписаниеЗанятия]
-					,_Fld2318 [ДлительностьЗанятия]
-					,_Fld2319RRef [ВидЗанятия]
-					From _Reference99(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1142 [ОписаниеЗанятия]
+					,_Fld1143 [ДлительностьЗанятия]
+					,_Fld1144RRef [ВидЗанятия]
+					From _Reference57(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -80,7 +93,7 @@ namespace V82.СправочникиСсылка
 							Наименование = Читалка.GetString(4);
 							ОписаниеЗанятия = Читалка.GetString(5);
 							ДлительностьЗанятия = Читалка.GetDecimal(6);
-							ВидЗанятия = new V82.СправочникиСсылка.ФормыОбучения((byte[])Читалка.GetValue(7));
+							ВидЗанятия = new V82.СправочникиСсылка.ФормыОбучения((byte[])Читалка.GetValue(7),Глубина+1);
 							//return Ссылка;
 						}
 						else

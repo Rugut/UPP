@@ -8,7 +8,10 @@
 	title: 'Детализация отчета о прибылях и убытках',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -77,6 +80,7 @@
 			]
 		},
 		{
+			id: 'ОтборСтатейОборотов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:143px;width:390px;height:160px;',
 			height: 160,width: 390,
@@ -90,7 +94,7 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'220',
+					width:'2200',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -103,11 +107,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДетализацияОтчетаОПрибыляхИУбытках").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДетализацияОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -120,6 +125,23 @@
 						name:'Знак',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборСтатейОборотов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -135,7 +157,8 @@
 			text: 'Наименование для отчета:',
 			style: 'position:absolute;left:8px;top:55px;width:84px;height:27px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,8 +8,12 @@
 	title: 'Отчет  Взаиморасчеты с комитентами',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

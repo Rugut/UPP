@@ -8,7 +8,10 @@
 	title: 'Групповое добавление элементов справочника ""Основные средства""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -234,7 +237,8 @@
 			text: 'по:',
 			style: 'position:absolute;left:249px;top:53px;width:16px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Ведомость по взаиморасчетам с контрагентами',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
@@ -117,7 +120,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class НачислениеЗарплатыРаботникам:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1ae27cbf-ac05-4886-9fc8-e57172aa97ef");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191857.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012029.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -66,15 +66,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9689 [ПериодРегистрации]
-					,_Fld9690RRef [Подразделение]
-					,_Fld9691 [Комментарий]
-					,_Fld9692RRef [Ответственный]
-					,_Fld9693 [КраткийСоставДокумента]
-					,_Fld9694 [ПоВременнойСхемеМотивации]
-					,_Fld9695RRef [ВидСхемыМотивации]
-					,_Fld9696RRef [ВидОперации]
-					From _Document436(NOLOCK)
+					,_Fld6172 [ПериодРегистрации]
+					,_Fld6173RRef [Подразделение]
+					,_Fld6174 [Комментарий]
+					,_Fld6175RRef [Ответственный]
+					,_Fld21529 [КраткийСоставДокумента]
+					,_Fld21530 [ПоВременнойСхемеМотивации]
+					,_Fld21531RRef [ВидСхемыМотивации]
+					,_Fld21532RRef [ВидОперации]
+					From _Document319(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class РабочиеЦентры:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f3f2218d-044f-4591-a916-7ccaf99482e0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191433.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012002.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -53,7 +53,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public РабочиеЦентры(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public РабочиеЦентры(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -66,11 +79,11 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3324RRef [Подразделение]
-					,_Fld3325 [Описание]
-					,_Fld3326 [ТребуетсяЗагрузкаПодчиненныхРабочихЦентров]
-					From _Reference214(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1687RRef [Подразделение]
+					,_Fld1688 [Описание]
+					,_Fld26586 [ТребуетсяЗагрузкаПодчиненныхРабочихЦентров]
+					From _Reference135(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -86,7 +99,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							Подразделение = new V82.СправочникиСсылка.Подразделения((byte[])Читалка.GetValue(6));
+							Подразделение = new V82.СправочникиСсылка.Подразделения((byte[])Читалка.GetValue(6),Глубина+1);
 							Описание = Читалка.GetString(7);
 							ТребуетсяЗагрузкаПодчиненныхРабочихЦентров = ((byte[])Читалка.GetValue(8))[0]==1;
 							//return Ссылка;

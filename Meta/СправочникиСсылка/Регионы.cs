@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class Регионы:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("16fd8951-9da4-48cb-ab60-cce13c5c8405");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191858.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012029.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -56,7 +56,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Регионы(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Регионы(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -69,12 +82,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3359 [Комментарий]
-					,_Fld3360 [КодРегиона]
-					,_Fld3361 [КодАдресногоЭлемента]
-					,_Fld3362 [ЖДСтанцияНазначения]
-					From _Reference218(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1715 [Комментарий]
+					,_Fld1716 [КодРегиона]
+					,_Fld1717 [КодАдресногоЭлемента]
+					,_Fld1718 [ЖДСтанцияНазначения]
+					From _Reference139(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

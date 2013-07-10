@@ -8,7 +8,10 @@
 	title: 'Премии сотрудникам организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -173,6 +176,7 @@
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:194px;width:636px;height:234px;',
 			height: 234,width: 636,
@@ -204,7 +208,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -246,7 +250,7 @@
 				},
 				{
 					text:'Результат',
-					width:'110',
+					width:'1100',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -257,7 +261,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПремииРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПремииРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -297,6 +301,23 @@
 						name:'Результат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -368,7 +389,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

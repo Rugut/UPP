@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class Работодатели:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b7dc3eaf-8733-49d6-8feb-5065132b502f");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191646.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -67,7 +67,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Работодатели(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Работодатели(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -80,15 +93,15 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3314 [НаименованиеПолное]
-					,_Fld3315 [ИНН]
-					,_Fld3316 [КПП]
-					,_Fld3317 [НаименованиеТерриториальногоОрганаФСС]
-					,_Fld3318 [РегистрационныйНомерФСС]
-					,_Fld3319 [ДополнительныйКодФСС]
-					,_Fld3320 [КодПодчиненностиФСС]
-					From _Reference212(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23731 [НаименованиеПолное]
+					,_Fld23732 [ИНН]
+					,_Fld23733 [КПП]
+					,_Fld23734 [НаименованиеТерриториальногоОрганаФСС]
+					,_Fld23735 [РегистрационныйНомерФСС]
+					,_Fld23736 [ДополнительныйКодФСС]
+					,_Fld23737 [КодПодчиненностиФСС]
+					From _Reference23123(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

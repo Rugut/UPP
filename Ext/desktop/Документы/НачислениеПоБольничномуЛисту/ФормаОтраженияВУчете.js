@@ -8,7 +8,10 @@
 	title: 'Отражение в учете пособия по документу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись11',
@@ -16,6 +19,7 @@
 			style: 'position:absolute;left:8px;top:8px;width:98px;height:18px;',
 		},
 		{
+			id: 'ОтражениеНачислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:156px;width:628px;height:155px;',
 			height: 155,width: 628,
@@ -47,7 +51,7 @@
 				},
 				{
 					text:'Счет Дт',
-					width:'61',
+					width:'606',
 					dataIndex:'СчетДт',
 					flex:1,
 				},
@@ -208,7 +212,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -302,6 +306,23 @@
 						name:'ВидНачисленийОплатыТрудаПоСтатье255НК',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтражениеНачислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -421,7 +442,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

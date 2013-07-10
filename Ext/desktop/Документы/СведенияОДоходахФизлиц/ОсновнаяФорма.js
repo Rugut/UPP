@@ -8,7 +8,10 @@
 	title: 'Сведения о доходах физлиц',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
@@ -49,7 +52,8 @@
 			text: 'Выбрать форму',
 			style: 'position:absolute;left:17px;top:128px;width:100px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

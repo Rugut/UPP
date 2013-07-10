@@ -8,7 +8,10 @@
 	title: 'Отчет мастера смены',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
@@ -85,6 +88,7 @@
 					items:
 					[
 		{
+			id: 'Выпуск',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:720px;height:220px;',
 			height: 220,width: 720,
@@ -104,7 +108,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -116,7 +120,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -146,25 +150,25 @@
 				},
 				{
 					text:'Номер партии',
-					width:'120',
+					width:'1200',
 					dataIndex:'НомерПартии',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'180',
+					width:'1800',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'160',
+					width:'1600',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Спецификация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -175,7 +179,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетМастераСмены/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетМастераСмены/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -219,6 +223,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Выпуск');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -227,6 +248,7 @@
 					items:
 					[
 		{
+			id: 'ТехнологическиеПараметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:720px;height:220px;',
 			height: 220,width: 720,
@@ -240,7 +262,7 @@
 				},
 				{
 					text:'Параметр',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидПараметра',
 					flex:1,
 				},
@@ -257,7 +279,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетМастераСмены/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетМастераСмены/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -271,6 +293,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТехнологическиеПараметры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -279,6 +318,7 @@
 					items:
 					[
 		{
+			id: 'РасходМатериалов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:720px;height:220px;',
 			height: 220,width: 720,
@@ -292,19 +332,19 @@
 				},
 				{
 					text:'Материал',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика материала',
-					width:'180',
+					width:'1800',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия материала',
-					width:'120',
+					width:'1200',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -334,25 +374,25 @@
 				},
 				{
 					text:'Продукция',
-					width:'120',
+					width:'1200',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'180',
+					width:'1800',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Серия продукции',
-					width:'120',
+					width:'1200',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
 				{
 					text:'Спецификация продукции',
-					width:'160',
+					width:'1600',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -363,7 +403,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетМастераСмены/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетМастераСмены/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -403,6 +443,23 @@
 						name:'Спецификация',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходМатериалов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -457,7 +514,8 @@
 			text: '01.01.0001 (00:00 - 23:59)',
 			style: 'position:absolute;left:273px;top:57px;width:156px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

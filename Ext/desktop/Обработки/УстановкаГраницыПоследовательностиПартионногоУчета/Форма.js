@@ -8,7 +8,10 @@
 	title: 'Установка границы последовательности партионного учета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Флажок',
@@ -57,7 +60,8 @@
 			text: 'По видам учета:',
 			style: 'position:absolute;left:8px;top:4px;width:138px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

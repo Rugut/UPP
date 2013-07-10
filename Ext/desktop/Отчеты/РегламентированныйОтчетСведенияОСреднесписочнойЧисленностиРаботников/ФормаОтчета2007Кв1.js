@@ -8,7 +8,10 @@
 	title: 'Сведения о среднесписочной численности работников за предшествующий календарный год',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:102px;width:654px;height:333px;',
@@ -135,7 +138,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

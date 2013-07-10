@@ -8,7 +8,10 @@
 	title: 'Отчет о контактной информации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:57px;width:588px;height:24px;',
@@ -57,7 +60,8 @@
 			text: 'Объект отчета (контактной информации):',
 			style: 'position:absolute;left:8px;top:33px;width:216px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

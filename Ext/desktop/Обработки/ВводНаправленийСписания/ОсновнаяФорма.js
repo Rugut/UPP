@@ -8,7 +8,10 @@
 	title: 'Ввод направлений списания продукции (услуг)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -91,6 +94,7 @@
 			style: 'position:absolute;left:142px;top:33px;width:89px;height:19px;',
 		},
 		{
+			id: 'НаправленияСписания',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:149px;width:584px;height:268px;',
 			height: 268,width: 584,
@@ -104,13 +108,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПодразделениеОрганизации',
 					flex:1,
 				},
@@ -301,7 +305,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНаправленийСписания/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНаправленийСписания/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -405,6 +409,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НаправленияСписания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -424,7 +445,8 @@
 			title: 'Направления списания продукции (услуг)',
 			style: 'position:absolute;left:8px;top:109px;width:584px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

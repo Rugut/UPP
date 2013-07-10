@@ -8,7 +8,10 @@
 	title: 'Отбор',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись4',
@@ -46,6 +49,7 @@
 			]
 		},
 		{
+			id: 'РолиСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:45px;width:257px;height:193px;',
 			height: 193,width: 257,
@@ -64,7 +68,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписокПользователейИБ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписокПользователейИБ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +76,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РолиСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ИнтерфейсыСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:270px;top:45px;width:252px;height:81px;',
 			height: 81,width: 252,
@@ -92,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписокПользователейИБ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписокПользователейИБ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -100,8 +122,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИнтерфейсыСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ЯзыкиСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:270px;top:171px;width:252px;height:67px;',
 			height: 67,width: 252,
@@ -120,13 +160,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписокПользователейИБ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписокПользователейИБ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЯзыкиСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -148,7 +205,8 @@
 			title: 'Языки',
 			style: 'position:absolute;left:270px;top:131px;width:252px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПрочиеЗатраты:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6f4b2ef0-d7b8-48be-98e5-b23b01f1db1c");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191919.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -124,25 +124,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld14887RRef [ВидОперации]
-					,_Fld14888 [Комментарий]
-					,_Fld14889RRef [Организация]
-					,_Fld14890RRef [Ответственный]
-					,_Fld14891 [ОтражатьВУправленческомУчете]
-					,_Fld14892 [ОтражатьВБухгалтерскомУчете]
-					,_Fld14893 [ОтражатьВНалоговомУчете]
-					,_Fld14894RRef [Подразделение]
-					,_Fld14895RRef [ПодразделениеОрганизации]
-					,_Fld14896RRef [Счет]
-					,_Fld14897RRef [Субконто1]
-					,_Fld14898RRef [Субконто2]
-					,_Fld14899RRef [Субконто3]
-					,_Fld14900RRef [СчетНУ]
-					,_Fld14901RRef [СубконтоНУ1]
-					,_Fld14902RRef [СубконтоНУ2]
-					,_Fld14903RRef [СубконтоНУ3]
-					,_Fld14904_TYPE [Проект_Тип],_Fld14904_RRRef [Проект],_Fld14904_RTRef [Проект_Вид]
-					From _Document544(NOLOCK)
+					,_Fld10225RRef [ВидОперации]
+					,_Fld10227 [Комментарий]
+					,_Fld10228RRef [Организация]
+					,_Fld10229RRef [Ответственный]
+					,_Fld10230 [ОтражатьВУправленческомУчете]
+					,_Fld10231 [ОтражатьВБухгалтерскомУчете]
+					,_Fld10232 [ОтражатьВНалоговомУчете]
+					,_Fld10233RRef [Подразделение]
+					,_Fld10234RRef [ПодразделениеОрганизации]
+					,_Fld10235RRef [Счет]
+					,_Fld10236RRef [Субконто1]
+					,_Fld10237RRef [Субконто2]
+					,_Fld10238RRef [Субконто3]
+					,_Fld10239RRef [СчетНУ]
+					,_Fld10240RRef [СубконтоНУ1]
+					,_Fld10241RRef [СубконтоНУ2]
+					,_Fld10242RRef [СубконтоНУ3]
+					,_Fld10243_TYPE [Проект_Тип],_Fld10243_RRRef [Проект],_Fld10243_RTRef [Проект_Вид]
+					From _Document415(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

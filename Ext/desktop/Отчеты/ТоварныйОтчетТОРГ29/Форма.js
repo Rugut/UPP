@@ -8,7 +8,10 @@
 	title: 'Товарный отчет (ТОРГ-29)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -100,7 +103,8 @@
 			text: 'Склад:',
 			style: 'position:absolute;left:362px;top:56px;width:70px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

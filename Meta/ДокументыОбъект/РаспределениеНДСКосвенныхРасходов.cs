@@ -189,32 +189,32 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document547(
+						Insert Into _Document418(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld15095RRef
-						,_Fld15096RRef
-						,_Fld15097
-						,_Fld15098
-						,_Fld15099
-						,_Fld15100
-						,_Fld15101
-						,_Fld15102
-						,_Fld15103RRef
-						,_Fld15104RRef
-						,_Fld15105RRef
-						,_Fld15106RRef
-						,_Fld15107RRef
-						,_Fld15108RRef
-						,_Fld15109RRef
-						,_Fld15110RRef
-						,_Fld15111
-						,_Fld15112RRef
-						,_Fld15113RRef
-						,_Fld15114RRef)
+						,_Fld10385RRef
+						,_Fld10386RRef
+						,_Fld10387
+						,_Fld10388
+						,_Fld10389
+						,_Fld10390
+						,_Fld10391
+						,_Fld10392
+						,_Fld21915RRef
+						,_Fld21916RRef
+						,_Fld21917RRef
+						,_Fld21918RRef
+						,_Fld21919RRef
+						,_Fld21920RRef
+						,_Fld21921RRef
+						,_Fld21922RRef
+						,_Fld21923
+						,_Fld21924RRef
+						,_Fld21925RRef
+						,_Fld21926RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -244,32 +244,32 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document547
+						Update _Document418
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld15095RRef	= @Организация
-						,_Fld15096RRef	= @Ответственный
-						,_Fld15097	= @Комментарий
-						,_Fld15098	= @ВыручкаЕНВД
-						,_Fld15099	= @ВыручкаБезНДС
-						,_Fld15100	= @ВыручкаНДС0
-						,_Fld15101	= @ВыручкаНДС
-						,_Fld15102	= @НачалоПериода
-						,_Fld15103RRef	= @СчетСписанияНДС
-						,_Fld15104RRef	= @СубконтоСписанияНДС1
-						,_Fld15105RRef	= @СубконтоСписанияНДС2
-						,_Fld15106RRef	= @СубконтоСписанияНДС3
-						,_Fld15107RRef	= @СчетСписанияНДСНУ
-						,_Fld15108RRef	= @СубконтоСписанияНДСНУ1
-						,_Fld15109RRef	= @СубконтоСписанияНДСНУ2
-						,_Fld15110RRef	= @СубконтоСписанияНДСНУ3
-						,_Fld15111	= @ДляСписанияНДСиспользоватьСчетИАналитикуУчетаЗатрат
-						,_Fld15112RRef	= @НоменклатурнаяГруппа
-						,_Fld15113RRef	= @СтатьяЗатратСписанияНДС
-						,_Fld15114RRef	= @ПодразделениеОрганизации
+						,_Fld10385RRef	= @Организация
+						,_Fld10386RRef	= @Ответственный
+						,_Fld10387	= @Комментарий
+						,_Fld10388	= @ВыручкаЕНВД
+						,_Fld10389	= @ВыручкаБезНДС
+						,_Fld10390	= @ВыручкаНДС0
+						,_Fld10391	= @ВыручкаНДС
+						,_Fld10392	= @НачалоПериода
+						,_Fld21915RRef	= @СчетСписанияНДС
+						,_Fld21916RRef	= @СубконтоСписанияНДС1
+						,_Fld21917RRef	= @СубконтоСписанияНДС2
+						,_Fld21918RRef	= @СубконтоСписанияНДС3
+						,_Fld21919RRef	= @СчетСписанияНДСНУ
+						,_Fld21920RRef	= @СубконтоСписанияНДСНУ1
+						,_Fld21921RRef	= @СубконтоСписанияНДСНУ2
+						,_Fld21922RRef	= @СубконтоСписанияНДСНУ3
+						,_Fld21923	= @ДляСписанияНДСиспользоватьСчетИАналитикуУчетаЗатрат
+						,_Fld21924RRef	= @НоменклатурнаяГруппа
+						,_Fld21925RRef	= @СтатьяЗатратСписанияНДС
+						,_Fld21926RRef	= @ПодразделениеОрганизации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -302,7 +302,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document547
+					Команда.CommandText = @"Delete _Document418
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

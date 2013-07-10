@@ -8,7 +8,10 @@
 	title: 'Отчет  Карточка субконто',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -65,7 +68,8 @@
 			height: 19,
 			style: 'position:absolute;left:356px;top:33px;width:264px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

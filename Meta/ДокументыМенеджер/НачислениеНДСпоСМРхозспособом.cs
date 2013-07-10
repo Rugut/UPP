@@ -25,10 +25,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -66,10 +66,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -107,10 +107,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)";
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.НачислениеНДСпоСМРхозспособом();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -144,10 +144,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -185,10 +185,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -226,10 +226,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)";
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.НачислениеНДСпоСМРхозспособом();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -263,10 +263,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)";
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.НачислениеНДСпоСМРхозспособом();
 					using (var Читалка = Команда.ExecuteReader())
 					{

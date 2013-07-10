@@ -8,7 +8,10 @@
 	title: 'Настройки обмена с WEB-сайтом',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:190px;top:58px;width:492px;height:464px;',
@@ -306,6 +309,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:128px;height:15px;',
 		},
 		{
+			id: 'ПостроительОтчетаОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:78px;width:478px;height:360px;',
 			height: 360,width: 478,
@@ -350,11 +354,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаССайтом").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаССайтом/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаССайтом/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -376,6 +381,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтчетаОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -662,7 +684,8 @@
 			text: 'Подробнее о технологии обмена',
 			style: 'position:absolute;left:8px;top:129px;width:174px;height:15px;text-align:center;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

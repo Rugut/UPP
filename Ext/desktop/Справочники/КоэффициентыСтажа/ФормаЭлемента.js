@@ -8,7 +8,10 @@
 	title: 'Размеры начислений в зависимости от стажа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -45,6 +48,7 @@
 			style: 'position:absolute;left:8px;top:59px;width:422px;height:16px;',
 		},
 		{
+			id: 'Шкала',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:99px;width:422px;height:160px;',
 			height: 160,width: 422,
@@ -64,18 +68,19 @@
 				},
 				{
 					text:'Размер',
-					width:'120',
+					width:'1200',
 					dataIndex:'Величина',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КоэффициентыСтажа").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КоэффициентыСтажа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КоэффициентыСтажа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,8 +94,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Шкала');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

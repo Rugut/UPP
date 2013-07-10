@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ПроизвольныеОтчеты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("07f4ac34-5646-44e1-ad08-1d195885b996");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191749.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012019.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -46,7 +46,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ПроизвольныеОтчеты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ПроизвольныеОтчеты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,11 +71,11 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3263 [СхемаКомпоновкиДанных]
-					,_Fld3264 [Описание]
-					,_Fld3265RRef [ВидПроизвольногоОтчета]
-					From _Reference205(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23713 [СхемаКомпоновкиДанных]
+					,_Fld23714 [Описание]
+					,_Fld23715RRef [ВидПроизвольногоОтчета]
+					From _Reference23122(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

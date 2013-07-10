@@ -93,20 +93,20 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference64(
+						Insert Into _Reference26(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld1975
-						,_Fld1976
-						,_Fld1977
-						,_Fld1978
-						,_Fld1979
-						,_Fld1980
-						,_Fld1981)
+						,_Fld954
+						,_Fld955
+						,_Fld956
+						,_Fld957
+						,_Fld958
+						,_Fld959
+						,_Fld960)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -125,7 +125,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference64
+						Update _Reference26
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -133,13 +133,13 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld1975	= @РазмерСчетчика
-						,_Fld1976	= @ВПределахОрганизации
-						,_Fld1977	= @ВПределахПодразделения
-						,_Fld1978	= @ВПределахНоменклатурнойГруппы
-						,_Fld1979	= @ВПределахНоменклатуры
-						,_Fld1980	= @НачальноеЗначение
-						,_Fld1981	= @КонечноеЗначение
+						,_Fld954	= @РазмерСчетчика
+						,_Fld955	= @ВПределахОрганизации
+						,_Fld956	= @ВПределахПодразделения
+						,_Fld957	= @ВПределахНоменклатурнойГруппы
+						,_Fld958	= @ВПределахНоменклатуры
+						,_Fld959	= @НачальноеЗначение
+						,_Fld960	= @КонечноеЗначение
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -166,7 +166,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference64
+					Команда.CommandText = @"Delete _Reference26
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

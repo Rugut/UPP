@@ -25,10 +25,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -66,10 +66,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -107,10 +107,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)";
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.УстановкаДиапазоновБазовыхЦен();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -144,10 +144,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -185,10 +185,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -226,10 +226,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)";
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.УстановкаДиапазоновБазовыхЦен();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -263,10 +263,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)";
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.УстановкаДиапазоновБазовыхЦен();
 					using (var Читалка = Команда.ExecuteReader())
 					{

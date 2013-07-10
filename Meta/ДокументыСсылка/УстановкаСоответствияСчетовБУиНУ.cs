@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УстановкаСоответствияСчетовБУиНУ:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("167f8a45-26f8-4b29-9a89-6040593c33e5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191508.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012004.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -60,9 +60,9 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18764 [Комментарий]
-					,_Fld18765RRef [Ответственный]
-					From _Document629(NOLOCK)
+					,_Fld12320 [Комментарий]
+					,_Fld12321RRef [Ответственный]
+					From _Document482(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

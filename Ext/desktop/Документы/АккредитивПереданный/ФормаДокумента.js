@@ -8,7 +8,10 @@
 	title: 'Аккредитив переданный',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -402,6 +405,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:627px;height:143px;',
 			height: 143,width: 627,
@@ -510,7 +514,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АккредитивПереданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АккредитивПереданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -562,6 +566,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1075,7 +1096,8 @@
 			text: 'Подразделение:',
 			style: 'position:absolute;left:8px;top:396px;width:84px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Постоянные и временные разницы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -41,7 +44,8 @@
 			height: 19,
 			style: 'position:absolute;left:76px;top:34px;width:123px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

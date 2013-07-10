@@ -8,7 +8,10 @@
 	title: 'Сведения о страховых взносах и стаже застрахованных лиц (СЗВ-4, СЗВ-6)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -108,6 +111,7 @@
 			]
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:286px;width:984px;height:175px;',
 			height: 175,width: 984,
@@ -121,19 +125,19 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Адрес для информирования',
-					width:'120',
+					width:'1200',
 					dataIndex:'АдресДляИнформирования',
 					flex:1,
 				},
 				{
 					text:'Страховой номер',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтраховойНомерПФР',
 					flex:1,
 				},
@@ -157,7 +161,7 @@
 				},
 				{
 					text:'Страховая часть',
-					width:'260',
+					width:'2600',
 					dataIndex:'КолонкаСтраховая',
 					flex:1,
 				},
@@ -187,7 +191,7 @@
 				},
 				{
 					text:'Накопительная часть',
-					width:'260',
+					width:'2600',
 					dataIndex:'КолонкаНакопительная',
 					flex:1,
 				},
@@ -222,7 +226,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОТрудовомСтажеИЗаработкеСЗВ4/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОТрудовомСтажеИЗаработкеСЗВ4/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -277,6 +281,23 @@
 						name:'ДоУплаченоНакопительная',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -578,7 +599,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

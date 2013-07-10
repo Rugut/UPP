@@ -8,7 +8,10 @@
 	title: 'Продажи по периодам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:884px;height:539px;',
@@ -20,6 +23,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеТовары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:870px;height:483px;',
 			height: 483,width: 870,
@@ -770,7 +774,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1144,6 +1148,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеТовары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -1240,6 +1261,7 @@
 			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеСклады',
 			xtype: 'grid',
 			style: 'position:absolute;left:438px;top:46px;width:424px;height:158px;',
 			height: 158,width: 424,
@@ -1270,7 +1292,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1284,6 +1306,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСклады');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1291,6 +1330,7 @@
 			style: 'position:absolute;left:438px;top:213px;width:424px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеТипыЦен',
 			xtype: 'grid',
 			style: 'position:absolute;left:438px;top:253px;width:424px;height:158px;',
 			height: 158,width: 424,
@@ -1315,7 +1355,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1325,6 +1365,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеТипыЦен');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1367,6 +1424,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеВыбранныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:424px;height:365px;',
 			height: 365,width: 424,
@@ -1385,13 +1443,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеВыбранныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1406,6 +1481,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:424px;height:365px;',
 			height: 365,width: 424,
@@ -1454,7 +1530,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1477,6 +1553,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1484,6 +1577,7 @@
 			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеСортировка',
 			xtype: 'grid',
 			style: 'position:absolute;left:438px;top:46px;width:424px;height:365px;',
 			height: 365,width: 424,
@@ -1508,7 +1602,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПродажиПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1519,6 +1613,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСортировка');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1528,7 +1639,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

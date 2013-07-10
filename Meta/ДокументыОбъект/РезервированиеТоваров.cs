@@ -132,20 +132,20 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document579(
+						Insert Into _Document446(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld16690RRef
-						,_Fld16691
-						,_Fld16692RRef
-						,_Fld16693RRef
-						,_Fld16694RRef
-						,_Fld16695RRef
-						,_Fld16696
-						,_Fld16697)
+						,_Fld11329RRef
+						,_Fld11330
+						,_Fld11331RRef
+						,_Fld11332RRef
+						,_Fld11333RRef
+						,_Fld11334RRef
+						,_Fld11335
+						,_Fld11336)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -163,20 +163,20 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document579
+						Update _Document446
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld16690RRef	= @ВидОперации
-						,_Fld16691	= @Комментарий
-						,_Fld16692RRef	= @Подразделение
-						,_Fld16693RRef	= @Контрагент
-						,_Fld16694RRef	= @Ответственный
-						,_Fld16695RRef	= @Организация
-						,_Fld16696	= @ОтражатьВБухгалтерскомУчете
-						,_Fld16697	= @ОтражатьВНалоговомУчете
+						,_Fld11329RRef	= @ВидОперации
+						,_Fld11330	= @Комментарий
+						,_Fld11331RRef	= @Подразделение
+						,_Fld11332RRef	= @Контрагент
+						,_Fld11333RRef	= @Ответственный
+						,_Fld11334RRef	= @Организация
+						,_Fld11335	= @ОтражатьВБухгалтерскомУчете
+						,_Fld11336	= @ОтражатьВНалоговомУчете
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -198,7 +198,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document579
+					Команда.CommandText = @"Delete _Document446
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

@@ -8,7 +8,10 @@
 	title: 'Регистрация счетов-фактур налогового агента',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -61,6 +64,7 @@
 			style: 'position:absolute;left:165px;top:33px;width:80px;height:19px;',
 		},
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:725px;height:263px;',
 			height: 263,width: 725,
@@ -80,25 +84,25 @@
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Документ основание',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОснование',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -110,7 +114,7 @@
 				},
 				{
 					text:'Сумма НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДС',
 					flex:1,
 				},
@@ -122,7 +126,7 @@
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -133,7 +137,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНалоговогоАгента/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНалоговогоАгента/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -168,6 +172,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -199,7 +220,8 @@
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

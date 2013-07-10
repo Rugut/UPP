@@ -8,7 +8,10 @@
 	title: 'Статистика: Форма П-2',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись6',
@@ -94,7 +97,8 @@
 			height: 19,
 			style: 'position:absolute;left:58px;top:343px;width:119px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

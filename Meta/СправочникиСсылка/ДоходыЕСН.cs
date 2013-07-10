@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ДоходыЕСН:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("084ef5bc-7c3d-4a5f-a823-64dd6ae447bb");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191718.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012016.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -47,7 +47,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ДоходыЕСН(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ДоходыЕСН(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -59,11 +72,11 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2293 [ВходитВБазуФОМС]
-					,_Fld2294 [ВходитВБазуФСС]
-					,_Fld2295 [ВходитВБазуФедеральныйБюджет]
-					From _Reference94(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1127 [ВходитВБазуФОМС]
+					,_Fld1128 [ВходитВБазуФСС]
+					,_Fld1129 [ВходитВБазуФедеральныйБюджет]
+					From _Reference53(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

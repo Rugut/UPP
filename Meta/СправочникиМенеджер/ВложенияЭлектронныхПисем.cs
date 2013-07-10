@@ -27,13 +27,13 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -77,13 +77,13 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)";
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ВложенияЭлектронныхПисем();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -123,14 +123,14 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -173,13 +173,13 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -223,13 +223,13 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)";
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ВложенияЭлектронныхПисем();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -269,13 +269,13 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld1986RRef [Объект]
-					,_Fld1987 [ИмяФайла]
-					,_Fld1988 [Хранилище]
-					,_Fld1989 [ИДФайлаПочтовогоПисьма]
-					,_Fld1990_TYPE [Предмет_Тип],_Fld1990_RRRef [Предмет],_Fld1990_RTRef [Предмет_Вид]
-					,_Fld1991 [ТекстФайла]
-					From _Reference67(NOLOCK)";
+					,_Fld964RRef [Объект]
+					,_Fld965 [ИмяФайла]
+					,_Fld966 [Хранилище]
+					,_Fld967 [ИДФайлаПочтовогоПисьма]
+					,_Fld968_TYPE [Предмет_Тип],_Fld968_RRRef [Предмет],_Fld968_RTRef [Предмет_Вид]
+					,_Fld21221 [ТекстФайла]
+					From _Reference30(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ВложенияЭлектронныхПисем();
 					using (var Читалка = Команда.ExecuteReader())
 					{

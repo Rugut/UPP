@@ -1,22 +1,7 @@
-﻿
-
-Ext.define('MyDesktop.App', {
-   
+﻿Ext.define('MyDesktop.App',
+{
     extend: 'Ext.ux.desktop.App',
-
     requires: [
-        //'Ext.window.MessageBox',
-
-        //'Ext.ux.desktop.ShortcutModel',
-
-        //'MyDesktop.SystemStatus',
-        //'MyDesktop.VideoWindow',
-        //'MyDesktop.GridWindow',
-        //'MyDesktop.Tovar',
-        //'MyDesktop.Nomenclatura',
-        //'MyDesktop.TabWindow',
-        
-
     'Ext.tab.Panel',
     'Ext.form.field.Text',
     'Ext.form.Label',
@@ -34,8 +19,6 @@ Ext.define('MyDesktop.App', {
     'Ext.data.Store',
 
         //'MyDesktop.ЗагрузкаTab',
-
-
         //'MyDesktop.AccordionWindow',
         //'MyDesktop.Notepad',
         //'MyDesktop.BogusMenuModule',
@@ -47,8 +30,6 @@ Ext.define('MyDesktop.App', {
         'Меню.ДокументыФормыСписка',
         'Меню.ОтчетыФормыОтчета',
         'Меню.ОбработкиФормыОбработки',
-
-
 //        'MyDesktop.Blockalanche',
         'MyDesktop.Settings',
         //'Ext.grid.*',
@@ -56,14 +37,13 @@ Ext.define('MyDesktop.App', {
     ],
 
     init: function() {
-        // custom logic before getXYZ methods get called...
 
         //Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов
         //    enabled: true,  //Загрузчик активен
-        //    disableCaching: true,   //Не кеширует файоы
-        //    paths: {
-        //        Base: "js/Base" //Путь в пространству данных Base
-        //    }
+        //    disableCaching: true,   //Не кеширует файлы
+            //paths: {
+            //    Данные: "Данные" //Путь в пространству данных Base
+            //}
         //    //paths: {
         //    //    MyDesktop: "desktop" //Путь в пространству данных Base
         //    //}
@@ -97,13 +77,9 @@ Ext.define('MyDesktop.App', {
         //        }]
         //    }]
         //});
-
-        //alert("Hi win");
+        
         //win.show();
         
-
-
-        // now ready...
     },
 
 
@@ -179,14 +155,14 @@ Ext.define('MyDesktop.App', {
                 width: 100,
                 items: [
                     {
-                        text:'Settings',
+                        text:'Настройки',
                         iconCls:'settings',
                         handler: me.onSettings,
                         scope: me
                     },
                     '-',
                     {
-                        text:'Logout',
+                        text:'Выход',
                         iconCls:'logout',
                         handler: me.onLogout,
                         scope: me
@@ -214,7 +190,7 @@ Ext.define('MyDesktop.App', {
 
     onLogout: function ()
     {
-        Ext.Msg.confirm('Logout', 'Are you sure you want to logout?');
+        Ext.Msg.confirm('Logout', 'Хотите выйти?');
     },
 
     onSettings: function ()

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УчетПоложенийПереходногоПериодаПоНДС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3d59ace7-3160-46f4-9d69-e3b8fc809311");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191447.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012003.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,10 +61,10 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18882RRef [Организация]
-					,_Fld18883RRef [Ответственный]
-					,_Fld18884 [Комментарий]
-					From _Document637(NOLOCK)
+					,_Fld12437RRef [Организация]
+					,_Fld12438RRef [Ответственный]
+					,_Fld12439 [Комментарий]
+					From _Document490(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

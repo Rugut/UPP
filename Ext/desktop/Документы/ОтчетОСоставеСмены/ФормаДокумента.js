@@ -8,7 +8,10 @@
 	title: 'Отчет о составе смены',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
@@ -86,6 +89,7 @@
 			style: 'position:absolute;left:8px;top:109px;width:734px;height:16px;',
 		},
 		{
+			id: 'СоставСмены',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:150px;width:734px;height:157px;',
 			height: 157,width: 734,
@@ -99,7 +103,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -123,13 +127,13 @@
 				},
 				{
 					text:'Замещающий сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЗамещающийСотрудник',
 					flex:1,
 				},
 				{
 					text:'Примечание',
-					width:'120',
+					width:'1200',
 					dataIndex:'Примечание',
 					flex:1,
 				},
@@ -140,7 +144,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОСоставеСмены/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОСоставеСмены/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -165,6 +169,23 @@
 						name:'Примечание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставСмены');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -209,7 +230,8 @@
 			text: '01.01.0001 (00:00 - 23:59)',
 			style: 'position:absolute;left:273px;top:57px;width:156px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

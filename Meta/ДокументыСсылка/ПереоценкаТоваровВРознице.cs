@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПереоценкаТоваровВРознице:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("0f8bad73-7a1a-4a69-8e0c-8c67163c2be4");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191518.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012005.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

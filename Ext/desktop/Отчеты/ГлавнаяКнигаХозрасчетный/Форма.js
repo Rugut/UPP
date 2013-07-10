@@ -8,7 +8,10 @@
 	title: 'Главная книга',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -65,7 +68,8 @@
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

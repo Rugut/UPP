@@ -108,7 +108,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference97(
+						Insert Into _Reference55(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -116,12 +116,12 @@ namespace V82.СправочникиОбъект
 						,_OwnerID_TYPE,_OwnerID_RTRef,_OwnerID_RRRef
 						,_Code
 						,_Description
-						,_Fld2307RRef
-						,_Fld2308
-						,_Fld2309
-						,_Fld2310
-						,_Fld2311
-						,_Fld2312)
+						,_Fld1134RRef
+						,_Fld1135
+						,_Fld1136
+						,_Fld1137
+						,_Fld21237
+						,_Fld21238)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -140,7 +140,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference97
+						Update _Reference55
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -149,12 +149,12 @@ namespace V82.СправочникиОбъект
 						,_OwnerID_TYPE	= @ВладелецТип,_OwnerID_RTRef	= @ВладелецВид,_OwnerID_RRRef	= @Владелец
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2307RRef	= @ЕдиницаПоКлассификатору
-						,_Fld2308	= @Вес
-						,_Fld2309	= @Объем
-						,_Fld2310	= @Коэффициент
-						,_Fld2311	= @ПорогОкругления
-						,_Fld2312	= @ПредупреждатьОНецелыхМестах
+						,_Fld1134RRef	= @ЕдиницаПоКлассификатору
+						,_Fld1135	= @Вес
+						,_Fld1136	= @Объем
+						,_Fld1137	= @Коэффициент
+						,_Fld21237	= @ПорогОкругления
+						,_Fld21238	= @ПредупреждатьОНецелыхМестах
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -183,7 +183,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference97
+					Команда.CommandText = @"Delete _Reference55
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

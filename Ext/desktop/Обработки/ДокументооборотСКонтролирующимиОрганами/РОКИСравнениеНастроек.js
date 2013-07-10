@@ -8,7 +8,10 @@
 	title: 'Сравнение настроек',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -33,7 +36,8 @@
 			text: '',
 			style: 'position:absolute;left:126px;top:29px;width:512px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

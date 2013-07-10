@@ -8,7 +8,10 @@
 	title: 'Настройка документа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать подразделения НЗП',
@@ -19,7 +22,8 @@
 			boxLabel: 'Использовать наработку',
 			style: 'position:absolute;left:8px;top:6px;width:384px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

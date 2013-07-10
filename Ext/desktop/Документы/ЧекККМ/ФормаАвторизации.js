@@ -8,7 +8,10 @@
 	title: 'Авторизация: Введите пароль или прочитайте регистрационную карту',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -39,7 +42,8 @@
 			text: 'Пароль:',
 			style: 'position:absolute;left:8px;top:32px;width:104px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

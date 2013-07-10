@@ -8,8 +8,12 @@
 	title: 'Справочник Учетные записи документооборота',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:972px;height:385px;',
 			height: 385,width: 972,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -59,13 +63,13 @@
 				},
 				{
 					text:'Имя пользователя POP3',
-					width:'160',
+					width:'1600',
 					dataIndex:'ИмяПользователяPOP3',
 					flex:1,
 				},
 				{
 					text:'Сервер POP3',
-					width:'160',
+					width:'1600',
 					dataIndex:'СерверPOP3',
 					flex:1,
 				},
@@ -77,13 +81,13 @@
 				},
 				{
 					text:'Имя пользователя SMTP',
-					width:'160',
+					width:'1600',
 					dataIndex:'ИмяПользователяSMTP',
 					flex:1,
 				},
 				{
 					text:'Сервер SMTP',
-					width:'160',
+					width:'1600',
 					dataIndex:'СерверSMTP',
 					flex:1,
 				},
@@ -106,7 +110,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,8 +157,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

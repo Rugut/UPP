@@ -8,7 +8,10 @@
 	title: 'Возврат на работу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -64,6 +67,7 @@
 			style: 'position:absolute;left:94px;top:271px;width:342px;height:19px;',
 		},
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:145px;width:428px;height:120px;',
 			height: 120,width: 428,
@@ -106,7 +110,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьВозвратНаРаботу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьВозвратНаРаботу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -125,6 +129,23 @@
 						name:'ЗаниматьСтавку',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -189,7 +210,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

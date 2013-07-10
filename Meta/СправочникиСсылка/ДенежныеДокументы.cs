@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ДенежныеДокументы:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3742e0a9-665a-4f85-a30c-690b5bedd641");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191604.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012009.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -46,7 +46,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ДенежныеДокументы(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ДенежныеДокументы(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -59,10 +72,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2100RRef [ВидДокумента]
-					,_Fld2101 [Стоимость]
-					From _Reference82(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23390RRef [ВидДокумента]
+					,_Fld23391 [Стоимость]
+					From _Reference23094(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

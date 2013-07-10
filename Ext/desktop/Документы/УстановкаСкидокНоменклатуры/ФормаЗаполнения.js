@@ -8,7 +8,10 @@
 	title: 'Установка скидок номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -75,7 +78,8 @@
 			text: 'Закрыть',
 			style: 'position:absolute;left:456px;top:32px;width:82px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

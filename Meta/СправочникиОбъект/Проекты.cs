@@ -99,7 +99,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference203(
+						Insert Into _Reference129(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -108,10 +108,10 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3257
-						,_Fld3258
-						,_Fld3259RRef
-						,_Fld3260)
+						,_Fld1655
+						,_Fld1656
+						,_Fld1657RRef
+						,_Fld1658)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -129,7 +129,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference203
+						Update _Reference129
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -139,10 +139,10 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3257	= @ДатаНачала
-						,_Fld3258	= @ДатаОкончания
-						,_Fld3259RRef	= @Ответственный
-						,_Fld3260	= @Описание
+						,_Fld1655	= @ДатаНачала
+						,_Fld1656	= @ДатаОкончания
+						,_Fld1657RRef	= @Ответственный
+						,_Fld1658	= @Описание
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -168,7 +168,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference203
+					Команда.CommandText = @"Delete _Reference129
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

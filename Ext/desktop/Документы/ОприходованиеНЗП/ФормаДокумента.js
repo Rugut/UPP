@@ -8,7 +8,10 @@
 	title: 'Оприходование незавершенного производства',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -111,6 +114,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:121px;',
 			height: 121,width: 622,
@@ -243,7 +247,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОприходованиеНЗП/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОприходованиеНЗП/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -307,6 +311,23 @@
 						name:'СчетЗатратНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -581,7 +602,8 @@
 			height: 19,
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -99,21 +99,21 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference128(
+						Insert Into _Reference76(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld2448
-						,_Fld2449
-						,_Fld2450
-						,_Fld2451
-						,_Fld2452
-						,_Fld2453
-						,_Fld2454
-						,_Fld2455RRef)
+						,_Fld1243
+						,_Fld1232
+						,_Fld1233
+						,_Fld1235
+						,_Fld1237
+						,_Fld1231
+						,_Fld1236
+						,_Fld1244RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -133,7 +133,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference128
+						Update _Reference76
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -141,14 +141,14 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2448	= @Фамилия
-						,_Fld2449	= @Имя
-						,_Fld2450	= @КоличествоДнейДоНапоминания
-						,_Fld2451	= @НапоминатьОДнеРождения
-						,_Fld2452	= @Отчество
-						,_Fld2453	= @ДатаРождения
-						,_Fld2454	= @Описание
-						,_Fld2455RRef	= @Пол
+						,_Fld1243	= @Фамилия
+						,_Fld1232	= @Имя
+						,_Fld1233	= @КоличествоДнейДоНапоминания
+						,_Fld1235	= @НапоминатьОДнеРождения
+						,_Fld1237	= @Отчество
+						,_Fld1231	= @ДатаРождения
+						,_Fld1236	= @Описание
+						,_Fld1244RRef	= @Пол
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -176,7 +176,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference128
+					Команда.CommandText = @"Delete _Reference76
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

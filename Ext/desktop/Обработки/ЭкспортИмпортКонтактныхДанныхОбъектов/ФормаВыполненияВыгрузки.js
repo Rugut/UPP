@@ -8,7 +8,10 @@
 	title: 'Выполнение выгрузки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:480px;height:400px;',
@@ -21,6 +24,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаПолейВыгрузки',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:480px;height:360px;',
 			height: 360,width: 480,
@@ -40,13 +44,13 @@
 				},
 				{
 					text:'Тип',
-					width:'180',
+					width:'1800',
 					dataIndex:'Тип',
 					flex:1,
 				},
 				{
 					text:'Имя поля выгрузки',
-					width:'220',
+					width:'2200',
 					dataIndex:'СинонимПоля',
 					flex:1,
 				},
@@ -57,7 +61,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -73,6 +77,23 @@
 						name:'СинонимПоля',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаПолейВыгрузки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -113,6 +134,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаВыгрузкиОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:480px;height:360px;',
 			height: 360,width: 480,
@@ -126,13 +148,13 @@
 				},
 				{
 					text:'Объект выгрузки',
-					width:'220',
+					width:'2200',
 					dataIndex:'ОбъектВыгрузки',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'220',
+					width:'2200',
 					dataIndex:'Владелец',
 					flex:1,
 				},
@@ -143,7 +165,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭкспортИмпортКонтактныхДанныхОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -156,6 +178,23 @@
 						name:'Владелец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаВыгрузкиОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -218,7 +257,8 @@
 			boxLabel: 'Сохранять соответствие параметров для последующих выгрузок',
 			style: 'position:absolute;left:8px;top:413px;width:369px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

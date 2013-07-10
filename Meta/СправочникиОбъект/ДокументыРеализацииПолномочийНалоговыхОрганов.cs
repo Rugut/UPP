@@ -102,21 +102,21 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference89(
+						Insert Into _Reference23096(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld2249RRef
-						,_Fld2250RRef
-						,_Fld2251
-						,_Fld2252
-						,_Fld2254
-						,_Fld2255
-						,_Fld2256
-						,_Fld2257)
+						,_Fld23477RRef
+						,_Fld23478RRef
+						,_Fld23479
+						,_Fld23480
+						,_Fld23482
+						,_Fld23483
+						,_Fld23484
+						,_Fld23485)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -136,7 +136,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference89
+						Update _Reference23096
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -144,14 +144,14 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2249RRef	= @НалоговыйОрган
-						,_Fld2250RRef	= @Организация
-						,_Fld2251	= @Идентификатор
-						,_Fld2252	= @ИдентификаторОснования
-						,_Fld2254	= @НомерДокумента
-						,_Fld2255	= @ДатаДокумента
-						,_Fld2256	= @ДатаСообщения
-						,_Fld2257	= @ДатаОтправки
+						,_Fld23477RRef	= @НалоговыйОрган
+						,_Fld23478RRef	= @Организация
+						,_Fld23479	= @Идентификатор
+						,_Fld23480	= @ИдентификаторОснования
+						,_Fld23482	= @НомерДокумента
+						,_Fld23483	= @ДатаДокумента
+						,_Fld23484	= @ДатаСообщения
+						,_Fld23485	= @ДатаОтправки
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -179,7 +179,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference89
+					Команда.CommandText = @"Delete _Reference23096
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

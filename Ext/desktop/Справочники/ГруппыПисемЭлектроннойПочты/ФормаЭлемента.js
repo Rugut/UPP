@@ -8,7 +8,10 @@
 	title: 'Группы писем электронной почты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -61,7 +64,8 @@
 			boxLabel: 'Использовать предметы писем',
 			style: 'position:absolute;left:8px;top:81px;width:184px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

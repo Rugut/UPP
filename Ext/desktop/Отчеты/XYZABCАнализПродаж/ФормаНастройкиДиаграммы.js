@@ -8,7 +8,10 @@
 	title: 'Настройка диаграммы (XYZ/ABC-анализ продаж)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:254px;height:353px;',
@@ -20,6 +23,7 @@
 					items:
 					[
 		{
+			id: 'ПоказателиДиаграммы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:92px;width:240px;height:235px;',
 			height: 235,width: 240,
@@ -33,7 +37,7 @@
 				},
 				{
 					text:'Имя показателя',
-					width:'220',
+					width:'2200',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -44,7 +48,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +58,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиДиаграммы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -180,7 +201,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

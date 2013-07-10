@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:102px;width:553px;height:70px;',
@@ -172,7 +175,8 @@
 			title: 'Контролируемые значения',
 			style: 'position:absolute;left:8px;top:57px;width:553px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

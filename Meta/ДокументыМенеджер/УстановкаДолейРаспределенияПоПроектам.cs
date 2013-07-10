@@ -25,11 +25,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -67,11 +67,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -109,11 +109,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)";
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.УстановкаДолейРаспределенияПоПроектам();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -147,11 +147,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -189,11 +189,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -231,11 +231,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)";
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.УстановкаДолейРаспределенияПоПроектам();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -269,11 +269,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18556 [Комментарий]
-					,_Fld18557RRef [Организация]
-					,_Fld18558RRef [Ответственный]
-					,_Fld18559RRef [ВидРаспределенияПоПроектам]
-					From _Document620(NOLOCK)";
+					,_Fld12155 [Комментарий]
+					,_Fld12156RRef [Организация]
+					,_Fld12157RRef [Ответственный]
+					,_Fld12158RRef [ВидРаспределенияПоПроектам]
+					From _Document474(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.УстановкаДолейРаспределенияПоПроектам();
 					using (var Читалка = Команда.ExecuteReader())
 					{

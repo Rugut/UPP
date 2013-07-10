@@ -8,7 +8,10 @@
 	title: 'Диаграмма',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -19,7 +22,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:98px;top:33px;width:360px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

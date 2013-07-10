@@ -8,7 +8,10 @@
 	title: 'Параметры выпуска продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -57,7 +60,8 @@
 			text: 'Группа:',
 			style: 'position:absolute;left:8px;top:33px;width:102px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

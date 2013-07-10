@@ -8,8 +8,12 @@
 	title: 'Цифровые сертификаты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Сертификаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:729px;height:269px;',
 			height: 269,width: 729,
@@ -23,13 +27,13 @@
 				},
 				{
 					text:'Имя владельца',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИмяВладельца',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -65,7 +69,7 @@
 				},
 				{
 					text:'Отпечаток',
-					width:'240',
+					width:'2400',
 					dataIndex:'Отпечаток',
 					flex:1,
 				},
@@ -83,25 +87,25 @@
 				},
 				{
 					text:'Поставщик',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Серийный номер',
-					width:'120',
+					width:'1200',
 					dataIndex:'СерийныйНомер',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Владелец',
-					width:'120',
+					width:'1200',
 					dataIndex:'Владелец',
 					flex:1,
 				},
@@ -112,7 +116,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -161,6 +165,23 @@
 						name:'Владелец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Сертификаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -252,7 +273,8 @@
 			text: '',
 			style: 'position:absolute;left:91px;top:390px;width:275px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

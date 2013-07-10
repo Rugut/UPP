@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ИнформационныеКарты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d48a9040-ce93-4dd7-86c6-e0e6b848fea5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190834.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011931.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -53,7 +53,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ИнформационныеКарты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ИнформационныеКарты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -66,14 +79,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -92,7 +105,7 @@ namespace V82.СправочникиСсылка
 							КодКарты = Читалка.GetString(6);
 							ВидКарты = V82.Перечисления/*Ссылка*/.ВидыИнформационныхКарт.ПустаяСсылка.Получить((byte[])Читалка.GetValue(10));
 							ТипКарты = V82.Перечисления/*Ссылка*/.ТипыИнформационныхКарт.ПустаяСсылка.Получить((byte[])Читалка.GetValue(11));
-							ВидДисконтнойКарты = new V82.СправочникиСсылка.ВидыДисконтныхКарт((byte[])Читалка.GetValue(13));
+							ВидДисконтнойКарты = new V82.СправочникиСсылка.ВидыДисконтныхКарт((byte[])Читалка.GetValue(13),Глубина+1);
 							//return Ссылка;
 						}
 						else

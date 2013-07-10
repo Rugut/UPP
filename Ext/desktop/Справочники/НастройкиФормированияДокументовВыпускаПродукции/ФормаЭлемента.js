@@ -8,7 +8,10 @@
 	title: 'Настройки формирования документов выпуска продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -230,7 +233,8 @@
 			boxLabel: 'Не обрабатывать период до завершения смен ',
 			style: 'position:absolute;left:8px;top:105px;width:260px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

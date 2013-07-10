@@ -8,7 +8,10 @@
 	title: 'Переоценка валютных статей при бюджетировании',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись3',
@@ -141,7 +144,8 @@
 			height: 19,
 			style: 'position:absolute;left:216px;top:33px;width:132px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

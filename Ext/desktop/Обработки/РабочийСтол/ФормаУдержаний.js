@@ -8,7 +8,10 @@
 	title: 'Удержания',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:370px;top:33px;width:367px;height:497px;',
@@ -26,6 +29,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:367px;height:16px;',
 		},
 		{
+			id: 'УдержанияРегл',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:367px;height:476px;',
 			height: 476,width: 367,
@@ -62,7 +66,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -78,6 +82,23 @@
 						name:'СпособРасчета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УдержанияРегл');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -101,6 +122,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:352px;height:16px;',
 		},
 		{
+			id: 'УдержанияУпр',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:352px;height:476px;',
 			height: 476,width: 352,
@@ -131,7 +153,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,12 +167,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УдержанияУпр');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

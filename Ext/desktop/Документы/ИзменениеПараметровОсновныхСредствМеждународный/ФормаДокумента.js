@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -99,6 +102,7 @@
 			]
 		},
 		{
+			id: 'ОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:634px;height:220px;',
 			height: 220,width: 634,
@@ -243,7 +247,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеПараметровОсновныхСредствМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеПараметровОсновныхСредствМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -314,6 +318,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -372,7 +393,8 @@
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:84px;width:634px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

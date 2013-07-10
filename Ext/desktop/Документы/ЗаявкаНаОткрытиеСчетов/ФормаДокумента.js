@@ -8,7 +8,10 @@
 	title: 'Заявка на открытие счетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -129,6 +132,7 @@
 			style: 'position:absolute;left:14px;top:202px;width:64px;height:19px;text-align:left;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:268px;width:631px;height:125px;',
 			height: 125,width: 631,
@@ -148,7 +152,7 @@
 				},
 				{
 					text:'Номер лицевого счета',
-					width:'180',
+					width:'1800',
 					dataIndex:'НомерЛицевогоСчета',
 					flex:1,
 				},
@@ -160,19 +164,19 @@
 				},
 				{
 					text:'Имя (лат.)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЭмбоссированныйТекст1',
 					flex:1,
 				},
 				{
 					text:'Фамилия (лат.)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЭмбоссированныйТекст2',
 					flex:1,
 				},
 				{
 					text:'Титул (лат.)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЭмбоссированныйТекст3',
 					flex:1,
 				},
@@ -363,7 +367,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаОткрытиеСчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаОткрытиеСчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -479,6 +483,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -591,7 +612,8 @@
 			name: 'ДатаВыплатыЗаработнойПлаты',
 			style: 'position:absolute;left:504px;top:177px;width:49px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

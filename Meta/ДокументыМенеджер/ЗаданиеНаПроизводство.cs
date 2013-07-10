@@ -22,13 +22,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -68,13 +68,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -114,13 +114,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)";
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ЗаданиеНаПроизводство();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -156,13 +156,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -202,13 +202,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -248,13 +248,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)";
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ЗаданиеНаПроизводство();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -290,13 +290,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld6884RRef [ВидЗадания]
-					,_Fld6885 [ДатаЗадания]
-					,_Fld6886 [Комментарий]
-					,_Fld6887RRef [Ответственный]
-					,_Fld6888RRef [Подразделение]
-					,_Fld6889RRef [Смена]
-					From _Document359(NOLOCK)";
+					,_Fld4225RRef [ВидЗадания]
+					,_Fld4226 [ДатаЗадания]
+					,_Fld4227 [Комментарий]
+					,_Fld4228RRef [Ответственный]
+					,_Fld4229RRef [Подразделение]
+					,_Fld4230RRef [Смена]
+					From _Document254(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ЗаданиеНаПроизводство();
 					using (var Читалка = Команда.ExecuteReader())
 					{

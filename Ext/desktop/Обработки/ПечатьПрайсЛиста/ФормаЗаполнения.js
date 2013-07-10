@@ -8,7 +8,10 @@
 	title: 'Печать прайс-листа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:57px;width:657px;height:46px;',
@@ -113,7 +116,8 @@
 			text: 'На дату:',
 			style: 'position:absolute;left:7px;top:33px;width:104px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

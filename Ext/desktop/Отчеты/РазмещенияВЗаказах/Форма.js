@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
@@ -159,7 +162,8 @@
 			boxLabel: 'Заказы на производство',
 			style: 'position:absolute;left:306px;top:56px;width:153px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

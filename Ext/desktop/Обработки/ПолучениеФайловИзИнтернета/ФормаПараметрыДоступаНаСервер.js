@@ -8,7 +8,10 @@
 	title: 'Параметры доступа на сервер',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -56,7 +59,8 @@
 			text: 'Авторизация на сервере',
 			style: 'position:absolute;left:8px;top:8px;width:309px;height:40px;text-align:center;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

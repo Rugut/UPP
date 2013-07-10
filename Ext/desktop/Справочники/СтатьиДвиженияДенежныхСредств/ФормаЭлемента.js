@@ -8,7 +8,10 @@
 	title: 'Статьи движения денежных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -73,7 +76,8 @@
 			height: 19,
 			style: 'position:absolute;left:119px;top:56px;width:370px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

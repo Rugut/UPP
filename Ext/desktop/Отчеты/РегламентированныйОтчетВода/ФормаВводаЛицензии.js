@@ -8,7 +8,10 @@
 	title: 'Лицензия на водопользование',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПолеВводаСерия',
@@ -66,7 +69,8 @@
 			text: '',
 			style: 'position:absolute;left:99px;top:108px;width:105px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

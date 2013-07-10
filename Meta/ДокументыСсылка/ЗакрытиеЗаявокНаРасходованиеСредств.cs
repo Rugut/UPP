@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗакрытиеЗаявокНаРасходованиеСредств:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3de9738a-6be9-4832-a7bf-155f7512328a");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191353.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011959.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -69,18 +69,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7251RRef [Ответственный]
-					,_Fld7252 [ОтборЦФО]
-					,_Fld7253RRef [ЦФО]
-					,_Fld7254 [ОтборОтветственный]
-					,_Fld7255RRef [ОтветственныйЗаявка]
-					,_Fld7256 [ОтборКонтрагент]
-					,_Fld7257RRef [Контрагент]
-					,_Fld7258RRef [Состояние]
-					,_Fld7259 [Комментарий]
-					,_Fld7260 [ОтборДатаНач]
-					,_Fld7261 [ОтборДатаКон]
-					From _Document369(NOLOCK)
+					,_Fld4578RRef [Ответственный]
+					,_Fld4579 [ОтборЦФО]
+					,_Fld4580RRef [ЦФО]
+					,_Fld4581 [ОтборОтветственный]
+					,_Fld4582RRef [ОтветственныйЗаявка]
+					,_Fld4583 [ОтборКонтрагент]
+					,_Fld4584RRef [Контрагент]
+					,_Fld4585RRef [Состояние]
+					,_Fld4586 [Комментарий]
+					,_Fld4587 [ОтборДатаНач]
+					,_Fld4588 [ОтборДатаКон]
+					From _Document263(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

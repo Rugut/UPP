@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class АктСверкиВзаиморасчетов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("ea12bd15-8be3-45b9-8675-f9f67f3915ae");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191911.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012030.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -99,21 +99,21 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld4828RRef [Организация]
-					,_Fld4829RRef [Контрагент]
-					,_Fld4830RRef [ДоговорКонтрагента]
-					,_Fld4831_TYPE [Сделка_Тип],_Fld4831_RRRef [Сделка],_Fld4831_RTRef [Сделка_Вид]
-					,_Fld4832 [ДатаНачала]
-					,_Fld4833 [ДатаОкончания]
-					,_Fld4834 [Комментарий]
-					,_Fld4835RRef [Ответственный]
-					,_Fld4836RRef [ВалютаДокумента]
-					,_Fld4837RRef [ПредставительОрганизации]
-					,_Fld4838RRef [ПредставительКонтрагента]
-					,_Fld4839 [ОстатокНаНачало]
-					,_Fld4840 [Расхождение]
-					,_Fld4841 [СверкаСогласована]
-					From _Document303(NOLOCK)
+					,_Fld2717RRef [Организация]
+					,_Fld2718RRef [Контрагент]
+					,_Fld2719RRef [ДоговорКонтрагента]
+					,_Fld2720_TYPE [Сделка_Тип],_Fld2720_RRRef [Сделка],_Fld2720_RTRef [Сделка_Вид]
+					,_Fld2721 [ДатаНачала]
+					,_Fld2722 [ДатаОкончания]
+					,_Fld2723 [Комментарий]
+					,_Fld2724RRef [Ответственный]
+					,_Fld2725RRef [ВалютаДокумента]
+					,_Fld2726RRef [ПредставительОрганизации]
+					,_Fld2727RRef [ПредставительКонтрагента]
+					,_Fld2728 [ОстатокНаНачало]
+					,_Fld2729 [Расхождение]
+					,_Fld2730 [СверкаСогласована]
+					From _Document207(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

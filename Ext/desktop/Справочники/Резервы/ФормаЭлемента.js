@@ -8,7 +8,10 @@
 	title: 'Оценочные обязательства и резервы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -45,7 +48,8 @@
 			text: 'Показать расчетную базу…',
 			style: 'position:absolute;left:8px;top:57px;width:254px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

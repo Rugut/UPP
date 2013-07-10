@@ -8,7 +8,10 @@
 	title: 'Ввод сведений о регламентированном учете плановых начислений сотрудников организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -107,6 +110,7 @@
 			style: 'position:absolute;left:415px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:627px;height:184px;',
 			height: 184,width: 627,
@@ -144,13 +148,13 @@
 				},
 				{
 					text:'Отражение в бухучете',
-					width:'120',
+					width:'1200',
 					dataIndex:'СпособОтраженияВБухучете',
 					flex:1,
 				},
 				{
 					text:'Отражение в ЕСН',
-					width:'120',
+					width:'1200',
 					dataIndex:'КодДоходаЕСН',
 					flex:1,
 				},
@@ -167,7 +171,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОРеглУчетеПлановыхНачисленийРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОРеглУчетеПлановыхНачисленийРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -196,13 +200,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Плановые начисления',
 			style: 'position:absolute;left:8px;top:84px;width:627px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

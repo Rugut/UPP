@@ -8,7 +8,10 @@
 	title: 'Торговое оборудование',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:128px;width:468px;height:25px;',
@@ -97,7 +100,8 @@
 			height: 19,
 			style: 'position:absolute;left:148px;top:102px;width:312px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

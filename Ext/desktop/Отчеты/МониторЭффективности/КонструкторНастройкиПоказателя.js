@@ -8,7 +8,10 @@
 	title: 'Настройка показателя монитора эффективности',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:54px;width:430px;height:279px;',
@@ -324,7 +327,8 @@
 			text: '',
 			style: 'position:absolute;left:45px;top:8px;width:393px;height:43px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

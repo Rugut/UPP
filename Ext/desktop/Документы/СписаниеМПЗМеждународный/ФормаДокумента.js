@@ -8,7 +8,10 @@
 	title: 'Списание МПЗ (международный)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -131,7 +134,8 @@
 			text: '...',
 			style: 'position:absolute;left:324px;top:59px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

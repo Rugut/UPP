@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ПрочиеДоходыИРасходы:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3505ec41-26e4-428f-bcaa-35b34e0653f6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191513.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012005.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -52,7 +52,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ПрочиеДоходыИРасходы(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ПрочиеДоходыИРасходы(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -65,10 +78,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3311RRef [ВидПрочихДоходовИРасходов]
-					,_Fld3312 [ПринятиеКналоговомуУчету]
-					From _Reference211(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1684RRef [ВидПрочихДоходовИРасходов]
+					,_Fld1685 [ПринятиеКналоговомуУчету]
+					From _Reference134(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

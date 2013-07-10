@@ -8,7 +8,10 @@
 	title: 'Размещение заказа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -98,6 +101,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
 			height: 160,width: 610,
@@ -117,19 +121,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -171,13 +175,13 @@
 				},
 				{
 					text:'Исходное размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'ИсходноеРазмещение',
 					flex:1,
 				},
 				{
 					text:'Новое размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'НовоеРазмещение',
 					flex:1,
 				},
@@ -188,7 +192,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РазмещениеЗаказа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РазмещениеЗаказа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -232,6 +236,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -265,6 +286,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
 			height: 160,width: 610,
@@ -284,13 +306,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -308,13 +330,13 @@
 				},
 				{
 					text:'Исходное размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'ИсходноеРазмещение',
 					flex:1,
 				},
 				{
 					text:'Новое размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'НовоеРазмещение',
 					flex:1,
 				},
@@ -325,7 +347,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РазмещениеЗаказа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РазмещениеЗаказа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -354,6 +376,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -374,6 +413,7 @@
 			style: 'position:absolute;left:322px;top:27px;width:88px;height:19px;',
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
 			height: 160,width: 610,
@@ -393,19 +433,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -447,13 +487,13 @@
 				},
 				{
 					text:'Исходное размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'ИсходноеРазмещение',
 					flex:1,
 				},
 				{
 					text:'Новое размещение',
-					width:'250',
+					width:'2500',
 					dataIndex:'НовоеРазмещение',
 					flex:1,
 				},
@@ -464,7 +504,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РазмещениеЗаказа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РазмещениеЗаказа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -507,6 +547,23 @@
 						name:'НовоеРазмещение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -628,7 +685,8 @@
 			text: 'Организация из заказа',
 			style: 'position:absolute;left:412px;top:32px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

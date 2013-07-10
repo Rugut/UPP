@@ -8,7 +8,10 @@
 	title: 'Фамилия, имя, отчество',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьФИО',
@@ -42,7 +45,8 @@
 			height: 19,
 			style: 'position:absolute;left:270px;top:7px;width:100px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

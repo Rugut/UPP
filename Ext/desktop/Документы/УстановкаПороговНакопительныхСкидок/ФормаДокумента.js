@@ -8,7 +8,10 @@
 	title: 'Установка порогов накопительных скидок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -75,6 +78,7 @@
 			style: 'position:absolute;left:96px;top:240px;width:296px;height:19px;',
 		},
 		{
+			id: 'ШкалаДиапазонов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:384px;height:131px;',
 			height: 131,width: 384,
@@ -111,7 +115,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПороговНакопительныхСкидок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПороговНакопительныхСкидок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -128,8 +132,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ШкалаДиапазонов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

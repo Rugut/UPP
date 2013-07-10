@@ -8,7 +8,10 @@
 	title: 'Отбор',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:541px;height:226px;',
@@ -268,7 +271,8 @@
 			text: 'Отмена',
 			style: 'position:absolute;left:94px;top:240px;width:80px;height:22px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

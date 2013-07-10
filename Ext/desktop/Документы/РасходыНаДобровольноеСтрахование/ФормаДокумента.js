@@ -8,7 +8,10 @@
 	title: 'Расходы на страхование',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -168,7 +171,8 @@
 			height: 19,
 			style: 'position:absolute;left:92px;top:172px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

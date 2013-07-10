@@ -8,7 +8,10 @@
 	title: 'Изменение времени события',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись8',
@@ -73,7 +76,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:204px;top:84px;width:122px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

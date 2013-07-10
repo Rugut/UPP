@@ -8,7 +8,10 @@
 	title: 'Внимание!',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Больше не показывать это сообщение',
@@ -19,7 +22,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:218px;width:637px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗапросНаИнформационноеОбслуживаниеНалогоплательщика:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("41bcbf63-2fbe-4bfb-b4df-0d6cb6dc4da1");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190940.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011938.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,16 +61,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7410RRef [Организация]
-					,_Fld7411RRef [Получатель]
-					,_Fld7412 [ДатаНачалаПериода]
-					,_Fld7413 [ДатаОкончанияПериода]
-					,_Fld7414RRef [ВидУслуги]
-					,_Fld7415RRef [ФорматОтвета]
-					,_Fld7416 [АдресПредставленияСправки]
-					,_Fld7417 [ДополнительныйПараметр]
-					,_Fld7418RRef [ФорматЗапроса]
-					From _Document375(NOLOCK)
+					,_Fld24205RRef [Организация]
+					,_Fld24206RRef [Получатель]
+					,_Fld24207 [ДатаНачалаПериода]
+					,_Fld24208 [ДатаОкончанияПериода]
+					,_Fld24209RRef [ВидУслуги]
+					,_Fld24210RRef [ФорматОтвета]
+					,_Fld24211 [АдресПредставленияСправки]
+					,_Fld24212 [ДополнительныйПараметр]
+					,_Fld24213RRef [ФорматЗапроса]
+					From _Document23145(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

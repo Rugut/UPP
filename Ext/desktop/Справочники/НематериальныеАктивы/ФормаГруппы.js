@@ -8,7 +8,10 @@
 	title: 'Группа Нематериальные активы и расходы на НИОКР',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:304px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

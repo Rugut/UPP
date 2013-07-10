@@ -8,7 +8,10 @@
 	title: 'Группа Информационные карты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:58px;width:299px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

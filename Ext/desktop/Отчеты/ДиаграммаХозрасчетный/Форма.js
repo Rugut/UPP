@@ -8,7 +8,10 @@
 	title: 'Отчет Диаграмма',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДатаНач',
@@ -92,7 +95,8 @@
 			height: 19,
 			style: 'position:absolute;left:344px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

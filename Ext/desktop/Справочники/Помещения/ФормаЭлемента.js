@@ -8,7 +8,10 @@
 	title: 'Помещения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -60,7 +63,8 @@
 			boxLabel: 'Для встреч',
 			style: 'position:absolute;left:8px;top:82px;width:384px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

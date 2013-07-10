@@ -8,7 +8,10 @@
 	title: 'Ввод на основании',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОснование',
@@ -25,6 +28,7 @@
 			style: 'position:absolute;left:73px;top:4px;width:319px;height:19px;',
 		},
 		{
+			id: 'ВводНаОсновании',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:52px;width:384px;height:177px;',
 			height: 177,width: 384,
@@ -38,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'210',
+					width:'2100',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -49,7 +53,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРегламентированныхКадровыхДокументовНаОсновании/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРегламентированныхКадровыхДокументовНаОсновании/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -60,8 +64,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВводНаОсновании');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Фамилия, имя, отчество физ. лица',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -76,7 +79,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:78px;width:290px;height:6px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

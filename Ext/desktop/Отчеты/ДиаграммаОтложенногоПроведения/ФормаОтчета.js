@@ -8,7 +8,10 @@
 	title: 'Диаграмма отложенного проведения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДопроведено',
@@ -57,7 +60,8 @@
 			text: 'текущая дата',
 			style: 'position:absolute;left:223px;top:266px;width:118px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

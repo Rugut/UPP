@@ -108,23 +108,23 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference228(
+						Insert Into _Reference23127(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Description
-						,_Fld3409
-						,_Fld3410
-						,_Fld3411
-						,_Fld3412
-						,_Fld3413RRef
-						,_Fld3414
-						,_Fld3415
-						,_Fld3416
-						,_Fld3417RRef
-						,_Fld3418
-						,_Fld3419)
+						,_Fld23751
+						,_Fld23752
+						,_Fld23753
+						,_Fld23754
+						,_Fld23755RRef
+						,_Fld23756
+						,_Fld23757
+						,_Fld23758
+						,_Fld23759RRef
+						,_Fld23760
+						,_Fld23761)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -146,24 +146,24 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference228
+						Update _Reference23127
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
 						,_Description	= @Наименование
-						,_Fld3409	= @ДолжностьПоСертификату
-						,_Fld3410	= @ЗапомнитьПарольКСертификату
-						,_Fld3411	= @Назначение
-						,_Fld3412	= @ОграничитьДоступКСертификату
-						,_Fld3413RRef	= @Организация
-						,_Fld3414	= @Отозван
-						,_Fld3415	= @Отпечаток
-						,_Fld3416	= @ПарольПользователя
-						,_Fld3417RRef	= @Пользователь
-						,_Fld3418	= @ПроверятьСоставИсполнителей
-						,_Fld3419	= @ФайлСертификата
+						,_Fld23751	= @ДолжностьПоСертификату
+						,_Fld23752	= @ЗапомнитьПарольКСертификату
+						,_Fld23753	= @Назначение
+						,_Fld23754	= @ОграничитьДоступКСертификату
+						,_Fld23755RRef	= @Организация
+						,_Fld23756	= @Отозван
+						,_Fld23757	= @Отпечаток
+						,_Fld23758	= @ПарольПользователя
+						,_Fld23759RRef	= @Пользователь
+						,_Fld23760	= @ПроверятьСоставИсполнителей
+						,_Fld23761	= @ФайлСертификата
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -193,7 +193,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference228
+					Команда.CommandText = @"Delete _Reference23127
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

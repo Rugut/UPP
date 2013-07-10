@@ -8,7 +8,10 @@
 	title: 'Ввод формулы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:92px;width:463px;height:51px;',
@@ -17,6 +20,7 @@
 			]
 		},
 		{
+			id: 'ПараметрыВыпускаПродукции',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:185px;width:463px;height:85px;',
 			height: 85,width: 463,
@@ -47,7 +51,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводФормулы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводФормулы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -60,6 +64,23 @@
 						name:'ВидПараметра',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыВыпускаПродукции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -80,6 +101,7 @@
 			style: 'position:absolute;left:8px;top:276px;width:463px;height:16px;',
 		},
 		{
+			id: 'СвойстваОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:316px;width:463px;height:101px;',
 			height: 101,width: 463,
@@ -99,7 +121,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'350',
+					width:'3500',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -110,7 +132,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводФормулы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводФормулы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -124,6 +146,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -132,7 +171,8 @@
 			[
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

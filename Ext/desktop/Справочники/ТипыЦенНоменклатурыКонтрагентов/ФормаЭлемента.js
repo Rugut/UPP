@@ -8,7 +8,10 @@
 	title: 'Типы цен номенклатуры контрагентов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -143,7 +146,8 @@
 			text: 'Код:',
 			style: 'position:absolute;left:319px;top:61px;width:40px;height:19px;text-align:center;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

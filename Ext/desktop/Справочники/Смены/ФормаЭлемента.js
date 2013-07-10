@@ -8,7 +8,10 @@
 	title: 'Смена',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -40,6 +43,7 @@
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
+			id: 'ПериодыСмены',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:430px;height:220px;',
 			height: 220,width: 430,
@@ -53,24 +57,25 @@
 				},
 				{
 					text:'Время начала',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВремяНачала',
 					flex:1,
 				},
 				{
 					text:'Время окончания',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВремяОкончания',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Смены").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Смены/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Смены/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -84,13 +89,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПериодыСмены');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Периоды смены:',
 			style: 'position:absolute;left:8px;top:60px;width:430px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

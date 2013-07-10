@@ -8,8 +8,12 @@
 	title: 'Расшифровка соотношений показателей',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОтсутствияНаРабочемМесте:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("50e2fe22-033e-4030-a0fc-6b7a3c60e7bd");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191848.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -58,13 +58,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld11387 [Комментарий]
-					,_Fld11388RRef [Ответственный]
-					,_Fld11389RRef [Физлицо]
-					,_Fld11390 [ДатаНачала]
-					,_Fld11391 [ДатаОкончания]
-					,_Fld11392RRef [ПричинаОтсутствия]
-					From _Document473(NOLOCK)
+					,_Fld20176 [Комментарий]
+					,_Fld20177RRef [Ответственный]
+					,_Fld20178RRef [Физлицо]
+					,_Fld20179 [ДатаНачала]
+					,_Fld20180 [ДатаОкончания]
+					,_Fld20181RRef [ПричинаОтсутствия]
+					From _Document19661(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

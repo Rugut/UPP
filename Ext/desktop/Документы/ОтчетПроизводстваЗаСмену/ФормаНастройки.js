@@ -8,7 +8,10 @@
 	title: 'Настройка документа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Автоматически распределять возвратные отходы на продукцию',
@@ -109,7 +112,8 @@
 			boxLabel: 'Использовать аналитику НЗП',
 			style: 'position:absolute;left:8px;top:386px;width:384px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

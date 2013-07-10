@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КорректировкаЗаказаПоставщику:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("69b75dd4-361a-4e5f-8cd8-1bb197fd64bf");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191855.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012029.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -86,23 +86,23 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9031RRef [ЗаказПоставщику]
-					,_Fld9032 [УчитыватьНДС]
-					,_Fld9033 [СуммаВключаетНДС]
-					,_Fld9034RRef [ТипЦен]
-					,_Fld9035 [Комментарий]
-					,_Fld9036 [СуммаДокумента]
-					,_Fld9037_TYPE [СтруктурнаяЕдиница_Тип],_Fld9037_RRRef [СтруктурнаяЕдиница],_Fld9037_RTRef [СтруктурнаяЕдиница_Вид]
-					,_Fld9038 [КурсВзаиморасчетов]
-					,_Fld9039 [КратностьВзаиморасчетов]
-					,_Fld9040RRef [Ответственный]
-					,_Fld9041RRef [Контрагент]
-					,_Fld9042 [ИспользоватьПлановуюСебестоимость]
-					,_Fld9043 [ИтогПлановаяСебестоимость]
-					,_Fld9044RRef [УсловиеПродаж]
-					,_Fld9045RRef [Организация]
-					,_Fld9046RRef [Подразделение]
-					From _Document423(NOLOCK)
+					,_Fld5807RRef [ЗаказПоставщику]
+					,_Fld5808 [УчитыватьНДС]
+					,_Fld5809 [СуммаВключаетНДС]
+					,_Fld5810RRef [ТипЦен]
+					,_Fld5811 [Комментарий]
+					,_Fld5812 [СуммаДокумента]
+					,_Fld5813_TYPE [СтруктурнаяЕдиница_Тип],_Fld5813_RRRef [СтруктурнаяЕдиница],_Fld5813_RTRef [СтруктурнаяЕдиница_Вид]
+					,_Fld5814 [КурсВзаиморасчетов]
+					,_Fld5815 [КратностьВзаиморасчетов]
+					,_Fld5816RRef [Ответственный]
+					,_Fld5817RRef [Контрагент]
+					,_Fld5818 [ИспользоватьПлановуюСебестоимость]
+					,_Fld5819 [ИтогПлановаяСебестоимость]
+					,_Fld5820RRef [УсловиеПродаж]
+					,_Fld19496RRef [Организация]
+					,_Fld19497RRef [Подразделение]
+					From _Document307(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

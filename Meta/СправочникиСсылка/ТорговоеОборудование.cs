@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ТорговоеОборудование:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("bb1d891f-7afa-4880-8777-34284cfcc258");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191427.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -53,7 +53,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ТорговоеОборудование(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ТорговоеОборудование(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -66,10 +79,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3991RRef [ОбработкаОбслуживания]
-					,_Fld3992 [Модель]
-					From _Reference272(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2127RRef [ОбработкаОбслуживания]
+					,_Fld2128 [Модель]
+					From _Reference183(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -85,7 +98,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							ОбработкаОбслуживания = new V82.СправочникиСсылка.ОбработкиОбслуживанияТО((byte[])Читалка.GetValue(6));
+							ОбработкаОбслуживания = new V82.СправочникиСсылка.ОбработкиОбслуживанияТО((byte[])Читалка.GetValue(6),Глубина+1);
 							Модель = Читалка.GetString(7);
 							//return Ссылка;
 						}

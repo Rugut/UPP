@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗакрытиеВнутреннихЗаказов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("366b7203-090c-492a-a4bd-aca83c3ec884");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191909.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012030.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -76,13 +76,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7192RRef [Организация]
-					,_Fld7193 [Комментарий]
-					,_Fld7194RRef [ВидОперации]
-					,_Fld7195RRef [Подразделение]
-					,_Fld7196RRef [Ответственный]
-					,_Fld7197 [СпособЗаполнения]
-					From _Document364(NOLOCK)
+					,_Fld19478RRef [Организация]
+					,_Fld4537 [Комментарий]
+					,_Fld4538RRef [ВидОперации]
+					,_Fld4539RRef [Подразделение]
+					,_Fld4540RRef [Ответственный]
+					,_Fld4541 [СпособЗаполнения]
+					From _Document259(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

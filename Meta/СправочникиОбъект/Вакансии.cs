@@ -108,24 +108,24 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference39(
+						Insert Into _Reference19631(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld1872
-						,_Fld1873RRef
-						,_Fld1874RRef
-						,_Fld1875
-						,_Fld1876RRef
-						,_Fld1877RRef
-						,_Fld1878
-						,_Fld1880
-						,_Fld1881
-						,_Fld1882
-						,_Fld1883)
+						,_Fld19717
+						,_Fld19718RRef
+						,_Fld19719RRef
+						,_Fld19720
+						,_Fld19721RRef
+						,_Fld19722RRef
+						,_Fld19723
+						,_Fld19725
+						,_Fld19726
+						,_Fld19727
+						,_Fld19728)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -148,7 +148,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference39
+						Update _Reference19631
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -156,17 +156,17 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld1872	= @Закрыта
-						,_Fld1873RRef	= @Должность
-						,_Fld1874RRef	= @Заявитель
-						,_Fld1875	= @Обязанности
-						,_Fld1876RRef	= @Организация
-						,_Fld1877RRef	= @Ответственный
-						,_Fld1878	= @ПлановаяДатаЗакрытия
-						,_Fld1880	= @Требования
-						,_Fld1881	= @Условия
-						,_Fld1882	= @ДатаОткрытия
-						,_Fld1883	= @ДатаЗакрытия
+						,_Fld19717	= @Закрыта
+						,_Fld19718RRef	= @Должность
+						,_Fld19719RRef	= @Заявитель
+						,_Fld19720	= @Обязанности
+						,_Fld19721RRef	= @Организация
+						,_Fld19722RRef	= @Ответственный
+						,_Fld19723	= @ПлановаяДатаЗакрытия
+						,_Fld19725	= @Требования
+						,_Fld19726	= @Условия
+						,_Fld19727	= @ДатаОткрытия
+						,_Fld19728	= @ДатаЗакрытия
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -197,7 +197,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference39
+					Команда.CommandText = @"Delete _Reference19631
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

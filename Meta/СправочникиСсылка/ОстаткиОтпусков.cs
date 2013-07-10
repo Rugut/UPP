@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОстаткиОтпусков:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("07d1e5a6-f2fd-4747-955d-cad4baaf17c6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191231.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011953.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -46,7 +46,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОстаткиОтпусков(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОстаткиОтпусков(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,10 +71,10 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3111RRef [Физлицо]
-					,_Fld3112 [ДатаАктуальности]
-					From _Reference182(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld19799RRef [Физлицо]
+					,_Fld19800 [ДатаАктуальности]
+					From _Reference19646(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -76,7 +89,7 @@ namespace V82.СправочникиСсылка
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Наименование = Читалка.GetString(4);
-							Физлицо = new V82.СправочникиСсылка.ФизическиеЛица((byte[])Читалка.GetValue(5));
+							Физлицо = new V82.СправочникиСсылка.ФизическиеЛица((byte[])Читалка.GetValue(5),Глубина+1);
 							ДатаАктуальности = Читалка.GetDateTime(6);
 							//return Ссылка;
 						}

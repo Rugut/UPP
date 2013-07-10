@@ -8,7 +8,10 @@
 	title: 'Регистр-расчет амортизации основных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -87,7 +90,8 @@
 			boxLabel: 'Группировать по объектам основных средств',
 			style: 'position:absolute;left:8px;top:80px;width:256px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

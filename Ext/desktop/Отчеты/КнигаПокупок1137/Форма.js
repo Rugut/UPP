@@ -8,7 +8,10 @@
 	title: 'Книга покупок по Постановлению № 1137',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -96,7 +99,8 @@
 			boxLabel: 'Выводить только доп. листы',
 			style: 'position:absolute;left:394px;top:57px;width:167px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

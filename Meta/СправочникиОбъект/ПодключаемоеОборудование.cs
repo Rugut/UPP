@@ -102,21 +102,21 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference190(
+						Insert Into _Reference23119(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Description
-						,_Fld3184
-						,_Fld3185
-						,_Fld3186
-						,_Fld3187
-						,_Fld3188RRef
-						,_Fld3189
-						,_Fld3190RRef
-						,_Fld3191RRef
-						,_Fld3192)
+						,_Fld23699
+						,_Fld23700
+						,_Fld23701
+						,_Fld23702
+						,_Fld23703RRef
+						,_Fld23704
+						,_Fld23705RRef
+						,_Fld23706RRef
+						,_Fld23707)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -136,22 +136,22 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference190
+						Update _Reference23119
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_IsMetadata	= @Предопределенный
 						,_Description	= @Наименование
-						,_Fld3184	= @ВерсияКомпоненты
-						,_Fld3185	= @ИдентификаторУстройства
-						,_Fld3186	= @УстройствоОтключено
-						,_Fld3187	= @УстройствоИспользуется
-						,_Fld3188RRef	= @ОбработчикДрайвера
-						,_Fld3189	= @Параметры
-						,_Fld3190RRef	= @РабочееМесто
-						,_Fld3191RRef	= @ТипОборудования
-						,_Fld3192	= @ТребуетсяПереустановка
+						,_Fld23699	= @ВерсияКомпоненты
+						,_Fld23700	= @ИдентификаторУстройства
+						,_Fld23701	= @УстройствоОтключено
+						,_Fld23702	= @УстройствоИспользуется
+						,_Fld23703RRef	= @ОбработчикДрайвера
+						,_Fld23704	= @Параметры
+						,_Fld23705RRef	= @РабочееМесто
+						,_Fld23706RRef	= @ТипОборудования
+						,_Fld23707	= @ТребуетсяПереустановка
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -179,7 +179,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference190
+					Команда.CommandText = @"Delete _Reference23119
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

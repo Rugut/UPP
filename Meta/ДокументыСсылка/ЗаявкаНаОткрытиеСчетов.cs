@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗаявкаНаОткрытиеСчетов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("983e4bc8-c997-40f1-9777-e2a6c1082587");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191416.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -69,21 +69,21 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7484RRef [Организация]
-					,_Fld7485RRef [Ответственный]
-					,_Fld7486RRef [БанковскийСчет]
-					,_Fld7487 [ТекстПодтверждения]
-					,_Fld7488 [НомерДоговора]
-					,_Fld7489 [ОтделениеБанка]
-					,_Fld7490 [ФилиалОтделенияБанка]
-					,_Fld7491RRef [Валюта]
-					,_Fld7492 [Комментарий]
-					,_Fld7493 [ВидВклада]
-					,_Fld7494RRef [Банк]
-					,_Fld7495 [ВводНачальныхСведений]
-					,_Fld7496 [КраткийСоставДокумента]
-					,_Fld7497 [ДатаВыплатыЗаработнойПлаты]
-					From _Document379(NOLOCK)
+					,_Fld4714RRef [Организация]
+					,_Fld4715RRef [Ответственный]
+					,_Fld4716RRef [БанковскийСчет]
+					,_Fld4717 [ТекстПодтверждения]
+					,_Fld4718 [НомерДоговора]
+					,_Fld4719 [ОтделениеБанка]
+					,_Fld4720 [ФилиалОтделенияБанка]
+					,_Fld4721RRef [Валюта]
+					,_Fld4722 [Комментарий]
+					,_Fld4723 [ВидВклада]
+					,_Fld4724RRef [Банк]
+					,_Fld4725 [ВводНачальныхСведений]
+					,_Fld21440 [КраткийСоставДокумента]
+					,_Fld26740 [ДатаВыплатыЗаработнойПлаты]
+					From _Document270(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

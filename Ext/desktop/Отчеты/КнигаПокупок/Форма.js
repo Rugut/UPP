@@ -8,7 +8,10 @@
 	title: 'Книга покупок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -96,7 +99,8 @@
 			boxLabel: 'Выводить только доп. листы',
 			style: 'position:absolute;left:418px;top:57px;width:178px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

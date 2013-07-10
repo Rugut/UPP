@@ -8,7 +8,10 @@
 	title: 'Авансы в ПФР',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:83px;width:764px;height:346px;',
@@ -326,7 +329,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

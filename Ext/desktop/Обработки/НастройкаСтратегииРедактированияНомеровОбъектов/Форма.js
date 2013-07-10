@@ -8,8 +8,12 @@
 	title: 'Настройка стратегии редактирования номеров (кодов) объектов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:538px;height:311px;',
 			height: 311,width: 538,
@@ -17,7 +21,7 @@
 			[
 				{
 					text:'Объект нумерации',
-					width:'350',
+					width:'3500',
 					dataIndex:'Объект',
 					flex:1,
 				},
@@ -34,7 +38,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаСтратегииРедактированияНомеровОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаСтратегииРедактированияНомеровОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +49,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

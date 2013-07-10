@@ -8,7 +8,10 @@
 	title: 'Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -67,7 +70,8 @@
 			name: 'ПроцентОтСтоимостиМашины',
 			style: 'position:absolute;left:302px;top:179px;width:90px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Профили изменения планов по измерениям',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -104,6 +107,7 @@
 			style: 'position:absolute;left:8px;top:204px;width:458px;height:16px;',
 		},
 		{
+			id: 'ЭлементыДляРаспределения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:244px;width:458px;height:160px;',
 			height: 160,width: 458,
@@ -117,7 +121,7 @@
 				},
 				{
 					text:'Элемент',
-					width:'220',
+					width:'2200',
 					dataIndex:'ЭлементУправленческойАналитики',
 					flex:1,
 				},
@@ -130,11 +134,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоИзмерениям").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -147,6 +152,23 @@
 						name:'ПроцентДляРаспределения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭлементыДляРаспределения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -164,7 +186,8 @@
 			height: 19,
 			style: 'position:absolute;left:386px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

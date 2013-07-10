@@ -8,7 +8,10 @@
 	title: 'Состав набора',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -61,6 +64,7 @@
 			style: 'position:absolute;left:8px;top:85px;width:584px;height:16px;',
 		},
 		{
+			id: 'СоставНабора',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:584px;height:183px;',
 			height: 183,width: 584,
@@ -80,25 +84,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'220',
+					width:'2200',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'220',
+					width:'2200',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -181,7 +185,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СоставНабора/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СоставНабора/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -240,8 +244,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставНабора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

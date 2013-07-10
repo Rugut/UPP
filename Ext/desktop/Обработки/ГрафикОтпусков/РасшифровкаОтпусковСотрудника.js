@@ -8,8 +8,12 @@
 	title: '<ФИО>, <номер года> год',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТабличноеПолеОтпуска',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:84px;width:625px;height:163px;',
 			height: 163,width: 625,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Описание',
-					width:'150',
+					width:'1500',
 					dataIndex:'Описание',
 					flex:1,
 				},
@@ -64,7 +68,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикОтпусков/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикОтпусков/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,6 +93,23 @@
 						name:'ДатаОкончания',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтпуска');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -145,7 +166,8 @@
 			text: 'Справка по отпуску',
 			style: 'position:absolute;left:495px;top:297px;width:138px;height:22px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

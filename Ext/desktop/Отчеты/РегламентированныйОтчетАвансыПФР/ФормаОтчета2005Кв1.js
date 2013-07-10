@@ -8,7 +8,10 @@
 	title: 'Авансы по взносам в ПФР',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:124px;width:705px;height:310px;',
@@ -381,7 +384,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

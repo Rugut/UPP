@@ -8,7 +8,10 @@
 	title: 'Элемент Банковские счета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
@@ -380,7 +383,8 @@
 			text: 'Код:',
 			style: 'position:absolute;left:482px;top:471px;width:37px;height:15px;text-align:center;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

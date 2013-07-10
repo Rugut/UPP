@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗакрытиеГода:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("02ef4514-a00c-4bc1-9593-915e3f2be0c1");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191553.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012008.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7205RRef [Организация]
-					,_Fld7206 [ПериодРегистрации]
-					,_Fld7207RRef [Ответственный]
-					,_Fld7208 [Комментарий]
-					,_Fld7209 [РеформацияБалансаБУ]
-					,_Fld7210 [ЗакрытиеСчетовНУ]
-					From _Document365(NOLOCK)
+					,_Fld20047RRef [Организация]
+					,_Fld20048 [ПериодРегистрации]
+					,_Fld20049RRef [Ответственный]
+					,_Fld20050 [Комментарий]
+					,_Fld20051 [РеформацияБалансаБУ]
+					,_Fld20052 [ЗакрытиеСчетовНУ]
+					From _Document19657(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

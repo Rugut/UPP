@@ -8,8 +8,12 @@
 	title: 'Варианты отчетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписокСохраненныеНастройки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:657px;height:259px;',
 			height: 259,width: 657,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Описание',
-					width:'210',
+					width:'2100',
 					dataIndex:'Описание',
 					flex:1,
 				},
@@ -48,11 +52,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СохраненныеНастройки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +77,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписокСохраненныеНастройки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

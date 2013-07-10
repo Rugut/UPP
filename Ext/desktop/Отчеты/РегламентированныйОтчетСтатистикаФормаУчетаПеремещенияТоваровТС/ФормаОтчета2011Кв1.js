@@ -8,7 +8,10 @@
 	title: 'Статистика: Форма учета перемещения товаров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: '_ИндикаторВнешнегоОтчета',
@@ -166,7 +169,8 @@
 			text: 'Дополнительные строки:',
 			style: 'position:absolute;left:408px;top:343px;width:132px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

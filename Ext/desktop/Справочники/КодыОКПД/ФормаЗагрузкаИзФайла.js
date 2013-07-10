@@ -8,7 +8,10 @@
 	title: 'Загрузка справочника ОКПД из CSV файла',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'ТекстПутьКФайлу',
@@ -30,7 +33,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:57px;width:304px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

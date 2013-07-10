@@ -8,7 +8,10 @@
 	title: 'Отражение в учете бухгалтерских расчетов с персоналом',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -89,7 +92,8 @@
 			height: 19,
 			style: 'position:absolute;left:113px;top:105px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

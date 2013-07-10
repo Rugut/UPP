@@ -8,8 +8,12 @@
 	title: 'Рапорт руководителю',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

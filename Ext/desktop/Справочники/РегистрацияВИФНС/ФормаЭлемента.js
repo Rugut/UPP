@@ -8,7 +8,10 @@
 	title: 'Регистрация в ИФНС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -212,7 +215,8 @@
 			height: 19,
 			style: 'position:absolute;left:144px;top:330px;width:328px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

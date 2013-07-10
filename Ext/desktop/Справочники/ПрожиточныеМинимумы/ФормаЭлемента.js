@@ -8,7 +8,10 @@
 	title: 'Прожиточный минимум субъекта РФ, в целом по РФ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -45,6 +48,7 @@
 			style: 'position:absolute;left:8px;top:65px;width:446px;height:16px;',
 		},
 		{
+			id: 'ВеличинаПрожиточногоМинимума',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:84px;width:446px;height:177px;',
 			height: 177,width: 446,
@@ -58,7 +62,7 @@
 				},
 				{
 					text:'Дата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -71,11 +75,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрожиточныеМинимумы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,8 +94,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВеличинаПрожиточногоМинимума');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

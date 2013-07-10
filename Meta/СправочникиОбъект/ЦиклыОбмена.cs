@@ -126,28 +126,28 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference291(
+						Insert Into _Reference23136(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld4228RRef
-						,_Fld4229RRef
-						,_Fld4230
-						,_Fld4232RRef
-						,_Fld4234
-						,_Fld4235
-						,_Fld4236
-						,_Fld4238
-						,_Fld4239
-						,_Fld4240
-						,_Fld4241RRef
-						,_Fld4242RRef
-						,_Fld4243
-						,_Fld4244RRef
-						,_Fld4245RRef)
+						,_Fld23880RRef
+						,_Fld23881RRef
+						,_Fld23882
+						,_Fld23884RRef
+						,_Fld23886
+						,_Fld23887
+						,_Fld23888
+						,_Fld23890
+						,_Fld23891
+						,_Fld23892
+						,_Fld23893RRef
+						,_Fld23894RRef
+						,_Fld23895
+						,_Fld23896RRef
+						,_Fld23897RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -174,7 +174,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference291
+						Update _Reference23136
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -182,21 +182,21 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld4228RRef	= @УчетнаяЗапись
-						,_Fld4229RRef	= @Тип
-						,_Fld4230	= @Идентификатор
-						,_Fld4232RRef	= @Организация
-						,_Fld4234	= @ДатаСоздания
-						,_Fld4235	= @ДатаЗакрытия
-						,_Fld4236	= @ДатаПоследнегоСообщения
-						,_Fld4238	= @ДатаНачалаПериода
-						,_Fld4239	= @ДатаОкончанияПериода
-						,_Fld4240	= @ВидДокумента
-						,_Fld4241RRef	= @ВидУслуги
-						,_Fld4242RRef	= @ФорматОтвета
-						,_Fld4243	= @Период
-						,_Fld4244RRef	= @Вид
-						,_Fld4245RRef	= @ФорматДокументооборота
+						,_Fld23880RRef	= @УчетнаяЗапись
+						,_Fld23881RRef	= @Тип
+						,_Fld23882	= @Идентификатор
+						,_Fld23884RRef	= @Организация
+						,_Fld23886	= @ДатаСоздания
+						,_Fld23887	= @ДатаЗакрытия
+						,_Fld23888	= @ДатаПоследнегоСообщения
+						,_Fld23890	= @ДатаНачалаПериода
+						,_Fld23891	= @ДатаОкончанияПериода
+						,_Fld23892	= @ВидДокумента
+						,_Fld23893RRef	= @ВидУслуги
+						,_Fld23894RRef	= @ФорматОтвета
+						,_Fld23895	= @Период
+						,_Fld23896RRef	= @Вид
+						,_Fld23897RRef	= @ФорматДокументооборота
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -231,7 +231,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference291
+					Команда.CommandText = @"Delete _Reference23136
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

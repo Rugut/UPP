@@ -8,7 +8,10 @@
 	title: 'Отчет по проводкам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДатаНач',
@@ -66,7 +69,8 @@
 			text: '...',
 			style: 'position:absolute;left:272px;top:33px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Отчет по движениям документа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -37,7 +40,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:612px;top:33px;width:92px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

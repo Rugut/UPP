@@ -8,7 +8,10 @@
 	title: 'Помощник планирования',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:798px;height:475px;',
@@ -20,6 +23,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеКонечныеПланы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:784px;height:403px;',
 			height: 403,width: 784,
@@ -80,7 +84,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,6 +112,23 @@
 						name:'ПрофильРаспределенияДетализацияПлана',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеКонечныеПланы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -165,6 +186,7 @@
 			style: 'position:absolute;left:504px;top:430px;width:286px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеСтратегииРасчетаКоличества',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:784px;height:356px;',
 			height: 356,width: 784,
@@ -237,7 +259,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -271,6 +293,23 @@
 						name:'КоличествоУровнейРазузлования',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСтратегииРасчетаКоличества');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -320,6 +359,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеСтратегииРасчетаСуммы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:784px;height:356px;',
 			height: 356,width: 784,
@@ -368,7 +408,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -391,6 +431,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСтратегииРасчетаСуммы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -399,6 +456,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:784px;height:381px;',
 			height: 381,width: 784,
@@ -447,7 +505,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -470,6 +528,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -488,6 +563,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеСформированныеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:784px;height:403px;',
 			height: 403,width: 784,
@@ -501,13 +577,13 @@
 				},
 				{
 					text:'Документ',
-					width:'220',
+					width:'2200',
 					dataIndex:'Документ',
 					flex:1,
 				},
 				{
 					text:'Вид плана',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидПлана',
 					flex:1,
 				},
@@ -518,7 +594,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -532,6 +608,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСформированныеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -542,7 +635,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,8 +8,12 @@
 	title: 'Общероссийский классификатор валют',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

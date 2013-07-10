@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОформленияСтрокПисем:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("34609f07-b772-4245-9ac2-f5d41375fc96");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191836.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -48,7 +48,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОформленияСтрокПисем(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОформленияСтрокПисем(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -61,14 +74,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3147 [Жирный]
-					,_Fld3148 [Зачеркнутый]
-					,_Fld3149 [Наклонный]
-					,_Fld3150 [Подчеркнутый]
-					,_Fld3151 [ЦветТекста]
-					,_Fld3152 [ЦветФона]
-					From _Reference186(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1589 [Жирный]
+					,_Fld1590 [Зачеркнутый]
+					,_Fld1591 [Наклонный]
+					,_Fld1592 [Подчеркнутый]
+					,_Fld1593 [ЦветТекста]
+					,_Fld1594 [ЦветФона]
+					From _Reference114(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

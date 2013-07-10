@@ -8,7 +8,10 @@
 	title: 'Аттестация сотрудника',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -105,6 +108,7 @@
 			]
 		},
 		{
+			id: 'СписокКомпетенций',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:408px;height:120px;',
 			height: 120,width: 408,
@@ -118,7 +122,7 @@
 				},
 				{
 					text:'Компетенция',
-					width:'220',
+					width:'2200',
 					dataIndex:'Компетенция',
 					flex:1,
 				},
@@ -141,7 +145,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АттестацияРаботника/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АттестацияРаботника/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,6 +161,23 @@
 						name:'ДатаОценки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокКомпетенций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -205,7 +226,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

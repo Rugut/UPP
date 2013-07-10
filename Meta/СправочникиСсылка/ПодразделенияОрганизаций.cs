@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ПодразделенияОрганизаций:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("216d90ff-d8c0-4976-94ae-f803a6162ede");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191306.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -73,7 +73,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ПодразделенияОрганизаций(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ПодразделенияОрганизаций(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -86,16 +99,16 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3202RRef [ВидПодразделения]
-					,_Fld3203 [КодПоОКАТО]
-					,_Fld3204 [КПП]
-					,_Fld3205 [РайонныйКоэффициент]
-					,_Fld3206 [РайонныйКоэффициентРФ]
-					,_Fld3207RRef [ТерриториальныеУсловияПФР]
-					,_Fld3208 [Порядок]
-					,_Fld3209 [СоответствуетСудамПодФлагомРФ]
-					From _Reference192(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1614RRef [ВидПодразделения]
+					,_Fld18715 [КодПоОКАТО]
+					,_Fld18716 [КПП]
+					,_Fld21275 [РайонныйКоэффициент]
+					,_Fld21276 [РайонныйКоэффициентРФ]
+					,_Fld21277RRef [ТерриториальныеУсловияПФР]
+					,_Fld26576 [Порядок]
+					,_Fld26577 [СоответствуетСудамПодФлагомРФ]
+					From _Reference119(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -116,7 +129,7 @@ namespace V82.СправочникиСсылка
 							КПП = Читалка.GetString(8);
 							РайонныйКоэффициент = Читалка.GetDecimal(9);
 							РайонныйКоэффициентРФ = Читалка.GetDecimal(10);
-							ТерриториальныеУсловияПФР = new V82.СправочникиСсылка.ТерриториальныеУсловия((byte[])Читалка.GetValue(11));
+							ТерриториальныеУсловияПФР = new V82.СправочникиСсылка.ТерриториальныеУсловия((byte[])Читалка.GetValue(11),Глубина+1);
 							Порядок = Читалка.GetDecimal(12);
 							СоответствуетСудамПодФлагомРФ = ((byte[])Читалка.GetValue(13))[0]==1;
 							//return Ссылка;

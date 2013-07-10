@@ -8,7 +8,10 @@
 	title: 'Рассылка анкет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -155,6 +158,7 @@
 					items:
 					[
 		{
+			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:419px;height:139px;',
 			height: 139,width: 419,
@@ -185,7 +189,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -199,6 +203,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Получатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -207,6 +228,7 @@
 					items:
 					[
 		{
+			id: 'Вложения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:419px;height:139px;',
 			height: 139,width: 419,
@@ -231,7 +253,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РассылкаАнкет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -241,6 +263,23 @@
 						name:'ИмяФайла',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Вложения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -303,7 +342,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:406px;width:345px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

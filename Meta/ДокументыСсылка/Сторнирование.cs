@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class Сторнирование:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("39c2fbd7-6fbc-49ac-9d32-0f554dd35beb");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191800.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012020.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -68,11 +68,11 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17640_TYPE [СторнируемыйДокумент_Тип],_Fld17640_RRRef [СторнируемыйДокумент],_Fld17640_RTRef [СторнируемыйДокумент_Вид]
-					,_Fld17641 [Комментарий]
-					,_Fld17642RRef [Ответственный]
-					,_Fld17643 [ПериодРегистрации]
-					From _Document602(NOLOCK)
+					,_Fld11756_TYPE [СторнируемыйДокумент_Тип],_Fld11756_RRRef [СторнируемыйДокумент],_Fld11756_RTRef [СторнируемыйДокумент_Вид]
+					,_Fld11757 [Комментарий]
+					,_Fld11758RRef [Ответственный]
+					,_Fld22254 [ПериодРегистрации]
+					From _Document461(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

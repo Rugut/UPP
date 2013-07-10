@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РегистрацияРазовыхНачисленийРаботниковОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("944448af-a6ed-400a-86f7-6acb9265d975");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191410.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012000.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16129 [ПериодРегистрации]
-					,_Fld16130RRef [Организация]
-					,_Fld16131 [Комментарий]
-					,_Fld16132RRef [Ответственный]
-					,_Fld16133 [КраткийСоставДокумента]
-					,_Fld16134RRef [ПерерассчитываемыйДокумент]
-					,_Fld16135RRef [СпособРегистрацииВремени]
-					From _Document568(NOLOCK)
+					,_Fld11174 [ПериодРегистрации]
+					,_Fld11175RRef [Организация]
+					,_Fld11176 [Комментарий]
+					,_Fld11177RRef [Ответственный]
+					,_Fld11178 [КраткийСоставДокумента]
+					,_Fld11179RRef [ПерерассчитываемыйДокумент]
+					,_Fld21997RRef [СпособРегистрацииВремени]
+					From _Document438(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

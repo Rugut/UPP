@@ -24,7 +24,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference267(NOLOCK)
+					From _Reference179(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -65,7 +65,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference267(NOLOCK)";
+					From _Reference179(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ТипыЗаписейЗаметок();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -102,8 +102,8 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference267(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					From _Reference179(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -143,7 +143,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference267(NOLOCK)
+					From _Reference179(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -184,7 +184,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference267(NOLOCK)";
+					From _Reference179(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТипыЗаписейЗаметок();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -221,7 +221,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference267(NOLOCK)";
+					From _Reference179(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ТипыЗаписейЗаметок();
 					using (var Читалка = Команда.ExecuteReader())
 					{

@@ -8,7 +8,10 @@
 	title: 'Регистр учета стоимости МПЗ, списанных в отчетном периоде',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -77,7 +80,8 @@
 			text: 'Вид МПЗ:',
 			style: 'position:absolute;left:8px;top:57px;width:56px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

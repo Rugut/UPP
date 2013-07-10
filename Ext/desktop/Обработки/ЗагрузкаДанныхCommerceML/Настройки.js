@@ -8,7 +8,10 @@
 	title: 'Настройки загрузки данных',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Записывать документы в режиме обмена данными',
@@ -34,7 +37,8 @@
 			boxLabel: 'Автоматически создавать недостающие договоры',
 			style: 'position:absolute;left:8px;top:32px;width:283px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

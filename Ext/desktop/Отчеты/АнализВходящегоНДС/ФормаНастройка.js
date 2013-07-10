@@ -8,7 +8,10 @@
 	title: 'Обработка  Анализ входящего НДС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -81,7 +84,8 @@
 			boxLabel: 'Сравнить суммы НДС, предъявленные поставщиком',
 			style: 'position:absolute;left:8px;top:66px;width:296px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Расчеты с фондами по страховым взносам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -1544,7 +1547,8 @@
 			height: 19,
 			style: 'position:absolute;left:115px;top:33px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

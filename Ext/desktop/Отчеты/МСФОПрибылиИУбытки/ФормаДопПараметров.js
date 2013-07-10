@@ -8,7 +8,10 @@
 	title: 'Дополнительные параметры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -51,7 +54,8 @@
 			text: '(Все суммы в рублях)',
 			style: 'position:absolute;left:8px;top:92px;width:318px;height:15px;text-align:right;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

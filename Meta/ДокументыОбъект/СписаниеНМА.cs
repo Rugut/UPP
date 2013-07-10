@@ -129,23 +129,23 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document594(
+						Insert Into _Document457(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld17367
-						,_Fld17368RRef
-						,_Fld17369RRef
-						,_Fld17370RRef
-						,_Fld17371
-						,_Fld17372
-						,_Fld17373
-						,_Fld17374RRef
-						,_Fld17375RRef
-						,_Fld17376RRef
-						,_Fld17377RRef)
+						,_Fld11662
+						,_Fld11663RRef
+						,_Fld11664RRef
+						,_Fld11665RRef
+						,_Fld11666
+						,_Fld11667
+						,_Fld11668
+						,_Fld11669RRef
+						,_Fld11670RRef
+						,_Fld11671RRef
+						,_Fld11672RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -166,23 +166,23 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document594
+						Update _Document457
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld17367	= @Комментарий
-						,_Fld17368RRef	= @НематериальныйАктив
-						,_Fld17369RRef	= @Организация
-						,_Fld17370RRef	= @Ответственный
-						,_Fld17371	= @ОтражатьВБухгалтерскомУчете
-						,_Fld17372	= @ОтражатьВНалоговомУчете
-						,_Fld17373	= @ОтражатьВУправленческомУчете
-						,_Fld17374RRef	= @СубконтоБУ
-						,_Fld17375RRef	= @СубконтоНУ
-						,_Fld17376RRef	= @СчетСписанияБУ
-						,_Fld17377RRef	= @СчетСписанияНУ
+						,_Fld11662	= @Комментарий
+						,_Fld11663RRef	= @НематериальныйАктив
+						,_Fld11664RRef	= @Организация
+						,_Fld11665RRef	= @Ответственный
+						,_Fld11666	= @ОтражатьВБухгалтерскомУчете
+						,_Fld11667	= @ОтражатьВНалоговомУчете
+						,_Fld11668	= @ОтражатьВУправленческомУчете
+						,_Fld11669RRef	= @СубконтоБУ
+						,_Fld11670RRef	= @СубконтоНУ
+						,_Fld11671RRef	= @СчетСписанияБУ
+						,_Fld11672RRef	= @СчетСписанияНУ
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -208,7 +208,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document594
+					Команда.CommandText = @"Delete _Document457
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

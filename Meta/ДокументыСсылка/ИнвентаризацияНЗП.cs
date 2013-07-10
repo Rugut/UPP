@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИнвентаризацияНЗП:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("2104394c-da4e-45af-bdb6-4ef8f45d7341");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191906.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012030.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -107,20 +107,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8176RRef [Подразделение]
-					,_Fld8177RRef [Организация]
-					,_Fld8178 [Комментарий]
-					,_Fld8179RRef [Ответственный]
-					,_Fld8180 [ОтражатьВУправленческомУчете]
-					,_Fld8181 [ОтражатьВБухгалтерскомУчете]
-					,_Fld8182 [ОтражатьВНалоговомУчете]
-					,_Fld8183_TYPE [Заказ_Тип],_Fld8183_RRRef [Заказ],_Fld8183_RTRef [Заказ_Вид]
-					,_Fld8184RRef [СтатьяЗатрат]
-					,_Fld8185 [ВводитьЗаказыПоСтрокам]
-					,_Fld8186RRef [НоменклатурнаяГруппа]
-					,_Fld8187 [ВводитьНоменклатурныеГруппыПоСтрокам]
-					,_Fld8188RRef [ПодразделениеОрганизации]
-					From _Document403(NOLOCK)
+					,_Fld5109RRef [Подразделение]
+					,_Fld5110RRef [Организация]
+					,_Fld5111 [Комментарий]
+					,_Fld5112RRef [Ответственный]
+					,_Fld5113 [ОтражатьВУправленческомУчете]
+					,_Fld5114 [ОтражатьВБухгалтерскомУчете]
+					,_Fld5115 [ОтражатьВНалоговомУчете]
+					,_Fld5116_TYPE [Заказ_Тип],_Fld5116_RRRef [Заказ],_Fld5116_RTRef [Заказ_Вид]
+					,_Fld5117RRef [СтатьяЗатрат]
+					,_Fld5118 [ВводитьЗаказыПоСтрокам]
+					,_Fld5119RRef [НоменклатурнаяГруппа]
+					,_Fld5120 [ВводитьНоменклатурныеГруппыПоСтрокам]
+					,_Fld5121RRef [ПодразделениеОрганизации]
+					From _Document289(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

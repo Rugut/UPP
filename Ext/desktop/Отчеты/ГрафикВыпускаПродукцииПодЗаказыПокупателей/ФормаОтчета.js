@@ -8,7 +8,10 @@
 	title: 'Отчет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:678px;height:103px;',
@@ -21,6 +24,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:678px;height:103px;',
 			height: 103,width: 678,
@@ -105,7 +109,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикВыпускаПродукцииПодЗаказыПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикВыпускаПродукцииПодЗаказыПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +149,23 @@
 						name:'ТипДляКраткогоОтображенияГруппы',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -239,7 +260,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

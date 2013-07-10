@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -99,6 +102,7 @@
 			]
 		},
 		{
+			id: 'НематериальныеАктивы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:120px;width:635px;height:220px;',
 			height: 220,width: 635,
@@ -112,7 +116,7 @@
 				},
 				{
 					text:'НМА',
-					width:'180',
+					width:'1800',
 					dataIndex:'НематериальныйАктив',
 					flex:1,
 				},
@@ -142,13 +146,13 @@
 				},
 				{
 					text:'Метод начисления амортизации',
-					width:'120',
+					width:'1200',
 					dataIndex:'МетодНачисленияАмортизации',
 					flex:1,
 				},
 				{
 					text:'Метод начисления амортизации (новый)',
-					width:'120',
+					width:'1200',
 					dataIndex:'МетодНачисленияАмортизацииНов',
 					flex:1,
 				},
@@ -190,37 +194,37 @@
 				},
 				{
 					text:'Субконто 1',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто 1 (новое)',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1Нов',
 					flex:1,
 				},
 				{
 					text:'Субконто 2',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто 2 (новое)',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто2Нов',
 					flex:1,
 				},
 				{
 					text:'Субконто 3',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
 				{
 					text:'Субконто 3 (новое)',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто3Нов',
 					flex:1,
 				},
@@ -231,7 +235,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеПараметровНМАМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеПараметровНМАМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -296,6 +300,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НематериальныеАктивы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -354,7 +375,8 @@
 			title: 'Нематериальные активы',
 			style: 'position:absolute;left:8px;top:84px;width:635px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

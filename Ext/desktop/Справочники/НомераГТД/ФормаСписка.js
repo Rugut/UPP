@@ -8,8 +8,12 @@
 	title: 'Номера ГТД',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокГТД',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:412px;height:219px;',
 			height: 219,width: 412,
@@ -23,24 +27,25 @@
 				},
 				{
 					text:'Номер',
-					width:'180',
+					width:'1800',
 					dataIndex:'Код',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'220',
+					width:'2200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НомераГТД").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НомераГТД/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НомераГТД/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +59,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокГТД');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

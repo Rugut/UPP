@@ -8,7 +8,10 @@
 	title: 'Форма М-17',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -100,7 +103,8 @@
 			text: '...',
 			style: 'position:absolute;left:617px;top:33px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

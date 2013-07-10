@@ -8,7 +8,10 @@
 	title: 'Форматы выгрузки для терминалов сбора данных',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -47,6 +50,7 @@
 			]
 		},
 		{
+			id: 'СвязываемыеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:82px;width:384px;height:177px;',
 			height: 177,width: 384,
@@ -73,11 +77,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТСДФорматыДанных").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТСДФорматыДанных/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТСДФорматыДанных/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +95,23 @@
 						name:'ПолеТСД',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвязываемыеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -113,7 +135,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

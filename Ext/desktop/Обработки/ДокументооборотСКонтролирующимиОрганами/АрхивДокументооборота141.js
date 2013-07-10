@@ -8,7 +8,10 @@
 	title: 'Архив документооборота по отчетности с ФНС в формате приказа от 26 марта 2009 г. № ММ-7-6/141@ и более ранних',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
@@ -75,6 +78,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаОтчетность',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:85px;width:562px;height:345px;',
 			height: 345,width: 562,
@@ -88,13 +92,13 @@
 				},
 				{
 					text:'Вид отчета',
-					width:'120',
+					width:'1200',
 					dataIndex:'Отчет',
 					flex:1,
 				},
 				{
 					text:'Период',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -118,7 +122,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -166,13 +170,13 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Налоговый орган',
-					width:'120',
+					width:'1200',
 					dataIndex:'НалоговыйОрган',
 					flex:1,
 				},
@@ -189,7 +193,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -244,6 +248,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаОтчетность');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -407,6 +428,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаИсходящиеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:55px;width:563px;height:375px;',
 			height: 375,width: 563,
@@ -414,7 +436,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -467,7 +489,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -495,6 +517,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаИсходящиеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -550,6 +589,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаВходящиеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:55px;width:563px;height:375px;',
 			height: 375,width: 563,
@@ -557,7 +597,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -598,7 +638,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -620,6 +660,23 @@
 						name:'ОтветНаОтветНаЗапрос',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаВходящиеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -675,6 +732,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаЗапросы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:55px;width:563px;height:375px;',
 			height: 375,width: 563,
@@ -688,7 +746,7 @@
 				},
 				{
 					text:'Период запроса',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -712,7 +770,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -766,13 +824,13 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Налоговый орган',
-					width:'120',
+					width:'1200',
 					dataIndex:'НалоговыйОрган',
 					flex:1,
 				},
@@ -789,7 +847,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -844,6 +902,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаЗапросы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -932,6 +1007,7 @@
 					items:
 					[
 		{
+			id: 'УчетныеЗаписи',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:48px;width:195px;height:408px;',
 			height: 408,width: 195,
@@ -956,7 +1032,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -966,6 +1042,23 @@
 						name:'Объект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УчетныеЗаписи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -993,7 +1086,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

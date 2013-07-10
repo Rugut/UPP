@@ -8,7 +8,10 @@
 	title: 'Кассовая книга за период',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -123,7 +126,8 @@
 			boxLabel: 'Всегда выводить листы на начало и конец периода',
 			style: 'position:absolute;left:8px;top:102px;width:284px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

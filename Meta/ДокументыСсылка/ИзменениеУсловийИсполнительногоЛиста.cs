@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИзменениеУсловийИсполнительногоЛиста:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e1d9eb9c-3731-41c3-a32c-d6c9cd32f828");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191946.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -75,24 +75,24 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8051RRef [Физлицо]
-					,_Fld8052RRef [Организация]
-					,_Fld8053RRef [ИсполнительныйЛист]
-					,_Fld8054RRef [Действие]
-					,_Fld8055 [ДатаИзменения]
-					,_Fld8056 [ДатаОкончания]
-					,_Fld8057RRef [СпособРасчетаУдержания]
-					,_Fld8058 [Размер]
-					,_Fld8059 [Предел]
-					,_Fld8060RRef [ПрожиточныйМинимум]
-					,_Fld8061 [ПроцентПочтовогоСбора]
-					,_Fld8062RRef [Тариф]
-					,_Fld8063RRef [СпособПеречисленияПоИсполнительномуЛисту]
-					,_Fld8064RRef [ТарифБанкаНаДенежныеПереводы]
-					,_Fld8065 [ПочтовыйСборРассчитыватьПроцентом]
-					,_Fld8066RRef [Ответственный]
-					,_Fld8067 [Комментарий]
-					From _Document400(NOLOCK)
+					,_Fld24367RRef [Физлицо]
+					,_Fld24368RRef [Организация]
+					,_Fld24369RRef [ИсполнительныйЛист]
+					,_Fld24370RRef [Действие]
+					,_Fld24371 [ДатаИзменения]
+					,_Fld24372 [ДатаОкончания]
+					,_Fld24373RRef [СпособРасчетаУдержания]
+					,_Fld24374 [Размер]
+					,_Fld24375 [Предел]
+					,_Fld24376RRef [ПрожиточныйМинимум]
+					,_Fld24377 [ПроцентПочтовогоСбора]
+					,_Fld24378RRef [Тариф]
+					,_Fld24379RRef [СпособПеречисленияПоИсполнительномуЛисту]
+					,_Fld24380RRef [ТарифБанкаНаДенежныеПереводы]
+					,_Fld24381 [ПочтовыйСборРассчитыватьПроцентом]
+					,_Fld24382RRef [Ответственный]
+					,_Fld24383 [Комментарий]
+					From _Document23151(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

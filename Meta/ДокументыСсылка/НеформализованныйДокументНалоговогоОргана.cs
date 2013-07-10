@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class НеформализованныйДокументНалоговогоОргана:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("289e3fae-6a2c-4ed9-928d-762325fa50e6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191350.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011959.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -55,10 +55,10 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10531RRef [Организация]
-					,_Fld10532RRef [НалоговыйОрган]
-					,_Fld10533 [Содержание]
-					From _Document448(NOLOCK)
+					,_Fld24668RRef [Организация]
+					,_Fld24669RRef [НалоговыйОрган]
+					,_Fld24670 [Содержание]
+					From _Document23154(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

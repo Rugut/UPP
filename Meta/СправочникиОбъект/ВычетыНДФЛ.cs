@@ -108,24 +108,24 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference70(
+						Insert Into _Reference34(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld2017
-						,_Fld2018
-						,_Fld2019
-						,_Fld2020
-						,_Fld2021
-						,_Fld2022
-						,_Fld2023
-						,_Fld2024
-						,_Fld2025RRef
-						,_Fld2026
-						,_Fld2027)
+						,_Fld26504
+						,_Fld26505
+						,_Fld26506
+						,_Fld26507
+						,_Fld26508
+						,_Fld26509
+						,_Fld26510
+						,_Fld26511
+						,_Fld26512RRef
+						,_Fld26513
+						,_Fld26514)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -148,7 +148,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference70
+						Update _Reference34
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -156,17 +156,17 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2017	= @КодДляОтчетности2007
-						,_Fld2018	= @КодДляОтчетности2008
-						,_Fld2019	= @КодДляОтчетности2009
-						,_Fld2020	= @Наименование2007
-						,_Fld2021	= @Наименование2008
-						,_Fld2022	= @КодДляОтчетности2010
-						,_Fld2023	= @НеПредоставляетсяНерезидентам
-						,_Fld2024	= @НеОтражаетсяВОтчетности2010
-						,_Fld2025RRef	= @ГруппаВычета
-						,_Fld2026	= @Наименование2010
-						,_Fld2027	= @КодДляОтчетности2011
+						,_Fld26504	= @КодДляОтчетности2007
+						,_Fld26505	= @КодДляОтчетности2008
+						,_Fld26506	= @КодДляОтчетности2009
+						,_Fld26507	= @Наименование2007
+						,_Fld26508	= @Наименование2008
+						,_Fld26509	= @КодДляОтчетности2010
+						,_Fld26510	= @НеПредоставляетсяНерезидентам
+						,_Fld26511	= @НеОтражаетсяВОтчетности2010
+						,_Fld26512RRef	= @ГруппаВычета
+						,_Fld26513	= @Наименование2010
+						,_Fld26514	= @КодДляОтчетности2011
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -197,7 +197,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference70
+					Команда.CommandText = @"Delete _Reference34
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

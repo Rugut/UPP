@@ -8,12 +8,16 @@
 	title: 'Настройка задач пользователей',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:8px;width:180px;height:251px;',
 		},
 		{
+			id: 'ТаблицаНастройкиРолей',
 			xtype: 'grid',
 			style: 'position:absolute;left:194px;top:31px;width:462px;height:228px;',
 			height: 228,width: 462,
@@ -21,13 +25,13 @@
 			[
 				{
 					text:'Организация',
-					width:'180',
+					width:'1800',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Роль исполнителя задач',
-					width:'140',
+					width:'1400',
 					dataIndex:'Роль',
 					flex:1,
 				},
@@ -50,7 +54,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -67,6 +71,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастройкиРолей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -74,7 +95,8 @@
 			text: '',
 			style: 'position:absolute;left:194px;top:8px;width:462px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

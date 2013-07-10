@@ -8,7 +8,10 @@
 	title: 'Выгрузка сведений о затратах предприятия',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'ТекстПутьКФайлуВыгрузки',
@@ -36,7 +39,8 @@
 			text: 'Выгружено:',
 			style: 'position:absolute;left:8px;top:57px;width:160px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

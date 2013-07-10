@@ -8,7 +8,10 @@
 	title: 'Форма данных об изображении',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименования',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:142px;top:33px;width:250px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

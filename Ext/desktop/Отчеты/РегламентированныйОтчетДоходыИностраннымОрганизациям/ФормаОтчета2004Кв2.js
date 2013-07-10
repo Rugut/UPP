@@ -8,7 +8,10 @@
 	title: 'Налоговый расчет о суммах выплаченных иностранным организациям доходов и удержанных налогов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:125px;width:654px;height:310px;',
@@ -298,7 +301,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

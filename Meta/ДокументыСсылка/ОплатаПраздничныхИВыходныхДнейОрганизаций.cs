@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОплатаПраздничныхИВыходныхДнейОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("82d8c4d6-baeb-4c61-bf11-0bf32a200d38");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191552.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012008.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10739 [ПериодРегистрации]
-					,_Fld10740RRef [Организация]
-					,_Fld10741 [Комментарий]
-					,_Fld10742RRef [Ответственный]
-					,_Fld10743 [КраткийСоставДокумента]
-					,_Fld10744RRef [ПерерассчитываемыйДокумент]
-					From _Document458(NOLOCK)
+					,_Fld6741 [ПериодРегистрации]
+					,_Fld6742RRef [Организация]
+					,_Fld6743 [Комментарий]
+					,_Fld6744RRef [Ответственный]
+					,_Fld6745 [КраткийСоставДокумента]
+					,_Fld6746RRef [ПерерассчитываемыйДокумент]
+					From _Document337(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

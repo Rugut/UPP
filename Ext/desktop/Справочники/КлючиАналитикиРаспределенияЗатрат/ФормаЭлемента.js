@@ -8,7 +8,10 @@
 	title: 'Ключ аналитики распределения затрат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -119,7 +122,8 @@
 			height: 19,
 			style: 'position:absolute;left:159px;top:178px;width:233px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class КурсыОбучения:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("0ba658fc-b975-4c48-b839-01203b472215");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191851.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012029.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -58,7 +58,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КурсыОбучения(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КурсыОбучения(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -70,14 +83,14 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2505 [ОписаниеКурса]
-					,_Fld2506 [ДлительностьКурса]
-					,_Fld2507 [ЗатратыНаОдногоОбучающегося]
-					,_Fld2508RRef [ВидДокументаОбОбразовании]
-					,_Fld2509RRef [Валюта]
-					,_Fld2510 [ОтражатьВРегУчете]
-					From _Reference132(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1298 [ОписаниеКурса]
+					,_Fld1299 [ДлительностьКурса]
+					,_Fld1300 [ЗатратыНаОдногоОбучающегося]
+					,_Fld1301RRef [ВидДокументаОбОбразовании]
+					,_Fld1302RRef [Валюта]
+					,_Fld1303 [ОтражатьВРегУчете]
+					From _Reference81(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -95,8 +108,8 @@ namespace V82.СправочникиСсылка
 							ОписаниеКурса = Читалка.GetString(5);
 							ДлительностьКурса = Читалка.GetDecimal(6);
 							ЗатратыНаОдногоОбучающегося = Читалка.GetDecimal(7);
-							ВидДокументаОбОбразовании = new V82.СправочникиСсылка.ДокументыОбОбразовании((byte[])Читалка.GetValue(8));
-							Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(9));
+							ВидДокументаОбОбразовании = new V82.СправочникиСсылка.ДокументыОбОбразовании((byte[])Читалка.GetValue(8),Глубина+1);
+							Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(9),Глубина+1);
 							ОтражатьВРегУчете = ((byte[])Читалка.GetValue(10))[0]==1;
 							//return Ссылка;
 						}

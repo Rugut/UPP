@@ -8,7 +8,10 @@
 	title: 'Бухгалтерская отчетность',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
@@ -71,7 +74,8 @@
 			boxLabel: 'Баланс некоммерческой организации',
 			style: 'position:absolute;left:8px;top:49px;width:260px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

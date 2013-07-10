@@ -8,7 +8,10 @@
 	title: 'Графа 1. Отправитель (ввод реквизитов)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textarea',
 			hideLabel: true,
@@ -196,7 +199,8 @@
 			height: 19,
 			style: 'position:absolute;left:121px;top:72px;width:23px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Группа отчетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -36,7 +39,8 @@
 			title: 'Описание',
 			style: 'position:absolute;left:8px;top:32px;width:306px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

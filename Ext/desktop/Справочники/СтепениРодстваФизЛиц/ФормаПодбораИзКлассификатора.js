@@ -8,8 +8,12 @@
 	title: 'Степени родства физических лиц',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

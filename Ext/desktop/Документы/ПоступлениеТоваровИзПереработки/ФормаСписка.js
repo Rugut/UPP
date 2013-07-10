@@ -8,8 +8,12 @@
 	title: 'Поступления товаров из переработки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -53,7 +57,7 @@
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -71,25 +75,25 @@
 				},
 				{
 					text:'Заказ',
-					width:'120',
+					width:'1200',
 					dataIndex:'Заказ',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'120',
+					width:'1200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -100,7 +104,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -144,8 +148,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

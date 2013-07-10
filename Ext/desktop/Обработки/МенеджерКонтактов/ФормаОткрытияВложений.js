@@ -8,7 +8,10 @@
 	title: 'Открыть/сохранить вложение',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'radiogroup',
 			defaults: {name: 'ccType'},
@@ -25,7 +28,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

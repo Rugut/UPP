@@ -28,12 +28,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -81,12 +81,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -134,12 +134,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)";
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.НематериальныеАктивы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -183,13 +183,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -236,12 +236,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -289,12 +289,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -342,12 +342,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)";
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НематериальныеАктивы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -391,12 +391,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)";
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НематериальныеАктивы();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -440,12 +440,12 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2898 [НаименованиеПолное]
-					,_Fld2899RRef [ВидНМА]
-					,_Fld2900RRef [АмортизационнаяГруппа]
-					,_Fld2901 [ПрочиеСведения]
-					,_Fld2902RRef [ВидОбъектаУчета]
-					From _Reference161(NOLOCK)";
+					,_Fld1415 [НаименованиеПолное]
+					,_Fld1416RRef [ВидНМА]
+					,_Fld1417RRef [АмортизационнаяГруппа]
+					,_Fld1418 [ПрочиеСведения]
+					,_Fld1419RRef [ВидОбъектаУчета]
+					From _Reference94(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НематериальныеАктивы();
 					using (var Читалка = Команда.ExecuteReader())
 					{

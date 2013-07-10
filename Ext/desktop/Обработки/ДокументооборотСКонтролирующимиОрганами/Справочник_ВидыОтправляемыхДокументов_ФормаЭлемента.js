@@ -8,7 +8,10 @@
 	title: 'Вид отправляемого документа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -107,7 +110,8 @@
 			text: 'Описание:',
 			style: 'position:absolute;left:8px;top:86px;width:84px;height:15px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

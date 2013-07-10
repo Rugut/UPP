@@ -8,7 +8,10 @@
 	title: 'Выгрузка архива документооборота',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -38,7 +41,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:52px;width:604px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

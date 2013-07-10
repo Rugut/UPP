@@ -8,7 +8,10 @@
 	title: 'Группа шаблонов формул расчета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:90px;top:33px;width:302px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

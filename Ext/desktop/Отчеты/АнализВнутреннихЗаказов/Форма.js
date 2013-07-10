@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:555px;top:3px;width:265px;height:19px;',
@@ -157,7 +160,8 @@
 			boxLabel: 'Включен полностью',
 			style: 'position:absolute;left:438px;top:54px;width:135px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

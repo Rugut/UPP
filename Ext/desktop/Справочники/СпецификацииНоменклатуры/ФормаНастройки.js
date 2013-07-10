@@ -8,7 +8,10 @@
 	title: 'Настройка спецификации номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Использовать параметры выпуска продукции',
@@ -59,7 +62,8 @@
 			boxLabel: 'Использовать вид воспроизводства',
 			style: 'position:absolute;left:8px;top:126px;width:384px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВводНачальныхОстатковПоВзаиморасчетам:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b9300e1c-d943-40eb-b351-adfe008cee10");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191702.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012015.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -79,16 +79,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld5446RRef [ВидОперации]
-					,_Fld5447 [Комментарий]
-					,_Fld5448RRef [Организация]
-					,_Fld5449RRef [Ответственный]
-					,_Fld5450 [ОтражатьВБухгалтерскомУчете]
-					,_Fld5451 [ОтражатьВУправленческомУчете]
-					,_Fld5452 [ОтразитьВРегистрахРасчетовОрганизации]
-					,_Fld5453 [ФормироватьПроводкиПоВводуНачальныхОстатков]
-					,_Fld5454 [ОтразитьВРегистреВзаиморасчетовПоДокументам]
-					From _Document319(NOLOCK)
+					,_Fld3176RRef [ВидОперации]
+					,_Fld3177 [Комментарий]
+					,_Fld3178RRef [Организация]
+					,_Fld3179RRef [Ответственный]
+					,_Fld3180 [ОтражатьВБухгалтерскомУчете]
+					,_Fld3181 [ОтражатьВУправленческомУчете]
+					,_Fld3182 [ОтразитьВРегистрахРасчетовОрганизации]
+					,_Fld3184 [ФормироватьПроводкиПоВводуНачальныхОстатков]
+					,_Fld21321 [ОтразитьВРегистреВзаиморасчетовПоДокументам]
+					From _Document221(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

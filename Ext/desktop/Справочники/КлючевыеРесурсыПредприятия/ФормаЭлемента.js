@@ -8,7 +8,10 @@
 	title: 'Ключевые ресурсы предприятия',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -94,7 +97,8 @@
 			title: 'Характеристики',
 			style: 'position:absolute;left:8px;top:85px;width:414px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

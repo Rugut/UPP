@@ -25,11 +25,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -67,11 +67,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -109,11 +109,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)";
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.КомплектацияОС();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -147,11 +147,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -189,11 +189,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -231,11 +231,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)";
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.КомплектацияОС();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -269,11 +269,11 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld8756 [Комментарий]
-					,_Fld8757RRef [ОсновноеСредство]
-					,_Fld8758RRef [Ответственный]
-					,_Fld8759RRef [Событие]
-					From _Document416(NOLOCK)";
+					,_Fld5537 [Комментарий]
+					,_Fld5538RRef [ОсновноеСредство]
+					,_Fld5539RRef [Ответственный]
+					,_Fld5540RRef [Событие]
+					From _Document300(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.КомплектацияОС();
 					using (var Читалка = Команда.ExecuteReader())
 					{

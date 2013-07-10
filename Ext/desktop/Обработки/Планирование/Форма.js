@@ -8,7 +8,10 @@
 	title: 'Планирование',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -60,6 +63,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоПланов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:230px;height:467px;',
 			height: 467,width: 230,
@@ -90,7 +94,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -104,8 +108,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоПланов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СоставПлана',
 			xtype: 'grid',
 			style: 'position:absolute;left:242px;top:46px;width:734px;height:189px;',
 			height: 189,width: 734,
@@ -190,7 +212,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -231,6 +253,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставПлана');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -249,6 +288,7 @@
 			style: 'position:absolute;left:242px;top:6px;width:734px;height:16px;',
 		},
 		{
+			id: 'Потребности',
 			xtype: 'grid',
 			style: 'position:absolute;left:242px;top:281px;width:734px;height:232px;',
 			height: 232,width: 734,
@@ -333,7 +373,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -374,6 +414,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Потребности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -412,6 +469,7 @@
 					items:
 					[
 		{
+			id: 'ПроизводственнаяПрограмма',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:956px;height:451px;',
 			height: 451,width: 956,
@@ -502,7 +560,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -545,6 +603,23 @@
 						name:'ВариантРаспределения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПроизводственнаяПрограмма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -614,7 +689,8 @@
 			text: 'Сценарий:',
 			style: 'position:absolute;left:401px;top:2px;width:55px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

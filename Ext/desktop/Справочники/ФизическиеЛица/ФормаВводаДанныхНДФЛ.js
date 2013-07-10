@@ -8,7 +8,10 @@
 	title: 'Физические лица',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:676px;height:332px;',
@@ -30,6 +33,7 @@
 			style: 'position:absolute;left:6px;top:182px;width:662px;height:16px;',
 		},
 		{
+			id: 'ПрименениеВычетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:222px;width:662px;height:82px;',
 			height: 82,width: 662,
@@ -49,7 +53,7 @@
 				},
 				{
 					text:'Применять вычеты в организации',
-					width:'320',
+					width:'3200',
 					dataIndex:'ПрименятьВычетыТекст',
 					flex:1,
 				},
@@ -68,11 +72,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -91,6 +96,23 @@
 						name:'Организация',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрименениеВычетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -113,6 +135,7 @@
 			]
 		},
 		{
+			id: 'СтандартныеВычеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:285px;height:129px;',
 			height: 129,width: 285,
@@ -157,11 +180,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -184,6 +208,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтандартныеВычеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -191,6 +232,7 @@
 			style: 'position:absolute;left:297px;top:6px;width:371px;height:16px;',
 		},
 		{
+			id: 'СтандартныеВычетыНаДетей',
 			xtype: 'grid',
 			style: 'position:absolute;left:297px;top:46px;width:371px;height:129px;',
 			height: 129,width: 371,
@@ -204,7 +246,7 @@
 				},
 				{
 					text:'Период (с ... по)',
-					width:'140',
+					width:'1400',
 					dataIndex:'КолонкаПериод',
 					flex:1,
 				},
@@ -253,11 +295,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -288,6 +331,23 @@
 						name:'Основание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтандартныеВычетыНаДетей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -399,6 +459,7 @@
 					items:
 					[
 		{
+			id: 'ДоходыПредыдущие',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:44px;width:661px;height:261px;',
 			height: 261,width: 661,
@@ -406,24 +467,25 @@
 			[
 				{
 					text:'Месяц',
-					width:'160',
+					width:'1600',
 					dataIndex:'МесяцНалоговогоПериода',
 					flex:1,
 				},
 				{
 					text:'Сумма дохода',
-					width:'120',
+					width:'1200',
 					dataIndex:'Размер',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -433,6 +495,23 @@
 						name:'Размер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоходыПредыдущие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -471,7 +550,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Принятие к учету НМА',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:387px;width:644px;height:25px;',
@@ -673,6 +676,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:16px;',
 		},
 		{
+			id: 'ОплатаНМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:152px;width:612px;height:87px;',
 			height: 87,width: 612,
@@ -703,7 +707,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуНМА/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуНМА/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -716,6 +720,23 @@
 						name:'СуммаОплаты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОплатаНМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -750,7 +771,8 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:494px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

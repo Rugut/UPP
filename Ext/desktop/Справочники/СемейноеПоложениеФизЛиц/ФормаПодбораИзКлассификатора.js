@@ -8,8 +8,12 @@
 	title: 'Семейное положение физических лиц',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

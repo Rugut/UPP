@@ -8,7 +8,10 @@
 	title: 'Поступление денежных документов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -311,6 +314,7 @@
 			]
 		},
 		{
+			id: 'ДенежныеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:102px;',
 			height: 102,width: 640,
@@ -324,7 +328,7 @@
 				},
 				{
 					text:'Денежный документ',
-					width:'180',
+					width:'1800',
 					dataIndex:'ДенежныйДокумент',
 					flex:1,
 				},
@@ -336,7 +340,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -347,7 +351,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДенежныхДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДенежныхДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -363,6 +367,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДенежныеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -498,7 +519,8 @@
 			height: 19,
 			style: 'position:absolute;left:236px;top:81px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

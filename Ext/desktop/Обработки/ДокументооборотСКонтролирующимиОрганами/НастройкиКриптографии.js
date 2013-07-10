@@ -8,7 +8,10 @@
 	title: 'Настройки криптографии',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКриптопровайдер',
@@ -100,7 +103,8 @@
 			text: 'Внимание!\r\nНастройки криптографии действительны для всех учетных записей, зарегистрированных в информационной базе!',
 			style: 'position:absolute;left:8px;top:9px;width:590px;height:28px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

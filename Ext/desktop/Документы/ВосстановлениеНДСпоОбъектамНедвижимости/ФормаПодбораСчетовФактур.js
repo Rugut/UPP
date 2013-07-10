@@ -8,8 +8,12 @@
 	title: 'Подбор счетов-фактур',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СчетаФактуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:55px;width:561px;height:204px;',
 			height: 204,width: 561,
@@ -82,7 +86,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -117,6 +121,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчетаФактуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -134,7 +155,8 @@
 			height: 19,
 			style: 'position:absolute;left:118px;top:8px;width:248px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

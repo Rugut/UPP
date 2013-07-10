@@ -8,7 +8,10 @@
 	title: 'Сведения о доле доходов организации от осуществления образовательной и (или) медицинской деятельности',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
@@ -65,7 +68,8 @@
 			title: 'Организация',
 			style: 'position:absolute;left:8px;top:8px;width:260px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

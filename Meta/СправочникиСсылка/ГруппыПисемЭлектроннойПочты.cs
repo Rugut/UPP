@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ГруппыПисемЭлектроннойПочты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6c56ef69-9b05-45f2-bacf-f2041a848cad");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191312.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -46,7 +46,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ГруппыПисемЭлектроннойПочты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ГруппыПисемЭлектроннойПочты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -59,10 +72,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2084 [Порядок]
-					,_Fld2085 [ИспользоватьПредметыПисем]
-					From _Reference78(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1033 [Порядок]
+					,_Fld1034 [ИспользоватьПредметыПисем]
+					From _Reference39(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

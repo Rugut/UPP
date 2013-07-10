@@ -117,21 +117,21 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document513(
+						Insert Into _Document387(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld12938
-						,_Fld12939RRef
-						,_Fld12940RRef
-						,_Fld12941RRef
-						,_Fld12942
-						,_Fld12943
-						,_Fld12944
-						,_Fld12945
-						,_Fld12946)
+						,_Fld8487
+						,_Fld8488RRef
+						,_Fld8489RRef
+						,_Fld8490RRef
+						,_Fld8491
+						,_Fld8492
+						,_Fld27213
+						,_Fld27214
+						,_Fld27215)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -150,21 +150,21 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document513
+						Update _Document387
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld12938	= @Комментарий
-						,_Fld12939RRef	= @Ответственный
-						,_Fld12940RRef	= @Подразделение
-						,_Fld12941RRef	= @Проект
-						,_Fld12942	= @МоментЗапасов
-						,_Fld12943	= @НачальнаяГраница
-						,_Fld12944	= @ИспользоватьДетальныеИсточники
-						,_Fld12945	= @РазузловатьПриПолучении
-						,_Fld12946	= @АвтоСвертка
+						,_Fld8487	= @Комментарий
+						,_Fld8488RRef	= @Ответственный
+						,_Fld8489RRef	= @Подразделение
+						,_Fld8490RRef	= @Проект
+						,_Fld8491	= @МоментЗапасов
+						,_Fld8492	= @НачальнаяГраница
+						,_Fld27213	= @ИспользоватьДетальныеИсточники
+						,_Fld27214	= @РазузловатьПриПолучении
+						,_Fld27215	= @АвтоСвертка
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -188,7 +188,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document513
+					Команда.CommandText = @"Delete _Document387
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

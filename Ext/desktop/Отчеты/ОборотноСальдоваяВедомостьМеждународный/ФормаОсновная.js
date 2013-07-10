@@ -8,7 +8,10 @@
 	title: 'Оборотно-сальдовая ведомость',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -65,7 +68,8 @@
 			text: 'Организация:',
 			style: 'position:absolute;left:286px;top:33px;width:76px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

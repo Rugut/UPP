@@ -8,7 +8,10 @@
 	title: 'Регламентные операции налогового учета (по налогу на приб.)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -125,7 +128,8 @@
 			height: 19,
 			style: 'position:absolute;left:97px;top:233px;width:279px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

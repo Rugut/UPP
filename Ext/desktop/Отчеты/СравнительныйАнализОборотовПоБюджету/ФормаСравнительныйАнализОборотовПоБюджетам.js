@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:588px;height:48px;',
@@ -77,7 +80,8 @@
 			text: 'Бюджет:',
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

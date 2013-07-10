@@ -8,7 +8,10 @@
 	title: 'Тариф почтового сбора',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -25,6 +28,7 @@
 			style: 'position:absolute;left:93px;top:33px;width:183px;height:19px;',
 		},
 		{
+			id: 'СоставШкалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:166px;width:384px;height:104px;',
 			height: 104,width: 384,
@@ -50,24 +54,25 @@
 				},
 				{
 					text:'Процент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Процент',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТарифыПочтовогоСбора").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТарифыПочтовогоСбора/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТарифыПочтовогоСбора/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -86,6 +91,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставШкалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -130,7 +152,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

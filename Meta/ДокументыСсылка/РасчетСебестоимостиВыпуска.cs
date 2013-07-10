@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РасчетСебестоимостиВыпуска:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6dbd04e7-b360-448b-917e-ed7d3bb3e652");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191746.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012019.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -86,17 +86,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15611 [Комментарий]
-					,_Fld15612RRef [Организация]
-					,_Fld15613RRef [Ответственный]
-					,_Fld15614 [ОтражатьВБухгалтерскомУчете]
-					,_Fld15615 [ОтражатьВМеждународномУчете]
-					,_Fld15616 [ОтражатьВНалоговомУчете]
-					,_Fld15617 [ОтражатьВУправленческомУчете]
-					,_Fld15618 [ПериодРегистрации]
-					,_Fld15619 [УчитыватьОбщепроизводственныеРасходыПриРаспределенииПоПеределам]
-					,_Fld15620RRef [НастройкаЗакрытияМесяца]
-					From _Document558(NOLOCK)
+					,_Fld10784 [Комментарий]
+					,_Fld10785RRef [Организация]
+					,_Fld10786RRef [Ответственный]
+					,_Fld10787 [ОтражатьВБухгалтерскомУчете]
+					,_Fld10788 [ОтражатьВМеждународномУчете]
+					,_Fld10789 [ОтражатьВНалоговомУчете]
+					,_Fld10790 [ОтражатьВУправленческомУчете]
+					,_Fld10791 [ПериодРегистрации]
+					,_Fld19099 [УчитыватьОбщепроизводственныеРасходыПриРаспределенииПоПеределам]
+					,_Fld27271RRef [НастройкаЗакрытияМесяца]
+					From _Document428(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

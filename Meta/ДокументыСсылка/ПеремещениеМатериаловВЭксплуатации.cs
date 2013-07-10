@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПеремещениеМатериаловВЭксплуатации:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("60bbdd9b-667f-43a4-a4cd-427281b42b96");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191718.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012016.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -87,15 +87,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12378 [Комментарий]
-					,_Fld12379RRef [Организация]
-					,_Fld12380RRef [Ответственный]
-					,_Fld12381 [ОтражатьВБухгалтерскомУчете]
-					,_Fld12382 [ОтражатьВНалоговомУчете]
-					,_Fld12383 [ОтражатьВУправленческомУчете]
-					,_Fld12384RRef [Подразделение]
-					,_Fld12385RRef [ПодразделениеОрганизации]
-					From _Document490(NOLOCK)
+					,_Fld8017 [Комментарий]
+					,_Fld8018RRef [Организация]
+					,_Fld8019RRef [Ответственный]
+					,_Fld8020 [ОтражатьВБухгалтерскомУчете]
+					,_Fld8021 [ОтражатьВНалоговомУчете]
+					,_Fld8022 [ОтражатьВУправленческомУчете]
+					,_Fld8023RRef [Подразделение]
+					,_Fld8024RRef [ПодразделениеОрганизации]
+					From _Document367(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

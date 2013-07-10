@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class НачислениеЗарплатыРаботникамОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d7bf413b-0887-4f84-8007-fa3622b83651");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191621.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012011.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -69,18 +69,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9744 [ПериодРегистрации]
-					,_Fld9745RRef [Организация]
-					,_Fld9746RRef [ПодразделениеОрганизации]
-					,_Fld9747 [Комментарий]
-					,_Fld9748RRef [Ответственный]
-					,_Fld9749 [КраткийСоставДокумента]
-					,_Fld9750_TYPE [ПерерассчитываемыйДокумент_Тип],_Fld9750_RRRef [ПерерассчитываемыйДокумент],_Fld9750_RTRef [ПерерассчитываемыйДокумент_Вид]
-					,_Fld9751RRef [ВидОперации]
-					,_Fld9752RRef [ПериодНачисления]
-					,_Fld9753 [ПериодНачисленияДатаНачала]
-					,_Fld9754 [ПериодНачисленияДатаОкончания]
-					From _Document437(NOLOCK)
+					,_Fld6212 [ПериодРегистрации]
+					,_Fld6213RRef [Организация]
+					,_Fld6214RRef [ПодразделениеОрганизации]
+					,_Fld6215 [Комментарий]
+					,_Fld6216RRef [Ответственный]
+					,_Fld6217 [КраткийСоставДокумента]
+					,_Fld6218_TYPE [ПерерассчитываемыйДокумент_Тип],_Fld6218_RRRef [ПерерассчитываемыйДокумент],_Fld6218_RTRef [ПерерассчитываемыйДокумент_Вид]
+					,_Fld6219RRef [ВидОперации]
+					,_Fld21540RRef [ПериодНачисления]
+					,_Fld21541 [ПериодНачисленияДатаНачала]
+					,_Fld21542 [ПериодНачисленияДатаОкончания]
+					From _Document320(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

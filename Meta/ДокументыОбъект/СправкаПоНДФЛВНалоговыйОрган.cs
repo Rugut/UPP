@@ -132,27 +132,27 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document600(
+						Insert Into _Document23174(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld17512
-						,_Fld17513RRef
-						,_Fld17514
-						,_Fld17515RRef
-						,_Fld17516
-						,_Fld17517
-						,_Fld17518RRef
-						,_Fld17519RRef
-						,_Fld17520RRef
-						,_Fld17521
-						,_Fld17522
-						,_Fld17523RRef
-						,_Fld17524
-						,_Fld17525
-						,_Fld17526)
+						,_Fld25454
+						,_Fld25455RRef
+						,_Fld25456
+						,_Fld25457RRef
+						,_Fld25458
+						,_Fld25459
+						,_Fld25460RRef
+						,_Fld25461RRef
+						,_Fld25462RRef
+						,_Fld25463
+						,_Fld25464
+						,_Fld25465RRef
+						,_Fld25466
+						,_Fld25467
+						,_Fld25468)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -177,27 +177,27 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document600
+						Update _Document23174
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld17512	= @НалоговыйПериод
-						,_Fld17513RRef	= @Организация
-						,_Fld17514	= @ОКАТО_КПП
-						,_Fld17515RRef	= @ОснованиеДляПредставленияСправок
-						,_Fld17516	= @ИмяФайла
-						,_Fld17517	= @Телефон
-						,_Fld17518RRef	= @ГлавныйБухгалтер
-						,_Fld17519RRef	= @СправкуПодписал
-						,_Fld17520RRef	= @ДолжностьПодписавшегоЛица
-						,_Fld17521	= @ПринятоНалоговымОрганом
-						,_Fld17522	= @КраткийСоставДокумента
-						,_Fld17523RRef	= @Ответственный
-						,_Fld17524	= @Комментарий
-						,_Fld17525	= @СпециальныйДокумент2011года
-						,_Fld17526	= @КодИФНС
+						,_Fld25454	= @НалоговыйПериод
+						,_Fld25455RRef	= @Организация
+						,_Fld25456	= @ОКАТО_КПП
+						,_Fld25457RRef	= @ОснованиеДляПредставленияСправок
+						,_Fld25458	= @ИмяФайла
+						,_Fld25459	= @Телефон
+						,_Fld25460RRef	= @ГлавныйБухгалтер
+						,_Fld25461RRef	= @СправкуПодписал
+						,_Fld25462RRef	= @ДолжностьПодписавшегоЛица
+						,_Fld25463	= @ПринятоНалоговымОрганом
+						,_Fld25464	= @КраткийСоставДокумента
+						,_Fld25465RRef	= @Ответственный
+						,_Fld25466	= @Комментарий
+						,_Fld25467	= @СпециальныйДокумент2011года
+						,_Fld25468	= @КодИФНС
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -225,7 +225,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document600
+					Команда.CommandText = @"Delete _Document23174
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

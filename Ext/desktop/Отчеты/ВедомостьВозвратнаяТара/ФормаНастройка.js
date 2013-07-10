@@ -8,7 +8,10 @@
 	title: 'Лимиты возвратной тары',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:354px;height:270px;',
@@ -54,6 +57,7 @@
 			style: 'position:absolute;left:164px;top:8px;width:80px;height:19px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:114px;width:340px;height:130px;',
 			height: 130,width: 340,
@@ -67,7 +71,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'220',
+					width:'2200',
 					dataIndex:'ПредставлениеПоказателя',
 					flex:1,
 				},
@@ -78,7 +82,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -88,6 +92,23 @@
 						name:'ПредставлениеПоказателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -118,6 +139,7 @@
 					items:
 					[
 		{
+			id: 'Группировки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:340px;height:220px;',
 			height: 220,width: 340,
@@ -125,7 +147,7 @@
 			[
 				{
 					text:'Группировки строк',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПредставлениеГруппировки',
 					flex:1,
 				},
@@ -137,7 +159,7 @@
 				},
 				{
 					text:'Дополнительные поля',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДополнительныеПоля',
 					flex:1,
 				},
@@ -148,7 +170,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,6 +184,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Группировки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -170,6 +209,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:340px;height:220px;',
 			height: 220,width: 340,
@@ -183,7 +223,7 @@
 				},
 				{
 					text:'Поле',
-					width:'120',
+					width:'1200',
 					dataIndex:'Поле',
 					flex:1,
 				},
@@ -195,7 +235,7 @@
 				},
 				{
 					text:'Значение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -206,7 +246,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВедомостьВозвратнаяТара/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -223,12 +263,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

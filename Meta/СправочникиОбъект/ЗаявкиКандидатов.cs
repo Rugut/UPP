@@ -117,26 +117,26 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference100(
+						Insert Into _Reference19638(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld2325RRef
-						,_Fld2326RRef
-						,_Fld2327RRef
-						,_Fld2328
-						,_Fld2329
-						,_Fld2330
-						,_Fld2331RRef
-						,_Fld2332
-						,_Fld2333RRef
-						,_Fld2334RRef
-						,_Fld2336RRef
-						,_Fld2337RRef
-						,_Fld2338RRef)
+						,_Fld19741RRef
+						,_Fld19742RRef
+						,_Fld19743RRef
+						,_Fld19744
+						,_Fld19745
+						,_Fld19746
+						,_Fld19747RRef
+						,_Fld19748
+						,_Fld19749RRef
+						,_Fld19750RRef
+						,_Fld19752RRef
+						,_Fld19753RRef
+						,_Fld19754RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -161,7 +161,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference100
+						Update _Reference19638
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -169,19 +169,19 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2325RRef	= @ФизЛицо
-						,_Fld2326RRef	= @Состояние
-						,_Fld2327RRef	= @Важность
-						,_Fld2328	= @Комментарий
-						,_Fld2329	= @Закрыта
-						,_Fld2330	= @РезультатЗакрытия
-						,_Fld2331RRef	= @ГруппаЗаявок
-						,_Fld2332	= @ДатаОткрытия
-						,_Fld2333RRef	= @ИсточникИнформации
-						,_Fld2334RRef	= @Вакансия
-						,_Fld2336RRef	= @Должность
-						,_Fld2337RRef	= @Организация
-						,_Fld2338RRef	= @Ответственный
+						,_Fld19741RRef	= @ФизЛицо
+						,_Fld19742RRef	= @Состояние
+						,_Fld19743RRef	= @Важность
+						,_Fld19744	= @Комментарий
+						,_Fld19745	= @Закрыта
+						,_Fld19746	= @РезультатЗакрытия
+						,_Fld19747RRef	= @ГруппаЗаявок
+						,_Fld19748	= @ДатаОткрытия
+						,_Fld19749RRef	= @ИсточникИнформации
+						,_Fld19750RRef	= @Вакансия
+						,_Fld19752RRef	= @Должность
+						,_Fld19753RRef	= @Организация
+						,_Fld19754RRef	= @Ответственный
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -214,7 +214,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference100
+					Команда.CommandText = @"Delete _Reference19638
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

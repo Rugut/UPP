@@ -8,7 +8,10 @@
 	title: 'Форма выбора строковых значений из текста',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:442px;top:54px;width:190px;height:259px;',
@@ -23,7 +26,8 @@
 			title: 'Найденные значения',
 			style: 'position:absolute;left:442px;top:10px;width:190px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

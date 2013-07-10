@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВводНачальныхОстатковОС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("6676c1d4-d0a0-4d60-9938-bc7a63040aa4");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191411.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012000.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -84,15 +84,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld5339RRef [Ответственный]
-					,_Fld5340 [Комментарий]
-					,_Fld5341RRef [Организация]
-					,_Fld5342 [ОтражатьВУправленческомУчете]
-					,_Fld5343 [ОтражатьВБухгалтерскомУчете]
-					,_Fld5344 [ОтражатьВНалоговомУчете]
-					,_Fld5345RRef [Подразделение]
-					,_Fld5346RRef [ПодразделениеОрганизации]
-					From _Document318(NOLOCK)
+					,_Fld3070RRef [Ответственный]
+					,_Fld3071 [Комментарий]
+					,_Fld3072RRef [Организация]
+					,_Fld3073 [ОтражатьВУправленческомУчете]
+					,_Fld3074 [ОтражатьВБухгалтерскомУчете]
+					,_Fld3075 [ОтражатьВНалоговомУчете]
+					,_Fld3076RRef [Подразделение]
+					,_Fld3077RRef [ПодразделениеОрганизации]
+					From _Document220(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

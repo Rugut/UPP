@@ -8,7 +8,10 @@
 	title: 'Ключ аналитики учета затрат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -135,7 +138,8 @@
 			height: 19,
 			style: 'position:absolute;left:141px;top:202px;width:251px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -108,21 +108,21 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document537(
+						Insert Into _Document409(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld14553RRef
-						,_Fld14554
-						,_Fld14555RRef
-						,_Fld14556
-						,_Fld14557
-						,_Fld14558RRef
-						,_Fld14559
-						,_Fld14560RRef
-						,_Fld14561)
+						,_Fld9940RRef
+						,_Fld9941
+						,_Fld9943RRef
+						,_Fld9944
+						,_Fld9945
+						,_Fld9942RRef
+						,_Fld27247
+						,_Fld27248RRef
+						,_Fld27249)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -141,21 +141,21 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document537
+						Update _Document409
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld14553RRef	= @Организация
-						,_Fld14554	= @Комментарий
-						,_Fld14555RRef	= @Ответственный
-						,_Fld14556	= @УдалитьРайонныйКоэффициент
-						,_Fld14557	= @КраткийСоставДокумента
-						,_Fld14558RRef	= @УдалитьВидЗанятости
-						,_Fld14559	= @ДанныеПрошлойВерсии
-						,_Fld14560RRef	= @ИсправляемыйДокумент
-						,_Fld14561	= @ДвиженияИсправляемогоДокумента
+						,_Fld9940RRef	= @Организация
+						,_Fld9941	= @Комментарий
+						,_Fld9943RRef	= @Ответственный
+						,_Fld9944	= @УдалитьРайонныйКоэффициент
+						,_Fld9945	= @КраткийСоставДокумента
+						,_Fld9942RRef	= @УдалитьВидЗанятости
+						,_Fld27247	= @ДанныеПрошлойВерсии
+						,_Fld27248RRef	= @ИсправляемыйДокумент
+						,_Fld27249	= @ДвиженияИсправляемогоДокумента
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -180,7 +180,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document537
+					Команда.CommandText = @"Delete _Document409
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

@@ -8,7 +8,10 @@
 	title: 'Справка другого страхователя о заработке',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -126,6 +129,7 @@
 			style: 'position:absolute;left:8px;top:83px;width:100px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ДанныеОЗаработке',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:136px;width:666px;height:132px;',
 			height: 132,width: 666,
@@ -162,7 +166,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаДругогоСтрахователяОЗаработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаДругогоСтрахователяОЗаработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -178,6 +182,23 @@
 						name:'ДнейБолезниУходаЗаДетьми',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеОЗаработке');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -214,7 +235,8 @@
 			height: 19,
 			style: 'position:absolute;left:554px;top:83px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

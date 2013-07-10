@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РегламентныеОперацииНалоговогоУчетаПоНалогуНаПрибыль:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e126ac28-7feb-4687-ae03-7196d4db0bc6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191849.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -67,16 +67,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16254RRef [Организация]
-					,_Fld16255 [НормированиеРасходовНаРекламу]
-					,_Fld16256 [НормированиеРасходовНаДобровольноеСтрахованиеИВозмещениеПроцентов]
-					,_Fld16257 [НормированиеПредставительскихРасходов]
-					,_Fld16258 [ЗакрытиеСчетовКосвенныхРасходов]
-					,_Fld16259 [РаспределениеРасходовПоВидамДеятельности]
-					,_Fld16260 [ПериодРегистрации]
-					,_Fld16261RRef [Ответственный]
-					,_Fld16262 [Комментарий]
-					From _Document571(NOLOCK)
+					,_Fld11277RRef [Организация]
+					,_Fld11278 [НормированиеРасходовНаРекламу]
+					,_Fld11279 [НормированиеРасходовНаДобровольноеСтрахованиеИВозмещениеПроцентов]
+					,_Fld11280 [НормированиеПредставительскихРасходов]
+					,_Fld11281 [ЗакрытиеСчетовКосвенныхРасходов]
+					,_Fld11283 [РаспределениеРасходовПоВидамДеятельности]
+					,_Fld11284 [ПериодРегистрации]
+					,_Fld11285RRef [Ответственный]
+					,_Fld11286 [Комментарий]
+					From _Document442(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

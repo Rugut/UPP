@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class КлассификаторИспользованияРабочегоВремени:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("789cf997-385d-45fc-8e83-80b6fb4feef0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191406.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012000.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -49,7 +49,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public КлассификаторИспользованияРабочегоВремени(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public КлассификаторИспользованияРабочегоВремени(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -61,13 +74,13 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2400 [БуквенныйКод]
-					,_Fld2401 [ЦифровойКод]
-					,_Fld2402 [ПолноеНаименование]
-					,_Fld2403RRef [УдалитьВидВремени]
-					,_Fld2404 [РабочееВремя]
-					From _Reference115(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1205 [БуквенныйКод]
+					,_Fld1206 [ЦифровойКод]
+					,_Fld1207 [ПолноеНаименование]
+					,_Fld1208RRef [УдалитьВидВремени]
+					,_Fld21239 [РабочееВремя]
+					From _Reference70(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

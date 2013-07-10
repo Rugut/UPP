@@ -8,7 +8,10 @@
 	title: 'Увольнение',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -64,6 +67,7 @@
 			style: 'position:absolute;left:96px;top:352px;width:306px;height:19px;',
 		},
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:394px;height:220px;',
 			height: 220,width: 394,
@@ -83,7 +87,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -106,7 +110,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Увольнение/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Увольнение/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -125,6 +129,23 @@
 						name:'ПричинаУвольнения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -170,7 +191,8 @@
 			title: 'Сотрудники',
 			style: 'position:absolute;left:8px;top:84px;width:394px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Сообщение о проверке заявления',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись18',
@@ -154,7 +157,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

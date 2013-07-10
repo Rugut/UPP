@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ТипыЦенНоменклатурыКонтрагентов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("68a517dd-73ea-4b18-b0ef-67c2f4716904");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191153.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011946.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -54,7 +54,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ТипыЦенНоменклатурыКонтрагентов(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ТипыЦенНоменклатурыКонтрагентов(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -67,13 +80,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3977RRef [ВалютаЦены]
-					,_Fld3978 [ЦенаВключаетНДС]
-					,_Fld3979RRef [ТипЦеныНоменклатуры]
-					,_Fld3980 [ОписаниеТипаЦеныНоменклатурыКонтрагента]
-					,_Fld3981 [Комментарий]
-					From _Reference270(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2119RRef [ВалютаЦены]
+					,_Fld2120 [ЦенаВключаетНДС]
+					,_Fld2121RRef [ТипЦеныНоменклатуры]
+					,_Fld2122 [ОписаниеТипаЦеныНоменклатурыКонтрагента]
+					,_Fld2123 [Комментарий]
+					From _Reference182(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -89,9 +102,9 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							ВалютаЦены = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(6));
+							ВалютаЦены = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(6),Глубина+1);
 							ЦенаВключаетНДС = ((byte[])Читалка.GetValue(7))[0]==1;
-							ТипЦеныНоменклатуры = new V82.СправочникиСсылка.ТипыЦенНоменклатуры((byte[])Читалка.GetValue(8));
+							ТипЦеныНоменклатуры = new V82.СправочникиСсылка.ТипыЦенНоменклатуры((byte[])Читалка.GetValue(8),Глубина+1);
 							ОписаниеТипаЦеныНоменклатурыКонтрагента = Читалка.GetString(9);
 							Комментарий = Читалка.GetString(10);
 							//return Ссылка;

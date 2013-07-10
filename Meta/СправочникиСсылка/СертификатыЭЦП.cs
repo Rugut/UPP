@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class СертификатыЭЦП:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1a6ea539-001e-4d2d-a7d6-26fd48d0353c");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191526.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012006.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -58,7 +58,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СертификатыЭЦП(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СертификатыЭЦП(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -70,19 +83,19 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3409 [ДолжностьПоСертификату]
-					,_Fld3410 [ЗапомнитьПарольКСертификату]
-					,_Fld3411 [Назначение]
-					,_Fld3412 [ОграничитьДоступКСертификату]
-					,_Fld3413RRef [Организация]
-					,_Fld3414 [Отозван]
-					,_Fld3415 [Отпечаток]
-					,_Fld3416 [ПарольПользователя]
-					,_Fld3417RRef [Пользователь]
-					,_Fld3418 [ПроверятьСоставИсполнителей]
-					,_Fld3419 [ФайлСертификата]
-					From _Reference228(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23751 [ДолжностьПоСертификату]
+					,_Fld23752 [ЗапомнитьПарольКСертификату]
+					,_Fld23753 [Назначение]
+					,_Fld23754 [ОграничитьДоступКСертификату]
+					,_Fld23755RRef [Организация]
+					,_Fld23756 [Отозван]
+					,_Fld23757 [Отпечаток]
+					,_Fld23758 [ПарольПользователя]
+					,_Fld23759RRef [Пользователь]
+					,_Fld23760 [ПроверятьСоставИсполнителей]
+					,_Fld23761 [ФайлСертификата]
+					From _Reference23127(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -101,11 +114,11 @@ namespace V82.СправочникиСсылка
 							ЗапомнитьПарольКСертификату = ((byte[])Читалка.GetValue(6))[0]==1;
 							Назначение = Читалка.GetString(7);
 							ОграничитьДоступКСертификату = ((byte[])Читалка.GetValue(8))[0]==1;
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(9));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(9),Глубина+1);
 							Отозван = ((byte[])Читалка.GetValue(10))[0]==1;
 							Отпечаток = Читалка.GetString(11);
 							ПарольПользователя = Читалка.GetString(12);
-							Пользователь = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(13));
+							Пользователь = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(13),Глубина+1);
 							ПроверятьСоставИсполнителей = ((byte[])Читалка.GetValue(14))[0]==1;
 							//return Ссылка;
 						}

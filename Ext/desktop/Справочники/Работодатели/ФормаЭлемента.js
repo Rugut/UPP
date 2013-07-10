@@ -8,7 +8,10 @@
 	title: 'Работодатели',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -149,7 +152,8 @@
 			title: 'Коды для запросов в ФСС',
 			style: 'position:absolute;left:8px;top:114px;width:502px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

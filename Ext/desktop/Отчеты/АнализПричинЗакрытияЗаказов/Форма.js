@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:555px;top:3px;width:265px;height:19px;',
@@ -143,7 +146,8 @@
 			boxLabel: 'Внутренние заказы',
 			style: 'position:absolute;left:570px;top:35px;width:156px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

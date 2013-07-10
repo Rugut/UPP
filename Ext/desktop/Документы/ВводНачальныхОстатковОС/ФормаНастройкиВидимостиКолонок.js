@@ -8,8 +8,12 @@
 	title: 'Настройка видимости колонок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:455px;height:322px;',
 			height: 322,width: 455,
@@ -28,13 +32,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Реквизит',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -54,7 +75,8 @@
 			boxLabel: 'Фиксировать колонки ОС',
 			style: 'position:absolute;left:8px;top:338px;width:484px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Конструктор пользовательского поля',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:119px;top:84px;width:203px;height:19px;',
@@ -54,7 +57,8 @@
 			height: 19,
 			style: 'position:absolute;left:119px;top:8px;width:203px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

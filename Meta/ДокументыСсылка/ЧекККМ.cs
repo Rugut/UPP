@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЧекККМ:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("13dbeddc-bc26-44b9-9e58-ce22c562e271");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191742.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012018.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -76,22 +76,22 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld19170RRef [ВидОперации]
-					,_Fld19171RRef [Склад]
-					,_Fld19172RRef [КассаККМ]
-					,_Fld19173RRef [ТипЦен]
-					,_Fld19174 [СуммаДокумента]
-					,_Fld19175 [Комментарий]
-					,_Fld19176RRef [ЧекККМПродажа]
-					,_Fld19177 [ЧекПробитНаККМ]
-					,_Fld19178 [НомерЧекаККМ]
-					,_Fld19179RRef [Ответственный]
-					,_Fld19180RRef [ДисконтнаяКарта]
-					,_Fld19181 [НомерСменыККМ]
-					,_Fld19182RRef [УсловиеПродаж]
-					,_Fld19183RRef [Организация]
-					,_Fld19184RRef [ВладелецДисконтнойКарты]
-					From _Document643(NOLOCK)
+					,_Fld12648RRef [ВидОперации]
+					,_Fld12649RRef [Склад]
+					,_Fld12650RRef [КассаККМ]
+					,_Fld12651RRef [ТипЦен]
+					,_Fld12652 [СуммаДокумента]
+					,_Fld12653 [Комментарий]
+					,_Fld12654RRef [ЧекККМПродажа]
+					,_Fld12655 [ЧекПробитНаККМ]
+					,_Fld12656 [НомерЧекаККМ]
+					,_Fld12657RRef [Ответственный]
+					,_Fld12658RRef [ДисконтнаяКарта]
+					,_Fld12659 [НомерСменыККМ]
+					,_Fld12663RRef [УсловиеПродаж]
+					,_Fld12664RRef [Организация]
+					,_Fld12665RRef [ВладелецДисконтнойКарты]
+					From _Document496(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

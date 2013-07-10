@@ -8,7 +8,10 @@
 	title: 'Годовые графики амортизации ОС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -260,7 +263,8 @@
 			name: 'Коэффициент12',
 			style: 'position:absolute;left:264px;top:225px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

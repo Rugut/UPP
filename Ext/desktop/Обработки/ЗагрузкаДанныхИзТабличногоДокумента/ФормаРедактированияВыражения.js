@@ -8,7 +8,10 @@
 	title: 'Форма редактирования выражения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textarea',
 			hideLabel: true,
@@ -16,7 +19,8 @@
 			name: 'НадписьТекстВыражения',
 			style: 'position:absolute;left:8px;top:8px;width:702px;height:105px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

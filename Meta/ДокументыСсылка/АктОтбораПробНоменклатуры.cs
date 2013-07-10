@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class АктОтбораПробНоменклатуры:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3672d97b-7098-4d5c-83f0-da0409079f55");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191351.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011959.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -94,25 +94,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld4802RRef [ВидОперации]
-					,_Fld4803 [Влажность]
-					,_Fld4804 [ЗамечанияКУпаковкеМаркировке]
-					,_Fld4805RRef [ЗаявкаНаСертификациюНоменклатуры]
-					,_Fld4806 [Испытания]
-					,_Fld4807 [КоличествоВскрытыхУпаковок]
-					,_Fld4808 [Комментарий]
-					,_Fld4809 [КонтрольнаяПроба]
-					,_Fld4810RRef [Номенклатура]
-					,_Fld4811RRef [НормативныйДокумент]
-					,_Fld4812RRef [Организация]
-					,_Fld4813RRef [ОрганПоСертификации]
-					,_Fld4814RRef [Ответственный]
-					,_Fld4815RRef [Подразделение]
-					,_Fld4816 [РезультатНаружногоОсмотра]
-					,_Fld4817RRef [СерияНоменклатуры]
-					,_Fld4818RRef [Склад]
-					,_Fld4819 [Температура]
-					From _Document302(NOLOCK)
+					,_Fld2692RRef [ВидОперации]
+					,_Fld2693 [Влажность]
+					,_Fld2694 [ЗамечанияКУпаковкеМаркировке]
+					,_Fld2695RRef [ЗаявкаНаСертификациюНоменклатуры]
+					,_Fld2696 [Испытания]
+					,_Fld2697 [КоличествоВскрытыхУпаковок]
+					,_Fld2698 [Комментарий]
+					,_Fld2699 [КонтрольнаяПроба]
+					,_Fld2700RRef [Номенклатура]
+					,_Fld2701RRef [НормативныйДокумент]
+					,_Fld2702RRef [Организация]
+					,_Fld2703RRef [ОрганПоСертификации]
+					,_Fld2704RRef [Ответственный]
+					,_Fld2705RRef [Подразделение]
+					,_Fld2706 [РезультатНаружногоОсмотра]
+					,_Fld2707RRef [СерияНоменклатуры]
+					,_Fld2708RRef [Склад]
+					,_Fld2709 [Температура]
+					From _Document206(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

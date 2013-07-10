@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СведенияОВзносахИСтраховомСтажеСПВ1:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("a83e74a9-aca7-4148-b877-7e765c78eb51");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191212.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011951.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -73,19 +73,19 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16746RRef [Организация]
-					,_Fld16747 [Комментарий]
-					,_Fld16748RRef [Ответственный]
-					,_Fld16749 [КраткийСоставДокумента]
-					,_Fld16750 [ПринятоВПФР]
-					,_Fld16751 [НомерПачки]
-					,_Fld16752RRef [КатегорияЗастрахованныхЛиц]
-					,_Fld16753 [ОтчетныйПериод]
-					,_Fld16754RRef [ТипСведенийСЗВ]
-					,_Fld16755RRef [Руководитель]
-					,_Fld16756RRef [ДолжностьРуководителя]
-					,_Fld16757RRef [ФорматФайла]
-					From _Document581(NOLOCK)
+					,_Fld25346RRef [Организация]
+					,_Fld25347 [Комментарий]
+					,_Fld25348RRef [Ответственный]
+					,_Fld25349 [КраткийСоставДокумента]
+					,_Fld25350 [ПринятоВПФР]
+					,_Fld25351 [НомерПачки]
+					,_Fld25352RRef [КатегорияЗастрахованныхЛиц]
+					,_Fld25353 [ОтчетныйПериод]
+					,_Fld25354RRef [ТипСведенийСЗВ]
+					,_Fld25355RRef [Руководитель]
+					,_Fld25356RRef [ДолжностьРуководителя]
+					,_Fld25357RRef [ФорматФайла]
+					From _Document23170(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

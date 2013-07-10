@@ -8,7 +8,10 @@
 	title: 'Общероссийский классификатор основных фондов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -82,7 +85,8 @@
 			height: 19,
 			style: 'position:absolute;left:160px;top:185px;width:325px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

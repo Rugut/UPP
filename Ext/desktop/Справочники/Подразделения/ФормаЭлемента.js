@@ -8,7 +8,10 @@
 	title: 'Подразделения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -111,6 +114,7 @@
 					items:
 					[
 		{
+			id: 'СоответствиеПодразделениямОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:510px;height:206px;',
 			height: 206,width: 510,
@@ -118,24 +122,25 @@
 			[
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПодразделениеОрганизации',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Подразделения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +150,23 @@
 						name:'ПодразделениеОрганизации',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствиеПодразделениямОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -160,6 +182,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:257px;top:26px;width:257px;height:201px;',
 			height: 201,width: 257,
@@ -179,18 +202,19 @@
 				},
 				{
 					text:'Категория',
-					width:'120',
+					width:'1200',
 					dataIndex:'Категория',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Подразделения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -204,8 +228,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:26px;width:247px;height:201px;',
 			height: 201,width: 247,
@@ -219,24 +261,25 @@
 				},
 				{
 					text:'Свойство',
-					width:'120',
+					width:'1200',
 					dataIndex:'Свойство',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Значение',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Подразделения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -249,6 +292,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -267,7 +327,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Технологический анализ бухгалтерского учета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -62,7 +65,8 @@
 			text: '',
 			style: 'position:absolute;left:229px;top:37px;width:21px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

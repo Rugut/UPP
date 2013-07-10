@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ТабельУчетаРабочегоВремениОрганизации:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8b1bd005-70e3-4493-9e16-7024fbc48e10");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190844.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011932.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,17 +65,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17924RRef [Организация]
-					,_Fld17925 [ПериодРегистрации]
-					,_Fld17926RRef [ПодразделениеОрганизации]
-					,_Fld17927RRef [Ответственный]
-					,_Fld17928 [Комментарий]
-					,_Fld17929 [КраткийСоставДокумента]
-					,_Fld17930RRef [СпособВводаДанных]
-					,_Fld17931RRef [СпособУказанияПериода]
-					,_Fld17932 [ДатаНачалаПериода]
-					,_Fld17933 [ДатаОкончанияПериода]
-					From _Document607(NOLOCK)
+					,_Fld20206RRef [Организация]
+					,_Fld20207 [ПериодРегистрации]
+					,_Fld20208RRef [ПодразделениеОрганизации]
+					,_Fld20209RRef [Ответственный]
+					,_Fld20210 [Комментарий]
+					,_Fld20211 [КраткийСоставДокумента]
+					,_Fld20212RRef [СпособВводаДанных]
+					,_Fld20213RRef [СпособУказанияПериода]
+					,_Fld20214 [ДатаНачалаПериода]
+					,_Fld20215 [ДатаОкончанияПериода]
+					From _Document19664(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

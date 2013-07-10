@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -91,6 +94,7 @@
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
 		},
 		{
+			id: 'Номенклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:388px;height:160px;',
 			height: 160,width: 388,
@@ -104,13 +108,13 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Вести сложный учет НДС',
-					width:'140',
+					width:'1400',
 					dataIndex:'ВестиСложныйУчетНДС',
 					flex:1,
 				},
@@ -121,7 +125,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыборНоменклатурыДляНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыборНоменклатурыДляНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,13 +139,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Номенклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Номенклатура',
 			style: 'position:absolute;left:8px;top:108px;width:388px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

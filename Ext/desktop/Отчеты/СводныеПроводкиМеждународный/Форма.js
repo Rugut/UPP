@@ -8,7 +8,10 @@
 	title: 'Отчет Сводные проводки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДатаНач',
@@ -66,7 +69,8 @@
 			text: '...',
 			style: 'position:absolute;left:288px;top:33px;width:24px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

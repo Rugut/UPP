@@ -8,7 +8,10 @@
 	title: 'Анализ заказа покупателя',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -41,7 +44,8 @@
 			height: 19,
 			style: 'position:absolute;left:512px;top:33px;width:120px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

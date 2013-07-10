@@ -8,7 +8,10 @@
 	title: 'Ввод сведений о плановых удержаниях сотрудников организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -113,6 +116,7 @@
 			]
 		},
 		{
+			id: 'Удержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:264px;width:604px;height:154px;',
 			height: 154,width: 604,
@@ -126,13 +130,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Удержание',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
@@ -156,13 +160,13 @@
 				},
 				{
 					text:'Показатели для расчета удержаний',
-					width:'250',
+					width:'2500',
 					dataIndex:'Показатели',
 					flex:1,
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
@@ -180,7 +184,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
@@ -198,7 +202,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
@@ -216,7 +220,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
@@ -234,7 +238,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель5',
 					flex:1,
 				},
@@ -252,7 +256,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'110',
+					width:'1100',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -270,7 +274,7 @@
 				},
 				{
 					text:'Основание',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОснование',
 					flex:1,
 				},
@@ -281,7 +285,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхУдержанияхРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхУдержанияхРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -364,6 +368,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Удержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -405,6 +426,7 @@
 			style: 'position:absolute;left:392px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:125px;width:604px;height:93px;',
 			height: 93,width: 604,
@@ -412,7 +434,7 @@
 			[
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
@@ -423,13 +445,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхУдержанияхРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхУдержанияхРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Физлицо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -442,7 +481,8 @@
 			title: 'Удержания',
 			style: 'position:absolute;left:8px;top:224px;width:604px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

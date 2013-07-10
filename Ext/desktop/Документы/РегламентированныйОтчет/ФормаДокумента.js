@@ -8,14 +8,18 @@
 	title: 'Документ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
 			text: 'Эта форма вспомогательная, предназначена для открытия нужной формы отчета в виде внешней обработки. ВИЗУАЛЬНО НЕ ОТОБРАЖАЕТСЯ.',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:48px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Обработка  Анализ входящего НДС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -71,7 +74,8 @@
 			boxLabel: 'Показывать только сводные итоги ',
 			style: 'position:absolute;left:8px;top:63px;width:296px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

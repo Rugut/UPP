@@ -150,7 +150,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference36(
+						Insert Into _Reference7(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -158,18 +158,18 @@ namespace V82.СправочникиОбъект
 						,_OwnerID_TYPE,_OwnerID_RTRef,_OwnerID_RRRef
 						,_Code
 						,_Description
-						,_Fld1854
-						,_Fld1855RRef
-						,_Fld1856RRef
-						,_Fld1857
-						,_Fld1858
-						,_Fld1859
-						,_Fld1860RRef
-						,_Fld1861
-						,_Fld1862
-						,_Fld1863
-						,_Fld1864
-						,_Fld1865)
+						,_Fld891
+						,_Fld892RRef
+						,_Fld893RRef
+						,_Fld894
+						,_Fld895
+						,_Fld896
+						,_Fld897RRef
+						,_Fld898
+						,_Fld899
+						,_Fld900
+						,_Fld901
+						,_Fld902)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -194,7 +194,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference36
+						Update _Reference7
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -203,18 +203,18 @@ namespace V82.СправочникиОбъект
 						,_OwnerID_TYPE	= @ВладелецТип,_OwnerID_RTRef	= @ВладелецВид,_OwnerID_RRRef	= @Владелец
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld1854	= @НомерСчета
-						,_Fld1855RRef	= @Банк
-						,_Fld1856RRef	= @БанкДляРасчетов
-						,_Fld1857	= @ТекстКорреспондента
-						,_Fld1858	= @ТекстНазначения
-						,_Fld1859	= @ВидСчета
-						,_Fld1860RRef	= @ВалютаДенежныхСредств
-						,_Fld1861	= @НомерИДатаРазрешения
-						,_Fld1862	= @ДатаОткрытия
-						,_Fld1863	= @ДатаЗакрытия
-						,_Fld1864	= @МесяцПрописью
-						,_Fld1865	= @СуммаБезКопеек
+						,_Fld891	= @НомерСчета
+						,_Fld892RRef	= @Банк
+						,_Fld893RRef	= @БанкДляРасчетов
+						,_Fld894	= @ТекстКорреспондента
+						,_Fld895	= @ТекстНазначения
+						,_Fld896	= @ВидСчета
+						,_Fld897RRef	= @ВалютаДенежныхСредств
+						,_Fld898	= @НомерИДатаРазрешения
+						,_Fld899	= @ДатаОткрытия
+						,_Fld900	= @ДатаЗакрытия
+						,_Fld901	= @МесяцПрописью
+						,_Fld902	= @СуммаБезКопеек
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -249,7 +249,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference36
+					Команда.CommandText = @"Delete _Reference7
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

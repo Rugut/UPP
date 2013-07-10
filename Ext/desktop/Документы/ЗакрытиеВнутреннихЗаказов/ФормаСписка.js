@@ -8,8 +8,12 @@
 	title: 'Закрытия внутренних заказов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:724px;height:380px;',
 			height: 380,width: 724,
@@ -35,31 +39,31 @@
 				},
 				{
 					text:'Вид операции',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'150',
+					width:'1500',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение компании',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПодразделениеКомпании',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'120',
+					width:'1200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -70,7 +74,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,6 +103,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -120,7 +141,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

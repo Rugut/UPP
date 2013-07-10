@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПакетЭД:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3d5fcdbd-7505-4bb4-87a1-fc7de4905aa0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191431.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012002.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -66,21 +66,21 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12062RRef [Направление]
-					,_Fld12063 [Получатель]
-					,_Fld12064 [Отправитель]
-					,_Fld12065 [ДанныеЗашифрованы]
-					,_Fld12066_TYPE [АдресРесурсаОрганизации_Тип],_Fld12066_RRRef [АдресРесурсаОрганизации],_Fld12066_RTRef [АдресРесурсаОрганизации_Вид]
-					,_Fld12067 [АдресРесурсаКонтрагента]
-					,_Fld12068 [СертификатШифрования]
-					,_Fld12069RRef [Соглашение]
-					,_Fld12070RRef [СтатусПакета]
-					,_Fld12071RRef [Контрагент]
-					,_Fld12072RRef [Организация]
-					,_Fld12073RRef [СпособОбменаЭД]
-					,_Fld12074 [Комментарий]
-					,_Fld12075 [ВнешнийУИД]
-					From _Document481(NOLOCK)
+					,_Fld24715RRef [Направление]
+					,_Fld24716 [Получатель]
+					,_Fld24717 [Отправитель]
+					,_Fld24718 [ДанныеЗашифрованы]
+					,_Fld24719_TYPE [АдресРесурсаОрганизации_Тип],_Fld24719_RRRef [АдресРесурсаОрганизации],_Fld24719_RTRef [АдресРесурсаОрганизации_Вид]
+					,_Fld24720 [АдресРесурсаКонтрагента]
+					,_Fld24721 [СертификатШифрования]
+					,_Fld24722RRef [Соглашение]
+					,_Fld24723RRef [СтатусПакета]
+					,_Fld24724RRef [Контрагент]
+					,_Fld24725RRef [Организация]
+					,_Fld24726RRef [СпособОбменаЭД]
+					,_Fld24727 [Комментарий]
+					,_Fld24728 [ВнешнийУИД]
+					From _Document23158(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

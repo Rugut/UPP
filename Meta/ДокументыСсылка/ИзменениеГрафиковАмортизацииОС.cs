@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИзменениеГрафиковАмортизацииОС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("50140d61-c291-4855-9b44-1bc18e4fcbb6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191427.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -87,15 +87,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7770RRef [Организация]
-					,_Fld7771 [Комментарий]
-					,_Fld7772RRef [Ответственный]
-					,_Fld7773_TYPE [ГрафикАмортизации_Тип],_Fld7773_RRRef [ГрафикАмортизации],_Fld7773_RTRef [ГрафикАмортизации_Вид]
-					,_Fld7774 [ОтражатьВБухгалтерскомУчете]
-					,_Fld7775 [ОтражатьВУправленческомУчете]
-					,_Fld7776RRef [Событие]
-					,_Fld7777RRef [СобытиеРегл]
-					From _Document387(NOLOCK)
+					,_Fld4831RRef [Организация]
+					,_Fld4830 [Комментарий]
+					,_Fld4832RRef [Ответственный]
+					,_Fld4829_TYPE [ГрафикАмортизации_Тип],_Fld4829_RRRef [ГрафикАмортизации],_Fld4829_RTRef [ГрафикАмортизации_Вид]
+					,_Fld4833 [ОтражатьВБухгалтерскомУчете]
+					,_Fld4834 [ОтражатьВУправленческомУчете]
+					,_Fld4835RRef [Событие]
+					,_Fld4836RRef [СобытиеРегл]
+					From _Document274(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

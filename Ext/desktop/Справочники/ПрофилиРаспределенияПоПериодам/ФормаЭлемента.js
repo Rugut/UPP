@@ -8,7 +8,10 @@
 	title: 'Профили распределения по периодам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -72,6 +75,7 @@
 			style: 'position:absolute;left:94px;top:84px;width:120px;height:19px;',
 		},
 		{
+			id: 'Распределение',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:151px;width:390px;height:220px;',
 			height: 220,width: 390,
@@ -85,24 +89,25 @@
 				},
 				{
 					text:'Номер подпериода',
-					width:'120',
+					width:'1200',
 					dataIndex:'НомерПодпериода',
 					flex:1,
 				},
 				{
 					text:'Доля подпериода',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоляПодпериода',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиРаспределенияПоПериодам").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиРаспределенияПоПериодам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиРаспределенияПоПериодам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -116,13 +121,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Распределение');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Доли подпериодов в периоде',
 			style: 'position:absolute;left:8px;top:111px;width:390px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Внутреннее перемещение основных средств (международный)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -136,6 +139,7 @@
 			]
 		},
 		{
+			id: 'ОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:610px;height:220px;',
 			height: 220,width: 610,
@@ -149,19 +153,19 @@
 				},
 				{
 					text:'Основное средство',
-					width:'220',
+					width:'2200',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
 				{
 					text:'Местонахождение',
-					width:'120',
+					width:'1200',
 					dataIndex:'МестонахождениеОбъекта',
 					flex:1,
 				},
 				{
 					text:'Местонахождение (нов.)',
-					width:'120',
+					width:'1200',
 					dataIndex:'МестонахождениеОбъектаНов',
 					flex:1,
 				},
@@ -191,13 +195,13 @@
 				},
 				{
 					text:'Субконто 1',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто 1 (новое)',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1Нов',
 					flex:1,
 				},
@@ -232,7 +236,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннееПеремещениеОсновныхСредствМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннееПеремещениеОсновныхСредствМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -279,6 +283,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -316,7 +337,8 @@
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:84px;width:610px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

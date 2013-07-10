@@ -8,8 +8,12 @@
 	title: 'Справочник Регистрация в ИФНС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:532px;height:259px;',
 			height: 259,width: 532,
@@ -35,13 +39,13 @@
 				},
 				{
 					text:'Организация',
-					width:'350',
+					width:'3500',
 					dataIndex:'Владелец',
 					flex:1,
 				},
 				{
 					text:'Наименование ИФНС',
-					width:'160',
+					width:'1600',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -53,30 +57,31 @@
 				},
 				{
 					text:'Представитель',
-					width:'160',
+					width:'1600',
 					dataIndex:'Представитель',
 					flex:1,
 				},
 				{
 					text:'Документ представителя',
-					width:'160',
+					width:'1600',
 					dataIndex:'ДокументПредставителя',
 					flex:1,
 				},
 				{
 					text:'Уполномоченное лицо представителя',
-					width:'160',
+					width:'1600',
 					dataIndex:'УполномоченноеЛицоПредставителя',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.РегистрацияВИФНС").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияВИФНС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияВИФНС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,8 +113,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

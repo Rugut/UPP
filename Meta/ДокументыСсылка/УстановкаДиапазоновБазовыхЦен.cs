@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УстановкаДиапазоновБазовыхЦен:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b00ff654-7d80-4944-9777-95b24c7551e0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191643.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,10 +64,10 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18547RRef [ТипЦен]
-					,_Fld18548 [Комментарий]
-					,_Fld18549RRef [Ответственный]
-					From _Document619(NOLOCK)
+					,_Fld12146RRef [ТипЦен]
+					,_Fld12147 [Комментарий]
+					,_Fld12148RRef [Ответственный]
+					From _Document473(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

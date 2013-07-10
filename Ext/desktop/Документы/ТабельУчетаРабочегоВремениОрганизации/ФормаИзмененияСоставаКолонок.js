@@ -8,7 +8,10 @@
 	title: 'Состав колонок табеля',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -41,7 +44,8 @@
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:215px;width:290px;height:219px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

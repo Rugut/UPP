@@ -8,7 +8,10 @@
 	title: 'Ввод количества и цены',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:394px;height:25px;',
@@ -67,6 +70,7 @@
 			style: 'position:absolute;left:78px;top:201px;width:308px;height:19px;',
 		},
 		{
+			id: 'ТаблицаХарактеристикНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:378px;height:139px;',
 			height: 139,width: 378,
@@ -74,7 +78,7 @@
 			[
 				{
 					text:'Характеристика номенклатуры',
-					width:'120',
+					width:'1200',
 					dataIndex:'Характеристика',
 					flex:1,
 				},
@@ -127,7 +131,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -156,13 +160,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаХарактеристикНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Показывать остатки',
 			style: 'position:absolute;left:262px;top:181px;width:124px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

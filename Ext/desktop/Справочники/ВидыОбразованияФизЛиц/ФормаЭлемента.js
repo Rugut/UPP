@@ -8,7 +8,10 @@
 	title: 'Вид образования физического лица',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:192px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

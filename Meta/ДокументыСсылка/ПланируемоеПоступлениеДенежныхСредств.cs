@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПланируемоеПоступлениеДенежныхСредств:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("ef51bebc-165e-43e7-bc8c-1f5b0d71ee0c");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191907.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012030.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -81,27 +81,27 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12807RRef [ВидОперации]
-					,_Fld12808RRef [Контрагент]
-					,_Fld12809_TYPE [КассаККМ_Тип],_Fld12809_RRRef [КассаККМ],_Fld12809_RTRef [КассаККМ_Вид]
-					,_Fld12810 [ДатаПоступления]
-					,_Fld12811_TYPE [ДокументОснование_Тип],_Fld12811_RRRef [ДокументОснование],_Fld12811_RTRef [ДокументОснование_Вид]
-					,_Fld12812RRef [ФормаОплаты]
-					,_Fld12813_TYPE [БанковскийСчетКасса_Тип],_Fld12813_RRRef [БанковскийСчетКасса],_Fld12813_RTRef [БанковскийСчетКасса_Вид]
-					,_Fld12814RRef [ВалютаДокумента]
-					,_Fld12815 [КурсДокумента]
-					,_Fld12816 [КратностьДокумента]
-					,_Fld12817 [СуммаДокумента]
-					,_Fld12818RRef [Состояние]
-					,_Fld12819 [Описание]
-					,_Fld12820RRef [Ответственный]
-					,_Fld12821 [Комментарий]
-					,_Fld12822RRef [Организация]
-					,_Fld12823RRef [СтатьяОборотов]
-					,_Fld12824RRef [ЦФО]
-					,_Fld12825 [ВключатьВПлатежныйКалендарь]
-					,_Fld12826RRef [ВидПриемаРозничнойВыручки]
-					From _Document510(NOLOCK)
+					,_Fld8369RRef [ВидОперации]
+					,_Fld8370RRef [Контрагент]
+					,_Fld8371_TYPE [КассаККМ_Тип],_Fld8371_RRRef [КассаККМ],_Fld8371_RTRef [КассаККМ_Вид]
+					,_Fld8372 [ДатаПоступления]
+					,_Fld8373_TYPE [ДокументОснование_Тип],_Fld8373_RRRef [ДокументОснование],_Fld8373_RTRef [ДокументОснование_Вид]
+					,_Fld8374RRef [ФормаОплаты]
+					,_Fld8375_TYPE [БанковскийСчетКасса_Тип],_Fld8375_RRRef [БанковскийСчетКасса],_Fld8375_RTRef [БанковскийСчетКасса_Вид]
+					,_Fld8376RRef [ВалютаДокумента]
+					,_Fld8377 [КурсДокумента]
+					,_Fld8378 [КратностьДокумента]
+					,_Fld8379 [СуммаДокумента]
+					,_Fld8380RRef [Состояние]
+					,_Fld8381 [Описание]
+					,_Fld8382RRef [Ответственный]
+					,_Fld8383 [Комментарий]
+					,_Fld8384RRef [Организация]
+					,_Fld8385RRef [СтатьяОборотов]
+					,_Fld8386RRef [ЦФО]
+					,_Fld8387 [ВключатьВПлатежныйКалендарь]
+					,_Fld8388RRef [ВидПриемаРозничнойВыручки]
+					From _Document384(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -8,7 +8,10 @@
 	title: 'Формирование документов по ордерам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
@@ -60,6 +63,7 @@
 					items:
 					[
 		{
+			id: 'СформированныеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:502px;height:144px;',
 			height: 144,width: 502,
@@ -85,7 +89,7 @@
 				},
 				{
 					text:'Дата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -97,7 +101,7 @@
 				},
 				{
 					text:'Документ',
-					width:'120',
+					width:'1200',
 					dataIndex:'Документ',
 					flex:1,
 				},
@@ -108,7 +112,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоДаннымОрдеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоДаннымОрдеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -131,6 +135,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СформированныеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -139,6 +160,7 @@
 					items:
 					[
 		{
+			id: 'УчтенныеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:502px;height:144px;',
 			height: 144,width: 502,
@@ -164,7 +186,7 @@
 				},
 				{
 					text:'Дата',
-					width:'120',
+					width:'1200',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -176,7 +198,7 @@
 				},
 				{
 					text:'Документ',
-					width:'120',
+					width:'1200',
 					dataIndex:'Документ',
 					flex:1,
 				},
@@ -187,7 +209,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоДаннымОрдеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоДаннымОрдеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -209,6 +231,23 @@
 						name:'Документ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УчтенныеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -232,7 +271,8 @@
 			text: '...',
 			style: 'position:absolute;left:258px;top:32px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

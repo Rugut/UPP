@@ -8,7 +8,10 @@
 	title: 'Переписка с контролирующими органами',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:157px;width:638px;height:353px;',
@@ -80,6 +83,7 @@
 			]
 		},
 		{
+			id: 'Вложения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:52px;width:626px;height:275px;',
 			height: 275,width: 626,
@@ -87,7 +91,7 @@
 			[
 				{
 					text:'Имя',
-					width:'350',
+					width:'3500',
 					dataIndex:'ИмяФайла',
 					flex:1,
 				},
@@ -110,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -123,6 +127,23 @@
 						name:'Тип',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Вложения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -231,7 +252,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

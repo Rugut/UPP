@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class СерииНоменклатуры:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("0675623a-8763-43c0-94dc-e6f81b5173ab");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191917.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -67,7 +67,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СерииНоменклатуры(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СерииНоменклатуры(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -80,14 +93,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3401 [СерийныйНомер]
-					,_Fld3402 [СрокГодности]
-					,_Fld3403RRef [НомерГТД]
-					,_Fld3404RRef [СтранаПроисхождения]
-					,_Fld3405RRef [ОсновноеИзображение]
-					,_Fld3406 [Комментарий]
-					From _Reference226(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1736 [СерийныйНомер]
+					,_Fld1737 [СрокГодности]
+					,_Fld1738RRef [НомерГТД]
+					,_Fld1739RRef [СтранаПроисхождения]
+					,_Fld1740RRef [ОсновноеИзображение]
+					,_Fld1741 [Комментарий]
+					From _Reference145(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -105,9 +118,9 @@ namespace V82.СправочникиСсылка
 							Наименование = Читалка.GetString(5);
 							СерийныйНомер = Читалка.GetString(6);
 							СрокГодности = Читалка.GetDateTime(7);
-							НомерГТД = new V82.СправочникиСсылка.НомераГТД((byte[])Читалка.GetValue(8));
-							СтранаПроисхождения = new V82.СправочникиСсылка.КлассификаторСтранМира((byte[])Читалка.GetValue(9));
-							ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(10));
+							НомерГТД = new V82.СправочникиСсылка.НомераГТД((byte[])Читалка.GetValue(8),Глубина+1);
+							СтранаПроисхождения = new V82.СправочникиСсылка.КлассификаторСтранМира((byte[])Читалка.GetValue(9),Глубина+1);
+							ОсновноеИзображение = new V82.СправочникиСсылка.ХранилищеДополнительнойИнформации((byte[])Читалка.GetValue(10),Глубина+1);
 							Комментарий = Читалка.GetString(11);
 							//return Ссылка;
 						}

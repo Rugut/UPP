@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СправкаПоНДФЛВНалоговыйОрган:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("476c9811-c737-4c21-a618-8f375a02b69a");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191914.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -79,22 +79,22 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17512 [НалоговыйПериод]
-					,_Fld17513RRef [Организация]
-					,_Fld17514 [ОКАТО_КПП]
-					,_Fld17515RRef [ОснованиеДляПредставленияСправок]
-					,_Fld17516 [ИмяФайла]
-					,_Fld17517 [Телефон]
-					,_Fld17518RRef [ГлавныйБухгалтер]
-					,_Fld17519RRef [СправкуПодписал]
-					,_Fld17520RRef [ДолжностьПодписавшегоЛица]
-					,_Fld17521 [ПринятоНалоговымОрганом]
-					,_Fld17522 [КраткийСоставДокумента]
-					,_Fld17523RRef [Ответственный]
-					,_Fld17524 [Комментарий]
-					,_Fld17525 [СпециальныйДокумент2011года]
-					,_Fld17526 [КодИФНС]
-					From _Document600(NOLOCK)
+					,_Fld25454 [НалоговыйПериод]
+					,_Fld25455RRef [Организация]
+					,_Fld25456 [ОКАТО_КПП]
+					,_Fld25457RRef [ОснованиеДляПредставленияСправок]
+					,_Fld25458 [ИмяФайла]
+					,_Fld25459 [Телефон]
+					,_Fld25460RRef [ГлавныйБухгалтер]
+					,_Fld25461RRef [СправкуПодписал]
+					,_Fld25462RRef [ДолжностьПодписавшегоЛица]
+					,_Fld25463 [ПринятоНалоговымОрганом]
+					,_Fld25464 [КраткийСоставДокумента]
+					,_Fld25465RRef [Ответственный]
+					,_Fld25466 [Комментарий]
+					,_Fld25467 [СпециальныйДокумент2011года]
+					,_Fld25468 [КодИФНС]
+					From _Document23174(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

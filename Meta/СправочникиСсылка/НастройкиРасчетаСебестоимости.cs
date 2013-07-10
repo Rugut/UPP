@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class НастройкиРасчетаСебестоимости:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("00093a0e-bee2-408a-8995-cd1f5efe314b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191511.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012005.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -59,7 +59,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public НастройкиРасчетаСебестоимости(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public НастройкиРасчетаСебестоимости(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -71,15 +84,15 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2824RRef [Организация]
-					,_Fld2825RRef [НастройкаЗакрытияМесяца]
-					,_Fld2826RRef [ВидОтраженияВУчете]
-					,_Fld2827 [ФормироватьДокументыАвтоматически]
-					,_Fld2828 [РегламентноеЗадание]
-					,_Fld2829 [Задержка]
-					,_Fld2830 [Комментарий]
-					From _Reference155(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23602RRef [Организация]
+					,_Fld23603RRef [НастройкаЗакрытияМесяца]
+					,_Fld23604RRef [ВидОтраженияВУчете]
+					,_Fld23605 [ФормироватьДокументыАвтоматически]
+					,_Fld23606 [РегламентноеЗадание]
+					,_Fld23607 [Задержка]
+					,_Fld23608 [Комментарий]
+					From _Reference23110(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -94,8 +107,8 @@ namespace V82.СправочникиСсылка
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Наименование = Читалка.GetString(4);
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(5));
-							НастройкаЗакрытияМесяца = new V82.СправочникиСсылка.НастройкиЗакрытияМесяца((byte[])Читалка.GetValue(6));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(5),Глубина+1);
+							НастройкаЗакрытияМесяца = new V82.СправочникиСсылка.НастройкиЗакрытияМесяца((byte[])Читалка.GetValue(6),Глубина+1);
 							ВидОтраженияВУчете = V82.Перечисления/*Ссылка*/.ВидыОтраженияВУчете.ПустаяСсылка.Получить((byte[])Читалка.GetValue(7));
 							ФормироватьДокументыАвтоматически = ((byte[])Читалка.GetValue(8))[0]==1;
 							РегламентноеЗадание = Читалка.GetString(9);

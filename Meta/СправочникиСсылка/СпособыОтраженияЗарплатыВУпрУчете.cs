@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СпособыОтраженияЗарплатыВУпрУчете:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d53d94b9-ba25-4f71-9de6-c2b1702f1df7");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190741.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011927.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -48,7 +48,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СпособыОтраженияЗарплатыВУпрУчете(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СпособыОтраженияЗарплатыВУпрУчете(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -60,12 +73,12 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld3710RRef [СтатьяЗатрат]
-					,_Fld3711RRef [НоменклатурнаяГруппа]
-					,_Fld3712RRef [СпособРаспределенияЗатрат]
-					,_Fld3713RRef [ОбъектСтроительства]
-					From _Reference242(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1895RRef [СтатьяЗатрат]
+					,_Fld1896RRef [НоменклатурнаяГруппа]
+					,_Fld1897RRef [СпособРаспределенияЗатрат]
+					,_Fld1898RRef [ОбъектСтроительства]
+					From _Reference156(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -80,10 +93,10 @@ namespace V82.СправочникиСсылка
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Наименование = Читалка.GetString(4);
-							СтатьяЗатрат = new V82.СправочникиСсылка.СтатьиЗатрат((byte[])Читалка.GetValue(5));
-							НоменклатурнаяГруппа = new V82.СправочникиСсылка.НоменклатурныеГруппы((byte[])Читалка.GetValue(6));
-							СпособРаспределенияЗатрат = new V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск((byte[])Читалка.GetValue(7));
-							ОбъектСтроительства = new V82.СправочникиСсылка.ОбъектыСтроительства((byte[])Читалка.GetValue(8));
+							СтатьяЗатрат = new V82.СправочникиСсылка.СтатьиЗатрат((byte[])Читалка.GetValue(5),Глубина+1);
+							НоменклатурнаяГруппа = new V82.СправочникиСсылка.НоменклатурныеГруппы((byte[])Читалка.GetValue(6),Глубина+1);
+							СпособРаспределенияЗатрат = new V82.СправочникиСсылка.СпособыРаспределенияЗатратНаВыпуск((byte[])Читалка.GetValue(7),Глубина+1);
+							ОбъектСтроительства = new V82.СправочникиСсылка.ОбъектыСтроительства((byte[])Читалка.GetValue(8),Глубина+1);
 							//return Ссылка;
 						}
 						else

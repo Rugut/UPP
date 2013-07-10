@@ -8,13 +8,17 @@
 	title: 'Особенности текущей версии подсистемы ""Регламентированная отчетность""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Не открывать это окно автоматически',
 			style: 'position:absolute;left:5px;top:430px;width:220px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

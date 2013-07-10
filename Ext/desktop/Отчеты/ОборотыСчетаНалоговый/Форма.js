@@ -8,7 +8,10 @@
 	title: 'Обороты счета (Главная книга)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСчет',
@@ -98,7 +101,8 @@
 			height: 19,
 			style: 'position:absolute;left:666px;top:33px;width:54px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

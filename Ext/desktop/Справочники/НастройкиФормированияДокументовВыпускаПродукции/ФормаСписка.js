@@ -8,8 +8,12 @@
 	title: 'Настройки формирования документов выпуска продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:258px;top:33px;width:488px;height:344px;',
 			height: 344,width: 488,
@@ -23,7 +27,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -35,19 +39,19 @@
 				},
 				{
 					text:'Подразделение',
-					width:'120',
+					width:'1200',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Вид документов',
-					width:'160',
+					width:'1600',
 					dataIndex:'ВидРегулярногоДокумента',
 					flex:1,
 				},
 				{
 					text:'Детализация',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПериодДетализации',
 					flex:1,
 				},
@@ -71,19 +75,19 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'1200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации',
-					width:'160',
+					width:'1600',
 					dataIndex:'ПодразделениеОрганизации',
 					flex:1,
 				},
 				{
 					text:'Склад',
-					width:'120',
+					width:'1200',
 					dataIndex:'Склад',
 					flex:1,
 				},
@@ -107,24 +111,25 @@
 				},
 				{
 					text:'Регламентное задание',
-					width:'120',
+					width:'1200',
 					dataIndex:'РегламентноеЗадание',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'120',
+					width:'1200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиФормированияДокументовВыпускаПродукции").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -180,8 +185,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:244px;height:344px;',
 			height: 344,width: 244,
@@ -189,18 +212,19 @@
 			[
 				{
 					text:'Наименование',
-					width:'350',
+					width:'3500',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиФормированияДокументовВыпускаПродукции").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиФормированияДокументовВыпускаПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -208,8 +232,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

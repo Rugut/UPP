@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ДенежныйЧек:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("819b9a69-74d9-48be-a262-02501893c121");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191803.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012020.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -71,17 +71,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6763RRef [Организация]
-					,_Fld6764RRef [СчетОрганизации]
-					,_Fld6765RRef [Касса]
-					,_Fld6766RRef [ВалютаДокумента]
-					,_Fld6767 [СуммаДокумента]
-					,_Fld6768RRef [Ответственный]
-					,_Fld6769 [Оплачено]
-					,_Fld6770 [ДатаОплаты]
-					,_Fld6771RRef [СтатьяДвиженияДенежныхСредств]
-					,_Fld6772 [Комментарий]
-					From _Document353(NOLOCK)
+					,_Fld4120RRef [Организация]
+					,_Fld4121RRef [СчетОрганизации]
+					,_Fld4122RRef [Касса]
+					,_Fld4123RRef [ВалютаДокумента]
+					,_Fld4124 [СуммаДокумента]
+					,_Fld4125RRef [Ответственный]
+					,_Fld4126 [Оплачено]
+					,_Fld4127 [ДатаОплаты]
+					,_Fld4128RRef [СтатьяДвиженияДенежныхСредств]
+					,_Fld4129 [Комментарий]
+					From _Document248(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -8,7 +8,10 @@
 	title: 'Серийные номера',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -40,7 +43,8 @@
 			height: 19,
 			style: 'position:absolute;left:100px;top:33px;width:314px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

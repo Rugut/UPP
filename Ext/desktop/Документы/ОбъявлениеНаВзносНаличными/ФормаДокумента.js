@@ -8,7 +8,10 @@
 	title: 'Объявление на взнос наличными',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись3',
@@ -177,7 +180,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:232px;width:269px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

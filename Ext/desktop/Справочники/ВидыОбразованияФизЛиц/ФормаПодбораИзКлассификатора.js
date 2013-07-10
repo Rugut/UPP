@@ -8,8 +8,12 @@
 	title: 'Виды образования физических лиц',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

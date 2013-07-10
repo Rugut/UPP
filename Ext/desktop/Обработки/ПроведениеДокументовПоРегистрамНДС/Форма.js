@@ -8,7 +8,10 @@
 	title: 'Проведение документов по регистрам НДС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьПериодС',
@@ -95,7 +98,8 @@
 			boxLabel: 'Отразить суммовые и курсовые разницы в регистрах НДС',
 			style: 'position:absolute;left:8px;top:117px;width:322px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

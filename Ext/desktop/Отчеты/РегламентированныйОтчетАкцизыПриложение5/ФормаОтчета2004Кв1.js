@@ -8,7 +8,10 @@
 	title: 'Акцизы (Приложение 5)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:125px;width:734px;height:310px;',
@@ -599,7 +602,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

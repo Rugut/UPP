@@ -8,7 +8,10 @@
 	title: 'Настройка: Оборотно-сальдовая ведомость',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:312px;height:270px;',
@@ -107,6 +110,7 @@
 					items:
 					[
 		{
+			id: 'ПравилаРазвернутогоСальдо',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:298px;height:220px;',
 			height: 220,width: 298,
@@ -126,7 +130,7 @@
 				},
 				{
 					text:'По субконто',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПредставлениеРазворотПоСубконто',
 					flex:1,
 				},
@@ -137,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьБухМСФО/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьБухМСФО/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -150,6 +154,23 @@
 						name:'ПредставлениеРазворотПоСубконто',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПравилаРазвернутогоСальдо');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -159,6 +180,7 @@
 					items:
 					[
 		{
+			id: 'ПравилаВыводаИтогов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:298px;height:220px;',
 			height: 220,width: 298,
@@ -178,7 +200,7 @@
 				},
 				{
 					text:'По субконто',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПредставлениеРазворотПоСубконто',
 					flex:1,
 				},
@@ -189,7 +211,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьБухМСФО/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотноСальдоваяВедомостьБухМСФО/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -203,12 +225,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПравилаВыводаИтогов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

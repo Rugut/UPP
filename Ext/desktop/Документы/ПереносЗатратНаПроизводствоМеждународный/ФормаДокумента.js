@@ -8,7 +8,10 @@
 	title: 'Перенос затрат на производство (международный)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -156,7 +159,8 @@
 			text: '...',
 			style: 'position:absolute;left:318px;top:57px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

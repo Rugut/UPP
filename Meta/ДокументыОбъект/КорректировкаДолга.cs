@@ -255,43 +255,43 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document419(
+						Insert Into _Document303(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld8820RRef
-						,_Fld8821RRef
-						,_Fld8822RRef
-						,_Fld8823RRef
-						,_Fld8824RRef
-						,_Fld8825
-						,_Fld8826
-						,_Fld8827
-						,_Fld8828RRef
-						,_Fld8829
-						,_Fld8830RRef
-						,_Fld8831
-						,_Fld8832
-						,_Fld8833RRef
-						,_Fld8834
-						,_Fld8835RRef
-						,_Fld8836RRef
-						,_Fld8837RRef
-						,_Fld8838RRef
-						,_Fld8839RRef
-						,_Fld8840RRef
-						,_Fld8841RRef
-						,_Fld8842RRef
-						,_Fld8843RRef
-						,_Fld8844RRef
-						,_Fld8845RRef
-						,_Fld8846RRef
-						,_Fld8847RRef
-						,_Fld8848RRef
-						,_Fld8849RRef
-						,_Fld8850RRef)
+						,_Fld5599RRef
+						,_Fld5610RRef
+						,_Fld5601RRef
+						,_Fld5600RRef
+						,_Fld5614RRef
+						,_Fld5604
+						,_Fld5605
+						,_Fld5603
+						,_Fld5602RRef
+						,_Fld5616
+						,_Fld5611RRef
+						,_Fld5612
+						,_Fld5613
+						,_Fld5615RRef
+						,_Fld5617
+						,_Fld5606RRef
+						,_Fld5607RRef
+						,_Fld5608RRef
+						,_Fld5609RRef
+						,_Fld5618RRef
+						,_Fld5619RRef
+						,_Fld5620RRef
+						,_Fld5621RRef
+						,_Fld5622RRef
+						,_Fld5623RRef
+						,_Fld5624RRef
+						,_Fld5625RRef
+						,_Fld5626RRef
+						,_Fld5627RRef
+						,_Fld5628RRef
+						,_Fld5629RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -332,43 +332,43 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document419
+						Update _Document303
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld8820RRef	= @Организация
-						,_Fld8821RRef	= @ВидОперации
-						,_Fld8822RRef	= @Подразделение
-						,_Fld8823RRef	= @КонтрагентДебитор
-						,_Fld8824RRef	= @КонтрагентКредитор
-						,_Fld8825	= @ОтражатьВУправленческомУчете
-						,_Fld8826	= @ОтражатьВБухгалтерскомУчете
-						,_Fld8827	= @Комментарий
-						,_Fld8828RRef	= @Ответственный
-						,_Fld8829	= @ОтражатьВНалоговомУчете
-						,_Fld8830RRef	= @ВалютаДокумента
-						,_Fld8831	= @КурсДокумента
-						,_Fld8832	= @КратностьДокумента
-						,_Fld8833RRef	= @ДоговорКонтрагента
-						,_Fld8834	= @ИспользоватьВспомогательныйСчет
-						,_Fld8835RRef	= @СчетДт
-						,_Fld8836RRef	= @СубконтоДт1
-						,_Fld8837RRef	= @СубконтоДт2
-						,_Fld8838RRef	= @СубконтоДт3
-						,_Fld8839RRef	= @СчетКт
-						,_Fld8840RRef	= @СубконтоКт1
-						,_Fld8841RRef	= @СубконтоКт2
-						,_Fld8842RRef	= @СубконтоКт3
-						,_Fld8843RRef	= @СчетДтНУ
-						,_Fld8844RRef	= @СубконтоДтНУ1
-						,_Fld8845RRef	= @СубконтоДтНУ2
-						,_Fld8846RRef	= @СубконтоДтНУ3
-						,_Fld8847RRef	= @СчетКтНУ
-						,_Fld8848RRef	= @СубконтоКтНУ1
-						,_Fld8849RRef	= @СубконтоКтНУ2
-						,_Fld8850RRef	= @СубконтоКтНУ3
+						,_Fld5599RRef	= @Организация
+						,_Fld5610RRef	= @ВидОперации
+						,_Fld5601RRef	= @Подразделение
+						,_Fld5600RRef	= @КонтрагентДебитор
+						,_Fld5614RRef	= @КонтрагентКредитор
+						,_Fld5604	= @ОтражатьВУправленческомУчете
+						,_Fld5605	= @ОтражатьВБухгалтерскомУчете
+						,_Fld5603	= @Комментарий
+						,_Fld5602RRef	= @Ответственный
+						,_Fld5616	= @ОтражатьВНалоговомУчете
+						,_Fld5611RRef	= @ВалютаДокумента
+						,_Fld5612	= @КурсДокумента
+						,_Fld5613	= @КратностьДокумента
+						,_Fld5615RRef	= @ДоговорКонтрагента
+						,_Fld5617	= @ИспользоватьВспомогательныйСчет
+						,_Fld5606RRef	= @СчетДт
+						,_Fld5607RRef	= @СубконтоДт1
+						,_Fld5608RRef	= @СубконтоДт2
+						,_Fld5609RRef	= @СубконтоДт3
+						,_Fld5618RRef	= @СчетКт
+						,_Fld5619RRef	= @СубконтоКт1
+						,_Fld5620RRef	= @СубконтоКт2
+						,_Fld5621RRef	= @СубконтоКт3
+						,_Fld5622RRef	= @СчетДтНУ
+						,_Fld5623RRef	= @СубконтоДтНУ1
+						,_Fld5624RRef	= @СубконтоДтНУ2
+						,_Fld5625RRef	= @СубконтоДтНУ3
+						,_Fld5626RRef	= @СчетКтНУ
+						,_Fld5627RRef	= @СубконтоКтНУ1
+						,_Fld5628RRef	= @СубконтоКтНУ2
+						,_Fld5629RRef	= @СубконтоКтНУ3
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -410,7 +410,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document419
+					Команда.CommandText = @"Delete _Document303
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

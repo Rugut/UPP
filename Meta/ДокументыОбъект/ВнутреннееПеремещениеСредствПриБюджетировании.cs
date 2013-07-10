@@ -156,35 +156,35 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document332(
+						Insert Into _Document230(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld5967RRef
-						,_Fld5968
-						,_Fld5969RRef
-						,_Fld5970RRef
-						,_Fld5971RRef
-						,_Fld5972RRef
-						,_Fld5973RRef
-						,_Fld5974RRef
-						,_Fld5975RRef
-						,_Fld5976RRef
-						,_Fld5978RRef
-						,_Fld5979
-						,_Fld5980
-						,_Fld5981
-						,_Fld5982
-						,_Fld5983
-						,_Fld5984RRef
-						,_Fld5985RRef
-						,_Fld5986
-						,_Fld5987RRef
-						,_Fld5989RRef
-						,_Fld5990
-						,_Fld5991)
+						,_Fld3489RRef
+						,_Fld3490
+						,_Fld3491RRef
+						,_Fld3492RRef
+						,_Fld3493RRef
+						,_Fld3494RRef
+						,_Fld3495RRef
+						,_Fld3496RRef
+						,_Fld3497RRef
+						,_Fld3498RRef
+						,_Fld3500RRef
+						,_Fld3501
+						,_Fld3502
+						,_Fld3503
+						,_Fld3504
+						,_Fld3505
+						,_Fld3506RRef
+						,_Fld3507RRef
+						,_Fld3508
+						,_Fld3509RRef
+						,_Fld3511RRef
+						,_Fld3512
+						,_Fld3513)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -217,35 +217,35 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document332
+						Update _Document230
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld5967RRef	= @Сценарий
-						,_Fld5968	= @ПериодПланирования
-						,_Fld5969RRef	= @СтатьяОборотов
-						,_Fld5970RRef	= @ЕдиницаИзмеренияИсточник
-						,_Fld5971RRef	= @ЕдиницаИзмеренияПриемник
-						,_Fld5972RRef	= @ЦФОИсточник
-						,_Fld5973RRef	= @ЦФОПриемник
-						,_Fld5974RRef	= @ПроектИсточник
-						,_Fld5975RRef	= @ПроектПриемник
-						,_Fld5976RRef	= @КонтрагентИсточник
-						,_Fld5978RRef	= @ВалютаИсточник
-						,_Fld5979	= @КоличествоИсточник
-						,_Fld5980	= @КоличествоПриемник
-						,_Fld5981	= @Сумма
-						,_Fld5982	= @КурсИсточник
-						,_Fld5983	= @КратностьИсточник
-						,_Fld5984RRef	= @Состояние
-						,_Fld5985RRef	= @Ответственный
-						,_Fld5986	= @Комментарий
-						,_Fld5987RRef	= @КонтрагентПриемник
-						,_Fld5989RRef	= @ВалютаПриемник
-						,_Fld5990	= @КурсПриемник
-						,_Fld5991	= @КратностьПриемник
+						,_Fld3489RRef	= @Сценарий
+						,_Fld3490	= @ПериодПланирования
+						,_Fld3491RRef	= @СтатьяОборотов
+						,_Fld3492RRef	= @ЕдиницаИзмеренияИсточник
+						,_Fld3493RRef	= @ЕдиницаИзмеренияПриемник
+						,_Fld3494RRef	= @ЦФОИсточник
+						,_Fld3495RRef	= @ЦФОПриемник
+						,_Fld3496RRef	= @ПроектИсточник
+						,_Fld3497RRef	= @ПроектПриемник
+						,_Fld3498RRef	= @КонтрагентИсточник
+						,_Fld3500RRef	= @ВалютаИсточник
+						,_Fld3501	= @КоличествоИсточник
+						,_Fld3502	= @КоличествоПриемник
+						,_Fld3503	= @Сумма
+						,_Fld3504	= @КурсИсточник
+						,_Fld3505	= @КратностьИсточник
+						,_Fld3506RRef	= @Состояние
+						,_Fld3507RRef	= @Ответственный
+						,_Fld3508	= @Комментарий
+						,_Fld3509RRef	= @КонтрагентПриемник
+						,_Fld3511RRef	= @ВалютаПриемник
+						,_Fld3512	= @КурсПриемник
+						,_Fld3513	= @КратностьПриемник
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -273,7 +273,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document332
+					Команда.CommandText = @"Delete _Document230
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

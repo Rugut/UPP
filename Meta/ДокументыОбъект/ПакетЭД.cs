@@ -117,25 +117,25 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document481(
+						Insert Into _Document23158(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld12062RRef
-						,_Fld12063
-						,_Fld12064
-						,_Fld12065
-						,_Fld12067
-						,_Fld12068
-						,_Fld12069RRef
-						,_Fld12070RRef
-						,_Fld12071RRef
-						,_Fld12072RRef
-						,_Fld12073RRef
-						,_Fld12074
-						,_Fld12075)
+						,_Fld24715RRef
+						,_Fld24716
+						,_Fld24717
+						,_Fld24718
+						,_Fld24720
+						,_Fld24721
+						,_Fld24722RRef
+						,_Fld24723RRef
+						,_Fld24724RRef
+						,_Fld24725RRef
+						,_Fld24726RRef
+						,_Fld24727
+						,_Fld24728)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -158,25 +158,25 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document481
+						Update _Document23158
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld12062RRef	= @Направление
-						,_Fld12063	= @Получатель
-						,_Fld12064	= @Отправитель
-						,_Fld12065	= @ДанныеЗашифрованы
-						,_Fld12067	= @АдресРесурсаКонтрагента
-						,_Fld12068	= @СертификатШифрования
-						,_Fld12069RRef	= @Соглашение
-						,_Fld12070RRef	= @СтатусПакета
-						,_Fld12071RRef	= @Контрагент
-						,_Fld12072RRef	= @Организация
-						,_Fld12073RRef	= @СпособОбменаЭД
-						,_Fld12074	= @Комментарий
-						,_Fld12075	= @ВнешнийУИД
+						,_Fld24715RRef	= @Направление
+						,_Fld24716	= @Получатель
+						,_Fld24717	= @Отправитель
+						,_Fld24718	= @ДанныеЗашифрованы
+						,_Fld24720	= @АдресРесурсаКонтрагента
+						,_Fld24721	= @СертификатШифрования
+						,_Fld24722RRef	= @Соглашение
+						,_Fld24723RRef	= @СтатусПакета
+						,_Fld24724RRef	= @Контрагент
+						,_Fld24725RRef	= @Организация
+						,_Fld24726RRef	= @СпособОбменаЭД
+						,_Fld24727	= @Комментарий
+						,_Fld24728	= @ВнешнийУИД
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -204,7 +204,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document481
+					Команда.CommandText = @"Delete _Document23158
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

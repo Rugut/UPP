@@ -8,7 +8,10 @@
 	title: 'Справка о доходах (2-НДФЛ) для сотрудника',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -189,6 +192,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОДоходах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:28px;width:390px;height:138px;',
 			height: 138,width: 390,
@@ -231,7 +235,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -251,8 +255,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОДоходах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СведенияОВычетах',
 			xtype: 'grid',
 			style: 'position:absolute;left:405px;top:28px;width:313px;height:91px;',
 			height: 91,width: 313,
@@ -277,7 +299,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -287,6 +309,23 @@
 						name:'СуммаВычета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОВычетах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -531,6 +570,7 @@
 			style: 'position:absolute;left:274px;top:75px;width:70px;height:19px;',
 		},
 		{
+			id: 'СуммыНалогов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:82px;height:94px;',
 			height: 94,width: 82,
@@ -549,13 +589,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛСотруднику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Ставка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СуммыНалогов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -940,7 +997,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class НастройкиРегламентногоФормированияДокументовПоНДС:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("83aa16bc-36b0-4a1a-9f9d-a3930bde66d6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191447.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012003.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -54,7 +54,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public НастройкиРегламентногоФормированияДокументовПоНДС(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public НастройкиРегламентногоФормированияДокументовПоНДС(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -67,12 +80,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2845RRef [Организация]
-					,_Fld2846 [РегламентноеЗадание]
-					,_Fld2847 [Комментарий]
-					,_Fld2848 [ФормироватьДокументыАвтоматически]
-					From _Reference157(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23623RRef [Организация]
+					,_Fld23624 [РегламентноеЗадание]
+					,_Fld23625 [Комментарий]
+					,_Fld23626 [ФормироватьДокументыАвтоматически]
+					From _Reference23112(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -88,7 +101,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(6));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(6),Глубина+1);
 							РегламентноеЗадание = Читалка.GetString(7);
 							Комментарий = Читалка.GetString(8);
 							ФормироватьДокументыАвтоматически = ((byte[])Читалка.GetValue(9))[0]==1;

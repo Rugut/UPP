@@ -8,7 +8,10 @@
 	title: 'Дополнительные настройки обмена данными',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКоличествоЭлементовВТранзакцииНаЗапись',
@@ -101,7 +104,8 @@
 			text: 'Настройки для выгрузки данных:',
 			style: 'position:absolute;left:8px;top:122px;width:176px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -111,24 +111,24 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference92(
+						Insert Into _Reference50(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld2276RRef
-						,_Fld2277RRef
-						,_Fld2278
-						,_Fld2279RRef
-						,_Fld2280
-						,_Fld2281RRef
-						,_Fld2282RRef
-						,_Fld2283
-						,_Fld2284
-						,_Fld2285RRef
-						,_Fld2286)
+						,_Fld1114RRef
+						,_Fld1115RRef
+						,_Fld1116
+						,_Fld1117RRef
+						,_Fld1118
+						,_Fld21231RRef
+						,_Fld21232RRef
+						,_Fld26528
+						,_Fld26529
+						,_Fld26530RRef
+						,_Fld26531)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -151,7 +151,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference92
+						Update _Reference50
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -159,17 +159,17 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2276RRef	= @КодПозицииСписка
-						,_Fld2277RRef	= @ОснованиеВыслугиЛет
-						,_Fld2278	= @АУП
-						,_Fld2279RRef	= @КатегорияВоинскогоУчета
-						,_Fld2280	= @КодПоОКПДТР
-						,_Fld2281RRef	= @Должность
-						,_Fld2282RRef	= @КатегорияСтатистическогоУчета
-						,_Fld2283	= @ЯвляетсяДолжностьюЛетногоЭкипажа
-						,_Fld2284	= @ЯвляетсяШахтерскойДолжностью
-						,_Fld2285RRef	= @КатегорияУчетаЗабронированных
-						,_Fld2286	= @ЯвляетсяФармацевтическойДолжностью
+						,_Fld1114RRef	= @КодПозицииСписка
+						,_Fld1115RRef	= @ОснованиеВыслугиЛет
+						,_Fld1116	= @АУП
+						,_Fld1117RRef	= @КатегорияВоинскогоУчета
+						,_Fld1118	= @КодПоОКПДТР
+						,_Fld21231RRef	= @Должность
+						,_Fld21232RRef	= @КатегорияСтатистическогоУчета
+						,_Fld26528	= @ЯвляетсяДолжностьюЛетногоЭкипажа
+						,_Fld26529	= @ЯвляетсяШахтерскойДолжностью
+						,_Fld26530RRef	= @КатегорияУчетаЗабронированных
+						,_Fld26531	= @ЯвляетсяФармацевтическойДолжностью
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -200,7 +200,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference92
+					Команда.CommandText = @"Delete _Reference50
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

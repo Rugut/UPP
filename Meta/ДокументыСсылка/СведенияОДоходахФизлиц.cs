@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СведенияОДоходахФизлиц:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("dca5d4d5-f330-44da-b72a-de8282de0105");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191722.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012017.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -68,17 +68,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16773RRef [Организация]
-					,_Fld16774 [НалоговыйПериод]
-					,_Fld16775RRef [Ответственный]
-					,_Fld16776 [КонтактныйТелефонОтветственного]
-					,_Fld16777 [УдалитьДляПередачиВИМНС]
-					,_Fld16778 [Комментарий]
-					,_Fld16779 [КраткийСоставДокумента]
-					,_Fld16780RRef [ДолжностьОтветственного]
-					,_Fld16781 [ИдентификаторФайла]
-					,_Fld16782RRef [НазначениеСправки]
-					From _Document582(NOLOCK)
+					,_Fld11369RRef [Организация]
+					,_Fld11370 [НалоговыйПериод]
+					,_Fld11371RRef [Ответственный]
+					,_Fld11372 [КонтактныйТелефонОтветственного]
+					,_Fld11373 [УдалитьДляПередачиВИМНС]
+					,_Fld11374 [Комментарий]
+					,_Fld11375 [КраткийСоставДокумента]
+					,_Fld11376RRef [ДолжностьОтветственного]
+					,_Fld11377 [ИдентификаторФайла]
+					,_Fld18841RRef [НазначениеСправки]
+					From _Document447(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

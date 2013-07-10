@@ -8,7 +8,10 @@
 	title: 'Настройка расчета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:45px;width:336px;height:93px;',
@@ -293,7 +296,8 @@
 			text: 'Расчет сумм к выплате',
 			style: 'position:absolute;left:8px;top:8px;width:336px;height:27px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

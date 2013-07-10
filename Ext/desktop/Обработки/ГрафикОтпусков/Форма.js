@@ -8,7 +8,10 @@
 	title: 'График отпусков',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:777px;top:33px;width:215px;height:539px;',
@@ -130,7 +133,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

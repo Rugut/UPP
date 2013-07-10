@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class Проекты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("35d8f4bb-743d-46c3-9800-a5d9802591e2");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191750.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012011.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -57,7 +57,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Проекты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Проекты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -70,12 +83,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3257 [ДатаНачала]
-					,_Fld3258 [ДатаОкончания]
-					,_Fld3259RRef [Ответственный]
-					,_Fld3260 [Описание]
-					From _Reference203(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1655 [ДатаНачала]
+					,_Fld1656 [ДатаОкончания]
+					,_Fld1657RRef [Ответственный]
+					,_Fld1658 [Описание]
+					From _Reference129(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -93,7 +106,7 @@ namespace V82.СправочникиСсылка
 							Наименование = Читалка.GetString(5);
 							ДатаНачала = Читалка.GetDateTime(6);
 							ДатаОкончания = Читалка.GetDateTime(7);
-							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8),Глубина+1);
 							Описание = Читалка.GetString(9);
 							//return Ссылка;
 						}

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ДоговорЗаймаСРаботником:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("945d4ca3-72bd-422b-81c6-8ba4b26d8ca1");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191553.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012008.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -133,28 +133,28 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6824RRef [ФизЛицо]
-					,_Fld6825 [СуммаЗайма]
-					,_Fld6826RRef [ВалютаДокумента]
-					,_Fld6827 [КурсДокумента]
-					,_Fld6828 [КратностьДокумента]
-					,_Fld6829 [ПроцентЗаПользованиеЗаймом]
-					,_Fld6830RRef [ПорядокПогашенияЗайма]
-					,_Fld6831 [СрокПогашения]
-					,_Fld6832 [НачалоПогашения]
-					,_Fld6833 [ОтражатьВУправленческомУчете]
-					,_Fld6834 [ОтражатьВБухгалтерскомУчете]
-					,_Fld6835RRef [Организация]
-					,_Fld6836 [НачислятьМатериальнуюВыгоду]
-					,_Fld6837RRef [СтавкаНалогообложенияРезидента]
-					,_Fld6838RRef [СчетУчетаПроцентовПоЗайму]
-					,_Fld6839 [Комментарий]
-					,_Fld6840RRef [Ответственный]
-					,_Fld6841RRef [Субконто1]
-					,_Fld6842RRef [Субконто2]
-					,_Fld6843RRef [Субконто3]
-					,_Fld6844 [ДанныеПрошлойВерсии]
-					From _Document356(NOLOCK)
+					,_Fld4174RRef [ФизЛицо]
+					,_Fld4175 [СуммаЗайма]
+					,_Fld4176RRef [ВалютаДокумента]
+					,_Fld4177 [КурсДокумента]
+					,_Fld4178 [КратностьДокумента]
+					,_Fld4179 [ПроцентЗаПользованиеЗаймом]
+					,_Fld4180RRef [ПорядокПогашенияЗайма]
+					,_Fld4181 [СрокПогашения]
+					,_Fld4182 [НачалоПогашения]
+					,_Fld4183 [ОтражатьВУправленческомУчете]
+					,_Fld4184 [ОтражатьВБухгалтерскомУчете]
+					,_Fld4185RRef [Организация]
+					,_Fld4186 [НачислятьМатериальнуюВыгоду]
+					,_Fld4193RRef [СтавкаНалогообложенияРезидента]
+					,_Fld4187RRef [СчетУчетаПроцентовПоЗайму]
+					,_Fld4188 [Комментарий]
+					,_Fld4189RRef [Ответственный]
+					,_Fld4190RRef [Субконто1]
+					,_Fld4191RRef [Субконто2]
+					,_Fld4192RRef [Субконто3]
+					,_Fld26723 [ДанныеПрошлойВерсии]
+					From _Document251(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

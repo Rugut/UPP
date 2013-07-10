@@ -8,7 +8,10 @@
 	title: 'Опрос',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:410px;height:52px;',
@@ -144,6 +147,7 @@
 					items:
 					[
 		{
+			id: 'ВопросыИОтветы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:258px;',
 			height: 258,width: 410,
@@ -163,13 +167,13 @@
 				},
 				{
 					text:'Вопрос',
-					width:'160',
+					width:'1600',
 					dataIndex:'Вопрос',
 					flex:1,
 				},
 				{
 					text:'Ответ',
-					width:'120',
+					width:'1200',
 					dataIndex:'ТиповойОтвет',
 					flex:1,
 				},
@@ -180,7 +184,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -196,6 +200,23 @@
 						name:'ТиповойОтвет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВопросыИОтветы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -253,7 +274,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

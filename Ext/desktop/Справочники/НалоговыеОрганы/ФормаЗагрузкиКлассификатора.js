@@ -8,7 +8,10 @@
 	title: 'Импорт классификатора СОУН',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКаталог',
@@ -73,7 +76,8 @@
 			title: '',
 			style: 'position:absolute;left:241px;top:66px;width:345px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

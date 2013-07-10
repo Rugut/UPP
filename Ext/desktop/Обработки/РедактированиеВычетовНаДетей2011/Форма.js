@@ -8,7 +8,10 @@
 	title: 'Стандартные вычеты - 2011',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьЗаголовокГлавногоОкна',
@@ -16,6 +19,7 @@
 			style: 'position:absolute;left:8px;top:8px;width:709px;height:25px;',
 		},
 		{
+			id: 'СотрудникиСДетьми',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:121px;width:206px;height:435px;',
 			height: 435,width: 206,
@@ -34,7 +38,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -42,8 +46,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СотрудникиСДетьми');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ВычетыСотрудниковСДетьми',
 			xtype: 'grid',
 			style: 'position:absolute;left:226px;top:121px;width:762px;height:120px;',
 			height: 120,width: 762,
@@ -51,7 +73,7 @@
 			[
 				{
 					text:'Период (с ... по)',
-					width:'140',
+					width:'1400',
 					dataIndex:'КолонкаПериод',
 					flex:1,
 				},
@@ -104,7 +126,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -132,6 +154,23 @@
 						name:'Основание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВычетыСотрудниковСДетьми');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -152,6 +191,7 @@
 			style: 'position:absolute;left:84px;top:39px;width:220px;height:19px;',
 		},
 		{
+			id: 'НовыеВычетыСотрудниковСДетьми',
 			xtype: 'grid',
 			style: 'position:absolute;left:226px;top:436px;width:762px;height:120px;',
 			height: 120,width: 762,
@@ -159,7 +199,7 @@
 			[
 				{
 					text:'Период (с ... по)',
-					width:'140',
+					width:'1400',
 					dataIndex:'КолонкаПериод',
 					flex:1,
 				},
@@ -212,7 +252,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РедактированиеВычетовНаДетей2011/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -240,6 +280,23 @@
 						name:'Основание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НовыеВычетыСотрудниковСДетьми');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -556,7 +613,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

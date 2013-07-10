@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class Подразделения:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("784bb020-f9e0-4a39-bf27-71d2b228a981");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191949.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Подразделения(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Подразделения(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,12 +76,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3195RRef [ВидПодразделения]
-					,_Fld3196RRef [ВидЦФО]
-					,_Fld3197_TYPE [ОсновнойПроект_Тип],_Fld3197_RRRef [ОсновнойПроект],_Fld3197_RTRef [ОсновнойПроект_Вид]
-					,_Fld3198 [Порядок]
-					From _Reference191(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1610RRef [ВидПодразделения]
+					,_Fld1611RRef [ВидЦФО]
+					,_Fld1612_TYPE [ОсновнойПроект_Тип],_Fld1612_RRRef [ОсновнойПроект],_Fld1612_RTRef [ОсновнойПроект_Вид]
+					,_Fld26573 [Порядок]
+					From _Reference118(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -85,7 +98,7 @@ namespace V82.СправочникиСсылка
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
 							ВидПодразделения = V82.Перечисления/*Ссылка*/.ВидыПодразделений.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
-							ВидЦФО = new V82.СправочникиСсылка.ВидыЦФО((byte[])Читалка.GetValue(7));
+							ВидЦФО = new V82.СправочникиСсылка.ВидыЦФО((byte[])Читалка.GetValue(7),Глубина+1);
 							Порядок = Читалка.GetDecimal(11);
 							//return Ссылка;
 						}

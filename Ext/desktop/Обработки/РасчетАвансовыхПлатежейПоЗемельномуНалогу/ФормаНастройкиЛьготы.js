@@ -8,7 +8,10 @@
 	title: 'Налоговые льготы по земельному налогу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'numberfield',
 			hideLabel: true,
@@ -228,7 +231,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,7 +8,10 @@
 	title: 'Форма редактирования выражения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textarea',
 			hideLabel: true,
@@ -33,7 +36,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

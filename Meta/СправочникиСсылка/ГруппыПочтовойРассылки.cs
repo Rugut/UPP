@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ГруппыПочтовойРассылки:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("239a18e6-915b-4c0e-81a1-d03a40812f50");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191134.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011927.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -45,7 +45,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ГруппыПочтовойРассылки(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ГруппыПочтовойРассылки(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -58,9 +71,9 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2095RRef [Ответственный]
-					From _Reference80(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1044RRef [Ответственный]
+					From _Reference41(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -76,7 +89,7 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(6));
+							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(6),Глубина+1);
 							//return Ссылка;
 						}
 						else

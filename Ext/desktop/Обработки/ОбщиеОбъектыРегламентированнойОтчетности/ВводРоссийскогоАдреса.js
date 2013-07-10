@@ -8,7 +8,10 @@
 	title: 'Ввод адреса',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись6',
@@ -187,7 +190,8 @@
 			height: 19,
 			style: 'position:absolute;left:99px;top:81px;width:27px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись36',
@@ -116,7 +119,8 @@
 			text: 'Детализация по периодам:',
 			style: 'position:absolute;left:322px;top:33px;width:143px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

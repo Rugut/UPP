@@ -8,7 +8,10 @@
 	title: 'Анализ счета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСчет',
@@ -81,7 +84,8 @@
 			text: '...',
 			style: 'position:absolute;left:248px;top:33px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

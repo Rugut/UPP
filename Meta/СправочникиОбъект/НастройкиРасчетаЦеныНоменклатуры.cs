@@ -108,7 +108,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference156(
+						Insert Into _Reference23111(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -116,15 +116,15 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef
 						,_Folder
 						,_Description
-						,_Fld2835
-						,_Fld2836
-						,_Fld2837
-						,_Fld2838RRef
-						,_Fld2839RRef
-						,_Fld2840
-						,_Fld2841
-						,_Fld2842RRef
-						,_Fld2843)
+						,_Fld23613
+						,_Fld23614
+						,_Fld23615
+						,_Fld23616RRef
+						,_Fld23617RRef
+						,_Fld23618
+						,_Fld23619
+						,_Fld23620RRef
+						,_Fld23621)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -146,7 +146,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference156
+						Update _Reference23111
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -155,15 +155,15 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef	= @Родитель
 						,_Folder	= @ЭтоГруппа
 						,_Description	= @Наименование
-						,_Fld2835	= @ФормироватьДокументыАвтоматически
-						,_Fld2836	= @РегламентноеЗадание
-						,_Fld2837	= @НастройкиКомпоновщика
-						,_Fld2838RRef	= @ТипЦен
-						,_Fld2839RRef	= @ВидОтраженияВУчете
-						,_Fld2840	= @ПорядокФормированияЦены
-						,_Fld2841	= @Комментарий
-						,_Fld2842RRef	= @НастройкаРасчетаСебестоимости
-						,_Fld2843	= @СоздаватьНовыйДокумент
+						,_Fld23613	= @ФормироватьДокументыАвтоматически
+						,_Fld23614	= @РегламентноеЗадание
+						,_Fld23615	= @НастройкиКомпоновщика
+						,_Fld23616RRef	= @ТипЦен
+						,_Fld23617RRef	= @ВидОтраженияВУчете
+						,_Fld23618	= @ПорядокФормированияЦены
+						,_Fld23619	= @Комментарий
+						,_Fld23620RRef	= @НастройкаРасчетаСебестоимости
+						,_Fld23621	= @СоздаватьНовыйДокумент
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -193,7 +193,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference156
+					Команда.CommandText = @"Delete _Reference23111
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

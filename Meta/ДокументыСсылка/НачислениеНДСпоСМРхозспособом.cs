@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class НачислениеНДСпоСМРхозспособом:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("a42c45a0-485e-43bd-888e-26572d2aaffd");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191847.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,10 +61,10 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9900RRef [Организация]
-					,_Fld9901RRef [Ответственный]
-					,_Fld9902 [Комментарий]
-					From _Document438(NOLOCK)
+					,_Fld6299RRef [Организация]
+					,_Fld6300RRef [Ответственный]
+					,_Fld6301 [Комментарий]
+					From _Document321(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

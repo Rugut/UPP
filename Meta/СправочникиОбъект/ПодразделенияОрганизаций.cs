@@ -123,7 +123,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference192(
+						Insert Into _Reference119(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -132,14 +132,14 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef
 						,_Code
 						,_Description
-						,_Fld3202RRef
-						,_Fld3203
-						,_Fld3204
-						,_Fld3205
-						,_Fld3206
-						,_Fld3207RRef
-						,_Fld3208
-						,_Fld3209)
+						,_Fld1614RRef
+						,_Fld18715
+						,_Fld18716
+						,_Fld21275
+						,_Fld21276
+						,_Fld21277RRef
+						,_Fld26576
+						,_Fld26577)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -161,7 +161,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference192
+						Update _Reference119
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -171,14 +171,14 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef	= @Родитель
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3202RRef	= @ВидПодразделения
-						,_Fld3203	= @КодПоОКАТО
-						,_Fld3204	= @КПП
-						,_Fld3205	= @РайонныйКоэффициент
-						,_Fld3206	= @РайонныйКоэффициентРФ
-						,_Fld3207RRef	= @ТерриториальныеУсловияПФР
-						,_Fld3208	= @Порядок
-						,_Fld3209	= @СоответствуетСудамПодФлагомРФ
+						,_Fld1614RRef	= @ВидПодразделения
+						,_Fld18715	= @КодПоОКАТО
+						,_Fld18716	= @КПП
+						,_Fld21275	= @РайонныйКоэффициент
+						,_Fld21276	= @РайонныйКоэффициентРФ
+						,_Fld21277RRef	= @ТерриториальныеУсловияПФР
+						,_Fld26576	= @Порядок
+						,_Fld26577	= @СоответствуетСудамПодФлагомРФ
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -208,7 +208,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference192
+					Команда.CommandText = @"Delete _Reference119
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

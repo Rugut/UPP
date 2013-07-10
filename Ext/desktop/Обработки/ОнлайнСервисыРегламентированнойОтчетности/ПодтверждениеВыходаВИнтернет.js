@@ -8,7 +8,10 @@
 	title: 'Использование сведений из Интернет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'КнопкаРазрешить',
@@ -27,7 +30,8 @@
 			text: 'Запретить',
 			style: 'position:absolute;left:8px;top:277px;width:642px;height:27px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

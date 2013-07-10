@@ -114,7 +114,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference144(
+						Insert Into _Reference23107(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -122,19 +122,19 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef
 						,_Code
 						,_Description
-						,_Fld2574RRef
-						,_Fld2575
-						,_Fld2576
-						,_Fld2577
-						,_Fld2578
-						,_Fld2579
-						,_Fld2580
-						,_Fld2581
-						,_Fld2582
-						,_Fld2583
-						,_Fld2584
-						,_Fld2585
-						,_Fld2586)
+						,_Fld23549RRef
+						,_Fld23550
+						,_Fld23551
+						,_Fld23552
+						,_Fld23553
+						,_Fld23554
+						,_Fld23555
+						,_Fld23556
+						,_Fld23557
+						,_Fld23558
+						,_Fld23559
+						,_Fld23560
+						,_Fld23561)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -160,7 +160,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference144
+						Update _Reference23107
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -169,19 +169,19 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef	= @Родитель
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2574RRef	= @Вид
-						,_Fld2575	= @ПолноеНаименование
-						,_Fld2576	= @УчетНалогоплательщиков
-						,_Fld2577	= @ПриемНалоговойОтчетности
-						,_Fld2578	= @ИНН
-						,_Fld2579	= @КПП
-						,_Fld2580	= @Адрес
-						,_Fld2581	= @Телефон
-						,_Fld2582	= @АдресЭлектроннойПочты
-						,_Fld2583	= @АдресСайта
-						,_Fld2584	= @Комментарий
-						,_Fld2585	= @УдалитьСертификат
-						,_Fld2586	= @АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками
+						,_Fld23549RRef	= @Вид
+						,_Fld23550	= @ПолноеНаименование
+						,_Fld23551	= @УчетНалогоплательщиков
+						,_Fld23552	= @ПриемНалоговойОтчетности
+						,_Fld23553	= @ИНН
+						,_Fld23554	= @КПП
+						,_Fld23555	= @Адрес
+						,_Fld23556	= @Телефон
+						,_Fld23557	= @АдресЭлектроннойПочты
+						,_Fld23558	= @АдресСайта
+						,_Fld23559	= @Комментарий
+						,_Fld23560	= @УдалитьСертификат
+						,_Fld23561	= @АдресЭлектроннойПочтыДляЦелейДокументооборотаСНалогоплательщиками
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -215,7 +215,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference144
+					Команда.CommandText = @"Delete _Reference23107
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

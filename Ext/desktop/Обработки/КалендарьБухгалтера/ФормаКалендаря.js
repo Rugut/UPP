@@ -8,7 +8,10 @@
 	title: 'Календарь бухгалтера',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДляОрганизации',
@@ -57,6 +60,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаСобытийКалендаря',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:502px;height:469px;',
 			height: 469,width: 502,
@@ -82,13 +86,13 @@
 				},
 				{
 					text:'Название отчета/налога',
-					width:'250',
+					width:'2500',
 					dataIndex:'НазваниеОтчетаИлиНалога',
 					flex:1,
 				},
 				{
 					text:'Налогоплательщик',
-					width:'250',
+					width:'2500',
 					dataIndex:'Кто',
 					flex:1,
 				},
@@ -99,7 +103,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарьБухгалтера/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарьБухгалтера/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -118,6 +122,23 @@
 						name:'Кто',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСобытийКалендаря');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -156,7 +177,8 @@
 			title: 'Легенда',
 			style: 'position:absolute;left:522px;top:429px;width:140px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

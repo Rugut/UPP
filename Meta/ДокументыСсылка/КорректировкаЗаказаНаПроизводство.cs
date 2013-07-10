@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КорректировкаЗаказаНаПроизводство:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e9fce078-12b6-4230-bafc-afbb13906635");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191602.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012009.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -81,15 +81,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8897 [Комментарий]
-					,_Fld8898RRef [Организация]
-					,_Fld8899RRef [Ответственный]
-					,_Fld8900RRef [Подразделение]
-					,_Fld8901RRef [Исполнитель]
-					,_Fld8902RRef [ЗаказНаПроизводство]
-					,_Fld8903_TYPE [ДокументОснование_Тип],_Fld8903_RRRef [ДокументОснование],_Fld8903_RTRef [ДокументОснование_Вид]
-					,_Fld8904RRef [ВидОперации]
-					From _Document421(NOLOCK)
+					,_Fld5676 [Комментарий]
+					,_Fld5677RRef [Организация]
+					,_Fld5678RRef [Ответственный]
+					,_Fld5679RRef [Подразделение]
+					,_Fld5680RRef [Исполнитель]
+					,_Fld5684RRef [ЗаказНаПроизводство]
+					,_Fld19489_TYPE [ДокументОснование_Тип],_Fld19489_RRRef [ДокументОснование],_Fld19489_RTRef [ДокументОснование_Вид]
+					,_Fld19490RRef [ВидОперации]
+					From _Document305(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

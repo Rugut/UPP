@@ -8,7 +8,10 @@
 	title: 'Выберите организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:61px;width:475px;height:271px;',
@@ -18,7 +21,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:35px;width:475px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

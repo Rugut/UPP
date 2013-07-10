@@ -8,7 +8,10 @@
 	title: 'Настройка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			fieldLabel: 'Выполнять в транзакции',
@@ -54,7 +57,8 @@
 			labelWidth: 50,
 			style: 'position:absolute;left:8px;top:88px;width:263px;height:20px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

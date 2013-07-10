@@ -8,8 +8,12 @@
 	title: 'Типы цен номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:686px;height:280px;',
 			height: 280,width: 686,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'180',
+					width:'1800',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -71,24 +75,25 @@
 				},
 				{
 					text:'Метод округления',
-					width:'150',
+					width:'1500',
 					dataIndex:'ОкруглятьВБольшуюСторону',
 					flex:1,
 				},
 				{
 					text:'Способ расчета цены',
-					width:'150',
+					width:'1500',
 					dataIndex:'СпособРасчетаЦены',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТипыЦенНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -125,6 +130,23 @@
 						name:'СпособРасчетаЦены',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -299,7 +321,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

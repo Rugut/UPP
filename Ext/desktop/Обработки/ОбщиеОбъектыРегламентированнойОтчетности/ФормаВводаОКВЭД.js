@@ -8,7 +8,10 @@
 	title: 'ОКВЭД',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьВведитеКодОКВЭД',
@@ -24,7 +27,8 @@
 			height: 19,
 			style: 'position:absolute;left:92px;top:7px;width:66px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Настройка документа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Автоматически распределять материалы',
@@ -64,7 +67,8 @@
 			title: 'Возвратные отходы',
 			style: 'position:absolute;left:8px;top:126px;width:384px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -25,13 +25,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -70,13 +70,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -115,13 +115,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)";
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ФиксацияБюджетов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -156,13 +156,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -201,13 +201,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -246,13 +246,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)";
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ФиксацияБюджетов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -287,13 +287,13 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18917RRef [Сценарий]
-					,_Fld18918 [ГраницаФиксации]
-					,_Fld18919RRef [ЦФО]
-					,_Fld18920RRef [Проект]
-					,_Fld18921RRef [Ответственный]
-					,_Fld18922 [Комментарий]
-					From _Document639(NOLOCK)";
+					,_Fld12471RRef [Сценарий]
+					,_Fld12472 [ГраницаФиксации]
+					,_Fld12473RRef [ЦФО]
+					,_Fld12474RRef [Проект]
+					,_Fld12475RRef [Ответственный]
+					,_Fld12476 [Комментарий]
+					From _Document492(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ФиксацияБюджетов();
 					using (var Читалка = Команда.ExecuteReader())
 					{

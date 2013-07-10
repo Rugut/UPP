@@ -8,7 +8,10 @@
 	title: 'Основание увольнения (статья ТК РФ)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -37,7 +40,8 @@
 			name: 'ТекстОснования',
 			style: 'position:absolute;left:8px;top:76px;width:362px;height:54px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

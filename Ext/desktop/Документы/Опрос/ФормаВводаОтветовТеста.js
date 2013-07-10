@@ -8,7 +8,10 @@
 	title: 'Опрос',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:261px;width:350px;height:249px;',
@@ -75,6 +78,7 @@
 					items:
 					[
 		{
+			id: 'НесколькоВариантовОтветов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:350px;height:238px;',
 			height: 238,width: 350,
@@ -111,7 +115,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -127,6 +131,23 @@
 						name:'Ответ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НесколькоВариантовОтветов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -382,6 +403,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеСоставногоОтвета',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:350px;height:238px;',
 			height: 238,width: 350,
@@ -394,10 +416,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Опрос/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСоставногоОтвета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -491,7 +530,8 @@
 			text: 'Осталось:',
 			style: 'position:absolute;left:115px;top:515px;width:59px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

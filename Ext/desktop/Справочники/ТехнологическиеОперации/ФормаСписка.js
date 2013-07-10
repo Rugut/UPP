@@ -8,8 +8,12 @@
 	title: 'Технологические операции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:33px;width:598px;height:320px;',
 			height: 320,width: 598,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'180',
+					width:'1800',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -65,36 +69,37 @@
 				},
 				{
 					text:'Основная статья затрат',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновнаяСтатьяЗатратНаПроизводство',
 					flex:1,
 				},
 				{
 					text:'Основная номенклатурная группа',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновнаяНоменклатурнаяГруппа',
 					flex:1,
 				},
 				{
 					text:'Отражение зарплаты в бухучете',
-					width:'120',
+					width:'1200',
 					dataIndex:'СпособОтраженияЗарплатыВБухучете',
 					flex:1,
 				},
 				{
 					text:'Способ распределения затрат на выпуск',
-					width:'350',
+					width:'3500',
 					dataIndex:'ОсновнойСпособРаспределенияЗатратНаВыпуск',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТехнологическиеОперации").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическиеОперации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическиеОперации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +140,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
 			height: 320,width: 160,
@@ -151,11 +174,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТехнологическиеОперации").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическиеОперации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическиеОперации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -163,8 +187,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Шаблон формулы расчета',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -87,7 +90,8 @@
 			height: 19,
 			style: 'position:absolute;left:87px;top:105px;width:405px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

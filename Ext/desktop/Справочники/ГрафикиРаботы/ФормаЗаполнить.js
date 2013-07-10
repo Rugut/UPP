@@ -8,7 +8,10 @@
 	title: 'Помощник заполнения графика',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:190px;top:0px;width:365px;height:386px;',
@@ -273,6 +276,7 @@
 					items:
 					[
 		{
+			id: 'РасписаниеСводно',
 			xtype: 'grid',
 			style: 'position:absolute;left:1px;top:11px;width:180px;height:150px;',
 			height: 150,width: 180,
@@ -293,11 +297,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -307,6 +312,23 @@
 						name:'ЧасовЗаДень',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасписаниеСводно');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -322,6 +344,7 @@
 					items:
 					[
 		{
+			id: 'РасписаниеПоЧасам',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:38px;width:360px;height:167px;',
 			height: 167,width: 360,
@@ -444,11 +467,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -510,6 +534,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасписаниеПоЧасам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -532,6 +573,7 @@
 					items:
 					[
 		{
+			id: 'РасписаниеСменный',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:38px;width:360px;height:167px;',
 			height: 167,width: 360,
@@ -558,11 +600,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -575,6 +618,23 @@
 						name:'ЧасовВСмене',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасписаниеСменный');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -662,7 +722,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

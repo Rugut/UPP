@@ -8,7 +8,10 @@
 	title: 'Автообмен с сервером ФСС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОтчет',
@@ -66,7 +69,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

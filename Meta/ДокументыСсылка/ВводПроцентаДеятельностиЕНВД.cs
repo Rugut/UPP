@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВводПроцентаДеятельностиЕНВД:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f8c8bfbe-379d-4b50-9ee5-6c368b1aec1b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190933.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011937.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld5723RRef [Организация]
-					,_Fld5724 [Период]
-					,_Fld5725 [Комментарий]
-					,_Fld5726RRef [Ответственный]
-					,_Fld5727 [КраткийСоставДокумента]
-					,_Fld5728 [ВводДанныхПоПериодам]
-					From _Document323(NOLOCK)
+					,_Fld3335RRef [Организация]
+					,_Fld3336 [Период]
+					,_Fld3337 [Комментарий]
+					,_Fld3338RRef [Ответственный]
+					,_Fld3339 [КраткийСоставДокумента]
+					,_Fld21351 [ВводДанныхПоПериодам]
+					From _Document223(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

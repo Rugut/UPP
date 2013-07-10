@@ -8,7 +8,10 @@
 	title: 'Ввод доли выручки, не облагаемой НДС (%)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОбщаяВыручка',
@@ -54,7 +57,8 @@
 			name: 'ДоляВыручкиНеОблагаемаяНДС',
 			style: 'position:absolute;left:216px;top:58px;width:129px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

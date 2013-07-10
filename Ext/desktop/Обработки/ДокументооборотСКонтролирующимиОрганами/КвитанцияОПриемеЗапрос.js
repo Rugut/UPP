@@ -8,7 +8,10 @@
 	title: 'Квитанция о приеме',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -134,7 +137,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:36px;width:547px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

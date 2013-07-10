@@ -8,7 +8,10 @@
 	title: 'Строка исходных комплектующих',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -245,7 +248,8 @@
 			height: 19,
 			style: 'position:absolute;left:148px;top:321px;width:209px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РасчетСтраховыхВзносов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b4c131aa-a20f-4260-8bca-b55ca9d1bad8");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191427.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15627 [ПериодРегистрации]
-					,_Fld15628RRef [Организация]
-					,_Fld15629RRef [ПодразделениеОрганизации]
-					,_Fld15630 [Комментарий]
-					,_Fld15631RRef [Ответственный]
-					,_Fld15632 [КраткийСоставДокумента]
-					From _Document559(NOLOCK)
+					,_Fld24839 [ПериодРегистрации]
+					,_Fld24840RRef [Организация]
+					,_Fld24841RRef [ПодразделениеОрганизации]
+					,_Fld24842 [Комментарий]
+					,_Fld24843RRef [Ответственный]
+					,_Fld24844 [КраткийСоставДокумента]
+					From _Document23164(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -129,20 +129,20 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document429(
+						Insert Into _Document313(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld9346
-						,_Fld9347
-						,_Fld9348
-						,_Fld9349RRef
-						,_Fld9350RRef
-						,_Fld9351
-						,_Fld9352RRef
-						,_Fld9353RRef)
+						,_Fld5998
+						,_Fld5999
+						,_Fld6000
+						,_Fld6001RRef
+						,_Fld6002RRef
+						,_Fld6003
+						,_Fld6004RRef
+						,_Fld6005RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -160,20 +160,20 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document429
+						Update _Document313
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld9346	= @ОтражатьВУправленческомУчете
-						,_Fld9347	= @ОтражатьВБухгалтерскомУчете
-						,_Fld9348	= @ОтражатьВНалоговомУчете
-						,_Fld9349RRef	= @Организация
-						,_Fld9350RRef	= @Подразделение
-						,_Fld9351	= @Комментарий
-						,_Fld9352RRef	= @Ответственный
-						,_Fld9353RRef	= @ПодразделениеОрганизации
+						,_Fld5998	= @ОтражатьВУправленческомУчете
+						,_Fld5999	= @ОтражатьВБухгалтерскомУчете
+						,_Fld6000	= @ОтражатьВНалоговомУчете
+						,_Fld6001RRef	= @Организация
+						,_Fld6002RRef	= @Подразделение
+						,_Fld6003	= @Комментарий
+						,_Fld6004RRef	= @Ответственный
+						,_Fld6005RRef	= @ПодразделениеОрганизации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -195,7 +195,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document429
+					Команда.CommandText = @"Delete _Document313
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class Склады:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("f9727404-36b6-4005-a5b4-77243dc0ff00");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190936.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011937.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -68,7 +68,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Склады(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Склады(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -81,14 +94,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3427 [Комментарий]
-					,_Fld3428RRef [ТипЦенРозничнойТорговли]
-					,_Fld3429RRef [Подразделение]
-					,_Fld3430RRef [ВидСклада]
-					,_Fld3431 [НомерСекции]
-					,_Fld3432 [РасчетРозничныхЦенПоТорговойНаценке]
-					From _Reference229(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1744 [Комментарий]
+					,_Fld1745RRef [ТипЦенРозничнойТорговли]
+					,_Fld1746RRef [Подразделение]
+					,_Fld1747RRef [ВидСклада]
+					,_Fld1748 [НомерСекции]
+					,_Fld1749 [РасчетРозничныхЦенПоТорговойНаценке]
+					From _Reference147(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -105,8 +118,8 @@ namespace V82.СправочникиСсылка
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
 							Комментарий = Читалка.GetString(6);
-							ТипЦенРозничнойТорговли = new V82.СправочникиСсылка.ТипыЦенНоменклатуры((byte[])Читалка.GetValue(7));
-							Подразделение = new V82.СправочникиСсылка.Подразделения((byte[])Читалка.GetValue(8));
+							ТипЦенРозничнойТорговли = new V82.СправочникиСсылка.ТипыЦенНоменклатуры((byte[])Читалка.GetValue(7),Глубина+1);
+							Подразделение = new V82.СправочникиСсылка.Подразделения((byte[])Читалка.GetValue(8),Глубина+1);
 							ВидСклада = V82.Перечисления/*Ссылка*/.ВидыСкладов.ПустаяСсылка.Получить((byte[])Читалка.GetValue(9));
 							НомерСекции = Читалка.GetDecimal(10);
 							РасчетРозничныхЦенПоТорговойНаценке = ((byte[])Читалка.GetValue(11))[0]==1;

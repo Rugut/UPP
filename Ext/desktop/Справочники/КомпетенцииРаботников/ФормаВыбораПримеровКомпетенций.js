@@ -8,8 +8,12 @@
 	title: 'Примеры компетенций (критериев оценки)',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

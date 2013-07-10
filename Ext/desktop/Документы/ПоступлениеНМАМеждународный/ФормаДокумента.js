@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись4',
@@ -25,6 +28,7 @@
 			style: 'position:absolute;left:87px;top:324px;width:559px;height:19px;',
 		},
 		{
+			id: 'НематериальныеАктивы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:107px;width:638px;height:211px;',
 			height: 211,width: 638,
@@ -181,7 +185,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеНМАМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеНМАМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -257,6 +261,23 @@
 						name:'ЛиквидационнаяСтоимость',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НематериальныеАктивы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -365,7 +386,8 @@
 			text: '...',
 			style: 'position:absolute;left:625px;top:33px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

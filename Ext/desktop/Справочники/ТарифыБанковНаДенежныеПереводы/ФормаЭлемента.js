@@ -8,7 +8,10 @@
 	title: 'Тарифы банков',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -84,7 +87,8 @@
 			name: 'Процент',
 			style: 'position:absolute;left:130px;top:62px;width:100px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

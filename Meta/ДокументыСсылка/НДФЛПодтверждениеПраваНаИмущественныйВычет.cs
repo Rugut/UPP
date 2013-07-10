@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class НДФЛПодтверждениеПраваНаИмущественныйВычет:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("97516a65-aae8-4b14-97f0-f9180f8dd057");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191758.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012020.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -60,12 +60,12 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10466RRef [Организация]
-					,_Fld10467 [НалоговыйПериод]
-					,_Fld10468RRef [Ответственный]
-					,_Fld10469 [Комментарий]
-					,_Fld10470 [КраткийСоставДокумента]
-					From _Document446(NOLOCK)
+					,_Fld6562RRef [Организация]
+					,_Fld6563 [НалоговыйПериод]
+					,_Fld6559RRef [Ответственный]
+					,_Fld6560 [Комментарий]
+					,_Fld6561 [КраткийСоставДокумента]
+					From _Document329(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -8,7 +8,10 @@
 	title: 'Инвентарная книга ОС (бухгалтерский учет)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -141,7 +144,8 @@
 			title: 'Дополнительно:',
 			style: 'position:absolute;left:344px;top:61px;width:322px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

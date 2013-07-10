@@ -8,7 +8,10 @@
 	title: 'Переоценка товаров отданных на комиссию',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -80,6 +83,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:618px;height:160px;',
 			height: 160,width: 618,
@@ -99,25 +103,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -182,7 +186,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаТоваровОтданныхНаКомиссию/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереоценкаТоваровОтданныхНаКомиссию/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -231,6 +235,23 @@
 						name:'СуммаСтарая',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -413,7 +434,8 @@
 			text: 'Сделка:\r\n',
 			style: 'position:absolute;left:8px;top:101px;width:84px;height:28px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

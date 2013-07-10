@@ -8,7 +8,10 @@
 	title: 'Инвентаризация ОС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -101,6 +104,7 @@
 					items:
 					[
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:637px;height:265px;',
 			height: 265,width: 637,
@@ -114,7 +118,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'220',
+					width:'2200',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -126,55 +130,55 @@
 				},
 				{
 					text:'МОЛ',
-					width:'120',
+					width:'1200',
 					dataIndex:'МОЛ',
 					flex:1,
 				},
 				{
 					text:'Стоимость по данным учета',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтоимостьПоДаннымУчета',
 					flex:1,
 				},
 				{
 					text:'Наличие по данным учета',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаличиеПоДаннымУчета',
 					flex:1,
 				},
 				{
 					text:'Фактическая стоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтоимостьФактическая',
 					flex:1,
 				},
 				{
 					text:'Фактическое наличие',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаличиеФактическое',
 					flex:1,
 				},
 				{
 					text:'Излишек, сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИзлишекСумма',
 					flex:1,
 				},
 				{
 					text:'Излишек, количество',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИзлишекКоличество',
 					flex:1,
 				},
 				{
 					text:'Недостача, сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'НедостачаСумма',
 					flex:1,
 				},
 				{
 					text:'Недостача, количество',
-					width:'120',
+					width:'1200',
 					dataIndex:'НедостачаКоличество',
 					flex:1,
 				},
@@ -185,7 +189,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -226,6 +230,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -251,6 +272,7 @@
 			style: 'position:absolute;left:100px;top:270px;width:543px;height:19px;',
 		},
 		{
+			id: 'ИнвентаризационнаяКомиссия',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:141px;width:637px;height:123px;',
 			height: 123,width: 637,
@@ -281,7 +303,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -294,6 +316,23 @@
 						name:'Председатель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИнвентаризационнаяКомиссия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -394,7 +433,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

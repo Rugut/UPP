@@ -8,7 +8,10 @@
 	title: 'Ввод коэффициентов индексации заработка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -58,6 +61,7 @@
 			style: 'position:absolute;left:422px;top:57px;width:120px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:534px;height:125px;',
 			height: 125,width: 534,
@@ -77,7 +81,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'210',
+					width:'2100',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -88,7 +92,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводКоэффициентовИндексацииЗаработка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводКоэффициентовИндексацииЗаработка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -101,6 +105,23 @@
 						name:'Сотрудник',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -172,7 +193,8 @@
 			title: 'Сотрудники',
 			style: 'position:absolute;left:8px;top:108px;width:534px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

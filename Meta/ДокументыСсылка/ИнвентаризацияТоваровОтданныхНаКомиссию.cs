@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИнвентаризацияТоваровОтданныхНаКомиссию:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8a78d3d5-a082-46ea-81e8-d3e8ec5e44a3");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191542.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012007.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8294RRef [Организация]
-					,_Fld8295RRef [Контрагент]
-					,_Fld8296RRef [ДоговорКонтрагента]
-					,_Fld8297RRef [Подразделение]
-					,_Fld8298 [Комментарий]
-					,_Fld8299RRef [Ответственный]
-					,_Fld8300_TYPE [Сделка_Тип],_Fld8300_RRRef [Сделка],_Fld8300_RTRef [Сделка_Вид]
-					From _Document407(NOLOCK)
+					,_Fld5180RRef [Организация]
+					,_Fld5181RRef [Контрагент]
+					,_Fld5182RRef [ДоговорКонтрагента]
+					,_Fld5183RRef [Подразделение]
+					,_Fld5184 [Комментарий]
+					,_Fld5185RRef [Ответственный]
+					,_Fld5186_TYPE [Сделка_Тип],_Fld5186_RRRef [Сделка],_Fld5186_RTRef [Сделка_Вид]
+					From _Document291(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

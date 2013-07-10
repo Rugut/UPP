@@ -8,7 +8,10 @@
 	title: 'План производства',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -105,6 +108,7 @@
 			style: 'position:absolute;left:564px;top:81px;width:80px;height:19px;',
 		},
 		{
+			id: 'СоставПлана',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:171px;width:636px;height:108px;',
 			height: 108,width: 636,
@@ -130,7 +134,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -226,7 +230,7 @@
 				},
 				{
 					text:'Вариант распределения',
-					width:'130',
+					width:'1300',
 					dataIndex:'ВариантРаспределения',
 					flex:1,
 				},
@@ -237,7 +241,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -301,6 +305,23 @@
 						name:'ВариантРаспределения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставПлана');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -458,7 +479,8 @@
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:306px;width:80px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

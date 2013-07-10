@@ -8,7 +8,10 @@
 	title: 'Импорт правил соответствия счетов БУ и МСФО',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -34,7 +37,8 @@
 			boxLabel: 'Исключение Проводок',
 			style: 'position:absolute;left:205px;top:5px;width:138px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

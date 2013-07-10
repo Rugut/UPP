@@ -8,7 +8,10 @@
 	title: 'Документ расчетов с контрагентом (ручной учет)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -139,7 +142,8 @@
 			height: 19,
 			style: 'position:absolute;left:190px;top:129px;width:120px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

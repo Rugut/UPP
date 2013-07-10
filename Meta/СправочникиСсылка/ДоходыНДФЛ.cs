@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ДоходыНДФЛ:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1b05873f-a6a2-4c1d-931b-5b33a7da7a2b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191217.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011952.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ДоходыНДФЛ(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ДоходыНДФЛ(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,13 +76,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2297RRef [СтавкаНалогообложенияРезидента]
-					,_Fld2298 [КодДляОтчетности]
-					,_Fld2299 [НеОблагаетсяУНалоговогоАгента]
-					,_Fld2300 [НеОтражаетсяВОтчетности2010]
-					,_Fld2301 [УчитыватьПоПериодуДействия]
-					From _Reference95(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1131RRef [СтавкаНалогообложенияРезидента]
+					,_Fld1132 [КодДляОтчетности]
+					,_Fld26532 [НеОблагаетсяУНалоговогоАгента]
+					,_Fld26533 [НеОтражаетсяВОтчетности2010]
+					,_Fld26534 [УчитыватьПоПериодуДействия]
+					From _Reference54(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

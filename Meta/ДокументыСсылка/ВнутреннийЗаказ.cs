@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВнутреннийЗаказ:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8cc62dad-1d6d-4118-8df0-147c1b9efe3f");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191916.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -100,19 +100,19 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld5995RRef [ВидЗаказа]
-					,_Fld5996 [ВремяНапоминания]
-					,_Fld5997 [ДатаОтгрузки]
-					,_Fld5998_TYPE [Заказчик_Тип],_Fld5998_RRRef [Заказчик],_Fld5998_RTRef [Заказчик_Вид]
-					,_Fld5999 [Комментарий]
-					,_Fld6000 [НапомнитьОСобытии]
-					,_Fld6001RRef [Организация]
-					,_Fld6002RRef [Ответственный]
-					,_Fld6003RRef [Подразделение]
-					,_Fld6004RRef [Исполнитель]
-					,_Fld6005RRef [ПодразделениеИсполнитель]
-					,_Fld6006RRef [ДокументОснование]
-					From _Document333(NOLOCK)
+					,_Fld3515RRef [ВидЗаказа]
+					,_Fld3516 [ВремяНапоминания]
+					,_Fld3517 [ДатаОтгрузки]
+					,_Fld3518_TYPE [Заказчик_Тип],_Fld3518_RRRef [Заказчик],_Fld3518_RTRef [Заказчик_Вид]
+					,_Fld3519 [Комментарий]
+					,_Fld3520 [НапомнитьОСобытии]
+					,_Fld3521RRef [Организация]
+					,_Fld3522RRef [Ответственный]
+					,_Fld3523RRef [Подразделение]
+					,_Fld3524RRef [Исполнитель]
+					,_Fld3525RRef [ПодразделениеИсполнитель]
+					,_Fld3526RRef [ДокументОснование]
+					From _Document231(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

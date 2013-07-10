@@ -8,7 +8,10 @@
 	title: 'Настройка учета зарплаты и управления персоналом',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:8px;width:689px;height:506px;',
@@ -633,6 +636,7 @@
 			style: 'position:absolute;left:370px;top:300px;width:114px;height:19px;',
 		},
 		{
+			id: 'ТаблицаРезервов',
 			xtype: 'grid',
 			style: 'position:absolute;left:10px;top:380px;width:496px;height:118px;',
 			height: 118,width: 496,
@@ -646,13 +650,13 @@
 				},
 				{
 					text:'Размер отчислений, %',
-					width:'120',
+					width:'1200',
 					dataIndex:'Размер',
 					flex:1,
 				},
 				{
 					text:'Расчетная база',
-					width:'140',
+					width:'1400',
 					dataIndex:'РасчетнаяБаза',
 					flex:1,
 				},
@@ -663,7 +667,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -676,6 +680,23 @@
 						name:'РасчетнаяБаза',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаРезервов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -760,6 +781,7 @@
 			style: 'position:absolute;left:109px;top:260px;width:90px;height:19px;',
 		},
 		{
+			id: 'ТарифСтраховыхВзносов',
 			xtype: 'grid',
 			style: 'position:absolute;left:10px;top:82px;width:496px;height:155px;',
 			height: 155,width: 496,
@@ -814,7 +836,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -840,6 +862,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТарифСтраховыхВзносов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -863,6 +902,7 @@
 			style: 'position:absolute;left:26px;top:260px;width:82px;height:19px;text-align:left;',
 		},
 		{
+			id: 'СтавкиФССНС',
 			xtype: 'grid',
 			style: 'position:absolute;left:10px;top:394px;width:496px;height:104px;',
 			height: 104,width: 496,
@@ -870,7 +910,7 @@
 			[
 				{
 					text:'Организация (обособленное подразделение)',
-					width:'250',
+					width:'2500',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -893,7 +933,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -906,6 +946,23 @@
 						name:'Ставка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтавкиФССНС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1130,6 +1187,7 @@
 			style: 'position:absolute;left:10px;top:8px;width:470px;height:25px;',
 		},
 		{
+			id: 'СписокГосударственныеПособия',
 			xtype: 'grid',
 			style: 'position:absolute;left:10px;top:148px;width:496px;height:160px;',
 			height: 160,width: 496,
@@ -1137,7 +1195,7 @@
 			[
 				{
 					text:'Вид пособия',
-					width:'250',
+					width:'2500',
 					dataIndex:'ВидПособия',
 					flex:1,
 				},
@@ -1160,7 +1218,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1173,6 +1231,23 @@
 						name:'Период',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокГосударственныеПособия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1606,7 +1681,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

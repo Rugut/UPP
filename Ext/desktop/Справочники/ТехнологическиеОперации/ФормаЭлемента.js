@@ -8,7 +8,10 @@
 	title: 'Технологические операции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -203,7 +206,8 @@
 			name: 'Коэффициент',
 			style: 'position:absolute;left:233px;top:284px;width:83px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

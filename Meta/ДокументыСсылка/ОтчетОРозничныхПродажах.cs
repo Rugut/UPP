@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОтчетОРозничныхПродажах:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("332ef7a8-5bcd-403b-b64d-9f01c921096e");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191951.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012032.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -122,29 +122,29 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld11621RRef [КассаККМ]
-					,_Fld11622 [Комментарий]
-					,_Fld11623RRef [Организация]
-					,_Fld11624 [ОтражатьВБухгалтерскомУчете]
-					,_Fld11625 [ОтражатьВУправленческомУчете]
-					,_Fld11626 [ОтражатьВНалоговомУчете]
-					,_Fld11627RRef [Подразделение]
-					,_Fld11628 [СуммаДокумента]
-					,_Fld11629RRef [ИнвентаризацияТоваровНаСкладе]
-					,_Fld11630RRef [ТипЦен]
-					,_Fld11631 [СуммаВключаетНДС]
-					,_Fld11632 [УчитыватьНДС]
-					,_Fld11633RRef [Склад]
-					,_Fld11634RRef [Ответственный]
-					,_Fld11635RRef [СтатьяДвиженияДенежныхСредств]
-					,_Fld11636RRef [ВидОперации]
-					,_Fld11637_TYPE [Проект_Тип],_Fld11637_RRRef [Проект],_Fld11637_RTRef [Проект_Вид]
-					,_Fld11638RRef [УсловиеПродаж]
-					,_Fld11639RRef [ДоговорЭквайринга]
-					,_Fld11640RRef [Эквайрер]
-					,_Fld11641RRef [ДоговорВзаиморасчетовЭквайрера]
-					,_Fld11642RRef [СчетУчетаРасчетовСЭквайрером]
-					From _Document477(NOLOCK)
+					,_Fld7360RRef [КассаККМ]
+					,_Fld7361 [Комментарий]
+					,_Fld7362RRef [Организация]
+					,_Fld7363 [ОтражатьВБухгалтерскомУчете]
+					,_Fld7364 [ОтражатьВУправленческомУчете]
+					,_Fld7365 [ОтражатьВНалоговомУчете]
+					,_Fld7366RRef [Подразделение]
+					,_Fld7367 [СуммаДокумента]
+					,_Fld7368RRef [ИнвентаризацияТоваровНаСкладе]
+					,_Fld7369RRef [ТипЦен]
+					,_Fld7370 [СуммаВключаетНДС]
+					,_Fld7371 [УчитыватьНДС]
+					,_Fld7372RRef [Склад]
+					,_Fld7373RRef [Ответственный]
+					,_Fld7374RRef [СтатьяДвиженияДенежныхСредств]
+					,_Fld7375RRef [ВидОперации]
+					,_Fld7376_TYPE [Проект_Тип],_Fld7376_RRRef [Проект],_Fld7376_RTRef [Проект_Вид]
+					,_Fld7377RRef [УсловиеПродаж]
+					,_Fld7378RRef [ДоговорЭквайринга]
+					,_Fld7379RRef [Эквайрер]
+					,_Fld7380RRef [ДоговорВзаиморасчетовЭквайрера]
+					,_Fld18995RRef [СчетУчетаРасчетовСЭквайрером]
+					From _Document356(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

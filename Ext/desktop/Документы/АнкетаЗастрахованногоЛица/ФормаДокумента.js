@@ -8,7 +8,10 @@
 	title: 'Анкета застрахованного лица (АДВ-1)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -132,6 +135,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:629px;height:229px;',
 			height: 229,width: 629,
@@ -145,13 +149,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Пол',
-					width:'120',
+					width:'1200',
 					dataIndex:'Пол',
 					flex:1,
 				},
@@ -163,7 +167,7 @@
 				},
 				{
 					text:'Фамилия',
-					width:'160',
+					width:'1600',
 					dataIndex:'Фамилия',
 					flex:1,
 				},
@@ -181,7 +185,7 @@
 				},
 				{
 					text:'Место рождения',
-					width:'160',
+					width:'1600',
 					dataIndex:'МестоРождения',
 					flex:1,
 				},
@@ -216,7 +220,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнкетаЗастрахованногоЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнкетаЗастрахованногоЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -256,6 +260,23 @@
 						name:'Телефоны',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -302,7 +323,8 @@
 			boxLabel: 'Заменять букву "ё"',
 			style: 'position:absolute;left:8px;top:396px;width:629px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

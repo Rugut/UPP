@@ -8,7 +8,10 @@
 	title: 'Актуализация бюджетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -177,7 +180,8 @@
 			boxLabel: 'Перенести транзакции',
 			style: 'position:absolute;left:188px;top:81px;width:145px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

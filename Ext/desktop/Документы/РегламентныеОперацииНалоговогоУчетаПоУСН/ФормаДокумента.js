@@ -8,7 +8,10 @@
 	title: 'Регламентные операции налогового учета (УСН)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -126,7 +129,8 @@
 			boxLabel: 'Списание доп. расходов',
 			style: 'position:absolute;left:8px;top:110px;width:366px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

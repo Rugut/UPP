@@ -8,7 +8,10 @@
 	title: 'Анализ оборачиваемости товаров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:552px;height:72px;',
@@ -145,7 +148,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:400px;top:57px;width:160px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Семейное положение физ. лица',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -48,7 +51,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:32px;width:338px;height:6px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

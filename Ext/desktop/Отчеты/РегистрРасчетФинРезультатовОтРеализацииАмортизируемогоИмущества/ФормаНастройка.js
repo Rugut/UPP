@@ -8,7 +8,10 @@
 	title: 'Регистр-расчет фин. результатов от реализации амортизируемого имущества',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:8px;width:358px;height:288px;',
@@ -87,7 +90,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

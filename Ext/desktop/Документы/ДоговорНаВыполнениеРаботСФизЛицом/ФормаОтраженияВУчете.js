@@ -8,7 +8,10 @@
 	title: 'Отражение в учете договора',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСпособОтраженияВБухучете',
@@ -50,7 +53,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

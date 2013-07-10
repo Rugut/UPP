@@ -8,7 +8,10 @@
 	title: 'Отправка на сервер ФСС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Предмет',
@@ -128,7 +131,8 @@
 			text: '<не определено>',
 			style: 'position:absolute;left:238px;top:200px;width:106px;height:15px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

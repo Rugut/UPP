@@ -8,7 +8,10 @@
 	title: 'Реестр сведений в ФСС о ежемесячных пособиях по уходу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -102,6 +105,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:376px;height:380px;',
 			height: 380,width: 376,
@@ -115,7 +119,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -144,7 +148,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -163,6 +167,23 @@
 						name:'ДатаОкончания',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -818,6 +839,7 @@
 			style: 'position:absolute;left:263px;top:335px;width:25px;height:19px;text-align:right;',
 		},
 		{
+			id: 'ДанныеОДетях',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:124px;width:565px;height:133px;',
 			height: 133,width: 565,
@@ -861,7 +883,7 @@
 				},
 				{
 					text:'Подтверждающий документ',
-					width:'380',
+					width:'3800',
 					dataIndex:'КолонкаПодтверждающийДокумент',
 					flex:1,
 				},
@@ -908,7 +930,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -951,6 +973,23 @@
 						name:'НаличиеРешенияСудаОЛишенииПрав',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеОДетях');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1639,7 +1678,8 @@
 			height: 19,
 			style: 'position:absolute;left:464px;top:57px;width:176px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

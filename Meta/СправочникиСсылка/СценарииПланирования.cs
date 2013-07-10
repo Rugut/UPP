@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СценарииПланирования:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8920ee9d-4d8d-4949-a21a-99282c6c391d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191423.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011957.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -76,7 +76,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СценарииПланирования(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СценарииПланирования(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -89,19 +102,19 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3860RRef [Периодичность]
-					,_Fld3861RRef [ДетализацияПланирования]
-					,_Fld3862 [УчетПоСуммам]
-					,_Fld3863 [УчетПоКоличеству]
-					,_Fld3864RRef [Валюта]
-					,_Fld3865RRef [СпособПланирования]
-					,_Fld3866 [ПродолжительностьЦикла]
-					,_Fld3867 [НачалоПлана]
-					,_Fld3868 [КонецПлана]
-					,_Fld3869 [НормаДоходности]
-					,_Fld3870 [ИспользоватьКурсыСценария]
-					From _Reference255(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2012RRef [Периодичность]
+					,_Fld2013RRef [ДетализацияПланирования]
+					,_Fld2014 [УчетПоСуммам]
+					,_Fld2015 [УчетПоКоличеству]
+					,_Fld2016RRef [Валюта]
+					,_Fld2017RRef [СпособПланирования]
+					,_Fld2018 [ПродолжительностьЦикла]
+					,_Fld2019 [НачалоПлана]
+					,_Fld2020 [КонецПлана]
+					,_Fld2021 [НормаДоходности]
+					,_Fld2022 [ИспользоватьКурсыСценария]
+					From _Reference169(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -121,7 +134,7 @@ namespace V82.СправочникиСсылка
 							ДетализацияПланирования = V82.Перечисления/*Ссылка*/.ДетализацияПланирования.ПустаяСсылка.Получить((byte[])Читалка.GetValue(7));
 							УчетПоСуммам = ((byte[])Читалка.GetValue(8))[0]==1;
 							УчетПоКоличеству = ((byte[])Читалка.GetValue(9))[0]==1;
-							Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(10));
+							Валюта = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(10),Глубина+1);
 							СпособПланирования = V82.Перечисления/*Ссылка*/.СпособыПланирования.ПустаяСсылка.Получить((byte[])Читалка.GetValue(11));
 							ПродолжительностьЦикла = Читалка.GetDecimal(12);
 							НачалоПлана = Читалка.GetDateTime(13);

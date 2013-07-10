@@ -8,7 +8,10 @@
 	title: 'Формирование документов по НДС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНастройка',
@@ -44,6 +47,7 @@
 					items:
 					[
 		{
+			id: 'СформированныеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:50px;width:502px;height:144px;',
 			height: 144,width: 502,
@@ -92,7 +96,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеДокументовПоНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -115,6 +119,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СформированныеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -136,7 +157,8 @@
 			height: 19,
 			style: 'position:absolute;left:76px;top:8px;width:448px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

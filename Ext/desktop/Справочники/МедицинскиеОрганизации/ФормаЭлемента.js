@@ -8,7 +8,10 @@
 	title: 'Медицинские организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОГРН',
@@ -84,7 +87,8 @@
 			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:342px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

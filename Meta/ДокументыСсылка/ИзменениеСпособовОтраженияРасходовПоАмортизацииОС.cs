@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИзменениеСпособовОтраженияРасходовПоАмортизацииОС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("0b8529ad-9524-4046-b319-ff3968596a58");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191722.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012017.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -91,16 +91,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8038RRef [Ответственный]
-					,_Fld8039 [Комментарий]
-					,_Fld8040RRef [Организация]
-					,_Fld8041 [ОтражатьВУправленческомУчете]
-					,_Fld8042 [ОтражатьВБухгалтерскомУчете]
-					,_Fld8043 [ОтражатьВНалоговомУчете]
-					,_Fld8044RRef [СпособОтраженияРасходовПоАмортизации]
-					,_Fld8045RRef [Событие]
-					,_Fld8046RRef [СобытиеРегл]
-					From _Document399(NOLOCK)
+					,_Fld5024RRef [Ответственный]
+					,_Fld5025 [Комментарий]
+					,_Fld5026RRef [Организация]
+					,_Fld5027 [ОтражатьВУправленческомУчете]
+					,_Fld5028 [ОтражатьВБухгалтерскомУчете]
+					,_Fld5029 [ОтражатьВНалоговомУчете]
+					,_Fld5030RRef [СпособОтраженияРасходовПоАмортизации]
+					,_Fld5031RRef [Событие]
+					,_Fld5032RRef [СобытиеРегл]
+					From _Document285(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

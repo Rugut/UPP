@@ -8,7 +8,10 @@
 	title: 'Расчет налоговой базы по налогу на прибыль',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:404px;width:670px;height:25px;',
@@ -134,7 +137,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

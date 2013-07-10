@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗарплатаКВыплатеОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("505c1f38-e3cf-4500-83b2-16ccd418f35d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191447.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012003.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -79,25 +79,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7442RRef [Организация]
-					,_Fld7443 [ПериодРегистрации]
-					,_Fld7444RRef [СпособВыплаты]
-					,_Fld7445RRef [Ответственный]
-					,_Fld7446 [Комментарий]
-					,_Fld7447 [ДнейНеВыплаты]
-					,_Fld7448 [КраткийСоставДокумента]
-					,_Fld7449RRef [ХарактерВыплаты]
-					,_Fld7450RRef [ПодразделениеОрганизации]
-					,_Fld7451_TYPE [ДокументОснование_Тип],_Fld7451_RRRef [ДокументОснование],_Fld7451_RTRef [ДокументОснование_Вид]
-					,_Fld7452 [ДатаНачала]
-					,_Fld7453 [ДатаОкончания]
-					,_Fld7454RRef [Банк]
-					,_Fld7455 [ПроцентВыплаты]
-					,_Fld7456 [ПредварительныйУчетУдержаний]
-					,_Fld7457RRef [Округление]
-					,_Fld7458 [СуммаДокумента]
-					,_Fld7459 [ДанныеПрошлойВерсии]
-					From _Document377(NOLOCK)
+					,_Fld4683RRef [Организация]
+					,_Fld4684 [ПериодРегистрации]
+					,_Fld4685RRef [СпособВыплаты]
+					,_Fld4686RRef [Ответственный]
+					,_Fld4687 [Комментарий]
+					,_Fld4688 [ДнейНеВыплаты]
+					,_Fld4689 [КраткийСоставДокумента]
+					,_Fld4690RRef [ХарактерВыплаты]
+					,_Fld4691RRef [ПодразделениеОрганизации]
+					,_Fld4692_TYPE [ДокументОснование_Тип],_Fld4692_RRRef [ДокументОснование],_Fld4692_RTRef [ДокументОснование_Вид]
+					,_Fld4693 [ДатаНачала]
+					,_Fld4694 [ДатаОкончания]
+					,_Fld21437RRef [Банк]
+					,_Fld26732 [ПроцентВыплаты]
+					,_Fld26733 [ПредварительныйУчетУдержаний]
+					,_Fld26734RRef [Округление]
+					,_Fld26735 [СуммаДокумента]
+					,_Fld26736 [ДанныеПрошлойВерсии]
+					From _Document268(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

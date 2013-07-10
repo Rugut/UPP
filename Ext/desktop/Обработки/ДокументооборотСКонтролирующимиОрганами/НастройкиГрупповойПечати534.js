@@ -8,7 +8,10 @@
 	title: 'Настройки печати',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -56,7 +59,8 @@
 			boxLabel: 'Печатать сообщение о несоответствиях',
 			style: 'position:absolute;left:8px;top:154px;width:259px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

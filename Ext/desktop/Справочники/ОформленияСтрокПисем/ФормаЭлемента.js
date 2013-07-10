@@ -8,7 +8,10 @@
 	title: 'Оформление строки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -71,7 +74,8 @@
 			text: 'Цвет фона:',
 			style: 'position:absolute;left:8px;top:108px;width:79px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

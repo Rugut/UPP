@@ -90,18 +90,18 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference95(
+						Insert Into _Reference54(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Code
 						,_Description
-						,_Fld2297RRef
-						,_Fld2298
-						,_Fld2299
-						,_Fld2300
-						,_Fld2301)
+						,_Fld1131RRef
+						,_Fld1132
+						,_Fld26532
+						,_Fld26533
+						,_Fld26534)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -118,7 +118,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference95
+						Update _Reference54
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -126,11 +126,11 @@ namespace V82.СправочникиОбъект
 						,_IsMetadata	= @Предопределенный
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2297RRef	= @СтавкаНалогообложенияРезидента
-						,_Fld2298	= @КодДляОтчетности
-						,_Fld2299	= @НеОблагаетсяУНалоговогоАгента
-						,_Fld2300	= @НеОтражаетсяВОтчетности2010
-						,_Fld2301	= @УчитыватьПоПериодуДействия
+						,_Fld1131RRef	= @СтавкаНалогообложенияРезидента
+						,_Fld1132	= @КодДляОтчетности
+						,_Fld26532	= @НеОблагаетсяУНалоговогоАгента
+						,_Fld26533	= @НеОтражаетсяВОтчетности2010
+						,_Fld26534	= @УчитыватьПоПериодуДействия
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -155,7 +155,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference95
+					Команда.CommandText = @"Delete _Reference54
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

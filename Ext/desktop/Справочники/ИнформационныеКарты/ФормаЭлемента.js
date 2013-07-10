@@ -8,7 +8,10 @@
 	title: 'Информационные карты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -136,7 +139,8 @@
 			height: 19,
 			style: 'position:absolute;left:372px;top:57px;width:88px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

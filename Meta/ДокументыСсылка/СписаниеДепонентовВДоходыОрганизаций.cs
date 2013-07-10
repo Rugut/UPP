@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class СписаниеДепонентовВДоходыОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("4a5cec84-ca1e-4cef-9365-24f38ce65c04");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190916.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011936.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -72,21 +72,21 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17229RRef [Организация]
-					,_Fld17230RRef [Ответственный]
-					,_Fld17231 [Комментарий]
-					,_Fld17232RRef [СчетДоходовБУ]
-					,_Fld17233RRef [Субконто1]
-					,_Fld17234RRef [Субконто2]
-					,_Fld17235RRef [Субконто3]
-					,_Fld17236 [СуммаДокумента]
-					,_Fld17237RRef [СчетДоходовНУ]
-					,_Fld17238RRef [СубконтоНУ1]
-					,_Fld17239RRef [СубконтоНУ2]
-					,_Fld17240RRef [СубконтоНУ3]
-					,_Fld17241 [ОтражатьВНалоговомУчете]
-					,_Fld17242 [КраткийСоставДокумента]
-					From _Document589(NOLOCK)
+					,_Fld11552RRef [Организация]
+					,_Fld11553RRef [Ответственный]
+					,_Fld11554 [Комментарий]
+					,_Fld11555RRef [СчетДоходовБУ]
+					,_Fld11556RRef [Субконто1]
+					,_Fld11557RRef [Субконто2]
+					,_Fld11558RRef [Субконто3]
+					,_Fld11559 [СуммаДокумента]
+					,_Fld11560RRef [СчетДоходовНУ]
+					,_Fld11561RRef [СубконтоНУ1]
+					,_Fld11562RRef [СубконтоНУ2]
+					,_Fld11563RRef [СубконтоНУ3]
+					,_Fld11564 [ОтражатьВНалоговомУчете]
+					,_Fld22253 [КраткийСоставДокумента]
+					From _Document453(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

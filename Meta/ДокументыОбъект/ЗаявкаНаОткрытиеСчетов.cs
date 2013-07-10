@@ -120,26 +120,26 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document379(
+						Insert Into _Document270(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld7484RRef
-						,_Fld7485RRef
-						,_Fld7486RRef
-						,_Fld7487
-						,_Fld7488
-						,_Fld7489
-						,_Fld7490
-						,_Fld7491RRef
-						,_Fld7492
-						,_Fld7493
-						,_Fld7494RRef
-						,_Fld7495
-						,_Fld7496
-						,_Fld7497)
+						,_Fld4714RRef
+						,_Fld4715RRef
+						,_Fld4716RRef
+						,_Fld4717
+						,_Fld4718
+						,_Fld4719
+						,_Fld4720
+						,_Fld4721RRef
+						,_Fld4722
+						,_Fld4723
+						,_Fld4724RRef
+						,_Fld4725
+						,_Fld21440
+						,_Fld26740)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -163,26 +163,26 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document379
+						Update _Document270
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld7484RRef	= @Организация
-						,_Fld7485RRef	= @Ответственный
-						,_Fld7486RRef	= @БанковскийСчет
-						,_Fld7487	= @ТекстПодтверждения
-						,_Fld7488	= @НомерДоговора
-						,_Fld7489	= @ОтделениеБанка
-						,_Fld7490	= @ФилиалОтделенияБанка
-						,_Fld7491RRef	= @Валюта
-						,_Fld7492	= @Комментарий
-						,_Fld7493	= @ВидВклада
-						,_Fld7494RRef	= @Банк
-						,_Fld7495	= @ВводНачальныхСведений
-						,_Fld7496	= @КраткийСоставДокумента
-						,_Fld7497	= @ДатаВыплатыЗаработнойПлаты
+						,_Fld4714RRef	= @Организация
+						,_Fld4715RRef	= @Ответственный
+						,_Fld4716RRef	= @БанковскийСчет
+						,_Fld4717	= @ТекстПодтверждения
+						,_Fld4718	= @НомерДоговора
+						,_Fld4719	= @ОтделениеБанка
+						,_Fld4720	= @ФилиалОтделенияБанка
+						,_Fld4721RRef	= @Валюта
+						,_Fld4722	= @Комментарий
+						,_Fld4723	= @ВидВклада
+						,_Fld4724RRef	= @Банк
+						,_Fld4725	= @ВводНачальныхСведений
+						,_Fld21440	= @КраткийСоставДокумента
+						,_Fld26740	= @ДатаВыплатыЗаработнойПлаты
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -209,7 +209,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document379
+					Команда.CommandText = @"Delete _Document270
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

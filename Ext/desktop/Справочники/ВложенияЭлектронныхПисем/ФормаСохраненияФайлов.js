@@ -8,7 +8,10 @@
 	title: 'Сохранить файлы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -34,7 +37,8 @@
 			boxLabel: 'Открыть каталог после сохранения',
 			style: 'position:absolute;left:76px;top:52px;width:208px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

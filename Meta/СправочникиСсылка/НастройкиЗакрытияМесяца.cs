@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class НастройкиЗакрытияМесяца:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("547f291a-e843-4909-ac3d-bd2577d287c0");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191745.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012019.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -51,7 +51,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public НастройкиЗакрытияМесяца(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public НастройкиЗакрытияМесяца(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,13 +76,13 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld2685 [ДатаНачалаДействияНастройки]
-					,_Fld2686 [ОтражатьВУправленческомУчете]
-					,_Fld2687 [ОтражатьВБухгалтерскомУчете]
-					,_Fld2688 [ОтражатьВНалоговомУчете]
-					,_Fld2689 [ВариантНастройки]
-					From _Reference151(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld19545 [ДатаНачалаДействияНастройки]
+					,_Fld19546 [ОтражатьВУправленческомУчете]
+					,_Fld19547 [ОтражатьВБухгалтерскомУчете]
+					,_Fld19548 [ОтражатьВНалоговомУчете]
+					,_Fld26538 [ВариантНастройки]
+					From _Reference19543(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

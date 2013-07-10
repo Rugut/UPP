@@ -27,7 +27,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference147(NOLOCK)
+					From _Reference92(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -68,7 +68,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference147(NOLOCK)";
+					From _Reference92(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.НастройкаИнтервалов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -105,8 +105,8 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference147(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					From _Reference92(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -146,7 +146,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference147(NOLOCK)
+					From _Reference92(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -187,7 +187,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference147(NOLOCK)";
+					From _Reference92(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НастройкаИнтервалов();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -224,7 +224,7 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					From _Reference147(NOLOCK)";
+					From _Reference92(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.НастройкаИнтервалов();
 					using (var Читалка = Команда.ExecuteReader())
 					{

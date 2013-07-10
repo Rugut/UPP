@@ -8,7 +8,10 @@
 	title: 'Анализ событий и источников информации покупателей',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -105,7 +108,8 @@
 			boxLabel: 'Учитывать номенклатуру',
 			style: 'position:absolute;left:313px;top:36px;width:359px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

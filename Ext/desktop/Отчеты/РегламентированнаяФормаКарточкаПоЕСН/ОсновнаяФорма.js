@@ -8,7 +8,10 @@
 	title: 'Индивидуальная карточка ЕСН',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -58,7 +61,8 @@
 			text: 'Налоговый период:',
 			style: 'position:absolute;left:326px;top:33px;width:105px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

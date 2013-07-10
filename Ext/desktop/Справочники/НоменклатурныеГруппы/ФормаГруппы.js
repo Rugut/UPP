@@ -8,7 +8,10 @@
 	title: 'Группа Номенклатурные группы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:95px;top:33px;width:295px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Обработка обслуживания ТО',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -93,6 +96,7 @@
 			style: 'position:absolute;left:8px;top:253px;width:457px;height:16px;',
 		},
 		{
+			id: 'Модели',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:276px;width:457px;height:192px;',
 			height: 192,width: 457,
@@ -106,18 +110,19 @@
 				},
 				{
 					text:'Модель торгового оборудования',
-					width:'250',
+					width:'2500',
 					dataIndex:'Модель',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОбработкиОбслуживанияТО").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкиОбслуживанияТО/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкиОбслуживанияТО/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -127,6 +132,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Модели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -186,7 +208,8 @@
 			text: '',
 			style: 'position:absolute;left:420px;top:78px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

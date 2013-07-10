@@ -8,7 +8,10 @@
 	title: 'Изменен вид документа и(или) номер корректировки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'КнопкаСоздатьНовый',
@@ -34,7 +37,8 @@
 			name: 'ТекстСообщения',
 			style: 'position:absolute;left:16px;top:18px;width:383px;height:77px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

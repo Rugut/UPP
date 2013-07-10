@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ПрофилиИзмененияПлановПоИзмерениям:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("33d713c4-d4be-4cbb-bfc1-ce09674bda5d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191638.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012002.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -58,7 +58,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ПрофилиИзмененияПлановПоИзмерениям(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ПрофилиИзмененияПлановПоИзмерениям(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -71,13 +84,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3282RRef [ВидРаспределения]
-					,_Fld3283RRef [ИзмерениеБюджетирования]
-					,_Fld3284RRef [ИсточникДанных]
-					,_Fld3285 [ПоказательИсточника]
-					,_Fld3286 [ПоВсемЭлементам]
-					From _Reference207(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1661RRef [ВидРаспределения]
+					,_Fld1662RRef [ИзмерениеБюджетирования]
+					,_Fld1663RRef [ИсточникДанных]
+					,_Fld1664 [ПоказательИсточника]
+					,_Fld1665 [ПоВсемЭлементам]
+					From _Reference131(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -95,7 +108,7 @@ namespace V82.СправочникиСсылка
 							Наименование = Читалка.GetString(5);
 							ВидРаспределения = V82.Перечисления/*Ссылка*/.ВидыРаспределенийПоИзмерениямБюджетирования.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
 							ИзмерениеБюджетирования = V82.Перечисления/*Ссылка*/.ИзмеренияБюджетирования.ПустаяСсылка.Получить((byte[])Читалка.GetValue(7));
-							ИсточникДанных = new V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования((byte[])Читалка.GetValue(8));
+							ИсточникДанных = new V82.СправочникиСсылка.ИсточникиДанныхДляРасчетовБюджетирования((byte[])Читалка.GetValue(8),Глубина+1);
 							ПоказательИсточника = Читалка.GetString(9);
 							ПоВсемЭлементам = ((byte[])Читалка.GetValue(10))[0]==1;
 							//return Ссылка;

@@ -135,7 +135,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference264(
+						Insert Into _Reference176(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -144,15 +144,15 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3906RRef
-						,_Fld3907RRef
-						,_Fld3908RRef
-						,_Fld3909RRef
-						,_Fld3910
-						,_Fld3911RRef
-						,_Fld3912RRef
-						,_Fld3913
-						,_Fld3914)
+						,_Fld2052RRef
+						,_Fld2053RRef
+						,_Fld2054RRef
+						,_Fld2055RRef
+						,_Fld2056
+						,_Fld2057RRef
+						,_Fld2058RRef
+						,_Fld2059
+						,_Fld2060)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -175,7 +175,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference264
+						Update _Reference176
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -185,15 +185,15 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3906RRef	= @ОсновнаяСтатьяЗатратНаПроизводство
-						,_Fld3907RRef	= @СпособОтраженияЗарплатыВБухучете
-						,_Fld3908RRef	= @ОсновнойСпособРаспределенияЗатратНаВыпуск
-						,_Fld3909RRef	= @ОсновнаяНоменклатурнаяГруппа
-						,_Fld3910	= @Расценка
-						,_Fld3911RRef	= @БазоваяЕдиницаИзмерения
-						,_Fld3912RRef	= @Валюта
-						,_Fld3913	= @НормаВремени
-						,_Fld3914	= @Коэффициент
+						,_Fld2052RRef	= @ОсновнаяСтатьяЗатратНаПроизводство
+						,_Fld2053RRef	= @СпособОтраженияЗарплатыВБухучете
+						,_Fld2054RRef	= @ОсновнойСпособРаспределенияЗатратНаВыпуск
+						,_Fld2055RRef	= @ОсновнаяНоменклатурнаяГруппа
+						,_Fld2056	= @Расценка
+						,_Fld2057RRef	= @БазоваяЕдиницаИзмерения
+						,_Fld2058RRef	= @Валюта
+						,_Fld2059	= @НормаВремени
+						,_Fld2060	= @Коэффициент
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -224,7 +224,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference264
+					Команда.CommandText = @"Delete _Reference176
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

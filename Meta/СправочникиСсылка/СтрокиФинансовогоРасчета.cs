@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class СтрокиФинансовогоРасчета:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e80eb5fe-4438-439a-be88-389c60fd574d");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191625.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011957.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -49,7 +49,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СтрокиФинансовогоРасчета(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СтрокиФинансовогоРасчета(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -62,11 +75,11 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3852RRef [ВидСтроки]
-					,_Fld3853_TYPE [Измерение_Тип],_Fld3853_RRRef [Измерение],_Fld3853_RTRef [Измерение_Вид]
-					,_Fld3854 [Формула]
-					From _Reference253(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2004RRef [ВидСтроки]
+					,_Fld2005_TYPE [Измерение_Тип],_Fld2005_RRRef [Измерение],_Fld2005_RTRef [Измерение_Вид]
+					,_Fld2006 [Формула]
+					From _Reference167(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

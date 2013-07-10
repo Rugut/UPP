@@ -8,7 +8,10 @@
 	title: 'Настройка обработки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -36,7 +39,8 @@
 			boxLabel: 'Отключать контроль записи',
 			style: 'position:absolute;left:8px;top:31px;width:323px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

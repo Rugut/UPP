@@ -8,7 +8,10 @@
 	title: 'Настройка интервала',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -32,6 +35,7 @@
 			]
 		},
 		{
+			id: 'ТабличнаяЧасть',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:369px;height:240px;',
 			height: 240,width: 369,
@@ -45,24 +49,25 @@
 				},
 				{
 					text:'Граница интервала',
-					width:'120',
+					width:'1200',
 					dataIndex:'НачалоИнтервала',
 					flex:1,
 				},
 				{
 					text:'Подпись в отчетах',
-					width:'220',
+					width:'2200',
 					dataIndex:'Подпись',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкаИнтервалов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаИнтервалов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаИнтервалов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -75,6 +80,23 @@
 						name:'Подпись',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличнаяЧасть');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -110,7 +132,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,7 +8,10 @@
 	title: 'События основного средства',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -69,7 +72,8 @@
 			height: 19,
 			style: 'position:absolute;left:110px;top:60px;width:333px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

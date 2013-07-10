@@ -8,7 +8,10 @@
 	title: 'Документ Расходный кассовый ордер',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -496,6 +499,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:627px;height:154px;',
 			height: 154,width: 627,
@@ -604,7 +608,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -656,6 +660,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -982,6 +1003,7 @@
 					items:
 					[
 		{
+			id: 'ВыплатаЗаработнойПлаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:618px;height:170px;',
 			height: 170,width: 618,
@@ -995,7 +1017,7 @@
 				},
 				{
 					text:'Ведомость',
-					width:'220',
+					width:'2200',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
@@ -1007,19 +1029,19 @@
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
 				{
 					text:'Заявка на расходование средств',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЗаявкаНаРасходованиеСредств',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'120',
+					width:'1200',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -1030,7 +1052,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1052,6 +1074,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыплатаЗаработнойПлаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1320,6 +1359,7 @@
 			style: 'position:absolute;left:6px;top:49px;width:80px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ВыплатаДепонентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:614px;height:172px;',
 			height: 172,width: 614,
@@ -1333,13 +1373,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Ведомость',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
@@ -1351,13 +1391,13 @@
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'120',
+					width:'1200',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -1368,7 +1408,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1391,6 +1431,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыплатаДепонентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1405,6 +1462,7 @@
 			style: 'position:absolute;left:0px;top:78px;width:72px;height:33px;text-align:left;',
 		},
 		{
+			id: 'Депоненты_РасшифровкаПоСтатьям',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:614px;height:172px;',
 			height: 172,width: 614,
@@ -1418,13 +1476,13 @@
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'220',
+					width:'2200',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'120',
+					width:'1200',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -1441,7 +1499,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходныйКассовыйОрдер/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1457,6 +1515,23 @@
 						name:'СуммаПлатежа',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Депоненты_РасшифровкаПоСтатьям');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1564,7 +1639,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

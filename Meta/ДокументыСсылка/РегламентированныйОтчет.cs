@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РегламентированныйОтчет:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1deb1e94-3af2-43e3-8a4d-c67d29b07574");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191503.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012004.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -112,27 +112,27 @@ namespace V82.ДокументыСсылка
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld16224 [ИсточникОтчета]
-					,_Fld16225 [НаименованиеОтчета]
-					,_Fld16226RRef [Организация]
-					,_Fld16227 [ДатаНачала]
-					,_Fld16228 [ДатаОкончания]
-					,_Fld16229 [ДатаПодписи]
-					,_Fld16230RRef [Периодичность]
-					,_Fld16231RRef [ЕдиницаИзмерения]
-					,_Fld16232 [ТочностьЕдиницыИзмерения]
-					,_Fld16233 [ВыбраннаяФорма]
-					,_Fld16234 [ДанныеОтчета]
-					,_Fld16235 [ДеревоНастройкиСтраниц]
-					,_Fld16236RRef [ВидОтчетности]
-					,_Fld16237 [Комментарий]
-					,_Fld16238 [КодИМНС]
-					,_Fld16239 [КодИМНСПосредника]
-					,_Fld16240 [ФорматВыгрузки]
-					,_Fld16241 [Вид]
-					,_Fld16242 [Период]
-					,_Fld16243 [КПП]
-					From _Document570(NOLOCK)
+					,_Fld11253 [ИсточникОтчета]
+					,_Fld11254 [НаименованиеОтчета]
+					,_Fld11255RRef [Организация]
+					,_Fld11256 [ДатаНачала]
+					,_Fld11257 [ДатаОкончания]
+					,_Fld11258 [ДатаПодписи]
+					,_Fld11259RRef [Периодичность]
+					,_Fld11260RRef [ЕдиницаИзмерения]
+					,_Fld11261 [ТочностьЕдиницыИзмерения]
+					,_Fld11262 [ВыбраннаяФорма]
+					,_Fld11263 [ДанныеОтчета]
+					,_Fld11264 [ДеревоНастройкиСтраниц]
+					,_Fld11265RRef [ВидОтчетности]
+					,_Fld11266 [Комментарий]
+					,_Fld11267 [КодИМНС]
+					,_Fld22670 [КодИМНСПосредника]
+					,_Fld11268 [ФорматВыгрузки]
+					,_Fld11269 [Вид]
+					,_Fld27288 [Период]
+					,_Fld27289 [КПП]
+					From _Document441(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

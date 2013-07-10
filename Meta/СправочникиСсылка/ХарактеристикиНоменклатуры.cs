@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ХарактеристикиНоменклатуры:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("32fb38a7-0eff-4313-93c7-f07d95302083");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221192000.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011941.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -44,7 +44,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ХарактеристикиНоменклатуры(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ХарактеристикиНоменклатуры(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -56,10 +69,10 @@ namespace V82.СправочникиСсылка
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4212RRef [ОКП]
-					,_Fld4213 [Активная]
-					From _Reference287(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2259RRef [ОКП]
+					,_Fld18721 [Активная]
+					From _Reference194(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -74,7 +87,7 @@ namespace V82.СправочникиСсылка
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Наименование = Читалка.GetString(4);
-							ОКП = new V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции((byte[])Читалка.GetValue(5));
+							ОКП = new V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции((byte[])Читалка.GetValue(5),Глубина+1);
 							Активная = ((byte[])Читалка.GetValue(6))[0]==1;
 							//return Ссылка;
 						}

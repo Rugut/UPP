@@ -141,7 +141,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference241(
+						Insert Into _Reference155(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -149,27 +149,27 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef
 						,_Folder
 						,_Description
-						,_Fld3688RRef
-						,_Fld3689RRef
-						,_Fld3690RRef
-						,_Fld3691RRef
-						,_Fld3692RRef
-						,_Fld3693RRef
-						,_Fld3694RRef
-						,_Fld3695RRef
-						,_Fld3696RRef
-						,_Fld3697RRef
-						,_Fld3698RRef
-						,_Fld3699RRef
-						,_Fld3700RRef
-						,_Fld3701RRef
-						,_Fld3702RRef
-						,_Fld3703RRef
-						,_Fld3704RRef
-						,_Fld3705RRef
-						,_Fld3706RRef
-						,_Fld3707RRef
-						,_Fld3708RRef)
+						,_Fld1876RRef
+						,_Fld1877RRef
+						,_Fld1878RRef
+						,_Fld1879RRef
+						,_Fld1880RRef
+						,_Fld1881RRef
+						,_Fld1882RRef
+						,_Fld1883RRef
+						,_Fld1884RRef
+						,_Fld1885RRef
+						,_Fld1886RRef
+						,_Fld1887RRef
+						,_Fld1888RRef
+						,_Fld1889RRef
+						,_Fld1890RRef
+						,_Fld1891RRef
+						,_Fld1892RRef
+						,_Fld1893RRef
+						,_Fld26611RRef
+						,_Fld26612RRef
+						,_Fld26613RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -203,7 +203,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference241
+						Update _Reference155
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -212,27 +212,27 @@ namespace V82.СправочникиОбъект
 						,_ParentIDRRef	= @Родитель
 						,_Folder	= @ЭтоГруппа
 						,_Description	= @Наименование
-						,_Fld3688RRef	= @СчетДт
-						,_Fld3689RRef	= @СубконтоДт1
-						,_Fld3690RRef	= @СубконтоДт2
-						,_Fld3691RRef	= @СубконтоДт3
-						,_Fld3692RRef	= @СпособРаспределенияЗатрат
-						,_Fld3693RRef	= @СчетКт
-						,_Fld3694RRef	= @СубконтоКт1
-						,_Fld3695RRef	= @СубконтоКт2
-						,_Fld3696RRef	= @СубконтоКт3
-						,_Fld3697RRef	= @СчетДтНУ
-						,_Fld3698RRef	= @СубконтоДтНУ1
-						,_Fld3699RRef	= @СубконтоДтНУ2
-						,_Fld3700RRef	= @СубконтоДтНУ3
-						,_Fld3701RRef	= @СчетКтНУ
-						,_Fld3702RRef	= @СубконтоКтНУ1
-						,_Fld3703RRef	= @СубконтоКтНУ2
-						,_Fld3704RRef	= @СубконтоКтНУ3
-						,_Fld3705RRef	= @ОтражениеВУСН
-						,_Fld3706RRef	= @ПодразделениеДт
-						,_Fld3707RRef	= @ПодразделениеКт
-						,_Fld3708RRef	= @ВидНачисленийОплатыТрудаПоСтатье255НК
+						,_Fld1876RRef	= @СчетДт
+						,_Fld1877RRef	= @СубконтоДт1
+						,_Fld1878RRef	= @СубконтоДт2
+						,_Fld1879RRef	= @СубконтоДт3
+						,_Fld1880RRef	= @СпособРаспределенияЗатрат
+						,_Fld1881RRef	= @СчетКт
+						,_Fld1882RRef	= @СубконтоКт1
+						,_Fld1883RRef	= @СубконтоКт2
+						,_Fld1884RRef	= @СубконтоКт3
+						,_Fld1885RRef	= @СчетДтНУ
+						,_Fld1886RRef	= @СубконтоДтНУ1
+						,_Fld1887RRef	= @СубконтоДтНУ2
+						,_Fld1888RRef	= @СубконтоДтНУ3
+						,_Fld1889RRef	= @СчетКтНУ
+						,_Fld1890RRef	= @СубконтоКтНУ1
+						,_Fld1891RRef	= @СубконтоКтНУ2
+						,_Fld1892RRef	= @СубконтоКтНУ3
+						,_Fld1893RRef	= @ОтражениеВУСН
+						,_Fld26611RRef	= @ПодразделениеДт
+						,_Fld26612RRef	= @ПодразделениеКт
+						,_Fld26613RRef	= @ВидНачисленийОплатыТрудаПоСтатье255НК
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -274,7 +274,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference241
+					Команда.CommandText = @"Delete _Reference155
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

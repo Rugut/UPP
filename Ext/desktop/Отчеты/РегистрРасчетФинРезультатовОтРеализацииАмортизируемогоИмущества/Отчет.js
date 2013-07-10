@@ -8,7 +8,10 @@
 	title: 'Регистр-расчет фин. результатов от реализации амортизируемого имущества',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -66,7 +69,8 @@
 			text: '...',
 			style: 'position:absolute;left:258px;top:33px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

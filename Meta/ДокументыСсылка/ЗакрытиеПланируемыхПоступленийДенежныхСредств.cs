@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ЗакрытиеПланируемыхПоступленийДенежныхСредств:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("01b5994e-723b-434f-b7c5-423aa9707925");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191842.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -71,20 +71,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7275RRef [Ответственный]
-					,_Fld7276 [ОтборЦФО]
-					,_Fld7277RRef [ЦФО]
-					,_Fld7278 [ОтборПроект]
-					,_Fld7279RRef [Проект]
-					,_Fld7280 [ОтборОтветственный]
-					,_Fld7281RRef [ОтветственныйПоступление]
-					,_Fld7282 [ОтборКонтрагент]
-					,_Fld7283RRef [Контрагент]
-					,_Fld7284RRef [Состояние]
-					,_Fld7285 [Комментарий]
-					,_Fld7286 [ОтборДатаНач]
-					,_Fld7287 [ОтборДатаКон]
-					From _Document370(NOLOCK)
+					,_Fld4601RRef [Ответственный]
+					,_Fld4602 [ОтборЦФО]
+					,_Fld4603RRef [ЦФО]
+					,_Fld4604 [ОтборПроект]
+					,_Fld4605RRef [Проект]
+					,_Fld4606 [ОтборОтветственный]
+					,_Fld4607RRef [ОтветственныйПоступление]
+					,_Fld4608 [ОтборКонтрагент]
+					,_Fld4609RRef [Контрагент]
+					,_Fld4610RRef [Состояние]
+					,_Fld4611 [Комментарий]
+					,_Fld4612 [ОтборДатаНач]
+					,_Fld4613 [ОтборДатаКон]
+					From _Document264(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

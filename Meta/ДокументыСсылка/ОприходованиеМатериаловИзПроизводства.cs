@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОприходованиеМатериаловИзПроизводства:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("da2dacb1-bb53-491e-abcb-a0ae93045266");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191345.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011959.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -96,18 +96,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10796RRef [ВидОперации]
-					,_Fld10797 [ОтражатьВУправленческомУчете]
-					,_Fld10798 [ОтражатьВБухгалтерскомУчете]
-					,_Fld10799 [ОтражатьВНалоговомУчете]
-					,_Fld10800RRef [Организация]
-					,_Fld10801RRef [Склад]
-					,_Fld10802RRef [Подразделение]
-					,_Fld10803 [Комментарий]
-					,_Fld10804RRef [Ответственный]
-					,_Fld10805RRef [ПодразделениеОрганизации]
-					,_Fld10806_TYPE [Проект_Тип],_Fld10806_RRRef [Проект],_Fld10806_RTRef [Проект_Вид]
-					From _Document461(NOLOCK)
+					,_Fld6794RRef [ВидОперации]
+					,_Fld6795 [ОтражатьВУправленческомУчете]
+					,_Fld6796 [ОтражатьВБухгалтерскомУчете]
+					,_Fld6797 [ОтражатьВНалоговомУчете]
+					,_Fld6798RRef [Организация]
+					,_Fld6799RRef [Склад]
+					,_Fld6800RRef [Подразделение]
+					,_Fld6801 [Комментарий]
+					,_Fld6802RRef [Ответственный]
+					,_Fld6803RRef [ПодразделениеОрганизации]
+					,_Fld6804_TYPE [Проект_Тип],_Fld6804_RRRef [Проект],_Fld6804_RTRef [Проект_Вид]
+					From _Document340(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

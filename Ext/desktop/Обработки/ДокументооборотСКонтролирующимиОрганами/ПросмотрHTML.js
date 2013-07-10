@@ -8,8 +8,12 @@
 	title: 'Просмотр HTML',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

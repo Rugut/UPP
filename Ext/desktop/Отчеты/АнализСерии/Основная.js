@@ -8,7 +8,10 @@
 	title: 'Анализ серии',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСостояние',
@@ -70,7 +73,8 @@
 			height: 19,
 			style: 'position:absolute;left:522px;top:33px;width:205px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

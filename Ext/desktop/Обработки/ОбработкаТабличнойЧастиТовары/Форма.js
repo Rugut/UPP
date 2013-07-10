@@ -8,7 +8,10 @@
 	title: 'Обработка табличной части',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:107px;width:712px;height:24px;',
@@ -26,6 +29,7 @@
 			]
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:133px;width:712px;height:215px;',
 			height: 215,width: 712,
@@ -45,25 +49,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'220',
+					width:'2200',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'220',
+					width:'2200',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -171,7 +175,7 @@
 				},
 				{
 					text:'Заказ покупателя',
-					width:'250',
+					width:'2500',
 					dataIndex:'ЗаказПокупателя',
 					flex:1,
 				},
@@ -200,7 +204,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкаТабличнойЧастиТовары/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкаТабличнойЧастиТовары/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -285,6 +289,23 @@
 						name:'ОграничениеСкидкиНаценки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -402,6 +423,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:712px;height:60px;',
 			height: 60,width: 712,
@@ -426,7 +448,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкаТабличнойЧастиТовары/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбработкаТабличнойЧастиТовары/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -437,12 +459,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

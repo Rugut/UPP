@@ -8,7 +8,10 @@
 	title: 'Сотрудники',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:112px;top:56px;width:322px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

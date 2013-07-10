@@ -8,7 +8,10 @@
 	title: 'Группа Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -39,7 +42,8 @@
 			height: 19,
 			style: 'position:absolute;left:131px;top:33px;width:221px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

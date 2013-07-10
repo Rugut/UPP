@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УдалитьОтсутствиеНаРаботе:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("43b3ef5c-fc2b-417f-b8e5-5158ee21e063");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191449.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012003.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,10 +61,10 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18452 [Комментарий]
-					,_Fld18453RRef [Ответственный]
-					,_Fld18454 [КраткийСоставДокумента]
-					From _Document615(NOLOCK)
+					,_Fld7171 [Комментарий]
+					,_Fld7172RRef [Ответственный]
+					,_Fld22282 [КраткийСоставДокумента]
+					From _Document352(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

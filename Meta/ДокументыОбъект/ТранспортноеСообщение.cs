@@ -120,25 +120,25 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document608(
+						Insert Into _Document23176(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
-						,_Fld18216RRef
-						,_Fld18217RRef
-						,_Fld18220RRef
-						,_Fld18221RRef
-						,_Fld18222
-						,_Fld18223
-						,_Fld18224
-						,_Fld18225
-						,_Fld18226
-						,_Fld18227
-						,_Fld18228
-						,_Fld18229
-						,_Fld18230RRef
-						,_Fld18231)
+						,_Fld25582RRef
+						,_Fld25583RRef
+						,_Fld25586RRef
+						,_Fld25587RRef
+						,_Fld25588
+						,_Fld25589
+						,_Fld25590
+						,_Fld25591
+						,_Fld25592
+						,_Fld25593
+						,_Fld25594
+						,_Fld25595
+						,_Fld25596RRef
+						,_Fld25597)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -161,25 +161,25 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document608
+						Update _Document23176
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
-						,_Fld18216RRef	= @ЦиклОбмена
-						,_Fld18217RRef	= @Тип
-						,_Fld18220RRef	= @УчетнаяЗапись
-						,_Fld18221RRef	= @Статус
-						,_Fld18222	= @Тема
-						,_Fld18223	= @ТекстПисьма
-						,_Fld18224	= @ИдентификаторСообщения
-						,_Fld18225	= @ДатаТранспорта
-						,_Fld18226	= @Важность
-						,_Fld18227	= @Кодировка
-						,_Fld18228	= @ОтКогоАдрес
-						,_Fld18229	= @ОтКогоПредставление
-						,_Fld18230RRef	= @Основание
-						,_Fld18231	= @ПротоколСОшибкой
+						,_Fld25582RRef	= @ЦиклОбмена
+						,_Fld25583RRef	= @Тип
+						,_Fld25586RRef	= @УчетнаяЗапись
+						,_Fld25587RRef	= @Статус
+						,_Fld25588	= @Тема
+						,_Fld25589	= @ТекстПисьма
+						,_Fld25590	= @ИдентификаторСообщения
+						,_Fld25591	= @ДатаТранспорта
+						,_Fld25592	= @Важность
+						,_Fld25593	= @Кодировка
+						,_Fld25594	= @ОтКогоАдрес
+						,_Fld25595	= @ОтКогоПредставление
+						,_Fld25596RRef	= @Основание
+						,_Fld25597	= @ПротоколСОшибкой
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -208,7 +208,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document608
+					Команда.CommandText = @"Delete _Document23176
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

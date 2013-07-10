@@ -25,14 +25,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -72,14 +72,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -119,14 +119,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)";
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ПереоценкаТоваровВРознице();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -162,14 +162,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -209,14 +209,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -256,14 +256,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)";
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ПереоценкаТоваровВРознице();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -299,14 +299,14 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld12620RRef [Организация]
-					,_Fld12621RRef [Склад]
-					,_Fld12622RRef [Подразделение]
-					,_Fld12623 [Комментарий]
-					,_Fld12624RRef [Ответственный]
-					,_Fld12625RRef [ВидОперации]
-					,_Fld12626RRef [ДокументУстановкаЦен]
-					From _Document502(NOLOCK)";
+					,_Fld8215RRef [Организация]
+					,_Fld8216RRef [Склад]
+					,_Fld8217RRef [Подразделение]
+					,_Fld8219 [Комментарий]
+					,_Fld8218RRef [Ответственный]
+					,_Fld8220RRef [ВидОперации]
+					,_Fld8221RRef [ДокументУстановкаЦен]
+					From _Document377(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ПереоценкаТоваровВРознице();
 					using (var Читалка = Команда.ExecuteReader())
 					{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОплатаОтПокупателяПлатежнойКартой:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1cce5e1a-937e-4d78-8bb0-14bcd21fed5b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191053.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011945.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -114,27 +114,27 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10630RRef [Организация]
-					,_Fld10631RRef [Подразделение]
-					,_Fld10632RRef [ВидОперации]
-					,_Fld10633RRef [Контрагент]
-					,_Fld10634 [СуммаДокумента]
-					,_Fld10635RRef [Ответственный]
-					,_Fld10636 [Комментарий]
-					,_Fld10637_TYPE [ДокументОснование_Тип],_Fld10637_RRRef [ДокументОснование],_Fld10637_RTRef [ДокументОснование_Вид]
-					,_Fld10638 [ОтражатьВУправленческомУчете]
-					,_Fld10639 [ОтражатьВБухгалтерскомУчете]
-					,_Fld10640 [ОтражатьВНалоговомУчете]
-					,_Fld10641 [НомерЧекаККМ]
-					,_Fld10642RRef [ДоговорЭквайринга]
-					,_Fld10643RRef [Эквайрер]
-					,_Fld10644RRef [ДоговорВзаиморасчетовЭквайрера]
-					,_Fld10645RRef [ВалютаДокумента]
-					,_Fld10646RRef [СчетУчетаРасчетовСЭквайрером]
-					,_Fld10647RRef [ВидОплаты]
-					,_Fld10648 [ПроцентТорговойУступки]
-					,_Fld10649 [СуммаТорговойУступки]
-					From _Document456(NOLOCK)
+					,_Fld6649RRef [Организация]
+					,_Fld6650RRef [Подразделение]
+					,_Fld6651RRef [ВидОперации]
+					,_Fld6652RRef [Контрагент]
+					,_Fld6653 [СуммаДокумента]
+					,_Fld6654RRef [Ответственный]
+					,_Fld6655 [Комментарий]
+					,_Fld6656_TYPE [ДокументОснование_Тип],_Fld6656_RRRef [ДокументОснование],_Fld6656_RTRef [ДокументОснование_Вид]
+					,_Fld6657 [ОтражатьВУправленческомУчете]
+					,_Fld6658 [ОтражатьВБухгалтерскомУчете]
+					,_Fld6659 [ОтражатьВНалоговомУчете]
+					,_Fld6660 [НомерЧекаККМ]
+					,_Fld6661RRef [ДоговорЭквайринга]
+					,_Fld6662RRef [Эквайрер]
+					,_Fld6663RRef [ДоговорВзаиморасчетовЭквайрера]
+					,_Fld6664RRef [ВалютаДокумента]
+					,_Fld6665RRef [СчетУчетаРасчетовСЭквайрером]
+					,_Fld6666RRef [ВидОплаты]
+					,_Fld6667 [ПроцентТорговойУступки]
+					,_Fld6668 [СуммаТорговойУступки]
+					From _Document335(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

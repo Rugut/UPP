@@ -8,7 +8,10 @@
 	title: 'Учетные записи документооборота',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
@@ -369,6 +372,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:239px;height:16px;',
 		},
 		{
+			id: 'Пользователи',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:14px;width:239px;height:424px;',
 			height: 424,width: 239,
@@ -393,7 +397,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -403,6 +407,23 @@
 						name:'Пользователь',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Пользователи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -554,7 +575,8 @@
 			boxLabel: 'Документооборот с Росстатом',
 			style: 'position:absolute;left:477px;top:34px;width:177px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

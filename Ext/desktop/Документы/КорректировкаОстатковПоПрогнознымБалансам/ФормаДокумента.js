@@ -8,7 +8,10 @@
 	title: 'Корректировка остатков по прогнозным балансам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -110,6 +113,7 @@
 			style: 'position:absolute;left:94px;top:441px;width:428px;height:19px;',
 		},
 		{
+			id: 'НовыеОстаткиПоСчетамБюджетирования',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:168px;width:514px;height:220px;',
 			height: 220,width: 514,
@@ -129,19 +133,19 @@
 				},
 				{
 					text:'Субконто 1',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3',
-					width:'120',
+					width:'1200',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -153,19 +157,19 @@
 				},
 				{
 					text:'Сумма упр.',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаУпр',
 					flex:1,
 				},
 				{
 					text:'Валютная сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВалютнаяСумма',
 					flex:1,
 				},
 				{
 					text:'Сумма сценария',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаСценария',
 					flex:1,
 				},
@@ -182,7 +186,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаОстатковПоПрогнознымБалансам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаОстатковПоПрогнознымБалансам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -216,6 +220,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НовыеОстаткиПоСчетамБюджетирования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -273,7 +294,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

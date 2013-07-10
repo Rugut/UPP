@@ -8,8 +8,12 @@
 	title: 'Список физлиц с похожими данными',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокФизлиц',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:29px;width:506px;height:96px;',
 			height: 96,width: 506,
@@ -41,18 +45,19 @@
 				},
 				{
 					text:'Страховой номер ПФР',
-					width:'120',
+					width:'1200',
 					dataIndex:'СтраховойНомерПФР',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -71,6 +76,23 @@
 						name:'СтраховойНомерПФР',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокФизлиц');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -97,7 +119,8 @@
 			text: 'Выбрать отмеченное в списке',
 			style: 'position:absolute;left:299px;top:173px;width:180px;height:28px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

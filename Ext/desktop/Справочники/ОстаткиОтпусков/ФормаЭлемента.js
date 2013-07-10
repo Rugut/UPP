@@ -8,7 +8,10 @@
 	title: 'Остатки отпуска прошлых лет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:58px;width:272px;height:233px;',
@@ -77,6 +80,7 @@
 					items:
 					[
 		{
+			id: 'Остатки',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:272px;height:111px;',
 			height: 111,width: 272,
@@ -109,11 +113,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -129,6 +134,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Остатки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -153,7 +175,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:33px;width:272px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПередачаДСВвПФР:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d75e7c88-33ae-406b-9502-c84d32681055");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191456.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012003.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12108RRef [Организация]
-					,_Fld12109RRef [Ответственный]
-					,_Fld12110 [Комментарий]
-					,_Fld12111 [КраткийСоставДокумента]
-					,_Fld12112 [НаименованиеПФР]
-					,_Fld12113RRef [ФорматФайла]
-					,_Fld12114 [НомерПачки]
-					From _Document483(NOLOCK)
+					,_Fld22650RRef [Организация]
+					,_Fld22651RRef [Ответственный]
+					,_Fld22652 [Комментарий]
+					,_Fld22653 [КраткийСоставДокумента]
+					,_Fld22654 [НаименованиеПФР]
+					,_Fld22655RRef [ФорматФайла]
+					,_Fld27195 [НомерПачки]
+					From _Document22649(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

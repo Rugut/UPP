@@ -90,7 +90,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference141(
+						Insert Into _Reference87(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -98,11 +98,11 @@ namespace V82.СправочникиОбъект
 						,_OwnerIDRRef
 						,_Code
 						,_Description
-						,_Fld2567RRef
-						,_Fld2568
-						,_Fld2569
-						,_Fld2570RRef
-						,_Fld2571RRef)
+						,_Fld1332RRef
+						,_Fld1333
+						,_Fld1334
+						,_Fld1335RRef
+						,_Fld1336RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -120,7 +120,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference141
+						Update _Reference87
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -129,11 +129,11 @@ namespace V82.СправочникиОбъект
 						,_OwnerIDRRef	= @Владелец
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2567RRef	= @СпособПогашенияСтоимости
-						,_Fld2568	= @СрокПолезногоИспользования
-						,_Fld2569	= @Количество
-						,_Fld2570RRef	= @ЕдиницаИзмерения
-						,_Fld2571RRef	= @СпособОтраженияРасходов
+						,_Fld1332RRef	= @СпособПогашенияСтоимости
+						,_Fld1333	= @СрокПолезногоИспользования
+						,_Fld1334	= @Количество
+						,_Fld1335RRef	= @ЕдиницаИзмерения
+						,_Fld1336RRef	= @СпособОтраженияРасходов
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -159,7 +159,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference141
+					Команда.CommandText = @"Delete _Reference87
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

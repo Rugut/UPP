@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ВычетыНДФЛ:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("66162784-3d30-4c15-8f2b-953a823b945c");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191417.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012001.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -56,7 +56,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ВычетыНДФЛ(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ВычетыНДФЛ(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -69,19 +82,19 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2017 [КодДляОтчетности2007]
-					,_Fld2018 [КодДляОтчетности2008]
-					,_Fld2019 [КодДляОтчетности2009]
-					,_Fld2020 [Наименование2007]
-					,_Fld2021 [Наименование2008]
-					,_Fld2022 [КодДляОтчетности2010]
-					,_Fld2023 [НеПредоставляетсяНерезидентам]
-					,_Fld2024 [НеОтражаетсяВОтчетности2010]
-					,_Fld2025RRef [ГруппаВычета]
-					,_Fld2026 [Наименование2010]
-					,_Fld2027 [КодДляОтчетности2011]
-					From _Reference70(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld26504 [КодДляОтчетности2007]
+					,_Fld26505 [КодДляОтчетности2008]
+					,_Fld26506 [КодДляОтчетности2009]
+					,_Fld26507 [Наименование2007]
+					,_Fld26508 [Наименование2008]
+					,_Fld26509 [КодДляОтчетности2010]
+					,_Fld26510 [НеПредоставляетсяНерезидентам]
+					,_Fld26511 [НеОтражаетсяВОтчетности2010]
+					,_Fld26512RRef [ГруппаВычета]
+					,_Fld26513 [Наименование2010]
+					,_Fld26514 [КодДляОтчетности2011]
+					From _Reference34(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

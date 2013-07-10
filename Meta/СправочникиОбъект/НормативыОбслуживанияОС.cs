@@ -135,7 +135,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference167(
+						Insert Into _Reference100(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -144,15 +144,15 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld2975
-						,_Fld2976RRef
-						,_Fld2977
-						,_Fld2978RRef
-						,_Fld2979RRef
-						,_Fld2980
-						,_Fld2981RRef
-						,_Fld2982
-						,_Fld2983)
+						,_Fld1489
+						,_Fld1490RRef
+						,_Fld1491
+						,_Fld1492RRef
+						,_Fld1493RRef
+						,_Fld1494
+						,_Fld1495RRef
+						,_Fld1496
+						,_Fld1497)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -175,7 +175,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference167
+						Update _Reference100
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -185,15 +185,15 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld2975	= @Комментарий
-						,_Fld2976RRef	= @Состояние
-						,_Fld2977	= @ДатаУтверждения
-						,_Fld2978RRef	= @Услуга
-						,_Fld2979RRef	= @ПериодичностьОбслуживания
-						,_Fld2980	= @КоличествоПериодов
-						,_Fld2981RRef	= @ПараметрВыработки
-						,_Fld2982	= @ЗначениеПараметраВыработки
-						,_Fld2983	= @Количество
+						,_Fld1489	= @Комментарий
+						,_Fld1490RRef	= @Состояние
+						,_Fld1491	= @ДатаУтверждения
+						,_Fld1492RRef	= @Услуга
+						,_Fld1493RRef	= @ПериодичностьОбслуживания
+						,_Fld1494	= @КоличествоПериодов
+						,_Fld1495RRef	= @ПараметрВыработки
+						,_Fld1496	= @ЗначениеПараметраВыработки
+						,_Fld1497	= @Количество
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -224,7 +224,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference167
+					Команда.CommandText = @"Delete _Reference100
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

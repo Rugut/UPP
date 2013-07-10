@@ -8,8 +8,12 @@
 	title: 'Заполнение справочника Регионы',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'АдресноеДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:234px;top:32px;width:480px;height:385px;',
 			height: 385,width: 480,
@@ -23,7 +27,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -42,11 +46,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Регионы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Регионы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Регионы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -62,6 +67,23 @@
 						name:'Ссылка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('АдресноеДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -85,7 +107,8 @@
 			height: 19,
 			style: 'position:absolute;left:199px;top:8px;width:515px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

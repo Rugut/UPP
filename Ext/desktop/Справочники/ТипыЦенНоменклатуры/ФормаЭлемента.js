@@ -8,7 +8,10 @@
 	title: 'Элемент Типы цен номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -207,7 +210,8 @@
 			height: 19,
 			style: 'position:absolute;left:113px;top:173px;width:256px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

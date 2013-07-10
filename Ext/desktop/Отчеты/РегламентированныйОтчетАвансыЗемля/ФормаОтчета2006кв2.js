@@ -8,7 +8,10 @@
 	title: 'Расчет по авансовым платежам по земельному налогу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
@@ -261,7 +264,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

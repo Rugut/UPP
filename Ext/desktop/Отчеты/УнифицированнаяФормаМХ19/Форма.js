@@ -8,7 +8,10 @@
 	title: 'Форма МХ-19',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Выводить данные в первую колонку',
@@ -91,7 +94,8 @@
 			height: 19,
 			style: 'position:absolute;left:88px;top:57px;width:219px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

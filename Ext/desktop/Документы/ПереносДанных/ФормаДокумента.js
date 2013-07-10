@@ -8,7 +8,10 @@
 	title: 'Перенос данных',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -225,7 +228,8 @@
 			text: '',
 			style: 'position:absolute;left:30px;top:312px;width:525px;height:33px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

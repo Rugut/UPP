@@ -8,7 +8,10 @@
 	title: 'Реализация отгруженных товаров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -269,7 +272,8 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:98px;top:199px;width:566px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

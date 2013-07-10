@@ -8,8 +8,12 @@
 	title: 'Свойства',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:460px;height:280px;',
 			height: 280,width: 460,
@@ -40,7 +44,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияСвойствОбъекта/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияСвойствОбъекта/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -53,6 +57,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -72,7 +93,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

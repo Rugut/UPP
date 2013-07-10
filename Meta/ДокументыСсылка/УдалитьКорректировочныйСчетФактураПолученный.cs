@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class УдалитьКорректировочныйСчетФактураПолученный:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("1a0dda0d-f30a-4b13-9232-112e47425105");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191847.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -78,24 +78,24 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18421RRef [Организация]
-					,_Fld18422RRef [Контрагент]
-					,_Fld18423RRef [ДоговорКонтрагента]
-					,_Fld18424RRef [СчетФактура]
-					,_Fld18425 [НомерВходящегоДокумента]
-					,_Fld18426 [ДатаВходящегоДокумента]
-					,_Fld18427 [НаименованиеПродавца]
-					,_Fld18428 [ИННПродавца]
-					,_Fld18429 [КПППродавца]
-					,_Fld18430RRef [ВалютаДокумента]
-					,_Fld18431RRef [Ответственный]
-					,_Fld18432 [Комментарий]
-					,_Fld18433 [РазницаСНДСКУменьшению]
-					,_Fld18434 [РазницаСНДСКДоплате]
-					,_Fld18435 [РазницаНДСКУменьшению]
-					,_Fld18436 [РазницаНДСКДоплате]
-					,_Fld18437 [РучнаяКорректировка]
-					From _Document614(NOLOCK)
+					,_Fld25673RRef [Организация]
+					,_Fld25674RRef [Контрагент]
+					,_Fld25675RRef [ДоговорКонтрагента]
+					,_Fld25676RRef [СчетФактура]
+					,_Fld25677 [НомерВходящегоДокумента]
+					,_Fld25678 [ДатаВходящегоДокумента]
+					,_Fld25679 [НаименованиеПродавца]
+					,_Fld25680 [ИННПродавца]
+					,_Fld25681 [КПППродавца]
+					,_Fld25682RRef [ВалютаДокумента]
+					,_Fld25683RRef [Ответственный]
+					,_Fld25684 [Комментарий]
+					,_Fld25685 [РазницаСНДСКУменьшению]
+					,_Fld25686 [РазницаСНДСКДоплате]
+					,_Fld25687 [РазницаНДСКУменьшению]
+					,_Fld25688 [РазницаНДСКДоплате]
+					,_Fld25689 [РучнаяКорректировка]
+					From _Document23178(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class АктуализацияБюджетов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("951ee3b1-cb1f-4ba8-8cd0-f1dec315435b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191125.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011947.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -66,15 +66,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld4877RRef [Сценарий]
-					,_Fld4878 [ДатаНачала]
-					,_Fld4879 [ДатаКонца]
-					,_Fld4880RRef [Ответственный]
-					,_Fld4881 [Комментарий]
-					,_Fld4882RRef [Состояние]
-					,_Fld4883 [АктуализироватьБюджеты]
-					,_Fld4884 [ПеренестиТранзакции]
-					From _Document304(NOLOCK)
+					,_Fld2761RRef [Сценарий]
+					,_Fld2762 [ДатаНачала]
+					,_Fld2763 [ДатаКонца]
+					,_Fld2764RRef [Ответственный]
+					,_Fld2765 [Комментарий]
+					,_Fld2766RRef [Состояние]
+					,_Fld2767 [АктуализироватьБюджеты]
+					,_Fld2768 [ПеренестиТранзакции]
+					From _Document208(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

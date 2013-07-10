@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ВидыКонтактнойИнформации:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8d5f9ae8-b39d-410b-85d7-6097cda43f41");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191527.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011952.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -44,7 +44,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ВидыКонтактнойИнформации(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ВидыКонтактнойИнформации(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -57,10 +70,10 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1944RRef [Тип]
-					,_Fld1945RRef [ВидОбъектаКонтактнойИнформации]
-					From _Reference53(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld926RRef [Тип]
+					,_Fld927RRef [ВидОбъектаКонтактнойИнформации]
+					From _Reference17(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

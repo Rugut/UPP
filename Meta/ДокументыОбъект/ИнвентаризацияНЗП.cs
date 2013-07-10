@@ -156,24 +156,24 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document403(
+						Insert Into _Document289(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld8176RRef
-						,_Fld8177RRef
-						,_Fld8178
-						,_Fld8179RRef
-						,_Fld8180
-						,_Fld8181
-						,_Fld8182
-						,_Fld8184RRef
-						,_Fld8185
-						,_Fld8186RRef
-						,_Fld8187
-						,_Fld8188RRef)
+						,_Fld5109RRef
+						,_Fld5110RRef
+						,_Fld5111
+						,_Fld5112RRef
+						,_Fld5113
+						,_Fld5114
+						,_Fld5115
+						,_Fld5117RRef
+						,_Fld5118
+						,_Fld5119RRef
+						,_Fld5120
+						,_Fld5121RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -195,24 +195,24 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document403
+						Update _Document289
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld8176RRef	= @Подразделение
-						,_Fld8177RRef	= @Организация
-						,_Fld8178	= @Комментарий
-						,_Fld8179RRef	= @Ответственный
-						,_Fld8180	= @ОтражатьВУправленческомУчете
-						,_Fld8181	= @ОтражатьВБухгалтерскомУчете
-						,_Fld8182	= @ОтражатьВНалоговомУчете
-						,_Fld8184RRef	= @СтатьяЗатрат
-						,_Fld8185	= @ВводитьЗаказыПоСтрокам
-						,_Fld8186RRef	= @НоменклатурнаяГруппа
-						,_Fld8187	= @ВводитьНоменклатурныеГруппыПоСтрокам
-						,_Fld8188RRef	= @ПодразделениеОрганизации
+						,_Fld5109RRef	= @Подразделение
+						,_Fld5110RRef	= @Организация
+						,_Fld5111	= @Комментарий
+						,_Fld5112RRef	= @Ответственный
+						,_Fld5113	= @ОтражатьВУправленческомУчете
+						,_Fld5114	= @ОтражатьВБухгалтерскомУчете
+						,_Fld5115	= @ОтражатьВНалоговомУчете
+						,_Fld5117RRef	= @СтатьяЗатрат
+						,_Fld5118	= @ВводитьЗаказыПоСтрокам
+						,_Fld5119RRef	= @НоменклатурнаяГруппа
+						,_Fld5120	= @ВводитьНоменклатурныеГруппыПоСтрокам
+						,_Fld5121RRef	= @ПодразделениеОрганизации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -236,7 +236,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document403
+					Команда.CommandText = @"Delete _Document289
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

@@ -8,7 +8,10 @@
 	title: 'Группа типовых анкет',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:344px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

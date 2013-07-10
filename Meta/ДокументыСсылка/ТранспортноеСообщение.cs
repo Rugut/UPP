@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ТранспортноеСообщение:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("0c2567b4-a7a0-45ad-bf02-b15cb7a65758");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191207.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011951.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -66,23 +66,23 @@ namespace V82.ДокументыСсылка
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld18216RRef [ЦиклОбмена]
-					,_Fld18217RRef [Тип]
-					,_Fld18218_TYPE [Отправитель_Тип],_Fld18218_RRRef [Отправитель],_Fld18218_RTRef [Отправитель_Вид]
-					,_Fld18219_TYPE [Получатель_Тип],_Fld18219_RRRef [Получатель],_Fld18219_RTRef [Получатель_Вид]
-					,_Fld18220RRef [УчетнаяЗапись]
-					,_Fld18221RRef [Статус]
-					,_Fld18222 [Тема]
-					,_Fld18223 [ТекстПисьма]
-					,_Fld18224 [ИдентификаторСообщения]
-					,_Fld18225 [ДатаТранспорта]
-					,_Fld18226 [Важность]
-					,_Fld18227 [Кодировка]
-					,_Fld18228 [ОтКогоАдрес]
-					,_Fld18229 [ОтКогоПредставление]
-					,_Fld18230RRef [Основание]
-					,_Fld18231 [ПротоколСОшибкой]
-					From _Document608(NOLOCK)
+					,_Fld25582RRef [ЦиклОбмена]
+					,_Fld25583RRef [Тип]
+					,_Fld25584_TYPE [Отправитель_Тип],_Fld25584_RRRef [Отправитель],_Fld25584_RTRef [Отправитель_Вид]
+					,_Fld25585_TYPE [Получатель_Тип],_Fld25585_RRRef [Получатель],_Fld25585_RTRef [Получатель_Вид]
+					,_Fld25586RRef [УчетнаяЗапись]
+					,_Fld25587RRef [Статус]
+					,_Fld25588 [Тема]
+					,_Fld25589 [ТекстПисьма]
+					,_Fld25590 [ИдентификаторСообщения]
+					,_Fld25591 [ДатаТранспорта]
+					,_Fld25592 [Важность]
+					,_Fld25593 [Кодировка]
+					,_Fld25594 [ОтКогоАдрес]
+					,_Fld25595 [ОтКогоПредставление]
+					,_Fld25596RRef [Основание]
+					,_Fld25597 [ПротоколСОшибкой]
+					From _Document23176(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

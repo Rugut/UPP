@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОбщероссийскийКлассификаторОсновныхФондов:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("dc911c86-bcc0-4720-9982-979670a2afd5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191900.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012029.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -53,7 +53,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОбщероссийскийКлассификаторОсновныхФондов(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОбщероссийскийКлассификаторОсновныхФондов(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -66,11 +79,11 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3004 [КонтрольноеЧисло]
-					,_Fld3005 [НаименованиеГруппировки]
-					,_Fld3006RRef [АмортизационнаяГруппа]
-					From _Reference169(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1515 [КонтрольноеЧисло]
+					,_Fld1516 [НаименованиеГруппировки]
+					,_Fld1517RRef [АмортизационнаяГруппа]
+					From _Reference102(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

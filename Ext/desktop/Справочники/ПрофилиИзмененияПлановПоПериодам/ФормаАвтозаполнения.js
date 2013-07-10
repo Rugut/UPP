@@ -8,7 +8,10 @@
 	title: 'Параметры изменения по периодам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'numberfield',
 			hideLabel: true,
@@ -116,7 +119,8 @@
 			title: 'Значения:',
 			style: 'position:absolute;left:8px;top:171px;width:280px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

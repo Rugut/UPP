@@ -8,7 +8,10 @@
 	title: 'Ввод количества и цены',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -111,7 +114,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:78px;top:105px;width:168px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

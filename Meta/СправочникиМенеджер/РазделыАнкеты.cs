@@ -25,8 +25,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -70,8 +70,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -115,8 +115,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)";
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.РазделыАнкеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -156,9 +156,9 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -201,8 +201,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -246,8 +246,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -291,8 +291,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)";
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.РазделыАнкеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -332,8 +332,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)";
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.РазделыАнкеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -373,8 +373,8 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3331 [Комментарий]
-					From _Reference215(NOLOCK)";
+					,_Fld21284 [Комментарий]
+					From _Reference136(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.РазделыАнкеты();
 					using (var Читалка = Команда.ExecuteReader())
 					{

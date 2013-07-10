@@ -8,7 +8,10 @@
 	title: 'Настройка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:234px;width:413px;height:25px;',
@@ -81,7 +84,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:36px;width:126px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

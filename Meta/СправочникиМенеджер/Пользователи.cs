@@ -25,10 +25,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -73,10 +73,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -121,10 +121,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)";
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.Пользователи();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -165,11 +165,11 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -213,10 +213,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -261,10 +261,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -309,10 +309,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)";
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Пользователи();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -353,10 +353,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)";
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Пользователи();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -397,10 +397,10 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3235RRef [ПрофильПолномочийПользователя]
-					,_Fld3236RRef [ФизЛицо]
-					,_Fld3237 [ИдентификаторПользователяИБ]
-					From _Reference195(NOLOCK)";
+					,_Fld22979RRef [ПрофильПолномочийПользователя]
+					,_Fld1627RRef [ФизЛицо]
+					,_Fld26585 [ИдентификаторПользователяИБ]
+					From _Reference122(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.Пользователи();
 					using (var Читалка = Команда.ExecuteReader())
 					{

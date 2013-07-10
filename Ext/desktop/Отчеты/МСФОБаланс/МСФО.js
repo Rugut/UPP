@@ -8,7 +8,10 @@
 	title: 'Баланс по МСФО',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:419px;width:736px;height:25px;',
@@ -172,7 +175,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

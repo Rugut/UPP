@@ -8,8 +8,12 @@
 	title: 'Расшифровка значений показателей',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Группа статей затрат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -56,7 +59,8 @@
 			height: 19,
 			style: 'position:absolute;left:129px;top:33px;width:332px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

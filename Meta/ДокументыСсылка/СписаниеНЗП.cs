@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СписаниеНЗП:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("5519f5f5-4bc8-4a43-becd-8b81a2ef9dd3");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191706.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012016.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -124,25 +124,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17327 [ОтражатьВУправленческомУчете]
-					,_Fld17328 [ОтражатьВБухгалтерскомУчете]
-					,_Fld17329 [ОтражатьВНалоговомУчете]
-					,_Fld17330RRef [Организация]
-					,_Fld17331RRef [Подразделение]
-					,_Fld17332 [Комментарий]
-					,_Fld17333RRef [Ответственный]
-					,_Fld17334RRef [ТипСтоимости]
-					,_Fld17335RRef [СчетДт]
-					,_Fld17336RRef [СубконтоДт1]
-					,_Fld17337RRef [СубконтоДт2]
-					,_Fld17338RRef [СубконтоДт3]
-					,_Fld17339RRef [ПодразделениеОрганизации]
-					,_Fld17340RRef [СчетДтНУ]
-					,_Fld17341RRef [СубконтоДтНУ1]
-					,_Fld17342RRef [СубконтоДтНУ2]
-					,_Fld17343RRef [СубконтоДтНУ3]
-					,_Fld17344RRef [ДокИнвентаризация]
-					From _Document593(NOLOCK)
+					,_Fld11621 [ОтражатьВУправленческомУчете]
+					,_Fld11622 [ОтражатьВБухгалтерскомУчете]
+					,_Fld11623 [ОтражатьВНалоговомУчете]
+					,_Fld11624RRef [Организация]
+					,_Fld11625RRef [Подразделение]
+					,_Fld11626 [Комментарий]
+					,_Fld11627RRef [Ответственный]
+					,_Fld11628RRef [ТипСтоимости]
+					,_Fld11629RRef [СчетДт]
+					,_Fld11630RRef [СубконтоДт1]
+					,_Fld11631RRef [СубконтоДт2]
+					,_Fld11632RRef [СубконтоДт3]
+					,_Fld11633RRef [ПодразделениеОрганизации]
+					,_Fld11634RRef [СчетДтНУ]
+					,_Fld11635RRef [СубконтоДтНУ1]
+					,_Fld11636RRef [СубконтоДтНУ2]
+					,_Fld11637RRef [СубконтоДтНУ3]
+					,_Fld11638RRef [ДокИнвентаризация]
+					From _Document456(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

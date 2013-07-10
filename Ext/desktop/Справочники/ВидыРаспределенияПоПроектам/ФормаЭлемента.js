@@ -8,7 +8,10 @@
 	title: 'Виды распределения по проектам',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -55,7 +58,8 @@
 			height: 19,
 			style: 'position:absolute;left:128px;top:57px;width:330px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

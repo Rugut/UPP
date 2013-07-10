@@ -8,7 +8,10 @@
 	title: 'Сведения о контролирующем органе (направление документооборота)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -55,7 +58,8 @@
 			height: 19,
 			style: 'position:absolute;left:152px;top:64px;width:188px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

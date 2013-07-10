@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПереоценкаТоваровПринятыхНаКомиссию:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e49c7767-40d1-408f-8d70-6fdaa62a644b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191619.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012011.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -113,23 +113,23 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12666 [ОтражатьВУправленческомУчете]
-					,_Fld12667 [ОтражатьВБухгалтерскомУчете]
-					,_Fld12668RRef [Организация]
-					,_Fld12669RRef [Склад]
-					,_Fld12670RRef [ТипЦен]
-					,_Fld12671RRef [ВалютаДокумента]
-					,_Fld12672 [КурсВзаиморасчетов]
-					,_Fld12673RRef [Контрагент]
-					,_Fld12674RRef [ДоговорКонтрагента]
-					,_Fld12675RRef [Подразделение]
-					,_Fld12676 [Комментарий]
-					,_Fld12677 [КратностьВзаиморасчетов]
-					,_Fld12678RRef [Ответственный]
-					,_Fld12679_TYPE [Сделка_Тип],_Fld12679_RRRef [Сделка],_Fld12679_RTRef [Сделка_Вид]
-					,_Fld12680 [НомерВходящегоДокументаЭлектронногоОбмена]
-					,_Fld12681 [ДатаВходящегоДокументаЭлектронногоОбмена]
-					From _Document504(NOLOCK)
+					,_Fld8261 [ОтражатьВУправленческомУчете]
+					,_Fld8262 [ОтражатьВБухгалтерскомУчете]
+					,_Fld8263RRef [Организация]
+					,_Fld8264RRef [Склад]
+					,_Fld8265RRef [ТипЦен]
+					,_Fld8266RRef [ВалютаДокумента]
+					,_Fld8267 [КурсВзаиморасчетов]
+					,_Fld8268RRef [Контрагент]
+					,_Fld8269RRef [ДоговорКонтрагента]
+					,_Fld8270RRef [Подразделение]
+					,_Fld8271 [Комментарий]
+					,_Fld8272 [КратностьВзаиморасчетов]
+					,_Fld8273RRef [Ответственный]
+					,_Fld8274_TYPE [Сделка_Тип],_Fld8274_RRRef [Сделка],_Fld8274_RTRef [Сделка_Вид]
+					,_Fld21820 [НомерВходящегоДокументаЭлектронногоОбмена]
+					,_Fld21821 [ДатаВходящегоДокументаЭлектронногоОбмена]
+					From _Document379(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

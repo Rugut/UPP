@@ -8,7 +8,10 @@
 	title: 'Точки маршрута',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -90,7 +93,8 @@
 			height: 19,
 			style: 'position:absolute;left:97px;top:105px;width:328px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

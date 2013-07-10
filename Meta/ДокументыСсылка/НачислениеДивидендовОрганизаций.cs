@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class НачислениеДивидендовОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("12a95072-f616-4d3d-b8be-08d75914ca93");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191330.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011957.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -73,16 +73,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld9651RRef [Организация]
-					,_Fld9652 [Комментарий]
-					,_Fld9653RRef [Ответственный]
-					,_Fld9654 [ДивидендыНачисляемые]
-					,_Fld9655 [НаОднуАкцию]
-					,_Fld9656 [ДивидендыПолученные]
-					,_Fld9657 [КраткийСоставДокумента]
-					,_Fld9658 [ПериодРегистрации]
-					,_Fld9659RRef [ПерерассчитываемыйДокумент]
-					From _Document434(NOLOCK)
+					,_Fld6142RRef [Организация]
+					,_Fld6143 [Комментарий]
+					,_Fld6144RRef [Ответственный]
+					,_Fld6145 [ДивидендыНачисляемые]
+					,_Fld6146 [НаОднуАкцию]
+					,_Fld6147 [ДивидендыПолученные]
+					,_Fld6148 [КраткийСоставДокумента]
+					,_Fld21527 [ПериодРегистрации]
+					,_Fld22996RRef [ПерерассчитываемыйДокумент]
+					From _Document317(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

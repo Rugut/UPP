@@ -8,7 +8,10 @@
 	title: 'Печать штрихкодов транспортных упаковок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Параметры заполнения',
@@ -37,6 +40,7 @@
 			style: 'position:absolute;left:8px;top:79px;width:564px;height:16px;',
 		},
 		{
+			id: 'Номенклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:133px;width:564px;height:230px;',
 			height: 230,width: 564,
@@ -56,7 +60,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'250',
+					width:'2500',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -68,13 +72,13 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'250',
+					width:'2500',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -86,7 +90,7 @@
 				},
 				{
 					text:'Упаковка',
-					width:'250',
+					width:'2500',
 					dataIndex:'Упаковка',
 					flex:1,
 				},
@@ -103,7 +107,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +139,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Номенклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

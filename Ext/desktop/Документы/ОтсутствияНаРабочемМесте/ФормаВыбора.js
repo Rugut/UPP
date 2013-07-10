@@ -8,8 +8,12 @@
 	title: 'Отсутствия на рабочем месте',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:855px;height:380px;',
 			height: 380,width: 855,
@@ -35,25 +39,25 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Период отсутствия',
-					width:'150',
+					width:'1500',
 					dataIndex:'ПериодОтсутствия',
 					flex:1,
 				},
 				{
 					text:'Причина отсутствия',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПричинаОтсутствия',
 					flex:1,
 				},
 				{
 					text:'Зарегистрировал',
-					width:'120',
+					width:'1200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -70,7 +74,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтсутствияНаРабочемМесте/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтсутствияНаРабочемМесте/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,8 +103,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

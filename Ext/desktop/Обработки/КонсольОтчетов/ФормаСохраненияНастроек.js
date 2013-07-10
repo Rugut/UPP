@@ -8,7 +8,10 @@
 	title: 'Сохранение настройки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'button',
 			name: 'КнопкаВыполнить',
@@ -36,6 +39,7 @@
 			style: 'position:absolute;left:8px;top:54px;width:171px;height:19px;',
 		},
 		{
+			id: 'Настройки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:77px;width:260px;height:140px;',
 			height: 140,width: 260,
@@ -54,13 +58,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Настройки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -86,7 +107,8 @@
 			text: 'Справка',
 			style: 'position:absolute;left:291px;top:89px;width:99px;height:22px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

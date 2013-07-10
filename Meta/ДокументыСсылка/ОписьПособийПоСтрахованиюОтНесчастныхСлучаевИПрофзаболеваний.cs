@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОписьПособийПоСтрахованиюОтНесчастныхСлучаевИПрофзаболеваний:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("c6dc2a96-74e0-461e-b527-f5f24aa1bbb7");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191754.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012019.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -71,20 +71,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10601RRef [Организация]
-					,_Fld10602RRef [Ответственный]
-					,_Fld10603 [Комментарий]
-					,_Fld10604 [НаименованиеТерриториальногоОрганаФСС]
-					,_Fld10605 [РегистрационныйНомерФСС]
-					,_Fld10606 [ДополнительныйКодФСС]
-					,_Fld10607 [КодПодчиненностиФСС]
-					,_Fld10608RRef [Руководитель]
-					,_Fld10609RRef [ДолжностьРуководителя]
-					,_Fld10610 [КраткийСоставДокумента]
-					,_Fld10611 [ИНН]
-					,_Fld10612 [КПП]
-					,_Fld10613 [ТелефонСоставителя]
-					From _Document455(NOLOCK)
+					,_Fld24677RRef [Организация]
+					,_Fld24678RRef [Ответственный]
+					,_Fld24679 [Комментарий]
+					,_Fld24680 [НаименованиеТерриториальногоОрганаФСС]
+					,_Fld24681 [РегистрационныйНомерФСС]
+					,_Fld24682 [ДополнительныйКодФСС]
+					,_Fld24683 [КодПодчиненностиФСС]
+					,_Fld24684RRef [Руководитель]
+					,_Fld24685RRef [ДолжностьРуководителя]
+					,_Fld24686 [КраткийСоставДокумента]
+					,_Fld24687 [ИНН]
+					,_Fld24688 [КПП]
+					,_Fld24689 [ТелефонСоставителя]
+					From _Document23156(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

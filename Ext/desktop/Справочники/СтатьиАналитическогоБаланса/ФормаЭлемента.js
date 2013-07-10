@@ -8,7 +8,10 @@
 	title: 'Статьи аналитического баланса',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -40,6 +43,7 @@
 			style: 'position:absolute;left:365px;top:33px;width:81px;height:19px;',
 		},
 		{
+			id: 'ОтборСчетовБюджетирования',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:143px;width:438px;height:160px;',
 			height: 160,width: 438,
@@ -59,13 +63,13 @@
 				},
 				{
 					text:'Наименование счета',
-					width:'120',
+					width:'1200',
 					dataIndex:'НаименованиеСчета',
 					flex:1,
 				},
 				{
 					text:'Вид остатка',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидОстатка',
 					flex:1,
 				},
@@ -78,11 +82,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СтатьиАналитическогоБаланса").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиАналитическогоБаланса/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиАналитическогоБаланса/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -101,6 +106,23 @@
 						name:'Знак',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборСчетовБюджетирования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -218,7 +240,8 @@
 			text: 'Наименование для отчета:',
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:38px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

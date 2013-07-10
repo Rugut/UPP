@@ -8,7 +8,10 @@
 	title: 'Рассылка анкеты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:473px;height:25px;',
@@ -61,6 +64,7 @@
 					items:
 					[
 		{
+			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
 			height: 204,width: 443,
@@ -68,24 +72,25 @@
 			[
 				{
 					text:'Получатель',
-					width:'220',
+					width:'2200',
 					dataIndex:'Объект',
 					flex:1,
 				},
 				{
 					text:'e-mail',
-					width:'120',
+					width:'1200',
 					dataIndex:'Получатель',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -96,6 +101,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Получатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -104,6 +126,7 @@
 					items:
 					[
 		{
+			id: 'Вложения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
 			height: 204,width: 443,
@@ -111,24 +134,42 @@
 			[
 				{
 					text:'Имя файла',
-					width:'320',
+					width:'3200',
 					dataIndex:'ИмяФайла',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ИмяФайла',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Вложения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -218,7 +259,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

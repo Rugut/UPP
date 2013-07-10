@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ИзменениеСостоянияОС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8d8fe620-2d18-4bf0-9e7f-9d899edc442c");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191315.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -107,20 +107,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld7989RRef [Ответственный]
-					,_Fld7990 [ВремяНапоминания]
-					,_Fld7991 [ВлияетНаНачислениеАмортизации]
-					,_Fld7992 [НапомнитьОСобытии]
-					,_Fld7993 [Комментарий]
-					,_Fld7994 [НачислятьАмортизациюВТекущемМесяце]
-					,_Fld7995RRef [Организация]
-					,_Fld7996 [ОтражатьВБухгалтерскомУчете]
-					,_Fld7997 [ОтражатьВНалоговомУчете]
-					,_Fld7998 [НачислятьАмортизацию]
-					,_Fld7999 [ОтражатьВУправленческомУчете]
-					,_Fld8000RRef [Событие]
-					,_Fld8001RRef [СобытиеРегл]
-					From _Document395(NOLOCK)
+					,_Fld4991RRef [Ответственный]
+					,_Fld4985 [ВремяНапоминания]
+					,_Fld4984 [ВлияетНаНачислениеАмортизации]
+					,_Fld4987 [НапомнитьОСобытии]
+					,_Fld4986 [Комментарий]
+					,_Fld4989 [НачислятьАмортизациюВТекущемМесяце]
+					,_Fld4990RRef [Организация]
+					,_Fld4992 [ОтражатьВБухгалтерскомУчете]
+					,_Fld4993 [ОтражатьВНалоговомУчете]
+					,_Fld4988 [НачислятьАмортизацию]
+					,_Fld4994 [ОтражатьВУправленческомУчете]
+					,_Fld4995RRef [Событие]
+					,_Fld4996RRef [СобытиеРегл]
+					From _Document282(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

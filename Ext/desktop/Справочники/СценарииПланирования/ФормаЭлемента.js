@@ -8,7 +8,10 @@
 	title: 'Сценарии планирования',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:529px;height:225px;',
@@ -138,6 +141,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:50px;height:19px;',
 		},
 		{
+			id: 'СписокКурсыВалют',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:79px;width:515px;height:120px;',
 			height: 120,width: 515,
@@ -170,11 +174,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СценарииПланирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -190,6 +195,23 @@
 						name:'Кратность',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокКурсыВалют');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -207,7 +229,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

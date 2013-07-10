@@ -8,7 +8,10 @@
 	title: 'Обработка результата',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:93px;width:362px;height:25px;',
@@ -103,7 +106,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

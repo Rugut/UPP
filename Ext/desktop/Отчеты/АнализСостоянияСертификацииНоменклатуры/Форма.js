@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
@@ -122,7 +125,8 @@
 			boxLabel: 'Выбирать позиции по которым есть остатки на складе',
 			style: 'position:absolute;left:8px;top:33px;width:305px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

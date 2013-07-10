@@ -153,30 +153,30 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document302(
+						Insert Into _Document206(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld4802RRef
-						,_Fld4803
-						,_Fld4804
-						,_Fld4805RRef
-						,_Fld4806
-						,_Fld4807
-						,_Fld4808
-						,_Fld4809
-						,_Fld4810RRef
-						,_Fld4811RRef
-						,_Fld4812RRef
-						,_Fld4813RRef
-						,_Fld4814RRef
-						,_Fld4815RRef
-						,_Fld4816
-						,_Fld4817RRef
-						,_Fld4818RRef
-						,_Fld4819)
+						,_Fld2692RRef
+						,_Fld2693
+						,_Fld2694
+						,_Fld2695RRef
+						,_Fld2696
+						,_Fld2697
+						,_Fld2698
+						,_Fld2699
+						,_Fld2700RRef
+						,_Fld2701RRef
+						,_Fld2702RRef
+						,_Fld2703RRef
+						,_Fld2704RRef
+						,_Fld2705RRef
+						,_Fld2706
+						,_Fld2707RRef
+						,_Fld2708RRef
+						,_Fld2709)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -204,30 +204,30 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document302
+						Update _Document206
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld4802RRef	= @ВидОперации
-						,_Fld4803	= @Влажность
-						,_Fld4804	= @ЗамечанияКУпаковкеМаркировке
-						,_Fld4805RRef	= @ЗаявкаНаСертификациюНоменклатуры
-						,_Fld4806	= @Испытания
-						,_Fld4807	= @КоличествоВскрытыхУпаковок
-						,_Fld4808	= @Комментарий
-						,_Fld4809	= @КонтрольнаяПроба
-						,_Fld4810RRef	= @Номенклатура
-						,_Fld4811RRef	= @НормативныйДокумент
-						,_Fld4812RRef	= @Организация
-						,_Fld4813RRef	= @ОрганПоСертификации
-						,_Fld4814RRef	= @Ответственный
-						,_Fld4815RRef	= @Подразделение
-						,_Fld4816	= @РезультатНаружногоОсмотра
-						,_Fld4817RRef	= @СерияНоменклатуры
-						,_Fld4818RRef	= @Склад
-						,_Fld4819	= @Температура
+						,_Fld2692RRef	= @ВидОперации
+						,_Fld2693	= @Влажность
+						,_Fld2694	= @ЗамечанияКУпаковкеМаркировке
+						,_Fld2695RRef	= @ЗаявкаНаСертификациюНоменклатуры
+						,_Fld2696	= @Испытания
+						,_Fld2697	= @КоличествоВскрытыхУпаковок
+						,_Fld2698	= @Комментарий
+						,_Fld2699	= @КонтрольнаяПроба
+						,_Fld2700RRef	= @Номенклатура
+						,_Fld2701RRef	= @НормативныйДокумент
+						,_Fld2702RRef	= @Организация
+						,_Fld2703RRef	= @ОрганПоСертификации
+						,_Fld2704RRef	= @Ответственный
+						,_Fld2705RRef	= @Подразделение
+						,_Fld2706	= @РезультатНаружногоОсмотра
+						,_Fld2707RRef	= @СерияНоменклатуры
+						,_Fld2708RRef	= @Склад
+						,_Fld2709	= @Температура
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -255,7 +255,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document302
+					Команда.CommandText = @"Delete _Document206
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

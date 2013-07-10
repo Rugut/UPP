@@ -8,7 +8,10 @@
 	title: 'Сведения о стаже работы на севере',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -112,7 +115,8 @@
 			name: 'СеверныйСтажЛет',
 			style: 'position:absolute;left:47px;top:73px;width:40px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

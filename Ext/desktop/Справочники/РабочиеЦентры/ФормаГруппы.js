@@ -8,7 +8,10 @@
 	title: 'Группа Рабочие центры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -57,7 +60,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:328px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

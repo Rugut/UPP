@@ -8,7 +8,10 @@
 	title: 'Справка о сертификации номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьИнтервал',
@@ -93,7 +96,8 @@
 			text: '...',
 			style: 'position:absolute;left:466px;top:33px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

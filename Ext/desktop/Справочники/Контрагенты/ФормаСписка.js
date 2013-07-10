@@ -8,8 +8,12 @@
 	title: 'Контрагенты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:57px;width:512px;height:256px;',
 			height: 256,width: 512,
@@ -29,7 +33,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'120',
+					width:'1200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -41,7 +45,7 @@
 				},
 				{
 					text:'Полное наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -59,25 +63,25 @@
 				},
 				{
 					text:'Головной контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'ГоловнойКонтрагент',
 					flex:1,
 				},
 				{
 					text:'Документ, удостоверяющий личность',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументУдостоверяющийЛичность',
 					flex:1,
 				},
 				{
 					text:'Дополнительное описание',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДополнительноеОписание',
 					flex:1,
 				},
 				{
 					text:'Источник информации при обращении',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИсточникИнформацииПриОбращении',
 					flex:1,
 				},
@@ -107,25 +111,25 @@
 				},
 				{
 					text:'Основное контактное лицо',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновноеКонтактноеЛицо',
 					flex:1,
 				},
 				{
 					text:'Основной банковский счет',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновнойБанковскийСчет',
 					flex:1,
 				},
 				{
 					text:'Основной вид деятельности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновнойВидДеятельности',
 					flex:1,
 				},
 				{
 					text:'Основной договор контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОсновнойДоговорКонтрагента',
 					flex:1,
 				},
@@ -143,13 +147,13 @@
 				},
 				{
 					text:'Расписание работы строкой',
-					width:'120',
+					width:'1200',
 					dataIndex:'РасписаниеРаботыСтрокой',
 					flex:1,
 				},
 				{
 					text:'Регион',
-					width:'120',
+					width:'1200',
 					dataIndex:'Регион',
 					flex:1,
 				},
@@ -161,18 +165,19 @@
 				},
 				{
 					text:'Юр. / физ. лицо',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЮрФизЛицо',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Контрагенты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -252,8 +257,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:160px;height:256px;',
 			height: 256,width: 160,
@@ -261,24 +284,42 @@
 			[
 				{
 					text:'Наименование',
-					width:'160',
+					width:'1600',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Контрагенты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Контрагенты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -300,7 +341,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

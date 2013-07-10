@@ -29,13 +29,9 @@ namespace Gen
 
         private static string ЗаменитьТокены(string Содержание)
         {
-            foreach (var Токен in Настройки.Токены)
+            foreach (var Токен in from Токен in Настройки.Токены let Позиция = Содержание.IndexOf(Токен.Key, 0, StringComparison.OrdinalIgnoreCase) where Позиция != -1 select Токен)
             {
-                var Позиция = Содержание.IndexOf(Токен.Key, 0, StringComparison.OrdinalIgnoreCase);
-                if (Позиция != -1)
-                {
-                    Содержание = Содержание.Replace(Токен.Key, Токен.Value);
-                }
+                Содержание = Содержание.Replace(Токен.Key, Токен.Value);
             }
             return Содержание;
         }
@@ -84,34 +80,33 @@ namespace Gen
                 ЗаписыватьФайл = !CRC.ПотокиИдентичны(НовыйПоток, СтарыйПоток);
             }
             //ЗаписыватьФайл = true;
-            if (ЗаписыватьФайл)
+            if (!ЗаписыватьФайл)
             {
-                Interlocked.Increment(ref КоличествоФайловКЗаписи);
-                //File.WriteAllBytes(ИмяФайла, НовыйПоток);
-                //Interlocked.Increment(ref КоличествоФайловЗаписано);
-                ИзменитьАтрибутЧтенияФайла(ИмяФайла, false);
-                try
+                return;
+            }
+            Interlocked.Increment(ref КоличествоФайловКЗаписи);
+            //File.WriteAllBytes(ИмяФайла, НовыйПоток);
+            //Interlocked.Increment(ref КоличествоФайловЗаписано);
+            ИзменитьАтрибутЧтенияФайла(ИмяФайла, false);
+            try
+            {
+                using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.Write, FileShare.Write, 4096, true))
                 {
-                    using (var ПотокФайла = new FileStream(ИмяФайла, FileMode.Create, FileAccess.Write, FileShare.Write, 4096, true))
-                    {
-                        var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, ИмяФайла);
-                        Ожидания.Add(МаркерВызова.AsyncWaitHandle);
-                    }
+                    var МаркерВызова = ПотокФайла.BeginWrite(НовыйПоток, 0, НовыйПоток.Length, ОбратныйВызовСохраненияФайла, ИмяФайла);
+                    Ожидания.Add(МаркерВызова.AsyncWaitHandle);
                 }
-                catch (Exception Исключение)
+            }
+            catch (Exception Исключение)
+            {
+                if (Interlocked.Increment(ref КоличествоОшибокЗаписи) < 10)
                 {
-                    if (Interlocked.Increment(ref КоличествоОшибокЗаписи) < 10)
-                    {
-                        var Сообщение = ((Исключение.InnerException == null)? Исключение.Message: Исключение.InnerException.Message);
-                        Console.WriteLine(Сообщение);
-                    }
+                    var Сообщение = ((Исключение.InnerException == null)? Исключение.Message: Исключение.InnerException.Message);
+                    Console.WriteLine(Сообщение);
                 }
-
-
             }
         }
 
-        private void ИзменитьАтрибутЧтенияФайла(string ИмяФайла,bool Установить)
+        private static void ИзменитьАтрибутЧтенияФайла(string ИмяФайла,bool Установить)
         {
             if (!File.Exists(ИмяФайла))
             {

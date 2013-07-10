@@ -8,7 +8,10 @@
 	title: 'Оборотно-сальдовая ведомость по счету',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСчет',
@@ -97,7 +100,8 @@
 			height: 19,
 			style: 'position:absolute;left:216px;top:57px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

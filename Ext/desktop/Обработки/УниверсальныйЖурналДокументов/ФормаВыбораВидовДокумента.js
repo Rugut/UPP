@@ -8,12 +8,16 @@
 	title: 'Выбор объектов: Документ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:31px;width:276px;height:226px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

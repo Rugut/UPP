@@ -8,7 +8,10 @@
 	title: 'Восстановление последовательности налогового учета УСН',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -42,7 +45,8 @@
 			text: 'Дата актуализации',
 			style: 'position:absolute;left:8px;top:33px;width:106px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

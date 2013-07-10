@@ -8,8 +8,12 @@
 	title: 'Дополнительная информация',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

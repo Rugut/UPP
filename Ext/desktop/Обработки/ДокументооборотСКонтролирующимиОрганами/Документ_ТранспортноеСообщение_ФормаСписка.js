@@ -8,8 +8,12 @@
 	title: 'Транспортные сообщения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:908px;height:405px;',
 			height: 405,width: 908,
@@ -35,31 +39,31 @@
 				},
 				{
 					text:'Тип',
-					width:'120',
+					width:'1200',
 					dataIndex:'Тип',
 					flex:1,
 				},
 				{
 					text:'Цикл обмена',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЦиклОбмена',
 					flex:1,
 				},
 				{
 					text:'Отправитель',
-					width:'120',
+					width:'1200',
 					dataIndex:'Отправитель',
 					flex:1,
 				},
 				{
 					text:'Получатель',
-					width:'120',
+					width:'1200',
 					dataIndex:'Получатель',
 					flex:1,
 				},
 				{
 					text:'Учетная запись',
-					width:'120',
+					width:'1200',
 					dataIndex:'УчетнаяЗапись',
 					flex:1,
 				},
@@ -71,25 +75,25 @@
 				},
 				{
 					text:'От кого (адрес)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОтКогоАдрес',
 					flex:1,
 				},
 				{
 					text:'От кого (представление)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОтКогоПредставление',
 					flex:1,
 				},
 				{
 					text:'Основание',
-					width:'120',
+					width:'1200',
 					dataIndex:'Основание',
 					flex:1,
 				},
 				{
 					text:'Тема',
-					width:'120',
+					width:'1200',
 					dataIndex:'Тема',
 					flex:1,
 				},
@@ -100,7 +104,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -144,8 +148,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -25,10 +25,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -67,10 +67,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)
 					Where _Number = @Номер";
 					Команда.Parameters.AddWithValue("Номер", Номер);
 					using (var Читалка = Команда.ExecuteReader())
@@ -109,10 +109,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)";
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ВводИнформацииОСотрудниках();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -147,10 +147,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)
 					Where _IDRRef between @Мин and @Макс
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -189,10 +189,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -231,10 +231,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)";
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ВводИнформацииОСотрудниках();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -269,10 +269,10 @@ namespace V82.Документы//Менеджер
 					_IDRRef [Ссылка]
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
-					,_Fld5129RRef [Ответственный]
-					,_Fld5130 [Комментарий]
-					,_Fld5131 [КраткийСоставДокумента]
-					From _Document313(NOLOCK)";
+					,_Fld20001RRef [Ответственный]
+					,_Fld20002 [Комментарий]
+					,_Fld20003 [КраткийСоставДокумента]
+					From _Document19653(NOLOCK)";
 					var Выборка = new V82.ДокументыВыборка.ВводИнформацииОСотрудниках();
 					using (var Читалка = Команда.ExecuteReader())
 					{

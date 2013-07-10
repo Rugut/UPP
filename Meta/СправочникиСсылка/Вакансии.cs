@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class Вакансии:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d0debbba-ea58-4d38-a33e-ccb725472a19");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191634.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -54,7 +54,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public Вакансии(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public Вакансии(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -67,20 +80,20 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1872 [Закрыта]
-					,_Fld1873RRef [Должность]
-					,_Fld1874RRef [Заявитель]
-					,_Fld1875 [Обязанности]
-					,_Fld1876RRef [Организация]
-					,_Fld1877RRef [Ответственный]
-					,_Fld1878 [ПлановаяДатаЗакрытия]
-					,_Fld1879_TYPE [Подразделение_Тип],_Fld1879_RRRef [Подразделение],_Fld1879_RTRef [Подразделение_Вид]
-					,_Fld1880 [Требования]
-					,_Fld1881 [Условия]
-					,_Fld1882 [ДатаОткрытия]
-					,_Fld1883 [ДатаЗакрытия]
-					From _Reference39(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld19717 [Закрыта]
+					,_Fld19718RRef [Должность]
+					,_Fld19719RRef [Заявитель]
+					,_Fld19720 [Обязанности]
+					,_Fld19721RRef [Организация]
+					,_Fld19722RRef [Ответственный]
+					,_Fld19723 [ПлановаяДатаЗакрытия]
+					,_Fld19724_TYPE [Подразделение_Тип],_Fld19724_RRRef [Подразделение],_Fld19724_RTRef [Подразделение_Вид]
+					,_Fld19725 [Требования]
+					,_Fld19726 [Условия]
+					,_Fld19727 [ДатаОткрытия]
+					,_Fld19728 [ДатаЗакрытия]
+					From _Reference19631(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -97,11 +110,11 @@ namespace V82.СправочникиСсылка
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
 							Закрыта = ((byte[])Читалка.GetValue(6))[0]==1;
-							Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(7));
-							Заявитель = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8));
+							Должность = new V82.СправочникиСсылка.Должности((byte[])Читалка.GetValue(7),Глубина+1);
+							Заявитель = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(8),Глубина+1);
 							Обязанности = Читалка.GetString(9);
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(10));
-							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(11));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(10),Глубина+1);
+							Ответственный = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(11),Глубина+1);
 							ПлановаяДатаЗакрытия = Читалка.GetDateTime(12);
 							Требования = Читалка.GetString(16);
 							Условия = Читалка.GetString(17);

@@ -150,28 +150,28 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document587(
+						Insert Into _Document451(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld17154RRef
-						,_Fld17155
-						,_Fld17156
-						,_Fld17157
-						,_Fld17159
-						,_Fld17160
-						,_Fld17161RRef
-						,_Fld17162
-						,_Fld17163RRef
-						,_Fld17164RRef
-						,_Fld17165RRef
-						,_Fld17166RRef
-						,_Fld17167RRef
-						,_Fld17168RRef
-						,_Fld17169RRef
-						,_Fld17170)
+						,_Fld11477RRef
+						,_Fld11478
+						,_Fld11479
+						,_Fld11480
+						,_Fld11482
+						,_Fld11483
+						,_Fld11484RRef
+						,_Fld11485
+						,_Fld11486RRef
+						,_Fld11487RRef
+						,_Fld11488RRef
+						,_Fld11489RRef
+						,_Fld11490RRef
+						,_Fld11491RRef
+						,_Fld11492RRef
+						,_Fld11493)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -197,28 +197,28 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document587
+						Update _Document451
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld17154RRef	= @ВидОперации
-						,_Fld17155	= @ДатаНачалаИспытаний
-						,_Fld17156	= @ДатаОкончанияИспытаний
-						,_Fld17157	= @ДатаСертификата
-						,_Fld17159	= @Заключение
-						,_Fld17160	= @Комментарий
-						,_Fld17161RRef	= @Номенклатура
-						,_Fld17162	= @НомерСертификата
-						,_Fld17163RRef	= @НормативныйДокумент
-						,_Fld17164RRef	= @Организация
-						,_Fld17165RRef	= @ОрганПоСертификации
-						,_Fld17166RRef	= @Ответственный
-						,_Fld17167RRef	= @Подразделение
-						,_Fld17168RRef	= @РезультатСертификации
-						,_Fld17169RRef	= @СерияНоменклатуры
-						,_Fld17170	= @СрокГодностиСертификата
+						,_Fld11477RRef	= @ВидОперации
+						,_Fld11478	= @ДатаНачалаИспытаний
+						,_Fld11479	= @ДатаОкончанияИспытаний
+						,_Fld11480	= @ДатаСертификата
+						,_Fld11482	= @Заключение
+						,_Fld11483	= @Комментарий
+						,_Fld11484RRef	= @Номенклатура
+						,_Fld11485	= @НомерСертификата
+						,_Fld11486RRef	= @НормативныйДокумент
+						,_Fld11487RRef	= @Организация
+						,_Fld11488RRef	= @ОрганПоСертификации
+						,_Fld11489RRef	= @Ответственный
+						,_Fld11490RRef	= @Подразделение
+						,_Fld11491RRef	= @РезультатСертификации
+						,_Fld11492RRef	= @СерияНоменклатуры
+						,_Fld11493	= @СрокГодностиСертификата
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -245,7 +245,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document587
+					Команда.CommandText = @"Delete _Document451
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

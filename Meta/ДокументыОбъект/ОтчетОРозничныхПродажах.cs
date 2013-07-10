@@ -189,33 +189,33 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document477(
+						Insert Into _Document356(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld11621RRef
-						,_Fld11622
-						,_Fld11623RRef
-						,_Fld11624
-						,_Fld11625
-						,_Fld11626
-						,_Fld11627RRef
-						,_Fld11628
-						,_Fld11629RRef
-						,_Fld11630RRef
-						,_Fld11631
-						,_Fld11632
-						,_Fld11633RRef
-						,_Fld11634RRef
-						,_Fld11635RRef
-						,_Fld11636RRef
-						,_Fld11638RRef
-						,_Fld11639RRef
-						,_Fld11640RRef
-						,_Fld11641RRef
-						,_Fld11642RRef)
+						,_Fld7360RRef
+						,_Fld7361
+						,_Fld7362RRef
+						,_Fld7363
+						,_Fld7364
+						,_Fld7365
+						,_Fld7366RRef
+						,_Fld7367
+						,_Fld7368RRef
+						,_Fld7369RRef
+						,_Fld7370
+						,_Fld7371
+						,_Fld7372RRef
+						,_Fld7373RRef
+						,_Fld7374RRef
+						,_Fld7375RRef
+						,_Fld7377RRef
+						,_Fld7378RRef
+						,_Fld7379RRef
+						,_Fld7380RRef
+						,_Fld18995RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -246,33 +246,33 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document477
+						Update _Document356
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld11621RRef	= @КассаККМ
-						,_Fld11622	= @Комментарий
-						,_Fld11623RRef	= @Организация
-						,_Fld11624	= @ОтражатьВБухгалтерскомУчете
-						,_Fld11625	= @ОтражатьВУправленческомУчете
-						,_Fld11626	= @ОтражатьВНалоговомУчете
-						,_Fld11627RRef	= @Подразделение
-						,_Fld11628	= @СуммаДокумента
-						,_Fld11629RRef	= @ИнвентаризацияТоваровНаСкладе
-						,_Fld11630RRef	= @ТипЦен
-						,_Fld11631	= @СуммаВключаетНДС
-						,_Fld11632	= @УчитыватьНДС
-						,_Fld11633RRef	= @Склад
-						,_Fld11634RRef	= @Ответственный
-						,_Fld11635RRef	= @СтатьяДвиженияДенежныхСредств
-						,_Fld11636RRef	= @ВидОперации
-						,_Fld11638RRef	= @УсловиеПродаж
-						,_Fld11639RRef	= @ДоговорЭквайринга
-						,_Fld11640RRef	= @Эквайрер
-						,_Fld11641RRef	= @ДоговорВзаиморасчетовЭквайрера
-						,_Fld11642RRef	= @СчетУчетаРасчетовСЭквайрером
+						,_Fld7360RRef	= @КассаККМ
+						,_Fld7361	= @Комментарий
+						,_Fld7362RRef	= @Организация
+						,_Fld7363	= @ОтражатьВБухгалтерскомУчете
+						,_Fld7364	= @ОтражатьВУправленческомУчете
+						,_Fld7365	= @ОтражатьВНалоговомУчете
+						,_Fld7366RRef	= @Подразделение
+						,_Fld7367	= @СуммаДокумента
+						,_Fld7368RRef	= @ИнвентаризацияТоваровНаСкладе
+						,_Fld7369RRef	= @ТипЦен
+						,_Fld7370	= @СуммаВключаетНДС
+						,_Fld7371	= @УчитыватьНДС
+						,_Fld7372RRef	= @Склад
+						,_Fld7373RRef	= @Ответственный
+						,_Fld7374RRef	= @СтатьяДвиженияДенежныхСредств
+						,_Fld7375RRef	= @ВидОперации
+						,_Fld7377RRef	= @УсловиеПродаж
+						,_Fld7378RRef	= @ДоговорЭквайринга
+						,_Fld7379RRef	= @Эквайрер
+						,_Fld7380RRef	= @ДоговорВзаиморасчетовЭквайрера
+						,_Fld18995RRef	= @СчетУчетаРасчетовСЭквайрером
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -300,7 +300,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document477
+					Команда.CommandText = @"Delete _Document356
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

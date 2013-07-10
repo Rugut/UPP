@@ -8,8 +8,12 @@
 	title: 'Форма',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'События',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:7px;width:460px;height:218px;',
 			height: 218,width: 460,
@@ -64,7 +68,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарьБухгалтера/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарьБухгалтера/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +94,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('События');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'button',
@@ -103,7 +124,8 @@
 			text: 'Отменить',
 			style: 'position:absolute;left:94px;top:230px;width:80px;height:20px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

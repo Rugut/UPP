@@ -8,7 +8,10 @@
 	title: 'Отчет по распределению НДС с косвенных расходов по вариантам реализации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -90,7 +93,8 @@
 			height: 19,
 			style: 'position:absolute;left:366px;top:57px;width:230px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

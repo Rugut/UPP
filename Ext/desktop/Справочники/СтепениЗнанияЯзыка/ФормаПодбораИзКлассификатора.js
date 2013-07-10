@@ -8,8 +8,12 @@
 	title: 'Степени знания языков',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

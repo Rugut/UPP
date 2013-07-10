@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РеализацияОтгруженныхТоваров:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("a2189c95-e5cf-482c-a01c-0306548b2007");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191643.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -94,19 +94,19 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15758RRef [Ответственный]
-					,_Fld15759 [Комментарий]
-					,_Fld15760RRef [Организация]
-					,_Fld15761 [ОтражатьВБухгалтерскомУчете]
-					,_Fld15762 [ОтражатьВНалоговомУчете]
-					,_Fld15763 [ОтражатьВУправленческомУчете]
-					,_Fld15764RRef [Контрагент]
-					,_Fld15765RRef [ДоговорКонтрагента]
-					,_Fld15766_TYPE [ДокументОтгрузки_Тип],_Fld15766_RRRef [ДокументОтгрузки],_Fld15766_RTRef [ДокументОтгрузки_Вид]
-					,_Fld15767_TYPE [Сделка_Тип],_Fld15767_RRRef [Сделка],_Fld15767_RTRef [Сделка_Вид]
-					,_Fld15768 [СуммаДокумента]
-					,_Fld15769RRef [ВалютаДокумента]
-					From _Document562(NOLOCK)
+					,_Fld22802RRef [Ответственный]
+					,_Fld22803 [Комментарий]
+					,_Fld22801RRef [Организация]
+					,_Fld22804 [ОтражатьВБухгалтерскомУчете]
+					,_Fld22805 [ОтражатьВНалоговомУчете]
+					,_Fld22806 [ОтражатьВУправленческомУчете]
+					,_Fld22807RRef [Контрагент]
+					,_Fld22808RRef [ДоговорКонтрагента]
+					,_Fld22811_TYPE [ДокументОтгрузки_Тип],_Fld22811_RRRef [ДокументОтгрузки],_Fld22811_RTRef [ДокументОтгрузки_Вид]
+					,_Fld22809_TYPE [Сделка_Тип],_Fld22809_RRRef [Сделка],_Fld22809_RTRef [Сделка_Вид]
+					,_Fld22810 [СуммаДокумента]
+					,_Fld22812RRef [ВалютаДокумента]
+					From _Document22681(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class Опрос:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d2cbacf3-2c02-467e-8b4f-d978f57318d3");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191548.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012008.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -61,13 +61,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld10936_TYPE [ОпрашиваемоеЛицо_Тип],_Fld10936_RRRef [ОпрашиваемоеЛицо],_Fld10936_RTRef [ОпрашиваемоеЛицо_Вид]
-					,_Fld10937 [Комментарий]
-					,_Fld10938RRef [ТиповаяАнкета]
-					,_Fld10939RRef [Ответственный]
-					,_Fld10940RRef [Рассылка]
-					,_Fld10941 [ОпросЗавершен]
-					From _Document464(NOLOCK)
+					,_Fld6931_TYPE [ОпрашиваемоеЛицо_Тип],_Fld6931_RRRef [ОпрашиваемоеЛицо],_Fld6931_RTRef [ОпрашиваемоеЛицо_Вид]
+					,_Fld6932 [Комментарий]
+					,_Fld6933RRef [ТиповаяАнкета]
+					,_Fld6934RRef [Ответственный]
+					,_Fld6935RRef [Рассылка]
+					,_Fld21712 [ОпросЗавершен]
+					From _Document343(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

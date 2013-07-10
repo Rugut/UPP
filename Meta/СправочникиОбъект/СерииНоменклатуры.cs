@@ -111,7 +111,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference226(
+						Insert Into _Reference145(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -119,12 +119,12 @@ namespace V82.СправочникиОбъект
 						,_OwnerIDRRef
 						,_Code
 						,_Description
-						,_Fld3401
-						,_Fld3402
-						,_Fld3403RRef
-						,_Fld3404RRef
-						,_Fld3405RRef
-						,_Fld3406)
+						,_Fld1736
+						,_Fld1737
+						,_Fld1738RRef
+						,_Fld1739RRef
+						,_Fld1740RRef
+						,_Fld1741)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -143,7 +143,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference226
+						Update _Reference145
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -152,12 +152,12 @@ namespace V82.СправочникиОбъект
 						,_OwnerIDRRef	= @Владелец
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3401	= @СерийныйНомер
-						,_Fld3402	= @СрокГодности
-						,_Fld3403RRef	= @НомерГТД
-						,_Fld3404RRef	= @СтранаПроисхождения
-						,_Fld3405RRef	= @ОсновноеИзображение
-						,_Fld3406	= @Комментарий
+						,_Fld1736	= @СерийныйНомер
+						,_Fld1737	= @СрокГодности
+						,_Fld1738RRef	= @НомерГТД
+						,_Fld1739RRef	= @СтранаПроисхождения
+						,_Fld1740RRef	= @ОсновноеИзображение
+						,_Fld1741	= @Комментарий
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -184,7 +184,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference226
+					Команда.CommandText = @"Delete _Reference145
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

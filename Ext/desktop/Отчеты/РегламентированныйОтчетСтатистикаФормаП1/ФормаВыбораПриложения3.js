@@ -8,8 +8,12 @@
 	title: 'Выберите сохраненную форму ""П-1 Приложение 3"" для выгрузки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокФормП1Пр3',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:641px;height:125px;',
 			height: 125,width: 641,
@@ -17,7 +21,7 @@
 			[
 				{
 					text:'Представление',
-					width:'320',
+					width:'3200',
 					dataIndex:'ПредставлениеФормы',
 					flex:1,
 				},
@@ -35,7 +39,7 @@
 				},
 				{
 					text:'Период',
-					width:'120',
+					width:'1200',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -64,7 +68,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетСтатистикаФормаП1/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчетСтатистикаФормаП1/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +94,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокФормП1Пр3');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

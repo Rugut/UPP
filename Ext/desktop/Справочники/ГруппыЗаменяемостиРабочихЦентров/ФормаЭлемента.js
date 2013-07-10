@@ -8,7 +8,10 @@
 	title: 'Группы заменяемости рабочих центров',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -50,6 +53,7 @@
 					items:
 					[
 		{
+			id: 'Состав',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:400px;height:202px;',
 			height: 202,width: 400,
@@ -76,11 +80,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -93,6 +98,23 @@
 						name:'Приоритет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Состав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -107,6 +129,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:400px;height:15px;',
 		},
 		{
+			id: 'ПодчиненныеРабочиеЦентры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:53px;width:400px;height:181px;',
 			height: 181,width: 400,
@@ -127,11 +150,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -142,12 +166,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПодчиненныеРабочиеЦентры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

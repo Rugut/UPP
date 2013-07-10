@@ -27,12 +27,12 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -75,12 +75,12 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)";
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK) ";
 					var Выборка = new V82.СправочникиВыборка.ХранилищеДополнительнойИнформации();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -119,13 +119,13 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -167,12 +167,12 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -215,12 +215,12 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)";
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ХранилищеДополнительнойИнформации();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -259,12 +259,12 @@ namespace V82.Справочники//Менеджер
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
 					,_Description [Наименование]
-					,_Fld4215RRef [ВидДанных]
-					,_Fld4216 [ИмяФайла]
-					,_Fld4217_TYPE [Объект_Тип],_Fld4217_RRRef [Объект],_Fld4217_RTRef [Объект_Вид]
-					,_Fld4218 [Хранилище]
-					,_Fld4219 [ТекстФайла]
-					From _Reference288(NOLOCK)";
+					,_Fld2261RRef [ВидДанных]
+					,_Fld2262 [ИмяФайла]
+					,_Fld2263_TYPE [Объект_Тип],_Fld2263_RRRef [Объект],_Fld2263_RTRef [Объект_Вид]
+					,_Fld2264 [Хранилище]
+					,_Fld21298 [ТекстФайла]
+					From _Reference195(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ХранилищеДополнительнойИнформации();
 					using (var Читалка = Команда.ExecuteReader())
 					{

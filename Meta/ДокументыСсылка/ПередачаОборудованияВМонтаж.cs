@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПередачаОборудованияВМонтаж:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("898501b0-58c4-49de-bdce-ad5cf3b3c7c5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191010.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011941.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -99,18 +99,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12189RRef [Организация]
-					,_Fld12190RRef [ОбъектСтроительства]
-					,_Fld12191RRef [СтатьяЗатрат]
-					,_Fld12192RRef [Склад]
-					,_Fld12193 [ОтражатьВНалоговомУчете]
-					,_Fld12194 [ОтражатьВУправленческомУчете]
-					,_Fld12195 [ОтражатьВБухгалтерскомУчете]
-					,_Fld12196RRef [СчетУчетаБУОбъектаСтроительства]
-					,_Fld12197RRef [Ответственный]
-					,_Fld12198 [Комментарий]
-					,_Fld12199RRef [СчетУчетаНУОбъектаСтроительства]
-					From _Document486(NOLOCK)
+					,_Fld7848RRef [Организация]
+					,_Fld7849RRef [ОбъектСтроительства]
+					,_Fld7850RRef [СтатьяЗатрат]
+					,_Fld7851RRef [Склад]
+					,_Fld7852 [ОтражатьВНалоговомУчете]
+					,_Fld7853 [ОтражатьВУправленческомУчете]
+					,_Fld7854 [ОтражатьВБухгалтерскомУчете]
+					,_Fld7855RRef [СчетУчетаБУОбъектаСтроительства]
+					,_Fld7856RRef [Ответственный]
+					,_Fld7857 [Комментарий]
+					,_Fld7858RRef [СчетУчетаНУОбъектаСтроительства]
+					From _Document363(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

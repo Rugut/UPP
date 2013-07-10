@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -108,7 +111,8 @@
 			height: 19,
 			style: 'position:absolute;left:197px;top:134px;width:151px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

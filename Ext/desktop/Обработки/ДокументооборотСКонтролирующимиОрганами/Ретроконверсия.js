@@ -8,7 +8,10 @@
 	title: 'Ретроконверсия - параметры ответа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -38,6 +41,7 @@
 					items:
 					[
 		{
+			id: 'ФайлыСведений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:449px;height:247px;',
 			height: 247,width: 449,
@@ -62,7 +66,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,6 +76,23 @@
 						name:'Файл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФайлыСведений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -114,7 +135,8 @@
 			text: 'Письмо, на которое создается ответ, содержит сведения для проведения ретроконверсии. Ретроконверсия - это процесс перевода ПФР ранее представленных вами сведений из бумажного вида в электронный.',
 			style: 'position:absolute;left:8px;top:8px;width:449px;height:43px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

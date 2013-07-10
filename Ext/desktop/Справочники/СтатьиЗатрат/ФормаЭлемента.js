@@ -8,7 +8,10 @@
 	title: 'Статья затрат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -120,7 +123,8 @@
 			height: 19,
 			style: 'position:absolute;left:110px;top:33px;width:382px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

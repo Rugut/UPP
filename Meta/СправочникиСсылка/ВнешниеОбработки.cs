@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ВнешниеОбработки:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("21718cc6-3074-4402-b6b3-5f2be659ea31");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191722.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012017.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -54,7 +54,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ВнешниеОбработки(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ВнешниеОбработки(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -67,12 +80,12 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld1994 [ХранилищеВнешнейОбработки]
-					,_Fld1995RRef [ВидОбработки]
-					,_Fld1996 [Комментарий]
-					,_Fld1997 [КомментарийКФайлуИсточнику]
-					From _Reference68(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld972 [ХранилищеВнешнейОбработки]
+					,_Fld973RRef [ВидОбработки]
+					,_Fld974 [Комментарий]
+					,_Fld975 [КомментарийКФайлуИсточнику]
+					From _Reference31(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

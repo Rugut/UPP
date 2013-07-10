@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ТипыЦенНоменклатуры:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("725b7d92-00ad-4110-9079-687c435246ee");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191718.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012016.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -78,7 +78,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ТипыЦенНоменклатуры(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ТипыЦенНоменклатуры(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -91,17 +104,17 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3965RRef [ВалютаЦены]
-					,_Fld3966RRef [БазовыйТипЦен]
-					,_Fld3967 [Рассчитывается]
-					,_Fld3968 [ПроцентСкидкиНаценки]
-					,_Fld3969 [ЦенаВключаетНДС]
-					,_Fld3970RRef [ПорядокОкругления]
-					,_Fld3971 [ОкруглятьВБольшуюСторону]
-					,_Fld3972 [Комментарий]
-					,_Fld3973RRef [СпособРасчетаЦены]
-					From _Reference269(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld2107RRef [ВалютаЦены]
+					,_Fld2108RRef [БазовыйТипЦен]
+					,_Fld2109 [Рассчитывается]
+					,_Fld2110 [ПроцентСкидкиНаценки]
+					,_Fld2111 [ЦенаВключаетНДС]
+					,_Fld2112RRef [ПорядокОкругления]
+					,_Fld2113 [ОкруглятьВБольшуюСторону]
+					,_Fld2114 [Комментарий]
+					,_Fld2115RRef [СпособРасчетаЦены]
+					From _Reference181(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -117,8 +130,8 @@ namespace V82.СправочникиСсылка
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
 							Код = Читалка.GetString(4);
 							Наименование = Читалка.GetString(5);
-							ВалютаЦены = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(6));
-							БазовыйТипЦен = new V82.СправочникиСсылка.ТипыЦенНоменклатуры((byte[])Читалка.GetValue(7));
+							ВалютаЦены = new V82.СправочникиСсылка.Валюты((byte[])Читалка.GetValue(6),Глубина+1);
+							БазовыйТипЦен = new V82.СправочникиСсылка.ТипыЦенНоменклатуры((byte[])Читалка.GetValue(7),Глубина+1);
 							Рассчитывается = ((byte[])Читалка.GetValue(8))[0]==1;
 							ПроцентСкидкиНаценки = Читалка.GetDecimal(9);
 							ЦенаВключаетНДС = ((byte[])Читалка.GetValue(10))[0]==1;

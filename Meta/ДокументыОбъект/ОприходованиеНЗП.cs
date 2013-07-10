@@ -183,30 +183,30 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document462(
+						Insert Into _Document341(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld10841
-						,_Fld10842
-						,_Fld10843
-						,_Fld10844RRef
-						,_Fld10845RRef
-						,_Fld10846
-						,_Fld10847RRef
-						,_Fld10848RRef
-						,_Fld10849RRef
-						,_Fld10850RRef
-						,_Fld10851RRef
-						,_Fld10852RRef
-						,_Fld10853RRef
-						,_Fld10854RRef
-						,_Fld10855RRef
-						,_Fld10856RRef
-						,_Fld10857RRef
-						,_Fld10858RRef)
+						,_Fld6839
+						,_Fld6840
+						,_Fld6841
+						,_Fld6842RRef
+						,_Fld6843RRef
+						,_Fld6844
+						,_Fld6845RRef
+						,_Fld6846RRef
+						,_Fld6847RRef
+						,_Fld6848RRef
+						,_Fld6849RRef
+						,_Fld6850RRef
+						,_Fld6851RRef
+						,_Fld6852RRef
+						,_Fld6853RRef
+						,_Fld6854RRef
+						,_Fld6855RRef
+						,_Fld6856RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -234,30 +234,30 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document462
+						Update _Document341
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld10841	= @ОтражатьВУправленческомУчете
-						,_Fld10842	= @ОтражатьВБухгалтерскомУчете
-						,_Fld10843	= @ОтражатьВНалоговомУчете
-						,_Fld10844RRef	= @Организация
-						,_Fld10845RRef	= @Подразделение
-						,_Fld10846	= @Комментарий
-						,_Fld10847RRef	= @Ответственный
-						,_Fld10848RRef	= @ТипСтоимости
-						,_Fld10849RRef	= @СчетКт
-						,_Fld10850RRef	= @СубконтоКт1
-						,_Fld10851RRef	= @СубконтоКт2
-						,_Fld10852RRef	= @СубконтоКт3
-						,_Fld10853RRef	= @ПодразделениеОрганизации
-						,_Fld10854RRef	= @СчетКтНУ
-						,_Fld10855RRef	= @СубконтоКтНУ1
-						,_Fld10856RRef	= @СубконтоКтНУ2
-						,_Fld10857RRef	= @СубконтоКтНУ3
-						,_Fld10858RRef	= @ДокИнвентаризация
+						,_Fld6839	= @ОтражатьВУправленческомУчете
+						,_Fld6840	= @ОтражатьВБухгалтерскомУчете
+						,_Fld6841	= @ОтражатьВНалоговомУчете
+						,_Fld6842RRef	= @Организация
+						,_Fld6843RRef	= @Подразделение
+						,_Fld6844	= @Комментарий
+						,_Fld6845RRef	= @Ответственный
+						,_Fld6846RRef	= @ТипСтоимости
+						,_Fld6847RRef	= @СчетКт
+						,_Fld6848RRef	= @СубконтоКт1
+						,_Fld6849RRef	= @СубконтоКт2
+						,_Fld6850RRef	= @СубконтоКт3
+						,_Fld6851RRef	= @ПодразделениеОрганизации
+						,_Fld6852RRef	= @СчетКтНУ
+						,_Fld6853RRef	= @СубконтоКтНУ1
+						,_Fld6854RRef	= @СубконтоКтНУ2
+						,_Fld6855RRef	= @СубконтоКтНУ3
+						,_Fld6856RRef	= @ДокИнвентаризация
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -289,7 +289,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document462
+					Команда.CommandText = @"Delete _Document341
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

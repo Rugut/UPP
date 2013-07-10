@@ -8,7 +8,10 @@
 	title: 'Визитные карточки сотрудников',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:704px;height:49px;',
@@ -77,7 +80,8 @@
 			height: 19,
 			style: 'position:absolute;left:633px;top:2px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

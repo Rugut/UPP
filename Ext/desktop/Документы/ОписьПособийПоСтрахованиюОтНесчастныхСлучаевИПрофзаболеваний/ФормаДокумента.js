@@ -8,7 +8,10 @@
 	title: 'Опись пособий по страхованию от несчастных случаев и профзаболеваний',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -102,6 +105,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:340px;height:296px;',
 			height: 296,width: 340,
@@ -115,13 +119,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Листок нетрудоспособности',
-					width:'160',
+					width:'1600',
 					dataIndex:'ЛистокНетрудоспособности',
 					flex:1,
 				},
@@ -132,7 +136,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОписьПособийПоСтрахованиюОтНесчастныхСлучаевИПрофзаболеваний/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОписьПособийПоСтрахованиюОтНесчастныхСлучаевИПрофзаболеваний/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +149,23 @@
 						name:'ЛистокНетрудоспособности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -439,7 +460,8 @@
 			height: 19,
 			style: 'position:absolute;left:520px;top:57px;width:120px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

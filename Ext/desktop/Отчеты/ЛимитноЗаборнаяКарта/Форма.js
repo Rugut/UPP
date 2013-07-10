@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -127,7 +130,8 @@
 			height: 19,
 			style: 'position:absolute;left:444px;top:33px;width:152px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

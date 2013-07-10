@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РасходыНаДобровольноеСтрахование:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("5d57f354-5788-43ae-81fb-1606c2a2007b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191041.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011944.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,13 +64,13 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15377 [ОтражатьВБухгалтерскомУчете]
-					,_Fld15378 [ОтражатьВНалоговомУчете]
-					,_Fld15379RRef [Организация]
-					,_Fld15380RRef [Ответственный]
-					,_Fld15381 [ПериодРегистрации]
-					,_Fld15382 [Комментарий]
-					From _Document552(NOLOCK)
+					,_Fld10629 [ОтражатьВБухгалтерскомУчете]
+					,_Fld10630 [ОтражатьВНалоговомУчете]
+					,_Fld10631RRef [Организация]
+					,_Fld10632RRef [Ответственный]
+					,_Fld10633 [ПериодРегистрации]
+					,_Fld10634 [Комментарий]
+					From _Document423(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

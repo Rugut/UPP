@@ -8,7 +8,10 @@
 	title: 'Элемент Характеристики номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -25,6 +28,7 @@
 			style: 'position:absolute;left:93px;top:33px;width:275px;height:19px;',
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:105px;width:360px;height:196px;',
 			height: 196,width: 360,
@@ -38,24 +42,25 @@
 				},
 				{
 					text:'Свойство',
-					width:'120',
+					width:'1200',
 					dataIndex:'Свойство',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'220',
+					width:'2200',
 					dataIndex:'Значение',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -68,6 +73,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -175,7 +197,8 @@
 			boxLabel: 'Активная характеристика',
 			style: 'position:absolute;left:8px;top:81px;width:155px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,7 +8,10 @@
 	title: 'Параметры выгрузки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Сведения об отправителе документа',
@@ -479,7 +482,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

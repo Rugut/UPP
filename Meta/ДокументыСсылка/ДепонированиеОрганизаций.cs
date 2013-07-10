@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ДепонированиеОрганизаций:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("645e864a-3992-4b0b-a4df-21e4e4978fe4");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191913.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012030.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -74,17 +74,17 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6781RRef [Организация]
-					,_Fld6782 [Комментарий]
-					,_Fld6783RRef [Ответственный]
-					,_Fld6784 [СуммаДокумента]
-					,_Fld6785RRef [СчетУчетаРасходов]
-					,_Fld6786RRef [Субконто1]
-					,_Fld6787RRef [Субконто2]
-					,_Fld6788RRef [Субконто3]
-					,_Fld6789 [КраткийСоставДокумента]
-					,_Fld6790 [ОтражатьВНалоговомУчете]
-					From _Document354(NOLOCK)
+					,_Fld4138RRef [Организация]
+					,_Fld4139 [Комментарий]
+					,_Fld4140RRef [Ответственный]
+					,_Fld4141 [СуммаДокумента]
+					,_Fld4142RRef [СчетУчетаРасходов]
+					,_Fld4143RRef [Субконто1]
+					,_Fld4144RRef [Субконто2]
+					,_Fld4145RRef [Субконто3]
+					,_Fld21421 [КраткийСоставДокумента]
+					,_Fld18397 [ОтражатьВНалоговомУчете]
+					From _Document249(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

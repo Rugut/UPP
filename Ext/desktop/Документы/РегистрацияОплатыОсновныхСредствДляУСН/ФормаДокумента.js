@@ -8,7 +8,10 @@
 	title: 'Регистрация оплаты ОС и НМА для УСН',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -69,6 +72,7 @@
 					items:
 					[
 		{
+			id: 'Оплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:510px;height:139px;',
 			height: 139,width: 510,
@@ -82,7 +86,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'150',
+					width:'1500',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -105,7 +109,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -122,6 +126,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -130,6 +151,7 @@
 					items:
 					[
 		{
+			id: 'ОплатаНМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:510px;height:139px;',
 			height: 139,width: 510,
@@ -143,7 +165,7 @@
 				},
 				{
 					text:'Нематериальный актив',
-					width:'150',
+					width:'1500',
 					dataIndex:'НематериальныйАктив',
 					flex:1,
 				},
@@ -166,7 +188,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -183,6 +205,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОплатаНМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -191,6 +230,7 @@
 					items:
 					[
 		{
+			id: 'ОплатаМодернизацииОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:510px;height:139px;',
 			height: 139,width: 510,
@@ -227,7 +267,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыОсновныхСредствДляУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -243,6 +283,23 @@
 						name:'СуммаОплаты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОплатаМодернизацииОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -282,7 +339,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:307px;width:436px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

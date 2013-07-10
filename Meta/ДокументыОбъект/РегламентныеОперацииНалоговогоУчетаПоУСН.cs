@@ -117,20 +117,20 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document572(
+						Insert Into _Document443(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld16265RRef
-						,_Fld16266
-						,_Fld16267
-						,_Fld16268
-						,_Fld16269RRef
-						,_Fld16270
-						,_Fld16271
-						,_Fld16272)
+						,_Fld11291RRef
+						,_Fld11292
+						,_Fld11293
+						,_Fld11294
+						,_Fld11295RRef
+						,_Fld11296
+						,_Fld11297
+						,_Fld22025)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -148,20 +148,20 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document572
+						Update _Document443
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld16265RRef	= @Организация
-						,_Fld16266	= @РаспределениеРасходовПоВидамДеятельности
-						,_Fld16267	= @ПериодРегистрации
-						,_Fld16268	= @ПризнаниеРасходовНаПриобретениеОСУСН
-						,_Fld16269RRef	= @Ответственный
-						,_Fld16270	= @Комментарий
-						,_Fld16271	= @ПризнаниеРасходовНаПриобретениеНМАУСН
-						,_Fld16272	= @СписаниеДопРасходовУСН
+						,_Fld11291RRef	= @Организация
+						,_Fld11292	= @РаспределениеРасходовПоВидамДеятельности
+						,_Fld11293	= @ПериодРегистрации
+						,_Fld11294	= @ПризнаниеРасходовНаПриобретениеОСУСН
+						,_Fld11295RRef	= @Ответственный
+						,_Fld11296	= @Комментарий
+						,_Fld11297	= @ПризнаниеРасходовНаПриобретениеНМАУСН
+						,_Fld22025	= @СписаниеДопРасходовУСН
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -185,7 +185,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document572
+					Команда.CommandText = @"Delete _Document443
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

@@ -8,7 +8,10 @@
 	title: 'Оплата праздничных и выходных дней организации',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -107,6 +110,7 @@
 			style: 'position:absolute;left:113px;top:57px;width:203px;height:19px;',
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:123px;width:639px;height:180px;',
 			height: 180,width: 639,
@@ -144,7 +148,7 @@
 				},
 				{
 					text:'Дата выхода',
-					width:'74',
+					width:'7372',
 					dataIndex:'ДатаВыхода',
 					flex:1,
 				},
@@ -173,7 +177,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПраздничныхИВыходныхДнейОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаПраздничныхИВыходныхДнейОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -204,6 +208,23 @@
 						name:'Результат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -270,7 +291,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

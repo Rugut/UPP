@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ОтражениеЗарплатыВРеглУчете:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("d9a16d33-f77f-41c0-ae94-aa6f3d4a25c5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191527.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012006.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -63,12 +63,12 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld11158RRef [Организация]
-					,_Fld11159 [ПериодРегистрации]
-					,_Fld11160RRef [Ответственный]
-					,_Fld11161 [Комментарий]
-					,_Fld11162 [КраткийСоставДокумента]
-					From _Document469(NOLOCK)
+					,_Fld7020RRef [Организация]
+					,_Fld7021 [ПериодРегистрации]
+					,_Fld7022RRef [Ответственный]
+					,_Fld7023 [Комментарий]
+					,_Fld7024 [КраткийСоставДокумента]
+					From _Document348(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

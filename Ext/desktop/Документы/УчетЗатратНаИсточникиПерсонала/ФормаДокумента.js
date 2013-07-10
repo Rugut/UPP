@@ -8,7 +8,10 @@
 	title: 'Учет затрат на источники персонала',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -42,6 +45,7 @@
 			style: 'position:absolute;left:194px;top:33px;width:120px;height:19px;',
 		},
 		{
+			id: 'Затраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:97px;width:488px;height:220px;',
 			height: 220,width: 488,
@@ -61,13 +65,13 @@
 				},
 				{
 					text:'Источник',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИсточникПерсонала',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -90,7 +94,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗатратНаИсточникиПерсонала/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗатратНаИсточникиПерсонала/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -112,6 +116,23 @@
 						name:'КурсДокумента',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Затраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -173,7 +194,8 @@
 			title: 'Затраты',
 			style: 'position:absolute;left:8px;top:57px;width:488px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РаспределениеНДСКосвенныхРасходов:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("26ef89fe-7430-49aa-9181-cb767d2e04c8");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191605.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012010.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -126,27 +126,27 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15095RRef [Организация]
-					,_Fld15096RRef [Ответственный]
-					,_Fld15097 [Комментарий]
-					,_Fld15098 [ВыручкаЕНВД]
-					,_Fld15099 [ВыручкаБезНДС]
-					,_Fld15100 [ВыручкаНДС0]
-					,_Fld15101 [ВыручкаНДС]
-					,_Fld15102 [НачалоПериода]
-					,_Fld15103RRef [СчетСписанияНДС]
-					,_Fld15104RRef [СубконтоСписанияНДС1]
-					,_Fld15105RRef [СубконтоСписанияНДС2]
-					,_Fld15106RRef [СубконтоСписанияНДС3]
-					,_Fld15107RRef [СчетСписанияНДСНУ]
-					,_Fld15108RRef [СубконтоСписанияНДСНУ1]
-					,_Fld15109RRef [СубконтоСписанияНДСНУ2]
-					,_Fld15110RRef [СубконтоСписанияНДСНУ3]
-					,_Fld15111 [ДляСписанияНДСиспользоватьСчетИАналитикуУчетаЗатрат]
-					,_Fld15112RRef [НоменклатурнаяГруппа]
-					,_Fld15113RRef [СтатьяЗатратСписанияНДС]
-					,_Fld15114RRef [ПодразделениеОрганизации]
-					From _Document547(NOLOCK)
+					,_Fld10385RRef [Организация]
+					,_Fld10386RRef [Ответственный]
+					,_Fld10387 [Комментарий]
+					,_Fld10388 [ВыручкаЕНВД]
+					,_Fld10389 [ВыручкаБезНДС]
+					,_Fld10390 [ВыручкаНДС0]
+					,_Fld10391 [ВыручкаНДС]
+					,_Fld10392 [НачалоПериода]
+					,_Fld21915RRef [СчетСписанияНДС]
+					,_Fld21916RRef [СубконтоСписанияНДС1]
+					,_Fld21917RRef [СубконтоСписанияНДС2]
+					,_Fld21918RRef [СубконтоСписанияНДС3]
+					,_Fld21919RRef [СчетСписанияНДСНУ]
+					,_Fld21920RRef [СубконтоСписанияНДСНУ1]
+					,_Fld21921RRef [СубконтоСписанияНДСНУ2]
+					,_Fld21922RRef [СубконтоСписанияНДСНУ3]
+					,_Fld21923 [ДляСписанияНДСиспользоватьСчетИАналитикуУчетаЗатрат]
+					,_Fld21924RRef [НоменклатурнаяГруппа]
+					,_Fld21925RRef [СтатьяЗатратСписанияНДС]
+					,_Fld21926RRef [ПодразделениеОрганизации]
+					From _Document418(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

@@ -8,7 +8,10 @@
 	title: 'Графа 3. Лицо, отв. за фин. урегулирование (ввод реквизитов)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:565px;width:399px;height:25px;',
@@ -377,7 +380,8 @@
 			text: 'Выбор вида отв.лица:',
 			style: 'position:absolute;left:8px;top:8px;width:112px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class СерверыДокументооборота:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8d022181-754b-4519-a068-b804f167df60");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191534.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012007.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -47,7 +47,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public СерверыДокументооборота(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public СерверыДокументооборота(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -60,13 +73,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3392 [АдресЭлектроннойПочтыФНС]
-					,_Fld3393 [ДлительностьОжиданияСервера]
-					,_Fld3394 [Сертификат]
-					,_Fld3395 [АдресЭлектроннойПочтыПФР]
-					,_Fld3396 [АдресЭлектроннойПочтыФСГС]
-					From _Reference225(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23742 [АдресЭлектроннойПочтыФНС]
+					,_Fld23743 [ДлительностьОжиданияСервера]
+					,_Fld23744 [Сертификат]
+					,_Fld23745 [АдресЭлектроннойПочтыПФР]
+					,_Fld23746 [АдресЭлектроннойПочтыФСГС]
+					From _Reference23126(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

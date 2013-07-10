@@ -8,7 +8,10 @@
 	title: 'Возврат товаров от покупателя',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -84,6 +87,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:631px;height:154px;',
 			height: 154,width: 631,
@@ -103,13 +107,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -199,7 +203,7 @@
 				},
 				{
 					text:'Документ партии',
-					width:'250',
+					width:'2500',
 					dataIndex:'ДокументПартии',
 					flex:1,
 				},
@@ -366,7 +370,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровОтПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровОтПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -506,6 +510,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -563,6 +584,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:631px;height:154px;',
 			height: 154,width: 631,
@@ -582,13 +604,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'220',
+					width:'2200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -647,7 +669,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровОтПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровОтПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -687,6 +709,23 @@
 						name:'ЗаказПокупателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -832,6 +871,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:7px;top:27px;width:630px;height:151px;',
 			height: 151,width: 630,
@@ -845,13 +885,13 @@
 				},
 				{
 					text:'Заказ покупателя',
-					width:'180',
+					width:'1800',
 					dataIndex:'Сделка',
 					flex:1,
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'180',
+					width:'1800',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -863,13 +903,13 @@
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма регл',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаРегл',
 					flex:1,
 				},
@@ -880,7 +920,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровОтПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровОтПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -902,6 +942,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1132,7 +1189,8 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:90px;top:366px;width:381px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

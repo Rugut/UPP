@@ -8,7 +8,10 @@
 	title: 'Табель учета рабочего времени',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
@@ -125,6 +128,7 @@
 					items:
 					[
 		{
+			id: 'ОтработанноеВремя',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:502px;height:218px;',
 			height: 218,width: 502,
@@ -347,7 +351,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТабельУчетаРабочегоВремениОрганизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТабельУчетаРабочегоВремениОрганизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -457,6 +461,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтработанноеВремя');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -499,6 +520,7 @@
 					items:
 					[
 		{
+			id: 'ОтработанноеВремяВЦеломЗаПериод',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:502px;height:219px;',
 			height: 219,width: 502,
@@ -637,7 +659,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТабельУчетаРабочегоВремениОрганизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТабельУчетаРабочегоВремениОрганизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -704,6 +726,23 @@
 						name:'Часов6',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтработанноеВремяВЦеломЗаПериод');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -877,7 +916,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

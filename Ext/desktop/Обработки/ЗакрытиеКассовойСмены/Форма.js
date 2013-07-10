@@ -8,7 +8,10 @@
 	title: 'Закрытие кассовой смены',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКассаККМ',
@@ -80,7 +83,8 @@
 			boxLabel: 'Сверка итогов по картам',
 			style: 'position:absolute;left:159px;top:8px;width:147px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

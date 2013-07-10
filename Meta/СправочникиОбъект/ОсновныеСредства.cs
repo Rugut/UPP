@@ -165,7 +165,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference180(
+						Insert Into _Reference111(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -174,22 +174,22 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3092
-						,_Fld3093
-						,_Fld3094RRef
-						,_Fld3095RRef
-						,_Fld3096
-						,_Fld3097
-						,_Fld3098
-						,_Fld3099RRef
-						,_Fld3100
-						,_Fld3101
-						,_Fld3102
-						,_Fld3103
-						,_Fld3104
-						,_Fld3105
-						,_Fld3106
-						,_Fld3107RRef)
+						,_Fld1584
+						,_Fld18594
+						,_Fld1581RRef
+						,_Fld1579RRef
+						,_Fld1578
+						,_Fld1577
+						,_Fld1575
+						,_Fld1580RRef
+						,_Fld18595
+						,_Fld1583
+						,_Fld1574
+						,_Fld1576
+						,_Fld26568
+						,_Fld26569
+						,_Fld26570
+						,_Fld26571RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -219,7 +219,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference180
+						Update _Reference111
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -229,22 +229,22 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3092	= @Автотранспорт
-						,_Fld3093	= @АдресМестонахождения
-						,_Fld3094RRef	= @АмортизационнаяГруппа
-						,_Fld3095RRef	= @ГруппаОС
-						,_Fld3096	= @ДатаВыпуска
-						,_Fld3097	= @ЗаводскойНомер
-						,_Fld3098	= @Изготовитель
-						,_Fld3099RRef	= @КодПоОКОФ
-						,_Fld3100	= @КодРегиона
-						,_Fld3101	= @Комментарий
-						,_Fld3102	= @НаименованиеПолное
-						,_Fld3103	= @НомерПаспорта
-						,_Fld3104	= @Помещение
-						,_Fld3105	= @КадастровыйНомер
-						,_Fld3106	= @УсловныйНомер
-						,_Fld3107RRef	= @НазначениеПомещения
+						,_Fld1584	= @Автотранспорт
+						,_Fld18594	= @АдресМестонахождения
+						,_Fld1581RRef	= @АмортизационнаяГруппа
+						,_Fld1579RRef	= @ГруппаОС
+						,_Fld1578	= @ДатаВыпуска
+						,_Fld1577	= @ЗаводскойНомер
+						,_Fld1575	= @Изготовитель
+						,_Fld1580RRef	= @КодПоОКОФ
+						,_Fld18595	= @КодРегиона
+						,_Fld1583	= @Комментарий
+						,_Fld1574	= @НаименованиеПолное
+						,_Fld1576	= @НомерПаспорта
+						,_Fld26568	= @Помещение
+						,_Fld26569	= @КадастровыйНомер
+						,_Fld26570	= @УсловныйНомер
+						,_Fld26571RRef	= @НазначениеПомещения
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -282,7 +282,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference180
+					Команда.CommandText = @"Delete _Reference111
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

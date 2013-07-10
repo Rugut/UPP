@@ -8,7 +8,10 @@
 	title: 'Форма МХ-19 (по типу цен)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -108,7 +111,8 @@
 			height: 19,
 			style: 'position:absolute;left:536px;top:81px;width:100px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

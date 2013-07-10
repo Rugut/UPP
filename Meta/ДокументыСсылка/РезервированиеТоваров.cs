@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РезервированиеТоваров:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e3737a63-d392-43fd-8202-4aa331c01145");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191123.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011947.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -91,16 +91,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16689_TYPE [Заказ_Тип],_Fld16689_RRRef [Заказ],_Fld16689_RTRef [Заказ_Вид]
-					,_Fld16690RRef [ВидОперации]
-					,_Fld16691 [Комментарий]
-					,_Fld16692RRef [Подразделение]
-					,_Fld16693RRef [Контрагент]
-					,_Fld16694RRef [Ответственный]
-					,_Fld16695RRef [Организация]
-					,_Fld16696 [ОтражатьВБухгалтерскомУчете]
-					,_Fld16697 [ОтражатьВНалоговомУчете]
-					From _Document579(NOLOCK)
+					,_Fld11328_TYPE [Заказ_Тип],_Fld11328_RRRef [Заказ],_Fld11328_RTRef [Заказ_Вид]
+					,_Fld11329RRef [ВидОперации]
+					,_Fld11330 [Комментарий]
+					,_Fld11331RRef [Подразделение]
+					,_Fld11332RRef [Контрагент]
+					,_Fld11333RRef [Ответственный]
+					,_Fld11334RRef [Организация]
+					,_Fld11335 [ОтражатьВБухгалтерскомУчете]
+					,_Fld11336 [ОтражатьВНалоговомУчете]
+					From _Document446(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

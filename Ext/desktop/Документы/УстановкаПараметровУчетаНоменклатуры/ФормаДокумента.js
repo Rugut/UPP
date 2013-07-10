@@ -8,7 +8,10 @@
 	title: 'Установка параметров учета номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -96,6 +99,7 @@
 					items:
 					[
 		{
+			id: 'СчетаУчетаНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:770px;height:188px;',
 			height: 188,width: 770,
@@ -115,7 +119,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'120',
+					width:'1200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -168,7 +172,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПараметровУчетаНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПараметровУчетаНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -203,6 +207,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчетаУчетаНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -211,6 +232,7 @@
 					items:
 					[
 		{
+			id: 'ПараметрыУчетаУслуг',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:770px;height:188px;',
 			height: 188,width: 770,
@@ -301,7 +323,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПараметровУчетаНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПараметровУчетаНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -345,6 +367,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыУчетаУслуг');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -353,6 +392,7 @@
 					items:
 					[
 		{
+			id: 'СпособыРасчетаСебестоимостиВФормах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:45px;width:770px;height:173px;',
 			height: 173,width: 770,
@@ -366,13 +406,13 @@
 				},
 				{
 					text:'Организация',
-					width:'140',
+					width:'1400',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Способ суммовой оценки',
-					width:'140',
+					width:'1400',
 					dataIndex:'СпособРасчета',
 					flex:1,
 				},
@@ -383,7 +423,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПараметровУчетаНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПараметровУчетаНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -396,6 +436,23 @@
 						name:'СпособРасчета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СпособыРасчетаСебестоимостиВФормах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -412,7 +469,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

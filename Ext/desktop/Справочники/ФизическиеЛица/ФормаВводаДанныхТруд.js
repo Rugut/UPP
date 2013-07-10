@@ -8,8 +8,12 @@
 	title: 'Физические лица',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТрудоваяДеятельность',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:54px;width:384px;height:118px;',
 			height: 118,width: 384,
@@ -48,11 +52,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -71,6 +76,23 @@
 						name:'Должность',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТрудоваяДеятельность');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -98,6 +120,7 @@
 			style: 'position:absolute;left:8px;top:319px;width:384px;height:19px;',
 		},
 		{
+			id: 'Стажи',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:198px;width:384px;height:94px;',
 			height: 94,width: 384,
@@ -136,11 +159,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -160,8 +184,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Стажи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

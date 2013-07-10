@@ -8,8 +8,12 @@
 	title: 'Банки',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:33px;width:560px;height:320px;',
 			height: 320,width: 560,
@@ -29,42 +33,43 @@
 				},
 				{
 					text:'Наименование',
-					width:'220',
+					width:'2200',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Корр. счет',
-					width:'160',
+					width:'1600',
 					dataIndex:'КоррСчет',
 					flex:1,
 				},
 				{
 					text:'Город',
-					width:'160',
+					width:'1600',
 					dataIndex:'Город',
 					flex:1,
 				},
 				{
 					text:'Адрес',
-					width:'220',
+					width:'2200',
 					dataIndex:'Адрес',
 					flex:1,
 				},
 				{
 					text:'Телефоны',
-					width:'160',
+					width:'1600',
 					dataIndex:'Телефоны',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Банки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Банки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Банки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +95,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
 			height: 320,width: 160,
@@ -99,24 +122,42 @@
 			[
 				{
 					text:'Наименование',
-					width:'160',
+					width:'1600',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Банки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Банки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Банки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -131,7 +172,8 @@
 			text: 'Надпись',
 			style: 'position:absolute;left:8px;top:378px;width:726px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

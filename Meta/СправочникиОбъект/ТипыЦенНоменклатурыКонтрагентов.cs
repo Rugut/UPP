@@ -96,7 +96,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference270(
+						Insert Into _Reference182(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -104,11 +104,11 @@ namespace V82.СправочникиОбъект
 						,_OwnerIDRRef
 						,_Code
 						,_Description
-						,_Fld3977RRef
-						,_Fld3978
-						,_Fld3979RRef
-						,_Fld3980
-						,_Fld3981)
+						,_Fld2119RRef
+						,_Fld2120
+						,_Fld2121RRef
+						,_Fld2122
+						,_Fld2123)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -126,7 +126,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference270
+						Update _Reference182
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -135,11 +135,11 @@ namespace V82.СправочникиОбъект
 						,_OwnerIDRRef	= @Владелец
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3977RRef	= @ВалютаЦены
-						,_Fld3978	= @ЦенаВключаетНДС
-						,_Fld3979RRef	= @ТипЦеныНоменклатуры
-						,_Fld3980	= @ОписаниеТипаЦеныНоменклатурыКонтрагента
-						,_Fld3981	= @Комментарий
+						,_Fld2119RRef	= @ВалютаЦены
+						,_Fld2120	= @ЦенаВключаетНДС
+						,_Fld2121RRef	= @ТипЦеныНоменклатуры
+						,_Fld2122	= @ОписаниеТипаЦеныНоменклатурыКонтрагента
+						,_Fld2123	= @Комментарий
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -165,7 +165,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference270
+					Команда.CommandText = @"Delete _Reference182
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

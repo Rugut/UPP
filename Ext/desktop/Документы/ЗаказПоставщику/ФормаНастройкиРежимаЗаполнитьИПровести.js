@@ -8,12 +8,16 @@
 	title: 'Выберите документы и настройте их порядок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:30px;width:288px;height:85px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

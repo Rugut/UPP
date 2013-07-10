@@ -8,7 +8,10 @@
 	title: 'ВНИМАНИЕ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОсновнойТекст',
@@ -36,7 +39,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

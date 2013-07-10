@@ -8,7 +8,10 @@
 	title: 'Бюджеты',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -69,7 +72,8 @@
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:72px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

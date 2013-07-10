@@ -306,52 +306,52 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document415(
+						Insert Into _Document299(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld8690RRef
-						,_Fld8691RRef
-						,_Fld8692RRef
-						,_Fld8695
-						,_Fld8696
-						,_Fld8697
-						,_Fld8698RRef
-						,_Fld8699RRef
-						,_Fld8700RRef
-						,_Fld8701RRef
-						,_Fld8702RRef
-						,_Fld8703
-						,_Fld8704
-						,_Fld8705
-						,_Fld8706RRef
-						,_Fld8707RRef
-						,_Fld8708RRef
-						,_Fld8709RRef
-						,_Fld8710RRef
-						,_Fld8711RRef
-						,_Fld8712RRef
-						,_Fld8713RRef
-						,_Fld8714RRef
-						,_Fld8715RRef
-						,_Fld8716RRef
-						,_Fld8717RRef
-						,_Fld8718RRef
-						,_Fld8719RRef
-						,_Fld8720RRef
-						,_Fld8721RRef
-						,_Fld8722RRef
-						,_Fld8723RRef
-						,_Fld8724RRef
-						,_Fld8725RRef
-						,_Fld8726RRef
-						,_Fld8727RRef
-						,_Fld8728RRef
-						,_Fld8729RRef
-						,_Fld8731
-						,_Fld8732)
+						,_Fld18967RRef
+						,_Fld5498RRef
+						,_Fld5499RRef
+						,_Fld5501
+						,_Fld5502
+						,_Fld5503
+						,_Fld5504RRef
+						,_Fld5505RRef
+						,_Fld18406RRef
+						,_Fld5506RRef
+						,_Fld5507RRef
+						,_Fld5508
+						,_Fld5509
+						,_Fld5510
+						,_Fld5511RRef
+						,_Fld18408RRef
+						,_Fld5512RRef
+						,_Fld5513RRef
+						,_Fld18969RRef
+						,_Fld5514RRef
+						,_Fld5515RRef
+						,_Fld18407RRef
+						,_Fld5517RRef
+						,_Fld5518RRef
+						,_Fld18398RRef
+						,_Fld18399RRef
+						,_Fld18400RRef
+						,_Fld18401RRef
+						,_Fld18402RRef
+						,_Fld18403RRef
+						,_Fld18404RRef
+						,_Fld18405RRef
+						,_Fld5519RRef
+						,_Fld18970RRef
+						,_Fld18971RRef
+						,_Fld18972RRef
+						,_Fld18973RRef
+						,_Fld18974RRef
+						,_Fld18976
+						,_Fld18977)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -401,52 +401,52 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document415
+						Update _Document299
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld8690RRef	= @ВидКомплектации
-						,_Fld8691RRef	= @ВидОперации
-						,_Fld8692RRef	= @ЕдиницаИзмерения
-						,_Fld8695	= @Количество
-						,_Fld8696	= @Комментарий
-						,_Fld8697	= @Коэффициент
-						,_Fld8698RRef	= @НДСвСтоимостиТоваров
-						,_Fld8699RRef	= @Номенклатура
-						,_Fld8700RRef	= @НоменклатурнаяГруппа
-						,_Fld8701RRef	= @Организация
-						,_Fld8702RRef	= @Ответственный
-						,_Fld8703	= @ОтражатьВБухгалтерскомУчете
-						,_Fld8704	= @ОтражатьВНалоговомУчете
-						,_Fld8705	= @ОтражатьВУправленческомУчете
-						,_Fld8706RRef	= @Подразделение
-						,_Fld8707RRef	= @ПодразделениеОрганизации
-						,_Fld8708RRef	= @СерияНоменклатуры
-						,_Fld8709RRef	= @Склад
-						,_Fld8710RRef	= @Спецификация
-						,_Fld8711RRef	= @СпособСписанияОстаткаТоваров
-						,_Fld8712RRef	= @СтатусПартии
-						,_Fld8713RRef	= @СтатьяЗатратСписанияНДС
-						,_Fld8714RRef	= @СчетУчетаБУ
-						,_Fld8715RRef	= @СчетУчетаНУ
-						,_Fld8716RRef	= @СчетСписанияНДС
-						,_Fld8717RRef	= @СубконтоСписанияНДС1
-						,_Fld8718RRef	= @СубконтоСписанияНДС2
-						,_Fld8719RRef	= @СубконтоСписанияНДС3
-						,_Fld8720RRef	= @СчетСписанияНДСНУ
-						,_Fld8721RRef	= @СубконтоСписанияНДСНУ1
-						,_Fld8722RRef	= @СубконтоСписанияНДСНУ2
-						,_Fld8723RRef	= @СубконтоСписанияНДСНУ3
-						,_Fld8724RRef	= @ХарактеристикаНоменклатуры
-						,_Fld8725RRef	= @Контрагент
-						,_Fld8726RRef	= @ДоговорКонтрагента
-						,_Fld8727RRef	= @СчетЗатрат
-						,_Fld8728RRef	= @СчетЗатратНУ
-						,_Fld8729RRef	= @СтатьяЗатрат
-						,_Fld8731	= @ЦенаПередачи
-						,_Fld8732	= @СуммаПередачи
+						,_Fld18967RRef	= @ВидКомплектации
+						,_Fld5498RRef	= @ВидОперации
+						,_Fld5499RRef	= @ЕдиницаИзмерения
+						,_Fld5501	= @Количество
+						,_Fld5502	= @Комментарий
+						,_Fld5503	= @Коэффициент
+						,_Fld5504RRef	= @НДСвСтоимостиТоваров
+						,_Fld5505RRef	= @Номенклатура
+						,_Fld18406RRef	= @НоменклатурнаяГруппа
+						,_Fld5506RRef	= @Организация
+						,_Fld5507RRef	= @Ответственный
+						,_Fld5508	= @ОтражатьВБухгалтерскомУчете
+						,_Fld5509	= @ОтражатьВНалоговомУчете
+						,_Fld5510	= @ОтражатьВУправленческомУчете
+						,_Fld5511RRef	= @Подразделение
+						,_Fld18408RRef	= @ПодразделениеОрганизации
+						,_Fld5512RRef	= @СерияНоменклатуры
+						,_Fld5513RRef	= @Склад
+						,_Fld18969RRef	= @Спецификация
+						,_Fld5514RRef	= @СпособСписанияОстаткаТоваров
+						,_Fld5515RRef	= @СтатусПартии
+						,_Fld18407RRef	= @СтатьяЗатратСписанияНДС
+						,_Fld5517RRef	= @СчетУчетаБУ
+						,_Fld5518RRef	= @СчетУчетаНУ
+						,_Fld18398RRef	= @СчетСписанияНДС
+						,_Fld18399RRef	= @СубконтоСписанияНДС1
+						,_Fld18400RRef	= @СубконтоСписанияНДС2
+						,_Fld18401RRef	= @СубконтоСписанияНДС3
+						,_Fld18402RRef	= @СчетСписанияНДСНУ
+						,_Fld18403RRef	= @СубконтоСписанияНДСНУ1
+						,_Fld18404RRef	= @СубконтоСписанияНДСНУ2
+						,_Fld18405RRef	= @СубконтоСписанияНДСНУ3
+						,_Fld5519RRef	= @ХарактеристикаНоменклатуры
+						,_Fld18970RRef	= @Контрагент
+						,_Fld18971RRef	= @ДоговорКонтрагента
+						,_Fld18972RRef	= @СчетЗатрат
+						,_Fld18973RRef	= @СчетЗатратНУ
+						,_Fld18974RRef	= @СтатьяЗатрат
+						,_Fld18976	= @ЦенаПередачи
+						,_Fld18977	= @СуммаПередачи
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -489,7 +489,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document415
+					Команда.CommandText = @"Delete _Document299
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

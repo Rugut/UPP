@@ -8,7 +8,10 @@
 	title: 'ABC-классификация покупателей',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -80,6 +83,7 @@
 			style: 'position:absolute;left:265px;top:6px;width:77px;height:19px;',
 		},
 		{
+			id: 'ТаблицаРаспределенияКонтрагентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:55px;width:600px;height:209px;',
 			height: 209,width: 600,
@@ -99,13 +103,13 @@
 				},
 				{
 					text:'Контрагент',
-					width:'220',
+					width:'2200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Параметр (значение)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ЗначениеПараметра',
 					flex:1,
 				},
@@ -117,7 +121,7 @@
 				},
 				{
 					text:'Менеджер контрагента',
-					width:'120',
+					width:'1200',
 					dataIndex:'МенеджерКонтрагента',
 					flex:1,
 				},
@@ -134,7 +138,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCКлассификацияПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCКлассификацияПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -159,6 +163,23 @@
 						name:'ABCКлассификацияСтарая',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаРаспределенияКонтрагентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -295,7 +316,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:358px;width:526px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

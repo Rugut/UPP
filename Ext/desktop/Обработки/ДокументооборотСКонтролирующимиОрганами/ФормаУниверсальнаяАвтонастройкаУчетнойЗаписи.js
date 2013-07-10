@@ -8,7 +8,10 @@
 	title: 'Автоматическая настройка параметров учетной записи',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -97,7 +100,8 @@
 			text: 'Укажите организацию для которой будет настроена учетная запись.',
 			style: 'position:absolute;left:8px;top:220px;width:581px;height:18px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

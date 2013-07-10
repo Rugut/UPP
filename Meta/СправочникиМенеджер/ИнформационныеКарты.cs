@@ -28,13 +28,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", _Ссылка);
 					using (var Читалка = Команда.ExecuteReader())
@@ -81,13 +81,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)
 					Where _Code=@Код";
 					Команда.Parameters.AddWithValue("Код", Код);
 					using (var Читалка = Команда.ExecuteReader())
@@ -134,13 +134,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)";
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)  Where _Folder = 0x01 ";
 					var Выборка = new V82.СправочникиВыборка.ИнформационныеКарты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -183,14 +183,14 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)
-					Where _IDRRef between @Мин and @Макс
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  and _Folder = 0x01 
 					Order by _IDRRef", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
 					Команда.Parameters.AddWithValue("Макс", Макс);
@@ -236,13 +236,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)
 					Where _Code between @Мин and @Макс
 					Order by _Code", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -289,13 +289,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)
 					Where _Description between @Мин and @Макс
 					Order by _Description", Первые);
 					Команда.Parameters.AddWithValue("Мин", Мин);
@@ -342,13 +342,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)";
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ИнформационныеКарты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -391,13 +391,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)";
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ИнформационныеКарты();
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -440,13 +440,13 @@ namespace V82.Справочники//Менеджер
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2351 [КодКарты]
-					,_Fld2352_TYPE [ВладелецКарты_Тип],_Fld2352_RRRef [ВладелецКарты],_Fld2352_RTRef [ВладелецКарты_Вид]
-					,_Fld2353RRef [ВидКарты]
-					,_Fld2354RRef [ТипКарты]
-					,_Fld2355RRef [ТипШтрихКода]
-					,_Fld2356RRef [ВидДисконтнойКарты]
-					From _Reference105(NOLOCK)";
+					,_Fld1158 [КодКарты]
+					,_Fld1159_TYPE [ВладелецКарты_Тип],_Fld1159_RRRef [ВладелецКарты],_Fld1159_RTRef [ВладелецКарты_Вид]
+					,_Fld1160RRef [ВидКарты]
+					,_Fld1161RRef [ТипКарты]
+					,_Fld1162RRef [ТипШтрихКода]
+					,_Fld1165RRef [ВидДисконтнойКарты]
+					From _Reference61(NOLOCK)";
 					var Выборка = new V82.СправочникиВыборка.ИнформационныеКарты();
 					using (var Читалка = Команда.ExecuteReader())
 					{

@@ -8,7 +8,10 @@
 	title: 'Настройка обязательности ответа на вопрос',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -50,6 +53,7 @@
 			style: 'position:absolute;left:8px;top:8px;width:278px;height:16px;',
 		},
 		{
+			id: 'СписокЗначенийОтвета',
 			xtype: 'grid',
 			style: 'position:absolute;left:159px;top:182px;width:127px;height:88px;',
 			height: 88,width: 127,
@@ -64,17 +68,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ЗначениеСписка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокЗначенийОтвета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -113,7 +135,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

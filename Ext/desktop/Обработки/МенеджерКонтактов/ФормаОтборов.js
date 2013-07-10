@@ -8,7 +8,10 @@
 	title: 'Отбор',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Контрагент:',
@@ -320,7 +323,8 @@
 			height: 19,
 			style: 'position:absolute;left:308px;top:57px;width:246px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -159,36 +159,36 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document588(
+						Insert Into _Document452(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld17181
-						,_Fld17182RRef
-						,_Fld17183RRef
-						,_Fld17184RRef
-						,_Fld17185
-						,_Fld17186RRef
-						,_Fld17187
-						,_Fld17190
-						,_Fld17191
-						,_Fld17192
-						,_Fld17193
-						,_Fld17195RRef
-						,_Fld17196RRef
-						,_Fld17197RRef
-						,_Fld17198
-						,_Fld17199RRef
-						,_Fld17200RRef
-						,_Fld17201RRef
-						,_Fld17202RRef
-						,_Fld17203
-						,_Fld17204RRef
-						,_Fld17205
-						,_Fld17206
-						,_Fld17207RRef)
+						,_Fld11506
+						,_Fld11507RRef
+						,_Fld11508RRef
+						,_Fld11509RRef
+						,_Fld11510
+						,_Fld11511RRef
+						,_Fld11512
+						,_Fld11515
+						,_Fld11516
+						,_Fld11517
+						,_Fld11518
+						,_Fld11520RRef
+						,_Fld11521RRef
+						,_Fld11522RRef
+						,_Fld11523
+						,_Fld11524RRef
+						,_Fld11525RRef
+						,_Fld11526RRef
+						,_Fld11527RRef
+						,_Fld11528
+						,_Fld11529RRef
+						,_Fld11530
+						,_Fld11531
+						,_Fld22251RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -222,36 +222,36 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document588
+						Update _Document452
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld17181	= @АдресЭлектроннойПочты
-						,_Fld17182RRef	= @Важность
-						,_Fld17183RRef	= @ВидОбъекта
-						,_Fld17184RRef	= @ВидСобытия
-						,_Fld17185	= @ВремяНапоминания
-						,_Fld17186RRef	= @ИсточникИнформацииПриОбращении
-						,_Fld17187	= @Комментарий
-						,_Fld17190	= @НапомнитьОСобытии
-						,_Fld17191	= @НачалоСобытия
-						,_Fld17192	= @ОкончаниеСобытия
-						,_Fld17193	= @ОписаниеСобытия
-						,_Fld17195RRef	= @Ответственный
-						,_Fld17196RRef	= @Помещение
-						,_Fld17197RRef	= @Проект
-						,_Fld17198	= @СодержаниеСобытия
-						,_Fld17199RRef	= @СостояниеСобытия
-						,_Fld17200RRef	= @Территория
-						,_Fld17201RRef	= @ТипСобытия
-						,_Fld17202RRef	= @ГруппаСобытия
-						,_Fld17203	= @ЕстьВложения
-						,_Fld17204RRef	= @КонтактноеЛицоБезКонтрагента
-						,_Fld17205	= @ИнтервалНапоминания
-						,_Fld17206	= @ПредметКонтакта
-						,_Fld17207RRef	= @ЗаявкаКандидата
+						,_Fld11506	= @АдресЭлектроннойПочты
+						,_Fld11507RRef	= @Важность
+						,_Fld11508RRef	= @ВидОбъекта
+						,_Fld11509RRef	= @ВидСобытия
+						,_Fld11510	= @ВремяНапоминания
+						,_Fld11511RRef	= @ИсточникИнформацииПриОбращении
+						,_Fld11512	= @Комментарий
+						,_Fld11515	= @НапомнитьОСобытии
+						,_Fld11516	= @НачалоСобытия
+						,_Fld11517	= @ОкончаниеСобытия
+						,_Fld11518	= @ОписаниеСобытия
+						,_Fld11520RRef	= @Ответственный
+						,_Fld11521RRef	= @Помещение
+						,_Fld11522RRef	= @Проект
+						,_Fld11523	= @СодержаниеСобытия
+						,_Fld11524RRef	= @СостояниеСобытия
+						,_Fld11525RRef	= @Территория
+						,_Fld11526RRef	= @ТипСобытия
+						,_Fld11527RRef	= @ГруппаСобытия
+						,_Fld11528	= @ЕстьВложения
+						,_Fld11529RRef	= @КонтактноеЛицоБезКонтрагента
+						,_Fld11530	= @ИнтервалНапоминания
+						,_Fld11531	= @ПредметКонтакта
+						,_Fld22251RRef	= @ЗаявкаКандидата
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -285,7 +285,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document588
+					Команда.CommandText = @"Delete _Document452
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

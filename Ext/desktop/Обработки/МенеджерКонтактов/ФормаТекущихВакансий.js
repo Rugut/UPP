@@ -8,7 +8,10 @@
 	title: 'Текущие вакансии',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -26,7 +29,8 @@
 			text: 'Вакансии на дату:',
 			style: 'position:absolute;left:8px;top:33px;width:96px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

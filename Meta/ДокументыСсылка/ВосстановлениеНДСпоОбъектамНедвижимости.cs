@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ВосстановлениеНДСпоОбъектамНедвижимости:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("10144d9f-df2c-4d5a-b8c2-a8fc4c302515");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191503.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011955.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -95,20 +95,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld6482RRef [Организация]
-					,_Fld6483RRef [Ответственный]
-					,_Fld6484 [Комментарий]
-					,_Fld6485 [ОтражатьВосстановлениеВКнигеПродаж]
-					,_Fld6486 [ОтражатьВНалоговомУчете]
-					,_Fld6487RRef [СчетСписанияНДС]
-					,_Fld6488RRef [СубконтоСписанияНДС1]
-					,_Fld6489RRef [СубконтоСписанияНДС2]
-					,_Fld6490RRef [СубконтоСписанияНДС3]
-					,_Fld6491RRef [СчетСписанияНДСНУ]
-					,_Fld6492RRef [СубконтоСписанияНДСНУ1]
-					,_Fld6493RRef [СубконтоСписанияНДСНУ2]
-					,_Fld6494RRef [СубконтоСписанияНДСНУ3]
-					From _Document341(NOLOCK)
+					,_Fld18534RRef [Организация]
+					,_Fld18535RRef [Ответственный]
+					,_Fld18536 [Комментарий]
+					,_Fld18537 [ОтражатьВосстановлениеВКнигеПродаж]
+					,_Fld18538 [ОтражатьВНалоговомУчете]
+					,_Fld18539RRef [СчетСписанияНДС]
+					,_Fld18540RRef [СубконтоСписанияНДС1]
+					,_Fld18541RRef [СубконтоСписанияНДС2]
+					,_Fld18542RRef [СубконтоСписанияНДС3]
+					,_Fld18543RRef [СчетСписанияНДСНУ]
+					,_Fld18544RRef [СубконтоСписанияНДСНУ1]
+					,_Fld18545RRef [СубконтоСписанияНДСНУ2]
+					,_Fld18546RRef [СубконтоСписанияНДСНУ3]
+					From _Document18532(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

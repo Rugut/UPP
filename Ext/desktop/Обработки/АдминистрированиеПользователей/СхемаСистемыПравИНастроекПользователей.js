@@ -8,7 +8,10 @@
 	title: 'Схема системы прав и настроек пользователей',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:364px;width:844px;height:25px;',
@@ -26,7 +29,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

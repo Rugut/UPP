@@ -132,7 +132,7 @@ namespace V82.СправочникиОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Reference255(
+						Insert Into _Reference169(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
@@ -141,17 +141,17 @@ namespace V82.СправочникиОбъект
 						,_Folder
 						,_Code
 						,_Description
-						,_Fld3860RRef
-						,_Fld3861RRef
-						,_Fld3862
-						,_Fld3863
-						,_Fld3864RRef
-						,_Fld3865RRef
-						,_Fld3866
-						,_Fld3867
-						,_Fld3868
-						,_Fld3869
-						,_Fld3870)
+						,_Fld2012RRef
+						,_Fld2013RRef
+						,_Fld2014
+						,_Fld2015
+						,_Fld2016RRef
+						,_Fld2017RRef
+						,_Fld2018
+						,_Fld2019
+						,_Fld2020
+						,_Fld2021
+						,_Fld2022)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -176,7 +176,7 @@ namespace V82.СправочникиОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Reference255
+						Update _Reference169
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
@@ -186,17 +186,17 @@ namespace V82.СправочникиОбъект
 						,_Folder	= @ЭтоГруппа
 						,_Code	= @Код
 						,_Description	= @Наименование
-						,_Fld3860RRef	= @Периодичность
-						,_Fld3861RRef	= @ДетализацияПланирования
-						,_Fld3862	= @УчетПоСуммам
-						,_Fld3863	= @УчетПоКоличеству
-						,_Fld3864RRef	= @Валюта
-						,_Fld3865RRef	= @СпособПланирования
-						,_Fld3866	= @ПродолжительностьЦикла
-						,_Fld3867	= @НачалоПлана
-						,_Fld3868	= @КонецПлана
-						,_Fld3869	= @НормаДоходности
-						,_Fld3870	= @ИспользоватьКурсыСценария
+						,_Fld2012RRef	= @Периодичность
+						,_Fld2013RRef	= @ДетализацияПланирования
+						,_Fld2014	= @УчетПоСуммам
+						,_Fld2015	= @УчетПоКоличеству
+						,_Fld2016RRef	= @Валюта
+						,_Fld2017RRef	= @СпособПланирования
+						,_Fld2018	= @ПродолжительностьЦикла
+						,_Fld2019	= @НачалоПлана
+						,_Fld2020	= @КонецПлана
+						,_Fld2021	= @НормаДоходности
+						,_Fld2022	= @ИспользоватьКурсыСценария
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -229,7 +229,7 @@ namespace V82.СправочникиОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Reference255
+					Команда.CommandText = @"Delete _Reference169
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

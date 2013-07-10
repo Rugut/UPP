@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class РеализацияУслугПоПереработке:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("3cc3c456-6fdf-4094-86cb-cdf5acc9ae17");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191028.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011943.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -138,30 +138,30 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld15939RRef [ВалютаДокумента]
-					,_Fld15940RRef [ДоговорКонтрагента]
-					,_Fld15941 [Комментарий]
-					,_Fld15942RRef [Контрагент]
-					,_Fld15943 [КратностьВзаиморасчетов]
-					,_Fld15944 [КурсВзаиморасчетов]
-					,_Fld15945RRef [Организация]
-					,_Fld15946RRef [Ответственный]
-					,_Fld15947 [ОтражатьВБухгалтерскомУчете]
-					,_Fld15948 [ОтражатьВНалоговомУчете]
-					,_Fld15949 [ОтражатьВУправленческомУчете]
-					,_Fld15950RRef [Подразделение]
-					,_Fld15951 [СуммаВключаетНДС]
-					,_Fld15952RRef [СчетУчетаРасчетовПоАвансам]
-					,_Fld15953RRef [СчетУчетаРасчетовСКонтрагентом]
-					,_Fld15954RRef [ТипЦен]
-					,_Fld15955 [УчитыватьНДС]
-					,_Fld15956 [СуммаДокумента]
-					,_Fld15957RRef [Сделка]
-					,_Fld15958RRef [Грузополучатель]
-					,_Fld15959_TYPE [Проект_Тип],_Fld15959_RRRef [Проект],_Fld15959_RTRef [Проект_Вид]
-					,_Fld15960RRef [Исполнитель]
-					,_Fld15961 [ИсполнительПоПриказу]
-					From _Document564(NOLOCK)
+					,_Fld10961RRef [ВалютаДокумента]
+					,_Fld10962RRef [ДоговорКонтрагента]
+					,_Fld10963 [Комментарий]
+					,_Fld10964RRef [Контрагент]
+					,_Fld10965 [КратностьВзаиморасчетов]
+					,_Fld10966 [КурсВзаиморасчетов]
+					,_Fld10967RRef [Организация]
+					,_Fld10968RRef [Ответственный]
+					,_Fld10969 [ОтражатьВБухгалтерскомУчете]
+					,_Fld10970 [ОтражатьВНалоговомУчете]
+					,_Fld10971 [ОтражатьВУправленческомУчете]
+					,_Fld10972RRef [Подразделение]
+					,_Fld10974 [СуммаВключаетНДС]
+					,_Fld10976RRef [СчетУчетаРасчетовПоАвансам]
+					,_Fld10977RRef [СчетУчетаРасчетовСКонтрагентом]
+					,_Fld10978RRef [ТипЦен]
+					,_Fld10979 [УчитыватьНДС]
+					,_Fld10975 [СуммаДокумента]
+					,_Fld10973RRef [Сделка]
+					,_Fld10980RRef [Грузополучатель]
+					,_Fld10981_TYPE [Проект_Тип],_Fld10981_RRRef [Проект],_Fld10981_RTRef [Проект_Вид]
+					,_Fld27275RRef [Исполнитель]
+					,_Fld27276 [ИсполнительПоПриказу]
+					From _Document431(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

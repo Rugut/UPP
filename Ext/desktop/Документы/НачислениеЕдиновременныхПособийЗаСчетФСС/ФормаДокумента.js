@@ -8,7 +8,10 @@
 	title: 'Начисление единовременных пособий за счет ФСС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -46,6 +49,7 @@
 			]
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:128px;width:635px;height:200px;',
 			height: 200,width: 635,
@@ -65,13 +69,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'180',
+					width:'1800',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Вид пособия',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидПособия',
 					flex:1,
 				},
@@ -94,7 +98,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЕдиновременныхПособийЗаСчетФСС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеЕдиновременныхПособийЗаСчетФСС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -116,6 +120,23 @@
 						name:'Результат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -264,7 +285,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

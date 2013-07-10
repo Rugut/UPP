@@ -8,7 +8,10 @@
 	title: 'Обработка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
@@ -43,7 +46,8 @@
 			height: 19,
 			style: 'position:absolute;left:91px;top:78px;width:114px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

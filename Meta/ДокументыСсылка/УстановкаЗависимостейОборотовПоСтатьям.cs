@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class УстановкаЗависимостейОборотовПоСтатьям:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("28520a5a-ca86-46a8-95b8-50f462fd218e");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191341.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011958.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -66,15 +66,15 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld18566RRef [Сценарий]
-					,_Fld18567RRef [СтатьяОборотовВлияющая]
-					,_Fld18568RRef [ЦФО]
-					,_Fld18569RRef [Проект]
-					,_Fld18570RRef [Контрагент]
-					,_Fld18571_TYPE [Номенклатура_Тип],_Fld18571_RRRef [Номенклатура],_Fld18571_RTRef [Номенклатура_Вид]
-					,_Fld18572RRef [Ответственный]
-					,_Fld18573 [Комментарий]
-					From _Document621(NOLOCK)
+					,_Fld12165RRef [Сценарий]
+					,_Fld12166RRef [СтатьяОборотовВлияющая]
+					,_Fld12167RRef [ЦФО]
+					,_Fld12168RRef [Проект]
+					,_Fld12169RRef [Контрагент]
+					,_Fld12170_TYPE [Номенклатура_Тип],_Fld12170_RRRef [Номенклатура],_Fld12170_RTRef [Номенклатура_Вид]
+					,_Fld12171RRef [Ответственный]
+					,_Fld12172 [Комментарий]
+					From _Document475(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

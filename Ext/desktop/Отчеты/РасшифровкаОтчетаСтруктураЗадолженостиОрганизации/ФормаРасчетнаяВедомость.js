@@ -8,8 +8,12 @@
 	title: 'Расшифровка отчета ',
 	
 	items:
-	[
-	],
+	[{
+		xtype: 'form',
+		items:
+		[
+		],
+	}],
 	dockedItems:
 	[
 	]

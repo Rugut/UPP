@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОбработкиОбслуживанияТО:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("05c02b8c-8ef4-47d6-897c-c5d7c6aee567");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191737.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012018.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -69,7 +69,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОбработкиОбслуживанияТО(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОбработкиОбслуживанияТО(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -82,14 +95,14 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2990 [Описание]
-					,_Fld2991RRef [Вид]
-					,_Fld2992 [ИмяФайла]
-					,_Fld2993 [Обработка]
-					,_Fld2995 [Идентификатор]
-					,_Fld2996 [ВерсияAPI]
-					From _Reference168(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1504 [Описание]
+					,_Fld1505RRef [Вид]
+					,_Fld1506 [ИмяФайла]
+					,_Fld1507 [Обработка]
+					,_Fld1509 [Идентификатор]
+					,_Fld21273 [ВерсияAPI]
+					From _Reference101(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

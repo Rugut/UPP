@@ -126,20 +126,20 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document490(
+						Insert Into _Document367(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld12378
-						,_Fld12379RRef
-						,_Fld12380RRef
-						,_Fld12381
-						,_Fld12382
-						,_Fld12383
-						,_Fld12384RRef
-						,_Fld12385RRef)
+						,_Fld8017
+						,_Fld8018RRef
+						,_Fld8019RRef
+						,_Fld8020
+						,_Fld8021
+						,_Fld8022
+						,_Fld8023RRef
+						,_Fld8024RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -157,20 +157,20 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document490
+						Update _Document367
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld12378	= @Комментарий
-						,_Fld12379RRef	= @Организация
-						,_Fld12380RRef	= @Ответственный
-						,_Fld12381	= @ОтражатьВБухгалтерскомУчете
-						,_Fld12382	= @ОтражатьВНалоговомУчете
-						,_Fld12383	= @ОтражатьВУправленческомУчете
-						,_Fld12384RRef	= @Подразделение
-						,_Fld12385RRef	= @ПодразделениеОрганизации
+						,_Fld8017	= @Комментарий
+						,_Fld8018RRef	= @Организация
+						,_Fld8019RRef	= @Ответственный
+						,_Fld8020	= @ОтражатьВБухгалтерскомУчете
+						,_Fld8021	= @ОтражатьВНалоговомУчете
+						,_Fld8022	= @ОтражатьВУправленческомУчете
+						,_Fld8023RRef	= @Подразделение
+						,_Fld8024RRef	= @ПодразделениеОрганизации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -192,7 +192,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document490
+					Команда.CommandText = @"Delete _Document367
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

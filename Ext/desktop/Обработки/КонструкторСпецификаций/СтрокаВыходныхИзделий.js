@@ -8,7 +8,10 @@
 	title: 'Строка выходных изделий',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -104,7 +107,8 @@
 			text: 'Единица:',
 			style: 'position:absolute;left:185px;top:105px;width:53px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

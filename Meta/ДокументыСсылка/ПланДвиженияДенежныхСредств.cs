@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПланДвиженияДенежныхСредств:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("5793c102-4713-4760-b35b-c171361663df");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191230.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011953.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -64,16 +64,16 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12721RRef [Сценарий]
-					,_Fld12722RRef [ВалютаДокумента]
-					,_Fld12723 [ДатаПланирования]
-					,_Fld12724 [Комментарий]
-					,_Fld12725 [КратностьДокумента]
-					,_Fld12726 [КурсДокумента]
-					,_Fld12727RRef [Ответственный]
-					,_Fld12728RRef [Подразделение]
-					,_Fld12729RRef [ВидДенежныхСредств]
-					From _Document506(NOLOCK)
+					,_Fld8295RRef [Сценарий]
+					,_Fld8296RRef [ВалютаДокумента]
+					,_Fld8297 [ДатаПланирования]
+					,_Fld8298 [Комментарий]
+					,_Fld8299 [КратностьДокумента]
+					,_Fld8300 [КурсДокумента]
+					,_Fld8301RRef [Ответственный]
+					,_Fld8302RRef [Подразделение]
+					,_Fld8303RRef [ВидДенежныхСредств]
+					From _Document380(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

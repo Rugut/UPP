@@ -8,7 +8,10 @@
 	title: 'Перерасчет НДФЛ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +95,7 @@
 			style: 'position:absolute;left:96px;top:349px;width:593px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:9px;top:147px;width:680px;height:171px;',
 			height: 171,width: 680,
@@ -105,7 +109,7 @@
 				},
 				{
 					text:'Физическое лицо',
-					width:'120',
+					width:'1200',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -129,7 +133,7 @@
 				},
 				{
 					text:'Вычеты на детей',
-					width:'360',
+					width:'3600',
 					dataIndex:'КолонкаЗаголовок',
 					flex:1,
 				},
@@ -207,7 +211,7 @@
 				},
 				{
 					text:'Вычеты имущественные',
-					width:'160',
+					width:'1600',
 					dataIndex:'КолонкаЗаголовокИмущественный',
 					flex:1,
 				},
@@ -248,7 +252,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛПерерасчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛПерерасчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -325,6 +329,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -361,7 +382,8 @@
 			title: 'Сотрудники организации',
 			style: 'position:absolute;left:8px;top:107px;width:681px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

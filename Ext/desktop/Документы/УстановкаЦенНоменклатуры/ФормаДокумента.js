@@ -8,7 +8,10 @@
 	title: 'Установка цен номенклатуры',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:101px;width:454px;height:24px;',
@@ -33,6 +36,7 @@
 			]
 		},
 		{
+			id: 'ТаблицаЦен',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:125px;width:454px;height:106px;',
 			height: 106,width: 454,
@@ -52,7 +56,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'130',
+					width:'1300',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -75,7 +79,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЦенНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЦенНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -94,6 +98,23 @@
 						name:'ХарактеристикаНоменклатуры',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЦен');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -239,7 +260,8 @@
 			boxLabel: 'Не регистрировать нулевые цены номенклатуры',
 			style: 'position:absolute;left:8px;top:81px;width:270px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,7 +8,10 @@
 	title: 'Единый налог на вмененный доход',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:121px;width:654px;height:313px;',
@@ -252,7 +255,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

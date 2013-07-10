@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class КорректировкаВнутреннегоЗаказа:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("b686f43e-5c72-4ce0-9179-c1f219b264b4");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191254.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011954.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -72,12 +72,12 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld8794RRef [Организация]
-					,_Fld8795 [Комментарий]
-					,_Fld8796RRef [Ответственный]
-					,_Fld8797RRef [Подразделение]
-					,_Fld8798RRef [ВнутреннийЗаказ]
-					From _Document418(NOLOCK)
+					,_Fld19487RRef [Организация]
+					,_Fld5574 [Комментарий]
+					,_Fld5575RRef [Ответственный]
+					,_Fld5576RRef [Подразделение]
+					,_Fld5577RRef [ВнутреннийЗаказ]
+					From _Document302(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

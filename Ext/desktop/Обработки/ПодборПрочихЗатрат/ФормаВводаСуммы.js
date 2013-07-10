@@ -8,7 +8,10 @@
 	title: 'Обработка  Подбор прочих затрат',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСуммаУпр',
@@ -51,7 +54,8 @@
 			text: '',
 			style: 'position:absolute;left:180px;top:33px;width:52px;height:21px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

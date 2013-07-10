@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class НазначенияИспользования:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("94ff4f23-5de0-48bc-a1d1-a8de257e2e52");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191643.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012012.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -48,7 +48,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public НазначенияИспользования(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public НазначенияИспользования(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -61,13 +74,13 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2567RRef [СпособПогашенияСтоимости]
-					,_Fld2568 [СрокПолезногоИспользования]
-					,_Fld2569 [Количество]
-					,_Fld2570RRef [ЕдиницаИзмерения]
-					,_Fld2571RRef [СпособОтраженияРасходов]
-					From _Reference141(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1332RRef [СпособПогашенияСтоимости]
+					,_Fld1333 [СрокПолезногоИспользования]
+					,_Fld1334 [Количество]
+					,_Fld1335RRef [ЕдиницаИзмерения]
+					,_Fld1336RRef [СпособОтраженияРасходов]
+					From _Reference87(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -86,8 +99,8 @@ namespace V82.СправочникиСсылка
 							СпособПогашенияСтоимости = V82.Перечисления/*Ссылка*/.СпособыПогашенияСтоимости.ПустаяСсылка.Получить((byte[])Читалка.GetValue(6));
 							СрокПолезногоИспользования = Читалка.GetDecimal(7);
 							Количество = Читалка.GetDecimal(8);
-							ЕдиницаИзмерения = new V82.СправочникиСсылка.ЕдиницыИзмерения((byte[])Читалка.GetValue(9));
-							СпособОтраженияРасходов = new V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации((byte[])Читалка.GetValue(10));
+							ЕдиницаИзмерения = new V82.СправочникиСсылка.ЕдиницыИзмерения((byte[])Читалка.GetValue(9),Глубина+1);
+							СпособОтраженияРасходов = new V82.СправочникиСсылка.СпособыОтраженияРасходовПоАмортизации((byte[])Читалка.GetValue(10),Глубина+1);
 							//return Ссылка;
 						}
 						else

@@ -8,7 +8,10 @@
 	title: 'Документ, подтверждающий полномочия представителя ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -101,7 +104,8 @@
 			text: 'Кем выдан',
 			style: 'position:absolute;left:31px;top:305px;width:101px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

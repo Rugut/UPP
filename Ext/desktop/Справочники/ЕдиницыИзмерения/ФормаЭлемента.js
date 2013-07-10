@@ -8,7 +8,10 @@
 	title: 'Единицы измерения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -141,7 +144,8 @@
 			text: '',
 			style: 'position:absolute;left:210px;top:171px;width:236px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

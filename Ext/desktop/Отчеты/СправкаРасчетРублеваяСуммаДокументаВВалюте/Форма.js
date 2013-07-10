@@ -8,7 +8,10 @@
 	title: 'Справка-расчет ""Рублевая сумма документа в иностранной валюте""',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -27,7 +30,8 @@
 			text: 'Документ:',
 			style: 'position:absolute;left:8px;top:33px;width:71px;height:21px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

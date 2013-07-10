@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ОтправкиФСС:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("caa8e55f-cd19-454a-a752-bbf7e879e24f");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190832.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011931.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -62,7 +62,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ОтправкиФСС(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ОтправкиФСС(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -75,19 +88,19 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3132_TYPE [ОтчетСсылка_Тип],_Fld3132_RRRef [ОтчетСсылка],_Fld3132_RTRef [ОтчетСсылка_Вид]
-					,_Fld3133 [ИдентификаторОтправкиНаСервере]
-					,_Fld3134 [ЗашифрованныйПакет]
-					,_Fld3135 [ИмяФайлаПакета]
-					,_Fld3136RRef [СтатусОтправки]
-					,_Fld3137 [Протокол]
-					,_Fld3138 [ДатаОтправки]
-					,_Fld3139 [ДатаПолученияРезультата]
-					,_Fld3140RRef [Организация]
-					,_Fld3141 [КодОрганаФСС]
-					,_Fld3142 [Квитанция]
-					From _Reference184(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld23664_TYPE [ОтчетСсылка_Тип],_Fld23664_RRRef [ОтчетСсылка],_Fld23664_RTRef [ОтчетСсылка_Вид]
+					,_Fld23665 [ИдентификаторОтправкиНаСервере]
+					,_Fld23666 [ЗашифрованныйПакет]
+					,_Fld23667 [ИмяФайлаПакета]
+					,_Fld23668RRef [СтатусОтправки]
+					,_Fld23669 [Протокол]
+					,_Fld23670 [ДатаОтправки]
+					,_Fld23671 [ДатаПолученияРезультата]
+					,_Fld23672RRef [Организация]
+					,_Fld23673 [КодОрганаФСС]
+					,_Fld23674 [Квитанция]
+					From _Reference23117(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -108,7 +121,7 @@ namespace V82.СправочникиСсылка
 							СтатусОтправки = V82.Перечисления/*Ссылка*/.СтатусыОтправки.ПустаяСсылка.Получить((byte[])Читалка.GetValue(12));
 							ДатаОтправки = Читалка.GetDateTime(14);
 							ДатаПолученияРезультата = Читалка.GetDateTime(15);
-							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(16));
+							Организация = new V82.СправочникиСсылка.Организации((byte[])Читалка.GetValue(16),Глубина+1);
 							КодОрганаФСС = Читалка.GetString(17);
 							//return Ссылка;
 						}

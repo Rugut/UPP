@@ -8,7 +8,10 @@
 	title: 'Группы доступности складов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -40,6 +43,7 @@
 			style: 'position:absolute;left:93px;top:33px;width:283px;height:19px;',
 		},
 		{
+			id: 'СоставГруппы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:451px;height:183px;',
 			height: 183,width: 451,
@@ -53,18 +57,19 @@
 				},
 				{
 					text:'Склад',
-					width:'350',
+					width:'3500',
 					dataIndex:'Склад',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыДоступностиСкладов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыДоступностиСкладов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыДоступностиСкладов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -75,8 +80,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставГруппы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

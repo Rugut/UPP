@@ -8,7 +8,10 @@
 	title: 'Восстановление НДС по объектам недвижимости',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -100,6 +103,7 @@
 					items:
 					[
 		{
+			id: 'ОбъектыНедвижимости',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:614px;height:115px;',
 			height: 115,width: 614,
@@ -113,7 +117,7 @@
 				},
 				{
 					text:'Объект недвижимости',
-					width:'120',
+					width:'1200',
 					dataIndex:'ОбъектНедвижимости',
 					flex:1,
 				},
@@ -149,43 +153,43 @@
 				},
 				{
 					text:'НДС по подрядным работам',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДСПоПодряднымРаботам',
 					flex:1,
 				},
 				{
 					text:'НДС по СМР хозспособом',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДСПоСМРДляСобственногоПотребления',
 					flex:1,
 				},
 				{
 					text:'НДС по объекту недвижимости',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДСПоОбъектуНедвижимости',
 					flex:1,
 				},
 				{
 					text:'Доля выручки, не облагаемая НДС (%)',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДоляВыручкиНеОблагаемаяНДС',
 					flex:1,
 				},
 				{
 					text:'НДС по подрядным работам, восстановленная',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДСПоПодряднымРаботамВосстановлена',
 					flex:1,
 				},
 				{
 					text:'НДС по СМР хозспособом восстановлена',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДСПоСМРДляСобственногоПотребленияВосстановлена',
 					flex:1,
 				},
 				{
 					text:'НДС по объекту недвижимости, восстановлена',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаНДСПоОбъектуНедвижимостиВосстановлена',
 					flex:1,
 				},
@@ -196,7 +200,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -243,6 +247,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОбъектыНедвижимости');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -253,6 +274,7 @@
 			]
 		},
 		{
+			id: 'СчетаФактуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:188px;width:614px;height:106px;',
 			height: 106,width: 614,
@@ -266,19 +288,19 @@
 				},
 				{
 					text:'Счет-фактура',
-					width:'120',
+					width:'1200',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Вид ценности',
-					width:'120',
+					width:'1200',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Код операции (для декларации)',
-					width:'120',
+					width:'1200',
 					dataIndex:'КодОперацииДляДекларации',
 					flex:1,
 				},
@@ -296,13 +318,13 @@
 				},
 				{
 					text:'Документ оплаты',
-					width:'120',
+					width:'1200',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -314,19 +336,19 @@
 				},
 				{
 					text:'НДС',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС, восстановлена',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаБезНДСВосстановлена',
 					flex:1,
 				},
 				{
 					text:'НДС, восстановлен',
-					width:'120',
+					width:'1200',
 					dataIndex:'НДСВосстановлен',
 					flex:1,
 				},
@@ -337,7 +359,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДСпоОбъектамНедвижимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -377,6 +399,23 @@
 						name:'НДСВосстановлен',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчетаФактуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -557,7 +596,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

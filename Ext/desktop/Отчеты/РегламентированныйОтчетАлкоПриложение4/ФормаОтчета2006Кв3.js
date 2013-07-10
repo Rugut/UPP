@@ -8,7 +8,10 @@
 	title: 'Декларация об объемах использования алкогольной и спиртосодержащей продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:80px;width:784px;height:312px;',
@@ -227,7 +230,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

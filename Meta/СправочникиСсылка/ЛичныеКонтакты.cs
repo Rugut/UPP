@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class ЛичныеКонтакты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("ca556363-c5ed-410e-b7ab-870ff6ba498e");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191601.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012009.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -50,7 +50,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ЛичныеКонтакты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ЛичныеКонтакты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -63,16 +76,16 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2519 [Фамилия]
-					,_Fld2520 [Имя]
-					,_Fld2521 [Отчество]
-					,_Fld2522 [ДатаРождения]
-					,_Fld2523 [Описание]
-					,_Fld2524 [НапоминатьОДнеРождения]
-					,_Fld2525 [КоличествоДнейДоНапоминания]
-					,_Fld2526RRef [ПользовательДляОграниченияПравДоступа]
-					From _Reference133(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1312 [Фамилия]
+					,_Fld1313 [Имя]
+					,_Fld1314 [Отчество]
+					,_Fld1315 [ДатаРождения]
+					,_Fld1316 [Описание]
+					,_Fld1317 [НапоминатьОДнеРождения]
+					,_Fld1318 [КоличествоДнейДоНапоминания]
+					,_Fld1319RRef [ПользовательДляОграниченияПравДоступа]
+					From _Reference82(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -95,7 +108,7 @@ namespace V82.СправочникиСсылка
 							Описание = Читалка.GetString(10);
 							НапоминатьОДнеРождения = ((byte[])Читалка.GetValue(11))[0]==1;
 							КоличествоДнейДоНапоминания = Читалка.GetDecimal(12);
-							ПользовательДляОграниченияПравДоступа = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(13));
+							ПользовательДляОграниченияПравДоступа = new V82.СправочникиСсылка.Пользователи((byte[])Читалка.GetValue(13),Глубина+1);
 							//return Ссылка;
 						}
 						else

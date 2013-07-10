@@ -8,7 +8,10 @@
 	title: 'Декларация по ЕСН для ИП, адвокатов, нотариусов, занимающихся частной практикой',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:125px;width:654px;height:310px;',
@@ -184,7 +187,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

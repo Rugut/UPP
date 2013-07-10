@@ -8,7 +8,10 @@
 	title: 'Обработка  Выписка банка',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:407px;width:676px;height:25px;',
@@ -82,6 +85,7 @@
 			style: 'position:absolute;left:8px;top:8px;width:96px;height:19px;',
 		},
 		{
+			id: 'СписокДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:123px;width:660px;height:180px;',
 			height: 180,width: 660,
@@ -95,25 +99,25 @@
 				},
 				{
 					text:'Документ',
-					width:'280',
+					width:'2800',
 					dataIndex:'Документ',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'120',
+					width:'1200',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Сумма прихода',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаПриход',
 					flex:1,
 				},
 				{
 					text:'Сумма расхода',
-					width:'120',
+					width:'1200',
 					dataIndex:'СуммаРасход',
 					flex:1,
 				},
@@ -130,7 +134,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыпискаБанка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыпискаБанка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -152,6 +156,23 @@
 						name:'ЧастичнаяОплата',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -280,7 +301,8 @@
 			title: 'Банковские расчетные документы',
 			style: 'position:absolute;left:8px;top:83px;width:660px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

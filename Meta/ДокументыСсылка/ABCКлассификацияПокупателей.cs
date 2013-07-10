@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ABCКлассификацияПокупателей:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("467a071f-ef2e-45b6-acdd-a4156fb28fb5");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191917.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012031.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -65,14 +65,14 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld4357 [ДатаНачала]
-					,_Fld4358 [ДатаОкончания]
-					,_Fld4359 [ПроцентAКласса]
-					,_Fld4360 [ПроцентBКласса]
-					,_Fld4361 [ПроцентCКласса]
-					,_Fld4362 [Комментарий]
-					,_Fld4363RRef [Ответственный]
-					From _Document297(NOLOCK)
+					,_Fld2279 [ДатаНачала]
+					,_Fld2280 [ДатаОкончания]
+					,_Fld2281 [ПроцентAКласса]
+					,_Fld2282 [ПроцентBКласса]
+					,_Fld2283 [ПроцентCКласса]
+					,_Fld2284 [Комментарий]
+					,_Fld2285RRef [Ответственный]
+					From _Document201(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

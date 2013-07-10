@@ -8,7 +8,10 @@
 	title: 'Декларация об объемах поставки этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:424px;width:800px;height:25px;',
@@ -273,7 +276,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

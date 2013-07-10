@@ -19,7 +19,7 @@ namespace V82.ДокументыСсылка
 	public partial class РеестрСведенийВФССОЕжемесячныхПособияхПоУходу:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("e29ee324-a823-4668-89af-6d49f829a32b");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221190822.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011930.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -76,25 +76,25 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld16297RRef [Организация]
-					,_Fld16298RRef [Ответственный]
-					,_Fld16299 [Комментарий]
-					,_Fld16300 [НаименованиеТерриториальногоОрганаФСС]
-					,_Fld16301 [РегистрационныйНомерФСС]
-					,_Fld16302 [ДополнительныйКодФСС]
-					,_Fld16303 [КодПодчиненностиФСС]
-					,_Fld16304RRef [Руководитель]
-					,_Fld16305RRef [ДолжностьРуководителя]
-					,_Fld16306 [КраткийСоставДокумента]
-					,_Fld16307 [ИНН]
-					,_Fld16308 [КПП]
-					,_Fld16309 [ОГРН]
-					,_Fld16310RRef [РеестрСоставил]
-					,_Fld16311 [ТелефонСоставителя]
-					,_Fld16312 [АдресЭлектроннойПочтыСоставителя]
-					,_Fld16313RRef [ГлавныйБухгалтер]
-					,_Fld16314 [ВыводитьПодписиВРеестрПособий]
-					From _Document574(NOLOCK)
+					,_Fld24985RRef [Организация]
+					,_Fld24986RRef [Ответственный]
+					,_Fld24987 [Комментарий]
+					,_Fld24988 [НаименованиеТерриториальногоОрганаФСС]
+					,_Fld24989 [РегистрационныйНомерФСС]
+					,_Fld24990 [ДополнительныйКодФСС]
+					,_Fld24991 [КодПодчиненностиФСС]
+					,_Fld24992RRef [Руководитель]
+					,_Fld24993RRef [ДолжностьРуководителя]
+					,_Fld24994 [КраткийСоставДокумента]
+					,_Fld24995 [ИНН]
+					,_Fld24996 [КПП]
+					,_Fld24997 [ОГРН]
+					,_Fld24998RRef [РеестрСоставил]
+					,_Fld24999 [ТелефонСоставителя]
+					,_Fld25000 [АдресЭлектроннойПочтыСоставителя]
+					,_Fld25001RRef [ГлавныйБухгалтер]
+					,_Fld25002 [ВыводитьПодписиВРеестрПособий]
+					From _Document23167(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

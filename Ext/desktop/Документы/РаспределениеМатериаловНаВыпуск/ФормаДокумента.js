@@ -8,7 +8,10 @@
 	title: 'Распределение материалов на выпуск',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:383px;width:652px;height:25px;',
@@ -151,6 +154,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
 			height: 131,width: 622,
@@ -170,7 +174,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -271,7 +275,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -330,6 +334,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -338,6 +359,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
 			height: 131,width: 622,
@@ -357,7 +379,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -453,13 +475,13 @@
 				},
 				{
 					text:'Подразделение НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеНЗП',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеОрганизацииНЗП',
 					flex:1,
 				},
@@ -470,7 +492,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -535,6 +557,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -543,6 +582,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеМатериалов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
 			height: 131,width: 622,
@@ -562,7 +602,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -676,13 +716,13 @@
 				},
 				{
 					text:'Подразделение НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеНЗП',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеОрганизацииНЗП',
 					flex:1,
 				},
@@ -693,7 +733,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -767,6 +807,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеМатериалов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -775,6 +832,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратныеОтходы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
 			height: 131,width: 622,
@@ -794,7 +852,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -890,13 +948,13 @@
 				},
 				{
 					text:'Подразделение НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеНЗП',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеОрганизацииНЗП',
 					flex:1,
 				},
@@ -907,7 +965,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -972,6 +1030,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратныеОтходы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -980,6 +1055,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеВозвратныхОтходов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
 			height: 131,width: 622,
@@ -999,7 +1075,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'120',
+					width:'1200',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -1113,13 +1189,13 @@
 				},
 				{
 					text:'Подразделение НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеНЗП',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации НЗП',
-					width:'130',
+					width:'1300',
 					dataIndex:'ПодразделениеОрганизацииНЗП',
 					flex:1,
 				},
@@ -1130,7 +1206,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеМатериаловНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1203,6 +1279,23 @@
 						name:'ПодразделениеОрганизацииНЗП',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеВозвратныхОтходов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1308,7 +1401,8 @@
 			height: 19,
 			style: 'position:absolute;left:196px;top:57px;width:120px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Обработка  Расчет авансовых платежей по земельному налогу',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -35,6 +38,7 @@
 			]
 		},
 		{
+			id: 'АвансовыеПлатежи',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:308px;width:771px;height:61px;',
 			height: 61,width: 771,
@@ -54,7 +58,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -65,7 +69,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоЗемельномуНалогу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоЗемельномуНалогу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -78,6 +82,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('АвансовыеПлатежи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -99,6 +120,7 @@
 			style: 'position:absolute;left:576px;top:33px;width:20px;height:19px;',
 		},
 		{
+			id: 'ЗемельныеУчастки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:85px;width:771px;height:189px;',
 			height: 189,width: 771,
@@ -118,13 +140,13 @@
 				},
 				{
 					text:'Кадастровый номер',
-					width:'120',
+					width:'1200',
 					dataIndex:'КадастровыйНомер',
 					flex:1,
 				},
 				{
 					text:'Кадастровая стоимость',
-					width:'120',
+					width:'1200',
 					dataIndex:'КадастроваяСтоимость',
 					flex:1,
 				},
@@ -160,7 +182,7 @@
 				},
 				{
 					text:'Налоговая льгота',
-					width:'120',
+					width:'1200',
 					dataIndex:'НалоговаяЛьгота',
 					flex:1,
 				},
@@ -207,7 +229,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоЗемельномуНалогу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетАвансовыхПлатежейПоЗемельномуНалогу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -260,6 +282,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗемельныеУчастки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -268,7 +307,8 @@
 			[
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

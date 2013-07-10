@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПереоценкаТоваровОтданныхНаКомиссию:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("4cc88759-4142-46cc-96c3-349fa6abdfcc");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191509.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012004.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -69,18 +69,18 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12637RRef [Организация]
-					,_Fld12638RRef [ТипЦен]
-					,_Fld12639RRef [ВалютаДокумента]
-					,_Fld12640RRef [Контрагент]
-					,_Fld12641RRef [ДоговорКонтрагента]
-					,_Fld12642RRef [Подразделение]
-					,_Fld12643 [Комментарий]
-					,_Fld12644 [КурсВзаиморасчетов]
-					,_Fld12645 [КратностьВзаиморасчетов]
-					,_Fld12646RRef [Ответственный]
-					,_Fld12647_TYPE [Сделка_Тип],_Fld12647_RRRef [Сделка],_Fld12647_RTRef [Сделка_Вид]
-					From _Document503(NOLOCK)
+					,_Fld8232RRef [Организация]
+					,_Fld8233RRef [ТипЦен]
+					,_Fld8234RRef [ВалютаДокумента]
+					,_Fld8235RRef [Контрагент]
+					,_Fld8236RRef [ДоговорКонтрагента]
+					,_Fld8237RRef [Подразделение]
+					,_Fld8238 [Комментарий]
+					,_Fld8239 [КурсВзаиморасчетов]
+					,_Fld8240 [КратностьВзаиморасчетов]
+					,_Fld8241RRef [Ответственный]
+					,_Fld8242_TYPE [Сделка_Тип],_Fld8242_RRRef [Сделка],_Fld8242_RTRef [Сделка_Вид]
+					From _Document378(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

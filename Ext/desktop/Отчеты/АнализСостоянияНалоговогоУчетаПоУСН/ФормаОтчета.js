@@ -8,7 +8,10 @@
 	title: 'Анализ состояния налогового учета по УСН',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:0px;width:1049px;height:28px;',
@@ -98,7 +101,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

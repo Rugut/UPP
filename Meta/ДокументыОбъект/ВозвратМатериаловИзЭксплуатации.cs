@@ -132,21 +132,21 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document334(
+						Insert Into _Document232(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld6029
-						,_Fld6030
-						,_Fld6031
-						,_Fld6032RRef
-						,_Fld6033RRef
-						,_Fld6034RRef
-						,_Fld6035
-						,_Fld6036RRef
-						,_Fld6037RRef)
+						,_Fld3550
+						,_Fld3551
+						,_Fld3552
+						,_Fld3553RRef
+						,_Fld3554RRef
+						,_Fld3555RRef
+						,_Fld3556
+						,_Fld3557RRef
+						,_Fld3558RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -165,21 +165,21 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document334
+						Update _Document232
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld6029	= @ОтражатьВУправленческомУчете
-						,_Fld6030	= @ОтражатьВБухгалтерскомУчете
-						,_Fld6031	= @ОтражатьВНалоговомУчете
-						,_Fld6032RRef	= @Организация
-						,_Fld6033RRef	= @Склад
-						,_Fld6034RRef	= @Подразделение
-						,_Fld6035	= @Комментарий
-						,_Fld6036RRef	= @Ответственный
-						,_Fld6037RRef	= @ПодразделениеОрганизации
+						,_Fld3550	= @ОтражатьВУправленческомУчете
+						,_Fld3551	= @ОтражатьВБухгалтерскомУчете
+						,_Fld3552	= @ОтражатьВНалоговомУчете
+						,_Fld3553RRef	= @Организация
+						,_Fld3554RRef	= @Склад
+						,_Fld3555RRef	= @Подразделение
+						,_Fld3556	= @Комментарий
+						,_Fld3557RRef	= @Ответственный
+						,_Fld3558RRef	= @ПодразделениеОрганизации
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -201,7 +201,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document334
+					Команда.CommandText = @"Delete _Document232
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

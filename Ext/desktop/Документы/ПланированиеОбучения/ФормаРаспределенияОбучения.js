@@ -8,7 +8,10 @@
 	title: 'Помощник равномерного распределения обучения по периоду ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -81,7 +84,8 @@
 			text: '...',
 			style: 'position:absolute;left:431px;top:36px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

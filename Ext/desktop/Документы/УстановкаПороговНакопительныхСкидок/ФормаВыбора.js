@@ -8,8 +8,12 @@
 	title: 'Установка порогов накопительных скидок',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:384px;height:259px;',
 			height: 259,width: 384,
@@ -23,7 +27,7 @@
 				},
 				{
 					text:'Дата',
-					width:'140',
+					width:'1400',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -46,7 +50,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПороговНакопительныхСкидок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПороговНакопительныхСкидок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +67,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

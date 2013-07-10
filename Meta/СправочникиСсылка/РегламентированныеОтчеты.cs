@@ -19,7 +19,7 @@ namespace V82.СправочникиСсылка
 	public partial class РегламентированныеОтчеты:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("14f10944-2eeb-4570-a546-254c9efbd477");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191628.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012011.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -54,7 +54,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public РегламентированныеОтчеты(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public РегламентированныеОтчеты(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -67,15 +80,15 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld3373 [ИсточникОтчета]
-					,_Fld3374 [НеПоказыватьВСписке]
-					,_Fld3375 [Описание]
-					,_Fld3376 [ВнешнийОтчетИспользовать]
-					,_Fld3377 [ВнешнийОтчетХранилище]
-					,_Fld3378 [Периоды]
-					,_Fld3379 [ВнешнийОтчетВерсия]
-					From _Reference220(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld1724 [ИсточникОтчета]
+					,_Fld1725 [НеПоказыватьВСписке]
+					,_Fld1726 [Описание]
+					,_Fld1727 [ВнешнийОтчетИспользовать]
+					,_Fld1728 [ВнешнийОтчетХранилище]
+					,_Fld1729 [Периоды]
+					,_Fld26592 [ВнешнийОтчетВерсия]
+					From _Reference141(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

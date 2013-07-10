@@ -8,8 +8,12 @@
 	title: 'Реестры счетов',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:600px;height:220px;',
 			height: 220,width: 600,
@@ -35,13 +39,13 @@
 				},
 				{
 					text:'Организация',
-					width:'220',
+					width:'2200',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Счет организации',
-					width:'220',
+					width:'2200',
 					dataIndex:'СчетОрганизации',
 					flex:1,
 				},
@@ -53,19 +57,19 @@
 				},
 				{
 					text:'Юр физ лицо контрагента',
-					width:'220',
+					width:'2200',
 					dataIndex:'ЮрФизЛицоКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'220',
+					width:'2200',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'220',
+					width:'2200',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -76,7 +80,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,6 +112,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -120,7 +141,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

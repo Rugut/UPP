@@ -22,7 +22,7 @@ namespace V82.СправочникиСсылка
 	public partial class ГодовыеГрафикиАмортизацииОС:СправочникСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("01cfb766-298c-418c-809b-5e4319699d61");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191533.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011937.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -97,7 +97,20 @@ namespace V82.СправочникиСсылка
 		}
 		
 		public ГодовыеГрафикиАмортизацииОС(byte[] УникальныйИдентификатор)
+			: this(УникальныйИдентификатор,0)
 		{
+		}
+		
+		public ГодовыеГрафикиАмортизацииОС(byte[] УникальныйИдентификатор,int Глубина)
+		{
+			if (Глубина>3)
+			{
+				return;
+			}
+			if (new Guid(УникальныйИдентификатор) == Guid.Empty)
+			{
+				return;
+			}
 			using (var Подключение = new SqlConnection(СтрокаСоединения))
 			{
 				Подключение.Open();
@@ -110,21 +123,21 @@ namespace V82.СправочникиСсылка
 					,_IsMetadata [Предопределенный]
 					,_Code [Код]
 					,_Description [Наименование]
-					,_Fld2029 [Комментарий]
-					,_Fld2030 [Коэффициент1]
-					,_Fld2031 [Коэффициент2]
-					,_Fld2032 [Коэффициент3]
-					,_Fld2033 [Коэффициент4]
-					,_Fld2034 [Коэффициент5]
-					,_Fld2035 [Коэффициент6]
-					,_Fld2036 [Коэффициент7]
-					,_Fld2037 [Коэффициент8]
-					,_Fld2038 [Коэффициент9]
-					,_Fld2039 [Коэффициент10]
-					,_Fld2040 [Коэффициент11]
-					,_Fld2041 [Коэффициент12]
-					From _Reference71(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор";
+					,_Fld993 [Комментарий]
+					,_Fld994 [Коэффициент1]
+					,_Fld995 [Коэффициент2]
+					,_Fld996 [Коэффициент3]
+					,_Fld997 [Коэффициент4]
+					,_Fld998 [Коэффициент5]
+					,_Fld999 [Коэффициент6]
+					,_Fld1000 [Коэффициент7]
+					,_Fld1001 [Коэффициент8]
+					,_Fld1002 [Коэффициент9]
+					,_Fld1003 [Коэффициент10]
+					,_Fld1004 [Коэффициент11]
+					,_Fld1005 [Коэффициент12]
+					From _Reference35(NOLOCK)
+					Where _IDRRef=@УникальныйИдентификатор  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{

@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class СписаниеОС:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("8daffed9-fd2b-4c80-8acf-f42bdb5fb6e6");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191539.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928012007.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -107,20 +107,20 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld17379RRef [Ответственный]
-					,_Fld17380 [Комментарий]
-					,_Fld17381RRef [Организация]
-					,_Fld17382 [ОтражатьВБухгалтерскомУчете]
-					,_Fld17383 [ОтражатьВНалоговомУчете]
-					,_Fld17384 [ОтражатьВУправленческомУчете]
-					,_Fld17385RRef [ПричинаСписания]
-					,_Fld17386RRef [Событие]
-					,_Fld17387RRef [СчетСписанияБУ]
-					,_Fld17388RRef [СчетСписанияНУ]
-					,_Fld17389RRef [СубконтоБУ]
-					,_Fld17390RRef [СубконтоНУ]
-					,_Fld17391RRef [СобытиеРегл]
-					From _Document595(NOLOCK)
+					,_Fld11676RRef [Ответственный]
+					,_Fld11674 [Комментарий]
+					,_Fld11675RRef [Организация]
+					,_Fld11677 [ОтражатьВБухгалтерскомУчете]
+					,_Fld11678 [ОтражатьВНалоговомУчете]
+					,_Fld11679 [ОтражатьВУправленческомУчете]
+					,_Fld11680RRef [ПричинаСписания]
+					,_Fld11681RRef [Событие]
+					,_Fld11684RRef [СчетСписанияБУ]
+					,_Fld11685RRef [СчетСписанияНУ]
+					,_Fld11682RRef [СубконтоБУ]
+					,_Fld11683RRef [СубконтоНУ]
+					,_Fld11686RRef [СобытиеРегл]
+					From _Document458(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

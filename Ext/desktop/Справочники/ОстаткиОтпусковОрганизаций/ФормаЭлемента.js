@@ -8,7 +8,10 @@
 	title: 'Остатки отпусков сотрудника',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьСотрудник',
@@ -112,6 +115,7 @@
 			style: 'position:absolute;left:10px;top:25px;width:320px;height:52px;',
 		},
 		{
+			id: 'ОстаткиБезРабочихЛет',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:111px;width:330px;height:178px;',
 			height: 178,width: 330,
@@ -119,7 +123,7 @@
 			[
 				{
 					text:'Вид ежегодного отпуска',
-					width:'180',
+					width:'1800',
 					dataIndex:'ВидЕжегодногоОтпуска',
 					flex:1,
 				},
@@ -132,11 +136,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОстаткиОтпусковОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -147,6 +152,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОстаткиБезРабочихЛет');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -155,6 +177,7 @@
 					items:
 					[
 		{
+			id: 'Остатки',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:330px;height:206px;',
 			height: 206,width: 330,
@@ -193,11 +216,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОстаткиОтпусковОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -217,6 +241,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Остатки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'button',
@@ -234,7 +275,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

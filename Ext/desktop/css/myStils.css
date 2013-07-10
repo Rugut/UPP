@@ -1,0 +1,53 @@
+/*Форма:*/
+
+.x-window-body-default {
+  border-color: #99bbe8;
+  border-width: 1px;
+  background: #F5F2DD;/*#dfe8f6;*/
+  color: black; }
+
+/*Меню:*/
+.x-menu-body {
+  user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  cursor: default;
+  background: #F5F2DD !important;
+  padding: 2px; }
+
+/*Шрифт формы*/
+.x-body {
+  color: black;
+  font-size: 12px;
+  font-family: tahoma, arial, verdana, sans-serif; }
+
+/*Панель*/
+
+.x-panel-body-default {
+  background: #F5F2DD;/*white;*/
+  border-color: #F5F2DD; /*#99bce8;*/
+  color: black;
+  border-width: 1px;
+  border-style: solid; }
+
+/*Переключатели*/
+.x-form-checkbox,
+.x-form-radio {
+  vertical-align: -1px;
+  width: 13px;
+  height: 13px;
+  background: #F5F2DD;/*no-repeat;*/
+  background-image: url('../../resources/themes/images/default/form/checkbox.gif');
+  overflow: hidden;
+  padding: 0;
+  border: 0; }
+
+textarea.x-form-field {
+  padding: 1px 3px;
+  background: repeat-x 0 0;
+  border: 1px solid;
+  background-color: white;
+  background-image: url('../../resources/themes/images/default/form/text-bg.gif');
+  border-color: #b5b8c8; }

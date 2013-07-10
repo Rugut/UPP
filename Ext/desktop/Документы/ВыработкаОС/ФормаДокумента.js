@@ -8,7 +8,10 @@
 	title: 'Выработка ОС',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -98,6 +101,7 @@
 			]
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:568px;height:220px;',
 			height: 220,width: 568,
@@ -117,13 +121,13 @@
 				},
 				{
 					text:'Основное средство',
-					width:'220',
+					width:'2200',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
 				{
 					text:'Параметр выработки',
-					width:'120',
+					width:'1200',
 					dataIndex:'ПараметрВыработкиОС',
 					flex:1,
 				},
@@ -146,7 +150,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыработкаОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыработкаОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -169,13 +173,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:60px;width:568px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

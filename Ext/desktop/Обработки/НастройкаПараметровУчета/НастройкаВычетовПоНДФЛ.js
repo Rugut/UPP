@@ -8,7 +8,10 @@
 	title: 'Настройка вычетов по НДФЛ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьВычетыНДФЛ',
@@ -16,6 +19,7 @@
 			style: 'position:absolute;left:8px;top:8px;width:180px;height:25px;',
 		},
 		{
+			id: 'НДФЛВычетыПоДоходам',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:278px;width:492px;height:189px;',
 			height: 189,width: 492,
@@ -52,7 +56,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -68,6 +72,23 @@
 						name:'Период',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДФЛВычетыПоДоходам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -86,6 +107,7 @@
 			style: 'position:absolute;left:8px;top:261px;width:470px;height:14px;',
 		},
 		{
+			id: 'НДФЛРазмерВычетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:51px;width:492px;height:192px;',
 			height: 192,width: 492,
@@ -122,7 +144,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -139,13 +161,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДФЛРазмерВычетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Размеры вычетов по НДФЛ',
 			style: 'position:absolute;left:8px;top:34px;width:470px;height:14px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

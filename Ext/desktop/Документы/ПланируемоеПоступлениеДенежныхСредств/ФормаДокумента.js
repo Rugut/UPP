@@ -8,7 +8,10 @@
 	title: 'Планируемое поступление денежных средств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -206,6 +209,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:641px;height:79px;',
 			height: 79,width: 641,
@@ -272,7 +276,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланируемоеПоступлениеДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланируемоеПоступлениеДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -303,6 +307,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -698,7 +719,8 @@
 			text: 'Итого по заявке: 150 000 USD',
 			style: 'position:absolute;left:8px;top:237px;width:308px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

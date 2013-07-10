@@ -8,7 +8,10 @@
 	title: 'Расчет платы за негативное воздействие на окружающую среду (основная форма)',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:654px;height:310px;',
@@ -363,7 +366,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Неформализованный документ налогового органа',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
@@ -108,7 +111,8 @@
 			text: '',
 			style: 'position:absolute;left:134px;top:33px;width:132px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

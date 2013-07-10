@@ -8,7 +8,10 @@
 	title: 'Заявка на курс обучения',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +95,7 @@
 			style: 'position:absolute;left:94px;top:320px;width:313px;height:19px;',
 		},
 		{
+			id: 'ОбучающиесяРаботники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:164px;width:399px;height:151px;',
 			height: 151,width: 399,
@@ -111,7 +115,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'220',
+					width:'2200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -122,7 +126,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаОбучение/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаОбучение/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,6 +139,23 @@
 						name:'Сотрудник',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОбучающиесяРаботники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -164,7 +185,8 @@
 			title: 'Дата завершения курса',
 			style: 'position:absolute;left:8px;top:81px;width:399px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

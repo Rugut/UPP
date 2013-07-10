@@ -8,7 +8,10 @@
 	title: 'Пересчет стоимости отложенных налоговых активов и обязательств',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -41,7 +44,8 @@
 			height: 19,
 			style: 'position:absolute;left:61px;top:33px;width:109px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

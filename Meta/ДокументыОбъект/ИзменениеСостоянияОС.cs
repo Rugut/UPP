@@ -156,25 +156,25 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document395(
+						Insert Into _Document282(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld7989RRef
-						,_Fld7990
-						,_Fld7991
-						,_Fld7992
-						,_Fld7993
-						,_Fld7994
-						,_Fld7995RRef
-						,_Fld7996
-						,_Fld7997
-						,_Fld7998
-						,_Fld7999
-						,_Fld8000RRef
-						,_Fld8001RRef)
+						,_Fld4991RRef
+						,_Fld4985
+						,_Fld4984
+						,_Fld4987
+						,_Fld4986
+						,_Fld4989
+						,_Fld4990RRef
+						,_Fld4992
+						,_Fld4993
+						,_Fld4988
+						,_Fld4994
+						,_Fld4995RRef
+						,_Fld4996RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -197,25 +197,25 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document395
+						Update _Document282
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld7989RRef	= @Ответственный
-						,_Fld7990	= @ВремяНапоминания
-						,_Fld7991	= @ВлияетНаНачислениеАмортизации
-						,_Fld7992	= @НапомнитьОСобытии
-						,_Fld7993	= @Комментарий
-						,_Fld7994	= @НачислятьАмортизациюВТекущемМесяце
-						,_Fld7995RRef	= @Организация
-						,_Fld7996	= @ОтражатьВБухгалтерскомУчете
-						,_Fld7997	= @ОтражатьВНалоговомУчете
-						,_Fld7998	= @НачислятьАмортизацию
-						,_Fld7999	= @ОтражатьВУправленческомУчете
-						,_Fld8000RRef	= @Событие
-						,_Fld8001RRef	= @СобытиеРегл
+						,_Fld4991RRef	= @Ответственный
+						,_Fld4985	= @ВремяНапоминания
+						,_Fld4984	= @ВлияетНаНачислениеАмортизации
+						,_Fld4987	= @НапомнитьОСобытии
+						,_Fld4986	= @Комментарий
+						,_Fld4989	= @НачислятьАмортизациюВТекущемМесяце
+						,_Fld4990RRef	= @Организация
+						,_Fld4992	= @ОтражатьВБухгалтерскомУчете
+						,_Fld4993	= @ОтражатьВНалоговомУчете
+						,_Fld4988	= @НачислятьАмортизацию
+						,_Fld4994	= @ОтражатьВУправленческомУчете
+						,_Fld4995RRef	= @Событие
+						,_Fld4996RRef	= @СобытиеРегл
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -242,7 +242,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document395
+					Команда.CommandText = @"Delete _Document282
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

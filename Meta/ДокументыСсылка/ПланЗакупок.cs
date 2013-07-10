@@ -22,7 +22,7 @@ namespace V82.ДокументыСсылка
 	public partial class ПланЗакупок:ДокументСсылка,IСериализаторProtoBuf,IСериализаторJson
 	{
 		public static readonly Guid ГуидКласса = new Guid("79ef8e00-6a65-4509-9b7d-3f587528ef26");
-		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20121221191034.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
+		public static readonly DateTime ВерсияКласса = DateTime.ParseExact("20120928011944.000", new string[] {"yyyyMMddHHmmss.fff"}, CultureInfo.InvariantCulture, DateTimeStyles.None);
 		public static readonly long КонтрольнаяСуммаКласса = 123;
 		[DataMember]
 		[ProtoMember(1)]
@@ -76,22 +76,22 @@ namespace V82.ДокументыСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_Number [Номер]
-					,_Fld12747RRef [ВалютаДокумента]
-					,_Fld12748 [ДатаПланирования]
-					,_Fld12749 [Комментарий]
-					,_Fld12750 [КратностьДокумента]
-					,_Fld12751 [КурсДокумента]
-					,_Fld12752RRef [Ответственный]
-					,_Fld12753RRef [Подразделение]
-					,_Fld12754RRef [Проект]
-					,_Fld12755RRef [Сценарий]
-					,_Fld12756 [СуммаДокумента]
-					,_Fld12757RRef [ТипЦен]
-					,_Fld12758 [СуммаВключаетНДС]
-					,_Fld12759 [УчитыватьНДС]
-					,_Fld12760 [НастройкиПомощникаПланирования]
-					,_Fld12761RRef [ПериодичностьДетализации]
-					From _Document507(NOLOCK)
+					,_Fld8318RRef [ВалютаДокумента]
+					,_Fld8319 [ДатаПланирования]
+					,_Fld8320 [Комментарий]
+					,_Fld8321 [КратностьДокумента]
+					,_Fld8322 [КурсДокумента]
+					,_Fld8323RRef [Ответственный]
+					,_Fld8324RRef [Подразделение]
+					,_Fld8325RRef [Проект]
+					,_Fld8326RRef [Сценарий]
+					,_Fld8327 [СуммаДокумента]
+					,_Fld8328RRef [ТипЦен]
+					,_Fld8329 [СуммаВключаетНДС]
+					,_Fld8330 [УчитыватьНДС]
+					,_Fld8331 [НастройкиПомощникаПланирования]
+					,_Fld8332RRef [ПериодичностьДетализации]
+					From _Document381(NOLOCK)
 					Where _IDRRef=@УникальныйИдентификатор";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())

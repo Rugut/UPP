@@ -153,25 +153,25 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document597(
+						Insert Into _Document460(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld17417RRef
-						,_Fld17418RRef
-						,_Fld17419RRef
-						,_Fld17420RRef
-						,_Fld17421
-						,_Fld17422
-						,_Fld17423
-						,_Fld17424
-						,_Fld17425
-						,_Fld17426
-						,_Fld17427RRef
-						,_Fld17428RRef
-						,_Fld17429RRef)
+						,_Fld11712RRef
+						,_Fld11713RRef
+						,_Fld11714RRef
+						,_Fld11715RRef
+						,_Fld11716
+						,_Fld11717
+						,_Fld11718
+						,_Fld11719
+						,_Fld11720
+						,_Fld11721
+						,_Fld11722RRef
+						,_Fld11723RRef
+						,_Fld11724RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -194,25 +194,25 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document597
+						Update _Document460
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld17417RRef	= @ВидОперации
-						,_Fld17418RRef	= @Организация
-						,_Fld17419RRef	= @Подразделение
-						,_Fld17420RRef	= @Склад
-						,_Fld17421	= @ОтражатьВУправленческомУчете
-						,_Fld17422	= @ОтражатьВБухгалтерскомУчете
-						,_Fld17423	= @ОтражатьВНалоговомУчете
-						,_Fld17424	= @СуммаДокумента
-						,_Fld17425	= @Основание
-						,_Fld17426	= @Комментарий
-						,_Fld17427RRef	= @ИнвентаризацияТоваровНаСкладе
-						,_Fld17428RRef	= @Ответственный
-						,_Fld17429RRef	= @НДСвСтоимостиТоваров
+						,_Fld11712RRef	= @ВидОперации
+						,_Fld11713RRef	= @Организация
+						,_Fld11714RRef	= @Подразделение
+						,_Fld11715RRef	= @Склад
+						,_Fld11716	= @ОтражатьВУправленческомУчете
+						,_Fld11717	= @ОтражатьВБухгалтерскомУчете
+						,_Fld11718	= @ОтражатьВНалоговомУчете
+						,_Fld11719	= @СуммаДокумента
+						,_Fld11720	= @Основание
+						,_Fld11721	= @Комментарий
+						,_Fld11722RRef	= @ИнвентаризацияТоваровНаСкладе
+						,_Fld11723RRef	= @Ответственный
+						,_Fld11724RRef	= @НДСвСтоимостиТоваров
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -239,7 +239,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document597
+					Команда.CommandText = @"Delete _Document460
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

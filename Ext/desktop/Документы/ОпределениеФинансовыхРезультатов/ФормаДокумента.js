@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -198,7 +201,8 @@
 			boxLabel: 'Расчет резервов по сомнительным долгам',
 			style: 'position:absolute;left:8px;top:131px;width:239px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

@@ -8,7 +8,10 @@
 	title: 'Ввод распределения заработка сотрудников',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -108,6 +111,7 @@
 			]
 		},
 		{
+			id: 'РаспределениеНачислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:265px;width:592px;height:128px;',
 			height: 128,width: 592,
@@ -127,13 +131,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'120',
+					width:'1200',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Упр. учет',
-					width:'120',
+					width:'1200',
 					dataIndex:'СпособОтраженияВУпрУчете',
 					flex:1,
 				},
@@ -156,7 +160,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияЗаработкаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияЗаработкаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -178,6 +182,23 @@
 						name:'Подразделение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеНачислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -212,6 +233,7 @@
 			style: 'position:absolute;left:8px;top:225px;width:592px;height:16px;',
 		},
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:119px;width:592px;height:97px;',
 			height: 97,width: 592,
@@ -242,7 +264,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияЗаработкаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводРаспределенияЗаработкаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -256,8 +278,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Рабочий стол',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:38px;width:700px;height:535px;',
@@ -2375,6 +2378,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеСписокСсылокНаИТСПерсонал',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:194px;height:451px;',
 			height: 451,width: 194,
@@ -2405,7 +2409,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2418,6 +2422,23 @@
 						name:'Порядок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСписокСсылокНаИТСПерсонал');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -2433,7 +2454,8 @@
 			boxLabel: 'Показывать статьи на сайте ИТС',
 			style: 'position:absolute;left:802px;top:5px;width:116px;height:33px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]

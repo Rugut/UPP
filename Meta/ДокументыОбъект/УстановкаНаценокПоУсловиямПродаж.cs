@@ -87,15 +87,15 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document623(
+						Insert Into _Document477(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld18605RRef
-						,_Fld18606
-						,_Fld18607RRef)
+						,_Fld12202RRef
+						,_Fld12203
+						,_Fld12204RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -108,15 +108,15 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document623
+						Update _Document477
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld18605RRef	= @ВидОперации
-						,_Fld18606	= @Комментарий
-						,_Fld18607RRef	= @Ответственный
+						,_Fld12202RRef	= @ВидОперации
+						,_Fld12203	= @Комментарий
+						,_Fld12204RRef	= @Ответственный
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -136,7 +136,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document623
+					Команда.CommandText = @"Delete _Document477
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();

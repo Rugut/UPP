@@ -8,8 +8,12 @@
 	title: 'Конвертации из информационных баз 1С:Предприятия 7.7',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:684px;height:149px;',
 			height: 149,width: 684,
@@ -23,13 +27,13 @@
 				},
 				{
 					text:'Конфигурация',
-					width:'250',
+					width:'2500',
 					dataIndex:'Конфигурация',
 					flex:1,
 				},
 				{
 					text:'Идентификатор конфигурации',
-					width:'120',
+					width:'1200',
 					dataIndex:'ИдентификаторКонфигурации',
 					flex:1,
 				},
@@ -60,11 +64,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КонвертацииИзИнформационныхБаз1СПредприятия77").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонвертацииИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +95,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

@@ -8,7 +8,10 @@
 	title: 'Ответ',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:32px;width:376px;height:19px;',
@@ -30,7 +33,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

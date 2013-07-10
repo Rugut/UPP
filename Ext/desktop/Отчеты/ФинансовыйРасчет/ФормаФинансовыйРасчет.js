@@ -8,7 +8,10 @@
 	title: '',
 	
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -103,7 +106,8 @@
 			text: 'Развернуть по горизонтали:',
 			style: 'position:absolute;left:320px;top:82px;width:148px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{

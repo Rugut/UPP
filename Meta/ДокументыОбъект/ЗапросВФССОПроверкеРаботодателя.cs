@@ -144,30 +144,30 @@ namespace V82.ДокументыОбъект
 					if(_ЭтоНовый)
 					{
 						Команда.CommandText = @"
-						Insert Into _Document374(
+						Insert Into _Document23144(
 						_IDRRef
 						/*,_Version*/
 						,_Marked
 						,_IsMetadata
 						,_Number
-						,_Fld7376RRef
-						,_Fld7377RRef
-						,_Fld7378RRef
-						,_Fld7379RRef
-						,_Fld7380RRef
-						,_Fld7381RRef
-						,_Fld7382
-						,_Fld7383
-						,_Fld7384
-						,_Fld7385
-						,_Fld7386
-						,_Fld7387
-						,_Fld7388
-						,_Fld7389
-						,_Fld7390
-						,_Fld7391
-						,_Fld7392
-						,_Fld7393RRef)
+						,_Fld24171RRef
+						,_Fld24172RRef
+						,_Fld24173RRef
+						,_Fld24174RRef
+						,_Fld24175RRef
+						,_Fld24176RRef
+						,_Fld24177
+						,_Fld24178
+						,_Fld24179
+						,_Fld24180
+						,_Fld24181
+						,_Fld24182
+						,_Fld24183
+						,_Fld24184
+						,_Fld24185
+						,_Fld24186
+						,_Fld24187
+						,_Fld24188RRef)
 						Values(
 						@Ссылка
 						/*,@Версия*/
@@ -195,30 +195,30 @@ namespace V82.ДокументыОбъект
 					else
 					{
 						Команда.CommandText = @"
-						Update _Document374
+						Update _Document23144
 						Set
 						/*_IDRRef	= @Ссылка*/
 						/*,_Version	= @Версия*/
 						_Marked	= @ПометкаУдаления
 						,_Number	= @Номер
-						,_Fld7376RRef	= @Организация
-						,_Fld7377RRef	= @Сотрудник
-						,_Fld7378RRef	= @ФизЛицо
-						,_Fld7379RRef	= @ВидПособия
-						,_Fld7380RRef	= @Руководитель
-						,_Fld7381RRef	= @ДолжностьРуководителя
-						,_Fld7382	= @РегистрационныйНомерФСС
-						,_Fld7383	= @ДополнительныйКодФСС
-						,_Fld7384	= @КодПодчиненностиФСС
-						,_Fld7385	= @НаименованиеТерриториальногоОрганаФСС
-						,_Fld7386	= @АдресОрганизации
-						,_Fld7387	= @СтраховойНомерПФР
-						,_Fld7388	= @Фамилия
-						,_Fld7389	= @Имя
-						,_Fld7390	= @Отчество
-						,_Fld7391	= @Адрес
-						,_Fld7392	= @Комментарий
-						,_Fld7393RRef	= @Ответственный
+						,_Fld24171RRef	= @Организация
+						,_Fld24172RRef	= @Сотрудник
+						,_Fld24173RRef	= @ФизЛицо
+						,_Fld24174RRef	= @ВидПособия
+						,_Fld24175RRef	= @Руководитель
+						,_Fld24176RRef	= @ДолжностьРуководителя
+						,_Fld24177	= @РегистрационныйНомерФСС
+						,_Fld24178	= @ДополнительныйКодФСС
+						,_Fld24179	= @КодПодчиненностиФСС
+						,_Fld24180	= @НаименованиеТерриториальногоОрганаФСС
+						,_Fld24181	= @АдресОрганизации
+						,_Fld24182	= @СтраховойНомерПФР
+						,_Fld24183	= @Фамилия
+						,_Fld24184	= @Имя
+						,_Fld24185	= @Отчество
+						,_Fld24186	= @Адрес
+						,_Fld24187	= @Комментарий
+						,_Fld24188RRef	= @Ответственный
 						Where _IDRRef = @Ссылка";
 					}
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
@@ -248,7 +248,7 @@ namespace V82.ДокументыОбъект
 				Подключение.Open();
 				using (var Команда = Подключение.CreateCommand())
 				{
-					Команда.CommandText = @"Delete _Document374
+					Команда.CommandText = @"Delete _Document23144
 					Where _IDRRef=@Ссылка";
 					Команда.Parameters.AddWithValue("Ссылка", Ссылка.ToByteArray());
 					Команда.ExecuteNonQuery();
