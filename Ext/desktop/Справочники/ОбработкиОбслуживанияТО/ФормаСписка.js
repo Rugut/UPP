@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ОбработкиОбслуживанияТО'], function () 
+{
+	Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Обработки обслуживания торгового оборудования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,7 +48,7 @@
 				},
 				{
 					text:'Имя файла',
-					width:'1500',
+					width:'150',
 					dataIndex:'ИмяФайла',
 					flex:1,
 				},
@@ -69,7 +72,7 @@
 				},
 				{
 					text:'Идентификатор',
-					width:'2500',
+					width:'250',
 					dataIndex:'Идентификатор',
 					flex:1,
 				},
@@ -122,9 +125,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбработкиОбслуживанияТО.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбработкиОбслуживанияТО.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -261,4 +264,5 @@
 			]
 		},
 	]
+	});
 });

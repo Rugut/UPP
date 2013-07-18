@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеНМА'], function () 
+{
+	Ext.define('Документы.СписаниеНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:624px;height:253px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Списание НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -273,4 +276,5 @@
 			]
 		},
 	]
+	});
 });

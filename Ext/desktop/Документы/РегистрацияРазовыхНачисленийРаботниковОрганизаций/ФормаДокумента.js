@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РегистрацияРазовыхНачисленийРаботниковОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РегистрацияРазовыхНачисленийРаботниковОрганизаций'], function () 
+{
+	Ext.define('Документы.РегистрацияРазовыхНачисленийРаботниковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:712px;height:513px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Регистрация разовых начислений сотрудникам организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -117,6 +123,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:85px;width:682px;height:223px;',
 			height: 223,width: 682,
@@ -345,7 +352,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияРазовыхНачисленийРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияРазовыхНачисленийРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -458,6 +465,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегистрацияРазовыхНачисленийРаботниковОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегистрацияРазовыхНачисленийРаботниковОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -493,6 +517,7 @@
 					items:
 					[
 		{
+			id: 'ДополнительныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:682px;height:284px;',
 			height: 284,width: 682,
@@ -679,7 +704,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияРазовыхНачисленийРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияРазовыхНачисленийРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -771,6 +796,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегистрацияРазовыхНачисленийРаботниковОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегистрацияРазовыхНачисленийРаботниковОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -817,7 +859,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -857,4 +900,5 @@
 			]
 		},
 	]
+	});
 });

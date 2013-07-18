@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НормативыОбслуживанияОС.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.НормативыОбслуживанияОС'], function () 
+{
+	Ext.define('Справочники.НормативыОбслуживанияОС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:506px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Нормативы обслуживания ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НормативыОбслуживанияОС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НормативыОбслуживанияОС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -115,9 +118,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НормативыОбслуживанияОС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НормативыОбслуживанияОС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -141,4 +144,5 @@
 			]
 		},
 	]
+	});
 });

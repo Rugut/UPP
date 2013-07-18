@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеКадровогоПлана.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ИзменениеКадровогоПлана'], function () 
+{
+	Ext.define('Документы.ИзменениеКадровогоПлана.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:620px;height:420px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Изменения кадрового плана',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:56px;width:604px;height:356px;',
 			height: 356,width: 604,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'147',
+					width:'146',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеКадровогоПлана/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеКадровогоПлана/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,6 +87,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеКадровогоПлана.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеКадровогоПлана.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -111,7 +135,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -200,4 +225,5 @@
 			]
 		},
 	]
+	});
 });

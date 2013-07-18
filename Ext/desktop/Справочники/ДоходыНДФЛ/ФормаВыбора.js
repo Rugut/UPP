@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоходыНДФЛ.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ДоходыНДФЛ'], function () 
+{
+	Ext.define('Справочники.ДоходыНДФЛ.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:508px;height:320px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Коды доходов НДФЛ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДоходыНДФЛ.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДоходыНДФЛ.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -208,4 +211,5 @@
 			]
 		},
 	]
+	});
 });

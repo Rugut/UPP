@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АнализНеявок.Форма',
+﻿Ext.require(['Данные.Обработки.АнализНеявок'], function () 
+{
+	Ext.define('Обработки.АнализНеявок.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:619px;height:413px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ неявок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('Неявки');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализНеявок.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализНеявок.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -300,4 +303,5 @@
 			]
 		},
 	]
+	});
 });

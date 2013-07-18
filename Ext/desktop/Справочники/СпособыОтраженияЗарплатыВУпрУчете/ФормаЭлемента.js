@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпособыОтраженияЗарплатыВУпрУчете.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СпособыОтраженияЗарплатыВУпрУчете'], function () 
+{
+	Ext.define('Справочники.СпособыОтраженияЗарплатыВУпрУчете.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:404px;height:206px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Способы отражения зарплаты в управленческом учете',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -135,4 +138,5 @@
 			]
 		},
 	]
+	});
 });

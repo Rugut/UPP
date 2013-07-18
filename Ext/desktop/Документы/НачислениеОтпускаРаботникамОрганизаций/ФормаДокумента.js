@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НачислениеОтпускаРаботникамОрганизаций'], function () 
+{
+	Ext.define('Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:679px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Начисление отпуска сотрудникам организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -443,6 +449,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:649px;height:291px;',
 			height: 291,width: 649,
@@ -462,7 +469,7 @@
 				},
 				{
 					text:'Дата начала',
-					width:'80',
+					width:'79',
 					dataIndex:'ДатаНачала',
 					flex:1,
 				},
@@ -558,13 +565,13 @@
 				},
 				{
 					text:'Результат',
-					width:'65',
+					width:'64',
 					dataIndex:'Результат',
 					flex:1,
 				},
 				{
 					text:'Дней отработано',
-					width:'55',
+					width:'54',
 					dataIndex:'ОтработаноДней',
 					flex:1,
 				},
@@ -594,7 +601,7 @@
 				},
 				{
 					text:'Зачесть в норму дней',
-					width:'79',
+					width:'78',
 					dataIndex:'НормаДней',
 					flex:1,
 				},
@@ -665,7 +672,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -775,6 +782,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -858,6 +882,7 @@
 					items:
 					[
 		{
+			id: 'РасчетСреднегоПоКалендарным',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:656px;height:222px;',
 			height: 222,width: 656,
@@ -930,7 +955,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -964,6 +989,23 @@
 						name:'ЧислоМесяцев',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднегоПоКалендарным');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -979,6 +1021,7 @@
 					items:
 					[
 		{
+			id: 'РасчетСреднегоПоШестидневке',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:656px;height:222px;',
 			height: 222,width: 656,
@@ -1051,7 +1094,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1086,6 +1129,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднегоПоШестидневке');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -1100,6 +1160,7 @@
 					items:
 					[
 		{
+			id: 'РасчетСреднегоПоКалендарным1',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:656px;height:97px;',
 			height: 97,width: 656,
@@ -1172,7 +1233,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1207,6 +1268,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднегоПоКалендарным1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1219,6 +1297,7 @@
 			style: 'position:absolute;left:0px;top:143px;width:656px;height:16px;',
 		},
 		{
+			id: 'РасчетСреднегоПоШестидневке1',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:183px;width:656px;height:84px;',
 			height: 84,width: 656,
@@ -1291,7 +1370,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1325,6 +1404,23 @@
 						name:'ЧислоМесяцев',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднегоПоШестидневке1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1782,7 +1878,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1830,4 +1927,5 @@
 			]
 		},
 	]
+	});
 });

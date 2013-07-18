@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЕСН.ФормаОтчета2006Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЕСН'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЕСН.ФормаОтчета2006Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:721px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по ЕСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -422,4 +425,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СохраненныеНастройки.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СохраненныеНастройки'], function () 
+{
+	Ext.define('Справочники.СохраненныеНастройки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:343px;height:336px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Вариант отчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Пользователи',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:152px;width:327px;height:151px;',
 			height: 151,width: 327,
@@ -36,11 +43,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СохраненныеНастройки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -53,6 +61,23 @@
 						name:'ПравоИзменения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Пользователи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СохраненныеНастройки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СохраненныеНастройки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -101,7 +126,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -137,4 +163,5 @@
 			]
 		},
 	]
+	});
 });

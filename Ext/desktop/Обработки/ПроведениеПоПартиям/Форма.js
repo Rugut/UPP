@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПроведениеПоПартиям.Форма',
+﻿Ext.require(['Данные.Обработки.ПроведениеПоПартиям'], function () 
+{
+	Ext.define('Обработки.ПроведениеПоПартиям.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:377px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Проведение по партиям',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -59,6 +65,7 @@
 			style: 'position:absolute;left:248px;top:94px;width:144px;height:19px;',
 		},
 		{
+			id: 'ТаблицаГраниц',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:160px;width:384px;height:184px;',
 			height: 184,width: 384,
@@ -107,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроведениеПоПартиям/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроведениеПоПартиям/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -130,6 +137,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаГраниц');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроведениеПоПартиям.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроведениеПоПартиям.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -141,7 +165,8 @@
 			title: ' По организациям:',
 			style: 'position:absolute;left:8px;top:117px;width:384px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -182,4 +207,5 @@
 			]
 		},
 	]
+	});
 });

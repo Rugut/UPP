@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.НастройкиПоиска',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.НастройкиПоиска',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:403px;height:98px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поиск',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -70,4 +73,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВозвратТоваровПоставщику.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ВозвратТоваровПоставщику'], function () 
+{
+	Ext.define('Документы.ВозвратТоваровПоставщику.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Возвраты товаров поставщикам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Вид передачи',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидПередачи',
 					flex:1,
 				},
@@ -81,7 +84,7 @@
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
@@ -93,19 +96,19 @@
 				},
 				{
 					text:'Договор контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Склад',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладКомпании',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -117,13 +120,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -202,9 +205,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -262,4 +265,5 @@
 			]
 		},
 	]
+	});
 });

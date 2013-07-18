@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиСведенияОбИнвалидности',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиСведенияОбИнвалидности',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:270px;height:199px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сведения об инвалидности',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

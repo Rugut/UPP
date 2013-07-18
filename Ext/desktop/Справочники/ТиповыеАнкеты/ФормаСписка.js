@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ТиповыеАнкеты'], function () 
+{
+	Ext.define('Справочники.ТиповыеАнкеты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:637px;height:260px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Типовые анкеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3200',
+					width:'320',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -86,7 +89,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'1600',
+					width:'160',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -115,9 +118,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -289,4 +292,5 @@
 			]
 		},
 	]
+	});
 });

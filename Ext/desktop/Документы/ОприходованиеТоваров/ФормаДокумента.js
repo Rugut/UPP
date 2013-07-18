@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОприходованиеТоваров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОприходованиеТоваров'], function () 
+{
+	Ext.define('Документы.ОприходованиеТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:668px;height:435px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оприходование товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -267,31 +270,31 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2200',
+					width:'220',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика',
-					width:'1200',
+					width:'120',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия',
-					width:'1200',
+					width:'120',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Статус партии',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтатусПартии',
 					flex:1,
 				},
@@ -381,13 +384,13 @@
 				},
 				{
 					text:'Номер ГТД',
-					width:'1200',
+					width:'120',
 					dataIndex:'НомерГТД',
 					flex:1,
 				},
 				{
 					text:'Страна происхождения',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтранаПроисхождения',
 					flex:1,
 				},
@@ -405,7 +408,7 @@
 				},
 				{
 					text:'Качество',
-					width:'1200',
+					width:'120',
 					dataIndex:'Качество',
 					flex:1,
 				},
@@ -508,9 +511,9 @@
 					{
 						var грид = Ext.getCmp('Товары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОприходованиеТоваров.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОприходованиеТоваров.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -668,4 +671,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

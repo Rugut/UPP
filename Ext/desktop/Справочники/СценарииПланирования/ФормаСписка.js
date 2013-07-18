@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СценарииПланирования.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СценарииПланирования'], function () 
+{
+	Ext.define('Справочники.СценарииПланирования.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:775px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сценарии планирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,19 +36,19 @@
 				},
 				{
 					text:'Наименование',
-					width:'1800',
+					width:'180',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Периодичность',
-					width:'1200',
+					width:'120',
 					dataIndex:'Периодичность',
 					flex:1,
 				},
 				{
 					text:'Объект планирования',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОбъектПланирования',
 					flex:1,
 				},
@@ -104,9 +107,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СценарииПланирования.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СценарииПланирования.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -151,9 +154,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СценарииПланирования.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СценарииПланирования.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -173,4 +176,5 @@
 			]
 		},
 	]
+	});
 });

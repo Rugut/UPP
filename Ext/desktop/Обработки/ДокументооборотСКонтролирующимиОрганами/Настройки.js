@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Настройки',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Настройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:398px;height:409px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки защищенного документооборота',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -217,4 +220,5 @@
 			]
 		},
 	]
+	});
 });

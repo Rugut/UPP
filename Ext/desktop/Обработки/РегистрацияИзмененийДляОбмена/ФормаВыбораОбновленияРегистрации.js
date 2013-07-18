@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаВыбораОбновленияРегистрации',
+﻿Ext.require(['Данные.Обработки.РегистрацияИзмененийДляОбмена'], function () 
+{
+	Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаВыбораОбновленияРегистрации',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:464px;height:172px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистрация изменений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -61,4 +64,5 @@
 			]
 		},
 	]
+	});
 });

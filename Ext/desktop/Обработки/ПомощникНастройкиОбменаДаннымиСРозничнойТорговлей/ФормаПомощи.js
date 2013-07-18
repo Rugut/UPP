@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаПомощи',
+﻿Ext.require(['Данные.Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей'], function () 
+{
+	Ext.define('Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаПомощи',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:750px;height:480px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Дополнительная информация',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

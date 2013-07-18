@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхCommerceML.ФормаЗаписанныхДокументов',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхCommerceML'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхCommerceML.ФормаЗаписанныхДокументов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:379px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Загруженные документы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаЗаписанныхДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:76px;width:584px;height:270px;',
 			height: 270,width: 584,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Документ',
-					width:'488',
+					width:'487',
 					dataIndex:'Документ',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,6 +52,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЗаписанныхДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаЗаписанныхДокументовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаЗаписанныхДокументовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -52,7 +76,8 @@
 			text: 'Надпись загрузки документов. Информация по загруженным документам приведена ниже:',
 			style: 'position:absolute;left:47px;top:8px;width:545px;height:32px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -103,4 +128,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЖурналУчетаСчетовФактур1137.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.ЖурналУчетаСчетовФактур1137'], function () 
+{
+	Ext.define('Отчеты.ЖурналУчетаСчетовФактур1137.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:631px;height:187px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -89,4 +92,5 @@
 			]
 		},
 	]
+	});
 });

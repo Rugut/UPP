@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаКачестваТоваров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаКачестваТоваров'], function () 
+{
+	Ext.define('Документы.КорректировкаКачестваТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:301px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Корректировка качества товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -121,25 +124,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2200',
+					width:'220',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия',
-					width:'2500',
+					width:'250',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -290,9 +293,9 @@
 					{
 						var грид = Ext.getCmp('Товары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КорректировкаКачестваТоваров.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КорректировкаКачестваТоваров.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -425,4 +428,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

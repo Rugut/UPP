@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГруппыДоступностиСкладов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ГруппыДоступностиСкладов'], function () 
+{
+	Ext.define('Справочники.ГруппыДоступностиСкладов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:467px;height:273px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы доступности складов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Склад',
-					width:'3500',
+					width:'350',
 					dataIndex:'Склад',
 					flex:1,
 				},
@@ -89,9 +92,9 @@
 					{
 						var грид = Ext.getCmp('СоставГруппы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГруппыДоступностиСкладов.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГруппыДоступностиСкладов.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -133,4 +136,5 @@
 			]
 		},
 	]
+	});
 });

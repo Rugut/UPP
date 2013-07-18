@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетКомиссионераОПродажах.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтчетКомиссионераОПродажах'], function () 
+{
+	Ext.define('Документы.ОтчетКомиссионераОПродажах.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:547px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отчет комиссионера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -132,6 +138,7 @@
 			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;',
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:128px;width:634px;height:126px;',
 			height: 126,width: 634,
@@ -181,7 +188,7 @@
 				},
 				{
 					text:'К. мест',
-					width:'49',
+					width:'48',
 					dataIndex:'КоэффициентМест',
 					flex:1,
 				},
@@ -348,7 +355,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -455,6 +462,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -476,6 +500,7 @@
 			]
 		},
 		{
+			id: 'ПокупателиТовары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:74px;',
 			height: 74,width: 634,
@@ -507,13 +532,13 @@
 				},
 				{
 					text:'Дата счета-фактуры',
-					width:'106',
+					width:'105',
 					dataIndex:'ДатаСФ',
 					flex:1,
 				},
 				{
 					text:'Счет фактура',
-					width:'161',
+					width:'160',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -524,7 +549,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -546,6 +571,23 @@
 						name:'СчетФактура',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПокупателиТовары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -574,6 +616,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ДенежныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:230px;',
 			height: 230,width: 634,
@@ -628,7 +671,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -653,6 +696,23 @@
 						name:'СуммаНДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДенежныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1015,6 +1075,7 @@
 			style: 'position:absolute;left:6px;top:30px;width:88px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:634px;height:152px;',
 			height: 152,width: 634,
@@ -1028,7 +1089,7 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'221',
+					width:'220',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -1057,7 +1118,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомиссионераОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1076,6 +1137,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1391,8 +1469,10 @@
 			boxLabel: 'Удержать комиссионное вознаграждение',
 			style: 'position:absolute;left:334px;top:132px;width:240px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

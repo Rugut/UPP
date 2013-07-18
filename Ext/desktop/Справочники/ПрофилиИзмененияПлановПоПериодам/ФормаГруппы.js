@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ПрофилиИзмененияПлановПоПериодам'], function () 
+{
+	Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:113px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Профили изменения планов по периодам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

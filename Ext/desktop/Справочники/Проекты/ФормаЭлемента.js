@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Проекты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Проекты'], function () 
+{
+	Ext.define('Справочники.Проекты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:410px;height:402px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Проекты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -163,7 +166,7 @@
 				},
 				{
 					text:'Значение',
-					width:'2200',
+					width:'220',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -198,9 +201,9 @@
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Проекты.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Проекты.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -234,7 +237,7 @@
 				},
 				{
 					text:'Категория',
-					width:'2200',
+					width:'220',
 					dataIndex:'Категория',
 					flex:1,
 				},
@@ -269,9 +272,9 @@
 					{
 						var грид = Ext.getCmp('Категории');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Проекты.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Проекты.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -309,4 +312,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Кассы.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Кассы'], function () 
+{
+	Ext.define('Справочники.Кассы.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:546px;height:133px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Кассы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -113,4 +116,5 @@
 			]
 		},
 	]
+	});
 });

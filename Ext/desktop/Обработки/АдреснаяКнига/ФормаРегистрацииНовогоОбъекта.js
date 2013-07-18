@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АдреснаяКнига.ФормаРегистрацииНовогоОбъекта',
+﻿Ext.require(['Данные.Обработки.АдреснаяКнига'], function () 
+{
+	Ext.define('Обработки.АдреснаяКнига.ФормаРегистрацииНовогоОбъекта',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:416px;height:164px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистрация нового объекта',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -120,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЗемля.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЗемля'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЗемля.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по земельному налогу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

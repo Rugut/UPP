@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыКонтактнойИнформации.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ВидыКонтактнойИнформации'], function () 
+{
+	Ext.define('Справочники.ВидыКонтактнойИнформации.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:496px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды контактной информации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,19 +36,19 @@
 				},
 				{
 					text:'Тип',
-					width:'1200',
+					width:'120',
 					dataIndex:'Тип',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Вид объекта контактной информации',
-					width:'2200',
+					width:'220',
 					dataIndex:'ВидОбъектаКонтактнойИнформации',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВидыКонтактнойИнформации.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВидыКонтактнойИнформации.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -112,4 +115,5 @@
 			]
 		},
 	]
+	});
 });

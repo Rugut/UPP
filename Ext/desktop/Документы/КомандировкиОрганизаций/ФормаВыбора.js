@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомандировкиОрганизаций.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.КомандировкиОрганизаций'], function () 
+{
+	Ext.define('Документы.КомандировкиОрганизаций.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:552px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Командировки организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Организация назначения',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОрганизацияНазначения',
 					flex:1,
 				},
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КомандировкиОрганизаций.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КомандировкиОрганизаций.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -124,4 +127,5 @@
 			]
 		},
 	]
+	});
 });

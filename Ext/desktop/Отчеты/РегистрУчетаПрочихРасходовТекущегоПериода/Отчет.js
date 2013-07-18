@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаПрочихРасходовТекущегоПериода.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаПрочихРасходовТекущегоПериода'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаПрочихРасходовТекущегоПериода.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета прочих и косвенных расходов текущего периода',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

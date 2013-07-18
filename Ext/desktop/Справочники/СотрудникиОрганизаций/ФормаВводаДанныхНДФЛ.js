@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛ',
+﻿Ext.require(['Данные.Справочники.СотрудникиОрганизаций'], function () 
+{
+	Ext.define('Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛ',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:552px;height:389px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Стандартные вычеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:536px;height:348px;',
@@ -44,6 +50,7 @@
 			]
 		},
 		{
+			id: 'СтандартныеВычеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:522px;height:90px;',
 			height: 90,width: 522,
@@ -57,13 +64,13 @@
 				},
 				{
 					text:'Код',
-					width:'99',
+					width:'98',
 					dataIndex:'ВычетыЛичныеТекст',
 					flex:1,
 				},
 				{
 					text:'Применение',
-					width:'77',
+					width:'76',
 					dataIndex:'ВычетыЛичныеПрименение',
 					flex:1,
 				},
@@ -82,11 +89,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -106,8 +114,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтандартныеВычеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СтандартныеВычетыНаДетей',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:182px;width:522px;height:90px;',
 			height: 90,width: 522,
@@ -139,7 +165,7 @@
 				},
 				{
 					text:'Применение',
-					width:'90',
+					width:'89',
 					dataIndex:'ВычетыНаДетейПрименение',
 					flex:1,
 				},
@@ -151,7 +177,7 @@
 				},
 				{
 					text:'Количество детей',
-					width:'45',
+					width:'44',
 					dataIndex:'КоличествоДетей',
 					flex:1,
 				},
@@ -164,11 +190,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -196,6 +223,23 @@
 						name:'Основание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтандартныеВычетыНаДетей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -329,6 +373,7 @@
 					items:
 					[
 		{
+			id: 'ДоходыПредыдущие',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:522px;height:276px;',
 			height: 276,width: 522,
@@ -349,11 +394,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -363,6 +409,23 @@
 						name:'Размер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоходыПредыдущие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -389,7 +452,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -411,4 +475,5 @@
 			]
 		},
 	]
+	});
 });

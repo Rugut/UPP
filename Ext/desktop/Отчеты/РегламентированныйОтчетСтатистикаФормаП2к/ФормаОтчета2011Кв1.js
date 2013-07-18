@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП2к.ФормаОтчета2011Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФормаП2к'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП2к.ФормаОтчета2011Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма П-2 (краткая)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -139,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

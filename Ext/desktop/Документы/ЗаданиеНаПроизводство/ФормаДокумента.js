@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаданиеНаПроизводство.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаданиеНаПроизводство'], function () 
+{
+	Ext.define('Документы.ЗаданиеНаПроизводство.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:381px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Задание на производство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -96,13 +99,13 @@
 				},
 				{
 					text:'Дата начала',
-					width:'1200',
+					width:'120',
 					dataIndex:'Период',
 					flex:1,
 				},
 				{
 					text:'Дата окончания',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДатаОкончания',
 					flex:1,
 				},
@@ -132,7 +135,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -262,9 +265,9 @@
 					{
 						var грид = Ext.getCmp('ВыпускТехПроцесс');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаданиеНаПроизводство.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаданиеНаПроизводство.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -394,4 +397,5 @@
 			]
 		},
 	]
+	});
 });

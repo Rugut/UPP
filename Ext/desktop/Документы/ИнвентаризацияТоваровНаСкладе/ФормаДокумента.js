@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияТоваровНаСкладе.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияТоваровНаСкладе'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияТоваровНаСкладе.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:603px;height:472px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Инвентаризация товаров на складе',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -71,6 +77,7 @@
 			]
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:214px;width:588px;height:130px;',
 			height: 130,width: 588,
@@ -120,7 +127,7 @@
 				},
 				{
 					text:'К. мест',
-					width:'112',
+					width:'111',
 					dataIndex:'КоэффициентМест',
 					flex:1,
 				},
@@ -132,7 +139,7 @@
 				},
 				{
 					text:'Отклонение',
-					width:'65',
+					width:'64',
 					dataIndex:'Отклонение',
 					flex:1,
 				},
@@ -156,7 +163,7 @@
 				},
 				{
 					text:'Учет. количество ',
-					width:'54',
+					width:'53',
 					dataIndex:'КоличествоУчет',
 					flex:1,
 				},
@@ -174,13 +181,13 @@
 				},
 				{
 					text:'Сумма',
-					width:'100',
+					width:'99',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Учет. сумма',
-					width:'94',
+					width:'93',
 					dataIndex:'СуммаУчет',
 					flex:1,
 				},
@@ -192,7 +199,7 @@
 				},
 				{
 					text:'Сумма (регл.)',
-					width:'125',
+					width:'124',
 					dataIndex:'СуммаРегл',
 					flex:1,
 				},
@@ -203,7 +210,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияТоваровНаСкладе/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияТоваровНаСкладе/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -267,6 +274,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияТоваровНаСкладе.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияТоваровНаСкладе.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -457,8 +481,10 @@
 			boxLabel: 'Учитывать серии',
 			style: 'position:absolute;left:8px;top:154px;width:109px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

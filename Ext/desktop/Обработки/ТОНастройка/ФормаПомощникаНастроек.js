@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТОНастройка.ФормаПомощникаНастроек',
+﻿Ext.require(['Данные.Обработки.ТОНастройка'], function () 
+{
+	Ext.define('Обработки.ТОНастройка.ФормаПомощникаНастроек',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:653px;height:393px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Помощник подключения и настройки торгового оборудования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:637px;height:352px;',
@@ -168,6 +174,7 @@
 			style: 'position:absolute;left:203px;top:271px;width:423px;height:41px;',
 		},
 		{
+			id: 'ТаблицаЗагруженныхОО',
 			xtype: 'grid',
 			style: 'position:absolute;left:183px;top:114px;width:443px;height:130px;',
 			height: 130,width: 443,
@@ -175,7 +182,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'427',
+					width:'426',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -186,13 +193,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЗагруженныхОО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -238,6 +262,7 @@
 			style: 'position:absolute;left:256px;top:41px;width:370px;height:19px;',
 		},
 		{
+			id: 'ТаблицаОбработокОбслуживания',
 			xtype: 'grid',
 			style: 'position:absolute;left:166px;top:95px;width:460px;height:114px;',
 			height: 114,width: 460,
@@ -262,7 +287,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -272,6 +297,23 @@
 						name:'Версия',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаОбработокОбслуживания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -353,6 +395,7 @@
 			style: 'position:absolute;left:203px;top:304px;width:423px;height:41px;',
 		},
 		{
+			id: 'ТаблицаСозданныхУстройств',
 			xtype: 'grid',
 			style: 'position:absolute;left:183px;top:88px;width:443px;height:166px;',
 			height: 166,width: 443,
@@ -377,7 +420,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -387,6 +430,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСозданныхУстройств');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -412,6 +472,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПоддерживаемыхМоделей',
 			xtype: 'grid',
 			style: 'position:absolute;left:166px;top:41px;width:460px;height:255px;',
 			height: 255,width: 460,
@@ -430,13 +491,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПоддерживаемыхМоделей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаПомощникаНастроекСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -501,8 +579,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

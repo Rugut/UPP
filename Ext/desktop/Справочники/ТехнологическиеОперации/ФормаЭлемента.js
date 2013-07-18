@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТехнологическиеОперации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТехнологическиеОперации'], function () 
+{
+	Ext.define('Справочники.ТехнологическиеОперации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:418px;height:336px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Технологические операции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -241,4 +244,5 @@
 			]
 		},
 	]
+	});
 });

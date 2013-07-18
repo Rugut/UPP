@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УслугиСобственнымПодразделениям.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УслугиСобственнымПодразделениям'], function () 
+{
+	Ext.define('Документы.УслугиСобственнымПодразделениям.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:404px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Услуги собственным подразделениям',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -172,6 +178,7 @@
 					items:
 					[
 		{
+			id: 'Затраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:641px;height:179px;',
 			height: 179,width: 641,
@@ -185,13 +192,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'210',
+					width:'209',
 					dataIndex:'ПодразделениеПолучатель',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации',
-					width:'206',
+					width:'205',
 					dataIndex:'ПодразделениеОрганизацииПолучатель',
 					flex:1,
 				},
@@ -245,19 +252,19 @@
 				},
 				{
 					text:'Продукция',
-					width:'103',
+					width:'102',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'103',
+					width:'102',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Серия продукции',
-					width:'103',
+					width:'102',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
@@ -280,7 +287,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УслугиСобственнымПодразделениям/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УслугиСобственнымПодразделениям/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -332,6 +339,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Затраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УслугиСобственнымПодразделениям.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УслугиСобственнымПодразделениям.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -433,8 +457,10 @@
 			text: '',
 			style: 'position:absolute;left:424px;top:79px;width:240px;height:15px;text-align:right;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НематериальныеАктивы.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.НематериальныеАктивы'], function () 
+{
+	Ext.define('Справочники.НематериальныеАктивы.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:414px;height:112px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Нематериальные активы и расходы на НИОКР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

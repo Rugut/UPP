@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаЗаказаПокупателя.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаЗаказаПокупателя'], function () 
+{
+	Ext.define('Документы.КорректировкаЗаказаПокупателя.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:773px;height:361px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка заказа покупателя',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -114,6 +120,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -235,7 +242,7 @@
 				},
 				{
 					text:'Спецификация',
-					width:'150',
+					width:'149',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -306,7 +313,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -401,6 +408,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -442,6 +466,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -514,7 +539,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -549,6 +574,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -563,6 +605,7 @@
 			style: 'position:absolute;left:12px;top:30px;width:74px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -641,7 +684,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -679,6 +722,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -700,6 +760,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:743px;height:96px;',
 			height: 96,width: 743,
@@ -773,7 +834,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'66',
+					width:'65',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -790,7 +851,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -833,6 +894,23 @@
 						name:'ХарактеристикаНоменклатуры',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаказаПокупателя.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1030,8 +1108,10 @@
 			text: 'Б/счет, касса из заказа',
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

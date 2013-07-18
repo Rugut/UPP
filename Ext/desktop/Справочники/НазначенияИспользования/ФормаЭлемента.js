@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НазначенияИспользования.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НазначенияИспользования'], function () 
+{
+	Ext.define('Справочники.НазначенияИспользования.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:421px;height:205px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Назначения использования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -174,4 +177,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйПоискОбъектов.Форма',
+﻿Ext.require(['Данные.Обработки.УниверсальныйПоискОбъектов'], function () 
+{
+	Ext.define('Обработки.УниверсальныйПоискОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:639px;height:473px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Поиск объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:33px;width:627px;height:407px;',
@@ -41,6 +47,7 @@
 			style: 'position:absolute;left:0px;top:49px;width:627px;height:16px;',
 		},
 		{
+			id: 'НастройкиПоиска',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:116px;width:627px;height:89px;',
 			height: 89,width: 627,
@@ -89,7 +96,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -111,6 +118,23 @@
 						name:'ПолеСвязки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиПоиска');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -135,6 +159,7 @@
 					items:
 					[
 		{
+			id: 'СписокНайденныхСсылок',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:627px;height:152px;',
 			height: 152,width: 627,
@@ -147,10 +172,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокНайденныхСсылок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -219,7 +261,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -241,4 +284,5 @@
 			]
 		},
 	]
+	});
 });

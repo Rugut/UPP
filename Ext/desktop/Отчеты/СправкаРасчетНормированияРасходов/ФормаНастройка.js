@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетНормированияРасходов.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетНормированияРасходов'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетНормированияРасходов.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:413px;height:259px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -89,4 +92,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

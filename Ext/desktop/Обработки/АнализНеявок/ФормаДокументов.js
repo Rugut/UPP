@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АнализНеявок.ФормаДокументов',
+﻿Ext.require(['Данные.Обработки.АнализНеявок'], function () 
+{
+	Ext.define('Обработки.АнализНеявок.ФормаДокументов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:367px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Неявка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -660,4 +663,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

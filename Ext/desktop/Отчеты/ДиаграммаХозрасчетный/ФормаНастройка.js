@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ДиаграммаХозрасчетный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ДиаграммаХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ДиаграммаХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка Диаграммы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -220,9 +223,9 @@
 					{
 						var грид = Ext.getCmp('Серии');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -275,9 +278,9 @@
 					{
 						var грид = Ext.getCmp('Точки');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -473,9 +476,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -519,4 +522,5 @@
 			]
 		},
 	]
+	});
 });

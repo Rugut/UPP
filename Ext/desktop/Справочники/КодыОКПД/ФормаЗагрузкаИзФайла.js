@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КодыОКПД.ФормаЗагрузкаИзФайла',
+﻿Ext.require(['Данные.Справочники.КодыОКПД'], function () 
+{
+	Ext.define('Справочники.КодыОКПД.ФормаЗагрузкаИзФайла',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:320px;height:146px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Загрузка справочника ОКПД из CSV файла',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -56,4 +59,5 @@
 			]
 		},
 	]
+	});
 });

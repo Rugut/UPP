@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОприходованиеТоваров.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ОприходованиеТоваров'], function () 
+{
+	Ext.define('Документы.ОприходованиеТоваров.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оприходования товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -69,31 +72,31 @@
 				},
 				{
 					text:'Подразделение компании',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПодразделениеКомпании',
 					flex:1,
 				},
 				{
 					text:'Склад',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладКомпании',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -157,9 +160,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОприходованиеТоваров.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОприходованиеТоваров.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -202,4 +205,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

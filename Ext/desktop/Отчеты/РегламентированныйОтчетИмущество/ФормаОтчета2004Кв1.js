@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетИмущество.ФормаОтчета2004Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетИмущество'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетИмущество.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:488px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по налогу на имущество',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -516,4 +519,5 @@
 			]
 		},
 	]
+	});
 });

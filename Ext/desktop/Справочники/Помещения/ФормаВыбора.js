@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Помещения.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.Помещения'], function () 
+{
+	Ext.define('Справочники.Помещения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:543px;height:347px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Помещения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,13 +24,13 @@
 			[
 				{
 					text:'Территория',
-					width:'1200',
+					width:'120',
 					dataIndex:'Территория',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'1200',
+					width:'120',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Помещения.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Помещения.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -147,4 +150,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СоставМероприятия.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СоставМероприятия'], function () 
+{
+	Ext.define('Справочники.СоставМероприятия.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:485px;height:288px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Состав мероприятия',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СоставМероприятия');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СоставМероприятия.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СоставМероприятия.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -229,4 +232,5 @@
 			]
 		},
 	]
+	});
 });

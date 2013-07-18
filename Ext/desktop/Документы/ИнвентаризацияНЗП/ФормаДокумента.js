@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияНЗП.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияНЗП'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияНЗП.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:435px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Инвентаризация незавершенного производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -248,7 +251,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -417,9 +420,9 @@
 					{
 						var грид = Ext.getCmp('Материалы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -550,9 +553,9 @@
 					{
 						var грид = Ext.getCmp('ПрочиеЗатраты');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -583,4 +586,5 @@
 			]
 		},
 	]
+	});
 });

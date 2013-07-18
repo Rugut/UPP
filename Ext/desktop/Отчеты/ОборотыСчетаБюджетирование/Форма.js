@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыСчетаБюджетирование.Форма',
+﻿Ext.require(['Данные.Отчеты.ОборотыСчетаБюджетирование'], function () 
+{
+	Ext.define('Отчеты.ОборотыСчетаБюджетирование.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:610px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обороты счета (Главная книга)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -146,4 +149,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗапросВФССОПроверкеРаботодателя.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ЗапросВФССОПроверкеРаботодателя'], function () 
+{
+	Ext.define('Документы.ЗапросВФССОПроверкеРаботодателя.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Запросы в ФСС о проверке работодателя',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,25 +42,25 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗапросВФССОПроверкеРаботодателя.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗапросВФССОПроверкеРаботодателя.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -297,4 +300,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РапортРуководителю.НастройкаПараметров',
+﻿Ext.require(['Данные.Отчеты.РапортРуководителю'], function () 
+{
+	Ext.define('Отчеты.РапортРуководителю.НастройкаПараметров',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:356px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка параметров показателя',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -58,9 +61,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПараметров');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РапортРуководителю.НастройкаПараметровСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РапортРуководителю.НастройкаПараметровСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -89,4 +92,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаявкаНаРасходованиеСредств.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаявкаНаРасходованиеСредств'], function () 
+{
+	Ext.define('Документы.ЗаявкаНаРасходованиеСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:372px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документ Заявка на расходование средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -209,6 +215,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:633px;height:79px;',
 			height: 79,width: 633,
@@ -228,7 +235,7 @@
 				},
 				{
 					text:'Сделка',
-					width:'151',
+					width:'150',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -240,25 +247,25 @@
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'89',
+					width:'88',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Курс взаиморасчетов',
-					width:'100',
+					width:'99',
 					dataIndex:'КурсВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма платежа',
-					width:'102',
+					width:'101',
 					dataIndex:'СуммаПлатежа',
 					flex:1,
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'201',
+					width:'200',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
@@ -275,7 +282,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаРасходованиеСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаРасходованиеСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -306,6 +313,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -682,6 +706,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
 		},
 		{
+			id: 'РазмещениеЗаявки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:54px;width:627px;height:79px;',
 			height: 79,width: 627,
@@ -695,7 +720,7 @@
 				},
 				{
 					text:'Место размещения',
-					width:'459',
+					width:'458',
 					dataIndex:'МестоРазмещения',
 					flex:1,
 				},
@@ -712,7 +737,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаРасходованиеСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкаНаРасходованиеСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -725,6 +750,23 @@
 						name:'СуммаПлатежа',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РазмещениеЗаявки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1036,8 +1078,10 @@
 			text: 'Комментарий:',
 			style: 'position:absolute;left:334px;top:320px;width:90px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

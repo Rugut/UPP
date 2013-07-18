@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТарифыПочтовогоСбора.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТарифыПочтовогоСбора'], function () 
+{
+	Ext.define('Справочники.ТарифыПочтовогоСбора.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:305px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Тариф почтового сбора',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -54,13 +57,13 @@
 				},
 				{
 					text:'Процент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Процент',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -101,9 +104,9 @@
 					{
 						var грид = Ext.getCmp('СоставШкалы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТарифыПочтовогоСбора.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТарифыПочтовогоСбора.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -263,4 +266,5 @@
 			]
 		},
 	]
+	});
 });

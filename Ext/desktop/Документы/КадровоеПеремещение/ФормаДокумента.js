@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КадровоеПеремещение.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КадровоеПеремещение'], function () 
+{
+	Ext.define('Документы.КадровоеПеремещение.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:390px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Кадровое перемещение',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -115,6 +121,7 @@
 					items:
 					[
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:622px;height:209px;',
 			height: 209,width: 622,
@@ -146,13 +153,13 @@
 				},
 				{
 					text:'По',
-					width:'44',
+					width:'43',
 					dataIndex:'ДатаОкончания',
 					flex:1,
 				},
 				{
 					text:'Напомнить',
-					width:'23',
+					width:'22',
 					dataIndex:'НапомнитьПоЗавершении',
 					flex:1,
 				},
@@ -217,7 +224,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПеремещение/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПеремещение/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -267,6 +274,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КадровоеПеремещение.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КадровоеПеремещение.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -275,6 +299,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:622px;height:209px;',
 			height: 209,width: 622,
@@ -497,7 +522,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПеремещение/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПеремещение/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -607,6 +632,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КадровоеПеремещение.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КадровоеПеремещение.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -615,6 +657,7 @@
 					items:
 					[
 		{
+			id: 'Взыскания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:622px;height:209px;',
 			height: 209,width: 622,
@@ -765,7 +808,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПеремещение/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КадровоеПеремещение/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -839,13 +882,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Взыскания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КадровоеПеремещение.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КадровоеПеремещение.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктОбОказанииПроизводственныхУслуг.ФормаСписка',
+﻿Ext.require(['Данные.Документы.АктОбОказанииПроизводственныхУслуг'], function () 
+{
+	Ext.define('Документы.АктОбОказанииПроизводственныхУслуг.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Акты об оказании производственных услуг',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -53,7 +60,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'85',
+					width:'84',
 					dataIndex:'СуммаДокумента',
 					flex:1,
 				},
@@ -106,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,8 +160,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -191,4 +216,5 @@
 			]
 		},
 	]
+	});
 });

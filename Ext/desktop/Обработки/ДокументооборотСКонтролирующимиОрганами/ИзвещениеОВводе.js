@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ИзвещениеОВводе',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ИзвещениеОВводе',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:563px;height:280px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Извещение о вводе',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -171,4 +174,5 @@
 			]
 		},
 	]
+	});
 });

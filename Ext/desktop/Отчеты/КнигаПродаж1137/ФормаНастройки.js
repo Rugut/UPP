@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КнигаПродаж1137.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.КнигаПродаж1137'], function () 
+{
+	Ext.define('Отчеты.КнигаПродаж1137.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:524px;height:229px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

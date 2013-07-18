@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиДопроведенияДокументов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкиДопроведенияДокументов'], function () 
+{
+	Ext.define('Справочники.НастройкиДопроведенияДокументов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:458px;height:243px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка допроведения документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -177,4 +180,5 @@
 			]
 		},
 	]
+	});
 });

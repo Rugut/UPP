@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗначенияПоказателейСхемМотивации.Форма',
+﻿Ext.require(['Данные.Обработки.ЗначенияПоказателейСхемМотивации'], function () 
+{
+	Ext.define('Обработки.ЗначенияПоказателейСхемМотивации.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:692px;height:361px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Показатели расчета заработной платы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:29px;width:676px;height:324px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ЕжемесячныеПоказатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:246px;top:111px;width:422px;height:185px;',
 			height: 185,width: 422,
@@ -74,7 +81,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,6 +106,23 @@
 						name:'Валюта',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЕжемесячныеПоказатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -184,6 +208,7 @@
 					items:
 					[
 		{
+			id: 'Сотрудники',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:234px;height:185px;',
 			height: 185,width: 234,
@@ -220,7 +245,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -236,6 +261,23 @@
 						name:'ТекущееПодразделениеКомпании',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Сотрудники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -276,6 +318,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеПодразделенияОрганизацийЕжемесячные',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:234px;height:208px;',
 			height: 208,width: 234,
@@ -300,7 +343,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -311,6 +354,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПодразделенияОрганизацийЕжемесячные');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -319,6 +379,7 @@
 					items:
 					[
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:234px;height:209px;',
 			height: 209,width: 234,
@@ -343,7 +404,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -354,6 +415,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -362,6 +440,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеПодразделенияПоЦФОЕжемесячные',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:234px;height:209px;',
 			height: 209,width: 234,
@@ -380,13 +459,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПодразделенияПоЦФОЕжемесячные');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -506,6 +602,7 @@
 					items:
 					[
 		{
+			id: 'ПлановыеЗначенияПоказателейСхемМотивации',
 			xtype: 'grid',
 			style: 'position:absolute;left:240px;top:26px;width:422px;height:185px;',
 			height: 185,width: 422,
@@ -542,7 +639,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -559,6 +656,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеЗначенияПоказателейСхемМотивации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -572,6 +686,7 @@
 					items:
 					[
 		{
+			id: 'ПодразделенияОрганизацииПлановые',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:233px;height:211px;',
 			height: 211,width: 233,
@@ -590,13 +705,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПодразделенияОрганизацииПлановые');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -606,6 +738,7 @@
 					items:
 					[
 		{
+			id: 'ПодразделенияПлановые',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:233px;height:211px;',
 			height: 211,width: 233,
@@ -624,13 +757,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПодразделенияПлановые');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -644,6 +794,7 @@
 					items:
 					[
 		{
+			id: 'ПлановыеЗначенияПоказателейСхемМотивацииОбщие',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:662px;height:187px;',
 			height: 187,width: 662,
@@ -680,7 +831,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗначенияПоказателейСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -697,6 +848,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеЗначенияПоказателейСхемМотивацииОбщие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -706,7 +874,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -758,4 +927,5 @@
 			]
 		},
 	]
+	});
 });

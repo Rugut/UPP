@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаЭП',
+﻿Ext.require(['Данные.Обработки.РедактированиеКонтактнойИнформации'], function () 
+{
+	Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаЭП',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:181px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Электронная почта',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -110,4 +113,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

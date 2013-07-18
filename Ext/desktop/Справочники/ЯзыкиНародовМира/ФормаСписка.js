@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЯзыкиНародовМира.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ЯзыкиНародовМира'], function () 
+{
+	Ext.define('Справочники.ЯзыкиНародовМира.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:523px;height:260px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Языки народов мира',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЯзыкиНародовМира.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЯзыкиНародовМира.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -199,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

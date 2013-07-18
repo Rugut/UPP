@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФинансовыеРасчеты.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ФинансовыеРасчеты'], function () 
+{
+	Ext.define('Справочники.ФинансовыеРасчеты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:496px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Финансовые расчеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:480px;height:259px;',
 			height: 259,width: 480,
@@ -29,18 +36,19 @@
 				},
 				{
 					text:'Наименование',
-					width:'406',
+					width:'405',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФинансовыеРасчеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФинансовыеРасчеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФинансовыеРасчеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +62,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФинансовыеРасчеты.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФинансовыеРасчеты.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -71,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

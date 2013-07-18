@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РегламентированныеОтчеты.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.РегламентированныеОтчеты'], function () 
+{
+	Ext.define('Справочники.РегламентированныеОтчеты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:322px;height:306px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа отчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -66,4 +69,5 @@
 			]
 		},
 	]
+	});
 });

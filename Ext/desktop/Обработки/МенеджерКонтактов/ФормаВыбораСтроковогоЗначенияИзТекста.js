@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаВыбораСтроковогоЗначенияИзТекста',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаВыбораСтроковогоЗначенияИзТекста',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:323px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма выбора строковых значений из текста',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,4 +60,5 @@
 			]
 		},
 	]
+	});
 });

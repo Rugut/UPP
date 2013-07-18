@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкиПрограммы.НастройкаПрограммы',
+﻿Ext.require(['Данные.Обработки.НастройкиПрограммы'], function () 
+{
+	Ext.define('Обработки.НастройкиПрограммы.НастройкаПрограммы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:730px;height:451px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Настройка программы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокРазделов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:166px;height:410px;',
 			height: 410,width: 166,
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -44,6 +51,23 @@
 						name:'ИмяРаздела',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокРазделов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -199,6 +223,7 @@
 					items:
 					[
 		{
+			id: 'ШаблоныТелефонов',
 			xtype: 'grid',
 			style: 'position:absolute;left:12px;top:124px;width:294px;height:88px;',
 			height: 88,width: 294,
@@ -217,13 +242,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ШаблоныТелефонныхНомеров',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ШаблоныТелефонов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -377,6 +419,7 @@
 			style: 'position:absolute;left:12px;top:6px;width:259px;height:30px;',
 		},
 		{
+			id: 'НастройкаОтложенногоПроведения',
 			xtype: 'grid',
 			style: 'position:absolute;left:12px;top:75px;width:522px;height:173px;',
 			height: 173,width: 522,
@@ -384,7 +427,7 @@
 			[
 				{
 					text:'Организация',
-					width:'256',
+					width:'255',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -396,7 +439,7 @@
 				},
 				{
 					text:'Настройка допроведения',
-					width:'137',
+					width:'136',
 					dataIndex:'НастройкаДопроведенияДокументов',
 					flex:1,
 				},
@@ -407,7 +450,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -420,6 +463,23 @@
 						name:'НастройкаДопроведенияДокументов',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаОтложенногоПроведения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -830,8 +890,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

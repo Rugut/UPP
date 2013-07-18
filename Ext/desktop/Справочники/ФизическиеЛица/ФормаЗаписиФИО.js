@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиФИО',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиФИО',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:306px;height:141px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Фамилия, имя, отчество физ. лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -106,4 +109,5 @@
 			]
 		},
 	]
+	});
 });

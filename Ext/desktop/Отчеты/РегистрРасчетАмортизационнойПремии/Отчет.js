@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетАмортизационнойПремии.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетАмортизационнойПремии'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетАмортизационнойПремии.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:432px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр-расчет амортизационной премии',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -142,4 +145,5 @@
 			]
 		},
 	]
+	});
 });

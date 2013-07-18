@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СравнительныйАнализОборотовПоБюджету.ФормаСравнительныйАнализОборотовПоБюджетам',
+﻿Ext.require(['Данные.Отчеты.СравнительныйАнализОборотовПоБюджету'], function () 
+{
+	Ext.define('Отчеты.СравнительныйАнализОборотовПоБюджету.ФормаСравнительныйАнализОборотовПоБюджетам',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:436px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -150,4 +153,5 @@
 			]
 		},
 	]
+	});
 });

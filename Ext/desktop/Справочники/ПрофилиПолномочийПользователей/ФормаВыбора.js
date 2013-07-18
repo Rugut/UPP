@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофилиПолномочийПользователей.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ПрофилиПолномочийПользователей'], function () 
+{
+	Ext.define('Справочники.ПрофилиПолномочийПользователей.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:462px;height:264px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Профили полномочий пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПрофилиПолномочийПользователей.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПрофилиПолномочийПользователей.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

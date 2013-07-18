@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Склады.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Склады'], function () 
+{
+	Ext.define('Справочники.Склады.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:546px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Склады (места хранения)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

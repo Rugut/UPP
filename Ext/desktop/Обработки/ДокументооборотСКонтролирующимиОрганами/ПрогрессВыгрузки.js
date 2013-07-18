@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПрогрессВыгрузки',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПрогрессВыгрузки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:620px;height:90px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выгрузка архива документооборота',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -46,4 +49,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

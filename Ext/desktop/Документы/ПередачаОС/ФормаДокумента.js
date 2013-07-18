@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПередачаОС'], function () 
+{
+	Ext.define('Документы.ПередачаОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Передача ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -122,6 +128,7 @@
 					items:
 					[
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:141px;',
 			height: 141,width: 634,
@@ -141,7 +148,7 @@
 				},
 				{
 					text:'Инв. №',
-					width:'64',
+					width:'63',
 					dataIndex:'ИнвентарныйНомер',
 					flex:1,
 				},
@@ -225,7 +232,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'124',
+					width:'123',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -290,7 +297,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -372,6 +379,23 @@
 						name:'СчетРасходовНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -542,6 +566,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:89px;',
 			height: 89,width: 634,
@@ -555,7 +580,7 @@
 				},
 				{
 					text:'Сделка',
-					width:'154',
+					width:'153',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -590,7 +615,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -612,6 +637,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -841,7 +883,8 @@
 			height: 19,
 			style: 'position:absolute;left:420px;top:154px;width:236px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -910,4 +953,5 @@
 			]
 		},
 	]
+	});
 });

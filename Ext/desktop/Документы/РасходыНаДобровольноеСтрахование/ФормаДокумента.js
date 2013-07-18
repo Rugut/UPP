@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасходыНаДобровольноеСтрахование.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасходыНаДобровольноеСтрахование'], function () 
+{
+	Ext.define('Документы.РасходыНаДобровольноеСтрахование.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:320px;height:226px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расходы на страхование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -176,4 +179,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

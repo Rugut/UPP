@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АккредитивПолученный.ФормаНазначениеПлатежа',
+﻿Ext.require(['Данные.Документы.АккредитивПолученный'], function () 
+{
+	Ext.define('Документы.АккредитивПолученный.ФормаНазначениеПлатежа',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:185px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Аккредитив полученный: Назначение платежа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -43,4 +46,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

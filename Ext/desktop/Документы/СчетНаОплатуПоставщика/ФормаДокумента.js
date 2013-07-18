@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетНаОплатуПоставщика.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СчетНаОплатуПоставщика'], function () 
+{
+	Ext.define('Документы.СчетНаОплатуПоставщика.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:658px;height:455px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документ Счет на оплату поставщика',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -95,6 +101,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
 			height: 137,width: 628,
@@ -227,7 +234,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -292,6 +299,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -335,6 +359,7 @@
 			]
 		},
 		{
+			id: 'Оборудование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
 			height: 137,width: 628,
@@ -431,7 +456,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -478,6 +503,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оборудование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -492,6 +534,7 @@
 			style: 'position:absolute;left:12px;top:27px;width:84px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
 			height: 137,width: 628,
@@ -523,7 +566,7 @@
 				},
 				{
 					text:'Цена',
-					width:'57',
+					width:'56',
 					dataIndex:'Цена',
 					flex:1,
 				},
@@ -541,7 +584,7 @@
 				},
 				{
 					text:'Сумма НДС',
-					width:'76',
+					width:'75',
 					dataIndex:'СуммаНДС',
 					flex:1,
 				},
@@ -558,7 +601,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -590,6 +633,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -620,6 +680,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:628px;height:137px;',
 			height: 137,width: 628,
@@ -680,7 +741,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПоставщика/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -708,6 +769,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПоставщика.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1025,8 +1103,10 @@
 			text: 'Отклонение от плановой себестоимости',
 			style: 'position:absolute;left:8px;top:377px;width:454px;height:17px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

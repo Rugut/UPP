@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаПоумолчанию',
+﻿Ext.require(['Данные.Обработки.КонструкторПользовательскихПолей'], function () 
+{
+	Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаПоумолчанию',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:64px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -23,4 +26,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

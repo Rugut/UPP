@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыбытиеНМАМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыбытиеНМАМеждународный'], function () 
+{
+	Ext.define('Документы.ВыбытиеНМАМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:705px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбытие НМА (международный)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -118,7 +121,7 @@
 				},
 				{
 					text:'НМА',
-					width:'2200',
+					width:'220',
 					dataIndex:'НематериальныйАктив',
 					flex:1,
 				},
@@ -149,9 +152,9 @@
 					{
 						var грид = Ext.getCmp('НематериальныеАктивы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВыбытиеНМАМеждународный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВыбытиеНМАМеждународный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -262,4 +265,5 @@
 			]
 		},
 	]
+	});
 });

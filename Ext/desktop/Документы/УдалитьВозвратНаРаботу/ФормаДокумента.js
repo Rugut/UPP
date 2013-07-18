@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УдалитьВозвратНаРаботу.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УдалитьВозвратНаРаботу'], function () 
+{
+	Ext.define('Документы.УдалитьВозвратНаРаботу.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:323px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Возврат на работу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -139,9 +142,9 @@
 					{
 						var грид = Ext.getCmp('Работники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УдалитьВозвратНаРаботу.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УдалитьВозвратНаРаботу.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -226,4 +229,5 @@
 			]
 		},
 	]
+	});
 });

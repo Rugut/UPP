@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение3.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАкцизыПриложение3'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение3.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Акцизы на алкогольную продукцию',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

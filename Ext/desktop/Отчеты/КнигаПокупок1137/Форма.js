@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КнигаПокупок1137.Форма',
+﻿Ext.require(['Данные.Отчеты.КнигаПокупок1137'], function () 
+{
+	Ext.define('Отчеты.КнигаПокупок1137.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:800px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Книга покупок по Постановлению № 1137',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -140,4 +143,5 @@
 			]
 		},
 	]
+	});
 });

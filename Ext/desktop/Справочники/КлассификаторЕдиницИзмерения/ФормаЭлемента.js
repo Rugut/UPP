@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлассификаторЕдиницИзмерения.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлассификаторЕдиницИзмерения'], function () 
+{
+	Ext.define('Справочники.КлассификаторЕдиницИзмерения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:401px;height:136px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Элемент Классификатор единиц измерения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -105,4 +108,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасходныйКассовыйОрдер.ФормаСписка',
+﻿Ext.require(['Данные.Документы.РасходныйКассовыйОрдер'], function () 
+{
+	Ext.define('Документы.РасходныйКассовыйОрдер.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расходные кассовые ордера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,13 +66,13 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Сумма документа',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаДокумента',
 					flex:1,
 				},
@@ -81,37 +84,37 @@
 				},
 				{
 					text:'Касса',
-					width:'1200',
+					width:'120',
 					dataIndex:'Касса',
 					flex:1,
 				},
 				{
 					text:'Контрагент, подотчетник, Касса ККМ',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -184,9 +187,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -229,4 +232,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

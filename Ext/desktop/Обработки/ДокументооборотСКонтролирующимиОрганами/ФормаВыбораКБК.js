@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораКБК',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораКБК',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:597px;height:408px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выбор КБК',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'КБК',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:581px;height:367px;',
 			height: 367,width: 581,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'КБК',
-					width:'171',
+					width:'170',
 					dataIndex:'КБК',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +52,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КБК');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораКБКСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораКБКСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -68,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

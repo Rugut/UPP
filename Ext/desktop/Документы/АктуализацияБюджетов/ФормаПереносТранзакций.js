@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктуализацияБюджетов.ФормаПереносТранзакций',
+﻿Ext.require(['Данные.Документы.АктуализацияБюджетов'], function () 
+{
+	Ext.define('Документы.АктуализацияБюджетов.ФормаПереносТранзакций',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:626px;height:370px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Перенос транзакций на следующие периоды',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'НастройкаПереносаТранзакций',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:58px;width:610px;height:279px;',
 			height: 279,width: 610,
@@ -29,19 +36,19 @@
 				},
 				{
 					text:'Установка периода',
-					width:'115',
+					width:'114',
 					dataIndex:'УстановкаПериода',
 					flex:1,
 				},
 				{
 					text:'Период',
-					width:'118',
+					width:'117',
 					dataIndex:'Период',
 					flex:1,
 				},
 				{
 					text:'Статья оборотов',
-					width:'147',
+					width:'146',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -94,7 +101,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктуализацияБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктуализацияБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +142,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаПереносаТранзакций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктуализацияБюджетов.ФормаПереносТранзакцийСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктуализацияБюджетов.ФормаПереносТранзакцийСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -179,4 +204,5 @@
 			]
 		},
 	]
+	});
 });

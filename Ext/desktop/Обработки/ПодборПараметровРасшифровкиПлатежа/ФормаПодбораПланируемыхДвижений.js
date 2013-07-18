@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораПланируемыхДвижений',
+﻿Ext.require(['Данные.Обработки.ПодборПараметровРасшифровкиПлатежа'], function () 
+{
+	Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораПланируемыхДвижений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:281px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Подбор документов планирования движения денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ПланируемыеДвижения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:53px;width:764px;height:220px;',
 			height: 220,width: 764,
@@ -53,13 +60,13 @@
 				},
 				{
 					text:'Дата движения',
-					width:'102',
+					width:'101',
 					dataIndex:'ДатаДвижения',
 					flex:1,
 				},
 				{
 					text:'Сумма платежа',
-					width:'113',
+					width:'112',
 					dataIndex:'СуммаПлатежа',
 					flex:1,
 				},
@@ -77,13 +84,13 @@
 				},
 				{
 					text:'Сумма счета',
-					width:'108',
+					width:'107',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'80',
+					width:'79',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -106,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПараметровРасшифровкиПлатежа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПараметровРасшифровкиПлатежа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,6 +160,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПланируемыеДвижения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораПланируемыхДвиженийСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораПланируемыхДвиженийСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -165,7 +189,8 @@
 			text: 'Всего выбрано:',
 			style: 'position:absolute;left:491px;top:30px;width:281px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -180,4 +205,5 @@
 			]
 		},
 	]
+	});
 });

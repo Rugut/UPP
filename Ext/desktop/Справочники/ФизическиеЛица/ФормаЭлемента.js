@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:608px;height:498px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Физическое лицо',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -105,6 +111,7 @@
 			style: 'position:absolute;left:100px;top:6px;width:80px;height:19px;',
 		},
 		{
+			id: 'КонтактнаяИнформация',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:166px;width:578px;height:169px;',
 			height: 169,width: 578,
@@ -143,11 +150,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -166,6 +174,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтактнаяИнформация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -306,6 +331,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:92px;height:19px;text-align:left;',
 		},
 		{
+			id: 'СоставСемьи',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:124px;width:300px;height:69px;',
 			height: 69,width: 300,
@@ -332,11 +358,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -350,8 +377,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставСемьи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Образование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:247px;width:360px;height:88px;',
 			height: 88,width: 360,
@@ -396,11 +441,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -423,8 +469,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Образование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ЗнаниеЯзыков',
 			xtype: 'grid',
 			style: 'position:absolute;left:312px;top:124px;width:272px;height:69px;',
 			height: 69,width: 272,
@@ -438,18 +502,19 @@
 				},
 				{
 					text:'Степень знания языка',
-					width:'125',
+					width:'124',
 					dataIndex:'СтепеньЗнанияЯзыка',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -459,6 +524,23 @@
 						name:'СтепеньЗнанияЯзыка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗнаниеЯзыков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -527,6 +609,7 @@
 			style: 'position:absolute;left:372px;top:226px;width:212px;height:16px;',
 		},
 		{
+			id: 'Профессии',
 			xtype: 'grid',
 			style: 'position:absolute;left:372px;top:247px;width:212px;height:88px;',
 			height: 88,width: 212,
@@ -541,17 +624,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Профессия',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Профессии');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -596,6 +697,7 @@
 					items:
 					[
 		{
+			id: 'УченыеСтепени',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:578px;height:80px;',
 			height: 80,width: 578,
@@ -640,11 +742,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -667,6 +770,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УченыеСтепени');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -674,6 +794,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;',
 		},
 		{
+			id: 'УченыеЗвания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:136px;width:578px;height:118px;',
 			height: 118,width: 578,
@@ -718,11 +839,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -744,6 +866,23 @@
 						name:'НаучнаяСпециальность',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УченыеЗвания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -779,6 +918,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;',
 		},
 		{
+			id: 'Награды',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:578px;height:289px;',
 			height: 289,width: 578,
@@ -811,11 +951,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -832,6 +973,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Награды');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -846,6 +1004,7 @@
 			style: 'position:absolute;left:6px;top:54px;width:92px;height:19px;text-align:left;',
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:286px;height:311px;',
 			height: 311,width: 286,
@@ -866,11 +1025,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -881,8 +1041,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:298px;top:24px;width:286px;height:311px;',
 			height: 311,width: 286,
@@ -896,18 +1074,19 @@
 				},
 				{
 					text:'Категория',
-					width:'257',
+					width:'256',
 					dataIndex:'Категория',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -917,6 +1096,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -932,6 +1128,7 @@
 					items:
 					[
 		{
+			id: 'Заметки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:70px;width:578px;height:156px;',
 			height: 156,width: 578,
@@ -970,11 +1167,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФизическиеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -993,6 +1191,23 @@
 						name:'Автор',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Заметки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1102,7 +1317,8 @@
 			height: 19,
 			style: 'position:absolute;left:98px;top:81px;width:502px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1120,4 +1336,5 @@
 			]
 		},
 	]
+	});
 });

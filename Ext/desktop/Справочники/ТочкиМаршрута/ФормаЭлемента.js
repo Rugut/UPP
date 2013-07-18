@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТочкиМаршрута.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТочкиМаршрута'], function () 
+{
+	Ext.define('Справочники.ТочкиМаршрута.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:433px;height:157px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Точки маршрута',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -128,4 +131,5 @@
 			]
 		},
 	]
+	});
 });

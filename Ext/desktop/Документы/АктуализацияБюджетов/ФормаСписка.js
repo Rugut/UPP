@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктуализацияБюджетов.ФормаСписка',
+﻿Ext.require(['Данные.Документы.АктуализацияБюджетов'], function () 
+{
+	Ext.define('Документы.АктуализацияБюджетов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Актуализации бюджетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,7 +54,7 @@
 				},
 				{
 					text:'Сценарий',
-					width:'2200',
+					width:'220',
 					dataIndex:'Сценарий',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АктуализацияБюджетов.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АктуализацияБюджетов.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

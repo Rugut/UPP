@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеЗаказовПоставщикам.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗакрытиеЗаказовПоставщикам'], function () 
+{
+	Ext.define('Документы.ЗакрытиеЗаказовПоставщикам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:648px;height:401px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Закрытие заказов поставщикам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +98,7 @@
 			]
 		},
 		{
+			id: 'Заказы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:125px;width:632px;height:195px;',
 			height: 195,width: 632,
@@ -141,7 +148,7 @@
 				},
 				{
 					text:'Организация',
-					width:'120',
+					width:'119',
 					dataIndex:'ОрганизацияЗаказа',
 					flex:1,
 				},
@@ -152,7 +159,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаказовПоставщикам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаказовПоставщикам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -180,6 +187,23 @@
 						name:'ОрганизацияЗаказа',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Заказы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗакрытиеЗаказовПоставщикам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗакрытиеЗаказовПоставщикам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -266,8 +290,10 @@
 			height: 19,
 			style: 'position:absolute;left:84px;top:56px;width:230px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

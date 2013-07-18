@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение4.ФормаОтчета2005Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАлкоПриложение4'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение4.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Использование виноматериалов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -215,4 +218,5 @@
 			]
 		},
 	]
+	});
 });

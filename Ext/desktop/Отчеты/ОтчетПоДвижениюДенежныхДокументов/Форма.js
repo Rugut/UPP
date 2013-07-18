@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоДвижениюДенежныхДокументов.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоДвижениюДенежныхДокументов'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоДвижениюДенежныхДокументов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:507px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по движению денежных документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -110,4 +113,5 @@
 			]
 		},
 	]
+	});
 });

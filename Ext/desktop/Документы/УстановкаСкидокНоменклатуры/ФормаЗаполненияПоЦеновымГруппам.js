@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаЗаполненияПоЦеновымГруппам',
+﻿Ext.require(['Данные.Документы.УстановкаСкидокНоменклатуры'], function () 
+{
+	Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаЗаполненияПоЦеновымГруппам',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:546px;height:59px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Установка скидок номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -83,4 +86,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

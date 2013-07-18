@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СертификацияНоменклатуры.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.СертификацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.СертификацияНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сертификации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СертификацияНоменклатуры.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СертификацияНоменклатуры.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

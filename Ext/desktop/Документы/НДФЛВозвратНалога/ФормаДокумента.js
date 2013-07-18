@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НДФЛВозвратНалога.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НДФЛВозвратНалога'], function () 
+{
+	Ext.define('Документы.НДФЛВозвратНалога.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:668px;height:367px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Возврат налога на доходы физических лиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -98,6 +104,7 @@
 			style: 'position:absolute;left:8px;top:57px;width:76px;height:19px;text-align:left;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:129px;width:652px;height:179px;',
 			height: 179,width: 652,
@@ -123,19 +130,19 @@
 				},
 				{
 					text:'По ставке 13 (30)%',
-					width:'102',
+					width:'101',
 					dataIndex:'СуммаВозвратаПоСтавке13',
 					flex:1,
 				},
 				{
 					text:'По ставке 9 (15, 30)%',
-					width:'79',
+					width:'78',
 					dataIndex:'СуммаВозвратаПоСтавке09',
 					flex:1,
 				},
 				{
 					text:'По ставке 35 (30)%',
-					width:'84',
+					width:'83',
 					dataIndex:'СуммаВозвратаПоСтавке35',
 					flex:1,
 				},
@@ -164,7 +171,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛВозвратНалога/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛВозвратНалога/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -195,6 +202,23 @@
 						name:'КПП',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛВозвратНалога.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛВозвратНалога.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -232,7 +256,8 @@
 			height: 19,
 			style: 'position:absolute;left:84px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -287,4 +312,5 @@
 			]
 		},
 	]
+	});
 });

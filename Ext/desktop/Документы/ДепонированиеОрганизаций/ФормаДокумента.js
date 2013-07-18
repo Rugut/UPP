@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДепонированиеОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ДепонированиеОрганизаций'], function () 
+{
+	Ext.define('Документы.ДепонированиеОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:502px;height:374px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Депонирование организаций',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -118,13 +121,13 @@
 				},
 				{
 					text:'Ведомость',
-					width:'2200',
+					width:'220',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
 				{
 					text:'Сумма к депонированию',
-					width:'1400',
+					width:'140',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -158,9 +161,9 @@
 					{
 						var грид = Ext.getCmp('ДепонированиеЗаработнойПлаты');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДепонированиеОрганизаций.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДепонированиеОрганизаций.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -188,13 +191,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'2200',
+					width:'220',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -228,9 +231,9 @@
 					{
 						var грид = Ext.getCmp('Работники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДепонированиеОрганизаций.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДепонированиеОрганизаций.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -398,4 +401,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказов',
+﻿Ext.require(['Данные.Документы.ЗакрытиеВнутреннихЗаказов'], function () 
+{
+	Ext.define('Документы.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:595px;height:397px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отобрать внутренние заказы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:30px;width:579px;height:120px;',
@@ -80,6 +86,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:565px;height:67px;',
 			height: 67,width: 565,
@@ -128,7 +135,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -150,6 +157,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -201,6 +225,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеЗаказы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:233px;width:579px;height:131px;',
 			height: 131,width: 579,
@@ -226,7 +251,7 @@
 				},
 				{
 					text:'Номер',
-					width:'86',
+					width:'85',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -315,7 +340,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеВнутреннихЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -370,6 +395,23 @@
 						name:'ПричинаЗакрытияЗаказа',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗаказы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗакрытиеВнутреннихЗаказов.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -444,7 +486,8 @@
 			text: 'Причина закрытия заказов:',
 			style: 'position:absolute;left:8px;top:164px;width:148px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -470,4 +513,5 @@
 			]
 		},
 	]
+	});
 });

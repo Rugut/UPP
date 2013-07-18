@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаЗаписейРегистров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаЗаписейРегистров'], function () 
+{
+	Ext.define('Документы.КорректировкаЗаписейРегистров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:363px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка записей регистров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -112,6 +118,7 @@
 					items:
 					[
 		{
+			id: 'ЗаполнениеДвижений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:620px;height:144px;',
 			height: 144,width: 620,
@@ -125,13 +132,13 @@
 				},
 				{
 					text:'Действие',
-					width:'192',
+					width:'191',
 					dataIndex:'Действие',
 					flex:1,
 				},
 				{
 					text:'Документ',
-					width:'182',
+					width:'181',
 					dataIndex:'Документ',
 					flex:1,
 				},
@@ -148,7 +155,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -164,6 +171,23 @@
 						name:'Примечание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаполнениеДвижений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -193,6 +217,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДвиженияБУ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:606px;height:133px;',
 			height: 133,width: 606,
@@ -325,7 +350,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -390,6 +415,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвиженияБУ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -398,6 +440,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДвиженияНУ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:606px;height:133px;',
 			height: 133,width: 606,
@@ -518,7 +561,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -577,6 +620,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвиженияНУ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -585,6 +645,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДвиженияМУ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:606px;height:133px;',
 			height: 133,width: 606,
@@ -628,13 +689,13 @@
 				},
 				{
 					text:'Валюта',
-					width:'41',
+					width:'40',
 					dataIndex:'ВалютаДт',
 					flex:1,
 				},
 				{
 					text:'Вал. сумма',
-					width:'93',
+					width:'92',
 					dataIndex:'ВалютнаяСуммаДт',
 					flex:1,
 				},
@@ -652,19 +713,19 @@
 				},
 				{
 					text:'СубконтоКт1',
-					width:'98',
+					width:'97',
 					dataIndex:'СубконтоКт1',
 					flex:1,
 				},
 				{
 					text:'СубконтоКт2',
-					width:'98',
+					width:'97',
 					dataIndex:'СубконтоКт2',
 					flex:1,
 				},
 				{
 					text:'СубконтоКт3',
-					width:'98',
+					width:'97',
 					dataIndex:'СубконтоКт3',
 					flex:1,
 				},
@@ -676,7 +737,7 @@
 				},
 				{
 					text:'Вал. сумма',
-					width:'81',
+					width:'80',
 					dataIndex:'ВалютнаяСуммаКт',
 					flex:1,
 				},
@@ -694,13 +755,13 @@
 				},
 				{
 					text:'Содержание',
-					width:'163',
+					width:'162',
 					dataIndex:'Содержание',
 					flex:1,
 				},
 				{
 					text:'№ж',
-					width:'24',
+					width:'23',
 					dataIndex:'НомерЖурнала',
 					flex:1,
 				},
@@ -711,7 +772,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -773,6 +834,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвиженияМУ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -781,6 +859,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДвиженияБюджетирование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:606px;height:132px;',
 			height: 132,width: 606,
@@ -800,7 +879,7 @@
 				},
 				{
 					text:'Счет Дт',
-					width:'57',
+					width:'56',
 					dataIndex:'СчетДт',
 					flex:1,
 				},
@@ -812,13 +891,13 @@
 				},
 				{
 					text:'Сумма вал. Дт',
-					width:'82',
+					width:'81',
 					dataIndex:'ВалютнаяСуммаДт',
 					flex:1,
 				},
 				{
 					text:'Субконто Дт',
-					width:'43',
+					width:'42',
 					dataIndex:'СубконтоДт1',
 					flex:1,
 				},
@@ -907,7 +986,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаЗаписейРегистров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -968,6 +1047,23 @@
 						name:'СтатьяОборотов',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвиженияБюджетирование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаЗаписейРегистров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1060,7 +1156,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1122,4 +1219,5 @@
 			]
 		},
 	]
+	});
 });

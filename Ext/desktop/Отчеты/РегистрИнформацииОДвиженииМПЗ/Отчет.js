@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрИнформацииОДвиженииМПЗ.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрИнформацииОДвиженииМПЗ'], function () 
+{
+	Ext.define('Отчеты.РегистрИнформацииОДвиженииМПЗ.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:605px;height:433px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр информации о движении МПЗ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -123,4 +126,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ФормированиеЗаписейКнигиПокупок.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ФормированиеЗаписейКнигиПокупок'], function () 
+{
+	Ext.define('Документы.ФормированиеЗаписейКнигиПокупок.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Формирование записей книги покупок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Дата',
-					width:'1200',
+					width:'120',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФормированиеЗаписейКнигиПокупок.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПокупок.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -151,4 +154,5 @@
 			]
 		},
 	]
+	});
 });

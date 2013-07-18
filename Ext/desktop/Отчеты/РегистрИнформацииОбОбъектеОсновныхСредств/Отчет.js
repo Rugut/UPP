@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрИнформацииОбОбъектеОсновныхСредств.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрИнформацииОбОбъектеОсновныхСредств'], function () 
+{
+	Ext.define('Отчеты.РегистрИнформацииОбОбъектеОсновныхСредств.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:409px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр информации об объекте основных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -130,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.Форма',
+﻿Ext.require(['Данные.Обработки.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки'], function () 
+{
+	Ext.define('Обработки.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отправка электронного сообщения в отдел технической поддержки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:313px;width:764px;height:24px;',
@@ -17,6 +23,7 @@
 			]
 		},
 		{
+			id: 'ФайлыВложения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:337px;width:764px;height:80px;',
 			height: 80,width: 764,
@@ -30,7 +37,7 @@
 				},
 				{
 					text:'Путь к файлу',
-					width:'476',
+					width:'475',
 					dataIndex:'ПутьКФайлу',
 					flex:1,
 				},
@@ -41,7 +48,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -51,6 +58,23 @@
 						name:'ПутьКФайлу',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФайлыВложения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -107,8 +131,10 @@
 			title: 'Вложения',
 			style: 'position:absolute;left:8px;top:297px;width:764px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

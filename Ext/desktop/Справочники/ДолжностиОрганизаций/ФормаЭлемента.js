@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДолжностиОрганизаций.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДолжностиОрганизаций'], function () 
+{
+	Ext.define('Справочники.ДолжностиОрганизаций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:565px;height:473px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Должности организаций',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -274,6 +280,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:275px;top:25px;width:266px;height:289px;',
 			height: 289,width: 266,
@@ -294,11 +301,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -309,8 +317,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:263px;height:289px;',
 			height: 289,width: 263,
@@ -331,11 +357,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -346,6 +373,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -354,6 +398,7 @@
 					items:
 					[
 		{
+			id: 'ЕжегодныеОтпуска',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:535px;height:284px;',
 			height: 284,width: 535,
@@ -374,11 +419,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -388,6 +434,23 @@
 						name:'КоличествоДнейОтпускаВГод',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЕжегодныеОтпуска');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -406,7 +469,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -450,4 +514,5 @@
 			]
 		},
 	]
+	});
 });

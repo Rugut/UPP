@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПодготовкаКПередачеОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПодготовкаКПередачеОС'], function () 
+{
+	Ext.define('Документы.ПодготовкаКПередачеОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:723px;height:423px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подготовка к передаче ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -117,6 +123,7 @@
 			style: 'position:absolute;left:506px;top:33px;width:71px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:147px;width:707px;height:194px;',
 			height: 194,width: 707,
@@ -130,7 +137,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'216',
+					width:'215',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -154,13 +161,13 @@
 				},
 				{
 					text:'Амортизация',
-					width:'91',
+					width:'90',
 					dataIndex:'Амортизация',
 					flex:1,
 				},
 				{
 					text:'Аморт. за месяц',
-					width:'100',
+					width:'99',
 					dataIndex:'АмортизацияЗаМесяц',
 					flex:1,
 				},
@@ -172,7 +179,7 @@
 				},
 				{
 					text:'Ост. стоимость (БУ)',
-					width:'116',
+					width:'115',
 					dataIndex:'ОстСтоимостьБУ',
 					flex:1,
 				},
@@ -190,19 +197,19 @@
 				},
 				{
 					text:'Стоимость (НУ)',
-					width:'112',
+					width:'111',
 					dataIndex:'СтоимостьНУ',
 					flex:1,
 				},
 				{
 					text:'Ост. стоимость (НУ)',
-					width:'102',
+					width:'101',
 					dataIndex:'ОстСтоимостьНУ',
 					flex:1,
 				},
 				{
 					text:'Амортизация (НУ)',
-					width:'119',
+					width:'118',
 					dataIndex:'АмортизацияНУ',
 					flex:1,
 				},
@@ -225,7 +232,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаКПередачеОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаКПередачеОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -278,6 +285,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаКПередачеОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаКПередачеОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -312,7 +336,8 @@
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:107px;width:707px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -391,4 +416,5 @@
 			]
 		},
 	]
+	});
 });

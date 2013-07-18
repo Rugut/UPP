@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РезультатГрупповойОнлайнПроверки',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РезультатГрупповойОнлайнПроверки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:759px;height:341px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Результаты проверки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаРезультатов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:743px;height:300px;',
 			height: 300,width: 743,
@@ -17,13 +24,13 @@
 			[
 				{
 					text:'Документ',
-					width:'271',
+					width:'270',
 					dataIndex:'Документ',
 					flex:1,
 				},
 				{
 					text:'Тип документа',
-					width:'91',
+					width:'90',
 					dataIndex:'ТипФайлаОтчета',
 					flex:1,
 				},
@@ -82,7 +89,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -117,8 +124,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаРезультатов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.РезультатГрупповойОнлайнПроверкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.РезультатГрупповойОнлайнПроверкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -136,4 +161,5 @@
 			]
 		},
 	]
+	});
 });

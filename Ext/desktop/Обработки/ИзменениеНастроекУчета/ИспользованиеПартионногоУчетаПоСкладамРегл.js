@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ИзменениеНастроекУчета.ИспользованиеПартионногоУчетаПоСкладамРегл',
+﻿Ext.require(['Данные.Обработки.ИзменениеНастроекУчета'], function () 
+{
+	Ext.define('Обработки.ИзменениеНастроекУчета.ИспользованиеПартионногоУчетаПоСкладамРегл',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:415px;height:116px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Установка параметра учета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,4 +53,5 @@
 			]
 		},
 	]
+	});
 });

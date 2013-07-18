@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСостоянияНалоговогоУчетаПоУСН.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.АнализСостоянияНалоговогоУчетаПоУСН'], function () 
+{
+	Ext.define('Отчеты.АнализСостоянияНалоговогоУчетаПоУСН.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1049px;height:600px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ состояния налогового учета по УСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -106,4 +109,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ВыборОрганизацииОбмена',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ВыборОрганизацииОбмена',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:491px;height:343px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выберите организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -59,4 +62,5 @@
 			]
 		},
 	]
+	});
 });

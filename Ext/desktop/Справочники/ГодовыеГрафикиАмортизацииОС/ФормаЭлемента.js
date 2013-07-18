@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГодовыеГрафикиАмортизацииОС.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ГодовыеГрафикиАмортизацииОС'], function () 
+{
+	Ext.define('Справочники.ГодовыеГрафикиАмортизацииОС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:418px;height:277px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Годовые графики амортизации ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -276,4 +279,5 @@
 			]
 		},
 	]
+	});
 });

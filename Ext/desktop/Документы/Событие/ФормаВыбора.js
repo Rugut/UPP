@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Событие.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.Событие'], function () 
+{
+	Ext.define('Документы.Событие.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'События',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,19 +54,19 @@
 				},
 				{
 					text:'Группа события',
-					width:'1200',
+					width:'120',
 					dataIndex:'ГруппаСобытия',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'1800',
+					width:'180',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -93,13 +96,13 @@
 				},
 				{
 					text:'Территория',
-					width:'1200',
+					width:'120',
 					dataIndex:'Территория',
 					flex:1,
 				},
 				{
 					text:'Помещение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Помещение',
 					flex:1,
 				},
@@ -111,19 +114,19 @@
 				},
 				{
 					text:'Вид объекта',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОбъекта',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'2200',
+					width:'220',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -202,9 +205,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Событие.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Событие.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -241,4 +244,5 @@
 			]
 		},
 	]
+	});
 });

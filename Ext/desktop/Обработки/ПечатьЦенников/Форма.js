@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПечатьЦенников.Форма',
+﻿Ext.require(['Данные.Обработки.ПечатьЦенников'], function () 
+{
+	Ext.define('Обработки.ПечатьЦенников.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:461px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обработка  Печать ценников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:210px;width:764px;height:217px;',
 			height: 217,width: 764,
@@ -29,13 +36,13 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'224',
+					width:'223',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'189',
+					width:'188',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -47,13 +54,13 @@
 				},
 				{
 					text:'Цена',
-					width:'89',
+					width:'88',
 					dataIndex:'Цена',
 					flex:1,
 				},
 				{
 					text:'Количество',
-					width:'66',
+					width:'65',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЦенников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЦенников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +97,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьЦенников.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьЦенников.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -109,6 +133,7 @@
 			style: 'position:absolute;left:390px;top:33px;width:236px;height:19px;',
 		},
 		{
+			id: 'Отборы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:111px;width:764px;height:69px;',
 			height: 69,width: 764,
@@ -157,7 +182,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЦенников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЦенников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -179,6 +204,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отборы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьЦенников.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьЦенников.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -255,7 +297,8 @@
 			text: 'Организация:',
 			style: 'position:absolute;left:8px;top:33px;width:70px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -275,4 +318,5 @@
 			]
 		},
 	]
+	});
 });

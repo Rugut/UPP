@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиАналитическогоБаланса.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.СтатьиАналитическогоБаланса'], function () 
+{
+	Ext.define('Справочники.СтатьиАналитическогоБаланса.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:486px;height:60px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Статьи аналитического баланса',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -65,4 +68,5 @@
 			]
 		},
 	]
+	});
 });

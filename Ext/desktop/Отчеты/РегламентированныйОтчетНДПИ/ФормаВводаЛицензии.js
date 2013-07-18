@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетНДПИ.ФормаВводаЛицензии',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетНДПИ'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетНДПИ.ФормаВводаЛицензии',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:212px;height:160px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Лицензия на пользование недрами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

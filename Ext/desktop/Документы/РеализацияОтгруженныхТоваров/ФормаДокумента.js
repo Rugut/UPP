@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеализацияОтгруженныхТоваров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РеализацияОтгруженныхТоваров'], function () 
+{
+	Ext.define('Документы.РеализацияОтгруженныхТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:305px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Реализация отгруженных товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -277,4 +280,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

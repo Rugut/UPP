@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Кассы.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.Кассы'], function () 
+{
+	Ext.define('Справочники.Кассы.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:304px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы касс',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Кассы.ФормаВыбораГруппыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Кассы.ФормаВыбораГруппыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

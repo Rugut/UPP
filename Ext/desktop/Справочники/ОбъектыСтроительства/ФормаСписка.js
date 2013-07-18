@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОбъектыСтроительства.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ОбъектыСтроительства'], function () 
+{
+	Ext.define('Справочники.ОбъектыСтроительства.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:677px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Объекты строительства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбъектыСтроительства.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбъектыСтроительства.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -86,7 +89,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'1200',
+					width:'120',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -115,9 +118,9 @@
 					{
 						var грид = Ext.getCmp('Дерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбъектыСтроительства.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбъектыСтроительства.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -137,4 +140,5 @@
 			]
 		},
 	]
+	});
 });

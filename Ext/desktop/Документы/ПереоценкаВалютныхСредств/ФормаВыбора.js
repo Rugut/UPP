@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереоценкаВалютныхСредств.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПереоценкаВалютныхСредств'], function () 
+{
+	Ext.define('Документы.ПереоценкаВалютныхСредств.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Переоценка валютных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,7 +48,7 @@
 				},
 				{
 					text:'Дата',
-					width:'1200',
+					width:'120',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -57,25 +60,25 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -130,9 +133,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПереоценкаВалютныхСредств.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПереоценкаВалютныхСредств.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -176,4 +179,5 @@
 			]
 		},
 	]
+	});
 });

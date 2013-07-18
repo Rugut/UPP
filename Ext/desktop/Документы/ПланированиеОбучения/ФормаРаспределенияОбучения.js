@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланированиеОбучения.ФормаРаспределенияОбучения',
+﻿Ext.require(['Данные.Документы.ПланированиеОбучения'], function () 
+{
+	Ext.define('Документы.ПланированиеОбучения.ФормаРаспределенияОбучения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:458px;height:88px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Помощник равномерного распределения обучения по периоду ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВзаиморасчетыСКомитентамиРасширеннаяАналитика.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.ВзаиморасчетыСКомитентамиРасширеннаяАналитика'], function () 
+{
+	Ext.define('Отчеты.ВзаиморасчетыСКомитентамиРасширеннаяАналитика.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:520px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет  Взаиморасчеты с комитентами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

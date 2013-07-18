@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыборНоменклатурыДляНДС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыборНоменклатурыДляНДС'], function () 
+{
+	Ext.define('Документы.ВыборНоменклатурыДляНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:404px;height:365px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -108,13 +111,13 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'2200',
+					width:'220',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Вести сложный учет НДС',
-					width:'1400',
+					width:'140',
 					dataIndex:'ВестиСложныйУчетНДС',
 					flex:1,
 				},
@@ -148,9 +151,9 @@
 					{
 						var грид = Ext.getCmp('Номенклатура');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВыборНоменклатурыДляНДС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВыборНоменклатурыДляНДС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -222,4 +225,5 @@
 			]
 		},
 	]
+	});
 });

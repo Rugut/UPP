@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СерииНоменклатуры.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СерииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СерииНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:317px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Серии номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -365,4 +368,5 @@
 			]
 		},
 	]
+	});
 });

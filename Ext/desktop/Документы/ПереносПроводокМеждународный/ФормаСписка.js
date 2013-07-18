@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереносПроводокМеждународный.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ПереносПроводокМеждународный'], function () 
+{
+	Ext.define('Документы.ПереносПроводокМеждународный.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:776px;height:470px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Перенос проводок (международный)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:760px;height:120px;',
 			height: 120,width: 760,
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПереносПроводокМеждународный.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПереносПроводокМеждународный.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеДвижения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:183px;width:760px;height:279px;',
 			height: 279,width: 760,
@@ -200,7 +225,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -262,6 +287,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвижения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПереносПроводокМеждународный.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПереносПроводокМеждународный.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -277,7 +319,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -306,4 +349,5 @@
 			]
 		},
 	]
+	});
 });

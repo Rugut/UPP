@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АдминистрированиеПользователей.СхемаСистемыПравИНастроекПользователей',
+﻿Ext.require(['Данные.Обработки.АдминистрированиеПользователей'], function () 
+{
+	Ext.define('Обработки.АдминистрированиеПользователей.СхемаСистемыПравИНастроекПользователей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:844px;height:389px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Схема системы прав и настроек пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -34,4 +37,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиГражданство',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиГражданство',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:418px;height:417px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Гражданство физического лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -116,9 +119,9 @@
 					{
 						var грид = Ext.getCmp('ПринятыеПоДолгосрочнымДоговорам');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиГражданствоСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиГражданствоСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -201,4 +204,5 @@
 			]
 		},
 	]
+	});
 });

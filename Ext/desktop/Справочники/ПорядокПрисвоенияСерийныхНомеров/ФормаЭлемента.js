@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПорядокПрисвоенияСерийныхНомеров'], function () 
+{
+	Ext.define('Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:316px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Порядок присвоения серийных номеров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -40,6 +46,7 @@
 			style: 'position:absolute;left:89px;top:33px;width:398px;height:19px;',
 		},
 		{
+			id: 'РазрядыСерийногоНомера',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:98px;width:584px;height:137px;',
 			height: 137,width: 584,
@@ -47,13 +54,13 @@
 			[
 				{
 					text:'Номер разряда',
-					width:'86',
+					width:'85',
 					dataIndex:'НомерСтроки',
 					flex:1,
 				},
 				{
 					text:'Источник',
-					width:'211',
+					width:'210',
 					dataIndex:'Источник',
 					flex:1,
 				},
@@ -65,7 +72,7 @@
 				},
 				{
 					text:'Тип разряда',
-					width:'75',
+					width:'74',
 					dataIndex:'ТипРазряда',
 					flex:1,
 				},
@@ -78,11 +85,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПорядокПрисвоенияСерийныхНомеров").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПорядокПрисвоенияСерийныхНомеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПорядокПрисвоенияСерийныхНомеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -101,6 +109,23 @@
 						name:'РазмерРазряда',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РазрядыСерийногоНомера');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -153,7 +178,8 @@
 			name: 'КоличествоЗнаков',
 			style: 'position:absolute;left:514px;top:240px;width:78px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -195,4 +221,5 @@
 			]
 		},
 	]
+	});
 });

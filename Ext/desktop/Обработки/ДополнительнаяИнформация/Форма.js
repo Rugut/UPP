@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДополнительнаяИнформация.Форма',
+﻿Ext.require(['Данные.Обработки.ДополнительнаяИнформация'], function () 
+{
+	Ext.define('Обработки.ДополнительнаяИнформация.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:730px;height:554px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Информация',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,4 +54,5 @@
 			]
 		},
 	]
+	});
 });

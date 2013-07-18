@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ВидыЕжегодныхОтпусков'], function () 
+{
+	Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды ежегодных отпусков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВидыЕжегодныхОтпусков.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВидыЕжегодныхОтпусков.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -195,4 +198,5 @@
 			]
 		},
 	]
+	});
 });

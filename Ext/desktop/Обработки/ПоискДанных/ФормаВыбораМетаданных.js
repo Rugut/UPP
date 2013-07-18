@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоискДанных.ФормаВыбораМетаданных',
+﻿Ext.require(['Данные.Обработки.ПоискДанных'], function () 
+{
+	Ext.define('Обработки.ПоискДанных.ФормаВыбораМетаданных',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:365px;height:410px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Выбор объектов поиска',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:385px;width:365px;height:25px;',
@@ -27,6 +33,7 @@
 			]
 		},
 		{
+			id: 'ТаблицаОМД',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:349px;height:369px;',
 			height: 369,width: 349,
@@ -46,7 +53,7 @@
 				},
 				{
 					text:'Колонка2',
-					width:'403',
+					width:'402',
 					dataIndex:'Колонка2',
 					flex:1,
 				},
@@ -57,7 +64,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискДанных/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискДанных/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -71,9 +78,28 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаОМД');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискДанных.ФормаВыбораМетаданныхСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискДанных.ФормаВыбораМетаданныхСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

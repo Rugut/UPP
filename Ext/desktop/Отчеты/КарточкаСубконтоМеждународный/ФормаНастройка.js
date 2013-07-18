@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КарточкаСубконтоМеждународный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.КарточкаСубконтоМеждународный'], function () 
+{
+	Ext.define('Отчеты.КарточкаСубконтоМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:364px;height:309px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка: Карточка субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:284px;width:364px;height:25px;',
@@ -87,6 +93,7 @@
 			style: 'position:absolute;left:251px;top:54px;width:91px;height:19px;',
 		},
 		{
+			id: 'Субконто',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:128px;width:336px;height:114px;',
 			height: 114,width: 336,
@@ -100,7 +107,7 @@
 				},
 				{
 					text:'Вид субконто',
-					width:'288',
+					width:'287',
 					dataIndex:'ВидСубконто',
 					flex:1,
 				},
@@ -111,7 +118,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КарточкаСубконтоМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КарточкаСубконтоМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -122,6 +129,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Субконто');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КарточкаСубконтоМеждународный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КарточкаСубконтоМеждународный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -130,6 +154,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:336px;height:210px;',
 			height: 210,width: 336,
@@ -178,7 +203,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КарточкаСубконтоМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КарточкаСубконтоМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -201,13 +226,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КарточкаСубконтоМеждународный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КарточкаСубконтоМеждународный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

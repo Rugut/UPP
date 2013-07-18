@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлассификаторОКОПФ.ФормаПодбораИзКлассификатора',
+﻿Ext.require(['Данные.Справочники.КлассификаторОКОПФ'], function () 
+{
+	Ext.define('Справочники.КлассификаторОКОПФ.ФормаПодбораИзКлассификатора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Общероссийский классификатор организационно-правовых форм',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

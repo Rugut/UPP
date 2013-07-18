@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияНЗП.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияНЗП'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияНЗП.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Инвентаризации незавершенного производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -130,9 +133,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИнвентаризацияНЗП.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИнвентаризацияНЗП.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -156,4 +159,5 @@
 			]
 		},
 	]
+	});
 });

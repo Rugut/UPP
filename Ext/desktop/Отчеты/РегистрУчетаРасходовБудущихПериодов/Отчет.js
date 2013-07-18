@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаРасходовБудущихПериодов.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаРасходовБудущихПериодов'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаРасходовБудущихПериодов.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:445px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета расходов будущих периодов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -117,4 +120,5 @@
 			]
 		},
 	]
+	});
 });

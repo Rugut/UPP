@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.Форма',
+﻿Ext.require(['Данные.Обработки.ПерерасчетЗарплатыОрганизаций'], function () 
+{
+	Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:380px;height:342px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Перерасчет зарплаты организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -27,6 +33,7 @@
 			style: 'position:absolute;left:83px;top:33px;width:289px;height:19px;',
 		},
 		{
+			id: 'ДокументыПерерасчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:83px;width:364px;height:226px;',
 			height: 226,width: 364,
@@ -57,7 +64,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПерерасчетЗарплатыОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПерерасчетЗарплатыОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -70,6 +77,23 @@
 						name:'ПериодРегистрации',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыПерерасчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПерерасчетЗарплатыОрганизаций.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПерерасчетЗарплатыОрганизаций.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -87,7 +111,8 @@
 			height: 19,
 			style: 'position:absolute;left:231px;top:58px;width:141px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -146,4 +171,5 @@
 			]
 		},
 	]
+	});
 });

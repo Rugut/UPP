@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетРезервыПоСомнительнымДолгам.Отчет',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетРезервыПоСомнительнымДолгам'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетРезервыПоСомнительнымДолгам.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Резервы по сомнительным долгам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

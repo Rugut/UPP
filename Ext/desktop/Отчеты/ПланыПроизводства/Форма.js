@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПланыПроизводства.Форма',
+﻿Ext.require(['Данные.Отчеты.ПланыПроизводства'], function () 
+{
+	Ext.define('Отчеты.ПланыПроизводства.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -227,4 +230,5 @@
 			]
 		},
 	]
+	});
 });

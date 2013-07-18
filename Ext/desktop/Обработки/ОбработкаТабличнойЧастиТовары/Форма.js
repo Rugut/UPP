@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбработкаТабличнойЧастиТовары.Форма',
+﻿Ext.require(['Данные.Обработки.ОбработкаТабличнойЧастиТовары'], function () 
+{
+	Ext.define('Обработки.ОбработкаТабличнойЧастиТовары.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:728px;height:405px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка табличной части',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,25 +52,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2200',
+					width:'220',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2200',
+					width:'220',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2200',
+					width:'220',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -175,7 +178,7 @@
 				},
 				{
 					text:'Заказ покупателя',
-					width:'2500',
+					width:'250',
 					dataIndex:'ЗаказПокупателя',
 					flex:1,
 				},
@@ -299,9 +302,9 @@
 					{
 						var грид = Ext.getCmp('Товары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбработкаТабличнойЧастиТовары.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбработкаТабличнойЧастиТовары.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -468,9 +471,9 @@
 					{
 						var грид = Ext.getCmp('Порядок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбработкаТабличнойЧастиТовары.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбработкаТабличнойЧастиТовары.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -486,4 +489,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

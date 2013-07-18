@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РабочееМестоМенеджераПоПродажам.Форма',
+﻿Ext.require(['Данные.Обработки.РабочееМестоМенеджераПоПродажам'], function () 
+{
+	Ext.define('Обработки.РабочееМестоМенеджераПоПродажам.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:405px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Рабочее место менеджера по продажам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Номенклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:80px;width:328px;height:181px;',
 			height: 181,width: 328,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Полное наименование',
-					width:'365',
+					width:'364',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -53,7 +60,7 @@
 				},
 				{
 					text:'Баз.ед.измер.',
-					width:'80',
+					width:'79',
 					dataIndex:'БазоваяЕдиницаИзмерения',
 					flex:1,
 				},
@@ -71,7 +78,7 @@
 				},
 				{
 					text:'Ответственный за покупки',
-					width:'152',
+					width:'151',
 					dataIndex:'ОтветственныйМенеджерЗаПокупки',
 					flex:1,
 				},
@@ -94,7 +101,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,6 +142,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Номенклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -156,6 +180,7 @@
 					items:
 					[
 		{
+			id: 'НоменклатураДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:417px;height:309px;',
 			height: 309,width: 417,
@@ -174,13 +199,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НоменклатураДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -292,6 +334,7 @@
 			style: 'position:absolute;left:155px;top:147px;width:268px;height:15px;',
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:167px;width:229px;height:148px;',
 			height: 148,width: 229,
@@ -311,7 +354,7 @@
 				},
 				{
 					text:'Значение',
-					width:'115',
+					width:'114',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -322,7 +365,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -336,8 +379,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:240px;top:167px;width:183px;height:148px;',
 			height: 148,width: 183,
@@ -368,7 +429,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -382,6 +443,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -390,6 +468,7 @@
 					items:
 					[
 		{
+			id: 'ОстаткиДляНовогоКлиента',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:417px;height:204px;',
 			height: 204,width: 417,
@@ -409,7 +488,7 @@
 				},
 				{
 					text:'Свободный',
-					width:'63',
+					width:'62',
 					dataIndex:'Свободный',
 					flex:1,
 				},
@@ -438,7 +517,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -460,6 +539,23 @@
 						name:'МестоХранения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОстаткиДляНовогоКлиента');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -490,6 +586,7 @@
 			style: 'position:absolute;left:259px;top:296px;width:164px;height:19px;',
 		},
 		{
+			id: 'СписокЦенОстатков',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:215px;width:417px;height:76px;',
 			height: 76,width: 417,
@@ -497,13 +594,13 @@
 			[
 				{
 					text:'Типы цен',
-					width:'133',
+					width:'132',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Ссылка',
-					width:'82',
+					width:'81',
 					dataIndex:'Ссылка',
 					flex:1,
 				},
@@ -544,7 +641,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -570,6 +667,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокЦенОстатков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -583,6 +697,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:417px;height:16px;',
 		},
 		{
+			id: 'ЗаказыТекущегоПокупателя',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:27px;width:417px;height:129px;',
 			height: 129,width: 417,
@@ -602,13 +717,13 @@
 				},
 				{
 					text:'Дата отгрузки',
-					width:'84',
+					width:'83',
 					dataIndex:'ДатаОтгрузки',
 					flex:1,
 				},
 				{
 					text:'В заказе',
-					width:'61',
+					width:'60',
 					dataIndex:'ОстатокПоЗаказу',
 					flex:1,
 				},
@@ -620,13 +735,13 @@
 				},
 				{
 					text:'Проведен',
-					width:'51',
+					width:'50',
 					dataIndex:'Проведен',
 					flex:1,
 				},
 				{
 					text:'Пометка удаления',
-					width:'55',
+					width:'54',
 					dataIndex:'ПометкаУдаления',
 					flex:1,
 				},
@@ -637,7 +752,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -663,6 +778,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаказыТекущегоПокупателя');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -670,6 +802,7 @@
 			style: 'position:absolute;left:6px;top:161px;width:417px;height:16px;',
 		},
 		{
+			id: 'ЗакзаыТекущегоПокупателяВЗаказахПоставщикам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:182px;width:417px;height:133px;',
 			height: 133,width: 417,
@@ -677,19 +810,19 @@
 			[
 				{
 					text:'Заказ покупателя',
-					width:'105',
+					width:'104',
 					dataIndex:'ЗаказПокупателя',
 					flex:1,
 				},
 				{
 					text:'Дата отгрузки',
-					width:'83',
+					width:'82',
 					dataIndex:'ДатаОтгрузки',
 					flex:1,
 				},
 				{
 					text:'Заказ поставщику',
-					width:'105',
+					width:'104',
 					dataIndex:'ЗаказПоставщику',
 					flex:1,
 				},
@@ -712,7 +845,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочееМестоМенеджераПоПродажам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -731,6 +864,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗакзаыТекущегоПокупателяВЗаказахПоставщикам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РабочееМестоМенеджераПоПродажам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -782,7 +932,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:56px;width:140px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -810,4 +961,5 @@
 			]
 		},
 	]
+	});
 });

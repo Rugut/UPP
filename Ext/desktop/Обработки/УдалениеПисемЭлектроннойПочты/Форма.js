@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УдалениеПисемЭлектроннойПочты.Форма',
+﻿Ext.require(['Данные.Обработки.УдалениеПисемЭлектроннойПочты'], function () 
+{
+	Ext.define('Обработки.УдалениеПисемЭлектроннойПочты.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:682px;height:458px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Удаление писем электронной почты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:433px;width:682px;height:25px;',
@@ -27,6 +33,7 @@
 			]
 		},
 		{
+			id: 'ОбъектыДляУдаления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:666px;height:236px;',
 			height: 236,width: 666,
@@ -52,7 +59,7 @@
 				},
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'СтатусПисьма',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				},
 				{
 					text:'Отправитель',
-					width:'89',
+					width:'88',
 					dataIndex:'Отправитель',
 					flex:1,
 				},
@@ -99,7 +106,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалениеПисемЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалениеПисемЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -134,8 +141,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОбъектыДляУдаления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УдалениеПисемЭлектроннойПочты.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УдалениеПисемЭлектроннойПочты.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'НайденныеСсылки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:274px;width:666px;height:151px;',
 			height: 151,width: 666,
@@ -149,13 +174,13 @@
 				},
 				{
 					text:'Данные',
-					width:'374',
+					width:'373',
 					dataIndex:'Данные',
 					flex:1,
 				},
 				{
 					text:'Метаданные',
-					width:'266',
+					width:'265',
 					dataIndex:'Метаданные',
 					flex:1,
 				},
@@ -166,7 +191,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалениеПисемЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалениеПисемЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -180,8 +205,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НайденныеСсылки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УдалениеПисемЭлектроннойПочты.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УдалениеПисемЭлектроннойПочты.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -211,4 +254,5 @@
 			]
 		},
 	]
+	});
 });

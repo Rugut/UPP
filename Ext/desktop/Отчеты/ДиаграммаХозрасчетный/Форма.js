@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ДиаграммаХозрасчетный.Форма',
+﻿Ext.require(['Данные.Отчеты.ДиаграммаХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ДиаграммаХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет Диаграмма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбменДаннымиXML.Форма',
+﻿Ext.require(['Данные.Обработки.ОбменДаннымиXML'], function () 
+{
+	Ext.define('Обработки.ОбменДаннымиXML.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:626px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:28px;width:618px;height:545px;',
@@ -57,6 +63,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравилВыгрузки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:273px;height:193px;',
 			height: 193,width: 273,
@@ -70,7 +77,7 @@
 				},
 				{
 					text:'Узел обмена',
-					width:'126',
+					width:'125',
 					dataIndex:'СсылкаНаУзелОбмена',
 					flex:1,
 				},
@@ -81,7 +88,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -92,8 +99,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравилВыгрузки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПостроительОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:285px;top:31px;width:311px;height:193px;',
 			height: 193,width: 311,
@@ -142,7 +167,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -165,6 +190,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -173,6 +215,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаНастройкиПараметров',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:218px;',
 			height: 218,width: 590,
@@ -186,7 +229,7 @@
 				},
 				{
 					text:'Значение',
-					width:'301',
+					width:'300',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -197,7 +240,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -207,6 +250,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастройкиПараметров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -676,7 +736,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -706,4 +767,5 @@
 			]
 		},
 	]
+	});
 });

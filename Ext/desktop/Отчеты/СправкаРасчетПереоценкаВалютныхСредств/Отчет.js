@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетПереоценкаВалютныхСредств.Отчет',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетПереоценкаВалютныхСредств'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетПереоценкаВалютныхСредств.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Переоценка валютных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

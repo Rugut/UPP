@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.Форма',
+﻿Ext.require(['Данные.Обработки.ГрупповаяОбработкаСправочниковИДокументов'], function () 
+{
+	Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:573px;height:414px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Групповая обработка справочников и документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:557px;height:348px;',
@@ -30,6 +36,7 @@
 			style: 'position:absolute;left:78px;top:11px;width:163px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеВидыОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:65px;width:543px;height:93px;',
 			height: 93,width: 543,
@@ -43,7 +50,7 @@
 				},
 				{
 					text:'Имя таблицы',
-					width:'194',
+					width:'193',
 					dataIndex:'ИмяТаблицы',
 					flex:1,
 				},
@@ -54,7 +61,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -65,8 +72,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеВидыОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:202px;width:543px;height:120px;',
 			height: 120,width: 543,
@@ -115,7 +140,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -137,6 +162,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -163,6 +205,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:543px;height:231px;',
 			height: 231,width: 543,
@@ -181,13 +224,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Ш_ВидПредставление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -218,7 +278,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -251,4 +312,5 @@
 			]
 		},
 	]
+	});
 });

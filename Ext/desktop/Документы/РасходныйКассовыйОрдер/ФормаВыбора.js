@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасходныйКассовыйОрдер.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.РасходныйКассовыйОрдер'], function () 
+{
+	Ext.define('Документы.РасходныйКассовыйОрдер.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расходные кассовые ордера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
@@ -75,31 +78,31 @@
 				},
 				{
 					text:'Касса',
-					width:'1200',
+					width:'120',
 					dataIndex:'Касса',
 					flex:1,
 				},
 				{
 					text:'Получатель',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -175,9 +178,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -221,4 +224,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ТребованиеНакладная.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ТребованиеНакладная'], function () 
+{
+	Ext.define('Документы.ТребованиеНакладная.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:461px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Требование-накладная',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -224,6 +230,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:243px;',
 			height: 243,width: 622,
@@ -351,13 +358,13 @@
 				},
 				{
 					text:'Вид субконто 2',
-					width:'42',
+					width:'41',
 					dataIndex:'ВидСубконто2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3',
-					width:'40',
+					width:'39',
 					dataIndex:'ВидСубконто3',
 					flex:1,
 				},
@@ -381,13 +388,13 @@
 				},
 				{
 					text:'Аналитика',
-					width:'130',
+					width:'129',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'127',
+					width:'126',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -465,13 +472,13 @@
 				},
 				{
 					text:'Заказы',
-					width:'106',
+					width:'105',
 					dataIndex:'Заказы',
 					flex:1,
 				},
 				{
 					text:'Затраты',
-					width:'106',
+					width:'105',
 					dataIndex:'Заказ',
 					flex:1,
 				},
@@ -483,7 +490,7 @@
 				},
 				{
 					text:'Резерв',
-					width:'93',
+					width:'92',
 					dataIndex:'ЗаказРезерв',
 					flex:1,
 				},
@@ -542,7 +549,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТребованиеНакладная/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТребованиеНакладная/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -699,6 +706,23 @@
 						name:'Склад',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТребованиеНакладная.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТребованиеНакладная.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1019,8 +1043,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

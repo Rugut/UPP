@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПлатежноеТребованиеВыставленное.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПлатежноеТребованиеВыставленное'], function () 
+{
+	Ext.define('Документы.ПлатежноеТребованиеВыставленное.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:477px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Платежное требование выставленное',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -402,6 +408,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:627px;height:144px;',
 			height: 144,width: 627,
@@ -439,7 +446,7 @@
 				},
 				{
 					text:'Курс взаиморасчетов',
-					width:'79',
+					width:'78',
 					dataIndex:'КурсВзаиморасчетов',
 					flex:1,
 				},
@@ -510,7 +517,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежноеТребованиеВыставленное/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежноеТребованиеВыставленное/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -562,6 +569,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежноеТребованиеВыставленное.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежноеТребованиеВыставленное.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1076,7 +1100,8 @@
 			text: 'Комментарий:',
 			style: 'position:absolute;left:8px;top:425px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1088,4 +1113,5 @@
 			]
 		},
 	]
+	});
 });

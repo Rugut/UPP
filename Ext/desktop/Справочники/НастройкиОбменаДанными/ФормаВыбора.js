@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиОбменаДанными.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.НастройкиОбменаДанными'], function () 
+{
+	Ext.define('Справочники.НастройкиОбменаДанными.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:411px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Настройки обмена данными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:648px;height:370px;',
 			height: 370,width: 648,
@@ -48,11 +55,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +80,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -89,4 +115,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиЗатрат.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.СтатьиЗатрат'], function () 
+{
+	Ext.define('Справочники.СтатьиЗатрат.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:469px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа статей затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

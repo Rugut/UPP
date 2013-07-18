@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.СообщенияВыполняемыхДействий.Форма',
+﻿Ext.require(['Данные.Обработки.СообщенияВыполняемыхДействий'], function () 
+{
+	Ext.define('Обработки.СообщенияВыполняемыхДействий.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:483px;height:303px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Внимание!',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -30,4 +33,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

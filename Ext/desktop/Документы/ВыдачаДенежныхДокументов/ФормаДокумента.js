@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыдачаДенежныхДокументов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыдачаДенежныхДокументов'], function () 
+{
+	Ext.define('Документы.ВыдачаДенежныхДокументов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:371px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выдача денежных документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -307,7 +310,7 @@
 				},
 				{
 					text:'Денежный документ',
-					width:'1800',
+					width:'180',
 					dataIndex:'ДенежныйДокумент',
 					flex:1,
 				},
@@ -319,13 +322,13 @@
 				},
 				{
 					text:'Стоимость',
-					width:'1200',
+					width:'120',
 					dataIndex:'Стоимость',
 					flex:1,
 				},
 				{
 					text:'Сумма возврата',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -365,9 +368,9 @@
 					{
 						var грид = Ext.getCmp('ДенежныеДокументы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВыдачаДенежныхДокументов.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВыдачаДенежныхДокументов.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -577,4 +580,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

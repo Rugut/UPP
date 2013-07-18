@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АмортизацияНМАМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АмортизацияНМАМеждународный'], function () 
+{
+	Ext.define('Документы.АмортизацияНМАМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:361px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Амортизация НМА (международный)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -82,6 +88,7 @@
 			]
 		},
 		{
+			id: 'НематериальныеАктивы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:628px;height:180px;',
 			height: 180,width: 628,
@@ -107,7 +114,7 @@
 				},
 				{
 					text:'Количество выпущенной продукции',
-					width:'188',
+					width:'187',
 					dataIndex:'КоличествоВыпущеннойПродукции',
 					flex:1,
 				},
@@ -118,7 +125,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АмортизацияНМАМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АмортизацияНМАМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -134,6 +141,23 @@
 						name:'КоличествоВыпущеннойПродукции',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НематериальныеАктивы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АмортизацияНМАМеждународный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АмортизацияНМАМеждународный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -225,8 +249,10 @@
 			height: 19,
 			style: 'position:absolute;left:425px;top:33px;width:137px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

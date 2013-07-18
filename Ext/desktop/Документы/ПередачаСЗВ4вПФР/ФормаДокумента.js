@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаСЗВ4вПФР.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПередачаСЗВ4вПФР'], function () 
+{
+	Ext.define('Документы.ПередачаСЗВ4вПФР.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:891px;height:554px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Опись сведений, передаваемых страхователем в ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -41,6 +47,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОЗадолженности1',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:55px;width:875px;height:292px;',
 			height: 292,width: 875,
@@ -89,7 +96,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -111,6 +118,23 @@
 						name:'ДополнительныйТариф',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОЗадолженности1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -160,6 +184,7 @@
 			]
 		},
 		{
+			id: 'ПачкиДокументов1',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:108px;width:514px;height:239px;',
 			height: 239,width: 514,
@@ -208,7 +233,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -231,8 +256,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиДокументов1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ФизлицаПачек1',
 			xtype: 'grid',
 			style: 'position:absolute;left:523px;top:108px;width:352px;height:239px;',
 			height: 239,width: 352,
@@ -257,7 +300,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -267,6 +310,23 @@
 						name:'ФизЛицо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаПачек1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -387,6 +447,7 @@
 					items:
 					[
 		{
+			id: 'ПачкиДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:503px;height:242px;',
 			height: 242,width: 503,
@@ -441,7 +502,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -467,8 +528,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ФизлицаПачек',
 			xtype: 'grid',
 			style: 'position:absolute;left:515px;top:46px;width:352px;height:242px;',
 			height: 242,width: 352,
@@ -493,7 +572,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -503,6 +582,23 @@
 						name:'ФизЛицо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаПачек');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -522,6 +618,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОЗадолженности',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:861px;height:264px;',
 			height: 264,width: 861,
@@ -553,7 +650,7 @@
 				},
 				{
 					text:'Накопительная часть',
-					width:'100',
+					width:'99',
 					dataIndex:'НакопительнаяЧасть',
 					flex:1,
 				},
@@ -570,7 +667,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -592,6 +689,23 @@
 						name:'ДополнительныйТариф',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОЗадолженности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -879,7 +993,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -919,4 +1034,5 @@
 			]
 		},
 	]
+	});
 });

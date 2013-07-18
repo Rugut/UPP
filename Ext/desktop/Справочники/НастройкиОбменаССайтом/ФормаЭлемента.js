@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиОбменаССайтом.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкиОбменаССайтом'], function () 
+{
+	Ext.define('Справочники.НастройкиОбменаССайтом.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:690px;height:579px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки обмена с WEB-сайтом',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -391,9 +394,9 @@
 					{
 						var грид = Ext.getCmp('ПостроительОтчетаОтбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -740,4 +743,5 @@
 			]
 		},
 	]
+	});
 });

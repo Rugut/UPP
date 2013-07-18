@@ -44,7 +44,7 @@ namespace V82.СправочникиОбъект
 		public bool Предопределенный {get;set;}
 		[DataMember]
 		[ProtoMember(6)]
-		public Guid Родитель {get;set;}
+		public V82.СправочникиСсылка.МаршрутыСогласования Родитель {get;set;}
 		[DataMember]
 		[ProtoMember(7)]
 		public string/*80*/ Наименование {get;set;}

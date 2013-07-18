@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыСчетаБюджетирование.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОборотыСчетаБюджетирование'], function () 
+{
+	Ext.define('Отчеты.ОборотыСчетаБюджетирование.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:323px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -166,7 +169,7 @@
 			[
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Поле',
 					flex:1,
 				},
@@ -203,9 +206,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПоле1');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОборотыСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОборотыСчетаБюджетирование.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -238,7 +241,7 @@
 				},
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -250,13 +253,13 @@
 				},
 				{
 					text:'С',
-					width:'1195',
+					width:'119',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'1195',
+					width:'119',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -296,9 +299,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПоле2');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОборотыСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОборотыСчетаБюджетирование.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -332,4 +335,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетОКонтактнойИнформации.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетОКонтактнойИнформации'], function () 
+{
+	Ext.define('Отчеты.ОтчетОКонтактнойИнформации.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:409px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет о контактной информации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -147,4 +150,5 @@
 			]
 		},
 	]
+	});
 });

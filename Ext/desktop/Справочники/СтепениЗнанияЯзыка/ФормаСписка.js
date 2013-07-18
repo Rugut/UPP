@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтепениЗнанияЯзыка.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СтепениЗнанияЯзыка'], function () 
+{
+	Ext.define('Справочники.СтепениЗнанияЯзыка.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:524px;height:260px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Степени знания языков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3200',
+					width:'320',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СтепениЗнанияЯзыка.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СтепениЗнанияЯзыка.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -199,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторСпецификаций.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.КонструкторСпецификаций'], function () 
+{
+	Ext.define('Обработки.КонструкторСпецификаций.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Конструктор спецификаций',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:408px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоСпецификаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:374px;height:336px;',
 			height: 336,width: 374,
@@ -27,19 +34,19 @@
 			[
 				{
 					text:'Вид норматива',
-					width:'42',
+					width:'41',
 					dataIndex:'ВидСтроки',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'175',
+					width:'174',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика',
-					width:'129',
+					width:'128',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -134,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -190,6 +197,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоСпецификаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -213,6 +237,7 @@
 					items:
 					[
 		{
+			id: 'СписокСпецификацииНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:98px;width:370px;height:77px;',
 			height: 77,width: 370,
@@ -256,7 +281,7 @@
 				},
 				{
 					text:'Состояние',
-					width:'76',
+					width:'75',
 					dataIndex:'Состояние',
 					flex:1,
 				},
@@ -279,7 +304,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -311,8 +336,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокСпецификацииНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СписокХарактеристикиНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:370px;height:66px;',
 			height: 66,width: 370,
@@ -337,7 +380,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -347,6 +390,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокХарактеристикиНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -369,6 +429,7 @@
 					items:
 					[
 		{
+			id: 'СписокСпецификацииОтдельный',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:370px;height:151px;',
 			height: 151,width: 370,
@@ -418,7 +479,7 @@
 				},
 				{
 					text:'Дата утверждения',
-					width:'130',
+					width:'129',
 					dataIndex:'ДатаУтверждения',
 					flex:1,
 				},
@@ -435,7 +496,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -467,6 +528,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокСпецификацииОтдельный');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -484,6 +562,7 @@
 					items:
 					[
 		{
+			id: 'СписокНоменклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:107px;width:370px;height:72px;',
 			height: 72,width: 370,
@@ -526,7 +605,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -546,8 +625,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокНоменклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДеревоНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:370px;height:77px;',
 			height: 77,width: 370,
@@ -555,7 +652,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'217',
+					width:'216',
 					dataIndex:'Картинка',
 					flex:1,
 				},
@@ -566,13 +663,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Картинка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -582,6 +696,7 @@
 					items:
 					[
 		{
+			id: 'СписокНоменклатураОтдельный',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:370px;height:154px;',
 			height: 154,width: 370,
@@ -624,7 +739,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонструкторСпецификаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -643,6 +758,23 @@
 						name:'Артикул',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокНоменклатураОтдельный');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -834,7 +966,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -846,4 +979,5 @@
 			]
 		},
 	]
+	});
 });

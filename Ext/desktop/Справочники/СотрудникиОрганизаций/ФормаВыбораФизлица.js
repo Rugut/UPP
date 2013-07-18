@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СотрудникиОрганизаций.ФормаВыбораФизлица',
+﻿Ext.require(['Данные.Справочники.СотрудникиОрганизаций'], function () 
+{
+	Ext.define('Справочники.СотрудникиОрганизаций.ФормаВыбораФизлица',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:522px;height:209px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Список физлиц с похожими данными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,7 +48,7 @@
 				},
 				{
 					text:'Страховой номер ПФР',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтраховойНомерПФР',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СписокФизлиц');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВыбораФизлицаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВыбораФизлицаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -124,4 +127,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

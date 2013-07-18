@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СпецификацииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СпецификацииНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:444px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Спецификации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -126,6 +132,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ИсходныеКомплектующие',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:113px;',
 			height: 113,width: 622,
@@ -254,11 +261,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -323,6 +331,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходныеКомплектующие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -331,6 +356,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратныеОтходы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:113px;',
 			height: 113,width: 622,
@@ -441,11 +467,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -501,6 +528,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратныеОтходы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -515,6 +559,7 @@
 			style: 'position:absolute;left:6px;top:30px;width:100px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ПараметрыВыпускаПродукции',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:113px;',
 			height: 113,width: 622,
@@ -528,7 +573,7 @@
 				},
 				{
 					text:'Вид параметра',
-					width:'276',
+					width:'275',
 					dataIndex:'ВидПараметра',
 					flex:1,
 				},
@@ -541,11 +586,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -559,6 +605,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыВыпускаПродукции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -567,6 +630,7 @@
 					items:
 					[
 		{
+			id: 'Документация',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:113px;',
 			height: 113,width: 622,
@@ -593,11 +657,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -610,6 +675,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Документация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -808,6 +890,7 @@
 					items:
 					[
 		{
+			id: 'ВыходныеИзделия',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:636px;height:48px;',
 			height: 48,width: 636,
@@ -888,11 +971,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -933,6 +1017,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыходныеИзделия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -966,6 +1067,7 @@
 					items:
 					[
 		{
+			id: 'ИсходныеКомплектующиеУзел',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:228px;',
 			height: 228,width: 622,
@@ -1076,11 +1178,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1135,6 +1238,23 @@
 						name:'Свойство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходныеКомплектующиеУзел');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1223,7 +1343,8 @@
 			text: '',
 			style: 'position:absolute;left:164px;top:82px;width:480px;height:15px;text-align:right;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1260,4 +1381,5 @@
 			]
 		},
 	]
+	});
 });

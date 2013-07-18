@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РегламентированныеОтчеты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.РегламентированныеОтчеты'], function () 
+{
+	Ext.define('Справочники.РегламентированныеОтчеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:470px;height:534px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры отчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -179,4 +182,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрочиеДоходыИРасходы.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ПрочиеДоходыИРасходы'], function () 
+{
+	Ext.define('Справочники.ПрочиеДоходыИРасходы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:781px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Прочие доходы и расходы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'2500',
+					width:'250',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Вид прочих дох. и расх.',
-					width:'2500',
+					width:'250',
 					dataIndex:'ВидПрочихДоходовИРасходов',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПрочиеДоходыИРасходы.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПрочиеДоходыИРасходы.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -104,7 +107,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'1600',
+					width:'160',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -133,9 +136,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПрочиеДоходыИРасходы.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПрочиеДоходыИРасходы.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -159,4 +162,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.СведенияОРасходахНаПроизводствоИПродажуПродукции'], function () 
+{
+	Ext.define('Отчеты.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:820px;height:558px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Сведения о расходах на производство и продажу продукции (товаров, работ и услуг)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:1px;width:820px;height:46px;',
@@ -149,6 +155,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:292px;height:115px;',
 			height: 115,width: 292,
@@ -521,7 +528,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОРасходахНаПроизводствоИПродажуПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОРасходахНаПроизводствоИПродажуПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -706,6 +713,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -727,6 +751,7 @@
 					items:
 					[
 		{
+			id: 'ПараметрыДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:29px;width:292px;height:137px;',
 			height: 137,width: 292,
@@ -740,7 +765,7 @@
 				},
 				{
 					text:'Параметр',
-					width:'132',
+					width:'131',
 					dataIndex:'Параметр',
 					flex:1,
 				},
@@ -787,7 +812,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОРасходахНаПроизводствоИПродажуПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОРасходахНаПроизводствоИПродажуПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -816,6 +841,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -841,8 +883,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыпускПродукции.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыпускПродукции'], function () 
+{
+	Ext.define('Документы.ВыпускПродукции.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:406px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Выпуск продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -207,6 +213,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:642px;height:154px;',
 			height: 154,width: 642,
@@ -250,7 +257,7 @@
 				},
 				{
 					text:'Ед. мест',
-					width:'50',
+					width:'49',
 					dataIndex:'ЕдиницаМест',
 					flex:1,
 				},
@@ -339,7 +346,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыпускПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыпускПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -404,6 +411,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыпускПродукции.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыпускПродукции.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -441,8 +465,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

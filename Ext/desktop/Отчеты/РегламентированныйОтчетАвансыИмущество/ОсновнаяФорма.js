@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыИмущество.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАвансыИмущество'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАвансыИмущество.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Авансы по налогу на имущество',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

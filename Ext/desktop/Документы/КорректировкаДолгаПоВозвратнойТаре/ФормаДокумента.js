@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаДолгаПоВозвратнойТаре.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаДолгаПоВозвратнойТаре'], function () 
+{
+	Ext.define('Документы.КорректировкаДолгаПоВозвратнойТаре.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:648px;height:387px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Корректировка долга по возвратной таре',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,13 +110,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2500',
+					width:'250',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -177,9 +180,9 @@
 					{
 						var грид = Ext.getCmp('ВозвратнаяТара');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КорректировкаДолгаПоВозвратнойТаре.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КорректировкаДолгаПоВозвратнойТаре.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -408,4 +411,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

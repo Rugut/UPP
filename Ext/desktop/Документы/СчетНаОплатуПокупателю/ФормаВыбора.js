@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетНаОплатуПокупателю.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.СчетНаОплатуПокупателю'], function () 
+{
+	Ext.define('Документы.СчетНаОплатуПокупателю.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Счет на оплату покупателю',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,19 +54,19 @@
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -130,9 +133,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СчетНаОплатуПокупателю.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СчетНаОплатуПокупателю.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -166,4 +169,5 @@
 			]
 		},
 	]
+	});
 });

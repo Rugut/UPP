@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Валюты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Валюты'], function () 
+{
+	Ext.define('Справочники.Валюты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:432px;height:397px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Валюта',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -138,9 +141,9 @@
 					{
 						var грид = Ext.getCmp('СписокКурсыВалют');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Валюты.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Валюты.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -315,4 +318,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

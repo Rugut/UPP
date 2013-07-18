@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоходыЕСН.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДоходыЕСН'], function () 
+{
+	Ext.define('Справочники.ДоходыЕСН.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:148px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Способы отражения доходов в учете ЕСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -110,4 +113,5 @@
 			]
 		},
 	]
+	});
 });

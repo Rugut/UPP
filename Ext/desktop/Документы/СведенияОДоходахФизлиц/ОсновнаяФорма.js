@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СведенияОДоходахФизлиц.ОсновнаяФорма',
+﻿Ext.require(['Данные.Документы.СведенияОДоходахФизлиц'], function () 
+{
+	Ext.define('Документы.СведенияОДоходахФизлиц.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:269px;height:184px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сведения о доходах физлиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -75,4 +78,5 @@
 			]
 		},
 	]
+	});
 });

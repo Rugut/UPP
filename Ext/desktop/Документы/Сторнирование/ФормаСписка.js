@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Сторнирование.ФормаСписка',
+﻿Ext.require(['Данные.Документы.Сторнирование'], function () 
+{
+	Ext.define('Документы.Сторнирование.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:509px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сторнирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Сторнируемый документ',
-					width:'1500',
+					width:'150',
 					dataIndex:'СторнируемыйДокумент',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1800',
+					width:'180',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Сторнирование.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Сторнирование.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -257,4 +260,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РасчетЛимитовОтпускаМатериалов.ФормаОсновная',
+﻿Ext.require(['Данные.Обработки.РасчетЛимитовОтпускаМатериалов'], function () 
+{
+	Ext.define('Обработки.РасчетЛимитовОтпускаМатериалов.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:769px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Расчет лимитов отпуска материалов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:753px;height:384px;',
@@ -428,6 +434,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:94px;width:739px;height:243px;',
 			height: 243,width: 739,
@@ -476,7 +483,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -498,6 +505,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -551,6 +575,7 @@
 					items:
 					[
 		{
+			id: 'Лимиты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:733px;height:328px;',
 			height: 328,width: 733,
@@ -611,7 +636,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -640,12 +665,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Лимиты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -683,4 +726,5 @@
 			]
 		},
 	]
+	});
 });

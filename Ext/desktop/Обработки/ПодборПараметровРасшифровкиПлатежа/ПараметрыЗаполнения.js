@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполнения',
+﻿Ext.require(['Данные.Обработки.ПодборПараметровРасшифровкиПлатежа'], function () 
+{
+	Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:353px;height:453px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка заполнения расшифровки платежа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:32px;width:337px;height:388px;',
@@ -204,6 +210,7 @@
 					items:
 					[
 		{
+			id: 'ПостроительОтбораДоговоровОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:323px;height:331px;',
 			height: 331,width: 323,
@@ -229,19 +236,19 @@
 				},
 				{
 					text:'Значение',
-					width:'112',
+					width:'111',
 					dataIndex:'Значение',
 					flex:1,
 				},
 				{
 					text:'С',
-					width:'112',
+					width:'111',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'112',
+					width:'111',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -252,7 +259,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПараметровРасшифровкиПлатежа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПараметровРасшифровкиПлатежа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -275,12 +282,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтбораДоговоровОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполненияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполненияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -337,4 +362,5 @@
 			]
 		},
 	]
+	});
 });

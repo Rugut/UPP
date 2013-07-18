@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:316px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы физических лиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,7 +24,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'3200',
+					width:'320',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаВыбораГруппыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВыбораГруппыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -150,4 +153,5 @@
 			]
 		},
 	]
+	});
 });

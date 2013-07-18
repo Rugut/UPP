@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПриемНаРаботуВОрганизацию.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПриемНаРаботуВОрганизацию'], function () 
+{
+	Ext.define('Документы.ПриемНаРаботуВОрганизацию.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:690px;height:482px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Прием на работу в организацию',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -102,6 +108,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:660px;height:250px;',
 			height: 250,width: 660,
@@ -186,7 +193,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботуВОрганизацию/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботуВОрганизацию/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -227,6 +234,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриемНаРаботуВОрганизацию.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриемНаРаботуВОрганизацию.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -235,6 +259,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:660px;height:250px;',
 			height: 250,width: 660,
@@ -266,25 +291,25 @@
 				},
 				{
 					text:'Показатель',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказатель1',
 					flex:1,
 				},
 				{
 					text:'Размер',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель1',
 					flex:1,
 				},
 				{
 					text:'Валюта',
-					width:'45',
+					width:'44',
 					dataIndex:'Валюта1',
 					flex:1,
 				},
 				{
 					text:'Показатель для ТР',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказательТР1',
 					flex:1,
 				},
@@ -296,25 +321,25 @@
 				},
 				{
 					text:'Показатель',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказатель2',
 					flex:1,
 				},
 				{
 					text:'Размер 2',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель2',
 					flex:1,
 				},
 				{
 					text:'Валюта 2',
-					width:'45',
+					width:'44',
 					dataIndex:'Валюта2',
 					flex:1,
 				},
 				{
 					text:'Показатель для ТР',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказательТР2',
 					flex:1,
 				},
@@ -326,25 +351,25 @@
 				},
 				{
 					text:'Показатель',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказатель3',
 					flex:1,
 				},
 				{
 					text:'Размер 3',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель3',
 					flex:1,
 				},
 				{
 					text:'Валюта 3',
-					width:'45',
+					width:'44',
 					dataIndex:'Валюта3',
 					flex:1,
 				},
 				{
 					text:'Показатель для ТР',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказательТР3',
 					flex:1,
 				},
@@ -356,25 +381,25 @@
 				},
 				{
 					text:'Показатель',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказатель4',
 					flex:1,
 				},
 				{
 					text:'Размер 4',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель4',
 					flex:1,
 				},
 				{
 					text:'Валюта 4',
-					width:'45',
+					width:'44',
 					dataIndex:'Валюта4',
 					flex:1,
 				},
 				{
 					text:'Показатель для ТР',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказательТР4',
 					flex:1,
 				},
@@ -386,7 +411,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказатель5',
 					flex:1,
 				},
@@ -404,7 +429,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказательТР5',
 					flex:1,
 				},
@@ -416,7 +441,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказатель6',
 					flex:1,
 				},
@@ -434,7 +459,7 @@
 				},
 				{
 					text:'Показатель для ТР',
-					width:'80',
+					width:'79',
 					dataIndex:'НаименованиеПоказательТР6',
 					flex:1,
 				},
@@ -457,7 +482,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботуВОрганизацию/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботуВОрганизацию/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -566,6 +591,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриемНаРаботуВОрганизацию.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриемНаРаботуВОрганизацию.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -695,7 +737,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -729,4 +772,5 @@
 			]
 		},
 	]
+	});
 });

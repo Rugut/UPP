@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СменноСуточноеЗадание.Форма',
+﻿Ext.require(['Данные.Отчеты.СменноСуточноеЗадание'], function () 
+{
+	Ext.define('Отчеты.СменноСуточноеЗадание.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:444px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -196,4 +199,5 @@
 			]
 		},
 	]
+	});
 });

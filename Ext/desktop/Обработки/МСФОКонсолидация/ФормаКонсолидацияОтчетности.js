@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МСФОКонсолидация.ФормаКонсолидацияОтчетности',
+﻿Ext.require(['Данные.Обработки.МСФОКонсолидация'], function () 
+{
+	Ext.define('Обработки.МСФОКонсолидация.ФормаКонсолидацияОтчетности',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:778px;height:455px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Консолидация отчетности по МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:430px;width:778px;height:25px;',
@@ -59,6 +65,7 @@
 			style: 'position:absolute;left:182px;top:21px;width:120px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПоле',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:762px;height:120px;',
 			height: 120,width: 762,
@@ -161,7 +168,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -211,6 +218,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПоле');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'button',
@@ -224,6 +248,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:214px;width:762px;height:200px;',
 			height: 200,width: 762,
@@ -344,7 +369,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -403,6 +428,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -427,6 +469,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон5',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -439,10 +482,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон5');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -472,6 +532,7 @@
 			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред5',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:232px;width:762px;height:138px;',
 			height: 138,width: 762,
@@ -484,10 +545,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред5');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -517,6 +595,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон6',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -529,10 +608,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон6');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -562,6 +658,7 @@
 			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред6',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:232px;width:762px;height:138px;',
 			height: 138,width: 762,
@@ -574,10 +671,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред6');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -619,6 +733,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон7',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -631,10 +746,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон7');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -658,6 +790,7 @@
 			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред7',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:232px;width:762px;height:138px;',
 			height: 138,width: 762,
@@ -670,10 +803,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред7');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -703,6 +853,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон8',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -715,10 +866,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон8');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -742,6 +910,7 @@
 			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред8',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:232px;width:762px;height:138px;',
 			height: 138,width: 762,
@@ -754,10 +923,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред8');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -787,6 +973,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон11',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -799,10 +986,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон11');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -832,6 +1036,7 @@
 			style: 'position:absolute;left:0px;top:222px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред11',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:243px;width:762px;height:127px;',
 			height: 127,width: 762,
@@ -844,10 +1049,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред11');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -877,6 +1099,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон12',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -889,10 +1112,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон12');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -922,6 +1162,7 @@
 			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред12',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:232px;width:762px;height:138px;',
 			height: 138,width: 762,
@@ -934,10 +1175,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред12');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -967,6 +1225,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗКон21',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:160px;',
 			height: 160,width: 762,
@@ -979,10 +1238,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗКон21');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1012,6 +1288,7 @@
 			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТЗПред21',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:232px;width:762px;height:137px;',
 			height: 137,width: 762,
@@ -1024,10 +1301,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТЗПред21');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1193,6 +1487,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеРезультат',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:762px;height:393px;',
 			height: 393,width: 762,
@@ -1217,7 +1512,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1228,13 +1523,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеРезультат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Опрос.ФормаВводаОтветаАдрес',
+﻿Ext.require(['Данные.Документы.Опрос'], function () 
+{
+	Ext.define('Документы.Опрос.ФормаВводаОтветаАдрес',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:249px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ответ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -185,4 +188,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

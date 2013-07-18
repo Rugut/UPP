@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТорговоеОборудование.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ТорговоеОборудование'], function () 
+{
+	Ext.define('Справочники.ТорговоеОборудование.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:550px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Торговое оборудование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,19 +36,19 @@
 				},
 				{
 					text:'Наименование',
-					width:'2500',
+					width:'250',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Модель',
-					width:'2500',
+					width:'250',
 					dataIndex:'Модель',
 					flex:1,
 				},
 				{
 					text:'Обработка обслуживания',
-					width:'2500',
+					width:'250',
 					dataIndex:'ОбработкаОбслуживания',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТорговоеОборудование.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТорговоеОборудование.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -225,4 +228,5 @@
 			]
 		},
 	]
+	});
 });

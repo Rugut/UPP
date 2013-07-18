@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АдреснаяКнига.ФормаВыбора',
+﻿Ext.require(['Данные.Обработки.АдреснаяКнига'], function () 
+{
+	Ext.define('Обработки.АдреснаяКнига.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:466px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Адресная книга (выбор)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:450px;height:408px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'КонтрагентыСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:143px;',
 			height: 143,width: 436,
@@ -50,7 +57,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -64,8 +71,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтрагентыСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'КонтактныеЛицаКонтрагентовСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:230px;width:436px;height:128px;',
 			height: 128,width: 436,
@@ -108,7 +133,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -127,6 +152,23 @@
 						name:'РольКонтактногоЛица',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтактныеЛицаКонтрагентовСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -157,6 +199,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:19px;',
 		},
 		{
+			id: 'ФизЛицаСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:328px;',
 			height: 328,width: 436,
@@ -187,7 +230,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -200,6 +243,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизЛицаСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -213,6 +273,7 @@
 					items:
 					[
 		{
+			id: 'ПрочиеКонтактныеЛицаСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:328px;',
 			height: 328,width: 436,
@@ -243,7 +304,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -256,6 +317,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрочиеКонтактныеЛицаСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -269,6 +347,7 @@
 					items:
 					[
 		{
+			id: 'ОрганизацииСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:328px;',
 			height: 328,width: 436,
@@ -299,7 +378,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -313,6 +392,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОрганизацииСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -325,6 +421,7 @@
 					items:
 					[
 		{
+			id: 'ЛичныеКонтактыСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:328px;',
 			height: 328,width: 436,
@@ -355,7 +452,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -368,6 +465,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЛичныеКонтактыСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -388,6 +502,7 @@
 					items:
 					[
 		{
+			id: 'ПользователиСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:328px;',
 			height: 328,width: 436,
@@ -418,7 +533,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -431,6 +546,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПользователиСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -451,6 +583,7 @@
 					items:
 					[
 		{
+			id: 'ГруппыРассылкиСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:435px;height:178px;',
 			height: 178,width: 435,
@@ -475,7 +608,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -486,8 +619,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГруппыРассылкиСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СоставГруппыРассылки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:212px;width:435px;height:146px;',
 			height: 146,width: 435,
@@ -501,7 +652,7 @@
 				},
 				{
 					text:'Состав группы',
-					width:'411',
+					width:'410',
 					dataIndex:'ОбъектРассылки',
 					flex:1,
 				},
@@ -512,7 +663,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -522,6 +673,23 @@
 						name:'ОбъектРассылки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставГруппыРассылки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -544,6 +712,7 @@
 			style: 'position:absolute;left:6px;top:30px;width:361px;height:19px;',
 		},
 		{
+			id: 'РезультатыПоиска',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:78px;width:436px;height:280px;',
 			height: 280,width: 436,
@@ -563,13 +732,13 @@
 				},
 				{
 					text:'Тип объекта',
-					width:'107',
+					width:'106',
 					dataIndex:'ТипОбъекта',
 					flex:1,
 				},
 				{
 					text:'ДоступныеАдреса',
-					width:'21',
+					width:'20',
 					dataIndex:'ДоступныеАдреса',
 					flex:1,
 				},
@@ -586,7 +755,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдреснаяКнига/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -606,6 +775,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РезультатыПоиска');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдреснаяКнига.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -621,7 +807,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -647,4 +834,5 @@
 			]
 		},
 	]
+	});
 });

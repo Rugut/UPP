@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗакрытиеКассовойСмены.ОтчетКассовойСменыБезГашения',
+﻿Ext.require(['Данные.Обработки.ЗакрытиеКассовойСмены'], function () 
+{
+	Ext.define('Обработки.ЗакрытиеКассовойСмены.ОтчетКассовойСменыБезГашения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:314px;height:93px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет кассовой смены без гашения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,4 +53,5 @@
 			]
 		},
 	]
+	});
 });

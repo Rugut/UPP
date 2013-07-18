@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереносПартийМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПереносПартийМеждународный'], function () 
+{
+	Ext.define('Документы.ПереносПартийМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:654px;height:402px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -278,9 +281,9 @@
 					{
 						var грид = Ext.getCmp('ПартииТоваровНаСкладах');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПереносПартийМеждународный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПереносПартийМеждународный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -368,4 +371,5 @@
 			]
 		},
 	]
+	});
 });

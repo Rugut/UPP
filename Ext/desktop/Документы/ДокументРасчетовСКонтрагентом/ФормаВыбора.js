@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ДокументРасчетовСКонтрагентом'], function () 
+{
+	Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:609px;height:450px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Документы расчетов с контрагентом (ручной учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:217px;width:593px;height:225px;',
 			height: 225,width: 593,
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументРасчетовСКонтрагентом/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументРасчетовСКонтрагентом/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -44,6 +51,23 @@
 						name:'Остаток',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументРасчетовСКонтрагентом.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументРасчетовСКонтрагентом.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -213,7 +237,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -256,4 +281,5 @@
 			]
 		},
 	]
+	});
 });

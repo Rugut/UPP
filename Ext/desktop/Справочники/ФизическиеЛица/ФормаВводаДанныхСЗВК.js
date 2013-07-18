@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВК',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВК',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:756px;height:455px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод данных СЗВ-К',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,7 +24,7 @@
 			[
 				{
 					text:'',
-					width:'1200',
+					width:'120',
 					dataIndex:'НевидимаяКолонка',
 					flex:1,
 				},
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'',
-					width:'1800',
+					width:'180',
 					dataIndex:'НевидимаяКолонка1',
 					flex:1,
 				},
@@ -69,13 +72,13 @@
 				},
 				{
 					text:'',
-					width:'1800',
+					width:'180',
 					dataIndex:'НевидимаяКолонка5',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'1800',
+					width:'180',
 					dataIndex:'ПодписьДолжности',
 					flex:1,
 				},
@@ -87,7 +90,7 @@
 				},
 				{
 					text:'Исчисляемый трудовой стаж',
-					width:'1900',
+					width:'190',
 					dataIndex:'НевидимаяКолонка3',
 					flex:1,
 				},
@@ -129,19 +132,19 @@
 				},
 				{
 					text:'Код позиции списка',
-					width:'2700',
+					width:'270',
 					dataIndex:'КодПозицииСписка',
 					flex:1,
 				},
 				{
 					text:'Должность',
-					width:'2700',
+					width:'270',
 					dataIndex:'Должность',
 					flex:1,
 				},
 				{
 					text:'Выслуга лет',
-					width:'1500',
+					width:'150',
 					dataIndex:'НевидимаяКолонка4',
 					flex:1,
 				},
@@ -266,9 +269,9 @@
 					{
 						var грид = Ext.getCmp('ЗаписиОСтаже');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВКСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВКСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -284,13 +287,13 @@
 			[
 				{
 					text:'Вид стажа',
-					width:'2200',
+					width:'220',
 					dataIndex:'ВидСтажа',
 					flex:1,
 				},
 				{
 					text:'Код стажа',
-					width:'1200',
+					width:'120',
 					dataIndex:'КодСтажа',
 					flex:1,
 				},
@@ -349,9 +352,9 @@
 					{
 						var грид = Ext.getCmp('ИтоговыйСтаж');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВКСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВКСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -574,19 +577,19 @@
 			[
 				{
 					text:'Организация',
-					width:'3200',
+					width:'320',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Вид общественно полезной деятельности',
-					width:'2200',
+					width:'220',
 					dataIndex:'ВидДеятельности',
 					flex:1,
 				},
 				{
 					text:'Период',
-					width:'1800',
+					width:'180',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -621,9 +624,9 @@
 					{
 						var грид = Ext.getCmp('ПериодыДеятельности');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВКСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхСЗВКСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -657,4 +660,5 @@
 			]
 		},
 	]
+	});
 });

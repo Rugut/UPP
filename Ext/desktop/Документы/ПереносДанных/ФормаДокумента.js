@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереносДанных.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПереносДанных'], function () 
+{
+	Ext.define('Документы.ПереносДанных.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:402px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Перенос данных',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -305,4 +308,5 @@
 			]
 		},
 	]
+	});
 });

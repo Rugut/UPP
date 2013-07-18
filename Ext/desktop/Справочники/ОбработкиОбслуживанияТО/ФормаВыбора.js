@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ОбработкиОбслуживанияТО'], function () 
+{
+	Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Обработки обслуживания торгового оборудования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбработкиОбслуживанияТО.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбработкиОбслуживанияТО.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -113,4 +116,5 @@
 			]
 		},
 	]
+	});
 });

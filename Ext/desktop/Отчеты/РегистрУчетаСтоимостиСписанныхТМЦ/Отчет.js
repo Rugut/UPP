@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаСтоимостиСписанныхТМЦ.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаСтоимостиСписанныхТМЦ'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаСтоимостиСписанныхТМЦ.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета стоимости МПЗ, списанных в отчетном периоде',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -130,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказПоставщику.ФормаРаспределения',
+﻿Ext.require(['Данные.Документы.ЗаказПоставщику'], function () 
+{
+	Ext.define('Документы.ЗаказПоставщику.ФормаРаспределения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Заполнение комплектующих для комплектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаНераспределенныхКомплектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:384px;height:229px;',
 			height: 229,width: 384,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'108',
+					width:'107',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -46,7 +53,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +70,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНераспределенныхКомплектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказПоставщику.ФормаРаспределенияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказПоставщику.ФормаРаспределенияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -119,4 +144,5 @@
 			]
 		},
 	]
+	});
 });

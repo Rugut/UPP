@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаТекущихВакансий',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаТекущихВакансий',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:475px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Текущие вакансии',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,4 +52,5 @@
 			]
 		},
 	]
+	});
 });

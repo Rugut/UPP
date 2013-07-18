@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетРВ3.ФормаОтчета2011Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетРВ3'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетРВ3.ФормаОтчета2011Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'РВ-3 ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -258,4 +261,5 @@
 			]
 		},
 	]
+	});
 });

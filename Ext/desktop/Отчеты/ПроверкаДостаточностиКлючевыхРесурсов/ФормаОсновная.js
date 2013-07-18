@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ПроверкаДостаточностиКлючевыхРесурсов'], function () 
+{
+	Ext.define('Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:349px;height:162px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет  Проверка достаточности ключевых ресурсов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -134,4 +137,5 @@
 			]
 		},
 	]
+	});
 });

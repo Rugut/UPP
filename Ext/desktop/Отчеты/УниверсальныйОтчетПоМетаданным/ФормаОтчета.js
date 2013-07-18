@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.УниверсальныйОтчетПоМетаданным.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.УниверсальныйОтчетПоМетаданным'], function () 
+{
+	Ext.define('Отчеты.УниверсальныйОтчетПоМетаданным.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:694px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -159,9 +162,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УниверсальныйОтчетПоМетаданным.ФормаОтчетаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УниверсальныйОтчетПоМетаданным.ФормаОтчетаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -352,4 +355,5 @@
 			]
 		},
 	]
+	});
 });

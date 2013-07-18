@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СводныеПроводкиМеждународный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.СводныеПроводкиМеждународный'], function () 
+{
+	Ext.define('Отчеты.СводныеПроводкиМеждународный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:253px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка Сводные проводки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -148,4 +151,5 @@
 			]
 		},
 	]
+	});
 });

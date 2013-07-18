@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПоказателиРаботыМенеджеров.ФормаДополнительно',
+﻿Ext.require(['Данные.Отчеты.ПоказателиРаботыМенеджеров'], function () 
+{
+	Ext.define('Отчеты.ПоказателиРаботыМенеджеров.ФормаДополнительно',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:486px;height:371px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -44,6 +50,7 @@
 			style: 'position:absolute;left:214px;top:6px;width:80px;height:19px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:117px;width:470px;height:221px;',
 			height: 221,width: 470,
@@ -57,7 +64,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'469',
+					width:'468',
 					dataIndex:'ПредставлениеПоказателя',
 					flex:1,
 				},
@@ -68,7 +75,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиРаботыМенеджеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиРаботыМенеджеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -78,6 +85,23 @@
 						name:'ПредставлениеПоказателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоказателиРаботыМенеджеров.ФормаДополнительноСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоказателиРаботыМенеджеров.ФормаДополнительноСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -114,7 +138,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:96px;top:50px;width:160px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -157,4 +182,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЕУНД.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЕУНД'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЕУНД.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Единая (упрощенная) налоговая декларация',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

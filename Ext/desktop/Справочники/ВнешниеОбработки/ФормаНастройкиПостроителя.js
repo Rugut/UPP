@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВнешниеОбработки.ФормаНастройкиПостроителя',
+﻿Ext.require(['Данные.Справочники.ВнешниеОбработки'], function () 
+{
+	Ext.define('Справочники.ВнешниеОбработки.ФормаНастройкиПостроителя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:267px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка условий',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,9 +98,9 @@
 					{
 						var грид = Ext.getCmp('ПостроительОтбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВнешниеОбработки.ФормаНастройкиПостроителяСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаНастройкиПостроителяСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -139,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

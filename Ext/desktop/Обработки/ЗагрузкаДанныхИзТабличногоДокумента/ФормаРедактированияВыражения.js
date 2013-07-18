@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаРедактированияВыражения',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхИзТабличногоДокумента'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаРедактированияВыражения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:718px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма редактирования выражения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -42,4 +45,5 @@
 			]
 		},
 	]
+	});
 });

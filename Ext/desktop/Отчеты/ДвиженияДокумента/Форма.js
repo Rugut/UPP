@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ДвиженияДокумента.Форма',
+﻿Ext.require(['Данные.Отчеты.ДвиженияДокумента'], function () 
+{
+	Ext.define('Отчеты.ДвиженияДокумента.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:712px;height:514px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по движениям документа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,4 +66,5 @@
 			]
 		},
 	]
+	});
 });

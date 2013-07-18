@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеМПЗМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеМПЗМеждународный'], function () 
+{
+	Ext.define('Документы.СписаниеМПЗМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:351px;height:187px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Списание МПЗ (международный)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -193,4 +196,5 @@
 			]
 		},
 	]
+	});
 });

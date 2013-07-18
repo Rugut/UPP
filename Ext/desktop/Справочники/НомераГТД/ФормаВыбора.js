@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НомераГТД.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.НомераГТД'], function () 
+{
+	Ext.define('Справочники.НомераГТД.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:434px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Номера ГТД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НомераГТД.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НомераГТД.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -85,4 +88,5 @@
 			]
 		},
 	]
+	});
 });

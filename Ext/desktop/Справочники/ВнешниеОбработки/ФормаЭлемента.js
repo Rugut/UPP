@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВнешниеОбработки.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВнешниеОбработки'], function () 
+{
+	Ext.define('Справочники.ВнешниеОбработки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:618px;height:386px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Регистрация внешней обработки, печатной формы,  обработки по заполнению табличных частей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -67,6 +73,7 @@
 					items:
 					[
 		{
+			id: 'Принадлежность',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:47px;width:602px;height:200px;',
 			height: 200,width: 602,
@@ -92,7 +99,7 @@
 				},
 				{
 					text:'Представление кнопки',
-					width:'199',
+					width:'198',
 					dataIndex:'ПредставлениеКнопки',
 					flex:1,
 				},
@@ -147,11 +154,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -191,6 +199,23 @@
 						name:'СпособЗапуска',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Принадлежность');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВнешниеОбработки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -244,7 +269,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:81px;width:514px;height:27px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -277,4 +303,5 @@
 			]
 		},
 	]
+	});
 });

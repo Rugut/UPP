@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктОтбораПробНоменклатуры.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.АктОтбораПробНоменклатуры'], function () 
+{
+	Ext.define('Документы.АктОтбораПробНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:620px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Акты отбора проб номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АктОтбораПробНоменклатуры.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АктОтбораПробНоменклатуры.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

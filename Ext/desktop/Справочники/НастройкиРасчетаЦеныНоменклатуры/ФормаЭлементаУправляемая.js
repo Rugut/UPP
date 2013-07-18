@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаЭлементаУправляемая',
+﻿Ext.require(['Данные.Справочники.НастройкиРасчетаЦеныНоменклатуры'], function () 
+{
+	Ext.define('Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаЭлементаУправляемая',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:0px;height:0px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

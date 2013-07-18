@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Субконто.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.Субконто'], function () 
+{
+	Ext.define('Справочники.Субконто.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:312px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Субконто.ФормаВыбораГруппыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Субконто.ФормаВыбораГруппыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

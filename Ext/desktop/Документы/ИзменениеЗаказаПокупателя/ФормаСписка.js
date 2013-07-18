@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеЗаказаПокупателя.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ИзменениеЗаказаПокупателя'], function () 
+{
+	Ext.define('Документы.ИзменениеЗаказаПокупателя.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Изменение заказов покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:624px;height:380px;',
 			height: 380,width: 624,
@@ -82,7 +89,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЗаказаПокупателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -117,8 +124,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеЗаказаПокупателя.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеЗаказаПокупателя.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -151,4 +176,5 @@
 			]
 		},
 	]
+	});
 });

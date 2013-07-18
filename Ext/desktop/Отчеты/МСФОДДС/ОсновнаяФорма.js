@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОДДС.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.МСФОДДС'], function () 
+{
+	Ext.define('Отчеты.МСФОДДС.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:269px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет о движении денежных средств по МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

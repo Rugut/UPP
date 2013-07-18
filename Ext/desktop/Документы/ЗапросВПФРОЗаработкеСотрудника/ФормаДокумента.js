@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗапросВПФРОЗаработкеСотрудника.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗапросВПФРОЗаработкеСотрудника'], function () 
+{
+	Ext.define('Документы.ЗапросВПФРОЗаработкеСотрудника.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:682px;height:535px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Запрос в ПФР о заработке сотрудника',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -475,4 +478,5 @@
 			]
 		},
 	]
+	});
 });

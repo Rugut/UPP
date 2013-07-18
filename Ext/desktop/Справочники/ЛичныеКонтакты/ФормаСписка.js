@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЛичныеКонтакты.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ЛичныеКонтакты'], function () 
+{
+	Ext.define('Справочники.ЛичныеКонтакты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:508px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Личные контакты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'ФИО',
-					width:'2200',
+					width:'220',
 					dataIndex:'ФИО',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЛичныеКонтакты.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЛичныеКонтакты.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -90,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

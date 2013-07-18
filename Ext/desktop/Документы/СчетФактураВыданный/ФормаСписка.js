@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетФактураВыданный.ФормаСписка',
+﻿Ext.require(['Данные.Документы.СчетФактураВыданный'], function () 
+{
+	Ext.define('Документы.СчетФактураВыданный.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Счета-фактуры выданные',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -106,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,8 +160,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураВыданный.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -195,4 +220,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДопроведениеДокументов.Форма',
+﻿Ext.require(['Данные.Обработки.ДопроведениеДокументов'], function () 
+{
+	Ext.define('Обработки.ДопроведениеДокументов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:427px;height:291px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Допроведение документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -136,4 +139,5 @@
 			]
 		},
 	]
+	});
 });

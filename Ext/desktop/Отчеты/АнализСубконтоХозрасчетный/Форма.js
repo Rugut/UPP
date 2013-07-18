@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСубконтоХозрасчетный.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСубконтоХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.АнализСубконтоХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:731px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -125,9 +128,9 @@
 					{
 						var грид = Ext.getCmp('Субконто');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализСубконтоХозрасчетный.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализСубконтоХозрасчетный.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -216,9 +219,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализСубконтоХозрасчетный.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализСубконтоХозрасчетный.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -308,4 +311,5 @@
 			]
 		},
 	]
+	});
 });

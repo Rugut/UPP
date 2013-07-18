@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ABCКлассификацияПокупателей.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ABCКлассификацияПокупателей'], function () 
+{
+	Ext.define('Документы.ABCКлассификацияПокупателей.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:630px;height:434px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'ABC-классификация покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -103,13 +106,13 @@
 				},
 				{
 					text:'Контрагент',
-					width:'2200',
+					width:'220',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Параметр (значение)',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеПараметра',
 					flex:1,
 				},
@@ -121,7 +124,7 @@
 				},
 				{
 					text:'Менеджер контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'МенеджерКонтрагента',
 					flex:1,
 				},
@@ -173,9 +176,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаРаспределенияКонтрагентов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ABCКлассификацияПокупателей.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ABCКлассификацияПокупателей.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -375,4 +378,5 @@
 			]
 		},
 	]
+	});
 });

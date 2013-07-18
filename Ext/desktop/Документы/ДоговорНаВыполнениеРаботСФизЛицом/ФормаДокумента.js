@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ДоговорНаВыполнениеРаботСФизЛицом'], function () 
+{
+	Ext.define('Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:350px;height:480px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Договор на выполнение работ с физ. лицом',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -364,4 +367,5 @@
 			]
 		},
 	]
+	});
 });

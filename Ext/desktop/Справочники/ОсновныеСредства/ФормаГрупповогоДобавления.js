@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновныеСредства.ФормаГрупповогоДобавления',
+﻿Ext.require(['Данные.Справочники.ОсновныеСредства'], function () 
+{
+	Ext.define('Справочники.ОсновныеСредства.ФормаГрупповогоДобавления',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:414px;height:417px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Групповое добавление элементов справочника ""Основные средства""',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -264,4 +267,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФормыОбучения.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ФормыОбучения'], function () 
+{
+	Ext.define('Справочники.ФормыОбучения.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:421px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Формы обучения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФормыОбучения.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФормыОбучения.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -195,4 +198,5 @@
 			]
 		},
 	]
+	});
 });

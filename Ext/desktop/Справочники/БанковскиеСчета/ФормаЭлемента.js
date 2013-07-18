@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.БанковскиеСчета.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.БанковскиеСчета'], function () 
+{
+	Ext.define('Справочники.БанковскиеСчета.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:568px;height:521px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Элемент Банковские счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -388,4 +391,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

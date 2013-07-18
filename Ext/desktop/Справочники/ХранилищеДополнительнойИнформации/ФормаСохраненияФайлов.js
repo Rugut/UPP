@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаСохраненияФайлов',
+﻿Ext.require(['Данные.Справочники.ХранилищеДополнительнойИнформации'], function () 
+{
+	Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаСохраненияФайлов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:512px;height:104px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сохранить файлы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -54,4 +57,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

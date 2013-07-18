@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ПараметрыВыпускаПродукции'], function () 
+{
+	Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:429px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры выпуска продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

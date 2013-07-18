@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПечатьСерийныхНомеров.Форма',
+﻿Ext.require(['Данные.Обработки.ПечатьСерийныхНомеров'], function () 
+{
+	Ext.define('Обработки.ПечатьСерийныхНомеров.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:462px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обработка  Печать серийных номеров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТабличноеПолеТовары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:95px;width:764px;height:361px;',
 			height: 361,width: 764,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Качество',
-					width:'105',
+					width:'104',
 					dataIndex:'Качество',
 					flex:1,
 				},
@@ -35,7 +42,7 @@
 				},
 				{
 					text:'Серия',
-					width:'139',
+					width:'138',
 					dataIndex:'Серия',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьСерийныхНомеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьСерийныхНомеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,6 +87,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеТовары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьСерийныхНомеров.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьСерийныхНомеров.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -148,7 +172,8 @@
 			title: 'Строки для печати',
 			style: 'position:absolute;left:8px;top:79px;width:764px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -187,4 +212,5 @@
 			]
 		},
 	]
+	});
 });

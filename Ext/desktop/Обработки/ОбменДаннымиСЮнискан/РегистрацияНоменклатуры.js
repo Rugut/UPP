@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбменДаннымиСЮнискан.РегистрацияНоменклатуры',
+﻿Ext.require(['Данные.Обработки.ОбменДаннымиСЮнискан'], function () 
+{
+	Ext.define('Обработки.ОбменДаннымиСЮнискан.РегистрацияНоменклатуры',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Регистрация номенклатуры в ЮНИСКАН/GS1 Russia',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -191,6 +197,7 @@
 			style: 'position:absolute;left:140px;top:207px;width:252px;height:41px;',
 		},
 		{
+			id: 'ТаблицаТранспортныхУпаковокРегистрации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:276px;width:392px;height:139px;',
 			height: 139,width: 392,
@@ -204,7 +211,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'156',
+					width:'155',
 					dataIndex:'НаименованиеТранспортнойУпаковки',
 					flex:1,
 				},
@@ -216,7 +223,7 @@
 				},
 				{
 					text:'Код EAH-14',
-					width:'112',
+					width:'111',
 					dataIndex:'ШтрихКод',
 					flex:1,
 				},
@@ -245,7 +252,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиСЮнискан/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиСЮнискан/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -270,6 +277,23 @@
 						name:'УникальныйНомер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаТранспортныхУпаковокРегистрации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -297,6 +321,7 @@
 			]
 		},
 		{
+			id: 'ТаблицаДляРегистрации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:60px;width:224px;height:387px;',
 			height: 387,width: 224,
@@ -316,7 +341,7 @@
 				},
 				{
 					text:'Единица измерения',
-					width:'207',
+					width:'206',
 					dataIndex:'ЕдиницаИзмерения',
 					flex:1,
 				},
@@ -328,13 +353,13 @@
 				},
 				{
 					text:'Код EAH-13',
-					width:'103',
+					width:'102',
 					dataIndex:'ШтрихКод',
 					flex:1,
 				},
 				{
 					text:'УникальныйНомерТовара',
-					width:'80',
+					width:'79',
 					dataIndex:'УникальныйНомерТовара',
 					flex:1,
 				},
@@ -417,7 +442,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиСЮнискан/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбменДаннымиСЮнискан/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -476,6 +501,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаДляРегистрации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -483,7 +525,8 @@
 			text: 'Номенклатура:',
 			style: 'position:absolute;left:8px;top:8px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -526,4 +569,5 @@
 			]
 		},
 	]
+	});
 });

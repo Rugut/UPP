@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаявкаНаОбучение.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаявкаНаОбучение'], function () 
+{
+	Ext.define('Документы.ЗаявкаНаОбучение.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:415px;height:396px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Заявка на курс обучения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -115,7 +118,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'2200',
+					width:'220',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -149,9 +152,9 @@
 					{
 						var грид = Ext.getCmp('ОбучающиесяРаботники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаявкаНаОбучение.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаявкаНаОбучение.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -261,4 +264,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ИзменениеДокументовБюджетирования.Форма',
+﻿Ext.require(['Данные.Обработки.ИзменениеДокументовБюджетирования'], function () 
+{
+	Ext.define('Обработки.ИзменениеДокументовБюджетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение документов бюджетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:628px;height:384px;',
@@ -30,6 +36,7 @@
 			style: 'position:absolute;left:6px;top:30px;width:80px;height:19px;',
 		},
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:94px;width:614px;height:259px;',
 			height: 259,width: 614,
@@ -78,7 +85,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеДокументовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеДокументовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -100,6 +107,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -172,6 +196,7 @@
 					items:
 					[
 		{
+			id: 'Действия',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:265px;width:614px;height:93px;',
 			height: 93,width: 614,
@@ -191,13 +216,13 @@
 				},
 				{
 					text:'Уточнение действия',
-					width:'204',
+					width:'203',
 					dataIndex:'УточнениеДействия',
 					flex:1,
 				},
 				{
 					text:'Параметр действия',
-					width:'239',
+					width:'238',
 					dataIndex:'ПараметрДействия',
 					flex:1,
 				},
@@ -208,7 +233,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеДокументовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеДокументовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -224,6 +249,23 @@
 						name:'ПараметрДействия',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Действия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -260,6 +302,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;',
 		},
 		{
+			id: 'ТабДокументовФорма',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:614px;height:174px;',
 			height: 174,width: 614,
@@ -272,10 +315,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеДокументовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеДокументовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабДокументовФорма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -287,7 +347,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -317,4 +378,5 @@
 			]
 		},
 	]
+	});
 });

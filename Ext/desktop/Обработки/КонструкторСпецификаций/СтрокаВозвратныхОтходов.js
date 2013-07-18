@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторСпецификаций.СтрокаВозвратныхОтходов',
+﻿Ext.require(['Данные.Обработки.КонструкторСпецификаций'], function () 
+{
+	Ext.define('Обработки.КонструкторСпецификаций.СтрокаВозвратныхОтходов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:325px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Строка возвратных отходов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -246,4 +249,5 @@
 			]
 		},
 	]
+	});
 });

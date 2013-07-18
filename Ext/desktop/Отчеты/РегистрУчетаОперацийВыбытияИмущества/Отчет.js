@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаОперацийВыбытияИмущества.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаОперацийВыбытияИмущества'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаОперацийВыбытияИмущества.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета операций выбытия имущества, работ, услуг, прав',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

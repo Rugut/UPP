@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ABCАнализПродаж.Форма',
+﻿Ext.require(['Данные.Отчеты.ABCАнализПродаж'], function () 
+{
+	Ext.define('Отчеты.ABCАнализПродаж.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:430px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'АВС-анализ продаж',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -180,4 +183,5 @@
 			]
 		},
 	]
+	});
 });

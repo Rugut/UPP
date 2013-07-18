@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ДиаграммаОтложенногоПроведения.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.ДиаграммаОтложенногоПроведения'], function () 
+{
+	Ext.define('Отчеты.ДиаграммаОтложенногоПроведения.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:947px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Диаграмма отложенного проведения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

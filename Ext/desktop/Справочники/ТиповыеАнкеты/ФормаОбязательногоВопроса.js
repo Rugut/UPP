@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаОбязательногоВопроса',
+﻿Ext.require(['Данные.Справочники.ТиповыеАнкеты'], function () 
+{
+	Ext.define('Справочники.ТиповыеАнкеты.ФормаОбязательногоВопроса',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:294px;height:303px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка обязательности ответа на вопрос',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -90,9 +93,9 @@
 					{
 						var грид = Ext.getCmp('СписокЗначенийОтвета');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -162,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

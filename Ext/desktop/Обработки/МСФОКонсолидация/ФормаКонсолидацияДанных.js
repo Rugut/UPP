@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МСФОКонсолидация.ФормаКонсолидацияДанных',
+﻿Ext.require(['Данные.Обработки.МСФОКонсолидация'], function () 
+{
+	Ext.define('Обработки.МСФОКонсолидация.ФормаКонсолидацияДанных',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:656px;height:392px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Консолидация по информационной базе',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:640px;height:326px;',
@@ -53,6 +59,7 @@
 			style: 'position:absolute;left:164px;top:24px;width:476px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:91px;width:640px;height:213px;',
 			height: 213,width: 640,
@@ -173,7 +180,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -232,6 +239,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -272,6 +296,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеДвижения',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:640px;height:280px;',
 			height: 280,width: 640,
@@ -344,7 +369,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -379,6 +404,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвижения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -392,6 +434,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;',
 		},
 		{
+			id: 'ТабличноеПолеРезультат',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:640px;height:305px;',
 			height: 305,width: 640,
@@ -416,7 +459,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МСФОКонсолидация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -427,12 +470,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеРезультат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -466,4 +527,5 @@
 			]
 		},
 	]
+	});
 });

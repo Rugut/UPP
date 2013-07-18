@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОпределениеФинансовыхРезультатов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОпределениеФинансовыхРезультатов'], function () 
+{
+	Ext.define('Документы.ОпределениеФинансовыхРезультатов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:345px;height:309px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -206,4 +209,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

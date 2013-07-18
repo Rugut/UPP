@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.Форма',
+﻿Ext.require(['Данные.Обработки.ПоискИЗаменаДублирующихсяЭлементов'], function () 
+{
+	Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:693px;height:362px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Поиск дублирующихся элементов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:677px;height:318px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'НастройкиОтчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:663px;height:261px;',
 			height: 261,width: 663,
@@ -33,7 +40,7 @@
 				},
 				{
 					text:'Тип сравнения',
-					width:'148',
+					width:'147',
 					dataIndex:'ТипСравнения',
 					flex:1,
 				},
@@ -50,7 +57,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -64,6 +71,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиОтчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -72,6 +96,7 @@
 					items:
 					[
 		{
+			id: 'НайденныеОбъекты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:663px;height:257px;',
 			height: 257,width: 663,
@@ -96,7 +121,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -107,6 +132,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НайденныеОбъекты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -115,6 +157,7 @@
 					items:
 					[
 		{
+			id: 'ЗависимыеОбъекты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:663px;height:108px;',
 			height: 108,width: 663,
@@ -134,7 +177,7 @@
 				},
 				{
 					text:'Правильный',
-					width:'226',
+					width:'225',
 					dataIndex:'Правильный',
 					flex:1,
 				},
@@ -145,7 +188,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -159,8 +202,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗависимыеОбъекты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'НайденныеЗависимыеСсылки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:153px;width:663px;height:134px;',
 			height: 134,width: 663,
@@ -173,10 +234,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НайденныеЗависимыеСсылки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -186,6 +264,7 @@
 					items:
 					[
 		{
+			id: 'НайденныеСсылки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:663px;height:259px;',
 			height: 259,width: 663,
@@ -198,17 +277,35 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НайденныеСсылки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -224,4 +321,5 @@
 			]
 		},
 	]
+	});
 });

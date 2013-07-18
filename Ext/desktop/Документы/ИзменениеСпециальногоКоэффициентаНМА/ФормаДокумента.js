@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеСпециальногоКоэффициентаНМА'], function () 
+{
+	Ext.define('Документы.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:476px;height:417px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение понижающего коэффициента для расчета амортизации НМА (налоговый учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -103,6 +109,7 @@
 			style: 'position:absolute;left:99px;top:55px;width:220px;height:19px;',
 		},
 		{
+			id: 'НМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:118px;width:460px;height:220px;',
 			height: 220,width: 460,
@@ -139,7 +146,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаНМА/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаНМА/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -156,13 +163,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Нематериальные активы',
 			style: 'position:absolute;left:8px;top:78px;width:460px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -231,4 +256,5 @@
 			]
 		},
 	]
+	});
 });

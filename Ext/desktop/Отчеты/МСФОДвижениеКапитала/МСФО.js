@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОДвижениеКапитала.МСФО',
+﻿Ext.require(['Данные.Отчеты.МСФОДвижениеКапитала'], function () 
+{
+	Ext.define('Отчеты.МСФОДвижениеКапитала.МСФО',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:736px;height:482px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -215,4 +218,5 @@
 			]
 		},
 	]
+	});
 });

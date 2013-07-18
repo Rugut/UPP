@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Подразделения.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.Подразделения'], function () 
+{
+	Ext.define('Справочники.Подразделения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:391px;height:380px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Подразделения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,7 +24,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Подразделения.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Подразделения.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -138,4 +141,5 @@
 			]
 		},
 	]
+	});
 });

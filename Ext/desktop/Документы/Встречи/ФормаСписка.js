@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Встречи.ФормаСписка',
+﻿Ext.require(['Данные.Документы.Встречи'], function () 
+{
+	Ext.define('Документы.Встречи.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Встречи',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,31 +42,31 @@
 				},
 				{
 					text:'Период встречи',
-					width:'1500',
+					width:'150',
 					dataIndex:'ПериодВстречи',
 					flex:1,
 				},
 				{
 					text:'Кандидат',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗаявкаКандидата',
 					flex:1,
 				},
 				{
 					text:'Помещение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Помещение',
 					flex:1,
 				},
 				{
 					text:'Краткий состав документа',
-					width:'1500',
+					width:'150',
 					dataIndex:'КраткийСоставДокумента',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Встречи.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Встречи.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -290,4 +293,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Регионы.ФормаЗаполнения',
+﻿Ext.require(['Данные.Справочники.Регионы'], function () 
+{
+	Ext.define('Справочники.Регионы.ФормаЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:722px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Заполнение справочника Регионы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('АдресноеДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Регионы.ФормаЗаполненияСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Регионы.ФормаЗаполненияСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -159,4 +162,5 @@
 			]
 		},
 	]
+	});
 });

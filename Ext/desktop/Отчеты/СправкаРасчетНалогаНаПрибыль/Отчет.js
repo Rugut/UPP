@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетНалогаНаПрибыль.Отчет',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетНалогаНаПрибыль'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетНалогаНаПрибыль.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчет налога на прибыль',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

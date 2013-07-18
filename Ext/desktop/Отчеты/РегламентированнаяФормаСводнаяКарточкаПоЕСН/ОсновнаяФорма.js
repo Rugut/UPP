@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированнаяФормаСводнаяКарточкаПоЕСН.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированнаяФормаСводнаяКарточкаПоЕСН'], function () 
+{
+	Ext.define('Отчеты.РегламентированнаяФормаСводнаяКарточкаПоЕСН.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:651px;height:387px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сводная карточка ЕСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -101,4 +104,5 @@
 			]
 		},
 	]
+	});
 });

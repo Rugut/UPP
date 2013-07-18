@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КалендарныйПланЗакупок.ФормаПомощника',
+﻿Ext.require(['Данные.Обработки.КалендарныйПланЗакупок'], function () 
+{
+	Ext.define('Обработки.КалендарныйПланЗакупок.ФормаПомощника',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:430px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Помощник заполнения календарного плана закупок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:153px;top:8px;width:619px;height:389px;',
@@ -21,6 +27,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаТоваров',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:619px;height:349px;',
 			height: 349,width: 619,
@@ -63,7 +70,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -83,6 +90,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаТоваров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -101,6 +125,7 @@
 			style: 'position:absolute;left:0px;top:95px;width:619px;height:16px;',
 		},
 		{
+			id: 'СвойстваИКатегорииКонтрагентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:140px;width:619px;height:249px;',
 			height: 249,width: 619,
@@ -137,7 +162,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,6 +178,23 @@
 						name:'ЗначениеФильтра',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИКатегорииКонтрагентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -238,6 +280,7 @@
 					items:
 					[
 		{
+			id: 'КонечнаяТаблица',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:619px;height:368px;',
 			height: 368,width: 619,
@@ -250,10 +293,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КалендарныйПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонечнаяТаблица');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -297,7 +357,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -327,4 +388,5 @@
 			]
 		},
 	]
+	});
 });

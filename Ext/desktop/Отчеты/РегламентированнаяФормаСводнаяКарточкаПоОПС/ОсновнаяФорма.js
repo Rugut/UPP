@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированнаяФормаСводнаяКарточкаПоОПС.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированнаяФормаСводнаяКарточкаПоОПС'], function () 
+{
+	Ext.define('Отчеты.РегламентированнаяФормаСводнаяКарточкаПоОПС.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:651px;height:387px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сводная карточка ОПС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -101,4 +104,5 @@
 			]
 		},
 	]
+	});
 });

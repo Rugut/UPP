@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетВода.ФормаОтчета2005Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетВода'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетВода.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:490px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Налоговая декларация по водному налогу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -494,4 +497,5 @@
 			]
 		},
 	]
+	});
 });

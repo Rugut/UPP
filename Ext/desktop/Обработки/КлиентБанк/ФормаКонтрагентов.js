@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КлиентБанк.ФормаКонтрагентов',
+﻿Ext.require(['Данные.Обработки.КлиентБанк'], function () 
+{
+	Ext.define('Обработки.КлиентБанк.ФормаКонтрагентов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:384px;height:301px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Клиент банка: Создание ненайденных объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоКонтрагентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:26px;width:368px;height:221px;',
 			height: 221,width: 368,
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,13 +52,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоКонтрагентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КлиентБанк.ФормаКонтрагентовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КлиентБанк.ФормаКонтрагентовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Открывать форму контрагента после записи',
 			style: 'position:absolute;left:8px;top:247px;width:327px;height:21px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -87,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

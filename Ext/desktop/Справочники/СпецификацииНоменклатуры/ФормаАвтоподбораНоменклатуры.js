@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатуры',
+﻿Ext.require(['Данные.Справочники.СпецификацииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатуры',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:262px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Автоподбор номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:237px;width:500px;height:25px;',
@@ -71,6 +77,7 @@
 					items:
 					[
 		{
+			id: 'АвтоподборНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:484px;height:129px;',
 			height: 129,width: 484,
@@ -84,7 +91,7 @@
 				},
 				{
 					text:'Значение',
-					width:'197',
+					width:'196',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -109,11 +116,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -132,6 +140,23 @@
 						name:'ЕдиницаИзмерения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('АвтоподборНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -151,6 +176,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:484px;height:16px;',
 		},
 		{
+			id: 'АвтоподборНоменклатурыОтходы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:484px;height:129px;',
 			height: 129,width: 484,
@@ -189,11 +215,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -213,13 +240,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('АвтоподборНоменклатурыОтходы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

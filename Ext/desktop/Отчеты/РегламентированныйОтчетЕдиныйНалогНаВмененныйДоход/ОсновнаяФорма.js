@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЕдиныйНалогНаВмененныйДоход.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЕдиныйНалогНаВмененныйДоход'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЕдиныйНалогНаВмененныйДоход.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:257px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по ЕНВД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлючиАналитикиВидаУчета.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлючиАналитикиВидаУчета'], function () 
+{
+	Ext.define('Справочники.КлючиАналитикиВидаУчета.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:375px;height:298px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ключ аналитики вида учета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -191,4 +194,5 @@
 			]
 		},
 	]
+	});
 });

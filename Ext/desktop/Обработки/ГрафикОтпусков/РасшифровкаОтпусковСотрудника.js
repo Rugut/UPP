@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрафикОтпусков.РасшифровкаОтпусковСотрудника',
+﻿Ext.require(['Данные.Обработки.ГрафикОтпусков'], function () 
+{
+	Ext.define('Обработки.ГрафикОтпусков.РасшифровкаОтпусковСотрудника',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:641px;height:327px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '<ФИО>, <номер года> год',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Описание',
-					width:'1500',
+					width:'150',
 					dataIndex:'Описание',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтпуска');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрафикОтпусков.РасшифровкаОтпусковСотрудникаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрафикОтпусков.РасшифровкаОтпусковСотрудникаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -196,4 +199,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияБракаВПроизводстве.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияБракаВПроизводстве'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияБракаВПроизводстве.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:458px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Инвентаризация брака в производстве',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:433px;width:652px;height:25px;',
@@ -136,6 +142,7 @@
 			]
 		},
 		{
+			id: 'ЗатратыПоБракуВПроизводстве',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:155px;width:636px;height:220px;',
 			height: 220,width: 636,
@@ -161,7 +168,7 @@
 				},
 				{
 					text:'Заказ',
-					width:'68',
+					width:'67',
 					dataIndex:'Заказ',
 					flex:1,
 				},
@@ -220,7 +227,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияБракаВПроизводстве/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияБракаВПроизводстве/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -260,6 +267,23 @@
 						name:'СчетЗатратНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗатратыПоБракуВПроизводстве');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияБракаВПроизводстве.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияБракаВПроизводстве.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -314,7 +338,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:382px;width:548px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -337,4 +362,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиСемейноеПоложение',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиСемейноеПоложение',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:354px;height:95px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Семейное положение физ. лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -78,4 +81,5 @@
 			]
 		},
 	]
+	});
 });

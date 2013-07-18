@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СерииНоменклатуры.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СерииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СерииНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Серии номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -51,7 +54,7 @@
 				},
 				{
 					text:'Номер и дата сертификата',
-					width:'1800',
+					width:'180',
 					dataIndex:'НомерИДатаСертификата',
 					flex:1,
 				},
@@ -63,13 +66,13 @@
 				},
 				{
 					text:'Номер ГТД',
-					width:'2200',
+					width:'220',
 					dataIndex:'НомерГТД',
 					flex:1,
 				},
 				{
 					text:'Страна происхождения',
-					width:'2200',
+					width:'220',
 					dataIndex:'СтранаПроисхождения',
 					flex:1,
 				},
@@ -131,9 +134,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СерииНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СерииНоменклатуры.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -173,4 +176,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РегламентныеОперацииНалоговогоУчетаПоУСН.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РегламентныеОперацииНалоговогоУчетаПоУСН'], function () 
+{
+	Ext.define('Документы.РегламентныеОперацииНалоговогоУчетаПоУСН.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:382px;height:274px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регламентные операции налогового учета (УСН)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -177,4 +180,5 @@
 			]
 		},
 	]
+	});
 });

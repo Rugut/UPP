@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СводныеПроводкиХозрасчетный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.СводныеПроводкиХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.СводныеПроводкиХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:253px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка Сводные проводки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -148,4 +151,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП3.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФормаП3'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП3.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:278px;height:255px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма П-3',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

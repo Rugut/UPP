@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СценарииПланирования.ФормаАвтозаполненияКурсов',
+﻿Ext.require(['Данные.Справочники.СценарииПланирования'], function () 
+{
+	Ext.define('Справочники.СценарииПланирования.ФормаАвтозаполненияКурсов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:348px;height:180px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -128,4 +131,5 @@
 			]
 		},
 	]
+	});
 });

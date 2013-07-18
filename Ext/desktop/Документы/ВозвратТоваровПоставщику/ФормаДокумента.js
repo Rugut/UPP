@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВозвратТоваровПоставщику.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВозвратТоваровПоставщику'], function () 
+{
+	Ext.define('Документы.ВозвратТоваровПоставщику.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:662px;height:442px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Возврат товаров поставщику',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -84,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'Оборудование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
 			height: 154,width: 632,
@@ -97,7 +104,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'172',
+					width:'171',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -115,7 +122,7 @@
 				},
 				{
 					text:'Мест',
-					width:'54',
+					width:'53',
 					dataIndex:'КоличествоМест',
 					flex:1,
 				},
@@ -151,7 +158,7 @@
 				},
 				{
 					text:'% НДС',
-					width:'53',
+					width:'52',
 					dataIndex:'СтавкаНДС',
 					flex:1,
 				},
@@ -169,7 +176,7 @@
 				},
 				{
 					text:'Документ поступления оборудования',
-					width:'224',
+					width:'223',
 					dataIndex:'ДокументПоступления',
 					flex:1,
 				},
@@ -204,7 +211,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -263,6 +270,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оборудование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -271,6 +295,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
 			height: 154,width: 632,
@@ -439,7 +464,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -522,6 +547,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -579,6 +621,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
 			height: 154,width: 632,
@@ -657,7 +700,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -694,6 +737,23 @@
 						name:'Склад',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -989,6 +1049,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:154px;',
 			height: 154,width: 632,
@@ -1031,7 +1092,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1050,6 +1111,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1256,8 +1334,10 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:152px;top:366px;width:336px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлассификаторОКОПФ.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлассификаторОКОПФ'], function () 
+{
+	Ext.define('Справочники.КлассификаторОКОПФ.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:130px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Классификатор ОКОПФ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -97,4 +100,5 @@
 			]
 		},
 	]
+	});
 });

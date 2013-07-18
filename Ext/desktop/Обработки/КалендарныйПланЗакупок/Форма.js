@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КалендарныйПланЗакупок.Форма',
+﻿Ext.require(['Данные.Обработки.КалендарныйПланЗакупок'], function () 
+{
+	Ext.define('Обработки.КалендарныйПланЗакупок.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Календарный план закупок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,7 +24,7 @@
 			[
 				{
 					text:'Номенклатура. Контрагент. Заказ.',
-					width:'2200',
+					width:'220',
 					dataIndex:'НоменклатураКонтрагентЗаказ',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДеревоПодбора');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -281,4 +284,5 @@
 			]
 		},
 	]
+	});
 });

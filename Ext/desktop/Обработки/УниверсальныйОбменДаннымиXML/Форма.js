@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйОбменДаннымиXML.Форма',
+﻿Ext.require(['Данные.Обработки.УниверсальныйОбменДаннымиXML'], function () 
+{
+	Ext.define('Обработки.УниверсальныйОбменДаннымиXML.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:632px;height:534px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Универсальный обмен данными в формате XML',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:618px;height:497px;',
@@ -45,6 +51,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравилВыгрузки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:55px;width:273px;height:214px;',
 			height: 214,width: 273,
@@ -58,7 +65,7 @@
 				},
 				{
 					text:'Узел обмена',
-					width:'126',
+					width:'125',
 					dataIndex:'СсылкаНаУзелОбмена',
 					flex:1,
 				},
@@ -69,7 +76,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,8 +87,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравилВыгрузки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПостроительОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:285px;top:55px;width:311px;height:214px;',
 			height: 214,width: 311,
@@ -130,7 +155,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -152,6 +177,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -206,6 +248,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаНастройкиПараметров',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:590px;height:234px;',
 			height: 234,width: 590,
@@ -219,7 +262,7 @@
 				},
 				{
 					text:'Значение',
-					width:'301',
+					width:'300',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -230,7 +273,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -240,6 +283,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастройкиПараметров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -767,6 +827,7 @@
 			style: 'position:absolute;left:166px;top:359px;width:252px;height:15px;',
 		},
 		{
+			id: 'УдаляемыеДанные',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:104px;width:604px;height:335px;',
 			height: 335,width: 604,
@@ -785,13 +846,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйОбменДаннымиXML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Метаданные',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УдаляемыеДанные');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -803,7 +881,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -833,4 +912,5 @@
 			]
 		},
 	]
+	});
 });

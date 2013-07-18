@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РапортРуководителю.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.РапортРуководителю'], function () 
+{
+	Ext.define('Отчеты.РапортРуководителю.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:448px;height:420px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка показателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:8px;width:434px;height:379px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеПоказателей',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:420px;height:244px;',
 			height: 244,width: 420,
@@ -44,7 +51,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +61,23 @@
 						name:'Показатель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПоказателей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РапортРуководителю.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РапортРуководителю.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -186,6 +210,7 @@
 			style: 'position:absolute;left:12px;top:248px;width:136px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеВремяПубликации',
 			xtype: 'grid',
 			style: 'position:absolute;left:150px;top:272px;width:276px;height:80px;',
 			height: 80,width: 276,
@@ -204,13 +229,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РапортРуководителю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Время',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеВремяПубликации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РапортРуководителю.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РапортРуководителю.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -256,8 +298,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

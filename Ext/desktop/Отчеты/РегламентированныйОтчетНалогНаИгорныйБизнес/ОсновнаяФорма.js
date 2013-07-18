@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетНалогНаИгорныйБизнес.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетНалогНаИгорныйБизнес'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетНалогНаИгорныйБизнес.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:264px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Налог на игорный бизнес',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

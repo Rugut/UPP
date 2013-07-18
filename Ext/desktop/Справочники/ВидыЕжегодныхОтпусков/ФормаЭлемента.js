@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВидыЕжегодныхОтпусков'], function () 
+{
+	Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:470px;height:183px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Вид ежегодного отпуска',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -164,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

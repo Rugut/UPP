@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаОборудованияВМонтаж.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПередачаОборудованияВМонтаж'], function () 
+{
+	Ext.define('Документы.ПередачаОборудованияВМонтаж.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:413px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Передача оборудования в монтаж',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -59,6 +65,7 @@
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'Оборудование',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:172px;width:644px;height:160px;',
 			height: 160,width: 644,
@@ -78,7 +85,7 @@
 				},
 				{
 					text:'Характеристика',
-					width:'100',
+					width:'99',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -108,7 +115,7 @@
 				},
 				{
 					text:'Количество',
-					width:'100',
+					width:'99',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -132,7 +139,7 @@
 				},
 				{
 					text:'Счет учета (НУ)',
-					width:'111',
+					width:'110',
 					dataIndex:'СчетУчетаНУ',
 					flex:1,
 				},
@@ -143,7 +150,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОборудованияВМонтаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаОборудованияВМонтаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -183,6 +190,23 @@
 						name:'СчетУчетаНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оборудование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаОборудованияВМонтаж.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаОборудованияВМонтаж.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -350,7 +374,8 @@
 			title: 'Оборудование',
 			style: 'position:absolute;left:8px;top:132px;width:644px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -405,4 +430,5 @@
 			]
 		},
 	]
+	});
 });

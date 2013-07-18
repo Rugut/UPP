@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КомпетенцииРаботников.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.КомпетенцииРаботников'], function () 
+{
+	Ext.define('Справочники.КомпетенцииРаботников.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:512px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Компетенции сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2800',
+					width:'280',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КомпетенцииРаботников.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КомпетенцииРаботников.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -210,4 +213,5 @@
 			]
 		},
 	]
+	});
 });

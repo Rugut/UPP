@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыЗемля.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАвансыЗемля'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАвансыЗемля.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:290px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Авансы по земельному налогу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

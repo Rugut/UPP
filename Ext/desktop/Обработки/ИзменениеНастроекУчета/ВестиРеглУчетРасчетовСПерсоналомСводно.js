@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ИзменениеНастроекУчета.ВестиРеглУчетРасчетовСПерсоналомСводно',
+﻿Ext.require(['Данные.Обработки.ИзменениеНастроекУчета'], function () 
+{
+	Ext.define('Обработки.ИзменениеНастроекУчета.ВестиРеглУчетРасчетовСПерсоналомСводно',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:169px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Установка параметра учета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -67,4 +70,5 @@
 			]
 		},
 	]
+	});
 });

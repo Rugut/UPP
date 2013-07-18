@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеЗаказаПокупателя.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ИзменениеЗаказаПокупателя'], function () 
+{
+	Ext.define('Документы.ИзменениеЗаказаПокупателя.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:520px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Изменение заказов покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,7 +48,7 @@
 				},
 				{
 					text:'Заказ покупателя',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗаказПокупателя',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИзменениеЗаказаПокупателя.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИзменениеЗаказаПокупателя.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -133,4 +136,5 @@
 			]
 		},
 	]
+	});
 });

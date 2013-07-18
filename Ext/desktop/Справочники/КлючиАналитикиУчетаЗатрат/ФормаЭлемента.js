@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлючиАналитикиУчетаЗатрат'], function () 
+{
+	Ext.define('Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:254px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ключ аналитики учета затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -173,4 +176,5 @@
 			]
 		},
 	]
+	});
 });

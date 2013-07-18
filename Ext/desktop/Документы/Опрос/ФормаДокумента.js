@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Опрос.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.Опрос'], function () 
+{
+	Ext.define('Документы.Опрос.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:426px;height:524px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Опрос',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -167,13 +170,13 @@
 				},
 				{
 					text:'Вопрос',
-					width:'1600',
+					width:'160',
 					dataIndex:'Вопрос',
 					flex:1,
 				},
 				{
 					text:'Ответ',
-					width:'1200',
+					width:'120',
 					dataIndex:'ТиповойОтвет',
 					flex:1,
 				},
@@ -210,9 +213,9 @@
 					{
 						var грид = Ext.getCmp('ВопросыИОтветы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Опрос.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Опрос.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -333,4 +336,5 @@
 			]
 		},
 	]
+	});
 });

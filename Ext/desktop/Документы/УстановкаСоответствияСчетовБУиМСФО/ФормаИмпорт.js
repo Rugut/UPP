@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиМСФО.ФормаИмпорт',
+﻿Ext.require(['Данные.Документы.УстановкаСоответствияСчетовБУиМСФО'], function () 
+{
+	Ext.define('Документы.УстановкаСоответствияСчетовБУиМСФО.ФормаИмпорт',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:421px;height:81px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Импорт правил соответствия счетов БУ и МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -64,4 +67,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборНоменклатуры.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.ПодборНоменклатуры'], function () 
+{
+	Ext.define('Обработки.ПодборНоменклатуры.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:464px;height:453px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Подбор',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:70px;top:8px;width:281px;height:19px;',
@@ -52,6 +58,7 @@
 					items:
 					[
 		{
+			id: 'НоменклатураДляПодбора',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:1px;width:447px;height:160px;',
 			height: 160,width: 447,
@@ -167,7 +174,7 @@
 				},
 				{
 					text:'Характеристика номенклатуры (представление)',
-					width:'48',
+					width:'47',
 					dataIndex:'ПредставлениеХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -250,7 +257,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -348,6 +355,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НоменклатураДляПодбора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -366,6 +390,7 @@
 					items:
 					[
 		{
+			id: 'СправочникНоменклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:447px;height:55px;',
 			height: 55,width: 447,
@@ -420,7 +445,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -446,6 +471,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникНоменклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -459,6 +501,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОстаткиТоваров',
 			xtype: 'grid',
 			style: 'position:absolute;left:108px;top:0px;width:337px;height:69px;',
 			height: 69,width: 337,
@@ -490,13 +533,13 @@
 				},
 				{
 					text:'Своб.ожид.',
-					width:'68',
+					width:'67',
 					dataIndex:'СвободныйОжидаемый',
 					flex:1,
 				},
 				{
 					text:'В резерве',
-					width:'75',
+					width:'74',
 					dataIndex:'ВРезерве',
 					flex:1,
 				},
@@ -507,7 +550,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -530,8 +573,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОстаткиТоваров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СписокЦенОстатков',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:101px;height:94px;',
 			height: 94,width: 101,
@@ -539,13 +600,13 @@
 			[
 				{
 					text:'Типы цен',
-					width:'133',
+					width:'132',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Ссылка',
-					width:'82',
+					width:'81',
 					dataIndex:'Ссылка',
 					flex:1,
 				},
@@ -586,7 +647,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -611,6 +672,23 @@
 						name:'Префикс',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокЦенОстатков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -651,6 +729,7 @@
 					items:
 					[
 		{
+			id: 'СправочникСпецификации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:447px;height:161px;',
 			height: 161,width: 447,
@@ -682,7 +761,7 @@
 				},
 				{
 					text:'Активная',
-					width:'81',
+					width:'80',
 					dataIndex:'Активная',
 					flex:1,
 				},
@@ -723,7 +802,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -757,6 +836,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСпецификации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -827,6 +923,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:106px;top:0px;width:342px;height:100px;',
 			height: 100,width: 342,
@@ -845,13 +942,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -899,6 +1013,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоСпецификаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:448px;height:102px;',
 			height: 102,width: 448,
@@ -917,13 +1032,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоСпецификаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -959,7 +1091,8 @@
 			text: '',
 			style: 'position:absolute;left:355px;top:8px;width:18px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -985,4 +1118,5 @@
 			]
 		},
 	]
+	});
 });

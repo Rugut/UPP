@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаСтоимостиСписанияТоваров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаСтоимостиСписанияТоваров'], function () 
+{
+	Ext.define('Документы.КорректировкаСтоимостиСписанияТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:399px;height:203px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Корректировка стоимости списания товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -217,4 +220,5 @@
 			]
 		},
 	]
+	});
 });

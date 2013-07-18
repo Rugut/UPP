@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчете',
+﻿Ext.require(['Данные.Документы.ДоговорНаВыполнениеРаботСФизЛицом'], function () 
+{
+	Ext.define('Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчете',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:514px;height:173px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отражение в учете договора',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

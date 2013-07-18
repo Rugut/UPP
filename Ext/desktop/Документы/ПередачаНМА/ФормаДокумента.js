@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПередачаНМА'], function () 
+{
+	Ext.define('Документы.ПередачаНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:396px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Передача НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -495,4 +498,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

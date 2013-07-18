@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма5З.ФормаОтчета2011Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФорма5З'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма5З.ФормаОтчета2011Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма 5-З',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -139,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетРасчетПоОплатеЗаВоду.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетРасчетПоОплатеЗаВоду'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетРасчетПоОплатеЗаВоду.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчет по оплате за воду',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

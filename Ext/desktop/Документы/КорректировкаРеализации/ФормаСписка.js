@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаРеализации.ФормаСписка',
+﻿Ext.require(['Данные.Документы.КорректировкаРеализации'], function () 
+{
+	Ext.define('Документы.КорректировкаРеализации.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Корректировки реализации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,7 +66,7 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
@@ -81,13 +84,13 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Документ реализации',
-					width:'1500',
+					width:'150',
 					dataIndex:'ДокументРеализации',
 					flex:1,
 				},
@@ -99,13 +102,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -175,9 +178,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КорректировкаРеализации.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КорректировкаРеализации.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -226,4 +229,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

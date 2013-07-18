@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПриходныйКассовыйОрдер.ФормаВыбораКассы',
+﻿Ext.require(['Данные.Документы.ПриходныйКассовыйОрдер'], function () 
+{
+	Ext.define('Документы.ПриходныйКассовыйОрдер.ФормаВыбораКассы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:108px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Укажите кассу поступления денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -79,4 +82,5 @@
 			]
 		},
 	]
+	});
 });

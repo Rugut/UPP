@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыСчетчиковДляЗначенийРазрядов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВидыСчетчиковДляЗначенийРазрядов'], function () 
+{
+	Ext.define('Справочники.ВидыСчетчиковДляЗначенийРазрядов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:215px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды счетчиков для значений разрядов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -142,4 +145,5 @@
 			]
 		},
 	]
+	});
 });

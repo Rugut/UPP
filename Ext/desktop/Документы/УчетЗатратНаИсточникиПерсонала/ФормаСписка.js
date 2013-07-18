@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УчетЗатратНаИсточникиПерсонала.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УчетЗатратНаИсточникиПерсонала'], function () 
+{
+	Ext.define('Документы.УчетЗатратНаИсточникиПерсонала.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Учет затрат на источники персонала',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:484px;height:380px;',
 			height: 380,width: 484,
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗатратНаИсточникиПерсонала/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетЗатратНаИсточникиПерсонала/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УчетЗатратНаИсточникиПерсонала.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УчетЗатратНаИсточникиПерсонала.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -232,4 +257,5 @@
 			]
 		},
 	]
+	});
 });

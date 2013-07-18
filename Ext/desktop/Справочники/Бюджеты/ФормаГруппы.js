@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Бюджеты.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Бюджеты'], function () 
+{
+	Ext.define('Справочники.Бюджеты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:113px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Бюджеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -79,4 +82,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РабочийСтол.ФормаНачислений',
+﻿Ext.require(['Данные.Обработки.РабочийСтол'], function () 
+{
+	Ext.define('Обработки.РабочийСтол.ФормаНачислений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:745px;height:538px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Начисления',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,31 +52,31 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Способ расчета',
-					width:'1200',
+					width:'120',
 					dataIndex:'СпособРасчета',
 					flex:1,
 				},
 				{
 					text:'Категория начисления',
-					width:'1200',
+					width:'120',
 					dataIndex:'КатегорияРасчета',
 					flex:1,
 				},
 				{
 					text:'Вид времени',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидВремени',
 					flex:1,
 				},
 				{
 					text:'Учет рабочего времени',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОбозначениеВТабелеУчетаРабочегоВремени',
 					flex:1,
 				},
@@ -97,7 +100,7 @@
 				},
 				{
 					text:'Учет по ЕНВД',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОтнесениеРасходовКДеятельностиЕНВД',
 					flex:1,
 				},
@@ -155,9 +158,9 @@
 					{
 						var грид = Ext.getCmp('ОсновныеНачисленияРегл');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочийСтол.ФормаНачисленийСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочийСтол.ФормаНачисленийСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -190,31 +193,31 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Способ расчета',
-					width:'1200',
+					width:'120',
 					dataIndex:'СпособРасчета',
 					flex:1,
 				},
 				{
 					text:'Категория начисления',
-					width:'1200',
+					width:'120',
 					dataIndex:'КатегорияРасчета',
 					flex:1,
 				},
 				{
 					text:'Код дохода НДФЛ',
-					width:'1200',
+					width:'120',
 					dataIndex:'КодДоходаНДФЛ',
 					flex:1,
 				},
 				{
 					text:'Учет по ЕСН',
-					width:'1200',
+					width:'120',
 					dataIndex:'КодДоходаЕСН',
 					flex:1,
 				},
@@ -260,9 +263,9 @@
 					{
 						var грид = Ext.getCmp('ДополнительныеНачисленияРегл');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочийСтол.ФормаНачисленийСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочийСтол.ФормаНачисленийСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -362,9 +365,9 @@
 					{
 						var грид = Ext.getCmp('НачисленияУпр');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочийСтол.ФормаНачисленийСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочийСтол.ФормаНачисленийСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -392,4 +395,5 @@
 			]
 		},
 	]
+	});
 });

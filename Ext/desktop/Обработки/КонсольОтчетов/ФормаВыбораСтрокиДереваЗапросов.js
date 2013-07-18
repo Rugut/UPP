@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонсольОтчетов.ФормаВыбораСтрокиДереваЗапросов',
+﻿Ext.require(['Данные.Обработки.КонсольОтчетов'], function () 
+{
+	Ext.define('Обработки.КонсольОтчетов.ФормаВыбораСтрокиДереваЗапросов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:336px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выберите строку дерева отчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоЗапросов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:29px;width:324px;height:265px;',
 			height: 265,width: 324,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Отчет',
-					width:'309',
+					width:'308',
 					dataIndex:'Отчет',
 					flex:1,
 				},
@@ -28,13 +35,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Отчет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоЗапросов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонсольОтчетов.ФормаВыбораСтрокиДереваЗапросовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаВыбораСтрокиДереваЗапросовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -43,8 +67,10 @@
 			text: 'Перенести на верхний уровень',
 			style: 'position:absolute;left:6px;top:6px;width:324px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

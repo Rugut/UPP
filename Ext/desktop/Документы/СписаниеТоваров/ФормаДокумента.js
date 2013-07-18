@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеТоваров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеТоваров'], function () 
+{
+	Ext.define('Документы.СписаниеТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:409px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Списание товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -238,6 +244,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:120px;',
 			height: 120,width: 622,
@@ -293,7 +300,7 @@
 				},
 				{
 					text:'Мест',
-					width:'59',
+					width:'58',
 					dataIndex:'КоличествоМест',
 					flex:1,
 				},
@@ -382,7 +389,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -453,6 +460,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СписаниеТоваров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СписаниеТоваров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -461,6 +485,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:120px;',
 			height: 120,width: 622,
@@ -527,7 +552,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -559,6 +584,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СписаниеТоваров.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СписаниеТоваров.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -580,8 +622,10 @@
 			height: 19,
 			style: 'position:absolute;left:103px;top:104px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

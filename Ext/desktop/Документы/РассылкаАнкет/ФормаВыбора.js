@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РассылкаАнкет.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.РассылкаАнкет'], function () 
+{
+	Ext.define('Документы.РассылкаАнкет.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:528px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Рассылки анкет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Анкета',
-					width:'1200',
+					width:'120',
 					dataIndex:'Анкета',
 					flex:1,
 				},
 				{
 					text:'Первичная рассылка',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПервичнаяРассылка',
 					flex:1,
 				},
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РассылкаАнкет.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РассылкаАнкет.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -273,4 +276,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

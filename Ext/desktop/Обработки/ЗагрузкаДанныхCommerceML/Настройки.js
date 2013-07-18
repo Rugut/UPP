@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхCommerceML.Настройки',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхCommerceML'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхCommerceML.Настройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:442px;height:132px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки загрузки данных',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -60,4 +63,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетСтоимостиОстатковНЗП.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетСтоимостиОстатковНЗП'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетСтоимостиОстатковНЗП.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр-расчет стоимости остатков незавершенного производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -150,4 +153,5 @@
 			]
 		},
 	]
+	});
 });

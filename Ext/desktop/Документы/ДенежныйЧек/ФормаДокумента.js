@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДенежныйЧек.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ДенежныйЧек'], function () 
+{
+	Ext.define('Документы.ДенежныйЧек.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:663px;height:370px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Денежный чек',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись3',
@@ -93,6 +99,7 @@
 			style: 'position:absolute;left:102px;top:129px;width:219px;height:19px;',
 		},
 		{
+			id: 'ВыплатаЗаработнойПлаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:193px;width:647px;height:100px;',
 			height: 100,width: 647,
@@ -106,19 +113,19 @@
 				},
 				{
 					text:'Ведомость',
-					width:'290',
+					width:'289',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'122',
+					width:'121',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'202',
+					width:'201',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
@@ -129,7 +136,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДенежныйЧек/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДенежныйЧек/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +152,23 @@
 						name:'СтатьяДвиженияДенежныхСредств',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыплатаЗаработнойПлаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДенежныйЧек.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДенежныйЧек.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -244,7 +268,8 @@
 			height: 19,
 			style: 'position:absolute;left:87px;top:318px;width:568px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -310,4 +335,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ВидыЕжегодныхОтпусков'], function () 
+{
+	Ext.define('Справочники.ВидыЕжегодныхОтпусков.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:567px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды ежегодных отпусков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'2500',
+					width:'250',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Способ расчета остатка отпуска',
-					width:'1200',
+					width:'120',
 					dataIndex:'СпособРасчетаОстаткаОтпуска',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВидыЕжегодныхОтпусков.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВидыЕжегодныхОтпусков.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -207,4 +210,5 @@
 			]
 		},
 	]
+	});
 });

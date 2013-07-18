@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИсполнительныйЛист.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИсполнительныйЛист'], function () 
+{
+	Ext.define('Документы.ИсполнительныйЛист.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:708px;height:498px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Исполнительный лист',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -428,4 +431,5 @@
 			]
 		},
 	]
+	});
 });

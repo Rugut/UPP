@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОснованияВыслугиЛет.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ОснованияВыслугиЛет'], function () 
+{
+	Ext.define('Справочники.ОснованияВыслугиЛет.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:425px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Основания выслуги лет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОснованияВыслугиЛет.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОснованияВыслугиЛет.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -199,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

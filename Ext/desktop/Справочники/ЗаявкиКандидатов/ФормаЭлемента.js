@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЗаявкиКандидатов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ЗаявкиКандидатов'], function () 
+{
+	Ext.define('Справочники.ЗаявкиКандидатов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:665px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Кандидат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -268,6 +274,7 @@
 			]
 		},
 		{
+			id: 'ПерепискаВстречиОпросы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:390px;width:341px;height:157px;',
 			height: 157,width: 341,
@@ -293,7 +300,7 @@
 				},
 				{
 					text:'Тема',
-					width:'166',
+					width:'165',
 					dataIndex:'Тема',
 					flex:1,
 				},
@@ -306,11 +313,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ЗаявкиКандидатов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -329,6 +337,23 @@
 						name:'ОтправительИмя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПерепискаВстречиОпросы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявкиКандидатов.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявкиКандидатов.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -366,6 +391,7 @@
 			style: 'position:absolute;left:366px;top:200px;width:291px;height:15px;',
 		},
 		{
+			id: 'ТабличноеПолеТекущаяРабота',
 			xtype: 'grid',
 			style: 'position:absolute;left:366px;top:220px;width:291px;height:144px;',
 			height: 144,width: 291,
@@ -392,11 +418,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ЗаявкиКандидатов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -410,6 +437,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеТекущаяРабота');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявкиКандидатов.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявкиКандидатов.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -421,7 +465,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -504,4 +549,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбновлениеИнформационнойБазы.ЗагрузкаНастроекТиповыхОтчетов',
+﻿Ext.require(['Данные.Обработки.ОбновлениеИнформационнойБазы'], function () 
+{
+	Ext.define('Обработки.ОбновлениеИнформационнойБазы.ЗагрузкаНастроекТиповыхОтчетов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:419px;height:90px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Загрузка настроек типовых отчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,4 +52,5 @@
 			]
 		},
 	]
+	});
 });

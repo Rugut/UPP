@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновноеСырье.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ОсновноеСырье'], function () 
+{
+	Ext.define('Справочники.ОсновноеСырье.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:336px;height:447px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Основное сырье',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновноеСырье.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновноеСырье.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -124,9 +127,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновноеСырье.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновноеСырье.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -146,4 +149,5 @@
 			]
 		},
 	]
+	});
 });

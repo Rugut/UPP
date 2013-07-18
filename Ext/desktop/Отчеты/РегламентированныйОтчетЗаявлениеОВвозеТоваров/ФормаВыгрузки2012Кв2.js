@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВыгрузки2012Кв2',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВыгрузки2012Кв2',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:554px;height:669px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры выгрузки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -540,4 +543,5 @@
 			]
 		},
 	]
+	});
 });

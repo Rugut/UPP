@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КарточкаСубконтоНалоговый.Форма',
+﻿Ext.require(['Данные.Отчеты.КарточкаСубконтоНалоговый'], function () 
+{
+	Ext.define('Отчеты.КарточкаСубконтоНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:628px;height:445px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет  Карточка субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -145,4 +148,5 @@
 			]
 		},
 	]
+	});
 });

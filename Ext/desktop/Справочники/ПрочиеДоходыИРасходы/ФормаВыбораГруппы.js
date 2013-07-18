@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрочиеДоходыИРасходы.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.ПрочиеДоходыИРасходы'], function () 
+{
+	Ext.define('Справочники.ПрочиеДоходыИРасходы.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:308px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы прочих доходов и расходов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,7 +24,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПрочиеДоходыИРасходы.ФормаВыбораГруппыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПрочиеДоходыИРасходы.ФормаВыбораГруппыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

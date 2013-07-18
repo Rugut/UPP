@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры.Форма',
+﻿Ext.require(['Данные.Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры'], function () 
+{
+	Ext.define('Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -249,4 +252,5 @@
 			]
 		},
 	]
+	});
 });

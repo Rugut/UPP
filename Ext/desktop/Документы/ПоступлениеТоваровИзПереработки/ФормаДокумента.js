@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеТоваровИзПереработки.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПоступлениеТоваровИзПереработки'], function () 
+{
+	Ext.define('Документы.ПоступлениеТоваровИзПереработки.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:422px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Поступление товаров из переработки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:397px;width:652px;height:25px;',
@@ -163,6 +169,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -188,13 +195,13 @@
 				},
 				{
 					text:'Продукция',
-					width:'144',
+					width:'143',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'107',
+					width:'106',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -242,7 +249,7 @@
 				},
 				{
 					text:'Доля стоимости',
-					width:'75',
+					width:'74',
 					dataIndex:'ДоляСтоимости',
 					flex:1,
 				},
@@ -272,7 +279,7 @@
 				},
 				{
 					text:'Спецификация',
-					width:'173',
+					width:'172',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -319,7 +326,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -396,6 +403,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -404,6 +428,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -482,7 +507,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -520,6 +545,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -545,6 +587,7 @@
 			style: 'position:absolute;left:210px;top:6px;width:80px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:49px;width:622px;height:105px;',
 			height: 105,width: 622,
@@ -647,7 +690,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -697,6 +740,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -710,6 +770,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеМатериалов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -771,7 +832,7 @@
 				},
 				{
 					text:'Продукция',
-					width:'82',
+					width:'81',
 					dataIndex:'Продукция',
 					flex:1,
 				},
@@ -818,7 +879,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -871,6 +932,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеМатериалов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -879,6 +957,7 @@
 					items:
 					[
 		{
+			id: 'ПрочиеЗатраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -904,7 +983,7 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'161',
+					width:'160',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -933,7 +1012,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -959,6 +1038,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрочиеЗатраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -967,6 +1063,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеПрочихЗатрат',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -1057,7 +1154,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1101,6 +1198,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеПрочихЗатрат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1109,6 +1223,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратныеОтходы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -1283,7 +1398,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1369,6 +1484,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратныеОтходы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -1394,6 +1526,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеВозвратныхОтходов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -1490,7 +1623,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровИзПереработки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1536,6 +1669,23 @@
 						name:'СчетЗатратНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеВозвратныхОтходов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1656,7 +1806,8 @@
 			height: 19,
 			style: 'position:absolute;left:336px;top:57px;width:84px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1716,4 +1867,5 @@
 			]
 		},
 	]
+	});
 });

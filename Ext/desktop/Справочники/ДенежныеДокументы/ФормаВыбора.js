@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДенежныеДокументы.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ДенежныеДокументы'], function () 
+{
+	Ext.define('Справочники.ДенежныеДокументы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:690px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Денежные документы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,19 +36,19 @@
 				},
 				{
 					text:'Наименование',
-					width:'1800',
+					width:'180',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Вид документа',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидДокумента',
 					flex:1,
 				},
 				{
 					text:'Стоимость единицы',
-					width:'1200',
+					width:'120',
 					dataIndex:'Стоимость',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДенежныеДокументы.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДенежныеДокументы.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -246,4 +249,5 @@
 			]
 		},
 	]
+	});
 });

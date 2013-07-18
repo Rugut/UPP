@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаРасходаДенежныхСредств.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаРасходаДенежныхСредств'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаРасходаДенежныхСредств.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:447px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета расхода денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

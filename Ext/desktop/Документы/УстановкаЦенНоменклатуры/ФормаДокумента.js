@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаЦенНоменклатуры.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаЦенНоменклатуры'], function () 
+{
+	Ext.define('Документы.УстановкаЦенНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:470px;height:313px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Установка цен номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -56,7 +59,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'1300',
+					width:'130',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -108,9 +111,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаЦен');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УстановкаЦенНоменклатуры.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УстановкаЦенНоменклатуры.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -265,4 +268,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

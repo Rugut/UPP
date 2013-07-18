@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УсловияПоставокПоДоговорамКонтрагентов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УсловияПоставокПоДоговорамКонтрагентов'], function () 
+{
+	Ext.define('Документы.УсловияПоставокПоДоговорамКонтрагентов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:656px;height:383px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Условия поставок по договорам контрагентов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -154,6 +160,7 @@
 			]
 		},
 		{
+			id: 'НоменклатураДоговора',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:176px;width:640px;height:128px;',
 			height: 128,width: 640,
@@ -179,7 +186,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'157',
+					width:'156',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -227,19 +234,19 @@
 				},
 				{
 					text:'Валюта',
-					width:'68',
+					width:'67',
 					dataIndex:'Валюта',
 					flex:1,
 				},
 				{
 					text:'Цена',
-					width:'76',
+					width:'75',
 					dataIndex:'Цена',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'80',
+					width:'79',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -250,7 +257,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УсловияПоставокПоДоговорамКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УсловияПоставокПоДоговорамКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -296,6 +303,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НоменклатураДоговора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УсловияПоставокПоДоговорамКонтрагентов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УсловияПоставокПоДоговорамКонтрагентов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -386,7 +410,8 @@
 			height: 17,
 			style: 'position:absolute;left:568px;top:309px;width:80px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -422,4 +447,5 @@
 			]
 		},
 	]
+	});
 });

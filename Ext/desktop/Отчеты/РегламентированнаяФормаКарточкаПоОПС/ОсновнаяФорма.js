@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированнаяФормаКарточкаПоОПС.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированнаяФормаКарточкаПоОПС'], function () 
+{
+	Ext.define('Отчеты.РегламентированнаяФормаКарточкаПоОПС.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Индивидуальная карточка ОПС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -117,4 +120,5 @@
 			]
 		},
 	]
+	});
 });

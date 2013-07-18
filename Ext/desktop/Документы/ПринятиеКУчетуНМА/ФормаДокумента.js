@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПринятиеКУчетуНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПринятиеКУчетуНМА'], function () 
+{
+	Ext.define('Документы.ПринятиеКУчетуНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Принятие к учету НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -730,9 +733,9 @@
 					{
 						var грид = Ext.getCmp('ОплатаНМА');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -811,4 +814,5 @@
 			]
 		},
 	]
+	});
 });

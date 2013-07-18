@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСерии.Основная',
+﻿Ext.require(['Данные.Отчеты.АнализСерии'], function () 
+{
+	Ext.define('Отчеты.АнализСерии.Основная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:735px;height:484px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ серии',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

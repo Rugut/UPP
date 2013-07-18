@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УправлениеДаннымиРаботника.Форма',
+﻿Ext.require(['Данные.Обработки.УправлениеДаннымиРаботника'], function () 
+{
+	Ext.define('Обработки.УправлениеДаннымиРаботника.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Иванова Анна Петровна',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:51px;width:780px;height:399px;',
@@ -32,6 +38,7 @@
 			style: 'position:absolute;left:31px;top:263px;width:251px;height:131px;',
 		},
 		{
+			id: 'СписокФизлиц',
 			xtype: 'grid',
 			style: 'position:absolute;left:294px;top:312px;width:475px;height:76px;',
 			height: 76,width: 475,
@@ -62,7 +69,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -75,6 +82,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокФизлиц');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -179,6 +203,7 @@
 					items:
 					[
 		{
+			id: 'ПервичныеДокументыОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:294px;top:312px;width:475px;height:76px;',
 			height: 76,width: 475,
@@ -216,7 +241,7 @@
 				},
 				{
 					text:'Организация',
-					width:'93',
+					width:'92',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -233,7 +258,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -258,6 +283,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПервичныеДокументыОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -337,6 +379,7 @@
 					items:
 					[
 		{
+			id: 'ПлановыеДанныеДляРасчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:294px;top:312px;width:475px;height:76px;',
 			height: 76,width: 475,
@@ -367,7 +410,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -380,6 +423,23 @@
 						name:'Дата',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеДанныеДляРасчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -447,6 +507,7 @@
 			style: 'position:absolute;left:0px;top:257px;width:27px;height:142px;',
 		},
 		{
+			id: 'УчетКадровОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:294px;top:312px;width:475px;height:76px;',
 			height: 76,width: 475,
@@ -495,7 +556,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -517,6 +578,23 @@
 						name:'Ответственный',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УчетКадровОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -604,6 +682,7 @@
 			style: 'position:absolute;left:37px;top:269px;width:239px;height:18px;',
 		},
 		{
+			id: 'НалогиОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:294px;top:312px;width:475px;height:76px;',
 			height: 76,width: 475,
@@ -652,7 +731,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеДаннымиРаботника/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -674,6 +753,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НалогиОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -744,7 +840,8 @@
 			height: 19,
 			style: 'position:absolute;left:4px;top:4px;width:136px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -812,4 +909,5 @@
 			]
 		},
 	]
+	});
 });

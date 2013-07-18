@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.СписокРаботников',
+﻿Ext.require(['Данные.Обработки.ПерерасчетЗарплатыОрганизаций'], function () 
+{
+	Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.СписокРаботников',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:277px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор по сотрудникам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -58,9 +61,9 @@
 					{
 						var грид = Ext.getCmp('СписокРаботников');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПерерасчетЗарплатыОрганизаций.СписокРаботниковСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПерерасчетЗарплатыОрганизаций.СписокРаботниковСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -90,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

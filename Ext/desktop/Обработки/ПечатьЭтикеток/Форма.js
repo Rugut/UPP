@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПечатьЭтикеток.Форма',
+﻿Ext.require(['Данные.Обработки.ПечатьЭтикеток'], function () 
+{
+	Ext.define('Обработки.ПечатьЭтикеток.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:501px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Печать этикеток',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
@@ -59,6 +65,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеТовары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:253px;width:764px;height:242px;',
 			height: 242,width: 764,
@@ -72,7 +79,7 @@
 				},
 				{
 					text:'Штрихкод',
-					width:'146',
+					width:'145',
 					dataIndex:'Штрихкод',
 					flex:1,
 				},
@@ -108,7 +115,7 @@
 				},
 				{
 					text:'Качество',
-					width:'133',
+					width:'132',
 					dataIndex:'Качество',
 					flex:1,
 				},
@@ -126,7 +133,7 @@
 				},
 				{
 					text:'Ед.',
-					width:'61',
+					width:'60',
 					dataIndex:'ЦеныЕдиница',
 					flex:1,
 				},
@@ -143,7 +150,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЭтикеток/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьЭтикеток/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -183,6 +190,23 @@
 						name:'ПроцентСкидкиНаценки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеТовары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьЭтикеток.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьЭтикеток.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -449,8 +473,10 @@
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:576px;top:206px;width:51px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

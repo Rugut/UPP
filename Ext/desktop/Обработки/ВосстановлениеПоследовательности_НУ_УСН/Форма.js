@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВосстановлениеПоследовательности_НУ_УСН.Форма',
+﻿Ext.require(['Данные.Обработки.ВосстановлениеПоследовательности_НУ_УСН'], function () 
+{
+	Ext.define('Обработки.ВосстановлениеПоследовательности_НУ_УСН.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:402px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Восстановление последовательности налогового учета УСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

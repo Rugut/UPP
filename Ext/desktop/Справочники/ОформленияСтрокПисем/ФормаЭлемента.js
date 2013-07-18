@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОформленияСтрокПисем.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОформленияСтрокПисем'], function () 
+{
+	Ext.define('Справочники.ОформленияСтрокПисем.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:209px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оформление строки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

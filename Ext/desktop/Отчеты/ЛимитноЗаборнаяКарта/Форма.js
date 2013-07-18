@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЛимитноЗаборнаяКарта.Форма',
+﻿Ext.require(['Данные.Отчеты.ЛимитноЗаборнаяКарта'], function () 
+{
+	Ext.define('Отчеты.ЛимитноЗаборнаяКарта.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:417px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -200,4 +203,5 @@
 			]
 		},
 	]
+	});
 });

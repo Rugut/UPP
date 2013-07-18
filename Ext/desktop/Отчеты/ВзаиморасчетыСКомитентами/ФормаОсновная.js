@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВзаиморасчетыСКомитентами.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ВзаиморасчетыСКомитентами'], function () 
+{
+	Ext.define('Отчеты.ВзаиморасчетыСКомитентами.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -114,4 +117,5 @@
 			]
 		},
 	]
+	});
 });

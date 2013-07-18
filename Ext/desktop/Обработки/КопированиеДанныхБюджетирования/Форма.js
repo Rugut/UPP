@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КопированиеДанныхБюджетирования.Форма',
+﻿Ext.require(['Данные.Обработки.КопированиеДанныхБюджетирования'], function () 
+{
+	Ext.define('Обработки.КопированиеДанныхБюджетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:732px;height:465px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Копирование данных бюджетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -370,6 +376,7 @@
 			style: 'position:absolute;left:372px;top:122px;width:108px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПоле1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:50px;width:339px;height:97px;',
 			height: 97,width: 339,
@@ -418,7 +425,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -441,6 +448,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПоле1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КопированиеДанныхБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КопированиеДанныхБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -454,6 +478,7 @@
 					items:
 					[
 		{
+			id: 'СписокДокументовОперации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:702px;height:200px;',
 			height: 200,width: 702,
@@ -473,7 +498,7 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'183',
+					width:'182',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -485,7 +510,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'168',
+					width:'167',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -496,7 +521,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -516,6 +541,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокДокументовОперации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КопированиеДанныхБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КопированиеДанныхБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -524,6 +566,7 @@
 					items:
 					[
 		{
+			id: 'СписокДокументовРасчеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:702px;height:200px;',
 			height: 200,width: 702,
@@ -537,7 +580,7 @@
 				},
 				{
 					text:'Документ',
-					width:'266',
+					width:'265',
 					dataIndex:'ДокументРасчет',
 					flex:1,
 				},
@@ -560,7 +603,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КопированиеДанныхБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -576,6 +619,23 @@
 						name:'ИсточникДанных',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокДокументовРасчеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КопированиеДанныхБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КопированиеДанныхБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -647,7 +707,8 @@
 			text: 'Копировать:',
 			style: 'position:absolute;left:372px;top:33px;width:72px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -704,4 +765,5 @@
 			]
 		},
 	]
+	});
 });

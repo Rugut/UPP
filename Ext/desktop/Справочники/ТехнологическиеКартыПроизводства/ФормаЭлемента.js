@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТехнологическиеКартыПроизводства'], function () 
+{
+	Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:406px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Технологические карты производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -90,6 +96,7 @@
 			style: 'position:absolute;left:322px;top:81px;width:80px;height:19px;',
 		},
 		{
+			id: 'Маршрут',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:147px;width:644px;height:226px;',
 			height: 226,width: 644,
@@ -218,11 +225,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТехнологическиеКартыПроизводства").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическиеКартыПроизводства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическиеКартыПроизводства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -287,13 +295,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Маршрут');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТехнологическиеКартыПроизводства.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТехнологическиеКартыПроизводства.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Маршрут',
 			style: 'position:absolute;left:8px;top:107px;width:644px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -335,4 +361,5 @@
 			]
 		},
 	]
+	});
 });

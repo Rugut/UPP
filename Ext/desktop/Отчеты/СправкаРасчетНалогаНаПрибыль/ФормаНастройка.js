@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетНалогаНаПрибыль.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетНалогаНаПрибыль'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетНалогаНаПрибыль.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:413px;height:203px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

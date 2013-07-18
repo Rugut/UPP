@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанных',
+﻿Ext.require(['Данные.Документы.НачислениеПоБольничномуЛисту'], function () 
+{
+	Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанных',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:596px;height:139px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Начисление по больничному листу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -199,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

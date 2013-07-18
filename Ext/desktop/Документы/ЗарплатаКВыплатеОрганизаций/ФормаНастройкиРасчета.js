@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗарплатаКВыплатеОрганизаций.ФормаНастройкиРасчета',
+﻿Ext.require(['Данные.Документы.ЗарплатаКВыплатеОрганизаций'], function () 
+{
+	Ext.define('Документы.ЗарплатаКВыплатеОрганизаций.ФормаНастройкиРасчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:352px;height:173px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -323,4 +326,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.БюджетнаяОперация.ФормаСписка',
+﻿Ext.require(['Данные.Документы.БюджетнаяОперация'], function () 
+{
+	Ext.define('Документы.БюджетнаяОперация.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:718px;height:403px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Бюджетные операции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:133px;width:702px;height:260px;',
 			height: 260,width: 702,
@@ -35,7 +42,7 @@
 				},
 				{
 					text:'Период планирования',
-					width:'80',
+					width:'79',
 					dataIndex:'ПериодПланирования',
 					flex:1,
 				},
@@ -47,7 +54,7 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'159',
+					width:'158',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -106,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/БюджетнаяОперация/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/БюджетнаяОперация/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -152,6 +159,23 @@
 						name:'Ответственный',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.БюджетнаяОперация.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.БюджетнаяОперация.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -306,7 +330,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -329,4 +354,5 @@
 			]
 		},
 	]
+	});
 });

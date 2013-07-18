@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ТехнологическиеКартыПроизводства'], function () 
+{
+	Ext.define('Справочники.ТехнологическиеКартыПроизводства.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:423px;height:112px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Технологические карты производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

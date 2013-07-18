@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетАмортизацииНелинейнымМетодом.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетАмортизацииНелинейнымМетодом'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетАмортизацииНелинейнымМетодом.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр-расчет амортизации нелинейным методом',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -224,4 +227,5 @@
 			]
 		},
 	]
+	});
 });

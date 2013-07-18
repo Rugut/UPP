@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма1ИП.ФормаОтчета2005кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФорма1ИП'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма1ИП.ФормаОтчета2005кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:423px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма 1-ИП (пром)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -142,4 +145,5 @@
 			]
 		},
 	]
+	});
 });

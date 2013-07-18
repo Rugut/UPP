@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОДДС.МСФО',
+﻿Ext.require(['Данные.Отчеты.МСФОДДС'], function () 
+{
+	Ext.define('Отчеты.МСФОДДС.МСФО',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:732px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -220,4 +223,5 @@
 			]
 		},
 	]
+	});
 });

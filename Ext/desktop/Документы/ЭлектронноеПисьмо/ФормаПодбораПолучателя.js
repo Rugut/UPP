@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЭлектронноеПисьмо.ФормаПодбораПолучателя',
+﻿Ext.require(['Данные.Документы.ЭлектронноеПисьмо'], function () 
+{
+	Ext.define('Документы.ЭлектронноеПисьмо.ФормаПодбораПолучателя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:448px;height:299px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Проверка и выбор получателей/отправителей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:104px;width:432px;height:162px;',
 			height: 162,width: 432,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Объект',
-					width:'276',
+					width:'275',
 					dataIndex:'Объект',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -44,6 +51,23 @@
 						name:'АдресЭлектроннойПочты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаПодбораПолучателяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаПодбораПолучателяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -64,7 +88,8 @@
 			text: 'Подсказка действий пользователя',
 			style: 'position:absolute;left:8px;top:48px;width:432px;height:27px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -117,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

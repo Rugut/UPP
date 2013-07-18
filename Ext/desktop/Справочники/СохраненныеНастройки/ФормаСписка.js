@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СохраненныеНастройки.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СохраненныеНастройки'], function () 
+{
+	Ext.define('Справочники.СохраненныеНастройки.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:673px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Варианты отчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Описание',
-					width:'2100',
+					width:'210',
 					dataIndex:'Описание',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписокСохраненныеНастройки');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СохраненныеНастройки.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СохраненныеНастройки.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -144,4 +147,5 @@
 			]
 		},
 	]
+	});
 });

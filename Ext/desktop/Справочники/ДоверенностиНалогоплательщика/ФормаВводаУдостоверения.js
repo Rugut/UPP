@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоверенностиНалогоплательщика.ФормаВводаУдостоверения',
+﻿Ext.require(['Данные.Справочники.ДоверенностиНалогоплательщика'], function () 
+{
+	Ext.define('Справочники.ДоверенностиНалогоплательщика.ФормаВводаУдостоверения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:160px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Данные удостоверения физического лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -127,4 +130,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

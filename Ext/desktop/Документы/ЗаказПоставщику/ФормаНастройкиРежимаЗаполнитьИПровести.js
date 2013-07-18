@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказПоставщику.ФормаНастройкиРежимаЗаполнитьИПровести',
+﻿Ext.require(['Данные.Документы.ЗаказПоставщику'], function () 
+{
+	Ext.define('Документы.ЗаказПоставщику.ФормаНастройкиРежимаЗаполнитьИПровести',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:304px;height:148px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выберите документы и настройте их порядок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -64,4 +67,5 @@
 			]
 		},
 	]
+	});
 });

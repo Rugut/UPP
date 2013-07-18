@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаБанков.ФормаКлассификатора',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаБанков'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаБанков.ФормаКлассификатора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:479px;height:385px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Загрузка ""Классификатора банков РФ""',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:360px;width:479px;height:25px;',
@@ -68,6 +74,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоБанков',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:449px;height:258px;',
 			height: 258,width: 449,
@@ -134,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаБанков/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаБанков/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -166,6 +173,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоБанков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -180,6 +204,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоИзмененныхБанков',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:94px;width:449px;height:211px;',
 			height: 211,width: 449,
@@ -228,7 +253,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаБанков/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаБанков/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -251,6 +276,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоИзмененныхБанков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -267,8 +309,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

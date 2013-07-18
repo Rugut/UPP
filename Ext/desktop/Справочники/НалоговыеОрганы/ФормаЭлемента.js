@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НалоговыеОрганы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НалоговыеОрганы'], function () 
+{
+	Ext.define('Справочники.НалоговыеОрганы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:694px;height:483px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Налоговые органы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -297,4 +300,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетОстаткиИОбороты.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОтчетОстаткиИОбороты'], function () 
+{
+	Ext.define('Отчеты.ОтчетОстаткиИОбороты.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:488px;height:326px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:282px;',
@@ -60,6 +66,7 @@
 			style: 'position:absolute;left:266px;top:8px;width:20px;height:19px;',
 		},
 		{
+			id: 'СписокПоказателей',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:176px;width:460px;height:80px;',
 			height: 80,width: 460,
@@ -84,7 +91,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -94,6 +101,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПоказателей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -192,6 +216,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:232px;',
 			height: 232,width: 460,
@@ -199,7 +224,7 @@
 			[
 				{
 					text:'Группировки строк',
-					width:'135',
+					width:'134',
 					dataIndex:'Поле',
 					flex:1,
 				},
@@ -216,7 +241,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -227,6 +252,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -235,6 +277,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:232px;',
 			height: 232,width: 460,
@@ -283,7 +326,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -306,6 +349,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -319,6 +379,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:296px;height:15px;',
 		},
 		{
+			id: 'ВыбранныеПоля1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:50px;width:460px;height:206px;',
 			height: 206,width: 460,
@@ -337,13 +398,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыбранныеПоля1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -353,6 +431,7 @@
 					items:
 					[
 		{
+			id: 'Порядок1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:232px;',
 			height: 232,width: 460,
@@ -377,7 +456,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОстаткиИОбороты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -387,6 +466,23 @@
 						name:'НаправлениеСортировки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -414,8 +510,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

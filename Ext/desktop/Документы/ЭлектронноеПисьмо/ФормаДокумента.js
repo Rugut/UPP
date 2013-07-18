@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЭлектронноеПисьмо.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЭлектронноеПисьмо'], function () 
+{
+	Ext.define('Документы.ЭлектронноеПисьмо.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:441px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Электронное письмо',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -305,7 +308,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3500',
+					width:'350',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -339,9 +342,9 @@
 					{
 						var грид = Ext.getCmp('ВложенияПисьма');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -375,7 +378,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3500',
+					width:'350',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -409,9 +412,9 @@
 					{
 						var грид = Ext.getCmp('ВложенияПисьмаТЗ');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -570,4 +573,5 @@
 			]
 		},
 	]
+	});
 });

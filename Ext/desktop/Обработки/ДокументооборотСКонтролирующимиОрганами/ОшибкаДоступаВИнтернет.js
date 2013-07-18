@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ОшибкаДоступаВИнтернет',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ОшибкаДоступаВИнтернет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:396px;height:398px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ошибка доступа в Интернет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -168,4 +171,5 @@
 			]
 		},
 	]
+	});
 });

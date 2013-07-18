@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ВыгрузкаРегламентированныхОтчетов'], function () 
+{
+	Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:704px;height:391px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выгрузка регламентированных отчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:688px;height:151px;',
 			height: 151,width: 688,
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +97,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -102,6 +126,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОснования',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:674px;height:161px;',
 			height: 161,width: 674,
@@ -126,7 +151,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -137,6 +162,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОснования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -145,6 +187,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеВыгрузки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:182px;height:161px;',
 			height: 161,width: 182,
@@ -181,7 +224,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -198,6 +241,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеВыгрузки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'textarea',
@@ -210,7 +270,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -361,4 +422,5 @@
 			]
 		},
 	]
+	});
 });

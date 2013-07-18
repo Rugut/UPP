@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПакетныйВводДокументов.ФормаВыбора',
+﻿Ext.require(['Данные.Обработки.ПакетныйВводДокументов'], function () 
+{
+	Ext.define('Обработки.ПакетныйВводДокументов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:364px;height:243px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Отбор по номенклатуре',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТабличноеПоле',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:348px;height:202px;',
 			height: 202,width: 348,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Представление поля',
-					width:'197',
+					width:'196',
 					dataIndex:'ПредставлениеПоля',
 					flex:1,
 				},
@@ -28,13 +35,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ПредставлениеПоля',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПоле');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -58,8 +82,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиВыполненияОбмена.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкиВыполненияОбмена'], function () 
+{
+	Ext.define('Справочники.НастройкиВыполненияОбмена.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:508px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройки выполнения обмена',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -216,6 +222,7 @@
 			style: 'position:absolute;left:148px;top:116px;width:336px;height:19px;',
 		},
 		{
+			id: 'СообщенияНеЯвляющиесяОшибками',
 			xtype: 'grid',
 			style: 'position:absolute;left:16px;top:166px;width:468px;height:68px;',
 			height: 68,width: 468,
@@ -230,17 +237,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиВыполненияОбмена").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ТекстСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СообщенияНеЯвляющиесяОшибками');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиВыполненияОбмена.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиВыполненияОбмена.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -253,6 +278,7 @@
 			style: 'position:absolute;left:8px;top:322px;width:492px;height:16px;',
 		},
 		{
+			id: 'НастройкиОбмена',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:368px;width:492px;height:155px;',
 			height: 155,width: 492,
@@ -260,13 +286,13 @@
 			[
 				{
 					text:'Порядок',
-					width:'66',
+					width:'65',
 					dataIndex:'НомерСтроки',
 					flex:1,
 				},
 				{
 					text:'Настройка обмена',
-					width:'250',
+					width:'249',
 					dataIndex:'НастройкаОбмена',
 					flex:1,
 				},
@@ -279,11 +305,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиВыполненияОбмена").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -296,6 +323,23 @@
 						name:'ВыполняемоеДействие',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиОбмена');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиВыполненияОбмена.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиВыполненияОбмена.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -358,7 +402,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:528px;width:398px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -396,4 +441,5 @@
 			]
 		},
 	]
+	});
 });

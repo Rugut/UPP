@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПолучениеФайловИзИнтернета.ФормаПараметрыДоступаНаСервер',
+﻿Ext.require(['Данные.Обработки.ПолучениеФайловИзИнтернета'], function () 
+{
+	Ext.define('Обработки.ПолучениеФайловИзИнтернета.ФормаПараметрыДоступаНаСервер',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:325px;height:194px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры доступа на сервер',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -82,4 +85,5 @@
 			]
 		},
 	]
+	});
 });

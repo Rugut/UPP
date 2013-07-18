@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктОбОказанииПроизводственныхУслуг.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АктОбОказанииПроизводственныхУслуг'], function () 
+{
+	Ext.define('Документы.АктОбОказанииПроизводственныхУслуг.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:668px;height:521px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Акт об оказании производственных услуг',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:668px;height:25px;',
@@ -183,6 +189,7 @@
 					items:
 					[
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:638px;height:214px;',
 			height: 214,width: 638,
@@ -208,13 +215,13 @@
 				},
 				{
 					text:'Услуга',
-					width:'146',
+					width:'145',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Содержание услуги, доп. сведения',
-					width:'184',
+					width:'183',
 					dataIndex:'Содержание',
 					flex:1,
 				},
@@ -357,7 +364,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -443,6 +450,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -451,6 +475,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:638px;height:214px;',
 			height: 214,width: 638,
@@ -553,7 +578,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -603,6 +628,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -617,6 +659,7 @@
 			style: 'position:absolute;left:6px;top:25px;width:96px;height:19px;text-align:left;',
 		},
 		{
+			id: 'РаспределениеМатериалов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:638px;height:214px;',
 			height: 214,width: 638,
@@ -713,7 +756,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -760,6 +803,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеМатериалов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -768,6 +828,7 @@
 					items:
 					[
 		{
+			id: 'ПрочиеЗатраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:638px;height:214px;',
 			height: 214,width: 638,
@@ -781,7 +842,7 @@
 				},
 				{
 					text:'Статья затрат',
-					width:'123',
+					width:'122',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
@@ -793,7 +854,7 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'149',
+					width:'148',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -822,7 +883,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -848,6 +909,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрочиеЗатраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -862,6 +940,7 @@
 			style: 'position:absolute;left:193px;top:25px;width:451px;height:19px;text-align:left;',
 		},
 		{
+			id: 'РаспределениеПрочихЗатрат',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:26px;width:638px;height:212px;',
 			height: 212,width: 638,
@@ -911,7 +990,7 @@
 				},
 				{
 					text:'Спецификация',
-					width:'128',
+					width:'127',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -940,7 +1019,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -977,6 +1056,23 @@
 						name:'СчетЗатратНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеПрочихЗатрат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1173,6 +1269,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:638px;height:150px;',
 			height: 150,width: 638,
@@ -1215,7 +1312,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктОбОказанииПроизводственныхУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1234,6 +1331,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1455,8 +1569,10 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:580px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

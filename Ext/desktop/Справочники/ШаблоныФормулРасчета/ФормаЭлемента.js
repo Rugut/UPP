@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ШаблоныФормулРасчета.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ШаблоныФормулРасчета'], function () 
+{
+	Ext.define('Справочники.ШаблоныФормулРасчета.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:157px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Шаблон формулы расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -125,4 +128,5 @@
 			]
 		},
 	]
+	});
 });

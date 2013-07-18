@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрафикЗаказов.Форма',
+﻿Ext.require(['Данные.Обработки.ГрафикЗаказов'], function () 
+{
+	Ext.define('Обработки.ГрафикЗаказов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:539px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'График заказов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -61,6 +67,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтборы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:986px;height:88px;',
 			height: 88,width: 986,
@@ -109,7 +116,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -132,12 +139,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтборы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -194,4 +219,5 @@
 			]
 		},
 	]
+	});
 });

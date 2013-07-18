@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонта',
+﻿Ext.require(['Данные.Обработки.ФормированиеЗаказовНаОбслуживаниеОС'], function () 
+{
+	Ext.define('Обработки.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонта',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:608px;height:374px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Настройка заполнения основных средств для обслуживания',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ОтборОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:78px;width:294px;height:263px;',
 			height: 263,width: 294,
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаказовНаОбслуживаниеОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаказовНаОбслуживаниеОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +52,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонтаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонтаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ОтборНоменклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:306px;top:78px;width:294px;height:263px;',
 			height: 263,width: 294,
@@ -60,7 +85,7 @@
 				},
 				{
 					text:'Услуги по обслуживанию ОС',
-					width:'260',
+					width:'259',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -71,7 +96,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаказовНаОбслуживаниеОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЗаказовНаОбслуживаниеОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,6 +106,23 @@
 						name:'Номенклатура',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборНоменклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонтаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаНастройкиЗаполненияОСДляРемонтаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -110,7 +152,8 @@
 			title: 'Отбор по услугам обслуживания ОС',
 			style: 'position:absolute;left:306px;top:33px;width:294px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -155,4 +198,5 @@
 			]
 		},
 	]
+	});
 });

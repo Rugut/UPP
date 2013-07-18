@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетВодныеБиоресурсы.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетВодныеБиоресурсы'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетВодныеБиоресурсы.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сбор за пользование объектами водных биологических ресурсов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

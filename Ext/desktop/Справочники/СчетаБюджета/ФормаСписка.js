@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СчетаБюджета.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СчетаБюджета'], function () 
+{
+	Ext.define('Справочники.СчетаБюджета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:776px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Счета бюджета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:246px;top:33px;width:522px;height:259px;',
 			height: 259,width: 522,
@@ -29,30 +36,31 @@
 				},
 				{
 					text:'Наименование',
-					width:'133',
+					width:'132',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Статья баланса',
-					width:'265',
+					width:'264',
 					dataIndex:'СтатьяБаланса',
 					flex:1,
 				},
 				{
 					text:'Знак',
-					width:'42',
+					width:'41',
 					dataIndex:'Знак',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СчетаБюджета").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +80,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетаБюджета.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетаБюджета.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:232px;height:259px;',
 			height: 259,width: 232,
@@ -81,18 +107,19 @@
 			[
 				{
 					text:'Наименование',
-					width:'229',
+					width:'228',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СчетаБюджета").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -100,8 +127,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетаБюджета.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетаБюджета.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -119,4 +164,5 @@
 			]
 		},
 	]
+	});
 });

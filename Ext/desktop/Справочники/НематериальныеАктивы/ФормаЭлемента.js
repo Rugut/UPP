@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НематериальныеАктивы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НематериальныеАктивы'], function () 
+{
+	Ext.define('Справочники.НематериальныеАктивы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:441px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Нематериальные активы и расходы на НИОКР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -153,6 +159,7 @@
 					items:
 					[
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:470px;height:122px;',
 			height: 122,width: 470,
@@ -179,11 +186,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НематериальныеАктивы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -197,6 +205,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НематериальныеАктивы.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НематериальныеАктивы.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -205,6 +230,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:470px;height:122px;',
 			height: 122,width: 470,
@@ -218,7 +244,7 @@
 				},
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'Принадлежность',
 					flex:1,
 				},
@@ -231,11 +257,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НематериальныеАктивы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -249,12 +276,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НематериальныеАктивы.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НематериальныеАктивы.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -288,4 +333,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ФиксацияБюджетов.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ФиксацияБюджетов'], function () 
+{
+	Ext.define('Документы.ФиксацияБюджетов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Фиксации бюджетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Сценарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сценарий',
 					flex:1,
 				},
@@ -51,19 +54,19 @@
 				},
 				{
 					text:'ЦФО',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФиксацияБюджетов.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФиксацияБюджетов.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -156,4 +159,5 @@
 			]
 		},
 	]
+	});
 });

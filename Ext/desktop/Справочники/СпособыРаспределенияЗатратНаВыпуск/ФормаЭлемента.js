@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СпособыРаспределенияЗатратНаВыпуск'], function () 
+{
+	Ext.define('Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:620px;height:463px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Способы распределения затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -229,6 +235,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ТабличноеПоле1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:590px;height:163px;',
 			height: 163,width: 590,
@@ -273,11 +280,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпособыРаспределенияЗатратНаВыпуск").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -300,6 +308,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПоле1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -318,6 +343,7 @@
 			style: 'position:absolute;left:168px;top:6px;width:278px;height:19px;',
 		},
 		{
+			id: 'Фильтры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:66px;width:590px;height:128px;',
 			height: 128,width: 590,
@@ -331,30 +357,31 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'285',
+					width:'284',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
 				{
 					text:'Продукция',
-					width:'258',
+					width:'257',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Коэффициент',
-					width:'78',
+					width:'77',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпособыРаспределенияЗатратНаВыпуск").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыРаспределенияЗатратНаВыпуск/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -370,6 +397,23 @@
 						name:'Коэффициент',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Фильтры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -420,7 +464,8 @@
 			height: 19,
 			style: 'position:absolute;left:177px;top:158px;width:135px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -454,4 +499,5 @@
 			]
 		},
 	]
+	});
 });

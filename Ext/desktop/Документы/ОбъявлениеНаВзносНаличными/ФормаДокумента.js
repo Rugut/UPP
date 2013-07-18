@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОбъявлениеНаВзносНаличными.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОбъявлениеНаВзносНаличными'], function () 
+{
+	Ext.define('Документы.ОбъявлениеНаВзносНаличными.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:379px;height:284px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Объявление на взнос наличными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -239,4 +242,5 @@
 			]
 		},
 	]
+	});
 });

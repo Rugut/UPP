@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализОборачиваемостиТоваров.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.АнализОборачиваемостиТоваров'], function () 
+{
+	Ext.define('Отчеты.АнализОборачиваемостиТоваров.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:322px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:7px;width:474px;height:282px;',
@@ -25,6 +31,7 @@
 			style: 'position:absolute;left:6px;top:125px;width:460px;height:16px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:166px;width:460px;height:90px;',
 			height: 90,width: 460,
@@ -49,7 +56,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -59,6 +66,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -122,6 +146,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:226px;',
 			height: 226,width: 460,
@@ -146,7 +171,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,6 +182,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -165,6 +207,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:226px;',
 			height: 226,width: 460,
@@ -213,7 +256,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -236,6 +279,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -251,6 +311,7 @@
 					items:
 					[
 		{
+			id: 'ВыбранныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:226px;',
 			height: 226,width: 460,
@@ -269,13 +330,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыбранныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -285,6 +363,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:226px;',
 			height: 226,width: 460,
@@ -309,7 +388,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализОборачиваемостиТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -319,6 +398,23 @@
 						name:'НаправлениеСортировки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализОборачиваемостиТоваров.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -346,8 +442,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

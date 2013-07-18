@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеЦен.ФормаВыбораТипаЦен',
+﻿Ext.require(['Данные.Обработки.ФормированиеЦен'], function () 
+{
+	Ext.define('Обработки.ФормированиеЦен.ФормаВыбораТипаЦен',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:263px;height:232px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма выбора типа цен',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,9 +52,9 @@
 					{
 						var грид = Ext.getCmp('ДеревоТиповЦенСкидок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФормированиеЦен.ФормаВыбораТипаЦенСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФормированиеЦен.ФормаВыбораТипаЦенСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

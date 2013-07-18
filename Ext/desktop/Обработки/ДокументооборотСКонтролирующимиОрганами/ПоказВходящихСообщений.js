@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПоказВходящихСообщений',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПоказВходящихСообщений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:771px;height:436px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Сообщения для просмотра',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:49px;width:755px;height:311px;',
 			height: 311,width: 755,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Описание',
-					width:'101',
+					width:'100',
 					dataIndex:'Описание',
 					flex:1,
 				},
@@ -28,13 +35,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Описание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПоказВходящихСообщенийСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПоказВходящихСообщенийСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -68,7 +92,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:43px;width:755px;height:4px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -90,4 +115,5 @@
 			]
 		},
 	]
+	});
 });

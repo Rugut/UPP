@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Помещения.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Помещения'], function () 
+{
+	Ext.define('Справочники.Помещения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:130px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Помещения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -108,4 +111,5 @@
 			]
 		},
 	]
+	});
 });

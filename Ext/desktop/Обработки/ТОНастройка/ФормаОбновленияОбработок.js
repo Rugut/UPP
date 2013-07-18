@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТОНастройка.ФормаОбновленияОбработок',
+﻿Ext.require(['Данные.Обработки.ТОНастройка'], function () 
+{
+	Ext.define('Обработки.ТОНастройка.ФормаОбновленияОбработок',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:981px;height:553px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обновление обработок обслуживания',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаСостоянияОбновления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:965px;height:248px;',
 			height: 248,width: 965,
@@ -23,19 +30,19 @@
 				},
 				{
 					text:'Имя файла обработки обслуживания',
-					width:'224',
+					width:'223',
 					dataIndex:'ИмяОбработкиОбслуживания',
 					flex:1,
 				},
 				{
 					text:'Текущее наименование',
-					width:'373',
+					width:'372',
 					dataIndex:'ТекущееНаименование',
 					flex:1,
 				},
 				{
 					text:'Новое наименование',
-					width:'373',
+					width:'372',
 					dataIndex:'НовоеНаименование',
 					flex:1,
 				},
@@ -53,7 +60,7 @@
 				},
 				{
 					text:'Текущая версия API',
-					width:'122',
+					width:'121',
 					dataIndex:'ТекущаяВерсияAPI',
 					flex:1,
 				},
@@ -65,7 +72,7 @@
 				},
 				{
 					text:'Подсказка',
-					width:'315',
+					width:'314',
 					dataIndex:'Подсказка',
 					flex:1,
 				},
@@ -76,7 +83,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -107,6 +114,23 @@
 						name:'Подсказка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСостоянияОбновления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаОбновленияОбработокСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаОбновленияОбработокСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -206,7 +230,8 @@
 			title: 'Легенда',
 			style: 'position:absolute;left:8px;top:355px;width:965px;height:165px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -247,4 +272,5 @@
 			]
 		},
 	]
+	});
 });

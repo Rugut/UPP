@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиЗакрытияМесяца.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкиЗакрытияМесяца'], function () 
+{
+	Ext.define('Справочники.НастройкиЗакрытияМесяца.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:850px;height:587px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка закрытия месяца',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:834px;height:521px;',
@@ -84,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'РегламентныеОперации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:820px;height:430px;',
 			height: 430,width: 820,
@@ -128,11 +135,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -154,6 +162,23 @@
 						name:'ОтражатьВНалоговомУчете',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РегламентныеОперации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -185,6 +210,7 @@
 					items:
 					[
 		{
+			id: 'СписокПользователей',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:286px;height:374px;',
 			height: 374,width: 286,
@@ -205,11 +231,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -220,6 +247,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПользователей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -228,6 +272,7 @@
 					items:
 					[
 		{
+			id: 'СписокГруппыПользователей',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:286px;height:372px;',
 			height: 372,width: 286,
@@ -235,24 +280,42 @@
 			[
 				{
 					text:'Группа пользователей',
-					width:'206',
+					width:'205',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокГруппыПользователей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -272,6 +335,7 @@
 			style: 'position:absolute;left:498px;top:124px;width:21px;height:17px;',
 		},
 		{
+			id: 'ОтветственныеПоРегламентнымОперациям',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:487px;height:430px;',
 			height: 430,width: 487,
@@ -292,11 +356,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -307,6 +372,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтветственныеПоРегламентнымОперациям');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -315,6 +397,7 @@
 					items:
 					[
 		{
+			id: 'СпособыРаспределения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:820px;height:408px;',
 			height: 408,width: 820,
@@ -365,11 +448,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиЗакрытияМесяца/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -395,6 +479,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СпособыРаспределения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -414,7 +515,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -477,4 +579,5 @@
 			]
 		},
 	]
+	});
 });

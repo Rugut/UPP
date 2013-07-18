@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ГлавнаяКнигаХозрасчетный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ГлавнаяКнигаХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ГлавнаяКнигаХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:236px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка: Главная книга',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:192px;',
@@ -111,6 +117,7 @@
 					items:
 					[
 		{
+			id: 'ПравилаРазвернутогоСальдо',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:460px;height:134px;',
 			height: 134,width: 460,
@@ -124,7 +131,7 @@
 				},
 				{
 					text:'По субсчетам',
-					width:'78',
+					width:'77',
 					dataIndex:'Субсчета',
 					flex:1,
 				},
@@ -141,7 +148,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГлавнаяКнигаХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГлавнаяКнигаХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -155,12 +162,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПравилаРазвернутогоСальдо');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГлавнаяКнигаХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГлавнаяКнигаХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -186,4 +211,5 @@
 			]
 		},
 	]
+	});
 });

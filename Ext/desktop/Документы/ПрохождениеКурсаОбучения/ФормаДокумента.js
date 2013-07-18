@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПрохождениеКурсаОбучения.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПрохождениеКурсаОбучения'], function () 
+{
+	Ext.define('Документы.ПрохождениеКурсаОбучения.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:510px;height:333px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Прохождение курса обучения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +98,7 @@
 			style: 'position:absolute;left:96px;top:256px;width:406px;height:19px;',
 		},
 		{
+			id: 'ОбучающиесяРаботники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:123px;width:494px;height:127px;',
 			height: 127,width: 494,
@@ -117,7 +124,7 @@
 				},
 				{
 					text:'Дата выдачи документа',
-					width:'136',
+					width:'135',
 					dataIndex:'ДатаПолученияДокумента',
 					flex:1,
 				},
@@ -134,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрохождениеКурсаОбучения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрохождениеКурсаОбучения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,6 +160,23 @@
 						name:'РеквизитыДокумента',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОбучающиесяРаботники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПрохождениеКурсаОбучения.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПрохождениеКурсаОбучения.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -197,7 +221,8 @@
 			title: 'Обучающиеся',
 			style: 'position:absolute;left:8px;top:83px;width:494px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -254,4 +279,5 @@
 			]
 		},
 	]
+	});
 });

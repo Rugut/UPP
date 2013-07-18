@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаНастройкиПринудительнойФильтрацииПисем',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаНастройкиПринудительнойФильтрацииПисем',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:256px;height:226px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка фильтрации писем папки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -82,4 +85,5 @@
 			]
 		},
 	]
+	});
 });

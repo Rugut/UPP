@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТекущиеСделки.ФормаОтборов',
+﻿Ext.require(['Данные.Обработки.ТекущиеСделки'], function () 
+{
+	Ext.define('Обработки.ТекущиеСделки.ФормаОтборов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:478px;height:260px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отбор',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -268,4 +271,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

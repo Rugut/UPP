@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоПроводкамНалоговый.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоПроводкамНалоговый'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоПроводкамНалоговый.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:460px;height:324px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка: Отчет по проводкам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:444px;height:283px;',
@@ -77,6 +83,7 @@
 			style: 'position:absolute;left:100px;top:32px;width:248px;height:19px;',
 		},
 		{
+			id: 'Корреспонденции',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:120px;width:126px;height:135px;',
 			height: 135,width: 126,
@@ -96,7 +103,7 @@
 				},
 				{
 					text:'Субконто',
-					width:'240',
+					width:'239',
 					dataIndex:'Субконто',
 					flex:1,
 				},
@@ -107,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамНалоговый/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамНалоговый/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -121,8 +128,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Корреспонденции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:140px;top:120px;width:296px;height:135px;',
 			height: 135,width: 296,
@@ -171,7 +196,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамНалоговый/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамНалоговый/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -193,6 +218,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -266,7 +308,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -288,4 +331,5 @@
 			]
 		},
 	]
+	});
 });

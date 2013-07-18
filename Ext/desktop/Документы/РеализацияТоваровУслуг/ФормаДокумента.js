@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеализацияТоваровУслуг.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РеализацияТоваровУслуг'], function () 
+{
+	Ext.define('Документы.РеализацияТоваровУслуг.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:676px;height:488px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Реализация товаров и услуг',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -90,6 +96,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:646px;height:212px;',
 			height: 212,width: 646,
@@ -348,7 +355,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -476,6 +483,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -519,6 +543,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:646px;height:212px;',
 			height: 212,width: 646,
@@ -609,7 +634,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -653,6 +678,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -673,6 +715,7 @@
 			style: 'position:absolute;left:7px;top:25px;width:110px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:646px;height:212px;',
 			height: 212,width: 646,
@@ -793,7 +836,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -851,6 +894,23 @@
 						name:'ЗаказПокупателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1131,6 +1191,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаАвтоСкидок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:646px;height:230px;',
 			height: 230,width: 646,
@@ -1185,7 +1246,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1210,6 +1271,23 @@
 						name:'ЗначениеУсловияАвтоматическойСкидки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаАвтоСкидок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1363,6 +1441,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:646px;height:143px;',
 			height: 143,width: 646,
@@ -1376,7 +1455,7 @@
 				},
 				{
 					text:'Заказ покупателя',
-					width:'139',
+					width:'138',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -1411,7 +1490,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1433,6 +1512,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияТоваровУслуг.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1686,8 +1782,10 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

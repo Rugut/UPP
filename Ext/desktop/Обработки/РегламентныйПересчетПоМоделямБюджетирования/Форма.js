@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегламентныйПересчетПоМоделямБюджетирования.Форма',
+﻿Ext.require(['Данные.Обработки.РегламентныйПересчетПоМоделямБюджетирования'], function () 
+{
+	Ext.define('Обработки.РегламентныйПересчетПоМоделямБюджетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:457px;height:328px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Регламентный пересчет по моделям бюджетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись36',
@@ -77,6 +83,7 @@
 			style: 'position:absolute;left:8px;top:144px;width:441px;height:16px;',
 		},
 		{
+			id: 'ДокументыДляОбработки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:189px;width:441px;height:106px;',
 			height: 106,width: 441,
@@ -107,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентныйПересчетПоМоделямБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентныйПересчетПоМоделямБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -120,6 +127,23 @@
 						name:'Сценарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыДляОбработки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегламентныйПересчетПоМоделямБюджетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегламентныйПересчетПоМоделямБюджетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -138,7 +162,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -204,4 +229,5 @@
 			]
 		},
 	]
+	});
 });

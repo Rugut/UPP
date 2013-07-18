@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетНаОплатуПоставщика.ФормаВыбораУправляемая',
+﻿Ext.require(['Данные.Документы.СчетНаОплатуПоставщика'], function () 
+{
+	Ext.define('Документы.СчетНаОплатуПоставщика.ФормаВыбораУправляемая',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:0px;height:0px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

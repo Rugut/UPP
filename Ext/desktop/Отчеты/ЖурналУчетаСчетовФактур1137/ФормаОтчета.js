@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЖурналУчетаСчетовФактур1137.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.ЖурналУчетаСчетовФактур1137'], function () 
+{
+	Ext.define('Отчеты.ЖурналУчетаСчетовФактур1137.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:815px;height:516px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Журнал учета полученных и выставленных счетов-фактур по Постановлению № 1137',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -78,4 +81,5 @@
 			]
 		},
 	]
+	});
 });

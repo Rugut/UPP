@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаДоходовТекущегоПериода.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаДоходовТекущегоПериода'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаДоходовТекущегоПериода.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета доходов текущего периода',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -120,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

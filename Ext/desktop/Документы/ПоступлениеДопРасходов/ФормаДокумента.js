@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеДопРасходов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПоступлениеДопРасходов'], function () 
+{
+	Ext.define('Документы.ПоступлениеДопРасходов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:676px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документ Поступление доп. расходов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +80,7 @@
 					items:
 					[
 		{
+			id: 'Оборудование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:645px;height:132px;',
 			height: 132,width: 645,
@@ -93,13 +100,13 @@
 				},
 				{
 					text:'Характеристика',
-					width:'167',
+					width:'166',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'147',
+					width:'146',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -123,7 +130,7 @@
 				},
 				{
 					text:'Сумма оборудования',
-					width:'113',
+					width:'112',
 					dataIndex:'СуммаТовара',
 					flex:1,
 				},
@@ -141,7 +148,7 @@
 				},
 				{
 					text:'Сумма НДС',
-					width:'70',
+					width:'69',
 					dataIndex:'СуммаНДС',
 					flex:1,
 				},
@@ -188,7 +195,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДопРасходов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДопРасходов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -244,6 +251,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оборудование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -252,6 +276,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:645px;height:132px;',
 			height: 132,width: 645,
@@ -390,7 +415,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДопРасходов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДопРасходов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -457,6 +482,23 @@
 						name:'ПодразделениеОрганизации',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -662,6 +704,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:645px;height:69px;',
 			height: 69,width: 645,
@@ -675,7 +718,7 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'233',
+					width:'232',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -704,7 +747,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДопРасходов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеДопРасходов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -723,6 +766,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1052,8 +1112,10 @@
 			name: 'Всего',
 			style: 'position:absolute;left:565px;top:381px;width:103px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

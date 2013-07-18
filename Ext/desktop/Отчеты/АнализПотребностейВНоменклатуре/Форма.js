@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализПотребностейВНоменклатуре.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализПотребностейВНоменклатуре'], function () 
+{
+	Ext.define('Отчеты.АнализПотребностейВНоменклатуре.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:611px;height:426px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ потребностей в номенклатуре',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -176,4 +179,5 @@
 			]
 		},
 	]
+	});
 });

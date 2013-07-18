@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыМеждуСубконтоХозрасчетный.Форма',
+﻿Ext.require(['Данные.Отчеты.ОборотыМеждуСубконтоХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ОборотыМеждуСубконтоХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет Обороты между субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -102,4 +105,5 @@
 			]
 		},
 	]
+	});
 });

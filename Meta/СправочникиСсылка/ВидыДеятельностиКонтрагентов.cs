@@ -35,7 +35,7 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
-		public Guid Родитель {get;set;}
+		public V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов Родитель {get;set;}
 		public bool ЭтоГруппа {get;set;}
 		public string/*9*/ Код {get;set;}
 		[DataMember(Name = "Представление")]//Проверить основное представление.
@@ -71,10 +71,12 @@ namespace V82.СправочникиСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
+					,_ParentIDRRef [Родитель]
+					,_Folder [ЭтоГруппа]
 					,_Code [Код]
 					,_Description [Наименование]
 					From _Reference15(NOLOCK)
-					Where _IDRRef=@УникальныйИдентификатор  and _Folder = 0x01  ";
+					Where _IDRRef=@УникальныйИдентификатор  -- and _Folder = 0x01  ";
 					Команда.Parameters.AddWithValue("УникальныйИдентификатор", УникальныйИдентификатор);
 					using (var Читалка = Команда.ExecuteReader())
 					{
@@ -88,8 +90,10 @@ namespace V82.СправочникиСсылка
 							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
-							Код = Читалка.GetString(4);
-							Наименование = Читалка.GetString(5);
+							Родитель = new V82.СправочникиСсылка.ВидыДеятельностиКонтрагентов((byte[])Читалка.GetValue(4),Глубина+1);
+							ЭтоГруппа = ((byte[])Читалка.GetValue(5))[0]==0;
+							Код = Читалка.GetString(6);
+							Наименование = Читалка.GetString(7);
 							//return Ссылка;
 						}
 						else

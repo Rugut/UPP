@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.Диаграмма.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.Диаграмма'], function () 
+{
+	Ext.define('Отчеты.Диаграмма.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:487px;height:282px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки диаграммы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -373,4 +376,5 @@
 			]
 		},
 	]
+	});
 });

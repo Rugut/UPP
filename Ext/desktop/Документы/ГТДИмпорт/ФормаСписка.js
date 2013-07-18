@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ГТДИмпорт.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ГТДИмпорт'], function () 
+{
+	Ext.define('Документы.ГТДИмпорт.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'ГТД по импорту',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Номер ГТД',
-					width:'1200',
+					width:'120',
 					dataIndex:'НомерГТД',
 					flex:1,
 				},
@@ -69,19 +72,19 @@
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -111,19 +114,19 @@
 				},
 				{
 					text:'Договор контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента (регл)',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагентаРегл',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -202,9 +205,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГТДИмпорт.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГТДИмпорт.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -244,4 +247,5 @@
 			]
 		},
 	]
+	});
 });

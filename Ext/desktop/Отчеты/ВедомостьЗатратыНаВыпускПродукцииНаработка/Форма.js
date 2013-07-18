@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВедомостьЗатратыНаВыпускПродукцииНаработка.Форма',
+﻿Ext.require(['Данные.Отчеты.ВедомостьЗатратыНаВыпускПродукцииНаработка'], function () 
+{
+	Ext.define('Отчеты.ВедомостьЗатратыНаВыпускПродукцииНаработка.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -209,4 +212,5 @@
 			]
 		},
 	]
+	});
 });

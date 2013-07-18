@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СостоянияЗаявокКандидатов.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СостоянияЗаявокКандидатов'], function () 
+{
+	Ext.define('Справочники.СостоянияЗаявокКандидатов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Состояния заявок кандидатов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:484px;height:259px;',
 			height: 259,width: 484,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'241',
+					width:'240',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -42,11 +49,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СостоянияЗаявокКандидатов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СостоянияЗаявокКандидатов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СостоянияЗаявокКандидатов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +71,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СостоянияЗаявокКандидатов.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СостоянияЗаявокКандидатов.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -185,4 +211,5 @@
 			]
 		},
 	]
+	});
 });

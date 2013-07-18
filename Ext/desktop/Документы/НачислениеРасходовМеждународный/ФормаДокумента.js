@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеРасходовМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НачислениеРасходовМеждународный'], function () 
+{
+	Ext.define('Документы.НачислениеРасходовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:385px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -104,19 +107,19 @@
 				},
 				{
 					text:'Субконто 1...3',
-					width:'1600',
+					width:'160',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'1600',
+					width:'160',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'1600',
+					width:'160',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -134,7 +137,7 @@
 				},
 				{
 					text:'Содержание операции',
-					width:'2200',
+					width:'220',
 					dataIndex:'СодержаниеОперации',
 					flex:1,
 				},
@@ -183,9 +186,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НачислениеРасходовМеждународный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НачислениеРасходовМеждународный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -292,4 +295,5 @@
 			]
 		},
 	]
+	});
 });

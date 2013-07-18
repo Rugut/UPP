@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Работодатели.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Работодатели'], function () 
+{
+	Ext.define('Справочники.Работодатели.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:518px;height:264px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Работодатели',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -187,4 +190,5 @@
 			]
 		},
 	]
+	});
 });

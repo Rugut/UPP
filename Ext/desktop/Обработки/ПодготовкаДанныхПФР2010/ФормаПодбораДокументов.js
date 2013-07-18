@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументов',
+﻿Ext.require(['Данные.Обработки.ПодготовкаДанныхПФР2010'], function () 
+{
+	Ext.define('Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:534px;height:426px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Подбор документов прошлых периодов, принятых ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -58,9 +61,9 @@
 					{
 						var грид = Ext.getCmp('ПачкиДокументов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -178,4 +181,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

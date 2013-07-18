@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СправкаПоНДФЛВНалоговыйОрган.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СправкаПоНДФЛВНалоговыйОрган'], function () 
+{
+	Ext.define('Документы.СправкаПоНДФЛВНалоговыйОрган.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:805px;height:623px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Справки 2-НДФЛ для передачи в ИФНС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:789px;height:43px;',
@@ -133,6 +139,7 @@
 			style: 'position:absolute;left:106px;top:494px;width:683px;height:19px;',
 		},
 		{
+			id: 'СотрудникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:147px;width:254px;height:292px;',
 			height: 292,width: 254,
@@ -169,7 +176,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -185,6 +192,23 @@
 						name:'Ставка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СотрудникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -318,6 +342,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОДоходах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:28px;width:326px;height:125px;',
 			height: 125,width: 326,
@@ -360,7 +385,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -380,8 +405,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОДоходах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СведенияОВычетах',
 			xtype: 'grid',
 			style: 'position:absolute;left:341px;top:28px;width:178px;height:58px;',
 			height: 58,width: 178,
@@ -406,7 +449,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -416,6 +459,23 @@
 						name:'СуммаВычета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОВычетах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -660,6 +720,7 @@
 			style: 'position:absolute;left:226px;top:68px;width:70px;height:19px;',
 		},
 		{
+			id: 'СуммыНалогов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:63px;height:87px;',
 			height: 87,width: 63,
@@ -667,7 +728,7 @@
 			[
 				{
 					text:'По ставке',
-					width:'62',
+					width:'61',
 					dataIndex:'Ставка',
 					flex:1,
 				},
@@ -678,13 +739,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СправкаПоНДФЛВНалоговыйОрган/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Ставка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СуммыНалогов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1053,7 +1131,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1095,4 +1174,5 @@
 			]
 		},
 	]
+	});
 });

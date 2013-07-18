@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетДеятельностьИнОргВРФ.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетДеятельностьИнОргВРФ'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетДеятельностьИнОргВРФ.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет о деятельности иностранной организации в РФ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЭффективностьЗатратНаПривлечение.ФормаОтчета',
+﻿Ext.require(['Данные.Отчеты.ЭффективностьЗатратНаПривлечение'], function () 
+{
+	Ext.define('Отчеты.ЭффективностьЗатратНаПривлечение.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:750px;height:538px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отчет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:345px;top:33px;width:397px;height:107px;',
@@ -21,6 +27,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:397px;height:107px;',
 			height: 107,width: 397,
@@ -34,67 +41,67 @@
 				},
 				{
 					text:'Левое значение',
-					width:'100',
+					width:'99',
 					dataIndex:'ЛевоеЗначениеДляПодробногоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Вид сравнения',
-					width:'75',
+					width:'74',
 					dataIndex:'ВидыСравненияДляПодробногоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Правое значение',
-					width:'100',
+					width:'99',
 					dataIndex:'ПравоеЗначениеДляПодробногоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Представление',
-					width:'100',
+					width:'99',
 					dataIndex:'ПредставлениеДляПодробногоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Представление',
-					width:'100',
+					width:'99',
 					dataIndex:'ПредставлениеДляКраткогоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Левое значение',
-					width:'100',
+					width:'99',
 					dataIndex:'ЛевоеЗначениеДляКраткогоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Вид сравнения',
-					width:'75',
+					width:'74',
 					dataIndex:'ВидыСравненияДляКраткогоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Правое значение',
-					width:'100',
+					width:'99',
 					dataIndex:'ПравоеЗначениеДляКраткогоОтображенияЭлемента',
 					flex:1,
 				},
 				{
 					text:'Тип группы',
-					width:'100',
+					width:'99',
 					dataIndex:'ТипДляПодробногоОтображенияГруппы',
 					flex:1,
 				},
 				{
 					text:'Представление',
-					width:'100',
+					width:'99',
 					dataIndex:'ПредставлениеДляПодробногоОтображенияГруппы',
 					flex:1,
 				},
 				{
 					text:'Тип группы',
-					width:'100',
+					width:'99',
 					dataIndex:'ТипДляКраткогоОтображенияГруппы',
 					flex:1,
 				},
@@ -105,7 +112,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭффективностьЗатратНаПривлечение/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭффективностьЗатратНаПривлечение/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +152,23 @@
 						name:'ТипДляКраткогоОтображенияГруппы',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЭффективностьЗатратНаПривлечение.ФормаОтчетаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЭффективностьЗатратНаПривлечение.ФормаОтчетаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -363,7 +387,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -448,4 +473,5 @@
 			]
 		},
 	]
+	});
 });

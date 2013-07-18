@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.Форма',
+﻿Ext.require(['Данные.Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей'], function () 
+{
+	Ext.define('Обработки.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:740px;height:424px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка обмена данными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
@@ -255,6 +261,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияМагазиновИСкладов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:532px;height:136px;',
 			height: 136,width: 532,
@@ -303,7 +310,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -326,6 +333,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияМагазиновИСкладов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -334,6 +358,7 @@
 					items:
 					[
 		{
+			id: 'ТипыЦенНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:532px;height:136px;',
 			height: 136,width: 532,
@@ -347,7 +372,7 @@
 				},
 				{
 					text:'Тип цены номенклатуры',
-					width:'140',
+					width:'139',
 					dataIndex:'ТипЦеныНоменклатуры',
 					flex:1,
 				},
@@ -358,7 +383,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -368,6 +393,23 @@
 						name:'ТипЦеныНоменклатуры',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТипыЦенНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -521,6 +563,7 @@
 			style: 'position:absolute;left:6px;top:10px;width:529px;height:19px;',
 		},
 		{
+			id: 'ТаблицаВыбораОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:159px;',
 			height: 159,width: 529,
@@ -539,13 +582,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Организация',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаВыбораОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -555,6 +615,7 @@
 					items:
 					[
 		{
+			id: 'ОтборПоНоменклатуре',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:159px;',
 			height: 159,width: 529,
@@ -603,7 +664,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -625,6 +686,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборПоНоменклатуре');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -634,6 +712,7 @@
 					items:
 					[
 		{
+			id: 'ОтборПоКонтрагентам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:159px;',
 			height: 159,width: 529,
@@ -682,7 +761,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -704,6 +783,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборПоКонтрагентам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -713,6 +809,7 @@
 					items:
 					[
 		{
+			id: 'ОтборПоСкладам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:159px;',
 			height: 159,width: 529,
@@ -761,7 +858,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -784,6 +881,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборПоСкладам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -792,6 +906,7 @@
 					items:
 					[
 		{
+			id: 'ОтборПоКассам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:159px;',
 			height: 159,width: 529,
@@ -840,7 +955,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -862,6 +977,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборПоКассам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1581,6 +1713,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаВыгрузкиДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:531px;height:214px;',
 			height: 214,width: 531,
@@ -1641,7 +1774,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1670,6 +1803,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаВыгрузкиДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1678,6 +1828,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаВариантовПоискаОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:531px;height:212px;',
 			height: 212,width: 531,
@@ -1738,7 +1889,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1766,6 +1917,23 @@
 						name:'КодПравилаОбмена',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаВариантовПоискаОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1824,7 +1992,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1846,4 +2015,5 @@
 			]
 		},
 	]
+	});
 });

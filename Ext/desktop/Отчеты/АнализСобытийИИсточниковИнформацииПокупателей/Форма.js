@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСобытийИИсточниковИнформацииПокупателей.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСобытийИИсточниковИнформацииПокупателей'], function () 
+{
+	Ext.define('Отчеты.АнализСобытийИИсточниковИнформацииПокупателей.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:434px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ событий и источников информации покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -187,4 +190,5 @@
 			]
 		},
 	]
+	});
 });

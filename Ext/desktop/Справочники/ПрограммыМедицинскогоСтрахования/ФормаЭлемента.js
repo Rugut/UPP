@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрограммыМедицинскогоСтрахования.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПрограммыМедицинскогоСтрахования'], function () 
+{
+	Ext.define('Справочники.ПрограммыМедицинскогоСтрахования.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:511px;height:218px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Программа медицинского страхования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -90,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

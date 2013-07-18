@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КатегорииОбъекта.КатегорииОбъекта',
+﻿Ext.require(['Данные.Обработки.КатегорииОбъекта'], function () 
+{
+	Ext.define('Обработки.КатегорииОбъекта.КатегорииОбъекта',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:376px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Категории',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -96,9 +99,9 @@
 					{
 						var грид = Ext.getCmp('КатегорииОбъекта');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КатегорииОбъекта.КатегорииОбъектаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КатегорииОбъекта.КатегорииОбъектаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -127,4 +130,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

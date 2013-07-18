@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПроведениеПоПартиям.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.ПроведениеПоПартиям'], function () 
+{
+	Ext.define('Обработки.ПроведениеПоПартиям.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:241px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

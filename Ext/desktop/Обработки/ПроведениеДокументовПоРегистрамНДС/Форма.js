@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПроведениеДокументовПоРегистрамНДС.Форма',
+﻿Ext.require(['Данные.Обработки.ПроведениеДокументовПоРегистрамНДС'], function () 
+{
+	Ext.define('Обработки.ПроведениеДокументовПоРегистрамНДС.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:338px;height:398px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Проведение документов по регистрам НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

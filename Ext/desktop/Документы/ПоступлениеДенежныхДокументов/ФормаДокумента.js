@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеДенежныхДокументов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПоступлениеДенежныхДокументов'], function () 
+{
+	Ext.define('Документы.ПоступлениеДенежныхДокументов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:371px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поступление денежных документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -328,7 +331,7 @@
 				},
 				{
 					text:'Денежный документ',
-					width:'1800',
+					width:'180',
 					dataIndex:'ДенежныйДокумент',
 					flex:1,
 				},
@@ -340,7 +343,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -377,9 +380,9 @@
 					{
 						var грид = Ext.getCmp('ДенежныеДокументы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПоступлениеДенежныхДокументов.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПоступлениеДенежныхДокументов.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -524,4 +527,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

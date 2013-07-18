@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетУСН.ФормаВыбора',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетУСН'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетУСН.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:287px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор из списка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,13 +24,13 @@
 			[
 				{
 					text:'Код',
-					width:'1600',
+					width:'160',
 					dataIndex:'Код',
 					flex:1,
 				},
 				{
 					text:'Название',
-					width:'2200',
+					width:'220',
 					dataIndex:'Название',
 					flex:1,
 				},
@@ -58,9 +61,9 @@
 					{
 						var грид = Ext.getCmp('СписокКодов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РегламентированныйОтчетУСН.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РегламентированныйОтчетУСН.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -85,4 +88,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РезервированиеПомещений.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РезервированиеПомещений'], function () 
+{
+	Ext.define('Документы.РезервированиеПомещений.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:378px;height:309px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Резервирование помещения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -261,4 +264,5 @@
 			]
 		},
 	]
+	});
 });

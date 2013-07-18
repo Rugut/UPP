@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗначенияСвойствОбъекта.ЗначенияСвойствОбъекта',
+﻿Ext.require(['Данные.Обработки.ЗначенияСвойствОбъекта'], function () 
+{
+	Ext.define('Обработки.ЗначенияСвойствОбъекта.ЗначенияСвойствОбъекта',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:476px;height:346px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Свойства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -67,9 +70,9 @@
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗначенияСвойствОбъекта.ЗначенияСвойствОбъектаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗначенияСвойствОбъекта.ЗначенияСвойствОбъектаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -131,4 +134,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОУчетнаяПолитика.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.МСФОУчетнаяПолитика'], function () 
+{
+	Ext.define('Отчеты.МСФОУчетнаяПолитика.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:269px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Учетная политика по МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

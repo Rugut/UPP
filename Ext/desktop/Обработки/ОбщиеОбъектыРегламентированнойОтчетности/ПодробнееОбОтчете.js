@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ПодробнееОбОтчете',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ПодробнееОбОтчете',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:527px;height:403px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подробнее об отчете',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Формы отчета',
@@ -31,6 +37,7 @@
 					items:
 					[
 		{
+			id: 'ФормыОтчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:511px;height:166px;',
 			height: 166,width: 511,
@@ -67,7 +74,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -83,6 +90,23 @@
 						name:'ФормаОтчета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФормыОтчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ПодробнееОбОтчетеСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ПодробнееОбОтчетеСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -118,7 +142,8 @@
 			text: '',
 			style: 'position:absolute;left:14px;top:304px;width:505px;height:66px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -140,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

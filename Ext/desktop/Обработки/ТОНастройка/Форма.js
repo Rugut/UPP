@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТОНастройка.Форма',
+﻿Ext.require(['Данные.Обработки.ТОНастройка'], function () 
+{
+	Ext.define('Обработки.ТОНастройка.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:866px;height:519px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подключение и настройка торгового оборудования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:88px;width:850px;height:398px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'СканерыШтрихКода',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -44,7 +51,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +61,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СканерыШтрихКода');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -63,6 +87,7 @@
 					items:
 					[
 		{
+			id: 'ФискальныеРегистраторы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -76,7 +101,7 @@
 				},
 				{
 					text:'Модель',
-					width:'346',
+					width:'345',
 					dataIndex:'Модель',
 					flex:1,
 				},
@@ -93,7 +118,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -106,6 +131,23 @@
 						name:'КассаККМ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФискальныеРегистраторы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -115,6 +157,7 @@
 					items:
 					[
 		{
+			id: 'ТерминалыСбораДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -139,7 +182,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -149,6 +192,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТерминалыСбораДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -158,6 +218,7 @@
 					items:
 					[
 		{
+			id: 'ДисплеиПокупателя',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -188,7 +249,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -201,6 +262,23 @@
 						name:'КассаККМ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДисплеиПокупателя');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -210,6 +288,7 @@
 					items:
 					[
 		{
+			id: 'СчитывателиМагнитныхКарт',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -234,7 +313,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -244,6 +323,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчитывателиМагнитныхКарт');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -253,6 +349,7 @@
 					items:
 					[
 		{
+			id: 'ЭлектронныеВесы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -277,7 +374,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -287,6 +384,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭлектронныеВесы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -296,6 +410,7 @@
 					items:
 					[
 		{
+			id: 'ВесыСПечатьюЭтикеток',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -320,7 +435,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -330,6 +445,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВесыСПечатьюЭтикеток');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -339,6 +471,7 @@
 					items:
 					[
 		{
+			id: 'ККМOffline',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -369,7 +502,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -382,6 +515,23 @@
 						name:'КассаККМ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ККМOffline');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -391,6 +541,7 @@
 					items:
 					[
 		{
+			id: 'ККМOnline',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -421,7 +572,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -435,6 +586,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ККМOnline');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -443,6 +611,7 @@
 					items:
 					[
 		{
+			id: 'ЭквайринговыеСистемы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -467,7 +636,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -478,6 +647,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭквайринговыеСистемы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -486,6 +672,7 @@
 					items:
 					[
 		{
+			id: 'СчитывателиRFIDМеток',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:612px;height:359px;',
 			height: 359,width: 612,
@@ -510,7 +697,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -520,6 +707,23 @@
 						name:'Модель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчитывателиRFIDМеток');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -556,7 +760,8 @@
 			text: 'Справка',
 			style: 'position:absolute;left:778px;top:57px;width:80px;height:25px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -578,4 +783,5 @@
 			]
 		},
 	]
+	});
 });

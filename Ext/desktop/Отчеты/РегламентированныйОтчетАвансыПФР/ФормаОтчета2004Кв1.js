@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыПФР.ФормаОтчета2004Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАвансыПФР'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАвансыПФР.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:460px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Авансы в ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -380,4 +383,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонсольОтчетов.ФормаРедактированияЗапроса',
+﻿Ext.require(['Данные.Обработки.КонсольОтчетов'], function () 
+{
+	Ext.define('Обработки.КонсольОтчетов.ФормаРедактированияЗапроса',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:309px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Редактирование запроса',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:6px;top:6px;width:388px;height:270px;',
@@ -62,6 +68,7 @@
 					items:
 					[
 		{
+			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:356px;height:228px;',
 			height: 228,width: 356,
@@ -81,7 +88,7 @@
 				},
 				{
 					text:'Значение параметра',
-					width:'189',
+					width:'188',
 					dataIndex:'ЗначениеПараметра',
 					flex:1,
 				},
@@ -92,7 +99,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -106,6 +113,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Параметры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -114,6 +138,7 @@
 					items:
 					[
 		{
+			id: 'Представления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:356px;height:256px;',
 			height: 256,width: 356,
@@ -144,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонсольОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,6 +182,23 @@
 						name:'Формат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Представления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -240,8 +282,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

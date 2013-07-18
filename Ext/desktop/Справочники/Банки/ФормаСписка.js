@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Банки.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.Банки'], function () 
+{
+	Ext.define('Справочники.Банки.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:742px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Банки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,31 +36,31 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Корр. счет',
-					width:'1600',
+					width:'160',
 					dataIndex:'КоррСчет',
 					flex:1,
 				},
 				{
 					text:'Город',
-					width:'1600',
+					width:'160',
 					dataIndex:'Город',
 					flex:1,
 				},
 				{
 					text:'Адрес',
-					width:'2200',
+					width:'220',
 					dataIndex:'Адрес',
 					flex:1,
 				},
 				{
 					text:'Телефоны',
-					width:'1600',
+					width:'160',
 					dataIndex:'Телефоны',
 					flex:1,
 				},
@@ -104,9 +107,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Банки.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Банки.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -122,7 +125,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'1600',
+					width:'160',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -151,9 +154,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Банки.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Банки.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -189,4 +192,5 @@
 			]
 		},
 	]
+	});
 });

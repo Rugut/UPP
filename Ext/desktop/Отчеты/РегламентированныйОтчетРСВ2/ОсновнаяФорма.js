@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетРСВ2.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетРСВ2'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетРСВ2.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:258px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'РСВ-2 ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

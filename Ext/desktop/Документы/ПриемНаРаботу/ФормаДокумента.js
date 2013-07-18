@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПриемНаРаботу.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПриемНаРаботу'], function () 
+{
+	Ext.define('Документы.ПриемНаРаботу.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:624px;height:377px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Прием на работу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -106,6 +112,7 @@
 					items:
 					[
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:594px;height:209px;',
 			height: 209,width: 594,
@@ -155,7 +162,7 @@
 				},
 				{
 					text:'По',
-					width:'55',
+					width:'54',
 					dataIndex:'ДатаПо',
 					flex:1,
 				},
@@ -196,7 +203,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -240,6 +247,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриемНаРаботу.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриемНаРаботу.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -248,6 +272,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:594px;height:209px;',
 			height: 209,width: 594,
@@ -470,7 +495,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -580,6 +605,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриемНаРаботу.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриемНаРаботу.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -588,6 +630,7 @@
 					items:
 					[
 		{
+			id: 'Взыскания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:594px;height:209px;',
 			height: 209,width: 594,
@@ -732,7 +775,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриемНаРаботу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -803,12 +846,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Взыскания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриемНаРаботу.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриемНаРаботу.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -820,4 +881,5 @@
 			]
 		},
 	]
+	});
 });

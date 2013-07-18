@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПодтверждениеНулевойСтавкиНДС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПодтверждениеНулевойСтавкиНДС'], function () 
+{
+	Ext.define('Документы.ПодтверждениеНулевойСтавкиНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:654px;height:371px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -149,7 +152,7 @@
 				},
 				{
 					text:'Курсовая разница',
-					width:'1200',
+					width:'120',
 					dataIndex:'КурсоваяРазница',
 					flex:1,
 				},
@@ -201,9 +204,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПодтверждениеНулевойСтавкиНДС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПодтверждениеНулевойСтавкиНДС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -326,4 +329,5 @@
 			]
 		},
 	]
+	});
 });

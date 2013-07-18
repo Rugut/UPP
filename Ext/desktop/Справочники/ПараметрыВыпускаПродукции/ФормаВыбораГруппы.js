@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.ПараметрыВыпускаПродукции'], function () 
+{
+	Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры выпуска продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПараметрыВыпускаПродукции.ФормаВыбораГруппыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПараметрыВыпускаПродукции.ФормаВыбораГруппыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

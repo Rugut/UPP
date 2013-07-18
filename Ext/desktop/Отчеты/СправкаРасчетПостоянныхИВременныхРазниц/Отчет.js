@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетПостоянныхИВременныхРазниц.Отчет',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетПостоянныхИВременныхРазниц'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетПостоянныхИВременныхРазниц.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Постоянные и временные разницы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

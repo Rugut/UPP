@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТорговоеОборудование.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТорговоеОборудование'], function () 
+{
+	Ext.define('Справочники.ТорговоеОборудование.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:468px;height:153px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Торговое оборудование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -170,4 +173,5 @@
 			]
 		},
 	]
+	});
 });

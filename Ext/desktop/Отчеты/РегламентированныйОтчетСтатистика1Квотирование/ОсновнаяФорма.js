@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистика1Квотирование.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистика1Квотирование'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистика1Квотирование.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:275px;height:237px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма 1-квотирование (Москва)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

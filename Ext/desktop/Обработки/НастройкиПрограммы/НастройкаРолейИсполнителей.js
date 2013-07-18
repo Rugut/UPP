@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкиПрограммы.НастройкаРолейИсполнителей',
+﻿Ext.require(['Данные.Обработки.НастройкиПрограммы'], function () 
+{
+	Ext.define('Обработки.НастройкиПрограммы.НастройкаРолейИсполнителей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка задач пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -25,13 +28,13 @@
 			[
 				{
 					text:'Организация',
-					width:'1800',
+					width:'180',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Роль исполнителя задач',
-					width:'1400',
+					width:'140',
 					dataIndex:'Роль',
 					flex:1,
 				},
@@ -80,9 +83,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаНастройкиРолей');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НастройкиПрограммы.НастройкаРолейИсполнителейСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаРолейИсполнителейСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

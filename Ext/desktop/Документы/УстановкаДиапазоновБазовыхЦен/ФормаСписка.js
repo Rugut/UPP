@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаДиапазоновБазовыхЦен.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УстановкаДиапазоновБазовыхЦен'], function () 
+{
+	Ext.define('Документы.УстановкаДиапазоновБазовыхЦен.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:610px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Установка диапазонов базовых цен',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:594px;height:259px;',
 			height: 259,width: 594,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Номер',
-					width:'114',
+					width:'113',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -47,7 +54,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'270',
+					width:'269',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДиапазоновБазовыхЦен/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДиапазоновБазовыхЦен/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +88,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаДиапазоновБазовыхЦен.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаДиапазоновБазовыхЦен.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -94,4 +119,5 @@
 			]
 		},
 	]
+	});
 });

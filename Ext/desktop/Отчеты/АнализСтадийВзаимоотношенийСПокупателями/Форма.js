@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСтадийВзаимоотношенийСПокупателями.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСтадийВзаимоотношенийСПокупателями'], function () 
+{
+	Ext.define('Отчеты.АнализСтадийВзаимоотношенийСПокупателями.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:659px;height:427px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ стадий взаимоотношений с покупателями',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -223,4 +226,5 @@
 			]
 		},
 	]
+	});
 });

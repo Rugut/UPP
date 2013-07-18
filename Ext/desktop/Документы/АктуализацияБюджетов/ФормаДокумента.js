@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктуализацияБюджетов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АктуализацияБюджетов'], function () 
+{
+	Ext.define('Документы.АктуализацияБюджетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:661px;height:177px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Актуализация бюджетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -216,4 +219,5 @@
 			]
 		},
 	]
+	});
 });

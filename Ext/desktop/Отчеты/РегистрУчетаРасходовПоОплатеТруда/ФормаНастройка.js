@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаРасходовПоОплатеТруда.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаРасходовПоОплатеТруда'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаРасходовПоОплатеТруда.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:372px;height:328px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета расходов по оплате труда (настройка)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -125,4 +128,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаТоваров.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПередачаТоваров'], function () 
+{
+	Ext.define('Документы.ПередачаТоваров.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:666px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Передача товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,25 +110,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2500',
+					width:'250',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -303,9 +306,9 @@
 					{
 						var грид = Ext.getCmp('Товары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПередачаТоваров.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПередачаТоваров.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -376,7 +379,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -473,9 +476,9 @@
 					{
 						var грид = Ext.getCmp('ВозвратнаяТара');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПередачаТоваров.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПередачаТоваров.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -789,4 +792,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

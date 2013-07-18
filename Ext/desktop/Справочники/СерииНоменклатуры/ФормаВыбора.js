@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СерииНоменклатуры.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.СерииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СерииНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:708px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Серии номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -45,7 +48,7 @@
 				},
 				{
 					text:'Номер и дата сертификата',
-					width:'1600',
+					width:'160',
 					dataIndex:'Сертификат',
 					flex:1,
 				},
@@ -104,9 +107,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СерииНоменклатуры.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СерииНоменклатуры.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -130,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

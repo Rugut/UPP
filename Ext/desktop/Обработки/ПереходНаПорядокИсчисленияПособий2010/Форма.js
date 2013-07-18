@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПереходНаПорядокИсчисленияПособий2010.Форма',
+﻿Ext.require(['Данные.Обработки.ПереходНаПорядокИсчисленияПособий2010'], function () 
+{
+	Ext.define('Обработки.ПереходНаПорядокИсчисленияПособий2010.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:800px;height:565px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Переход - 2010',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОблученных',
@@ -189,6 +195,7 @@
 					items:
 					[
 		{
+			id: 'ПособияПоБеременности',
 			xtype: 'grid',
 			style: 'position:absolute;left:38px;top:16px;width:532px;height:69px;',
 			height: 69,width: 532,
@@ -202,7 +209,7 @@
 				},
 				{
 					text:'Расчетный документ',
-					width:'196',
+					width:'195',
 					dataIndex:'РасчетныйДокумент',
 					flex:1,
 				},
@@ -214,7 +221,7 @@
 				},
 				{
 					text:'Выполнено',
-					width:'66',
+					width:'65',
 					dataIndex:'Выполнено',
 					flex:1,
 				},
@@ -225,7 +232,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -241,6 +248,23 @@
 						name:'Выполнено',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияПоБеременности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -264,6 +288,7 @@
 					items:
 					[
 		{
+			id: 'ПособияПоУходуЗаРебенком',
 			xtype: 'grid',
 			style: 'position:absolute;left:38px;top:16px;width:532px;height:69px;',
 			height: 69,width: 532,
@@ -271,7 +296,7 @@
 			[
 				{
 					text:'Сотрудник',
-					width:'142',
+					width:'141',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -283,13 +308,13 @@
 				},
 				{
 					text:'Действие',
-					width:'85',
+					width:'84',
 					dataIndex:'Действие',
 					flex:1,
 				},
 				{
 					text:'Выполнено',
-					width:'71',
+					width:'70',
 					dataIndex:'Выполнено',
 					flex:1,
 				},
@@ -300,7 +325,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереходНаПорядокИсчисленияПособий2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -316,6 +341,23 @@
 						name:'Выполнено',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияПоУходуЗаРебенком');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -401,8 +443,10 @@
 			title: '',
 			style: 'position:absolute;left:14px;top:418px;width:778px;height:6px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

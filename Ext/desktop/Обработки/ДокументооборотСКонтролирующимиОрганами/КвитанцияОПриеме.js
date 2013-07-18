@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.КвитанцияОПриеме',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.КвитанцияОПриеме',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:563px;height:411px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Квитанция о приеме',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -246,4 +249,5 @@
 			]
 		},
 	]
+	});
 });

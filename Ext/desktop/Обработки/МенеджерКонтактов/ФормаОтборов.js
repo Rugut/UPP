@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаОтборов',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаОтборов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:562px;height:277px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отбор',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -328,4 +331,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

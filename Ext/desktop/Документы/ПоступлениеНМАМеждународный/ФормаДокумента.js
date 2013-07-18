@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеНМАМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПоступлениеНМАМеждународный'], function () 
+{
+	Ext.define('Документы.ПоступлениеНМАМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:654px;height:376px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -271,9 +274,9 @@
 					{
 						var грид = Ext.getCmp('НематериальныеАктивы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПоступлениеНМАМеждународный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПоступлениеНМАМеждународный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -456,4 +459,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтражениеРеализацииТоваровИУслугНДС'], function () 
+{
+	Ext.define('Документы.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:473px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отражение начисления НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -150,6 +156,7 @@
 					items:
 					[
 		{
+			id: 'ТоварыИУслуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:642px;height:161px;',
 			height: 161,width: 642,
@@ -187,13 +194,13 @@
 				},
 				{
 					text:'Единица',
-					width:'64',
+					width:'63',
 					dataIndex:'ЕдиницаИзмерения',
 					flex:1,
 				},
 				{
 					text:'К.',
-					width:'53',
+					width:'52',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
@@ -288,7 +295,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеРеализацииТоваровИУслугНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеРеализацииТоваровИУслугНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -356,6 +363,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТоварыИУслуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -364,6 +388,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыОплаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:642px;height:164px;',
 			height: 164,width: 642,
@@ -394,7 +419,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеРеализацииТоваровИУслугНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеРеализацииТоваровИУслугНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -407,6 +432,23 @@
 						name:'ДокументОплаты',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыОплаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -520,7 +562,8 @@
 			boxLabel: 'Использовать документ расчетов как счет-фактуру',
 			style: 'position:absolute;left:317px;top:129px;width:347px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -581,4 +624,5 @@
 			]
 		},
 	]
+	});
 });

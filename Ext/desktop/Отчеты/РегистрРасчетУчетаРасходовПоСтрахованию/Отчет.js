@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетУчетаРасходовПоСтрахованию.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетУчетаРасходовПоСтрахованию'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетУчетаРасходовПоСтрахованию.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр-расчет учета расходов по страхованию',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -114,4 +117,5 @@
 			]
 		},
 	]
+	});
 });

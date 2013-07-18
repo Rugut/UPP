@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КонтролируемыеЗначенияПоБюджетам.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КонтролируемыеЗначенияПоБюджетам'], function () 
+{
+	Ext.define('Документы.КонтролируемыеЗначенияПоБюджетам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:410px;height:458px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Контролируемые значения по бюджетам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -184,7 +187,7 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -202,25 +205,25 @@
 				},
 				{
 					text:'ЦФО',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -272,9 +275,9 @@
 					{
 						var грид = Ext.getCmp('ГраницыЗначений');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -451,4 +454,5 @@
 			]
 		},
 	]
+	});
 });

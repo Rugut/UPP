@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОбщероссийскийКлассификаторПродукции.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ОбщероссийскийКлассификаторПродукции'], function () 
+{
+	Ext.define('Справочники.ОбщероссийскийКлассификаторПродукции.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:160px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Общероссийский классификатор продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЕСХН.ФормаОтчета2008Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЕСХН'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЕСХН.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:490px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по единому сельскохозяйственному налогу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -211,4 +214,5 @@
 			]
 		},
 	]
+	});
 });

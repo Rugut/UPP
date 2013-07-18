@@ -31,7 +31,7 @@ Ext.define('Меню.СправочникиФормыСписка',
                         handler: this.createWindow,
                         scope: this,
                         windowId: ++windowIndex,
-                        FormId: 'Справочники.' + Элемент.Имя + '.ФормаВыбора',
+                        FormId: 'Справочники.' + Элемент.Имя + '.ФормаСписка',
                     }
                 );
                 if (Номер > 50)

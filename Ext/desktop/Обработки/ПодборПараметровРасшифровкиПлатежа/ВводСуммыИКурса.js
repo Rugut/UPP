@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ВводСуммыИКурса',
+﻿Ext.require(['Данные.Обработки.ПодборПараметровРасшифровкиПлатежа'], function () 
+{
+	Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ВводСуммыИКурса',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:260px;height:138px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод суммы и курса',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -152,4 +155,5 @@
 			]
 		},
 	]
+	});
 });

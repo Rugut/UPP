@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СчетчикДляФормированияСерийныхНомеров.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.СчетчикДляФормированияСерийныхНомеров'], function () 
+{
+	Ext.define('Справочники.СчетчикДляФормированияСерийныхНомеров.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Счетчик для формирования серийных номеров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:384px;height:259px;',
 			height: 259,width: 384,
@@ -30,11 +37,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СчетчикДляФормированияСерийныхНомеров").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетчикДляФормированияСерийныхНомеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетчикДляФормированияСерийныхНомеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +53,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетчикДляФормированияСерийныхНомеров.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетчикДляФормированияСерийныхНомеров.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -62,4 +88,5 @@
 			]
 		},
 	]
+	});
 });

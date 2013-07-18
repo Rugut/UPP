@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЧекККМ.ФормаАвторизации',
+﻿Ext.require(['Данные.Документы.ЧекККМ'], function () 
+{
+	Ext.define('Документы.ЧекККМ.ФормаАвторизации',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:468px;height:84px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Авторизация: Введите пароль или прочитайте регистрационную карту',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -64,4 +67,5 @@
 			]
 		},
 	]
+	});
 });

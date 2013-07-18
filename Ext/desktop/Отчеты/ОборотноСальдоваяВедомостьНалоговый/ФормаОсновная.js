@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьНалоговый.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ОборотноСальдоваяВедомостьНалоговый'], function () 
+{
+	Ext.define('Отчеты.ОборотноСальдоваяВедомостьНалоговый.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:921px;height:567px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оборотно-сальдовая ведомость',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -148,4 +151,5 @@
 			]
 		},
 	]
+	});
 });

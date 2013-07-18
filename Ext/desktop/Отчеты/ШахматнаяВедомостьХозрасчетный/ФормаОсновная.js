@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ШахматнаяВедомостьХозрасчетный.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ШахматнаяВедомостьХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ШахматнаяВедомостьХозрасчетный.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Шахматная оборотная ведомость',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -139,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

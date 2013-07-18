@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписи',
+﻿Ext.require(['Данные.Обработки.РедактированиеКонтактнойИнформации'], function () 
+{
+	Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписи',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:245px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Другое',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -108,4 +111,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

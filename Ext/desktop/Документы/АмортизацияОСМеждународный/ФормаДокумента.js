@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АмортизацияОСМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АмортизацияОСМеждународный'], function () 
+{
+	Ext.define('Документы.АмортизацияОСМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:361px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Амортизация основных средств (международный)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -74,6 +80,7 @@
 			style: 'position:absolute;left:90px;top:309px;width:546px;height:19px;',
 		},
 		{
+			id: 'ОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:628px;height:180px;',
 			height: 180,width: 628,
@@ -110,7 +117,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АмортизацияОСМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АмортизацияОСМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -126,6 +133,23 @@
 						name:'КоличествоВыпущеннойПродукции',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АмортизацияОСМеждународный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АмортизацияОСМеждународный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -165,7 +189,8 @@
 			height: 19,
 			style: 'position:absolute;left:435px;top:33px;width:137px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -232,4 +257,5 @@
 			]
 		},
 	]
+	});
 });

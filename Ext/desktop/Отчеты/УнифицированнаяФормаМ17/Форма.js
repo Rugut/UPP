@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.УнифицированнаяФормаМ17.Форма',
+﻿Ext.require(['Данные.Отчеты.УнифицированнаяФормаМ17'], function () 
+{
+	Ext.define('Отчеты.УнифицированнаяФормаМ17.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:393px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма М-17',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -127,4 +130,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОстаткиДенежныхСредствДиаграмма.ФормаДенежныеСредства',
+﻿Ext.require(['Данные.Отчеты.ОстаткиДенежныхСредствДиаграмма'], function () 
+{
+	Ext.define('Отчеты.ОстаткиДенежныхСредствДиаграмма.ФормаДенежныеСредства',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -182,4 +185,5 @@
 			]
 		},
 	]
+	});
 });

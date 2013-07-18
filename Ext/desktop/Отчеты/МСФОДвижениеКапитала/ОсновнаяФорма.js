@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОДвижениеКапитала.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.МСФОДвижениеКапитала'], function () 
+{
+	Ext.define('Отчеты.МСФОДвижениеКапитала.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:269px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет об изменениях в капитале по МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

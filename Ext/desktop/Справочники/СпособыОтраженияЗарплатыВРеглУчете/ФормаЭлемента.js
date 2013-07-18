@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СпособыОтраженияЗарплатыВРеглУчете'], function () 
+{
+	Ext.define('Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:585px;height:408px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Способы отражения зарплаты в регламентированном учете',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -544,4 +547,5 @@
 			]
 		},
 	]
+	});
 });

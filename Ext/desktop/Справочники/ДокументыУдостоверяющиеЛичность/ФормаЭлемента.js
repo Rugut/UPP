@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДокументыУдостоверяющиеЛичность.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДокументыУдостоверяющиеЛичность'], function () 
+{
+	Ext.define('Справочники.ДокументыУдостоверяющиеЛичность.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:322px;height:133px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Документы, удостоверяющие личность',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -92,4 +95,5 @@
 			]
 		},
 	]
+	});
 });

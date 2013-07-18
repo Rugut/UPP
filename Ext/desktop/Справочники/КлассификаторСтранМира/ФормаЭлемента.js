@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлассификаторСтранМира.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлассификаторСтранМира'], function () 
+{
+	Ext.define('Справочники.КлассификаторСтранМира.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:512px;height:108px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Классификатор стран мира',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -105,4 +108,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

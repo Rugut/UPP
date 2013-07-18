@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбора',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:287px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор из списка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,7 +24,7 @@
 			[
 				{
 					text:'Код',
-					width:'1300',
+					width:'130',
 					dataIndex:'Код',
 					flex:1,
 				},
@@ -58,9 +61,9 @@
 					{
 						var грид = Ext.getCmp('СписокКодов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -85,4 +88,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

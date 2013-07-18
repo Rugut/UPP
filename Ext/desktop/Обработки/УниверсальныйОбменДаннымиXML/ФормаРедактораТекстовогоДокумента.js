@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйОбменДаннымиXML.ФормаРедактораТекстовогоДокумента',
+﻿Ext.require(['Данные.Обработки.УниверсальныйОбменДаннымиXML'], function () 
+{
+	Ext.define('Обработки.УниверсальныйОбменДаннымиXML.ФормаРедактораТекстовогоДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:638px;height:575px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Модуль отладки обработчиков и алгоритмов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,4 +52,5 @@
 			]
 		},
 	]
+	});
 });

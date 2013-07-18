@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций'], function () 
+{
+	Ext.define('Документы.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:576px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод сведений о плановых начислениях сотрудников организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -113,6 +119,7 @@
 			]
 		},
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:251px;width:585px;height:267px;',
 			height: 267,width: 585,
@@ -162,7 +169,7 @@
 				},
 				{
 					text:'Дата "по"',
-					width:'66',
+					width:'65',
 					dataIndex:'ДатаДействияКонец',
 					flex:1,
 				},
@@ -359,7 +366,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -481,6 +488,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -522,6 +546,7 @@
 			style: 'position:absolute;left:373px;top:56px;width:220px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:125px;width:585px;height:80px;',
 			height: 80,width: 585,
@@ -546,7 +571,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -556,6 +581,23 @@
 						name:'Сотрудник',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСведенийОПлановыхНачисленияхРаботниковОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -568,7 +610,8 @@
 			title: 'Сотрудники',
 			style: 'position:absolute;left:8px;top:85px;width:585px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -591,4 +634,5 @@
 			]
 		},
 	]
+	});
 });

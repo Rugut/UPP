@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказПоставщику.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаказПоставщику'], function () 
+{
+	Ext.define('Документы.ЗаказПоставщику.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:821px;height:490px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документ Заказ поставщику',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -91,6 +97,7 @@
 			]
 		},
 		{
+			id: 'Оборудование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
 			height: 187,width: 793,
@@ -187,7 +194,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -234,6 +241,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оборудование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -248,6 +272,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
 			height: 187,width: 793,
@@ -297,7 +322,7 @@
 				},
 				{
 					text:'Мест',
-					width:'61',
+					width:'60',
 					dataIndex:'КоличествоМест',
 					flex:1,
 				},
@@ -392,7 +417,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -463,6 +488,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -496,6 +538,7 @@
 			style: 'position:absolute;left:6px;top:24px;width:103px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
 			height: 187,width: 793,
@@ -527,7 +570,7 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'125',
+					width:'124',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -586,7 +629,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -630,6 +673,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -656,6 +716,7 @@
 			style: 'position:absolute;left:394px;top:64px;width:128px;height:19px;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
 			height: 187,width: 793,
@@ -687,7 +748,7 @@
 				},
 				{
 					text:'Цена',
-					width:'57',
+					width:'56',
 					dataIndex:'Цена',
 					flex:1,
 				},
@@ -705,7 +766,7 @@
 				},
 				{
 					text:'Сумма НДС',
-					width:'76',
+					width:'75',
 					dataIndex:'СуммаНДС',
 					flex:1,
 				},
@@ -722,7 +783,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -753,6 +814,23 @@
 						name:'Всего',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -800,6 +878,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:793px;height:187px;',
 			height: 187,width: 793,
@@ -866,7 +945,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказПоставщику/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -897,6 +976,23 @@
 						name:'Заказ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказПоставщику.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказПоставщику.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1247,7 +1343,8 @@
 			title: '',
 			style: 'position:absolute;left:0px;top:98px;width:218px;height:32px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1259,4 +1356,5 @@
 			]
 		},
 	]
+	});
 });

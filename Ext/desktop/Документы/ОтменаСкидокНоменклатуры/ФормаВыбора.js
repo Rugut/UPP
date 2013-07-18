@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ОтменаСкидокНоменклатуры'], function () 
+{
+	Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:626px;height:314px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отмена скидок номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Дата',
-					width:'1400',
+					width:'140',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -76,9 +79,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтменаСкидокНоменклатуры.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтменаСкидокНоменклатуры.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -115,4 +118,5 @@
 			]
 		},
 	]
+	});
 });

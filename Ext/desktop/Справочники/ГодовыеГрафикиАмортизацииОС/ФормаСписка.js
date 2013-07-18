@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГодовыеГрафикиАмортизацииОС.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ГодовыеГрафикиАмортизацииОС'], function () 
+{
+	Ext.define('Справочники.ГодовыеГрафикиАмортизацииОС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Годовые графики амортизации ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -185,9 +188,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГодовыеГрафикиАмортизацииОС.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГодовыеГрафикиАмортизацииОС.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -207,4 +210,5 @@
 			]
 		},
 	]
+	});
 });

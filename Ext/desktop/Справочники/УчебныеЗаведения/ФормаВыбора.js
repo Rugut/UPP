@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.УчебныеЗаведения.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.УчебныеЗаведения'], function () 
+{
+	Ext.define('Справочники.УчебныеЗаведения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:425px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Учебные заведения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3200',
+					width:'320',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УчебныеЗаведения.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УчебныеЗаведения.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -190,4 +193,5 @@
 			]
 		},
 	]
+	});
 });

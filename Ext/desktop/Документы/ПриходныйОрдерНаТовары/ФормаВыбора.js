@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПриходныйОрдерНаТовары.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПриходныйОрдерНаТовары'], function () 
+{
+	Ext.define('Документы.ПриходныйОрдерНаТовары.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:620px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Приходные ордера на товары',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:604px;height:380px;',
 			height: 380,width: 604,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Контрагент',
-					width:'239',
+					width:'238',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
@@ -70,7 +77,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриходныйОрдерНаТовары/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриходныйОрдерНаТовары/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,8 +106,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриходныйОрдерНаТовары.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриходныйОрдерНаТовары.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -135,4 +160,5 @@
 			]
 		},
 	]
+	});
 });

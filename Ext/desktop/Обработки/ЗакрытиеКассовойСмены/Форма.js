@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗакрытиеКассовойСмены.Форма',
+﻿Ext.require(['Данные.Обработки.ЗакрытиеКассовойСмены'], function () 
+{
+	Ext.define('Обработки.ЗакрытиеКассовойСмены.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:314px;height:108px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Закрытие кассовой смены',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -88,4 +91,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

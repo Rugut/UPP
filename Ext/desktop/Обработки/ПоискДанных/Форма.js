@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоискДанных.Форма',
+﻿Ext.require(['Данные.Обработки.ПоискДанных'], function () 
+{
+	Ext.define('Обработки.ПоискДанных.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:271px;height:492px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поиск данных',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -153,4 +156,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

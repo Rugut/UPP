@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетПрибыль.ФормаОтчета2004Кв2',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетПрибыль'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетПрибыль.ФормаОтчета2004Кв2',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:675px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Прибыль',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -860,4 +863,5 @@
 			]
 		},
 	]
+	});
 });

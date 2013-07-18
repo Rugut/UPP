@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСчетаНалоговый.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСчетаНалоговый'], function () 
+{
+	Ext.define('Отчеты.АнализСчетаНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:738px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -162,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

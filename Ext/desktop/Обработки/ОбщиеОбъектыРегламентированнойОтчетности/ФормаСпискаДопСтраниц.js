@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаСпискаДопСтраниц',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаСпискаДопСтраниц',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:367px;height:262px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выберите страницу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаДопСтраниц',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:351px;height:197px;',
 			height: 197,width: 351,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Представления страниц',
-					width:'338',
+					width:'337',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +52,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаДопСтраниц');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаСпискаДопСтраницСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаСпискаДопСтраницСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -91,4 +116,5 @@
 			]
 		},
 	]
+	});
 });

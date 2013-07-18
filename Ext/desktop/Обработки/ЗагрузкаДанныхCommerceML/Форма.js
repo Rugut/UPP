@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхCommerceML.Форма',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхCommerceML'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхCommerceML.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:491px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Загрузка данных в формате CommerceML',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:210px;width:648px;height:250px;',
@@ -21,6 +27,7 @@
 					items:
 					[
 		{
+			id: 'ТоварыКаталог',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:648px;height:226px;',
 			height: 226,width: 648,
@@ -28,7 +35,7 @@
 			[
 				{
 					text:'Номенклатура',
-					width:'291',
+					width:'290',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -40,13 +47,13 @@
 				},
 				{
 					text:'Штрих код',
-					width:'106',
+					width:'105',
 					dataIndex:'ШтрихКод',
 					flex:1,
 				},
 				{
 					text:'Единица',
-					width:'60',
+					width:'59',
 					dataIndex:'БазоваяЕдиницаИзмерения',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				},
 				{
 					text:'Идентификатор документа',
-					width:'105',
+					width:'104',
 					dataIndex:'ИдДокумента',
 					flex:1,
 				},
@@ -69,7 +76,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -92,6 +99,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТоварыКаталог');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -100,6 +124,7 @@
 					items:
 					[
 		{
+			id: 'ТоварыПрайс',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:648px;height:226px;',
 			height: 226,width: 648,
@@ -107,7 +132,7 @@
 			[
 				{
 					text:'Номенклатура',
-					width:'189',
+					width:'188',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -125,7 +150,7 @@
 				},
 				{
 					text:'Единица',
-					width:'54',
+					width:'53',
 					dataIndex:'БазоваяЕдиницаИзмерения',
 					flex:1,
 				},
@@ -137,37 +162,37 @@
 				},
 				{
 					text:'Тип цен',
-					width:'59',
+					width:'58',
 					dataIndex:'ТипЦены',
 					flex:1,
 				},
 				{
 					text:'Цена',
-					width:'78',
+					width:'77',
 					dataIndex:'Цена',
 					flex:1,
 				},
 				{
 					text:'Валюта',
-					width:'63',
+					width:'62',
 					dataIndex:'Валюта',
 					flex:1,
 				},
 				{
 					text:'Единица',
-					width:'77',
+					width:'76',
 					dataIndex:'ЕдиницаИзмерения',
 					flex:1,
 				},
 				{
 					text:'Коэффициент',
-					width:'45',
+					width:'44',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
 				{
 					text:'Идентификатор документа',
-					width:'175',
+					width:'174',
 					dataIndex:'ИдДокумента',
 					flex:1,
 				},
@@ -178,7 +203,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -216,6 +241,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТоварыПрайс');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -224,6 +266,7 @@
 					items:
 					[
 		{
+			id: 'ТоварыДокумент',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:648px;height:226px;',
 			height: 226,width: 648,
@@ -237,13 +280,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'114',
+					width:'113',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Штрихкод',
-					width:'117',
+					width:'116',
 					dataIndex:'ШтрихКод',
 					flex:1,
 				},
@@ -255,7 +298,7 @@
 				},
 				{
 					text:'Ид',
-					width:'105',
+					width:'104',
 					dataIndex:'Ид',
 					flex:1,
 				},
@@ -267,19 +310,19 @@
 				},
 				{
 					text:'Единица',
-					width:'64',
+					width:'63',
 					dataIndex:'ЕдиницаИзмерения',
 					flex:1,
 				},
 				{
 					text:'Коэффициент',
-					width:'43',
+					width:'42',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
 				{
 					text:'Цена',
-					width:'60',
+					width:'59',
 					dataIndex:'Цена',
 					flex:1,
 				},
@@ -291,7 +334,7 @@
 				},
 				{
 					text:'Идентификатор документа',
-					width:'119',
+					width:'118',
 					dataIndex:'ИдДокумента',
 					flex:1,
 				},
@@ -344,7 +387,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -403,6 +446,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТоварыДокумент');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -411,6 +471,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыОснования',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:29px;width:636px;height:215px;',
 			height: 215,width: 636,
@@ -441,7 +502,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -455,12 +516,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыОснования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
 		{
+			id: 'ЭлДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:105px;width:648px;height:96px;',
 			height: 96,width: 648,
@@ -486,7 +565,7 @@
 				},
 				{
 					text:'Номер',
-					width:'73',
+					width:'72',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -510,13 +589,13 @@
 				},
 				{
 					text:'Ид',
-					width:'101',
+					width:'100',
 					dataIndex:'Ид',
 					flex:1,
 				},
 				{
 					text:'Уникальный идентификатор',
-					width:'205',
+					width:'204',
 					dataIndex:'УникальныйИдентификаторДокумента',
 					flex:1,
 				},
@@ -534,7 +613,7 @@
 				},
 				{
 					text:'Банк',
-					width:'154',
+					width:'153',
 					dataIndex:'Банк',
 					flex:1,
 				},
@@ -582,7 +661,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'157',
+					width:'156',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -659,7 +738,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -756,6 +835,23 @@
 						name:'РольКонтрагента',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭлДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -903,7 +999,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -926,4 +1023,5 @@
 			]
 		},
 	]
+	});
 });

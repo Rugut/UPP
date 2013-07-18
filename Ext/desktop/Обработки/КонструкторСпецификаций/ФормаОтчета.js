@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторСпецификаций.ФормаОтчета',
+﻿Ext.require(['Данные.Обработки.КонструкторСпецификаций'], function () 
+{
+	Ext.define('Обработки.КонструкторСпецификаций.ФормаОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:418px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -151,4 +154,5 @@
 			]
 		},
 	]
+	});
 });

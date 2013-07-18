@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеОсновныхСредствМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПоступлениеОсновныхСредствМеждународный'], function () 
+{
+	Ext.define('Документы.ПоступлениеОсновныхСредствМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:385px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -435,9 +438,9 @@
 					{
 						var грид = Ext.getCmp('ОсновныеСредства');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПоступлениеОсновныхСредствМеждународный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПоступлениеОсновныхСредствМеждународный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -507,4 +510,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

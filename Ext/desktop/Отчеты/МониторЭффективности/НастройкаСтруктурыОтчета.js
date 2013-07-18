@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МониторЭффективности.НастройкаСтруктурыОтчета',
+﻿Ext.require(['Данные.Отчеты.МониторЭффективности'], function () 
+{
+	Ext.define('Отчеты.МониторЭффективности.НастройкаСтруктурыОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:801px;height:321px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Настройка структуры монитора',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ПоказателиКопия',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:785px;height:222px;',
 			height: 222,width: 785,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Показатель',
-					width:'156',
+					width:'155',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -94,7 +101,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,6 +142,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиКопия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МониторЭффективности.НастройкаСтруктурыОтчетаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МониторЭффективности.НастройкаСтруктурыОтчетаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -148,7 +172,8 @@
 			text: 'Описание:',
 			style: 'position:absolute;left:8px;top:260px;width:58px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -222,4 +247,5 @@
 			]
 		},
 	]
+	});
 });

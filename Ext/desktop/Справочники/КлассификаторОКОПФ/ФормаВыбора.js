@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлассификаторОКОПФ.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.КлассификаторОКОПФ'], function () 
+{
+	Ext.define('Справочники.КлассификаторОКОПФ.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:536px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Классификатор ОКОПФ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Наименование полное',
-					width:'2200',
+					width:'220',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
 				{
 					text:'Быстрый выбор',
-					width:'1200',
+					width:'120',
 					dataIndex:'БыстрыйВыбор',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КлассификаторОКОПФ.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КлассификаторОКОПФ.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -116,4 +119,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаДоговоровНаДобровольноеСтрахование.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаДоговоровНаДобровольноеСтрахование'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаДоговоровНаДобровольноеСтрахование.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета договоров на добровольное страхование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -114,4 +117,5 @@
 			]
 		},
 	]
+	});
 });

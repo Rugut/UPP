@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КатегорииОбъектов.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.КатегорииОбъектов'], function () 
+{
+	Ext.define('Справочники.КатегорииОбъектов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:464px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Категории объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Назначение категории',
-					width:'1200',
+					width:'120',
 					dataIndex:'НазначениеКатегории',
 					flex:1,
 				},
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КатегорииОбъектов.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КатегорииОбъектов.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -103,4 +106,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЭкспортСоответствияСчетовБУиМСФО.Форма',
+﻿Ext.require(['Данные.Обработки.ЭкспортСоответствияСчетовБУиМСФО'], function () 
+{
+	Ext.define('Обработки.ЭкспортСоответствияСчетовБУиМСФО.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:421px;height:81px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Экспорт правил соответствия счетов БУ и МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -71,4 +74,5 @@
 			]
 		},
 	]
+	});
 });

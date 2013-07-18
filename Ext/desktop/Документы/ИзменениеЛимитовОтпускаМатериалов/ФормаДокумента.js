@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеЛимитовОтпускаМатериалов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеЛимитовОтпускаМатериалов'], function () 
+{
+	Ext.define('Документы.ИзменениеЛимитовОтпускаМатериалов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:669px;height:402px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение лимитов отпуска материалов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -144,6 +150,7 @@
 			]
 		},
 		{
+			id: 'Лимиты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:652px;height:172px;',
 			height: 172,width: 652,
@@ -204,7 +211,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеЛимитовОтпускаМатериалов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -232,6 +239,23 @@
 						name:'КонтролироватьЛимит',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Лимиты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеЛимитовОтпускаМатериалов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеЛимитовОтпускаМатериалов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -317,8 +341,10 @@
 			height: 19,
 			style: 'position:absolute;left:423px;top:57px;width:237px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

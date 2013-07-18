@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ИзменениеНомеровСообщений',
+﻿Ext.require(['Данные.Обработки.РегистрацияИзмененийДляОбмена'], function () 
+{
+	Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ИзменениеНомеровСообщений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:278px;height:87px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Изменение номеров сообщений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -65,4 +68,5 @@
 			]
 		},
 	]
+	});
 });

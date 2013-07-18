@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ИзменениеНастроекУчета.НастройкаПараметровУчета',
+﻿Ext.require(['Данные.Обработки.ИзменениеНастроекУчета'], function () 
+{
+	Ext.define('Обработки.ИзменениеНастроекУчета.НастройкаПараметровУчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:765px;height:468px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка параметров учета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -87,9 +90,9 @@
 					{
 						var грид = Ext.getCmp('СписокРазделов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИзменениеНастроекУчета.НастройкаПараметровУчетаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.НастройкаПараметровУчетаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1111,4 +1114,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

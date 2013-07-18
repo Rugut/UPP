@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрафикЗаказов.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.ГрафикЗаказов'], function () 
+{
+	Ext.define('Обработки.ГрафикЗаказов.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:840px;height:412px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:158px;width:827px;height:71px;',
 			height: 71,width: 827,
@@ -29,25 +36,25 @@
 				},
 				{
 					text:'Тип сравнения',
-					width:'84',
+					width:'83',
 					dataIndex:'ВидСравнения',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'161',
+					width:'160',
 					dataIndex:'Значение',
 					flex:1,
 				},
 				{
 					text:'С',
-					width:'161',
+					width:'160',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'161',
+					width:'160',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,6 +88,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -93,6 +117,7 @@
 			style: 'position:absolute;left:8px;top:5px;width:207px;height:15px;',
 		},
 		{
+			id: 'ПоляЗаказаНаПроизводство',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:302px;width:192px;height:79px;',
 			height: 79,width: 192,
@@ -100,7 +125,7 @@
 			[
 				{
 					text:'Поле',
-					width:'178',
+					width:'177',
 					dataIndex:'Поле',
 					flex:1,
 				},
@@ -111,13 +136,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоляЗаказаНаПроизводство');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -127,6 +169,7 @@
 			style: 'position:absolute;left:8px;top:259px;width:151px;height:15px;',
 		},
 		{
+			id: 'ПоляЗаказаПоставщику',
 			xtype: 'grid',
 			style: 'position:absolute;left:221px;top:302px;width:192px;height:79px;',
 			height: 79,width: 192,
@@ -145,13 +188,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоляЗаказаПоставщику');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -161,6 +221,7 @@
 			style: 'position:absolute;left:221px;top:259px;width:142px;height:15px;',
 		},
 		{
+			id: 'ПоляЗаказаПокупателя',
 			xtype: 'grid',
 			style: 'position:absolute;left:432px;top:302px;width:192px;height:79px;',
 			height: 79,width: 192,
@@ -179,13 +240,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоляЗаказаПокупателя');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -280,6 +358,7 @@
 			]
 		},
 		{
+			id: 'ПоляВнутренниеЗаказы',
 			xtype: 'grid',
 			style: 'position:absolute;left:643px;top:302px;width:192px;height:79px;',
 			height: 79,width: 192,
@@ -287,7 +366,7 @@
 			[
 				{
 					text:'Поле',
-					width:'185',
+					width:'184',
 					dataIndex:'Поле',
 					flex:1,
 				},
@@ -298,13 +377,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоляВнутренниеЗаказы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -336,7 +432,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -348,4 +445,5 @@
 			]
 		},
 	]
+	});
 });

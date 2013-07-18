@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ИнформационныеКарты.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ИнформационныеКарты'], function () 
+{
+	Ext.define('Справочники.ИнформационныеКарты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Информационные карты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОПрибылиИУбытки.ФормаДопПараметров',
+﻿Ext.require(['Данные.Отчеты.МСФОПрибылиИУбытки'], function () 
+{
+	Ext.define('Отчеты.МСФОПрибылиИУбытки.ФормаДопПараметров',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:334px;height:140px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Дополнительные параметры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

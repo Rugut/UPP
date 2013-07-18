@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГрафикиРаботы.ФормаЗаполнить',
+﻿Ext.require(['Данные.Справочники.ГрафикиРаботы'], function () 
+{
+	Ext.define('Справочники.ГрафикиРаботы.ФормаЗаполнить',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:561px;height:411px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Помощник заполнения графика',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -322,9 +325,9 @@
 					{
 						var грид = Ext.getCmp('РасписаниеСводно');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -543,9 +546,9 @@
 					{
 						var грид = Ext.getCmp('РасписаниеПоЧасам');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -628,9 +631,9 @@
 					{
 						var грид = Ext.getCmp('РасписаниеСменный');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -757,4 +760,5 @@
 			]
 		},
 	]
+	});
 });

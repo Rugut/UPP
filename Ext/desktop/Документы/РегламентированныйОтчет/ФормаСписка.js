@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РегламентированныйОтчет.ФормаСписка',
+﻿Ext.require(['Данные.Документы.РегламентированныйОтчет'], function () 
+{
+	Ext.define('Документы.РегламентированныйОтчет.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:688px;height:425px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Регламентированные отчеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:116px;width:672px;height:277px;',
 			height: 277,width: 672,
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,6 +96,23 @@
 						name:'КодИМНС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегламентированныйОтчет.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегламентированныйОтчет.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -227,7 +251,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -263,4 +288,5 @@
 			]
 		},
 	]
+	});
 });

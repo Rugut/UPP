@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ИндивидуальныеГрафикиАмортизации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ИндивидуальныеГрафикиАмортизации'], function () 
+{
+	Ext.define('Справочники.ИндивидуальныеГрафикиАмортизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:405px;height:377px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Индивидуальные графики амортизации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -72,13 +75,13 @@
 				},
 				{
 					text:'Месяц',
-					width:'1200',
+					width:'120',
 					dataIndex:'Месяц',
 					flex:1,
 				},
 				{
 					text:'Коэффициент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
@@ -113,9 +116,9 @@
 					{
 						var грид = Ext.getCmp('График');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИндивидуальныеГрафикиАмортизации.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИндивидуальныеГрафикиАмортизации.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -170,4 +173,5 @@
 			]
 		},
 	]
+	});
 });

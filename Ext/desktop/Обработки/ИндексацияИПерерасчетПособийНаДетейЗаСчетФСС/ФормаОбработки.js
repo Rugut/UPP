@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработки',
+﻿Ext.require(['Данные.Обработки.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС'], function () 
+{
+	Ext.define('Обработки.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:646px;height:418px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Индексация и перерасчет государственных пособий гражданам, имеющим детей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:630px;height:377px;',
@@ -21,6 +27,7 @@
 					items:
 					[
 		{
+			id: 'Индексации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:124px;width:213px;height:135px;',
 			height: 135,width: 213,
@@ -45,7 +52,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -56,8 +63,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Индексации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'РазмерыПособий',
 			xtype: 'grid',
 			style: 'position:absolute;left:220px;top:124px;width:410px;height:135px;',
 			height: 135,width: 410,
@@ -65,13 +90,13 @@
 			[
 				{
 					text:'Вид пособия',
-					width:'312',
+					width:'311',
 					dataIndex:'ВидПособия',
 					flex:1,
 				},
 				{
 					text:'Размер',
-					width:'75',
+					width:'74',
 					dataIndex:'Размер',
 					flex:1,
 				},
@@ -82,7 +107,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -92,6 +117,23 @@
 						name:'Размер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РазмерыПособий');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -159,6 +201,7 @@
 					items:
 					[
 		{
+			id: 'ПолучателиПособий',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:43px;width:630px;height:117px;',
 			height: 117,width: 630,
@@ -219,7 +262,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -247,6 +290,23 @@
 						name:'СуммаКДоначислению',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПолучателиПособий');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -277,6 +337,7 @@
 					items:
 					[
 		{
+			id: 'Исправления',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:76px;',
 			height: 76,width: 630,
@@ -307,7 +368,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -320,6 +381,23 @@
 						name:'Организация',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Исправления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -345,7 +423,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -367,4 +446,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПодразделенияОрганизаций.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ПодразделенияОрганизаций'], function () 
+{
+	Ext.define('Справочники.ПодразделенияОрганизаций.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:512px;height:380px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Подразделения организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:496px;height:315px;',
 			height: 315,width: 496,
@@ -48,11 +55,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -71,6 +79,23 @@
 						name:'Порядок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -103,8 +128,10 @@
 			height: 19,
 			style: 'position:absolute;left:233px;top:33px;width:271px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

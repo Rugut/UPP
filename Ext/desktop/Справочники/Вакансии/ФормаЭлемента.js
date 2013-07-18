@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Вакансии.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Вакансии'], function () 
+{
+	Ext.define('Справочники.Вакансии.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:811px;height:408px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Вакансия',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -326,4 +329,5 @@
 			]
 		},
 	]
+	});
 });

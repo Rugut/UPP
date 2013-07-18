@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РегистрацияВИФНС.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.РегистрацияВИФНС'], function () 
+{
+	Ext.define('Справочники.РегистрацияВИФНС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:480px;height:382px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистрация в ИФНС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -294,4 +297,5 @@
 			]
 		},
 	]
+	});
 });

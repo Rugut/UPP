@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетУбытковПрошлыхЛет.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетУбытковПрошлыхЛет'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетУбытковПрошлыхЛет.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета убытков прошлых лет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -114,4 +117,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкаПравДоступа.ПодборГруппПользователей',
+﻿Ext.require(['Данные.Обработки.НастройкаПравДоступа'], function () 
+{
+	Ext.define('Обработки.НастройкаПравДоступа.ПодборГруппПользователей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:354px;height:330px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Подбор групп пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ГруппыПользователей',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:338px;height:267px;',
 			height: 267,width: 338,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'229',
+					width:'228',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +52,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГруппыПользователей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.ПодборГруппПользователейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.ПодборГруппПользователейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -76,4 +101,5 @@
 			]
 		},
 	]
+	});
 });

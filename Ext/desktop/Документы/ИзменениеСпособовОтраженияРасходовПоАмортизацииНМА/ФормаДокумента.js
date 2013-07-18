@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА'], function () 
+{
+	Ext.define('Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:392px;height:459px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение способа отражения расходов по амортизации НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:434px;width:392px;height:25px;',
@@ -116,6 +122,7 @@
 			style: 'position:absolute;left:98px;top:81px;width:286px;height:19px;',
 		},
 		{
+			id: 'НМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:218px;width:376px;height:160px;',
 			height: 160,width: 376,
@@ -135,7 +142,7 @@
 				},
 				{
 					text:'Нематериальный актив',
-					width:'267',
+					width:'266',
 					dataIndex:'НематериальныйАктив',
 					flex:1,
 				},
@@ -146,7 +153,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -159,6 +166,23 @@
 						name:'НематериальныйАктив',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеСпособовОтраженияРасходовПоАмортизацииНМА.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -221,7 +245,8 @@
 			text: 'Способ (налог. учет):',
 			style: 'position:absolute;left:8px;top:152px;width:109px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -265,4 +290,5 @@
 			]
 		},
 	]
+	});
 });

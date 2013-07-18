@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиРаботаНаСевере',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиРаботаНаСевере',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:304px;height:165px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сведения о стаже работы на севере',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -142,4 +145,5 @@
 			]
 		},
 	]
+	});
 });

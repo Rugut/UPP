@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КарточкаСчетаМеждународный.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.КарточкаСчетаМеждународный'], function () 
+{
+	Ext.define('Отчеты.КарточкаСчетаМеждународный.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:628px;height:445px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет  Карточка счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -148,4 +151,5 @@
 			]
 		},
 	]
+	});
 });

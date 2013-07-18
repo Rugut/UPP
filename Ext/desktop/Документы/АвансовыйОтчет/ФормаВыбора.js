@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АвансовыйОтчет.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.АвансовыйОтчет'], function () 
+{
+	Ext.define('Документы.АвансовыйОтчет.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Авансовые отчеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Вид поступления',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидПоступления',
 					flex:1,
 				},
 				{
 					text:'Подотчетник',
-					width:'1200',
+					width:'120',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -81,7 +84,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -148,9 +151,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АвансовыйОтчет.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АвансовыйОтчет.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -194,4 +197,5 @@
 			]
 		},
 	]
+	});
 });

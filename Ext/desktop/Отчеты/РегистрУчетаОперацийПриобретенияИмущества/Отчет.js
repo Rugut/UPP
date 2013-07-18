@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаОперацийПриобретенияИмущества.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаОперацийПриобретенияИмущества'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаОперацийПриобретенияИмущества.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:605px;height:433px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета операций приобретения имущества, работ, услуг, прав',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -120,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

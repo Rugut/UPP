@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаСкидокНоменклатуры'], function () 
+{
+	Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:638px;height:470px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка скидок номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -206,6 +212,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
 			height: 130,width: 608,
@@ -231,31 +238,31 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'213',
+					width:'212',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'123',
+					width:'122',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Качество',
-					width:'130',
+					width:'129',
 					dataIndex:'Качество',
 					flex:1,
 				},
 				{
 					text:'%',
-					width:'51',
+					width:'50',
 					dataIndex:'ПроцентСкидкиНаценки',
 					flex:1,
 				},
 				{
 					text:'Огр.',
-					width:'51',
+					width:'50',
 					dataIndex:'ОграничениеСкидкиНаценки',
 					flex:1,
 				},
@@ -266,7 +273,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -295,6 +302,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -303,6 +327,7 @@
 					items:
 					[
 		{
+			id: 'ЦеновыеГруппы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
 			height: 130,width: 608,
@@ -316,7 +341,7 @@
 				},
 				{
 					text:'Ценовая группа',
-					width:'211',
+					width:'210',
 					dataIndex:'ЦеноваяГруппа',
 					flex:1,
 				},
@@ -328,7 +353,7 @@
 				},
 				{
 					text:'%',
-					width:'38',
+					width:'37',
 					dataIndex:'ПроцентСкидкиНаценки',
 					flex:1,
 				},
@@ -345,7 +370,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -365,6 +390,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦеновыеГруппы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -373,6 +415,7 @@
 					items:
 					[
 		{
+			id: 'Бонусы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
 			height: 130,width: 608,
@@ -398,19 +441,19 @@
 				},
 				{
 					text:'Качество',
-					width:'128',
+					width:'127',
 					dataIndex:'Качество',
 					flex:1,
 				},
 				{
 					text:'Кол-во',
-					width:'96',
+					width:'95',
 					dataIndex:'Количество',
 					flex:1,
 				},
 				{
 					text:'Ед.',
-					width:'96',
+					width:'95',
 					dataIndex:'ЕдиницаИзмерения',
 					flex:1,
 				},
@@ -434,7 +477,7 @@
 				},
 				{
 					text:'Ед.',
-					width:'89',
+					width:'88',
 					dataIndex:'ЕдиницаИзмеренияСпецПредложения',
 					flex:1,
 				},
@@ -445,7 +488,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -480,6 +523,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Бонусы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -494,6 +554,7 @@
 			style: 'position:absolute;left:323px;top:135px;width:86px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ПолучателиСкидки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:130px;',
 			height: 130,width: 608,
@@ -513,7 +574,7 @@
 				},
 				{
 					text:'Получатель',
-					width:'208',
+					width:'207',
 					dataIndex:'Получатель',
 					flex:1,
 				},
@@ -524,7 +585,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -537,6 +598,23 @@
 						name:'Получатель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПолучателиСкидки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -568,6 +646,7 @@
 			style: 'position:absolute;left:531px;top:135px;width:83px;height:19px;',
 		},
 		{
+			id: 'ВремяПоДнямНедели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:608px;height:106px;',
 			height: 106,width: 608,
@@ -604,7 +683,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -620,6 +699,23 @@
 						name:'ВремяОкончания',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВремяПоДнямНедели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСкидокНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -712,7 +808,8 @@
 			height: 19,
 			style: 'position:absolute;left:72px;top:182px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -724,4 +821,5 @@
 			]
 		},
 	]
+	});
 });

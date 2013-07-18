@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПринятиеКУчетуОС.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПринятиеКУчетуОС'], function () 
+{
+	Ext.define('Документы.ПринятиеКУчетуОС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Принятие к учету ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,37 +60,37 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Объект строительства',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Списывать при принятии к учету',
-					width:'1200',
+					width:'120',
 					dataIndex:'СписыватьПриПринятииКУчету',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -157,9 +160,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПринятиеКУчетуОС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПринятиеКУчетуОС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -203,4 +206,5 @@
 			]
 		},
 	]
+	});
 });

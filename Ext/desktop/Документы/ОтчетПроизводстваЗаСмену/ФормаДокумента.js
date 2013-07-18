@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетПроизводстваЗаСмену.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтчетПроизводстваЗаСмену'], function () 
+{
+	Ext.define('Документы.ОтчетПроизводстваЗаСмену.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:421px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отчет производства за смену',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
@@ -171,6 +177,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -196,13 +203,13 @@
 				},
 				{
 					text:'Продукция / услуга',
-					width:'144',
+					width:'143',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'107',
+					width:'106',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -220,7 +227,7 @@
 				},
 				{
 					text:'Направление выпуска',
-					width:'119',
+					width:'118',
 					dataIndex:'НаправлениеВыпуска',
 					flex:1,
 				},
@@ -357,7 +364,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -449,6 +456,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -457,6 +481,7 @@
 					items:
 					[
 		{
+			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:147px;',
 			height: 147,width: 622,
@@ -679,7 +704,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -789,6 +814,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Получатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -814,6 +856,7 @@
 			style: 'position:absolute;left:270px;top:6px;width:80px;height:19px;',
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:49px;width:622px;height:133px;',
 			height: 133,width: 622,
@@ -952,7 +995,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1020,6 +1063,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1033,6 +1093,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеМатериалов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -1100,7 +1161,7 @@
 				},
 				{
 					text:'Продукция',
-					width:'82',
+					width:'81',
 					dataIndex:'Продукция',
 					flex:1,
 				},
@@ -1183,7 +1244,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1257,6 +1318,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеМатериалов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1265,6 +1343,7 @@
 					items:
 					[
 		{
+			id: 'ТехнологическиеОперации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -1350,43 +1429,43 @@
 				},
 				{
 					text:'Аналитика',
-					width:'99',
+					width:'98',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'99',
+					width:'98',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа (доп)',
-					width:'99',
+					width:'98',
 					dataIndex:'НоменклатурнаяГруппаДоп',
 					flex:1,
 				},
 				{
 					text:'Продукция',
-					width:'99',
+					width:'98',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'99',
+					width:'98',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Серия продукции',
-					width:'99',
+					width:'98',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
 				{
 					text:'Объект строительства',
-					width:'99',
+					width:'98',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
@@ -1433,7 +1512,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1516,6 +1595,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТехнологическиеОперации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1524,6 +1620,7 @@
 					items:
 					[
 		{
+			id: 'Исполнители',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:67px;width:622px;height:115px;',
 			height: 115,width: 622,
@@ -1543,7 +1640,7 @@
 				},
 				{
 					text:'Работник',
-					width:'149',
+					width:'148',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -1572,7 +1669,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1594,6 +1691,23 @@
 						name:'СуммаКНачислениюРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Исполнители');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1618,6 +1732,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеТехнологическихОпераций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:150px;',
 			height: 150,width: 622,
@@ -1726,7 +1841,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1779,6 +1894,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеТехнологическихОпераций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1787,6 +1919,7 @@
 					items:
 					[
 		{
+			id: 'ПрочиеЗатраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -1859,7 +1992,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1894,6 +2027,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрочиеЗатраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1902,6 +2052,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеПрочихЗатрат',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -2022,7 +2173,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2081,6 +2232,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеПрочихЗатрат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2089,6 +2257,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратныеОтходы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -2281,7 +2450,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2376,6 +2545,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратныеОтходы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -2401,6 +2587,7 @@
 					items:
 					[
 		{
+			id: 'РаспределениеВозвратныхОтходов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:152px;',
 			height: 152,width: 622,
@@ -2539,7 +2726,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПроизводстваЗаСмену/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2607,6 +2794,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеВозвратныхОтходов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2664,7 +2868,8 @@
 			boxLabel: 'Разрешить превышение лимита',
 			style: 'position:absolute;left:424px;top:105px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -2715,4 +2920,5 @@
 			]
 		},
 	]
+	});
 });

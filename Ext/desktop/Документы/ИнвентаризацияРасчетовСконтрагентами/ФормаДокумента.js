@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияРасчетовСконтрагентами.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияРасчетовСконтрагентами'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияРасчетовСконтрагентами.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:728px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Инвентаризация расчетов с контрагентами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -101,6 +107,7 @@
 			]
 		},
 		{
+			id: 'КонтрагентыДт',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:699px;height:224px;',
 			height: 224,width: 699,
@@ -155,7 +162,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -180,6 +187,23 @@
 						name:'ВидЗадолженности',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтрагентыДт');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -237,6 +261,7 @@
 			]
 		},
 		{
+			id: 'КонтрагентыКт',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:699px;height:224px;',
 			height: 224,width: 699,
@@ -250,7 +275,7 @@
 				},
 				{
 					text:'Счет расчетов',
-					width:'78',
+					width:'77',
 					dataIndex:'СчетРасчетов',
 					flex:1,
 				},
@@ -291,7 +316,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -317,6 +342,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтрагентыКт');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -336,6 +378,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:699px;height:16px;',
 		},
 		{
+			id: 'СчетаРасчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:699px;height:229px;',
 			height: 229,width: 699,
@@ -343,13 +386,13 @@
 			[
 				{
 					text:'Счет',
-					width:'124',
+					width:'123',
 					dataIndex:'Счет',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'360',
+					width:'359',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -360,7 +403,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -370,6 +413,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СчетаРасчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -429,6 +489,7 @@
 			style: 'position:absolute;left:6px;top:106px;width:699px;height:16px;',
 		},
 		{
+			id: 'ИнвентаризационнаяКомиссия',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:146px;width:699px;height:130px;',
 			height: 130,width: 699,
@@ -442,7 +503,7 @@
 				},
 				{
 					text:'Члены комиссии',
-					width:'265',
+					width:'264',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -459,7 +520,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -472,6 +533,23 @@
 						name:'Председатель',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИнвентаризационнаяКомиссия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -599,7 +677,8 @@
 			height: 19,
 			style: 'position:absolute;left:105px;top:371px;width:616px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -657,4 +736,5 @@
 			]
 		},
 	]
+	});
 });

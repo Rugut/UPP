@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеСпискаРаботников.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.ФормированиеСпискаРаботников'], function () 
+{
+	Ext.define('Обработки.ФормированиеСпискаРаботников.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:429px;height:404px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Формирование списка сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:379px;width:429px;height:25px;',
@@ -44,6 +50,7 @@
 			style: 'position:absolute;left:173px;top:8px;width:120px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:96px;width:413px;height:108px;',
 			height: 108,width: 413,
@@ -92,7 +99,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -114,6 +121,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -158,6 +182,7 @@
 			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
 		},
 		{
+			id: 'ПоказателиПремии',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:413px;height:121px;',
 			height: 121,width: 413,
@@ -284,7 +309,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -345,6 +370,23 @@
 						name:'Валюта6',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиПремии');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -420,6 +462,7 @@
 			style: 'position:absolute;left:290px;top:49px;width:20px;height:19px;',
 		},
 		{
+			id: 'ПоказателиРазовыхРасчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:93px;width:413px;height:74px;',
 			height: 74,width: 413,
@@ -546,7 +589,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -607,6 +650,23 @@
 						name:'Валюта6',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиРазовыхРасчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -757,6 +817,7 @@
 			style: 'position:absolute;left:290px;top:49px;width:20px;height:19px;',
 		},
 		{
+			id: 'ПоказателиРазовыхРасчетовДополнительные',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:120px;width:413px;height:47px;',
 			height: 47,width: 413,
@@ -883,7 +944,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -944,6 +1005,23 @@
 						name:'Валюта6',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиРазовыхРасчетовДополнительные');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1296,6 +1374,7 @@
 			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;',
 		},
 		{
+			id: 'РаспределениеНачислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:49px;width:413px;height:118px;',
 			height: 118,width: 413,
@@ -1332,7 +1411,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1348,6 +1427,23 @@
 						name:'СчетДт',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеНачислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1443,6 +1539,7 @@
 			style: 'position:absolute;left:290px;top:49px;width:20px;height:19px;',
 		},
 		{
+			id: 'ПоказателиРазовыхУдержаний',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:94px;width:413px;height:67px;',
 			height: 67,width: 413,
@@ -1569,7 +1666,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1631,6 +1728,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиРазовыхУдержаний');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -1650,6 +1764,7 @@
 			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;',
 		},
 		{
+			id: 'РаспределениеУпрНачислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:413px;height:121px;',
 			height: 121,width: 413,
@@ -1674,7 +1789,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1684,6 +1799,23 @@
 						name:'ДоляСпособаОтражения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаспределениеУпрНачислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1719,6 +1851,7 @@
 					items:
 					[
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:29px;width:401px;height:132px;',
 			height: 132,width: 401,
@@ -1917,7 +2050,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеСпискаРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2014,6 +2147,23 @@
 						name:'ТарифныйРазряд6',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2162,8 +2312,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

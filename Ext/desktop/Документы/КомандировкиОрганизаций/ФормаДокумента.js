@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомандировкиОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КомандировкиОрганизаций'], function () 
+{
+	Ext.define('Документы.КомандировкиОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Командировки организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +80,7 @@
 			style: 'position:absolute;left:96px;top:428px;width:548px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:244px;width:636px;height:140px;',
 			height: 140,width: 636,
@@ -152,7 +159,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомандировкиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомандировкиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -189,6 +196,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КомандировкиОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КомандировкиОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -381,7 +405,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -472,4 +497,5 @@
 			]
 		},
 	]
+	});
 });

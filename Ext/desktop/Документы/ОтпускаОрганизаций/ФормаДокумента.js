@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтпускаОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтпускаОрганизаций'], function () 
+{
+	Ext.define('Документы.ОтпускаОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:642px;height:400px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отпуска организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +80,7 @@
 			style: 'position:absolute;left:86px;top:348px;width:548px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:626px;height:180px;',
 			height: 180,width: 626,
@@ -105,7 +112,7 @@
 				},
 				{
 					text:'Вид отпуска',
-					width:'228',
+					width:'227',
 					dataIndex:'ПричинаОтсутствия',
 					flex:1,
 				},
@@ -117,7 +124,7 @@
 				},
 				{
 					text:'По',
-					width:'69',
+					width:'68',
 					dataIndex:'ДатаПо',
 					flex:1,
 				},
@@ -182,7 +189,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускаОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускаОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -234,6 +241,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтпускаОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтпускаОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -370,7 +394,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -471,4 +496,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗаполнениеСчетовРасходовУСН.Форма',
+﻿Ext.require(['Данные.Обработки.ЗаполнениеСчетовРасходовУСН'], function () 
+{
+	Ext.define('Обработки.ЗаполнениеСчетовРасходовУСН.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:226px;height:149px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

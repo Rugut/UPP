@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПомощникПланирования.ФормаРежимСложенияОбъединения',
+﻿Ext.require(['Данные.Обработки.ПомощникПланирования'], function () 
+{
+	Ext.define('Обработки.ПомощникПланирования.ФормаРежимСложенияОбъединения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:251px;height:246px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -79,4 +82,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НомераГТД.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НомераГТД'], function () 
+{
+	Ext.define('Справочники.НомераГТД.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:403px;height:113px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Номер ГТД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

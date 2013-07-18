@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыОбразованияФизЛиц.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ВидыОбразованияФизЛиц'], function () 
+{
+	Ext.define('Справочники.ВидыОбразованияФизЛиц.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:524px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды образования физических лиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВидыОбразованияФизЛиц.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВидыОбразованияФизЛиц.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -98,4 +101,5 @@
 			]
 		},
 	]
+	});
 });

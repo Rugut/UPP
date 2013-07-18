@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВводПараметровВыпускаПродукции.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.ВводПараметровВыпускаПродукции'], function () 
+{
+	Ext.define('Обработки.ВводПараметровВыпускаПродукции.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:320px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод параметров выпуска продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -91,6 +97,7 @@
 			style: 'position:absolute;left:142px;top:33px;width:89px;height:19px;',
 		},
 		{
+			id: 'ПараметрыВыпускаПродукции',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:584px;height:139px;',
 			height: 139,width: 584,
@@ -104,13 +111,13 @@
 				},
 				{
 					text:'Вид параметра',
-					width:'216',
+					width:'215',
 					dataIndex:'ВидПараметра',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'186',
+					width:'185',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -121,7 +128,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПараметровВыпускаПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПараметровВыпускаПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,13 +142,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыВыпускаПродукции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводПараметровВыпускаПродукции.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводПараметровВыпускаПродукции.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Параметры выпуска продукции',
 			style: 'position:absolute;left:8px;top:108px;width:584px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -182,4 +207,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВосстановлениеНДС.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ВосстановлениеНДС'], function () 
+{
+	Ext.define('Документы.ВосстановлениеНДС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:507px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Восстановления НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:491px;height:380px;',
 			height: 380,width: 491,
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВосстановлениеНДС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВосстановлениеНДС.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВосстановлениеНДС.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -101,4 +126,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Бюджеты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Бюджеты'], function () 
+{
+	Ext.define('Справочники.Бюджеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:322px;height:210px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Бюджеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

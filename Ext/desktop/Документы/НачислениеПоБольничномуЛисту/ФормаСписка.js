@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаСписка',
+﻿Ext.require(['Данные.Документы.НачислениеПоБольничномуЛисту'], function () 
+{
+	Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Начисления по больничным листам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:764px;height:356px;',
 			height: 356,width: 764,
@@ -112,7 +119,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,6 +169,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -192,7 +216,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -372,4 +397,5 @@
 			]
 		},
 	]
+	});
 });

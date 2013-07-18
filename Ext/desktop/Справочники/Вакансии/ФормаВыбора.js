@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Вакансии.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.Вакансии'], function () 
+{
+	Ext.define('Справочники.Вакансии.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:769px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Вакансии',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -45,13 +48,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Должность',
-					width:'1200',
+					width:'120',
 					dataIndex:'Должность',
 					flex:1,
 				},
@@ -104,9 +107,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Вакансии.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Вакансии.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -247,4 +250,5 @@
 			]
 		},
 	]
+	});
 });

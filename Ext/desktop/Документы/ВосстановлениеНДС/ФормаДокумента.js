@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВосстановлениеНДС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВосстановлениеНДС'], function () 
+{
+	Ext.define('Документы.ВосстановлениеНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:709px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -157,25 +160,25 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'1200',
+					width:'120',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -187,7 +190,7 @@
 				},
 				{
 					text:'Документ оплаты',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -199,7 +202,7 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -211,7 +214,7 @@
 				},
 				{
 					text:'НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -287,9 +290,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВосстановлениеНДС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВосстановлениеНДС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -344,4 +347,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОперацияБух.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ОперацияБух'], function () 
+{
+	Ext.define('Документы.ОперацияБух.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:470px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Операции (бухгалтерский и налоговый учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:764px;height:157px;',
 			height: 157,width: 764,
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,6 +87,23 @@
 						name:'Содержание',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОперацияБух.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОперацияБух.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -107,6 +131,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДвиженияБУ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:750px;height:210px;',
 			height: 210,width: 750,
@@ -180,13 +205,13 @@
 				},
 				{
 					text:'',
-					width:'65',
+					width:'64',
 					dataIndex:'СубконтоКт2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'65',
+					width:'64',
 					dataIndex:'СубконтоКт3',
 					flex:1,
 				},
@@ -233,7 +258,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -295,6 +320,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвиженияБУ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОперацияБух.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОперацияБух.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -303,6 +345,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДвиженияНУ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:750px;height:210px;',
 			height: 210,width: 750,
@@ -417,7 +460,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияБух/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -473,12 +516,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвиженияНУ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОперацияБух.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОперацияБух.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -512,4 +573,5 @@
 			]
 		},
 	]
+	});
 });

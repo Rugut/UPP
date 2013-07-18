@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводНачальныхОстатковУСН.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВводНачальныхОстатковУСН'], function () 
+{
+	Ext.define('Документы.ВводНачальныхОстатковУСН.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:681px;height:453px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод начальных остатков УСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -79,6 +85,7 @@
 					items:
 					[
 		{
+			id: 'ВзаиморасчетыСПоставщиками',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -122,7 +129,7 @@
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'90',
+					width:'89',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -133,7 +140,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -159,6 +166,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВзаиморасчетыСПоставщиками');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -167,6 +191,7 @@
 					items:
 					[
 		{
+			id: 'ВзаиморасчетыСПокупателями',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -186,13 +211,13 @@
 				},
 				{
 					text:'Контрагент',
-					width:'119',
+					width:'118',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'119',
+					width:'118',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
@@ -210,19 +235,19 @@
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'97',
+					width:'96',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'в т.ч. ЕНВД',
-					width:'97',
+					width:'96',
 					dataIndex:'ДоходЕНВД',
 					flex:1,
 				},
 				{
 					text:'в т.ч. доход комитента',
-					width:'97',
+					width:'96',
 					dataIndex:'ДоходКомитента',
 					flex:1,
 				},
@@ -233,7 +258,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -265,6 +290,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВзаиморасчетыСПокупателями');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -273,6 +315,7 @@
 					items:
 					[
 		{
+			id: 'ВзаиморасчетыСПодотчетниками',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -304,7 +347,7 @@
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'111',
+					width:'110',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -315,7 +358,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -335,6 +378,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВзаиморасчетыСПодотчетниками');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -343,6 +403,7 @@
 					items:
 					[
 		{
+			id: 'ВзаиморасчетыССотрудниками',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -362,13 +423,13 @@
 				},
 				{
 					text:'Работник',
-					width:'357',
+					width:'356',
 					dataIndex:'Работник',
 					flex:1,
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'131',
+					width:'130',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
@@ -379,7 +440,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -396,6 +457,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВзаиморасчетыССотрудниками');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -404,6 +482,7 @@
 					items:
 					[
 		{
+			id: 'ВзаиморвасчетыПоНалогам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -417,13 +496,13 @@
 				},
 				{
 					text:'Вид задолженности',
-					width:'109',
+					width:'108',
 					dataIndex:'ВидЗадолженности',
 					flex:1,
 				},
 				{
 					text:'Счет расчетов по налогу',
-					width:'123',
+					width:'122',
 					dataIndex:'СчетРасчетовПоНалогу',
 					flex:1,
 				},
@@ -440,7 +519,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -457,6 +536,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВзаиморвасчетыПоНалогам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -469,6 +565,7 @@
 					items:
 					[
 		{
+			id: 'ПартииТоваровНаСкладах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:651px;height:228px;',
 			height: 228,width: 651,
@@ -500,7 +597,7 @@
 				},
 				{
 					text:'Счет учета',
-					width:'67',
+					width:'66',
 					dataIndex:'СчетУчета',
 					flex:1,
 				},
@@ -518,7 +615,7 @@
 				},
 				{
 					text:'Количество',
-					width:'75',
+					width:'74',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -529,7 +626,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -558,6 +655,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПартииТоваровНаСкладах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -566,6 +680,7 @@
 					items:
 					[
 		{
+			id: 'ПартииТоваровПереданные',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:651px;height:228px;',
 			height: 228,width: 651,
@@ -579,7 +694,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'143',
+					width:'142',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -621,7 +736,7 @@
 				},
 				{
 					text:'Количество',
-					width:'80',
+					width:'79',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -632,7 +747,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -664,6 +779,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПартииТоваровПереданные');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -682,6 +814,7 @@
 					items:
 					[
 		{
+			id: 'РасходыНоменклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -731,7 +864,7 @@
 				},
 				{
 					text:'Документ расчетов',
-					width:'199',
+					width:'198',
 					dataIndex:'РасчетныйДокумент',
 					flex:1,
 				},
@@ -743,31 +876,31 @@
 				},
 				{
 					text:'Отражение в УСН',
-					width:'99',
+					width:'98',
 					dataIndex:'ОтражениеВУСН',
 					flex:1,
 				},
 				{
 					text:'Валюта',
-					width:'105',
+					width:'104',
 					dataIndex:'Валюта',
 					flex:1,
 				},
 				{
 					text:'Количество',
-					width:'105',
+					width:'104',
 					dataIndex:'Количество',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'96',
+					width:'95',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'96',
+					width:'95',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -778,7 +911,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -825,6 +958,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходыНоменклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -833,6 +983,7 @@
 					items:
 					[
 		{
+			id: 'РасходыНМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -899,7 +1050,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -931,6 +1082,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходыНМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -939,6 +1107,7 @@
 					items:
 					[
 		{
+			id: 'РасходыУслуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -1005,7 +1174,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1037,6 +1206,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходыУслуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1045,6 +1231,7 @@
 					items:
 					[
 		{
+			id: 'РасходыРБП',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -1100,7 +1287,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'98',
+					width:'97',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -1117,7 +1304,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1152,6 +1339,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходыРБП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1160,6 +1364,7 @@
 					items:
 					[
 		{
+			id: 'РасходыЗарплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -1173,7 +1378,7 @@
 				},
 				{
 					text:'Работник',
-					width:'287',
+					width:'286',
 					dataIndex:'Работник',
 					flex:1,
 				},
@@ -1196,7 +1401,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1213,6 +1418,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходыЗарплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1221,6 +1443,7 @@
 					items:
 					[
 		{
+			id: 'РасходыНалоги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -1257,7 +1480,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1273,6 +1496,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасходыНалоги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1296,6 +1536,7 @@
 					items:
 					[
 		{
+			id: 'ПервоначальныеСведенияОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -1350,7 +1591,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1376,6 +1617,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПервоначальныеСведенияОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1384,6 +1642,7 @@
 					items:
 					[
 		{
+			id: 'ПервоначальныеСведенияНМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:637px;height:196px;',
 			height: 196,width: 637,
@@ -1438,7 +1697,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1463,6 +1722,23 @@
 						name:'ПорядокВключенияСтоимостиВСоставРасходовУСН',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПервоначальныеСведенияНМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1511,7 +1787,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:377px;width:579px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1558,4 +1835,5 @@
 			]
 		},
 	]
+	});
 });

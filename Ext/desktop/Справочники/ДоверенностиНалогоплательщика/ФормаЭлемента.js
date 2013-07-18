@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоверенностиНалогоплательщика.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДоверенностиНалогоплательщика'], function () 
+{
+	Ext.define('Справочники.ДоверенностиНалогоплательщика.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:499px;height:608px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Доверенность налогоплательщика',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомерДовер',
@@ -1048,6 +1054,7 @@
 			style: 'position:absolute;left:107px;top:33px;width:384px;height:19px;',
 		},
 		{
+			id: 'ПолномочияПредставителя',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:504px;width:483px;height:71px;',
 			height: 71,width: 483,
@@ -1074,11 +1081,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоверенностиНалогоплательщика").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1091,6 +1099,23 @@
 						name:'КПП',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПолномочияПредставителя');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1105,7 +1130,8 @@
 			title: 'Сведения о полномочиях представителя',
 			style: 'position:absolute;left:8px;top:464px;width:483px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1139,4 +1165,5 @@
 			]
 		},
 	]
+	});
 });

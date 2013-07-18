@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СертификацияНоменклатуры.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СертификацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.СертификацияНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:666px;height:398px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Сертификация номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -236,6 +242,7 @@
 					items:
 					[
 		{
+			id: 'Анализы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:636px;height:108px;',
 			height: 108,width: 636,
@@ -249,7 +256,7 @@
 				},
 				{
 					text:'Показатель анализа',
-					width:'232',
+					width:'231',
 					dataIndex:'ПоказательАнализа',
 					flex:1,
 				},
@@ -290,7 +297,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СертификацияНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СертификацияНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -315,6 +322,23 @@
 						name:'СоответствуетНормативу',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Анализы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СертификацияНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СертификацияНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -401,7 +425,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -439,4 +464,5 @@
 			]
 		},
 	]
+	});
 });

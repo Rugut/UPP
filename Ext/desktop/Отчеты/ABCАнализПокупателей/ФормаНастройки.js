@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ABCАнализПокупателей.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.ABCАнализПокупателей'], function () 
+{
+	Ext.define('Отчеты.ABCАнализПокупателей.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:486px;height:332px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка ABC-анализ покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:470px;height:291px;',
@@ -53,6 +59,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:456px;height:241px;',
 			height: 241,width: 456,
@@ -66,7 +73,7 @@
 				},
 				{
 					text:'Тип',
-					width:'170',
+					width:'169',
 					dataIndex:'Тип',
 					flex:1,
 				},
@@ -77,7 +84,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -88,6 +95,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ABCАнализПокупателей.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ABCАнализПокупателей.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -96,6 +120,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:456px;height:241px;',
 			height: 241,width: 456,
@@ -109,7 +134,7 @@
 				},
 				{
 					text:'Поле',
-					width:'158',
+					width:'157',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -144,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -167,6 +192,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ABCАнализПокупателей.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ABCАнализПокупателей.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -175,6 +217,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:456px;height:241px;',
 			height: 241,width: 456,
@@ -182,7 +225,7 @@
 			[
 				{
 					text:'Поле',
-					width:'290',
+					width:'289',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -199,7 +242,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ABCАнализПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -210,12 +253,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ABCАнализПокупателей.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ABCАнализПокупателей.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -237,4 +298,5 @@
 			]
 		},
 	]
+	});
 });

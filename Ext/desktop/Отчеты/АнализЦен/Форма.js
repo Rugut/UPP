@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализЦен.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализЦен'], function () 
+{
+	Ext.define('Отчеты.АнализЦен.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:512px;height:377px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ цен',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -164,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

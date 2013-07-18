@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторПользовательскихПолей.Форма',
+﻿Ext.require(['Данные.Обработки.КонструкторПользовательскихПолей'], function () 
+{
+	Ext.define('Обработки.КонструкторПользовательскихПолей.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Пользовательские поля',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,9 +52,9 @@
 					{
 						var грид = Ext.getCmp('ПользовательскиеПоля');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КонструкторПользовательскихПолей.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КонструкторПользовательскихПолей.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -88,4 +91,5 @@
 			]
 		},
 	]
+	});
 });

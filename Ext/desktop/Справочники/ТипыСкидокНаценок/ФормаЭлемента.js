@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТипыСкидокНаценок.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТипыСкидокНаценок'], function () 
+{
+	Ext.define('Справочники.ТипыСкидокНаценок.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:483px;height:320px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Типы скидок и наценок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:61px;width:467px;height:226px;',
@@ -183,6 +189,7 @@
 			style: 'position:absolute;left:368px;top:181px;width:91px;height:19px;',
 		},
 		{
+			id: 'ВремяПоДнямНедели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:453px;height:146px;',
 			height: 146,width: 453,
@@ -196,7 +203,7 @@
 				},
 				{
 					text:'День недели',
-					width:'202',
+					width:'201',
 					dataIndex:'ДеньНедели',
 					flex:1,
 				},
@@ -215,11 +222,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТипыСкидокНаценок").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыСкидокНаценок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыСкидокНаценок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -235,6 +243,23 @@
 						name:'ВремяОкончания',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВремяПоДнямНедели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -271,7 +296,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:307px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -305,4 +331,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновноеСырье.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОсновноеСырье'], function () 
+{
+	Ext.define('Справочники.ОсновноеСырье.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:353px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Основное сырье',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Основной материал и его аналоги',
-					width:'2200',
+					width:'220',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -89,9 +92,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновноеСырье.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновноеСырье.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -150,4 +153,5 @@
 			]
 		},
 	]
+	});
 });

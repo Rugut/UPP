@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЗанятияКурсовОбучения.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ЗанятияКурсовОбучения'], function () 
+{
+	Ext.define('Справочники.ЗанятияКурсовОбучения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:406px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Занятия курсов обучения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -58,6 +64,7 @@
 			]
 		},
 		{
+			id: 'ИзучаемыеКомпетенции',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:263px;width:384px;height:110px;',
 			height: 110,width: 384,
@@ -84,11 +91,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ЗанятияКурсовОбучения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗанятияКурсовОбучения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗанятияКурсовОбучения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -101,6 +109,23 @@
 						name:'Вес',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзучаемыеКомпетенции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗанятияКурсовОбучения.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗанятияКурсовОбучения.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -130,7 +155,8 @@
 			title: 'Описание занятия:',
 			style: 'position:absolute;left:8px;top:56px;width:384px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -164,4 +190,5 @@
 			]
 		},
 	]
+	});
 });

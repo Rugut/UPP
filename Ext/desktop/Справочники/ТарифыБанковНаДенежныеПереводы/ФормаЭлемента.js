@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТарифыБанковНаДенежныеПереводы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТарифыБанковНаДенежныеПереводы'], function () 
+{
+	Ext.define('Справочники.ТарифыБанковНаДенежныеПереводы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:168px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Тарифы банков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -132,4 +135,5 @@
 			]
 		},
 	]
+	});
 });

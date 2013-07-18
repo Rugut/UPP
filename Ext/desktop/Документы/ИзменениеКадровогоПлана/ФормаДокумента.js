@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеКадровогоПлана.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеКадровогоПлана'], function () 
+{
+	Ext.define('Документы.ИзменениеКадровогоПлана.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:549px;height:423px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение кадрового плана',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:98px;width:533px;height:24px;',
@@ -23,6 +29,7 @@
 			]
 		},
 		{
+			id: 'РабочиеМеста',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:122px;width:533px;height:220px;',
 			height: 220,width: 533,
@@ -48,7 +55,7 @@
 				},
 				{
 					text:'Количество',
-					width:'64',
+					width:'63',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -59,7 +66,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеКадровогоПлана/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеКадровогоПлана/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -75,6 +82,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РабочиеМеста');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеКадровогоПлана.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеКадровогоПлана.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -253,8 +277,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

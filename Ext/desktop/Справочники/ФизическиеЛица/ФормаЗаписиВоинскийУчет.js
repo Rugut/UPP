@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчет',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:430px;height:376px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Воинский учет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -247,4 +250,5 @@
 			]
 		},
 	]
+	});
 });

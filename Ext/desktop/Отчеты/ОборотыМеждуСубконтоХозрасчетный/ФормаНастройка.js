@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОборотыМеждуСубконтоХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка Обороты между субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:251px;',
@@ -77,6 +83,7 @@
 			style: 'position:absolute;left:88px;top:32px;width:288px;height:19px;',
 		},
 		{
+			id: 'ВидыСубконто',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:108px;width:182px;height:117px;',
 			height: 117,width: 182,
@@ -101,7 +108,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -112,8 +119,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВидыСубконто');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'КорВидыСубконто',
 			xtype: 'grid',
 			style: 'position:absolute;left:194px;top:108px;width:182px;height:117px;',
 			height: 117,width: 182,
@@ -138,7 +163,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -149,6 +174,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КорВидыСубконто');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -157,6 +199,7 @@
 					items:
 					[
 		{
+			id: 'Детализация',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:222px;height:177px;',
 			height: 177,width: 222,
@@ -164,13 +207,13 @@
 			[
 				{
 					text:'Поле',
-					width:'118',
+					width:'117',
 					dataIndex:'Поле',
 					flex:1,
 				},
 				{
 					text:'Тип',
-					width:'79',
+					width:'78',
 					dataIndex:'Тип',
 					flex:1,
 				},
@@ -181,7 +224,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -192,8 +235,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Детализация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДоступныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:260px;top:48px;width:116px;height:177px;',
 			height: 177,width: 116,
@@ -212,13 +273,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -240,6 +318,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:370px;height:194px;',
 			height: 194,width: 370,
@@ -288,7 +367,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыМеждуСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -311,12 +390,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -342,4 +439,5 @@
 			]
 		},
 	]
+	});
 });

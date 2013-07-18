@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаявлениеАбонентаСпецоператораСвязи.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ЗаявлениеАбонентаСпецоператораСвязи'], function () 
+{
+	Ext.define('Документы.ЗаявлениеАбонентаСпецоператораСвязи.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Список заявлений абонентов спецоператоров связи',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

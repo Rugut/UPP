@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТОВыгрузкаТСД.Форма',
+﻿Ext.require(['Данные.Обработки.ТОВыгрузкаТСД'], function () 
+{
+	Ext.define('Обработки.ТОВыгрузкаТСД.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:398px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выгрузка данных в ТСД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,25 +52,25 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'2200',
+					width:'220',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2500',
+					width:'250',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Штрихкод',
-					width:'1200',
+					width:'120',
 					dataIndex:'Штрихкод',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'Характеристика',
 					flex:1,
 				},
@@ -79,13 +82,13 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'Серия',
 					flex:1,
 				},
@@ -182,9 +185,9 @@
 					{
 						var грид = Ext.getCmp('ПолеТовары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТОВыгрузкаТСД.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТОВыгрузкаТСД.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -333,4 +336,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборНоменклатуры.ВводПараметровБезСерийБезХарактеристик',
+﻿Ext.require(['Данные.Обработки.ПодборНоменклатуры'], function () 
+{
+	Ext.define('Обработки.ПодборНоменклатуры.ВводПараметровБезСерийБезХарактеристик',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:254px;height:157px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод количества и цены',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

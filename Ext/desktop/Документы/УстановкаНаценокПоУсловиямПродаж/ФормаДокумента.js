@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаНаценокПоУсловиямПродаж.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаНаценокПоУсловиямПродаж'], function () 
+{
+	Ext.define('Документы.УстановкаНаценокПоУсловиямПродаж.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:656px;height:406px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка наценок по условиям продаж',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -67,6 +73,7 @@
 			]
 		},
 		{
+			id: 'Наценки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:640px;height:246px;',
 			height: 246,width: 640,
@@ -80,13 +87,13 @@
 				},
 				{
 					text:'Номенклатурная или ценовая группа',
-					width:'209',
+					width:'208',
 					dataIndex:'НоменклатурнаяЦеноваяГруппа',
 					flex:1,
 				},
 				{
 					text:'Условие продаж',
-					width:'247',
+					width:'246',
 					dataIndex:'УсловиеПродаж',
 					flex:1,
 				},
@@ -103,7 +110,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаНаценокПоУсловиямПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаНаценокПоУсловиямПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -119,6 +126,23 @@
 						name:'ПроцентНаценки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Наценки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаНаценокПоУсловиямПродаж.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаНаценокПоУсловиямПродаж.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -162,7 +186,8 @@
 			text: 'Ответственный:',
 			style: 'position:absolute;left:8px;top:331px;width:88px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -174,4 +199,5 @@
 			]
 		},
 	]
+	});
 });

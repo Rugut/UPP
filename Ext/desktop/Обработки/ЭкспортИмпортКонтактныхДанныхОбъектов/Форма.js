@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЭкспортИмпортКонтактныхДанныхОбъектов.Форма',
+﻿Ext.require(['Данные.Обработки.ЭкспортИмпортКонтактныхДанныхОбъектов'], function () 
+{
+	Ext.define('Обработки.ЭкспортИмпортКонтактныхДанныхОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:459px;height:181px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Экспорт/Импорт контактных данных объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -96,4 +99,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

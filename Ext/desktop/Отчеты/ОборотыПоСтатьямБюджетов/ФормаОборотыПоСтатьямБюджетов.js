@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетов',
+﻿Ext.require(['Данные.Отчеты.ОборотыПоСтатьямБюджетов'], function () 
+{
+	Ext.define('Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:637px;height:418px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -225,4 +228,5 @@
 			]
 		},
 	]
+	});
 });

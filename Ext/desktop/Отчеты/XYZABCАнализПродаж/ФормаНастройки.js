@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.XYZABCАнализПродаж.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.XYZABCАнализПродаж'], function () 
+{
+	Ext.define('Отчеты.XYZABCАнализПродаж.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:522px;height:350px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка XYZ/ABC-анализ продаж',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:506px;height:309px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:164px;width:492px;height:119px;',
 			height: 119,width: 492,
@@ -44,7 +51,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +61,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -147,6 +171,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:113px;width:492px;height:170px;',
 			height: 170,width: 492,
@@ -160,7 +185,7 @@
 				},
 				{
 					text:'Тип',
-					width:'170',
+					width:'169',
 					dataIndex:'Тип',
 					flex:1,
 				},
@@ -171,7 +196,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -182,6 +207,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -191,6 +233,7 @@
 			]
 		},
 		{
+			id: 'Группы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:492px;height:65px;',
 			height: 65,width: 492,
@@ -215,7 +258,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -226,6 +269,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Группы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -234,6 +294,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:86px;width:492px;height:197px;',
 			height: 197,width: 492,
@@ -247,7 +308,7 @@
 				},
 				{
 					text:'Поле',
-					width:'157',
+					width:'156',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -282,7 +343,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -304,6 +365,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -349,6 +427,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:492px;height:253px;',
 			height: 253,width: 492,
@@ -356,7 +435,7 @@
 			[
 				{
 					text:'Поле',
-					width:'290',
+					width:'289',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -373,7 +452,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/XYZABCАнализПродаж/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -383,6 +462,23 @@
 						name:'НаправлениеСортировки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -558,7 +654,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -580,4 +677,5 @@
 			]
 		},
 	]
+	});
 });

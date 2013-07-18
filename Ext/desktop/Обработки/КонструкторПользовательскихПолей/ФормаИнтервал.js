@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаИнтервал',
+﻿Ext.require(['Данные.Обработки.КонструкторПользовательскихПолей'], function () 
+{
+	Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаИнтервал',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:356px;height:136px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Конструктор пользовательского поля',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -80,4 +83,5 @@
 			]
 		},
 	]
+	});
 });

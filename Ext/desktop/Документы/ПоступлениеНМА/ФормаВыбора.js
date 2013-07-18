@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеНМА.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПоступлениеНМА'], function () 
+{
+	Ext.define('Документы.ПоступлениеНМА.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поступление НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,19 +66,19 @@
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Договор контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Номер вход. документа',
-					width:'2500',
+					width:'250',
 					dataIndex:'НомерВходящегоДокумента',
 					flex:1,
 				},
@@ -148,9 +151,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПоступлениеНМА.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПоступлениеНМА.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -194,4 +197,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ОтменаСкидокНоменклатуры'], function () 
+{
+	Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:688px;height:380px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Отмена скидок номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:672px;height:339px;',
 			height: 339,width: 672,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Номер',
-					width:'159',
+					width:'158',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -40,7 +47,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтменаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтменаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +61,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтменаСкидокНоменклатуры.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтменаСкидокНоменклатуры.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -80,4 +105,5 @@
 			]
 		},
 	]
+	});
 });

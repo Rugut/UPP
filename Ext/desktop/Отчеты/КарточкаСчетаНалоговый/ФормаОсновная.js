@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КарточкаСчетаНалоговый.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.КарточкаСчетаНалоговый'], function () 
+{
+	Ext.define('Отчеты.КарточкаСчетаНалоговый.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:738px;height:445px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет  Карточка счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -165,4 +168,5 @@
 			]
 		},
 	]
+	});
 });

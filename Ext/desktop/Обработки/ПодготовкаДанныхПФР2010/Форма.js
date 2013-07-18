@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодготовкаДанныхПФР2010.Форма',
+﻿Ext.require(['Данные.Обработки.ПодготовкаДанныхПФР2010'], function () 
+{
+	Ext.define('Обработки.ПодготовкаДанныхПФР2010.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:616px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подготовка данных для передачи в ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -56,6 +62,7 @@
 			style: 'position:absolute;left:0px;top:310px;width:984px;height:19px;',
 		},
 		{
+			id: 'ПачкиДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:248px;height:96px;',
 			height: 96,width: 248,
@@ -80,7 +87,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +97,23 @@
 						name:'ОтчетныйПериод',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -115,6 +139,7 @@
 					items:
 					[
 		{
+			id: 'ПачкиСЗВ6',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:26px;width:333px;height:111px;',
 			height: 111,width: 333,
@@ -175,7 +200,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -203,6 +228,23 @@
 						name:'УплаченоНакопительная',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиСЗВ6');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -459,6 +501,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОЗадолженности',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:984px;height:91px;',
 			height: 91,width: 984,
@@ -496,7 +539,7 @@
 				},
 				{
 					text:'Дополнительный тариф',
-					width:'130',
+					width:'129',
 					dataIndex:'ДополнительныйТариф',
 					flex:1,
 				},
@@ -507,7 +550,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -529,6 +572,23 @@
 						name:'ДополнительныйТариф',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОЗадолженности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -566,6 +626,7 @@
 					items:
 					[
 		{
+			id: 'ФизлицаПачек',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:333px;height:182px;',
 			height: 182,width: 333,
@@ -656,7 +717,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -699,6 +760,23 @@
 						name:'Отчество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаПачек');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -744,6 +822,7 @@
 			]
 		},
 		{
+			id: 'ЗаписиОСтаже',
 			xtype: 'grid',
 			style: 'position:absolute;left:347px;top:118px;width:637px;height:88px;',
 			height: 88,width: 637,
@@ -876,7 +955,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -940,6 +1019,23 @@
 						name:'ТретийПараметрВыслугиЛет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаписиОСтаже');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1415,6 +1511,7 @@
 			]
 		},
 		{
+			id: 'ПачкиСПВ',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:179px;width:293px;height:102px;',
 			height: 102,width: 293,
@@ -1469,7 +1566,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1495,8 +1592,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиСПВ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Пенсионеры',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:47px;width:333px;height:81px;',
 			height: 81,width: 333,
@@ -1527,7 +1642,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1540,6 +1655,23 @@
 						name:'ДатаСоставленияСведений',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Пенсионеры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1770,6 +1902,7 @@
 					items:
 					[
 		{
+			id: 'ФизлицаПачекСПВ',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:333px;height:200px;',
 			height: 200,width: 333,
@@ -1848,7 +1981,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1885,6 +2018,23 @@
 						name:'ДатаСоставления',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаПачекСПВ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1930,6 +2080,7 @@
 			]
 		},
 		{
+			id: 'ЗаписиОСтажеСПВ',
 			xtype: 'grid',
 			style: 'position:absolute;left:347px;top:118px;width:637px;height:106px;',
 			height: 106,width: 637,
@@ -2062,7 +2213,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2126,6 +2277,23 @@
 						name:'ТретийПараметрВыслугиЛет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаписиОСтажеСПВ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2255,6 +2423,7 @@
 					items:
 					[
 		{
+			id: 'ПачкиСЗВ63',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:49px;width:293px;height:182px;',
 			height: 182,width: 293,
@@ -2262,7 +2431,7 @@
 			[
 				{
 					text:'Пачка',
-					width:'59',
+					width:'58',
 					dataIndex:'Пачка',
 					flex:1,
 				},
@@ -2285,7 +2454,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2298,6 +2467,23 @@
 						name:'ОблагаетсяВзносами',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиСЗВ63');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2528,6 +2714,7 @@
 					items:
 					[
 		{
+			id: 'ФизлицаПачекСЗВ63',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:342px;height:245px;',
 			height: 245,width: 342,
@@ -2552,7 +2739,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2562,6 +2749,23 @@
 						name:'ФизЛицо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаПачекСЗВ63');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2577,6 +2781,7 @@
 			style: 'position:absolute;left:358px;top:0px;width:148px;height:19px;',
 		},
 		{
+			id: 'СведенияОЗаработке',
 			xtype: 'grid',
 			style: 'position:absolute;left:358px;top:24px;width:329px;height:219px;',
 			height: 219,width: 329,
@@ -2607,7 +2812,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2620,6 +2825,23 @@
 						name:'ОблагаетсяВзносами',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОЗаработке');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2798,8 +3020,10 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетОРозничныхПродажах.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтчетОРозничныхПродажах'], function () 
+{
+	Ext.define('Документы.ОтчетОРозничныхПродажах.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:457px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отчет о розничных продажах',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -257,6 +263,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:642px;height:144px;',
 			height: 144,width: 642,
@@ -336,7 +343,7 @@
 				},
 				{
 					text:'% Авт.ск.',
-					width:'55',
+					width:'54',
 					dataIndex:'ПроцентАвтоматическихСкидок',
 					flex:1,
 				},
@@ -461,7 +468,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -562,6 +569,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -606,6 +630,7 @@
 					items:
 					[
 		{
+			id: 'ОплатаПлатежнымиКартами',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:72px;width:642px;height:102px;',
 			height: 102,width: 642,
@@ -619,7 +644,7 @@
 				},
 				{
 					text:'Вид оплаты',
-					width:'257',
+					width:'256',
 					dataIndex:'ВидОплаты',
 					flex:1,
 				},
@@ -648,7 +673,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -667,6 +692,23 @@
 						name:'СуммаТорговойУступки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОплатаПлатежнымиКартами');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -746,6 +788,7 @@
 			style: 'position:absolute;left:448px;top:201px;width:120px;height:17px;text-align:left;',
 		},
 		{
+			id: 'ОплатаБанковскимиКредитами',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:642px;height:144px;',
 			height: 144,width: 642,
@@ -806,7 +849,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -834,6 +877,23 @@
 						name:'СчетУчетаРасчетовСКонтрагентом',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОплатаБанковскимиКредитами');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -867,6 +927,7 @@
 			style: 'position:absolute;left:508px;top:180px;width:60px;height:17px;text-align:left;',
 		},
 		{
+			id: 'ПродажиПоДисконтнымКартам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:642px;height:188px;',
 			height: 188,width: 642,
@@ -880,7 +941,7 @@
 				},
 				{
 					text:'Дисконтная карта',
-					width:'220',
+					width:'219',
 					dataIndex:'ДисконтнаяКарта',
 					flex:1,
 				},
@@ -903,7 +964,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -920,13 +981,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПродажиПоДисконтнымКартам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОРозничныхПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

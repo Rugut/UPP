@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонсольОтчетов.ФормаРедактированияМакета',
+﻿Ext.require(['Данные.Обработки.КонсольОтчетов'], function () 
+{
+	Ext.define('Обработки.КонсольОтчетов.ФормаРедактированияМакета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Редактирование макета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -65,4 +68,5 @@
 			]
 		},
 	]
+	});
 });

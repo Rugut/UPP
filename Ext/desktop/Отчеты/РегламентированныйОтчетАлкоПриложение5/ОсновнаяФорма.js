@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение5.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАлкоПриложение5'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение5.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:275px;height:310px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оборот спирта и алкогольной продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

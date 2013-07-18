@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыбытиеОсновныхСредствМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыбытиеОсновныхСредствМеждународный'], function () 
+{
+	Ext.define('Документы.ВыбытиеОсновныхСредствМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:706px;height:401px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -102,6 +108,7 @@
 			]
 		},
 		{
+			id: 'ОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:690px;height:220px;',
 			height: 220,width: 690,
@@ -133,7 +140,7 @@
 				},
 				{
 					text:'Материально-ответственное лицо',
-					width:'107',
+					width:'106',
 					dataIndex:'МОЛ',
 					flex:1,
 				},
@@ -150,7 +157,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыбытиеОсновныхСредствМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыбытиеОсновныхСредствМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -172,6 +179,23 @@
 						name:'МОЛНов',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыбытиеОсновныхСредствМеждународный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыбытиеОсновныхСредствМеждународный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -271,8 +295,10 @@
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:84px;width:690px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

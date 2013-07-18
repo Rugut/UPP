@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПоказателиСхемМотивации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПоказателиСхемМотивации'], function () 
+{
+	Ext.define('Справочники.ПоказателиСхемМотивации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:413px;height:393px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Показатели схем мотивации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -177,6 +183,7 @@
 					items:
 					[
 		{
+			id: 'СоставШкалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:383px;height:110px;',
 			height: 110,width: 383,
@@ -196,7 +203,7 @@
 				},
 				{
 					text:'По',
-					width:'68',
+					width:'67',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -209,11 +216,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПоказателиСхемМотивации").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -229,6 +237,23 @@
 						name:'Размер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставШкалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -343,7 +368,8 @@
 			text: 'Стаж работы с момента приема на работу',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -418,4 +444,5 @@
 			]
 		},
 	]
+	});
 });

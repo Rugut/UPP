@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОснованияУвольненияИзОрганизации.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ОснованияУвольненияИзОрганизации'], function () 
+{
+	Ext.define('Справочники.ОснованияУвольненияИзОрганизации.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:631px;height:361px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Основания увольнения (статьи ТК РФ)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:615px;height:320px;',
 			height: 320,width: 615,
@@ -36,11 +43,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОснованияУвольненияИзОрганизации").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОснованияУвольненияИзОрганизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОснованияУвольненияИзОрганизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +62,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОснованияУвольненияИзОрганизации.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОснованияУвольненияИзОрганизации.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -176,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

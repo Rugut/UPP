@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлючиАналитикиУчетаПартий.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлючиАналитикиУчетаПартий'], function () 
+{
+	Ext.define('Справочники.КлючиАналитикиУчетаПартий.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:439px;height:278px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ключ аналитики учета партий',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -181,4 +184,5 @@
 			]
 		},
 	]
+	});
 });

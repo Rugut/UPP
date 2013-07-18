@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГруппыПользователей.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ГруппыПользователей'], function () 
+{
+	Ext.define('Справочники.ГруппыПользователей.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:417px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Группа пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -57,6 +63,7 @@
 			style: 'position:absolute;left:92px;top:57px;width:400px;height:19px;',
 		},
 		{
+			id: 'ПользователиГруппы',
 			xtype: 'grid',
 			style: 'position:absolute;left:266px;top:138px;width:226px;height:214px;',
 			height: 214,width: 226,
@@ -70,18 +77,19 @@
 				},
 				{
 					text:'Пользователь группы',
-					width:'148',
+					width:'147',
 					dataIndex:'Пользователь',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыПользователей").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -92,8 +100,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПользователиГруппы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГруппыПользователей.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГруппыПользователей.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ВидыОбъектовДоступа',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:138px;width:249px;height:214px;',
 			height: 214,width: 249,
@@ -101,7 +127,7 @@
 			[
 				{
 					text:'Вид объекта доступа',
-					width:'164',
+					width:'163',
 					dataIndex:'ВидОбъектаДоступа',
 					flex:1,
 				},
@@ -114,11 +140,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыПользователей").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -128,6 +155,23 @@
 						name:'ДоступноОбъектов',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВидыОбъектовДоступа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГруппыПользователей.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГруппыПользователей.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -154,7 +198,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:355px;width:249px;height:29px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -268,4 +313,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводНачальныхОстатковУСН.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ВводНачальныхОстатковУСН'], function () 
+{
+	Ext.define('Документы.ВводНачальныхОстатковУСН.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Ввод начальных остатков УСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:384px;height:259px;',
 			height: 259,width: 384,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Номер',
-					width:'90',
+					width:'89',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'293',
+					width:'292',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковУСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковУСН.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковУСН.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -98,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

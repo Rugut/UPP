@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаСвидетельствоАкцизы',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаСвидетельствоАкцизы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:181px;height:83px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Свидетельство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -69,4 +72,5 @@
 			]
 		},
 	]
+	});
 });

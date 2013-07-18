@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводНачальныхОстатковОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВводНачальныхОстатковОС'], function () 
+{
+	Ext.define('Документы.ВводНачальныхОстатковОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:654px;height:420px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод начальных остатков ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -165,6 +171,7 @@
 					items:
 					[
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:624px;height:195px;',
 			height: 195,width: 624,
@@ -202,19 +209,19 @@
 				},
 				{
 					text:'Событие принятия к учету',
-					width:'56',
+					width:'55',
 					dataIndex:'СобытиеПринятияКУчету',
 					flex:1,
 				},
 				{
 					text:'Название документа принятия к учету',
-					width:'56',
+					width:'55',
 					dataIndex:'НазваниеДокументаПринятияКУчету',
 					flex:1,
 				},
 				{
 					text:'Номер документа принятия к учету',
-					width:'56',
+					width:'55',
 					dataIndex:'НомерДокументаПринятияКУчету',
 					flex:1,
 				},
@@ -526,25 +533,25 @@
 				},
 				{
 					text:'Параметр выработки',
-					width:'54',
+					width:'53',
 					dataIndex:'ПараметрВыработки',
 					flex:1,
 				},
 				{
 					text:'Предполагаемый объем продукции (работ) в натуральных ед.',
-					width:'54',
+					width:'53',
 					dataIndex:'ОбъемПродукцииРабот',
 					flex:1,
 				},
 				{
 					text:'Объем продукции (работ) для исчисления амортизации в натуральных ед.',
-					width:'54',
+					width:'53',
 					dataIndex:'ОбъемПродукцииРаботДляВычисленияАмортизации',
 					flex:1,
 				},
 				{
 					text:'Выработка количество',
-					width:'54',
+					width:'53',
 					dataIndex:'ВыработкаКоличество',
 					flex:1,
 				},
@@ -724,37 +731,37 @@
 				},
 				{
 					text:'Дата последней модернизации (Регл)',
-					width:'56',
+					width:'55',
 					dataIndex:'ДатаПоследнейМодернизацииРегл',
 					flex:1,
 				},
 				{
 					text:'Сумма последней модернизации (БУ)',
-					width:'56',
+					width:'55',
 					dataIndex:'СуммаПоследнейМодернизацииБУ',
 					flex:1,
 				},
 				{
 					text:'Сумма последней модернизации (НУ)',
-					width:'56',
+					width:'55',
 					dataIndex:'СуммаПоследнейМодернизацииНУ',
 					flex:1,
 				},
 				{
 					text:'Событие модернизации (Регл)',
-					width:'56',
+					width:'55',
 					dataIndex:'СобытиеМодернизацииРегл',
 					flex:1,
 				},
 				{
 					text:'Название документа модернизации (Регл)',
-					width:'56',
+					width:'55',
 					dataIndex:'НазваниеДокументаМодернизацииРегл',
 					flex:1,
 				},
 				{
 					text:'Номер документа модернизации (Регл)',
-					width:'56',
+					width:'55',
 					dataIndex:'НомерДокументаМодернизацииРегл',
 					flex:1,
 				},
@@ -765,7 +772,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1064,6 +1071,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1072,6 +1096,7 @@
 					items:
 					[
 		{
+			id: 'ТабИтогов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:624px;height:220px;',
 			height: 220,width: 624,
@@ -1085,7 +1110,7 @@
 				},
 				{
 					text:'Название колонки',
-					width:'225',
+					width:'224',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -1102,7 +1127,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1115,6 +1140,23 @@
 						name:'Итог',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабИтогов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1138,7 +1180,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:81px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1177,4 +1220,5 @@
 			]
 		},
 	]
+	});
 });

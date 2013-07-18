@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПробныйБалансМеждународный.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ПробныйБалансМеждународный'], function () 
+{
+	Ext.define('Отчеты.ПробныйБалансМеждународный.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Пробный баланс',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -131,4 +134,5 @@
 			]
 		},
 	]
+	});
 });

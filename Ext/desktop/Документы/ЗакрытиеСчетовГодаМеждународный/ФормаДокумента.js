@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеСчетовГодаМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗакрытиеСчетовГодаМеждународный'], function () 
+{
+	Ext.define('Документы.ЗакрытиеСчетовГодаМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:344px;height:161px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Закрытие счетов в конце финансового года (международный)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -153,4 +156,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СведенияОДоходахФизлиц.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.СведенияОДоходахФизлиц'], function () 
+{
+	Ext.define('Документы.СведенияОДоходахФизлиц.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:562px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сведения о доходах физлиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -51,7 +54,7 @@
 				},
 				{
 					text:'Назначение справки',
-					width:'1200',
+					width:'120',
 					dataIndex:'НазначениеСправки',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -269,4 +272,5 @@
 			]
 		},
 	]
+	});
 });

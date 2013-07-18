@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСчетаНалоговый.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.АнализСчетаНалоговый'], function () 
+{
+	Ext.define('Отчеты.АнализСчетаНалоговый.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:311px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -131,13 +134,13 @@
 			[
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Поле',
 					flex:1,
 				},
 				{
 					text:'Тип',
-					width:'1200',
+					width:'120',
 					dataIndex:'Тип',
 					flex:1,
 				},
@@ -168,9 +171,9 @@
 					{
 						var грид = Ext.getCmp('Детализация');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализСчетаНалоговый.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализСчетаНалоговый.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -214,7 +217,7 @@
 				},
 				{
 					text:'По субконто',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПредставлениеРазворотПоСубконто',
 					flex:1,
 				},
@@ -248,9 +251,9 @@
 					{
 						var грид = Ext.getCmp('ПравилаВыводаИтогов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализСчетаНалоговый.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализСчетаНалоговый.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -278,7 +281,7 @@
 				},
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -290,19 +293,19 @@
 				},
 				{
 					text:'Значение',
-					width:'2400',
+					width:'240',
 					dataIndex:'Значение',
 					flex:1,
 				},
 				{
 					text:'С',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -345,9 +348,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализСчетаНалоговый.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализСчетаНалоговый.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -385,4 +388,5 @@
 			]
 		},
 	]
+	});
 });

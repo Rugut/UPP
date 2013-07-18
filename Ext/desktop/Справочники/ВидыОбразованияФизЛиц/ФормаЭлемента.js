@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыОбразованияФизЛиц.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВидыОбразованияФизЛиц'], function () 
+{
+	Ext.define('Справочники.ВидыОбразованияФизЛиц.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:380px;height:85px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Вид образования физического лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

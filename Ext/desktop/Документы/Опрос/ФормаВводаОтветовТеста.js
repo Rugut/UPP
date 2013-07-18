@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Опрос.ФормаВводаОтветовТеста',
+﻿Ext.require(['Данные.Документы.Опрос'], function () 
+{
+	Ext.define('Документы.Опрос.ФормаВводаОтветовТеста',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:366px;height:561px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Опрос',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -141,9 +144,9 @@
 					{
 						var грид = Ext.getCmp('НесколькоВариантовОтветов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Опрос.ФормаВводаОтветовТестаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Опрос.ФормаВводаОтветовТестаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -430,9 +433,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСоставногоОтвета');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Опрос.ФормаВводаОтветовТестаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Опрос.ФормаВводаОтветовТестаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -535,4 +538,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

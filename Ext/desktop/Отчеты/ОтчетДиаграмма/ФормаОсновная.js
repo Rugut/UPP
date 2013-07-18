@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетДиаграмма.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ОтчетДиаграмма'], function () 
+{
+	Ext.define('Отчеты.ОтчетДиаграмма.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:586px;height:449px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -400,4 +403,5 @@
 			]
 		},
 	]
+	});
 });

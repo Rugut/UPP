@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаданиеНаПроизводство.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ЗаданиеНаПроизводство'], function () 
+{
+	Ext.define('Документы.ЗаданиеНаПроизводство.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Задания на производство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Вид задания',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидЗадания',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаданиеНаПроизводство.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаданиеНаПроизводство.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -151,4 +154,5 @@
 			]
 		},
 	]
+	});
 });

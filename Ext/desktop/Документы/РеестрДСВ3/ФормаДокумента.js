@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеестрДСВ3.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РеестрДСВ3'], function () 
+{
+	Ext.define('Документы.РеестрДСВ3.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:765px;height:498px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Реестр застрахованных лиц (форма ДСВ-3)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -284,13 +287,13 @@
 				},
 				{
 					text:'Перечислено сотрудником',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВзносовРаботника',
 					flex:1,
 				},
 				{
 					text:'Перечислено работодателем',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВзносовРаботодателя',
 					flex:1,
 				},
@@ -339,9 +342,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РеестрДСВ3.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РеестрДСВ3.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -429,4 +432,5 @@
 			]
 		},
 	]
+	});
 });

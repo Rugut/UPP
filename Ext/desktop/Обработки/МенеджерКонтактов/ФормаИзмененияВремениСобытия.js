@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаИзмененияВремениСобытия',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаИзмененияВремениСобытия',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:334px;height:188px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Изменение времени события',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -98,4 +101,5 @@
 			]
 		},
 	]
+	});
 });

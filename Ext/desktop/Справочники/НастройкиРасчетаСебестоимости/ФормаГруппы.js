@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.НастройкиРасчетаСебестоимости'], function () 
+{
+	Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Настройки расчета себестоимости',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -79,4 +82,5 @@
 			]
 		},
 	]
+	});
 });

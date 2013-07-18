@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновныеСредства.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ОсновныеСредства'], function () 
+{
+	Ext.define('Справочники.ОсновныеСредства.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:677px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Основные средства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Полное наименование',
-					width:'2800',
+					width:'280',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -158,9 +161,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновныеСредства.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -176,7 +179,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'1600',
+					width:'160',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -205,9 +208,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновныеСредства.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -254,4 +257,5 @@
 			]
 		},
 	]
+	});
 });

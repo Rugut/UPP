@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаПрочихЗатрат.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаПрочихЗатрат'], function () 
+{
+	Ext.define('Документы.КорректировкаПрочихЗатрат.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:505px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка прочих затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -111,6 +117,7 @@
 					items:
 					[
 		{
+			id: 'Затраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:255px;',
 			height: 255,width: 622,
@@ -124,7 +131,7 @@
 				},
 				{
 					text:'Статья затрат',
-					width:'198',
+					width:'197',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
@@ -190,13 +197,13 @@
 				},
 				{
 					text:'Вид субконто 2',
-					width:'42',
+					width:'41',
 					dataIndex:'ВидСубконто2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3',
-					width:'40',
+					width:'39',
 					dataIndex:'ВидСубконто3',
 					flex:1,
 				},
@@ -220,13 +227,13 @@
 				},
 				{
 					text:'Аналитика',
-					width:'108',
+					width:'107',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'107',
+					width:'106',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -244,7 +251,7 @@
 				},
 				{
 					text:'Субконто 1',
-					width:'130',
+					width:'129',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
@@ -262,25 +269,25 @@
 				},
 				{
 					text:'Субконто 1 (НУ)',
-					width:'130',
+					width:'129',
 					dataIndex:'СубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2 (НУ)',
-					width:'132',
+					width:'131',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3 (НУ)',
-					width:'128',
+					width:'127',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Продукция',
-					width:'105',
+					width:'104',
 					dataIndex:'Продукция',
 					flex:1,
 				},
@@ -321,7 +328,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -425,6 +432,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Затраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -445,6 +469,7 @@
 					items:
 					[
 		{
+			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:255px;',
 			height: 255,width: 622,
@@ -542,13 +567,13 @@
 				},
 				{
 					text:'Вид субконто 2',
-					width:'43',
+					width:'42',
 					dataIndex:'ВидСубконто2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3',
-					width:'40',
+					width:'39',
 					dataIndex:'ВидСубконто3',
 					flex:1,
 				},
@@ -572,13 +597,13 @@
 				},
 				{
 					text:'Аналитика',
-					width:'137',
+					width:'136',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'136',
+					width:'135',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -590,7 +615,7 @@
 				},
 				{
 					text:'Способ распределения затрат на выпуск',
-					width:'127',
+					width:'126',
 					dataIndex:'СпособРаспределенияЗатратНаВыпуск',
 					flex:1,
 				},
@@ -602,7 +627,7 @@
 				},
 				{
 					text:'Субконто 2',
-					width:'168',
+					width:'167',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
@@ -632,19 +657,19 @@
 				},
 				{
 					text:'Продукция получатель',
-					width:'133',
+					width:'132',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'136',
+					width:'135',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Серия продукции',
-					width:'131',
+					width:'130',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
@@ -673,7 +698,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -785,6 +810,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Получатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -912,8 +954,10 @@
 			height: 19,
 			style: 'position:absolute;left:424px;top:81px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

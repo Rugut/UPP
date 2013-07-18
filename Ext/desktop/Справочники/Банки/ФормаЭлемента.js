@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Банки.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Банки'], function () 
+{
+	Ext.define('Справочники.Банки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:362px;height:219px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Банк',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -155,4 +158,5 @@
 			]
 		},
 	]
+	});
 });

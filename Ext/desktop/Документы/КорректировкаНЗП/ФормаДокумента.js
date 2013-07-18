@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаНЗП.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаНЗП'], function () 
+{
+	Ext.define('Документы.КорректировкаНЗП.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:389px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка незавершенного производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -111,6 +117,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:142px;',
 			height: 142,width: 622,
@@ -249,7 +256,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаНЗП/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаНЗП/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -317,6 +324,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаНЗП.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаНЗП.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -337,6 +361,7 @@
 					items:
 					[
 		{
+			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:142px;',
 			height: 142,width: 622,
@@ -421,7 +446,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаНЗП/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаНЗП/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -461,6 +486,23 @@
 						name:'СчетЗатратПолучательНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Получатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаНЗП.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаНЗП.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -589,8 +631,10 @@
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:573px;top:33px;width:71px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ШаблоныФормулРасчета.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ШаблоныФормулРасчета'], function () 
+{
+	Ext.define('Справочники.ШаблоныФормулРасчета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Шаблоны формул расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ШаблоныФормулРасчета.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ШаблоныФормулРасчета.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -133,9 +136,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ШаблоныФормулРасчета.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ШаблоныФормулРасчета.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -155,4 +158,5 @@
 			]
 		},
 	]
+	});
 });

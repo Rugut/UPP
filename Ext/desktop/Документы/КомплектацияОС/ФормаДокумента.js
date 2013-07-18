@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомплектацияОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КомплектацияОС'], function () 
+{
+	Ext.define('Документы.КомплектацияОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:493px;height:367px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Комплектация ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -60,6 +66,7 @@
 			style: 'position:absolute;left:117px;top:56px;width:368px;height:19px;',
 		},
 		{
+			id: 'СоставОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:477px;height:140px;',
 			height: 140,width: 477,
@@ -73,7 +80,7 @@
 				},
 				{
 					text:'Инв. №',
-					width:'77',
+					width:'76',
 					dataIndex:'ИнвентарныйНомер',
 					flex:1,
 				},
@@ -90,7 +97,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -103,6 +110,23 @@
 						name:'ОсновноеСредство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КомплектацияОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КомплектацияОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -159,7 +183,8 @@
 			height: 19,
 			style: 'position:absolute;left:117px;top:80px;width:368px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -230,4 +255,5 @@
 			]
 		},
 	]
+	});
 });

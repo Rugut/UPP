@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УвольнениеИзОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УвольнениеИзОрганизаций'], function () 
+{
+	Ext.define('Документы.УвольнениеИзОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:565px;height:463px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Увольнение из организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -81,6 +87,7 @@
 			style: 'position:absolute;left:96px;top:412px;width:461px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:549px;height:220px;',
 			height: 220,width: 549,
@@ -124,7 +131,7 @@
 				},
 				{
 					text:'Прекращать стандартные вычеты',
-					width:'115',
+					width:'114',
 					dataIndex:'ПрекращатьСтандартныеВычеты',
 					flex:1,
 				},
@@ -171,7 +178,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УвольнениеИзОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УвольнениеИзОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -214,6 +221,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УвольнениеИзОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УвольнениеИзОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -286,7 +310,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -400,4 +425,5 @@
 			]
 		},
 	]
+	});
 });

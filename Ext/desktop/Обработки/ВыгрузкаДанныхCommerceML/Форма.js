@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВыгрузкаДанныхCommerceML.Форма',
+﻿Ext.require(['Данные.Обработки.ВыгрузкаДанныхCommerceML'], function () 
+{
+	Ext.define('Обработки.ВыгрузкаДанныхCommerceML.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:611px;height:513px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Выгрузка данных в формате CommerceML',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:44px;top:56px;width:428px;height:19px;',
@@ -59,6 +65,7 @@
 					items:
 					[
 		{
+			id: 'ПостроительОтчетаКаталогОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:67px;width:591px;height:262px;',
 			height: 262,width: 591,
@@ -107,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -129,6 +136,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтчетаКаталогОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -173,6 +197,7 @@
 			style: 'position:absolute;left:101px;top:0px;width:355px;height:19px;',
 		},
 		{
+			id: 'ПостроительОтчетаПрайсаОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:67px;width:591px;height:259px;',
 			height: 259,width: 591,
@@ -221,7 +246,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -243,6 +268,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтчетаПрайсаОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -312,6 +354,7 @@
 			style: 'position:absolute;left:302px;top:23px;width:19px;height:19px;',
 		},
 		{
+			id: 'ДеревоДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:94px;width:591px;height:233px;',
 			height: 233,width: 591,
@@ -336,7 +379,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -346,6 +389,23 @@
 						name:'Обрабатывать',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -360,6 +420,7 @@
 					items:
 					[
 		{
+			id: 'Классификатор',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:110px;width:242px;height:219px;',
 			height: 219,width: 242,
@@ -384,7 +445,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -395,8 +456,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Классификатор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПостроительОтчетаПрайсCML_1Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:248px;top:136px;width:343px;height:193px;',
 			height: 193,width: 343,
@@ -445,7 +524,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -467,6 +546,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтчетаПрайсCML_1Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -655,7 +751,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -667,4 +764,5 @@
 			]
 		},
 	]
+	});
 });

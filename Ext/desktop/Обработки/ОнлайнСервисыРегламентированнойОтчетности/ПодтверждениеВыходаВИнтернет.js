@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ПодтверждениеВыходаВИнтернет',
+﻿Ext.require(['Данные.Обработки.ОнлайнСервисыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ПодтверждениеВыходаВИнтернет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:658px;height:312px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Использование сведений из Интернет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -35,4 +38,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

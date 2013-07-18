@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСчетаНалоговый.ФормаНастройкаПоСубконто',
+﻿Ext.require(['Данные.Отчеты.АнализСчетаНалоговый'], function () 
+{
+	Ext.define('Отчеты.АнализСчетаНалоговый.ФормаНастройкаПоСубконто',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:236px;height:290px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -66,4 +69,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

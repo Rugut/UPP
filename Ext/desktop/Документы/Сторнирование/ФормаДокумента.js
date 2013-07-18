@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Сторнирование.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.Сторнирование'], function () 
+{
+	Ext.define('Документы.Сторнирование.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:628px;height:384px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сторнирование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -193,4 +196,5 @@
 			]
 		},
 	]
+	});
 });

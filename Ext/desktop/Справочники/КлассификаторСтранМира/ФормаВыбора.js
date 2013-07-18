@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлассификаторСтранМира.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.КлассификаторСтранМира'], function () 
+{
+	Ext.define('Справочники.КлассификаторСтранМира.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:528px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Классификатор стран мира',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'1200',
+					width:'120',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Полное наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КлассификаторСтранМира.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КлассификаторСтранМира.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

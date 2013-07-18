@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВыполнениеУсловийПоДоговорамКонтрагентов.Форма',
+﻿Ext.require(['Данные.Отчеты.ВыполнениеУсловийПоДоговорамКонтрагентов'], function () 
+{
+	Ext.define('Отчеты.ВыполнениеУсловийПоДоговорамКонтрагентов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:634px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выполнение условий по договорам контрагентов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -210,4 +213,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыИмущество.ФормаОтчета2011Кв3',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАвансыИмущество'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАвансыИмущество.ФормаОтчета2011Кв3',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:488px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчет по авансовым платежам по налогу на имущество',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -338,4 +341,5 @@
 			]
 		},
 	]
+	});
 });

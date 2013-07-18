@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ВопросПредупреждение',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ВопросПредупреждение',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:663px;height:218px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'ВНИМАНИЕ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -62,4 +65,5 @@
 			]
 		},
 	]
+	});
 });

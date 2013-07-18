@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УдалитьОтсутствиеНаРаботе.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УдалитьОтсутствиеНаРаботе'], function () 
+{
+	Ext.define('Документы.УдалитьОтсутствиеНаРаботе.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:721px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отсутствия на работе',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,13 +48,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УдалитьОтсутствиеНаРаботе.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УдалитьОтсутствиеНаРаботе.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -139,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

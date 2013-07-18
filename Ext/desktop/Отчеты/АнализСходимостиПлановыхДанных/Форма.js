@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСходимостиПлановыхДанных.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСходимостиПлановыхДанных'], function () 
+{
+	Ext.define('Отчеты.АнализСходимостиПлановыхДанных.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -198,9 +201,9 @@
 					{
 						var грид = Ext.getCmp('ДанныеОтчета');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализСходимостиПлановыхДанных.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализСходимостиПлановыхДанных.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -307,4 +310,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланПроизводстваПоСменам.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПланПроизводстваПоСменам'], function () 
+{
+	Ext.define('Документы.ПланПроизводстваПоСменам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:420px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'План производства по сменам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомера',
@@ -67,6 +73,7 @@
 					items:
 					[
 		{
+			id: 'ПланыПроизводства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:247px;',
 			height: 247,width: 640,
@@ -98,7 +105,7 @@
 				},
 				{
 					text:'Дата нач',
-					width:'80',
+					width:'79',
 					dataIndex:'ДатаНач',
 					flex:1,
 				},
@@ -133,7 +140,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -165,6 +172,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПланыПроизводства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -173,6 +197,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеЗаказов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:247px;',
 			height: 247,width: 640,
@@ -221,7 +246,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -244,6 +269,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеЗаказов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -252,6 +294,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:247px;',
 			height: 247,width: 640,
@@ -348,7 +391,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -395,6 +438,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -403,6 +463,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоПланов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:200px;',
 			height: 200,width: 640,
@@ -488,7 +549,7 @@
 				},
 				{
 					text:'Количество по спецификации',
-					width:'89',
+					width:'88',
 					dataIndex:'КоличествоПоСпецификации',
 					flex:1,
 				},
@@ -511,7 +572,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -564,6 +625,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоПланов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -587,6 +665,7 @@
 					items:
 					[
 		{
+			id: 'ЗанятостьРабочихЦентров',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:247px;',
 			height: 247,width: 640,
@@ -677,7 +756,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -721,6 +800,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗанятостьРабочихЦентров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -729,6 +825,7 @@
 					items:
 					[
 		{
+			id: 'ПотребностиПроизводства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:247px;',
 			height: 247,width: 640,
@@ -813,7 +910,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -853,6 +950,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПотребностиПроизводства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -907,6 +1021,7 @@
 			style: 'position:absolute;left:6px;top:54px;width:640px;height:16px;',
 		},
 		{
+			id: 'ДоступныеСклады',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:99px;width:640px;height:108px;',
 			height: 108,width: 640,
@@ -931,7 +1046,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланПроизводстваПоСменам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -941,6 +1056,23 @@
 						name:'Склад',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеСклады');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -999,7 +1131,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1061,4 +1194,5 @@
 			]
 		},
 	]
+	});
 });

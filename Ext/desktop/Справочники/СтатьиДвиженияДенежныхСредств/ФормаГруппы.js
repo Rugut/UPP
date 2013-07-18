@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.СтатьиДвиженияДенежныхСредств'], function () 
+{
+	Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:450px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Статьи движения денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -135,4 +138,5 @@
 			]
 		},
 	]
+	});
 });

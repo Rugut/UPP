@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПолучениеФайловИзИнтернета.ФормаПараметрыПрокси',
+﻿Ext.require(['Данные.Обработки.ПолучениеФайловИзИнтернета'], function () 
+{
+	Ext.define('Обработки.ПолучениеФайловИзИнтернета.ФормаПараметрыПрокси',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:284px;height:154px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры прокси-сервера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -100,4 +103,5 @@
 			]
 		},
 	]
+	});
 });

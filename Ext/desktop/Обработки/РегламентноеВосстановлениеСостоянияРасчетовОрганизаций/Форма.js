@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегламентноеВосстановлениеСостоянияРасчетовОрганизаций.Форма',
+﻿Ext.require(['Данные.Обработки.РегламентноеВосстановлениеСостоянияРасчетовОрганизаций'], function () 
+{
+	Ext.define('Обработки.РегламентноеВосстановлениеСостоянияРасчетовОрганизаций.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:625px;height:380px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Восстановление состояния расчетов с контрагентами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -42,6 +48,7 @@
 			style: 'position:absolute;left:8px;top:101px;width:397px;height:19px;',
 		},
 		{
+			id: 'ТабОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:609px;height:177px;',
 			height: 177,width: 609,
@@ -62,7 +69,7 @@
 				{
 					text:'Граница 
 по приобретению',
-					width:'131',
+					width:'130',
 					dataIndex:'ГраницаПриобретений',
 					flex:1,
 				},
@@ -86,7 +93,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентноеВосстановлениеСостоянияРасчетовОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентноеВосстановлениеСостоянияРасчетовОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -106,6 +113,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегламентноеВосстановлениеСостоянияРасчетовОрганизаций.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегламентноеВосстановлениеСостоянияРасчетовОрганизаций.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -113,7 +137,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:328px;width:609px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -161,4 +186,5 @@
 			]
 		},
 	]
+	});
 });

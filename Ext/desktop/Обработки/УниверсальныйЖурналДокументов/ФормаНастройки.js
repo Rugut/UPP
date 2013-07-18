@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.УниверсальныйЖурналДокументов'], function () 
+{
+	Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:681px;height:399px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Общий журнал документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:196px;width:255px;height:24px;',
@@ -30,6 +36,7 @@
 			style: 'position:absolute;left:8px;top:180px;width:665px;height:16px;',
 		},
 		{
+			id: 'РеквизитыДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:269px;top:220px;width:404px;height:146px;',
 			height: 146,width: 404,
@@ -43,7 +50,7 @@
 				},
 				{
 					text:'Имя',
-					width:'151',
+					width:'150',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -54,7 +61,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -65,8 +72,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РеквизитыДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйЖурналДокументов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйЖурналДокументов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СписокГраф',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:220px;width:255px;height:146px;',
 			height: 146,width: 255,
@@ -85,13 +110,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокГраф');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйЖурналДокументов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйЖурналДокументов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -108,6 +150,7 @@
 			]
 		},
 		{
+			id: 'СписокОбрабатываемыхДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:29px;width:665px;height:146px;',
 			height: 146,width: 665,
@@ -126,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -134,8 +177,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокОбрабатываемыхДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйЖурналДокументов.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйЖурналДокументов.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -174,4 +235,5 @@
 			]
 		},
 	]
+	});
 });

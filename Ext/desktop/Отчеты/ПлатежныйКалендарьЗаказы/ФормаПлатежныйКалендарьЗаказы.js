@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПлатежныйКалендарьЗаказы.ФормаПлатежныйКалендарьЗаказы',
+﻿Ext.require(['Данные.Отчеты.ПлатежныйКалендарьЗаказы'], function () 
+{
+	Ext.define('Отчеты.ПлатежныйКалендарьЗаказы.ФормаПлатежныйКалендарьЗаказы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:698px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -189,4 +192,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоДаннымКонтрагента.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоДаннымКонтрагента'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоДаннымКонтрагента.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:810px;height:486px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по данным контрагента',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -124,4 +127,5 @@
 			]
 		},
 	]
+	});
 });

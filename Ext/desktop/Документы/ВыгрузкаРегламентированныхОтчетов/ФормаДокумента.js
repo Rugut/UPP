@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыгрузкаРегламентированныхОтчетов'], function () 
+{
+	Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:720px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер1',
@@ -77,6 +83,7 @@
 					items:
 					[
 		{
+			id: 'Основания',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:704px;height:211px;',
 			height: 211,width: 704,
@@ -90,7 +97,7 @@
 				},
 				{
 					text:'Отчет',
-					width:'142',
+					width:'141',
 					dataIndex:'Отчет',
 					flex:1,
 				},
@@ -131,7 +138,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -156,6 +163,23 @@
 						name:'Ссылка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Основания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -283,7 +307,8 @@
 			boxLabel: 'Отбор по коду ИФНС',
 			style: 'position:absolute;left:354px;top:33px;width:132px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -343,4 +368,5 @@
 			]
 		},
 	]
+	});
 });

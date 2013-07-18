@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаДиапазоновБазовыхЦен.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаДиапазоновБазовыхЦен'], function () 
+{
+	Ext.define('Документы.УстановкаДиапазоновБазовыхЦен.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:506px;height:364px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установки диапазонов базовых цен',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -59,6 +65,7 @@
 			style: 'position:absolute;left:101px;top:57px;width:397px;height:19px;',
 		},
 		{
+			id: 'ШкалаДиапазонов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:128px;width:490px;height:156px;',
 			height: 156,width: 490,
@@ -72,7 +79,7 @@
 				},
 				{
 					text:'Верхняя граница',
-					width:'100',
+					width:'99',
 					dataIndex:'ВерхняяГраница',
 					flex:1,
 				},
@@ -84,13 +91,13 @@
 				},
 				{
 					text:'Цена',
-					width:'81',
+					width:'80',
 					dataIndex:'Цена',
 					flex:1,
 				},
 				{
 					text:'Валюта',
-					width:'62',
+					width:'61',
 					dataIndex:'Валюта',
 					flex:1,
 				},
@@ -101,7 +108,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДиапазоновБазовыхЦен/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДиапазоновБазовыхЦен/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -120,6 +127,23 @@
 						name:'Валюта',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ШкалаДиапазонов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаДиапазоновБазовыхЦен.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаДиапазоновБазовыхЦен.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -161,7 +185,8 @@
 			text: 'Надпись базовый тип цен',
 			style: 'position:absolute;left:101px;top:81px;width:397px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -217,4 +242,5 @@
 			]
 		},
 	]
+	});
 });

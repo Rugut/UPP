@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ПараметрыФормированияПакета',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчет4ФСС'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ПараметрыФормированияПакета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:584px;height:120px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры формирования пакета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -85,4 +88,5 @@
 			]
 		},
 	]
+	});
 });

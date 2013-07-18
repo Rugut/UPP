@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеНДСпоСМРхозспособом.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НачислениеНДСпоСМРхозспособом'], function () 
+{
+	Ext.define('Документы.НачислениеНДСпоСМРхозспособом.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:709px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,13 +112,13 @@
 				},
 				{
 					text:'Объект строительства',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Сумма без НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -127,7 +130,7 @@
 				},
 				{
 					text:'НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -167,9 +170,9 @@
 					{
 						var грид = Ext.getCmp('СМРхозспособом');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НачислениеНДСпоСМРхозспособом.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НачислениеНДСпоСМРхозспособом.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -263,4 +266,5 @@
 			]
 		},
 	]
+	});
 });

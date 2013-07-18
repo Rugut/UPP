@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПродажиПоПериодам.Форма',
+﻿Ext.require(['Данные.Отчеты.ПродажиПоПериодам'], function () 
+{
+	Ext.define('Отчеты.ПродажиПоПериодам.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:900px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Продажи по периодам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -1157,9 +1160,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеТовары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1315,9 +1318,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСклады');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1375,9 +1378,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеТипыЦен');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1460,9 +1463,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеВыбранныеПоля');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1562,9 +1565,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1622,9 +1625,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСортировка');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1683,4 +1686,5 @@
 			]
 		},
 	]
+	});
 });

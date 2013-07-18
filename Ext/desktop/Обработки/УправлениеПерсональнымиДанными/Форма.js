@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УправлениеПерсональнымиДанными.Форма',
+﻿Ext.require(['Данные.Обработки.УправлениеПерсональнымиДанными'], function () 
+{
+	Ext.define('Обработки.УправлениеПерсональнымиДанными.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:711px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Управление персональными данными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:6px;width:696px;height:566px;',
@@ -64,6 +70,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:684px;height:16px;',
 		},
 		{
+			id: 'События',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:53px;width:453px;height:424px;',
 			height: 424,width: 453,
@@ -71,7 +78,7 @@
 			[
 				{
 					text:'',
-					width:'25',
+					width:'24',
 					dataIndex:'Картинка',
 					flex:1,
 				},
@@ -83,19 +90,19 @@
 				},
 				{
 					text:'Представление события',
-					width:'148',
+					width:'147',
 					dataIndex:'ПредставлениеСобытия',
 					flex:1,
 				},
 				{
 					text:'Пользователь',
-					width:'134',
+					width:'133',
 					dataIndex:'ИмяПользователя',
 					flex:1,
 				},
 				{
 					text:'Метаданные',
-					width:'179',
+					width:'178',
 					dataIndex:'ПредставлениеМетаданных',
 					flex:1,
 				},
@@ -208,7 +215,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -279,8 +286,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('События');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеПерсональнымиДанными.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеПерсональнымиДанными.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СведенияОСобытии',
 			xtype: 'grid',
 			style: 'position:absolute;left:469px;top:161px;width:221px;height:316px;',
 			height: 316,width: 221,
@@ -288,7 +313,7 @@
 			[
 				{
 					text:'Список субъектов события',
-					width:'238',
+					width:'237',
 					dataIndex:'СубъектСобытия',
 					flex:1,
 				},
@@ -299,13 +324,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'СубъектСобытия',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОСобытии');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеПерсональнымиДанными.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеПерсональнымиДанными.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -328,6 +370,7 @@
 			style: 'position:absolute;left:138px;top:27px;width:138px;height:19px;',
 		},
 		{
+			id: 'ОбластиДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:469px;top:74px;width:221px;height:61px;',
 			height: 61,width: 221,
@@ -358,7 +401,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УправлениеПерсональнымиДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -371,6 +414,23 @@
 						name:'ИмяТаблицыИБ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОбластиДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УправлениеПерсональнымиДанными.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УправлениеПерсональнымиДанными.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -394,8 +454,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

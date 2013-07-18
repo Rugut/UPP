@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеРасходовБудущихПериодов.ФормаСписка',
+﻿Ext.require(['Данные.Документы.СписаниеРасходовБудущихПериодов'], function () 
+{
+	Ext.define('Документы.СписаниеРасходовБудущихПериодов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Списание расходов будущих периодов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,13 +66,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СписаниеРасходовБудущихПериодов.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СписаниеРасходовБудущихПериодов.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -166,4 +169,5 @@
 			]
 		},
 	]
+	});
 });

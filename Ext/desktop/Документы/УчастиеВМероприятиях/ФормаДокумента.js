@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УчастиеВМероприятиях.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УчастиеВМероприятиях'], function () 
+{
+	Ext.define('Документы.УчастиеВМероприятиях.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:452px;height:428px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Участие в мероприятиях',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -74,6 +80,7 @@
 			style: 'position:absolute;left:96px;top:376px;width:348px;height:19px;',
 		},
 		{
+			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:436px;height:220px;',
 			height: 220,width: 436,
@@ -116,7 +123,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчастиеВМероприятиях/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчастиеВМероприятиях/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,6 +142,23 @@
 						name:'ХарактерУчастия',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Работники');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УчастиеВМероприятиях.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УчастиеВМероприятиях.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -180,7 +204,8 @@
 			title: 'Сотрудники',
 			style: 'position:absolute;left:8px;top:108px;width:436px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -233,4 +258,5 @@
 			]
 		},
 	]
+	});
 });

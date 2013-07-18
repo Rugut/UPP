@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеестрСчетов.ФормаСписка',
+﻿Ext.require(['Данные.Документы.РеестрСчетов'], function () 
+{
+	Ext.define('Документы.РеестрСчетов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:616px;height:260px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Реестры счетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Организация',
-					width:'2200',
+					width:'220',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Счет организации',
-					width:'2200',
+					width:'220',
 					dataIndex:'СчетОрганизации',
 					flex:1,
 				},
@@ -57,19 +60,19 @@
 				},
 				{
 					text:'Юр физ лицо контрагента',
-					width:'2200',
+					width:'220',
 					dataIndex:'ЮрФизЛицоКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'2200',
+					width:'220',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'2200',
+					width:'220',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РеестрСчетов.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РеестрСчетов.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -146,4 +149,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

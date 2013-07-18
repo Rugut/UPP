@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеЦен.Форма',
+﻿Ext.require(['Данные.Обработки.ФормированиеЦен'], function () 
+{
+	Ext.define('Обработки.ФормированиеЦен.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:331px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Формирование цен',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:34px;width:484px;height:24px;',
@@ -23,6 +29,7 @@
 			]
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:58px;width:656px;height:220px;',
 			height: 220,width: 656,
@@ -48,7 +55,7 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'103',
+					width:'102',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -60,19 +67,19 @@
 				},
 				{
 					text:'Валюта базовая',
-					width:'97',
+					width:'96',
 					dataIndex:'ВалютаБазовая',
 					flex:1,
 				},
 				{
 					text:'Способ расчета',
-					width:'137',
+					width:'136',
 					dataIndex:'СпособРасчетаЦены',
 					flex:1,
 				},
 				{
 					text:'% скидки (наценки)',
-					width:'46',
+					width:'45',
 					dataIndex:'ПроцентСкидкиНаценки',
 					flex:1,
 				},
@@ -101,7 +108,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -138,6 +145,23 @@
 						name:'ЕдиницаИзмерения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеЦен.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеЦен.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -220,8 +244,10 @@
 			boxLabel: 'Подставлять валюту из диапазона',
 			style: 'position:absolute;left:466px;top:283px;width:196px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

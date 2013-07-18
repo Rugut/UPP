@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СертификацияНоменклатуры.ФормаСписка',
+﻿Ext.require(['Данные.Документы.СертификацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.СертификацияНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сертификации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,31 +42,31 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Результат сертификации',
-					width:'1200',
+					width:'120',
 					dataIndex:'РезультатСертификации',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'1200',
+					width:'120',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Номер сертификата',
-					width:'1200',
+					width:'120',
 					dataIndex:'НомерСертификата',
 					flex:1,
 				},
@@ -130,9 +133,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СертификацияНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СертификацияНоменклатуры.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -295,4 +298,5 @@
 			]
 		},
 	]
+	});
 });

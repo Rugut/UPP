@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеТоваровИзПереработки.ФормаНастройки',
+﻿Ext.require(['Данные.Документы.ПоступлениеТоваровИзПереработки'], function () 
+{
+	Ext.define('Документы.ПоступлениеТоваровИзПереработки.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:254px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка документа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -90,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

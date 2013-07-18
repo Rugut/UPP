@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПрочиеЗатраты.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПрочиеЗатраты'], function () 
+{
+	Ext.define('Документы.ПрочиеЗатраты.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:491px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Затраты прочие',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -84,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'Затраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:640px;height:245px;',
 			height: 245,width: 640,
@@ -169,13 +176,13 @@
 				},
 				{
 					text:'Аналитика',
-					width:'108',
+					width:'107',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'144',
+					width:'143',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -235,13 +242,13 @@
 				},
 				{
 					text:'Характеристика продукции',
-					width:'105',
+					width:'104',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Серия продукции',
-					width:'105',
+					width:'104',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
@@ -294,7 +301,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрочиеЗатраты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрочиеЗатраты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -397,6 +404,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Затраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПрочиеЗатраты.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПрочиеЗатраты.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -693,8 +717,10 @@
 			height: 19,
 			style: 'position:absolute;left:424px;top:81px;width:238px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

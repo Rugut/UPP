@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеестрСчетов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РеестрСчетов'], function () 
+{
+	Ext.define('Документы.РеестрСчетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:367px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Реестр счетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -174,6 +180,7 @@
 			style: 'position:absolute;left:564px;top:104px;width:80px;height:19px;',
 		},
 		{
+			id: 'Реестр',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:176px;width:636px;height:108px;',
 			height: 108,width: 636,
@@ -216,7 +223,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -235,6 +242,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Реестр');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеестрСчетов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеестрСчетов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -326,7 +350,8 @@
 			height: 19,
 			style: 'position:absolute;left:119px;top:128px;width:197px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -338,4 +363,5 @@
 			]
 		},
 	]
+	});
 });

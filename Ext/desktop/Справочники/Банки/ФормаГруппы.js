@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Банки.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Банки'], function () 
+{
+	Ext.define('Справочники.Банки.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:446px;height:113px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Банки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

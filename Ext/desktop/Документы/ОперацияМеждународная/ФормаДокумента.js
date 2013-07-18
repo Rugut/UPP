@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОперацияМеждународная.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОперацияМеждународная'], function () 
+{
+	Ext.define('Документы.ОперацияМеждународная.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:653px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -107,6 +113,7 @@
 			style: 'position:absolute;left:425px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеДвижения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:132px;width:637px;height:261px;',
 			height: 261,width: 637,
@@ -144,13 +151,13 @@
 				},
 				{
 					text:'Валюта',
-					width:'41',
+					width:'40',
 					dataIndex:'ВалютаДт',
 					flex:1,
 				},
 				{
 					text:'Вал. сумма',
-					width:'93',
+					width:'92',
 					dataIndex:'ВалютнаяСуммаДт',
 					flex:1,
 				},
@@ -168,19 +175,19 @@
 				},
 				{
 					text:'СубконтоКт1',
-					width:'98',
+					width:'97',
 					dataIndex:'СубконтоКт1',
 					flex:1,
 				},
 				{
 					text:'СубконтоКт2',
-					width:'98',
+					width:'97',
 					dataIndex:'СубконтоКт2',
 					flex:1,
 				},
 				{
 					text:'СубконтоКт3',
-					width:'98',
+					width:'97',
 					dataIndex:'СубконтоКт3',
 					flex:1,
 				},
@@ -192,7 +199,7 @@
 				},
 				{
 					text:'Вал. сумма',
-					width:'81',
+					width:'80',
 					dataIndex:'ВалютнаяСуммаКт',
 					flex:1,
 				},
@@ -210,13 +217,13 @@
 				},
 				{
 					text:'Содержание',
-					width:'163',
+					width:'162',
 					dataIndex:'Содержание',
 					flex:1,
 				},
 				{
 					text:'№ж',
-					width:'24',
+					width:'23',
 					dataIndex:'НомерЖурнала',
 					flex:1,
 				},
@@ -227,7 +234,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -286,8 +293,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвижения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОперацияМеждународная.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОперацияМеждународная.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -362,4 +387,5 @@
 			]
 		},
 	]
+	});
 });

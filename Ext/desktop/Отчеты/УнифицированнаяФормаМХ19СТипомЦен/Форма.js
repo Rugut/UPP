@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.УнифицированнаяФормаМХ19СТипомЦен.Форма',
+﻿Ext.require(['Данные.Отчеты.УнифицированнаяФормаМХ19СТипомЦен'], function () 
+{
+	Ext.define('Отчеты.УнифицированнаяФормаМХ19СТипомЦен.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:418px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма МХ-19 (по типу цен)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -148,4 +151,5 @@
 			]
 		},
 	]
+	});
 });

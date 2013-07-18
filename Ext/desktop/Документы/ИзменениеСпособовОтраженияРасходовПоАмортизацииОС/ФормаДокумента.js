@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииОС'], function () 
+{
+	Ext.define('Документы.ИзменениеСпособовОтраженияРасходовПоАмортизацииОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:344px;height:487px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение способа отражения расходов по амортизации ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -101,6 +107,7 @@
 			style: 'position:absolute;left:170px;top:57px;width:72px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:244px;width:328px;height:160px;',
 			height: 160,width: 328,
@@ -131,7 +138,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпособовОтраженияРасходовПоАмортизацииОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпособовОтраженияРасходовПоАмортизацииОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -144,6 +151,23 @@
 						name:'ОсновноеСредство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеСпособовОтраженияРасходовПоАмортизацииОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеСпособовОтраженияРасходовПоАмортизацииОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -243,7 +267,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:133px;width:242px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -286,4 +311,5 @@
 			]
 		},
 	]
+	});
 });

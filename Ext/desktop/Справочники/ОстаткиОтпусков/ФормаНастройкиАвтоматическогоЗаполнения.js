@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОстаткиОтпусков.ФормаНастройкиАвтоматическогоЗаполнения',
+﻿Ext.require(['Данные.Справочники.ОстаткиОтпусков'], function () 
+{
+	Ext.define('Справочники.ОстаткиОтпусков.ФормаНастройкиАвтоматическогоЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:112px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка автоматического заполнения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -46,4 +49,5 @@
 			]
 		},
 	]
+	});
 });

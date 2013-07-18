@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыПоСтатьямБюджетов.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОборотыПоСтатьямБюджетов'], function () 
+{
+	Ext.define('Отчеты.ОборотыПоСтатьямБюджетов.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:382px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:341px;',
@@ -100,6 +106,7 @@
 			style: 'position:absolute;left:310px;top:6px;width:20px;height:19px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:188px;width:460px;height:127px;',
 			height: 127,width: 460,
@@ -113,7 +120,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'280',
+					width:'279',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -124,7 +131,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -134,6 +141,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -174,6 +198,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:212px;height:291px;',
 			height: 291,width: 212,
@@ -198,7 +223,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -209,8 +234,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ИзмеренияКолонки',
 			xtype: 'grid',
 			style: 'position:absolute;left:254px;top:24px;width:212px;height:291px;',
 			height: 291,width: 212,
@@ -235,7 +278,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -246,6 +289,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияКолонки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -254,6 +314,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:290px;',
 			height: 290,width: 460,
@@ -302,7 +363,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -325,6 +386,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -338,6 +416,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:303px;height:15px;',
 		},
 		{
+			id: 'ВыбранныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:52px;width:460px;height:260px;',
 			height: 260,width: 460,
@@ -356,13 +435,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыбранныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -390,8 +486,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

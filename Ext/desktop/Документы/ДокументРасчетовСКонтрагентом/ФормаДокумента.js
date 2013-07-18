@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ДокументРасчетовСКонтрагентом'], function () 
+{
+	Ext.define('Документы.ДокументРасчетовСКонтрагентом.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:317px;height:206px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Документ расчетов с контрагентом (ручной учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -186,4 +189,5 @@
 			]
 		},
 	]
+	});
 });

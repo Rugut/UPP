@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтепениРодстваФизЛиц.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтепениРодстваФизЛиц'], function () 
+{
+	Ext.define('Справочники.СтепениРодстваФизЛиц.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:408px;height:85px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Степени родства физических лиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

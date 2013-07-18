@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.УведомлениеОБлокировкеФормыИЛИФормата',
+﻿Ext.require(['Данные.Обработки.ОнлайнСервисыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.УведомлениеОБлокировкеФормыИЛИФормата',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:545px;height:335px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Внимание!',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -105,4 +108,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

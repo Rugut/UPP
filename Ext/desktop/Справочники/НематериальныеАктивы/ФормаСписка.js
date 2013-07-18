@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НематериальныеАктивы.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.НематериальныеАктивы'], function () 
+{
+	Ext.define('Справочники.НематериальныеАктивы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Нематериальные активы и расходы на НИОКР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,25 +36,25 @@
 				},
 				{
 					text:'Наименование',
-					width:'1200',
+					width:'120',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Полное наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
 				{
 					text:'Вид НМА',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидНМА',
 					flex:1,
 				},
 				{
 					text:'Амортизационная группа',
-					width:'1200',
+					width:'120',
 					dataIndex:'АмортизационнаяГруппа',
 					flex:1,
 				},
@@ -95,9 +98,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НематериальныеАктивы.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НематериальныеАктивы.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -113,7 +116,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'1600',
+					width:'160',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -142,9 +145,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НематериальныеАктивы.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НематериальныеАктивы.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -171,4 +174,5 @@
 			]
 		},
 	]
+	});
 });

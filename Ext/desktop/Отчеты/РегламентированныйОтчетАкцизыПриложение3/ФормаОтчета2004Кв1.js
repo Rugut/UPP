@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение3.ФормаОтчета2004Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАкцизыПриложение3'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАкцизыПриложение3.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:490px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Акцизы (Приложение 3)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -433,4 +436,5 @@
 			]
 		},
 	]
+	});
 });

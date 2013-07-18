@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетНедра.ФормаОтчета2004Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетНедра'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетНедра.ФормаОтчета2004Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:490px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Плата за пользование недрами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -370,4 +373,5 @@
 			]
 		},
 	]
+	});
 });

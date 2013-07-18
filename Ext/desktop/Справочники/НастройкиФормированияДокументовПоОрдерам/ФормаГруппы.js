@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиФормированияДокументовПоОрдерам.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.НастройкиФормированияДокументовПоОрдерам'], function () 
+{
+	Ext.define('Справочники.НастройкиФормированияДокументовПоОрдерам.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки формирования документов по ордерам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -79,4 +82,5 @@
 			]
 		},
 	]
+	});
 });

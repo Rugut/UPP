@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КалендарныйПланЗакупок.ФормаОтбора',
+﻿Ext.require(['Данные.Обработки.КалендарныйПланЗакупок'], function () 
+{
+	Ext.define('Обработки.КалендарныйПланЗакупок.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:319px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отбор',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -371,4 +374,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАвансыПоЕСН.ФормаОтчета2007Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАвансыПоЕСН'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАвансыПоЕСН.ФормаОтчета2007Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:721px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Авансы по ЕСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -338,4 +341,5 @@
 			]
 		},
 	]
+	});
 });

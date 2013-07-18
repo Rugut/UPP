@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТарифныеРазряды.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ТарифныеРазряды'], function () 
+{
+	Ext.define('Справочники.ТарифныеРазряды.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:433px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа тарифных разрядов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -103,4 +106,5 @@
 			]
 		},
 	]
+	});
 });

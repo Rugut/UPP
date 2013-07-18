@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПробныйБалансМеждународный.ФормаНастройкаПоСубконто',
+﻿Ext.require(['Данные.Отчеты.ПробныйБалансМеждународный'], function () 
+{
+	Ext.define('Отчеты.ПробныйБалансМеждународный.ФормаНастройкаПоСубконто',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:262px;height:259px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,4 +60,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

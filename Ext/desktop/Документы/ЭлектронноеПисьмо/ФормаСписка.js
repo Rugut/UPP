@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЭлектронноеПисьмо.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ЭлектронноеПисьмо'], function () 
+{
+	Ext.define('Документы.ЭлектронноеПисьмо.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:334px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Электронные письма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:293px;',
 			height: 293,width: 764,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'НеРассмотрено',
 					flex:1,
 				},
@@ -35,7 +42,7 @@
 				},
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'СтатусПисьма',
 					flex:1,
 				},
@@ -59,19 +66,19 @@
 				},
 				{
 					text:'От кого',
-					width:'142',
+					width:'141',
 					dataIndex:'ОтправительИмя',
 					flex:1,
 				},
 				{
 					text:'Кому',
-					width:'118',
+					width:'117',
 					dataIndex:'КомуПредставление',
 					flex:1,
 				},
 				{
 					text:'Тема',
-					width:'129',
+					width:'128',
 					dataIndex:'Тема',
 					flex:1,
 				},
@@ -89,7 +96,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'118',
+					width:'117',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -106,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,8 +160,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -176,4 +201,5 @@
 			]
 		},
 	]
+	});
 });

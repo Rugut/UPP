@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализЗаказаНаПроизводство.ФормаГлавная',
+﻿Ext.require(['Данные.Отчеты.АнализЗаказаНаПроизводство'], function () 
+{
+	Ext.define('Отчеты.АнализЗаказаНаПроизводство.ФормаГлавная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:767px;height:406px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ заказа на производство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -82,4 +85,5 @@
 			]
 		},
 	]
+	});
 });

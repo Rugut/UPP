@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НалоговыеОрганы.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.НалоговыеОрганы'], function () 
+{
+	Ext.define('Справочники.НалоговыеОрганы.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:831px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Налоговые органы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,13 +48,13 @@
 				},
 				{
 					text:'Вид',
-					width:'1200',
+					width:'120',
 					dataIndex:'Вид',
 					flex:1,
 				},
 				{
 					text:'E-mail',
-					width:'1200',
+					width:'120',
 					dataIndex:'АдресЭлектроннойПочты',
 					flex:1,
 				},
@@ -93,19 +96,19 @@
 				},
 				{
 					text:'Адрес',
-					width:'1200',
+					width:'120',
 					dataIndex:'Адрес',
 					flex:1,
 				},
 				{
 					text:'Телефон',
-					width:'1200',
+					width:'120',
 					dataIndex:'Телефон',
 					flex:1,
 				},
 				{
 					text:'Адрес сайта',
-					width:'1200',
+					width:'120',
 					dataIndex:'АдресСайта',
 					flex:1,
 				},
@@ -176,9 +179,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НалоговыеОрганы.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НалоговыеОрганы.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -321,4 +324,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофилиПолномочийПользователей.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ПрофилиПолномочийПользователей'], function () 
+{
+	Ext.define('Справочники.ПрофилиПолномочийПользователей.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа профиля полномочий пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -120,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

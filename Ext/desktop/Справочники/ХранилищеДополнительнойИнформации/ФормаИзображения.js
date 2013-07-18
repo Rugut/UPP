@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаИзображения',
+﻿Ext.require(['Данные.Справочники.ХранилищеДополнительнойИнформации'], function () 
+{
+	Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаИзображения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:386px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма данных об изображении',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -120,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

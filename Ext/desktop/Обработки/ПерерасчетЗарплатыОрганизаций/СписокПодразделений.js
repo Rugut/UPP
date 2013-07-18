@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.СписокПодразделений',
+﻿Ext.require(['Данные.Обработки.ПерерасчетЗарплатыОрганизаций'], function () 
+{
+	Ext.define('Обработки.ПерерасчетЗарплатыОрганизаций.СписокПодразделений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:277px;height:292px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выбор по подразделениям',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокПодразделений',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:261px;height:251px;',
 			height: 251,width: 261,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Подразделение',
-					width:'168',
+					width:'167',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПерерасчетЗарплатыОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПерерасчетЗарплатыОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +52,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПодразделений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПерерасчетЗарплатыОрганизаций.СписокПодразделенийСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПерерасчетЗарплатыОрганизаций.СписокПодразделенийСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -68,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

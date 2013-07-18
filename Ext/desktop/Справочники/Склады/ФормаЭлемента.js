@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Склады.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Склады'], function () 
+{
+	Ext.define('Справочники.Склады.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:529px;height:320px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Склады (места хранения)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -183,6 +189,7 @@
 					items:
 					[
 		{
+			id: 'Свойства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:499px;height:127px;',
 			height: 127,width: 499,
@@ -196,24 +203,25 @@
 				},
 				{
 					text:'Свойство',
-					width:'186',
+					width:'185',
 					dataIndex:'Свойство',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'259',
+					width:'258',
 					dataIndex:'Значение',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Склады").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -227,6 +235,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Свойства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -235,6 +260,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:499px;height:127px;',
 			height: 127,width: 499,
@@ -254,18 +280,19 @@
 				},
 				{
 					text:'Категория',
-					width:'416',
+					width:'415',
 					dataIndex:'Категория',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Склады").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -279,12 +306,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -332,4 +377,5 @@
 			]
 		},
 	]
+	});
 });

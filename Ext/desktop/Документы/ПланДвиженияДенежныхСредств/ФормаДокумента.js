@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланДвиженияДенежныхСредств.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПланДвиженияДенежныхСредств'], function () 
+{
+	Ext.define('Документы.ПланДвиженияДенежныхСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:411px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'План движения денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -101,6 +107,7 @@
 			style: 'position:absolute;left:549px;top:57px;width:95px;height:19px;',
 		},
 		{
+			id: 'ДвиженияДенежныхСредств',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:174px;width:636px;height:108px;',
 			height: 108,width: 636,
@@ -120,13 +127,13 @@
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'128',
+					width:'127',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'86',
+					width:'85',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -144,7 +151,7 @@
 				},
 				{
 					text:'Вид операции',
-					width:'159',
+					width:'158',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
@@ -156,7 +163,7 @@
 				},
 				{
 					text:'Сделка',
-					width:'143',
+					width:'142',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -167,7 +174,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -198,6 +205,23 @@
 						name:'Сделка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДвиженияДенежныхСредств');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланДвиженияДенежныхСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланДвиженияДенежныхСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -362,7 +386,8 @@
 			title: 'Движения денежных средств',
 			style: 'position:absolute;left:8px;top:129px;width:636px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -377,4 +402,5 @@
 			]
 		},
 	]
+	});
 });

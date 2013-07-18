@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КонтактныеЛицаКонтрагентов.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.КонтактныеЛицаКонтрагентов'], function () 
+{
+	Ext.define('Справочники.КонтактныеЛицаКонтрагентов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:416px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Контактные лица контрагентов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -113,9 +116,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -135,4 +138,5 @@
 			]
 		},
 	]
+	});
 });

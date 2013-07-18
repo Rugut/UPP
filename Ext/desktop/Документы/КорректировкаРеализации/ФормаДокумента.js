@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаРеализации.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаРеализации'], function () 
+{
+	Ext.define('Документы.КорректировкаРеализации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:485px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка реализации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -84,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:642px;height:207px;',
 			height: 207,width: 642,
@@ -390,7 +397,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаРеализации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаРеализации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -542,6 +549,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаРеализации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаРеализации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -570,6 +594,7 @@
 					items:
 					[
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:642px;height:207px;',
 			height: 207,width: 642,
@@ -750,7 +775,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаРеализации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаРеализации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -838,6 +863,23 @@
 						name:'СчетРасходовНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаРеализации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаРеализации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1114,8 +1156,10 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

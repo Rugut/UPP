@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиБюджета.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.СтатьиБюджета'], function () 
+{
+	Ext.define('Справочники.СтатьиБюджета.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:324px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Статьи бюджета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СтатьиБюджета.ФормаВыбораГруппыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СтатьиБюджета.ФормаВыбораГруппыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

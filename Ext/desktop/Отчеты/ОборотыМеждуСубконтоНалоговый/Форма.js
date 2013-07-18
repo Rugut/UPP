@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыМеждуСубконтоНалоговый.Форма',
+﻿Ext.require(['Данные.Отчеты.ОборотыМеждуСубконтоНалоговый'], function () 
+{
+	Ext.define('Отчеты.ОборотыМеждуСубконтоНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет Обороты между субконто',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

@@ -44,7 +44,7 @@ namespace V82.СправочникиОбъект
 		public Guid Владелец {get;set;}
 		[DataMember]
 		[ProtoMember(7)]
-		public Guid Родитель {get;set;}
+		public V82.СправочникиСсылка.ГруппыПисемЭлектроннойПочты Родитель {get;set;}
 		[DataMember]
 		[ProtoMember(8)]
 		public string/*9*/ Код {get;set;}

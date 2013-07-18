@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.СообщениеОПроверке',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.СообщениеОПроверке',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:513px;height:288px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сообщение о проверке заявления',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -176,4 +179,5 @@
 			]
 		},
 	]
+	});
 });

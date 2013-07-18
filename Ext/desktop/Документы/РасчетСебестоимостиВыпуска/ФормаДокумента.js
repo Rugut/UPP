@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетСебестоимостиВыпуска.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетСебестоимостиВыпуска'], function () 
+{
+	Ext.define('Документы.РасчетСебестоимостиВыпуска.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:363px;height:464px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Расчет себестоимости',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -99,6 +105,7 @@
 					items:
 					[
 		{
+			id: 'ВыполняемыеДействия',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:333px;height:177px;',
 			height: 177,width: 333,
@@ -106,13 +113,13 @@
 			[
 				{
 					text:'Порядок',
-					width:'49',
+					width:'48',
 					dataIndex:'НомерСтроки',
 					flex:1,
 				},
 				{
 					text:'Выполняемое действие',
-					width:'244',
+					width:'243',
 					dataIndex:'ВыполняемоеДействие',
 					flex:1,
 				},
@@ -123,7 +130,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСебестоимостиВыпуска/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСебестоимостиВыпуска/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -133,6 +140,23 @@
 						name:'ВыполняемоеДействие',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыполняемыеДействия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСебестоимостиВыпуска.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСебестоимостиВыпуска.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -259,7 +283,8 @@
 			height: 19,
 			style: 'position:absolute;left:107px;top:137px;width:248px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -297,4 +322,5 @@
 			]
 		},
 	]
+	});
 });

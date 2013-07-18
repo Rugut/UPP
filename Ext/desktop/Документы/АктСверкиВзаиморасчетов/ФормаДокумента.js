@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АктСверкиВзаиморасчетов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АктСверкиВзаиморасчетов'], function () 
+{
+	Ext.define('Документы.АктСверкиВзаиморасчетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:441px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Акт сверки взаиморасчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -181,6 +187,7 @@
 			]
 		},
 		{
+			id: 'ПоДаннымОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:24px;width:631px;height:176px;',
 			height: 176,width: 631,
@@ -241,7 +248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -269,6 +276,23 @@
 						name:'Кредит',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоДаннымОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктСверкиВзаиморасчетов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктСверкиВзаиморасчетов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -305,6 +329,7 @@
 					items:
 					[
 		{
+			id: 'ПоДаннымКонтрагента',
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:24px;width:631px;height:176px;',
 			height: 176,width: 631,
@@ -336,13 +361,13 @@
 				},
 				{
 					text:'Документ',
-					width:'101',
+					width:'100',
 					dataIndex:'Документ',
 					flex:1,
 				},
 				{
 					text:'Представление',
-					width:'252',
+					width:'251',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -365,7 +390,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -393,6 +418,23 @@
 						name:'Кредит',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоДаннымКонтрагента');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктСверкиВзаиморасчетов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктСверкиВзаиморасчетов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -443,6 +485,7 @@
 					items:
 					[
 		{
+			id: 'СписокСчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:627px;height:178px;',
 			height: 178,width: 627,
@@ -450,19 +493,19 @@
 			[
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'УчаствуетВРасчетах',
 					flex:1,
 				},
 				{
 					text:'Счет',
-					width:'76',
+					width:'75',
 					dataIndex:'Счет',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'297',
+					width:'296',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -473,7 +516,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АктСверкиВзаиморасчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -486,6 +529,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокСчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АктСверкиВзаиморасчетов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АктСверкиВзаиморасчетов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -589,7 +649,8 @@
 			boxLabel: 'Сверка согласована',
 			style: 'position:absolute;left:328px;top:106px;width:143px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -627,4 +688,5 @@
 			]
 		},
 	]
+	});
 });

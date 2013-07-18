@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ТоварныйОтчетТОРГ29.Форма',
+﻿Ext.require(['Данные.Отчеты.ТоварныйОтчетТОРГ29'], function () 
+{
+	Ext.define('Отчеты.ТоварныйОтчетТОРГ29.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Товарный отчет (ТОРГ-29)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

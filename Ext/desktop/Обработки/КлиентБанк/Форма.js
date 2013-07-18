@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КлиентБанк.Форма',
+﻿Ext.require(['Данные.Обработки.КлиентБанк'], function () 
+{
+	Ext.define('Обработки.КлиентБанк.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:787px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Клиент банка (загрузка / выгрузка платежных документов)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:7px;width:774px;height:565px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыНаЭкспорт',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:138px;width:757px;height:340px;',
 			height: 340,width: 757,
@@ -416,7 +423,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -613,6 +620,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыНаЭкспорт');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КлиентБанк.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КлиентБанк.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -736,6 +760,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыКИмпорту',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:138px;width:757px;height:340px;',
 			height: 340,width: 757,
@@ -773,7 +798,7 @@
 				},
 				{
 					text:'Сумма документа',
-					width:'102',
+					width:'101',
 					dataIndex:'СуммаДокумента1',
 					flex:1,
 				},
@@ -791,7 +816,7 @@
 				},
 				{
 					text:'Счет организации',
-					width:'129',
+					width:'128',
 					dataIndex:'СчетОрганизации',
 					flex:1,
 				},
@@ -856,7 +881,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлиентБанк/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -914,6 +939,23 @@
 						name:'СтатьяДДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыКИмпорту');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КлиентБанк.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КлиентБанк.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1001,8 +1043,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

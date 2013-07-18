@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполнения',
+﻿Ext.require(['Данные.Справочники.ПрофилиИзмененияПлановПоПериодам'], function () 
+{
+	Ext.define('Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:296px;height:268px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Параметры изменения по периодам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -141,4 +144,5 @@
 			]
 		},
 	]
+	});
 });

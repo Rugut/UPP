@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ДоступныеОбновленияРегламентированнойОтчетности',
+﻿Ext.require(['Данные.Обработки.ОнлайнСервисыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОнлайнСервисыРегламентированнойОтчетности.ДоступныеОбновленияРегламентированнойОтчетности',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:439px;height:537px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Информация об обновлениях',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:512px;width:439px;height:25px;',
@@ -49,6 +55,7 @@
 					items:
 					[
 		{
+			id: 'ДеревоОтчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:423px;height:333px;',
 			height: 333,width: 423,
@@ -56,7 +63,7 @@
 			[
 				{
 					text:'Отчет',
-					width:'171',
+					width:'170',
 					dataIndex:'Отчет',
 					flex:1,
 				},
@@ -91,7 +98,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОнлайнСервисыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОнлайнСервисыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -110,6 +117,23 @@
 						name:'URL',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоОтчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОнлайнСервисыРегламентированнойОтчетности.ДоступныеОбновленияРегламентированнойОтчетностиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОнлайнСервисыРегламентированнойОтчетности.ДоступныеОбновленияРегламентированнойОтчетностиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -229,8 +253,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

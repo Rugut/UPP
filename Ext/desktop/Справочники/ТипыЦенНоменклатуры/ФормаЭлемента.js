@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТипыЦенНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:492px;height:336px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Элемент Типы цен номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -223,4 +226,5 @@
 			]
 		},
 	]
+	});
 });

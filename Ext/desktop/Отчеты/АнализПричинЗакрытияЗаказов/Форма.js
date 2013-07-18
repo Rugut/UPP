@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализПричинЗакрытияЗаказов.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализПричинЗакрытияЗаказов'], function () 
+{
+	Ext.define('Отчеты.АнализПричинЗакрытияЗаказов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:820px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -235,4 +238,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЯзыкиНародовМира.ФормаПодбораИзКлассификатора',
+﻿Ext.require(['Данные.Справочники.ЯзыкиНародовМира'], function () 
+{
+	Ext.define('Справочники.ЯзыкиНародовМира.ФормаПодбораИзКлассификатора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Языки народов мира',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

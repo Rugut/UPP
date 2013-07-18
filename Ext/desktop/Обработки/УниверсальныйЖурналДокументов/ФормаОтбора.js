@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаОтбора',
+﻿Ext.require(['Данные.Обработки.УниверсальныйЖурналДокументов'], function () 
+{
+	Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:460px;height:302px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отбор и сортировка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:5px;top:5px;width:450px;height:266px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:210px;',
 			height: 210,width: 436,
@@ -68,7 +75,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -91,6 +98,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйЖурналДокументов.ФормаОтбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйЖурналДокументов.ФормаОтбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -99,6 +123,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:436px;height:210px;',
 			height: 210,width: 436,
@@ -112,7 +137,7 @@
 				},
 				{
 					text:'Направление сортировки',
-					width:'63',
+					width:'62',
 					dataIndex:'НаправлениеСортировки',
 					flex:1,
 				},
@@ -123,7 +148,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -134,12 +159,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйЖурналДокументов.ФормаОтбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйЖурналДокументов.ФормаОтбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -161,4 +204,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеГода.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ЗакрытиеГода'], function () 
+{
+	Ext.define('Документы.ЗакрытиеГода.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:572px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Закрытие года',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:556px;height:380px;',
 			height: 380,width: 556,
@@ -47,7 +54,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'220',
+					width:'219',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеГода/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеГода/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +88,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗакрытиеГода.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗакрытиеГода.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -117,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

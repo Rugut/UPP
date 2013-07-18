@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ТипыЦенНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:702px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Типы цен номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'1800',
+					width:'180',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -75,13 +78,13 @@
 				},
 				{
 					text:'Метод округления',
-					width:'1500',
+					width:'150',
 					dataIndex:'ОкруглятьВБольшуюСторону',
 					flex:1,
 				},
 				{
 					text:'Способ расчета цены',
-					width:'1500',
+					width:'150',
 					dataIndex:'СпособРасчетаЦены',
 					flex:1,
 				},
@@ -140,9 +143,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТипыЦенНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТипыЦенНоменклатуры.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -326,4 +329,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

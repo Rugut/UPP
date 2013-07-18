@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПоказателиРаботыМенеджеров.Форма',
+﻿Ext.require(['Данные.Отчеты.ПоказателиРаботыМенеджеров'], function () 
+{
+	Ext.define('Отчеты.ПоказателиРаботыМенеджеров.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:622px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Показатели работы менеджеров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -159,4 +162,5 @@
 			]
 		},
 	]
+	});
 });

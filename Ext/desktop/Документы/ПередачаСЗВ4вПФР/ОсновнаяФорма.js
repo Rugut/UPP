@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаСЗВ4вПФР.ОсновнаяФорма',
+﻿Ext.require(['Данные.Документы.ПередачаСЗВ4вПФР'], function () 
+{
+	Ext.define('Документы.ПередачаСЗВ4вПФР.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:269px;height:184px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Передача СЗВ-4 в ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -75,4 +78,5 @@
 			]
 		},
 	]
+	});
 });

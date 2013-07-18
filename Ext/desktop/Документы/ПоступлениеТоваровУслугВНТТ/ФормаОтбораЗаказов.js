@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказов',
+﻿Ext.require(['Данные.Документы.ПоступлениеТоваровУслугВНТТ'], function () 
+{
+	Ext.define('Документы.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:415px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отобрать заказы поставщикам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:413px;top:17px;width:233px;height:19px;',
@@ -138,6 +144,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
 			height: 221,width: 630,
@@ -223,7 +230,7 @@
 				},
 				{
 					text:'Флаг заполнено',
-					width:'134',
+					width:'133',
 					dataIndex:'ФлагЗаполнено',
 					flex:1,
 				},
@@ -234,7 +241,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -281,6 +288,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -289,6 +313,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
 			height: 221,width: 630,
@@ -379,7 +404,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -423,6 +448,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -431,6 +473,7 @@
 					items:
 					[
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
 			height: 221,width: 630,
@@ -509,7 +552,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -547,6 +590,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -573,6 +633,7 @@
 			style: 'position:absolute;left:23px;top:61px;width:102px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеЗаказы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:250px;width:644px;height:131px;',
 			height: 131,width: 644,
@@ -735,7 +796,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -814,6 +875,23 @@
 						name:'Проведен',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗаказы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -937,6 +1015,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:630px;height:114px;',
 			height: 114,width: 630,
@@ -985,7 +1064,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслугВНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1008,6 +1087,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1018,7 +1114,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1040,4 +1137,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСубконтоХозрасчетный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.АнализСубконтоХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.АнализСубконтоХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:432px;height:261px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:416px;height:220px;',
@@ -83,6 +89,7 @@
 			style: 'position:absolute;left:260px;top:56px;width:148px;height:16px;',
 		},
 		{
+			id: 'Субконто',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:96px;width:242px;height:96px;',
 			height: 96,width: 242,
@@ -96,7 +103,7 @@
 				},
 				{
 					text:'Вид субконто',
-					width:'191',
+					width:'190',
 					dataIndex:'ВидСубконто',
 					flex:1,
 				},
@@ -107,7 +114,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -117,6 +124,23 @@
 						name:'ВидСубконто',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Субконто');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -131,6 +155,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:402px;height:162px;',
 			height: 162,width: 402,
@@ -179,7 +204,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -202,6 +227,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -216,6 +258,7 @@
 			style: 'position:absolute;left:6px;top:7px;width:80px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:182px;height:146px;',
 			height: 146,width: 182,
@@ -229,7 +272,7 @@
 				},
 				{
 					text:'Поле',
-					width:'64',
+					width:'63',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -240,7 +283,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -251,8 +294,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДоступныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:220px;top:48px;width:188px;height:146px;',
 			height: 146,width: 188,
@@ -271,13 +332,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АнализСубконтоХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АнализСубконтоХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -302,7 +380,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -328,4 +407,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеНДСпоСМРхозспособом.ФормаСписка',
+﻿Ext.require(['Данные.Документы.НачислениеНДСпоСМРхозспособом'], function () 
+{
+	Ext.define('Документы.НачислениеНДСпоСМРхозспособом.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:321px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Начисление НДС по СМР (хозспособ)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:280px;',
 			height: 280,width: 764,
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеНДСпоСМРхозспособом/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеНДСпоСМРхозспособом/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +88,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеНДСпоСМРхозспособом.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеНДСпоСМРхозспособом.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -111,4 +136,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УчетЗаработкаРаботников.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УчетЗаработкаРаботников'], function () 
+{
+	Ext.define('Документы.УчетЗаработкаРаботников.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:477px;height:428px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Учет заработка сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -113,7 +116,7 @@
 				},
 				{
 					text:'Способ отражения в упр учете',
-					width:'1600',
+					width:'160',
 					dataIndex:'СпособОтраженияВУпрУчете',
 					flex:1,
 				},
@@ -171,9 +174,9 @@
 					{
 						var грид = Ext.getCmp('Работники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УчетЗаработкаРаботников.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УчетЗаработкаРаботников.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -274,4 +277,5 @@
 			]
 		},
 	]
+	});
 });

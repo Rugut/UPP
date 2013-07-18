@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаОСертификацииНоменклатуры.Основная',
+﻿Ext.require(['Данные.Отчеты.СправкаОСертификацииНоменклатуры'], function () 
+{
+	Ext.define('Отчеты.СправкаОСертификацииНоменклатуры.Основная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:554px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справка о сертификации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -130,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

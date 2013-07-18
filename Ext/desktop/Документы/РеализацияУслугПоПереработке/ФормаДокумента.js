@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеализацияУслугПоПереработке.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РеализацияУслугПоПереработке'], function () 
+{
+	Ext.define('Документы.РеализацияУслугПоПереработке.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:666px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Реализация услуг по переработке',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -119,6 +125,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:636px;height:188px;',
 			height: 188,width: 636,
@@ -186,7 +193,7 @@
 				},
 				{
 					text:'Ед.',
-					width:'53',
+					width:'52',
 					dataIndex:'Единица',
 					flex:1,
 				},
@@ -293,7 +300,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -379,6 +386,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -412,6 +436,7 @@
 			style: 'position:absolute;left:4px;top:7px;width:188px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:636px;height:188px;',
 			height: 188,width: 636,
@@ -508,7 +533,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -555,6 +580,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -581,6 +623,7 @@
 			style: 'position:absolute;left:12px;top:30px;width:84px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ИспользованныеМатериалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:637px;height:188px;',
 			height: 188,width: 637,
@@ -683,7 +726,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -732,6 +775,23 @@
 						name:'СчетУчетаБУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИспользованныеМатериалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -882,6 +942,7 @@
 			style: 'position:absolute;left:6px;top:54px;width:90px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:636px;height:122px;',
 			height: 122,width: 636,
@@ -895,7 +956,7 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'228',
+					width:'227',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -924,7 +985,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеализацияУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -943,6 +1004,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1175,8 +1253,10 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:573px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

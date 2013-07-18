@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетНормированияРасходов.Отчет',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетНормированияРасходов'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетНормированияРасходов.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:416px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Нормирование расходов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

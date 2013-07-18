@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РасчетАвансовыхПлатежейПоЗемельномуНалогу.ФормаНастройкиЛьготы',
+﻿Ext.require(['Данные.Обработки.РасчетАвансовыхПлатежейПоЗемельномуНалогу'], function () 
+{
+	Ext.define('Обработки.РасчетАвансовыхПлатежейПоЗемельномуНалогу.ФормаНастройкиЛьготы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:508px;height:442px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Налоговые льготы по земельному налогу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -236,4 +239,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

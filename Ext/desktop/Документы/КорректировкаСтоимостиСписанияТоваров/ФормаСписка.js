@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаСтоимостиСписанияТоваров.ФормаСписка',
+﻿Ext.require(['Данные.Документы.КорректировкаСтоимостиСписанияТоваров'], function () 
+{
+	Ext.define('Документы.КорректировкаСтоимостиСписанияТоваров.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:558px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Корректировки стоимости списания товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:542px;height:259px;',
 			height: 259,width: 542,
@@ -35,7 +42,7 @@
 				},
 				{
 					text:'НУ',
-					width:'21',
+					width:'20',
 					dataIndex:'ОтражатьВНалоговомУчете',
 					flex:1,
 				},
@@ -88,7 +95,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаСтоимостиСписанияТоваров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаСтоимостиСписанияТоваров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -126,8 +133,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаСтоимостиСписанияТоваров.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаСтоимостиСписанияТоваров.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -159,4 +184,5 @@
 			]
 		},
 	]
+	});
 });

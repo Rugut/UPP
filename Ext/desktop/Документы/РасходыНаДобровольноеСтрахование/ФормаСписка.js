@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасходыНаДобровольноеСтрахование.ФормаСписка',
+﻿Ext.require(['Данные.Документы.РасходыНаДобровольноеСтрахование'], function () 
+{
+	Ext.define('Документы.РасходыНаДобровольноеСтрахование.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расходы на страхование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,7 +66,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'3500',
+					width:'350',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РасходыНаДобровольноеСтрахование.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РасходыНаДобровольноеСтрахование.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -157,4 +160,5 @@
 			]
 		},
 	]
+	});
 });

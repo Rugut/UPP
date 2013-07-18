@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиМСФО.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаСоответствияСчетовБУиМСФО'], function () 
+{
+	Ext.define('Документы.УстановкаСоответствияСчетовБУиМСФО.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:740px;height:422px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка соответствия счетов БУ и МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -84,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'СоответствиеСчетовБУиМСФО',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:710px;height:227px;',
 			height: 227,width: 710,
@@ -91,7 +98,7 @@
 			[
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'Учитывается',
 					flex:1,
 				},
@@ -109,19 +116,19 @@
 				},
 				{
 					text:'Субконто хозр.',
-					width:'182',
+					width:'181',
 					dataIndex:'СубконтоХозр1',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'182',
+					width:'181',
 					dataIndex:'СубконтоХозр2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'182',
+					width:'181',
 					dataIndex:'СубконтоХозр3',
 					flex:1,
 				},
@@ -174,7 +181,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиМСФО/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиМСФО/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -218,6 +225,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствиеСчетовБУиМСФО');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСоответствияСчетовБУиМСФО.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСоответствияСчетовБУиМСФО.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -226,6 +250,7 @@
 					items:
 					[
 		{
+			id: 'ИсключениеПроводок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:710px;height:227px;',
 			height: 227,width: 710,
@@ -269,19 +294,19 @@
 				},
 				{
 					text:'Субконто Кт 1',
-					width:'142',
+					width:'141',
 					dataIndex:'СубконтоКт1',
 					flex:1,
 				},
 				{
 					text:'Субконто Кт 2',
-					width:'142',
+					width:'141',
 					dataIndex:'СубконтоКт2',
 					flex:1,
 				},
 				{
 					text:'Субконто Кт 3',
-					width:'142',
+					width:'141',
 					dataIndex:'СубконтоКт3',
 					flex:1,
 				},
@@ -298,7 +323,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиМСФО/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиМСФО/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -333,12 +358,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсключениеПроводок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСоответствияСчетовБУиМСФО.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСоответствияСчетовБУиМСФО.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -386,4 +429,5 @@
 			]
 		},
 	]
+	});
 });

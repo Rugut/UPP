@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияРасчетовСконтрагентами.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияРасчетовСконтрагентами'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияРасчетовСконтрагентами.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:630px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Инвентаризация расчетов с контрагентами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:614px;height:259px;',
 			height: 259,width: 614,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Дата',
-					width:'118',
+					width:'117',
 					dataIndex:'Дата',
 					flex:1,
 				},
@@ -35,13 +42,13 @@
 				},
 				{
 					text:'Организация',
-					width:'146',
+					width:'145',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'191',
+					width:'190',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнвентаризацияРасчетовСконтрагентами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнвентаризацияРасчетовСконтрагентами.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -201,4 +226,5 @@
 			]
 		},
 	]
+	});
 });

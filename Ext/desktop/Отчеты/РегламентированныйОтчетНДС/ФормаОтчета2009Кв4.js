@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетНДС.ФормаОтчета2009Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетНДС'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетНДС.ФормаОтчета2009Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:488px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -447,4 +450,5 @@
 			]
 		},
 	]
+	});
 });

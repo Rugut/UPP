@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.УчетныеЗаписиЭлектроннойПочты'], function () 
+{
+	Ext.define('Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:582px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройки учетной записи',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -429,6 +435,7 @@
 					items:
 					[
 		{
+			id: 'ДоступКУчетнойЗаписи',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:552px;height:256px;',
 			height: 256,width: 552,
@@ -467,11 +474,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -490,6 +498,23 @@
 						name:'Запись',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДоступКУчетнойЗаписи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -515,6 +540,7 @@
 					items:
 					[
 		{
+			id: 'ГруппыПисем',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:50px;width:552px;height:236px;',
 			height: 236,width: 552,
@@ -529,17 +555,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГруппыПисем');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -669,6 +713,7 @@
 					items:
 					[
 		{
+			id: 'ФильтрыПисем',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:552px;height:256px;',
 			height: 256,width: 552,
@@ -688,24 +733,25 @@
 				},
 				{
 					text:'Код',
-					width:'73',
+					width:'72',
 					dataIndex:'Код',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'313',
+					width:'312',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -721,6 +767,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФильтрыПисем');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -760,7 +823,8 @@
 			height: 19,
 			style: 'position:absolute;left:100px;top:81px;width:474px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -794,4 +858,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗапросВФССОПроверкеРаботодателя.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗапросВФССОПроверкеРаботодателя'], function () 
+{
+	Ext.define('Документы.ЗапросВФССОПроверкеРаботодателя.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:682px;height:410px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Запрос в ФСС о проверке работодателя',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -119,6 +125,7 @@
 					items:
 					[
 		{
+			id: 'Страхователи',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:293px;height:182px;',
 			height: 182,width: 293,
@@ -132,7 +139,7 @@
 				},
 				{
 					text:'Справка другого страхователя',
-					width:'132',
+					width:'131',
 					dataIndex:'Справка',
 					flex:1,
 				},
@@ -149,7 +156,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗапросВФССОПроверкеРаботодателя/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗапросВФССОПроверкеРаботодателя/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,6 +169,23 @@
 						name:'Страхователь',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Страхователи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗапросВФССОПроверкеРаботодателя.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗапросВФССОПроверкеРаботодателя.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -534,7 +558,8 @@
 			height: 19,
 			style: 'position:absolute;left:113px;top:83px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -568,4 +593,5 @@
 			]
 		},
 	]
+	});
 });

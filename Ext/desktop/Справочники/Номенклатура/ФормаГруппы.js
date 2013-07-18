@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Номенклатура.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Номенклатура'], function () 
+{
+	Ext.define('Справочники.Номенклатура.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:422px;height:169px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Номенклатура',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -134,4 +137,5 @@
 			]
 		},
 	]
+	});
 });

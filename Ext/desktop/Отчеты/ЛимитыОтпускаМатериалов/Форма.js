@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЛимитыОтпускаМатериалов.Форма',
+﻿Ext.require(['Данные.Отчеты.ЛимитыОтпускаМатериалов'], function () 
+{
+	Ext.define('Отчеты.ЛимитыОтпускаМатериалов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -225,4 +228,5 @@
 			]
 		},
 	]
+	});
 });

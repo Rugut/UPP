@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФильтрыДляЭлектронныхПисем.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ФильтрыДляЭлектронныхПисем'], function () 
+{
+	Ext.define('Справочники.ФильтрыДляЭлектронныхПисем.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Фильтры для электронных писем',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3500',
+					width:'350',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -95,9 +98,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФильтрыДляЭлектронныхПисем.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФильтрыДляЭлектронныхПисем.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -117,4 +120,5 @@
 			]
 		},
 	]
+	});
 });

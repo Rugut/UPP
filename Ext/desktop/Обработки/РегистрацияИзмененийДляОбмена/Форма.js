@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.Форма',
+﻿Ext.require(['Данные.Обработки.РегистрацияИзмененийДляОбмена'], function () 
+{
+	Ext.define('Обработки.РегистрацияИзмененийДляОбмена.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:702px;height:445px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Регистрация изменений для обмена',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьУзелОбмена',
@@ -28,6 +34,7 @@
 			style: 'position:absolute;left:85px;top:4px;width:609px;height:19px;',
 		},
 		{
+			id: 'ДеревоОбмена',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:128px;width:686px;height:284px;',
 			height: 284,width: 686,
@@ -35,7 +42,7 @@
 			[
 				{
 					text:'Имя',
-					width:'342',
+					width:'341',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияИзмененийДляОбмена/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияИзмененийДляОбмена/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -80,6 +87,23 @@
 						name:'КоличествоЗарегистрированных',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоОбмена');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегистрацияИзмененийДляОбмена.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегистрацияИзмененийДляОбмена.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -116,7 +140,8 @@
 			text: 'Изменить номера сообщений...',
 			style: 'position:absolute;left:500px;top:76px;width:167px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -177,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

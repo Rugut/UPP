@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Регионы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Регионы'], function () 
+{
+	Ext.define('Справочники.Регионы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:506px;height:232px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регионы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -154,4 +157,5 @@
 			]
 		},
 	]
+	});
 });

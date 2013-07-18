@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ФормаОтчета2005Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАлкоПриложение7'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:443px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поступления спирта и виноматериалов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -215,4 +218,5 @@
 			]
 		},
 	]
+	});
 });

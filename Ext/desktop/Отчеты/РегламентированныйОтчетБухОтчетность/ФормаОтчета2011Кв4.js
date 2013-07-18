@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетБухОтчетность'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:484px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Бухгалтерская отчетность',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -1126,4 +1129,5 @@
 			]
 		},
 	]
+	});
 });

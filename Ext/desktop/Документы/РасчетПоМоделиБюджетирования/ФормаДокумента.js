@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетПоМоделиБюджетирования.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетПоМоделиБюджетирования'], function () 
+{
+	Ext.define('Документы.РасчетПоМоделиБюджетирования.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:751px;height:470px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Расчет по модели бюджетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -293,6 +299,7 @@
 					items:
 					[
 		{
+			id: 'ОборотыПоСтатьямБюджетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:720px;height:169px;',
 			height: 169,width: 720,
@@ -395,7 +402,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -444,6 +451,23 @@
 						name:'ЗначениеИзмененияПоНоменклатуре',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОборотыПоСтатьямБюджетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -541,6 +565,7 @@
 					items:
 					[
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:363px;height:102px;',
 			height: 102,width: 363,
@@ -577,7 +602,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -594,6 +619,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -602,6 +644,7 @@
 					items:
 					[
 		{
+			id: 'ДополнительныеИсточникиДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:363px;height:102px;',
 			height: 102,width: 363,
@@ -615,7 +658,7 @@
 				},
 				{
 					text:'Источник данных',
-					width:'333',
+					width:'332',
 					dataIndex:'ИсточникДанных',
 					flex:1,
 				},
@@ -626,7 +669,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -636,6 +679,23 @@
 						name:'ИсточникДанных',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеИсточникиДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -657,7 +717,8 @@
 			text: 'Основной источник данных:',
 			style: 'position:absolute;left:8px;top:108px;width:113px;height:28px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -716,4 +777,5 @@
 			]
 		},
 	]
+	});
 });

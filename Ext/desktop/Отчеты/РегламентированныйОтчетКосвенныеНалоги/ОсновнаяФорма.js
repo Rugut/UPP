@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетКосвенныеНалоги.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетКосвенныеНалоги'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетКосвенныеНалоги.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Косвенные налоги при ввозе товаров из Республики Беларусь',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

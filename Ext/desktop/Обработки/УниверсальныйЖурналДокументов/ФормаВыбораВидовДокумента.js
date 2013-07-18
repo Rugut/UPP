@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаВыбораВидовДокумента',
+﻿Ext.require(['Данные.Обработки.УниверсальныйЖурналДокументов'], function () 
+{
+	Ext.define('Обработки.УниверсальныйЖурналДокументов.ФормаВыбораВидовДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:292px;height:290px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор объектов: Документ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -53,4 +56,5 @@
 			]
 		},
 	]
+	});
 });

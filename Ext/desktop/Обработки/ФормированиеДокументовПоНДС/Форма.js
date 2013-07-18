@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеДокументовПоНДС.Форма',
+﻿Ext.require(['Данные.Обработки.ФормированиеДокументовПоНДС'], function () 
+{
+	Ext.define('Обработки.ФормированиеДокументовПоНДС.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:532px;height:289px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Формирование документов по НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -128,9 +131,9 @@
 					{
 						var грид = Ext.getCmp('СформированныеДокументы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФормированиеДокументовПоНДС.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФормированиеДокументовПоНДС.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -184,4 +187,5 @@
 			]
 		},
 	]
+	});
 });

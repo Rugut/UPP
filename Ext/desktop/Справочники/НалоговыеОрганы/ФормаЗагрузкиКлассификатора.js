@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НалоговыеОрганы.ФормаЗагрузкиКлассификатора',
+﻿Ext.require(['Данные.Справочники.НалоговыеОрганы'], function () 
+{
+	Ext.define('Справочники.НалоговыеОрганы.ФормаЗагрузкиКлассификатора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:602px;height:164px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Импорт классификатора СОУН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -103,4 +106,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АккредитивПолученный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АккредитивПолученный'], function () 
+{
+	Ext.define('Документы.АккредитивПолученный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:456px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Аккредитив полученный',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомерДокумента',
@@ -443,6 +449,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:636px;height:157px;',
 			height: 157,width: 636,
@@ -551,7 +558,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АккредитивПолученный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АккредитивПолученный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -603,6 +610,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АккредитивПолученный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АккредитивПолученный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -902,7 +926,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -914,4 +939,5 @@
 			]
 		},
 	]
+	});
 });

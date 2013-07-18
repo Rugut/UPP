@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗарплатаКВыплатеОрганизаций'], function () 
+{
+	Ext.define('Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:750px;height:524px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Зарплата к выплате',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -91,6 +97,7 @@
 			style: 'position:absolute;left:98px;top:472px;width:644px;height:19px;',
 		},
 		{
+			id: 'Зарплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:231px;width:734px;height:198px;',
 			height: 198,width: 734,
@@ -116,7 +123,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'217',
+					width:'216',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
@@ -163,7 +170,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплатеОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплатеОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -197,6 +204,23 @@
 						name:'ВыплатаЗарегистрированаДокументом',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Зарплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -411,7 +435,8 @@
 			text: 'Расчет сумм к выплате:',
 			style: 'position:absolute;left:126px;top:149px;width:616px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -581,4 +606,5 @@
 			]
 		},
 	]
+	});
 });

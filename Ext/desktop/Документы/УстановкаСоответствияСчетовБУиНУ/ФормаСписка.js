@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УстановкаСоответствияСчетовБУиНУ'], function () 
+{
+	Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Установить соответствие счетов БУ и НУ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:384px;height:259px;',
 			height: 259,width: 384,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Номер',
-					width:'80',
+					width:'79',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиНУ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиНУ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСоответствияСчетовБУиНУ.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСоответствияСчетовБУиНУ.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -95,4 +120,5 @@
 			]
 		},
 	]
+	});
 });

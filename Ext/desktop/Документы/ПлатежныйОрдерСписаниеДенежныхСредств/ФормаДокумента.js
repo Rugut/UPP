@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПлатежныйОрдерСписаниеДенежныхСредств'], function () 
+{
+	Ext.define('Документы.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:456px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Платежный ордер на списание денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -462,6 +468,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:641px;height:152px;',
 			height: 152,width: 641,
@@ -570,7 +577,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйОрдерСписаниеДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйОрдерСписаниеДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -622,6 +629,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -816,6 +840,7 @@
 					items:
 					[
 		{
+			id: 'ПеречислениеЗаработнойПлаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:641px;height:156px;',
 			height: 156,width: 641,
@@ -829,7 +854,7 @@
 				},
 				{
 					text:'Ведомость',
-					width:'143',
+					width:'142',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
@@ -847,19 +872,19 @@
 				},
 				{
 					text:'Статья движения денежных средств',
-					width:'101',
+					width:'100',
 					dataIndex:'СтатьяДвиженияДенежныхСредств',
 					flex:1,
 				},
 				{
 					text:'Документ планирования платежа',
-					width:'183',
+					width:'182',
 					dataIndex:'ДокументПланированияПлатежа',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'153',
+					width:'152',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -870,7 +895,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйОрдерСписаниеДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйОрдерСписаниеДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -895,6 +920,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПеречислениеЗаработнойПлаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1240,7 +1282,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1252,4 +1295,5 @@
 			]
 		},
 	]
+	});
 });

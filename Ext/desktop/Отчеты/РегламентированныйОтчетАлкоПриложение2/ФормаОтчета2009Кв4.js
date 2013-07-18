@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение2.ФормаОтчета2009Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАлкоПриложение2'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение2.ФормаОтчета2009Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:800px;height:447px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация об объёмах использования этилового спирта',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -275,4 +278,5 @@
 			]
 		},
 	]
+	});
 });

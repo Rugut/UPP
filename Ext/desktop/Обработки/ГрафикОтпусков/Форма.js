@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрафикОтпусков.Форма',
+﻿Ext.require(['Данные.Обработки.ГрафикОтпусков'], function () 
+{
+	Ext.define('Обработки.ГрафикОтпусков.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'График отпусков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -184,4 +187,5 @@
 			]
 		},
 	]
+	});
 });

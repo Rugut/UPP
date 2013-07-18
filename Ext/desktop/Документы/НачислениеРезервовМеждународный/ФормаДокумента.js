@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеРезервовМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НачислениеРезервовМеждународный'], function () 
+{
+	Ext.define('Документы.НачислениеРезервовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:569px;height:409px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -42,6 +48,7 @@
 			style: 'position:absolute;left:194px;top:33px;width:148px;height:19px;',
 		},
 		{
+			id: 'Резервы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:132px;width:553px;height:220px;',
 			height: 220,width: 553,
@@ -108,7 +115,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеРезервовМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеРезервовМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -139,6 +146,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Резервы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеРезервовМеждународный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеРезервовМеждународный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -191,7 +215,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:467px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -257,4 +282,5 @@
 			]
 		},
 	]
+	});
 });

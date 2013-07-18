@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.НастройкиРасчетаСебестоимости'], function () 
+{
+	Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:726px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Настройки расчета себестоимости',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:33px;width:544px;height:259px;',
 			height: 259,width: 544,
@@ -59,18 +66,19 @@
 				},
 				{
 					text:'Комментарий',
-					width:'111',
+					width:'110',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиРасчетаСебестоимости").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,8 +107,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиРасчетаСебестоимости.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиРасчетаСебестоимости.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:259px;',
 			height: 259,width: 160,
@@ -108,18 +134,19 @@
 			[
 				{
 					text:'Наименование',
-					width:'159',
+					width:'158',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиРасчетаСебестоимости").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -127,8 +154,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиРасчетаСебестоимости.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиРасчетаСебестоимости.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -140,4 +185,5 @@
 			]
 		},
 	]
+	});
 });

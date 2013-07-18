@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетПоМоделиБюджетирования.ФормаВводаФормулы',
+﻿Ext.require(['Данные.Документы.РасчетПоМоделиБюджетирования'], function () 
+{
+	Ext.define('Документы.РасчетПоМоделиБюджетирования.ФормаВводаФормулы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:433px;height:370px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод формулы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:93px;width:417px;height:52px;',
@@ -112,6 +118,7 @@
 			]
 		},
 		{
+			id: 'ТаблицаАргументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:145px;width:417px;height:192px;',
 			height: 192,width: 417,
@@ -119,19 +126,19 @@
 			[
 				{
 					text:'Код строки',
-					width:'73',
+					width:'72',
 					dataIndex:'Код',
 					flex:1,
 				},
 				{
 					text:'Показатель расчета',
-					width:'191',
+					width:'190',
 					dataIndex:'Представление',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'109',
+					width:'108',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -148,7 +155,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПоМоделиБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -165,8 +172,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаАргументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаВводаФормулыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаВводаФормулыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -188,4 +213,5 @@
 			]
 		},
 	]
+	});
 });

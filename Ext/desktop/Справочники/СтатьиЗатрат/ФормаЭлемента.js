@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиЗатрат.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтатьиЗатрат'], function () 
+{
+	Ext.define('Справочники.СтатьиЗатрат.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:181px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статья затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -158,4 +161,5 @@
 			]
 		},
 	]
+	});
 });

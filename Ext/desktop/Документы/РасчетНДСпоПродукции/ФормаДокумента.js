@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетНДСпоПродукции.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетНДСпоПродукции'], function () 
+{
+	Ext.define('Документы.РасчетНДСпоПродукции.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:186px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчет НДС по продукции (работам, услугам)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -164,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

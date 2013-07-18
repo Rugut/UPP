@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаЗапросаПерезаписиФайлов',
+﻿Ext.require(['Данные.Справочники.ХранилищеДополнительнойИнформации'], function () 
+{
+	Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаЗапросаПерезаписиФайлов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:508px;height:95px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сохранение файла',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -53,4 +56,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

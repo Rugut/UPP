@@ -17,14 +17,15 @@ Ext.define('MyDesktop.BogusModule',
     //},
     createWindow: function (src)
     {
-        Ext.require([src.FormId],function (){
-        //Ext.onReady(function() {
-            var win = Ext.create(src.FormId, {});
-            if (win)
-            {
-                win.show();
-                return win;
-            }
+        //Ext.require([src.FormId], function () {
+        Ext.require([src.FormId], function () {
+            Ext.onReady(function() {
+                var win = Ext.create(src.FormId, {});
+                if (win) {
+                    win.show();
+                    return win;
+                }
+            });
         });
             
         //Ext.Loader.setConfig({ //Конфигурация загрузчика скриптов

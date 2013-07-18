@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СведенияОДоходахФизлиц.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СведенияОДоходахФизлиц'], function () 
+{
+	Ext.define('Документы.СведенияОДоходахФизлиц.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:630px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сведения о доходах физических лиц для ИФНС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,7 +112,7 @@
 				},
 				{
 					text:'Физическое лицо',
-					width:'2200',
+					width:'220',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -185,9 +188,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -341,4 +344,5 @@
 			]
 		},
 	]
+	});
 });

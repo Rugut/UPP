@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НоменклатурныеГруппы.ФормаПодбора',
+﻿Ext.require(['Данные.Справочники.НоменклатурныеГруппы'], function () 
+{
+	Ext.define('Справочники.НоменклатурныеГруппы.ФормаПодбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:484px;height:444px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Номенклатурные группы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НоменклатурныеГруппы.ФормаПодбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НоменклатурныеГруппы.ФормаПодбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -104,4 +107,5 @@
 			]
 		},
 	]
+	});
 });

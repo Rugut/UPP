@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоНаличиюСчетовФактур.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоНаличиюСчетовФактур'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоНаличиюСчетовФактур.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:367px;height:375px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по наличию счетов-фактур',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('СписокДокументов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтчетПоНаличиюСчетовФактур.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтчетПоНаличиюСчетовФактур.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -200,4 +203,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АмортизацияНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АмортизацияНМА'], function () 
+{
+	Ext.define('Документы.АмортизацияНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:598px;height:186px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Амортизация НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -196,4 +199,5 @@
 			]
 		},
 	]
+	});
 });

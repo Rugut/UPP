@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КнигаУчетаДоходовИРасходов.Форма',
+﻿Ext.require(['Данные.Отчеты.КнигаУчетаДоходовИРасходов'], function () 
+{
+	Ext.define('Отчеты.КнигаУчетаДоходовИРасходов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:428px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Книга учета доходов и расходов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -151,4 +154,5 @@
 			]
 		},
 	]
+	});
 });

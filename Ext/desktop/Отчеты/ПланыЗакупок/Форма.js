@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПланыЗакупок.Форма',
+﻿Ext.require(['Данные.Отчеты.ПланыЗакупок'], function () 
+{
+	Ext.define('Отчеты.ПланыЗакупок.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -227,4 +230,5 @@
 			]
 		},
 	]
+	});
 });

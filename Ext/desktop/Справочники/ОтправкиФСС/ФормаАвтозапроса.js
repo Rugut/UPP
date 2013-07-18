@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОтправкиФСС.ФормаАвтозапроса',
+﻿Ext.require(['Данные.Справочники.ОтправкиФСС'], function () 
+{
+	Ext.define('Справочники.ОтправкиФСС.ФормаАвтозапроса',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:367px;height:103px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Автообмен с сервером ФСС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -74,4 +77,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

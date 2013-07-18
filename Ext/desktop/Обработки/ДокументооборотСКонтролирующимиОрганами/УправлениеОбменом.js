@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменом',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменом',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:794px;height:524px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документооборот с контролирующими органами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
@@ -74,6 +80,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаОтчетность',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:85px;width:529px;height:331px;',
 			height: 331,width: 529,
@@ -194,7 +201,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -252,6 +259,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаОтчетность');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -415,6 +439,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаЗаявление',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:85px;width:529px;height:331px;',
 			height: 331,width: 529,
@@ -541,7 +566,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -602,6 +627,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаЗаявление');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -801,6 +843,7 @@
 					items:
 					[
 		{
+			id: 'Требования',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -849,7 +892,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -872,6 +915,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Требования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -889,6 +949,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаТребования',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -943,7 +1004,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -969,6 +1030,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаТребования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -992,6 +1070,7 @@
 					items:
 					[
 		{
+			id: 'ИсходящиеДокументыФНС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -1017,7 +1096,7 @@
 				},
 				{
 					text:'Тема',
-					width:'187',
+					width:'186',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -1034,7 +1113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1054,6 +1133,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходящиеДокументыФНС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1071,6 +1167,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаИсходящиеДокументыФНС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -1143,7 +1240,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1178,6 +1275,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаИсходящиеДокументыФНС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1201,6 +1315,7 @@
 					items:
 					[
 		{
+			id: 'ВходящиеДокументыФНС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -1243,7 +1358,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1263,6 +1378,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВходящиеДокументыФНС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1280,6 +1412,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаВходящиеДокументыФНС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -1322,7 +1455,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1341,6 +1474,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаВходящиеДокументыФНС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1365,6 +1515,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаЗапросы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -1449,7 +1600,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1489,6 +1640,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаЗапросы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1557,6 +1725,7 @@
 			]
 		},
 		{
+			id: 'Запросы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -1623,7 +1792,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1655,6 +1824,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Запросы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1681,6 +1867,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаОтчетностьПФР',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:52px;width:529px;height:364px;',
 			height: 364,width: 529,
@@ -1777,7 +1964,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1823,6 +2010,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаОтчетностьПФР');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1947,6 +2151,7 @@
 					items:
 					[
 		{
+			id: 'ИсходящиеДокументыПФР',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -1989,7 +2194,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2009,6 +2214,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходящиеДокументыПФР');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2026,6 +2248,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаИсходящиеДокументыПФР',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -2074,7 +2297,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2096,6 +2319,23 @@
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаИсходящиеДокументыПФР');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -2120,6 +2360,7 @@
 					items:
 					[
 		{
+			id: 'ВходящиеДокументыПФР',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -2162,7 +2403,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2182,6 +2423,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВходящиеДокументыПФР');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2199,6 +2457,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаВходящиеДокументыПФР',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -2241,7 +2500,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2260,6 +2519,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаВходящиеДокументыПФР');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -2287,6 +2563,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаОтчетностьФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:52px;width:529px;height:364px;',
 			height: 364,width: 529,
@@ -2395,7 +2672,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2447,6 +2724,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаОтчетностьФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2571,6 +2865,7 @@
 					items:
 					[
 		{
+			id: 'ИсходящиеДокументыФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -2613,7 +2908,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2633,6 +2928,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсходящиеДокументыФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2650,6 +2962,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаИсходящиеДокументыФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -2710,7 +3023,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2739,6 +3052,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаИсходящиеДокументыФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2762,6 +3092,7 @@
 					items:
 					[
 		{
+			id: 'ВходящиеДокументыФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:529px;height:252px;',
 			height: 252,width: 529,
@@ -2804,7 +3135,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2824,6 +3155,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВходящиеДокументыФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2841,6 +3189,7 @@
 					items:
 					[
 		{
+			id: 'ЦиклыОбменаВходящиеДокументыФСГС',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:128px;',
 			height: 128,width: 529,
@@ -2883,7 +3232,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2902,6 +3251,23 @@
 						name:'ДатаПоследнегоСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЦиклыОбменаВходящиеДокументыФСГС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -2930,6 +3296,7 @@
 					items:
 					[
 		{
+			id: 'ПрочиеСообщения',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:41px;width:543px;height:401px;',
 			height: 401,width: 543,
@@ -2990,7 +3357,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3018,6 +3385,23 @@
 						name:'ПометкаУдаления',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрочиеСообщения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3060,6 +3444,7 @@
 					items:
 					[
 		{
+			id: 'УчетныеЗаписи',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:48px;width:195px;height:408px;',
 			height: 408,width: 195,
@@ -3084,7 +3469,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3094,6 +3479,23 @@
 						name:'Объект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УчетныеЗаписи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.УправлениеОбменомСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3121,7 +3523,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -3216,4 +3619,5 @@
 			]
 		},
 	]
+	});
 });

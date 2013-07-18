@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрИнформацииОДвиженииМПЗ.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.РегистрИнформацииОДвиженииМПЗ'], function () 
+{
+	Ext.define('Отчеты.РегистрИнформацииОДвиженииМПЗ.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:192px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -193,9 +196,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РегистрИнформацииОДвиженииМПЗ.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РегистрИнформацииОДвиженииМПЗ.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -229,4 +232,5 @@
 			]
 		},
 	]
+	});
 });

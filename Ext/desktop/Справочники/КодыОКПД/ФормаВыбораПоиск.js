@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КодыОКПД.ФормаВыбораПоиск',
+﻿Ext.require(['Данные.Справочники.КодыОКПД'], function () 
+{
+	Ext.define('Справочники.КодыОКПД.ФормаВыбораПоиск',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:788px;height:473px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Коды ОКПД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Имя',
-					width:'3500',
+					width:'350',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('СправочникДерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КодыОКПД.ФормаВыбораПоискСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КодыОКПД.ФормаВыбораПоискСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -177,4 +180,5 @@
 			]
 		},
 	]
+	});
 });

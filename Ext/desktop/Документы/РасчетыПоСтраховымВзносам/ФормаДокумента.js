@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетыПоСтраховымВзносам.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетыПоСтраховымВзносам'], function () 
+{
+	Ext.define('Документы.РасчетыПоСтраховымВзносам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:510px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчеты с фондами по страховым взносам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -1582,4 +1585,5 @@
 			]
 		},
 	]
+	});
 });

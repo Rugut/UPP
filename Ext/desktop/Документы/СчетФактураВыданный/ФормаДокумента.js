@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетФактураВыданный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СчетФактураВыданный'], function () 
+{
+	Ext.define('Документы.СчетФактураВыданный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:804px;height:582px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Счет-фактура выданный',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -443,6 +449,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
 		},
 		{
+			id: 'ДокументыОснования',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:776px;height:64px;',
 			height: 64,width: 776,
@@ -467,7 +474,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -478,8 +485,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыОснования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДатаНомерДокументовОплаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:173px;width:776px;height:62px;',
 			height: 62,width: 776,
@@ -504,7 +529,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -514,6 +539,23 @@
 						name:'НомерПлатежноРасчетногоДокумента',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДатаНомерДокументовОплаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -559,6 +601,7 @@
 			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;',
 		},
 		{
+			id: 'Авансы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:89px;width:776px;height:98px;',
 			height: 98,width: 776,
@@ -607,7 +650,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -629,6 +672,23 @@
 						name:'СуммаНДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Авансы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -797,6 +857,7 @@
 			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;',
 		},
 		{
+			id: 'НалоговыйАгент',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:89px;width:776px;height:98px;',
 			height: 98,width: 776,
@@ -845,7 +906,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -867,6 +928,23 @@
 						name:'СуммаНДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НалоговыйАгент');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -918,6 +996,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
 		},
 		{
+			id: 'ДокументыОснованияКорректировка',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:44px;width:776px;height:177px;',
 			height: 177,width: 776,
@@ -942,7 +1021,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -952,6 +1031,23 @@
 						name:'ДокументОснование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыОснованияКорректировка');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1243,8 +1339,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

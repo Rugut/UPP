@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Резервы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Резервы'], function () 
+{
+	Ext.define('Справочники.Резервы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:438px;height:105px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оценочные обязательства и резервы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -93,4 +96,5 @@
 			]
 		},
 	]
+	});
 });

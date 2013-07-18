@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотноСальдоваяВедомостьПоСчетуБюджетирование.Форма',
+﻿Ext.require(['Данные.Отчеты.ОборотноСальдоваяВедомостьПоСчетуБюджетирование'], function () 
+{
+	Ext.define('Отчеты.ОборотноСальдоваяВедомостьПоСчетуБюджетирование.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:708px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оборотно-сальдовая ведомость по счету',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -146,4 +149,5 @@
 			]
 		},
 	]
+	});
 });

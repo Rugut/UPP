@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеЦен.ФормаЗаполнения',
+﻿Ext.require(['Данные.Обработки.ФормированиеЦен'], function () 
+{
+	Ext.define('Обработки.ФормированиеЦен.ФормаЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:676px;height:338px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Формирование цен',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:660px;height:276px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:646px;height:220px;',
 			height: 220,width: 646,
@@ -68,7 +75,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФормированиеЦен/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +97,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФормированиеЦен.ФормаЗаполненияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФормированиеЦен.ФормаЗаполненияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -133,8 +157,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

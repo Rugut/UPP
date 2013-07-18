@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаМатериаловВЭксплуатацию.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ПередачаМатериаловВЭксплуатацию'], function () 
+{
+	Ext.define('Документы.ПередачаМатериаловВЭксплуатацию.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:418px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Передача материалов в эксплуатацию',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,31 +60,31 @@
 				},
 				{
 					text:'Склад',
-					width:'1200',
+					width:'120',
 					dataIndex:'Склад',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -139,9 +142,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПередачаМатериаловВЭксплуатацию.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПередачаМатериаловВЭксплуатацию.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -184,4 +187,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

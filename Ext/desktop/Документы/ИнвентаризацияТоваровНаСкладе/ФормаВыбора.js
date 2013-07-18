@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияТоваровНаСкладе.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияТоваровНаСкладе'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияТоваровНаСкладе.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:488px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Инвентаризации товаров на складах',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИнвентаризацияТоваровНаСкладе.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИнвентаризацияТоваровНаСкладе.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -120,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

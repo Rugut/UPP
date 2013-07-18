@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КонтактныеЛица.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.КонтактныеЛица'], function () 
+{
+	Ext.define('Справочники.КонтактныеЛица.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:396px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Контактные лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'ФИО',
-					width:'2200',
+					width:'220',
 					dataIndex:'ФИО',
 					flex:1,
 				},
@@ -63,13 +66,13 @@
 				},
 				{
 					text:'Описание',
-					width:'1200',
+					width:'120',
 					dataIndex:'Описание',
 					flex:1,
 				},
 				{
 					text:'Отчество',
-					width:'1200',
+					width:'120',
 					dataIndex:'Отчество',
 					flex:1,
 				},
@@ -81,7 +84,7 @@
 				},
 				{
 					text:'Фамилия',
-					width:'1200',
+					width:'120',
 					dataIndex:'Фамилия',
 					flex:1,
 				},
@@ -140,9 +143,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КонтактныеЛица.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -162,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

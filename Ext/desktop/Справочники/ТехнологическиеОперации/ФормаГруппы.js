@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТехнологическиеОперации.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ТехнологическиеОперации'], function () 
+{
+	Ext.define('Справочники.ТехнологическиеОперации.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:398px;height:111px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Технологические операции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

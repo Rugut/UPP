@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Подразделения.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.Подразделения'], function () 
+{
+	Ext.define('Справочники.Подразделения.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:858px;height:580px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Структура предприятия',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Подразделения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:82px;width:410px;height:490px;',
 			height: 490,width: 410,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Подразделения юридических лиц',
-					width:'207',
+					width:'206',
 					dataIndex:'ПодразделенияОрганизаций',
 					flex:1,
 				},
@@ -42,11 +49,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Подразделения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,6 +71,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Подразделения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Подразделения.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Подразделения.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -77,6 +102,7 @@
 			style: 'position:absolute;left:433px;top:33px;width:417px;height:20px;',
 		},
 		{
+			id: 'ПодразделенияОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:433px;top:82px;width:417px;height:490px;',
 			height: 490,width: 417,
@@ -121,11 +147,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Подразделения").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -148,8 +175,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПодразделенияОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Подразделения.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Подразделения.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -218,4 +263,5 @@
 			]
 		},
 	]
+	});
 });

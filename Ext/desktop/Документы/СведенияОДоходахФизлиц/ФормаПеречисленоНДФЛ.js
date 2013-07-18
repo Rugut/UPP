@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛ',
+﻿Ext.require(['Данные.Документы.СведенияОДоходахФизлиц'], function () 
+{
+	Ext.define('Документы.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛ',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:619px;height:347px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Справочно',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Всего за налоговый период',
@@ -20,6 +26,7 @@
 			style: 'position:absolute;left:12px;top:8px;width:599px;height:16px;',
 		},
 		{
+			id: 'ПеречисленоНДФЛПоФизлицам',
 			xtype: 'grid',
 			style: 'position:absolute;left:12px;top:26px;width:599px;height:140px;',
 			height: 140,width: 599,
@@ -45,7 +52,7 @@
 				},
 				{
 					text:'КБК',
-					width:'74',
+					width:'73',
 					dataIndex:'КБК',
 					flex:1,
 				},
@@ -63,7 +70,7 @@
 				},
 				{
 					text:'Удержано (справочно)',
-					width:'88',
+					width:'87',
 					dataIndex:'Удержано',
 					flex:1,
 				},
@@ -74,7 +81,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -100,8 +107,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПеречисленоНДФЛПоФизлицам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПеречисленоНДФЛВсего',
 			xtype: 'grid',
 			style: 'position:absolute;left:12px;top:190px;width:599px;height:149px;',
 			height: 149,width: 599,
@@ -144,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОДоходахФизлиц/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -164,9 +189,28 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПеречисленоНДФЛВсего');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

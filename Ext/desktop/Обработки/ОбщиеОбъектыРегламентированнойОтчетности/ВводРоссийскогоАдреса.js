@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ВводРоссийскогоАдреса',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ВводРоссийскогоАдреса',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:333px;height:298px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод адреса',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -225,4 +228,5 @@
 			]
 		},
 	]
+	});
 });

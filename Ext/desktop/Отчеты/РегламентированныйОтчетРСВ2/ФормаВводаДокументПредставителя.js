@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетРСВ2.ФормаВводаДокументПредставителя',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетРСВ2'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетРСВ2.ФормаВводаДокументПредставителя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:361px;height:383px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Документ, подтверждающий полномочия представителя ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -135,4 +138,5 @@
 			]
 		},
 	]
+	});
 });

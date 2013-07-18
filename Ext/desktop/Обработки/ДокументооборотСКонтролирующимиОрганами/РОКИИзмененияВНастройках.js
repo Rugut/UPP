@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РОКИИзмененияВНастройках',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РОКИИзмененияВНастройках',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:618px;height:511px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Список изменений в настройках, которые необходимо произвести',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаИзменений',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:64px;width:602px;height:414px;',
 			height: 414,width: 602,
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,6 +79,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаИзменений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.РОКИИзмененияВНастройкахСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.РОКИИзмененияВНастройкахСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -84,7 +108,8 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:57px;width:602px;height:3px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -106,4 +131,5 @@
 			]
 		},
 	]
+	});
 });

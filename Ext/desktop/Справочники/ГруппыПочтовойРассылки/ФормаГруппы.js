@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГруппыПочтовойРассылки.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ГруппыПочтовойРассылки'], function () 
+{
+	Ext.define('Справочники.ГруппыПочтовойРассылки.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Группы почтовой рассылки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

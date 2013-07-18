@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.НесуществующееТранспортноеСообщение',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.НесуществующееТранспортноеСообщение',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:480px;height:285px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -47,4 +50,5 @@
 			]
 		},
 	]
+	});
 });

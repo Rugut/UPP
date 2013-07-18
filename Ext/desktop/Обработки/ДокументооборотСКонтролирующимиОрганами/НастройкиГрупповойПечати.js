@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.НастройкиГрупповойПечати',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.НастройкиГрупповойПечати',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:230px;height:253px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -93,4 +96,5 @@
 			]
 		},
 	]
+	});
 });

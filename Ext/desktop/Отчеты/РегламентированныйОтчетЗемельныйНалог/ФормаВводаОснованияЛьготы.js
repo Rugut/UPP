@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЗемельныйНалог.ФормаВводаОснованияЛьготы',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЗемельныйНалог'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЗемельныйНалог.ФормаВводаОснованияЛьготы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:349px;height:154px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод основания применения льготы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -86,4 +89,5 @@
 			]
 		},
 	]
+	});
 });

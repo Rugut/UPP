@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводПроцентаДеятельностиЕНВД.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВводПроцентаДеятельностиЕНВД'], function () 
+{
+	Ext.define('Документы.ВводПроцентаДеятельностиЕНВД.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:462px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод процента деятельности ЕНВД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -83,6 +89,7 @@
 			style: 'position:absolute;left:126px;top:101px;width:120px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:185px;width:634px;height:220px;',
 			height: 220,width: 634,
@@ -114,7 +121,7 @@
 				},
 				{
 					text:'% ЕНВД-деятельности ',
-					width:'64',
+					width:'63',
 					dataIndex:'ПодпадаетПодЕНВД',
 					flex:1,
 				},
@@ -155,7 +162,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПроцентаДеятельностиЕНВД/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводПроцентаДеятельностиЕНВД/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -189,6 +196,23 @@
 						name:'СпособРаспределенияЗатрат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводПроцентаДеятельностиЕНВД.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводПроцентаДеятельностиЕНВД.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -235,7 +259,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -344,4 +369,5 @@
 			]
 		},
 	]
+	});
 });

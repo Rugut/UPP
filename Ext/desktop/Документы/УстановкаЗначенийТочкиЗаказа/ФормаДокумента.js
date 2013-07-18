@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаЗначенийТочкиЗаказа.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаЗначенийТочкиЗаказа'], function () 
+{
+	Ext.define('Документы.УстановкаЗначенийТочкиЗаказа.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:341px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка значений точки заказа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -42,6 +48,7 @@
 			style: 'position:absolute;left:198px;top:33px;width:120px;height:19px;',
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:107px;width:636px;height:175px;',
 			height: 175,width: 636,
@@ -67,7 +74,7 @@
 				},
 				{
 					text:'Способ определения',
-					width:'175',
+					width:'174',
 					dataIndex:'СпособОпределенияЗначенияТочкиЗаказа',
 					flex:1,
 				},
@@ -120,7 +127,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЗначенийТочкиЗаказа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЗначенийТочкиЗаказа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,6 +164,23 @@
 						name:'Склад',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаЗначенийТочкиЗаказа.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаЗначенийТочкиЗаказа.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -210,7 +234,8 @@
 			height: 19,
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -280,4 +305,5 @@
 			]
 		},
 	]
+	});
 });

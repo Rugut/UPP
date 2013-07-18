@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПодразделенияОрганизаций.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПодразделенияОрганизаций'], function () 
+{
+	Ext.define('Справочники.ПодразделенияОрганизаций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:526px;height:351px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подразделение',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -199,6 +205,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:257px;top:23px;width:245px;height:132px;',
 			height: 132,width: 245,
@@ -218,18 +225,19 @@
 				},
 				{
 					text:'Категория',
-					width:'166',
+					width:'165',
 					dataIndex:'Категория',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -243,8 +251,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:245px;height:132px;',
 			height: 132,width: 245,
@@ -265,11 +291,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -279,6 +306,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -345,7 +389,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -418,4 +463,5 @@
 			]
 		},
 	]
+	});
 });

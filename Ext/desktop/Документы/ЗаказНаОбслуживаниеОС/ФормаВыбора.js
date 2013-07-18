@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказНаОбслуживаниеОС.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ЗаказНаОбслуживаниеОС'], function () 
+{
+	Ext.define('Документы.ЗаказНаОбслуживаниеОС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Заказы на обслуживание ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Услуга',
-					width:'1200',
+					width:'120',
 					dataIndex:'Услуга',
 					flex:1,
 				},
 				{
 					text:'Причина заказа на обслуживание',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПричинаЗаказаНаОбслуживаниеОС',
 					flex:1,
 				},
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Вид обслуживания',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОбслуживанияОС',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаказНаОбслуживаниеОС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаказНаОбслуживаниеОС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -160,4 +163,5 @@
 			]
 		},
 	]
+	});
 });

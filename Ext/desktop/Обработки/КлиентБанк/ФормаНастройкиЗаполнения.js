@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КлиентБанк.ФормаНастройкиЗаполнения',
+﻿Ext.require(['Данные.Обработки.КлиентБанк'], function () 
+{
+	Ext.define('Обработки.КлиентБанк.ФормаНастройкиЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:286px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаДокументов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КлиентБанк.ФормаНастройкиЗаполненияСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КлиентБанк.ФормаНастройкиЗаполненияСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -195,7 +198,7 @@
 				},
 				{
 					text:'Статья ДДС для новых документов',
-					width:'2100',
+					width:'210',
 					dataIndex:'СтатьяДДС',
 					flex:1,
 				},
@@ -229,9 +232,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаНастроек');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КлиентБанк.ФормаНастройкиЗаполненияСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КлиентБанк.ФормаНастройкиЗаполненияСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -288,4 +291,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов'], function () 
+{
+	Ext.define('Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:384px;height:259px;',
 			height: 259,width: 384,
@@ -17,18 +24,19 @@
 			[
 				{
 					text:'Наименование',
-					width:'246',
+					width:'245',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -36,8 +44,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.ФормаВыбораГруппыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЕдиныеНормыАмортизационныхОтчисленийОсновныхФондов.ФормаВыбораГруппыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -53,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

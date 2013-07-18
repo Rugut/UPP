@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтатьиОтчетаОПрибыляхИУбытках'], function () 
+{
+	Ext.define('Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:324px;height:336px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Статьи отчета о прибылях и убытках',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись2',
@@ -40,6 +46,7 @@
 			style: 'position:absolute;left:96px;top:33px;width:81px;height:19px;',
 		},
 		{
+			id: 'ОтборСтатейОборотов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:164px;width:308px;height:139px;',
 			height: 139,width: 308,
@@ -59,18 +66,19 @@
 				},
 				{
 					text:'Знак',
-					width:'35',
+					width:'34',
 					dataIndex:'Знак',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СтатьиОтчетаОПрибыляхИУбытках").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиОтчетаОПрибыляхИУбытках/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -83,6 +91,23 @@
 						name:'Знак',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборСтатейОборотов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -128,7 +153,8 @@
 			text: 'Наименование для отчета:',
 			style: 'position:absolute;left:8px;top:81px;width:88px;height:38px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -206,4 +232,5 @@
 			]
 		},
 	]
+	});
 });

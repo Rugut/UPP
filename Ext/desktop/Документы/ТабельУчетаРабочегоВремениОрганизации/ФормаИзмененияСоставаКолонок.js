@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ТабельУчетаРабочегоВремениОрганизации.ФормаИзмененияСоставаКолонок',
+﻿Ext.require(['Данные.Документы.ТабельУчетаРабочегоВремениОрганизации'], function () 
+{
+	Ext.define('Документы.ТабельУчетаРабочегоВремениОрганизации.ФормаИзмененияСоставаКолонок',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:306px;height:467px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Состав колонок табеля',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -67,4 +70,5 @@
 			]
 		},
 	]
+	});
 });

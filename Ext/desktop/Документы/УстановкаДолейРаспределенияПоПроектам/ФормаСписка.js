@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаДолейРаспределенияПоПроектам.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УстановкаДолейРаспределенияПоПроектам'], function () 
+{
+	Ext.define('Документы.УстановкаДолейРаспределенияПоПроектам.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Установка долей распределения по проектам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Вид распределения по проектам',
-					width:'186',
+					width:'185',
 					dataIndex:'ВидРаспределенияПоПроектам',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДолейРаспределенияПоПроектам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаДолейРаспределенияПоПроектам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +97,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаДолейРаспределенияПоПроектам.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаДолейРаспределенияПоПроектам.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -111,8 +135,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

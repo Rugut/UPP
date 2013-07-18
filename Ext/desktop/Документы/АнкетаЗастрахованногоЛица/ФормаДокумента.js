@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АнкетаЗастрахованногоЛица.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АнкетаЗастрахованногоЛица'], function () 
+{
+	Ext.define('Документы.АнкетаЗастрахованногоЛица.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:645px;height:470px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анкета застрахованного лица (АДВ-1)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -149,13 +152,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'2200',
+					width:'220',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
 				{
 					text:'Пол',
-					width:'1200',
+					width:'120',
 					dataIndex:'Пол',
 					flex:1,
 				},
@@ -167,7 +170,7 @@
 				},
 				{
 					text:'Фамилия',
-					width:'1600',
+					width:'160',
 					dataIndex:'Фамилия',
 					flex:1,
 				},
@@ -185,7 +188,7 @@
 				},
 				{
 					text:'Место рождения',
-					width:'1600',
+					width:'160',
 					dataIndex:'МестоРождения',
 					flex:1,
 				},
@@ -270,9 +273,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнкетаЗастрахованногоЛица.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнкетаЗастрахованногоЛица.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -367,4 +370,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОснованияУвольнения.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ОснованияУвольнения'], function () 
+{
+	Ext.define('Справочники.ОснованияУвольнения.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:425px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Причины увольнения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,7 +30,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОснованияУвольнения.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОснованияУвольнения.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -85,4 +88,5 @@
 			]
 		},
 	]
+	});
 });

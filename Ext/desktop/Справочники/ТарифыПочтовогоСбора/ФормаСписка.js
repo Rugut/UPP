@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТарифыПочтовогоСбора.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ТарифыПочтовогоСбора'], function () 
+{
+	Ext.define('Справочники.ТарифыПочтовогоСбора.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Тарифы почтового сбора',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТарифыПочтовогоСбора.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТарифыПочтовогоСбора.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -90,4 +93,5 @@
 			]
 		},
 	]
+	});
 });

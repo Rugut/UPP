@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВозвратНаРаботуОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВозвратНаРаботуОрганизаций'], function () 
+{
+	Ext.define('Документы.ВозвратНаРаботуОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:516px;height:404px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Возврат на работу в организацию',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -94,6 +100,7 @@
 			style: 'position:absolute;left:94px;top:353px;width:414px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:500px;height:160px;',
 			height: 160,width: 500,
@@ -119,7 +126,7 @@
 				},
 				{
 					text:'Дата возврата',
-					width:'127',
+					width:'126',
 					dataIndex:'ДатаС',
 					flex:1,
 				},
@@ -142,7 +149,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратНаРаботуОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратНаРаботуОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -164,6 +171,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратНаРаботуОрганизаций.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратНаРаботуОрганизаций.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -300,7 +324,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -349,4 +374,5 @@
 			]
 		},
 	]
+	});
 });

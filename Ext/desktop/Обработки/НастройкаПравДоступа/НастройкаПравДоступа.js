@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкаПравДоступа.НастройкаПравДоступа',
+﻿Ext.require(['Данные.Обработки.НастройкаПравДоступа'], function () 
+{
+	Ext.define('Обработки.НастройкаПравДоступа.НастройкаПравДоступа',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:854px;height:378px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка прав доступа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:230px;top:33px;width:616px;height:312px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Контрагенты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -98,7 +105,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -136,6 +143,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Контрагенты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -150,6 +174,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Организации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -187,13 +212,13 @@
 				},
 				{
 					text:'Чтение',
-					width:'47',
+					width:'46',
 					dataIndex:'Чтение_1',
 					flex:1,
 				},
 				{
 					text:'Запись',
-					width:'47',
+					width:'46',
 					dataIndex:'Запись_1',
 					flex:1,
 				},
@@ -204,7 +229,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -230,6 +255,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Организации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -238,6 +280,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Подразделения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -292,7 +335,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -318,6 +361,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Подразделения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -326,6 +386,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Проекты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -380,7 +441,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -406,6 +467,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Проекты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -414,6 +492,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Склады',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -451,7 +530,7 @@
 				},
 				{
 					text:'Чтение',
-					width:'47',
+					width:'46',
 					dataIndex:'Чтение_1',
 					flex:1,
 				},
@@ -468,7 +547,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -494,6 +573,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Склады');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -502,6 +598,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_ФизическиеЛица',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -557,7 +654,7 @@
 				},
 				{
 					text:'Редактирование данных',
-					width:'89',
+					width:'88',
 					dataIndex:'Изменение_2',
 					flex:1,
 				},
@@ -568,7 +665,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -600,6 +697,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_ФизическиеЛица');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -608,6 +722,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_ВнешниеОбработки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -662,7 +777,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -688,6 +803,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_ВнешниеОбработки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -696,6 +828,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Заметки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -750,7 +883,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -776,6 +909,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Заметки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -784,6 +934,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_ПодразделенияОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -838,7 +989,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -864,6 +1015,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_ПодразделенияОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -872,6 +1040,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_ЗаявкиКандидатов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -926,7 +1095,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -952,6 +1121,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_ЗаявкиКандидатов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -960,6 +1146,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Номенклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:240px;',
 			height: 240,width: 602,
@@ -1008,7 +1195,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1031,6 +1218,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Номенклатура');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1039,6 +1243,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_Спецификации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:602px;height:224px;',
 			height: 224,width: 602,
@@ -1093,7 +1298,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1119,6 +1324,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_Спецификации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1127,6 +1349,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаПравДоступа_ЦеныНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:602px;height:223px;',
 			height: 223,width: 602,
@@ -1164,7 +1387,7 @@
 				},
 				{
 					text:'Цены компании',
-					width:'61',
+					width:'60',
 					dataIndex:'ГруппаЦеныКомпании',
 					flex:1,
 				},
@@ -1176,19 +1399,19 @@
 				},
 				{
 					text:'Запись',
-					width:'50',
+					width:'49',
 					dataIndex:'Изменение_1',
 					flex:1,
 				},
 				{
 					text:'Цены контрагентов',
-					width:'107',
+					width:'106',
 					dataIndex:'ГруппаЦеныКонтрагентов',
 					flex:1,
 				},
 				{
 					text:'Чтение',
-					width:'49',
+					width:'48',
 					dataIndex:'Чтение_2',
 					flex:1,
 				},
@@ -1205,7 +1428,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1243,6 +1466,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаПравДоступа_ЦеныНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1252,6 +1492,7 @@
 			]
 		},
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:215px;height:312px;',
 			height: 312,width: 215,
@@ -1259,7 +1500,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'185',
+					width:'184',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -1270,7 +1511,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПравДоступа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1278,8 +1519,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкаПравДоступа.НастройкаПравДоступаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1325,4 +1584,5 @@
 			]
 		},
 	]
+	});
 });

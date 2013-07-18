@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПоказателиАнализовНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:531px;height:320px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Показатели анализов номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -139,6 +145,7 @@
 					items:
 					[
 		{
+			id: 'ДопустимыеЗначенияПоказателей',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:30px;width:515px;height:116px;',
 			height: 116,width: 515,
@@ -159,11 +166,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПоказателиАнализовНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -173,6 +181,23 @@
 						name:'ЗначениеПоказателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДопустимыеЗначенияПоказателей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -185,7 +210,8 @@
 			text: '',
 			style: 'position:absolute;left:10px;top:258px;width:513px;height:29px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -219,4 +245,5 @@
 			]
 		},
 	]
+	});
 });

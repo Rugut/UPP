@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтсутствияНаРабочемМесте.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтсутствияНаРабочемМесте'], function () 
+{
+	Ext.define('Документы.ОтсутствияНаРабочемМесте.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:378px;height:313px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отсутствие на рабочем месте',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -207,4 +210,5 @@
 			]
 		},
 	]
+	});
 });

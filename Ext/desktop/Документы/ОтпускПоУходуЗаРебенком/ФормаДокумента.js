@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтпускПоУходуЗаРебенком.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтпускПоУходуЗаРебенком'], function () 
+{
+	Ext.define('Документы.ОтпускПоУходуЗаРебенком.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:784px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отпуск по уходу за ребенком',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -226,6 +232,7 @@
 					items:
 					[
 		{
+			id: 'РасчетСреднего',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:75px;width:754px;height:285px;',
 			height: 285,width: 754,
@@ -298,7 +305,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -332,6 +339,23 @@
 						name:'БазовыйПериодКонец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -421,6 +445,7 @@
 			style: 'position:absolute;left:178px;top:8px;width:64px;height:19px;',
 		},
 		{
+			id: 'РасчетСреднего2011',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:75px;width:754px;height:285px;',
 			height: 285,width: 754,
@@ -463,7 +488,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -483,6 +508,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего2011');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -495,6 +537,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:754px;height:336px;',
 			height: 336,width: 754,
@@ -735,7 +778,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -854,6 +897,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -926,6 +986,7 @@
 					items:
 					[
 		{
+			id: 'ПлановыеУдержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:754px;height:336px;',
 			height: 336,width: 754,
@@ -1082,7 +1143,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1158,6 +1219,23 @@
 						name:'Сторно',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеУдержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1705,6 +1783,7 @@
 					items:
 					[
 		{
+			id: 'ДанныеОДетях',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:56px;width:754px;height:203px;',
 			height: 203,width: 754,
@@ -1712,7 +1791,7 @@
 			[
 				{
 					text:'Очередность',
-					width:'74',
+					width:'73',
 					dataIndex:'Очередность',
 					flex:1,
 				},
@@ -1742,7 +1821,7 @@
 				},
 				{
 					text:'Выплачивается пособие',
-					width:'92',
+					width:'91',
 					dataIndex:'НаРебенкаВыплачиваетсяПособие',
 					flex:1,
 				},
@@ -1784,7 +1863,7 @@
 				},
 				{
 					text:'Решение суда о лишении прав',
-					width:'92',
+					width:'91',
 					dataIndex:'НаличиеРешенияСудаОЛишенииПрав',
 					flex:1,
 				},
@@ -1795,7 +1874,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтпускПоУходуЗаРебенком/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1838,6 +1917,23 @@
 						name:'НаличиеРешенияСудаОЛишенииПрав',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДанныеОДетях');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2102,7 +2198,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -2142,4 +2239,5 @@
 			]
 		},
 	]
+	});
 });

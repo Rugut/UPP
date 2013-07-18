@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВводаСтавкиНалога',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВводаСтавкиНалога',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:304px;height:330px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ставки налога',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -136,4 +139,5 @@
 			]
 		},
 	]
+	});
 });

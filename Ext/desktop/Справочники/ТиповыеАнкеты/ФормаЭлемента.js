@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТиповыеАнкеты'], function () 
+{
+	Ext.define('Справочники.ТиповыеАнкеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:445px;height:470px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Типовая анкета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -135,6 +141,7 @@
 					items:
 					[
 		{
+			id: 'ВопросыАнкеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:166px;width:416px;height:80px;',
 			height: 80,width: 416,
@@ -148,7 +155,7 @@
 				},
 				{
 					text:'№',
-					width:'27',
+					width:'26',
 					dataIndex:'НомерСтроки',
 					flex:1,
 				},
@@ -179,11 +186,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -206,6 +214,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВопросыАнкеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -215,6 +240,7 @@
 			]
 		},
 		{
+			id: 'РазделыАнкеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:416px;height:74px;',
 			height: 74,width: 416,
@@ -241,11 +267,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -258,6 +285,23 @@
 						name:'Комментарий',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РазделыАнкеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -308,7 +352,8 @@
 			name: 'Вступление',
 			style: 'position:absolute;left:95px;top:82px;width:343px;height:80px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -382,4 +427,5 @@
 			]
 		},
 	]
+	});
 });

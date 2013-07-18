@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УстановкаЗависимостейОборотовПоСтатьям'], function () 
+{
+	Ext.define('Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Установки зависимостей оборотов по статьям',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,37 +42,37 @@
 				},
 				{
 					text:'Сценарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сценарий',
 					flex:1,
 				},
 				{
 					text:'Статья оборотов',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтатьяОборотовВлияющая',
 					flex:1,
 				},
 				{
 					text:'ЦФО',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УстановкаЗависимостейОборотовПоСтатьям.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УстановкаЗависимостейОборотовПоСтатьям.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -156,4 +159,5 @@
 			]
 		},
 	]
+	});
 });

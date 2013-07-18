@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НормативыОбслуживанияОС.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.НормативыОбслуживанияОС'], function () 
+{
+	Ext.define('Справочники.НормативыОбслуживанияОС.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Нормативы обслуживания ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

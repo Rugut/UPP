@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТОЗагрузкаККМOffline.Форма',
+﻿Ext.require(['Данные.Обработки.ТОЗагрузкаККМOffline'], function () 
+{
+	Ext.define('Обработки.ТОЗагрузкаККМOffline.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:442px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка  Загрузка ККМ Off-Line',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -62,13 +65,13 @@
 				},
 				{
 					text:'Код товара',
-					width:'1200',
+					width:'120',
 					dataIndex:'КодТовара',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2500',
+					width:'250',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -80,13 +83,13 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'Серия',
 					flex:1,
 				},
@@ -138,9 +141,9 @@
 					{
 						var грид = Ext.getCmp('Товары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТОЗагрузкаККМOffline.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТОЗагрузкаККМOffline.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -240,4 +243,5 @@
 			]
 		},
 	]
+	});
 });

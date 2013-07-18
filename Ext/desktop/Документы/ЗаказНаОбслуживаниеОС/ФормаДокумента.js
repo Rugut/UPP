@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказНаОбслуживаниеОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаказНаОбслуживаниеОС'], function () 
+{
+	Ext.define('Документы.ЗаказНаОбслуживаниеОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:386px;height:421px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Заказ на обслуживание ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -125,6 +131,7 @@
 			style: 'position:absolute;left:146px;top:129px;width:80px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:196px;width:370px;height:145px;',
 			height: 145,width: 370,
@@ -161,7 +168,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказНаОбслуживаниеОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказНаОбслуживаниеОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -177,6 +184,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -201,7 +225,8 @@
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:156px;width:370px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -272,4 +297,5 @@
 			]
 		},
 	]
+	});
 });

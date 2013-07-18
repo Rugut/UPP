@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеМатериаловИзЭксплуатации.ФормаСписка',
+﻿Ext.require(['Данные.Документы.СписаниеМатериаловИзЭксплуатации'], function () 
+{
+	Ext.define('Документы.СписаниеМатериаловИзЭксплуатации.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Списание материалов из эксплуатации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -71,7 +78,7 @@
 				},
 				{
 					text:'Способ списания расходов',
-					width:'143',
+					width:'142',
 					dataIndex:'СпособСписанияРасходов',
 					flex:1,
 				},
@@ -94,7 +101,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеМатериаловИзЭксплуатации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеМатериаловИзЭксплуатации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,6 +142,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СписаниеМатериаловИзЭксплуатации.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СписаниеМатериаловИзЭксплуатации.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -167,8 +191,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

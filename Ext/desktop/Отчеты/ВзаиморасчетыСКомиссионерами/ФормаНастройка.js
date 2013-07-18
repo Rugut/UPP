@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВзаиморасчетыСКомиссионерами.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ВзаиморасчетыСКомиссионерами'], function () 
+{
+	Ext.define('Отчеты.ВзаиморасчетыСКомиссионерами.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:620px;height:399px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:6px;width:604px;height:360px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'Группировки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:73px;width:336px;height:261px;',
 			height: 261,width: 336,
@@ -50,7 +57,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВзаиморасчетыСКомиссионерами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВзаиморасчетыСКомиссионерами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,6 +70,23 @@
 						name:'ДополнительныеПоля',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Группировки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВзаиморасчетыСКомиссионерами.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВзаиморасчетыСКомиссионерами.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -105,6 +129,7 @@
 			style: 'position:absolute;left:171px;top:6px;width:80px;height:19px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:346px;top:73px;width:250px;height:261px;',
 			height: 261,width: 250,
@@ -118,7 +143,7 @@
 				},
 				{
 					text:'Показатель',
-					width:'177',
+					width:'176',
 					dataIndex:'ПредставлениеПоказателя',
 					flex:1,
 				},
@@ -129,7 +154,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВзаиморасчетыСКомиссионерами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВзаиморасчетыСКомиссионерами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -139,6 +164,23 @@
 						name:'ПредставлениеПоказателя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВзаиморасчетыСКомиссионерами.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВзаиморасчетыСКомиссионерами.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -173,6 +215,7 @@
 			style: 'position:absolute;left:396px;top:30px;width:200px;height:304px;',
 		},
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:386px;height:304px;',
 			height: 304,width: 386,
@@ -198,7 +241,7 @@
 				},
 				{
 					text:'Значение',
-					width:'163',
+					width:'162',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -209,7 +252,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВзаиморасчетыСКомиссионерами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВзаиморасчетыСКомиссионерами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -226,12 +269,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВзаиморасчетыСКомиссионерами.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВзаиморасчетыСКомиссионерами.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -253,4 +314,5 @@
 			]
 		},
 	]
+	});
 });

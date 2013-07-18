@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновныеСредства.ФормаПодбора',
+﻿Ext.require(['Данные.Справочники.ОсновныеСредства'], function () 
+{
+	Ext.define('Справочники.ОсновныеСредства.ФормаПодбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Основные средства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновныеСредства.ФормаПодбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаПодбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -115,9 +118,9 @@
 					{
 						var грид = Ext.getCmp('Дерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОсновныеСредства.ФормаПодбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаПодбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -297,4 +300,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

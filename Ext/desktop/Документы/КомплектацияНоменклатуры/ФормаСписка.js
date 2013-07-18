@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомплектацияНоменклатуры.ФормаСписка',
+﻿Ext.require(['Данные.Документы.КомплектацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.КомплектацияНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Комплектации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Склад',
-					width:'1100',
+					width:'110',
 					dataIndex:'Склад',
 					flex:1,
 				},
@@ -111,7 +114,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'2200',
+					width:'220',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -184,9 +187,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КомплектацияНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КомплектацияНоменклатуры.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -229,4 +232,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЖурналУчетаПолученныхСчетовФактур.Форма',
+﻿Ext.require(['Данные.Отчеты.ЖурналУчетаПолученныхСчетовФактур'], function () 
+{
+	Ext.define('Отчеты.ЖурналУчетаПолученныхСчетовФактур.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:530px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Журнал учета полученных счетов-фактур',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -171,4 +174,5 @@
 			]
 		},
 	]
+	});
 });

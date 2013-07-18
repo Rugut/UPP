@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РабочийСтол.ФормаУдержаний',
+﻿Ext.require(['Данные.Обработки.РабочийСтол'], function () 
+{
+	Ext.define('Обработки.РабочийСтол.ФормаУдержаний',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:745px;height:538px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Удержания',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -92,9 +95,9 @@
 					{
 						var грид = Ext.getCmp('УдержанияРегл');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочийСтол.ФормаУдержанийСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочийСтол.ФормаУдержанийСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -176,9 +179,9 @@
 					{
 						var грид = Ext.getCmp('УдержанияУпр');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочийСтол.ФормаУдержанийСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочийСтол.ФормаУдержанийСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -206,4 +209,5 @@
 			]
 		},
 	]
+	});
 });

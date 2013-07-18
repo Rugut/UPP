@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомплектацияНоменклатуры.ФормаВыбораВыпускаемойНоменклатуры',
+﻿Ext.require(['Данные.Документы.КомплектацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.КомплектацияНоменклатуры.ФормаВыбораВыпускаемойНоменклатуры',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:174px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выберите выпускаемую номенклатуру',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:648px;height:133px;',
 			height: 133,width: 648,
@@ -17,13 +24,13 @@
 			[
 				{
 					text:'Номенклатура',
-					width:'168',
+					width:'167',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'172',
+					width:'171',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -52,7 +59,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +79,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КомплектацияНоменклатуры.ФормаВыбораВыпускаемойНоменклатурыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КомплектацияНоменклатуры.ФормаВыбораВыпускаемойНоменклатурыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -92,4 +117,5 @@
 			]
 		},
 	]
+	});
 });

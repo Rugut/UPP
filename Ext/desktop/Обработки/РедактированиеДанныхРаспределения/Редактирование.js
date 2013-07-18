@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РедактированиеДанныхРаспределения.Редактирование',
+﻿Ext.require(['Данные.Обработки.РедактированиеДанныхРаспределения'], function () 
+{
+	Ext.define('Обработки.РедактированиеДанныхРаспределения.Редактирование',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -48,4 +51,5 @@
 			]
 		},
 	]
+	});
 });

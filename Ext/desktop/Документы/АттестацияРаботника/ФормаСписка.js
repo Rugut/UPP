@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АттестацияРаботника.ФормаСписка',
+﻿Ext.require(['Данные.Документы.АттестацияРаботника'], function () 
+{
+	Ext.define('Документы.АттестацияРаботника.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:532px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Аттестации сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Работник',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АттестацияРаботника.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АттестацияРаботника.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -188,4 +191,5 @@
 			]
 		},
 	]
+	});
 });

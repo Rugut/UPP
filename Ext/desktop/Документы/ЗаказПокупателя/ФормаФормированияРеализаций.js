@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказПокупателя.ФормаФормированияРеализаций',
+﻿Ext.require(['Данные.Документы.ЗаказПокупателя'], function () 
+{
+	Ext.define('Документы.ЗаказПокупателя.ФормаФормированияРеализаций',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:744px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оформление документов ""Реализация товаров и услуг""',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -344,4 +347,5 @@
 			]
 		},
 	]
+	});
 });

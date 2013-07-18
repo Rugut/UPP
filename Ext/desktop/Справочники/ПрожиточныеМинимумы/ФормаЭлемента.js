@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрожиточныеМинимумы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПрожиточныеМинимумы'], function () 
+{
+	Ext.define('Справочники.ПрожиточныеМинимумы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:462px;height:294px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Прожиточный минимум субъекта РФ, в целом по РФ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -62,7 +65,7 @@
 				},
 				{
 					text:'Дата',
-					width:'1200',
+					width:'120',
 					dataIndex:'Период',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ВеличинаПрожиточногоМинимума');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПрожиточныеМинимумы.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПрожиточныеМинимумы.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -192,4 +195,5 @@
 			]
 		},
 	]
+	});
 });

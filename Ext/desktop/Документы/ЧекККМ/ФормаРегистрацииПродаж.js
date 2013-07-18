@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЧекККМ.ФормаРегистрацииПродаж',
+﻿Ext.require(['Данные.Документы.ЧекККМ'], function () 
+{
+	Ext.define('Документы.ЧекККМ.ФормаРегистрацииПродаж',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:782px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Чек ККМ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'СуммаДокумента',
@@ -61,6 +67,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:15px;width:766px;height:252px;',
 			height: 252,width: 766,
@@ -122,7 +129,7 @@
 				},
 				{
 					text:'% Руч.ск.',
-					width:'60',
+					width:'59',
 					dataIndex:'ПроцентСкидкиНаценки',
 					flex:1,
 				},
@@ -157,7 +164,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -204,6 +211,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЧекККМ.ФормаРегистрацииПродажСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЧекККМ.ФормаРегистрацииПродажСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -242,8 +266,10 @@
 			text: 'Владелец дисконтной карты',
 			style: 'position:absolute;left:13px;top:371px;width:276px;height:18px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

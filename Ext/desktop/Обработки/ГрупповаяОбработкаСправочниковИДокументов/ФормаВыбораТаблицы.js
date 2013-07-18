@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицы',
+﻿Ext.require(['Данные.Обработки.ГрупповаяОбработкаСправочниковИДокументов'], function () 
+{
+	Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:344px;height:463px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обработка  Внешняя обработка2',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоТаблиц',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:328px;height:397px;',
 			height: 397,width: 328,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Имя таблицы',
-					width:'87',
+					width:'86',
 					dataIndex:'ИмяТаблицы',
 					flex:1,
 				},
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрупповаяОбработкаСправочниковИДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +52,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоТаблиц');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -82,4 +107,5 @@
 			]
 		},
 	]
+	});
 });

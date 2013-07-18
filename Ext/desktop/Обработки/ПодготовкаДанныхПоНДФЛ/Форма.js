@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодготовкаДанныхПоНДФЛ.Форма',
+﻿Ext.require(['Данные.Обработки.ПодготовкаДанныхПоНДФЛ'], function () 
+{
+	Ext.define('Обработки.ПодготовкаДанныхПоНДФЛ.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подготовка данных по НДФЛ для передачи в налоговые органы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -51,6 +57,7 @@
 			style: 'position:absolute;left:8px;top:47px;width:984px;height:19px;',
 		},
 		{
+			id: 'Документы2НДФЛ',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:93px;width:365px;height:131px;',
 			height: 131,width: 365,
@@ -58,7 +65,7 @@
 			[
 				{
 					text:'Реестр',
-					width:'101',
+					width:'100',
 					dataIndex:'Справка',
 					flex:1,
 				},
@@ -87,7 +94,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -103,6 +110,23 @@
 						name:'НалогаУдержано',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Документы2НДФЛ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -329,6 +353,7 @@
 					items:
 					[
 		{
+			id: 'ФизлицаРеестра2НДФЛ',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:349px;height:268px;',
 			height: 268,width: 349,
@@ -365,7 +390,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -382,6 +407,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаРеестра2НДФЛ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -394,6 +436,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОДоходах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:293px;height:138px;',
 			height: 138,width: 293,
@@ -436,7 +479,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -456,8 +499,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОДоходах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СведенияОВычетах',
 			xtype: 'grid',
 			style: 'position:absolute;left:309px;top:23px;width:309px;height:91px;',
 			height: 91,width: 309,
@@ -482,7 +543,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -492,6 +553,23 @@
 						name:'СуммаВычета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОВычетах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -814,6 +892,7 @@
 			style: 'position:absolute;left:247px;top:68px;width:70px;height:19px;',
 		},
 		{
+			id: 'СуммыНалогов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:70px;height:91px;',
 			height: 91,width: 70,
@@ -832,13 +911,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПоНДФЛ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Ставка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СуммыНалогов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1129,7 +1225,8 @@
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:624px;top:8px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1156,4 +1253,5 @@
 			]
 		},
 	]
+	});
 });

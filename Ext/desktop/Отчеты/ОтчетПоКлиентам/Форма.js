@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоКлиентам.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоКлиентам'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоКлиентам.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по клиентам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -209,4 +212,5 @@
 			]
 		},
 	]
+	});
 });

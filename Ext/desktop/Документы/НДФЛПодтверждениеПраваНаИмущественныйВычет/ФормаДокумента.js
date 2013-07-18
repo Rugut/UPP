@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НДФЛПодтверждениеПраваНаИмущественныйВычет.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НДФЛПодтверждениеПраваНаИмущественныйВычет'], function () 
+{
+	Ext.define('Документы.НДФЛПодтверждениеПраваНаИмущественныйВычет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:621px;height:392px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подтверждение права на имущественный вычет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОтветственный',
@@ -43,6 +49,7 @@
 			style: 'position:absolute;left:113px;top:340px;width:500px;height:19px;',
 		},
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:173px;width:605px;height:160px;',
 			height: 160,width: 605,
@@ -92,7 +99,7 @@
 				},
 				{
 					text:'Номер уведомления',
-					width:'100',
+					width:'99',
 					dataIndex:'НомерВходящегоДокумента',
 					flex:1,
 				},
@@ -109,7 +116,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛПодтверждениеПраваНаИмущественныйВычет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛПодтверждениеПраваНаИмущественныйВычет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -140,6 +147,23 @@
 						name:'ДатаУведомления',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛПодтверждениеПраваНаИмущественныйВычет.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛПодтверждениеПраваНаИмущественныйВычет.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -217,7 +241,8 @@
 			text: 'год',
 			style: 'position:absolute;left:201px;top:107px;width:25px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -321,4 +346,5 @@
 			]
 		},
 	]
+	});
 });

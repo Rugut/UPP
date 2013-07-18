@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПроизвольныеОтчеты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПроизвольныеОтчеты'], function () 
+{
+	Ext.define('Справочники.ПроизвольныеОтчеты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:445px;height:323px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Общая настройка отчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -32,6 +38,7 @@
 			style: 'position:absolute;left:8px;top:251px;width:429px;height:39px;',
 		},
 		{
+			id: 'ИсточникиДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:135px;width:429px;height:92px;',
 			height: 92,width: 429,
@@ -39,7 +46,7 @@
 			[
 				{
 					text:'Имя источника',
-					width:'120',
+					width:'119',
 					dataIndex:'ИмяИсточника',
 					flex:1,
 				},
@@ -52,11 +59,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -66,6 +74,23 @@
 						name:'НаборДанных',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсточникиДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроизвольныеОтчеты.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроизвольныеОтчеты.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -96,7 +121,8 @@
 			title: 'Источники данных',
 			style: 'position:absolute;left:8px;top:95px;width:429px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -141,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонсольОтчетов.ФормаВыбораОтчета',
+﻿Ext.require(['Данные.Обработки.КонсольОтчетов'], function () 
+{
+	Ext.define('Обработки.КонсольОтчетов.ФормаВыбораОтчета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор отчета для расшифровки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,9 +52,9 @@
 					{
 						var грид = Ext.getCmp('ДеревоОтчетов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КонсольОтчетов.ФормаВыбораОтчетаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаВыбораОтчетаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -81,4 +84,5 @@
 			]
 		},
 	]
+	});
 });

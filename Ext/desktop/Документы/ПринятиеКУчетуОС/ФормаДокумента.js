@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПринятиеКУчетуОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПринятиеКУчетуОС'], function () 
+{
+	Ext.define('Документы.ПринятиеКУчетуОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:706px;height:559px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Принятие к учету ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:534px;width:706px;height:25px;',
@@ -125,6 +131,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:212px;width:676px;height:157px;',
 			height: 157,width: 676,
@@ -138,7 +145,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'366',
+					width:'365',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -150,7 +157,7 @@
 				},
 				{
 					text:'Инв. № (Орг)',
-					width:'112',
+					width:'111',
 					dataIndex:'ИнвентарныйНомер',
 					flex:1,
 				},
@@ -161,7 +168,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -177,6 +184,23 @@
 						name:'ИнвентарныйНомер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПринятиеКУчетуОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПринятиеКУчетуОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1476,6 +1500,7 @@
 			style: 'position:absolute;left:562px;top:6px;width:120px;height:19px;',
 		},
 		{
+			id: 'Оплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:205px;width:676px;height:165px;',
 			height: 165,width: 676,
@@ -1512,7 +1537,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1529,8 +1554,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПринятиеКУчетуОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПринятиеКУчетуОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ОсновныеСредстваДляУСН',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:92px;width:676px;height:76px;',
 			height: 76,width: 676,
@@ -1561,7 +1604,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1574,6 +1617,23 @@
 						name:'ИнвентарныйНомер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредстваДляУСН');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПринятиеКУчетуОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПринятиеКУчетуОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1650,7 +1710,8 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:90px;top:485px;width:608px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1689,4 +1750,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ФильтрыДляЭлектронныхПисем'], function () 
+{
+	Ext.define('Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:714px;height:423px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Фильтры для электронных писем',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -57,6 +63,7 @@
 			style: 'position:absolute;left:99px;top:57px;width:502px;height:19px;',
 		},
 		{
+			id: 'УсловияФильтра',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:123px;width:347px;height:243px;',
 			height: 243,width: 347,
@@ -76,7 +83,7 @@
 				},
 				{
 					text:'Условие',
-					width:'162',
+					width:'161',
 					dataIndex:'Условие',
 					flex:1,
 				},
@@ -89,11 +96,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФильтрыДляЭлектронныхПисем").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -110,8 +118,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УсловияФильтра');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДействияФильтра',
 			xtype: 'grid',
 			style: 'position:absolute;left:359px;top:123px;width:347px;height:267px;',
 			height: 267,width: 347,
@@ -144,11 +170,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ФильтрыДляЭлектронныхПисем").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ФильтрыДляЭлектронныхПисем/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -164,6 +191,23 @@
 						name:'Оформление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДействияФильтра');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -191,7 +235,8 @@
 			boxLabel: 'Использование',
 			style: 'position:absolute;left:608px;top:33px;width:98px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -241,4 +286,5 @@
 			]
 		},
 	]
+	});
 });

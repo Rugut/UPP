@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НевыходыВОрганизациях.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НевыходыВОрганизациях'], function () 
+{
+	Ext.define('Документы.НевыходыВОрганизациях.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:431px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Невыходы в организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +98,7 @@
 			style: 'position:absolute;left:424px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:161px;width:636px;height:170px;',
 			height: 170,width: 636,
@@ -159,13 +166,13 @@
 				},
 				{
 					text:'Зачесть в норму дней',
-					width:'125',
+					width:'124',
 					dataIndex:'НормаДней',
 					flex:1,
 				},
 				{
 					text:'Зачесть в норму часов',
-					width:'90',
+					width:'89',
 					dataIndex:'НормаЧасов',
 					flex:1,
 				},
@@ -338,7 +345,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НевыходыВОрганизациях/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НевыходыВОрганизациях/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -460,6 +467,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НевыходыВОрганизациях.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НевыходыВОрганизациях.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -562,7 +586,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -695,4 +720,5 @@
 			]
 		},
 	]
+	});
 });

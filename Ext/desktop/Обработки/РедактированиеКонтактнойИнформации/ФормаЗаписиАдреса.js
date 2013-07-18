@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдреса',
+﻿Ext.require(['Данные.Обработки.РедактированиеКонтактнойИнформации'], function () 
+{
+	Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдреса',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Адрес',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -401,4 +404,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

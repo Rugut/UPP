@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Вакансии.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.Вакансии'], function () 
+{
+	Ext.define('Справочники.Вакансии.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:729px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Вакансии',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -104,9 +107,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Вакансии.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Вакансии.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -243,4 +246,5 @@
 			]
 		},
 	]
+	});
 });

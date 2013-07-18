@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПлатежноеПоручениеИсходящее.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПлатежноеПоручениеИсходящее'], function () 
+{
+	Ext.define('Документы.ПлатежноеПоручениеИсходящее.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:658px;height:485px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Платежное поручение исходящее',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -489,6 +495,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:627px;height:155px;',
 			height: 155,width: 627,
@@ -508,7 +515,7 @@
 				},
 				{
 					text:'Сделка',
-					width:'90',
+					width:'89',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -597,7 +604,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежноеПоручениеИсходящее/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежноеПоручениеИсходящее/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -650,6 +657,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -669,6 +693,7 @@
 					items:
 					[
 		{
+			id: 'ПеречислениеЗаработнойПлаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:619px;height:146px;',
 			height: 146,width: 619,
@@ -682,7 +707,7 @@
 				},
 				{
 					text:'Ведомость',
-					width:'272',
+					width:'271',
 					dataIndex:'Ведомость',
 					flex:1,
 				},
@@ -700,13 +725,13 @@
 				},
 				{
 					text:'Заявка на расходование средств',
-					width:'176',
+					width:'175',
 					dataIndex:'ДокументПланированияПлатежа',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'122',
+					width:'121',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -717,7 +742,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежноеПоручениеИсходящее/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежноеПоручениеИсходящее/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -739,6 +764,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПеречислениеЗаработнойПлаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1946,7 +1988,8 @@
 			text: 'Комментарий:',
 			style: 'position:absolute;left:8px;top:433px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1958,4 +2001,5 @@
 			]
 		},
 	]
+	});
 });

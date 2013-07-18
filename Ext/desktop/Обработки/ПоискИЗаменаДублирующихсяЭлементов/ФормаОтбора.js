@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.ФормаОтбора',
+﻿Ext.require(['Данные.Обработки.ПоискИЗаменаДублирующихсяЭлементов'], function () 
+{
+	Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:359px;height:392px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Значения настроек',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЗначенияОтбора',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:9px;width:343px;height:350px;',
 			height: 350,width: 343,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Представление',
-					width:'276',
+					width:'275',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -40,7 +47,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +61,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗначенияОтбора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаОтбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаОтбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -76,4 +101,5 @@
 			]
 		},
 	]
+	});
 });

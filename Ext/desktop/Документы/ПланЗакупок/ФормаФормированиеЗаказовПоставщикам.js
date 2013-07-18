@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланЗакупок.ФормаФормированиеЗаказовПоставщикам',
+﻿Ext.require(['Данные.Документы.ПланЗакупок'], function () 
+{
+	Ext.define('Документы.ПланЗакупок.ФормаФормированиеЗаказовПоставщикам',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Формирование заказов поставщикам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:624px;height:439px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеЗакупки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:610px;height:383px;',
 			height: 383,width: 610,
@@ -27,7 +34,7 @@
 			[
 				{
 					text:' Поставщик. Номенклатура.',
-					width:'154',
+					width:'153',
 					dataIndex:'ПоставщикНоменклатура',
 					flex:1,
 				},
@@ -74,7 +81,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -100,6 +107,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗакупки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланЗакупок.ФормаФормированиеЗаказовПоставщикамСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланЗакупок.ФормаФормированиеЗаказовПоставщикамСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -108,6 +132,7 @@
 					items:
 					[
 		{
+			id: 'СформированныеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:610px;height:383px;',
 			height: 383,width: 610,
@@ -132,7 +157,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланЗакупок/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланЗакупок/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -143,12 +168,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СформированныеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланЗакупок.ФормаФормированиеЗаказовПоставщикамСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланЗакупок.ФормаФормированиеЗаказовПоставщикамСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -170,4 +213,5 @@
 			]
 		},
 	]
+	});
 });

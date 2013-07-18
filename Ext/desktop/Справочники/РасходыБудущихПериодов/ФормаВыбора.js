@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РасходыБудущихПериодов.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.РасходыБудущихПериодов'], function () 
+{
+	Ext.define('Справочники.РасходыБудущихПериодов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:321px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Расходы будущих периодов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:142px;height:284px;',
 			height: 284,width: 142,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Код',
-					width:'79',
+					width:'78',
 					dataIndex:'Код',
 					flex:1,
 				},
@@ -30,11 +37,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.РасходыБудущихПериодов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходыБудущихПериодов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходыБудущихПериодов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +53,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасходыБудущихПериодов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасходыБудущихПериодов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникВыбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:157px;top:33px;width:551px;height:284px;',
 			height: 284,width: 551,
@@ -150,37 +176,37 @@
 				},
 				{
 					text:'Вид субконто 1',
-					width:'95',
+					width:'94',
 					dataIndex:'ВидСубконто1',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 2',
-					width:'95',
+					width:'94',
 					dataIndex:'ВидСубконто2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3',
-					width:'95',
+					width:'94',
 					dataIndex:'ВидСубконто3',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 1 (НУ)',
-					width:'79',
+					width:'78',
 					dataIndex:'ВидСубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 2 (НУ)',
-					width:'79',
+					width:'78',
 					dataIndex:'ВидСубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3 (НУ)',
-					width:'79',
+					width:'78',
 					dataIndex:'ВидСубконтоНУ3',
 					flex:1,
 				},
@@ -192,7 +218,7 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'183',
+					width:'182',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -204,61 +230,61 @@
 				},
 				{
 					text:'Способ распределения затрат на выпуск',
-					width:'154',
+					width:'153',
 					dataIndex:'СпособРаспределенияЗатратНаВыпуск',
 					flex:1,
 				},
 				{
 					text:'Субконто 1',
-					width:'101',
+					width:'100',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2',
-					width:'101',
+					width:'100',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3',
-					width:'101',
+					width:'100',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
 				{
 					text:'Субконто 1 (НУ)',
-					width:'101',
+					width:'100',
 					dataIndex:'СубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2 (НУ)',
-					width:'101',
+					width:'100',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3 (НУ)',
-					width:'101',
+					width:'100',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Продукция',
-					width:'101',
+					width:'100',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'101',
+					width:'100',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
 				{
 					text:'Серия продукции',
-					width:'101',
+					width:'100',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
@@ -283,11 +309,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.РасходыБудущихПериодов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходыБудущихПериодов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасходыБудущихПериодов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -406,8 +433,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникВыбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасходыБудущихПериодов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасходыБудущихПериодов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -423,4 +468,5 @@
 			]
 		},
 	]
+	});
 });

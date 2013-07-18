@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НаправленияСписанияВыпущеннойПродукции'], function () 
+{
+	Ext.define('Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:616px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Направления списания выпущенной продукции (услуг)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -62,6 +68,7 @@
 			]
 		},
 		{
+			id: 'Направления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:120px;width:600px;height:272px;',
 			height: 272,width: 600,
@@ -105,7 +112,7 @@
 				},
 				{
 					text:'Хар-р затрат',
-					width:'80',
+					width:'79',
 					dataIndex:'ХарактерЗатрат',
 					flex:1,
 				},
@@ -141,31 +148,31 @@
 				},
 				{
 					text:'Вид субконто 1 (НУ)',
-					width:'87',
+					width:'86',
 					dataIndex:'ВидСубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 2 (НУ)',
-					width:'87',
+					width:'86',
 					dataIndex:'ВидСубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3 (НУ)',
-					width:'87',
+					width:'86',
 					dataIndex:'ВидСубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Аналитика',
-					width:'89',
+					width:'88',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'89',
+					width:'88',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -189,19 +196,19 @@
 				},
 				{
 					text:'Субконто 1 (НУ)',
-					width:'58',
+					width:'57',
 					dataIndex:'СубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2 (НУ)',
-					width:'58',
+					width:'57',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3 (НУ)',
-					width:'58',
+					width:'57',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
@@ -256,11 +263,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НаправленияСписанияВыпущеннойПродукции").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -358,6 +366,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Направления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -381,7 +406,8 @@
 			title: 'Направления',
 			style: 'position:absolute;left:8px;top:80px;width:600px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -415,4 +441,5 @@
 			]
 		},
 	]
+	});
 });

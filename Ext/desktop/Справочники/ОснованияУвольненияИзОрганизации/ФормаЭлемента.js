@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОснованияУвольненияИзОрганизации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОснованияУвольненияИзОрганизации'], function () 
+{
+	Ext.define('Справочники.ОснованияУвольненияИзОрганизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:378px;height:163px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Основание увольнения (статья ТК РФ)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -75,4 +78,5 @@
 			]
 		},
 	]
+	});
 });

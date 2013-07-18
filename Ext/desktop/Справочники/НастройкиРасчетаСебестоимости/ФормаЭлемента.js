@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкиРасчетаСебестоимости'], function () 
+{
+	Ext.define('Справочники.НастройкиРасчетаСебестоимости.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:394px;height:418px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка расчета себестоимости',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -43,6 +49,7 @@
 					items:
 					[
 		{
+			id: 'ВыполняемыеДействия',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:363px;height:133px;',
 			height: 133,width: 363,
@@ -57,17 +64,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиРасчетаСебестоимости").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиРасчетаСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ВыполняемоеДействие',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыполняемыеДействия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиРасчетаСебестоимости.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиРасчетаСебестоимости.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -198,7 +223,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -232,4 +258,5 @@
 			]
 		},
 	]
+	});
 });

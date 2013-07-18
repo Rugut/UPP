@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеНЗП.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеНЗП'], function () 
+{
+	Ext.define('Документы.СписаниеНЗП.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:389px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Списание незавершенного производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -138,7 +141,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -325,9 +328,9 @@
 					{
 						var грид = Ext.getCmp('Материалы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СписаниеНЗП.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СписаниеНЗП.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -611,4 +614,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

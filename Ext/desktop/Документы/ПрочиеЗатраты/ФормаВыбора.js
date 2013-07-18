@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПрочиеЗатраты.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПрочиеЗатраты'], function () 
+{
+	Ext.define('Документы.ПрочиеЗатраты.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Прочие затраты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПрочиеЗатраты.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПрочиеЗатраты.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -167,4 +170,5 @@
 			]
 		},
 	]
+	});
 });

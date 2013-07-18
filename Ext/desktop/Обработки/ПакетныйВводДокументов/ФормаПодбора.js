@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПакетныйВводДокументов.ФормаПодбора',
+﻿Ext.require(['Данные.Обработки.ПакетныйВводДокументов'], function () 
+{
+	Ext.define('Обработки.ПакетныйВводДокументов.ФормаПодбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:636px;height:336px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Пакетный ввод документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:620px;height:295px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеСписокФильтров',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:290px;height:216px;',
 			height: 216,width: 290,
@@ -27,13 +34,13 @@
 			[
 				{
 					text:'Отбор',
-					width:'131',
+					width:'130',
 					dataIndex:'ПредставлениеФильтра',
 					flex:1,
 				},
 				{
 					text:'Значение отбора',
-					width:'156',
+					width:'155',
 					dataIndex:'ПредставлениеЗначения',
 					flex:1,
 				},
@@ -44,7 +51,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -55,8 +62,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеСписокФильтров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеЗначенияФильтров',
 			xtype: 'grid',
 			style: 'position:absolute;left:301px;top:30px;width:315px;height:216px;',
 			height: 216,width: 315,
@@ -69,10 +94,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗначенияФильтров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -94,6 +136,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:610px;height:244px;',
 			height: 244,width: 610,
@@ -125,7 +168,7 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'263',
+					width:'262',
 					dataIndex:'Характеристика',
 					flex:1,
 				},
@@ -142,7 +185,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -164,6 +207,23 @@
 						name:'Остаток',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -203,8 +263,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

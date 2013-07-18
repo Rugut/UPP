@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетПроизводстваЗаСмену.ФормаНастройки',
+﻿Ext.require(['Данные.Документы.ОтчетПроизводстваЗаСмену'], function () 
+{
+	Ext.define('Документы.ОтчетПроизводстваЗаСмену.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:434px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка документа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -135,4 +138,5 @@
 			]
 		},
 	]
+	});
 });

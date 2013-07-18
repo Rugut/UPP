@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПеремещениеТоваров.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ПеремещениеТоваров'], function () 
+{
+	Ext.define('Документы.ПеремещениеТоваров.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Перемещения товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Склад отправитель',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладКомпании',
 					flex:1,
 				},
@@ -75,7 +78,7 @@
 				},
 				{
 					text:'Склад получатель',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладПолучатель',
 					flex:1,
 				},
@@ -93,13 +96,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -166,9 +169,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПеремещениеТоваров.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПеремещениеТоваров.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -211,4 +214,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

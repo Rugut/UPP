@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПомощникНастройкиОбменаДанными.ДополнительныеНастройки',
+﻿Ext.require(['Данные.Обработки.ПомощникНастройкиОбменаДанными'], function () 
+{
+	Ext.define('Обработки.ПомощникНастройкиОбменаДанными.ДополнительныеНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:494px;height:244px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Дополнительные настройки обмена данными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -127,4 +130,5 @@
 			]
 		},
 	]
+	});
 });

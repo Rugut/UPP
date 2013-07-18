@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпособыОтраженияРасходовПоАмортизации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СпособыОтраженияРасходовПоАмортизации'], function () 
+{
+	Ext.define('Справочники.СпособыОтраженияРасходовПоАмортизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:616px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Способы отражения расходов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -62,6 +68,7 @@
 			]
 		},
 		{
+			id: 'Способы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:147px;width:600px;height:246px;',
 			height: 246,width: 600,
@@ -111,7 +118,7 @@
 				},
 				{
 					text:'Хар-р затрат',
-					width:'80',
+					width:'79',
 					dataIndex:'ХарактерЗатрат',
 					flex:1,
 				},
@@ -147,31 +154,31 @@
 				},
 				{
 					text:'Вид субконто 1 (НУ)',
-					width:'87',
+					width:'86',
 					dataIndex:'ВидСубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 2 (НУ)',
-					width:'87',
+					width:'86',
 					dataIndex:'ВидСубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3 (НУ)',
-					width:'87',
+					width:'86',
 					dataIndex:'ВидСубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Аналитика',
-					width:'89',
+					width:'88',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'89',
+					width:'88',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -195,19 +202,19 @@
 				},
 				{
 					text:'Субконто 1 (НУ)',
-					width:'58',
+					width:'57',
 					dataIndex:'СубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Субконто 2 (НУ)',
-					width:'58',
+					width:'57',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3 (НУ)',
-					width:'58',
+					width:'57',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
@@ -231,13 +238,13 @@
 				},
 				{
 					text:'Объект строительства',
-					width:'88',
+					width:'87',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Способ строительства',
-					width:'86',
+					width:'85',
 					dataIndex:'СпособСтроительства',
 					flex:1,
 				},
@@ -250,11 +257,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпособыОтраженияРасходовПоАмортизации").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияРасходовПоАмортизации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияРасходовПоАмортизации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -349,6 +357,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Способы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпособыОтраженияРасходовПоАмортизации.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпособыОтраженияРасходовПоАмортизации.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -390,7 +415,8 @@
 			title: 'Способы',
 			style: 'position:absolute;left:8px;top:107px;width:600px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -424,4 +450,5 @@
 			]
 		},
 	]
+	});
 });

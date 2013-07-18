@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СценарииПланирования.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.СценарииПланирования'], function () 
+{
+	Ext.define('Справочники.СценарииПланирования.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:113px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Сценарии планирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

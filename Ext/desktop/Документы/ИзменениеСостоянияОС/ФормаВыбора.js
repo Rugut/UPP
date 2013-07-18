@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСостоянияОС.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ИзменениеСостоянияОС'], function () 
+{
+	Ext.define('Документы.ИзменениеСостоянияОС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Изменение состояния ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,37 +60,37 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Состояние',
-					width:'1200',
+					width:'120',
 					dataIndex:'Состояние',
 					flex:1,
 				},
 				{
 					text:'Влияет на начисление амортизации',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВлияетНаНачислениеАмортизации',
 					flex:1,
 				},
 				{
 					text:'Начислять амортизацию',
-					width:'1200',
+					width:'120',
 					dataIndex:'НачислятьАмортизацию',
 					flex:1,
 				},
 				{
 					text:'Начислять амортизацию в текущем месяце',
-					width:'1200',
+					width:'120',
 					dataIndex:'НачислятьАмортизациюВТекущемМесяце',
 					flex:1,
 				},
@@ -157,9 +160,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИзменениеСостоянияОС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИзменениеСостоянияОС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -196,4 +199,5 @@
 			]
 		},
 	]
+	});
 });

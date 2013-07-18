@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаВводаВыручки',
+﻿Ext.require(['Данные.Документы.ВосстановлениеНДСпоОбъектамНедвижимости'], function () 
+{
+	Ext.define('Документы.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаВводаВыручки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:353px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод доли выручки, не облагаемой НДС (%)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -80,4 +83,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоговорыКонтрагентов.ФормаВыбораГруппы',
+﻿Ext.require(['Данные.Справочники.ДоговорыКонтрагентов'], function () 
+{
+	Ext.define('Справочники.ДоговорыКонтрагентов.ФормаВыбораГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:376px;height:312px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Группы договоров взаиморасчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:360px;height:272px;',
 			height: 272,width: 360,
@@ -17,24 +24,42 @@
 			[
 				{
 					text:'Наименование',
-					width:'282',
+					width:'281',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаВыбораГруппыСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаВыбораГруппыСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -48,8 +73,10 @@
 				'-',
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

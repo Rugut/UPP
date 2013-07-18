@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЭлектронноеПисьмо.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ЭлектронноеПисьмо'], function () 
+{
+	Ext.define('Документы.ЭлектронноеПисьмо.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:350px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Электронные письма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:309px;',
 			height: 309,width: 764,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'',
-					width:'21',
+					width:'20',
 					dataIndex:'ЕстьВложения',
 					flex:1,
 				},
@@ -59,13 +66,13 @@
 				},
 				{
 					text:'От кого',
-					width:'120',
+					width:'119',
 					dataIndex:'ОтправительИмя',
 					flex:1,
 				},
 				{
 					text:'Кому',
-					width:'112',
+					width:'111',
 					dataIndex:'КомуПредставление',
 					flex:1,
 				},
@@ -89,7 +96,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'172',
+					width:'171',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -112,7 +119,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЭлектронноеПисьмо/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,8 +169,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -189,4 +214,5 @@
 			]
 		},
 	]
+	});
 });

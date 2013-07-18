@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НеявкиИБолезниОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НеявкиИБолезниОрганизаций'], function () 
+{
+	Ext.define('Документы.НеявкиИБолезниОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:504px;height:367px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Неявки и болезни',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -97,7 +100,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -109,7 +112,7 @@
 				},
 				{
 					text:'Состояние',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПричинаОтсутствия',
 					flex:1,
 				},
@@ -167,9 +170,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НеявкиИБолезниОрганизаций.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НеявкиИБолезниОрганизаций.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -403,4 +406,5 @@
 			]
 		},
 	]
+	});
 });

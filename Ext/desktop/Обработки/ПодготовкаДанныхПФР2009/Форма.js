@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодготовкаДанныхПФР2009.Форма',
+﻿Ext.require(['Данные.Обработки.ПодготовкаДанныхПФР2009'], function () 
+{
+	Ext.define('Обработки.ПодготовкаДанныхПФР2009.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:970px;height:548px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Подготовка данных СЗВ-4',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
@@ -60,6 +66,7 @@
 			style: 'position:absolute;left:8px;top:57px;width:954px;height:19px;',
 		},
 		{
+			id: 'ПачкиДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:105px;width:275px;height:130px;',
 			height: 130,width: 275,
@@ -84,7 +91,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -94,6 +101,23 @@
 						name:'НомерПачки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПачкиДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -201,6 +225,7 @@
 					items:
 					[
 		{
+			id: 'СведенияОЗадолженности',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:662px;height:59px;',
 			height: 59,width: 662,
@@ -238,7 +263,7 @@
 				},
 				{
 					text:'Дополнительный тариф',
-					width:'130',
+					width:'129',
 					dataIndex:'ДополнительныйТариф',
 					flex:1,
 				},
@@ -249,7 +274,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -271,6 +296,23 @@
 						name:'ДополнительныйТариф',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СведенияОЗадолженности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -451,6 +493,7 @@
 					items:
 					[
 		{
+			id: 'ФизлицаПачек',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:275px;height:219px;',
 			height: 219,width: 275,
@@ -481,7 +524,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -494,6 +537,23 @@
 						name:'АдресДляИнформирования',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФизлицаПачек');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -513,6 +573,7 @@
 					items:
 					[
 		{
+			id: 'ЗаписиОСтаже',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:664px;height:88px;',
 			height: 88,width: 664,
@@ -633,7 +694,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -691,6 +752,23 @@
 						name:'ТретийПараметрВыслугиЛет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаписиОСтаже');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1178,6 +1256,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаСсылокСЗВ4',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:0px;width:940px;height:226px;',
 			height: 226,width: 940,
@@ -1196,13 +1275,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2009/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСсылокСЗВ4');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1275,7 +1371,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1302,4 +1399,5 @@
 			]
 		},
 	]
+	});
 });

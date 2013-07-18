@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланированиеОтпуска.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПланированиеОтпуска'], function () 
+{
+	Ext.define('Документы.ПланированиеОтпуска.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:445px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Планирование отпуска',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('Работники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланированиеОтпуска.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланированиеОтпуска.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -282,4 +285,5 @@
 			]
 		},
 	]
+	});
 });

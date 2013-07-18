@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РегламентированныйОтчет.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РегламентированныйОтчет'], function () 
+{
+	Ext.define('Документы.РегламентированныйОтчет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:89px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Документ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,4 +48,5 @@
 			]
 		},
 	]
+	});
 });

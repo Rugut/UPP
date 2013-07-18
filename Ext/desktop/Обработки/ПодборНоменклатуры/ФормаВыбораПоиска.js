@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборНоменклатуры.ФормаВыбораПоиска',
+﻿Ext.require(['Данные.Обработки.ПодборНоменклатуры'], function () 
+{
+	Ext.define('Обработки.ПодборНоменклатуры.ФормаВыбораПоиска',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:676px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,25 +30,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Полное наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
 				{
 					text:'Группа номенклатуры',
-					width:'1200',
+					width:'120',
 					dataIndex:'Родитель',
 					flex:1,
 				},
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаНоменклатуры');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПодборНоменклатуры.ФормаВыбораПоискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПодборНоменклатуры.ФормаВыбораПоискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -117,4 +120,5 @@
 			]
 		},
 	]
+	});
 });

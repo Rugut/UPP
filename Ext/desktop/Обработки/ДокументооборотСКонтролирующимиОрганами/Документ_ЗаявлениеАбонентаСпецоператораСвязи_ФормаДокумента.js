@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Документ_ЗаявлениеАбонентаСпецоператораСвязи_ФормаДокумента',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.Документ_ЗаявлениеАбонентаСпецоператораСвязи_ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:860px;height:533px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Заявление на подключение',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:140px;width:844px;height:360px;',
@@ -326,6 +332,7 @@
 			style: 'position:absolute;left:8px;top:33px;width:128px;height:15px;text-align:left;',
 		},
 		{
+			id: 'Направления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:828px;height:300px;',
 			height: 300,width: 828,
@@ -351,7 +358,7 @@
 				},
 				{
 					text:'КПП (только для ФНС)',
-					width:'144',
+					width:'143',
 					dataIndex:'КПП',
 					flex:1,
 				},
@@ -362,7 +369,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -378,6 +385,23 @@
 						name:'КПП',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Направления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Документ_ЗаявлениеАбонентаСпецоператораСвязи_ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Документ_ЗаявлениеАбонентаСпецоператораСвязи_ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -615,7 +639,8 @@
 			text: 'Номер основной поставки 1с:',
 			style: 'position:absolute;left:472px;top:80px;width:172px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -643,4 +668,5 @@
 			]
 		},
 	]
+	});
 });

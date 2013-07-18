@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Событие.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.Событие'], function () 
+{
+	Ext.define('Документы.Событие.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:618px;height:430px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Документ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -487,9 +490,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Событие.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Событие.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -551,9 +554,9 @@
 					{
 						var грид = Ext.getCmp('СторонниеЛица');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Событие.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Событие.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -620,4 +623,5 @@
 			]
 		},
 	]
+	});
 });

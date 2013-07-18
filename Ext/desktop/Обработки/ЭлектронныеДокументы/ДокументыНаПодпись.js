@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЭлектронныеДокументы.ДокументыНаПодпись',
+﻿Ext.require(['Данные.Обработки.ЭлектронныеДокументы'], function () 
+{
+	Ext.define('Обработки.ЭлектронныеДокументы.ДокументыНаПодпись',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:0px;height:0px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

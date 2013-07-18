@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаЗаписейРегистров.ФормаНастройки',
+﻿Ext.require(['Данные.Документы.КорректировкаЗаписейРегистров'], function () 
+{
+	Ext.define('Документы.КорректировкаЗаписейРегистров.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:365px;height:365px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка состава регистров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -73,4 +76,5 @@
 			]
 		},
 	]
+	});
 });

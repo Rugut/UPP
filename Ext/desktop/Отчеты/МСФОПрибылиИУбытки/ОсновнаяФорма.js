@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОПрибылиИУбытки.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.МСФОПрибылиИУбытки'], function () 
+{
+	Ext.define('Отчеты.МСФОПрибылиИУбытки.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:269px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет о прибылях и убытках по МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

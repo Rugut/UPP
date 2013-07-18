@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПодписиПодДокументами',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПодписиПодДокументами',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:832px;height:422px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Электронно-цифровые подписи',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Подписи',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:158px;width:816px;height:256px;',
 			height: 256,width: 816,
@@ -47,7 +54,7 @@
 				},
 				{
 					text:'Имя подписанного файла',
-					width:'233',
+					width:'232',
 					dataIndex:'ЭЦПИмяПодписанногоФайла',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,6 +96,23 @@
 						name:'ЭЦПЭтоПодписьАбонента',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Подписи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПодписиПодДокументамиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПодписиПодДокументамиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -164,7 +188,8 @@
 			height: 19,
 			style: 'position:absolute;left:149px;top:70px;width:675px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -190,4 +215,5 @@
 			]
 		},
 	]
+	});
 });

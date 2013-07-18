@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Подразделения.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Подразделения'], function () 
+{
+	Ext.define('Справочники.Подразделения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:538px;height:472px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Подразделения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -122,13 +125,13 @@
 			[
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение организации',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПодразделениеОрганизации',
 					flex:1,
 				},
@@ -160,9 +163,9 @@
 					{
 						var грид = Ext.getCmp('СоответствиеПодразделениямОрганизаций');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -202,7 +205,7 @@
 				},
 				{
 					text:'Категория',
-					width:'1200',
+					width:'120',
 					dataIndex:'Категория',
 					flex:1,
 				},
@@ -237,9 +240,9 @@
 					{
 						var грид = Ext.getCmp('Категории');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -261,13 +264,13 @@
 				},
 				{
 					text:'Свойство',
-					width:'1200',
+					width:'120',
 					dataIndex:'Свойство',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Значение',
 					flex:1,
 				},
@@ -302,9 +305,9 @@
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -404,4 +407,5 @@
 			]
 		},
 	]
+	});
 });

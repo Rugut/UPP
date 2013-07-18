@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПомощникПланирования.ФормаВыборПоля',
+﻿Ext.require(['Данные.Обработки.ПомощникПланирования'], function () 
+{
+	Ext.define('Обработки.ПомощникПланирования.ФормаВыборПоля',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор поля',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДоступныеПоля');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПомощникПланирования.ФормаВыборПоляСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПомощникПланирования.ФормаВыборПоляСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -126,4 +129,5 @@
 			]
 		},
 	]
+	});
 });

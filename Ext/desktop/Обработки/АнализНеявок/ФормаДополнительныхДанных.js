@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АнализНеявок.ФормаДополнительныхДанных',
+﻿Ext.require(['Данные.Обработки.АнализНеявок'], function () 
+{
+	Ext.define('Обработки.АнализНеявок.ФормаДополнительныхДанных',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:610px;height:215px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Начисление по больничному листу: дополнительные данные',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -325,4 +328,5 @@
 			]
 		},
 	]
+	});
 });

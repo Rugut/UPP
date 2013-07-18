@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрHTML',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрHTML',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:684px;height:544px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Просмотр HTML',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -31,4 +34,5 @@
 			]
 		},
 	]
+	});
 });

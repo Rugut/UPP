@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ХранилищеДополнительнойИнформации'], function () 
+{
+	Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Дополнительная информация',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,25 +30,25 @@
 				},
 				{
 					text:'Объект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Объект',
 					flex:1,
 				},
 				{
 					text:'Вид данных',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидДанных',
 					flex:1,
 				},
 				{
 					text:'Имя файла',
-					width:'2200',
+					width:'220',
 					dataIndex:'ИмяФайла',
 					flex:1,
 				},
 				{
 					text:'Описание',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ХранилищеДополнительнойИнформации.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ХранилищеДополнительнойИнформации.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -108,4 +111,5 @@
 			]
 		},
 	]
+	});
 });

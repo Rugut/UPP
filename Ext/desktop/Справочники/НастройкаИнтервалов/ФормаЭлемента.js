@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкаИнтервалов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкаИнтервалов'], function () 
+{
+	Ext.define('Справочники.НастройкаИнтервалов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:384px;height:373px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка интервала',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,13 +52,13 @@
 				},
 				{
 					text:'Граница интервала',
-					width:'1200',
+					width:'120',
 					dataIndex:'НачалоИнтервала',
 					flex:1,
 				},
 				{
 					text:'Подпись в отчетах',
-					width:'2200',
+					width:'220',
 					dataIndex:'Подпись',
 					flex:1,
 				},
@@ -90,9 +93,9 @@
 					{
 						var грид = Ext.getCmp('ТабличнаяЧасть');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НастройкаИнтервалов.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НастройкаИнтервалов.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -137,4 +140,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораРСВ',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораРСВ',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:588px;height:410px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Выбор расчета по страховым взносам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:572px;height:369px;',
@@ -32,6 +38,7 @@
 			style: 'position:absolute;left:0px;top:100px;width:572px;height:3px;',
 		},
 		{
+			id: 'ЖурналОтчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:130px;width:572px;height:239px;',
 			height: 239,width: 572,
@@ -45,7 +52,7 @@
 				},
 				{
 					text:'Наименование отчета',
-					width:'186',
+					width:'185',
 					dataIndex:'НаименованиеОтчета',
 					flex:1,
 				},
@@ -68,7 +75,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -85,12 +92,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЖурналОтчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораРСВСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ФормаВыбораРСВСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -116,4 +141,5 @@
 			]
 		},
 	]
+	});
 });

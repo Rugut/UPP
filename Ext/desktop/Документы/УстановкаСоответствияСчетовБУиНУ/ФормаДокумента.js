@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаСоответствияСчетовБУиНУ'], function () 
+{
+	Ext.define('Документы.УстановкаСоответствияСчетовБУиНУ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:594px;height:321px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка соответствия счетов БУ и НУ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись3',
@@ -74,6 +80,7 @@
 			style: 'position:absolute;left:152px;top:33px;width:120px;height:19px;',
 		},
 		{
+			id: 'СоответствиеСчетовБУиНУ',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:578px;height:159px;',
 			height: 159,width: 578,
@@ -93,7 +100,7 @@
 				},
 				{
 					text:'Счет БУ',
-					width:'79',
+					width:'78',
 					dataIndex:'СчетБУ',
 					flex:1,
 				},
@@ -128,7 +135,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиНУ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСоответствияСчетовБУиНУ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -154,8 +161,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствиеСчетовБУиНУ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСоответствияСчетовБУиНУ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСоответствияСчетовБУиНУ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -219,4 +244,5 @@
 			]
 		},
 	]
+	});
 });

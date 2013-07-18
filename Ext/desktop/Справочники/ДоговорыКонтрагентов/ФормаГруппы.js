@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоговорыКонтрагентов.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ДоговорыКонтрагентов'], function () 
+{
+	Ext.define('Справочники.ДоговорыКонтрагентов.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:442px;height:136px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа договоров взаиморасчетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВариантыОтветовОпросов.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ВариантыОтветовОпросов'], function () 
+{
+	Ext.define('Справочники.ВариантыОтветовОпросов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:460px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Варианты ответов опросов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Содержание ответа',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВариантыОтветовОпросов.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВариантыОтветовОпросов.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -221,4 +224,5 @@
 			]
 		},
 	]
+	});
 });

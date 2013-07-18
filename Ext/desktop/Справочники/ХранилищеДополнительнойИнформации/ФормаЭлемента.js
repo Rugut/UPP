@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ХранилищеДополнительнойИнформации'], function () 
+{
+	Ext.define('Справочники.ХранилищеДополнительнойИнформации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:396px;height:133px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Хранилище дополнительной информации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -96,4 +99,5 @@
 			]
 		},
 	]
+	});
 });

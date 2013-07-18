@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПротоколаФСГС',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПротоколаФСГС',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:403px;height:298px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Протокол',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -67,4 +70,5 @@
 			]
 		},
 	]
+	});
 });

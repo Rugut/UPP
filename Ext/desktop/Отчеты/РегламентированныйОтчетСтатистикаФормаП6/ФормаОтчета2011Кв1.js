@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП6.ФормаОтчета2011Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФормаП6'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП6.ФормаОтчета2011Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:436px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма П-6',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -228,4 +231,5 @@
 			]
 		},
 	]
+	});
 });

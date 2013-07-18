@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаВыбораЗначения',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхИзТабличногоДокумента'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.ФормаВыбораЗначения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:316px;height:60px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выберите значение',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -38,4 +41,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.НастройкиКриптографии',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.НастройкиКриптографии',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:606px;height:219px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройки криптографии',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -130,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

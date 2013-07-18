@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаИзмененияПредмета',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаИзмененияПредмета',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:60px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Укажите новый предмет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -44,4 +47,5 @@
 			]
 		},
 	]
+	});
 });

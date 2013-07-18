@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетАмортизацииНематериальныхАктивов.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетАмортизацииНематериальныхАктивов'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетАмортизацииНематериальныхАктивов.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:432px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр-расчет амортизации нематериальных активов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -141,4 +144,5 @@
 			]
 		},
 	]
+	});
 });

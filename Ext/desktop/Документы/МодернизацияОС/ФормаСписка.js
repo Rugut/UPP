@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.МодернизацияОС.ФормаСписка',
+﻿Ext.require(['Данные.Документы.МодернизацияОС'], function () 
+{
+	Ext.define('Документы.МодернизацияОС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Модернизация ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,19 +60,19 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Объект строительства',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Вид операций с основными средствами',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперацийСОсновнымиСредствами',
 					flex:1,
 				},
@@ -99,7 +102,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -166,9 +169,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.МодернизацияОС.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.МодернизацияОС.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -211,4 +214,5 @@
 			]
 		},
 	]
+	});
 });

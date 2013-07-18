@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаПараметров',
+﻿Ext.require(['Данные.Обработки.РегистрацияИзмененийДляОбмена'], function () 
+{
+	Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаПараметров',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:396px;height:271px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Параметры запроса',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:34px;width:380px;height:229px;',
 			height: 229,width: 380,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Значение параметра',
-					width:'192',
+					width:'191',
 					dataIndex:'ЗначениеПараметра',
 					flex:1,
 				},
@@ -40,7 +47,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияИзмененийДляОбмена/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияИзмененийДляОбмена/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +61,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Параметры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегистрацияИзмененийДляОбмена.ФормаПараметровСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегистрацияИзмененийДляОбмена.ФормаПараметровСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -98,4 +123,5 @@
 			]
 		},
 	]
+	});
 });

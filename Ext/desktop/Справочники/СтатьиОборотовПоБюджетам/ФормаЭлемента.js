@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиОборотовПоБюджетам.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтатьиОборотовПоБюджетам'], function () 
+{
+	Ext.define('Справочники.СтатьиОборотовПоБюджетам.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:495px;height:457px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Статьи оборотов по бюджетам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:84px;width:479px;height:316px;',
@@ -134,6 +140,7 @@
 					items:
 					[
 		{
+			id: 'ШаблоныПроводок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:27px;width:465px;height:263px;',
 			height: 263,width: 465,
@@ -159,7 +166,7 @@
 				},
 				{
 					text:'К-т для суммы',
-					width:'97',
+					width:'96',
 					dataIndex:'КоэффициентДляСуммы',
 					flex:1,
 				},
@@ -172,11 +179,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СтатьиОборотовПоБюджетам").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиОборотовПоБюджетам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиОборотовПоБюджетам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -195,6 +203,23 @@
 						name:'КоэффициентДляКоличества',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ШаблоныПроводок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СтатьиОборотовПоБюджетам.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СтатьиОборотовПоБюджетам.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -367,7 +392,8 @@
 			height: 19,
 			style: 'position:absolute;left:130px;top:405px;width:357px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -401,4 +427,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереносПроводокМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПереносПроводокМеждународный'], function () 
+{
+	Ext.define('Документы.ПереносПроводокМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:654px;height:379px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись6',
@@ -25,6 +31,7 @@
 			style: 'position:absolute;left:94px;top:327px;width:552px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеДвижения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:109px;width:638px;height:212px;',
 			height: 212,width: 638,
@@ -128,7 +135,7 @@
 				},
 				{
 					text:'Содержание',
-					width:'199',
+					width:'198',
 					dataIndex:'Содержание',
 					flex:1,
 				},
@@ -140,7 +147,7 @@
 				},
 				{
 					text:'НЖ',
-					width:'8',
+					width:'7',
 					dataIndex:'НомерЖурнала',
 					flex:1,
 				},
@@ -151,7 +158,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносПроводокМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -212,6 +219,23 @@
 						name:'НомерЖурнала',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвижения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПереносПроводокМеждународный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПереносПроводокМеждународный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -325,7 +349,8 @@
 			boxLabel: 'Показать протокол переноса',
 			style: 'position:absolute;left:477px;top:85px;width:169px;height:24px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -409,4 +434,5 @@
 			]
 		},
 	]
+	});
 });

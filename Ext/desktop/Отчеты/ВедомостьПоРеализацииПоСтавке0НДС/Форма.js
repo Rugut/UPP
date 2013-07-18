@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВедомостьПоРеализацииПоСтавке0НДС.Форма',
+﻿Ext.require(['Данные.Отчеты.ВедомостьПоРеализацииПоСтавке0НДС'], function () 
+{
+	Ext.define('Отчеты.ВедомостьПоРеализацииПоСтавке0НДС.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -209,4 +212,5 @@
 			]
 		},
 	]
+	});
 });

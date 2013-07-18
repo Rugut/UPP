@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Пользователи.ФормаНастройкиГруппПользователя',
+﻿Ext.require(['Данные.Справочники.Пользователи'], function () 
+{
+	Ext.define('Справочники.Пользователи.ФормаНастройкиГруппПользователя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:326px;height:425px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы, в которые входит пользователь',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -56,9 +59,9 @@
 					{
 						var грид = Ext.getCmp('ДеревоГрупп');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Пользователи.ФормаНастройкиГруппПользователяСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Пользователи.ФормаНастройкиГруппПользователяСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -106,4 +109,5 @@
 			]
 		},
 	]
+	});
 });

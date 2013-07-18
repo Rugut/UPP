@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиВыполненияОбмена.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.НастройкиВыполненияОбмена'], function () 
+{
+	Ext.define('Справочники.НастройкиВыполненияОбмена.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:715px;height:425px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Настройки выполнения обмена',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:699px;height:384px;',
 			height: 384,width: 699,
@@ -23,30 +30,31 @@
 				},
 				{
 					text:'Код',
-					width:'70',
+					width:'69',
 					dataIndex:'Код',
 					flex:1,
 				},
 				{
 					text:'Наименование',
-					width:'352',
+					width:'351',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'169',
+					width:'168',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиВыполненияОбмена").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиВыполненияОбмена/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +71,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиВыполненияОбмена.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиВыполненияОбмена.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -93,4 +119,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.УчетныеЗаписиЭлектроннойПочты'], function () 
+{
+	Ext.define('Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:594px;height:361px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Учетные записи электронной почты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:578px;height:320px;',
 			height: 320,width: 578,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'50',
+					width:'49',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -288,11 +295,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -432,8 +440,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -445,4 +471,5 @@
 			]
 		},
 	]
+	});
 });

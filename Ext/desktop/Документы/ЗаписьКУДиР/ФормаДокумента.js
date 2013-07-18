@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаписьКУДиР.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаписьКУДиР'], function () 
+{
+	Ext.define('Документы.ЗаписьКУДиР.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:736px;height:420px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Запись книги учета доходов и расходов УСН (ручной учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -85,6 +91,7 @@
 					items:
 					[
 		{
+			id: 'Строки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:698px;height:197px;',
 			height: 197,width: 698,
@@ -157,7 +164,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаписьКУДиР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаписьКУДиР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -192,6 +199,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Строки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаписьКУДиР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаписьКУДиР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -200,6 +224,7 @@
 					items:
 					[
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:706px;height:197px;',
 			height: 197,width: 706,
@@ -255,7 +280,7 @@
 				},
 				{
 					text:'Доля расходов за нал. период (%)',
-					width:'80',
+					width:'79',
 					dataIndex:'Графа10_ДоляРасходовЗаНалПериод',
 					flex:1,
 				},
@@ -296,7 +321,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаписьКУДиР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаписьКУДиР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -343,6 +368,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаписьКУДиР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаписьКУДиР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -351,6 +393,7 @@
 					items:
 					[
 		{
+			id: 'НМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:706px;height:197px;',
 			height: 197,width: 706,
@@ -441,7 +484,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаписьКУДиР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаписьКУДиР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -485,6 +528,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаписьКУДиР.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаписьКУДиР.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -507,7 +567,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:344px;width:634px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -558,4 +619,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетДоходыЗаПределамиРФ.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетДоходыЗаПределамиРФ'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетДоходыЗаПределамиРФ.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:300px;height:255px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация о доходах за пределами РФ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

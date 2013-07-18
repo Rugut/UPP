@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПолучениеПочты.ФормаПисьма',
+﻿Ext.require(['Данные.Обработки.ПолучениеПочты'], function () 
+{
+	Ext.define('Обработки.ПолучениеПочты.ФормаПисьма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:496px;height:443px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Содержание письма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -32,6 +38,7 @@
 			style: 'position:absolute;left:8px;top:60px;width:40px;height:19px;',
 		},
 		{
+			id: 'ФайлыПисьма',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:310px;width:480px;height:100px;',
 			height: 100,width: 480,
@@ -39,7 +46,7 @@
 			[
 				{
 					text:'Файл',
-					width:'527',
+					width:'526',
 					dataIndex:'Файл',
 					flex:1,
 				},
@@ -50,13 +57,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеПочты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеПочты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Файл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФайлыПисьма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПолучениеПочты.ФормаПисьмаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПолучениеПочты.ФормаПисьмаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -143,8 +167,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

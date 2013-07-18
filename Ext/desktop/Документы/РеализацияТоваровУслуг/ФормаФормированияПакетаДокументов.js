@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеализацияТоваровУслуг.ФормаФормированияПакетаДокументов',
+﻿Ext.require(['Данные.Документы.РеализацияТоваровУслуг'], function () 
+{
+	Ext.define('Документы.РеализацияТоваровУслуг.ФормаФормированияПакетаДокументов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:376px;height:501px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оформить документы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -266,4 +269,5 @@
 			]
 		},
 	]
+	});
 });

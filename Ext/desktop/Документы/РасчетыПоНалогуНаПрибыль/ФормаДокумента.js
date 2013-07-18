@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетыПоНалогуНаПрибыль.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетыПоНалогуНаПрибыль'], function () 
+{
+	Ext.define('Документы.РасчетыПоНалогуНаПрибыль.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:431px;height:314px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчеты по налогу на прибыль',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -212,4 +215,5 @@
 			]
 		},
 	]
+	});
 });

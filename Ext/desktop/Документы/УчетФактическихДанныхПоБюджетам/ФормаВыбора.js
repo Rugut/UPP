@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УчетФактическихДанныхПоБюджетам.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.УчетФактическихДанныхПоБюджетам'], function () 
+{
+	Ext.define('Документы.УчетФактическихДанныхПоБюджетам.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Учет фактических данных по бюджетам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,13 +54,13 @@
 				},
 				{
 					text:'ЦФО',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Статьи оборотов',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтатьиОборотов',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УчетФактическихДанныхПоБюджетам.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УчетФактическихДанныхПоБюджетам.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -147,4 +150,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ШаблоныФормулРасчета.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ШаблоныФормулРасчета'], function () 
+{
+	Ext.define('Справочники.ШаблоныФормулРасчета.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа шаблонов формул расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

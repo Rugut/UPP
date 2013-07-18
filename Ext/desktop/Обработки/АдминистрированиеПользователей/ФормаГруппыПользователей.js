@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АдминистрированиеПользователей.ФормаГруппыПользователей',
+﻿Ext.require(['Данные.Обработки.АдминистрированиеПользователей'], function () 
+{
+	Ext.define('Обработки.АдминистрированиеПользователей.ФормаГруппыПользователей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:739px;height:386px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Группы пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:32px;width:217px;height:322px;',
 			height: 322,width: 217,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'185',
+					width:'184',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -28,13 +35,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -204,6 +228,7 @@
 			style: 'position:absolute;left:6px;top:91px;width:24px;height:24px;',
 		},
 		{
+			id: 'СписокПользователи',
 			xtype: 'grid',
 			style: 'position:absolute;left:34px;top:0px;width:235px;height:322px;',
 			height: 322,width: 235,
@@ -240,7 +265,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -256,6 +281,23 @@
 						name:'ПрофильПолномочийПользователя',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПользователи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -274,6 +316,7 @@
 					items:
 					[
 		{
+			id: 'ПользователиГруппы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:225px;height:322px;',
 			height: 322,width: 225,
@@ -292,7 +335,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АдминистрированиеПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -300,13 +343,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПользователиГруппы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

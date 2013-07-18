@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.РезультатыПоиска',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.РезультатыПоиска',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:728px;height:235px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Результаты поиска',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'РезультатыПоиска',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:25px;width:728px;height:210px;',
 			height: 210,width: 728,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Наименование раздела',
-					width:'255',
+					width:'254',
 					dataIndex:'НаименованиеЛиста',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,6 +88,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РезультатыПоиска');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.РезультатыПоискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.РезультатыПоискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -88,7 +112,8 @@
 			text: '',
 			style: 'position:absolute;left:100px;top:5px;width:622px;height:15px;text-align:right;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -107,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

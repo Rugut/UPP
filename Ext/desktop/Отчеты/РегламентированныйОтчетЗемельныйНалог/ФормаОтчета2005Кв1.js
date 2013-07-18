@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетЗемельныйНалог.ФормаОтчета2005Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетЗемельныйНалог'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетЗемельныйНалог.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:490px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по земельному налогу (годовая)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -258,4 +261,5 @@
 			]
 		},
 	]
+	});
 });

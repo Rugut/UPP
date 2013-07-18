@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкиПрограммы.НастройкаТорговогоОборудования',
+﻿Ext.require(['Данные.Обработки.НастройкиПрограммы'], function () 
+{
+	Ext.define('Обработки.НастройкиПрограммы.НастройкаТорговогоОборудования',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:327px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка торгового оборудования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -87,9 +90,9 @@
 					{
 						var грид = Ext.getCmp('СписокРазделов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НастройкиПрограммы.НастройкаТорговогоОборудованияСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаТорговогоОборудованияСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -247,4 +250,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

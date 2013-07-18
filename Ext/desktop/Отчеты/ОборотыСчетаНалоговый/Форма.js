@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыСчетаНалоговый.Форма',
+﻿Ext.require(['Данные.Отчеты.ОборотыСчетаНалоговый'], function () 
+{
+	Ext.define('Отчеты.ОборотыСчетаНалоговый.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:728px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обороты счета (Главная книга)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -162,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

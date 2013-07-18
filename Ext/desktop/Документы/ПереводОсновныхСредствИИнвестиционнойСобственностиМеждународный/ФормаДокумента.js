@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный'], function () 
+{
+	Ext.define('Документы.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:725px;height:376px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -125,6 +131,7 @@
 			style: 'position:absolute;left:218px;top:57px;width:132px;height:19px;',
 		},
 		{
+			id: 'ОсновныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:107px;width:709px;height:211px;',
 			height: 211,width: 709,
@@ -150,13 +157,13 @@
 				},
 				{
 					text:'Местонахождение',
-					width:'117',
+					width:'116',
 					dataIndex:'МестонахождениеОбъекта',
 					flex:1,
 				},
 				{
 					text:'МОЛ',
-					width:'117',
+					width:'116',
 					dataIndex:'МОЛ',
 					flex:1,
 				},
@@ -251,7 +258,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -313,6 +320,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'button',
@@ -320,7 +344,8 @@
 			text: '...',
 			style: 'position:absolute;left:354px;top:57px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -389,4 +414,5 @@
 			]
 		},
 	]
+	});
 });

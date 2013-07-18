@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РегистрацияВИФНС.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.РегистрацияВИФНС'], function () 
+{
+	Ext.define('Справочники.РегистрацияВИФНС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:548px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Регистрация в ИФНС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Организация',
-					width:'3500',
+					width:'350',
 					dataIndex:'Владелец',
 					flex:1,
 				},
 				{
 					text:'Наименование ИФНС',
-					width:'1600',
+					width:'160',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -57,19 +60,19 @@
 				},
 				{
 					text:'Представитель',
-					width:'1600',
+					width:'160',
 					dataIndex:'Представитель',
 					flex:1,
 				},
 				{
 					text:'Документ представителя',
-					width:'1600',
+					width:'160',
 					dataIndex:'ДокументПредставителя',
 					flex:1,
 				},
 				{
 					text:'Уполномоченное лицо представителя',
-					width:'1600',
+					width:'160',
 					dataIndex:'УполномоченноеЛицоПредставителя',
 					flex:1,
 				},
@@ -122,9 +125,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РегистрацияВИФНС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РегистрацияВИФНС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -258,4 +261,5 @@
 			]
 		},
 	]
+	});
 });

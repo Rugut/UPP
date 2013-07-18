@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПеремещениеОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПеремещениеОС'], function () 
+{
+	Ext.define('Документы.ПеремещениеОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:665px;height:464px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Перемещение ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -146,6 +152,7 @@
 			style: 'position:absolute;left:429px;top:122px;width:228px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:209px;width:649px;height:175px;',
 			height: 175,width: 649,
@@ -176,7 +183,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПеремещениеОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПеремещениеОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -189,6 +196,23 @@
 						name:'ОсновноеСредство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПеремещениеОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПеремещениеОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -274,7 +298,8 @@
 			height: 19,
 			style: 'position:absolute;left:429px;top:145px;width:228px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -342,4 +367,5 @@
 			]
 		},
 	]
+	});
 });

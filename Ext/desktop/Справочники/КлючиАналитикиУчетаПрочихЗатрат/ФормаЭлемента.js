@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлючиАналитикиУчетаПрочихЗатрат.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КлючиАналитикиУчетаПрочихЗатрат'], function () 
+{
+	Ext.define('Справочники.КлючиАналитикиУчетаПрочихЗатрат.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:610px;height:359px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ключ аналитики учета прочих затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -286,4 +289,5 @@
 			]
 		},
 	]
+	});
 });

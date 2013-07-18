@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов.ФормаОтчета2004Кв2',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов.ФормаОтчета2004Кв2',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:429px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -178,4 +181,5 @@
 			]
 		},
 	]
+	});
 });

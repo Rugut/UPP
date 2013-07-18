@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВизитныеКарточкиРаботников.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.ВизитныеКарточкиРаботников'], function () 
+{
+	Ext.define('Отчеты.ВизитныеКарточкиРаботников.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:397px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка ""Визитные карточки сотрудников""',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:356px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ВидыКонтактнойИнформации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:460px;height:282px;',
 			height: 282,width: 460,
@@ -50,7 +57,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,6 +70,23 @@
 						name:'ВидКонтактнойИнформации',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВидыКонтактнойИнформации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -92,6 +116,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:306px;',
 			height: 306,width: 460,
@@ -105,7 +130,7 @@
 				},
 				{
 					text:'Тип',
-					width:'122',
+					width:'121',
 					dataIndex:'Тип',
 					flex:1,
 				},
@@ -116,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -127,6 +152,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -135,6 +177,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:306px;',
 			height: 306,width: 460,
@@ -148,7 +191,7 @@
 				},
 				{
 					text:'Поле',
-					width:'122',
+					width:'121',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -160,19 +203,19 @@
 				},
 				{
 					text:'Значение',
-					width:'100',
+					width:'99',
 					dataIndex:'Значение',
 					flex:1,
 				},
 				{
 					text:'С',
-					width:'100',
+					width:'99',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'100',
+					width:'99',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -183,7 +226,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -206,6 +249,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -214,6 +274,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:306px;',
 			height: 306,width: 460,
@@ -221,7 +282,7 @@
 			[
 				{
 					text:'Поле',
-					width:'331',
+					width:'330',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -238,7 +299,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВизитныеКарточкиРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -249,12 +310,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВизитныеКарточкиРаботников.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -276,4 +355,5 @@
 			]
 		},
 	]
+	});
 });

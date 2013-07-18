@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаВнутреннегоЗаказа.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаВнутреннегоЗаказа'], function () 
+{
+	Ext.define('Документы.КорректировкаВнутреннегоЗаказа.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:370px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка внутреннего заказа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -109,6 +115,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
 			height: 177,width: 627,
@@ -182,7 +189,7 @@
 				},
 				{
 					text:'Размещение',
-					width:'184',
+					width:'183',
 					dataIndex:'Размещение',
 					flex:1,
 				},
@@ -193,7 +200,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаВнутреннегоЗаказа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаВнутреннегоЗаказа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -234,6 +241,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаВнутреннегоЗаказа.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаВнутреннегоЗаказа.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -271,6 +295,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
 			height: 177,width: 627,
@@ -325,7 +350,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаВнутреннегоЗаказа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаВнутреннегоЗаказа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -350,6 +375,23 @@
 						name:'Размещение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаВнутреннегоЗаказа.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаВнутреннегоЗаказа.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -469,8 +511,10 @@
 			text: 'Заказчик:',
 			style: 'position:absolute;left:330px;top:56px;width:76px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

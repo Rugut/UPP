@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаПорядкаЗакрытияПодразделений.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаПорядкаЗакрытияПодразделений'], function () 
+{
+	Ext.define('Документы.УстановкаПорядкаЗакрытияПодразделений.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:636px;height:346px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка порядка закрытия подразделений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -92,6 +98,7 @@
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'ПорядокЗакрытия',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:122px;width:619px;height:144px;',
 			height: 144,width: 619,
@@ -105,7 +112,7 @@
 				},
 				{
 					text:'Подразделение',
-					width:'347',
+					width:'346',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -122,7 +129,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПорядкаЗакрытияПодразделений/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаПорядкаЗакрытияПодразделений/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,6 +142,23 @@
 						name:'ВидПодразделения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПорядокЗакрытия');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаПорядкаЗакрытияПодразделений.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаПорядкаЗакрытияПодразделений.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -164,7 +188,8 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -230,4 +255,5 @@
 			]
 		},
 	]
+	});
 });

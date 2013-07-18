@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЧекККМ.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЧекККМ'], function () 
+{
+	Ext.define('Документы.ЧекККМ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:438px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Чек ККМ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
@@ -205,6 +211,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:74px;',
 			height: 74,width: 622,
@@ -301,7 +308,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -348,6 +355,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЧекККМ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЧекККМ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -361,6 +385,7 @@
 					items:
 					[
 		{
+			id: 'Оплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:622px;height:66px;',
 			height: 66,width: 622,
@@ -391,7 +416,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -404,6 +429,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЧекККМ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЧекККМ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -542,8 +584,10 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

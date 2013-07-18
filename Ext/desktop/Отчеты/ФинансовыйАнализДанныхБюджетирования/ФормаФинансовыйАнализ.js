@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализ',
+﻿Ext.require(['Данные.Отчеты.ФинансовыйАнализДанныхБюджетирования'], function () 
+{
+	Ext.define('Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализ',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:654px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -143,4 +146,5 @@
 			]
 		},
 	]
+	});
 });

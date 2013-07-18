@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПлатежныйКалендарьЗаказы.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ПлатежныйКалендарьЗаказы'], function () 
+{
+	Ext.define('Отчеты.ПлатежныйКалендарьЗаказы.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:354px;height:412px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:338px;height:371px;',
@@ -76,6 +82,7 @@
 			style: 'position:absolute;left:6px;top:30px;width:186px;height:19px;',
 		},
 		{
+			id: 'ОсновныеГруппировки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:122px;width:324px;height:83px;',
 			height: 83,width: 324,
@@ -106,7 +113,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйКалендарьЗаказы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйКалендарьЗаказы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -120,6 +127,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеГруппировки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -132,6 +156,7 @@
 			style: 'position:absolute;left:6px;top:210px;width:324px;height:16px;',
 		},
 		{
+			id: 'ДополнительныеГруппировки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:254px;width:324px;height:91px;',
 			height: 91,width: 324,
@@ -162,7 +187,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйКалендарьЗаказы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйКалендарьЗаказы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -175,6 +200,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеГруппировки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -203,6 +245,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:324px;height:313px;',
 			height: 313,width: 324,
@@ -251,7 +294,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйКалендарьЗаказы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПлатежныйКалендарьЗаказы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -273,6 +316,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -300,8 +360,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

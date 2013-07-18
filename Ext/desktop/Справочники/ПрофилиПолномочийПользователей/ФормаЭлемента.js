@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофилиПолномочийПользователей.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПрофилиПолномочийПользователей'], function () 
+{
+	Ext.define('Справочники.ПрофилиПолномочийПользователей.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:631px;height:401px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Профиль полномочий пользователей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьОсновнойИнтерфейс',
@@ -35,6 +41,7 @@
 			style: 'position:absolute;left:93px;top:33px;width:186px;height:19px;',
 		},
 		{
+			id: 'СоставРолей',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:132px;width:271px;height:236px;',
 			height: 236,width: 271,
@@ -49,11 +56,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиПолномочийПользователей").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -61,8 +69,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставРолей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ДеревоПрав',
 			xtype: 'grid',
 			style: 'position:absolute;left:290px;top:132px;width:333px;height:236px;',
 			height: 236,width: 333,
@@ -70,7 +96,7 @@
 			[
 				{
 					text:'Право',
-					width:'270',
+					width:'269',
 					dataIndex:'Право',
 					flex:1,
 				},
@@ -83,11 +109,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиПолномочийПользователей").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -97,6 +124,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоПрав');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -127,7 +171,8 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:57px;width:186px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -193,4 +238,5 @@
 			]
 		},
 	]
+	});
 });

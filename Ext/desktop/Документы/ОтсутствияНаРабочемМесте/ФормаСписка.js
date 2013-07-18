@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтсутствияНаРабочемМесте.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ОтсутствияНаРабочемМесте'], function () 
+{
+	Ext.define('Документы.ОтсутствияНаРабочемМесте.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:871px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отсутствия на рабочем месте',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,25 +42,25 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
 				{
 					text:'Период отсутствия',
-					width:'1500',
+					width:'150',
 					dataIndex:'ПериодОтсутствия',
 					flex:1,
 				},
 				{
 					text:'Причина отсутствия',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПричинаОтсутствия',
 					flex:1,
 				},
 				{
 					text:'Зарегистрировал',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтсутствияНаРабочемМесте.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтсутствияНаРабочемМесте.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -281,4 +284,5 @@
 			]
 		},
 	]
+	});
 });

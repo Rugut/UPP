@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВводСерийныхНомеров.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.ВводСерийныхНомеров'], function () 
+{
+	Ext.define('Обработки.ВводСерийныхНомеров.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:781px;height:332px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод серийных номеров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -102,6 +108,7 @@
 					items:
 					[
 		{
+			id: 'СерийныеНомера',
 			xtype: 'grid',
 			style: 'position:absolute;left:430px;top:50px;width:335px;height:121px;',
 			height: 121,width: 335,
@@ -109,7 +116,7 @@
 			[
 				{
 					text:'N',
-					width:'51',
+					width:'50',
 					dataIndex:'НомерСтроки',
 					flex:1,
 				},
@@ -132,7 +139,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -146,8 +153,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СерийныеНомера');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'НачальныеЗначенияПорядкаПрисвоения',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:50px;width:426px;height:121px;',
 			height: 121,width: 426,
@@ -196,7 +221,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -218,6 +243,23 @@
 						name:'НачальноеЗначениеРазряда',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НачальныеЗначенияПорядкаПрисвоения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -299,6 +341,7 @@
 					items:
 					[
 		{
+			id: 'СерийныеНомераВвод',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:50px;width:765px;height:121px;',
 			height: 121,width: 765,
@@ -329,7 +372,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСерийныхНомеров/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -342,6 +385,23 @@
 						name:'КлючСвязи',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СерийныеНомераВвод');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -368,7 +428,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -398,4 +459,5 @@
 			]
 		},
 	]
+	});
 });

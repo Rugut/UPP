@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыДисконтныхКарт.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВидыДисконтныхКарт'], function () 
+{
+	Ext.define('Справочники.ВидыДисконтныхКарт.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды дисконтных карт',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаНастройки',
+﻿Ext.require(['Данные.Справочники.СпецификацииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СпецификацииНоменклатуры.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:234px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка спецификации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -85,4 +88,5 @@
 			]
 		},
 	]
+	});
 });

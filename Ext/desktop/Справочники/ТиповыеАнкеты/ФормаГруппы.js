@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ТиповыеАнкеты'], function () 
+{
+	Ext.define('Справочники.ТиповыеАнкеты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:446px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа типовых анкет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -104,4 +107,5 @@
 			]
 		},
 	]
+	});
 });

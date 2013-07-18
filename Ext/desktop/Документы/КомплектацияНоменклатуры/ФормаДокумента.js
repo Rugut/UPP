@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомплектацияНоменклатуры.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КомплектацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.КомплектацияНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:421px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Комплектация номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -287,6 +293,7 @@
 					items:
 					[
 		{
+			id: 'Комплектующие',
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:24px;width:626px;height:179px;',
 			height: 179,width: 626,
@@ -312,19 +319,19 @@
 				},
 				{
 					text:'Комплектующая',
-					width:'212',
+					width:'211',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика комплектующей',
-					width:'171',
+					width:'170',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия комплектующей',
-					width:'141',
+					width:'140',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -413,7 +420,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомплектацияНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -474,6 +481,23 @@
 						name:'СтатусПартии',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Комплектующие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КомплектацияНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КомплектацияНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1083,8 +1107,10 @@
 			height: 19,
 			style: 'position:absolute;left:424px;top:105px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

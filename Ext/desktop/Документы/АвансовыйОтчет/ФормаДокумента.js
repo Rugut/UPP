@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АвансовыйОтчет.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АвансовыйОтчет'], function () 
+{
+	Ext.define('Документы.АвансовыйОтчет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:692px;height:434px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Авансовый отчет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -145,6 +151,7 @@
 					items:
 					[
 		{
+			id: 'ВыданныеАвансы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:662px;height:174px;',
 			height: 174,width: 662,
@@ -193,7 +200,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -216,6 +223,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыданныеАвансы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АвансовыйОтчет.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АвансовыйОтчет.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -224,6 +248,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:662px;height:132px;',
 			height: 132,width: 662,
@@ -279,7 +304,7 @@
 				},
 				{
 					text:'Мест',
-					width:'58',
+					width:'57',
 					dataIndex:'КоличествоМест',
 					flex:1,
 				},
@@ -333,13 +358,13 @@
 				},
 				{
 					text:'Вид входящего документа',
-					width:'125',
+					width:'124',
 					dataIndex:'ВидДокВходящий',
 					flex:1,
 				},
 				{
 					text:'Дата вход. документа',
-					width:'80',
+					width:'79',
 					dataIndex:'ДатаВходящегоДокумента',
 					flex:1,
 				},
@@ -434,7 +459,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -538,6 +563,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АвансовыйОтчет.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АвансовыйОтчет.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -570,6 +612,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:662px;height:174px;',
 			height: 174,width: 662,
@@ -702,7 +745,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -767,6 +810,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АвансовыйОтчет.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АвансовыйОтчет.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -775,6 +835,7 @@
 					items:
 					[
 		{
+			id: 'ОплатаПоставщикам',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:662px;height:174px;',
 			height: 174,width: 662,
@@ -806,7 +867,7 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'149',
+					width:'148',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -842,13 +903,13 @@
 				},
 				{
 					text:'Вид входящего документа',
-					width:'124',
+					width:'123',
 					dataIndex:'ВидДокВходящий',
 					flex:1,
 				},
 				{
 					text:'Дата вход. документа',
-					width:'119',
+					width:'118',
 					dataIndex:'ДатаВходящегоДокумента',
 					flex:1,
 				},
@@ -883,7 +944,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -936,6 +997,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОплатаПоставщикам');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АвансовыйОтчет.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АвансовыйОтчет.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -950,6 +1028,7 @@
 					items:
 					[
 		{
+			id: 'Прочее',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:662px;height:174px;',
 			height: 174,width: 662,
@@ -1215,7 +1294,7 @@
 				},
 				{
 					text:'Продукция',
-					width:'92',
+					width:'91',
 					dataIndex:'Продукция',
 					flex:1,
 				},
@@ -1227,7 +1306,7 @@
 				},
 				{
 					text:'Серия продукции',
-					width:'93',
+					width:'92',
 					dataIndex:'СерияПродукции',
 					flex:1,
 				},
@@ -1239,7 +1318,7 @@
 				},
 				{
 					text:'Способ строительства',
-					width:'191',
+					width:'190',
 					dataIndex:'СпособСтроительства',
 					flex:1,
 				},
@@ -1262,7 +1341,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/АвансовыйОтчет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1416,6 +1495,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Прочее');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.АвансовыйОтчет.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.АвансовыйОтчет.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1633,8 +1729,10 @@
 			height: 19,
 			style: 'position:absolute;left:231px;top:339px;width:40px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

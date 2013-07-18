@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетНДПИ.ФормаОтчета2011Кв2',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетНДПИ'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетНДПИ.ФормаОтчета2011Кв2',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:488px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по налогу на добычу полезных ископаемых',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -479,4 +482,5 @@
 			]
 		},
 	]
+	});
 });

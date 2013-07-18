@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетНДС0.ФормаОтчета2006Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетНДС0'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетНДС0.ФормаОтчета2006Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по НДС 0%',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -275,4 +278,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаПочтовыхСообщений.Форма',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаПочтовыхСообщений'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаПочтовыхСообщений.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:643px;height:416px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обработка  Загрузка почтовых сообщений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЭлектронныеПисьма',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:627px;height:302px;',
 			height: 302,width: 627,
@@ -53,7 +60,7 @@
 				},
 				{
 					text:'Тема',
-					width:'146',
+					width:'145',
 					dataIndex:'Тема',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаПочтовыхСообщений/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаПочтовыхСообщений/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,6 +97,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭлектронныеПисьма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаПочтовыхСообщений.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаПочтовыхСообщений.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -108,7 +132,8 @@
 			height: 19,
 			style: 'position:absolute;left:98px;top:33px;width:385px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -157,4 +182,5 @@
 			]
 		},
 	]
+	});
 });

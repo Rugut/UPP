@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбора',
+﻿Ext.require(['Данные.Справочники.ХарактеристикиНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:488px;height:406px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выбор характеристики номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:225px;width:472px;height:172px;',
 			height: 172,width: 472,
@@ -30,11 +37,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -45,8 +53,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СписокХарактеристики',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:29px;width:472px;height:172px;',
 			height: 172,width: 472,
@@ -60,13 +86,13 @@
 				},
 				{
 					text:'Характеристика',
-					width:'246',
+					width:'245',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'ОКП',
-					width:'86',
+					width:'85',
 					dataIndex:'ОКП',
 					flex:1,
 				},
@@ -79,11 +105,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,6 +126,23 @@
 						name:'Владелец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокХарактеристики');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -118,8 +162,10 @@
 			text: 'Значения свойств текущей характеристики номенклатуры',
 			style: 'position:absolute;left:8px;top:209px;width:472px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

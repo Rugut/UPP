@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОснованияВыслугиЛет.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ОснованияВыслугиЛет'], function () 
+{
+	Ext.define('Справочники.ОснованияВыслугиЛет.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:516px;height:261px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Основания выслуги лет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:500px;height:220px;',
 			height: 220,width: 500,
@@ -42,11 +49,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОснованияВыслугиЛет").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОснованияВыслугиЛет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОснованияВыслугиЛет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +71,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОснованияВыслугиЛет.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОснованияВыслугиЛет.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -181,4 +207,5 @@
 			]
 		},
 	]
+	});
 });

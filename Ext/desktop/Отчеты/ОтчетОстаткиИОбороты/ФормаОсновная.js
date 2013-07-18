@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетОстаткиИОбороты.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ОтчетОстаткиИОбороты'], function () 
+{
+	Ext.define('Отчеты.ОтчетОстаткиИОбороты.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:593px;height:466px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -327,4 +330,5 @@
 			]
 		},
 	]
+	});
 });

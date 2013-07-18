@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкиПрограммы.ПараметрыДоступаНаУровнеЗаписей',
+﻿Ext.require(['Данные.Обработки.НастройкиПрограммы'], function () 
+{
+	Ext.define('Обработки.НастройкиПрограммы.ПараметрыДоступаНаУровнеЗаписей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:333px;height:335px;',
@@ -7,14 +9,19 @@
 	maximizable: true,
 	title: 'Параметры доступа на уровне записей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'checkbox',
 			boxLabel: 'Ограничить доступ на уровне записей по видам объектов:',
 			style: 'position:absolute;left:8px;top:8px;width:317px;height:19px;',
 		},
 		{
+			id: 'ВидыОбъектовДоступа',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:30px;width:317px;height:251px;',
 			height: 251,width: 317,
@@ -22,7 +29,7 @@
 			[
 				{
 					text:'Вид объекта доступа',
-					width:'164',
+					width:'163',
 					dataIndex:'ВидОбъектаДоступа',
 					flex:1,
 				},
@@ -33,13 +40,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ВидОбъектаДоступа',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВидыОбъектовДоступа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиПрограммы.ПараметрыДоступаНаУровнеЗаписейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиПрограммы.ПараметрыДоступаНаУровнеЗаписейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -48,7 +72,8 @@
 			text: 'Настройка доступа выполняется для групп пользователей.',
 			style: 'position:absolute;left:8px;top:283px;width:317px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -78,4 +103,5 @@
 			]
 		},
 	]
+	});
 });

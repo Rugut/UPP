@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.ФормаНастройкиКалендаря',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.ФормаНастройкиКалендаря',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:357px;height:471px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка параметров календаря',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -248,4 +251,5 @@
 			]
 		},
 	]
+	});
 });

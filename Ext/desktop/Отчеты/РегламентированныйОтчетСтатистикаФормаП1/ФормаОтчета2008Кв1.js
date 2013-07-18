@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП1.ФормаОтчета2008Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФормаП1'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФормаП1.ФормаОтчета2008Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма П-1',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -152,4 +155,5 @@
 			]
 		},
 	]
+	});
 });

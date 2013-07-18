@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.Форма',
+﻿Ext.require(['Данные.Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте'], function () 
+{
+	Ext.define('Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:430px;height:87px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справка-расчет ""Рублевая сумма документа в иностранной валюте""',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -67,4 +70,5 @@
 			]
 		},
 	]
+	});
 });

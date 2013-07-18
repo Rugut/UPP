@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСведенияОрублевыхСчетах.ФормаОтчета2005Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСведенияОрублевыхСчетах'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСведенияОрублевыхСчетах.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сведения о рублевых счетах',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -172,4 +175,5 @@
 			]
 		},
 	]
+	});
 });

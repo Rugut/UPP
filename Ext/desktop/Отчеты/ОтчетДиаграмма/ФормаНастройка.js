@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетДиаграмма.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОтчетДиаграмма'], function () 
+{
+	Ext.define('Отчеты.ОтчетДиаграмма.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:314px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -511,9 +514,9 @@
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -566,9 +569,9 @@
 					{
 						var грид = Ext.getCmp('ИзмеренияКолонки');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -615,7 +618,7 @@
 				},
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -627,19 +630,19 @@
 				},
 				{
 					text:'Значение',
-					width:'2400',
+					width:'240',
 					dataIndex:'Значение',
 					flex:1,
 				},
 				{
 					text:'С',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -682,9 +685,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -706,13 +709,13 @@
 			[
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Имя',
 					flex:1,
 				},
 				{
 					text:'Направление сортировки',
-					width:'1200',
+					width:'120',
 					dataIndex:'НаправлениеСортировки',
 					flex:1,
 				},
@@ -743,9 +746,9 @@
 					{
 						var грид = Ext.getCmp('Порядок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтчетДиаграмма.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -782,4 +785,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаПереходногоПериода',
+﻿Ext.require(['Данные.Документы.НачислениеПоБольничномуЛисту'], function () 
+{
+	Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаПереходногоПериода',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:377px;height:142px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчет пособия за период после 1 января 2007 года',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -101,4 +104,5 @@
 			]
 		},
 	]
+	});
 });

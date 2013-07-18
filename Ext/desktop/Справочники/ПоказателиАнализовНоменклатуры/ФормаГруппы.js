@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПоказателиАнализовНоменклатуры.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ПоказателиАнализовНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ПоказателиАнализовНоменклатуры.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:85px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Показатели анализов номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

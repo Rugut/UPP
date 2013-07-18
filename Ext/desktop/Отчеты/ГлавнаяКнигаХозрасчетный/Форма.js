@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ГлавнаяКнигаХозрасчетный.Форма',
+﻿Ext.require(['Данные.Отчеты.ГлавнаяКнигаХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ГлавнаяКнигаХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:728px;height:452px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Главная книга',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

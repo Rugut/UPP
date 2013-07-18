@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РезервированиеПомещений.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.РезервированиеПомещений'], function () 
+{
+	Ext.define('Документы.РезервированиеПомещений.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:781px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Резервирования помещений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -121,9 +124,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РезервированиеПомещений.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РезервированиеПомещений.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -160,4 +163,5 @@
 			]
 		},
 	]
+	});
 });

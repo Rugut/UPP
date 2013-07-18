@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОприходованиеНЗП.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОприходованиеНЗП'], function () 
+{
+	Ext.define('Документы.ОприходованиеНЗП.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:389px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оприходование незавершенного производства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -321,9 +324,9 @@
 					{
 						var грид = Ext.getCmp('Материалы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОприходованиеНЗП.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОприходованиеНЗП.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -607,4 +610,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

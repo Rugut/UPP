@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.АттестацииРаботников.Форма',
+﻿Ext.require(['Данные.Обработки.АттестацииРаботников'], function () 
+{
+	Ext.define('Обработки.АттестацииРаботников.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:627px;height:393px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Аттестации сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -59,9 +62,9 @@
 					{
 						var грид = Ext.getCmp('Работники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АттестацииРаботников.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АттестацииРаботников.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -150,19 +153,19 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -205,9 +208,9 @@
 					{
 						var грид = Ext.getCmp('Аттестации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АттестацииРаботников.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АттестацииРаботников.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -342,4 +345,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеТоваровУслуг.ФормаОтбораЗаказов',
+﻿Ext.require(['Данные.Документы.ПоступлениеТоваровУслуг'], function () 
+{
+	Ext.define('Документы.ПоступлениеТоваровУслуг.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:783px;height:518px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отобрать заказы покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:493px;width:781px;height:25px;',
@@ -137,6 +143,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:753px;height:114px;',
 			height: 114,width: 753,
@@ -185,7 +192,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -207,6 +214,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -311,6 +335,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеЗаказы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:250px;width:767px;height:234px;',
 			height: 234,width: 767,
@@ -462,7 +487,7 @@
 				},
 				{
 					text:'Проведен',
-					width:'81',
+					width:'80',
 					dataIndex:'Проведен',
 					flex:1,
 				},
@@ -473,7 +498,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -553,6 +578,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗаказы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -601,6 +643,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:753px;height:332px;',
 			height: 332,width: 753,
@@ -692,7 +735,7 @@
 				},
 				{
 					text:'Флаг заполнено',
-					width:'134',
+					width:'133',
 					dataIndex:'ФлагЗаполнено',
 					flex:1,
 				},
@@ -703,7 +746,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -753,6 +796,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -761,6 +821,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:753px;height:334px;',
 			height: 334,width: 753,
@@ -857,7 +918,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -904,6 +965,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -912,6 +990,7 @@
 					items:
 					[
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:753px;height:332px;',
 			height: 332,width: 753,
@@ -990,7 +1069,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1028,6 +1107,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1036,6 +1132,7 @@
 					items:
 					[
 		{
+			id: 'Оборудование',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:753px;height:332px;',
 			height: 332,width: 753,
@@ -1126,7 +1223,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеТоваровУслуг/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1170,6 +1267,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Оборудование');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеТоваровУслуг.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1210,8 +1324,10 @@
 			boxLabel: 'Оборудование',
 			style: 'position:absolute;left:145px;top:61px;width:106px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

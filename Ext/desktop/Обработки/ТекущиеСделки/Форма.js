@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТекущиеСделки.Форма',
+﻿Ext.require(['Данные.Обработки.ТекущиеСделки'], function () 
+{
+	Ext.define('Обработки.ТекущиеСделки.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:430px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Текущие сделки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -25,6 +31,7 @@
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
+			id: 'СделкиПредставление',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:58px;width:764px;height:363px;',
 			height: 363,width: 764,
@@ -56,7 +63,7 @@
 				},
 				{
 					text:'Вид операции',
-					width:'99',
+					width:'98',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
@@ -68,13 +75,13 @@
 				},
 				{
 					text:'Сумма (остаток)',
-					width:'103',
+					width:'102',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Сумма сделки',
-					width:'110',
+					width:'109',
 					dataIndex:'ОбщаяСуммаСделки',
 					flex:1,
 				},
@@ -86,7 +93,7 @@
 				},
 				{
 					text:'Договор',
-					width:'102',
+					width:'101',
 					dataIndex:'Договор',
 					flex:1,
 				},
@@ -97,7 +104,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТекущиеСделки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТекущиеСделки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -132,8 +139,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СделкиПредставление');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТекущиеСделки.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТекущиеСделки.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -212,4 +237,5 @@
 			]
 		},
 	]
+	});
 });

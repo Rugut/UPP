@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КоэффициентыСтажа.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.КоэффициентыСтажа'], function () 
+{
+	Ext.define('Справочники.КоэффициентыСтажа.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:483px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Размеры начислений в зависимости от стажа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КоэффициентыСтажа.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КоэффициентыСтажа.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -199,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

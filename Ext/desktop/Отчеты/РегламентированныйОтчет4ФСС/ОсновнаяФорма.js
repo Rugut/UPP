@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчет4ФСС'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:258px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '4-ФСС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

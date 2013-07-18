@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СобытияОС.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СобытияОС'], function () 
+{
+	Ext.define('Справочники.СобытияОС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:451px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'События основного средства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

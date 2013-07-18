@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаписьКУДиР.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ЗаписьКУДиР'], function () 
+{
+	Ext.define('Документы.ЗаписьКУДиР.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Запись книги учета доходов и расходов УСН (ручной учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаписьКУДиР.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаписьКУДиР.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -124,4 +127,5 @@
 			]
 		},
 	]
+	});
 });

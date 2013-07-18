@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ТипыЦенНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ТипыЦенНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:496px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Типы цен номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:480px;height:259px;',
 			height: 259,width: 480,
@@ -47,24 +54,25 @@
 				},
 				{
 					text:'Рассчитывается',
-					width:'91',
+					width:'90',
 					dataIndex:'Рассчитывается',
 					flex:1,
 				},
 				{
 					text:'Процент',
-					width:'50',
+					width:'49',
 					dataIndex:'ПроцентСкидкиНаценки',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТипыЦенНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +98,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТипыЦенНоменклатуры.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТипыЦенНоменклатуры.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -107,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

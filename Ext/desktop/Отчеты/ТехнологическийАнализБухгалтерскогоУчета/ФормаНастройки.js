@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройки',
+﻿Ext.require(['Данные.Отчеты.ТехнологическийАнализБухгалтерскогоУчета'], function () 
+{
+	Ext.define('Отчеты.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:679px;height:293px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Параметры анализа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:10px;top:8px;width:663px;height:252px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:618px;height:220px;',
 			height: 220,width: 618,
@@ -33,7 +40,7 @@
 				},
 				{
 					text:'Выполнять',
-					width:'68',
+					width:'67',
 					dataIndex:'Настройка',
 					flex:1,
 				},
@@ -44,7 +51,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,6 +61,23 @@
 						name:'Настройка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -75,6 +99,7 @@
 					items:
 					[
 		{
+			id: 'Проводки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:36px;width:649px;height:190px;',
 			height: 190,width: 649,
@@ -117,7 +142,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -137,6 +162,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Проводки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -145,6 +187,7 @@
 					items:
 					[
 		{
+			id: 'ПС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:649px;height:220px;',
 			height: 220,width: 649,
@@ -205,7 +248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТехнологическийАнализБухгалтерскогоУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -234,12 +277,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -265,4 +326,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетФактураПолученный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СчетФактураПолученный'], function () 
+{
+	Ext.define('Документы.СчетФактураПолученный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:792px;height:489px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Счет-фактура полученный',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -300,6 +306,7 @@
 			style: 'position:absolute;left:434px;top:6px;width:59px;height:19px;',
 		},
 		{
+			id: 'Авансы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:30px;width:776px;height:67px;',
 			height: 67,width: 776,
@@ -336,7 +343,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -352,6 +359,23 @@
 						name:'СуммаНДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Авансы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураПолученный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураПолученный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -375,6 +399,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыОснования',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:776px;height:119px;',
 			height: 119,width: 776,
@@ -388,7 +413,7 @@
 				},
 				{
 					text:'Документ - основание для выписки счета-фактуры',
-					width:'313',
+					width:'312',
 					dataIndex:'ДокументОснование',
 					flex:1,
 				},
@@ -399,7 +424,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетФактураПолученный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -409,6 +434,23 @@
 						name:'ДокументОснование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыОснования');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетФактураПолученный.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетФактураПолученный.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -906,8 +948,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

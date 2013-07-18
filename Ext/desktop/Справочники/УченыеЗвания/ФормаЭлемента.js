@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.УченыеЗвания.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.УченыеЗвания'], function () 
+{
+	Ext.define('Справочники.УченыеЗвания.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:438px;height:85px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ученое звание',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Событие.ФормаСписка',
+﻿Ext.require(['Данные.Документы.Событие'], function () 
+{
+	Ext.define('Документы.Событие.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:736px;height:261px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'События',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:720px;height:220px;',
 			height: 220,width: 720,
@@ -29,13 +36,13 @@
 				},
 				{
 					text:'Дата',
-					width:'139',
+					width:'138',
 					dataIndex:'Дата',
 					flex:1,
 				},
 				{
 					text:'Номер',
-					width:'117',
+					width:'116',
 					dataIndex:'Номер',
 					flex:1,
 				},
@@ -71,7 +78,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'144',
+					width:'143',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -94,7 +101,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Событие/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Событие/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +142,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Событие.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Событие.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -169,4 +194,5 @@
 			]
 		},
 	]
+	});
 });

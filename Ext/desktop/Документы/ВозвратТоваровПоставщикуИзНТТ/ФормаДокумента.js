@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВозвратТоваровПоставщикуИзНТТ.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВозвратТоваровПоставщикуИзНТТ'], function () 
+{
+	Ext.define('Документы.ВозвратТоваровПоставщикуИзНТТ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:662px;height:442px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Возврат товаров поставщику из НТТ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -123,6 +129,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:632px;height:160px;',
 			height: 160,width: 632,
@@ -279,7 +286,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщикуИзНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщикуИзНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -356,6 +363,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщикуИзНТТ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщикуИзНТТ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -410,6 +434,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:632px;height:160px;',
 			height: 160,width: 632,
@@ -476,7 +501,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщикуИзНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщикуИзНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -507,6 +532,23 @@
 						name:'СчетУчетаНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщикуИзНТТ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщикуИзНТТ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -748,6 +790,7 @@
 			style: 'position:absolute;left:183px;top:27px;width:455px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:632px;height:151px;',
 			height: 151,width: 632,
@@ -761,7 +804,7 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'263',
+					width:'262',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -790,7 +833,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщикуИзНТТ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратТоваровПоставщикуИзНТТ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -809,6 +852,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратТоваровПоставщикуИзНТТ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщикуИзНТТ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1017,8 +1077,10 @@
 			text: 'Ввести счет-фактуру',
 			style: 'position:absolute;left:152px;top:366px;width:326px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

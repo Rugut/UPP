@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВаловаяПрибыль.Форма',
+﻿Ext.require(['Данные.Отчеты.ВаловаяПрибыль'], function () 
+{
+	Ext.define('Отчеты.ВаловаяПрибыль.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Валовая прибыль',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -209,4 +212,5 @@
 			]
 		},
 	]
+	});
 });

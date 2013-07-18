@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.СоставНабора.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.СоставНабора'], function () 
+{
+	Ext.define('Обработки.СоставНабора.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:340px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Состав набора',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -84,25 +87,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2200',
+					width:'220',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2200',
+					width:'220',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2200',
+					width:'220',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -253,9 +256,9 @@
 					{
 						var грид = Ext.getCmp('СоставНабора');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СоставНабора.ОсновнаяФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СоставНабора.ОсновнаяФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -305,4 +308,5 @@
 			]
 		},
 	]
+	});
 });

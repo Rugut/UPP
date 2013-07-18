@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетСтраховыхВзносов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетСтраховыхВзносов'], function () 
+{
+	Ext.define('Документы.РасчетСтраховыхВзносов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:782px;height:531px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Начисление страховых взносов в ПФР, ФОМС и ФСС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -135,6 +141,7 @@
 					items:
 					[
 		{
+			id: 'ИсчисленныеСтраховыеВзносы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:752px;height:285px;',
 			height: 285,width: 752,
@@ -154,13 +161,13 @@
 				},
 				{
 					text:'ФСС, соц.страхование',
-					width:'126',
+					width:'125',
 					dataIndex:'ФСС',
 					flex:1,
 				},
 				{
 					text:'ФСС, несчастные случаи',
-					width:'126',
+					width:'125',
 					dataIndex:'ФССНесчастныеСлучаи',
 					flex:1,
 				},
@@ -184,7 +191,7 @@
 				},
 				{
 					text:'ПФР, накопительная часть',
-					width:'122',
+					width:'121',
 					dataIndex:'ПФРНакопительная',
 					flex:1,
 				},
@@ -237,7 +244,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -287,6 +294,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсчисленныеСтраховыеВзносы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -295,6 +319,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:752px;height:285px;',
 			height: 285,width: 752,
@@ -397,7 +422,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -447,6 +472,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -455,6 +497,7 @@
 					items:
 					[
 		{
+			id: 'ДополнительныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:752px;height:285px;',
 			height: 285,width: 752,
@@ -545,7 +588,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -589,6 +632,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -597,6 +657,7 @@
 					items:
 					[
 		{
+			id: 'НеоблагаемыеСуммыДоходов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:752px;height:285px;',
 			height: 285,width: 752,
@@ -633,7 +694,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -650,6 +711,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НеоблагаемыеСуммыДоходов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -658,6 +736,7 @@
 					items:
 					[
 		{
+			id: 'ПособияПоСоциальномуСтрахованию',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:752px;height:285px;',
 			height: 285,width: 752,
@@ -701,7 +780,7 @@
 				},
 				{
 					text:'Новый',
-					width:'45',
+					width:'44',
 					dataIndex:'УчитыватьКакНовыйСтраховойСлучай',
 					flex:1,
 				},
@@ -808,7 +887,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -882,6 +961,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияПоСоциальномуСтрахованию');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -890,6 +986,7 @@
 					items:
 					[
 		{
+			id: 'ПособияПоУходуЗаРебенкомДоПолутораЛет',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:752px;height:285px;',
 			height: 285,width: 752,
@@ -1010,7 +1107,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетСтраховыхВзносов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1069,6 +1166,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияПоУходуЗаРебенкомДоПолутораЛет');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетСтраховыхВзносов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1080,7 +1194,8 @@
 			text: 'Заполнить и рассчитать',
 			style: 'position:absolute;left:8px;top:85px;width:193px;height:36px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1114,4 +1229,5 @@
 			]
 		},
 	]
+	});
 });

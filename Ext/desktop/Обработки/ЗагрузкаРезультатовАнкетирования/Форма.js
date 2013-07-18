@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаРезультатовАнкетирования.Форма',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаРезультатовАнкетирования'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаРезультатовАнкетирования.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:573px;height:417px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Загрузка результатов анкетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:557px;height:377px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'Входящие',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:99px;width:222px;height:151px;',
 			height: 151,width: 222,
@@ -27,19 +34,19 @@
 			[
 				{
 					text:'Тема',
-					width:'135',
+					width:'134',
 					dataIndex:'Тема',
 					flex:1,
 				},
 				{
 					text:'Эл. справочника',
-					width:'70',
+					width:'69',
 					dataIndex:'ОбъектЗагрузки',
 					flex:1,
 				},
 				{
 					text:'Анкета',
-					width:'144',
+					width:'143',
 					dataIndex:'Анкета',
 					flex:1,
 				},
@@ -56,7 +63,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -73,6 +80,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Входящие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -86,6 +110,7 @@
 			style: 'position:absolute;left:234px;top:74px;width:171px;height:25px;',
 		},
 		{
+			id: 'Вложения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:256px;width:222px;height:93px;',
 			height: 93,width: 222,
@@ -104,7 +129,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -112,8 +137,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Вложения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПолеОтветов',
 			xtype: 'grid',
 			style: 'position:absolute;left:234px;top:281px;width:315px;height:68px;',
 			height: 68,width: 315,
@@ -127,7 +170,7 @@
 				},
 				{
 					text:'Ответ',
-					width:'96',
+					width:'95',
 					dataIndex:'Ответ',
 					flex:1,
 				},
@@ -144,7 +187,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,6 +200,23 @@
 						name:'РазвернутыйОтвет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПолеОтветов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -209,6 +269,7 @@
 					items:
 					[
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:129px;width:273px;height:222px;',
 			height: 222,width: 273,
@@ -222,13 +283,13 @@
 				},
 				{
 					text:'Анкета',
-					width:'61',
+					width:'60',
 					dataIndex:'Анкета',
 					flex:1,
 				},
 				{
 					text:'Эл. справочника',
-					width:'88',
+					width:'87',
 					dataIndex:'ОбъектЗагрузки',
 					flex:1,
 				},
@@ -245,7 +306,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -262,6 +323,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -273,6 +351,7 @@
 			style: 'position:absolute;left:65px;top:5px;width:484px;height:19px;',
 		},
 		{
+			id: 'ПолеОтветовИзКаталога',
 			xtype: 'grid',
 			style: 'position:absolute;left:285px;top:129px;width:264px;height:221px;',
 			height: 221,width: 264,
@@ -280,7 +359,7 @@
 			[
 				{
 					text:'Вопрос',
-					width:'99',
+					width:'98',
 					dataIndex:'Вопрос',
 					flex:1,
 				},
@@ -303,7 +382,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаРезультатовАнкетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -316,6 +395,23 @@
 						name:'РазвернутыйОтвет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПолеОтветовИзКаталога');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -367,7 +463,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -382,4 +479,5 @@
 			]
 		},
 	]
+	});
 });

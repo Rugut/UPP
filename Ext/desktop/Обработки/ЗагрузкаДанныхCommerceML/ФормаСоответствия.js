@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхCommerceML.ФормаСоответствия',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхCommerceML'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхCommerceML.ФормаСоответствия',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:425px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Сопоставление объектов из файла и информационной базы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:400px;width:664px;height:25px;',
@@ -45,6 +51,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияВалют',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:634px;height:268px;',
 			height: 268,width: 634,
@@ -64,7 +71,7 @@
 				},
 				{
 					text:'Валюта',
-					width:'194',
+					width:'193',
 					dataIndex:'НовыйВалюта',
 					flex:1,
 				},
@@ -75,7 +82,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -89,6 +96,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияВалют');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -97,6 +121,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияОрганизаций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:634px;height:266px;',
 			height: 266,width: 634,
@@ -122,7 +147,7 @@
 				},
 				{
 					text:'Организация',
-					width:'212',
+					width:'211',
 					dataIndex:'НовыйОрганизация',
 					flex:1,
 				},
@@ -133,7 +158,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -150,6 +175,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияОрганизаций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -158,6 +200,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияКонтрагентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:634px;height:268px;',
 			height: 268,width: 634,
@@ -171,7 +214,7 @@
 				},
 				{
 					text:'Контрагент из файла',
-					width:'156',
+					width:'155',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
@@ -183,7 +226,7 @@
 				},
 				{
 					text:'Контрагент',
-					width:'189',
+					width:'188',
 					dataIndex:'НовыйКонтрагент',
 					flex:1,
 				},
@@ -194,7 +237,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -211,6 +254,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияКонтрагентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -219,6 +279,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияБанков',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:634px;height:266px;',
 			height: 266,width: 634,
@@ -267,7 +328,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -290,6 +351,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияБанков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -298,6 +376,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияБанковскихСчетов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:634px;height:266px;',
 			height: 266,width: 634,
@@ -311,7 +390,7 @@
 				},
 				{
 					text:'Номер счета в файле',
-					width:'173',
+					width:'172',
 					dataIndex:'НомерСчета',
 					flex:1,
 				},
@@ -346,7 +425,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -369,6 +448,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияБанковскихСчетов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -377,6 +473,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияЕдиницИзмерения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:634px;height:268px;',
 			height: 268,width: 634,
@@ -390,13 +487,13 @@
 				},
 				{
 					text:'Единица измерения из файла',
-					width:'185',
+					width:'184',
 					dataIndex:'ЕдиницаИзмерения',
 					flex:1,
 				},
 				{
 					text:'Единица измерения',
-					width:'176',
+					width:'175',
 					dataIndex:'НовыйЕдиницаИзмерения',
 					flex:1,
 				},
@@ -407,7 +504,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -421,6 +518,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияЕдиницИзмерения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -429,6 +543,7 @@
 					items:
 					[
 		{
+			id: 'СоответствиеВидовНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:634px;height:270px;',
 			height: 270,width: 634,
@@ -465,7 +580,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -482,6 +597,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствиеВидовНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -490,6 +622,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияТоваров',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:634px;height:272px;',
 			height: 272,width: 634,
@@ -503,13 +636,13 @@
 				},
 				{
 					text:'Номенклатура из файла',
-					width:'129',
+					width:'128',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Артикул из файла',
-					width:'74',
+					width:'73',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -533,19 +666,19 @@
 				},
 				{
 					text:'Ид',
-					width:'116',
+					width:'115',
 					dataIndex:'Ид',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'304',
+					width:'303',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'304',
+					width:'303',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -562,7 +695,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -597,6 +730,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияТоваров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -605,6 +755,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияКачества',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:634px;height:269px;',
 			height: 269,width: 634,
@@ -618,7 +769,7 @@
 				},
 				{
 					text:'Качество из файла',
-					width:'232',
+					width:'231',
 					dataIndex:'Качество',
 					flex:1,
 				},
@@ -635,7 +786,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -649,6 +800,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияКачества');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -657,6 +825,7 @@
 					items:
 					[
 		{
+			id: 'СоответствияТиповЦен',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:634px;height:268px;',
 			height: 268,width: 634,
@@ -670,19 +839,19 @@
 				},
 				{
 					text:'Тип цены из файла',
-					width:'150',
+					width:'149',
 					dataIndex:'ТипЦены',
 					flex:1,
 				},
 				{
 					text:'Ид из файла',
-					width:'91',
+					width:'90',
 					dataIndex:'Ид',
 					flex:1,
 				},
 				{
 					text:'Валюта цены из файла',
-					width:'97',
+					width:'96',
 					dataIndex:'Валюта',
 					flex:1,
 				},
@@ -694,7 +863,7 @@
 				},
 				{
 					text:'Контрагент из файла',
-					width:'190',
+					width:'189',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
@@ -711,7 +880,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -737,6 +906,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствияТиповЦен');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -757,8 +943,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

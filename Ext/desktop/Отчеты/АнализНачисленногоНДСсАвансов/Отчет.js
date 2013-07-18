@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализНачисленногоНДСсАвансов.Отчет',
+﻿Ext.require(['Данные.Отчеты.АнализНачисленногоНДСсАвансов'], function () 
+{
+	Ext.define('Отчеты.АнализНачисленногоНДСсАвансов.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:447px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ начисленного НДС с авансов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -119,4 +122,5 @@
 			]
 		},
 	]
+	});
 });

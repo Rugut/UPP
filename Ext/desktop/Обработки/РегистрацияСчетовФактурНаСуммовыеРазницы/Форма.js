@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияСчетовФактурНаСуммовыеРазницы.Форма',
+﻿Ext.require(['Данные.Обработки.РегистрацияСчетовФактурНаСуммовыеРазницы'], function () 
+{
+	Ext.define('Обработки.РегистрацияСчетовФактурНаСуммовыеРазницы.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:736px;height:390px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Регистрация счетов-фактур на суммовые разницы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -73,6 +79,7 @@
 			style: 'position:absolute;left:8px;top:60px;width:720px;height:16px;',
 		},
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:105px;width:720px;height:252px;',
 			height: 252,width: 720,
@@ -139,7 +146,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНаСуммовыеРазницы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияСчетовФактурНаСуммовыеРазницы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -171,8 +178,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегистрацияСчетовФактурНаСуммовыеРазницы.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегистрацияСчетовФактурНаСуммовыеРазницы.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -218,4 +243,5 @@
 			]
 		},
 	]
+	});
 });

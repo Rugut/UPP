@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыработкаОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыработкаОС'], function () 
+{
+	Ext.define('Документы.ВыработкаОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:584px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выработка ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -121,13 +124,13 @@
 				},
 				{
 					text:'Основное средство',
-					width:'2200',
+					width:'220',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
 				{
 					text:'Параметр выработки',
-					width:'1200',
+					width:'120',
 					dataIndex:'ПараметрВыработкиОС',
 					flex:1,
 				},
@@ -182,9 +185,9 @@
 					{
 						var грид = Ext.getCmp('ОС');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВыработкаОС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВыработкаОС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -240,4 +243,5 @@
 			]
 		},
 	]
+	});
 });

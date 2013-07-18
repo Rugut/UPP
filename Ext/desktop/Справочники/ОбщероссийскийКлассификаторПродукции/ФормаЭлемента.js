@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОбщероссийскийКлассификаторПродукции.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОбщероссийскийКлассификаторПродукции'], function () 
+{
+	Ext.define('Справочники.ОбщероссийскийКлассификаторПродукции.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:468px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Общероссийский классификатор продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -122,4 +125,5 @@
 			]
 		},
 	]
+	});
 });

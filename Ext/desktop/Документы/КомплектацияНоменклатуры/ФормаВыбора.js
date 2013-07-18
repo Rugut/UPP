@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КомплектацияНоменклатуры.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.КомплектацияНоменклатуры'], function () 
+{
+	Ext.define('Документы.КомплектацияНоменклатуры.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:740px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Комплектации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -69,13 +72,13 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Склад',
-					width:'1200',
+					width:'120',
 					dataIndex:'Склад',
 					flex:1,
 				},
@@ -139,9 +142,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КомплектацияНоменклатуры.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КомплектацияНоменклатуры.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -185,4 +188,5 @@
 			]
 		},
 	]
+	});
 });

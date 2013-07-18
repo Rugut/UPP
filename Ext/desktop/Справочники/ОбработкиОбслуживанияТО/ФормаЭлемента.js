@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОбработкиОбслуживанияТО'], function () 
+{
+	Ext.define('Справочники.ОбработкиОбслуживанияТО.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:473px;height:501px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка обслуживания ТО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -110,7 +113,7 @@
 				},
 				{
 					text:'Модель торгового оборудования',
-					width:'2500',
+					width:'250',
 					dataIndex:'Модель',
 					flex:1,
 				},
@@ -142,9 +145,9 @@
 					{
 						var грид = Ext.getCmp('Модели');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбработкиОбслуживанияТО.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбработкиОбслуживанияТО.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -292,4 +295,5 @@
 			]
 		},
 	]
+	});
 });

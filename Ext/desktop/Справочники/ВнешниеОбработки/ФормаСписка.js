@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВнешниеОбработки.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ВнешниеОбработки'], function () 
+{
+	Ext.define('Справочники.ВнешниеОбработки.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:608px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Дополнительные печатные формы, обработки, заполнение табличных частей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,13 +30,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Вид обработки',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОбработки',
 					flex:1,
 				},
@@ -45,13 +48,13 @@
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 				{
 					text:'Комментарий к файлу источнику',
-					width:'1200',
+					width:'120',
 					dataIndex:'КомментарийКФайлуИсточнику',
 					flex:1,
 				},
@@ -95,9 +98,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВнешниеОбработки.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -142,9 +145,9 @@
 					{
 						var грид = Ext.getCmp('Дерево');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВнешниеОбработки.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -170,4 +173,5 @@
 			]
 		},
 	]
+	});
 });

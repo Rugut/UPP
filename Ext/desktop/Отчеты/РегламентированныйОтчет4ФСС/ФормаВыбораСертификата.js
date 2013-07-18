@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ФормаВыбораСертификата',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчет4ФСС'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчет4ФСС.ФормаВыбораСертификата',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:255px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выберите сертификат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -21,37 +24,37 @@
 			[
 				{
 					text:'Представление',
-					width:'1200',
+					width:'120',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Начало действия',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДействителенС',
 					flex:1,
 				},
 				{
 					text:'Конец действия',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДействителенПо',
 					flex:1,
 				},
 				{
 					text:'Отпечаток',
-					width:'2400',
+					width:'240',
 					dataIndex:'Отпечаток',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'1200',
+					width:'120',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Серийный номер',
-					width:'1200',
+					width:'120',
 					dataIndex:'СерийныйНомер',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('Сертификаты');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РегламентированныйОтчет4ФСС.ФормаВыбораСертификатаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РегламентированныйОтчет4ФСС.ФормаВыбораСертификатаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -123,4 +126,5 @@
 			]
 		},
 	]
+	});
 });

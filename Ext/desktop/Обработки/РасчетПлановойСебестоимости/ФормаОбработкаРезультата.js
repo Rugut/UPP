@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РасчетПлановойСебестоимости.ФормаОбработкаРезультата',
+﻿Ext.require(['Данные.Обработки.РасчетПлановойСебестоимости'], function () 
+{
+	Ext.define('Обработки.РасчетПлановойСебестоимости.ФормаОбработкаРезультата',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:362px;height:118px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка результата',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

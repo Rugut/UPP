@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодготовкаДанныхПФР2009.ФормаВводаДаты',
+﻿Ext.require(['Данные.Обработки.ПодготовкаДанныхПФР2009'], function () 
+{
+	Ext.define('Обработки.ПодготовкаДанныхПФР2009.ФормаВводаДаты',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:359px;height:293px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Окончание межрасчетного периода',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -82,9 +85,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаСотрудников');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаВводаДатыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаВводаДатыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -114,4 +117,5 @@
 			]
 		},
 	]
+	});
 });

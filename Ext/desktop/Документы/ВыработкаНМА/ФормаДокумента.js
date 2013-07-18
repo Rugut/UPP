@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыработкаНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВыработкаНМА'], function () 
+{
+	Ext.define('Документы.ВыработкаНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:414px;height:401px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Выработка НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -75,6 +81,7 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
+			id: 'НМА',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:398px;height:220px;',
 			height: 220,width: 398,
@@ -100,7 +107,7 @@
 				},
 				{
 					text:'Объем работ',
-					width:'90',
+					width:'89',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -111,7 +118,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыработкаНМА/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыработкаНМА/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -128,13 +135,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НМА');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыработкаНМА.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыработкаНМА.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Нематериальные активы',
 			style: 'position:absolute;left:8px;top:60px;width:398px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -231,4 +256,5 @@
 			]
 		},
 	]
+	});
 });

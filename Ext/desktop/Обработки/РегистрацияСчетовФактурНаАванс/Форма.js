@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияСчетовФактурНаАванс.Форма',
+﻿Ext.require(['Данные.Обработки.РегистрацияСчетовФактурНаАванс'], function () 
+{
+	Ext.define('Обработки.РегистрацияСчетовФактурНаАванс.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:736px;height:453px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистрация счетов-фактур на аванс',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -131,7 +134,7 @@
 				},
 				{
 					text:'Счет на оплату',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетНаОплату',
 					flex:1,
 				},
@@ -155,7 +158,7 @@
 				},
 				{
 					text:'Счет-фактура',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -219,9 +222,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РегистрацияСчетовФактурНаАванс.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РегистрацияСчетовФактурНаАванс.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -287,4 +290,5 @@
 			]
 		},
 	]
+	});
 });

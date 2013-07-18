@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РаспределениеНДСКосвенныхРасходов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РаспределениеНДСКосвенныхРасходов'], function () 
+{
+	Ext.define('Документы.РаспределениеНДСКосвенныхРасходов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:715px;height:470px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -179,19 +182,19 @@
 				},
 				{
 					text:'Вид ценности',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
 				{
 					text:'Поставщик',
-					width:'1200',
+					width:'120',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
@@ -221,61 +224,61 @@
 				},
 				{
 					text:'Сумма по счету',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаВсего',
 					flex:1,
 				},
 				{
 					text:'НДС по счету',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДСВсего',
 					flex:1,
 				},
 				{
 					text:'Сумма (НДС)',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДССумма',
 					flex:1,
 				},
 				{
 					text:'НДС (НДС)',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДС18',
 					flex:1,
 				},
 				{
 					text:'Сумма (Без НДС)',
-					width:'1200',
+					width:'120',
 					dataIndex:'БезНДССумма',
 					flex:1,
 				},
 				{
 					text:'НДС (Без НДС)',
-					width:'1200',
+					width:'120',
 					dataIndex:'БезНДС',
 					flex:1,
 				},
 				{
 					text:'Сумма (ЕНВД)',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЕНВДСумма',
 					flex:1,
 				},
 				{
 					text:'НДС (ЕНВД)',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЕНВДНДС',
 					flex:1,
 				},
 				{
 					text:'0% (Сумма)',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаБезНДС0',
 					flex:1,
 				},
 				{
 					text:'0% (НДС)',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДС0',
 					flex:1,
 				},
@@ -354,9 +357,9 @@
 					{
 						var грид = Ext.getCmp('СоставКосвенныхРасходов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РаспределениеНДСКосвенныхРасходов.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РаспределениеНДСКосвенныхРасходов.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -396,13 +399,13 @@
 				},
 				{
 					text:'Счет затрат',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетЗатрат',
 					flex:1,
 				},
 				{
 					text:'Счет затрат (НУ)',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетЗатратНУ',
 					flex:1,
 				},
@@ -480,49 +483,49 @@
 				},
 				{
 					text:'Субконто1',
-					width:'1200',
+					width:'120',
 					dataIndex:'Субконто1',
 					flex:1,
 				},
 				{
 					text:'Субконто2',
-					width:'1200',
+					width:'120',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'Субконто3',
-					width:'1200',
+					width:'120',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
 				{
 					text:'Субконто1 (НУ)',
-					width:'1200',
+					width:'120',
 					dataIndex:'СубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Субконто2 (НУ)',
-					width:'1200',
+					width:'120',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто3 (НУ)',
-					width:'1200',
+					width:'120',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
 				{
 					text:'НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДС',
 					flex:1,
 				},
@@ -658,9 +661,9 @@
 					{
 						var грид = Ext.getCmp('СчетаУчетаРасходов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РаспределениеНДСКосвенныхРасходов.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РаспределениеНДСКосвенныхРасходов.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -970,4 +973,5 @@
 			]
 		},
 	]
+	});
 });

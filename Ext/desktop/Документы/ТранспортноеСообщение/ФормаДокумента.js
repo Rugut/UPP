@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ТранспортноеСообщение.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ТранспортноеСообщение'], function () 
+{
+	Ext.define('Документы.ТранспортноеСообщение.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:97px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

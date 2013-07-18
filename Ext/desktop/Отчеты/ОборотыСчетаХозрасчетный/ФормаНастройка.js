@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыСчетаХозрасчетный.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ОборотыСчетаХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.ОборотыСчетаХозрасчетный.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:276px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:235px;',
@@ -201,6 +207,7 @@
 					items:
 					[
 		{
+			id: 'Детализация',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:48px;width:460px;height:161px;',
 			height: 161,width: 460,
@@ -225,7 +232,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыСчетаХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыСчетаХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -235,6 +242,23 @@
 						name:'Тип',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Детализация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -250,6 +274,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:28px;width:460px;height:181px;',
 			height: 181,width: 460,
@@ -298,7 +323,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыСчетаХозрасчетный/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОборотыСчетаХозрасчетный/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -321,12 +346,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -352,4 +395,5 @@
 			]
 		},
 	]
+	});
 });

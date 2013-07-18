@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РабочиеЦентры.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.РабочиеЦентры'], function () 
+{
+	Ext.define('Справочники.РабочиеЦентры.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:430px;height:113px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Рабочие центры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

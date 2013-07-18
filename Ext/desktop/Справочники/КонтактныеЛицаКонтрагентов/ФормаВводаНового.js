@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНового',
+﻿Ext.require(['Данные.Справочники.КонтактныеЛицаКонтрагентов'], function () 
+{
+	Ext.define('Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНового',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:533px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Контактные лица контрагентов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -380,4 +383,5 @@
 			]
 		},
 	]
+	});
 });

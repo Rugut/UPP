@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланПроизводстваПоСменам.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПланПроизводстваПоСменам'], function () 
+{
+	Ext.define('Документы.ПланПроизводстваПоСменам.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:628px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'План производства по сменам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,19 +42,19 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -142,4 +145,5 @@
 			]
 		},
 	]
+	});
 });

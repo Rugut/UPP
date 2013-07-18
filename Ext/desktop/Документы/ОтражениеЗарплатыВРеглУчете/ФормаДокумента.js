@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтражениеЗарплатыВРеглУчете.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтражениеЗарплатыВРеглУчете'], function () 
+{
+	Ext.define('Документы.ОтражениеЗарплатыВРеглУчете.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:659px;height:479px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отражение зарплаты в регламентированном учете',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +98,7 @@
 					items:
 					[
 		{
+			id: 'ОтражениеВУчете',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:629px;height:262px;',
 			height: 262,width: 629,
@@ -189,25 +196,25 @@
 				},
 				{
 					text:'Субконто Дт НУ',
-					width:'100',
+					width:'99',
 					dataIndex:'СубконтоДтНУ1',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'100',
+					width:'99',
 					dataIndex:'СубконтоДтНУ2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'100',
+					width:'99',
 					dataIndex:'СубконтоДтНУ3',
 					flex:1,
 				},
 				{
 					text:'Счет Кт НУ',
-					width:'72',
+					width:'71',
 					dataIndex:'СчетКтНУ',
 					flex:1,
 				},
@@ -278,7 +285,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВРеглУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВРеглУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -370,6 +377,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтражениеВУчете');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтражениеЗарплатыВРеглУчете.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтражениеЗарплатыВРеглУчете.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -378,6 +402,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:629px;height:262px;',
 			height: 262,width: 629,
@@ -517,7 +542,7 @@
 				},
 				{
 					text:'Субконто Кт НУ',
-					width:'127',
+					width:'126',
 					dataIndex:'СубконтоКтНУ1',
 					flex:1,
 				},
@@ -547,7 +572,7 @@
 				},
 				{
 					text:'Результат',
-					width:'81',
+					width:'80',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -588,7 +613,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВРеглУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВРеглУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -692,6 +717,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтражениеЗарплатыВРеглУчете.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтражениеЗарплатыВРеглУчете.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -700,6 +742,7 @@
 					items:
 					[
 		{
+			id: 'ДополнительныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:629px;height:262px;',
 			height: 262,width: 629,
@@ -743,7 +786,7 @@
 				},
 				{
 					text:'Субконто Дт',
-					width:'110',
+					width:'109',
 					dataIndex:'СубконтоДт1',
 					flex:1,
 				},
@@ -797,7 +840,7 @@
 				},
 				{
 					text:'Счет Дт НУ',
-					width:'67',
+					width:'66',
 					dataIndex:'СчетДтНУ',
 					flex:1,
 				},
@@ -827,13 +870,13 @@
 				},
 				{
 					text:'Субконто Кт НУ',
-					width:'96',
+					width:'95',
 					dataIndex:'СубконтоКтНУ1',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'129',
+					width:'128',
 					dataIndex:'СубконтоКтНУ2',
 					flex:1,
 				},
@@ -857,7 +900,7 @@
 				},
 				{
 					text:'Результат',
-					width:'77',
+					width:'76',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -904,7 +947,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВРеглУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтражениеЗарплатыВРеглУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1005,6 +1048,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтражениеЗарплатыВРеглУчете.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтражениеЗарплатыВРеглУчете.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1040,7 +1100,8 @@
 			text: 'Заполнить',
 			style: 'position:absolute;left:8px;top:64px;width:120px;height:36px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1105,4 +1166,5 @@
 			]
 		},
 	]
+	});
 });

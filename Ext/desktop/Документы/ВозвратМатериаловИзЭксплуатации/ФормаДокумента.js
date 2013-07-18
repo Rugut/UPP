@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВозвратМатериаловИзЭксплуатации.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВозвратМатериаловИзЭксплуатации'], function () 
+{
+	Ext.define('Документы.ВозвратМатериаловИзЭксплуатации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:383px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Возврат материалов из эксплуатации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -122,6 +128,7 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:149px;width:636px;height:151px;',
 			height: 151,width: 636,
@@ -171,7 +178,7 @@
 				},
 				{
 					text:'Назначение использования',
-					width:'148',
+					width:'147',
 					dataIndex:'НазначениеИспользования',
 					flex:1,
 				},
@@ -284,7 +291,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратМатериаловИзЭксплуатации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВозвратМатериаловИзЭксплуатации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -363,6 +370,23 @@
 						name:'ОтражениеВУСН',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВозвратМатериаловИзЭксплуатации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВозвратМатериаловИзЭксплуатации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -476,7 +500,8 @@
 			title: 'Материалы',
 			style: 'position:absolute;left:8px;top:107px;width:636px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -493,4 +518,5 @@
 			]
 		},
 	]
+	});
 });

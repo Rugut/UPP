@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборМатериаловИАналогов.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.ПодборМатериаловИАналогов'], function () 
+{
+	Ext.define('Обработки.ПодборМатериаловИАналогов.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:722px;height:441px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Подбор материалов и аналогов для выпуска продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоИсходныеКомплектующие',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:54px;width:706px;height:255px;',
 			height: 255,width: 706,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Продукция / материал / аналог',
-					width:'182',
+					width:'181',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Используется для выпуска',
-					width:'34',
+					width:'33',
 					dataIndex:'Используется',
 					flex:1,
 				},
@@ -112,7 +119,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборМатериаловИАналогов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборМатериаловИАналогов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -162,6 +169,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоИсходныеКомплектующие');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -203,6 +227,7 @@
 			style: 'position:absolute;left:101px;top:6px;width:220px;height:19px;',
 		},
 		{
+			id: 'ОстаткиМатериалов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:315px;width:706px;height:95px;',
 			height: 95,width: 706,
@@ -239,7 +264,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборМатериаловИАналогов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборМатериаловИАналогов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -256,8 +281,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОстаткиМатериалов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -276,4 +319,5 @@
 			]
 		},
 	]
+	});
 });

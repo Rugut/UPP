@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоПроводкамМеждународный.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоПроводкамМеждународный'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоПроводкамМеждународный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:452px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по проводкам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -129,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

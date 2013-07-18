@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаЗависимостейОборотовПоСтатьям'], function () 
+{
+	Ext.define('Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:656px;height:413px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка зависимостей оборотов по статьям',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -159,6 +165,7 @@
 			style: 'position:absolute;left:94px;top:129px;width:220px;height:19px;',
 		},
 		{
+			id: 'ЗависимостиОборотовПоСтатьям',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:196px;width:640px;height:160px;',
 			height: 160,width: 640,
@@ -190,7 +197,7 @@
 				},
 				{
 					text:'К-т для кол-ва',
-					width:'86',
+					width:'85',
 					dataIndex:'КоэффициентДляРасчетаКоличества',
 					flex:1,
 				},
@@ -202,7 +209,7 @@
 				},
 				{
 					text:'Зависимая номенклатура',
-					width:'97',
+					width:'96',
 					dataIndex:'ЗависимаяНоменклатура',
 					flex:1,
 				},
@@ -231,7 +238,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЗависимостейОборотовПоСтатьям/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЗависимостейОборотовПоСтатьям/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -266,6 +273,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗависимостиОборотовПоСтатьям');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -287,7 +311,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:361px;width:554px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -346,4 +371,5 @@
 			]
 		},
 	]
+	});
 });

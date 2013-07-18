@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетБаланс.ФормаОтчета2003Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетБаланс'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетБаланс.ФормаОтчета2003Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:487px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Баланс',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -235,4 +238,5 @@
 			]
 		},
 	]
+	});
 });

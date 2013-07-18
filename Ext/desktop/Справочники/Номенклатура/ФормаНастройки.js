@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Номенклатура.ФормаНастройки',
+﻿Ext.require(['Данные.Справочники.Номенклатура'], function () 
+{
+	Ext.define('Справочники.Номенклатура.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:698px;height:292px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка формы элемента Номенклатура',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:682px;height:226px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаСтраниц',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:668px;height:170px;',
 			height: 170,width: 668,
@@ -27,7 +34,7 @@
 			[
 				{
 					text:'Видимость',
-					width:'61',
+					width:'60',
 					dataIndex:'Видимость',
 					flex:1,
 				},
@@ -46,11 +53,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -64,6 +72,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСтраниц');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -72,6 +97,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаРеквизитов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:668px;height:170px;',
 			height: 170,width: 668,
@@ -91,7 +117,7 @@
 				},
 				{
 					text:'Уникальность',
-					width:'78',
+					width:'77',
 					dataIndex:'Уникальность',
 					flex:1,
 				},
@@ -103,7 +129,7 @@
 				},
 				{
 					text:'Видимость системная',
-					width:'72',
+					width:'71',
 					dataIndex:'ДоступностьСистемная',
 					flex:1,
 				},
@@ -116,11 +142,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -143,6 +170,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаРеквизитов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -151,6 +195,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаЦенНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:668px;height:170px;',
 			height: 170,width: 668,
@@ -177,11 +222,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -195,12 +241,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЦенНоменклатуры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -239,4 +303,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.УдалитьОценочныеОбязательства.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.УдалитьОценочныеОбязательства'], function () 
+{
+	Ext.define('Справочники.УдалитьОценочныеОбязательства.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:509px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: '(не используется) Оценочные обязательства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:493px;height:259px;',
 			height: 259,width: 493,
@@ -42,11 +49,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.УдалитьОценочныеОбязательства").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьОценочныеОбязательства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьОценочныеОбязательства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +71,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УдалитьОценочныеОбязательства.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УдалитьОценочныеОбязательства.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -76,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

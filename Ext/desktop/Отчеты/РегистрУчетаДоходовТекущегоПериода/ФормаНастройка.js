@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаДоходовТекущегоПериода.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаДоходовТекущегоПериода'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаДоходовТекущегоПериода.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:372px;height:352px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка  Регистр учета операций приобретения имущества, работ, услуг, прав',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -125,4 +128,5 @@
 			]
 		},
 	]
+	});
 });

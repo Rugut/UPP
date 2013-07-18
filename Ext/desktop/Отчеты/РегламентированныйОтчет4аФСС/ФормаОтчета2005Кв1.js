@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчет4аФСС.ФормаОтчета2005Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчет4аФСС'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчет4аФСС.ФормаОтчета2005Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '4а-ФСС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -300,4 +303,5 @@
 			]
 		},
 	]
+	});
 });

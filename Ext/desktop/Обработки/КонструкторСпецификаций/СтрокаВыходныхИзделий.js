@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторСпецификаций.СтрокаВыходныхИзделий',
+﻿Ext.require(['Данные.Обработки.КонструкторСпецификаций'], function () 
+{
+	Ext.define('Обработки.КонструкторСпецификаций.СтрокаВыходныхИзделий',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:335px;height:181px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Строка выходных изделий',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -138,4 +141,5 @@
 			]
 		},
 	]
+	});
 });

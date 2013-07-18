@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеЗаказовНаПроизводство.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ЗакрытиеЗаказовНаПроизводство'], function () 
+{
+	Ext.define('Документы.ЗакрытиеЗаказовНаПроизводство.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:516px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Закрытия заказов на производство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1500',
+					width:'150',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -94,9 +97,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗакрытиеЗаказовНаПроизводство.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗакрытиеЗаказовНаПроизводство.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -133,4 +136,5 @@
 			]
 		},
 	]
+	});
 });

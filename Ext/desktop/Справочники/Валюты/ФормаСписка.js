@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Валюты.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.Валюты'], function () 
+{
+	Ext.define('Справочники.Валюты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:608px;height:285px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Валюты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'1200',
+					width:'120',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Полное наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -57,7 +60,7 @@
 				},
 				{
 					text:'Параметры прописи на русском',
-					width:'2200',
+					width:'220',
 					dataIndex:'ПараметрыПрописиНаРусском',
 					flex:1,
 				},
@@ -104,9 +107,9 @@
 					{
 						var грид = Ext.getCmp('СписокВалюты');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Валюты.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Валюты.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -150,4 +153,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

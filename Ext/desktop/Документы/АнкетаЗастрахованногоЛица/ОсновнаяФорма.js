@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АнкетаЗастрахованногоЛица.ОсновнаяФорма',
+﻿Ext.require(['Данные.Документы.АнкетаЗастрахованногоЛица'], function () 
+{
+	Ext.define('Документы.АнкетаЗастрахованногоЛица.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:269px;height:184px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анкета застрахованного лица (АДВ-1)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -75,4 +78,5 @@
 			]
 		},
 	]
+	});
 });

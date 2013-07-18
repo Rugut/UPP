@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.СписокПользователейИБ.ФормаОтбора',
+﻿Ext.require(['Данные.Обработки.СписокПользователейИБ'], function () 
+{
+	Ext.define('Обработки.СписокПользователейИБ.ФормаОтбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:530px;height:319px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отбор',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('РолиСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СписокПользователейИБ.ФормаОтбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СписокПользователейИБ.ФормаОтбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -131,9 +134,9 @@
 					{
 						var грид = Ext.getCmp('ИнтерфейсыСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СписокПользователейИБ.ФормаОтбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СписокПользователейИБ.ФормаОтбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -177,9 +180,9 @@
 					{
 						var грид = Ext.getCmp('ЯзыкиСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СписокПользователейИБ.ФормаОтбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СписокПользователейИБ.ФормаОтбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -262,4 +265,5 @@
 			]
 		},
 	]
+	});
 });

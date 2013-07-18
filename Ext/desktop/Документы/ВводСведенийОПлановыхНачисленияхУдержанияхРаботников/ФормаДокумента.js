@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников'], function () 
+{
+	Ext.define('Документы.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:470px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод сведений о начислениях сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -85,6 +91,7 @@
 					items:
 					[
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:610px;height:283px;',
 			height: 283,width: 610,
@@ -110,7 +117,7 @@
 				},
 				{
 					text:'Действие',
-					width:'54',
+					width:'53',
 					dataIndex:'Действие',
 					flex:1,
 				},
@@ -152,7 +159,7 @@
 				},
 				{
 					text:'Размер 1',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель1',
 					flex:1,
 				},
@@ -182,7 +189,7 @@
 				},
 				{
 					text:'Размер 2',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель2',
 					flex:1,
 				},
@@ -212,7 +219,7 @@
 				},
 				{
 					text:'Размер 3',
-					width:'80',
+					width:'79',
 					dataIndex:'Показатель3',
 					flex:1,
 				},
@@ -331,7 +338,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхУдержанияхРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхУдержанияхРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -453,6 +460,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -461,6 +485,7 @@
 					items:
 					[
 		{
+			id: 'Удержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:610px;height:283px;',
 			height: 283,width: 610,
@@ -629,7 +654,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхУдержанияхРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводСведенийОПлановыхНачисленияхУдержанияхРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -712,6 +737,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Удержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводСведенийОПлановыхНачисленияхУдержанияхРаботников.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -735,7 +777,8 @@
 			height: 19,
 			style: 'position:absolute;left:99px;top:57px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -800,4 +843,5 @@
 			]
 		},
 	]
+	});
 });

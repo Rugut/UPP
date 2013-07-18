@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МониторЭффективности.КонструкторНастройкиПоказателя',
+﻿Ext.require(['Данные.Отчеты.МониторЭффективности'], function () 
+{
+	Ext.define('Отчеты.МониторЭффективности.КонструкторНастройкиПоказателя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:446px;height:366px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка показателя монитора эффективности',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -357,4 +360,5 @@
 			]
 		},
 	]
+	});
 });

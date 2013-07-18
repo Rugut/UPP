@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.БанковскиеСчета.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.БанковскиеСчета'], function () 
+{
+	Ext.define('Справочники.БанковскиеСчета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:608px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Банковские счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,13 +36,13 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Банк',
-					width:'2200',
+					width:'220',
 					dataIndex:'Банк',
 					flex:1,
 				},
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.БанковскиеСчета.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.БанковскиеСчета.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -108,4 +111,5 @@
 			]
 		},
 	]
+	});
 });

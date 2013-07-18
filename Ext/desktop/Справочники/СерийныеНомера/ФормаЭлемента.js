@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СерийныеНомера.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СерийныеНомера'], function () 
+{
+	Ext.define('Справочники.СерийныеНомера.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:422px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Серийные номера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -78,4 +81,5 @@
 			]
 		},
 	]
+	});
 });

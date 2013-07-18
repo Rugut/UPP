@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеОС'], function () 
+{
+	Ext.define('Документы.СписаниеОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:689px;height:413px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Списание ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -118,6 +124,7 @@
 			style: 'position:absolute;left:494px;top:33px;width:72px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:172px;width:673px;height:160px;',
 			height: 160,width: 673,
@@ -131,7 +138,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'216',
+					width:'215',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -143,13 +150,13 @@
 				},
 				{
 					text:'Списано при принятии',
-					width:'147',
+					width:'146',
 					dataIndex:'СписаноНаЗатраты',
 					flex:1,
 				},
 				{
 					text:'Списано при принятии (БУ)',
-					width:'147',
+					width:'146',
 					dataIndex:'СписаноНаЗатратыБУ',
 					flex:1,
 				},
@@ -167,13 +174,13 @@
 				},
 				{
 					text:'Амортизация',
-					width:'91',
+					width:'90',
 					dataIndex:'Амортизация',
 					flex:1,
 				},
 				{
 					text:'Аморт. за месяц',
-					width:'100',
+					width:'99',
 					dataIndex:'АмортизацияЗаМесяц',
 					flex:1,
 				},
@@ -185,7 +192,7 @@
 				},
 				{
 					text:'Ост. стоимость (БУ)',
-					width:'116',
+					width:'115',
 					dataIndex:'ОстСтоимостьБУ',
 					flex:1,
 				},
@@ -203,19 +210,19 @@
 				},
 				{
 					text:'Стоимость (НУ)',
-					width:'112',
+					width:'111',
 					dataIndex:'СтоимостьНУ',
 					flex:1,
 				},
 				{
 					text:'Ост. стоимость (НУ)',
-					width:'102',
+					width:'101',
 					dataIndex:'ОстСтоимостьНУ',
 					flex:1,
 				},
 				{
 					text:'Амортизация (НУ)',
-					width:'119',
+					width:'118',
 					dataIndex:'АмортизацияНУ',
 					flex:1,
 				},
@@ -238,7 +245,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -296,6 +303,23 @@
 						name:'СуммаКапитальныхВложенийВключаемыхВРасходыНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СписаниеОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СписаниеОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -418,7 +442,8 @@
 			height: 19,
 			style: 'position:absolute;left:416px;top:105px;width:265px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -497,4 +522,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ВизитныеКарточкиРаботников.Форма',
+﻿Ext.require(['Данные.Отчеты.ВизитныеКарточкиРаботников'], function () 
+{
+	Ext.define('Отчеты.ВизитныеКарточкиРаботников.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:720px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Визитные карточки сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -167,4 +170,5 @@
 			]
 		},
 	]
+	});
 });

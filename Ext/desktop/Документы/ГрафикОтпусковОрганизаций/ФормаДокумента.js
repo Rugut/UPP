@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ГрафикОтпусковОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ГрафикОтпусковОрганизаций'], function () 
+{
+	Ext.define('Документы.ГрафикОтпусковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:430px;height:425px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'График отпусков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -134,7 +137,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -195,9 +198,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрафикОтпусковОрганизаций.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрафикОтпусковОрганизаций.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -264,4 +267,5 @@
 			]
 		},
 	]
+	});
 });

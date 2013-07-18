@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрафикЗаказов.ФормаОтображениеИзменений',
+﻿Ext.require(['Данные.Обработки.ГрафикЗаказов'], function () 
+{
+	Ext.define('Обработки.ГрафикЗаказов.ФормаОтображениеИзменений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:747px;height:335px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Список изменений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаОтображенияИзменений',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:48px;width:731px;height:254px;',
 			height: 254,width: 731,
@@ -23,19 +30,19 @@
 				},
 				{
 					text:'Заказ',
-					width:'21',
+					width:'20',
 					dataIndex:'Заказ',
 					flex:1,
 				},
 				{
 					text:'Заказ',
-					width:'368',
+					width:'367',
 					dataIndex:'ПредставлениеЗаказа',
 					flex:1,
 				},
 				{
 					text:'Дата запуска',
-					width:'65',
+					width:'64',
 					dataIndex:'ДатыЗапуска',
 					flex:1,
 				},
@@ -76,7 +83,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,6 +115,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаОтображенияИзменений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикЗаказов.ФормаОтображениеИзмененийСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаОтображениеИзмененийСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -115,7 +139,8 @@
 			text: '',
 			style: 'position:absolute;left:8px;top:5px;width:731px;height:38px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -139,4 +164,5 @@
 			]
 		},
 	]
+	});
 });

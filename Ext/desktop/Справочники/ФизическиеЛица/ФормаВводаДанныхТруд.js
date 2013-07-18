@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ФизическиеЛица.ФормаВводаДанныхТруд',
+﻿Ext.require(['Данные.Справочники.ФизическиеЛица'], function () 
+{
+	Ext.define('Справочники.ФизическиеЛица.ФормаВводаДанныхТруд',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:371px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Физические лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('ТрудоваяДеятельность');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -193,9 +196,9 @@
 					{
 						var грид = Ext.getCmp('Стажи');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -248,4 +251,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВнешниеОбработки.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ВнешниеОбработки'], function () 
+{
+	Ext.define('Справочники.ВнешниеОбработки.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:135px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Внешние обработки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -98,4 +101,5 @@
 			]
 		},
 	]
+	});
 });

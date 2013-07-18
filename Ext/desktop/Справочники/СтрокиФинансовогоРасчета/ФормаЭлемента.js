@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтрокиФинансовогоРасчета.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтрокиФинансовогоРасчета'], function () 
+{
+	Ext.define('Справочники.СтрокиФинансовогоРасчета.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:161px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Строки финансового расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -123,4 +126,5 @@
 			]
 		},
 	]
+	});
 });

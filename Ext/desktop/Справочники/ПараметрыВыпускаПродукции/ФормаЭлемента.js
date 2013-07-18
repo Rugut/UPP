@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПараметрыВыпускаПродукции'], function () 
+{
+	Ext.define('Справочники.ПараметрыВыпускаПродукции.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:281px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Параметры выпуска продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -73,6 +79,7 @@
 			style: 'position:absolute;left:110px;top:229px;width:382px;height:19px;',
 		},
 		{
+			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:120px;width:484px;height:104px;',
 			height: 104,width: 484,
@@ -99,11 +106,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПараметрыВыпускаПродукции").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПараметрыВыпускаПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПараметрыВыпускаПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -117,13 +125,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Параметры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПараметрыВыпускаПродукции.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПараметрыВыпускаПродукции.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Параметры',
 			style: 'position:absolute;left:8px;top:80px;width:484px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -165,4 +191,5 @@
 			]
 		},
 	]
+	});
 });

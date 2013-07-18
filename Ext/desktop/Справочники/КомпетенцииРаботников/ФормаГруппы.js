@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КомпетенцииРаботников.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.КомпетенцииРаботников'], function () 
+{
+	Ext.define('Справочники.КомпетенцииРаботников.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа компетенций сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -79,4 +82,5 @@
 			]
 		},
 	]
+	});
 });

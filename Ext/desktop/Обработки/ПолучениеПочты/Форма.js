@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПолучениеПочты.Форма',
+﻿Ext.require(['Данные.Обработки.ПолучениеПочты'], function () 
+{
+	Ext.define('Обработки.ПолучениеПочты.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:636px;height:446px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Получение почты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Отправитель',
-					width:'1800',
+					width:'180',
 					dataIndex:'Отправитель',
 					flex:1,
 				},
 				{
 					text:'Тема',
-					width:'2200',
+					width:'220',
 					dataIndex:'Тема',
 					flex:1,
 				},
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаПисем');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПолучениеПочты.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПолучениеПочты.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -189,4 +192,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТранспортныеУпаковки.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ТранспортныеУпаковки'], function () 
+{
+	Ext.define('Справочники.ТранспортныеУпаковки.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:612px;height:340px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Транспортные упаковки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:596px;height:299px;',
 			height: 299,width: 596,
@@ -35,7 +42,7 @@
 				},
 				{
 					text:'Коэффициент',
-					width:'79',
+					width:'78',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
@@ -48,11 +55,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТранспортныеУпаковки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +80,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТранспортныеУпаковки.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТранспортныеУпаковки.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -85,4 +111,5 @@
 			]
 		},
 	]
+	});
 });

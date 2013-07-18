@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализРаспределенияПроизводственныхЗатрат.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализРаспределенияПроизводственныхЗатрат'], function () 
+{
+	Ext.define('Отчеты.АнализРаспределенияПроизводственныхЗатрат.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -219,4 +222,5 @@
 			]
 		},
 	]
+	});
 });

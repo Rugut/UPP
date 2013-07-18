@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСостоянияНалоговогоУчетаПоНалогуНаПрибыль.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСостоянияНалоговогоУчетаПоНалогуНаПрибыль'], function () 
+{
+	Ext.define('Отчеты.АнализСостоянияНалоговогоУчетаПоНалогуНаПрибыль.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:863px;height:507px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ состояния налогового учета по налогу на прибыль',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -134,4 +137,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализОборачиваемостиТоваров.ГлавнаяФорма',
+﻿Ext.require(['Данные.Отчеты.АнализОборачиваемостиТоваров'], function () 
+{
+	Ext.define('Отчеты.АнализОборачиваемостиТоваров.ГлавнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:568px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ оборачиваемости товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -199,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

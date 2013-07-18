@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПакетныйВводБюджетныхОпераций.Форма',
+﻿Ext.require(['Данные.Обработки.ПакетныйВводБюджетныхОпераций'], function () 
+{
+	Ext.define('Обработки.ПакетныйВводБюджетныхОпераций.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Пакетный ввод бюджетных операций',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -36,6 +42,7 @@
 					items:
 					[
 		{
+			id: 'РеквизитыОпераций',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:750px;height:154px;',
 			height: 154,width: 750,
@@ -132,7 +139,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -179,6 +186,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РеквизитыОпераций');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -186,6 +210,7 @@
 			style: 'position:absolute;left:6px;top:189px;width:750px;height:16px;',
 		},
 		{
+			id: 'ТабЗависимыеОбороты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:210px;width:750px;height:124px;',
 			height: 124,width: 750,
@@ -198,10 +223,27 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабЗависимыеОбороты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -393,6 +435,7 @@
 					items:
 					[
 		{
+			id: 'СписокДокументовОперации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:750px;height:304px;',
 			height: 304,width: 750,
@@ -412,7 +455,7 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'183',
+					width:'182',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
@@ -435,7 +478,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -455,12 +498,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокДокументовОперации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -490,4 +551,5 @@
 			]
 		},
 	]
+	});
 });

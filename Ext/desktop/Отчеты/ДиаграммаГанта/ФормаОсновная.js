@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ДиаграммаГанта.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ДиаграммаГанта'], function () 
+{
+	Ext.define('Отчеты.ДиаграммаГанта.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:586px;height:457px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -273,4 +276,5 @@
 			]
 		},
 	]
+	});
 });

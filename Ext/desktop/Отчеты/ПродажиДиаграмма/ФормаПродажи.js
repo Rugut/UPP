@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПродажиДиаграмма.ФормаПродажи',
+﻿Ext.require(['Данные.Отчеты.ПродажиДиаграмма'], function () 
+{
+	Ext.define('Отчеты.ПродажиДиаграмма.ФормаПродажи',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -205,4 +208,5 @@
 			]
 		},
 	]
+	});
 });

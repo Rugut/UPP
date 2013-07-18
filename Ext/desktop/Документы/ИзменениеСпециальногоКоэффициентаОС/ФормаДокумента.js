@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСпециальногоКоэффициентаОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеСпециальногоКоэффициентаОС'], function () 
+{
+	Ext.define('Документы.ИзменениеСпециальногоКоэффициентаОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:476px;height:417px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение специального коэффициента для расчета амортизации ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -92,6 +98,7 @@
 			style: 'position:absolute;left:99px;top:55px;width:220px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:118px;width:460px;height:220px;',
 			height: 220,width: 460,
@@ -128,7 +135,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,13 +152,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеСпециальногоКоэффициентаОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеСпециальногоКоэффициентаОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Основные средства',
 			style: 'position:absolute;left:8px;top:78px;width:460px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -212,4 +237,5 @@
 			]
 		},
 	]
+	});
 });

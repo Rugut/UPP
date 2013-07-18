@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РаспределениеПрочихЗатрат.ФормаНастройки',
+﻿Ext.require(['Данные.Документы.РаспределениеПрочихЗатрат'], function () 
+{
+	Ext.define('Документы.РаспределениеПрочихЗатрат.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:74px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка документа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,4 +48,5 @@
 			]
 		},
 	]
+	});
 });

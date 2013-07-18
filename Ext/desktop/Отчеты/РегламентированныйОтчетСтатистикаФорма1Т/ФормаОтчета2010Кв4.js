@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма1Т.ФормаОтчета2010Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФорма1Т'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма1Т.ФормаОтчета2010Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма 1-торги',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -139,4 +142,5 @@
 			]
 		},
 	]
+	});
 });

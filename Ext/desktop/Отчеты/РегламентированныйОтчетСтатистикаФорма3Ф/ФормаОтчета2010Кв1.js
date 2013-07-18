@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма3Ф.ФормаОтчета2010Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетСтатистикаФорма3Ф'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетСтатистикаФорма3Ф.ФормаОтчета2010Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:716px;height:395px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статистика: Форма 3-Ф',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -152,4 +155,5 @@
 			]
 		},
 	]
+	});
 });

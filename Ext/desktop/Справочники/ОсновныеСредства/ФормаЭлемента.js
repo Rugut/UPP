@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновныеСредства.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОсновныеСредства'], function () 
+{
+	Ext.define('Справочники.ОсновныеСредства.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:764px;height:495px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Основные средства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -1045,6 +1051,7 @@
 			style: 'position:absolute;left:264px;top:27px;width:60px;height:19px;text-align:left;',
 		},
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:733px;height:259px;',
 			height: 259,width: 733,
@@ -1071,11 +1078,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1088,6 +1096,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОсновныеСредства.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1127,6 +1152,7 @@
 			style: 'position:absolute;left:350px;top:27px;width:140px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:733px;height:259px;',
 			height: 259,width: 733,
@@ -1153,11 +1179,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1170,6 +1197,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОсновныеСредства.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1321,7 +1365,8 @@
 			text: 'Дата сведений:',
 			style: 'position:absolute;left:8px;top:81px;width:84px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1347,4 +1392,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыОплатЧекаККМ.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ВидыОплатЧекаККМ'], function () 
+{
+	Ext.define('Справочники.ВидыОплатЧекаККМ.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:402px;height:85px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Виды оплат чека ККМ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

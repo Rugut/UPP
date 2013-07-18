@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВложенияЭлектронныхПисем.ФормаСохраненияФайлов',
+﻿Ext.require(['Данные.Справочники.ВложенияЭлектронныхПисем'], function () 
+{
+	Ext.define('Справочники.ВложенияЭлектронныхПисем.ФормаСохраненияФайлов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:512px;height:100px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сохранить файлы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -60,4 +63,5 @@
 			]
 		},
 	]
+	});
 });

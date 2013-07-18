@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОсновныеСредства.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.ОсновныеСредства'], function () 
+{
+	Ext.define('Справочники.ОсновныеСредства.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:396px;height:108px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Основные средства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

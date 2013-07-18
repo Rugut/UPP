@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НачислениеПоБольничномуЛисту'], function () 
+{
+	Ext.define('Документы.НачислениеПоБольничномуЛисту.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:945px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Начисление по больничному листу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -674,6 +680,7 @@
 			style: 'position:absolute;left:6px;top:305px;width:917px;height:29px;',
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:105px;width:917px;height:194px;',
 			height: 194,width: 917,
@@ -920,7 +927,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1041,6 +1048,23 @@
 						name:'ЧислоМесяцев',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1231,6 +1255,7 @@
 					items:
 					[
 		{
+			id: 'РасчетСреднего',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:75px;width:917px;height:214px;',
 			height: 214,width: 917,
@@ -1303,7 +1328,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1337,6 +1362,23 @@
 						name:'БазовыйПериодКонец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1426,6 +1468,7 @@
 			style: 'position:absolute;left:183px;top:8px;width:64px;height:19px;',
 		},
 		{
+			id: 'РасчетСреднего2011',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:74px;width:917px;height:215px;',
 			height: 215,width: 917,
@@ -1468,7 +1511,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1487,6 +1530,23 @@
 						name:'Страхователь',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего2011');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1531,6 +1591,7 @@
 			style: 'position:absolute;left:183px;top:165px;width:64px;height:19px;',
 		},
 		{
+			id: 'РасчетСреднего2011_ПП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:230px;width:917px;height:59px;',
 			height: 59,width: 917,
@@ -1567,7 +1628,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1583,6 +1644,23 @@
 						name:'Страхователь',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего2011_ПП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1622,6 +1700,7 @@
 			]
 		},
 		{
+			id: 'РасчетСреднего2010_ПП',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:67px;width:917px;height:87px;',
 			height: 87,width: 917,
@@ -1694,7 +1773,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1728,6 +1807,23 @@
 						name:'БазовыйПериодКонец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасчетСреднего2010_ПП');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2396,6 +2492,7 @@
 			style: 'position:absolute;left:6px;top:218px;width:355px;height:19px;',
 		},
 		{
+			id: 'УходЗаБольнымЧленомСемьи',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:242px;width:917px;height:91px;',
 			height: 91,width: 917,
@@ -2433,7 +2530,7 @@
 				},
 				{
 					text:'ФИО',
-					width:'271',
+					width:'270',
 					dataIndex:'ФИО',
 					flex:1,
 				},
@@ -2444,7 +2541,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2466,6 +2563,23 @@
 						name:'ФИО',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УходЗаБольнымЧленомСемьи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2767,6 +2881,7 @@
 			style: 'position:absolute;left:6px;top:162px;width:228px;height:19px;',
 		},
 		{
+			id: 'ОсвобождениеОтРаботыВЛисткеНетрудоспособности',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:184px;width:917px;height:121px;',
 			height: 121,width: 917,
@@ -2827,7 +2942,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеПоБольничномуЛисту/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2855,6 +2970,23 @@
 						name:'ИдентификационныйНомерВрачаПредседателяВК',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсвобождениеОтРаботыВЛисткеНетрудоспособности');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2983,7 +3115,8 @@
 			text: '',
 			style: 'position:absolute;left:382px;top:469px;width:223px;height:42px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -3023,4 +3156,5 @@
 			]
 		},
 	]
+	});
 });

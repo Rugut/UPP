@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОбесценениеАктивовМеждународный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОбесценениеАктивовМеждународный'], function () 
+{
+	Ext.define('Документы.ОбесценениеАктивовМеждународный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:433px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -82,13 +85,13 @@
 				},
 				{
 					text:'Счет учета',
-					width:'1600',
+					width:'160',
 					dataIndex:'СчетУчета',
 					flex:1,
 				},
 				{
 					text:'Статья прочих расходов',
-					width:'1600',
+					width:'160',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
@@ -100,19 +103,19 @@
 				},
 				{
 					text:'Актив',
-					width:'1600',
+					width:'160',
 					dataIndex:'Объект',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'1600',
+					width:'160',
 					dataIndex:'Субконто2',
 					flex:1,
 				},
 				{
 					text:'',
-					width:'1600',
+					width:'160',
 					dataIndex:'Субконто3',
 					flex:1,
 				},
@@ -167,9 +170,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОбесценениеАктивовМеждународный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОбесценениеАктивовМеждународный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -284,4 +287,5 @@
 			]
 		},
 	]
+	});
 });

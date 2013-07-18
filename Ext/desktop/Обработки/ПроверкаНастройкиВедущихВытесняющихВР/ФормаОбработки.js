@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработки',
+﻿Ext.require(['Данные.Обработки.ПроверкаНастройкиВедущихВытесняющихВР'], function () 
+{
+	Ext.define('Обработки.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:638px;height:376px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Проверка настройки списков ведущих и вытесняющих видов расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:9px;width:622px;height:327px;',
@@ -59,6 +65,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаЦиклическихСсылок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:40px;width:316px;height:145px;',
 			height: 145,width: 316,
@@ -72,7 +79,7 @@
 				},
 				{
 					text:'Вид расчета удалить',
-					width:'150',
+					width:'149',
 					dataIndex:'ВидРасчетаУдалить',
 					flex:1,
 				},
@@ -83,7 +90,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -93,6 +100,23 @@
 						name:'ВидРасчетаУдалить',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЦиклическихСсылок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -167,6 +191,7 @@
 			style: 'position:absolute;left:6px;top:33px;width:610px;height:7px;',
 		},
 		{
+			id: 'СписокПлохихВР',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:43px;width:308px;height:130px;',
 			height: 130,width: 308,
@@ -185,13 +210,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПлохихВР');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -218,6 +260,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:597px;height:15px;',
 		},
 		{
+			id: 'СписокВРУдалить',
 			xtype: 'grid',
 			style: 'position:absolute;left:5px;top:43px;width:301px;height:91px;',
 			height: 91,width: 301,
@@ -236,7 +279,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -244,8 +287,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокВРУдалить');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СписокВРДобавить',
 			xtype: 'grid',
 			style: 'position:absolute;left:314px;top:43px;width:289px;height:91px;',
 			height: 91,width: 289,
@@ -264,13 +325,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаНастройкиВедущихВытесняющихВР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокВРДобавить');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -347,8 +425,10 @@
 			text: 'Отмена',
 			style: 'position:absolute;left:495px;top:336px;width:130px;height:32px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

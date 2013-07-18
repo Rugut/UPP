@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеЗаявокНаРасходованиеСредств.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗакрытиеЗаявокНаРасходованиеСредств'], function () 
+{
+	Ext.define('Документы.ЗакрытиеЗаявокНаРасходованиеСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:433px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Закрытие заявок на расходование средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -59,6 +65,7 @@
 			style: 'position:absolute;left:98px;top:354px;width:220px;height:19px;',
 		},
 		{
+			id: 'ЗаявкиНаРасходованиеСредств',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:166px;width:656px;height:180px;',
 			height: 180,width: 656,
@@ -90,7 +97,7 @@
 				},
 				{
 					text:'Валюта остатка',
-					width:'98',
+					width:'97',
 					dataIndex:'ВалютаЗаявка',
 					flex:1,
 				},
@@ -102,7 +109,7 @@
 				},
 				{
 					text:'Остаток размещение',
-					width:'108',
+					width:'107',
 					dataIndex:'ОстатокРазмещение',
 					flex:1,
 				},
@@ -119,7 +126,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаявокНаРасходованиеСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеЗаявокНаРасходованиеСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -147,6 +154,23 @@
 						name:'Ответственный',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаявкиНаРасходованиеСредств');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗакрытиеЗаявокНаРасходованиеСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗакрытиеЗаявокНаРасходованиеСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -333,7 +357,8 @@
 			text: '...',
 			style: 'position:absolute;left:298px;top:78px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -345,4 +370,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеМатериаловИзЭксплуатации.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеМатериаловИзЭксплуатации'], function () 
+{
+	Ext.define('Документы.СписаниеМатериаловИзЭксплуатации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:366px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Списание материалов из эксплуатации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -115,6 +121,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:121px;',
 			height: 121,width: 622,
@@ -164,7 +171,7 @@
 				},
 				{
 					text:'Назначение использования',
-					width:'148',
+					width:'147',
 					dataIndex:'НазначениеИспользования',
 					flex:1,
 				},
@@ -247,7 +254,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеМатериаловИзЭксплуатации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СписаниеМатериаловИзЭксплуатации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -311,6 +318,23 @@
 						name:'ДокументПередачи',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СписаниеМатериаловИзЭксплуатации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СписаниеМатериаловИзЭксплуатации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -676,8 +700,10 @@
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:573px;top:33px;width:71px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

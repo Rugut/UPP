@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НоменклатурныеУзлы.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.НоменклатурныеУзлы'], function () 
+{
+	Ext.define('Справочники.НоменклатурныеУзлы.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:528px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Номенклатурные узлы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -86,9 +89,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НоменклатурныеУзлы.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НоменклатурныеУзлы.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -112,4 +115,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеРасходовБудущихПериодов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеРасходовБудущихПериодов'], function () 
+{
+	Ext.define('Документы.СписаниеРасходовБудущихПериодов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:320px;height:226px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Списание расходов будущих периодов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -176,4 +179,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

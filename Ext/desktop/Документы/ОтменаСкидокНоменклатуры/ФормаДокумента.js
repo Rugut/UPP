@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтменаСкидокНоменклатуры'], function () 
+{
+	Ext.define('Документы.ОтменаСкидокНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:739px;height:321px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отмена скидок номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -42,6 +48,7 @@
 			style: 'position:absolute;left:204px;top:33px;width:163px;height:19px;',
 		},
 		{
+			id: 'Документы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:86px;width:722px;height:152px;',
 			height: 152,width: 722,
@@ -55,7 +62,7 @@
 				},
 				{
 					text:'Установка скидок номенклатуры',
-					width:'306',
+					width:'305',
 					dataIndex:'УстановкаСкидокНоменклатуры',
 					flex:1,
 				},
@@ -97,7 +104,7 @@
 				},
 				{
 					text:'Тип скидки',
-					width:'138',
+					width:'137',
 					dataIndex:'ТипСкидкиНаценки',
 					flex:1,
 				},
@@ -108,7 +115,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтменаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтменаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -139,6 +146,23 @@
 						name:'ТипСкидкиНаценки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Документы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтменаСкидокНоменклатуры.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтменаСкидокНоменклатуры.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -173,7 +197,8 @@
 			height: 19,
 			style: 'position:absolute;left:95px;top:269px;width:636px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -232,4 +257,5 @@
 			]
 		},
 	]
+	});
 });

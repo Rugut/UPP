@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПодтверждениеНулевойСтавкиНДС.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ПодтверждениеНулевойСтавкиНДС'], function () 
+{
+	Ext.define('Документы.ПодтверждениеНулевойСтавкиНДС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Подтверждения нулевой ставки НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -76,9 +79,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПодтверждениеНулевойСтавкиНДС.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПодтверждениеНулевойСтавкиНДС.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -118,4 +121,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПрочихЗатрат.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.ПодборПрочихЗатрат'], function () 
+{
+	Ext.define('Обработки.ПодборПрочихЗатрат.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:504px;height:450px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обработка  Подбор прочих затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДеревоСтатейЗатрат',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:81px;width:489px;height:156px;',
 			height: 156,width: 489,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Статьи затрат',
-					width:'567',
+					width:'566',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -28,7 +35,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -36,8 +43,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДеревоСтатейЗатрат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СпрСтатьиЗатрат',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:245px;width:489px;height:197px;',
 			height: 197,width: 489,
@@ -80,7 +105,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,6 +124,23 @@
 						name:'ОстатокРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СпрСтатьиЗатрат');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -173,8 +215,10 @@
 			boxLabel: 'Регл. учета',
 			style: 'position:absolute;left:202px;top:56px;width:79px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

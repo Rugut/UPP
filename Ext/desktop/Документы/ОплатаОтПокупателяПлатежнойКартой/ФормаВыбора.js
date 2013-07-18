@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОплатаОтПокупателяПлатежнойКартой.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ОплатаОтПокупателяПлатежнойКартой'], function () 
+{
+	Ext.define('Документы.ОплатаОтПокупателяПлатежнойКартой.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Оплаты от покупателей платежными картами',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:380px;',
 			height: 380,width: 764,
@@ -107,13 +114,13 @@
 				},
 				{
 					text:'Способ заполнения',
-					width:'148',
+					width:'147',
 					dataIndex:'СпособЗаполнения',
 					flex:1,
 				},
 				{
 					text:'Номер чека ККМ',
-					width:'120',
+					width:'119',
 					dataIndex:'НомерЧекаККМ',
 					flex:1,
 				},
@@ -166,7 +173,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаОтПокупателяПлатежнойКартой/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаОтПокупателяПлатежнойКартой/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -243,8 +250,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОплатаОтПокупателяПлатежнойКартой.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОплатаОтПокупателяПлатежнойКартой.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -280,4 +305,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.Планирование.Форма',
+﻿Ext.require(['Данные.Обработки.Планирование'], function () 
+{
+	Ext.define('Обработки.Планирование.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Планирование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -117,9 +120,9 @@
 					{
 						var грид = Ext.getCmp('ДеревоПланов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -262,9 +265,9 @@
 					{
 						var грид = Ext.getCmp('СоставПлана');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -423,9 +426,9 @@
 					{
 						var грид = Ext.getCmp('Потребности');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -613,9 +616,9 @@
 					{
 						var грид = Ext.getCmp('ПроизводственнаяПрограмма');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -722,4 +725,5 @@
 			]
 		},
 	]
+	});
 });

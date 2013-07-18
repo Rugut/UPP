@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеестрСчетов.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.РеестрСчетов'], function () 
+{
+	Ext.define('Документы.РеестрСчетов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Реестры счетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:584px;height:259px;',
 			height: 259,width: 584,
@@ -88,7 +95,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -126,8 +133,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеестрСчетов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеестрСчетов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -143,4 +168,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПрогрессОнлайнПроверки',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПрогрессОнлайнПроверки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:418px;height:54px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Подождите, пожалуйста...',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -23,4 +26,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

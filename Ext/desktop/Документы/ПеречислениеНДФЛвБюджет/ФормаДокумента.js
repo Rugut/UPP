@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПеречислениеНДФЛвБюджет.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПеречислениеНДФЛвБюджет'], function () 
+{
+	Ext.define('Документы.ПеречислениеНДФЛвБюджет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:683px;height:480px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Перечисление НДФЛ в бюджет РФ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,7 +112,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'2200',
+					width:'220',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -149,9 +152,9 @@
 					{
 						var грид = Ext.getCmp('СотрудникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПеречислениеНДФЛвБюджет.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПеречислениеНДФЛвБюджет.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -342,4 +345,5 @@
 			]
 		},
 	]
+	});
 });

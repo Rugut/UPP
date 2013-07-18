@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СпособыОтраженияЗарплатыВРеглУчете'], function () 
+{
+	Ext.define('Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:748px;height:321px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Способы отражения зарплаты в регламентированном учете',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:183px;top:33px;width:556px;height:280px;',
 			height: 280,width: 556,
@@ -107,13 +114,13 @@
 				},
 				{
 					text:'Счет Кт НУ',
-					width:'78',
+					width:'77',
 					dataIndex:'СчетКтНУ',
 					flex:1,
 				},
 				{
 					text:'Субконто Кт НУ ',
-					width:'91',
+					width:'90',
 					dataIndex:'СубконтоКтНУ1',
 					flex:1,
 				},
@@ -138,11 +145,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпособыОтраженияЗарплатыВРеглУчете").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияЗарплатыВРеглУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияЗарплатыВРеглУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -207,8 +215,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:169px;height:280px;',
 			height: 280,width: 169,
@@ -223,11 +249,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпособыОтраженияЗарплатыВРеглУчете").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияЗарплатыВРеглУчете/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпособыОтраженияЗарплатыВРеглУчете/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -235,8 +262,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпособыОтраженияЗарплатыВРеглУчете.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -248,4 +293,5 @@
 			]
 		},
 	]
+	});
 });

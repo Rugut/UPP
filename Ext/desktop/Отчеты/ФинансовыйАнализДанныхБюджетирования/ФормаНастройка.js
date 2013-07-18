@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.ФинансовыйАнализДанныхБюджетирования'], function () 
+{
+	Ext.define('Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:356px;height:263px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет  Финансовый анализ данных бюджетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -216,4 +219,5 @@
 			]
 		},
 	]
+	});
 });

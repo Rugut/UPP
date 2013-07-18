@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РабочиеЦентры.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.РабочиеЦентры'], function () 
+{
+	Ext.define('Справочники.РабочиеЦентры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:439px;height:318px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Рабочие центры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -116,9 +119,9 @@
 					{
 						var грид = Ext.getCmp('ПодчиненныеРабочиеЦентры');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочиеЦентры.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочиеЦентры.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -182,4 +185,5 @@
 			]
 		},
 	]
+	});
 });

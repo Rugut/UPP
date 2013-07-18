@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.Форма',
+﻿Ext.require(['Данные.Обработки.ЗагрузкаДанныхИзТабличногоДокумента'], function () 
+{
+	Ext.define('Обработки.ЗагрузкаДанныхИзТабличногоДокумента.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:683px;height:573px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Загрузка данных из табличного документа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:56px;width:667px;height:466px;',
@@ -26,6 +32,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаЗагружаемыхРеквизитов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:54px;width:653px;height:386px;',
 			height: 386,width: 653,
@@ -45,7 +52,7 @@
 				},
 				{
 					text:'Имя реквизита',
-					width:'93',
+					width:'92',
 					dataIndex:'ИмяРеквизита',
 					flex:1,
 				},
@@ -57,7 +64,7 @@
 				},
 				{
 					text:'Поле поиска',
-					width:'21',
+					width:'20',
 					dataIndex:'ПолеПоиска',
 					flex:1,
 				},
@@ -69,7 +76,7 @@
 				},
 				{
 					text:'Описание типов',
-					width:'134',
+					width:'133',
 					dataIndex:'ОписаниеТипов',
 					flex:1,
 				},
@@ -81,19 +88,19 @@
 				},
 				{
 					text:'№ Колонки табличного документа',
-					width:'52',
+					width:'51',
 					dataIndex:'НомерКолонки',
 					flex:1,
 				},
 				{
 					text:'Значение по умолчанию',
-					width:'78',
+					width:'77',
 					dataIndex:'ЗначениеПоУмолчанию',
 					flex:1,
 				},
 				{
 					text:'Выражение',
-					width:'106',
+					width:'105',
 					dataIndex:'Выражение',
 					flex:1,
 				},
@@ -117,7 +124,7 @@
 				},
 				{
 					text:'Элемент связи по типу',
-					width:'106',
+					width:'105',
 					dataIndex:'ЭлементСвязиПоТипу',
 					flex:1,
 				},
@@ -134,7 +141,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхИзТабличногоДокумента/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗагрузкаДанныхИзТабличногоДокумента/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -186,6 +193,23 @@
 						name:'ШиринаКолонки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЗагружаемыхРеквизитов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -303,7 +327,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:8px;width:247px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -318,4 +343,5 @@
 			]
 		},
 	]
+	});
 });

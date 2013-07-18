@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполненияПлан',
+﻿Ext.require(['Данные.Обработки.ПодборПараметровРасшифровкиПлатежа'], function () 
+{
+	Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ПараметрыЗаполненияПлан',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:314px;height:237px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка заполнения расшифровки платежа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -131,4 +134,5 @@
 			]
 		},
 	]
+	});
 });

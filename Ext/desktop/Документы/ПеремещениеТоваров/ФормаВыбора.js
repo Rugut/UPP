@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПеремещениеТоваров.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПеремещениеТоваров'], function () 
+{
+	Ext.define('Документы.ПеремещениеТоваров.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:560px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Перемещения товаров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Склад отправитель',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладОтправитель',
 					flex:1,
 				},
 				{
 					text:'Склад получатель',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладПолучатель',
 					flex:1,
 				},
@@ -75,7 +78,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -139,9 +142,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПеремещениеТоваров.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПеремещениеТоваров.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -185,4 +188,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.Обозреватель.Форма',
+﻿Ext.require(['Данные.Обработки.Обозреватель'], function () 
+{
+	Ext.define('Обработки.Обозреватель.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Web-страница конфигурации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -43,4 +46,5 @@
 			]
 		},
 	]
+	});
 });

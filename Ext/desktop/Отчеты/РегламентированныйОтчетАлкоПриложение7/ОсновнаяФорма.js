@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетАлкоПриложение7'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетАлкоПриложение7.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:310px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Закупки спирта и алкогольной продукции',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -111,4 +114,5 @@
 			]
 		},
 	]
+	});
 });

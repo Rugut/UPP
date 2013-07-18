@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РаспределениеНДСКосвенныхРасходов.Отчет',
+﻿Ext.require(['Данные.Отчеты.РаспределениеНДСКосвенныхРасходов'], function () 
+{
+	Ext.define('Отчеты.РаспределениеНДСКосвенныхРасходов.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по распределению НДС с косвенных расходов по вариантам реализации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -147,4 +150,5 @@
 			]
 		},
 	]
+	});
 });

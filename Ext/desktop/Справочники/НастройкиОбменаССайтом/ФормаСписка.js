@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиОбменаССайтом.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.НастройкиОбменаССайтом'], function () 
+{
+	Ext.define('Справочники.НастройкиОбменаССайтом.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:724px;height:300px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Справочник Настройки обмена с WEB - сайтом',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:708px;height:259px;',
 			height: 259,width: 708,
@@ -53,7 +60,7 @@
 				},
 				{
 					text:'Комментарий',
-					width:'101',
+					width:'100',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -90,11 +97,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаССайтом").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаССайтом/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаССайтом/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +143,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -172,4 +198,5 @@
 			]
 		},
 	]
+	});
 });

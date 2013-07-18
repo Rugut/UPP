@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеГрафиковАмортизацииОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеГрафиковАмортизацииОС'], function () 
+{
+	Ext.define('Документы.ИзменениеГрафиковАмортизацииОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:344px;height:442px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение графиков амортизации ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -85,6 +91,7 @@
 			style: 'position:absolute;left:94px;top:367px;width:242px;height:19px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:215px;width:328px;height:147px;',
 			height: 147,width: 328,
@@ -98,7 +105,7 @@
 				},
 				{
 					text:'Инв. №',
-					width:'70',
+					width:'69',
 					dataIndex:'ИнвентарныйНомер',
 					flex:1,
 				},
@@ -115,7 +122,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеГрафиковАмортизацииОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеГрафиковАмортизацииОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -128,6 +135,23 @@
 						name:'ОсновноеСредство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеГрафиковАмортизацииОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеГрафиковАмортизацииОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -206,7 +230,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:150px;width:242px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -275,4 +300,5 @@
 			]
 		},
 	]
+	});
 });

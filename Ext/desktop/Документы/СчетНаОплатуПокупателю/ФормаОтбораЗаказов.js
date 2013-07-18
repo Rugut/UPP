@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СчетНаОплатуПокупателю.ФормаОтбораЗаказов',
+﻿Ext.require(['Данные.Документы.СчетНаОплатуПокупателю'], function () 
+{
+	Ext.define('Документы.СчетНаОплатуПокупателю.ФормаОтбораЗаказов',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:415px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отобрать заказы покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:41px;width:644px;height:167px;',
@@ -120,6 +126,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:630px;height:114px;',
 			height: 114,width: 630,
@@ -168,7 +175,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -190,6 +197,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -294,6 +318,7 @@
 			]
 		},
 		{
+			id: 'ТабличноеПолеЗаказы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:250px;width:644px;height:131px;',
 			height: 131,width: 644,
@@ -474,7 +499,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -563,6 +588,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗаказы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -611,6 +653,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
 			height: 221,width: 630,
@@ -636,7 +679,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'80',
+					width:'79',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -695,7 +738,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -736,6 +779,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -744,6 +804,7 @@
 					items:
 					[
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
 			height: 221,width: 630,
@@ -822,7 +883,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -860,6 +921,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -868,6 +946,7 @@
 					items:
 					[
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:630px;height:221px;',
 			height: 221,width: 630,
@@ -940,7 +1019,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетНаОплатуПокупателю/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -975,6 +1054,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СчетНаОплатуПокупателю.ФормаОтбораЗаказовСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -1000,7 +1096,8 @@
 			boxLabel: 'Услуги',
 			style: 'position:absolute;left:23px;top:61px;width:102px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1022,4 +1119,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнкассовоеПоручениеПереданное.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИнкассовоеПоручениеПереданное'], function () 
+{
+	Ext.define('Документы.ИнкассовоеПоручениеПереданное.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:481px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Инкассовое поручение переданное',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -396,6 +402,7 @@
 					items:
 					[
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:627px;height:149px;',
 			height: 149,width: 627,
@@ -433,7 +440,7 @@
 				},
 				{
 					text:'Курс взаиморасчетов',
-					width:'79',
+					width:'78',
 					dataIndex:'КурсВзаиморасчетов',
 					flex:1,
 				},
@@ -445,7 +452,7 @@
 				},
 				{
 					text:'% НДС',
-					width:'68',
+					width:'67',
 					dataIndex:'СтавкаНДС',
 					flex:1,
 				},
@@ -504,7 +511,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнкассовоеПоручениеПереданное/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнкассовоеПоручениеПереданное/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -556,6 +563,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИнкассовоеПоручениеПереданное.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИнкассовоеПоручениеПереданное.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1101,7 +1125,8 @@
 			text: 'Комментарий:',
 			style: 'position:absolute;left:8px;top:429px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1113,4 +1138,5 @@
 			]
 		},
 	]
+	});
 });

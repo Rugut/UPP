@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализЗаказовПокупателей.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализЗаказовПокупателей'], function () 
+{
+	Ext.define('Отчеты.АнализЗаказовПокупателей.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:820px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -251,4 +254,5 @@
 			]
 		},
 	]
+	});
 });

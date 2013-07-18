@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ИнвентарнаяКнигаОС.Форма',
+﻿Ext.require(['Данные.Отчеты.ИнвентарнаяКнигаОС'], function () 
+{
+	Ext.define('Отчеты.ИнвентарнаяКнигаОС.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:674px;height:451px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Инвентарная книга ОС (управленческий учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -165,4 +168,5 @@
 			]
 		},
 	]
+	});
 });

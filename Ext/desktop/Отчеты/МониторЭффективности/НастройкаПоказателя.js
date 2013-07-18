@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МониторЭффективности.НастройкаПоказателя',
+﻿Ext.require(['Данные.Отчеты.МониторЭффективности'], function () 
+{
+	Ext.define('Отчеты.МониторЭффективности.НастройкаПоказателя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:404px;height:296px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка показателя',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -36,6 +42,7 @@
 					items:
 					[
 		{
+			id: 'ПараметрыПоказателя',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:374px;height:147px;',
 			height: 147,width: 374,
@@ -43,7 +50,7 @@
 			[
 				{
 					text:'Параметр',
-					width:'175',
+					width:'174',
 					dataIndex:'ПараметрПредставление',
 					flex:1,
 				},
@@ -60,7 +67,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -70,6 +77,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПараметрыПоказателя');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МониторЭффективности.НастройкаПоказателяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МониторЭффективности.НастройкаПоказателяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -205,6 +229,7 @@
 					items:
 					[
 		{
+			id: 'СписокРасшифровок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:374px;height:123px;',
 			height: 123,width: 374,
@@ -212,7 +237,7 @@
 			[
 				{
 					text:'Представление',
-					width:'160',
+					width:'159',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -235,7 +260,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -248,6 +273,23 @@
 						name:'НаименованиеНастройкиОтчета',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокРасшифровок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МониторЭффективности.НастройкаПоказателяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МониторЭффективности.НастройкаПоказателяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -285,7 +327,8 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:302px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -311,4 +354,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПолучениеУслугПоПереработке.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПолучениеУслугПоПереработке'], function () 
+{
+	Ext.define('Документы.ПолучениеУслугПоПереработке.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Получение услуг по переработке',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -119,6 +125,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:642px;height:174px;',
 			height: 174,width: 642,
@@ -240,7 +247,7 @@
 				},
 				{
 					text:'Спецификация',
-					width:'138',
+					width:'137',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -257,7 +264,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -325,6 +332,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -355,6 +379,7 @@
 			style: 'position:absolute;left:334px;top:72px;width:86px;height:19px;text-align:left;',
 		},
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:642px;height:174px;',
 			height: 174,width: 642,
@@ -368,7 +393,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'161',
+					width:'160',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -452,7 +477,7 @@
 				},
 				{
 					text:'Вид субконто 1',
-					width:'100',
+					width:'99',
 					dataIndex:'ВидСубконто1',
 					flex:1,
 				},
@@ -464,7 +489,7 @@
 				},
 				{
 					text:'Вид субконто 3',
-					width:'106',
+					width:'105',
 					dataIndex:'ВидСубконто3',
 					flex:1,
 				},
@@ -488,13 +513,13 @@
 				},
 				{
 					text:'Аналитика',
-					width:'262',
+					width:'261',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'262',
+					width:'261',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -524,25 +549,25 @@
 				},
 				{
 					text:'Субконто 2 (НУ)',
-					width:'91',
+					width:'90',
 					dataIndex:'СубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Субконто 3 (НУ)',
-					width:'92',
+					width:'91',
 					dataIndex:'СубконтоНУ3',
 					flex:1,
 				},
 				{
 					text:'Продукция',
-					width:'80',
+					width:'79',
 					dataIndex:'Продукция',
 					flex:1,
 				},
 				{
 					text:'Характеристика продукции',
-					width:'91',
+					width:'90',
 					dataIndex:'ХарактеристикаПродукции',
 					flex:1,
 				},
@@ -554,13 +579,13 @@
 				},
 				{
 					text:'Объект строительства',
-					width:'172',
+					width:'171',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Способ строительства',
-					width:'169',
+					width:'168',
 					dataIndex:'СпособСтроительства',
 					flex:1,
 				},
@@ -595,7 +620,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -714,6 +739,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -746,6 +788,7 @@
 			style: 'position:absolute;left:6px;top:26px;width:88px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ИспользованныеМатериалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:642px;height:174px;',
 			height: 174,width: 642,
@@ -771,7 +814,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'201',
+					width:'200',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -879,7 +922,7 @@
 				},
 				{
 					text:'Аналитика',
-					width:'122',
+					width:'121',
 					dataIndex:'Аналитика',
 					flex:1,
 				},
@@ -897,7 +940,7 @@
 				},
 				{
 					text:'Способ строительства',
-					width:'121',
+					width:'120',
 					dataIndex:'СпособСтроительства',
 					flex:1,
 				},
@@ -914,7 +957,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -996,6 +1039,23 @@
 						name:'Заказ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИспользованныеМатериалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1193,6 +1253,7 @@
 			style: 'position:absolute;left:6px;top:72px;width:88px;height:19px;',
 		},
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:26px;width:642px;height:106px;',
 			height: 106,width: 642,
@@ -1206,13 +1267,13 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'210',
+					width:'209',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
 				{
 					text:'Дата оплаты',
-					width:'132',
+					width:'131',
 					dataIndex:'ДатаОплаты',
 					flex:1,
 				},
@@ -1235,7 +1296,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПолучениеУслугПоПереработке/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1254,6 +1315,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПолучениеУслугПоПереработке.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1532,8 +1610,10 @@
 			height: 19,
 			style: 'position:absolute;left:428px;top:81px;width:236px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

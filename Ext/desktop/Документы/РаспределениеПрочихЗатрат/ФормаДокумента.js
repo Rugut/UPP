@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РаспределениеПрочихЗатрат.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РаспределениеПрочихЗатрат'], function () 
+{
+	Ext.define('Документы.РаспределениеПрочихЗатрат.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:416px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Распределение прочих затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:391px;width:652px;height:25px;',
@@ -151,6 +157,7 @@
 					items:
 					[
 		{
+			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:130px;',
 			height: 130,width: 622,
@@ -241,7 +248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -285,6 +292,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Продукция');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РаспределениеПрочихЗатрат.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РаспределениеПрочихЗатрат.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -293,6 +317,7 @@
 					items:
 					[
 		{
+			id: 'ПрочиеЗатраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:130px;',
 			height: 130,width: 622,
@@ -383,7 +408,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -427,6 +452,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПрочиеЗатраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РаспределениеПрочихЗатрат.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РаспределениеПрочихЗатрат.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -435,6 +477,7 @@
 					items:
 					[
 		{
+			id: 'ЗатратыНаПродукцию',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:130px;',
 			height: 130,width: 622,
@@ -448,7 +491,7 @@
 				},
 				{
 					text:'Статья затрат',
-					width:'100',
+					width:'99',
 					dataIndex:'СтатьяЗатрат',
 					flex:1,
 				},
@@ -514,7 +557,7 @@
 				},
 				{
 					text:'Сумма',
-					width:'83',
+					width:'82',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -561,7 +604,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеПрочихЗатрат/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РаспределениеПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -622,6 +665,23 @@
 						name:'ПодразделениеОрганизацииНЗП',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗатратыНаПродукцию');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РаспределениеПрочихЗатрат.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РаспределениеПрочихЗатрат.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -727,7 +787,8 @@
 			height: 19,
 			style: 'position:absolute;left:210px;top:57px;width:106px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -768,4 +829,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АккредитивПереданный.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.АккредитивПереданный'], function () 
+{
+	Ext.define('Документы.АккредитивПереданный.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:472px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Аккредитив переданный',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -576,9 +579,9 @@
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АккредитивПереданный.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АккредитивПереданный.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1109,4 +1112,5 @@
 			]
 		},
 	]
+	});
 });

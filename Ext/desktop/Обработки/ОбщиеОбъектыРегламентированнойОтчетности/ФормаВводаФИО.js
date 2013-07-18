@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаФИО',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаФИО',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:378px;height:59px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Фамилия, имя, отчество',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -72,4 +75,5 @@
 			]
 		},
 	]
+	});
 });

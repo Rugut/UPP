@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СотрудникиОрганизаций.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.СотрудникиОрганизаций'], function () 
+{
+	Ext.define('Справочники.СотрудникиОрганизаций.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:442px;height:108px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сотрудники',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -101,4 +104,5 @@
 			]
 		},
 	]
+	});
 });

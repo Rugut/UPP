@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ФормированиеПоказателейСхемМотивации.Форма',
+﻿Ext.require(['Данные.Обработки.ФормированиеПоказателейСхемМотивации'], function () 
+{
+	Ext.define('Обработки.ФормированиеПоказателейСхемМотивации.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:402px;height:320px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Формирование показателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -87,9 +90,9 @@
 					{
 						var грид = Ext.getCmp('ПоказателиОтчета');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ФормированиеПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ФормированиеПоказателейСхемМотивации.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -164,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

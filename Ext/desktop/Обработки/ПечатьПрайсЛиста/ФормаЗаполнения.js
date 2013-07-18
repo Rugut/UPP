@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПечатьПрайсЛиста.ФормаЗаполнения',
+﻿Ext.require(['Данные.Обработки.ПечатьПрайсЛиста'], function () 
+{
+	Ext.define('Обработки.ПечатьПрайсЛиста.ФормаЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:671px;height:445px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Печать прайс-листа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -164,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

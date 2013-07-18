@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СведенияОНачисленномЗаработкеСЗВ63.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.СведенияОНачисленномЗаработкеСЗВ63'], function () 
+{
+	Ext.define('Документы.СведенияОНачисленномЗаработкеСЗВ63.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:750px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Сведения о начисленном заработке СЗВ-6-3',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:734px;height:380px;',
 			height: 380,width: 734,
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СведенияОНачисленномЗаработкеСЗВ63/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +88,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СведенияОНачисленномЗаработкеСЗВ63.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СведенияОНачисленномЗаработкеСЗВ63.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -245,4 +270,5 @@
 			]
 		},
 	]
+	});
 });

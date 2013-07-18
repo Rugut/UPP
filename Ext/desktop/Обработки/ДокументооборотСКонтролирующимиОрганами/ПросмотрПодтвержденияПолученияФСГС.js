@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГС',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГС',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:473px;height:291px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Извещение о получении',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:457px;height:250px;',
@@ -21,6 +27,7 @@
 					items:
 					[
 		{
+			id: 'Содержимое',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:20px;width:457px;height:230px;',
 			height: 230,width: 457,
@@ -51,7 +58,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -64,6 +71,23 @@
 						name:'ТранспортноеСообщение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Содержимое');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГССобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГССобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -92,6 +116,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
 		},
 		{
+			id: 'Протоколы',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:21px;width:457px;height:229px;',
 			height: 229,width: 457,
@@ -111,7 +136,7 @@
 				},
 				{
 					text:'Транспортное сообщение',
-					width:'141',
+					width:'140',
 					dataIndex:'ТранспортноеСообщение',
 					flex:1,
 				},
@@ -122,7 +147,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -136,12 +161,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Протоколы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГССобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПросмотрПодтвержденияПолученияФСГССобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -159,4 +202,5 @@
 			]
 		},
 	]
+	});
 });

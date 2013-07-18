@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетТранспортныйНалог.ФормаОтчета2012Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетТранспортныйНалог'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетТранспортныйНалог.ФормаОтчета2012Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:488px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по транспортному налогу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -284,4 +287,5 @@
 			]
 		},
 	]
+	});
 });

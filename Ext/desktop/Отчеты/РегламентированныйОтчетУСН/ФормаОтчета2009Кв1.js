@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетУСН.ФормаОтчета2009Кв1',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетУСН'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетУСН.ФормаОтчета2009Кв1',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Декларация по УСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -237,4 +240,5 @@
 			]
 		},
 	]
+	});
 });

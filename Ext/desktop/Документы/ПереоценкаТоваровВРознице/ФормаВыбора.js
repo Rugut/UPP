@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереоценкаТоваровВРознице.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПереоценкаТоваровВРознице'], function () 
+{
+	Ext.define('Документы.ПереоценкаТоваровВРознице.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:516px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Переоценки товаров в рознице',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,13 +48,13 @@
 				},
 				{
 					text:'Склад',
-					width:'1200',
+					width:'120',
 					dataIndex:'СкладКомпании',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПереоценкаТоваровВРознице.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПереоценкаТоваровВРознице.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -142,4 +145,5 @@
 			]
 		},
 	]
+	});
 });

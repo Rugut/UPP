@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УчетЗаработкаРаботников.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.УчетЗаработкаРаботников'], function () 
+{
+	Ext.define('Документы.УчетЗаработкаРаботников.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:740px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Учет заработка сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,13 +42,13 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Основание',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДокументОснование',
 					flex:1,
 				},
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УчетЗаработкаРаботников.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УчетЗаработкаРаботников.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -151,4 +154,5 @@
 			]
 		},
 	]
+	});
 });

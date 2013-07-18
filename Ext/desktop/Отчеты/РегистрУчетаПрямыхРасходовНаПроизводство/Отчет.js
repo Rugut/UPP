@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрУчетаПрямыхРасходовНаПроизводство.Отчет',
+﻿Ext.require(['Данные.Отчеты.РегистрУчетаПрямыхРасходовНаПроизводство'], function () 
+{
+	Ext.define('Отчеты.РегистрУчетаПрямыхРасходовНаПроизводство.Отчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:412px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр учета прямых расходов на производство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -130,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

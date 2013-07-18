@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетПлатаЗаЗагрязнение.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетПлатаЗаЗагрязнение'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетПлатаЗаЗагрязнение.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Плата за загрязнение окружающей среды',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

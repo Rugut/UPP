@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования'], function () 
+{
+	Ext.define('Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:601px;height:440px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Элемент Источники данных для расчетов бюджетирования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -50,6 +56,7 @@
 					items:
 					[
 		{
+			id: 'ДатыОтбораДанныхИсточника',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:27px;width:571px;height:100px;',
 			height: 100,width: 571,
@@ -69,7 +76,7 @@
 				},
 				{
 					text:'Начальная граница',
-					width:'96',
+					width:'95',
 					dataIndex:'НачальнаяГраницаОтсчета',
 					flex:1,
 				},
@@ -94,11 +101,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -121,6 +129,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДатыОтбораДанныхИсточника');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -128,6 +153,7 @@
 			style: 'position:absolute;left:6px;top:133px;width:264px;height:16px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:173px;width:264px;height:124px;',
 			height: 124,width: 264,
@@ -154,11 +180,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -171,6 +198,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -187,6 +231,7 @@
 			]
 		},
 		{
+			id: 'ИзмеренияИсточника',
 			xtype: 'grid',
 			style: 'position:absolute;left:276px;top:173px;width:300px;height:124px;',
 			height: 124,width: 300,
@@ -207,11 +252,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -221,6 +267,23 @@
 						name:'ИзмерениеБюджетирования',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияИсточника');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -256,6 +319,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:380px;height:273px;',
 			height: 273,width: 380,
@@ -300,11 +364,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -326,6 +391,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -368,6 +450,7 @@
 					items:
 					[
 		{
+			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:539px;height:253px;',
 			height: 253,width: 539,
@@ -381,18 +464,19 @@
 				},
 				{
 					text:'Значение параметра',
-					width:'280',
+					width:'279',
 					dataIndex:'ЗначениеПараметра',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИсточникиДанныхДляРасчетовБюджетирования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -402,6 +486,23 @@
 						name:'ЗначениеПараметра',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Параметры');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -427,7 +528,8 @@
 			height: 19,
 			style: 'position:absolute;left:512px;top:33px;width:81px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -468,4 +570,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГруппыПочтовойРассылки.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ГруппыПочтовойРассылки'], function () 
+{
+	Ext.define('Справочники.ГруппыПочтовойРассылки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:437px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Группы почтовой рассылки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -68,6 +74,7 @@
 					items:
 					[
 		{
+			id: 'СоставГруппыРассылки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:376px;height:270px;',
 			height: 270,width: 376,
@@ -75,7 +82,7 @@
 			[
 				{
 					text:'Объект',
-					width:'250',
+					width:'249',
 					dataIndex:'Объект',
 					flex:1,
 				},
@@ -88,11 +95,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыПочтовойРассылки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -103,6 +111,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставГруппыРассылки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -111,6 +136,7 @@
 					items:
 					[
 		{
+			id: 'УчетныеЗаписи',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:376px;height:270px;',
 			height: 270,width: 376,
@@ -124,18 +150,19 @@
 				},
 				{
 					text:'Учетная запись',
-					width:'331',
+					width:'330',
 					dataIndex:'УчетнаяЗапись',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГруппыПочтовойРассылки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыПочтовойРассылки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -146,12 +173,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('УчетныеЗаписи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -185,4 +230,5 @@
 			]
 		},
 	]
+	});
 });

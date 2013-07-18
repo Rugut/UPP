@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КонтактныеЛица.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.КонтактныеЛица'], function () 
+{
+	Ext.define('Справочники.КонтактныеЛица.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:464px;height:321px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Контактные лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'ФИО',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -45,7 +48,7 @@
 				},
 				{
 					text:'Имя',
-					width:'1200',
+					width:'120',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -63,13 +66,13 @@
 				},
 				{
 					text:'Описание',
-					width:'1200',
+					width:'120',
 					dataIndex:'Описание',
 					flex:1,
 				},
 				{
 					text:'Отчество',
-					width:'1200',
+					width:'120',
 					dataIndex:'Отчество',
 					flex:1,
 				},
@@ -81,7 +84,7 @@
 				},
 				{
 					text:'Фамилия',
-					width:'1200',
+					width:'120',
 					dataIndex:'Фамилия',
 					flex:1,
 				},
@@ -140,9 +143,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КонтактныеЛица.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -166,4 +169,5 @@
 			]
 		},
 	]
+	});
 });

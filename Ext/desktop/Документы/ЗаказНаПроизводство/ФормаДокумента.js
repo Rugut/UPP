@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаказНаПроизводство.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаказНаПроизводство'], function () 
+{
+	Ext.define('Документы.ЗаказНаПроизводство.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:424px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Документ Заказ на производство',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -136,19 +139,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1700',
+					width:'170',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'1700',
+					width:'170',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -190,7 +193,7 @@
 				},
 				{
 					text:'Спецификация',
-					width:'1500',
+					width:'150',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
@@ -260,9 +263,9 @@
 					{
 						var грид = Ext.getCmp('Продукция');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаказНаПроизводство.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаказНаПроизводство.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -332,19 +335,19 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1700',
+					width:'170',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'1700',
+					width:'170',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
@@ -398,13 +401,13 @@
 				},
 				{
 					text:'Спецификация',
-					width:'1500',
+					width:'150',
 					dataIndex:'Спецификация',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -492,9 +495,9 @@
 					{
 						var грид = Ext.getCmp('Материалы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЗаказНаПроизводство.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЗаказНаПроизводство.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -672,4 +675,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

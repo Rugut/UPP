@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителя',
+﻿Ext.require(['Данные.Обработки.УниверсальныйПоискОбъектов'], function () 
+{
+	Ext.define('Обработки.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителя',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:576px;height:480px;',
@@ -7,14 +9,19 @@
 	maximizable: true,
 	title: 'Дополнительные параметры ограничений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'fieldset',
 			title: 'Поля поиска',
 			style: 'position:absolute;left:8px;top:4px;width:560px;height:16px;',
 		},
 		{
+			id: 'СписокИменПолей',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:48px;width:560px;height:202px;',
 			height: 202,width: 560,
@@ -22,7 +29,7 @@
 			[
 				{
 					text:'Имя поля',
-					width:'278',
+					width:'277',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -33,13 +40,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокИменПолей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -54,6 +78,7 @@
 					items:
 					[
 		{
+			id: 'ПостроительОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:42px;width:560px;height:150px;',
 			height: 150,width: 560,
@@ -102,7 +127,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйПоискОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -124,6 +149,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПостроительОтбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -148,7 +190,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -173,4 +216,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СдельныйНаряд.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СдельныйНаряд'], function () 
+{
+	Ext.define('Документы.СдельныйНаряд.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:692px;height:577px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сдельный наряд на выполненные работы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -150,7 +153,7 @@
 				},
 				{
 					text:'Технологическая операция',
-					width:'1500',
+					width:'150',
 					dataIndex:'ТехнологическаяОперация',
 					flex:1,
 				},
@@ -222,7 +225,7 @@
 				},
 				{
 					text:'Номенклатурная группа',
-					width:'1300',
+					width:'130',
 					dataIndex:'НоменклатурнаяГруппа',
 					flex:1,
 				},
@@ -361,9 +364,9 @@
 					{
 						var грид = Ext.getCmp('Выработка');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СдельныйНаряд.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СдельныйНаряд.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -410,7 +413,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -912,9 +915,9 @@
 					{
 						var грид = Ext.getCmp('Исполнители');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СдельныйНаряд.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СдельныйНаряд.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1175,4 +1178,5 @@
 			]
 		},
 	]
+	});
 });

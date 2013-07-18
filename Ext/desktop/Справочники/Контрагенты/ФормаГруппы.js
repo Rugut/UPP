@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Контрагенты.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Контрагенты'], function () 
+{
+	Ext.define('Справочники.Контрагенты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:546px;height:137px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Контрагенты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

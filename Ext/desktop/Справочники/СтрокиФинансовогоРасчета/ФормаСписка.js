@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтрокиФинансовогоРасчета.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.СтрокиФинансовогоРасчета'], function () 
+{
+	Ext.define('Справочники.СтрокиФинансовогоРасчета.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:616px;height:361px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Строки финансового расчета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,25 +36,25 @@
 				},
 				{
 					text:'Наименование',
-					width:'2200',
+					width:'220',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Вид строки',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидСтроки',
 					flex:1,
 				},
 				{
 					text:'Измерение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Измерение',
 					flex:1,
 				},
 				{
 					text:'Формула',
-					width:'2200',
+					width:'220',
 					dataIndex:'Формула',
 					flex:1,
 				},
@@ -95,9 +98,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СтрокиФинансовогоРасчета.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СтрокиФинансовогоРасчета.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -123,4 +126,5 @@
 			]
 		},
 	]
+	});
 });

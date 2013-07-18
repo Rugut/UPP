@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетОРозничныхПродажах.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ОтчетОРозничныхПродажах'], function () 
+{
+	Ext.define('Документы.ОтчетОРозничныхПродажах.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:580px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Отчеты о розничных продажах',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:564px;height:380px;',
 			height: 380,width: 564,
@@ -94,7 +101,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетОРозничныхПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +142,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетОРозничныхПродажах.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетОРозничныхПродажах.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -172,4 +197,5 @@
 			]
 		},
 	]
+	});
 });

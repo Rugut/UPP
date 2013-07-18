@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаДанныхВыгрузки',
+﻿Ext.require(['Данные.Обработки.РегистрацияИзмененийДляОбмена'], function () 
+{
+	Ext.define('Обработки.РегистрацияИзмененийДляОбмена.ФормаДанныхВыгрузки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:536px;height:466px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма просмотра текста',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -31,4 +34,5 @@
 			]
 		},
 	]
+	});
 });

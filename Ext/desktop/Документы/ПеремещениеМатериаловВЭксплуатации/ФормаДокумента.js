@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПеремещениеМатериаловВЭксплуатации.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПеремещениеМатериаловВЭксплуатации'], function () 
+{
+	Ext.define('Документы.ПеремещениеМатериаловВЭксплуатации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:384px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Перемещение материалов в эксплуатации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -221,6 +227,7 @@
 					items:
 					[
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:622px;height:124px;',
 			height: 124,width: 622,
@@ -276,7 +283,7 @@
 				},
 				{
 					text:'Ед. мест',
-					width:'50',
+					width:'49',
 					dataIndex:'ЕдиницаМест',
 					flex:1,
 				},
@@ -324,13 +331,13 @@
 				},
 				{
 					text:'Сумма',
-					width:'76',
+					width:'75',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Сумма (регл.)',
-					width:'78',
+					width:'77',
 					dataIndex:'СуммаРегл',
 					flex:1,
 				},
@@ -359,7 +366,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПеремещениеМатериаловВЭксплуатации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПеремещениеМатериаловВЭксплуатации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -427,6 +434,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПеремещениеМатериаловВЭксплуатации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПеремещениеМатериаловВЭксплуатации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -435,6 +459,7 @@
 					items:
 					[
 		{
+			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:622px;height:125px;',
 			height: 125,width: 622,
@@ -448,7 +473,7 @@
 				},
 				{
 					text:'Материал',
-					width:'147',
+					width:'146',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -466,7 +491,7 @@
 				},
 				{
 					text:'Количество',
-					width:'53',
+					width:'52',
 					dataIndex:'Количество',
 					flex:1,
 				},
@@ -496,7 +521,7 @@
 				},
 				{
 					text:'Счет учета (БУ)',
-					width:'82',
+					width:'81',
 					dataIndex:'СчетУчетаПолучательБУ',
 					flex:1,
 				},
@@ -513,7 +538,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПеремещениеМатериаловВЭксплуатации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПеремещениеМатериаловВЭксплуатации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -551,13 +576,32 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Получатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПеремещениеМатериаловВЭксплуатации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПеремещениеМатериаловВЭксплуатации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

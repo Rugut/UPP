@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОборотыСчетаМеждународный.Форма',
+﻿Ext.require(['Данные.Отчеты.ОборотыСчетаМеждународный'], function () 
+{
+	Ext.define('Отчеты.ОборотыСчетаМеждународный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:728px;height:448px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обороты счета (Главная книга)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -145,4 +148,5 @@
 			]
 		},
 	]
+	});
 });

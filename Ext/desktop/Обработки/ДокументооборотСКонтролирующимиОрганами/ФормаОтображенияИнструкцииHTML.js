@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаОтображенияИнструкцииHTML',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаОтображенияИнструкцииHTML',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:544px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Инструкция',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,4 +54,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

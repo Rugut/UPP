@@ -32,7 +32,7 @@ namespace V82.СправочникиСсылка
 		/*версия класса восстановленного из пакета*/
 		public bool ПометкаУдаления {get;set;}
 		public bool Предопределенный {get;set;}
-		public Guid Родитель {get;set;}
+		public V82.СправочникиСсылка.ГруппыПользователей Родитель {get;set;}
 		public string/*9*/ Код {get;set;}
 		[DataMember(Name = "Представление")]//Проверить основное представление.
 		[ProtoMember(3)]
@@ -67,6 +67,7 @@ namespace V82.СправочникиСсылка
 					,_Version [Версия]
 					,_Marked [ПометкаУдаления]
 					,_IsMetadata [Предопределенный]
+					,_ParentIDRRef [Родитель]
 					,_Code [Код]
 					,_Description [Наименование]
 					From _Reference40(NOLOCK)
@@ -84,8 +85,9 @@ namespace V82.СправочникиСсылка
 							ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
 							ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
 							Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
-							Код = Читалка.GetString(4);
-							Наименование = Читалка.GetString(5);
+							Родитель = new V82.СправочникиСсылка.ГруппыПользователей((byte[])Читалка.GetValue(4),Глубина+1);
+							Код = Читалка.GetString(5);
+							Наименование = Читалка.GetString(6);
 							//return Ссылка;
 						}
 						else

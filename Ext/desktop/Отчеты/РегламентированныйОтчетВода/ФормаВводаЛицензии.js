@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетВода.ФормаВводаЛицензии',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетВода'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетВода.ФормаВводаЛицензии',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:212px;height:160px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Лицензия на водопользование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

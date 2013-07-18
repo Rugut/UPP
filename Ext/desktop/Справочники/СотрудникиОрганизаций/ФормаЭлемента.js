@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СотрудникиОрганизаций.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СотрудникиОрганизаций'], function () 
+{
+	Ext.define('Справочники.СотрудникиОрганизаций.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:506px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Сотрудники',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:480px;top:33px;width:212px;height:440px;',
@@ -515,6 +521,7 @@
 					items:
 					[
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:223px;height:226px;',
 			height: 226,width: 223,
@@ -535,11 +542,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -549,6 +557,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -565,6 +590,7 @@
 			]
 		},
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:235px;top:23px;width:223px;height:226px;',
 			height: 226,width: 223,
@@ -585,11 +611,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -599,6 +626,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -917,6 +961,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
 		},
 		{
+			id: 'МестоРаботы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:452px;height:63px;',
 			height: 63,width: 452,
@@ -966,7 +1011,7 @@
 				},
 				{
 					text:'График работы',
-					width:'111',
+					width:'110',
 					dataIndex:'ГрафикРаботы',
 					flex:1,
 				},
@@ -978,7 +1023,7 @@
 				},
 				{
 					text:'Занимаемых ставок',
-					width:'84',
+					width:'83',
 					dataIndex:'ЗанимаемыхСтавок',
 					flex:1,
 				},
@@ -1003,11 +1048,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1051,8 +1097,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('МестоРаботы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'КадровыеДокументы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:128px;width:452px;height:144px;',
 			height: 144,width: 452,
@@ -1085,11 +1149,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1105,6 +1170,23 @@
 						name:'Номер',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КадровыеДокументы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1158,6 +1240,7 @@
 					items:
 					[
 		{
+			id: 'ПлановыеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:452px;height:128px;',
 			height: 128,width: 452,
@@ -1580,11 +1663,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1796,6 +1880,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1808,6 +1909,7 @@
 			style: 'position:absolute;left:6px;top:157px;width:452px;height:16px;',
 		},
 		{
+			id: 'ПлановыеУдержания',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:174px;width:452px;height:97px;',
 			height: 97,width: 452,
@@ -1953,7 +2055,7 @@
 				},
 				{
 					text:'Действует с',
-					width:'83',
+					width:'82',
 					dataIndex:'ПериодЗавершения',
 					flex:1,
 				},
@@ -2080,11 +2182,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2221,6 +2324,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПлановыеУдержания');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -2242,6 +2362,7 @@
 					items:
 					[
 		{
+			id: 'ОтражениеПлановыхНачислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:170px;width:452px;height:102px;',
 			height: 102,width: 452,
@@ -2280,11 +2401,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2304,6 +2426,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтражениеПлановыхНачислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -2316,6 +2455,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
 		},
 		{
+			id: 'ОтражениеОсновныхНачислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:452px;height:77px;',
 			height: 77,width: 452,
@@ -2341,18 +2481,19 @@
 				},
 				{
 					text:'ЕНВД',
-					width:'36',
+					width:'35',
 					dataIndex:'ПодпадаетПодЕНВД',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2368,6 +2509,23 @@
 						name:'ПодпадаетПодЕНВД',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтражениеОсновныхНачислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2636,6 +2794,7 @@
 			style: 'position:absolute;left:338px;top:29px;width:28px;height:19px;text-align:left;',
 		},
 		{
+			id: 'СписокДоговоровГПХ',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:6px;width:452px;height:266px;',
 			height: 266,width: 452,
@@ -2679,7 +2838,7 @@
 				},
 				{
 					text:'Валюта',
-					width:'47',
+					width:'46',
 					dataIndex:'Валюта',
 					flex:1,
 				},
@@ -2692,11 +2851,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2725,6 +2885,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокДоговоровГПХ');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2749,6 +2926,7 @@
 			style: 'position:absolute;left:6px;top:75px;width:452px;height:16px;',
 		},
 		{
+			id: 'МестоРаботыУпрУчет',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:452px;height:48px;',
 			height: 48,width: 452,
@@ -2793,11 +2971,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2819,6 +2998,23 @@
 						name:'ЗанимаемыхСтавок',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('МестоРаботыУпрУчет');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -2907,6 +3103,7 @@
 			]
 		},
 		{
+			id: 'КадровыеДокументыУпрУчет',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:115px;width:452px;height:157px;',
 			height: 157,width: 452,
@@ -2939,11 +3136,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -2960,6 +3158,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КадровыеДокументыУпрУчет');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -2974,6 +3189,7 @@
 			style: 'position:absolute;left:226px;top:6px;width:140px;height:19px;',
 		},
 		{
+			id: 'СвойстваИЗначения1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:23px;width:223px;height:249px;',
 			height: 249,width: 223,
@@ -2994,11 +3210,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3008,6 +3225,23 @@
 						name:'Значение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3024,6 +3258,7 @@
 			]
 		},
 		{
+			id: 'Категории1',
 			xtype: 'grid',
 			style: 'position:absolute;left:235px;top:23px;width:223px;height:249px;',
 			height: 249,width: 223,
@@ -3044,11 +3279,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -3058,6 +3294,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -3165,7 +3418,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -3244,4 +3498,5 @@
 			]
 		},
 	]
+	});
 });

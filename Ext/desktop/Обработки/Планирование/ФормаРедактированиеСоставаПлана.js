@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.Планирование.ФормаРедактированиеСоставаПлана',
+﻿Ext.require(['Данные.Обработки.Планирование'], function () 
+{
+	Ext.define('Обработки.Планирование.ФормаРедактированиеСоставаПлана',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:350px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Редактирование состава плана',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:309px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'СоставПлана',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:253px;',
 			height: 253,width: 670,
@@ -104,7 +111,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -145,6 +152,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоставПлана');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -153,6 +177,7 @@
 					items:
 					[
 		{
+			id: 'ПроизводственнаяПрограмма',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:253px;',
 			height: 253,width: 670,
@@ -249,7 +274,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Планирование/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -296,12 +321,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПроизводственнаяПрограмма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -327,4 +370,5 @@
 			]
 		},
 	]
+	});
 });

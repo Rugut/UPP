@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка'], function () 
+{
+	Ext.define('Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:900px;height:576px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Реестр сведений в ФСС о пособиях при рождении ребенка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -102,6 +108,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:35px;width:214px;height:376px;',
 			height: 376,width: 214,
@@ -127,19 +134,19 @@
 				},
 				{
 					text:'Фамилия',
-					width:'36',
+					width:'35',
 					dataIndex:'ФамилияРебенка',
 					flex:1,
 				},
 				{
 					text:'Имя',
-					width:'36',
+					width:'35',
 					dataIndex:'ИмяРебенка',
 					flex:1,
 				},
 				{
 					text:'Отчество ребенка',
-					width:'36',
+					width:'35',
 					dataIndex:'ОтчествоРебенка',
 					flex:1,
 				},
@@ -162,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОПособияхПриРожденииРебенка/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОПособияхПриРожденииРебенка/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -190,6 +197,23 @@
 						name:'ДатаРождения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1258,7 +1282,8 @@
 			height: 19,
 			style: 'position:absolute;left:808px;top:57px;width:84px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1300,4 +1325,5 @@
 			]
 		},
 	]
+	});
 });

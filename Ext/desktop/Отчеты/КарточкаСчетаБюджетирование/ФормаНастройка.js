@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КарточкаСчетаБюджетирование.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.КарточкаСчетаБюджетирование'], function () 
+{
+	Ext.define('Отчеты.КарточкаСчетаБюджетирование.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:408px;height:251px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка: Карточка счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -183,9 +186,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КарточкаСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КарточкаСчетаБюджетирование.ФормаНастройкаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -207,4 +210,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

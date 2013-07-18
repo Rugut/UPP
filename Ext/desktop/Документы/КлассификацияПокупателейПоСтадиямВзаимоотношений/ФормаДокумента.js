@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КлассификацияПокупателейПоСтадиямВзаимоотношений'], function () 
+{
+	Ext.define('Документы.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:430px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Классификация покупателей по стадиям взаимоотношений',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -101,6 +107,7 @@
 			style: 'position:absolute;left:358px;top:6px;width:66px;height:19px;',
 		},
 		{
+			id: 'ТаблицаРаспределенияКонтрагентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:56px;width:630px;height:208px;',
 			height: 208,width: 630,
@@ -173,7 +180,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификацияПокупателейПоСтадиямВзаимоотношений/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификацияПокупателейПоСтадиямВзаимоотношений/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -207,6 +214,23 @@
 						name:'XYZКлассификацияСтарая',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаРаспределенияКонтрагентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -400,7 +424,8 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:354px;width:556px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -458,4 +483,5 @@
 			]
 		},
 	]
+	});
 });

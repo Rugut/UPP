@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатрат',
+﻿Ext.require(['Данные.Обработки.ИзменениеНастроекУчета'], function () 
+{
+	Ext.define('Обработки.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатрат',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:498px;height:442px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка параметра учета ""Использовать расширенную аналитику учета затрат""',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:1px;width:498px;height:416px;',
@@ -86,6 +92,7 @@
 			style: 'position:absolute;left:304px;top:6px;width:137px;height:19px;',
 		},
 		{
+			id: 'ТаблицаНастройки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:118px;width:486px;height:109px;',
 			height: 109,width: 486,
@@ -105,13 +112,13 @@
 				},
 				{
 					text:'Бух. учет',
-					width:'72',
+					width:'71',
 					dataIndex:'БУ',
 					flex:1,
 				},
 				{
 					text:'Налог. учет',
-					width:'68',
+					width:'67',
 					dataIndex:'НУ',
 					flex:1,
 				},
@@ -146,7 +153,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -175,6 +182,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастройки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -187,6 +211,7 @@
 			style: 'position:absolute;left:6px;top:247px;width:486px;height:16px;',
 		},
 		{
+			id: 'ТаблицаОтображаемыхДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:293px;width:486px;height:117px;',
 			height: 117,width: 486,
@@ -194,7 +219,7 @@
 			[
 				{
 					text:'',
-					width:'53',
+					width:'52',
 					dataIndex:'Пометка',
 					flex:1,
 				},
@@ -212,7 +237,7 @@
 				},
 				{
 					text:'Ссылка',
-					width:'28',
+					width:'27',
 					dataIndex:'Ссылка',
 					flex:1,
 				},
@@ -223,7 +248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -239,6 +264,23 @@
 						name:'Ссылка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаОтображаемыхДокументов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -373,6 +415,7 @@
 					items:
 					[
 		{
+			id: 'НастройкиАналитикиУчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:486px;height:386px;',
 			height: 386,width: 486,
@@ -380,7 +423,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'363',
+					width:'362',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -392,7 +435,7 @@
 				},
 				{
 					text:'Регл',
-					width:'44',
+					width:'43',
 					dataIndex:'РегламентированныйУчет',
 					flex:1,
 				},
@@ -403,7 +446,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеНастроекУчета/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -417,6 +460,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиАналитикиУчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -427,7 +487,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -459,4 +520,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РегистрацияОплатыНДСВБюджет.ФормаСписка',
+﻿Ext.require(['Данные.Документы.РегистрацияОплатыНДСВБюджет'], function () 
+{
+	Ext.define('Документы.РегистрацияОплатыНДСВБюджет.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:627px;height:337px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Регистрации оплаты НДС в бюджет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:611px;height:296px;',
 			height: 296,width: 611,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'130',
+					width:'129',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыНДСВБюджет/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияОплатыНДСВБюджет/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +88,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегистрацияОплатыНДСВБюджет.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегистрацияОплатыНДСВБюджет.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -107,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

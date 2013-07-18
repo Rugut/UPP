@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ФинансовыйРасчет.ФормаФинансовыйРасчет',
+﻿Ext.require(['Данные.Отчеты.ФинансовыйРасчет'], function () 
+{
+	Ext.define('Отчеты.ФинансовыйРасчет.ФормаФинансовыйРасчет',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:698px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -165,4 +168,5 @@
 			]
 		},
 	]
+	});
 });

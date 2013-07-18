@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РасчетЛимитовОтпускаМатериалов.ФормаОбработкаРезультата',
+﻿Ext.require(['Данные.Обработки.РасчетЛимитовОтпускаМатериалов'], function () 
+{
+	Ext.define('Обработки.РасчетЛимитовОтпускаМатериалов.ФормаОбработкаРезультата',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:362px;height:89px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка результата',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -83,4 +86,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

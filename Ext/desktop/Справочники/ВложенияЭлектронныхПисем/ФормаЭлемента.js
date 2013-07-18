@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВложенияЭлектронныхПисем.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВложенияЭлектронныхПисем'], function () 
+{
+	Ext.define('Справочники.ВложенияЭлектронныхПисем.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:396px;height:136px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Вложение электронного письма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -91,4 +94,5 @@
 			]
 		},
 	]
+	});
 });

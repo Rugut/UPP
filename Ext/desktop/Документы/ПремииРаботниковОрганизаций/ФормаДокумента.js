@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПремииРаботниковОрганизаций.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПремииРаботниковОрганизаций'], function () 
+{
+	Ext.define('Документы.ПремииРаботниковОрганизаций.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:524px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Премии сотрудникам организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -208,7 +211,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'2200',
+					width:'220',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -250,7 +253,7 @@
 				},
 				{
 					text:'Результат',
-					width:'1100',
+					width:'110',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -311,9 +314,9 @@
 					{
 						var грид = Ext.getCmp('Начисления');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПремииРаботниковОрганизаций.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПремииРаботниковОрганизаций.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -527,4 +530,5 @@
 			]
 		},
 	]
+	});
 });

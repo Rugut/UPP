@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПакетныйВводДокументов.ФормаГлавная',
+﻿Ext.require(['Данные.Обработки.ПакетныйВводДокументов'], function () 
+{
+	Ext.define('Обработки.ПакетныйВводДокументов.ФормаГлавная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:699px;height:474px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Обработка  Пакетный ввод документов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:433px;',
@@ -311,6 +317,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:670px;height:377px;',
 			height: 377,width: 670,
@@ -354,7 +361,7 @@
 				},
 				{
 					text:'К.',
-					width:'37',
+					width:'36',
 					dataIndex:'Коэффициент',
 					flex:1,
 				},
@@ -372,13 +379,13 @@
 				},
 				{
 					text:'Не распределено',
-					width:'93',
+					width:'92',
 					dataIndex:'Нераспределено',
 					flex:1,
 				},
 				{
 					text:'Заказ покупателя',
-					width:'242',
+					width:'241',
 					dataIndex:'Заказ',
 					flex:1,
 				},
@@ -389,7 +396,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводДокументов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -426,6 +433,23 @@
 						name:'Заказ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаГлавнаяСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаГлавнаяСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -478,8 +502,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

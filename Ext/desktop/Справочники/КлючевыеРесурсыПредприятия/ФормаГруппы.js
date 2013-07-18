@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КлючевыеРесурсыПредприятия.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.КлючевыеРесурсыПредприятия'], function () 
+{
+	Ext.define('Справочники.КлючевыеРесурсыПредприятия.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:430px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Ключевые ресурсы предприятия',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

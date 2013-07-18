@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Пользователи.ФормаСОтбором',
+﻿Ext.require(['Данные.Справочники.Пользователи'], function () 
+{
+	Ext.define('Справочники.Пользователи.ФормаСОтбором',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:345px;height:369px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справочник Пользователи',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,9 +80,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Пользователи.ФормаСОтборомСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Пользователи.ФормаСОтборомСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -133,4 +136,5 @@
 			]
 		},
 	]
+	});
 });

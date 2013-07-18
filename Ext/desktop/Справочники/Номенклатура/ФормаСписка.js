@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Номенклатура.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.Номенклатура'], function () 
+{
+	Ext.define('Справочники.Номенклатура.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:793px;height:345px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Номенклатура',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:175px;top:57px;width:611px;height:130px;',
 			height: 130,width: 611,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'93',
+					width:'92',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Полное наименование',
-					width:'185',
+					width:'184',
 					dataIndex:'НаименованиеПолное',
 					flex:1,
 				},
@@ -53,13 +60,13 @@
 				},
 				{
 					text:'Базовая единица измерения',
-					width:'164',
+					width:'163',
 					dataIndex:'БазоваяЕдиницаИзмерения',
 					flex:1,
 				},
 				{
 					text:'Единица хранения остатков',
-					width:'168',
+					width:'167',
 					dataIndex:'ЕдиницаХраненияОстатков',
 					flex:1,
 				},
@@ -102,11 +109,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -153,8 +161,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:160px;height:130px;',
 			height: 130,width: 160,
@@ -169,17 +195,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Наименование',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Дерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -247,6 +291,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеОстаткиТоваров',
 			xtype: 'grid',
 			style: 'position:absolute;left:149px;top:20px;width:462px;height:101px;',
 			height: 101,width: 462,
@@ -278,24 +323,25 @@
 				},
 				{
 					text:'Своб.ожид.',
-					width:'68',
+					width:'67',
 					dataIndex:'СвободныйОжидаемый',
 					flex:1,
 				},
 				{
 					text:'В резерве',
-					width:'75',
+					width:'74',
 					dataIndex:'ВРезерве',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -318,6 +364,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеОстаткиТоваров');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -325,6 +388,7 @@
 			style: 'position:absolute;left:0px;top:0px;width:611px;height:16px;',
 		},
 		{
+			id: 'СписокЦенОстатков',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:20px;width:143px;height:124px;',
 			height: 124,width: 143,
@@ -332,13 +396,13 @@
 			[
 				{
 					text:'Типы цен',
-					width:'133',
+					width:'132',
 					dataIndex:'Наименование',
 					flex:1,
 				},
 				{
 					text:'Ссылка',
-					width:'82',
+					width:'81',
 					dataIndex:'Ссылка',
 					flex:1,
 				},
@@ -375,11 +439,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Номенклатура").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -404,6 +469,23 @@
 						name:'Префикс',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокЦенОстатков');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -456,7 +538,8 @@
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -484,4 +567,5 @@
 			]
 		},
 	]
+	});
 });

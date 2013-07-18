@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеПланируемыхПоступленийДенежныхСредств.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗакрытиеПланируемыхПоступленийДенежныхСредств'], function () 
+{
+	Ext.define('Документы.ЗакрытиеПланируемыхПоступленийДенежныхСредств.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:427px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Закрытие планируемых поступлений денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -59,6 +65,7 @@
 			style: 'position:absolute;left:98px;top:351px;width:220px;height:19px;',
 		},
 		{
+			id: 'ПланируемыеПоступленияДС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:166px;width:656px;height:180px;',
 			height: 180,width: 656,
@@ -84,13 +91,13 @@
 				},
 				{
 					text:'Валюта',
-					width:'59',
+					width:'58',
 					dataIndex:'ВалютаПоступление',
 					flex:1,
 				},
 				{
 					text:'Остаток в размещении',
-					width:'90',
+					width:'89',
 					dataIndex:'ОстатокРазмещение',
 					flex:1,
 				},
@@ -113,7 +120,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеПланируемыхПоступленийДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗакрытиеПланируемыхПоступленийДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -138,6 +145,23 @@
 						name:'Контрагент',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПланируемыеПоступленияДС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗакрытиеПланируемыхПоступленийДенежныхСредств.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗакрытиеПланируемыхПоступленийДенежныхСредств.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -323,7 +347,8 @@
 			text: '...',
 			style: 'position:absolute;left:298px;top:78px;width:20px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -335,4 +360,5 @@
 			]
 		},
 	]
+	});
 });

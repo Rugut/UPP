@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетКомитентуОПродажах.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтчетКомитентуОПродажах'], function () 
+{
+	Ext.define('Документы.ОтчетКомитентуОПродажах.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:480px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Отчет комитенту',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -90,6 +96,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:174px;',
 			height: 174,width: 634,
@@ -228,7 +235,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомитентуОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомитентуОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -296,6 +303,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомитентуОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомитентуОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -329,6 +353,7 @@
 			style: 'position:absolute;left:6px;top:11px;width:192px;height:19px;text-align:left;',
 		},
 		{
+			id: 'ДенежныеСредства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:634px;height:174px;',
 			height: 174,width: 634,
@@ -383,7 +408,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомитентуОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомитентуОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -408,6 +433,23 @@
 						name:'СуммаНДС',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДенежныеСредства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомитентуОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомитентуОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -628,6 +670,7 @@
 			style: 'position:absolute;left:6px;top:54px;width:164px;height:19px;',
 		},
 		{
+			id: 'ДокументыРасчетовСКонтрагентом',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:637px;height:106px;',
 			height: 106,width: 637,
@@ -641,7 +684,7 @@
 				},
 				{
 					text:'Документ расчетов с контрагентом',
-					width:'234',
+					width:'233',
 					dataIndex:'ДокументРасчетовСКонтрагентом',
 					flex:1,
 				},
@@ -670,7 +713,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомитентуОПродажах/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетКомитентуОПродажах/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -689,6 +732,23 @@
 						name:'СуммаРегл',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОтчетКомитентуОПродажах.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОтчетКомитентуОПродажах.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -974,8 +1034,10 @@
 			boxLabel: 'Удержать комиссионное вознаграждение',
 			style: 'position:absolute;left:334px;top:129px;width:236px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

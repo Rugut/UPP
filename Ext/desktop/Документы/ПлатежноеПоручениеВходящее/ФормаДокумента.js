@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПлатежноеПоручениеВходящее.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПлатежноеПоручениеВходящее'], function () 
+{
+	Ext.define('Документы.ПлатежноеПоручениеВходящее.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:456px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Платежное поручение входящее',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -665,9 +668,9 @@
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПлатежноеПоручениеВходящее.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПлатежноеПоручениеВходящее.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -1328,4 +1331,5 @@
 			]
 		},
 	]
+	});
 });

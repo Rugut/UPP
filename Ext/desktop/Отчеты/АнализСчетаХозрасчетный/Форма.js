@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализСчетаХозрасчетный.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализСчетаХозрасчетный'], function () 
+{
+	Ext.define('Отчеты.АнализСчетаХозрасчетный.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:731px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ счета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -145,4 +148,5 @@
 			]
 		},
 	]
+	});
 });

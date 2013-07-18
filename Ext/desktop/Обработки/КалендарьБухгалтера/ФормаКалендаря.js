@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КалендарьБухгалтера.ФормаКалендаря',
+﻿Ext.require(['Данные.Обработки.КалендарьБухгалтера'], function () 
+{
+	Ext.define('Обработки.КалендарьБухгалтера.ФормаКалендаря',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:669px;height:571px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Календарь бухгалтера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -86,13 +89,13 @@
 				},
 				{
 					text:'Название отчета/налога',
-					width:'2500',
+					width:'250',
 					dataIndex:'НазваниеОтчетаИлиНалога',
 					flex:1,
 				},
 				{
 					text:'Налогоплательщик',
-					width:'2500',
+					width:'250',
 					dataIndex:'Кто',
 					flex:1,
 				},
@@ -132,9 +135,9 @@
 					{
 						var грид = Ext.getCmp('ТаблицаСобытийКалендаря');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КалендарьБухгалтера.ФормаКалендаряСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КалендарьБухгалтера.ФормаКалендаряСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -233,4 +236,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтепениЗнанияЯзыка.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтепениЗнанияЯзыка'], function () 
+{
+	Ext.define('Справочники.СтепениЗнанияЯзыка.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:408px;height:85px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Степени знания языков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

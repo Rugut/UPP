@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ДиаграммаЗагрузкиРабочихЦентров.Форма',
+﻿Ext.require(['Данные.Отчеты.ДиаграммаЗагрузкиРабочихЦентров'], function () 
+{
+	Ext.define('Отчеты.ДиаграммаЗагрузкиРабочихЦентров.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:618px;height:460px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Диаграмма загрузки рабочих центров',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -58,7 +61,7 @@
 				},
 				{
 					text:'Поле',
-					width:'1200',
+					width:'120',
 					dataIndex:'Имя',
 					flex:1,
 				},
@@ -70,19 +73,19 @@
 				},
 				{
 					text:'Значение',
-					width:'2400',
+					width:'240',
 					dataIndex:'Значение',
 					flex:1,
 				},
 				{
 					text:'С',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеС',
 					flex:1,
 				},
 				{
 					text:'По',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗначениеПо',
 					flex:1,
 				},
@@ -125,9 +128,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДиаграммаЗагрузкиРабочихЦентров.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДиаграммаЗагрузкиРабочихЦентров.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -206,4 +209,5 @@
 			]
 		},
 	]
+	});
 });

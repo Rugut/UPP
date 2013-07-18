@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВводНачальныхОстатковМатериаловВЭксплуатации.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВводНачальныхОстатковМатериаловВЭксплуатации'], function () 
+{
+	Ext.define('Документы.ВводНачальныхОстатковМатериаловВЭксплуатации.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:384px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Ввод начальных остатков материалов в эксплуатации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -122,6 +128,7 @@
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:150px;width:636px;height:152px;',
 			height: 152,width: 636,
@@ -171,7 +178,7 @@
 				},
 				{
 					text:'Назначение использования',
-					width:'146',
+					width:'145',
 					dataIndex:'НазначениеИспользования',
 					flex:1,
 				},
@@ -290,7 +297,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковМатериаловВЭксплуатации/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВводНачальныхОстатковМатериаловВЭксплуатации/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -372,6 +379,23 @@
 						name:'СчетУчетаНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Материалы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВводНачальныхОстатковМатериаловВЭксплуатации.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВводНачальныхОстатковМатериаловВЭксплуатации.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -484,8 +508,10 @@
 			title: 'Материалы',
 			style: 'position:absolute;left:8px;top:109px;width:636px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

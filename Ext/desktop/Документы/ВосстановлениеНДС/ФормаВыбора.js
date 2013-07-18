@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВосстановлениеНДС.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ВосстановлениеНДС'], function () 
+{
+	Ext.define('Документы.ВосстановлениеНДС.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:524px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Восстановления НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -85,9 +88,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВосстановлениеНДС.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВосстановлениеНДС.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -127,4 +130,5 @@
 			]
 		},
 	]
+	});
 });

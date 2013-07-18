@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РабочийСтол.Форма',
+﻿Ext.require(['Данные.Обработки.РабочийСтол'], function () 
+{
+	Ext.define('Обработки.РабочийСтол.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:918px;height:573px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Рабочий стол',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -2432,9 +2435,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСписокСсылокНаИТСПерсонал');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РабочийСтол.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РабочийСтол.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -2459,4 +2462,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

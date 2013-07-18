@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.МСФОБаланс.МСФО',
+﻿Ext.require(['Данные.Отчеты.МСФОБаланс'], function () 
+{
+	Ext.define('Отчеты.МСФОБаланс.МСФО',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:736px;height:444px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Баланс по МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -215,4 +218,5 @@
 			]
 		},
 	]
+	});
 });

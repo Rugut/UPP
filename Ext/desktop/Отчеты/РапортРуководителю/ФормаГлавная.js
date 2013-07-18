@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РапортРуководителю.ФормаГлавная',
+﻿Ext.require(['Данные.Отчеты.РапортРуководителю'], function () 
+{
+	Ext.define('Отчеты.РапортРуководителю.ФормаГлавная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:656px;height:437px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Рапорт руководителю',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -41,4 +44,5 @@
 			]
 		},
 	]
+	});
 });

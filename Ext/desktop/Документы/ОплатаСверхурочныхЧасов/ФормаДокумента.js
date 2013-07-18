@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОплатаСверхурочныхЧасов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОплатаСверхурочныхЧасов'], function () 
+{
+	Ext.define('Документы.ОплатаСверхурочныхЧасов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:688px;height:403px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Оплата сверхурочных часов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -107,6 +113,7 @@
 			style: 'position:absolute;left:113px;top:57px;width:220px;height:19px;',
 		},
 		{
+			id: 'Начисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:672px;height:180px;',
 			height: 180,width: 672,
@@ -133,13 +140,13 @@
 				{
 					text:'Подразделение
 организации',
-					width:'91',
+					width:'90',
 					dataIndex:'ПодразделениеОрганизации',
 					flex:1,
 				},
 				{
 					text:'Дата',
-					width:'71',
+					width:'70',
 					dataIndex:'ДатаВыхода',
 					flex:1,
 				},
@@ -157,7 +164,7 @@
 				},
 				{
 					text:'Часы в 2-ом размере',
-					width:'85',
+					width:'84',
 					dataIndex:'ЧасовДвойных',
 					flex:1,
 				},
@@ -174,7 +181,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаСверхурочныхЧасов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОплатаСверхурочныхЧасов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -205,6 +212,23 @@
 						name:'Результат',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Начисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОплатаСверхурочныхЧасов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОплатаСверхурочныхЧасов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -271,7 +295,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -404,4 +429,5 @@
 			]
 		},
 	]
+	});
 });

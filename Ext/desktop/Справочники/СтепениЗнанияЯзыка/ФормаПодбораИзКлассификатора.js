@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтепениЗнанияЯзыка.ФормаПодбораИзКлассификатора',
+﻿Ext.require(['Данные.Справочники.СтепениЗнанияЯзыка'], function () 
+{
+	Ext.define('Справочники.СтепениЗнанияЯзыка.ФормаПодбораИзКлассификатора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Степени знания языков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

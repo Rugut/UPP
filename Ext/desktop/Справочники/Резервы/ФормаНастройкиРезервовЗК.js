@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Резервы.ФормаНастройкиРезервовЗК',
+﻿Ext.require(['Данные.Справочники.Резервы'], function () 
+{
+	Ext.define('Справочники.Резервы.ФормаНастройкиРезервовЗК',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:483px;height:249px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Форма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:467px;height:185px;',
@@ -20,6 +26,7 @@
 					items:
 					[
 		{
+			id: 'БазовыеВидыРасчета',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:453px;height:129px;',
 			height: 129,width: 453,
@@ -33,18 +40,19 @@
 				},
 				{
 					text:'Вид расчета',
-					width:'168',
+					width:'167',
 					dataIndex:'ВидРасчета',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Резервы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Резервы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Резервы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -55,6 +63,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('БазовыеВидыРасчета');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -63,6 +88,7 @@
 					items:
 					[
 		{
+			id: 'НаборЗаписейРазмерыОтчислений',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:453px;height:128px;',
 			height: 128,width: 453,
@@ -95,11 +121,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Резервы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Резервы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Резервы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -115,6 +142,23 @@
 						name:'Резерв',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НаборЗаписейРазмерыОтчислений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -136,7 +180,8 @@
 			height: 19,
 			style: 'position:absolute;left:91px;top:7px;width:384px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -158,4 +203,5 @@
 			]
 		},
 	]
+	});
 });

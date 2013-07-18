@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.СравнительныйАнализОборотовПоСтатьямБюджетов'], function () 
+{
+	Ext.define('Отчеты.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:490px;height:389px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:348px;',
@@ -43,6 +49,7 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
 		},
 		{
+			id: 'Показатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:221px;width:260px;height:101px;',
 			height: 101,width: 260,
@@ -67,7 +74,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -77,6 +84,23 @@
 						name:'Представление',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Показатели');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -104,6 +128,7 @@
 			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;',
 		},
 		{
+			id: 'ТаблицаСценарии',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:73px;width:460px;height:100px;',
 			height: 100,width: 460,
@@ -123,7 +148,7 @@
 				},
 				{
 					text:'Сценарий',
-					width:'172',
+					width:'171',
 					dataIndex:'Сценарий',
 					flex:1,
 				},
@@ -146,7 +171,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -165,6 +190,23 @@
 						name:'ДатаКон',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСценарии');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -194,6 +236,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:460px;height:297px;',
 			height: 297,width: 460,
@@ -218,7 +261,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -229,6 +272,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -237,6 +297,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:298px;',
 			height: 298,width: 460,
@@ -285,7 +346,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -308,6 +369,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -316,6 +394,7 @@
 					items:
 					[
 		{
+			id: 'ВыбранныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:460px;height:298px;',
 			height: 298,width: 460,
@@ -334,13 +413,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СравнительныйАнализОборотовПоСтатьямБюджетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыбранныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СравнительныйАнализОборотовПоСтатьямБюджетов.ФормаНастройкаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -368,8 +464,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

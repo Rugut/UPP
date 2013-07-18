@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаИзмененияФИО',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ФормаИзмененияФИО',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:310px;height:108px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Фамилия, имя, отчество сотрудника',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -80,4 +83,5 @@
 			]
 		},
 	]
+	});
 });

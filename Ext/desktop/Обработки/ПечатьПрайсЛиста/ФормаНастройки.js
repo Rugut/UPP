@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПечатьПрайсЛиста.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.ПечатьПрайсЛиста'], function () 
+{
+	Ext.define('Обработки.ПечатьПрайсЛиста.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:624px;height:326px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка прайс-листа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:8px;width:606px;height:284px;',
@@ -139,6 +145,7 @@
 					items:
 					[
 		{
+			id: 'ИзмеренияСтроки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:598px;height:234px;',
 			height: 234,width: 598,
@@ -163,7 +170,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -174,6 +181,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИзмеренияСтроки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -182,6 +206,7 @@
 					items:
 					[
 		{
+			id: 'Отбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:598px;height:234px;',
 			height: 234,width: 598,
@@ -230,7 +255,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -253,6 +278,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Отбор');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -261,6 +303,7 @@
 					items:
 					[
 		{
+			id: 'ВыбранныеПоля',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:592px;height:234px;',
 			height: 234,width: 592,
@@ -279,13 +322,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Поле',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВыбранныеПоля');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -295,6 +355,7 @@
 					items:
 					[
 		{
+			id: 'Порядок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:592px;height:234px;',
 			height: 234,width: 592,
@@ -302,13 +363,13 @@
 			[
 				{
 					text:'Поле',
-					width:'393',
+					width:'392',
 					dataIndex:'Имя',
 					flex:1,
 				},
 				{
 					text:'Направление сортировки',
-					width:'173',
+					width:'172',
 					dataIndex:'НаправлениеСортировки',
 					flex:1,
 				},
@@ -319,7 +380,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -330,6 +391,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Порядок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -338,6 +416,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаНастройкиПолейПечать',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:592px;height:210px;',
 			height: 210,width: 592,
@@ -345,7 +424,7 @@
 			[
 				{
 					text:'Поле',
-					width:'198',
+					width:'197',
 					dataIndex:'Поле',
 					flex:1,
 				},
@@ -357,13 +436,13 @@
 				},
 				{
 					text:'Печать',
-					width:'41',
+					width:'40',
 					dataIndex:'ВыводитьНаПечать',
 					flex:1,
 				},
 				{
 					text:'Положение',
-					width:'211',
+					width:'210',
 					dataIndex:'Положение',
 					flex:1,
 				},
@@ -374,7 +453,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьПрайсЛиста/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -390,6 +469,23 @@
 						name:'Положение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаНастройкиПолейПечать');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -427,8 +523,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

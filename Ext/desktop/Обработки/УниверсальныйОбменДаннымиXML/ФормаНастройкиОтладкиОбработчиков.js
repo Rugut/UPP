@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.УниверсальныйОбменДаннымиXML.ФормаНастройкиОтладкиОбработчиков',
+﻿Ext.require(['Данные.Обработки.УниверсальныйОбменДаннымиXML'], function () 
+{
+	Ext.define('Обработки.УниверсальныйОбменДаннымиXML.ФормаНастройкиОтладкиОбработчиков',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:567px;height:360px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка отладки обработчиков',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -150,4 +153,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

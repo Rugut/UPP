@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаОКВЭД',
+﻿Ext.require(['Данные.Обработки.ОбщиеОбъектыРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВводаОКВЭД',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:166px;height:59px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'ОКВЭД',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -54,4 +57,5 @@
 			]
 		},
 	]
+	});
 });

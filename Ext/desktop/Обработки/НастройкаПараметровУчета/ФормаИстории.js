@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НастройкаПараметровУчета.ФормаИстории',
+﻿Ext.require(['Данные.Обработки.НастройкаПараметровУчета'], function () 
+{
+	Ext.define('Обработки.НастройкаПараметровУчета.ФормаИстории',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:431px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -40,9 +43,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПоле');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НастройкаПараметровУчета.ФормаИсторииСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НастройкаПараметровУчета.ФормаИсторииСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -103,4 +106,5 @@
 			]
 		},
 	]
+	});
 });

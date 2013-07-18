@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофилиПолномочийПользователей.СозданиеПрофилей',
+﻿Ext.require(['Данные.Справочники.ПрофилиПолномочийПользователей'], function () 
+{
+	Ext.define('Справочники.ПрофилиПолномочийПользователей.СозданиеПрофилей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:434px;height:398px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Создание профилей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокПрофилей',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:418px;height:332px;',
 			height: 332,width: 418,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Профиль',
-					width:'203',
+					width:'202',
 					dataIndex:'Профиль',
 					flex:1,
 				},
@@ -36,11 +43,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПрофилиПолномочийПользователей").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиПолномочийПользователей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +62,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокПрофилей');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПрофилиПолномочийПользователей.СозданиеПрофилейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПрофилиПолномочийПользователей.СозданиеПрофилейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -103,4 +129,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВозвратТоваровПоставщику.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ВозвратТоваровПоставщику'], function () 
+{
+	Ext.define('Документы.ВозвратТоваровПоставщику.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:696px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Возвраты товаров поставщикам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Вид передачи',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидПередачи',
 					flex:1,
 				},
@@ -81,7 +84,7 @@
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
@@ -93,19 +96,19 @@
 				},
 				{
 					text:'Договор контрагента',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Сделка',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сделка',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -184,9 +187,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -230,4 +233,5 @@
 			]
 		},
 	]
+	});
 });

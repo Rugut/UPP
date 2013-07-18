@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.ФормаНастройкиСовпадения',
+﻿Ext.require(['Данные.Обработки.ПоискИЗаменаДублирующихсяЭлементов'], function () 
+{
+	Ext.define('Обработки.ПоискИЗаменаДублирующихсяЭлементов.ФормаНастройкиСовпадения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:339px;height:165px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка обработки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -62,4 +65,5 @@
 			]
 		},
 	]
+	});
 });

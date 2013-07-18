@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПрофессииРабочих.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ПрофессииРабочих'], function () 
+{
+	Ext.define('Справочники.ПрофессииРабочих.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:325px;height:110px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Профессии рабочих',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

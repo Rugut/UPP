@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НормативыОбслуживанияОС.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НормативыОбслуживанияОС'], function () 
+{
+	Ext.define('Справочники.НормативыОбслуживанияОС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:404px;height:454px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Нормативы обслуживания ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -211,7 +214,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'2200',
+					width:'220',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -246,9 +249,9 @@
 					{
 						var грид = Ext.getCmp('ОС');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НормативыОбслуживанияОС.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НормативыОбслуживанияОС.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -332,4 +335,5 @@
 			]
 		},
 	]
+	});
 });

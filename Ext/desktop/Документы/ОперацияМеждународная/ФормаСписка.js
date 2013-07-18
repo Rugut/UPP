@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОперацияМеждународная.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ОперацияМеждународная'], function () 
+{
+	Ext.define('Документы.ОперацияМеждународная.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:470px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Журнал операций (международный учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:764px;height:159px;',
 			height: 159,width: 764,
@@ -46,7 +53,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +70,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОперацияМеждународная.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОперацияМеждународная.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеДвижения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:222px;width:764px;height:240px;',
 			height: 240,width: 764,
@@ -102,7 +127,7 @@
 				},
 				{
 					text:'Количество Дт',
-					width:'8',
+					width:'7',
 					dataIndex:'КоличествоДт',
 					flex:1,
 				},
@@ -114,7 +139,7 @@
 				},
 				{
 					text:'Вал. сумма Дт',
-					width:'98',
+					width:'97',
 					dataIndex:'ВалютнаяСуммаДт',
 					flex:1,
 				},
@@ -150,7 +175,7 @@
 				},
 				{
 					text:'Валюта Кт',
-					width:'52',
+					width:'51',
 					dataIndex:'ВалютаКт',
 					flex:1,
 				},
@@ -185,7 +210,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОперацияМеждународная/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -244,6 +269,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеДвижения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОперацияМеждународная.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОперацияМеждународная.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -262,7 +304,8 @@
 			height: 19,
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -287,4 +330,5 @@
 			]
 		},
 	]
+	});
 });

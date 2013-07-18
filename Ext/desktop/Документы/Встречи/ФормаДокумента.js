@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Встречи.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.Встречи'], function () 
+{
+	Ext.define('Документы.Встречи.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:675px;height:446px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Встреча',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -135,9 +138,9 @@
 					{
 						var грид = Ext.getCmp('Участники');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Встречи.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Встречи.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -284,4 +287,5 @@
 			]
 		},
 	]
+	});
 });

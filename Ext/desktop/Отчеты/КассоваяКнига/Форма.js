@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.КассоваяКнига.Форма',
+﻿Ext.require(['Данные.Отчеты.КассоваяКнига'], function () 
+{
+	Ext.define('Отчеты.КассоваяКнига.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:639px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Кассовая книга за период',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -167,4 +170,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализПотребностейВНоменклатуре.ФормаВыбора',
+﻿Ext.require(['Данные.Отчеты.АнализПотребностейВНоменклатуре'], function () 
+{
+	Ext.define('Отчеты.АнализПотребностейВНоменклатуре.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:252px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор поля',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,9 +52,9 @@
 					{
 						var грид = Ext.getCmp('ДеревоВыбора');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АнализПотребностейВНоменклатуре.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АнализПотребностейВНоменклатуре.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -75,4 +78,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

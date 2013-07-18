@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкам',
+﻿Ext.require(['Данные.Документы.ВыгрузкаРегламентированныхОтчетов'], function () 
+{
+	Ext.define('Документы.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкам',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:649px;height:148px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Навигация по ошибкам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ТаблицаСообщений',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:24px;width:649px;height:124px;',
 			height: 124,width: 649,
@@ -29,7 +36,7 @@
 				},
 				{
 					text:'Страница',
-					width:'98',
+					width:'97',
 					dataIndex:'Страница',
 					flex:1,
 				},
@@ -76,7 +83,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,6 +115,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаСообщений');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкамСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкамСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -129,8 +153,10 @@
 			text: '',
 			style: 'position:absolute;left:193px;top:5px;width:450px;height:15px;text-align:right;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

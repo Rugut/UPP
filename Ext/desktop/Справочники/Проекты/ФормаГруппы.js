@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Проекты.ФормаГруппы',
+﻿Ext.require(['Данные.Справочники.Проекты'], function () 
+{
+	Ext.define('Справочники.Проекты.ФормаГруппы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группа Проекты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

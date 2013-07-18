@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоговорыКонтрагентов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДоговорыКонтрагентов'], function () 
+{
+	Ext.define('Справочники.ДоговорыКонтрагентов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:511px;height:579px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Договор контрагента',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -545,6 +551,7 @@
 					items:
 					[
 		{
+			id: 'ДокументыУсловияДоговора',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:54px;width:481px;height:256px;',
 			height: 256,width: 481,
@@ -589,11 +596,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -615,6 +623,23 @@
 						name:'СуммаУсловийДоговора',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументыУсловияДоговора');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -641,6 +666,7 @@
 					items:
 					[
 		{
+			id: 'Скидки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:481px;height:222px;',
 			height: 222,width: 481,
@@ -739,11 +765,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -793,6 +820,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Скидки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -841,6 +885,7 @@
 					items:
 					[
 		{
+			id: 'Свойства',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:481px;height:222px;',
 			height: 222,width: 481,
@@ -854,24 +899,25 @@
 				},
 				{
 					text:'Свойство',
-					width:'186',
+					width:'185',
 					dataIndex:'Свойство',
 					flex:1,
 				},
 				{
 					text:'Значение',
-					width:'302',
+					width:'301',
 					dataIndex:'Значение',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -885,6 +931,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Свойства');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -893,6 +956,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:481px;height:222px;',
 			height: 222,width: 481,
@@ -912,18 +976,19 @@
 				},
 				{
 					text:'Категория',
-					width:'465',
+					width:'464',
 					dataIndex:'Категория',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -936,6 +1001,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -1035,8 +1117,10 @@
 			height: 19,
 			style: 'position:absolute;left:423px;top:153px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

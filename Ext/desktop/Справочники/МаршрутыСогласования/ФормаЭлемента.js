@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.МаршрутыСогласования.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.МаршрутыСогласования'], function () 
+{
+	Ext.define('Справочники.МаршрутыСогласования.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:428px;height:319px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Этап согласования',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -42,6 +48,7 @@
 			style: 'position:absolute;left:108px;top:57px;width:312px;height:19px;',
 		},
 		{
+			id: 'СогласующиеЛица',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:134px;width:412px;height:152px;',
 			height: 152,width: 412,
@@ -62,11 +69,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.МаршрутыСогласования").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МаршрутыСогласования/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МаршрутыСогласования/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -77,13 +85,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СогласующиеЛица');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МаршрутыСогласования.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МаршрутыСогласования.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Согласующие лица',
 			style: 'position:absolute;left:8px;top:89px;width:412px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -146,4 +172,5 @@
 			]
 		},
 	]
+	});
 });

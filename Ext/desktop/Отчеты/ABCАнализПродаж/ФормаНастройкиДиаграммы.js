@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ABCАнализПродаж.ФормаНастройкиДиаграммы',
+﻿Ext.require(['Данные.Отчеты.ABCАнализПродаж'], function () 
+{
+	Ext.define('Отчеты.ABCАнализПродаж.ФормаНастройкиДиаграммы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:256px;height:342px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка диаграммы (ABC-анализ продаж)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -58,9 +61,9 @@
 					{
 						var грид = Ext.getCmp('ПоказателиДиаграммы');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ABCАнализПродаж.ФормаНастройкиДиаграммыСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ABCАнализПродаж.ФормаНастройкиДиаграммыСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -95,4 +98,5 @@
 			]
 		},
 	]
+	});
 });

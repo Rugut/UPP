@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПрочихЗатрат.ФормаВводаСуммы',
+﻿Ext.require(['Данные.Обработки.ПодборПрочихЗатрат'], function () 
+{
+	Ext.define('Обработки.ПодборПрочихЗатрат.ФормаВводаСуммы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:241px;height:87px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка  Подбор прочих затрат',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -77,4 +80,5 @@
 			]
 		},
 	]
+	});
 });

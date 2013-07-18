@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоговорыКонтрагентов.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.ДоговорыКонтрагентов'], function () 
+{
+	Ext.define('Справочники.ДоговорыКонтрагентов.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:742px;height:361px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Договоры контрагентов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:174px;top:33px;width:560px;height:320px;',
 			height: 320,width: 560,
@@ -47,7 +54,7 @@
 				},
 				{
 					text:'Взаиморасчеты',
-					width:'108',
+					width:'107',
 					dataIndex:'ВедениеВзаиморасчетов',
 					flex:1,
 				},
@@ -90,11 +97,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -135,8 +143,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СправочникДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
 			height: 320,width: 160,
@@ -151,11 +177,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -163,8 +190,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -183,4 +228,5 @@
 			]
 		},
 	]
+	});
 });

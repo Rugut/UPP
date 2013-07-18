@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.УченыеЗвания.ФормаПодбораИзКлассификатора',
+﻿Ext.require(['Данные.Справочники.УченыеЗвания'], function () 
+{
+	Ext.define('Справочники.УченыеЗвания.ФормаПодбораИзКлассификатора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:696px;height:396px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ученые звания',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

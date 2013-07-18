@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТОУправлениеЭквайринговойСистемой.Форма',
+﻿Ext.require(['Данные.Обработки.ТОУправлениеЭквайринговойСистемой'], function () 
+{
+	Ext.define('Обработки.ТОУправлениеЭквайринговойСистемой.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:274px;height:209px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Управление эквайринговой системой',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -69,4 +72,5 @@
 			]
 		},
 	]
+	});
 });

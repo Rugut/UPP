@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиАналитическогоБаланса.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтатьиАналитическогоБаланса'], function () 
+{
+	Ext.define('Справочники.СтатьиАналитическогоБаланса.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:454px;height:336px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статьи аналитического баланса',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,13 +66,13 @@
 				},
 				{
 					text:'Наименование счета',
-					width:'1200',
+					width:'120',
 					dataIndex:'НаименованиеСчета',
 					flex:1,
 				},
 				{
 					text:'Вид остатка',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидОстатка',
 					flex:1,
 				},
@@ -116,9 +119,9 @@
 					{
 						var грид = Ext.getCmp('ОтборСчетовБюджетирования');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СтатьиАналитическогоБаланса.ФормаЭлементаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СтатьиАналитическогоБаланса.ФормаЭлементаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -245,4 +248,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

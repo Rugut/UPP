@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.ГрупповаяОбработкаСправочниковИДокументов'], function () 
+{
+	Ext.define('Обработки.ГрупповаяОбработкаСправочниковИДокументов.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:316px;height:163px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -76,4 +79,5 @@
 			]
 		},
 	]
+	});
 });

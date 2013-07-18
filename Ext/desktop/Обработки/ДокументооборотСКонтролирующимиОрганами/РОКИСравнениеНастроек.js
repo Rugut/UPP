@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РОКИСравнениеНастроек',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РОКИСравнениеНастроек',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:646px;height:77px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Сравнение настроек',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -55,4 +58,5 @@
 			]
 		},
 	]
+	});
 });

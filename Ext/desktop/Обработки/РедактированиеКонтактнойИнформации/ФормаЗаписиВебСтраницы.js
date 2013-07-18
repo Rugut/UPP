@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиВебСтраницы',
+﻿Ext.require(['Данные.Обработки.РедактированиеКонтактнойИнформации'], function () 
+{
+	Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиВебСтраницы',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:334px;height:189px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Веб-страница',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -110,4 +113,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

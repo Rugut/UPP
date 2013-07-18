@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.АккредитивПереданный.ФормаСписка',
+﻿Ext.require(['Данные.Документы.АккредитивПереданный'], function () 
+{
+	Ext.define('Документы.АккредитивПереданный.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:756px;height:260px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Аккредитивы переданные',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -69,7 +72,7 @@
 				},
 				{
 					text:'Вид операции',
-					width:'1300',
+					width:'130',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
@@ -184,9 +187,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.АккредитивПереданный.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.АккредитивПереданный.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -229,4 +232,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

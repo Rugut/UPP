@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КомпетенцииРаботников.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КомпетенцииРаботников'], function () 
+{
+	Ext.define('Справочники.КомпетенцииРаботников.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:428px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Компетенция сотрудника',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -82,6 +88,7 @@
 			style: 'position:absolute;left:96px;top:30px;width:286px;height:19px;',
 		},
 		{
+			id: 'ОписаниеОценок',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:84px;width:376px;height:203px;',
 			height: 203,width: 376,
@@ -107,18 +114,19 @@
 				},
 				{
 					text:'Описание оценки',
-					width:'250',
+					width:'249',
 					dataIndex:'ОписаниеОценки',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КомпетенцииРаботников").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомпетенцииРаботников/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КомпетенцииРаботников/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -134,6 +142,23 @@
 						name:'ОписаниеОценки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОписаниеОценок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КомпетенцииРаботников.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КомпетенцииРаботников.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -162,7 +187,8 @@
 			height: 19,
 			style: 'position:absolute;left:117px;top:58px;width:281px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -246,4 +272,5 @@
 			]
 		},
 	]
+	});
 });

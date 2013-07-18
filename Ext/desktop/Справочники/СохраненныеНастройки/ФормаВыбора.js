@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СохраненныеНастройки.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.СохраненныеНастройки'], function () 
+{
+	Ext.define('Справочники.СохраненныеНастройки.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:551px;height:327px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выбор настройки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписокСохраненныеНастройки',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:60px;width:535px;height:259px;',
 			height: 259,width: 535,
@@ -17,7 +24,7 @@
 			[
 				{
 					text:'Наименование',
-					width:'217',
+					width:'216',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -35,24 +42,25 @@
 				},
 				{
 					text:'Описание',
-					width:'206',
+					width:'205',
 					dataIndex:'Описание',
 					flex:1,
 				},
 				{
 					text:'Пользователи',
-					width:'364',
+					width:'363',
 					dataIndex:'Пользователи',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СохраненныеНастройки").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СохраненныеНастройки/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -71,6 +79,23 @@
 						name:'Пользователи',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписокСохраненныеНастройки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СохраненныеНастройки.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СохраненныеНастройки.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -103,7 +128,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -126,4 +152,5 @@
 			]
 		},
 	]
+	});
 });

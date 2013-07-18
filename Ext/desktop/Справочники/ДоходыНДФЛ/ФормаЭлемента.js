@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоходыНДФЛ.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДоходыНДФЛ'], function () 
+{
+	Ext.define('Справочники.ДоходыНДФЛ.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:471px;height:247px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Код дохода для исчисления НДФЛ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -140,4 +143,5 @@
 			]
 		},
 	]
+	});
 });

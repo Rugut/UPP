@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратам',
+﻿Ext.require(['Данные.Справочники.СпецификацииНоменклатуры'], function () 
+{
+	Ext.define('Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратам',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:700px;height:337px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Спецификации номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -42,6 +48,7 @@
 			style: 'position:absolute;left:465px;top:32px;width:227px;height:19px;',
 		},
 		{
+			id: 'ФактЗатраты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:138px;width:684px;height:166px;',
 			height: 166,width: 684,
@@ -55,7 +62,7 @@
 				},
 				{
 					text:'Характеристика материала',
-					width:'132',
+					width:'131',
 					dataIndex:'ХарактеристикаМатериала',
 					flex:1,
 				},
@@ -80,11 +87,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -103,6 +111,23 @@
 						name:'Количество',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ФактЗатраты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратамСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратамСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -209,7 +234,8 @@
 			text: '...',
 			style: 'position:absolute;left:290px;top:8px;width:19px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -243,4 +269,5 @@
 			]
 		},
 	]
+	});
 });

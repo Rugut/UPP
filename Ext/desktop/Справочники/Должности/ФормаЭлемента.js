@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Должности.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.Должности'], function () 
+{
+	Ext.define('Справочники.Должности.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:446px;height:424px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Должность',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -113,6 +119,7 @@
 					items:
 					[
 		{
+			id: 'Компетенции',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:416px;height:249px;',
 			height: 249,width: 416,
@@ -126,7 +133,7 @@
 				},
 				{
 					text:'Компетенция',
-					width:'181',
+					width:'180',
 					dataIndex:'Компетенция',
 					flex:1,
 				},
@@ -139,11 +146,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Должности").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Должности/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Должности/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -157,12 +165,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Компетенции');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Должности.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Должности.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -210,4 +236,5 @@
 			]
 		},
 	]
+	});
 });

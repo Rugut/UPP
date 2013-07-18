@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.МедицинскиеСтраховыеПолисы.РедактированиеДокументаУдостоверяющегоЛичность',
+﻿Ext.require(['Данные.Справочники.МедицинскиеСтраховыеПолисы'], function () 
+{
+	Ext.define('Справочники.МедицинскиеСтраховыеПолисы.РедактированиеДокументаУдостоверяющегоЛичность',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:160px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Паспортные данные физического лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -127,4 +130,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

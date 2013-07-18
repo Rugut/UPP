@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ДоговорыЭквайринга.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ДоговорыЭквайринга'], function () 
+{
+	Ext.define('Справочники.ДоговорыЭквайринга.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:439px;height:292px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Договор эквайринга',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -74,6 +80,7 @@
 			style: 'position:absolute;left:148px;top:79px;width:281px;height:19px;',
 		},
 		{
+			id: 'ТарифыЗаРасчетноеОбслуживание',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:145px;width:421px;height:114px;',
 			height: 114,width: 421,
@@ -87,24 +94,25 @@
 				},
 				{
 					text:'Вид оплаты',
-					width:'275',
+					width:'274',
 					dataIndex:'ВидОплаты',
 					flex:1,
 				},
 				{
 					text:'% торговой уступки',
-					width:'105',
+					width:'104',
 					dataIndex:'ПроцентТорговойУступки',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ДоговорыЭквайринга").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыЭквайринга/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыЭквайринга/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -118,13 +126,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТарифыЗаРасчетноеОбслуживание');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДоговорыЭквайринга.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДоговорыЭквайринга.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Тарифы за расчетное обслуживание',
 			style: 'position:absolute;left:8px;top:102px;width:421px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -166,4 +192,5 @@
 			]
 		},
 	]
+	});
 });

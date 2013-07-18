@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.МедицинскиеОрганизации.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.МедицинскиеОрганизации'], function () 
+{
+	Ext.define('Справочники.МедицинскиеОрганизации.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:565px;height:136px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Медицинские организации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -132,4 +135,5 @@
 			]
 		},
 	]
+	});
 });

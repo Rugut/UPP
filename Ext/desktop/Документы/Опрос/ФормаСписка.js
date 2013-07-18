@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Опрос.ФормаСписка',
+﻿Ext.require(['Данные.Документы.Опрос'], function () 
+{
+	Ext.define('Документы.Опрос.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:420px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Опросы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,25 +42,25 @@
 				},
 				{
 					text:'Опрашиваемое лицо',
-					width:'1200',
+					width:'120',
 					dataIndex:'ОпрашиваемоеЛицо',
 					flex:1,
 				},
 				{
 					text:'Типовая анкета',
-					width:'1200',
+					width:'120',
 					dataIndex:'ТиповаяАнкета',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -103,9 +106,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.Опрос.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.Опрос.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -242,4 +245,5 @@
 			]
 		},
 	]
+	});
 });

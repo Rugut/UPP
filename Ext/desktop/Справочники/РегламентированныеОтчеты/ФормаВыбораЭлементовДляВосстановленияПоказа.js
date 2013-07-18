@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.РегламентированныеОтчеты.ФормаВыбораЭлементовДляВосстановленияПоказа',
+﻿Ext.require(['Данные.Справочники.РегламентированныеОтчеты'], function () 
+{
+	Ext.define('Справочники.РегламентированныеОтчеты.ФормаВыбораЭлементовДляВосстановленияПоказа',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:550px;height:361px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Скрытые отчеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'РегламентированныеОтчеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:36px;width:534px;height:292px;',
 			height: 292,width: 534,
@@ -36,11 +43,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -54,8 +62,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РегламентированныеОтчеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РегламентированныеОтчеты.ФормаВыбораЭлементовДляВосстановленияПоказаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РегламентированныеОтчеты.ФормаВыбораЭлементовДляВосстановленияПоказаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -95,4 +121,5 @@
 			]
 		},
 	]
+	});
 });

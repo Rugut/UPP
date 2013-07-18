@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КонтактныеЛица.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КонтактныеЛица'], function () 
+{
+	Ext.define('Справочники.КонтактныеЛица.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:595px;height:387px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Контактные лица',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -50,6 +56,7 @@
 					items:
 					[
 		{
+			id: 'КонтактнаяИнформация',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:565px;height:214px;',
 			height: 214,width: 565,
@@ -69,13 +76,13 @@
 				},
 				{
 					text:'Вид',
-					width:'173',
+					width:'172',
 					dataIndex:'Вид',
 					flex:1,
 				},
 				{
 					text:'Представление',
-					width:'244',
+					width:'243',
 					dataIndex:'Представление',
 					flex:1,
 				},
@@ -88,11 +95,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -112,6 +120,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтактнаяИнформация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -120,6 +145,7 @@
 					items:
 					[
 		{
+			id: 'НаборКонтрагентов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:565px;height:214px;',
 			height: 214,width: 565,
@@ -158,11 +184,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -182,6 +209,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НаборКонтрагентов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -190,6 +234,7 @@
 					items:
 					[
 		{
+			id: 'События',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:565px;height:214px;',
 			height: 214,width: 565,
@@ -246,11 +291,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -278,6 +324,23 @@
 						name:'ОписаниеСобытия',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('События');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -376,6 +439,7 @@
 					items:
 					[
 		{
+			id: 'СвойстваИЗначения',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:565px;height:220px;',
 			height: 220,width: 565,
@@ -402,11 +466,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -420,6 +485,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СвойстваИЗначения');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -428,6 +510,7 @@
 					items:
 					[
 		{
+			id: 'Категории',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:565px;height:220px;',
 			height: 220,width: 565,
@@ -454,11 +537,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -471,6 +555,23 @@
 						name:'Категория',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Категории');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -510,7 +611,8 @@
 			height: 19,
 			style: 'position:absolute;left:448px;top:33px;width:139px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -558,4 +660,5 @@
 			]
 		},
 	]
+	});
 });

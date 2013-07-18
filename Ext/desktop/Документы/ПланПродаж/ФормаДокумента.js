@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланПродаж.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПланПродаж'], function () 
+{
+	Ext.define('Документы.ПланПродаж.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:380px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'План продаж',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -85,7 +88,7 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
@@ -175,7 +178,7 @@
 				},
 				{
 					text:'Вариант распределения',
-					width:'1300',
+					width:'130',
 					dataIndex:'ВариантРаспределения',
 					flex:1,
 				},
@@ -257,9 +260,9 @@
 					{
 						var грид = Ext.getCmp('СоставПлана');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланПродаж.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланПродаж.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -486,4 +489,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СерийныеНомера.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.СерийныеНомера'], function () 
+{
+	Ext.define('Справочники.СерийныеНомера.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:300px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Серийные номера',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -27,13 +30,13 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'1500',
+					width:'150',
 					dataIndex:'Владелец',
 					flex:1,
 				},
 				{
 					text:'Серийный номер',
-					width:'2600',
+					width:'260',
 					dataIndex:'Код',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СерийныеНомера.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СерийныеНомера.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДоговорЗаймаСРаботником.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ДоговорЗаймаСРаботником'], function () 
+{
+	Ext.define('Документы.ДоговорЗаймаСРаботником.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:534px;height:432px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Договор займа с сотрудником',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -388,4 +391,5 @@
 			]
 		},
 	]
+	});
 });

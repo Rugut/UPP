@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ПроизвольныеОтчеты.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.ПроизвольныеОтчеты'], function () 
+{
+	Ext.define('Справочники.ПроизвольныеОтчеты.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:665px;height:382px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Произвольные отчеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:443px;height:305px;',
 			height: 305,width: 443,
@@ -24,11 +31,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -36,8 +44,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроизвольныеОтчеты.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроизвольныеОтчеты.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СписокСохраненныеНастройки',
 			xtype: 'grid',
 			style: 'position:absolute;left:457px;top:33px;width:200px;height:305px;',
 			height: 305,width: 200,
@@ -52,17 +78,35 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Ссылка',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокСохраненныеНастройки');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПроизвольныеОтчеты.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПроизвольныеОтчеты.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -77,7 +121,8 @@
 			text: 'Описание:',
 			style: 'position:absolute;left:8px;top:343px;width:56px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -207,4 +252,5 @@
 			]
 		},
 	]
+	});
 });

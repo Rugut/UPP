@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетПоСобытиям.Форма',
+﻿Ext.require(['Данные.Отчеты.ОтчетПоСобытиям'], function () 
+{
+	Ext.define('Отчеты.ОтчетПоСобытиям.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:396px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет по событиям',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -173,4 +176,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПредупреждениеПриПереходеНа534',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПредупреждениеПриПереходеНа534',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:653px;height:273px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Внимание!',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -41,4 +44,5 @@
 			]
 		},
 	]
+	});
 });

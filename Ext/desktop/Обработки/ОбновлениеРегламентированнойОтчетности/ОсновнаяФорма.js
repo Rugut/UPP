@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбновлениеРегламентированнойОтчетности.ОсновнаяФорма',
+﻿Ext.require(['Данные.Обработки.ОбновлениеРегламентированнойОтчетности'], function () 
+{
+	Ext.define('Обработки.ОбновлениеРегламентированнойОтчетности.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:83px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обновление регламентированной отчетности',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -38,4 +41,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализТочкиЗаказа.Форма',
+﻿Ext.require(['Данные.Отчеты.АнализТочкиЗаказа'], function () 
+{
+	Ext.define('Отчеты.АнализТочкиЗаказа.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Анализ точки заказа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -213,4 +216,5 @@
 			]
 		},
 	]
+	});
 });

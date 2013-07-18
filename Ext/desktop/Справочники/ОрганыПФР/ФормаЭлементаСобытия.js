@@ -9,28 +9,30 @@
 			fields: ['Код', 'Наименование'],
 			proxy: new Ext.data.ScriptTagProxy({ url: 'https://as-msk-n7077:1337/Справочники/ОрганыПФР/НайтиПоСсылке/' + ссылка, }),
 		});
-		win = Ext.create('Справочники.ОрганыПФР.ФормаЭлемента', {});
+		Ext.require(['Справочники.ОрганыПФР.ФормаЭлемента'], function () {
+			var win = Ext.create('Справочники.ОрганыПФР.ФормаЭлемента', {});
 
-		var form = win.down('form');
-		count = st.getCount();
-		if (count == 0)
-		{
-			var массивЗначений = строкаЗначений;
-		}
-		else
-		{
-			st.on('load', function ()
+			var form = win.down('form');
+			count = st.getCount();
+			if (count == 0)
 			{
-				var массивЗначений = st.data.items[0].data;
-			});
-		};
+				var массивЗначений = строкаЗначений;
+			}
+			else
+			{
+				st.on('load', function ()
+				{
+					var массивЗначений = st.data.items[0].data;
+				});
+			};
 
-		form.getForm().setValues(массивЗначений);
+			form.getForm().setValues(массивЗначений);
 
-		if (win)
-		{
-			win.show();
-			return win;
-		}
+			if (win)
+			{
+				win.show();
+				return win;
+			}
+		});
 	}
 });

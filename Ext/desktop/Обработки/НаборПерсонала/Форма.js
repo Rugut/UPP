@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НаборПерсонала.Форма',
+﻿Ext.require(['Данные.Обработки.НаборПерсонала'], function () 
+{
+	Ext.define('Обработки.НаборПерсонала.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:925px;height:580px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Набор персонала',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:703px;top:33px;width:214px;height:539px;',
@@ -44,6 +50,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеНеразобранныеПисьма',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:31px;width:275px;height:128px;',
 			height: 128,width: 275,
@@ -51,13 +58,13 @@
 			[
 				{
 					text:'Тема',
-					width:'173',
+					width:'172',
 					dataIndex:'Тема',
 					flex:1,
 				},
 				{
 					text:'Отправитель',
-					width:'100',
+					width:'99',
 					dataIndex:'Отправитель',
 					flex:1,
 				},
@@ -110,7 +117,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -142,6 +149,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеНеразобранныеПисьма');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НаборПерсонала.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НаборПерсонала.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -165,6 +189,7 @@
 					items:
 					[
 		{
+			id: 'ТабличноеПолеЗаявкиКандидатов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:53px;width:229px;height:295px;',
 			height: 295,width: 229,
@@ -207,7 +232,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -227,8 +252,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеЗаявкиКандидатов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НаборПерсонала.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НаборПерсонала.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ТабличноеПолеПерепискаПоЗаявке',
 			xtype: 'grid',
 			style: 'position:absolute;left:235px;top:268px;width:146px;height:80px;',
 			height: 80,width: 146,
@@ -265,7 +308,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаборПерсонала/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -281,6 +324,23 @@
 						name:'ДатаОтправления',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеПерепискаПоЗаявке');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НаборПерсонала.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НаборПерсонала.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -340,7 +400,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -410,4 +471,5 @@
 			]
 		},
 	]
+	});
 });

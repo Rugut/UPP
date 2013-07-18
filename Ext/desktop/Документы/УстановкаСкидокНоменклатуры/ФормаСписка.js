@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаСписка',
+﻿Ext.require(['Данные.Документы.УстановкаСкидокНоменклатуры'], function () 
+{
+	Ext.define('Документы.УстановкаСкидокНоменклатуры.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:672px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Установки скидок номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'Список',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:656px;height:380px;',
 			height: 380,width: 656,
@@ -47,19 +54,19 @@
 				},
 				{
 					text:'Условие',
-					width:'242',
+					width:'241',
 					dataIndex:'Условие',
 					flex:1,
 				},
 				{
 					text:'Значение условия',
-					width:'132',
+					width:'131',
 					dataIndex:'ЗначениеУсловия',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'196',
+					width:'195',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -76,7 +83,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаСкидокНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -108,6 +115,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Список');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаСкидокНоменклатуры.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаСкидокНоменклатуры.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -132,8 +156,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

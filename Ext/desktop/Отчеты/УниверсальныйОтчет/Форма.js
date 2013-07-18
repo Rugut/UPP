@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.УниверсальныйОтчет.Форма',
+﻿Ext.require(['Данные.Отчеты.УниверсальныйОтчет'], function () 
+{
+	Ext.define('Отчеты.УниверсальныйОтчет.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:450px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Универсальный отчет',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -209,4 +212,5 @@
 			]
 		},
 	]
+	});
 });

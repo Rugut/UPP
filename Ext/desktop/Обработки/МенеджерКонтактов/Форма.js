@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МенеджерКонтактов.Форма',
+﻿Ext.require(['Данные.Обработки.МенеджерКонтактов'], function () 
+{
+	Ext.define('Обработки.МенеджерКонтактов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:837px;height:496px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Менеджер контактов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:0px;top:25px;width:837px;height:471px;',
@@ -46,6 +52,7 @@
 			style: 'position:absolute;left:1px;top:0px;width:88px;height:19px;',
 		},
 		{
+			id: 'ЗаказыИСобытияПредставление',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:48px;width:804px;height:409px;',
 			height: 409,width: 804,
@@ -112,7 +119,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -143,6 +150,23 @@
 						name:'Информация',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗаказыИСобытияПредставление');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -187,6 +211,7 @@
 					items:
 					[
 		{
+			id: 'СделкиДень',
 			xtype: 'grid',
 			style: 'position:absolute;left:339px;top:0px;width:332px;height:427px;',
 			height: 427,width: 332,
@@ -206,13 +231,13 @@
 				},
 				{
 					text:'Вид операции',
-					width:'136',
+					width:'135',
 					dataIndex:'ВидОперации',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'133',
+					width:'132',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
@@ -223,7 +248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -239,6 +264,23 @@
 						name:'Контрагент',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СделкиДень');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -307,6 +349,7 @@
 					items:
 					[
 		{
+			id: 'ЭлектронныеПисьмаСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:231px;top:30px;width:578px;height:161px;',
 			height: 161,width: 578,
@@ -374,67 +417,67 @@
 				},
 				{
 					text:'Не рассмотрено с ...',
-					width:'64',
+					width:'63',
 					dataIndex:'ГраницаКонтроляОтветаНаПисьмо',
 					flex:1,
 				},
 				{
 					text:'Дата создания',
-					width:'105',
+					width:'104',
 					dataIndex:'Дата',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'84',
+					width:'83',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Предмет',
-					width:'87',
+					width:'86',
 					dataIndex:'Предмет',
 					flex:1,
 				},
 				{
 					text:'Группа учетной записи',
-					width:'104',
+					width:'103',
 					dataIndex:'ГруппаУчетнойЗаписи',
 					flex:1,
 				},
 				{
 					text:'Основание',
-					width:'100',
+					width:'99',
 					dataIndex:'Основание',
 					flex:1,
 				},
 				{
 					text:'Номер',
-					width:'88',
+					width:'87',
 					dataIndex:'Номер',
 					flex:1,
 				},
 				{
 					text:'Учетная запись',
-					width:'107',
+					width:'106',
 					dataIndex:'УчетнаяЗапись',
 					flex:1,
 				},
 				{
 					text:'Копии',
-					width:'100',
+					width:'99',
 					dataIndex:'КопииПредставление',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'100',
+					width:'99',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 				{
 					text:'Текст письма',
-					width:'100',
+					width:'99',
 					dataIndex:'ТекстПисьма',
 					flex:1,
 				},
@@ -445,7 +488,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -512,6 +555,23 @@
 						name:'ТекстПисьма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭлектронныеПисьмаСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -769,6 +829,7 @@
 					items:
 					[
 		{
+			id: 'ГруппыПисемДерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:220px;height:210px;',
 			height: 210,width: 220,
@@ -793,7 +854,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -804,8 +865,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГруппыПисемДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ПредметыСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:216px;width:220px;height:217px;',
 			height: 217,width: 220,
@@ -824,13 +903,30 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'Предмет',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПредметыСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -840,6 +936,7 @@
 					items:
 					[
 		{
+			id: 'ГруппыПисемДерево1',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:0px;width:220px;height:433px;',
 			height: 433,width: 220,
@@ -864,7 +961,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -874,6 +971,23 @@
 						name:'Владелец',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ГруппыПисемДерево1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -951,8 +1065,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

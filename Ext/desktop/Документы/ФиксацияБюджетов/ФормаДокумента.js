@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ФиксацияБюджетов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ФиксацияБюджетов'], function () 
+{
+	Ext.define('Документы.ФиксацияБюджетов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:324px;height:229px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Фиксация бюджетов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -198,4 +201,5 @@
 			]
 		},
 	]
+	});
 });

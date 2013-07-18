@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаСписка',
+﻿Ext.require(['Данные.Справочники.НаправленияСписанияВыпущеннойПродукции'], function () 
+{
+	Ext.define('Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:281px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Направления списания выпущенной продукции (услуг)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СправочникСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:588px;height:240px;',
 			height: 240,width: 588,
@@ -35,18 +42,19 @@
 				},
 				{
 					text:'Организация',
-					width:'155',
+					width:'154',
 					dataIndex:'Организация',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НаправленияСписанияВыпущеннойПродукции").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НаправленияСписанияВыпущеннойПродукции/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -63,8 +71,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НаправленияСписанияВыпущеннойПродукции.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -76,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

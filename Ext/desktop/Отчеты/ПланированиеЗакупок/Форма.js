@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ПланированиеЗакупок.Форма',
+﻿Ext.require(['Данные.Отчеты.ПланированиеЗакупок'], function () 
+{
+	Ext.define('Отчеты.ПланированиеЗакупок.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:800px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Планирование закупок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -238,9 +241,9 @@
 					{
 						var грид = Ext.getCmp('Отбор');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланированиеЗакупок.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланированиеЗакупок.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -290,9 +293,9 @@
 					{
 						var грид = Ext.getCmp('ВыбранныеПоля');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланированиеЗакупок.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланированиеЗакупок.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -351,9 +354,9 @@
 					{
 						var грид = Ext.getCmp('СписокПоказателей');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланированиеЗакупок.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланированиеЗакупок.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -429,4 +432,5 @@
 			]
 		},
 	]
+	});
 });

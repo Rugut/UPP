@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеУсловийИсполнительногоЛиста'], function () 
+{
+	Ext.define('Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:708px;height:472px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Изменение условий удержания по исполнительному листу',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -402,4 +405,5 @@
 			]
 		},
 	]
+	});
 });

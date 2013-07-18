@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ЗадолженностьДиаграмма.ФормаДебиторскаяЗадолженность',
+﻿Ext.require(['Данные.Отчеты.ЗадолженностьДиаграмма'], function () 
+{
+	Ext.define('Отчеты.ЗадолженностьДиаграмма.ФормаДебиторскаяЗадолженность',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:449px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -162,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

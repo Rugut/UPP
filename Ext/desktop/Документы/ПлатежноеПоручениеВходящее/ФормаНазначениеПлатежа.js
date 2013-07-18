@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПлатежноеПоручениеВходящее.ФормаНазначениеПлатежа',
+﻿Ext.require(['Данные.Документы.ПлатежноеПоручениеВходящее'], function () 
+{
+	Ext.define('Документы.ПлатежноеПоручениеВходящее.ФормаНазначениеПлатежа',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:444px;height:185px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Платежное поручение (входящее): Назначение платежа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -43,4 +46,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

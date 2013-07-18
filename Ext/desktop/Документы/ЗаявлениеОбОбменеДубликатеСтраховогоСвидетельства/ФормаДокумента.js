@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства'], function () 
+{
+	Ext.define('Документы.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:644px;height:464px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Заявление об обмене, дубликате страхового свидетельства',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:644px;height:25px;',
@@ -179,6 +185,7 @@
 					items:
 					[
 		{
+			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
 			height: 125,width: 614,
@@ -215,7 +222,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -232,6 +239,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РаботникиОрганизации');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -240,6 +264,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаДанныеВСвидетельстве',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
 			height: 125,width: 614,
@@ -289,7 +314,7 @@
 				},
 				{
 					text:'Отчество',
-					width:'70',
+					width:'69',
 					dataIndex:'ОтчествоВСвидетельстве',
 					flex:1,
 				},
@@ -306,7 +331,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -338,6 +363,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаДанныеВСвидетельстве');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -346,6 +388,7 @@
 					items:
 					[
 		{
+			id: 'ТаблицаИзменившиесяДанные',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:25px;width:614px;height:125px;',
 			height: 125,width: 614,
@@ -442,7 +485,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -488,6 +531,23 @@
 						name:'Телефоны',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаИзменившиесяДанные');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗаявлениеОбОбменеДубликатеСтраховогоСвидетельства.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -538,7 +598,8 @@
 			boxLabel: 'Заменять букву "ё"',
 			style: 'position:absolute;left:8px;top:394px;width:614px;height:15px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -550,4 +611,5 @@
 			]
 		},
 	]
+	});
 });

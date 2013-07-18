@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.КатегорииОбъектов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.КатегорииОбъектов'], function () 
+{
+	Ext.define('Справочники.КатегорииОбъектов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Элемент Категории объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -91,4 +94,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

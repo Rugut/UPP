@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИнвентаризацияОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИнвентаризацияОС'], function () 
+{
+	Ext.define('Документы.ИнвентаризацияОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:454px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Инвентаризация ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -118,7 +121,7 @@
 				},
 				{
 					text:'Основное средство',
-					width:'2200',
+					width:'220',
 					dataIndex:'ОсновноеСредство',
 					flex:1,
 				},
@@ -130,55 +133,55 @@
 				},
 				{
 					text:'МОЛ',
-					width:'1200',
+					width:'120',
 					dataIndex:'МОЛ',
 					flex:1,
 				},
 				{
 					text:'Стоимость по данным учета',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтоимостьПоДаннымУчета',
 					flex:1,
 				},
 				{
 					text:'Наличие по данным учета',
-					width:'1200',
+					width:'120',
 					dataIndex:'НаличиеПоДаннымУчета',
 					flex:1,
 				},
 				{
 					text:'Фактическая стоимость',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтоимостьФактическая',
 					flex:1,
 				},
 				{
 					text:'Фактическое наличие',
-					width:'1200',
+					width:'120',
 					dataIndex:'НаличиеФактическое',
 					flex:1,
 				},
 				{
 					text:'Излишек, сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'ИзлишекСумма',
 					flex:1,
 				},
 				{
 					text:'Излишек, количество',
-					width:'1200',
+					width:'120',
 					dataIndex:'ИзлишекКоличество',
 					flex:1,
 				},
 				{
 					text:'Недостача, сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'НедостачаСумма',
 					flex:1,
 				},
 				{
 					text:'Недостача, количество',
-					width:'1200',
+					width:'120',
 					dataIndex:'НедостачаКоличество',
 					flex:1,
 				},
@@ -239,9 +242,9 @@
 					{
 						var грид = Ext.getCmp('ОС');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИнвентаризацияОС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИнвентаризацияОС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -326,9 +329,9 @@
 					{
 						var грид = Ext.getCmp('ИнвентаризационнаяКомиссия');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ИнвентаризацияОС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ИнвентаризацияОС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -536,4 +539,5 @@
 			]
 		},
 	]
+	});
 });

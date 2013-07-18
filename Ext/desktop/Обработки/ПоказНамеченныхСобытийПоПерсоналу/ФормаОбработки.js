@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработки',
+﻿Ext.require(['Данные.Обработки.ПоказНамеченныхСобытийПоПерсоналу'], function () 
+{
+	Ext.define('Обработки.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:541px;height:374px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Запланированные кадровые перестановки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -44,6 +50,7 @@
 			style: 'position:absolute;left:191px;top:8px;width:80px;height:19px;',
 		},
 		{
+			id: 'ТабличноеПолеРезультаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:80px;width:525px;height:261px;',
 			height: 261,width: 525,
@@ -93,13 +100,13 @@
 				},
 				{
 					text:'Ставка',
-					width:'40',
+					width:'39',
 					dataIndex:'Ставка',
 					flex:1,
 				},
 				{
 					text:'Занимать',
-					width:'46',
+					width:'45',
 					dataIndex:'ЗаниматьСтавку',
 					flex:1,
 				},
@@ -116,7 +123,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказНамеченныхСобытийПоПерсоналу/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказНамеченныхСобытийПоПерсоналу/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -150,6 +157,23 @@
 						name:'ПланируемоеСобытие',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеРезультаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -197,7 +221,8 @@
 			height: 19,
 			style: 'position:absolute;left:91px;top:32px;width:442px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -240,4 +265,5 @@
 			]
 		},
 	]
+	});
 });

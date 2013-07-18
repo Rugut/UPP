@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСпециальногоКоэффициентаОС.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ИзменениеСпециальногоКоэффициентаОС'], function () 
+{
+	Ext.define('Документы.ИзменениеСпециальногоКоэффициентаОС.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:622px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Изменения специального коэффициента для расчета амортизации ОС (налоговый учет)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:606px;height:380px;',
 			height: 380,width: 606,
@@ -41,7 +48,7 @@
 				},
 				{
 					text:'Организация',
-					width:'201',
+					width:'200',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -58,7 +65,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСпециальногоКоэффициентаОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -81,8 +88,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеСпециальногоКоэффициентаОС.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеСпециальногоКоэффициентаОС.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -107,4 +132,5 @@
 			]
 		},
 	]
+	});
 });

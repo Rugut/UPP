@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаявкаНаСертификациюНоменклатуры.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаявкаНаСертификациюНоменклатуры'], function () 
+{
+	Ext.define('Документы.ЗаявкаНаСертификациюНоменклатуры.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:664px;height:287px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Заявка на сертификацию номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -280,4 +283,5 @@
 			]
 		},
 	]
+	});
 });

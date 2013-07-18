@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтепениРодстваФизЛиц.ФормаВыбора',
+﻿Ext.require(['Данные.Справочники.СтепениРодстваФизЛиц'], function () 
+{
+	Ext.define('Справочники.СтепениРодстваФизЛиц.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:457px;height:261px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Степени родства физических лиц',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -33,7 +36,7 @@
 				},
 				{
 					text:'Наименование',
-					width:'3200',
+					width:'320',
 					dataIndex:'Наименование',
 					flex:1,
 				},
@@ -68,9 +71,9 @@
 					{
 						var грид = Ext.getCmp('СправочникСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СтепениРодстваФизЛиц.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СтепениРодстваФизЛиц.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -202,4 +205,5 @@
 			]
 		},
 	]
+	});
 });

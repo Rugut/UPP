@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиТелефона',
+﻿Ext.require(['Данные.Обработки.РедактированиеКонтактнойИнформации'], function () 
+{
+	Ext.define('Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиТелефона',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:330px;height:257px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Телефон',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -168,4 +171,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

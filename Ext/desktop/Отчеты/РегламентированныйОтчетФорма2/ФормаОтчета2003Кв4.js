@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетФорма2.ФормаОтчета2003Кв4',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетФорма2'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетФорма2.ФормаОтчета2003Кв4',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:720px;height:491px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Форма №2',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -235,4 +238,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбновлениеИнформационнойБазы.ОписаниеОбновлений',
+﻿Ext.require(['Данные.Обработки.ОбновлениеИнформационнойБазы'], function () 
+{
+	Ext.define('Обработки.ОбновлениеИнформационнойБазы.ОписаниеОбновлений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:696px;height:400px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обновление информационной базы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -38,4 +41,5 @@
 			]
 		},
 	]
+	});
 });

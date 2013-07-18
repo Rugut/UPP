@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ГрупповаяОбработкаОбъектов.Форма',
+﻿Ext.require(['Данные.Обработки.ГрупповаяОбработкаОбъектов'], function () 
+{
+	Ext.define('Обработки.ГрупповаяОбработкаОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:500px;height:328px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Групповая обработка объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -114,9 +117,9 @@
 					{
 						var грид = Ext.getCmp('ОбрабатываемыеОбъекты');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрупповаяОбработкаОбъектов.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрупповаяОбработкаОбъектов.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -198,9 +201,9 @@
 					{
 						var грид = Ext.getCmp('УстанавливаемыеСвойства');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ГрупповаяОбработкаОбъектов.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ГрупповаяОбработкаОбъектов.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -242,4 +245,5 @@
 			]
 		},
 	]
+	});
 });

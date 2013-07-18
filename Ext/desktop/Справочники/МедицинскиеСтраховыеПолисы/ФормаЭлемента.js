@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.МедицинскиеСтраховыеПолисы'], function () 
+{
+	Ext.define('Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:460px;height:515px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Медицинский страховой полис',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -311,4 +314,5 @@
 			]
 		},
 	]
+	});
 });

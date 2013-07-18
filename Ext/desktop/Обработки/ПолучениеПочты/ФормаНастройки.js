@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПолучениеПочты.ФормаНастройки',
+﻿Ext.require(['Данные.Обработки.ПолучениеПочты'], function () 
+{
+	Ext.define('Обработки.ПолучениеПочты.ФормаНастройки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:248px;height:75px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка получения почты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -45,4 +48,5 @@
 			]
 		},
 	]
+	});
 });

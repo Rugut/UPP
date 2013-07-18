@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПечатьТТН1208.Форма',
+﻿Ext.require(['Данные.Обработки.ПечатьТТН1208'], function () 
+{
+	Ext.define('Обработки.ПечатьТТН1208.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:997px;height:579px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Печать ТТН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -357,4 +360,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

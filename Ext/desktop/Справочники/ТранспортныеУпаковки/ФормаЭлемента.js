@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТранспортныеУпаковки.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТранспортныеУпаковки'], function () 
+{
+	Ext.define('Справочники.ТранспортныеУпаковки.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:133px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Транспортные упаковки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

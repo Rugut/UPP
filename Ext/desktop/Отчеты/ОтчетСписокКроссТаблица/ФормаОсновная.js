@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ОтчетСписокКроссТаблица.ФормаОсновная',
+﻿Ext.require(['Данные.Отчеты.ОтчетСписокКроссТаблица'], function () 
+{
+	Ext.define('Отчеты.ОтчетСписокКроссТаблица.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:608px;height:468px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -327,4 +330,5 @@
 			]
 		},
 	]
+	});
 });

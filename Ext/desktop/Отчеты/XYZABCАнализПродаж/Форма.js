@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.XYZABCАнализПродаж.Форма',
+﻿Ext.require(['Данные.Отчеты.XYZABCАнализПродаж'], function () 
+{
+	Ext.define('Отчеты.XYZABCАнализПродаж.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:660px;height:430px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'XYZ/ABC-анализ продаж',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -222,4 +225,5 @@
 			]
 		},
 	]
+	});
 });

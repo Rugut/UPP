@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораЗадолженностей',
+﻿Ext.require(['Данные.Обработки.ПодборПараметровРасшифровкиПлатежа'], function () 
+{
+	Ext.define('Обработки.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораЗадолженностей',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:354px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Обработка  Подбор задолженности для платежа',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЗадолженностьДляОплаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:75px;width:764px;height:220px;',
 			height: 220,width: 764,
@@ -23,13 +30,13 @@
 				},
 				{
 					text:'Договор контрагента',
-					width:'186',
+					width:'185',
 					dataIndex:'ДоговорКонтрагента',
 					flex:1,
 				},
 				{
 					text:'Сделка',
-					width:'195',
+					width:'194',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -47,19 +54,19 @@
 				},
 				{
 					text:'Сумма взаиморасчетов',
-					width:'129',
+					width:'128',
 					dataIndex:'СуммаВзаиморасчетов',
 					flex:1,
 				},
 				{
 					text:'Сумма платежа',
-					width:'120',
+					width:'119',
 					dataIndex:'СуммаПлатежа',
 					flex:1,
 				},
 				{
 					text:'Дата возникновения',
-					width:'78',
+					width:'77',
 					dataIndex:'ДатаВозникновения',
 					flex:1,
 				},
@@ -70,7 +77,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПараметровРасшифровкиПлатежа/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПараметровРасшифровкиПлатежа/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -98,6 +105,23 @@
 						name:'ДатаВозникновения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЗадолженностьДляОплаты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораЗадолженностейСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораЗадолженностейСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -146,7 +170,8 @@
 			text: 'Всего выбрано:',
 			style: 'position:absolute;left:491px;top:8px;width:281px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -158,4 +183,5 @@
 			]
 		},
 	]
+	});
 });

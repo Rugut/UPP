@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланЗакупок.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ПланЗакупок'], function () 
+{
+	Ext.define('Документы.ПланЗакупок.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Планы закупок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Сценарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сценарий',
 					flex:1,
 				},
@@ -63,19 +66,19 @@
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Тип цен',
-					width:'1200',
+					width:'120',
 					dataIndex:'ТипЦен',
 					flex:1,
 				},
@@ -130,9 +133,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПланЗакупок.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПланЗакупок.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -168,4 +171,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

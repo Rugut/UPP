@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов'], function () 
+{
+	Ext.define('Отчеты.РегламентированныйОтчетРасчетЧистыхАктивов.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:276px;height:236px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Расчет чистых активов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -96,4 +99,5 @@
 			]
 		},
 	]
+	});
 });

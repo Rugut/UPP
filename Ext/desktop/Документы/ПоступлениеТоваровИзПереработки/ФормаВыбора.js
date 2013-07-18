@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеТоваровИзПереработки.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПоступлениеТоваровИзПереработки'], function () 
+{
+	Ext.define('Документы.ПоступлениеТоваровИзПереработки.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:680px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поступления товаров из переработки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -57,13 +60,13 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
@@ -75,7 +78,7 @@
 				},
 				{
 					text:'Склад',
-					width:'1200',
+					width:'120',
 					dataIndex:'Склад',
 					flex:1,
 				},
@@ -139,9 +142,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПоступлениеТоваровИзПереработки.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПоступлениеТоваровИзПереработки.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -185,4 +188,5 @@
 			]
 		},
 	]
+	});
 });

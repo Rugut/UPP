@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РеестрДСВ3.ФормаСписка',
+﻿Ext.require(['Данные.Документы.РеестрДСВ3'], function () 
+{
+	Ext.define('Документы.РеестрДСВ3.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Реестры застрахованных лиц (по форме ДСВ-3)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -51,7 +54,7 @@
 				},
 				{
 					text:'Платежное поручение: № и дата',
-					width:'1800',
+					width:'180',
 					dataIndex:'КолонкаЗаголовок',
 					flex:1,
 				},
@@ -69,13 +72,13 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'1200',
+					width:'120',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
@@ -130,9 +133,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РеестрДСВ3.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РеестрДСВ3.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -342,4 +345,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

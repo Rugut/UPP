@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЧекККМ.ФормаОплатЧека',
+﻿Ext.require(['Данные.Документы.ЧекККМ'], function () 
+{
+	Ext.define('Документы.ЧекККМ.ФормаОплатЧека',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:480px;height:228px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Оплата чека',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -167,9 +170,9 @@
 					{
 						var грид = Ext.getCmp('Оплата');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ЧекККМ.ФормаОплатЧекаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ЧекККМ.ФормаОплатЧекаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -201,4 +204,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

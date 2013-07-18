@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузки',
+﻿Ext.require(['Данные.Обработки.ВыгрузкаДанныхCommerceML'], function () 
+{
+	Ext.define('Обработки.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:476px;height:367px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выгруженные файлы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СоответствиеКонтрагентовИФайлов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:89px;width:460px;height:245px;',
 			height: 245,width: 460,
@@ -35,7 +42,7 @@
 				},
 				{
 					text:'Успешно',
-					width:'60',
+					width:'59',
 					dataIndex:'РезультатВыгрузки',
 					flex:1,
 				},
@@ -46,7 +53,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаДанныхCommerceML/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -62,6 +69,23 @@
 						name:'РезультатВыгрузки',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СоответствиеКонтрагентовИФайлов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузкиСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузкиСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -90,7 +114,8 @@
 			title: 'Выгруженные файлы',
 			style: 'position:absolute;left:8px;top:69px;width:460px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -108,4 +133,5 @@
 			]
 		},
 	]
+	});
 });

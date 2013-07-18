@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ВнутреннийЗаказ.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ВнутреннийЗаказ'], function () 
+{
+	Ext.define('Документы.ВнутреннийЗаказ.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:657px;height:395px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документ Внутренний заказ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -109,6 +115,7 @@
 					items:
 					[
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
 			height: 177,width: 627,
@@ -182,7 +189,7 @@
 				},
 				{
 					text:'Размещение',
-					width:'184',
+					width:'183',
 					dataIndex:'Размещение',
 					flex:1,
 				},
@@ -193,7 +200,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннийЗаказ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннийЗаказ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -234,6 +241,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВнутреннийЗаказ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВнутреннийЗаказ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -264,6 +288,7 @@
 			]
 		},
 		{
+			id: 'ВозвратнаяТара',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:627px;height:177px;',
 			height: 177,width: 627,
@@ -318,7 +343,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннийЗаказ/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнутреннийЗаказ/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -343,6 +368,23 @@
 						name:'Размещение',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВозвратнаяТара');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВнутреннийЗаказ.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВнутреннийЗаказ.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -547,8 +589,10 @@
 			title: '',
 			style: 'position:absolute;left:8px;top:75px;width:174px;height:32px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

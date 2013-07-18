@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.НастройкиОбменаДанными.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.НастройкиОбменаДанными'], function () 
+{
+	Ext.define('Справочники.НастройкиОбменаДанными.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:507px;height:551px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройки обмена данными',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -619,6 +625,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаВыгрузкиДанных',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:33px;width:464px;height:207px;',
 			height: 207,width: 464,
@@ -626,19 +633,19 @@
 			[
 				{
 					text:'Выгрузка',
-					width:'54',
+					width:'53',
 					dataIndex:'ЭтоНастройкаДляВыгрузки',
 					flex:1,
 				},
 				{
 					text:'Наименование объекта',
-					width:'185',
+					width:'184',
 					dataIndex:'НаименованиеПравилаВыгрузки',
 					flex:1,
 				},
 				{
 					text:'Настройка выгрузки',
-					width:'157',
+					width:'156',
 					dataIndex:'НастройкаВыгрузки',
 					flex:1,
 				},
@@ -650,13 +657,13 @@
 				},
 				{
 					text:'Выгружать по ссылке',
-					width:'74',
+					width:'73',
 					dataIndex:'ВыгружатьПоСсылке',
 					flex:1,
 				},
 				{
 					text:'Код правила выгрузки',
-					width:'92',
+					width:'91',
 					dataIndex:'КодПравилаВыгрузки',
 					flex:1,
 				},
@@ -675,11 +682,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -708,6 +716,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаВыгрузкиДанных');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -716,6 +741,7 @@
 					items:
 					[
 		{
+			id: 'НастройкаВариантовПоискаОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:5px;top:33px;width:465px;height:207px;',
 			height: 207,width: 465,
@@ -772,11 +798,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -804,6 +831,23 @@
 						name:'КодПравилаОбмена',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкаВариантовПоискаОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 					]
@@ -905,6 +949,7 @@
 			style: 'position:absolute;left:148px;top:211px;width:336px;height:19px;',
 		},
 		{
+			id: 'СообщенияНеЯвляющиесяОшибками',
 			xtype: 'grid',
 			style: 'position:absolute;left:16px;top:260px;width:468px;height:152px;',
 			height: 152,width: 468,
@@ -912,24 +957,42 @@
 			[
 				{
 					text:'Тексты сообщений, которые не являются ошибками',
-					width:'325',
+					width:'324',
 					dataIndex:'ТекстСообщения',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
 						name:'ТекстСообщения',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СообщенияНеЯвляющиесяОшибками');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -944,6 +1007,7 @@
 					items:
 					[
 		{
+			id: 'НастройкиВыполненияОбменов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:76px;width:478px;height:336px;',
 			height: 336,width: 478,
@@ -976,11 +1040,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -997,12 +1062,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НастройкиВыполненияОбменов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1114,4 +1197,5 @@
 			]
 		},
 	]
+	});
 });

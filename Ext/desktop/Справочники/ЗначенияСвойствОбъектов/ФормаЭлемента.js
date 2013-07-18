@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЗначенияСвойствОбъектов.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ЗначенияСвойствОбъектов'], function () 
+{
+	Ext.define('Справочники.ЗначенияСвойствОбъектов.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:406px;height:133px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Значения свойств объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -112,4 +115,5 @@
 			]
 		},
 	]
+	});
 });

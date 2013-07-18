@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НДФЛиЕСНДоходыИНалоги.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НДФЛиЕСНДоходыИНалоги'], function () 
+{
+	Ext.define('Документы.НДФЛиЕСНДоходыИНалоги.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:813px;height:495px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка учета по НДФЛ, страховым взносам и ЕСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -84,6 +90,7 @@
 					items:
 					[
 		{
+			id: 'НДФЛСведенияОДоходах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:43px;width:622px;height:300px;',
 			height: 300,width: 622,
@@ -180,7 +187,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -227,6 +234,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДФЛСведенияОДоходах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -240,6 +264,7 @@
 					items:
 					[
 		{
+			id: 'НДФЛИсчисленный13',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:117px;',
 			height: 117,width: 622,
@@ -253,7 +278,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'182',
+					width:'181',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -300,7 +325,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -329,6 +354,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДФЛИсчисленный13');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -341,6 +383,7 @@
 			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
 		},
 		{
+			id: 'НДФЛПредоставленныеВычеты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:206px;width:622px;height:137px;',
 			height: 137,width: 622,
@@ -407,7 +450,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -438,6 +481,23 @@
 						name:'КПП',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДФЛПредоставленныеВычеты');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -486,6 +546,7 @@
 					items:
 					[
 		{
+			id: 'НДФЛУдержанный',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:301px;',
 			height: 301,width: 622,
@@ -558,7 +619,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -593,6 +654,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НДФЛУдержанный');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -606,6 +684,7 @@
 					items:
 					[
 		{
+			id: 'СтраховыеВзносыСведенияОДоходах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:117px;',
 			height: 117,width: 622,
@@ -655,13 +734,13 @@
 				},
 				{
 					text:'Облагается по дополнительному тарифу',
-					width:'215',
+					width:'214',
 					dataIndex:'ОблагаетсяПоДополнительномуТарифу',
 					flex:1,
 				},
 				{
 					text:'Облагается взносами на доплату к пенсии шахтерам',
-					width:'237',
+					width:'236',
 					dataIndex:'ОблагаетсяВзносамиНаДоплатуКПенсииШахтерам',
 					flex:1,
 				},
@@ -684,7 +763,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -722,8 +801,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтраховыеВзносыСведенияОДоходах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'СтраховыеВзносы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:206px;width:622px;height:137px;',
 			height: 137,width: 622,
@@ -850,7 +947,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -912,6 +1009,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СтраховыеВзносы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -937,6 +1051,7 @@
 					items:
 					[
 		{
+			id: 'ЕСНСведенияОДоходах',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:117px;',
 			height: 117,width: 622,
@@ -991,7 +1106,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1017,8 +1132,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЕСНСведенияОДоходах');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
+			id: 'ЕСННалоги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:206px;width:622px;height:137px;',
 			height: 137,width: 622,
@@ -1115,7 +1248,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1161,6 +1294,23 @@
 						name:'ПФРСтраховаяЕНВД',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЕСННалоги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1219,6 +1369,7 @@
 					items:
 					[
 		{
+			id: 'ПособияСоциальномуСтрахованию',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:117px;',
 			height: 117,width: 622,
@@ -1297,7 +1448,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1334,6 +1485,23 @@
 						name:'ОблагаетсяЕНВД',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияСоциальномуСтрахованию');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1376,6 +1544,7 @@
 			]
 		},
 		{
+			id: 'ПособияПоУходуЗаРебенкомДоПолутораЛет',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:206px;width:622px;height:137px;',
 			height: 137,width: 622,
@@ -1460,7 +1629,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НДФЛиЕСНДоходыИНалоги/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1500,6 +1669,23 @@
 						name:'ОблагаетсяЕНВД',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияПоУходуЗаРебенкомДоПолутораЛет');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1555,7 +1741,8 @@
 			text: 'год',
 			style: 'position:absolute;left:270px;top:57px;width:25px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1619,4 +1806,5 @@
 			]
 		},
 	]
+	});
 });

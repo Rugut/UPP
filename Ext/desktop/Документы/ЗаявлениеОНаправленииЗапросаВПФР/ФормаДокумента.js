@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗаявлениеОНаправленииЗапросаВПФР.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗаявлениеОНаправленииЗапросаВПФР'], function () 
+{
+	Ext.define('Документы.ЗаявлениеОНаправленииЗапросаВПФР.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:682px;height:480px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Заявление о направлении запроса в ПФР',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -449,4 +452,5 @@
 			]
 		},
 	]
+	});
 });

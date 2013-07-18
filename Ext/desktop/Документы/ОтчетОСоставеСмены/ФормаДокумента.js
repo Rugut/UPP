@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОтчетОСоставеСмены.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ОтчетОСоставеСмены'], function () 
+{
+	Ext.define('Документы.ОтчетОСоставеСмены.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:750px;height:367px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отчет о составе смены',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -103,7 +106,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -127,13 +130,13 @@
 				},
 				{
 					text:'Замещающий сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЗамещающийСотрудник',
 					flex:1,
 				},
 				{
 					text:'Примечание',
-					width:'1200',
+					width:'120',
 					dataIndex:'Примечание',
 					flex:1,
 				},
@@ -179,9 +182,9 @@
 					{
 						var грид = Ext.getCmp('СоставСмены');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ОтчетОСоставеСмены.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ОтчетОСоставеСмены.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -359,4 +362,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ОтправкиФСС.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ОтправкиФСС'], function () 
+{
+	Ext.define('Справочники.ОтправкиФСС.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:352px;height:308px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Отправка на сервер ФСС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -161,4 +164,5 @@
 			]
 		},
 	]
+	});
 });

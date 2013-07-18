@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.ТехнологическийАнализБухгалтерскогоУчета.ОсновнаяФорма',
+﻿Ext.require(['Данные.Отчеты.ТехнологическийАнализБухгалтерскогоУчета'], function () 
+{
+	Ext.define('Отчеты.ТехнологическийАнализБухгалтерскогоУчета.ОсновнаяФорма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:670px;height:402px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Технологический анализ бухгалтерского учета',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -135,4 +138,5 @@
 			]
 		},
 	]
+	});
 });

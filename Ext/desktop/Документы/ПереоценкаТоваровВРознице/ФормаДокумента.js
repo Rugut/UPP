@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПереоценкаТоваровВРознице.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПереоценкаТоваровВРознице'], function () 
+{
+	Ext.define('Документы.ПереоценкаТоваровВРознице.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:652px;height:320px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Переоценка товаров в рознице',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -87,25 +90,25 @@
 				},
 				{
 					text:'Артикул',
-					width:'1200',
+					width:'120',
 					dataIndex:'Артикул',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'2500',
+					width:'250',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -184,9 +187,9 @@
 					{
 						var грид = Ext.getCmp('Товары');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПереоценкаТоваровВРознице.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПереоценкаТоваровВРознице.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -326,4 +329,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

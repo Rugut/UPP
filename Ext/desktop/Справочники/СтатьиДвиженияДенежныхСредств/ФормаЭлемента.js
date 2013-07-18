@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.СтатьиДвиженияДенежныхСредств'], function () 
+{
+	Ext.define('Справочники.СтатьиДвиженияДенежныхСредств.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:497px;height:143px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Статьи движения денежных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -152,4 +155,5 @@
 			]
 		},
 	]
+	});
 });

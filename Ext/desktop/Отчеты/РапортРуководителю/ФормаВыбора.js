@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РапортРуководителю.ФормаВыбора',
+﻿Ext.require(['Данные.Отчеты.РапортРуководителю'], function () 
+{
+	Ext.define('Отчеты.РапортРуководителю.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:238px;height:294px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Показатели рапорта',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -49,9 +52,9 @@
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДеревоПоказателей');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.РапортРуководителю.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.РапортРуководителю.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -94,4 +97,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ДенежныйЧек.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ДенежныйЧек'], function () 
+{
+	Ext.define('Документы.ДенежныйЧек.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Денежные чеки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,19 +54,19 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Счет организации',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетОрганизации',
 					flex:1,
 				},
 				{
 					text:'Касса',
-					width:'1200',
+					width:'120',
 					dataIndex:'Касса',
 					flex:1,
 				},
@@ -81,7 +84,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -139,9 +142,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ДенежныйЧек.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ДенежныйЧек.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -174,4 +177,5 @@
 			]
 		},
 	]
+	});
 });

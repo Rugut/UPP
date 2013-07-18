@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТиповыеАнкеты.ФормаРассылки',
+﻿Ext.require(['Данные.Справочники.ТиповыеАнкеты'], function () 
+{
+	Ext.define('Справочники.ТиповыеАнкеты.ФормаРассылки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:473px;height:392px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Рассылка анкеты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -72,13 +75,13 @@
 			[
 				{
 					text:'Получатель',
-					width:'2200',
+					width:'220',
 					dataIndex:'Объект',
 					flex:1,
 				},
 				{
 					text:'e-mail',
-					width:'1200',
+					width:'120',
 					dataIndex:'Получатель',
 					flex:1,
 				},
@@ -110,9 +113,9 @@
 					{
 						var грид = Ext.getCmp('Получатели');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -134,7 +137,7 @@
 			[
 				{
 					text:'Имя файла',
-					width:'3200',
+					width:'320',
 					dataIndex:'ИмяФайла',
 					flex:1,
 				},
@@ -163,9 +166,9 @@
 					{
 						var грид = Ext.getCmp('Вложения');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -264,4 +267,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

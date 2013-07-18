@@ -44,7 +44,7 @@ namespace V82.СправочникиОбъект
 		public bool Предопределенный {get;set;}
 		[DataMember]
 		[ProtoMember(6)]
-		public Guid Родитель {get;set;}
+		public V82.СправочникиСсылка.ОбщероссийскийКлассификаторПродукции Родитель {get;set;}
 		[DataMember]
 		[ProtoMember(7)]
 		public bool ЭтоГруппа {get;set;}

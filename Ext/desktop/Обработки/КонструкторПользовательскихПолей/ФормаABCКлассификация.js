@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаABCКлассификация',
+﻿Ext.require(['Данные.Обработки.КонструкторПользовательскихПолей'], function () 
+{
+	Ext.define('Обработки.КонструкторПользовательскихПолей.ФормаABCКлассификация',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:511px;height:211px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Настройка ABC-классификации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -143,4 +146,5 @@
 			]
 		},
 	]
+	});
 });

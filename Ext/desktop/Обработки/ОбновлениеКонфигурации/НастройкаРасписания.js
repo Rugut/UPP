@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ОбновлениеКонфигурации.НастройкаРасписания',
+﻿Ext.require(['Данные.Обработки.ОбновлениеКонфигурации'], function () 
+{
+	Ext.define('Обработки.ОбновлениеКонфигурации.НастройкаРасписания',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:60px;height:0px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -17,4 +20,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

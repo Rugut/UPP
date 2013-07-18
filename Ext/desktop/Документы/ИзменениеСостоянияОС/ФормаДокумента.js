@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ИзменениеСостоянияОС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ИзменениеСостоянияОС'], function () 
+{
+	Ext.define('Документы.ИзменениеСостоянияОС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:662px;height:409px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Изменение состояния ОС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -132,6 +138,7 @@
 			style: 'position:absolute;left:336px;top:145px;width:242px;height:15px;',
 		},
 		{
+			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:206px;width:646px;height:146px;',
 			height: 146,width: 646,
@@ -162,7 +169,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСостоянияОС/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИзменениеСостоянияОС/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -175,6 +182,23 @@
 						name:'ОсновноеСредство',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОС');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ИзменениеСостоянияОС.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ИзменениеСостоянияОС.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -250,7 +274,8 @@
 			height: 19,
 			style: 'position:absolute;left:90px;top:102px;width:220px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -293,4 +318,5 @@
 			]
 		},
 	]
+	});
 });

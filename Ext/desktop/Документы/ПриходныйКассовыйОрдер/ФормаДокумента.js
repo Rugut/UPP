@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПриходныйКассовыйОрдер.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПриходныйКассовыйОрдер'], function () 
+{
+	Ext.define('Документы.ПриходныйКассовыйОрдер.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:658px;height:460px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Документ Приходный кассовый ордер',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -272,6 +278,7 @@
 			style: 'position:absolute;left:322px;top:0px;width:86px;height:27px;',
 		},
 		{
+			id: 'РасшифровкаПлатежа',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:45px;width:628px;height:152px;',
 			height: 152,width: 628,
@@ -291,7 +298,7 @@
 				},
 				{
 					text:'Сделка',
-					width:'100',
+					width:'99',
 					dataIndex:'Сделка',
 					flex:1,
 				},
@@ -321,7 +328,7 @@
 				},
 				{
 					text:'% НДС',
-					width:'50',
+					width:'49',
 					dataIndex:'СтавкаНДС',
 					flex:1,
 				},
@@ -380,7 +387,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриходныйКассовыйОрдер/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПриходныйКассовыйОрдер/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -432,6 +439,23 @@
 						name:'СуммаПлатежаПлан',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('РасшифровкаПлатежа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПриходныйКассовыйОрдер.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПриходныйКассовыйОрдер.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1172,8 +1196,10 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВыгрузкаСпискаОбъектов.Форма',
+﻿Ext.require(['Данные.Обработки.ВыгрузкаСпискаОбъектов'], function () 
+{
+	Ext.define('Обработки.ВыгрузкаСпискаОбъектов.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:426px;height:317px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Выгрузка списка объектов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокВыгружаемыхОбъектов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:103px;width:410px;height:181px;',
 			height: 181,width: 410,
@@ -34,7 +41,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаСпискаОбъектов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаСпискаОбъектов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -44,6 +51,23 @@
 						name:'Объект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокВыгружаемыхОбъектов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ВыгрузкаСпискаОбъектов.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ВыгрузкаСпискаОбъектов.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -66,7 +90,8 @@
 			title: 'Выгружаемые объекты',
 			style: 'position:absolute;left:8px;top:58px;width:410px;height:16px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -114,4 +139,5 @@
 			]
 		},
 	]
+	});
 });

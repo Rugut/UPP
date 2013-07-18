@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗакрытиеГода.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗакрытиеГода'], function () 
+{
+	Ext.define('Документы.ЗакрытиеГода.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:345px;height:237px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -175,4 +178,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

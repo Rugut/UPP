@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполнения',
+﻿Ext.require(['Данные.Документы.ПланДвиженияДенежныхСредств'], function () 
+{
+	Ext.define('Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполнения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:810px;height:413px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Настройка автоматического заполнения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:794px;height:351px;',
@@ -714,6 +720,7 @@
 					items:
 					[
 		{
+			id: 'ОтборПоступления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:768px;height:183px;',
 			height: 183,width: 768,
@@ -762,7 +769,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -784,6 +791,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборПоступления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1605,6 +1629,7 @@
 					items:
 					[
 		{
+			id: 'ОтборПлатежи',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:768px;height:183px;',
 			height: 183,width: 768,
@@ -1624,7 +1649,7 @@
 				},
 				{
 					text:'Тип сравнения',
-					width:'115',
+					width:'114',
 					dataIndex:'ВидСравнения',
 					flex:1,
 				},
@@ -1653,7 +1678,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1675,6 +1700,23 @@
 						name:'ЗначениеПо',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОтборПлатежи');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1724,7 +1766,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1761,4 +1804,5 @@
 			]
 		},
 	]
+	});
 });

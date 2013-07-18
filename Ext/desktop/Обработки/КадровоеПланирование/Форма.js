@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КадровоеПланирование.Форма',
+﻿Ext.require(['Данные.Обработки.КадровоеПланирование'], function () 
+{
+	Ext.define('Обработки.КадровоеПланирование.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:1000px;height:580px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Кадровое планирование',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -62,9 +65,9 @@
 					{
 						var грид = Ext.getCmp('Подразделения');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -121,13 +124,13 @@
 				},
 				{
 					text:'Подразделение',
-					width:'1200',
+					width:'120',
 					dataIndex:'Подразделение',
 					flex:1,
 				},
 				{
 					text:'Должность',
-					width:'1200',
+					width:'120',
 					dataIndex:'Должность',
 					flex:1,
 				},
@@ -188,9 +191,9 @@
 					{
 						var грид = Ext.getCmp('РабочиеМеста');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -256,7 +259,7 @@
 				},
 				{
 					text:'Должность',
-					width:'1400',
+					width:'140',
 					dataIndex:'Должность',
 					flex:1,
 				},
@@ -320,9 +323,9 @@
 					{
 						var грид = Ext.getCmp('Вакансии');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -370,7 +373,7 @@
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
@@ -416,9 +419,9 @@
 					{
 						var грид = Ext.getCmp('ИзмененияКадровогоПлана');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -491,4 +494,5 @@
 			]
 		},
 	]
+	});
 });

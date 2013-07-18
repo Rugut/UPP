@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГруппыПисемЭлектроннойПочты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ГруппыПисемЭлектроннойПочты'], function () 
+{
+	Ext.define('Справочники.ГруппыПисемЭлектроннойПочты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:420px;height:129px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Группы писем электронной почты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,4 +102,5 @@
 			]
 		},
 	]
+	});
 });

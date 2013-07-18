@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.АнализВходящегоНДС.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.АнализВходящегоНДС'], function () 
+{
+	Ext.define('Отчеты.АнализВходящегоНДС.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:312px;height:158px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка  Анализ входящего НДС',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -107,4 +110,5 @@
 			]
 		},
 	]
+	});
 });

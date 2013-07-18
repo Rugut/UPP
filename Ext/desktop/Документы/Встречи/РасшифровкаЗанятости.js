@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.Встречи.РасшифровкаЗанятости',
+﻿Ext.require(['Данные.Документы.Встречи'], function () 
+{
+	Ext.define('Документы.Встречи.РасшифровкаЗанятости',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:641px;height:130px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '<ФИО|Помещение>',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -64,4 +67,5 @@
 			]
 		},
 	]
+	});
 });

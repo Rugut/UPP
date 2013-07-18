@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.НДФЛПерерасчет.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.НДФЛПерерасчет'], function () 
+{
+	Ext.define('Документы.НДФЛПерерасчет.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:697px;height:401px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Перерасчет НДФЛ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,7 +112,7 @@
 				},
 				{
 					text:'Физическое лицо',
-					width:'1200',
+					width:'120',
 					dataIndex:'ФизЛицо',
 					flex:1,
 				},
@@ -133,7 +136,7 @@
 				},
 				{
 					text:'Вычеты на детей',
-					width:'3600',
+					width:'360',
 					dataIndex:'КолонкаЗаголовок',
 					flex:1,
 				},
@@ -211,7 +214,7 @@
 				},
 				{
 					text:'Вычеты имущественные',
-					width:'1600',
+					width:'160',
 					dataIndex:'КолонкаЗаголовокИмущественный',
 					flex:1,
 				},
@@ -338,9 +341,9 @@
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.НДФЛПерерасчет.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.НДФЛПерерасчет.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -492,4 +495,5 @@
 			]
 		},
 	]
+	});
 });

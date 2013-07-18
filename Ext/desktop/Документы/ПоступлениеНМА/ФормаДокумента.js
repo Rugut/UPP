@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеНМА.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ПоступлениеНМА'], function () 
+{
+	Ext.define('Документы.ПоступлениеНМА.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:640px;height:419px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Поступление НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -114,6 +120,7 @@
 					items:
 					[
 		{
+			id: 'НематериальныеАктивы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:610px;height:160px;',
 			height: 160,width: 610,
@@ -169,7 +176,7 @@
 				},
 				{
 					text:'Счет учета (НУ)',
-					width:'94',
+					width:'93',
 					dataIndex:'СчетУчетаНУ',
 					flex:1,
 				},
@@ -180,7 +187,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеНМА/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоступлениеНМА/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -211,6 +218,23 @@
 						name:'СчетУчетаНУ',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НематериальныеАктивы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоступлениеНМА.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоступлениеНМА.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -443,8 +467,10 @@
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:490px;top:33px;width:80px;height:19px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

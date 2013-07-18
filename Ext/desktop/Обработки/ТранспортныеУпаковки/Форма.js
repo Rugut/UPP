@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ТранспортныеУпаковки.Форма',
+﻿Ext.require(['Данные.Обработки.ТранспортныеУпаковки'], function () 
+{
+	Ext.define('Обработки.ТранспортныеУпаковки.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:580px;height:371px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Печать штрихкодов транспортных упаковок',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -60,7 +63,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'2500',
+					width:'250',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -72,13 +75,13 @@
 				},
 				{
 					text:'Характеристика номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'ХарактеристикаНоменклатуры',
 					flex:1,
 				},
 				{
 					text:'Серия номенклатуры',
-					width:'2500',
+					width:'250',
 					dataIndex:'СерияНоменклатуры',
 					flex:1,
 				},
@@ -90,7 +93,7 @@
 				},
 				{
 					text:'Упаковка',
-					width:'2500',
+					width:'250',
 					dataIndex:'Упаковка',
 					flex:1,
 				},
@@ -148,9 +151,9 @@
 					{
 						var грид = Ext.getCmp('Номенклатура');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ТранспортныеУпаковки.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ТранспортныеУпаковки.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -233,4 +236,5 @@
 			]
 		},
 	]
+	});
 });

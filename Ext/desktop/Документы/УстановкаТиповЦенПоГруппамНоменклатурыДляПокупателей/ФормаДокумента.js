@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей'], function () 
+{
+	Ext.define('Документы.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:656px;height:406px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка типов цен по группам номенклатуры для покупателей',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -118,6 +124,7 @@
 			]
 		},
 		{
+			id: 'НоменклатурныеЦеновыеГруппы',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:149px;width:640px;height:178px;',
 			height: 178,width: 640,
@@ -131,13 +138,13 @@
 				},
 				{
 					text:'Номенклатурная или ценовая группа',
-					width:'209',
+					width:'208',
 					dataIndex:'НоменклатурнаяЦеноваяГруппа',
 					flex:1,
 				},
 				{
 					text:'Тип цен',
-					width:'247',
+					width:'246',
 					dataIndex:'ТипЦен',
 					flex:1,
 				},
@@ -148,7 +155,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -161,6 +168,23 @@
 						name:'ТипЦен',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('НоменклатурныеЦеновыеГруппы');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -212,7 +236,8 @@
 			text: 'Ответственный:',
 			style: 'position:absolute;left:8px;top:354px;width:88px;height:19px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -224,4 +249,5 @@
 			]
 		},
 	]
+	});
 });

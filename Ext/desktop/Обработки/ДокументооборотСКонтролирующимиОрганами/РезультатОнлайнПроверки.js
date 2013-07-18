@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РезультатОнлайнПроверки',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.РезультатОнлайнПроверки',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:863px;height:656px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Результат проверки отчета ',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -105,4 +108,5 @@
 			]
 		},
 	]
+	});
 });

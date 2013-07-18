@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УстановкаЦенНоменклатурыКонтрагентов'], function () 
+{
+	Ext.define('Документы.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:514px;height:343px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Установка цен номенклатуры контрагентов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -145,6 +151,7 @@
 			style: 'position:absolute;left:88px;top:0px;width:409px;height:19px;',
 		},
 		{
+			id: 'ТаблицаЦен',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:73px;width:497px;height:106px;',
 			height: 106,width: 497,
@@ -170,7 +177,7 @@
 				},
 				{
 					text:'Номенклатура',
-					width:'178',
+					width:'177',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -187,7 +194,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЦенНоменклатурыКонтрагентов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЦенНоменклатурыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -207,6 +214,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТаблицаЦен');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -217,7 +241,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -289,4 +314,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РасчетЕСН.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РасчетЕСН'], function () 
+{
+	Ext.define('Документы.РасчетЕСН.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:604px;height:432px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Расчет ЕСН',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -134,6 +140,7 @@
 					items:
 					[
 		{
+			id: 'ИсчисленныйЕСН',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:574px;height:217px;',
 			height: 217,width: 574,
@@ -224,7 +231,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -268,6 +275,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ИсчисленныйЕСН');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЕСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЕСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -276,6 +300,7 @@
 					items:
 					[
 		{
+			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:574px;height:217px;',
 			height: 217,width: 574,
@@ -325,7 +350,7 @@
 				},
 				{
 					text:'Результат',
-					width:'80',
+					width:'79',
 					dataIndex:'Результат',
 					flex:1,
 				},
@@ -354,7 +379,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -392,6 +417,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ОсновныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЕСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЕСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -400,6 +442,7 @@
 					items:
 					[
 		{
+			id: 'ДополнительныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:574px;height:217px;',
 			height: 217,width: 574,
@@ -472,7 +515,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -507,6 +550,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДополнительныеНачисления');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЕСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЕСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -515,6 +575,7 @@
 					items:
 					[
 		{
+			id: 'ПособияСоциальномуСтрахованию',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:574px;height:217px;',
 			height: 217,width: 574,
@@ -552,13 +613,13 @@
 				},
 				{
 					text:'Страховой случай:',
-					width:'50',
+					width:'49',
 					dataIndex:'ЗаголовокСтраховогоСлучая',
 					flex:1,
 				},
 				{
 					text:'Новый ',
-					width:'52',
+					width:'51',
 					dataIndex:'УчитыватьКакНовыйСтраховойСлучай',
 					flex:1,
 				},
@@ -576,7 +637,7 @@
 				},
 				{
 					text:'Дата начала',
-					width:'70',
+					width:'69',
 					dataIndex:'ПериодДействияНачало',
 					flex:1,
 				},
@@ -629,7 +690,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -685,6 +746,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияСоциальномуСтрахованию');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЕСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЕСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
@@ -693,6 +771,7 @@
 					items:
 					[
 		{
+			id: 'ПособияПоУходуЗаРебенкомДоПолутораЛет',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:574px;height:217px;',
 			height: 217,width: 574,
@@ -777,7 +856,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетЕСН/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -818,12 +897,30 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПособияПоУходуЗаРебенкомДоПолутораЛет');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.РасчетЕСН.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.РасчетЕСН.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 					]
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -857,4 +954,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.НаборПерсонала.ФормаОткрытияВложений',
+﻿Ext.require(['Данные.Обработки.НаборПерсонала'], function () 
+{
+	Ext.define('Обработки.НаборПерсонала.ФормаОткрытияВложений',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:194px;height:76px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Открыть/сохранить вложение',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -51,4 +54,5 @@
 			]
 		},
 	]
+	});
 });

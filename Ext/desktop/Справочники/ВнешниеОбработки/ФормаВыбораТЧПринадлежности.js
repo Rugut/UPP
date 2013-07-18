@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВнешниеОбработки.ФормаВыбораТЧПринадлежности',
+﻿Ext.require(['Данные.Справочники.ВнешниеОбработки'], function () 
+{
+	Ext.define('Справочники.ВнешниеОбработки.ФормаВыбораТЧПринадлежности',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:335px;height:245px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Табличная часть',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -50,9 +53,9 @@
 					{
 						var грид = Ext.getCmp('СписокТабличныхЧастей');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВнешниеОбработки.ФормаВыбораТЧПринадлежностиСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаВыбораТЧПринадлежностиСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -81,4 +84,5 @@
 			]
 		},
 	]
+	});
 });

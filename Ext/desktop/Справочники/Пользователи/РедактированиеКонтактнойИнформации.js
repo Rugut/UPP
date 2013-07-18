@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Пользователи.РедактированиеКонтактнойИнформации',
+﻿Ext.require(['Данные.Справочники.Пользователи'], function () 
+{
+	Ext.define('Справочники.Пользователи.РедактированиеКонтактнойИнформации',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:580px;height:234px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Редактирование контактной информации',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'КонтактнаяИнформация',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:564px;height:168px;',
 			height: 168,width: 564,
@@ -35,24 +42,25 @@
 				},
 				{
 					text:'Представление',
-					width:'195',
+					width:'194',
 					dataIndex:'Представление',
 					flex:1,
 				},
 				{
 					text:'Комментарий',
-					width:'218',
+					width:'217',
 					dataIndex:'Комментарий',
 					flex:1,
 				},
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.Пользователи").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -72,8 +80,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('КонтактнаяИнформация');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.Пользователи.РедактированиеКонтактнойИнформацииСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.Пользователи.РедактированиеКонтактнойИнформацииСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -178,4 +204,5 @@
 			]
 		},
 	]
+	});
 });

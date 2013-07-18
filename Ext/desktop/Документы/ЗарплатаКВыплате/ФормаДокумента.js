@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ЗарплатаКВыплате.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.ЗарплатаКВыплате'], function () 
+{
+	Ext.define('Документы.ЗарплатаКВыплате.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:537px;height:524px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Зарплата к выплате',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -109,6 +115,7 @@
 			]
 		},
 		{
+			id: 'Зарплата',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:246px;width:521px;height:220px;',
 			height: 220,width: 521,
@@ -134,13 +141,13 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'323',
+					width:'322',
 					dataIndex:'Физлицо',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'104',
+					width:'103',
 					dataIndex:'Сумма',
 					flex:1,
 				},
@@ -151,7 +158,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплате/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплате/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -170,6 +177,23 @@
 						name:'Сумма',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Зарплата');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ЗарплатаКВыплате.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ЗарплатаКВыплате.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -274,7 +298,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -401,4 +426,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.КорректировкаПоступления.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.КорректировкаПоступления'], function () 
+{
+	Ext.define('Документы.КорректировкаПоступления.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:671px;height:478px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Корректировка поступления',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -90,6 +96,7 @@
 			style: 'position:absolute;left:12px;top:112px;width:103px;height:19px;',
 		},
 		{
+			id: 'Товары',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:641px;height:200px;',
 			height: 200,width: 641,
@@ -342,7 +349,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПоступления/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПоступления/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -467,6 +474,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Товары');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаПоступления.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаПоступления.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -497,6 +521,7 @@
 					items:
 					[
 		{
+			id: 'Услуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:641px;height:200px;',
 			height: 200,width: 641,
@@ -516,7 +541,7 @@
 				},
 				{
 					text:'Содержание услуги, доп. сведения до изменения',
-					width:'100',
+					width:'99',
 					dataIndex:'СодержаниеДоИзменения',
 					flex:1,
 				},
@@ -678,49 +703,49 @@
 				},
 				{
 					text:'Вид аналитики',
-					width:'221',
+					width:'220',
 					dataIndex:'ВидАналитики',
 					flex:1,
 				},
 				{
 					text:'Вид аналитики (доп)',
-					width:'221',
+					width:'220',
 					dataIndex:'ВидАналитикиДоп',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 1',
-					width:'74',
+					width:'73',
 					dataIndex:'ВидСубконто1',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 2',
-					width:'74',
+					width:'73',
 					dataIndex:'ВидСубконто2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3',
-					width:'74',
+					width:'73',
 					dataIndex:'ВидСубконто3',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 1 (НУ )',
-					width:'92',
+					width:'91',
 					dataIndex:'ВидСубконтоНУ1',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 2 (НУ)',
-					width:'92',
+					width:'91',
 					dataIndex:'ВидСубконтоНУ2',
 					flex:1,
 				},
 				{
 					text:'Вид субконто 3 (НУ)',
-					width:'92',
+					width:'91',
 					dataIndex:'ВидСубконтоНУ3',
 					flex:1,
 				},
@@ -744,7 +769,7 @@
 				},
 				{
 					text:'Способ распределения затрат',
-					width:'74',
+					width:'73',
 					dataIndex:'СпособРаспределенияЗатратНаВыпуск',
 					flex:1,
 				},
@@ -804,13 +829,13 @@
 				},
 				{
 					text:'Объект строительства',
-					width:'180',
+					width:'179',
 					dataIndex:'ОбъектСтроительства',
 					flex:1,
 				},
 				{
 					text:'Способ строительства',
-					width:'178',
+					width:'177',
 					dataIndex:'СпособСтроительства',
 					flex:1,
 				},
@@ -839,7 +864,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПоступления/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КорректировкаПоступления/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -1008,6 +1033,23 @@
 						name:'Проект',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('Услуги');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.КорректировкаПоступления.ФормаДокументаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.КорректировкаПоступления.ФормаДокументаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -1320,8 +1362,10 @@
 		},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 	]
+	});
 });

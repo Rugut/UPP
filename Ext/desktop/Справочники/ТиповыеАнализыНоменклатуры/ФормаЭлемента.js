@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ТиповыеАнализыНоменклатуры'], function () 
+{
+	Ext.define('Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:480px;height:309px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Типовые анализы номенклатуры',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -58,6 +64,7 @@
 			style: 'position:absolute;left:88px;top:33px;width:384px;height:19px;',
 		},
 		{
+			id: 'ПоказателиАнализа',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:132px;width:464px;height:144px;',
 			height: 144,width: 464,
@@ -78,11 +85,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ТиповыеАнализыНоменклатуры").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнализыНоменклатуры/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнализыНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -93,13 +101,31 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ПоказателиАнализа');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'fieldset',
 			title: 'Показатели анализа',
 			style: 'position:absolute;left:8px;top:89px;width:464px;height:17px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -141,4 +167,5 @@
 			]
 		},
 	]
+	});
 });

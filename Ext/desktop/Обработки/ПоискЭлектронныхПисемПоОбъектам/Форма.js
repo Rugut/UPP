@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПоискЭлектронныхПисемПоОбъектам.Форма',
+﻿Ext.require(['Данные.Обработки.ПоискЭлектронныхПисемПоОбъектам'], function () 
+{
+	Ext.define('Обработки.ПоискЭлектронныхПисемПоОбъектам.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:696px;height:385px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Поиск электронных писем по объектам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ЭлектронныеПисьмаСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:57px;width:680px;height:320px;',
 			height: 320,width: 680,
@@ -71,25 +78,25 @@
 				},
 				{
 					text:'Номер',
-					width:'21',
+					width:'20',
 					dataIndex:'Номер',
 					flex:1,
 				},
 				{
 					text:'Учетная запись',
-					width:'27',
+					width:'26',
 					dataIndex:'УчетнаяЗапись',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'80',
+					width:'79',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Основание',
-					width:'86',
+					width:'85',
 					dataIndex:'Основание',
 					flex:1,
 				},
@@ -100,7 +107,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискЭлектронныхПисемПоОбъектам/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискЭлектронныхПисемПоОбъектам/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -144,6 +151,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ЭлектронныеПисьмаСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПоискЭлектронныхПисемПоОбъектам.ФормаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПоискЭлектронныхПисемПоОбъектам.ФормаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -179,7 +203,8 @@
 				},
 			]
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -346,4 +371,5 @@
 			]
 		},
 	]
+	});
 });

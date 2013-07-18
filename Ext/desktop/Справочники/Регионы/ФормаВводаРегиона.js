@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.Регионы.ФормаВводаРегиона',
+﻿Ext.require(['Данные.Справочники.Регионы'], function () 
+{
+	Ext.define('Справочники.Регионы.ФормаВводаРегиона',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:336px;height:272px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Ввод региона',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -140,4 +143,5 @@
 			]
 		},
 	]
+	});
 });

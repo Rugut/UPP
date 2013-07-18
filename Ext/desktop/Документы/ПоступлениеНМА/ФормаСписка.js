@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПоступлениеНМА.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ПоступлениеНМА'], function () 
+{
+	Ext.define('Документы.ПоступлениеНМА.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:780px;height:418px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Поступление НМА',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,25 +66,25 @@
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
 				{
 					text:'Ответственный',
-					width:'1200',
+					width:'120',
 					dataIndex:'Ответственный',
 					flex:1,
 				},
 				{
 					text:'Номер вход. документа',
-					width:'2500',
+					width:'250',
 					dataIndex:'НомерВходящегоДокумента',
 					flex:1,
 				},
@@ -157,9 +160,9 @@
 					{
 						var грид = Ext.getCmp('Список');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ПоступлениеНМА.ФормаСпискаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ПоступлениеНМА.ФормаСпискаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -198,4 +201,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

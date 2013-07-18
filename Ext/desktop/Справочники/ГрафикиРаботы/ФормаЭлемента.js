@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ГрафикиРаботы.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ГрафикиРаботы'], function () 
+{
+	Ext.define('Справочники.ГрафикиРаботы.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:813px;height:530px;',
@@ -7,8 +9,12 @@
 	maximizable: true,
 	title: 'Графики работы',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -31,6 +37,7 @@
 			style: 'position:absolute;left:8px;top:35px;width:128px;height:27px;',
 		},
 		{
+			id: 'ТабличноеПолеГрафика',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:72px;width:797px;height:425px;',
 			height: 425,width: 797,
@@ -74,19 +81,19 @@
 				},
 				{
 					text:'Часов за день',
-					width:'98',
+					width:'97',
 					dataIndex:'ЧасовЗаДень',
 					flex:1,
 				},
 				{
 					text:'Из них вечерних',
-					width:'98',
+					width:'97',
 					dataIndex:'ИзНихВечерних',
 					flex:1,
 				},
 				{
 					text:'Из них ночных',
-					width:'98',
+					width:'97',
 					dataIndex:'ИзНихНочных',
 					flex:1,
 				},
@@ -657,11 +664,12 @@
 			],
 			store:
 			{
+				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -975,6 +983,23 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПолеГрафика');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ГрафикиРаботы.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
 		{
 			xtype: 'label',
@@ -1003,7 +1028,8 @@
 			text: 'Изменить параметры заполнения графика...',
 			style: 'position:absolute;left:628px;top:34px;width:177px;height:34px;text-align:left;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -1037,4 +1063,5 @@
 			]
 		},
 	]
+	});
 });

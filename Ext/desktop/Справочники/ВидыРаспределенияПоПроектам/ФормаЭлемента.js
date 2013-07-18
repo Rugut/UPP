@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ВидыРаспределенияПоПроектам.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ВидыРаспределенияПоПроектам'], function () 
+{
+	Ext.define('Справочники.ВидыРаспределенияПоПроектам.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:466px;height:109px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Виды распределения по проектам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -93,4 +96,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ВыпискаБанка.Форма',
+﻿Ext.require(['Данные.Обработки.ВыпискаБанка'], function () 
+{
+	Ext.define('Обработки.ВыпискаБанка.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:676px;height:432px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Обработка  Выписка банка',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -99,25 +102,25 @@
 				},
 				{
 					text:'Документ',
-					width:'2800',
+					width:'280',
 					dataIndex:'Документ',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Сумма прихода',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаПриход',
 					flex:1,
 				},
 				{
 					text:'Сумма расхода',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаРасход',
 					flex:1,
 				},
@@ -166,9 +169,9 @@
 					{
 						var грид = Ext.getCmp('СписокДокументов');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.ВыпискаБанка.ФормаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.ВыпискаБанка.ФормаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -306,4 +309,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

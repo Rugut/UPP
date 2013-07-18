@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.УчетФактическихДанныхПоБюджетам.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.УчетФактическихДанныхПоБюджетам'], function () 
+{
+	Ext.define('Документы.УчетФактическихДанныхПоБюджетам.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:650px;height:409px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Учет фактических данных по бюджетам',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -116,49 +119,49 @@
 				},
 				{
 					text:'Статья оборотов',
-					width:'1200',
+					width:'120',
 					dataIndex:'СтатьяОборотов',
 					flex:1,
 				},
 				{
 					text:'Валюта',
-					width:'1200',
+					width:'120',
 					dataIndex:'Валюта',
 					flex:1,
 				},
 				{
 					text:'Сумма',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сумма',
 					flex:1,
 				},
 				{
 					text:'Количество',
-					width:'1200',
+					width:'120',
 					dataIndex:'Количество',
 					flex:1,
 				},
 				{
 					text:'ЦФО',
-					width:'1200',
+					width:'120',
 					dataIndex:'ЦФО',
 					flex:1,
 				},
 				{
 					text:'Проект',
-					width:'1200',
+					width:'120',
 					dataIndex:'Проект',
 					flex:1,
 				},
 				{
 					text:'Контрагент',
-					width:'1200',
+					width:'120',
 					dataIndex:'Контрагент',
 					flex:1,
 				},
 				{
 					text:'Номенклатура',
-					width:'1200',
+					width:'120',
 					dataIndex:'Номенклатура',
 					flex:1,
 				},
@@ -213,9 +216,9 @@
 					{
 						var грид = Ext.getCmp('БюджетныеОперации');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.УчетФактическихДанныхПоБюджетам.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.УчетФактическихДанныхПоБюджетам.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -394,4 +397,5 @@
 	dockedItems:
 	[
 	]
+	});
 });

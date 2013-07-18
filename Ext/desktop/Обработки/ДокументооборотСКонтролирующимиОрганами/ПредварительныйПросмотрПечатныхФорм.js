@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПредварительныйПросмотрПечатныхФорм',
+﻿Ext.require(['Данные.Обработки.ДокументооборотСКонтролирующимиОрганами'], function () 
+{
+	Ext.define('Обработки.ДокументооборотСКонтролирующимиОрганами.ПредварительныйПросмотрПечатныхФорм',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:740px;height:450px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Печать документов циклов обмена',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'СписокЛистов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:53px;width:198px;height:319px;',
 			height: 319,width: 198,
@@ -23,7 +30,7 @@
 				},
 				{
 					text:'Объект',
-					width:'159',
+					width:'158',
 					dataIndex:'Объект',
 					flex:1,
 				},
@@ -40,7 +47,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -53,6 +60,23 @@
 						name:'ТабличныйДокумент',
 					},
 				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СписокЛистов');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПредварительныйПросмотрПечатныхФормСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПредварительныйПросмотрПечатныхФормСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
 			},
 		},
 		{
@@ -85,7 +109,8 @@
 			text: 'Количество копий:',
 			style: 'position:absolute;left:14px;top:399px;width:100px;height:18px;',
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -140,4 +165,5 @@
 			]
 		},
 	]
+	});
 });

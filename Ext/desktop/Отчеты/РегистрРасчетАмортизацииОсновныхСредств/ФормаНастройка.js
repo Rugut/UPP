@@ -1,4 +1,6 @@
-﻿Ext.define('Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ФормаНастройка',
+﻿Ext.require(['Данные.Отчеты.РегистрРасчетАмортизацииОсновныхСредств'], function () 
+{
+	Ext.define('Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ФормаНастройка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:313px;height:128px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Регистр-расчет амортизации основных средств',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -109,4 +112,5 @@
 			]
 		},
 	]
+	});
 });

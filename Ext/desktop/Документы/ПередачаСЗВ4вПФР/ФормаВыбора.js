@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ПередачаСЗВ4вПФР.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.ПередачаСЗВ4вПФР'], function () 
+{
+	Ext.define('Документы.ПередачаСЗВ4вПФР.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:718px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Описи сведений АДВ-6-2 (до 2010 года - Ведомости уплаты АДВ-11)',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:702px;height:380px;',
 			height: 380,width: 702,
@@ -53,7 +60,7 @@
 				},
 				{
 					text:'Принято ПФР',
-					width:'82',
+					width:'81',
 					dataIndex:'ПринятоВПФР',
 					flex:1,
 				},
@@ -70,7 +77,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПередачаСЗВ4вПФР/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -99,8 +106,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаВыбораСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаВыбораСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -264,4 +289,5 @@
 			]
 		},
 	]
+	});
 });

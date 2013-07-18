@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ИнформационныеКарты.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ИнформационныеКарты'], function () 
+{
+	Ext.define('Справочники.ИнформационныеКарты.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:468px;height:205px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Информационные карты',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -174,4 +177,5 @@
 			]
 		},
 	]
+	});
 });

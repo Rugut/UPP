@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.МСФОКонсолидация.ФормаОсновная',
+﻿Ext.require(['Данные.Обработки.МСФОКонсолидация'], function () 
+{
+	Ext.define('Обработки.МСФОКонсолидация.ФормаОсновная',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:254px;height:122px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Консолидация МСФО',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -63,4 +66,5 @@
 			]
 		},
 	]
+	});
 });

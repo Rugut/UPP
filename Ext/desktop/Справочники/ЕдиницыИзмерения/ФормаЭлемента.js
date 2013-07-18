@@ -1,4 +1,6 @@
-﻿Ext.define('Справочники.ЕдиницыИзмерения.ФормаЭлемента',
+﻿Ext.require(['Данные.Справочники.ЕдиницыИзмерения'], function () 
+{
+	Ext.define('Справочники.ЕдиницыИзмерения.ФормаЭлемента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:470px;height:250px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Единицы измерения',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -179,4 +182,5 @@
 			]
 		},
 	]
+	});
 });

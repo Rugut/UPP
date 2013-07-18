@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.РезультатИспытательногоСрока.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.РезультатИспытательногоСрока'], function () 
+{
+	Ext.define('Документы.РезультатИспытательногоСрока.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:699px;height:312px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Результат испытательного срока',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -222,4 +225,5 @@
 			]
 		},
 	]
+	});
 });

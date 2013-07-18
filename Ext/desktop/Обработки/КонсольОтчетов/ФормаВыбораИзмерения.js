@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.КонсольОтчетов.ФормаВыбораИзмерения',
+﻿Ext.require(['Данные.Обработки.КонсольОтчетов'], function () 
+{
+	Ext.define('Обработки.КонсольОтчетов.ФормаВыбораИзмерения',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:400px;height:292px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Выбор группировки',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,4 +42,5 @@
 			]
 		},
 	]
+	});
 });

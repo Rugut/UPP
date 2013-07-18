@@ -1,4 +1,6 @@
-﻿Ext.define('Обработки.ПредупреждениеОРазницеВоВремениССервером.Форма',
+﻿Ext.require(['Данные.Обработки.ПредупреждениеОРазницеВоВремениССервером'], function () 
+{
+	Ext.define('Обработки.ПредупреждениеОРазницеВоВремениССервером.Форма',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:600px;height:179px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Разница во времени с сервером 1С:Предприятия',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -81,4 +84,5 @@
 			]
 		},
 	]
+	});
 });

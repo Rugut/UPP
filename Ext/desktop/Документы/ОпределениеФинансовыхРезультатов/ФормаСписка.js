@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.ОпределениеФинансовыхРезультатов.ФормаСписка',
+﻿Ext.require(['Данные.Документы.ОпределениеФинансовыхРезультатов'], function () 
+{
+	Ext.define('Документы.ОпределениеФинансовыхРезультатов.ФормаСписка',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:503px;height:421px;',
@@ -7,9 +9,14 @@
 	maximizable: true,
 	title: 'Определение финансовых результатов',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
-	[
+	[{
+		xtype: 'form',
+		items:
+		[
 		{
+			id: 'ДокументСписок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:481px;height:380px;',
 			height: 380,width: 481,
@@ -47,7 +54,7 @@
 				},
 				{
 					text:'Период',
-					width:'115',
+					width:'114',
 					dataIndex:'ПериодРегистрации',
 					flex:1,
 				},
@@ -64,7 +71,7 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОпределениеФинансовыхРезультатов/ВыбратьПоСсылке/100'},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОпределениеФинансовыхРезультатов/ВыбратьПоСсылке/100', timeout: 3},
 				fields:
 				[
 					{
@@ -90,8 +97,26 @@
 					},
 				]
 			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ДокументСписок');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						Ext.require(['Справочники.ОпределениеФинансовыхРезультатов.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОпределениеФинансовыхРезультатов.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(ссылка);
+						});
+					}
+				}
+			},
 		},
-	],
+		],
+	}],
 	dockedItems:
 	[
 		{
@@ -125,4 +150,5 @@
 			]
 		},
 	]
+	});
 });

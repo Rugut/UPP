@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СправкаПоНДФЛСотруднику.ФормаВыбора',
+﻿Ext.require(['Данные.Документы.СправкаПоНДФЛСотруднику'], function () 
+{
+	Ext.define('Документы.СправкаПоНДФЛСотруднику.ФормаВыбора',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:562px;height:421px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: 'Справки о доходах (2-НДФЛ) для сотрудников',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -39,7 +42,7 @@
 				},
 				{
 					text:'Организация',
-					width:'1200',
+					width:'120',
 					dataIndex:'Организация',
 					flex:1,
 				},
@@ -51,7 +54,7 @@
 				},
 				{
 					text:'Сотрудник',
-					width:'1200',
+					width:'120',
 					dataIndex:'Сотрудник',
 					flex:1,
 				},
@@ -63,7 +66,7 @@
 				},
 				{
 					text:'Назначение справки',
-					width:'1200',
+					width:'120',
 					dataIndex:'НазначениеСправки',
 					flex:1,
 				},
@@ -112,9 +115,9 @@
 					{
 						var грид = Ext.getCmp('ДокументСписок');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СправкаПоНДФЛСотруднику.ФормаВыбораСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СправкаПоНДФЛСотруднику.ФормаВыбораСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -276,4 +279,5 @@
 			]
 		},
 	]
+	});
 });

@@ -1,4 +1,6 @@
-﻿Ext.define('Документы.СписаниеНДС.ФормаДокумента',
+﻿Ext.require(['Данные.Документы.СписаниеНДС'], function () 
+{
+	Ext.define('Документы.СписаниеНДС.ФормаДокумента',
 	{
 	extend: 'Ext.window.Window',
 	style: 'position:absolute;width:709px;height:470px;',
@@ -7,6 +9,7 @@
 	maximizable: true,
 	title: '',
 	
+	layout: {type: "fit",align: "stretch"},
 	items:
 	[{
 		xtype: 'form',
@@ -129,19 +132,19 @@
 				},
 				{
 					text:'Поставщик',
-					width:'1200',
+					width:'120',
 					dataIndex:'Поставщик',
 					flex:1,
 				},
 				{
 					text:'Счет-фактура',
-					width:'1200',
+					width:'120',
 					dataIndex:'СчетФактура',
 					flex:1,
 				},
 				{
 					text:'Вид ценности',
-					width:'1200',
+					width:'120',
 					dataIndex:'ВидЦенности',
 					flex:1,
 				},
@@ -153,7 +156,7 @@
 				},
 				{
 					text:'Сумма без НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'СуммаБезНДС',
 					flex:1,
 				},
@@ -165,13 +168,13 @@
 				},
 				{
 					text:'НДС',
-					width:'1200',
+					width:'120',
 					dataIndex:'НДС',
 					flex:1,
 				},
 				{
 					text:'Документ оплаты',
-					width:'1200',
+					width:'120',
 					dataIndex:'ДокументОплаты',
 					flex:1,
 				},
@@ -223,9 +226,9 @@
 					{
 						var грид = Ext.getCmp('Состав');
 						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.Банки.ФормаЭлементаСобытия'], function ()
+						Ext.require(['Справочники.СписаниеНДС.ФормаДокументаСобытия'], function ()
 						{
-							var obj = Ext.create("Справочники.Банки.ФормаЭлементаСобытия");
+							var obj = Ext.create("Справочники.СписаниеНДС.ФормаДокументаСобытия");
 							obj.ПередатьСсылку(ссылка);
 						});
 					}
@@ -421,4 +424,5 @@
 	dockedItems:
 	[
 	]
+	});
 });
