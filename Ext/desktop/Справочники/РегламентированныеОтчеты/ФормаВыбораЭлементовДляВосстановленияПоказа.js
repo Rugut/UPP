@@ -43,14 +43,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
+					fields: ['Пометка','Код','Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Пометка',
 					},
@@ -99,6 +106,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

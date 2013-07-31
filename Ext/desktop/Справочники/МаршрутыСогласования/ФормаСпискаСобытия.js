@@ -3,36 +3,41 @@
 	ПередатьСсылку: function (строкаЗначений)
 	{
 		var ссылка = строкаЗначений.Ссылка;
-		var st = Ext.create('Ext.data.Store',
+		var хранилище = Ext.create('Ext.data.Store',
 		{
 			autoLoad: true,
-			fields: ['Код', 'Наименование'],
-			proxy: new Ext.data.ScriptTagProxy({ url: 'https://as-msk-n7077:1337/Справочники/МаршрутыСогласования/НайтиПоСсылке/' + ссылка, }),
+			fields: ['Наименование','Родитель','Родитель.Ссылка','Родитель.Представление',],
+			proxy: new Ext.data.ScriptTagProxy({ url: 'https://as-msk-n7077:1337/Справочники/МаршрутыСогласования/НайтиПоСсылке/' + ссылка, timeout:200}),
 		});
-		Ext.require(['Справочники.МаршрутыСогласования.ФормаЭлемента'], function () {
-			var win = Ext.create('Справочники.МаршрутыСогласования.ФормаЭлемента', {});
-
-			var form = win.down('form');
-			count = st.getCount();
-			if (count == 0)
+		хранилище.load(
+		{
+			callback: function (records, operation, success)
 			{
-				var массивЗначений = строкаЗначений;
-			}
-			else
-			{
-				st.on('load', function ()
+				Ext.require(['Справочники.МаршрутыСогласования.ФормаЭлемента'], function ()
 				{
-					var массивЗначений = st.data.items[0].data;
+					var количество = хранилище.getCount();
+					if (количество == 0)
+					{
+						var массивЗначений = строкаЗначений;
+					}
+					else
+					{
+						var массивЗначений = хранилище.data.items[0].data;
+					};
+					var окно = Ext.create('Справочники.МаршрутыСогласования.ФормаЭлемента',
+					{
+						Хранилище: массивЗначений.Родитель,
+					});
+					var форма = окно.down('form');
+					форма.getForm().setValues(массивЗначений);
+					if (окно)
+					{
+						окно.show();
+						return окно;
+					}
 				});
-			};
-
-			form.getForm().setValues(массивЗначений);
-
-			if (win)
-			{
-				win.show();
-				return win;
-			}
+			},
+			scope: this
 		});
 	}
 });

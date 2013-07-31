@@ -31,10 +31,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'НачислениеПоБЛ',
+			name: 'НачислениеПоБЛ.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:80px;top:78px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -116,10 +144,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидРасчетаДоплаты',
+			name: 'ВидРасчетаДоплаты.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:75px;top:0px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -185,10 +241,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОграничениеПособияБезЛьгот1',
+			name: 'ОграничениеПособияБезЛьгот1.Представление',
 			width: 350,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:236px;top:84px;width:350px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -264,10 +348,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОграничениеПособия',
+			name: 'ОграничениеПособия.Представление',
 			width: 172,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:223px;top:54px;width:172px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -296,10 +408,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОграничениеПособияБезЛьгот2',
+			name: 'ОграничениеПособияБезЛьгот2.Представление',
 			width: 172,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:414px;top:54px;width:172px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.АнализНеявок.ФормаДополнительныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},

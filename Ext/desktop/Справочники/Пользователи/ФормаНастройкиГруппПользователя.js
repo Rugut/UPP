@@ -37,14 +37,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Пользователи").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Пользователи").data,
+					fields: ['ГруппаПользователей',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Пользователи/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ГруппаПользователей',
 					},

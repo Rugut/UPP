@@ -55,14 +55,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ТранспортныеУпаковки").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ТранспортныеУпаковки").data,
+					fields: ['Картинка','НомерУпаковки','Наименование','Коэффициент','Владелец',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТранспортныеУпаковки/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

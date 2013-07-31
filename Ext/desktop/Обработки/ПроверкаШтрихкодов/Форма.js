@@ -93,9 +93,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаШтрихкодов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроверкаШтрихкодов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Код',
 					},
@@ -152,7 +155,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПроверяемыйДокументОбъект',
-			text: '',
+			text: 'НадписьПроверяемыйДокументОбъект',
 			style: 'position:absolute;left:140px;top:33px;width:352px;height:19px;',
 		},
 		],
@@ -182,6 +185,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

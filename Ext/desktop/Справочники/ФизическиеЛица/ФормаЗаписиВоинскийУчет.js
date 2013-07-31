@@ -44,10 +44,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОтношениеКВоинскойОбязанности',
+			name: 'ОтношениеКВоинскойОбязанности.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:202px;top:8px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -61,10 +89,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОтношениеКВоинскомуУчету',
+			name: 'ОтношениеКВоинскомуУчету.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:202px;top:198px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -78,10 +134,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Годность',
+			name: 'Годность.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:322px;top:126px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -95,10 +179,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Звание',
+			name: 'Звание.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:202px;top:80px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -112,10 +224,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ЗабронированОрганизацией',
+			name: 'ЗабронированОрганизацией.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:202px;top:289px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -134,10 +274,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Военкомат',
+			name: 'Военкомат.Представление',
 			width: 334,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:88px;top:150px;width:334px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -181,10 +349,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КатегорияЗапаса',
+			name: 'КатегорияЗапаса.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:202px;top:54px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -198,10 +394,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Состав',
+			name: 'Состав.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:202px;top:102px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиВоинскийУчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -246,6 +470,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

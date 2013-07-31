@@ -33,7 +33,7 @@
 		{
 			xtype: 'label',
 			name: 'СтрокаИнфо',
-			text: '',
+			text: 'СтрокаИнфо',
 			style: 'position:absolute;left:8px;top:57px;width:304px;height:19px;',
 		},
 		],
@@ -55,6 +55,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

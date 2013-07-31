@@ -43,7 +43,7 @@
 				{
 					text:'Вид склада',
 					width:'80',
-					dataIndex:'ВидСклада',
+					dataIndex:'ВидСклада.Представление',
 					flex:1,
 				},
 				{
@@ -55,13 +55,13 @@
 				{
 					text:'Тип цен розничной торговли',
 					width:'120',
-					dataIndex:'ТипЦенРозничнойТорговли',
+					dataIndex:'ТипЦенРозничнойТорговли.Представление',
 					flex:1,
 				},
 				{
 					text:'Подразделение',
 					width:'120',
-					dataIndex:'Подразделение',
+					dataIndex:'Подразделение.Представление',
 					flex:1,
 				},
 				{
@@ -73,14 +73,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Склады").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Склады").data,
+					fields: ['Картинка','Код','Наименование','ВидСклада.Представление','НомерСекции','ТипЦенРозничнойТорговли.Представление','Подразделение.Представление','Комментарий',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -141,14 +148,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Склады").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Склады").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

@@ -67,10 +67,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Владелец',
+			name: 'Владелец.Представление',
 			width: 317,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:120px;top:6px;width:317px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СерииНоменклатуры.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СерииНоменклатуры.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СерииНоменклатуры.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СерииНоменклатуры.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -116,10 +144,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'НомерГТД',
+			name: 'НомерГТД.Представление',
 			width: 317,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:120px;top:86px;width:317px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СерииНоменклатуры.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СерииНоменклатуры.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СерииНоменклатуры.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СерииНоменклатуры.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -132,10 +188,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СтранаПроисхождения',
+			name: 'СтранаПроисхождения.Представление',
 			width: 317,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:120px;top:112px;width:317px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СерииНоменклатуры.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СерииНоменклатуры.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СерииНоменклатуры.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СерииНоменклатуры.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -215,7 +299,7 @@
 		{
 			xtype: 'label',
 			name: 'ГиперссылкаЗаписьСертификации',
-			text: '',
+			text: 'ГиперссылкаЗаписьСертификации',
 			style: 'position:absolute;left:6px;top:77px;width:431px;height:19px;text-align:left;',
 		},
 		{
@@ -275,7 +359,7 @@
 		{
 			xtype: 'label',
 			name: 'ГиперссылкаЗаписьСертификацииВнутр',
-			text: '',
+			text: 'ГиперссылкаЗаписьСертификацииВнутр',
 			style: 'position:absolute;left:6px;top:187px;width:431px;height:19px;text-align:left;',
 		},
 					]
@@ -364,6 +448,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

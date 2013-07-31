@@ -294,10 +294,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОтветственныйЗаАвтоПолучениеОтправкуСообщений',
+			name: 'ОтветственныйЗаАвтоПолучениеОтправкуСообщений.Представление',
 			width: 129,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:429px;top:71px;width:129px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -316,10 +344,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ДействиеАвтополученияОтправкиСообщений',
+			name: 'ДействиеАвтополученияОтправкиСообщений.Представление',
 			width: 114,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:71px;width:114px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -474,14 +530,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
+					fields: ['НомерСтроки','Пользователь','Администрирование','Чтение','Запись',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -555,14 +618,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -609,10 +679,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ГруппаВходящие',
+			name: 'ГруппаВходящие.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:27px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -626,10 +724,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ГруппаИсходящие',
+			name: 'ГруппаИсходящие.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:51px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -643,10 +769,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ГруппаУдаленные',
+			name: 'ГруппаУдаленные.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:75px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -680,10 +834,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ГруппаЧерновики',
+			name: 'ГруппаЧерновики.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:99px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'button',
@@ -746,14 +928,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.УчетныеЗаписиЭлектроннойПочты").data,
+					fields: ['Картинка','Использование','Код','Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УчетныеЗаписиЭлектроннойПочты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -818,10 +1007,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'НазначениеУчетнойЗаписи',
+			name: 'НазначениеУчетнойЗаписи.Представление',
 			width: 474,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:100px;top:81px;width:474px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.УчетныеЗаписиЭлектроннойПочты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -854,6 +1071,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

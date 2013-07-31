@@ -75,7 +75,7 @@
 		{
 			xtype: 'label',
 			name: 'Период',
-			text: '',
+			text: 'Период',
 			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
@@ -130,10 +130,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПолеВводаТипЦен',
+			name: 'ПолеВводаТипЦен.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:120px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ПланыПроизводства.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПланыПроизводства.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ПланыПроизводства.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПланыПроизводства.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

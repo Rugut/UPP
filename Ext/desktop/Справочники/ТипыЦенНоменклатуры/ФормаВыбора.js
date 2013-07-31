@@ -43,13 +43,13 @@
 				{
 					text:'Валюта',
 					width:'45',
-					dataIndex:'ВалютаЦены',
+					dataIndex:'ВалютаЦены.Представление',
 					flex:1,
 				},
 				{
 					text:'Базовый тип цен',
 					width:'239',
-					dataIndex:'БазовыйТипЦен',
+					dataIndex:'БазовыйТипЦен.Представление',
 					flex:1,
 				},
 				{
@@ -67,14 +67,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ТипыЦенНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ТипыЦенНоменклатуры").data,
+					fields: ['Картинка','Код','Наименование','ВалютаЦены.Представление','БазовыйТипЦен.Представление','Рассчитывается','ПроцентСкидкиНаценки',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыЦенНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

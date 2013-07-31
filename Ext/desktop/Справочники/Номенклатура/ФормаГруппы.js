@@ -57,10 +57,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 297,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:117px;top:33px;width:297px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -75,10 +103,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ВидНоменклатуры',
+			name: 'ВидНоменклатуры.Представление',
 			width: 297,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:117px;top:87px;width:297px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -93,10 +149,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПорядокПрисвоенияСерийногоНомера',
+			name: 'ПорядокПрисвоенияСерийногоНомера.Представление',
 			width: 297,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:117px;top:114px;width:297px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -133,6 +217,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

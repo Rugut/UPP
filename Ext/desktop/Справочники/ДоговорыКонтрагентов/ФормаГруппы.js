@@ -51,10 +51,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Владелец',
+			name: 'Владелец.Представление',
 			width: 300,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:134px;top:32px;width:300px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -74,10 +102,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 300,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:134px;top:56px;width:300px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаГруппыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -104,6 +160,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

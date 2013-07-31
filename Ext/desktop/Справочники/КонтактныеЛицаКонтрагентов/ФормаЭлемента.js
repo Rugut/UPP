@@ -57,10 +57,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Владелец',
+			name: 'Владелец.Представление',
 			width: 484,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:103px;top:58px;width:484px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -74,10 +102,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'КонтактноеЛицо',
+			name: 'КонтактноеЛицо.Представление',
 			width: 484,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:103px;top:33px;width:484px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -129,14 +185,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+					fields: ['Картинка','Тип','Вид','Представление','Комментарий',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -217,14 +280,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+					fields: ['Картинка','Тип','Вид','Представление','Комментарий',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -411,14 +481,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+					fields: ['Картинка','СостояниеСобытия','Важность','Дата','Номер','ВидСобытия','Ответственный','ОписаниеСобытия',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -495,10 +572,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'РольКонтактногоЛица',
+			name: 'РольКонтактногоЛица.Представление',
 			width: 436,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:135px;top:33px;width:436px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -561,14 +666,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+					fields: ['ПометкаУдаления','Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -632,14 +744,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КонтактныеЛицаКонтрагентов").data,
+					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛицаКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -719,6 +838,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

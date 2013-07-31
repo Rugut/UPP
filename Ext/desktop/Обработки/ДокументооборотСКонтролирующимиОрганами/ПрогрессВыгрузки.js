@@ -24,7 +24,7 @@
 		{
 			xtype: 'label',
 			name: 'ЦиклОбмена',
-			text: '',
+			text: 'ЦиклОбмена',
 			style: 'position:absolute;left:91px;top:8px;width:521px;height:16px;',
 		},
 		{
@@ -36,7 +36,7 @@
 		{
 			xtype: 'label',
 			name: 'Сообщение',
-			text: '',
+			text: 'Сообщение',
 			style: 'position:absolute;left:91px;top:29px;width:521px;height:16px;',
 		},
 		{

@@ -52,10 +52,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Периодичность',
+			name: 'Периодичность.Представление',
 			width: 364,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:58px;width:364px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -69,10 +97,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ДетализацияПланирования',
+			name: 'ДетализацияПланирования.Представление',
 			width: 364,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:32px;width:364px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -96,10 +152,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Валюта',
+			name: 'Валюта.Представление',
 			width: 107,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:157px;top:84px;width:107px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -132,10 +216,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВалютаКурсов',
+			name: 'ВалютаКурсов.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:58px;top:6px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СценарииПланирования.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СценарииПланирования.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -177,14 +289,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СценарииПланирования").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СценарииПланирования").data,
+					fields: ['Картинка','Период','Курс','Кратность',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СценарииПланирования/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -255,6 +374,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

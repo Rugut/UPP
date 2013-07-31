@@ -65,7 +65,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПредставлениеКодаДоходаПоЕСН',
-			text: '',
+			text: 'НадписьПредставлениеКодаДоходаПоЕСН',
 			style: 'position:absolute;left:1px;top:0px;width:389px;height:55px;',
 		},
 					]
@@ -109,6 +109,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

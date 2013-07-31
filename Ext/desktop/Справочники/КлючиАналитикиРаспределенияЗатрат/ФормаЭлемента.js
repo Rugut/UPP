@@ -41,10 +41,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'НоменклатурнаяГруппа',
+			name: 'НоменклатурнаяГруппа.Представление',
 			width: 233,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:159px;top:57px;width:233px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -57,10 +85,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'Продукция',
+			name: 'Продукция.Представление',
 			width: 233,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:159px;top:81px;width:233px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -73,10 +129,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'ХарактеристикаПродукции',
+			name: 'ХарактеристикаПродукции.Представление',
 			width: 233,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:159px;top:105px;width:233px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -89,10 +173,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'СерияПродукции',
+			name: 'СерияПродукции.Представление',
 			width: 233,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:159px;top:129px;width:233px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -105,10 +217,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'Спецификация',
+			name: 'Спецификация.Представление',
 			width: 233,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:159px;top:153px;width:233px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -120,10 +260,38 @@
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
-			name: 'ВариантВыпускаПродукции',
+			name: 'ВариантВыпускаПродукции.Представление',
 			width: 233,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:159px;top:178px;width:233px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиРаспределенияЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -156,6 +324,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

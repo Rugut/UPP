@@ -55,6 +55,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -74,10 +75,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СтавкаНДС',
+			name: 'СтавкаНДС.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:83px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -105,20 +134,76 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'БазоваяЕдиницаИзмерения',
+			name: 'БазоваяЕдиницаИзмерения.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:114px;top:131px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ЕдиницаХраненияОстатков',
+			name: 'ЕдиницаХраненияОстатков.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:364px;top:131px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -150,10 +235,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 350,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:33px;width:350px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НоменклатурныеГруппы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -205,14 +318,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
+					fields: ['Картинка','Код','Артикул','Наименование','Вес',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -282,14 +402,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
+					fields: ['ПометкаУдаления','Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -353,14 +480,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
+					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НоменклатурныеГруппы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},

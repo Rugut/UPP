@@ -43,20 +43,27 @@
 				{
 					text:'Тип номенклатуры',
 					width:'120',
-					dataIndex:'ТипНоменклатуры',
+					dataIndex:'ТипНоменклатуры.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ВидыНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ВидыНоменклатуры").data,
+					fields: ['Картинка','Код','Наименование','ТипНоменклатуры.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВидыНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВидыНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

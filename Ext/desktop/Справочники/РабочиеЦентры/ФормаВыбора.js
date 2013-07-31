@@ -43,20 +43,27 @@
 				{
 					text:'Подразделение',
 					width:'120',
-					dataIndex:'Подразделение',
+					dataIndex:'Подразделение.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.РабочиеЦентры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.РабочиеЦентры").data,
+					fields: ['Картинка','Код','Наименование','Подразделение.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочиеЦентры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочиеЦентры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -105,14 +112,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.РабочиеЦентры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.РабочиеЦентры").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочиеЦентры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочиеЦентры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

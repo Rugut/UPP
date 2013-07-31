@@ -43,7 +43,7 @@
 				{
 					text:'Вид результата анализа',
 					width:'91',
-					dataIndex:'ВидРезультатаАнализа',
+					dataIndex:'ВидРезультатаАнализа.Представление',
 					flex:1,
 				},
 				{
@@ -61,20 +61,27 @@
 				{
 					text:'Единица измерения',
 					width:'175',
-					dataIndex:'ЕдиницаИзмерения',
+					dataIndex:'ЕдиницаИзмерения.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПоказателиАнализовНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПоказателиАнализовНоменклатуры").data,
+					fields: ['Картинка','Код','Наименование','ВидРезультатаАнализа.Представление','МинЗначение','МаксЗначение','ЕдиницаИзмерения.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -132,14 +139,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПоказателиАнализовНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПоказателиАнализовНоменклатуры").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиАнализовНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

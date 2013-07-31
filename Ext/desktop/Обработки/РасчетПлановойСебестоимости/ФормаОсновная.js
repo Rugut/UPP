@@ -92,9 +92,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Использование',
 					},
@@ -216,9 +219,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -274,10 +280,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'МетодРасчета',
+			name: 'МетодРасчета.Представление',
 			width: 231,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:178px;top:30px;width:231px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -317,10 +351,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДо',
+			name: 'ОкруглитьДо.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:309px;top:130px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -403,10 +465,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'МетодРасчетаМатериальные',
+			name: 'МетодРасчетаМатериальные.Представление',
 			width: 205,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:136px;top:25px;width:205px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -446,10 +536,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоМатериальные',
+			name: 'ОкруглитьДоМатериальные.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:516px;top:69px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -496,10 +614,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'МетодОпределенияСтоимости',
+			name: 'МетодОпределенияСтоимости.Представление',
 			width: 205,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:136px;top:69px;width:205px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -545,10 +691,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоОплатаТруда',
+			name: 'ОкруглитьДоОплатаТруда.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:516px;top:175px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -588,10 +762,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоАмортизация',
+			name: 'ОкруглитьДоАмортизация.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:516px;top:257px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -631,10 +833,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоПрочие',
+			name: 'ОкруглитьДоПрочие.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:516px;top:339px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -647,10 +877,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'МетодРасчетаОплатаТруда',
+			name: 'МетодРасчетаОплатаТруда.Представление',
 			width: 205,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:136px;top:131px;width:205px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -808,10 +1066,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ТипЦен',
+			name: 'ТипЦен.Представление',
 			width: 205,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:136px;top:91px;width:205px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -883,10 +1169,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоОбщепроизводственные',
+			name: 'ОкруглитьДоОбщепроизводственные.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:517px;top:70px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -926,10 +1240,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоОбщехозяйственные',
+			name: 'ОкруглитьДоОбщехозяйственные.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:517px;top:153px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -969,10 +1311,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОкруглитьДоБракВПроизводстве',
+			name: 'ОкруглитьДоБракВПроизводстве.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:517px;top:236px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1228,9 +1598,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПлановойСебестоимости/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Код',
 					},
@@ -1339,6 +1712,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -18,13 +18,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДопроведено',
-			text: '',
+			text: 'НадписьДопроведено',
 			style: 'position:absolute;left:8px;top:265px;width:20px;height:20px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНеДопроведено',
-			text: '',
+			text: 'НадписьНеДопроведено',
 			style: 'position:absolute;left:8px;top:292px;width:20px;height:20px;',
 		},
 		{
@@ -42,7 +42,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьГраницаЗапрета',
-			text: '',
+			text: 'НадписьГраницаЗапрета',
 			style: 'position:absolute;left:202px;top:292px;width:20px;height:20px;',
 		},
 		{
@@ -54,7 +54,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьТекущаяДата',
-			text: '',
+			text: 'НадписьТекущаяДата',
 			style: 'position:absolute;left:202px;top:265px;width:20px;height:20px;',
 		},
 		{

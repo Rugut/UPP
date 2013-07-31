@@ -73,10 +73,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 418,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:103px;top:33px;width:418px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -100,10 +128,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ТипЦенРозничнойТорговли',
+			name: 'ТипЦенРозничнойТорговли.Представление',
 			width: 411,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:62px;width:411px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -118,10 +174,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Подразделение',
+			name: 'Подразделение.Представление',
 			width: 411,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:110px;width:411px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -134,10 +218,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидСклада',
+			name: 'ВидСклада.Представление',
 			width: 411,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:38px;width:411px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -171,10 +283,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ОтветственноеЛицо',
+			name: 'ОтветственноеЛицо.Представление',
 			width: 326,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:9px;width:326px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Склады.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Склады.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'button',
@@ -216,14 +356,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Склады").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Склады").data,
+					fields: ['ПометкаУдаления','Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -287,14 +434,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Склады").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Склады").data,
+					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Склады/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -373,6 +527,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

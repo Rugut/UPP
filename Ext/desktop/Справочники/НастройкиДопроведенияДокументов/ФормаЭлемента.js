@@ -58,7 +58,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПериодДопроведения',
-			text: '',
+			text: 'НадписьПериодДопроведения',
 			style: 'position:absolute;left:54px;top:79px;width:380px;height:19px;',
 		},
 		{
@@ -176,6 +176,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

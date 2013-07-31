@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
-			text: '',
+			text: 'НадписьПериодСоставленияОтчета',
 			style: 'position:absolute;left:42px;top:33px;width:176px;height:19px;text-align:center;',
 		},
 		{
@@ -36,7 +36,7 @@
 		{
 			xtype: 'label',
 			name: 'ОписаниеНормативДок',
-			text: '',
+			text: 'ОписаниеНормативДок',
 			style: 'position:absolute;left:17px;top:84px;width:244px;height:40px;text-align:left;',
 		},
 		{

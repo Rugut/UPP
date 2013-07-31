@@ -119,9 +119,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Состояние',
 					},
@@ -178,13 +181,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьМесяца',
-			text: '',
+			text: 'НадписьМесяца',
 			style: 'position:absolute;left:0px;top:0px;width:513px;height:22px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНедели',
-			text: '',
+			text: 'НадписьНедели',
 			style: 'position:absolute;left:0px;top:0px;width:623px;height:22px;text-align:left;',
 		},
 		{
@@ -248,9 +251,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'КартинкаДокумента',
 					},
@@ -293,7 +299,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДня',
-			text: '',
+			text: 'НадписьДня',
 			style: 'position:absolute;left:0px;top:0px;width:200px;height:22px;text-align:left;',
 		},
 					]
@@ -488,9 +494,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НеРассмотрено',
 					},
@@ -854,9 +863,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -903,9 +915,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Предмет',
 					},
@@ -961,9 +976,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МенеджерКонтактов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

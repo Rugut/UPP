@@ -31,20 +31,27 @@
 				{
 					text:'Физлицо',
 					width:'350',
-					dataIndex:'Физлицо',
+					dataIndex:'Физлицо.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+					fields: ['Наименование','Физлицо.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -105,14 +112,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+					fields: ['ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ГодРаботы',
 					},
@@ -148,7 +162,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСотрудник',
-			text: '',
+			text: 'НадписьСотрудник',
 			style: 'position:absolute;left:239px;top:33px;width:230px;height:19px;',
 		},
 		{

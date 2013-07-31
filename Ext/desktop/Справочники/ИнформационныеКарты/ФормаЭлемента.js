@@ -106,30 +106,114 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ВидДисконтнойКарты',
+			name: 'ВидДисконтнойКарты.Представление',
 			width: 359,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:101px;top:153px;width:359px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидКарты',
+			name: 'ВидКарты.Представление',
 			width: 177,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:101px;top:57px;width:177px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ТипКарты',
+			name: 'ТипКарты.Представление',
 			width: 359,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:101px;top:105px;width:359px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -137,10 +221,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ТипШтрихкода',
+			name: 'ТипШтрихкода.Представление',
 			width: 88,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:372px;top:57px;width:88px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ИнформационныеКарты.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ИнформационныеКарты.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -173,6 +285,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

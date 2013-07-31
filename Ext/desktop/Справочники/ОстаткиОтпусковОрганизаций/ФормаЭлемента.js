@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСотрудник',
-			text: '',
+			text: 'НадписьСотрудник',
 			style: 'position:absolute;left:8px;top:33px;width:330px;height:19px;',
 		},
 		{
@@ -139,14 +139,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОстаткиОтпусковОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОстаткиОтпусковОрганизаций").data,
+					fields: ['ВидЕжегодногоОтпуска','Количество',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ВидЕжегодногоОтпуска',
 					},
@@ -219,14 +226,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОстаткиОтпусковОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОстаткиОтпусковОрганизаций").data,
+					fields: ['ВидЕжегодногоОтпуска','ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусковОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ВидЕжегодногоОтпуска',
 					},
@@ -309,6 +323,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

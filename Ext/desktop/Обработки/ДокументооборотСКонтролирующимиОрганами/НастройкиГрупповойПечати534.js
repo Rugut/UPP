@@ -39,7 +39,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЧислоЦикловОбмена',
-			text: '',
+			text: 'НадписьЧислоЦикловОбмена',
 			style: 'position:absolute;left:199px;top:9px;width:68px;height:15px;text-align:center;',
 		},
 		{

@@ -54,7 +54,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРуководительТекст',
-			text: '',
+			text: 'НадписьРуководительТекст',
 			style: 'position:absolute;left:91px;top:57px;width:427px;height:34px;text-align:left;',
 		},
 		{
@@ -69,10 +69,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидПодразделения',
+			name: 'ВидПодразделения.Представление',
 			width: 295,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:93px;top:93px;width:295px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -86,10 +114,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидЦФО',
+			name: 'ВидЦФО.Представление',
 			width: 295,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:93px;top:120px;width:295px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -138,14 +194,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Подразделения").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Подразделения").data,
+					fields: ['Организация','ПодразделениеОрганизации',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Организация',
 					},
@@ -212,14 +275,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Подразделения").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Подразделения").data,
+					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -277,14 +347,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Подразделения").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Подразделения").data,
+					fields: ['ПометкаУдаления','Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Подразделения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -403,6 +480,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

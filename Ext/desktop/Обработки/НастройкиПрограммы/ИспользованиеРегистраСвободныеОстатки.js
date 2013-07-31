@@ -34,7 +34,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДатаНачала',
-			text: '',
+			text: 'НадписьДатаНачала',
 			style: 'position:absolute;left:8px;top:33px;width:164px;height:19px;text-align:right;',
 		},
 		{
@@ -68,6 +68,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -76,10 +104,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СтатьяОборотовВлияющая',
+			name: 'СтатьяОборотовВлияющая.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:428px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -93,10 +149,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ЦФО',
+			name: 'ЦФО.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:81px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -110,10 +194,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Проект',
+			name: 'Проект.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:428px;top:81px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -127,10 +239,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Контрагент',
+			name: 'Контрагент.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -159,10 +299,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:94px;top:129px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			id: 'ЗависимостиОборотовПоСтатьям',
@@ -238,9 +406,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЗависимостейОборотовПоСтатьям/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УстановкаЗависимостейОборотовПоСтатьям/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'СтатьяОборотовЗависимая',
 					},
@@ -367,6 +538,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -29,6 +29,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -43,10 +44,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВариантАвтоподбора',
+			name: 'ВариантАвтоподбора.Представление',
 			width: 342,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:150px;top:6px;width:342px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -60,10 +89,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Свойство',
+			name: 'Свойство.Представление',
 			width: 342,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:150px;top:30px;width:342px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -116,14 +173,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
+					fields: ['НомерСтроки','Значение','Номенклатура','Количество','ЕдиницаИзмерения',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -215,14 +279,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
+					fields: ['НомерСтроки','Значение','Номенклатура','Количество','ЕдиницаИзмерения',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СпецификацииНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},

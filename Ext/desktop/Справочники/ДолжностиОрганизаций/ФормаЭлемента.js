@@ -87,10 +87,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КодПозицииСписка',
+			name: 'КодПозицииСписка.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:140px;top:124px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -104,10 +132,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОснованиеВыслугиЛет',
+			name: 'ОснованиеВыслугиЛет.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:140px;top:148px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -121,10 +177,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КатегорияВоинскогоУчета',
+			name: 'КатегорияВоинскогоУчета.Представление',
 			width: 374,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:167px;top:51px;width:374px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -154,10 +238,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Должность',
+			name: 'Должность.Представление',
 			width: 401,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:140px;top:295px;width:401px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -171,10 +283,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КатегорияСтатистическогоУчета',
+			name: 'КатегорияСтатистическогоУчета.Представление',
 			width: 374,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:167px;top:27px;width:374px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -188,10 +328,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КатегорияУчетаЗабронированных',
+			name: 'КатегорияУчетаЗабронированных.Представление',
 			width: 374,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:167px;top:75px;width:374px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -301,14 +469,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
+					fields: ['Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Принадлежность',
 					},
@@ -357,14 +532,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
+					fields: ['Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Свойство',
 					},
@@ -419,14 +601,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
+					fields: ['ВидЕжегодногоОтпуска','КоличествоДнейОтпускаВГод',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДолжностиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ВидЕжегодногоОтпуска',
 					},
@@ -510,6 +699,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

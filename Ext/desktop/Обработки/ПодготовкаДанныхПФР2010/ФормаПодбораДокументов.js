@@ -41,9 +41,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ОтчетныйПериод',
 					},
@@ -127,10 +130,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ДокументАДВ62ДляЗагрузки',
+			name: 'ДокументАДВ62ДляЗагрузки.Представление',
 			width: 237,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:289px;top:302px;width:237px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -143,10 +174,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'ПолеВвода1',
+			name: 'ПолеВвода1.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:326px;top:253px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаПодбораДокументовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

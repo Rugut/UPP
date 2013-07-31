@@ -74,9 +74,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ОписаниеОтчета',
 					},
@@ -139,7 +142,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВозможныеПериоды',
-			text: '',
+			text: 'НадписьВозможныеПериоды',
 			style: 'position:absolute;left:14px;top:304px;width:505px;height:66px;text-align:left;',
 		},
 		],
@@ -157,6 +160,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

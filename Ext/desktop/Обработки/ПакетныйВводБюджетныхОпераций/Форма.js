@@ -26,10 +26,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -139,9 +167,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -223,9 +254,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 				]
 			},
 			listeners:
@@ -267,20 +301,76 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СтатьяОборотов',
+			name: 'СтатьяОборотов.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:142px;top:30px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВалютаДокумента',
+			name: 'ВалютаДокумента.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:520px;top:30px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -298,10 +388,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ЦФО',
+			name: 'ЦФО.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:142px;top:54px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -314,10 +432,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Проект',
+			name: 'Проект.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:520px;top:54px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -330,10 +476,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Контрагент',
+			name: 'Контрагент.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:142px;top:78px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -359,10 +533,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:142px;top:102px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -374,10 +576,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Состояние',
+			name: 'Состояние.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:520px;top:102px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -407,7 +637,7 @@
 		{
 			xtype: 'label',
 			name: 'Период',
-			text: '',
+			text: 'Период',
 			style: 'position:absolute;left:160px;top:6px;width:115px;height:19px;text-align:center;',
 		},
 		{
@@ -478,9 +708,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПакетныйВводБюджетныхОпераций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -547,6 +780,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

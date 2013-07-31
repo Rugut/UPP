@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -77,10 +105,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -151,9 +207,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -323,10 +382,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Пол',
+			name: 'Пол.Представление',
 			width: 115,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:456px;top:30px;width:115px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -339,10 +426,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СтатусНалогоплательщика',
+			name: 'СтатусНалогоплательщика.Представление',
 			width: 206,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:365px;top:78px;width:206px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -409,10 +524,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидДокумента',
+			name: 'ВидДокумента.Представление',
 			width: 197,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:90px;top:162px;width:197px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -502,10 +645,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Банк',
+			name: 'Банк.Представление',
 			width: 185,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:197px;top:64px;width:185px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -669,10 +840,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВыплатаЗаСчетФедеральногоБюджета',
+			name: 'ВыплатаЗаСчетФедеральногоБюджета.Представление',
 			width: 149,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:422px;top:172px;width:149px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'radiogroup',
@@ -933,9 +1132,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОЕжемесячныхПособияхПоУходу/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Очередность',
 					},
@@ -1455,10 +1657,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Руководитель',
+			name: 'Руководитель.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:121px;top:162px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1473,10 +1703,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя',
+			name: 'ДолжностьРуководителя.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:439px;top:162px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1620,10 +1878,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ГлавныйБухгалтер',
+			name: 'ГлавныйБухгалтер.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:121px;top:186px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1676,10 +1962,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'РеестрСоставил',
+			name: 'РеестрСоставил.Представление',
 			width: 176,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:464px;top:57px;width:176px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -1720,6 +2034,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

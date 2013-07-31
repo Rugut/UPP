@@ -119,9 +119,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Пометка',
 					},
@@ -201,7 +204,7 @@
 		{
 			xtype: 'label',
 			name: 'Наименование',
-			text: '',
+			text: 'Наименование',
 			style: 'position:absolute;left:91px;top:350px;width:275px;height:16px;',
 		},
 		{
@@ -213,7 +216,7 @@
 		{
 			xtype: 'label',
 			name: 'Владелец',
-			text: '',
+			text: 'Владелец',
 			style: 'position:absolute;left:462px;top:350px;width:275px;height:16px;',
 		},
 		{
@@ -225,7 +228,7 @@
 		{
 			xtype: 'label',
 			name: 'ДействуетС',
-			text: '',
+			text: 'ДействуетС',
 			style: 'position:absolute;left:462px;top:390px;width:121px;height:16px;',
 		},
 		{
@@ -237,7 +240,7 @@
 		{
 			xtype: 'label',
 			name: 'ДействуетПо',
-			text: '',
+			text: 'ДействуетПо',
 			style: 'position:absolute;left:616px;top:390px;width:121px;height:16px;',
 		},
 		{
@@ -255,13 +258,13 @@
 		{
 			xtype: 'label',
 			name: 'Поставщик',
-			text: '',
+			text: 'Поставщик',
 			style: 'position:absolute;left:91px;top:370px;width:275px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'СерийныйНомер',
-			text: '',
+			text: 'СерийныйНомер',
 			style: 'position:absolute;left:462px;top:370px;width:275px;height:16px;',
 		},
 		{
@@ -273,7 +276,7 @@
 		{
 			xtype: 'label',
 			name: 'Отпечаток',
-			text: '',
+			text: 'Отпечаток',
 			style: 'position:absolute;left:91px;top:390px;width:275px;height:16px;',
 		},
 		],

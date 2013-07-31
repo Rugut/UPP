@@ -74,10 +74,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 282,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:346px;width:282px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -91,10 +119,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Услуга',
+			name: 'Услуга.Представление',
 			width: 232,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:146px;top:57px;width:232px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -108,10 +164,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПричинаЗаказаНаОбслуживаниеОС',
+			name: 'ПричинаЗаказаНаОбслуживаниеОС.Представление',
 			width: 232,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:146px;top:81px;width:232px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -168,9 +252,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказНаОбслуживаниеОС/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаказНаОбслуживаниеОС/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -209,10 +296,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидОбслуживанияОС',
+			name: 'ВидОбслуживанияОС.Представление',
 			width: 232,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:146px;top:105px;width:232px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаказНаОбслуживаниеОС.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -293,6 +408,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

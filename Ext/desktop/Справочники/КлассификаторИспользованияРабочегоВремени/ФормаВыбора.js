@@ -49,14 +49,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КлассификаторИспользованияРабочегоВремени").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КлассификаторИспользованияРабочегоВремени").data,
+					fields: ['Картинка','Наименование','ПолноеНаименование','РабочееВремя',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификаторИспользованияРабочегоВремени/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификаторИспользованияРабочегоВремени/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

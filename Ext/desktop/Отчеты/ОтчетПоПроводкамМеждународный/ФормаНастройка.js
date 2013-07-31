@@ -77,10 +77,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 248,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:100px;top:32px;width:248px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			id: 'Корреспонденции',
@@ -114,9 +142,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамМеждународный/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамМеждународный/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'СчетДт',
 					},
@@ -196,9 +227,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамМеждународный/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоПроводкамМеждународный/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Использование',
 					},
@@ -249,10 +283,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Валюта',
+			name: 'Валюта.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:116px;top:6px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -315,10 +377,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Регистратор',
+			name: 'Регистратор.Представление',
 			width: 320,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:116px;top:59px;width:320px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоПроводкамМеждународный.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -343,6 +433,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

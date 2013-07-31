@@ -43,19 +43,19 @@
 				{
 					text:'Вид затрат',
 					width:'120',
-					dataIndex:'ВидЗатрат',
+					dataIndex:'ВидЗатрат.Представление',
 					flex:1,
 				},
 				{
 					text:'Статус мат. затрат',
 					width:'116',
-					dataIndex:'СтатусМатериальныхЗатрат',
+					dataIndex:'СтатусМатериальныхЗатрат.Представление',
 					flex:1,
 				},
 				{
 					text:'Характер затрат',
 					width:'120',
-					dataIndex:'ХарактерЗатрат',
+					dataIndex:'ХарактерЗатрат.Представление',
 					flex:1,
 				},
 				{
@@ -67,14 +67,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СтатьиЗатрат").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СтатьиЗатрат").data,
+					fields: ['Картинка','Код','Наименование','ВидЗатрат.Представление','СтатусМатериальныхЗатрат.Представление','ХарактерЗатрат.Представление','ВидЗатратНалоговогоУчета',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиЗатрат/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиЗатрат/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -132,14 +139,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СтатьиЗатрат").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СтатьиЗатрат").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиЗатрат/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтатьиЗатрат/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

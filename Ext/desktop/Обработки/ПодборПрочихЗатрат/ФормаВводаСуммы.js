@@ -33,7 +33,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВалютаУпр',
-			text: '',
+			text: 'НадписьВалютаУпр',
 			style: 'position:absolute;left:181px;top:8px;width:52px;height:21px;',
 		},
 		{
@@ -54,7 +54,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВалютаРегл',
-			text: '',
+			text: 'НадписьВалютаРегл',
 			style: 'position:absolute;left:180px;top:33px;width:52px;height:21px;',
 		},
 		],
@@ -76,6 +76,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

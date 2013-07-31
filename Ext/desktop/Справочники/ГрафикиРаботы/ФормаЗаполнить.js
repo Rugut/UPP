@@ -122,10 +122,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ТипГрафика',
+			name: 'ТипГрафика.Представление',
 			width: 149,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:50px;width:149px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -178,10 +206,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ГрафикПолногоРабочегоВремени',
+			name: 'ГрафикПолногоРабочегоВремени.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:144px;top:309px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -300,14 +356,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
+					fields: ['ДеньНедели','ЧасовЗаДень',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ДеньНедели',
 					},
@@ -470,14 +533,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
+					fields: ['ДеньНедели','Начало','Окончание','Перерыв1','НачалоПерерыва1','ОкончаниеПерерыва1','Перерыв2','НачалоПерерыва2','ОкончаниеПерерыва2','Перерыв3','НачалоПерерыва3','ОкончаниеПерерыва3','Перерыв4','НачалоПерерыва4','ОкончаниеПерерыва4','Перерыв5','НачалоПерерыва5','ОкончаниеПерерыва5','ИтогоЗаДень',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ДеньНедели',
 					},
@@ -603,14 +673,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
+					fields: ['НомерДня','Смена','ЧасовВСмене',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикиРаботы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерДня',
 					},

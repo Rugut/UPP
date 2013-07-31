@@ -109,10 +109,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ТерриториальныеУсловияПФР',
+			name: 'ТерриториальныеУсловияПФР.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:248px;top:137px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -232,14 +260,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
+					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -291,14 +326,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
+					fields: ['Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодразделенияОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Свойство',
 					},
@@ -334,7 +376,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОтражениеВБухучете',
-			text: '',
+			text: 'НадписьОтражениеВБухучете',
 			style: 'position:absolute;left:34px;top:45px;width:466px;height:79px;',
 		},
 		{
@@ -357,7 +399,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРуководительТекст',
-			text: '',
+			text: 'НадписьРуководительТекст',
 			style: 'position:absolute;left:91px;top:59px;width:427px;height:33px;text-align:left;',
 		},
 		{
@@ -366,10 +408,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидПодразделения',
+			name: 'ВидПодразделения.Представление',
 			width: 300,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:96px;width:300px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -459,6 +529,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

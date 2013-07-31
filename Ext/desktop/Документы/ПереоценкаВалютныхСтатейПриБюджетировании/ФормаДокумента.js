@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:108px;top:162px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -70,10 +98,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:108px;top:57px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -93,10 +149,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СчетОтнесенияКурсовыхРазниц',
+			name: 'СчетОтнесенияКурсовыхРазниц.Представление',
 			width: 99,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:108px;top:105px;width:99px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -104,10 +188,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПолеВвода2',
+			name: 'ПолеВвода2.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:108px;top:138px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейПриБюджетировании.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -202,6 +314,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -31,10 +31,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КонтрагентДляОтбора',
+			name: 'КонтрагентДляОтбора.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:183px;top:92px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаПродаж.ФормаНастройкиСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаПродаж.ФормаНастройкиСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаПродаж.ФормаНастройкиСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаПродаж.ФормаНастройкиСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',

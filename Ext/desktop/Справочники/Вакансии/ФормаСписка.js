@@ -43,7 +43,7 @@
 				{
 					text:'Организация',
 					width:'100',
-					dataIndex:'Организация',
+					dataIndex:'Организация.Представление',
 					flex:1,
 				},
 				{
@@ -55,7 +55,7 @@
 				{
 					text:'Должность',
 					width:'100',
-					dataIndex:'Должность',
+					dataIndex:'Должность.Представление',
 					flex:1,
 				},
 				{
@@ -67,14 +67,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Вакансии").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Вакансии").data,
+					fields: ['Картинка','Код','Наименование','Организация.Представление','Подразделение','Должность.Представление','ПлановаяДатаЗакрытия',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Вакансии/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Вакансии/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

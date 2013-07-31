@@ -79,14 +79,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.РегистрацияВИФНС").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.РегистрацияВИФНС").data,
+					fields: ['Картинка','Код','КПП','Владелец','Наименование','НаименованиеИФНС','Представитель','ДокументПредставителя','УполномоченноеЛицоПредставителя',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияВИФНС/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегистрацияВИФНС/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

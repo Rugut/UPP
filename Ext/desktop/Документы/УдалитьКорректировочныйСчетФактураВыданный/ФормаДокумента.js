@@ -76,6 +76,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -91,10 +92,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 653,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:120px;top:476px;width:653px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -131,10 +160,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 258,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:112px;top:56px;width:258px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -142,10 +199,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Контрагент',
+			name: 'Контрагент.Представление',
 			width: 258,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:112px;top:80px;width:258px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -153,10 +238,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ДоговорКонтрагента',
+			name: 'ДоговорКонтрагента.Представление',
 			width: 253,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:520px;top:80px;width:253px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -164,10 +277,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетФактура',
+			name: 'СчетФактура.Представление',
 			width: 661,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:112px;top:104px;width:661px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -342,9 +483,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УдалитьКорректировочныйСчетФактураВыданный/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -606,10 +750,38 @@
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
-			name: 'ВалютаДокумента',
+			name: 'ВалютаДокумента.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:150px;top:158px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

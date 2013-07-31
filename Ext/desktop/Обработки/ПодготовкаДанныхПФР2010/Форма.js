@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:278px;top:8px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -87,9 +115,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Пачка',
 					},
@@ -200,9 +231,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -302,10 +336,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'КатегорияЗастрахованныхЛиц',
+			name: 'КатегорияЗастрахованныхЛиц.Представление',
 			width: 96,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:216px;top:94px;width:96px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -320,10 +382,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Исполнитель1',
+			name: 'Исполнитель1.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:412px;top:94px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -337,10 +427,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Руководитель1',
+			name: 'Руководитель1.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:412px;top:46px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -354,10 +472,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя1',
+			name: 'ДолжностьРуководителя1.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:412px;top:70px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -550,9 +696,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -717,9 +866,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -955,9 +1107,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НевидимаяКолонка1',
 					},
@@ -1296,10 +1451,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Исполнитель',
+			name: 'Исполнитель.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:274px;top:24px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1313,10 +1496,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Руководитель',
+			name: 'Руководитель.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:457px;top:0px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1330,10 +1541,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя',
+			name: 'ДолжностьРуководителя.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:457px;top:24px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1392,10 +1631,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'РасчетСтраховыхВзносов',
+			name: 'РасчетСтраховыхВзносов.Представление',
 			width: 88,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:642px;top:0px;width:88px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1566,9 +1833,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Пачка',
 					},
@@ -1642,9 +1912,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1730,10 +2003,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'КатегорияЗастрахованныхЛиц1',
+			name: 'КатегорияЗастрахованныхЛиц1.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:206px;top:81px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1748,10 +2049,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Исполнитель2',
+			name: 'Исполнитель2.Представление',
 			width: 160,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:407px;top:81px;width:160px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1765,10 +2094,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Руководитель2',
+			name: 'Руководитель2.Представление',
 			width: 160,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:407px;top:31px;width:160px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1782,10 +2139,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя2',
+			name: 'ДолжностьРуководителя2.Представление',
 			width: 160,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:407px;top:56px;width:160px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1981,9 +2366,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -2213,9 +2601,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НевидимаяКолонка1',
 					},
@@ -2454,9 +2845,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Пачка',
 					},
@@ -2536,10 +2930,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'КатегорияЗастрахованныхЛиц2',
+			name: 'КатегорияЗастрахованныхЛиц2.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:99px;top:96px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -2554,10 +2976,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Исполнитель3',
+			name: 'Исполнитель3.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:99px;top:145px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -2571,10 +3021,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Руководитель3',
+			name: 'Руководитель3.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:99px;top:121px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -2588,10 +3066,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя3',
+			name: 'ДолжностьРуководителя3.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:389px;top:121px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -2631,10 +3137,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ТипДоговора',
+			name: 'ТипДоговора.Представление',
 			width: 200,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:389px;top:96px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -2669,10 +3203,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ОписьАДВ62',
+			name: 'ОписьАДВ62.Представление',
 			width: 113,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:476px;top:71px;width:113px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодготовкаДанныхПФР2010.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'radiogroup',
@@ -2739,9 +3301,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -2812,9 +3377,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодготовкаДанныхПФР2010/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Месяц',
 					},

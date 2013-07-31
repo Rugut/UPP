@@ -51,9 +51,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоБюджету/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоБюджету/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -131,10 +134,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 398,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:68px;top:54px;width:398px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -147,10 +178,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ПолеВвода1',
+			name: 'ПолеВвода1.Представление',
 			width: 398,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:68px;top:78px;width:398px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -163,10 +222,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидДанныхОтчета',
+			name: 'ВидДанныхОтчета.Представление',
 			width: 398,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:68px;top:30px;width:398px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -206,9 +293,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоБюджету/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоБюджету/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Поле',
 					},
@@ -300,9 +390,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоБюджету/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОтчетПоБюджету/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Использование',
 					},
@@ -365,6 +458,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

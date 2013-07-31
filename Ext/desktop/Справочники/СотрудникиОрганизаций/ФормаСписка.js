@@ -54,7 +54,7 @@
 				{
 					text:'Организация',
 					width:'126',
-					dataIndex:'ОбособленноеПодразделение',
+					dataIndex:'ОбособленноеПодразделение.Представление',
 					flex:1,
 				},
 				{
@@ -66,7 +66,7 @@
 				{
 					text:'Должность',
 					width:'120',
-					dataIndex:'Должность',
+					dataIndex:'Должность.Представление',
 					flex:1,
 				},
 				{
@@ -108,14 +108,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Группа','Наименование','Код','ОбособленноеПодразделение.Представление','Подразделение','Должность.Представление','Состояние','ДатаПриема','ДатаУвольнения','Аванс','НомерЛицевогоСчета','Банк',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Группа',
 					},
@@ -269,14 +276,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -345,7 +359,7 @@
 				{
 					text:'Организация',
 					width:'137',
-					dataIndex:'Организация',
+					dataIndex:'Организация.Представление',
 					flex:1,
 				},
 				{
@@ -363,14 +377,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Организация.Представление','Наименование','Код',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Организация',
 					},
@@ -448,20 +469,27 @@
 				{
 					text:'Вид договора',
 					width:'100',
-					dataIndex:'ВидДоговора',
+					dataIndex:'ВидДоговора.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Наименование','ВидДоговора.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -563,14 +591,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Код','Наименование','ДатаВыдачиПолиса','ДатаОкончанияПолиса','ВидСтрахования','ПрограммаСтрахования','Родственник',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Код',
 					},
@@ -658,14 +693,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['ВидЕжегодногоОтпуска','ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ВидЕжегодногоОтпуска',
 					},

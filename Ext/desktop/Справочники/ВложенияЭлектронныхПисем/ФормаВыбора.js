@@ -31,7 +31,7 @@
 				{
 					text:'Электронное письмо',
 					width:'120',
-					dataIndex:'Объект',
+					dataIndex:'Объект.Представление',
 					flex:1,
 				},
 				{
@@ -61,14 +61,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ВложенияЭлектронныхПисем").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ВложенияЭлектронныхПисем").data,
+					fields: ['Картинка','Объект.Представление','ИмяФайла','Наименование','ИДФайлаПочтовогоПисьма','Предмет',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВложенияЭлектронныхПисем/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВложенияЭлектронныхПисем/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись1',
-			text: '',
+			text: 'Надпись1',
 			style: 'position:absolute;left:8px;top:8px;width:25px;height:32px;',
 		},
 		{

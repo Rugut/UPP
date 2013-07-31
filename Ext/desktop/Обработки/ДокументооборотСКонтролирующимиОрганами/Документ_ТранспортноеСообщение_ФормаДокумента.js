@@ -30,19 +30,19 @@
 		{
 			xtype: 'label',
 			name: 'Отправитель',
-			text: '',
+			text: 'Отправитель',
 			style: 'position:absolute;left:87px;top:84px;width:487px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Получатель',
-			text: '',
+			text: 'Получатель',
 			style: 'position:absolute;left:87px;top:105px;width:487px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодробнаяИнформация',
-			text: '',
+			text: 'НадписьПодробнаяИнформация',
 			style: 'position:absolute;left:8px;top:33px;width:566px;height:27px;',
 		},
 		{
@@ -331,13 +331,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаПротоколПроверки',
-			text: '',
+			text: 'НадписьСостояниеПодтвержденияНаПротоколПроверки',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаПодтверждениеОтправки',
-			text: '',
+			text: 'НадписьСостояниеПодтвержденияНаПодтверждениеОтправки',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 		{
@@ -523,7 +523,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаНеформализованноеСообщение',
-			text: '',
+			text: 'НадписьСостояниеПодтвержденияНаНеформализованноеСообщение',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -651,7 +651,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеОтветаНаПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
-			text: '',
+			text: 'НадписьСостояниеОтветаНаПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -799,7 +799,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаПодтверждениеОтправкиЗапроса',
-			text: '',
+			text: 'НадписьСостояниеПодтвержденияНаПодтверждениеОтправкиЗапроса',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 		{
@@ -858,7 +858,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаПротоколПроверки15',
-			text: '',
+			text: 'НадписьСостояниеПодтвержденияНаПротоколПроверки15',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -1065,7 +1065,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПодтвержденияНаОтветНаЗапрос',
-			text: '',
+			text: 'НадписьСостояниеПодтвержденияНаОтветНаЗапрос',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 		{
@@ -1219,9 +1219,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -1325,9 +1328,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -1431,9 +1437,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -1489,7 +1498,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПротоколКвитанция',
-			text: '',
+			text: 'НадписьСостояниеПротоколКвитанция',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -1554,9 +1563,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -1673,9 +1685,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -1731,7 +1746,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеПисьмоВходящееКвитанция',
-			text: '',
+			text: 'НадписьСостояниеПисьмоВходящееКвитанция',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -1796,9 +1811,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -1902,9 +1920,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2008,9 +2029,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2114,9 +2138,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2220,9 +2247,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2326,9 +2356,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2384,7 +2417,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатПриемаНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -2449,9 +2482,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2555,9 +2591,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2613,7 +2652,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатОбработкиНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатОбработкиНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -2678,9 +2717,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2784,9 +2826,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -2842,7 +2887,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПодтверждениеНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -2907,9 +2952,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3013,9 +3061,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3119,9 +3170,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3177,7 +3231,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНП2НДФЛ',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПодтверждениеНП2НДФЛ',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -3242,9 +3296,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3348,9 +3405,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3406,7 +3466,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНП2НДФЛ',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатПриемаНП2НДФЛ',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -3471,9 +3531,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3577,9 +3640,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3683,9 +3749,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3741,7 +3810,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНПОбращение',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатПриемаНПОбращение',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -3806,9 +3875,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3864,7 +3936,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНПОбращение',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПодтверждениеНПОбращение',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -3929,9 +4001,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -3987,7 +4062,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПисьмоНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПисьмоНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -4052,9 +4127,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4158,9 +4236,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4216,7 +4297,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРассылкаНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРассылкаНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -4281,9 +4362,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4387,9 +4471,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4493,9 +4580,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4599,9 +4689,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4657,7 +4750,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНПЗапрос',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПодтверждениеНПЗапрос',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -4722,9 +4815,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4828,9 +4924,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -4886,7 +4985,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНПЗапрос',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатПриемаНПЗапрос',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -4951,9 +5050,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5009,7 +5111,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатОбработкиНПЗапрос',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатОбработкиНПЗапрос',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -5074,9 +5176,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5180,9 +5285,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5238,7 +5346,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеНПЗаявление',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПодтверждениеНПЗаявление',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -5303,9 +5411,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5409,9 +5520,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5467,7 +5581,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатПриемаНПЗаявление',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатПриемаНПЗаявление',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -5532,9 +5646,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5590,7 +5707,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатОбработкиРФНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатОбработкиРФНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -5655,9 +5772,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5761,9 +5881,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5867,9 +5990,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -5973,9 +6099,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6031,7 +6160,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеОбОтзывеЗаявлениеРФНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеОбОтзывеЗаявлениеРФНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -6096,9 +6225,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6154,7 +6286,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеРезультатОбработкиТСНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеРезультатОбработкиТСНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -6219,9 +6351,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6277,7 +6412,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеДокументНП',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеДокументНП',
 			style: 'position:absolute;left:0px;top:145px;width:566px;height:15px;',
 		},
 		{
@@ -6289,7 +6424,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеРезультатПриемаДокументНП',
-			text: '',
+			text: 'НадписьСостояниеРезультатПриемаДокументНП',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -6354,9 +6489,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6460,9 +6598,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6566,9 +6707,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6672,9 +6816,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6778,9 +6925,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -6836,7 +6986,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПодтверждениеДатыОтправкиФСГС',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПодтверждениеДатыОтправкиФСГС',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -6901,9 +7051,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7007,9 +7160,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7113,9 +7269,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7171,7 +7330,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПротоколВходногоКонтроляОтчетностиФСГС',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПротоколВходногоКонтроляОтчетностиФСГС',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -7236,9 +7395,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7342,9 +7504,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7400,7 +7565,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояниеИзвещениеПисьмоВходящееФСГС',
-			text: '',
+			text: 'НадписьСостояниеИзвещениеПисьмоВходящееФСГС',
 			style: 'position:absolute;left:0px;top:176px;width:566px;height:15px;',
 		},
 					]
@@ -7465,9 +7630,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7571,9 +7739,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7677,9 +7848,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Тип',
 					},
@@ -7765,6 +7939,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

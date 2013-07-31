@@ -41,9 +41,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Представление',
 					},
@@ -144,7 +147,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДатаНачалаСвободныеОстатки',
-			text: '',
+			text: 'НадписьДатаНачалаСвободныеОстатки',
 			style: 'position:absolute;left:276px;top:48px;width:251px;height:19px;text-align:left;',
 		},
 		{
@@ -242,9 +245,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ШаблоныТелефонныхНомеров',
 					},
@@ -344,10 +350,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПользовательДляВыполненияРегламентныхЗаданийВФайловомВарианте',
+			name: 'ПользовательДляВыполненияРегламентныхЗаданийВФайловомВарианте.Представление',
 			width: 278,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:256px;top:48px;width:278px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкиПрограммы.НастройкаПрограммыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкиПрограммы.НастройкаПрограммыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -450,9 +484,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиПрограммы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Организация',
 					},
@@ -883,6 +920,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

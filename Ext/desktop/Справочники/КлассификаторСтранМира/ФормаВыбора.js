@@ -49,14 +49,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КлассификаторСтранМира").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КлассификаторСтранМира").data,
+					fields: ['Картинка','Код','Наименование','НаименованиеПолное',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификаторСтранМира/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлассификаторСтранМира/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

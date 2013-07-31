@@ -43,7 +43,7 @@
 				{
 					text:'Подразделение',
 					width:'142',
-					dataIndex:'Подразделение',
+					dataIndex:'Подразделение.Представление',
 					flex:1,
 				},
 				{
@@ -55,14 +55,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ТочкиМаршрута").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ТочкиМаршрута").data,
+					fields: ['Картинка','Код','Наименование','Подразделение.Представление','РабочийЦентр',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТочкиМаршрута/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТочкиМаршрута/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -114,14 +121,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ТочкиМаршрута").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ТочкиМаршрута").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТочкиМаршрута/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТочкиМаршрута/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

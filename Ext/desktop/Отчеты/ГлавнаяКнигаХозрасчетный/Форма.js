@@ -26,10 +26,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 368,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:352px;top:33px;width:368px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ГлавнаяКнигаХозрасчетный.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ГлавнаяКнигаХозрасчетный.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ГлавнаяКнигаХозрасчетный.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ГлавнаяКнигаХозрасчетный.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',

@@ -56,10 +56,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияКонтрагент',
+			name: 'ВидСравненияКонтрагент.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:30px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -80,10 +108,38 @@
 			hideLabel: true,
 			disabled: true,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияПользователь',
+			name: 'ВидСравненияПользователь.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:54px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -91,10 +147,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ЗначениеОтбораПользователь',
+			name: 'ЗначениеОтбораПользователь.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:234px;top:54px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -106,10 +190,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияСумма',
+			name: 'ВидСравненияСумма.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:78px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -130,10 +242,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияТипДокумента',
+			name: 'ВидСравненияТипДокумента.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:102px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -154,10 +294,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияДоговор',
+			name: 'ВидСравненияДоговор.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:126px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -169,10 +337,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияНомер',
+			name: 'ВидСравненияНомер.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:150px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -193,10 +389,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияВидОперации',
+			name: 'ВидСравненияВидОперации.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:174px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -217,10 +441,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ВидСравненияДата',
+			name: 'ВидСравненияДата.Представление',
 			width: 118,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:111px;top:6px;width:118px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТекущиеСделки.ФормаОтборовСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТекущиеСделки.ФормаОтборовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',

@@ -29,6 +29,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -58,9 +59,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Поле',
 					},
@@ -99,10 +103,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Документ',
+			name: 'Документ.Представление',
 			width: 176,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:211px;top:33px;width:176px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -134,9 +166,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Поле',
 					},
@@ -191,9 +226,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Имя',
 					},
@@ -296,9 +334,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ВыводитьНаПечать',
 					},
@@ -349,10 +390,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СписокСкладов',
+			name: 'СписокСкладов.Представление',
 			width: 242,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:530px;top:33px;width:242px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -427,9 +496,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПечатьРаскладкиНоменклатурыПоМестамХранения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Приоритет',
 					},

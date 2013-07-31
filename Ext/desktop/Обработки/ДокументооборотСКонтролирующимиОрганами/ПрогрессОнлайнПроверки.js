@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСостояние',
-			text: '',
+			text: 'НадписьСостояние',
 			style: 'position:absolute;left:56px;top:8px;width:354px;height:38px;text-align:center;',
 		},
 		],

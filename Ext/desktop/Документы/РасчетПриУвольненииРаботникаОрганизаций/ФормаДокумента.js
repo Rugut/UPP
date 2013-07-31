@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:113px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -77,10 +105,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:454px;top:58px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -100,6 +156,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -145,10 +202,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Сотрудник',
+			name: 'Сотрудник.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:113px;top:81px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -229,10 +314,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ДокументОснование',
+			name: 'ДокументОснование.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:71px;top:28px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -245,10 +358,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ПорядокРасчетаОтпуска',
+			name: 'ПорядокРасчетаОтпуска.Представление',
 			width: 142,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:516px;top:106px;width:142px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -317,13 +458,13 @@
 		{
 			xtype: 'label',
 			name: 'ЗначениеРазмер',
-			text: '',
+			text: 'ЗначениеРазмер',
 			style: 'position:absolute;left:105px;top:283px;width:181px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьРазмер',
-			text: '',
+			text: 'ИнформационнаяНадписьРазмер',
 			style: 'position:absolute;left:105px;top:330px;width:181px;height:21px;',
 		},
 		{
@@ -335,13 +476,13 @@
 		{
 			xtype: 'label',
 			name: 'ЗначениеСреднийЗаработок',
-			text: '',
+			text: 'ЗначениеСреднийЗаработок',
 			style: 'position:absolute;left:296px;top:283px;width:181px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьСреднийЗаработок',
-			text: '',
+			text: 'ИнформационнаяНадписьСреднийЗаработок',
 			style: 'position:absolute;left:296px;top:299px;width:181px;height:40px;',
 		},
 		{
@@ -353,7 +494,7 @@
 		{
 			xtype: 'label',
 			name: 'ДополнительнаяИнформационнаяНадпись',
-			text: '',
+			text: 'ДополнительнаяИнформационнаяНадпись',
 			style: 'position:absolute;left:491px;top:283px;width:167px;height:56px;',
 		},
 		{
@@ -383,7 +524,7 @@
 		{
 			xtype: 'label',
 			name: 'ЗначениеРазмер1',
-			text: '',
+			text: 'ЗначениеРазмер1',
 			style: 'position:absolute;left:105px;top:314px;width:181px;height:15px;',
 		},
 		{
@@ -476,9 +617,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -529,7 +673,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОплата',
-			text: '',
+			text: 'НадписьОплата',
 			style: 'position:absolute;left:6px;top:313px;width:652px;height:39px;',
 		},
 					]
@@ -629,9 +773,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -771,9 +918,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -963,9 +1113,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1093,9 +1246,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РасчетПриУвольненииРаботникаОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1199,7 +1355,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРасчетСреднегоЗаработка',
-			text: '',
+			text: 'НадписьРасчетСреднегоЗаработка',
 			style: 'position:absolute;left:146px;top:317px;width:512px;height:35px;',
 		},
 		{
@@ -1228,7 +1384,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
-			text: '',
+			text: 'НадписьПредупреждение',
 			style: 'position:absolute;left:32px;top:490px;width:398px;height:33px;text-align:left;',
 		},
 		{

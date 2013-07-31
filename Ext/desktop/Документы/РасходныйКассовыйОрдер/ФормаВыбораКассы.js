@@ -34,10 +34,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 294,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:33px;width:294px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -46,10 +74,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Касса',
+			name: 'Касса.Представление',
 			width: 294,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:56px;width:294px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РасходныйКассовыйОрдер.ФормаВыбораКассыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -78,6 +134,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

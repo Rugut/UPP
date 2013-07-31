@@ -60,38 +60,45 @@
 				{
 					text:'Вид номенклатуры',
 					width:'110',
-					dataIndex:'ВидНоменклатуры',
+					dataIndex:'ВидНоменклатуры.Представление',
 					flex:1,
 				},
 				{
 					text:'Базовая',
 					width:'54',
-					dataIndex:'БазоваяЕдиницаИзмерения',
+					dataIndex:'БазоваяЕдиницаИзмерения.Представление',
 					flex:1,
 				},
 				{
 					text:'Единица',
 					width:'54',
-					dataIndex:'ЕдиницаХраненияОстатков',
+					dataIndex:'ЕдиницаХраненияОстатков.Представление',
 					flex:1,
 				},
 				{
 					text:'Ставка НДС',
 					width:'80',
-					dataIndex:'СтавкаНДС',
+					dataIndex:'СтавкаНДС.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Номенклатура").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Номенклатура").data,
+					fields: ['Картинка','Код','Артикул','Наименование','ВидНоменклатуры.Представление','БазоваяЕдиницаИзмерения.Представление','ЕдиницаХраненияОстатков.Представление','СтавкаНДС.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -152,14 +159,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Номенклатура").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Номенклатура").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -260,14 +274,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Номенклатура").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Номенклатура").data,
+					fields: ['ХарактеристикаСклад','МестоХранения','Общий','Свободный','СвободныйОжидаемый','ВРезерве',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ХарактеристикаСклад',
 					},
@@ -358,14 +379,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Номенклатура").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Номенклатура").data,
+					fields: ['Наименование','Ссылка','БазовыйТипЦен','Рассчитывается','ОкруглятьВБольшуюСторону','ПроцентСкидкиНаценки','Префикс',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -413,10 +441,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВалютаЦены',
+			name: 'ВалютаЦены.Представление',
 			width: 133,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:418px;top:125px;width:133px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаВыбораСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаВыбораСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.Номенклатура.ФормаВыбораСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.Номенклатура.ФормаВыбораСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -497,14 +553,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.Номенклатура").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.Номенклатура").data,
+					fields: ['Картинка','АртикулНоменклатурыКонтрагента','Номенклатура','НаименованиеНоменклатурыКонтрагента','КодНоменклатурыКонтрагента',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/Номенклатура/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

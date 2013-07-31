@@ -100,10 +100,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Пол',
+			name: 'Пол.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:95px;top:49px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -218,10 +246,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидЗанятости',
+			name: 'ВидЗанятости.Представление',
 			width: 239,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:95px;top:186px;width:239px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -229,10 +285,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 239,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:95px;top:162px;width:239px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -261,10 +345,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидДоговора',
+			name: 'ВидДоговора.Представление',
 			width: 239,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:95px;top:139px;width:239px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -423,10 +535,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ОбособленноеПодразделение',
+			name: 'ОбособленноеПодразделение.Представление',
 			width: 366,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:52px;width:366px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -435,10 +575,38 @@
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-select-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПодразделениеОрганизации',
+			name: 'ПодразделениеОрганизации.Представление',
 			width: 366,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:75px;width:366px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -447,10 +615,38 @@
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-select-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Должность',
+			name: 'Должность.Представление',
 			width: 366,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:98px;width:366px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -458,10 +654,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ГрафикРаботы',
+			name: 'ГрафикРаботы.Представление',
 			width: 253,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:121px;width:253px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -478,10 +702,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидРасчета',
+			name: 'ВидРасчета.Представление',
 			width: 249,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:164px;width:249px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -489,10 +741,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВалютаТарифнойСтавки',
+			name: 'ВалютаТарифнойСтавки.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:265px;top:187px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -509,10 +789,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ТарифныйРазряд',
+			name: 'ТарифныйРазряд.Представление',
 			width: 249,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:187px;width:249px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -542,14 +850,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Свойство',
 					},
@@ -611,14 +926,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Принадлежность',
 					},
@@ -728,10 +1050,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 363,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:103px;top:421px;width:363px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -744,10 +1094,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Физлицо',
+			name: 'Физлицо.Представление',
 			width: 421,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:45px;top:79px;width:421px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -811,10 +1189,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Пол1',
+			name: 'Пол1.Представление',
 			width: 100,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:90px;top:29px;width:100px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -988,7 +1394,7 @@
 				{
 					text:'Подразделение',
 					width:'152',
-					dataIndex:'ПодразделениеОрганизации',
+					dataIndex:'ПодразделениеОрганизации.Представление',
 					flex:1,
 				},
 				{
@@ -1000,7 +1406,7 @@
 				{
 					text:'Должность',
 					width:'107',
-					dataIndex:'Должность',
+					dataIndex:'Должность.Представление',
 					flex:1,
 				},
 				{
@@ -1012,7 +1418,7 @@
 				{
 					text:'График работы',
 					width:'110',
-					dataIndex:'ГрафикРаботы',
+					dataIndex:'ГрафикРаботы.Представление',
 					flex:1,
 				},
 				{
@@ -1048,14 +1454,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Картинка','Период','ДатаЗавершения','ПодразделениеОрганизации.Представление','ПодразделениеОрганизацииЗавершения','Должность.Представление','ДолжностьЗавершения','ГрафикРаботы.Представление','ГрафикРаботыЗавершения','ЗанимаемыхСтавок','ЗанимаемыхСтавокЗавершения','ПричинаИзмененияСостояния','ПричинаИзмененияСостоянияЗавершения',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -1149,14 +1562,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Картинка','ВидДокумента','Дата','Номер',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -1261,7 +1681,7 @@
 				{
 					text:'Вид расчета',
 					width:'200',
-					dataIndex:'ВидРасчета',
+					dataIndex:'ВидРасчета.Представление',
 					flex:1,
 				},
 				{
@@ -1663,14 +2083,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Действие','Период','ВидРасчета.Представление','Показатели','НаименованиеПоказатель1','Показатель1','Валюта1','НаименованиеПоказательТР1','ТарифныйРазряд1','НаименованиеПоказатель2','Показатель2','Валюта2','НаименованиеПоказательТР2','ТарифныйРазряд2','НаименованиеПоказатель3','Показатель3','Валюта3','НаименованиеПоказательТР3','ТарифныйРазряд3','НаименованиеПоказатель4','Показатель4','Валюта4','НаименованиеПоказательТР4','ТарифныйРазряд4','НаименованиеПоказатель5','Показатель5','Валюта5','НаименованиеПоказательТР5','ТарифныйРазряд5','НаименованиеПоказатель6','Показатель6','Валюта6','НаименованиеПоказательТР6','ТарифныйРазряд6','ДействиеЗавершения','ПериодЗавершения','ВидРасчетаЗавершения','ПоказателиЗавершения','НаименованиеПоказатель1Завершения','Показатель1Завершения','Валюта1Завершения','НаименованиеПоказательТР1Завершения','ТарифныйРазряд1Завершения','НаименованиеПоказатель2Завершения','Показатель2Завершения','Валюта2Завершения','НаименованиеПоказательТР2Завершения','ТарифныйРазряд2Завершения','НаименованиеПоказатель3Завершения','Показатель3Завершения','Валюта3Завершения','НаименованиеПоказательТР3Завершения','ТарифныйРазряд3Завершения','НаименованиеПоказатель4Завершения','Показатель4Завершения','Валюта4Завершения','НаименованиеПоказательТР4Завершения','ТарифныйРазряд4Завершения','НаименованиеПоказатель5Завершения','Показатель5Завершения','Валюта5Завершения','НаименованиеПоказательТР5Завершения','ТарифныйРазряд5Завершения','НаименованиеПоказатель6Завершения','Показатель6Завершения','Валюта6Завершения','НаименованиеПоказательТР6Завершения','ТарифныйРазряд6Завершения','Регистратор',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Действие',
 					},
@@ -1930,7 +2357,7 @@
 				{
 					text:'Вид расчета',
 					width:'110',
-					dataIndex:'ВидРасчета',
+					dataIndex:'ВидРасчета.Представление',
 					flex:1,
 				},
 				{
@@ -2182,14 +2609,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Действие','Дата','ВидРасчета.Представление','Показатели','НаименованиеПоказатель1','Показатель1','Валюта1','НаименованиеПоказатель2','Показатель2','Валюта2','НаименованиеПоказатель3','Показатель3','Валюта3','НаименованиеПоказатель4','Показатель4','Валюта4','НаименованиеПоказатель5','Показатель5','Валюта5','НаименованиеПоказатель6','Показатель6','Валюта6','ДействиеЗавершения','ПериодЗавершения','ПоказателиЗавершения','НаименованиеПоказатель1Завершения','Показатель1Завершения','Валюта1Завершения','НаименованиеПоказатель2Завершения','Показатель2Завершения','Валюта2Завершения','НаименованиеПоказатель3Завершения','Показатель3Завершения','Валюта3Завершения','НаименованиеПоказатель4Завершения','Показатель4Завершения','Валюта4Завершения','НаименованиеПоказатель5Завершения','Показатель5Завершения','Валюта5Завершения','НаименованиеПоказатель6Завершения','Показатель6Завершения','Валюта6Завершения','Регистратор',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Действие',
 					},
@@ -2377,7 +2811,7 @@
 				{
 					text:'Вид расчета',
 					width:'120',
-					dataIndex:'ВидРасчета',
+					dataIndex:'ВидРасчета.Представление',
 					flex:1,
 				},
 				{
@@ -2401,14 +2835,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Период','ВидРасчета.Представление','СпособОтраженияВБухучете','КодДоходаЕСН','ОтнесениеРасходовКДеятельностиЕНВД',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Период',
 					},
@@ -2488,14 +2929,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Период','СпособОтраженияВБухучете','СпособОтраженияВБухучетеБольничногоЗаСчетРаботодателя','ПодпадаетПодЕНВД',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Период',
 					},
@@ -2699,10 +3147,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ГрафикРаботы1',
+			name: 'ГрафикРаботы1.Представление',
 			width: 253,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:144px;width:253px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -2710,10 +3186,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ОбособленноеПодразделение1',
+			name: 'ОбособленноеПодразделение1.Представление',
 			width: 366,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:75px;width:366px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -2722,10 +3226,38 @@
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-select-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПодразделениеОрганизации1',
+			name: 'ПодразделениеОрганизации1.Представление',
 			width: 366,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:98px;width:366px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -2734,10 +3266,38 @@
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-select-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Должность1',
+			name: 'Должность1.Представление',
 			width: 366,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:92px;top:121px;width:366px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -2745,10 +3305,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВалютаТарифнойСтавки1',
+			name: 'ВалютаТарифнойСтавки1.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:265px;top:210px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -2756,10 +3344,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидРасчета1',
+			name: 'ВидРасчета1.Представление',
 			width: 249,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:187px;width:249px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -2776,10 +3392,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ТарифныйРазряд1',
+			name: 'ТарифныйРазряд1.Представление',
 			width: 249,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:210px;width:249px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -2851,14 +3495,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Картинка','Номер','Дата','ДатаНачала','ДатаОкончания','СуммаЗаРаботу','Валюта','Оплата',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -2953,13 +3604,13 @@
 				{
 					text:'Должность',
 					width:'120',
-					dataIndex:'Должность',
+					dataIndex:'Должность.Представление',
 					flex:1,
 				},
 				{
 					text:'График работы',
 					width:'120',
-					dataIndex:'ГрафикРаботы',
+					dataIndex:'ГрафикРаботы.Представление',
 					flex:1,
 				},
 				{
@@ -2971,14 +3622,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Картинка','Период','Подразделение','Должность.Представление','ГрафикРаботы.Представление','ЗанимаемыхСтавок',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -3136,14 +3794,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Картинка','ВидДокумента','Дата','Номер',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -3210,14 +3875,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Свойство',
 					},
@@ -3279,14 +3951,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Принадлежность',
 					},
@@ -3347,20 +4026,76 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидДоговора1',
+			name: 'ВидДоговора1.Представление',
 			width: 250,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:84px;top:46px;width:250px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидЗанятости1',
+			name: 'ВидЗанятости1.Представление',
 			width: 250,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:84px;top:95px;width:250px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -3368,10 +4103,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация1',
+			name: 'Организация1.Представление',
 			width: 250,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:84px;top:71px;width:250px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -3388,10 +4151,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Родитель1',
+			name: 'Родитель1.Представление',
 			width: 363,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:103px;top:421px;width:363px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.СотрудникиОрганизаций.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -3480,6 +4271,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

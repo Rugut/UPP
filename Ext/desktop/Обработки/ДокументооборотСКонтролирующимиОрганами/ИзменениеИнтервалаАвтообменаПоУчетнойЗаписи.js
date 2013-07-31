@@ -36,13 +36,13 @@
 		{
 			xtype: 'label',
 			name: 'УчетнаяЗапись',
-			text: '',
+			text: 'УчетнаяЗапись',
 			style: 'position:absolute;left:106px;top:48px;width:290px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Пользователь',
-			text: '',
+			text: 'Пользователь',
 			style: 'position:absolute;left:106px;top:71px;width:290px;height:15px;',
 		},
 		{

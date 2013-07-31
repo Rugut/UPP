@@ -327,7 +327,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПодсказка',
-			text: '',
+			text: 'НадписьПодсказка',
 			style: 'position:absolute;left:45px;top:8px;width:393px;height:43px;',
 		},
 		],
@@ -352,6 +352,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

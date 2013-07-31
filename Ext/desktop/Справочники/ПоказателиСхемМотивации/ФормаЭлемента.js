@@ -41,10 +41,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ТипПоказателя',
+			name: 'ТипПоказателя.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:166px;top:104px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -57,10 +85,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВозможностьИзменения',
+			name: 'ВозможностьИзменения.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -72,10 +128,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидПоказателя',
+			name: 'ВидПоказателя.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:166px;top:132px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -120,21 +204,49 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ФактическийПоказатель',
+			name: 'ФактическийПоказатель.Представление',
 			width: 336,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:28px;top:122px;width:336px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРасшифровкаПоказательЭффективности',
-			text: '',
+			text: 'НадписьРасшифровкаПоказательЭффективности',
 			style: 'position:absolute;left:34px;top:30px;width:355px;height:21px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРасшифровкаТарифнаяСтавка',
-			text: '',
+			text: 'НадписьРасшифровкаТарифнаяСтавка',
 			style: 'position:absolute;left:33px;top:31px;width:356px;height:110px;text-align:left;',
 		},
 		{
@@ -173,7 +285,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРасшифровкаТарифнаяСтавкаВалюта',
-			text: '',
+			text: 'НадписьРасшифровкаТарифнаяСтавкаВалюта',
 			style: 'position:absolute;left:33px;top:50px;width:356px;height:91px;text-align:left;',
 		},
 					]
@@ -216,14 +328,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПоказателиСхемМотивации").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПоказателиСхемМотивации").data,
+					fields: ['Картинка','ЗначениеС','ЗначениеПо','Размер',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -265,7 +384,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПояснение',
-			text: '',
+			text: 'НадписьПояснение',
 			style: 'position:absolute;left:33px;top:6px;width:356px;height:135px;text-align:left;',
 		},
 					]
@@ -291,10 +410,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Валюта',
+			name: 'Валюта.Представление',
 			width: 333,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:56px;top:6px;width:333px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -305,7 +452,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРасшифровкаСтажа',
-			text: '',
+			text: 'НадписьРасшифровкаСтажа',
 			style: 'position:absolute;left:33px;top:6px;width:356px;height:135px;text-align:left;',
 		},
 					]
@@ -324,10 +471,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СпособРасчетаСуммы',
+			name: 'СпособРасчетаСуммы.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:166px;top:132px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -341,10 +516,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СуммируемыйПоказатель',
+			name: 'СуммируемыйПоказатель.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -357,10 +560,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидСтажа',
+			name: 'ВидСтажа.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:166px;top:161px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПоказателиСхемМотивации.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -440,6 +671,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

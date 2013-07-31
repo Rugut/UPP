@@ -43,10 +43,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 307,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:101px;top:33px;width:307px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -87,10 +115,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ПолеВвода4',
+			name: 'ПолеВвода4.Представление',
 			width: 293,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:99px;top:6px;width:293px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -124,10 +180,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ПолеВвода5',
+			name: 'ПолеВвода5.Представление',
 			width: 293,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:99px;top:30px;width:293px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиФормированияДокументовОтработанногоВремени.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'radiogroup',
@@ -179,7 +263,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПояснениеЗадержка',
-			text: '',
+			text: 'НадписьПояснениеЗадержка',
 			style: 'position:absolute;left:39px;top:102px;width:353px;height:19px;',
 		},
 		{
@@ -238,6 +322,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

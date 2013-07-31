@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:113px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -77,10 +105,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:452px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -124,10 +180,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Сотрудник',
+			name: 'Сотрудник.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:113px;top:82px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -206,10 +290,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ПорядокРасчетаОсновногоОтпуска',
+			name: 'ПорядокРасчетаОсновногоОтпуска.Представление',
 			width: 128,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:211px;top:100px;width:128px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -223,10 +335,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидРасчетаДополнительногоОтпуска',
+			name: 'ВидРасчетаДополнительногоОтпуска.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:175px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -263,10 +403,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ПорядокРасчетаКомпенсацииОтпуска',
+			name: 'ПорядокРасчетаКомпенсацииОтпуска.Представление',
 			width: 138,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:411px;top:223px;width:138px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -382,13 +550,13 @@
 		{
 			xtype: 'label',
 			name: 'ЗначениеРазмерОтпускных',
-			text: '',
+			text: 'ЗначениеРазмерОтпускных',
 			style: 'position:absolute;left:104px;top:297px;width:181px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьРазмерОтпускных',
-			text: '',
+			text: 'ИнформационнаяНадписьРазмерОтпускных',
 			style: 'position:absolute;left:104px;top:313px;width:181px;height:40px;',
 		},
 		{
@@ -400,13 +568,13 @@
 		{
 			xtype: 'label',
 			name: 'ЗначениеСреднийЗаработок',
-			text: '',
+			text: 'ЗначениеСреднийЗаработок',
 			style: 'position:absolute;left:293px;top:297px;width:181px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьСреднийЗаработок',
-			text: '',
+			text: 'ИнформационнаяНадписьСреднийЗаработок',
 			style: 'position:absolute;left:293px;top:313px;width:181px;height:40px;',
 		},
 		{
@@ -672,9 +840,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -803,7 +974,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОплата',
-			text: '',
+			text: 'НадписьОплата',
 			style: 'position:absolute;left:6px;top:320px;width:649px;height:34px;',
 		},
 					]
@@ -861,7 +1032,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРасчетСреднегоЗаработка',
-			text: '',
+			text: 'НадписьРасчетСреднегоЗаработка',
 			style: 'position:absolute;left:150px;top:320px;width:512px;height:34px;',
 		},
 		{
@@ -955,9 +1126,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1094,9 +1268,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1233,9 +1410,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1370,9 +1550,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НачислениеОтпускаРаботникамОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -1529,10 +1712,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидДокумента',
+			name: 'ВидДокумента.Представление',
 			width: 276,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:103px;top:56px;width:276px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1619,10 +1830,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Банк',
+			name: 'Банк.Представление',
 			width: 236,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:203px;top:156px;width:236px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1694,10 +1933,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ДолжностьУполномоченного',
+			name: 'ДолжностьУполномоченного.Представление',
 			width: 206,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:203px;top:281px;width:206px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1712,10 +1979,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Уполномоченный',
+			name: 'Уполномоченный.Представление',
 			width: 206,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:203px;top:256px;width:206px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеОтпускаРаботникамОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'button',
@@ -1833,7 +2128,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
-			text: '',
+			text: 'НадписьПредупреждение',
 			style: 'position:absolute;left:30px;top:490px;width:422px;height:33px;text-align:left;',
 		},
 		{
@@ -1909,6 +2204,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

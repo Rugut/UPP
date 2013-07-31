@@ -24,7 +24,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись40',
-			text: '',
+			text: 'Надпись40',
 			style: 'position:absolute;left:218px;top:9px;width:247px;height:17px;',
 		},
 		],
@@ -42,6 +42,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

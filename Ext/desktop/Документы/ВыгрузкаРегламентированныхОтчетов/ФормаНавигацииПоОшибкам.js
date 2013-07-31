@@ -83,9 +83,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВыгрузкаРегламентированныхОтчетов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Отчет',
 					},
@@ -150,7 +153,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВсегоОшибок',
-			text: '',
+			text: 'НадписьВсегоОшибок',
 			style: 'position:absolute;left:193px;top:5px;width:450px;height:15px;text-align:right;',
 		},
 		],

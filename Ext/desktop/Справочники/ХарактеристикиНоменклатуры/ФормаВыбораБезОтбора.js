@@ -37,14 +37,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
+					fields: ['Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Свойство',
 					},
@@ -93,7 +100,7 @@
 				{
 					text:'ОКП',
 					width:'85',
-					dataIndex:'ОКП',
+					dataIndex:'ОКП.Представление',
 					flex:1,
 				},
 				{
@@ -105,14 +112,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
+					fields: ['Картинка','Наименование','ОКП.Представление','Владелец',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ХарактеристикиНоменклатуры/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

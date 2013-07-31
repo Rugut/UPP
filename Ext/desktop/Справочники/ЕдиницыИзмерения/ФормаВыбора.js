@@ -43,7 +43,7 @@
 				{
 					text:'По классификатору',
 					width:'120',
-					dataIndex:'ЕдиницаПоКлассификатору',
+					dataIndex:'ЕдиницаПоКлассификатору.Представление',
 					flex:1,
 				},
 				{
@@ -73,14 +73,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ЕдиницыИзмерения").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ЕдиницыИзмерения").data,
+					fields: ['Картинка','Владелец','Код','ЕдиницаПоКлассификатору.Представление','Наименование','Коэффициент','Объем','Вес',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЕдиницыИзмерения/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЕдиницыИзмерения/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

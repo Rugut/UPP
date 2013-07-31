@@ -65,9 +65,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОбщиеОбъектыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НаименованиеЛиста',
 					},
@@ -109,7 +112,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьНайдено',
-			text: '',
+			text: 'НадписьНайдено',
 			style: 'position:absolute;left:100px;top:5px;width:622px;height:15px;text-align:right;',
 		},
 		],

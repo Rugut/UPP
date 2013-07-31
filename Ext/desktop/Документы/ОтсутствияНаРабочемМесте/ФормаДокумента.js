@@ -60,10 +60,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 256,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:114px;top:261px;width:256px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -76,10 +104,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ПричинаОтсутствия',
+			name: 'ПричинаОтсутствия.Представление',
 			width: 296,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:74px;top:131px;width:296px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -93,10 +149,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Сотрудник',
+			name: 'Сотрудник.Представление',
 			width: 296,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:74px;top:33px;width:296px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ОтсутствияНаРабочемМесте.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -206,6 +290,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

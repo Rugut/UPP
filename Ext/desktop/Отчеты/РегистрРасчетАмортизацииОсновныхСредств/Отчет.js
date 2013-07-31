@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:366px;top:33px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -84,10 +112,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'АмортизационнаяГруппа',
+			name: 'АмортизационнаяГруппа.Представление',
 			width: 450,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:146px;top:57px;width:450px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегистрРасчетАмортизацииОсновныхСредств.ОтчетСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',

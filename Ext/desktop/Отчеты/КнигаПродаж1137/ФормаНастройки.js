@@ -31,10 +31,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КонтрагентДляОтбора',
+			name: 'КонтрагентДляОтбора.Представление',
 			width: 230,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:183px;top:111px;width:230px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -52,10 +80,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Руководитель',
+			name: 'Руководитель.Представление',
 			width: 324,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:89px;top:29px;width:324px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаПродаж1137.ФормаНастройкиСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

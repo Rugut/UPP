@@ -61,10 +61,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:114px;top:32px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -78,10 +106,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВариантНастройки',
+			name: 'ВариантНастройки.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:114px;top:56px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -147,10 +203,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СценарийСравнениеПрибыли',
+			name: 'СценарийСравнениеПрибыли.Представление',
 			width: 268,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:64px;top:30px;width:268px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаНастройкаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -215,6 +299,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -22,10 +22,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:114px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -39,10 +67,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВариантНастройки',
+			name: 'ВариантНастройки.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:114px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ФинансовыйАнализДанныхБюджетирования.ФормаФинансовыйАнализСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

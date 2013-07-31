@@ -37,14 +37,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
+					fields: ['Параметр','ПутьКДанным',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Параметр',
 					},
@@ -151,10 +158,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СохраненнаяНастройка',
+			name: 'СохраненнаяНастройка.Представление',
 			width: 256,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:87px;top:24px;width:256px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -162,10 +197,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ПроизвольныйОтчет',
+			name: 'ПроизвольныйОтчет.Представление',
 			width: 256,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -185,10 +248,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВнешняяОбработка',
+			name: 'ВнешняяОбработка.Представление',
 			width: 256,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:87px;top:0px;width:256px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -222,6 +313,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

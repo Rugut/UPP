@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВопросУсловия',
+			name: 'ВопросУсловия.Представление',
 			width: 261,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:25px;top:140px;width:261px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -44,10 +72,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Ответ',
+			name: 'Ответ.Представление',
 			width: 126,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:160px;top:183px;width:126px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -71,14 +127,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
+					fields: ['ЗначениеСписка',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТиповыеАнкеты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ЗначениеСписка',
 					},
@@ -107,10 +170,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'УсловиеОтвета',
+			name: 'УсловиеОтвета.Представление',
 			width: 129,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:25px;top:183px;width:129px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'radiogroup',

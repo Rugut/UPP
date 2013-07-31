@@ -37,7 +37,7 @@
 				{
 					text:'Тип',
 					width:'108',
-					dataIndex:'ТипПоказателя',
+					dataIndex:'ТипПоказателя.Представление',
 					flex:1,
 				},
 				{
@@ -49,20 +49,27 @@
 				{
 					text:'Вид показателя',
 					width:'100',
-					dataIndex:'ВидПоказателя',
+					dataIndex:'ВидПоказателя.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПоказателиСхемМотивации").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПоказателиСхемМотивации").data,
+					fields: ['Картинка','Наименование','ТипПоказателя.Представление','Постоянство','ВидПоказателя.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоказателиСхемМотивации/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

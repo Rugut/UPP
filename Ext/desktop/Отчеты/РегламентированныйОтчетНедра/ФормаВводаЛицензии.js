@@ -69,7 +69,7 @@
 		{
 			xtype: 'label',
 			name: 'ПолеВводаПредставление',
-			text: '',
+			text: 'ПолеВводаПредставление',
 			style: 'position:absolute;left:99px;top:108px;width:105px;height:19px;',
 		},
 		],

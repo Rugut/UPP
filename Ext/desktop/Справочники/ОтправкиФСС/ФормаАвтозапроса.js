@@ -30,13 +30,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОтчетПредставление',
-			text: '',
+			text: 'НадписьОтчетПредставление',
 			style: 'position:absolute;left:45px;top:8px;width:314px;height:15px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'ДатаОтправки',
-			text: '',
+			text: 'ДатаОтправки',
 			style: 'position:absolute;left:91px;top:26px;width:268px;height:15px;text-align:left;',
 		},
 		{
@@ -65,7 +65,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРезультат',
-			text: '',
+			text: 'НадписьРезультат',
 			style: 'position:absolute;left:0px;top:18px;width:351px;height:15px;text-align:left;',
 		},
 					]

@@ -83,9 +83,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикЗаказов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Изменять',
 					},
@@ -136,7 +139,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьИнформация',
-			text: '',
+			text: 'НадписьИнформация',
 			style: 'position:absolute;left:8px;top:5px;width:731px;height:38px;text-align:left;',
 		},
 		],

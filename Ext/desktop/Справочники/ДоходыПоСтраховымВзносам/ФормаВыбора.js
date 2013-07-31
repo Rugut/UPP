@@ -37,14 +37,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоходыПоСтраховымВзносам").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоходыПоСтраховымВзносам").data,
+					fields: ['Картинка','Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоходыПоСтраховымВзносам/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоходыПоСтраховымВзносам/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -74,7 +81,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьВидаДохода',
-			text: '',
+			text: 'НадписьВидаДохода',
 			style: 'position:absolute;left:8px;top:379px;width:750px;height:39px;',
 		},
 		],

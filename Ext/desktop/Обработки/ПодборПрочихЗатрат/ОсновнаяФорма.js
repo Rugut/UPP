@@ -35,9 +35,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -105,9 +108,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПодборПрочихЗатрат/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -154,10 +160,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Подразделение',
+			name: 'Подразделение.Представление',
 			width: 290,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:121px;top:8px;width:290px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'button',
@@ -177,10 +211,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-select-trigger',
-			name: 'ПодразделениеОрганизации',
+			name: 'ПодразделениеОрганизации.Представление',
 			width: 290,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:121px;top:32px;width:290px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

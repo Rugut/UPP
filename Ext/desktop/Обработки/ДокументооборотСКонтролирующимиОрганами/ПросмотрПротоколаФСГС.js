@@ -35,13 +35,13 @@
 		{
 			xtype: 'label',
 			name: 'Надпись40',
-			text: '',
+			text: 'Надпись40',
 			style: 'position:absolute;left:165px;top:8px;width:230px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПротоколЯвляетсяПоложительным',
-			text: '',
+			text: 'НадписьПротоколЯвляетсяПоложительным',
 			style: 'position:absolute;left:165px;top:35px;width:230px;height:16px;',
 		},
 		{
@@ -66,6 +66,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

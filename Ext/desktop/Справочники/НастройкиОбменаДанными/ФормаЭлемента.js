@@ -83,10 +83,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'УзелИнформационнойБазы',
+			name: 'УзелИнформационнойБазы.Представление',
 			width: 391,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:93px;top:6px;width:391px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -99,10 +127,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ТипНастройки',
+			name: 'ТипНастройки.Представление',
 			width: 391,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:93px;top:160px;width:391px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -246,10 +302,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'УчетнаяЗаписьПриемаОтправкиСообщений',
+			name: 'УчетнаяЗаписьПриемаОтправкиСообщений.Представление',
 			width: 372,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:106px;top:24px;width:372px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -436,10 +520,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'УзелФоновогоОбмена',
+			name: 'УзелФоновогоОбмена.Представление',
 			width: 391,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:93px;top:116px;width:391px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -682,14 +794,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+					fields: ['ЭтоНастройкаДляВыгрузки','НаименованиеПравилаВыгрузки','НастройкаВыгрузки','ВыгружатьДанные','ВыгружатьПоСсылке','КодПравилаВыгрузки','КодПравилаОбмена','НастройкаНеПоддерживается',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ЭтоНастройкаДляВыгрузки',
 					},
@@ -798,14 +917,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+					fields: ['ЭтоНастройкаДляВыгрузки','НаименованиеПравилаОбмена','ИмяНастройкиДляПользователя','ОписаниеНастройкиДляПользователя','ИмяНастройкиДляАлгоритма','НастройкаНеПоддерживается','ВариантПоискаНеПоддерживается','КодПравилаОбмена',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ЭтоНастройкаДляВыгрузки',
 					},
@@ -928,10 +1054,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'УчетнаяЗаписьОтправкиСообщенияОбОшибке',
+			name: 'УчетнаяЗаписьОтправкиСообщенияОбОшибке.Представление',
 			width: 336,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:148px;top:187px;width:336px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -964,14 +1118,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+					fields: ['ТекстСообщения',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ТекстСообщения',
 					},
@@ -1040,14 +1201,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
+					fields: ['Картинка','Код','Наименование','Комментарий',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаДанными/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -1193,6 +1361,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

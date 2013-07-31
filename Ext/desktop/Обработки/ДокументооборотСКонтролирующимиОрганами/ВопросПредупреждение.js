@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОсновнойТекст',
-			text: '',
+			text: 'НадписьОсновнойТекст',
 			style: 'position:absolute;left:92px;top:14px;width:551px;height:92px;',
 		},
 		{

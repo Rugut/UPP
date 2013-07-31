@@ -41,10 +41,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидОбработки',
+			name: 'ВидОбработки.Представление',
 			width: 185,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:39px;top:57px;width:185px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ВнешниеОбработки.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ВнешниеОбработки.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ВнешниеОбработки.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ВнешниеОбработки.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -154,14 +182,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
+					fields: ['НомерСтроки','ПредставлениеОбъекта','ТабличнаяЧасть','ПредставлениеКнопки','ПредставлениеОтбораПостроителя','ИмяФайлаПечатнойФормы','ЗаменяемаяПечатнаяФорма','НастройкиПостроителяДляОтбора','ТабличнаяЧастьИмя','ХранилищеВнешнейОбработки','ПредставлениеНастроекОбработки','СпособЗапуска',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ВнешниеОбработки/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -260,13 +295,14 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
 		{
 			xtype: 'label',
 			name: 'КомментарийКФайлуИсточнику',
-			text: '',
+			text: 'КомментарийКФайлуИсточнику',
 			style: 'position:absolute;left:8px;top:81px;width:514px;height:27px;',
 		},
 		],

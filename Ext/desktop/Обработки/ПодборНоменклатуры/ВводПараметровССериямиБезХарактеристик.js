@@ -20,10 +20,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ЕдиницаИзмерения',
+			name: 'ЕдиницаИзмерения.Представление',
 			width: 84,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:162px;top:33px;width:84px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -104,6 +132,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -130,10 +159,38 @@
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-select-trigger',
 			trigger3Cls: 'x-form-clear-trigger',
-			name: 'Серия',
+			name: 'Серия.Представление',
 			width: 166,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:78px;top:106px;width:166px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ПодборНоменклатуры.ВводПараметровССериямиБезХарактеристикСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],

@@ -22,10 +22,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПолеВвода1',
+			name: 'ПолеВвода1.Представление',
 			width: 341,
 			height: 21,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:81px;top:33px;width:341px;height:21px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.СправкаРасчетРублеваяСуммаДокументаВВалюте.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -66,6 +94,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

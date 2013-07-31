@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОписаниеОшибки',
-			text: '',
+			text: 'НадписьОписаниеОшибки',
 			style: 'position:absolute;left:8px;top:8px;width:380px;height:29px;text-align:center;',
 		},
 		{

@@ -55,38 +55,45 @@
 				{
 					text:'Вид дисконтной карты',
 					width:'350',
-					dataIndex:'ВидДисконтнойКарты',
+					dataIndex:'ВидДисконтнойКарты.Представление',
 					flex:1,
 				},
 				{
 					text:'Вид карты',
 					width:'120',
-					dataIndex:'ВидКарты',
+					dataIndex:'ВидКарты.Представление',
 					flex:1,
 				},
 				{
 					text:'Тип карты',
 					width:'120',
-					dataIndex:'ТипКарты',
+					dataIndex:'ТипКарты.Представление',
 					flex:1,
 				},
 				{
 					text:'Тип штрих кода',
 					width:'120',
-					dataIndex:'ТипШтрихКода',
+					dataIndex:'ТипШтрихКода.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ИнформационныеКарты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ИнформационныеКарты").data,
+					fields: ['Картинка','Код','Наименование','КодКарты','ВладелецКарты','ВидДисконтнойКарты.Представление','ВидКарты.Представление','ТипКарты.Представление','ТипШтрихКода.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнформационныеКарты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнформационныеКарты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -150,14 +157,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ИнформационныеКарты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ИнформационныеКарты").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнформационныеКарты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ИнформационныеКарты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

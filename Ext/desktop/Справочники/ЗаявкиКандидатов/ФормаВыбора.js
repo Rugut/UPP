@@ -31,7 +31,7 @@
 				{
 					text:'',
 					width:'21',
-					dataIndex:'Важность',
+					dataIndex:'Важность.Представление',
 					flex:1,
 				},
 				{
@@ -49,32 +49,39 @@
 				{
 					text:'Состояние',
 					width:'100',
-					dataIndex:'Состояние',
+					dataIndex:'Состояние.Представление',
 					flex:1,
 				},
 				{
 					text:'Физическое лицо',
 					width:'100',
-					dataIndex:'ФизЛицо',
+					dataIndex:'ФизЛицо.Представление',
 					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'350',
-					dataIndex:'Организация',
+					dataIndex:'Организация.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ЗаявкиКандидатов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ЗаявкиКандидатов").data,
+					fields: ['Картинка','Важность.Представление','Код','Наименование','Состояние.Представление','ФизЛицо.Представление','Организация.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявкиКандидатов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

@@ -33,7 +33,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОбъекта',
-			text: '',
+			text: 'НадписьОбъекта',
 			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;text-align:left;',
 		},
 		{
@@ -119,6 +119,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

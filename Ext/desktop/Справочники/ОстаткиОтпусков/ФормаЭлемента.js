@@ -116,14 +116,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+					fields: ['ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ГодРаботы',
 					},
@@ -175,7 +182,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСотрудник',
-			text: '',
+			text: 'НадписьСотрудник',
 			style: 'position:absolute;left:8px;top:33px;width:272px;height:19px;',
 		},
 		],
@@ -209,6 +216,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

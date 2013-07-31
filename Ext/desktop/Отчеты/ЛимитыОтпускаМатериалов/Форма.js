@@ -75,7 +75,7 @@
 		{
 			xtype: 'label',
 			name: 'Период',
-			text: '',
+			text: 'Период',
 			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
@@ -134,10 +134,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Периодичность',
+			name: 'Периодичность.Представление',
 			width: 125,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:136px;top:33px;width:125px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ЛимитыОтпускаМатериалов.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ЛимитыОтпускаМатериалов.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ЛимитыОтпускаМатериалов.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ЛимитыОтпускаМатериалов.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],

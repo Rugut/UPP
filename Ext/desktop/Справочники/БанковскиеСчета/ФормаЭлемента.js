@@ -40,6 +40,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -66,10 +67,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВалютаДенежныхСредств',
+			name: 'ВалютаДенежныхСредств.Представление',
 			width: 68,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:492px;top:33px;width:68px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.БанковскиеСчета.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.БанковскиеСчета.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.БанковскиеСчета.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.БанковскиеСчета.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',

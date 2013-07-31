@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Сотрудник',
+			name: 'Сотрудник.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:129px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -50,10 +78,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВалютаДокумента',
+			name: 'ВалютаДокумента.Представление',
 			width: 86,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:256px;top:307px;width:86px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -98,10 +154,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:403px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -181,10 +265,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:81px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -199,10 +311,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПодразделениеОрганизации',
+			name: 'ПодразделениеОрганизации.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:105px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -210,10 +350,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидРасчета',
+			name: 'ВидРасчета.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:259px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -237,10 +405,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ХарактерОплаты',
+			name: 'ХарактерОплаты.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:283px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -248,10 +444,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КодВычета',
+			name: 'КодВычета.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:102px;top:379px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -312,10 +536,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидАвторскогоДоговора',
+			name: 'ВидАвторскогоДоговора.Представление',
 			width: 240,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:88px;top:6px;width:240px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -363,6 +615,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -112,10 +112,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:382px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -128,10 +156,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Бюджет',
+			name: 'Бюджет.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:66px;top:81px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -159,10 +215,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидДанныхОтчета',
+			name: 'ВидДанныхОтчета.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:66px;top:57px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОтчетПоБюджету.ФормаОтчетПоБюджетуСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

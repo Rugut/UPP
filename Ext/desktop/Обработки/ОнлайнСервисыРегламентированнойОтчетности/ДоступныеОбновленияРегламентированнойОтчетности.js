@@ -25,6 +25,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
@@ -98,9 +99,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОнлайнСервисыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОнлайнСервисыРегламентированнойОтчетности/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Отчет',
 					},
@@ -246,7 +250,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПоследняяВерсия',
-			text: '',
+			text: 'НадписьПоследняяВерсия',
 			style: 'position:absolute;left:178px;top:1px;width:245px;height:17px;text-align:left;',
 		},
 					]

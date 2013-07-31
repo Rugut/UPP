@@ -189,10 +189,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Владелец',
+			name: 'Владелец.Представление',
 			width: 328,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:144px;top:33px;width:328px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -213,10 +241,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Доверенность',
+			name: 'Доверенность.Представление',
 			width: 328,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:144px;top:330px;width:328px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.РегистрацияВИФНС.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -293,6 +349,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

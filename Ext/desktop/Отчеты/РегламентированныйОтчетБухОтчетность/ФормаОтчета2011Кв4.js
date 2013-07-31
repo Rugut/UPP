@@ -129,10 +129,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Статус',
+			name: 'Статус.Представление',
 			width: 119,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:47px;top:3px;width:119px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4События'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4События");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4События'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегламентированныйОтчетБухОтчетность.ФормаОтчета2011Кв4События");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -1090,19 +1118,19 @@
 		{
 			xtype: 'label',
 			name: 'КомментарийКФайлуПояснительнойЗаписки',
-			text: '',
+			text: 'КомментарийКФайлуПояснительнойЗаписки',
 			style: 'position:absolute;left:6px;top:28px;width:598px;height:27px;',
 		},
 		{
 			xtype: 'label',
 			name: 'КомментарийКФайлуАудиторскогоЗаключения',
-			text: '',
+			text: 'КомментарийКФайлуАудиторскогоЗаключения',
 			style: 'position:absolute;left:6px;top:84px;width:598px;height:27px;',
 		},
 		{
 			xtype: 'label',
 			name: 'КомментарийКФайлуЗаявленияСоюзаСельхозпроизводетелей',
-			text: '',
+			text: 'КомментарийКФайлуЗаявленияСоюзаСельхозпроизводетелей',
 			style: 'position:absolute;left:6px;top:141px;width:598px;height:27px;',
 		},
 					]

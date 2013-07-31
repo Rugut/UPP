@@ -41,10 +41,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'СтатьяЗатрат',
+			name: 'СтатьяЗатрат.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:57px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -57,10 +85,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'Затрата',
+			name: 'Затрата.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:82px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -73,10 +129,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'ХарактеристикаЗатраты',
+			name: 'ХарактеристикаЗатраты.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:106px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -89,10 +173,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'СерияЗатраты',
+			name: 'СерияЗатраты.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:130px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -105,10 +217,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'СпособРаспределенияЗатрат',
+			name: 'СпособРаспределенияЗатрат.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:154px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -120,10 +260,38 @@
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
-			name: 'ХарактерЗатрат',
+			name: 'ХарактерЗатрат.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:178px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -136,10 +304,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-search-trigger',
-			name: 'Качество',
+			name: 'Качество.Представление',
 			width: 251,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:141px;top:202px;width:251px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КлючиАналитикиУчетаЗатрат.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -172,6 +368,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

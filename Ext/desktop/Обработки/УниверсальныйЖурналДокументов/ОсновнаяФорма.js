@@ -53,9 +53,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/УниверсальныйЖурналДокументов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Иконка',
 					},
@@ -91,7 +94,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОтбор',
-			text: '',
+			text: 'НадписьОтбор',
 			style: 'position:absolute;left:8px;top:386px;width:667px;height:15px;',
 		},
 		],

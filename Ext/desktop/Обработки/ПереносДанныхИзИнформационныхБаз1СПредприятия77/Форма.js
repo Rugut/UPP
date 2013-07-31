@@ -88,9 +88,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносДанныхИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПереносДанныхИзИнформационныхБаз1СПредприятия77/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Имя',
 					},
@@ -129,7 +132,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьИнформацияОПути',
-			text: '',
+			text: 'НадписьИнформацияОПути',
 			style: 'position:absolute;left:138px;top:177px;width:456px;height:19px;text-align:left;',
 		},
 		{
@@ -282,31 +285,31 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКонфигурация',
-			text: '',
+			text: 'НадписьКонфигурация',
 			style: 'position:absolute;left:294px;top:128px;width:292px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомерРелиза',
-			text: '',
+			text: 'НадписьНомерРелиза',
 			style: 'position:absolute;left:294px;top:155px;width:292px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
-			text: '',
+			text: 'НадписьОрганизация',
 			style: 'position:absolute;left:294px;top:182px;width:292px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПериод',
-			text: '',
+			text: 'НадписьПериод',
 			style: 'position:absolute;left:294px;top:209px;width:292px;height:28px;text-align:left;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДата',
-			text: '',
+			text: 'НадписьДата',
 			style: 'position:absolute;left:294px;top:256px;width:292px;height:19px;',
 		},
 		{
@@ -394,7 +397,7 @@
 		{
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаОшибка',
-			text: '',
+			text: 'ИБНадписьИмяИсточникаОшибка',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
@@ -436,7 +439,7 @@
 		{
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаУспешно',
-			text: '',
+			text: 'ИБНадписьИмяИсточникаУспешно',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
@@ -454,7 +457,7 @@
 		{
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаБазовая',
-			text: '',
+			text: 'ИБНадписьИмяИсточникаБазовая',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
@@ -472,13 +475,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьИБСостояниеПереноса',
-			text: '',
+			text: 'НадписьИБСостояниеПереноса',
 			style: 'position:absolute;left:0px;top:0px;width:454px;height:22px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ИБНадписьИмяИсточникаПроцесс',
-			text: '',
+			text: 'ИБНадписьИмяИсточникаПроцесс',
 			style: 'position:absolute;left:1px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
@@ -565,7 +568,7 @@
 		{
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаОшибка',
-			text: '',
+			text: 'ФНадписьИмяИсточникаОшибка',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
@@ -607,7 +610,7 @@
 		{
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаПроф',
-			text: '',
+			text: 'ФНадписьИмяИсточникаПроф',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 					]
@@ -625,7 +628,7 @@
 		{
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаБазовая',
-			text: '',
+			text: 'ФНадписьИмяИсточникаБазовая',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
@@ -643,13 +646,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьФСостояниеПереноса',
-			text: '',
+			text: 'НадписьФСостояниеПереноса',
 			style: 'position:absolute;left:2px;top:0px;width:454px;height:22px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ФНадписьИмяИсточникаПроцесс',
-			text: '',
+			text: 'ФНадписьИмяИсточникаПроцесс',
 			style: 'position:absolute;left:3px;top:28px;width:453px;height:32px;text-align:left;',
 		},
 		{
@@ -677,7 +680,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьИБТекстОшибкиПриПодключении',
-			text: '',
+			text: 'НадписьИБТекстОшибкиПриПодключении',
 			style: 'position:absolute;left:138px;top:38px;width:456px;height:17px;',
 		},
 		{
@@ -695,7 +698,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьИБОписаниеОшибкиПриПодключении',
-			text: '',
+			text: 'НадписьИБОписаниеОшибкиПриПодключении',
 			style: 'position:absolute;left:138px;top:63px;width:456px;height:31px;',
 		},
 		{

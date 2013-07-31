@@ -24,13 +24,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьТекущийПользователь',
-			text: '',
+			text: 'НадписьТекущийПользователь',
 			style: 'position:absolute;left:267px;top:5px;width:507px;height:15px;text-align:right;',
 		},
 		{
 			xtype: 'label',
 			name: 'ДисконтнаяКарта',
-			text: '',
+			text: 'ДисконтнаяКарта',
 			style: 'position:absolute;left:160px;top:349px;width:129px;height:18px;text-align:left;',
 		},
 		{
@@ -164,9 +164,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЧекККМ/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -241,7 +244,7 @@
 		{
 			xtype: 'label',
 			name: 'СкидкиИтогоСумма',
-			text: '',
+			text: 'СкидкиИтогоСумма',
 			style: 'position:absolute;left:175px;top:395px;width:114px;height:19px;text-align:right;',
 		},
 		{

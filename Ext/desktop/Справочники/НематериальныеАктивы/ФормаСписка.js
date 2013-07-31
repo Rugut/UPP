@@ -49,26 +49,33 @@
 				{
 					text:'Вид НМА',
 					width:'120',
-					dataIndex:'ВидНМА',
+					dataIndex:'ВидНМА.Представление',
 					flex:1,
 				},
 				{
 					text:'Амортизационная группа',
 					width:'120',
-					dataIndex:'АмортизационнаяГруппа',
+					dataIndex:'АмортизационнаяГруппа.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НематериальныеАктивы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НематериальныеАктивы").data,
+					fields: ['Картинка','Код','Наименование','НаименованиеПолное','ВидНМА.Представление','АмортизационнаяГруппа.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -123,14 +130,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НематериальныеАктивы").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НематериальныеАктивы").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НематериальныеАктивы/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

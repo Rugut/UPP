@@ -35,9 +35,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Описание',
 					},
@@ -84,7 +87,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЗаголовок',
-			text: '',
+			text: 'НадписьЗаголовок',
 			style: 'position:absolute;left:8px;top:8px;width:755px;height:31px;',
 		},
 		{
@@ -107,6 +110,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

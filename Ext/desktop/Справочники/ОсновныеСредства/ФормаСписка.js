@@ -73,19 +73,19 @@
 				{
 					text:'Код по ОКОФ',
 					width:'70',
-					dataIndex:'КодПоОКОФ',
+					dataIndex:'КодПоОКОФ.Представление',
 					flex:1,
 				},
 				{
 					text:'Амортизационная группа',
 					width:'100',
-					dataIndex:'АмортизационнаяГруппа',
+					dataIndex:'АмортизационнаяГруппа.Представление',
 					flex:1,
 				},
 				{
 					text:'Группа ОС',
 					width:'100',
-					dataIndex:'ГруппаОС',
+					dataIndex:'ГруппаОС.Представление',
 					flex:1,
 				},
 				{
@@ -103,14 +103,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
+					fields: ['Картинка','Код','Наименование','НаименованиеПолное','Изготовитель','НомерПаспорта','ЗаводскойНомер','ДатаВыпуска','КодПоОКОФ.Представление','АмортизационнаяГруппа.Представление','ГруппаОС.Представление','Автотранспорт','Комментарий',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -186,14 +193,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

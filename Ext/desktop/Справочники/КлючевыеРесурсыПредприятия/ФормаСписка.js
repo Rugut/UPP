@@ -43,26 +43,33 @@
 				{
 					text:'Базовая единица',
 					width:'95',
-					dataIndex:'БазоваяЕдиницаИзмерения',
+					dataIndex:'БазоваяЕдиницаИзмерения.Представление',
 					flex:1,
 				},
 				{
 					text:'База задания потребности',
 					width:'142',
-					dataIndex:'БазаЗаданияПотребности',
+					dataIndex:'БазаЗаданияПотребности.Представление',
 					flex:1,
 				},
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КлючевыеРесурсыПредприятия").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КлючевыеРесурсыПредприятия").data,
+					fields: ['Картинка','Код','Наименование','БазоваяЕдиницаИзмерения.Представление','БазаЗаданияПотребности.Представление',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -114,14 +121,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КлючевыеРесурсыПредприятия").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КлючевыеРесурсыПредприятия").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КлючевыеРесурсыПредприятия/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

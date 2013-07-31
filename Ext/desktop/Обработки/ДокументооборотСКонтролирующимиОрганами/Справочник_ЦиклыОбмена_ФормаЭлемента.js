@@ -24,7 +24,7 @@
 		{
 			xtype: 'label',
 			name: 'Код',
-			text: '',
+			text: 'Код',
 			style: 'position:absolute;left:119px;top:52px;width:80px;height:15px;',
 		},
 		{
@@ -36,13 +36,13 @@
 		{
 			xtype: 'label',
 			name: 'Наименование',
-			text: '',
+			text: 'Наименование',
 			style: 'position:absolute;left:119px;top:71px;width:591px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Предмет',
-			text: '',
+			text: 'Предмет',
 			style: 'position:absolute;left:14px;top:193px;width:696px;height:15px;',
 		},
 		{
@@ -54,7 +54,7 @@
 		{
 			xtype: 'label',
 			name: 'Организация',
-			text: '',
+			text: 'Организация',
 			style: 'position:absolute;left:119px;top:133px;width:591px;height:15px;',
 		},
 		{
@@ -98,7 +98,7 @@
 		{
 			xtype: 'label',
 			name: 'ДатаПоследнегоСообщения',
-			text: '',
+			text: 'ДатаПоследнегоСообщения',
 			style: 'position:absolute;left:266px;top:38px;width:106px;height:15px;',
 		},
 		{
@@ -121,7 +121,7 @@
 		{
 			xtype: 'label',
 			name: 'ДатаСоздания',
-			text: '',
+			text: 'ДатаСоздания',
 			style: 'position:absolute;left:68px;top:20px;width:104px;height:15px;',
 		},
 		{
@@ -133,7 +133,7 @@
 		{
 			xtype: 'label',
 			name: 'ДатаЗакрытия',
-			text: '',
+			text: 'ДатаЗакрытия',
 			style: 'position:absolute;left:265px;top:20px;width:106px;height:15px;',
 		},
 		{
@@ -161,7 +161,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьУведомлениеОбУточнении',
-			text: '',
+			text: 'НадписьУведомлениеОбУточнении',
 			style: 'position:absolute;left:45px;top:0px;width:657px;height:16px;',
 		},
 					]
@@ -183,25 +183,25 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПервичноеСообщение',
-			text: '',
+			text: 'НадписьПервичноеСообщение',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНеформализованныйДокументНО',
-			text: '',
+			text: 'НадписьНеформализованныйДокументНО',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНеформализованныйДокументНалогоплательщика',
-			text: '',
+			text: 'НадписьНеформализованныйДокументНалогоплательщика',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗапросНаИнформационноеОбслуживание',
-			text: '',
+			text: 'НадписьЗапросНаИнформационноеОбслуживание',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 					]
@@ -213,13 +213,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПервичноеСообщениеПФР',
-			text: '',
+			text: 'НадписьПервичноеСообщениеПФР',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеПолученияПФР',
-			text: '',
+			text: 'НадписьПодтверждениеПолученияПФР',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
@@ -236,13 +236,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПротоколПФР',
-			text: '',
+			text: 'НадписьПротоколПФР',
 			style: 'position:absolute;left:45px;top:7px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПротоколКвитанцияПФР',
-			text: '',
+			text: 'НадписьПротоколКвитанцияПФР',
 			style: 'position:absolute;left:45px;top:28px;width:657px;height:16px;',
 		},
 		{
@@ -264,13 +264,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьНеформализованноеСообщениеПФР',
-			text: '',
+			text: 'НадписьНеформализованноеСообщениеПФР',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеПолученияНеформализованногоСообщенияПФР',
-			text: '',
+			text: 'НадписьПодтверждениеПолученияНеформализованногоСообщенияПФР',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
@@ -288,37 +288,37 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеОтправки',
-			text: '',
+			text: 'НадписьПодтверждениеОтправки',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеНаНеформализованныйДокументНО',
-			text: '',
+			text: 'НадписьПодтверждениеНаНеформализованныйДокументНО',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
-			text: '',
+			text: 'НадписьПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеОтправкиЗапроса',
-			text: '',
+			text: 'НадписьПодтверждениеОтправкиЗапроса',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьНеформализованноеСообщениеПФРИсходящее',
-			text: '',
+			text: 'НадписьНеформализованноеСообщениеПФРИсходящее',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеПолученияНеформализованногоСообщенияПФРИсходящее',
-			text: '',
+			text: 'НадписьПодтверждениеПолученияНеформализованногоСообщенияПФРИсходящее',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 					]
@@ -336,37 +336,37 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДекларацияНП',
-			text: '',
+			text: 'НадписьДекларацияНП',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеДекларацияНО',
-			text: '',
+			text: 'НадписьПодтверждениеДекларацияНО',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеНП',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеНП',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеДекларацияНО',
-			text: '',
+			text: 'НадписьИзвещениеДекларацияНО',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатПриемаДекларацияНО',
-			text: '',
+			text: 'НадписьРезультатПриемаДекларацияНО',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатПриемаНП',
-			text: '',
+			text: 'НадписьИзвещениеРезультатПриемаНП',
 			style: 'position:absolute;left:45px;top:107px;width:657px;height:16px;',
 		},
 		{
@@ -395,13 +395,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатОбработкиДекларацияНО',
-			text: '',
+			text: 'НадписьРезультатОбработкиДекларацияНО',
 			style: 'position:absolute;left:45px;top:4px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатОбработкиНП',
-			text: '',
+			text: 'НадписьИзвещениеРезультатОбработкиНП',
 			style: 'position:absolute;left:45px;top:26px;width:657px;height:16px;',
 		},
 		{
@@ -423,37 +423,37 @@
 		{
 			xtype: 'label',
 			name: 'НадписьФорма2НДФЛНП',
-			text: '',
+			text: 'НадписьФорма2НДФЛНП',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеФорма2НДФЛНО',
-			text: '',
+			text: 'НадписьПодтверждениеФорма2НДФЛНО',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеНП2НДФЛ',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеНП2НДФЛ',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеФорма2НДФЛНО',
-			text: '',
+			text: 'НадписьИзвещениеФорма2НДФЛНО',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатПриемаФорма2НДФЛНО',
-			text: '',
+			text: 'НадписьРезультатПриемаФорма2НДФЛНО',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатПриемаНП2НДФЛ',
-			text: '',
+			text: 'НадписьИзвещениеРезультатПриемаНП2НДФЛ',
 			style: 'position:absolute;left:45px;top:107px;width:657px;height:16px;',
 		},
 		{
@@ -477,43 +477,43 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеНаПодтверждениеОтправки',
-			text: '',
+			text: 'НадписьПодтверждениеНаПодтверждениеОтправки',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПереподписанноеПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
-			text: '',
+			text: 'НадписьПереподписанноеПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеНаПодтверждениеОтправкиЗапроса',
-			text: '',
+			text: 'НадписьПодтверждениеНаПодтверждениеОтправкиЗапроса',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьОбращениеНП',
-			text: '',
+			text: 'НадписьОбращениеНП',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеОбращениеНО',
-			text: '',
+			text: 'НадписьПодтверждениеОбращениеНО',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеНПОбращение',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеНПОбращение',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеОбращениеНО',
-			text: '',
+			text: 'НадписьИзвещениеОбращениеНО',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
@@ -536,13 +536,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатПриемаОбращениеНО',
-			text: '',
+			text: 'НадписьРезультатПриемаОбращениеНО',
 			style: 'position:absolute;left:45px;top:7px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатПриемаНПОбращение',
-			text: '',
+			text: 'НадписьИзвещениеРезультатПриемаНПОбращение',
 			style: 'position:absolute;left:45px;top:28px;width:657px;height:16px;',
 		},
 		{
@@ -582,13 +582,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПисьмоНО',
-			text: '',
+			text: 'НадписьПисьмоНО',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПисьмоНП',
-			text: '',
+			text: 'НадписьИзвещениеПисьмоНП',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
@@ -606,7 +606,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРассылка',
-			text: '',
+			text: 'НадписьРассылка',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 					]
@@ -618,13 +618,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРассылкаГрупповая',
-			text: '',
+			text: 'НадписьРассылкаГрупповая',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРассылкаНП',
-			text: '',
+			text: 'НадписьИзвещениеРассылкаНП',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
@@ -642,55 +642,55 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеДоставки',
-			text: '',
+			text: 'НадписьПодтверждениеДоставки',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеДоставкиНеформализованногоДокументаНалогоплательщика',
-			text: '',
+			text: 'НадписьПодтверждениеДоставкиНеформализованногоДокументаНалогоплательщика',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеДоставкиЗапроса',
-			text: '',
+			text: 'НадписьПодтверждениеДоставкиЗапроса',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗапросНП',
-			text: '',
+			text: 'НадписьЗапросНП',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеЗапросНО',
-			text: '',
+			text: 'НадписьПодтверждениеЗапросНО',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеНПЗапрос',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеНПЗапрос',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеЗапросНО',
-			text: '',
+			text: 'НадписьИзвещениеЗапросНО',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатПриемаЗапросНО',
-			text: '',
+			text: 'НадписьРезультатПриемаЗапросНО',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатПриемаНПЗапрос',
-			text: '',
+			text: 'НадписьИзвещениеРезультатПриемаНПЗапрос',
 			style: 'position:absolute;left:45px;top:107px;width:657px;height:16px;',
 		},
 		{
@@ -719,13 +719,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатОбработкиЗапросНО',
-			text: '',
+			text: 'НадписьРезультатОбработкиЗапросНО',
 			style: 'position:absolute;left:45px;top:4px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатОбработкиНПЗапрос',
-			text: '',
+			text: 'НадписьИзвещениеРезультатОбработкиНПЗапрос',
 			style: 'position:absolute;left:45px;top:26px;width:657px;height:16px;',
 		},
 		{
@@ -747,37 +747,37 @@
 		{
 			xtype: 'label',
 			name: 'НадписьЗаявлениеНП',
-			text: '',
+			text: 'НадписьЗаявлениеНП',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеЗаявлениеНО',
-			text: '',
+			text: 'НадписьПодтверждениеЗаявлениеНО',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеНПЗаявление',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеНПЗаявление',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеЗаявлениеНО',
-			text: '',
+			text: 'НадписьИзвещениеЗаявлениеНО',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатПриемаЗаявлениеНО',
-			text: '',
+			text: 'НадписьРезультатПриемаЗаявлениеНО',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатПриемаНПЗаявление',
-			text: '',
+			text: 'НадписьИзвещениеРезультатПриемаНПЗаявление',
 			style: 'position:absolute;left:45px;top:107px;width:657px;height:16px;',
 		},
 		{
@@ -806,13 +806,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатОбработкиЗаявлениеРФНО',
-			text: '',
+			text: 'НадписьРезультатОбработкиЗаявлениеРФНО',
 			style: 'position:absolute;left:45px;top:4px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатОбработкиРФНП',
-			text: '',
+			text: 'НадписьИзвещениеРезультатОбработкиРФНП',
 			style: 'position:absolute;left:45px;top:26px;width:657px;height:16px;',
 		},
 		{
@@ -839,13 +839,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСообщениеОбОтзывеЗаявлениеРФНО',
-			text: '',
+			text: 'НадписьСообщениеОбОтзывеЗаявлениеРФНО',
 			style: 'position:absolute;left:45px;top:4px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеОбОтзывеЗаявлениеРФНП',
-			text: '',
+			text: 'НадписьИзвещениеОбОтзывеЗаявлениеРФНП',
 			style: 'position:absolute;left:45px;top:26px;width:657px;height:16px;',
 		},
 		{
@@ -872,13 +872,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатОбработкиЗаявлениеТСНО',
-			text: '',
+			text: 'НадписьРезультатОбработкиЗаявлениеТСНО',
 			style: 'position:absolute;left:45px;top:4px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатОбработкиТСНП',
-			text: '',
+			text: 'НадписьИзвещениеРезультатОбработкиТСНП',
 			style: 'position:absolute;left:45px;top:26px;width:657px;height:16px;',
 		},
 		{
@@ -900,25 +900,25 @@
 		{
 			xtype: 'label',
 			name: 'НадписьДокументНО',
-			text: '',
+			text: 'НадписьДокументНО',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеДокументНП',
-			text: '',
+			text: 'НадписьИзвещениеДокументНП',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРезультатПриемаДокументНП',
-			text: '',
+			text: 'НадписьРезультатПриемаДокументНП',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеРезультатПриемаНО',
-			text: '',
+			text: 'НадписьИзвещениеРезультатПриемаНО',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
@@ -942,49 +942,49 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПротоколПроверки',
-			text: '',
+			text: 'НадписьПротоколПроверки',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПротоколПроверкиЗапроса',
-			text: '',
+			text: 'НадписьПротоколПроверкиЗапроса',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПервичноеСообщениеФСГС',
-			text: '',
+			text: 'НадписьПервичноеСообщениеФСГС',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеДатыОтправкиФСГС',
-			text: '',
+			text: 'НадписьПодтверждениеДатыОтправкиФСГС',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеДатыОтправкиФСГС',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеДатыОтправкиФСГС',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеОтчетностьФСГС',
-			text: '',
+			text: 'НадписьИзвещениеОтчетностьФСГС',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПротоколФСГС',
-			text: '',
+			text: 'НадписьПротоколФСГС',
 			style: 'position:absolute;left:45px;top:86px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПротоколФСГС',
-			text: '',
+			text: 'НадписьИзвещениеПротоколФСГС',
 			style: 'position:absolute;left:45px;top:107px;width:657px;height:16px;',
 		},
 		{
@@ -1008,25 +1008,25 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПисьмоИсходящееФСГС',
-			text: '',
+			text: 'НадписьПисьмоИсходящееФСГС',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьПодтверждениеДатыОтправкиПисьмаФСГС',
-			text: '',
+			text: 'НадписьПодтверждениеДатыОтправкиПисьмаФСГС',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПодтверждениеДатыОтправкиПисьмаФСГС',
-			text: '',
+			text: 'НадписьИзвещениеПодтверждениеДатыОтправкиПисьмаФСГС',
 			style: 'position:absolute;left:45px;top:44px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПисьмоИсходящееФСГС',
-			text: '',
+			text: 'НадписьИзвещениеПисьмоИсходящееФСГС',
 			style: 'position:absolute;left:45px;top:65px;width:657px;height:16px;',
 		},
 		{
@@ -1044,13 +1044,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПисьмоВходящееФСГС',
-			text: '',
+			text: 'НадписьПисьмоВходящееФСГС',
 			style: 'position:absolute;left:45px;top:2px;width:657px;height:16px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьИзвещениеПисьмоВходящееФСГС',
-			text: '',
+			text: 'НадписьИзвещениеПисьмоВходящееФСГС',
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
@@ -1104,7 +1104,7 @@
 		{
 			xtype: 'label',
 			name: 'НалоговыйОрган',
-			text: '',
+			text: 'НалоговыйОрган',
 			style: 'position:absolute;left:111px;top:0px;width:591px;height:15px;',
 		},
 					]
@@ -1122,7 +1122,7 @@
 		{
 			xtype: 'label',
 			name: 'ОрганПФР',
-			text: '',
+			text: 'ОрганПФР',
 			style: 'position:absolute;left:111px;top:0px;width:591px;height:15px;',
 		},
 					]
@@ -1140,7 +1140,7 @@
 		{
 			xtype: 'label',
 			name: 'ОрганФСГС',
-			text: '',
+			text: 'ОрганФСГС',
 			style: 'position:absolute;left:111px;top:0px;width:591px;height:15px;',
 		},
 					]
@@ -1156,7 +1156,7 @@
 		{
 			xtype: 'label',
 			name: 'Вид',
-			text: '',
+			text: 'Вид',
 			style: 'position:absolute;left:119px;top:33px;width:400px;height:15px;',
 		},
 		{
@@ -1182,7 +1182,7 @@
 		{
 			xtype: 'label',
 			name: 'ДополнительныйПредмет',
-			text: '',
+			text: 'ДополнительныйПредмет',
 			style: 'position:absolute;left:6px;top:0px;width:696px;height:15px;',
 		},
 					]
@@ -1218,6 +1218,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

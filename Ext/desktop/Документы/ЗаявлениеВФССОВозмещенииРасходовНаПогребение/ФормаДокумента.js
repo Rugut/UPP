@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 296,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:33px;width:296px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -77,10 +105,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 296,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:57px;width:296px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -145,9 +201,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеВФССОВозмещенииРасходовНаПогребение/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗаявлениеВФССОВозмещенииРасходовНаПогребение/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -199,10 +258,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Руководитель',
+			name: 'Руководитель.Представление',
 			width: 320,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:119px;top:275px;width:320px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -217,10 +304,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя',
+			name: 'ДолжностьРуководителя.Представление',
 			width: 320,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:554px;top:275px;width:320px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -324,10 +439,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Банк',
+			name: 'Банк.Представление',
 			width: 611,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:58px;top:133px;width:611px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗаявлениеВФССОВозмещенииРасходовНаПогребение.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -481,6 +624,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

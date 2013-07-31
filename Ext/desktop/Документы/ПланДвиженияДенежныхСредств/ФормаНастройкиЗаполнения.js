@@ -200,10 +200,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовПоступления',
+			name: 'СтатьяОборотовПоступления.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -211,10 +239,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектПоступления',
+			name: 'ПроектПоступления.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -232,10 +288,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовПланПоступления',
+			name: 'СтатьяОборотовПланПоступления.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -243,10 +327,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектПланПоступления',
+			name: 'ПроектПланПоступления.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -362,10 +474,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовОбъемПродаж',
+			name: 'СтатьяОборотовОбъемПродаж.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -379,10 +519,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектОбъемПродаж',
+			name: 'ПроектОбъемПродаж.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -410,10 +578,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовПланыПродаж',
+			name: 'СтатьяОборотовПланыПродаж.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -427,10 +623,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектПланыПродаж',
+			name: 'ПроектПланыПродаж.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -485,10 +709,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовДебиторскаяЗадолженность',
+			name: 'СтатьяОборотовДебиторскаяЗадолженность.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -502,10 +754,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектДебиторскаяЗадолженность',
+			name: 'ПроектДебиторскаяЗадолженность.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:123px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -573,10 +853,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовЗаказыПокупателей',
+			name: 'СтатьяОборотовЗаказыПокупателей.Представление',
 			width: 203,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:571px;top:99px;width:203px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -590,10 +898,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектЗаказыПокупателей',
+			name: 'ПроектЗаказыПокупателей.Представление',
 			width: 203,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:571px;top:123px;width:203px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -769,9 +1105,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Использование',
 					},
@@ -1105,10 +1444,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовПлатежи',
+			name: 'СтатьяОборотовПлатежи.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -1116,10 +1483,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектПлатежи',
+			name: 'ПроектПлатежи.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1137,10 +1532,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовПланПлатежи',
+			name: 'СтатьяОборотовПланПлатежи.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -1148,10 +1571,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектПланПлатежи',
+			name: 'ПроектПланПлатежи.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1255,10 +1706,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовОбъемЗакупок',
+			name: 'СтатьяОборотовОбъемЗакупок.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -1266,10 +1745,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектОбъемЗакупок',
+			name: 'ПроектОбъемЗакупок.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1291,10 +1798,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовПланыЗакупок',
+			name: 'СтатьяОборотовПланыЗакупок.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -1302,10 +1837,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектПланыЗакупок',
+			name: 'ПроектПланыЗакупок.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:570px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -1354,10 +1917,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовКредиторскаяЗадолженность',
+			name: 'СтатьяОборотовКредиторскаяЗадолженность.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -1365,10 +1956,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектКредиторскаяЗадолженность',
+			name: 'ПроектКредиторскаяЗадолженность.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:123px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1424,10 +2043,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовЗаказыПоставщикам',
+			name: 'СтатьяОборотовЗаказыПоставщикам.Представление',
 			width: 203,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:571px;top:99px;width:203px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -1435,10 +2082,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектЗаказыПоставщикам',
+			name: 'ПроектЗаказыПоставщикам.Представление',
 			width: 203,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:571px;top:123px;width:203px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -1563,10 +2238,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОборотовЗаработнаяПлата',
+			name: 'СтатьяОборотовЗаработнаяПлата.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:75px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1580,10 +2283,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПроектЗаработнаяПлата',
+			name: 'ПроектЗаработнаяПлата.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:176px;top:99px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1678,9 +2409,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПланДвиженияДенежныхСредств/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Использование',
 					},
@@ -1796,6 +2530,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

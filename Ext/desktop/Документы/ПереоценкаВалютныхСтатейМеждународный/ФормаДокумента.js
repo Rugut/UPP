@@ -60,10 +60,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 257,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:83px;width:257px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -92,10 +120,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 257,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:58px;width:257px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -109,10 +165,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СтатьяОтнесенияКурсовыхРазниц',
+			name: 'СтатьяОтнесенияКурсовыхРазниц.Представление',
 			width: 151,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:197px;top:134px;width:151px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПереоценкаВалютныхСтатейМеждународный.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -169,6 +253,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

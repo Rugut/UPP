@@ -71,9 +71,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикОтпусков/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГрафикОтпусков/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -130,13 +133,13 @@
 		{
 			xtype: 'label',
 			name: 'ДатаПриемаНаРаботу',
-			text: '',
+			text: 'ДатаПриемаНаРаботу',
 			style: 'position:absolute;left:207px;top:52px;width:151px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Сегодня',
-			text: '',
+			text: 'Сегодня',
 			style: 'position:absolute;left:8px;top:264px;width:194px;height:15px;',
 		},
 		{
@@ -148,7 +151,7 @@
 		{
 			xtype: 'label',
 			name: 'НеиспользованныйОтпуск',
-			text: '',
+			text: 'НеиспользованныйОтпуск',
 			style: 'position:absolute;left:207px;top:284px;width:151px;height:15px;',
 		},
 		{
@@ -160,7 +163,7 @@
 		{
 			xtype: 'label',
 			name: 'ДополнительныйОтпуск',
-			text: '',
+			text: 'ДополнительныйОтпуск',
 			style: 'position:absolute;left:207px;top:304px;width:151px;height:15px;',
 		},
 		{

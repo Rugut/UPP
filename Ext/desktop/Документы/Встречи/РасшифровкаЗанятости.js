@@ -18,13 +18,13 @@
 		{
 			xtype: 'label',
 			name: 'Наименование',
-			text: '',
+			text: 'Наименование',
 			style: 'position:absolute;left:8px;top:25px;width:625px;height:22px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ОписаниеЗанятости',
-			text: '',
+			text: 'ОписаниеЗанятости',
 			style: 'position:absolute;left:8px;top:52px;width:625px;height:15px;',
 		},
 		{
@@ -36,7 +36,7 @@
 		{
 			xtype: 'label',
 			name: 'Документ',
-			text: '',
+			text: 'Документ',
 			style: 'position:absolute;left:207px;top:87px;width:426px;height:15px;',
 		},
 		{
@@ -48,7 +48,7 @@
 		{
 			xtype: 'label',
 			name: 'Телефоны',
-			text: '',
+			text: 'Телефоны',
 			style: 'position:absolute;left:207px;top:107px;width:426px;height:15px;',
 		},
 		],

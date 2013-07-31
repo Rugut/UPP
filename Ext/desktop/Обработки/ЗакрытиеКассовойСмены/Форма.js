@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'КассаККМ',
+			name: 'КассаККМ.Представление',
 			width: 232,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:74px;top:32px;width:232px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ЗакрытиеКассовойСмены.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ЗакрытиеКассовойСмены.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ЗакрытиеКассовойСмены.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ЗакрытиеКассовойСмены.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -63,6 +91,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -57,7 +57,7 @@
 		{
 			xtype: 'label',
 			name: 'ВидОбъектов',
-			text: '',
+			text: 'ВидОбъектов',
 			style: 'position:absolute;left:268px;top:35px;width:258px;height:15px;',
 		},
 		{
@@ -69,7 +69,7 @@
 		{
 			xtype: 'label',
 			name: 'КоличествоОбъектов',
-			text: '',
+			text: 'КоличествоОбъектов',
 			style: 'position:absolute;left:268px;top:55px;width:258px;height:15px;',
 		},
 		{
@@ -81,7 +81,7 @@
 		{
 			xtype: 'label',
 			name: 'Действие',
-			text: '',
+			text: 'Действие',
 			style: 'position:absolute;left:268px;top:75px;width:258px;height:15px;',
 		},
 		{

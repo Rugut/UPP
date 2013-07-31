@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Владелец',
+			name: 'Владелец.Представление',
 			width: 427,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:137px;width:427px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -74,10 +102,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'РольКонтактногоЛица',
+			name: 'РольКонтактногоЛица.Представление',
 			width: 427,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:187px;width:427px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -117,10 +173,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидТелефонаКонтактногоЛица',
+			name: 'ВидТелефонаКонтактногоЛица.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:241px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -172,10 +256,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидЭлектроннойПочтыКонтактногоЛица',
+			name: 'ВидЭлектроннойПочтыКонтактногоЛица.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:314px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -240,10 +352,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Пол',
+			name: 'Пол.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:84px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -285,10 +425,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидЭлектроннойПочтыКонтактногоЛица2',
+			name: 'ВидЭлектроннойПочтыКонтактногоЛица2.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:339px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -310,10 +478,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидТелефонаКонтактногоЛица2',
+			name: 'ВидТелефонаКонтактногоЛица2.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:267px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.КонтактныеЛицаКонтрагентов.ФормаВводаНовогоСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -379,6 +575,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -37,6 +37,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -90,10 +91,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:90px;top:56px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -138,10 +167,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'СпособОтраженияРасходов',
+			name: 'СпособОтраженияРасходов.Представление',
 			width: 369,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:251px;top:124px;width:369px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -149,10 +206,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетУчетаБУВнеоборотногоАктива',
+			name: 'СчетУчетаБУВнеоборотногоАктива.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:251px;top:52px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -160,10 +245,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетУчетаНУВнеоборотногоАктива',
+			name: 'СчетУчетаНУВнеоборотногоАктива.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:251px;top:76px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -172,10 +285,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'НематериальныйАктив',
+			name: 'НематериальныйАктив.Представление',
 			width: 369,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:251px;top:28px;width:369px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -190,7 +331,7 @@
 		{
 			xtype: 'label',
 			name: 'ИнфоНадписьРасходыНаНИОКР',
-			text: '',
+			text: 'ИнфоНадписьРасходыНаНИОКР',
 			style: 'position:absolute;left:30px;top:148px;width:590px;height:56px;',
 		},
 					]
@@ -216,10 +357,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СпособПоступления',
+			name: 'СпособПоступления.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:75px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -246,10 +415,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СпособНачисленияАмортизацииБУ',
+			name: 'СпособНачисленияАмортизацииБУ.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:147px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -257,10 +454,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетУчетаБУ',
+			name: 'СчетУчетаБУ.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:27px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -268,10 +493,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетНачисленияАмортизацииБУ',
+			name: 'СчетНачисленияАмортизацииБУ.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:195px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -371,10 +624,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетУчетаНУ',
+			name: 'СчетУчетаНУ.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:27px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -461,10 +742,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'СчетНачисленияАмортизацииНУ',
+			name: 'СчетНачисленияАмортизацииНУ.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:471px;top:25px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -509,10 +818,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СпособНачисленияАмортизацииНУ',
+			name: 'СпособНачисленияАмортизацииНУ.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:238px;top:0px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -542,7 +879,7 @@
 		{
 			xtype: 'label',
 			name: 'ИнфоНадписьРавномерноеСписание',
-			text: '',
+			text: 'ИнфоНадписьРавномерноеСписание',
 			style: 'position:absolute;left:24px;top:55px;width:584px;height:15px;',
 		},
 		{
@@ -577,10 +914,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ПорядокСписанияНИОКРНаРасходыНУ',
+			name: 'ПорядокСписанияНИОКРНаРасходыНУ.Представление',
 			width: 234,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:212px;top:125px;width:234px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -668,10 +1033,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПорядокВключенияСтоимостиВСоставРасходовУСН',
+			name: 'ПорядокВключенияСтоимостиВСоставРасходовУСН.Представление',
 			width: 374,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:244px;top:75px;width:374px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -710,9 +1103,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуНМА/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПринятиеКУчетуНМА/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -764,10 +1160,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:416px;top:56px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ПринятиеКУчетуНМА.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',

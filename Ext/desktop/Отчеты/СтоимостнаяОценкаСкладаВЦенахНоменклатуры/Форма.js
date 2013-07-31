@@ -75,7 +75,7 @@
 		{
 			xtype: 'label',
 			name: 'Период',
-			text: '',
+			text: 'Период',
 			style: 'position:absolute;left:107px;top:0px;width:130px;height:19px;text-align:center;',
 		},
 		{
@@ -130,10 +130,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ТипЦен',
+			name: 'ТипЦен.Представление',
 			width: 180,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:61px;top:33px;width:180px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.СтоимостнаяОценкаСкладаВЦенахНоменклатуры.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

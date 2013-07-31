@@ -50,6 +50,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -204,30 +205,114 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ТипКвартиры',
+			name: 'ТипКвартиры.Представление',
 			width: 42,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:238px;top:120px;width:42px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ТипКорпуса',
+			name: 'ТипКорпуса.Представление',
 			width: 72,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:126px;top:120px;width:72px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ТипДома',
+			name: 'ТипДома.Представление',
 			width: 86,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:0px;top:120px;width:86px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.РедактированиеКонтактнойИнформации.ФормаЗаписиАдресаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},

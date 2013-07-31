@@ -120,10 +120,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация3',
+			name: 'Организация3.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -273,10 +301,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация2',
+			name: 'Организация2.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -343,10 +399,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ТарифПочтовогоСбора',
+			name: 'ТарифПочтовогоСбора.Представление',
 			width: 327,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:179px;top:427px;width:327px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -413,10 +497,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация6',
+			name: 'Организация6.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -469,10 +581,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация8',
+			name: 'Организация8.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -492,7 +632,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияРБП',
-			text: '',
+			text: 'НадписьОкончанияДействияРБП',
 			style: 'position:absolute;left:188px;top:263px;width:120px;height:19px;',
 		},
 		{
@@ -590,10 +730,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ОценочноеОбязательствоДляОтпуска',
+			name: 'ОценочноеОбязательствоДляОтпуска.Представление',
 			width: 460,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:46px;top:158px;width:460px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -606,10 +774,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация9',
+			name: 'Организация9.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -629,7 +825,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияОО',
-			text: '',
+			text: 'НадписьОкончанияДействияОО',
 			style: 'position:absolute;left:177px;top:300px;width:120px;height:19px;',
 		},
 		{
@@ -670,9 +866,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Резерв',
 					},
@@ -759,7 +958,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияПредельнаяВеличинаБазыСтраховыхВзносов',
-			text: '',
+			text: 'НадписьОкончанияДействияПредельнаяВеличинаБазыСтраховыхВзносов',
 			style: 'position:absolute;left:205px;top:284px;width:120px;height:19px;',
 		},
 		{
@@ -839,9 +1038,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Период',
 					},
@@ -936,9 +1138,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Организация',
 					},
@@ -1016,10 +1221,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Организация4',
+			name: 'Организация4.Представление',
 			width: 402,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:104px;top:347px;width:402px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -1111,10 +1344,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация5',
+			name: 'Организация5.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'numberfield',
@@ -1134,7 +1395,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияНДФЛ',
-			text: '',
+			text: 'НадписьОкончанияДействияНДФЛ',
 			style: 'position:absolute;left:173px;top:231px;width:120px;height:19px;',
 		},
 		{
@@ -1221,9 +1482,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкаПараметровУчета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ВидПособия',
 					},
@@ -1276,10 +1540,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ОбособленноеПодразделение',
+			name: 'ОбособленноеПодразделение.Представление',
 			width: 415,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:91px;top:52px;width:415px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -1353,7 +1645,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияОграниченияПособий',
-			text: '',
+			text: 'НадписьОкончанияДействияОграниченияПособий',
 			style: 'position:absolute;left:190px;top:74px;width:124px;height:19px;',
 		},
 		{
@@ -1439,7 +1731,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияСтавкиРефинансирования',
-			text: '',
+			text: 'НадписьОкончанияДействияСтавкиРефинансирования',
 			style: 'position:absolute;left:197px;top:98px;width:124px;height:19px;',
 		},
 		{
@@ -1463,7 +1755,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияМРОТ',
-			text: '',
+			text: 'НадписьОкончанияДействияМРОТ',
 			style: 'position:absolute;left:197px;top:181px;width:124px;height:19px;',
 		},
 		{
@@ -1513,10 +1805,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 419,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:87px;top:52px;width:419px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1538,7 +1858,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончанияДействияЛьготаЕСН',
-			text: '',
+			text: 'НадписьОкончанияДействияЛьготаЕСН',
 			style: 'position:absolute;left:234px;top:133px;width:100px;height:19px;',
 		},
 		{
@@ -1596,10 +1916,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'МетодПланированияУчетаЗатратНаПерсонал',
+			name: 'МетодПланированияУчетаЗатратНаПерсонал.Представление',
 			width: 316,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:190px;top:43px;width:316px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1703,6 +2051,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

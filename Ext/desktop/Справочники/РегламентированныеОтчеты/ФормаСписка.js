@@ -43,14 +43,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
+					fields: ['Картинка','Код','Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -96,14 +103,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентированныеОтчеты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -130,7 +144,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОписаниеОтчета',
-			text: '',
+			text: 'НадписьОписаниеОтчета',
 			style: 'position:absolute;left:8px;top:342px;width:661px;height:40px;',
 		},
 		{

@@ -55,13 +55,13 @@
 		{
 			xtype: 'label',
 			name: 'НадписьНомерВерсии',
-			text: '',
+			text: 'НадписьНомерВерсии',
 			style: 'position:absolute;left:154px;top:38px;width:83px;height:15px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьДатаВерсии',
-			text: '',
+			text: 'НадписьДатаВерсии',
 			style: 'position:absolute;left:154px;top:59px;width:83px;height:15px;',
 		},
 		{

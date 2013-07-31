@@ -93,9 +93,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентноеВосстановлениеСостоянияРасчетовОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РегламентноеВосстановлениеСостоянияРасчетовОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Пометка',
 					},
@@ -134,7 +137,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьХодПроцесса',
-			text: '',
+			text: 'НадписьХодПроцесса',
 			style: 'position:absolute;left:8px;top:328px;width:609px;height:19px;',
 		},
 		],
@@ -164,6 +167,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

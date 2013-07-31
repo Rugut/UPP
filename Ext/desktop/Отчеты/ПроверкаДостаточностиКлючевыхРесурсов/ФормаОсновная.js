@@ -27,10 +27,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидПланирования',
+			name: 'ВидПланирования.Представление',
 			width: 225,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:116px;top:60px;width:225px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -44,10 +72,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СценарийПлана',
+			name: 'СценарийПлана.Представление',
 			width: 225,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:116px;top:85px;width:225px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -101,10 +157,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'СценарийРесурсов',
+			name: 'СценарийРесурсов.Представление',
 			width: 225,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:116px;top:110px;width:225px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПроверкаДостаточностиКлючевыхРесурсов.ФормаОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],
@@ -133,6 +217,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

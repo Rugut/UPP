@@ -251,10 +251,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПредставительФЛ_Гражданство',
+			name: 'ПредставительФЛ_Гражданство.Представление',
 			width: 139,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:95px;top:158px;width:139px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -376,10 +404,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПредставительУЛ_Гражданство',
+			name: 'ПредставительУЛ_Гражданство.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:88px;top:158px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -654,10 +710,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ДоверительФЛ_Гражданство',
+			name: 'ДоверительФЛ_Гражданство.Представление',
 			width: 139,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:95px;top:158px;width:139px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -760,10 +844,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ДоверительУЛ_Гражданство',
+			name: 'ДоверительУЛ_Гражданство.Представление',
 			width: 140,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:88px;top:158px;width:140px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1048,10 +1160,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 384,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:107px;top:33px;width:384px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			id: 'ПолномочияПредставителя',
@@ -1081,14 +1221,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоверенностиНалогоплательщика").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоверенностиНалогоплательщика").data,
+					fields: ['ОбластьПолномочий','ОКАТО','КПП',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоверенностиНалогоплательщика/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ОбластьПолномочий',
 					},
@@ -1161,6 +1308,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

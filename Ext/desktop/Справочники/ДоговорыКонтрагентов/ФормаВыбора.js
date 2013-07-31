@@ -43,25 +43,25 @@
 				{
 					text:'Валюта',
 					width:'60',
-					dataIndex:'ВалютаВзаиморасчетов',
+					dataIndex:'ВалютаВзаиморасчетов.Представление',
 					flex:1,
 				},
 				{
 					text:'Организация',
 					width:'95',
-					dataIndex:'Организация',
+					dataIndex:'Организация.Представление',
 					flex:1,
 				},
 				{
 					text:'Взаиморасчеты',
 					width:'107',
-					dataIndex:'ВедениеВзаиморасчетов',
+					dataIndex:'ВедениеВзаиморасчетов.Представление',
 					flex:1,
 				},
 				{
 					text:'Вид договора',
 					width:'131',
-					dataIndex:'ВидДоговора',
+					dataIndex:'ВидДоговора.Представление',
 					flex:1,
 				},
 				{
@@ -97,14 +97,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+					fields: ['Картинка','Код','Наименование','ВалютаВзаиморасчетов.Представление','Организация.Представление','ВедениеВзаиморасчетов.Представление','ВидДоговора.Представление','Номер','Дата','Владелец','ОсновнойПроект','СрокДействия',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -177,14 +184,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

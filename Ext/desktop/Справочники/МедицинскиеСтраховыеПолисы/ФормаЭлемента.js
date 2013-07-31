@@ -57,10 +57,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Физлицо',
+			name: 'Физлицо.Представление',
 			width: 307,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:145px;top:33px;width:307px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -73,10 +101,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидСтрахования',
+			name: 'ВидСтрахования.Представление',
 			width: 307,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:145px;top:83px;width:307px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -125,10 +181,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПрограммаСтрахования',
+			name: 'ПрограммаСтрахования.Представление',
 			width: 307,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:145px;top:108px;width:307px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -156,10 +240,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Пол',
+			name: 'Пол.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:145px;top:256px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -249,10 +361,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 307,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:145px;top:58px;width:307px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.МедицинскиеСтраховыеПолисы.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -310,6 +450,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

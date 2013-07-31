@@ -108,10 +108,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Статус',
+			name: 'Статус.Представление',
 			width: 119,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:47px;top:3px;width:119px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.РегламентированныйОтчетФорма5.ФормаОтчета2006Кв4События'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегламентированныйОтчетФорма5.ФормаОтчета2006Кв4События");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.РегламентированныйОтчетФорма5.ФормаОтчета2006Кв4События'], function ()
+					{
+						var объект = Ext.create("Отчеты.РегламентированныйОтчетФорма5.ФормаОтчета2006Кв4События");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},

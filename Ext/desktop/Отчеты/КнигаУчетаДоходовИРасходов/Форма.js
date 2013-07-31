@@ -33,10 +33,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:424px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаУчетаДоходовИРасходов.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаУчетаДоходовИРасходов.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.КнигаУчетаДоходовИРасходов.ФормаСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.КнигаУчетаДоходовИРасходов.ФормаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -61,7 +89,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПериодСоставленияОтчета',
-			text: '',
+			text: 'НадписьПериодСоставленияОтчета',
 			style: 'position:absolute;left:184px;top:33px;width:120px;height:19px;text-align:center;',
 		},
 		{

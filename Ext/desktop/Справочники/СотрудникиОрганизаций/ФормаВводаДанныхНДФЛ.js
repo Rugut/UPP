@@ -89,14 +89,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['Период','ВычетыЛичныеТекст','ВычетыЛичныеПрименение','КодВычетаЛичный','Основание',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Период',
 					},
@@ -190,14 +197,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['КолонкаПериод','Период','ПериодЗавершения','ВычетыНаДетейТекст','ВычетыНаДетейПрименение','КодВычетаНаДетей','КоличествоДетей','Основание',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'КолонкаПериод',
 					},
@@ -291,7 +305,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОкончаниеДействияСтатусаНДФЛ',
-			text: '',
+			text: 'НадписьОкончаниеДействияСтатусаНДФЛ',
 			style: 'position:absolute;left:242px;top:62px;width:100px;height:19px;',
 		},
 		{
@@ -394,14 +408,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
+					fields: ['МесяцНалоговогоПериода','Размер',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СотрудникиОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'МесяцНалоговогоПериода',
 					},

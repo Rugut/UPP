@@ -31,14 +31,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПроизвольныеОтчеты/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -65,7 +72,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьОписание',
-			text: '',
+			text: 'НадписьОписание',
 			style: 'position:absolute;left:65px;top:306px;width:325px;height:31px;',
 		},
 		{

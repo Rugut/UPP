@@ -48,7 +48,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПредупреждения',
-			text: '',
+			text: 'НадписьПредупреждения',
 			style: 'position:absolute;left:8px;top:8px;width:492px;height:56px;',
 		},
 		],

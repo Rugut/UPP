@@ -76,7 +76,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСсылкаПоддерживаемоеТО',
-			text: '',
+			text: 'НадписьСсылкаПоддерживаемоеТО',
 			style: 'position:absolute;left:203px;top:326px;width:423px;height:19px;',
 		},
 		{
@@ -193,9 +193,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -287,9 +290,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -342,7 +348,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьКаталогПоУмолчанию',
-			text: '',
+			text: 'НадписьКаталогПоУмолчанию',
 			style: 'position:absolute;left:203px;top:326px;width:428px;height:19px;',
 		},
 		{
@@ -420,9 +426,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},
@@ -460,10 +469,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'КассаККМ',
+			name: 'КассаККМ.Представление',
 			width: 394,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:232px;top:259px;width:394px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -491,9 +528,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТОНастройка/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Модель',
 					},
@@ -550,10 +590,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'КассаККМДобавлениеНовогоУстройства',
+			name: 'КассаККМДобавлениеНовогоУстройства.Представление',
 			width: 375,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:251px;top:326px;width:375px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия'], function ()
+					{
+						var объект = Ext.create("Обработки.ТОНастройка.ФормаПомощникаНастроекСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},

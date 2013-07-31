@@ -26,10 +26,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ДокументВид',
+			name: 'ДокументВид.Представление',
 			width: 204,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:118px;top:8px;width:204px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаВводаУдостоверенияСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаВводаУдостоверенияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаВводаУдостоверенияСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаВводаУдостоверенияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -122,6 +150,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

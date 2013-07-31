@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
@@ -203,6 +205,8 @@ namespace Gen
             ПолучитьМодулиОбъектовПоЗапросу(ОбработатьФайл, МодульОсновнойФормыОбработки);
         }
 
+        private readonly static Regex ОбработкаЮникодПоследовательности = new Regex(@"\\[uU]([0-9A-F]{4})");
+
         public void ПолучитьДанныеОбъектовПоЗапросу(ОбработатьФайл ОбработатьФайл, string ТекстЗапроса)
         {
             //Console.WriteLine(ТекстЗапроса);
@@ -243,6 +247,10 @@ namespace Gen
                                             поток.Append(readStream.ReadLine());
                                         }
                                         var ответ = поток.ToString().Trim('{').Trim('}');
+
+
+                                        ответ = ОбработкаЮникодПоследовательности.Replace(ответ, Match => ((char)Int32.Parse(Match.Value.Substring(2), NumberStyles.HexNumber)).ToString(CultureInfo.InvariantCulture));
+
                                         ответ = string.Format(@"
                                     Ext.define('Данные.Справочники.{0}',
                                     {{

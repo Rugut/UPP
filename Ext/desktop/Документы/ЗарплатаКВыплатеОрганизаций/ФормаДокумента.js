@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 303,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:33px;width:303px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -76,10 +104,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 224,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:518px;top:56px;width:224px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -170,9 +226,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплатеОрганизаций/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ЗарплатаКВыплатеОрганизаций/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -231,7 +290,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьПредупреждение',
-			text: '',
+			text: 'НадписьПредупреждение',
 			style: 'position:absolute;left:31px;top:436px;width:711px;height:33px;',
 		},
 		{
@@ -246,10 +305,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПодразделениеОрганизации',
+			name: 'ПодразделениеОрганизации.Представление',
 			width: 303,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:56px;width:303px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -282,10 +369,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ХарактерВыплаты',
+			name: 'ХарактерВыплаты.Представление',
 			width: 303,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:113px;top:31px;width:303px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -328,10 +443,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СпособВыплаты',
+			name: 'СпособВыплаты.Представление',
 			width: 92,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:324px;top:6px;width:92px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -350,10 +493,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Банк',
+			name: 'Банк.Представление',
 			width: 217,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:87px;top:0px;width:217px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ЗарплатаКВыплатеОрганизаций.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -372,7 +543,7 @@
 		{
 			xtype: 'label',
 			name: 'ИнформационнаяНадписьПараметрыЗаполнения',
-			text: '',
+			text: 'ИнформационнаяНадписьПараметрыЗаполнения',
 			style: 'position:absolute;left:126px;top:165px;width:616px;height:33px;',
 		},
 		{
@@ -562,6 +733,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

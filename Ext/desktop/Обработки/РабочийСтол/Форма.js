@@ -1659,7 +1659,7 @@
 		{
 			xtype: 'label',
 			name: 'ОсновнаяОрганизация',
-			text: '',
+			text: 'ОсновнаяОрганизация',
 			style: 'position:absolute;left:218px;top:0px;width:275px;height:42px;',
 		},
 		{
@@ -2412,9 +2412,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РабочийСтол/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПредставлениеСсылки',
 					},

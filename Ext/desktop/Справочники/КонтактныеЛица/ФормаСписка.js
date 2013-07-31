@@ -79,7 +79,7 @@
 				{
 					text:'Пол',
 					width:'80',
-					dataIndex:'Пол',
+					dataIndex:'Пол.Представление',
 					flex:1,
 				},
 				{
@@ -91,14 +91,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
+					fields: ['Картинка','Код','ФИО','ДатаРождения','Имя','КоличествоДнейДоНапоминания','НапоминатьОДнеРождения','Описание','Отчество','Пол.Представление','Фамилия',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/КонтактныеЛица/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

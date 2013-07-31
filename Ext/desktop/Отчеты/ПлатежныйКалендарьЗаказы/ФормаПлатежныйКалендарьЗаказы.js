@@ -111,10 +111,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ДетализацияПоПериодам',
+			name: 'ДетализацияПоПериодам.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:470px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ПлатежныйКалендарьЗаказы.ФормаПлатежныйКалендарьЗаказыСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПлатежныйКалендарьЗаказы.ФормаПлатежныйКалендарьЗаказыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ПлатежныйКалендарьЗаказы.ФормаПлатежныйКалендарьЗаказыСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ПлатежныйКалендарьЗаказы.ФормаПлатежныйКалендарьЗаказыСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

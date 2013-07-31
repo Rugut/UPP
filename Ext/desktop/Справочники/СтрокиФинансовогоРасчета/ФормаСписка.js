@@ -43,7 +43,7 @@
 				{
 					text:'Вид строки',
 					width:'120',
-					dataIndex:'ВидСтроки',
+					dataIndex:'ВидСтроки.Представление',
 					flex:1,
 				},
 				{
@@ -61,14 +61,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СтрокиФинансовогоРасчета").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СтрокиФинансовогоРасчета").data,
+					fields: ['Картинка','Код','Наименование','ВидСтроки.Представление','Измерение','Формула',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтрокиФинансовогоРасчета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СтрокиФинансовогоРасчета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},

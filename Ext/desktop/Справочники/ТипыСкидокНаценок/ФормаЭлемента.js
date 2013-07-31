@@ -66,10 +66,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Валюта',
+			name: 'Валюта.Представление',
 			width: 68,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:391px;top:6px;width:68px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -97,10 +125,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'Условие',
+			name: 'Условие.Представление',
 			width: 344,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:115px;top:129px;width:344px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -124,10 +180,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Качество',
+			name: 'Качество.Представление',
 			width: 344,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:115px;top:61px;width:344px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -155,10 +239,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидСкидки',
+			name: 'ВидСкидки.Представление',
 			width: 219,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:115px;top:6px;width:219px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -222,14 +334,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ТипыСкидокНаценок").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ТипыСкидокНаценок").data,
+					fields: ['Выбран','ДеньНедели','ВремяНачала','ВремяОкончания',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыСкидокНаценок/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ТипыСкидокНаценок/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Выбран',
 					},
@@ -327,6 +446,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

@@ -101,9 +101,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/МониторЭффективности/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Представление',
 					},
@@ -163,7 +166,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьТекстОписания',
-			text: '',
+			text: 'НадписьТекстОписания',
 			style: 'position:absolute;left:69px;top:260px;width:723px;height:28px;',
 		},
 		{
@@ -191,6 +194,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{

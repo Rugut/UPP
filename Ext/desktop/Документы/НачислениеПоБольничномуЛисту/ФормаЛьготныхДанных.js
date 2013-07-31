@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОграничениеПособияБезЛьгот1',
+			name: 'ОграничениеПособияБезЛьгот1.Представление',
 			width: 351,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:229px;top:73px;width:351px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -138,10 +166,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОграничениеПособия',
+			name: 'ОграничениеПособия.Представление',
 			width: 172,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:217px;top:48px;width:172px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -170,10 +226,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОграничениеПособияБезЛьгот2',
+			name: 'ОграничениеПособияБезЛьгот2.Представление',
 			width: 172,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:408px;top:48px;width:172px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.НачислениеПоБольничномуЛисту.ФормаЛьготныхДанныхСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},

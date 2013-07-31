@@ -43,7 +43,7 @@
 				{
 					text:'Статья баланса',
 					width:'264',
-					dataIndex:'СтатьяБаланса',
+					dataIndex:'СтатьяБаланса.Представление',
 					flex:1,
 				},
 				{
@@ -55,14 +55,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СчетаБюджета").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СчетаБюджета").data,
+					fields: ['Картинка','Код','Наименование','СтатьяБаланса.Представление','Знак',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -114,14 +121,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.СчетаБюджета").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.СчетаБюджета").data,
+					fields: ['Наименование',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/СчетаБюджета/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Наименование',
 					},

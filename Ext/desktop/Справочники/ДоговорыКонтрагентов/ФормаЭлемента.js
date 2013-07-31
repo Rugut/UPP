@@ -93,10 +93,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Родитель',
+			name: 'Родитель.Представление',
 			width: 397,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:106px;top:81px;width:397px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'toolbar',
@@ -116,6 +144,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -141,10 +170,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВалютаВзаиморасчетов',
+			name: 'ВалютаВзаиморасчетов.Представление',
 			width: 80,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:405px;top:25px;width:80px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -206,10 +263,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидВзаиморасчетов',
+			name: 'ВидВзаиморасчетов.Представление',
 			width: 335,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:150px;top:88px;width:335px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -337,10 +422,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СпособРасчетаКомиссионногоВознаграждения',
+			name: 'СпособРасчетаКомиссионногоВознаграждения.Представление',
 			width: 228,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:98px;width:228px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -389,10 +502,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОсновнаяСтатьяДвиженияДенежныхСредств',
+			name: 'ОсновнаяСтатьяДвиженияДенежныхСредств.Представление',
 			width: 363,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:50px;width:363px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -428,10 +569,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'НаименованиеДляСчетаФактурыНаАванс',
+			name: 'НаименованиеДляСчетаФактурыНаАванс.Представление',
 			width: 478,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:7px;top:108px;width:478px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'tabpanel',
@@ -456,10 +625,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ПорядокРегистрацииСчетовФактурНаАвансПоДоговору',
+			name: 'ПорядокРегистрацииСчетовФактурНаАвансПоДоговору.Представление',
 			width: 478,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:0px;top:24px;width:478px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -498,10 +695,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидАгентскогоДоговора',
+			name: 'ВидАгентскогоДоговора.Представление',
 			width: 339,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:146px;top:41px;width:339px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -520,10 +745,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'НаименованиеДляСчетаФактурыНаАванс1',
+			name: 'НаименованиеДляСчетаФактурыНаАванс1.Представление',
 			width: 478,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:7px;top:84px;width:478px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',
@@ -596,14 +849,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+					fields: ['Картинка','Дата','Номер','ДатаНачала','Периодичность','СуммаУсловийДоговора',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Картинка',
 					},
@@ -654,10 +914,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ВидУсловийДоговора',
+			name: 'ВидУсловийДоговора.Представление',
 			width: 345,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:142px;top:6px;width:345px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -765,14 +1053,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+					fields: ['ПолучательСкидки','Номенклатура','Характеристика','Качество','Условие','ЗначениеУсловия','Процент','Валюта','ДеньНедели','ВремяНачала','ВремяОкончания','Начало','Окончание','УстановкаСкидокНоменклатуры','ОтменаСкидок',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПолучательСкидки',
 					},
@@ -912,14 +1207,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+					fields: ['ПометкаУдаления','Свойство','Значение',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -983,14 +1285,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
+					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДоговорыКонтрагентов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ПометкаУдаления',
 					},
@@ -1042,10 +1351,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Владелец',
+			name: 'Владелец.Представление',
 			width: 397,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:106px;top:57px;width:397px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -1063,10 +1400,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 397,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:106px;top:33px;width:397px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'textfield',

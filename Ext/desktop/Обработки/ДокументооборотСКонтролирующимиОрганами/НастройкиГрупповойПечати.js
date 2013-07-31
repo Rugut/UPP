@@ -45,7 +45,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись3',
-			text: '',
+			text: 'Надпись3',
 			style: 'position:absolute;left:149px;top:8px;width:73px;height:15px;text-align:center;',
 		},
 		{

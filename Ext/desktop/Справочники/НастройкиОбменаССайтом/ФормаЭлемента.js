@@ -233,10 +233,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'УзелОбменаТоварами',
+			name: 'УзелОбменаТоварами.Представление',
 			width: 268,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:135px;top:0px;width:268px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -259,10 +287,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'УзелОбменаЗаказами',
+			name: 'УзелОбменаЗаказами.Представление',
 			width: 268,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:135px;top:0px;width:268px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -357,14 +413,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.НастройкиОбменаССайтом").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.НастройкиОбменаССайтом").data,
+					fields: ['Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаССайтом/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/НастройкиОбменаССайтом/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'Использование',
 					},
@@ -463,10 +526,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 299,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:185px;top:51px;width:299px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -474,10 +565,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 299,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:185px;top:75px;width:299px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -485,10 +604,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Подразделение',
+			name: 'Подразделение.Представление',
 			width: 299,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:185px;top:99px;width:299px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'combobox',
@@ -500,10 +647,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ГруппаДляНовыхКонтрагентов',
+			name: 'ГруппаДляНовыхКонтрагентов.Представление',
 			width: 299,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:185px;top:144px;width:299px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -511,10 +686,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ГруппаДляНовойНоменклатуры',
+			name: 'ГруппаДляНовойНоменклатуры.Представление',
 			width: 299,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:185px;top:168px;width:299px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'trigger',
@@ -522,10 +725,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ЕдиницаИзмеренияНовойНоменклатуры',
+			name: 'ЕдиницаИзмеренияНовойНоменклатуры.Представление',
 			width: 299,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:185px;top:192px;width:299px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -739,6 +970,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

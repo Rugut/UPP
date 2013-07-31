@@ -92,9 +92,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -175,7 +178,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись2',
-			text: '',
+			text: 'Надпись2',
 			style: 'position:absolute;left:263px;top:26px;width:375px;height:15px;',
 		},
 		{
@@ -265,7 +268,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись40',
-			text: '',
+			text: 'Надпись40',
 			style: 'position:absolute;left:166px;top:8px;width:472px;height:17px;',
 		},
 		{
@@ -328,7 +331,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись42',
-			text: '',
+			text: 'Надпись42',
 			style: 'position:absolute;left:257px;top:0px;width:375px;height:15px;',
 		},
 		{
@@ -340,7 +343,7 @@
 		{
 			xtype: 'label',
 			name: 'Надпись52',
-			text: '',
+			text: 'Надпись52',
 			style: 'position:absolute;left:257px;top:0px;width:375px;height:15px;',
 		},
 		{
@@ -384,6 +387,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

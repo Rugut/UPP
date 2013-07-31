@@ -86,10 +86,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ТипРаспределения',
+			name: 'ТипРаспределения.Представление',
 			width: 164,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:124px;top:111px;width:164px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -102,10 +130,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ТипИзменения',
+			name: 'ТипИзменения.Представление',
 			width: 164,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:124px;top:135px;width:164px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаАвтозаполненияСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -140,6 +196,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

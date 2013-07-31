@@ -28,10 +28,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'СпособОтраженияВБухучете',
+			name: 'СпособОтраженияВБухучете.Представление',
 			width: 498,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:8px;top:27px;width:498px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -45,15 +73,43 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'ОтнесениеРасходовКДеятельностиЕНВД',
+			name: 'ОтнесениеРасходовКДеятельностиЕНВД.Представление',
 			width: 498,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:8px;top:121px;width:498px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ДоговорНаВыполнениеРаботСФизЛицом.ФормаОтраженияВУчетеСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
 			name: 'НадписьРасшифровкаОтражениеВБухучете',
-			text: '',
+			text: 'НадписьРасшифровкаОтражениеВБухучете',
 			style: 'position:absolute;left:8px;top:46px;width:498px;height:56px;text-align:left;',
 		},
 		],

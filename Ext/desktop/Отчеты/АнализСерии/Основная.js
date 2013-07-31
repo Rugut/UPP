@@ -49,10 +49,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Номенклатура',
+			name: 'Номенклатура.Представление',
 			width: 205,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:260px;top:33px;width:205px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.АнализСерии.ОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.АнализСерии.ОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.АнализСерии.ОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.АнализСерии.ОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -71,10 +99,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
-			name: 'Серия',
+			name: 'Серия.Представление',
 			width: 205,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:522px;top:33px;width:205px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.АнализСерии.ОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.АнализСерии.ОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.АнализСерии.ОсновнаяСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.АнализСерии.ОсновнаяСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		],
 	}],

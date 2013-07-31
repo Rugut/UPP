@@ -48,25 +48,25 @@
 		{
 			xtype: 'label',
 			name: 'НалоговыйОрган',
-			text: '',
+			text: 'НалоговыйОрган',
 			style: 'position:absolute;left:111px;top:153px;width:689px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'Организация',
-			text: '',
+			text: 'Организация',
 			style: 'position:absolute;left:111px;top:178px;width:689px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'НомерДокумента',
-			text: '',
+			text: 'НомерДокумента',
 			style: 'position:absolute;left:111px;top:102px;width:691px;height:19px;',
 		},
 		{
 			xtype: 'label',
 			name: 'ДатаДокумента',
-			text: '',
+			text: 'ДатаДокумента',
 			style: 'position:absolute;left:111px;top:127px;width:691px;height:19px;',
 		},
 		{
@@ -101,9 +101,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ДокументооборотСКонтролирующимиОрганами/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'ИмяФайла',
 					},
@@ -249,6 +252,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

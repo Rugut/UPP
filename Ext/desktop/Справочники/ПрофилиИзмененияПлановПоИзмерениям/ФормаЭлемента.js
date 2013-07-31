@@ -41,10 +41,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидРаспределения',
+			name: 'ВидРаспределения.Представление',
 			width: 344,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:84px;width:344px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -57,10 +85,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-trigger-square',
-			name: 'ИзмерениеБюджетирования',
+			name: 'ИзмерениеБюджетирования.Представление',
 			width: 344,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:57px;width:344px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -74,10 +130,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ИсточникДанных',
+			name: 'ИсточникДанных.Представление',
 			width: 344,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:122px;top:108px;width:344px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -137,14 +221,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоИзмерениям").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоИзмерениям").data,
+					fields: ['НомерСтроки','ЭлементУправленческойАналитики','ПроцентДляРаспределения',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрофилиИзмененияПлановПоИзмерениям/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -232,6 +323,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

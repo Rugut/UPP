@@ -18,7 +18,7 @@
 		{
 			xtype: 'label',
 			name: 'Предмет',
-			text: '',
+			text: 'Предмет',
 			style: 'position:absolute;left:14px;top:136px;width:330px;height:15px;',
 		},
 		{
@@ -30,7 +30,7 @@
 		{
 			xtype: 'label',
 			name: 'Организация',
-			text: '',
+			text: 'Организация',
 			style: 'position:absolute;left:89px;top:76px;width:255px;height:16px;',
 		},
 		{
@@ -42,7 +42,7 @@
 		{
 			xtype: 'label',
 			name: 'КодОрганаФСС',
-			text: '',
+			text: 'КодОрганаФСС',
 			style: 'position:absolute;left:89px;top:95px;width:255px;height:15px;',
 		},
 		{
@@ -125,7 +125,7 @@
 		{
 			xtype: 'label',
 			name: 'ДатаОтправки',
-			text: '',
+			text: 'ДатаОтправки',
 			style: 'position:absolute;left:64px;top:180px;width:103px;height:15px;text-align:left;',
 		},
 		{
@@ -160,6 +160,7 @@
 				},
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

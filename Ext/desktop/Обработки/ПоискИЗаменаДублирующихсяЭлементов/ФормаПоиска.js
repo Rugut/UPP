@@ -29,9 +29,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПоискИЗаменаДублирующихсяЭлементов/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 				]
 			},
 			listeners:
@@ -55,7 +58,7 @@
 		{
 			xtype: 'label',
 			name: 'НадписьСообщение',
-			text: '',
+			text: 'НадписьСообщение',
 			style: 'position:absolute;left:8px;top:2px;width:659px;height:28px;',
 		},
 		],

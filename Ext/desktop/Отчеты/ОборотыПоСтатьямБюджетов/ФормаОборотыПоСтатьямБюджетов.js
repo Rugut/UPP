@@ -73,10 +73,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Сценарий',
+			name: 'Сценарий.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -91,10 +119,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'СтатьяБаланса',
+			name: 'СтатьяБаланса.Представление',
 			width: 137,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:492px;top:57px;width:137px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -147,10 +203,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидДанныхОтчета',
+			name: 'ВидДанныхОтчета.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:98px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия'], function ()
+					{
+						var объект = Ext.create("Отчеты.ОборотыПоСтатьямБюджетов.ФормаОборотыПоСтатьямБюджетовСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',

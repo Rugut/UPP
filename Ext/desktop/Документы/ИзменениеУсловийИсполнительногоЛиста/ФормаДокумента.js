@@ -53,10 +53,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Физлицо',
+			name: 'Физлицо.Представление',
 			width: 246,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:100px;top:57px;width:246px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -70,10 +98,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 246,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:100px;top:33px;width:246px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -149,10 +205,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ПолеВвода5',
+			name: 'ПолеВвода5.Представление',
 			width: 246,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:454px;top:57px;width:246px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'fieldset',
@@ -198,10 +282,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ТарифБанкаНаДенежныеПереводы',
+			name: 'ТарифБанкаНаДенежныеПереводы.Представление',
 			width: 182,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -224,10 +336,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Тариф',
+			name: 'Тариф.Представление',
 			width: 182,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:180px;top:23px;width:182px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -274,10 +414,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ПрожиточныйМинимум',
+			name: 'ПрожиточныйМинимум.Представление',
 			width: 232,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:265px;top:243px;width:232px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -291,10 +459,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ИсполнительныйЛист',
+			name: 'ИсполнительныйЛист.Представление',
 			width: 246,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:100px;top:86px;width:246px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.ИзменениеУсловийИсполнительногоЛиста.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'datefield',
@@ -401,6 +597,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

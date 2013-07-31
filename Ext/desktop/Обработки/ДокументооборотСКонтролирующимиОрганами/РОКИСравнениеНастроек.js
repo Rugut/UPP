@@ -24,7 +24,7 @@
 		{
 			xtype: 'label',
 			name: 'СтароеЗначение',
-			text: '',
+			text: 'СтароеЗначение',
 			style: 'position:absolute;left:126px;top:8px;width:512px;height:15px;',
 		},
 		{
@@ -36,7 +36,7 @@
 		{
 			xtype: 'label',
 			name: 'НовоеЗначение',
-			text: '',
+			text: 'НовоеЗначение',
 			style: 'position:absolute;left:126px;top:29px;width:512px;height:15px;',
 		},
 		],

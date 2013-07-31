@@ -83,14 +83,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
+					fields: ['НомерСтроки','РабочийЦентр','Приоритет',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -153,14 +160,21 @@
 			],
 			store:
 			{
-				data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
+					fields: ['НомерСтроки','РабочийЦентр',]
+				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ГруппыЗаменяемостиРабочихЦентров/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -222,6 +236,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

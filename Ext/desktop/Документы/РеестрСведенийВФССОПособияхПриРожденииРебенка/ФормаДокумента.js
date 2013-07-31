@@ -59,10 +59,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация',
+			name: 'Организация.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:33px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -77,10 +105,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Ответственный',
+			name: 'Ответственный.Представление',
 			width: 220,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:57px;width:220px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -169,9 +225,12 @@
 				pageSize: 50,
 				restful: true,
 				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОПособияхПриРожденииРебенка/ВыбратьПоСсылке/100', timeout: 3},
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/РеестрСведенийВФССОПособияхПриРожденииРебенка/ВыбратьПоСсылке/100', timeout: 200},
 				fields:
 				[
+					{
+						name:'Ссылка',
+					},
 					{
 						name:'НомерСтроки',
 					},
@@ -277,10 +336,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'ВидДокументаУдостоверяющегоЛичность',
+			name: 'ВидДокументаУдостоверяющегоЛичность.Представление',
 			width: 273,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:96px;top:130px;width:273px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -373,10 +460,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'Банк',
+			name: 'Банк.Представление',
 			width: 255,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:194px;top:256px;width:255px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -502,10 +617,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'Пол',
+			name: 'Пол.Представление',
 			width: 160,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:483px;top:30px;width:160px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'button',
@@ -530,10 +673,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'СтатусНалогоплательщика',
+			name: 'СтатусНалогоплательщика.Представление',
 			width: 267,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:376px;top:54px;width:267px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1031,10 +1202,38 @@
 			hideLabel: true,
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
-			name: 'ВидСправкиОРожденииРебенка',
+			name: 'ВидСправкиОРожденииРебенка.Представление',
 			width: 84,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:118px;top:25px;width:84px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 					]
 				},
@@ -1059,10 +1258,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'Руководитель',
+			name: 'Руководитель.Представление',
 			width: 320,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:121px;top:140px;width:320px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1077,10 +1304,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ДолжностьРуководителя',
+			name: 'ДолжностьРуководителя.Представление',
 			width: 320,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:555px;top:140px;width:320px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1221,10 +1476,38 @@
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-clear-trigger',
 			trigger3Cls: 'x-form-search-trigger',
-			name: 'ГлавныйБухгалтер',
+			name: 'ГлавныйБухгалтер.Представление',
 			width: 320,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:121px;top:166px;width:320px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'checkbox',
@@ -1247,10 +1530,38 @@
 			disabled: false,
 			trigger1Cls: 'x-form-select-trigger',
 			trigger2Cls: 'x-form-search-trigger',
-			name: 'РеестрСоставил',
+			name: 'РеестрСоставил.Представление',
 			width: 172,
 			height: 19,
+			Хранилище:'Ссылка',
 			style: 'position:absolute;left:424px;top:57px;width:172px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
+					{
+						var объект = Ext.create("Документы.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
 		},
 		{
 			xtype: 'label',
@@ -1321,6 +1632,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},
