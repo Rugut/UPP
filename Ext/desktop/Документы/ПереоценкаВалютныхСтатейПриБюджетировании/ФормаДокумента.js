@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Переоценка валютных статей при бюджетировании',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,33 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:356px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись3',
@@ -263,34 +291,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:356px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:356px;height:25px;',

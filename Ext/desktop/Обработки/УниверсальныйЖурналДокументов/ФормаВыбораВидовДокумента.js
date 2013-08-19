@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор объектов: Документ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -16,17 +17,8 @@
 		items:
 		[
 		{
-			xtype: 'itemselector',
-			style: 'position:absolute;left:8px;top:31px;width:276px;height:226px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:6px;width:276px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -37,6 +29,14 @@
 				},
 			]
 		},
+		{
+			xtype: 'itemselector',
+			style: 'position:absolute;left:8px;top:31px;width:276px;height:226px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:265px;width:292px;height:25px;',

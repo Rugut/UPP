@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет по модели бюджетирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -75,6 +76,38 @@
 			xtype: 'checkbox',
 			boxLabel: 'Регламентный расчет',
 			style: 'position:absolute;left:223px;top:59px;width:134px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:751px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Выполнить расчет',
+				},
+				{
+					text:'Просмотр операций',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -449,6 +482,34 @@
 			style: 'position:absolute;left:410px;top:174px;width:102px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:175px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'Предыдущая строка',
+				},
+				{
+					text:'Следующая строка',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'ТекстНомерСтрокиОбороты',
 			text: 'Строка 1 из 5',
@@ -715,15 +776,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОборотыПоСтатьямБюджетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:720px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -941,15 +1011,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:363px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+			]
 		},
 					]
 				},
@@ -1005,15 +1099,42 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДополнительныеИсточникиДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:363px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+			]
 		},
 					]
 				},
@@ -1038,39 +1159,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:751px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				{
-					text:'Выполнить расчет',
-				},
-				{
-					text:'Просмотр операций',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:751px;height:25px;',

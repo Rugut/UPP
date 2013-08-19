@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -154,6 +155,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:102px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -224,15 +227,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Детализация');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализСчетаБюджетирование.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:45px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -250,6 +262,13 @@
 					title:'Детализация кор. счетов',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ПравилаВыводаИтогов',
 			xtype: 'grid',
@@ -307,11 +326,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПравилаВыводаИтогов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализСчетаБюджетирование.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -407,15 +428,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализСчетаБюджетирование.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

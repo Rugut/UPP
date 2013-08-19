@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заказы поставщикам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:748px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ТаблицаЗаказов',
 			xtype: 'grid',
@@ -117,11 +125,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаЗаказов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаОтображенияЗаказовПоставщикамСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаОтображенияЗаказовПоставщикамСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -131,14 +141,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:748px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировка прочих затрат',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -443,11 +444,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Затраты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -825,15 +828,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Получатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаПрочихЗатрат.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},

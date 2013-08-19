@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Планирование обучения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -109,6 +110,45 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:408px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Распределить на период',
+				},
+			]
+		},
+		{
 			id: 'УчебныйПлан',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:97px;width:408px;height:160px;',
@@ -174,69 +214,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УчебныйПлан');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланированиеОбучения.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланированиеОбучения.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учебный план',
-			style: 'position:absolute;left:8px;top:57px;width:408px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:408px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Распределить на период',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:424px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -271,6 +263,15 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Учебный план',
+			style: 'position:absolute;left:8px;top:57px;width:408px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:313px;width:424px;height:25px;',

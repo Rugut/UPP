@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Печать прайс-листа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,48 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:671px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Сформировать',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:7px;top:57px;width:657px;height:46px;',
@@ -38,6 +81,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:109px;top:1px;width:102px;height:19px;',
+			width: 102,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -52,6 +97,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:109px;top:24px;width:102px;height:20px;',
+			width: 102,
+			height: 20,
 		},
 		{
 			xtype: 'textfield',
@@ -78,6 +125,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:116px;top:105px;width:102px;height:19px;',
+			width: 102,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -151,49 +200,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:671px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Сформировать',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Отбор',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

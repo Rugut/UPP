@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Транспортные упаковки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -105,18 +106,17 @@
 			name: 'НомерУпаковки',
 			style: 'position:absolute;left:101px;top:33px;width:35px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:108px;width:400px;height:25px;',

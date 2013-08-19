@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Утверждение схемы мотивации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,20 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:629px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Утвердить',
+				},
+			]
+		},
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -422,15 +437,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УтверждениеCхемыМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УтверждениеCхемыМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:599px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по виду схемы мотивации',
+				},
+			]
 		},
 					]
 				},
@@ -666,15 +693,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Удержания');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УтверждениеCхемыМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УтверждениеCхемыМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:599px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по виду схемы мотивации',
+				},
+			]
 		},
 					]
 				},
@@ -684,21 +723,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:629px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Утвердить',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:337px;width:629px;height:25px;',

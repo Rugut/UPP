@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьКомментарий',
@@ -333,15 +341,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Реализация');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -487,15 +505,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Авансы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -632,15 +660,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НачисленКУплате');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -777,15 +815,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВосстановленПоАвансам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 					]
 				},
@@ -904,15 +954,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Восстановлен');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -1049,15 +1109,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НеОтражаетсяВКниге');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаписейКнигиПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -1072,14 +1142,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:709px;height:25px;',

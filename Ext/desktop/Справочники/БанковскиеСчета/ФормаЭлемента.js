@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Элемент Банковские счета',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка закрытия месяца',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,42 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:850px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Документы регламентных операций',
+				},
+				{
+					text:'Отчеты регламентных операций',
+				},
+				{
+					text:'Переключить видимость справки формы',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:834px;height:521px;',
@@ -138,7 +175,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
-					fields: ['НомерСтроки','РегламентнаяОперация','Ответственный','ОтражатьВУправленческомУчете','ОтражатьВБухгалтерскомУчете','ОтражатьВНалоговомУчете',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','РегламентнаяОперация','Ответственный','ОтражатьВУправленческомУчете','ОтражатьВБухгалтерскомУчете','ОтражатьВНалоговомУчете',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -178,11 +215,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РегламентныеОперации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -194,12 +233,32 @@
 					title:'Схема',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:20px;top:20px;width:229px;height:27px;',
+			items:
+			[
+				{
+					text:'Изменить ответственного',
+				},
+			]
+		},
 					]
 				},
 				{
 					title:'Схема расчета НДС',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:26px;top:29px;width:229px;height:27px;',
+			items:
+			[
+				{
+					text:'Изменить ответственного',
+				},
+			]
+		},
 					]
 				},
 				{
@@ -216,6 +275,30 @@
 					title:'Пользователи',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
+			items:
+			[
+				{
+					text:'Иерархический просмотр',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
+		},
 		{
 			id: 'СписокПользователей',
 			xtype: 'grid',
@@ -241,7 +324,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
-					fields: ['Картинка','Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -269,11 +352,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокПользователей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -304,7 +389,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -329,15 +414,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокГруппыПользователей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
+			items:
+			[
+				{
+					text:'Иерархический просмотр',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 					]
 				},
@@ -380,7 +491,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
-					fields: ['РегламентнаяОперация','Ответственный',]
+					fields: ['Ссылка','Родитель.Представление','РегламентнаяОперация','Ответственный',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -408,11 +519,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтветственныеПоРегламентнымОперациям');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -479,7 +592,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиЗакрытияМесяца").data,
-					fields: ['НомерСтроки','ХарактерЗатрат','ВидПодразделения','Подразделение','СтатьяЗатрат','НоменклатурнаяГруппа','СпособРаспределения',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ХарактерЗатрат','ВидПодразделения','Подразделение','СтатьяЗатрат','НоменклатурнаяГруппа','СпособРаспределения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -522,15 +635,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СпособыРаспределения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиЗакрытияМесяца.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:820px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Проверить',
+				},
+			]
 		},
 					]
 				},
@@ -545,6 +671,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:598px;top:4px;width:236px;height:19px;',
+			width: 236,
+			height: 19,
 		},
 					]
 				},
@@ -554,43 +682,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:850px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Документы регламентных операций',
-				},
-				{
-					text:'Отчеты регламентных операций',
-				},
-				{
-					text:'Переключить видимость справки формы',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:562px;width:850px;height:25px;',

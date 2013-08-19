@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменение специального коэффициента для расчета амортизации ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,26 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:476px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -219,15 +240,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеСпециальногоКоэффициентаОС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеСпециальногоКоэффициентаОС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:94px;width:460px;height:24px;',
+			items:
+			[
+				{
+					text:'Для списка ОС',
+				},
+				{
+					text:'По наименованию',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -238,27 +274,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:476px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:392px;width:476px;height:25px;',
@@ -279,20 +294,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:94px;width:460px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Для списка ОС',
-				},
-				{
-					text:'По наименованию',
 				},
 			]
 		},

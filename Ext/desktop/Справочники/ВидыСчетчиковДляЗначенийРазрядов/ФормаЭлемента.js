@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Виды счетчиков для значений разрядов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -110,18 +111,17 @@
 			name: 'КонечноеЗначение',
 			style: 'position:absolute;left:312px;top:79px;width:80px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:190px;width:400px;height:25px;',

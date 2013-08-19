@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Затраты прочие',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -416,11 +417,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Затраты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрочиеЗатраты.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрочиеЗатраты.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

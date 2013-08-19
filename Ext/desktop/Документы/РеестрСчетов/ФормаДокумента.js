@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Реестр счетов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -292,6 +293,13 @@
 			style: 'position:absolute;left:564px;top:104px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:152px;width:636px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'Реестр',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:176px;width:636px;height:108px;',
@@ -366,11 +374,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Реестр');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеестрСчетов.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеестрСчетов.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -526,14 +536,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:152px;width:636px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

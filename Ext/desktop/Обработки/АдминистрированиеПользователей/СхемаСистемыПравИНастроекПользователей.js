@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Схема системы прав и настроек пользователей',
 	
 	layout: {type: "fit",align: "stretch"},

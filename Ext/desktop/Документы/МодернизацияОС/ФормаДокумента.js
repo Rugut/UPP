@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Модернизация ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -378,6 +379,19 @@
 					title:'Основные средства',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:625px;height:24px;',
+			items:
+			[
+				{
+					text:'Для списка ОС',
+				},
+				{
+					text:'По наименованию',
+				},
+			]
+		},
 		{
 			id: 'ОС',
 			xtype: 'grid',
@@ -795,11 +809,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МодернизацияОС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МодернизацияОС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1274,15 +1290,75 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Оплата');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МодернизацияОС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МодернизацияОС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:2px;top:47px;width:623px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Установить отбор...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+			]
 		},
 					]
 				},

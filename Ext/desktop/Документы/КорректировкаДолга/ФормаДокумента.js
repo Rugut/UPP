@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировка долга',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -196,6 +197,14 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+			]
+		},
+		{
 			id: 'СуммыДолга',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:205px;',
@@ -342,11 +351,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СуммыДолга');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаДолга.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаДолга.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -517,15 +528,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СуммыДолгаУменьшение');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаДолга.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаДолга.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки оповещений',
 	
 	layout: {type: "fit",align: "stretch"},

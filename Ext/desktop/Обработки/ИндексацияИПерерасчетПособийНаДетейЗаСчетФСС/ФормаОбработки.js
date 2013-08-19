@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Индексация и перерасчет государственных пособий гражданам, имеющим детей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -74,11 +75,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Индексации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -132,11 +135,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РазмерыПособий');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -149,6 +154,16 @@
 			style: 'position:absolute;left:31px;top:35px;width:599px;height:40px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:99px;width:213px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьЗаголовокПерерасчетов',
 			text: 'Перерасчет начисленных пособий на детей',
@@ -158,6 +173,19 @@
 			xtype: 'fieldset',
 			title: 'История индексации пособий на детей',
 			style: 'position:absolute;left:0px;top:83px;width:630px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:165px;width:213px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+			]
 		},
 					]
 				},
@@ -308,15 +336,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПолучателиПособий');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:483px;top:19px;width:147px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:519px;top:19px;width:111px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -402,15 +458,53 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Исправления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияИПерерасчетПособийНаДетейЗаСчетФСС.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:322px;top:0px;width:202px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+			]
 		},
 					]
 				},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Параметры изменения по периодам',
 	
 	layout: {type: "fit",align: "stretch"},

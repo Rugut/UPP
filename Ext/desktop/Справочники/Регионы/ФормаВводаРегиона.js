@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод региона',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:336px;height:25px;',
+			items:
+			[
+				{
+					text:'Классификатор',
+				},
+			]
+		},
 		{
 			xtype: 'fieldset',
 			title: 'Адрес',
@@ -141,17 +152,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:336px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Классификатор',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:247px;width:336px;height:25px;',

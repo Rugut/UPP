@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Формирование цен',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -157,11 +158,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЦен.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЦен.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -175,6 +178,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:6px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -188,6 +193,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:514px;top:6px;width:62px;height:19px;',
+			width: 62,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -207,6 +214,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:430px;top:6px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'label',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сбор за пользование объектами водных биологических ресурсов',
 	
 	layout: {type: "fit",align: "stretch"},

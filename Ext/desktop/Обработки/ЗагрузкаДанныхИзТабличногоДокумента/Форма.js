@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Загрузка данных из табличного документа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,12 +26,87 @@
 					title:'Табличный документ',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:653px;height:24px;',
+			items:
+			[
+				{
+					text:'Открыть файл...',
+				},
+				{
+					text:'Сохранить в файл...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Контроль заполнения',
+				},
+				'-',
+				{
+					text:'Следующее примечание',
+				},
+				{
+					text:'Предыдущее примечание',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:398px;top:6px;width:214px;height:24px;',
+			items:
+			[
+				{
+					text:'Выбрать значение',
+				},
+			]
+		},
 					]
 				},
 				{
 					title:'Настройка',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:30px;width:653px;height:24px;',
+			items:
+			[
+				{
+					text:'Восстановить настройки из файла...',
+				},
+				{
+					text:'Сохранить настройки в файл...',
+				},
+				'-',
+				{
+					text:'Восстановить настройки...',
+				},
+				{
+					text:'Сохранить настройки...',
+				},
+				'-',
+				{
+					text:'Перечитать ',
+				},
+				'-',
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				'-',
+				{
+					text:'События...',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаЗагружаемыхРеквизитов',
 			xtype: 'grid',
@@ -205,11 +281,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаЗагружаемыхРеквизитов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -260,6 +338,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:95px;top:0px;width:246px;height:19px;',
+			width: 246,
+			height: 19,
 		},
 					]
 				},
@@ -343,6 +423,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:95px;top:0px;width:246px;height:19px;',
+			width: 246,
+			height: 19,
 		},
 					]
 				},
@@ -357,6 +439,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:8px;width:247px;height:19px;',
+			width: 247,
+			height: 19,
 		},
 		],
 	}],

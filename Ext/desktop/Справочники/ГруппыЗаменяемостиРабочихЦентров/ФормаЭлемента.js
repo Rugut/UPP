@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группы заменяемости рабочих центров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,6 +47,13 @@
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:414px;height:260px;',
 			height: 260,width: 414,
@@ -55,6 +63,13 @@
 					title:'Состав группы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:400px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Состав',
 			xtype: 'grid',
@@ -86,7 +101,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
-					fields: ['НомерСтроки','РабочийЦентр','Приоритет',]
+					fields: ['Ссылка','НомерСтроки','РабочийЦентр','Приоритет',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -117,11 +132,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Состав');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГруппыЗаменяемостиРабочихЦентров.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГруппыЗаменяемостиРабочихЦентров.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -163,7 +180,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГруппыЗаменяемостиРабочихЦентров").data,
-					fields: ['НомерСтроки','РабочийЦентр',]
+					fields: ['Ссылка','НомерСтроки','РабочийЦентр',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -191,15 +208,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПодчиненныеРабочиеЦентры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГруппыЗаменяемостиРабочихЦентров.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГруппыЗаменяемостиРабочихЦентров.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:400px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -209,14 +235,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:430px;height:25px;',

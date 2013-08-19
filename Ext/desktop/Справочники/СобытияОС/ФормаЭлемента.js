@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'События основного средства',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -59,6 +60,13 @@
 			style: 'position:absolute;left:110px;top:93px;width:333px;height:110px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:451px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись5',
 			text: 'Вид события ОС:',
@@ -107,14 +115,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:451px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:211px;width:451px;height:25px;',

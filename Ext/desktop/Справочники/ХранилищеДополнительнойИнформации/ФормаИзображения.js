@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма данных об изображении',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -37,22 +38,8 @@
 			style: 'position:absolute;left:8px;top:33px;width:134px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'Объект',
-			width: 250,
-			height: 19,
-			style: 'position:absolute;left:142px;top:33px;width:250px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				'-',
@@ -100,6 +87,19 @@
 				},
 			]
 		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Объект',
+			width: 250,
+			height: 19,
+			style: 'position:absolute;left:142px;top:33px;width:250px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:361px;width:400px;height:25px;',

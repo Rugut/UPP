@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменения лимитов возвратной тары',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -117,11 +118,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеЛимитовВозвратнойТары.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеЛимитовВозвратнойТары.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

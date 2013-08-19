@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Внешняя обработка2',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,19 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:9px;width:328px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+			]
+		},
 		{
 			id: 'ДеревоТаблиц',
 			xtype: 'grid',
@@ -63,11 +77,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоТаблиц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораТаблицыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -93,20 +109,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:9px;width:328px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
 				},
 			]
 		},

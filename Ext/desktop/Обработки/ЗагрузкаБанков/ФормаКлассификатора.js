@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Загрузка ""Классификатора банков РФ""',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -185,11 +186,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоБанков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -200,6 +203,40 @@
 			name: 'НадписьДопРеквизитов',
 			text: 'Надпись',
 			style: 'position:absolute;left:6px;top:290px;width:449px;height:15px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:449px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Свернуть все',
+				},
+				{
+					text:'Развернуть все',
+				},
+			]
 		},
 					]
 				},
@@ -291,11 +328,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоИзмененныхБанков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаБанков.ФормаКлассификатораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -306,6 +345,33 @@
 			name: 'НадписьКонфликты',
 			text: 'Список банков, уже имеющихся в базе, но отличающихся от классификатора некоторыми параметрами. \r\nПометьте те банки, изменения для которых необходимо принять.',
 			style: 'position:absolute;left:6px;top:6px;width:449px;height:43px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:70px;width:449px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Пометить',
+				},
+				{
+					text:'Снять пометки',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',

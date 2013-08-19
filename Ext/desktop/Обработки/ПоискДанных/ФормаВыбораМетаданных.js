@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор объектов поиска',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -89,11 +90,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаОМД');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоискДанных.ФормаВыбораМетаданныхСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоискДанных.ФормаВыбораМетаданныхСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

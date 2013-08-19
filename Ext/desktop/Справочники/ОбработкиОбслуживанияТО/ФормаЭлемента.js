@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка обслуживания ТО',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,62 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:473px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+				'-',
+				{
+					text:'НайтиВСписке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Экспорт в файл',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -151,7 +208,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОбработкиОбслуживанияТО").data,
-					fields: ['НомерСтроки','Модель',]
+					fields: ['Ссылка','НомерСтроки','Модель',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -179,11 +236,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Модели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбработкиОбслуживанияТО.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбработкиОбслуживанияТО.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -250,63 +309,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:473px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-				'-',
-				{
-					text:'НайтиВСписке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Экспорт в файл',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:476px;width:473px;height:25px;',

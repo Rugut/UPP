@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анкета застрахованного лица (АДВ-1)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:645px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -194,6 +202,16 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:629px;height:24px;',
+			items:
+			[
+				{
+					text:'Сотрудниками без страховых номеров',
+				},
+			]
+		},
+		{
 			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:629px;height:229px;',
@@ -331,11 +349,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнкетаЗастрахованногоЛица.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнкетаЗастрахованногоЛица.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -389,14 +409,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:645px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:645px;height:25px;',

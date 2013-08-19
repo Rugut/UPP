@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Передача СЗВ-4 в ПФР',
 	
 	layout: {type: "fit",align: "stretch"},

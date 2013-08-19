@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Спецификации номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -88,7 +89,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['Картинка','Код','КодВерсии','Наименование','Активная','ВидСпецификации.Представление','Состояние.Представление','ДатаУтверждения','Ответственный.Представление','Комментарий',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','КодВерсии','Наименование','Активная','ВидСпецификации.Представление','Состояние.Представление','ДатаУтверждения','Ответственный.Представление','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -140,15 +141,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Версии спецификации',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Создать версию',
+				},
+				'-',
+				{
+					text:'Печать спецификации',
+				},
+			]
 		},
 		{
 			id: 'СправочникДерево',
@@ -169,7 +196,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -194,11 +221,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -208,31 +237,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Версии спецификации',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Создать версию',
-				},
-				'-',
-				{
-					text:'Печать спецификации',
-				},
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка XYZ/ABC-анализ продаж',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -73,15 +74,44 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:140px;width:492px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -96,10 +126,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:148px;top:100px;width:350px;height:19px;',
+			width: 350,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:148px;top:76px;width:350px;height:19px;',
+			width: 350,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -249,11 +283,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -314,15 +350,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Группы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -414,15 +465,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:62px;width:492px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -441,6 +501,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:6px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -459,6 +521,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:29px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 					]
 				},
@@ -514,15 +578,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Порядок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.XYZABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

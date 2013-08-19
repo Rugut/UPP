@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Дополнительные настройки фонового обмена',
 	
 	layout: {type: "fit",align: "stretch"},

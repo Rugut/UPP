@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Поступление НМА',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -230,11 +231,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НематериальныеАктивы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеНМА.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеНМА.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

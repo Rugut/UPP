@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод количества и цены',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -145,6 +146,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:78px;top:130px;width:168px;height:19px;',
+			width: 168,
+			height: 19,
 		},
 		{
 			xtype: 'label',

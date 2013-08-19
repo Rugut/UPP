@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Оценочные обязательства и резервы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,19 +47,8 @@
 			style: 'position:absolute;left:89px;top:33px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьПоказатьБазу',
-			text: 'Показать расчетную базу…',
-			style: 'position:absolute;left:8px;top:57px;width:254px;height:15px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:438px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -73,6 +63,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПоказатьБазу',
+			text: 'Показать расчетную базу…',
+			style: 'position:absolute;left:8px;top:57px;width:254px;height:15px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:80px;width:438px;height:25px;',

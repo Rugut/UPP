@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Иванова Анна Петровна',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -94,11 +95,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокФизлиц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -298,11 +301,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПервичныеДокументыОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -441,11 +446,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПлановыеДанныеДляРасчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -599,11 +606,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УчетКадровОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -777,11 +786,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НалогиОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеДаннымиРаботника.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеДаннымиРаботника.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -838,6 +849,49 @@
 			]
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:26px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'Основное',
+				},
+				'-',
+				{
+					text:'Кадровые данные',
+				},
+				'-',
+				{
+					text:'Плановые начисления и удержания',
+				},
+				'-',
+				{
+					text:'Расчеты, зарплата',
+				},
+				'-',
+				{
+					text:'Страховые взносы, ЕСН и отражение зарплаты в учете',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:727px;top:2px;width:53px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
@@ -875,67 +929,8 @@
 			},
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'МесяцСтрока',
-			width: 136,
-			height: 19,
-			style: 'position:absolute;left:4px;top:4px;width:136px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:26px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Основное',
-				},
-				'-',
-				{
-					text:'Кадровые данные',
-				},
-				'-',
-				{
-					text:'Плановые начисления и удержания',
-				},
-				'-',
-				{
-					text:'Расчеты, зарплата',
-				},
-				'-',
-				{
-					text:'Страховые взносы, ЕСН и отражение зарплаты в учете',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:727px;top:2px;width:53px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:380px;top:2px;width:201px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -951,6 +946,19 @@
 				},
 			]
 		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'МесяцСтрока',
+			width: 136,
+			height: 19,
+			style: 'position:absolute;left:4px;top:4px;width:136px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Продажи по периодам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,44 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:884px;height:539px;',
@@ -1162,15 +1201,63 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеТовары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
+			items:
+			[
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Настройка списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+				'-',
+				{
+					text:'Зафиксировать слева',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1218,6 +1305,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:330px;top:27px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1351,15 +1440,51 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСклады');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:438px;top:22px;width:424px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1414,11 +1539,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеТипыЦен');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1502,15 +1629,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеВыбранныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:424px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+			]
 		},
 					]
 				},
@@ -1607,15 +1755,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:424px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1670,15 +1839,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСортировка');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПродажиПоПериодам.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПродажиПоПериодам.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:438px;top:22px;width:424px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+			]
 		},
 					]
 				},
@@ -1692,45 +1882,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-			]
-		},
 	]
 	});
 });

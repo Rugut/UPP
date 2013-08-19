@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -321,15 +322,26 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Состав');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВосстановлениеНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВосстановлениеНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+			]
 		},
 					]
 				},

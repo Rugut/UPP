@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о доле доходов организации от осуществления образовательной и (или) медицинской деятельности',
 	
 	layout: {type: "fit",align: "stretch"},

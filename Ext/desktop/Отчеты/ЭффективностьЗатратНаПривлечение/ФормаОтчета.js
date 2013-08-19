@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,86 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:478px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'На принтер',
+				},
+				'-',
+				{
+					text:'Новый отчет',
+				},
+				{
+					text:'Быстрые отборы',
+				},
+				'-',
+				{
+					text:'Восстановить настройки',
+				},
+				{
+					text:'Сохранить настройки',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Загрузить настройки отчета',
+				},
+				{
+					text:'Сохранить настройки отчета',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:345px;top:33px;width:397px;height:107px;',
@@ -164,11 +245,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЭффективностьЗатратНаПривлечение.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЭффективностьЗатратНаПривлечение.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -394,87 +477,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:478px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройки...',
-				},
-				'-',
-				{
-					text:'На принтер',
-				},
-				'-',
-				{
-					text:'Новый отчет',
-				},
-				{
-					text:'Быстрые отборы',
-				},
-				'-',
-				{
-					text:'Восстановить настройки',
-				},
-				{
-					text:'Сохранить настройки',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройки...',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Загрузить настройки отчета',
-				},
-				{
-					text:'Сохранить настройки отчета',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-			]
-		},
 	]
 	});
 });

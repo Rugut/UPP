@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод параметров расшифровки платежа',
 	
 	layout: {type: "fit",align: "stretch"},

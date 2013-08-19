@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помощник заполнения графика',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -359,7 +360,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
-					fields: ['ДеньНедели','ЧасовЗаДень',]
+					fields: ['Ссылка','ДеньНедели','ЧасовЗаДень',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -387,11 +388,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасписаниеСводно');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -536,7 +539,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
-					fields: ['ДеньНедели','Начало','Окончание','Перерыв1','НачалоПерерыва1','ОкончаниеПерерыва1','Перерыв2','НачалоПерерыва2','ОкончаниеПерерыва2','Перерыв3','НачалоПерерыва3','ОкончаниеПерерыва3','Перерыв4','НачалоПерерыва4','ОкончаниеПерерыва4','Перерыв5','НачалоПерерыва5','ОкончаниеПерерыва5','ИтогоЗаДень',]
+					fields: ['Ссылка','ДеньНедели','Начало','Окончание','Перерыв1','НачалоПерерыва1','ОкончаниеПерерыва1','Перерыв2','НачалоПерерыва2','ОкончаниеПерерыва2','Перерыв3','НачалоПерерыва3','ОкончаниеПерерыва3','Перерыв4','НачалоПерерыва4','ОкончаниеПерерыва4','Перерыв5','НачалоПерерыва5','ОкончаниеПерерыва5','ИтогоЗаДень',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -615,11 +618,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасписаниеПоЧасам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -676,7 +681,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГрафикиРаботы").data,
-					fields: ['НомерДня','Смена','ЧасовВСмене',]
+					fields: ['Ссылка','НомерДня','Смена','ЧасовВСмене',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -707,11 +712,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасписаниеСменный');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикиРаботы.ФормаЗаполнитьСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -722,6 +729,13 @@
 			name: 'НадписьДатаОтсчета1',
 			text: 'Начать с:',
 			style: 'position:absolute;left:215px;top:14px;width:51px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:9px;width:132px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'datefield',

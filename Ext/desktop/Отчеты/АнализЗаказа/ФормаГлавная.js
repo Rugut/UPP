@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анализ заказа покупателя',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,25 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Новое окно',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -51,26 +71,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Новое окно',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

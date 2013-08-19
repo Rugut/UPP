@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сохранение настройки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -92,11 +93,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокНастроек');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСохраненияНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхИзТабличногоДокумента.ФормаСохраненияНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

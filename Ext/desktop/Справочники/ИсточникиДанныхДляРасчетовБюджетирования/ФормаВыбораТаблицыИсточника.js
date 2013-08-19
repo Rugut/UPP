@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Таблицы источника',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -34,7 +35,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
-					fields: ['ОписаниеПоля',]
+					fields: ['Ссылка','Родитель.Представление','ОписаниеПоля',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -59,11 +60,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаВыбораТаблицыИсточникаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаВыбораТаблицыИсточникаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

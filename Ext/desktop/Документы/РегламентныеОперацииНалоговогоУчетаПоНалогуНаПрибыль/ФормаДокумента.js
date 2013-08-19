@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регламентные операции налогового учета (по налогу на приб.)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,6 +109,29 @@
 			style: 'position:absolute;left:8px;top:184px;width:368px;height:15px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Распределение расходов по видам деятельности (ЕНВД / не ЕНВД)',
 			style: 'position:absolute;left:8px;top:109px;width:368px;height:15px;',
@@ -191,30 +215,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:262px;width:384px;height:25px;',

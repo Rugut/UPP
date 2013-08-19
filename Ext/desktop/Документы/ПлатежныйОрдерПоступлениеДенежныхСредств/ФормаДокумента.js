@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежный ордер на поступление денежных средств',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -226,6 +227,13 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -895,15 +903,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежныйОрдерПоступлениеДенежныхСредств.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежныйОрдерПоступлениеДенежныхСредств.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:294px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 		{
 			xtype: 'label',
@@ -2647,14 +2690,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

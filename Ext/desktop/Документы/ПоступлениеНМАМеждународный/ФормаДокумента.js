@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,16 @@
 			width: 559,
 			height: 19,
 			style: 'position:absolute;left:87px;top:324px;width:559px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:83px;width:638px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить за период',
+				},
+			]
 		},
 		{
 			id: 'НематериальныеАктивы',
@@ -276,15 +287,44 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НематериальныеАктивы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеНМАМеждународный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеНМАМеждународный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -452,45 +492,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:83px;width:638px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить за период',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:351px;width:654px;height:25px;',

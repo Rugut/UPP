@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'График отпусков',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -220,14 +221,9 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:926px;top:0px;width:74px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -241,7 +237,6 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:926px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				'-',
@@ -270,6 +265,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

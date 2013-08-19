@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Поиск данных',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -119,6 +120,32 @@
 			width: 259,
 			height: 19,
 			style: 'position:absolute;left:6px;top:5px;width:259px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:175px;top:26px;width:90px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Настройка поиска',
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:76px;height:24px;',
+			items:
+			[
+				{
+					text:'Поиск',
+				},
+			]
 		},
 					]
 				},

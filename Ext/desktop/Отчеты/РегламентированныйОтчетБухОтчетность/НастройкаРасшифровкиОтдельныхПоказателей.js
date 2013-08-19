@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка расшифровки отдельных показателей бухгалтерской отчетности',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,34 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Отметить все',
+				},
+				{
+					text:'Снять все отметки',
+				},
+				'-',
+				{
+					text:'Сбросить',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'ТабличноеПолеДеревоНастроек',
 			xtype: 'grid',
@@ -45,11 +74,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДеревоНастроек');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентированныйОтчетБухОтчетность.НастройкаРасшифровкиОтдельныхПоказателейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентированныйОтчетБухОтчетность.НастройкаРасшифровкиОтдельныхПоказателейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -59,35 +90,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Отметить все',
-				},
-				{
-					text:'Снять все отметки',
-				},
-				'-',
-				{
-					text:'Сбросить',
-				},
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:459px;width:716px;height:25px;',

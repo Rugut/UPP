@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Проведение по партиям',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,6 +26,20 @@
 			width: 103,
 			height: 19,
 			style: 'position:absolute;left:207px;top:33px;width:103px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Настройка обработки',
+				},
+				'-',
+				{
+					text:'Установка границы последовательности',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -149,49 +164,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаГраниц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроведениеПоПартиям.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроведениеПоПартиям.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: ' По видам учета:',
-			style: 'position:absolute;left:8px;top:57px;width:384px;height:16px;',
-		},
-		{
-			xtype: 'fieldset',
-			title: ' По организациям:',
-			style: 'position:absolute;left:8px;top:117px;width:384px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Настройка обработки',
-				},
-				'-',
-				{
-					text:'Установка границы последовательности',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:136px;width:384px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -210,6 +197,20 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: ' По видам учета:',
+			style: 'position:absolute;left:8px;top:57px;width:384px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: ' По организациям:',
+			style: 'position:absolute;left:8px;top:117px;width:384px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

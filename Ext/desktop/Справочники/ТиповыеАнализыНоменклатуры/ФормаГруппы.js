@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа Типовые анализы номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -45,18 +46,17 @@
 			height: 19,
 			style: 'position:absolute;left:93px;top:33px;width:181px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:60px;width:400px;height:25px;',

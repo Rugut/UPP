@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'План производства',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -109,6 +110,16 @@
 			width: 80,
 			height: 19,
 			style: 'position:absolute;left:564px;top:81px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить план',
+				},
+			]
 		},
 		{
 			id: 'СоставПлана',
@@ -320,11 +331,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставПлана');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводства.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводства.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -630,17 +643,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить план',
-				},
-			]
-		},
 	]
 	});
 });

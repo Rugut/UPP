@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Подбор прочих затрат',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -54,11 +55,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоСтатейЗатрат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -139,11 +142,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СпрСтатьиЗатрат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборПрочихЗатрат.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

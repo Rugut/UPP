@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Печать серийных номеров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,40 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Печатать',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Печатать',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			id: 'ТабличноеПолеТовары',
 			xtype: 'grid',
@@ -99,11 +134,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеТовары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьСерийныхНомеров.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьСерийныхНомеров.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -179,41 +216,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Печатать',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Печатать',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

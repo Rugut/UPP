@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Пакетный ввод документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -149,6 +150,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:113px;top:6px;width:294px;height:19px;',
+			width: 294,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -416,6 +419,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:113px;top:62px;width:294px;height:19px;',
+			width: 294,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -585,11 +590,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаГлавнаяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаГлавнаяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

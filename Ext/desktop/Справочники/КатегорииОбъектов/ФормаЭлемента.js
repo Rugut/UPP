@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Элемент Категории объектов',
 	
 	layout: {type: "fit",align: "stretch"},

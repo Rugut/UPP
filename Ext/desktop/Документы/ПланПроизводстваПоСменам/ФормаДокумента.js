@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'План производства по сменам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -61,6 +62,37 @@
 			width: 568,
 			height: 19,
 			style: 'position:absolute;left:94px;top:368px;width:568px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Действие открыть свойства',
+				},
+				{
+					text:'Действие открыть категории',
+				},
+				'-',
+				{
+					text:'Выполнить планирование',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -183,15 +215,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПланыПроизводства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -283,15 +324,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеЗаказов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -299,6 +349,21 @@
 					title:'Индивидуальные выпуски',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'Товары',
 			xtype: 'grid',
@@ -455,11 +520,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -471,6 +538,28 @@
 					title:'Детальное планирование',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Свернуть дерево',
+				},
+				{
+					text:'Раскрыть дерево',
+				},
+				'-',
+				{
+					text:'Получить данные',
+				},
+				'-',
+				{
+					text:'Свернуть',
+				},
+			]
+		},
 		{
 			id: 'ДеревоПланов',
 			xtype: 'grid',
@@ -645,11 +734,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоПланов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -823,15 +914,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗанятостьРабочихЦентров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -977,15 +1077,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПотребностиПроизводства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1142,11 +1251,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеСклады');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПроизводстваПоСменам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1185,6 +1296,13 @@
 			width: 80,
 			height: 19,
 			style: 'position:absolute;left:211px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:75px;width:640px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -1240,38 +1358,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Действие открыть свойства',
-				},
-				{
-					text:'Действие открыть категории',
-				},
-				'-',
-				{
-					text:'Выполнить планирование',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:395px;width:670px;height:25px;',

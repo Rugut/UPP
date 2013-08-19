@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Единая (упрощенная) налоговая декларация',
 	
 	layout: {type: "fit",align: "stretch"},

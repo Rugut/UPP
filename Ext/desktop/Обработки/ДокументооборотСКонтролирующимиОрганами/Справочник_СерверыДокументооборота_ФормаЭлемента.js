@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Серверы документооборота',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -76,6 +77,13 @@
 			style: 'position:absolute;left:208px;top:109px;width:63px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСертификат',
 			text: 'Сертификат:',
@@ -129,14 +137,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:241px;width:554px;height:25px;',

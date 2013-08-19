@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр учета расходов будущих периодов (настройка)',
 	
 	layout: {type: "fit",align: "stretch"},

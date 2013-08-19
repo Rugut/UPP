@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Контактные лица',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -94,7 +95,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
-					fields: ['Картинка','Код','ФИО','ДатаРождения','Имя','КоличествоДнейДоНапоминания','НапоминатьОДнеРождения','Описание','Отчество','Пол.Представление','Фамилия',]
+					fields: ['Ссылка','Картинка','Код','ФИО','ДатаРождения','Имя','КоличествоДнейДоНапоминания','НапоминатьОДнеРождения','Описание','Отчество','Пол.Представление','Фамилия',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -149,28 +150,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтактныеЛица.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:396px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

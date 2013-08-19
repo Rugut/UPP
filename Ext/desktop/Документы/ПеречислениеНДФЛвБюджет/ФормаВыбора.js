@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Перечисление НДФЛ в бюджет РФ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -144,24 +145,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПеречислениеНДФЛвБюджет.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПеречислениеНДФЛвБюджет.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:740px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -195,6 +193,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

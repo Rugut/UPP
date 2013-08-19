@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Проведение документов по регистрам НДС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:338px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьПериодС',
@@ -105,14 +113,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:338px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:338px;height:25px;',

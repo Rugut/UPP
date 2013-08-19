@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Переход - 2010',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -260,11 +261,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПособияПоБеременности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -356,11 +359,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПособияПоУходуЗаРебенком');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереходНаПорядокИсчисленияПособий2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

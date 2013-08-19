@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Декларация об объемах оборота этилового спирта, алкогольной и спиртосодержащей продукции',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -113,6 +114,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:101px;top:2px;width:669px;height:19px;',
+			width: 669,
+			height: 19,
 		},
 					]
 				},
@@ -212,6 +215,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:199px;top:23px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',

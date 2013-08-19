@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка результата',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -33,6 +34,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:89px;top:6px;width:265px;height:19px;',
+			width: 265,
+			height: 19,
 		},
 		{
 			xtype: 'label',

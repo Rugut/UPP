@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Коды ОКПД',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КодыОКПД").data,
-					fields: ['Код','Имя',]
+					fields: ['Ссылка','Родитель.Представление','Код','Имя',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,24 +69,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КодыОКПД.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КодыОКПД.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:555px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				'-',
@@ -94,6 +92,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:555px;height:25px;',

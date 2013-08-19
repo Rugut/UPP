@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Автоподбор номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -134,6 +135,13 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:484px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'АвтоподборНоменклатуры',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:484px;height:129px;',
@@ -176,7 +184,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['НомерСтроки','Значение','Номенклатура','Количество','ЕдиницаИзмерения',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Значение','Номенклатура','Количество','ЕдиницаИзмерения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -213,11 +221,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('АвтоподборНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -238,6 +248,13 @@
 			xtype: 'fieldset',
 			title: 'Значения свойства',
 			style: 'position:absolute;left:0px;top:0px;width:484px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:484px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'АвтоподборНоменклатурыОтходы',
@@ -282,7 +299,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['НомерСтроки','Значение','Номенклатура','Количество','ЕдиницаИзмерения',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Значение','Номенклатура','Количество','ЕдиницаИзмерения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -319,11 +336,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('АвтоподборНоменклатурыОтходы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораНоменклатурыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

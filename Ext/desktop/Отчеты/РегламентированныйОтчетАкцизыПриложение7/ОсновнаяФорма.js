@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Акцизы на минеральное сырье',
 	
 	layout: {type: "fit",align: "stretch"},

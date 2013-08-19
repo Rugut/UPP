@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Регистр учета операций приобретения имущества, работ, услуг, прав',
 	
 	layout: {type: "fit",align: "stretch"},

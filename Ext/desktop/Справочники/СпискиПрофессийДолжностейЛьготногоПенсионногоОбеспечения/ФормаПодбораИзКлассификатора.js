@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профессии и должности льготного пенсионного обеспечения',
 	
 	layout: {type: "fit",align: "stretch"},

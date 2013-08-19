@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежное поручение (входящее): Назначение платежа',
 	
 	layout: {type: "fit",align: "stretch"},

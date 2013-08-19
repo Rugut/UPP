@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Технологические карты производства',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -152,6 +153,13 @@
 			style: 'position:absolute;left:322px;top:81px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:123px;width:644px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'Маршрут',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:147px;width:644px;height:226px;',
@@ -284,7 +292,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТехнологическиеКартыПроизводства").data,
-					fields: ['НомерСтроки','НомерОперации','РабочийЦентрПодготовительныхОпераций','ТехнологическаяОперацияПодготовительная','ЕдиницаПодготовительная','КоэффициентПодготовительная','ВремяПодготовительныхОпераций','РабочийЦентр','ТехнологическаяОперация','Единица','Коэффициент','ВремяВыполнения','Количество','СледующиеОперации','ДопускаетПеренос','РабочийЦентрЗаключительныхОпераций','ТехнологическаяОперацияЗаключительная','ЕдиницаЗаключительная','КоэффициентЗаключительная','ВремяЗавершающихОпераций',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','НомерОперации','РабочийЦентрПодготовительныхОпераций','ТехнологическаяОперацияПодготовительная','ЕдиницаПодготовительная','КоэффициентПодготовительная','ВремяПодготовительныхОпераций','РабочийЦентр','ТехнологическаяОперация','Единица','Коэффициент','ВремяВыполнения','Количество','СледующиеОперации','ДопускаетПеренос','РабочийЦентрЗаключительныхОпераций','ТехнологическаяОперацияЗаключительная','ЕдиницаЗаключительная','КоэффициентЗаключительная','ВремяЗавершающихОпераций',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -366,15 +374,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Маршрут');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТехнологическиеКартыПроизводства.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТехнологическиеКартыПроизводства.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -385,22 +402,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:123px;width:644px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:381px;width:660px;height:25px;',

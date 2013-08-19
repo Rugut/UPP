@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Формирование подтверждений',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -189,11 +190,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбмена');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ФормированиеПодтвержденийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ФормированиеПодтвержденийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -295,6 +298,23 @@
 			style: 'position:absolute;left:509px;top:61px;width:225px;height:15px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
+			items:
+			[
+				{
+					text:'Пометить все',
+				},
+				{
+					text:'Снять флажки у всех',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: '',
 			style: 'position:absolute;left:8px;top:80px;width:726px;height:3px;',
@@ -340,24 +360,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Пометить все',
-				},
-				{
-					text:'Снять флажки у всех',
-				},
-				'-',
-				{
-					text:'Обновить',
 				},
 			]
 		},

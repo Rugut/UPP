@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет чистых активов',
 	
 	layout: {type: "fit",align: "stretch"},

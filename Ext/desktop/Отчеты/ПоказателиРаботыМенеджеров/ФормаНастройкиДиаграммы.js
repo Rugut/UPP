@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка диаграммы (Показатели работы менеджеров)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,11 +64,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиДиаграммы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоказателиРаботыМенеджеров.ФормаНастройкиДиаграммыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоказателиРаботыМенеджеров.ФормаНастройкиДиаграммыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

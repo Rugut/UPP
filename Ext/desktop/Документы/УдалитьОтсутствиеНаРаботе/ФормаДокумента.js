@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отсутствие на работе',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -207,15 +208,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Работники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УдалитьОтсутствиеНаРаботе.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УдалитьОтсутствиеНаРаботе.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:431px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по графику отпусков',
+				},
+				'-',
+				{
+					text:'Списком работников',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -294,21 +311,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:431px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить по графику отпусков',
-				},
-				'-',
-				{
-					text:'Списком работников',
-				},
-			]
-		},
 	]
 	});
 });

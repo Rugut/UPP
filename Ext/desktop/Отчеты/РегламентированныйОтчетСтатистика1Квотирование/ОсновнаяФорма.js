@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма 1-квотирование (Москва)',
 	
 	layout: {type: "fit",align: "stretch"},

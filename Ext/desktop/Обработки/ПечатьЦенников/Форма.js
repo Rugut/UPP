@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Печать ценников',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Товары',
 			xtype: 'grid',
@@ -108,11 +116,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьЦенников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьЦенников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -247,15 +257,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отборы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьЦенников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьЦенников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:87px;width:764px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -392,22 +411,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:87px;width:764px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

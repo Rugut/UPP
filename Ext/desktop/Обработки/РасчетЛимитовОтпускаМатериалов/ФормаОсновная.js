@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет лимитов отпуска материалов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:753px;height:384px;',
@@ -422,10 +430,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:398px;top:238px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:483px;top:238px;width:262px;height:19px;',
+			width: 262,
+			height: 19,
 		},
 					]
 				},
@@ -517,15 +529,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:70px;width:739px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -634,6 +655,21 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:733px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Изменить...',
+				},
+			]
+		},
+		{
 			id: 'Лимиты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:733px;height:328px;',
@@ -735,11 +771,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Лимиты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетЛимитовОтпускаМатериалов.ФормаОсновнаяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -753,14 +791,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:769px;height:25px;',

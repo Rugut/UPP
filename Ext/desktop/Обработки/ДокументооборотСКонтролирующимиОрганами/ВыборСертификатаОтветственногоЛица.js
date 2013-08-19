@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор сертификата ответственного лица для подписания',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,24 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Открыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			id: 'Сертификаты',
 			xtype: 'grid',
@@ -63,11 +82,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Сертификаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ВыборСертификатаОтветственногоЛицаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ВыборСертификатаОтветственногоЛицаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -77,25 +98,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Открыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

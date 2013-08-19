@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Начисление по больничному листу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -1284,11 +1285,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1566,6 +1569,42 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:51px;width:917px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать заработок за расчетный период',
+				},
+			]
+		},
+		{
 			id: 'РасчетСреднего',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:75px;width:917px;height:214px;',
@@ -1685,11 +1724,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1856,15 +1897,53 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего2011');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:50px;width:917px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать заработок',
+				},
+			]
 		},
 					]
 				},
@@ -1973,11 +2052,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего2011_ПП');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -2016,6 +2097,42 @@
 				'-',
 				{
 					text:'Рассчитать заработок',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:43px;width:917px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать заработок за расчетный период',
 				},
 			]
 		},
@@ -2139,11 +2256,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего2010_ПП');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -3010,11 +3129,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УходЗаБольнымЧленомСемьи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -3448,11 +3569,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсвобождениеОтРаботыВЛисткеНетрудоспособности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Стандартные вычеты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -92,7 +93,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Период','ВычетыЛичныеТекст','ВычетыЛичныеПрименение','КодВычетаЛичный','Основание',]
+					fields: ['Ссылка','Родитель.Представление','Период','ВычетыЛичныеТекст','ВычетыЛичныеПрименение','КодВычетаЛичный','Основание',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -129,11 +130,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтандартныеВычеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -200,7 +203,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['КолонкаПериод','Период','ПериодЗавершения','ВычетыНаДетейТекст','ВычетыНаДетейПрименение','КодВычетаНаДетей','КоличествоДетей','Основание',]
+					fields: ['Ссылка','Родитель.Представление','КолонкаПериод','Период','ПериодЗавершения','ВычетыНаДетейТекст','ВычетыНаДетейПрименение','КодВычетаНаДетей','КоличествоДетей','Основание',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -246,15 +249,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтандартныеВычетыНаДетей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:522px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -411,7 +430,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['МесяцНалоговогоПериода','Размер',]
+					fields: ['Ссылка','Родитель.Представление','МесяцНалоговогоПериода','Размер',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -439,11 +458,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоходыПредыдущие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о трудовом стаже застрахованного лица (СЗВ-К)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,43 @@
 			width: 479,
 			height: 19,
 			style: 'position:absolute;left:96px;top:361px;width:479px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:583px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -236,10 +274,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:399px;top:24px;width:168px;height:19px;',
+			width: 168,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:74px;width:479px;height:19px;',
+			width: 479,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -277,6 +319,49 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:567px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Редактировать СЗВ-К',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		{
 			id: 'РаботникиОрганизации',
 			xtype: 'grid',
@@ -325,11 +410,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОТрудовомСтажеЗастрахованногоЛицаСЗВК.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОТрудовомСтажеЗастрахованногоЛицаСЗВК.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -348,44 +435,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:583px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 	]
 	});
 });

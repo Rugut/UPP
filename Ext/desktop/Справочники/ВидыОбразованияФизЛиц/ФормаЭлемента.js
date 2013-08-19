@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Вид образования физического лица',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -45,18 +46,17 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:33px;width:192px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:380px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:60px;width:380px;height:25px;',

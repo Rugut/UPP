@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа тарифных разрядов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -90,14 +91,9 @@
 				};
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:433px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -111,6 +107,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:84px;width:433px;height:25px;',

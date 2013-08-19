@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Общероссийский классификатор стран мира',
 	
 	layout: {type: "fit",align: "stretch"},

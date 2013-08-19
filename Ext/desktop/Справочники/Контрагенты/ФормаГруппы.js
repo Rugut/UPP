@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа Контрагенты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -105,18 +106,17 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:85px;width:444px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:546px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:112px;width:546px;height:25px;',

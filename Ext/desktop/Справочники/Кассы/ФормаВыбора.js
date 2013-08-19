@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Кассы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -58,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Кассы").data,
-					fields: ['Картинка','Код','Наименование','ВалютаДенежныхСредств.Представление','Владелец',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','Наименование','ВалютаДенежныхСредств.Представление','Владелец',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -95,11 +96,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Кассы.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Кассы.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -124,7 +127,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Кассы").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -149,24 +152,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Кассы.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Кассы.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -175,6 +175,10 @@
 				'-',
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

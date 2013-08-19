@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма П-3',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,6 +71,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:101px;top:81px;width:167px;height:19px;',
+			width: 167,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',

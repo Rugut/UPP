@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет при увольнении сотрудника',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -137,6 +138,13 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -660,15 +668,111 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:66px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -693,6 +797,43 @@
 					title:'Расчет среднего',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать',
+				},
+			]
+		},
 		{
 			id: 'РасчетСреднего',
 			xtype: 'grid',
@@ -822,11 +963,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -964,15 +1107,54 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднегоДляОтпуска');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1162,11 +1344,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1292,15 +1476,54 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднегоДляОтпуска1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПриУвольненииРаботникаОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:652px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Рассчитать',
+				},
+			]
 		},
 					]
 				},
@@ -1433,14 +1656,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

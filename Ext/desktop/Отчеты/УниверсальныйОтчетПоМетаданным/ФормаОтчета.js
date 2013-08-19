@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,47 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройки...',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Открыть в новом окне',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Загрузить настройки отчета',
+				},
+				{
+					text:'Сохранить настройки отчета',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:60px;width:678px;height:103px;',
@@ -164,11 +206,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчетПоМетаданным.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчетПоМетаданным.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -315,48 +359,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройки...',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Открыть в новом окне',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Заголовок',
-				},
-				'-',
-				{
-					text:'Загрузить настройки отчета',
-				},
-				{
-					text:'Сохранить настройки отчета',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-			]
-		},
 	]
 	});
 });

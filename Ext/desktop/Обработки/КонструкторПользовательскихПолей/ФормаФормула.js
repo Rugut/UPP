@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Пользовательское поле ""Формула""',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:341px;top:124px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -70,11 +73,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторПользовательскихПолей.ФормаФормулаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторПользовательскихПолей.ФормаФормулаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

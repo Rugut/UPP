@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,23 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер1',
@@ -203,15 +221,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Основания');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:19px;width:704px;height:24px;',
+			items:
+			[
+				{
+					text:'Пометить все',
+				},
+				{
+					text:'Снять пометки у всех',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Текст',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -342,24 +383,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:720px;height:25px;',

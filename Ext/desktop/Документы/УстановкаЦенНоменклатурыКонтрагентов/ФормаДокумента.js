@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка цен номенклатуры контрагентов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -155,6 +156,73 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:514px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+					]
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				{
+					text:'Отмена проведения',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:318px;width:514px;height:25px;',
 			items:
 			[
@@ -190,6 +258,21 @@
 					title:'Цены номенклатуры',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:47px;width:497px;height:26px;',
+			items:
+			[
+				{
+					text:'Поиск по штрихкоду',
+				},
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -310,11 +393,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаЦен');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УстановкаЦенНоменклатурыКонтрагентов.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -333,74 +418,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:514px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-					]
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Провести',
-				},
-				{
-					text:'Отмена проведения',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-			]
-		},
 	]
 	});
 });

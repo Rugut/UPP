@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Участие в мероприятиях',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,6 +109,46 @@
 			style: 'position:absolute;left:96px;top:376px;width:348px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:436px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			id: 'Работники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:436px;height:220px;',
@@ -182,15 +223,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Работники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УчастиеВМероприятиях.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УчастиеВМероприятиях.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:452px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -268,55 +318,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:124px;width:436px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:452px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

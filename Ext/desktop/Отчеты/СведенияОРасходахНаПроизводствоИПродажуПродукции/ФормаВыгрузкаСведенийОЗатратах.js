@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выгрузка сведений о затратах предприятия',
 	
 	layout: {type: "fit",align: "stretch"},

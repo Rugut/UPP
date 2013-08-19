@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Договор эквайринга',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -136,6 +137,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:121px;width:421px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ТарифыЗаРасчетноеОбслуживание',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:145px;width:421px;height:114px;',
@@ -166,7 +174,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоговорыЭквайринга").data,
-					fields: ['НомерСтроки','ВидОплаты','ПроцентТорговойУступки',]
+					fields: ['Ссылка','НомерСтроки','ВидОплаты','ПроцентТорговойУступки',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -197,15 +205,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТарифыЗаРасчетноеОбслуживание');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоговорыЭквайринга.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоговорыЭквайринга.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -216,22 +233,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:121px;width:421px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:439px;height:25px;',

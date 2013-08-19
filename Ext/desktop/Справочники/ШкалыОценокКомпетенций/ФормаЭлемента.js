@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Шкала оценок компетенций',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,6 +47,23 @@
 			style: 'position:absolute;left:98px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+			]
+		},
+		{
 			id: 'ТабличноеПолеОценок',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:426px;height:165px;',
@@ -76,7 +94,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ШкалыОценокКомпетенций").data,
-					fields: ['Картинка','ПриоритетОценки','Наименование',]
+					fields: ['Ссылка','Картинка','ПриоритетОценки','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -107,11 +125,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОценок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ШкалыОценокКомпетенций.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ШкалыОценокКомпетенций.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -122,28 +142,30 @@
 			title: 'Наименования оценок',
 			style: 'position:absolute;left:8px;top:60px;width:426px;height:16px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:426px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				{
+					text:'',
+				},
+				'-',
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:273px;width:442px;height:25px;',
@@ -165,27 +187,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:426px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				{
-					text:'',
-				},
-				'-',
 			]
 		},
 	]

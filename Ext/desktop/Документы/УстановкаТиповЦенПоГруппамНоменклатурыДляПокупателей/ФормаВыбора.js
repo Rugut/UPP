@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка типов цен по группам номенклатуры для покупателей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -99,24 +100,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УстановкаТиповЦенПоГруппамНоменклатурыДляПокупателей.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:564px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -138,6 +136,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Банки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,7 +71,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Банки").data,
-					fields: ['Родитель.Представление','Картинка','Код','Наименование','КоррСчет','Город','Адрес','Телефоны',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','Наименование','КоррСчет','Город','Адрес','Телефоны',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -113,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Банки.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Банки.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -142,7 +145,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Банки").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -167,15 +170,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Банки.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Банки.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Добавить из классификатора банков РФ',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -193,18 +209,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Добавить из классификатора банков РФ',
-				},
-			]
-		},
 	]
 	});
 });

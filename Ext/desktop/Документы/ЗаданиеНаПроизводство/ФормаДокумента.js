@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Задание на производство',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,6 +64,13 @@
 			width: 80,
 			height: 19,
 			style: 'position:absolute;left:416px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -267,11 +275,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыпускТехПроцесс');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗаданиеНаПроизводство.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗаданиеНаПроизводство.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -449,14 +459,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:356px;width:644px;height:25px;',

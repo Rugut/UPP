@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Инвентаризация товаров на складе',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -286,11 +287,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИнвентаризацияТоваровНаСкладе.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИнвентаризацияТоваровНаСкладе.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -536,6 +539,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:151px;top:0px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -554,6 +559,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:151px;top:24px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 					]
 				},

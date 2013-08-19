@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установки цен номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -99,11 +100,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УстановкаЦенНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УстановкаЦенНоменклатуры.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

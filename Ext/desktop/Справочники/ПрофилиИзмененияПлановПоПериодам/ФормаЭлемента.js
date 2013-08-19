@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профили изменения планов по периодам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,7 +107,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоПериодам").data,
-					fields: ['НомерСтроки','НомерПериода','Коэффициент',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','НомерПериода','Коэффициент',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -137,11 +138,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПрофильИзменения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиИзмененияПлановПоПериодам.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

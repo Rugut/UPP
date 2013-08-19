@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Элемент Типы цен номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -215,6 +216,13 @@
 			style: 'position:absolute;left:371px;top:33px;width:40px;height:19px;text-align:center;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОкруглятьВБольшуюСторону',
 			text: 'Метод округления:',
@@ -330,14 +338,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

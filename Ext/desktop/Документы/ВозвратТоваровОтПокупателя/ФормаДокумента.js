@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Возврат товаров от покупателя',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -524,11 +525,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровОтПокупателя.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровОтПокупателя.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -727,11 +730,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВозвратнаяТара');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровОтПокупателя.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровОтПокупателя.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1131,15 +1136,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровОтПокупателя.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровОтПокупателя.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:1px;width:628px;height:26px;',
+			items:
+			[
+				{
+					text:'Заполнить документы расчетов с контрагентом',
+				},
+			]
 		},
 		{
 			xtype: 'label',

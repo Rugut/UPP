@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -148,6 +159,45 @@
 					title:'Начисления',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:17px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		{
 			id: 'ОсновныеНачисления',
 			xtype: 'grid',
@@ -484,11 +534,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсновныеНачисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводПостоянногоНачисленияИлиУдержанияСотрудникамОрганизации.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводПостоянногоНачисленияИлиУдержанияСотрудникамОрганизации.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -621,17 +673,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:548px;width:643px;height:25px;',

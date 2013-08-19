@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма 1-Инвест',
 	
 	layout: {type: "fit",align: "stretch"},

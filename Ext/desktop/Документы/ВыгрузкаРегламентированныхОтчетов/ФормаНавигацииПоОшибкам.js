@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Навигация по ошибкам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -126,11 +127,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаСообщений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкамСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаРегламентированныхОтчетов.ФормаНавигацииПоОшибкамСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

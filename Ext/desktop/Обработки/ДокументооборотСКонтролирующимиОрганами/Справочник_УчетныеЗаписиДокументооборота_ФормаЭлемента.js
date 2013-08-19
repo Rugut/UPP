@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Учетные записи документооборота',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,37 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Серверы документооборота',
+				},
+				{
+					text:'Налоговые органы',
+				},
+				{
+					text:'Органы ПФР',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Расширенные настройки',
+				},
+				'-',
+				{
+					text:'Проверить',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
@@ -479,11 +511,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Пользователи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_УчетныеЗаписиДокументооборота_ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_УчетныеЗаписиДокументооборота_ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -698,38 +732,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Серверы документооборота',
-				},
-				{
-					text:'Налоговые органы',
-				},
-				{
-					text:'Органы ПФР',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Расширенные настройки',
-				},
-				'-',
-				{
-					text:'Проверить',
-				},
-			]
-		},
 	]
 	});
 });

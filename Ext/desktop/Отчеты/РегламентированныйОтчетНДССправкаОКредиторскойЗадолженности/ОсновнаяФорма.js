@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Справка о кредиторской задолженности',
 	
 	layout: {type: "fit",align: "stretch"},

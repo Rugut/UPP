@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Налоговые льготы по земельному налогу',
 	
 	layout: {type: "fit",align: "stretch"},

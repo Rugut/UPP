@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка Диаграммы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -163,6 +164,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:82px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'radiogroup',
@@ -281,11 +284,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Серии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -339,19 +344,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Точки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:28px;width:182px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:194px;top:28px;width:182px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:104px;top:205px;width:176px;height:20px;',
+			width: 176,
+			height: 20,
 		},
 		{
 			xtype: 'numberfield',
@@ -383,6 +406,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:112px;top:32px;width:264px;height:19px;',
+			width: 264,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -414,6 +439,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:112px;top:56px;width:264px;height:19px;',
+			width: 264,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -449,6 +476,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:112px;top:6px;width:264px;height:19px;',
+			width: 264,
+			height: 19,
 		},
 					]
 				},
@@ -540,15 +569,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДиаграммаХозрасчетный.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Редактирование полномочий представителя',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,6 +47,19 @@
 			style: 'position:absolute;left:195px;top:10px;width:90px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:72px;width:847px;height:25px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			id: 'СписокПризнаков',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:99px;width:847px;height:346px;',
@@ -76,7 +90,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоверенностиНалогоплательщика").data,
-					fields: ['','','',]
+					fields: ['Ссылка','','','',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -107,11 +121,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокПризнаков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаВводаПолномочийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаВводаПолномочийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -158,20 +174,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:72px;width:847px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
 				},
 			]
 		},

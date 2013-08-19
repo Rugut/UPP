@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ответ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -92,11 +93,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НесколькоВариантовОтветов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Опрос.ФормаВводаОстальныхОтветовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Опрос.ФормаВводаОстальныхОтветовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -138,11 +141,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСоставногоОтвета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Опрос.ФормаВводаОстальныхОтветовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Опрос.ФормаВводаОстальныхОтветовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

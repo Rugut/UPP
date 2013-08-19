@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Электронные представления регламентированных отчетов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -91,6 +92,42 @@
 			style: 'position:absolute;left:106px;top:674px;width:644px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
+			items:
+			[
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				'-',
+				'-',
+				{
+					text:'Просмотр печатной формы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: '',
 			style: 'position:absolute;left:8px;top:668px;width:742px;height:4px;',
@@ -147,6 +184,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:232px;top:186px;width:230px;height:19px;',
+			width: 230,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -248,6 +287,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:98px;top:0px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -321,6 +362,39 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:17px;width:742px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			id: 'ФайлыКомплекта',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:43px;width:742px;height:380px;',
@@ -386,11 +460,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФайлыКомплекта');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ЭлектронныеПредставленияРегламентированныхОтчетов_ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ЭлектронныеПредставленияРегламентированныхОтчетов_ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -525,43 +601,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				'-',
-				'-',
-				{
-					text:'Просмотр печатной формы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:701px;width:758px;height:25px;',

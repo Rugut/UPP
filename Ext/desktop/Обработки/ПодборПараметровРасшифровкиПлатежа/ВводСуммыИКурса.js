@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод суммы и курса',
 	
 	layout: {type: "fit",align: "stretch"},

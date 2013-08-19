@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расшифровка соотношений показателей',
 	
 	layout: {type: "fit",align: "stretch"},

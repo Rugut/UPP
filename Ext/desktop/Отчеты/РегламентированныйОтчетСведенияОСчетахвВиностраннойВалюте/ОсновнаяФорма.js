@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Справка о валютных счетах',
 	
 	layout: {type: "fit",align: "stretch"},

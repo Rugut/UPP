@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Акцизы: извещение об освобождении от уплаты авансового платежа',
 	
 	layout: {type: "fit",align: "stretch"},

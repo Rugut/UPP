@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сформированные заказы на обслуживание ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,17 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаДокументов',
 			xtype: 'grid',
@@ -108,11 +120,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСформированныхЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСформированныхЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -122,18 +136,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
-		},
 	]
 	});
 });

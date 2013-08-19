@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -138,6 +139,16 @@
 			style: 'position:absolute;left:96px;top:376px;width:605px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить документ',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер:',
@@ -162,6 +173,16 @@
 					title:'По договорам налогового агента',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'ОплатаПоДоговорамНалоговогоАгента',
 			xtype: 'grid',
@@ -228,11 +249,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОплатаПоДоговорамНалоговогоАгента');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияОплатыНДСВБюджет.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияОплатыНДСВБюджет.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -244,6 +267,16 @@
 					title:'Для собственного потребления',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
+		},
 		{
 			id: 'ОплатаДляСобственногоПотребления',
 			xtype: 'grid',
@@ -310,11 +343,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОплатаДляСобственногоПотребления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияОплатыНДСВБюджет.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияОплатыНДСВБюджет.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -328,17 +363,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить документ',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:403px;width:709px;height:25px;',

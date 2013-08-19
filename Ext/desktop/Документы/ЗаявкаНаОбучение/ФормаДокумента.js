@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заявка на курс обучения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -154,6 +155,16 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:140px;width:399px;height:24px;',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
+		},
+		{
 			id: 'ОбучающиесяРаботники',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:164px;width:399px;height:151px;',
@@ -210,62 +221,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОбучающиесяРаботники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗаявкаНаОбучение.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗаявкаНаОбучение.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьКурсОбучения1',
-			text: 'Дата:',
-			style: 'position:absolute;left:8px;top:101px;width:78px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'datefield',
-			hideLabel: true,
-			disabled: false,
-			value: 0,
-			format: 'd.m.Y',
-			name: 'ДатаЗавершенияКурса',
-			width: 80,
-			height: 19,
-			style: 'position:absolute;left:94px;top:101px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Обучающиеся',
-			style: 'position:absolute;left:8px;top:124px;width:399px;height:16px;',
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Дата завершения курса',
-			style: 'position:absolute;left:8px;top:81px;width:399px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:140px;width:399px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:415px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -300,6 +270,37 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьКурсОбучения1',
+			text: 'Дата:',
+			style: 'position:absolute;left:8px;top:101px;width:78px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'datefield',
+			hideLabel: true,
+			disabled: false,
+			value: 0,
+			format: 'd.m.Y',
+			name: 'ДатаЗавершенияКурса',
+			width: 80,
+			height: 19,
+			style: 'position:absolute;left:94px;top:101px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Обучающиеся',
+			style: 'position:absolute;left:8px;top:124px;width:399px;height:16px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Дата завершения курса',
+			style: 'position:absolute;left:8px;top:81px;width:399px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:371px;width:415px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отправка на сервер ФСС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,16 @@
 			name: 'КодОрганаФСС',
 			text: 'КодОрганаФСС',
 			style: 'position:absolute;left:89px;top:95px;width:255px;height:15px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:352px;height:25px;',
+			items:
+			[
+				{
+					text:'Выгрузить отправленный пакет',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -138,17 +149,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:352px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выгрузить отправленный пакет',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:283px;width:352px;height:25px;',

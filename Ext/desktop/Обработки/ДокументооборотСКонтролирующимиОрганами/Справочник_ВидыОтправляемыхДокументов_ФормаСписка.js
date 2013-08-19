@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Виды отправляемых документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -90,11 +91,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ВидыОтправляемыхДокументов_ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ВидыОтправляемыхДокументов_ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -139,35 +142,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ВидыОтправляемыхДокументов_ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ВидыОтправляемыхДокументов_ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьОписаниеОтчета',
-			text: 'НадписьОписаниеОтчета',
-			style: 'position:absolute;left:8px;top:342px;width:786px;height:40px;',
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Описание',
-			style: 'position:absolute;left:8px;top:321px;width:786px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:802px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -219,6 +208,21 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписаниеОтчета',
+			text: 'НадписьОписаниеОтчета',
+			style: 'position:absolute;left:8px;top:342px;width:786px;height:40px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание',
+			style: 'position:absolute;left:8px;top:321px;width:786px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

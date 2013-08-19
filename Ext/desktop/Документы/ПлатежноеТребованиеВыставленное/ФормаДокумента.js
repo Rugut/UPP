@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежное требование выставленное',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -861,15 +862,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежноеТребованиеВыставленное.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежноеТребованиеВыставленное.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:310px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1303,6 +1316,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:96px;top:30px;width:537px;height:19px;',
+			width: 537,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1402,6 +1417,13 @@
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
 			]
 		},
 		{
@@ -1640,14 +1662,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

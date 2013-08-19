@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Перенос данных из информационных баз 1С:Предприятия 7.7',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -107,11 +108,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаПути');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереносДанныхИзИнформационныхБаз1СПредприятия77.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереносДанныхИзИнформационныхБаз1СПредприятия77.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

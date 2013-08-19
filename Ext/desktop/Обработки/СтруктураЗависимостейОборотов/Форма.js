@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Структура зависимостей оборотов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -67,11 +68,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабДеревоЗависимостей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СтруктураЗависимостейОборотов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СтруктураЗависимостейОборотов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

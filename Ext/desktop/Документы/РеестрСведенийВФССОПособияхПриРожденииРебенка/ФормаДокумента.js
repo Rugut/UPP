@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Реестр сведений в ФСС о пособиях при рождении ребенка',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -154,6 +155,13 @@
 			style: 'position:absolute;left:96px;top:524px;width:796px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:884px;height:437px;',
 			height: 437,width: 884,
@@ -163,6 +171,16 @@
 					title:'Пособия',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить детьми',
+				},
+			]
+		},
 		{
 			id: 'РаботникиОрганизации',
 			xtype: 'grid',
@@ -265,11 +283,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеестрСведенийВФССОПособияхПриРожденииРебенка.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1597,14 +1617,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',

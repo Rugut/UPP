@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр-расчет амортизации основных средств',
 	
 	layout: {type: "fit",align: "stretch"},

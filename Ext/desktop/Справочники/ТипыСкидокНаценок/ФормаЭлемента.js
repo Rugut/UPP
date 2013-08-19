@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Типы скидок и наценок',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:483px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:61px;width:467px;height:226px;',
@@ -337,7 +345,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТипыСкидокНаценок").data,
-					fields: ['Выбран','ДеньНедели','ВремяНачала','ВремяОкончания',]
+					fields: ['Ссылка','Выбран','ДеньНедели','ВремяНачала','ВремяОкончания',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -371,15 +379,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВремяПоДнямНедели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТипыСкидокНаценок.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:453px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -419,14 +442,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:483px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:295px;width:483px;height:25px;',

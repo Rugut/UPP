@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежный ордер на поступление денежных средств: Назначение платежа',
 	
 	layout: {type: "fit",align: "stretch"},

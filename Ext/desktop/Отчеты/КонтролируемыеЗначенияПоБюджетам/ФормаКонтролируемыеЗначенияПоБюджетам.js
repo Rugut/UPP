@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,69 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:569px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Заголовок',
+				},
+				{
+					text:'Настройка...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Заголовок',
+				},
+				{
+					text:'Настройка...',
+				},
+				{
+					text:'Восстановить значения',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:102px;width:553px;height:70px;',
@@ -93,10 +157,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:72px;top:45px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:72px;top:21px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -266,70 +334,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:569px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				'-',
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Восстановить значения',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

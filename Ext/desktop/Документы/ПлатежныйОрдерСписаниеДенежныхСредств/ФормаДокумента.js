@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежный ордер на списание денежных средств',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -226,6 +227,13 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -922,15 +930,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:294px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1496,11 +1516,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПеречислениеЗаработнойПлаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежныйОрдерСписаниеДенежныхСредств.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1510,6 +1532,40 @@
 			xtype: 'fieldset',
 			title: 'Зачислено по ведомостям на счета работников',
 			style: 'position:absolute;left:0px;top:0px;width:641px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:641px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 					]
 				},
@@ -2077,14 +2133,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

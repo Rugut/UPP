@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Параметры интеграции с ПК ""Спринтер"" компании ""Такском""',
 	
 	layout: {type: "fit",align: "stretch"},

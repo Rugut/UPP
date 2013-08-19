@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Приложение к справке о кредиторской задолженности',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,36 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			items:
+			[
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:654px;height:312px;',
@@ -82,6 +113,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:86px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -91,6 +124,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:427px;top:24px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -177,37 +212,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:670px;height:25px;',

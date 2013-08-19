@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Семейное положение физических лиц',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,7 +47,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СемейноеПоложениеФизЛиц").data,
-					fields: ['Картинка','Код','Наименование',]
+					fields: ['Ссылка','Картинка','Код','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -77,11 +78,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СемейноеПоложениеФизЛиц.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СемейноеПоложениеФизЛиц.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

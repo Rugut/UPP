@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Регистрация изменений для обмена',
 	
 	layout: {type: "fit",align: "stretch"},

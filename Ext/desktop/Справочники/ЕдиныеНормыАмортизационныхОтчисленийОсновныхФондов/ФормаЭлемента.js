@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Единые нормы амортизационных отчислений на полное восстановление основных фондов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -73,18 +74,17 @@
 			name: 'ПроцентОтСтоимостиМашины',
 			style: 'position:absolute;left:302px;top:179px;width:90px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:522px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:522px;height:25px;',

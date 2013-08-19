@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет пособия за период после 1 января 2007 года',
 	
 	layout: {type: "fit",align: "stretch"},

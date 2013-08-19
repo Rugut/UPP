@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Остатки отпусков прошлых лет',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,24 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:477px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить остатки отпусков',
+				},
+				'-',
+				{
+					text:'Настроить автоматическое заполнение...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			id: 'СотрудникиОрганизаций',
 			xtype: 'grid',
@@ -40,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
-					fields: ['Наименование','Физлицо.Представление',]
+					fields: ['Ссылка','Наименование','Физлицо.Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,11 +87,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СотрудникиОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОстаткиОтпусков.ФормаСпискаПоследнихОстатковСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОстаткиОтпусков.ФормаСпискаПоследнихОстатковСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -115,7 +136,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
-					fields: ['ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
+					fields: ['Ссылка','ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -149,11 +170,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Остатки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОстаткиОтпусков.ФормаСпискаПоследнихОстатковСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОстаткиОтпусков.ФормаСпискаПоследнихОстатковСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -181,25 +204,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:477px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить остатки отпусков',
-				},
-				'-',
-				{
-					text:'Настроить автоматическое заполнение...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:13px;top:29px;width:230px;height:19px;',
+			width: 230,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',

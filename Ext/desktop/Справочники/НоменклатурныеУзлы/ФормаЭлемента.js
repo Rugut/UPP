@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Номенклатурные узлы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -107,6 +108,13 @@
 			style: 'position:absolute;left:326px;top:57px;width:80px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:625px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ИсходныеКомплектующие',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:625px;height:220px;',
@@ -161,7 +169,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НоменклатурныеУзлы").data,
-					fields: ['НомерСтроки','ВидНорматива','Номенклатура','ХарактеристикаНоменклатуры','Количество','ЕдиницаИзмерения','СтатьяЗатрат',]
+					fields: ['Ссылка','НомерСтроки','ВидНорматива','Номенклатура','ХарактеристикаНоменклатуры','Количество','ЕдиницаИзмерения','СтатьяЗатрат',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -204,15 +212,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИсходныеКомплектующие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НоменклатурныеУзлы.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НоменклатурныеУзлы.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -223,22 +240,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:625px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:641px;height:25px;',

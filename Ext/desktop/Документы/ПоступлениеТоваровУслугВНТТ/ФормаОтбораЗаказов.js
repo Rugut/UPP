@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отобрать заказы поставщикам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:413px;top:17px;width:233px;height:19px;',
+			width: 233,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -300,15 +303,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'Обнулить столбец добавляемых в документ',
+				},
+				{
+					text:'Заполнить столбец добавляемых в документ',
+				},
+			]
 		},
 					]
 				},
@@ -463,15 +481,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВозвратнаяТара');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'Обнулить столбец добавляемых в документ',
+				},
+				{
+					text:'Заполнить столбец добавляемых в документ',
+				},
+			]
 		},
 					]
 				},
@@ -479,6 +512,19 @@
 					title:'Услуги',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'Обнулить столбец добавляемых в документ',
+				},
+				{
+					text:'Заполнить столбец добавляемых в документ',
+				},
+			]
+		},
 		{
 			id: 'Услуги',
 			xtype: 'grid',
@@ -608,11 +654,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Услуги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -897,11 +945,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеЗаказы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -910,6 +960,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:419px;top:36px;width:233px;height:19px;',
+			width: 233,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -941,6 +993,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:64px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -951,6 +1005,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:8px;width:210px;height:19px;',
+			width: 210,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -961,6 +1017,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:40px;width:210px;height:19px;',
+			width: 210,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -971,6 +1029,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:364px;top:8px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -984,6 +1044,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:96px;width:210px;height:19px;',
+			width: 210,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -997,6 +1059,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:120px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1111,15 +1175,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеТоваровУслугВНТТ.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',

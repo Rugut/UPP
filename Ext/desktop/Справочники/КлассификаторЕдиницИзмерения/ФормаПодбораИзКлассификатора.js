@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Общероссийский классификатор единиц измерения',
 	
 	layout: {type: "fit",align: "stretch"},

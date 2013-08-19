@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка представления наименования объекта при загрузке',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,26 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:33px;width:310px;height:24px;',
+			items:
+			[
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
+		},
 		{
 			id: 'ПоляПредставленияНаименованияОбъектаПриЗагрузке',
 			xtype: 'grid',
@@ -63,49 +84,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляПредставленияНаименованияОбъектаПриЗагрузке');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЭкспортИмпортКонтактныхДанныхОбъектов.ФормаНастройкиПолейНаименованияОбъектаПриЗагрузкеСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЭкспортИмпортКонтактныхДанныхОбъектов.ФормаНастройкиПолейНаименованияОбъектаПриЗагрузкеСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:326px;height:25px;',
+			items:
+			[
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:33px;width:310px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				'-',
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:326px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

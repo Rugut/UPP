@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Финансовая мотивация персонала',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,39 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:494px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Печать мотиваций',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Печать всех начислений',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:703px;top:33px;width:225px;height:521px;',
@@ -97,11 +131,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДолжности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МотивацияПерсонала.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МотивацияПерсонала.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -425,11 +461,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПоДолжности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МотивацияПерсонала.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МотивацияПерсонала.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -477,6 +515,18 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:27px;width:689px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Печать по подразделению',
+				},
+				'-',
+			]
+		},
 		{
 			id: 'СхемыМотивацииПодразделения',
 			xtype: 'grid',
@@ -813,11 +863,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СхемыМотивацииПодразделения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МотивацияПерсонала.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МотивацияПерсонала.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -891,11 +943,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПодразделенияОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МотивацияПерсонала.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МотивацияПерсонала.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -955,11 +1009,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПодразделенияПоЦФО');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МотивацияПерсонала.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МотивацияПерсонала.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -980,6 +1036,19 @@
 			style: 'position:absolute;left:0px;top:0px;width:456px;height:20px;',
 		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:881px;top:0px;width:55px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
 				},
 			]
 		},
@@ -1008,54 +1077,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:494px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Печать мотиваций',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Печать всех начислений',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:881px;top:0px;width:55px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-			]
-		},
 	]
 	});
 });

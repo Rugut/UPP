@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '<ФИО>, <номер года> год',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,15 +109,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтпуска');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикОтпусков.РасшифровкаОтпусковСотрудникаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикОтпусков.РасшифровкаОтпусковСотрудникаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			items:
+			[
+				{
+					text:'Запланировать отпуск',
+				},
+				{
+					text:'Открыть документ',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Остатки отпусков сотрудника',
+				},
+				'-',
+				{
+					text:'Дополнительные дни отпуска',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -176,31 +203,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Запланировать отпуск',
-				},
-				{
-					text:'Открыть документ',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Остатки отпусков сотрудника',
-				},
-				'-',
-				{
-					text:'Дополнительные дни отпуска',
-				},
-			]
-		},
 	]
 	});
 });

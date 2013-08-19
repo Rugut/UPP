@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод сведений о регламентированном учете плановых начислений сотрудников организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -169,6 +170,45 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			id: 'ОсновныеНачисления',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:627px;height:184px;',
@@ -270,69 +310,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсновныеНачисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводСведенийОРеглУчетеПлановыхНачисленийРаботниковОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводСведенийОРеглУчетеПлановыхНачисленийРаботниковОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Плановые начисления',
-			style: 'position:absolute;left:8px;top:84px;width:627px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:627px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -368,6 +360,15 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Плановые начисления',
+			style: 'position:absolute;left:8px;top:84px;width:627px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:341px;width:643px;height:25px;',

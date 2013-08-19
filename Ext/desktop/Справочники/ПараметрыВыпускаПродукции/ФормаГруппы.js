@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Параметры выпуска продукции',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -86,6 +87,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:429px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьГруппа',
 			text: 'Группа:',
@@ -95,14 +103,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:429px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:84px;width:429px;height:25px;',

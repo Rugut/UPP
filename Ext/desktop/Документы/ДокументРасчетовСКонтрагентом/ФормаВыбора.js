@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Документы расчетов с контрагентом (ручной учет)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,44 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:192px;width:593px;height:25px;',
+			items:
+			[
+				{
+					text:'&Просмотр',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Новый документ расчетов (ручной учет)',
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаДокументов',
 			xtype: 'grid',
@@ -63,11 +102,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументРасчетовСКонтрагентом.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументРасчетовСКонтрагентом.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -384,45 +425,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:192px;width:593px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Просмотр',
-				},
-				{
-					text:'&Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
-				},
-				'-',
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Новый документ расчетов (ручной учет)',
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

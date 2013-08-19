@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Свойства',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,38 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:476px;height:25px;',
+			items:
+			[
+				{
+					text:'Записать',
+				},
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'СвойстваИЗначения',
 			xtype: 'grid',
@@ -72,11 +105,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияСвойствОбъекта.ЗначенияСвойствОбъектаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияСвойствОбъекта.ЗначенияСвойствОбъектаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -104,39 +139,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:476px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Записать',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 	]
 	});
 });

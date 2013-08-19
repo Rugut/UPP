@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регламентированная и финансовая отчетность',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -148,15 +149,52 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоОтчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:18px;width:219px;height:24px;',
+			items:
+			[
+				{
+					text:'Новый',
+				},
+				'-',
+				{
+					text:'Снять пометки',
+				},
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Развернуть все узлы',
+				},
+				{
+					text:'Свернуть все узлы',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Подробнее об отчете',
+				},
+				'-',
+				{
+					text:'Иерархический просмотр',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -593,15 +631,52 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЖурналОтчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:5px;top:1px;width:526px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Групповой режим',
+				},
+				'-',
+				'-',
+				'-',
+				'-',
+				{
+					text:'Отображать панель обмена',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -743,11 +818,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаФНС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -865,15 +942,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаПФР');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			items:
+			[
+				{
+					text:'Обменяться',
+				},
+				'-',
+				'-',
+				'-',
+			]
 		},
 					]
 				},
@@ -956,11 +1048,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтправкиФСС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1119,15 +1213,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаЗаявление');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			items:
+			[
+				{
+					text:'Обменяться',
+				},
+				'-',
+				'-',
+				'-',
+			]
 		},
 					]
 				},
@@ -1246,15 +1355,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаФСГС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			items:
+			[
+				{
+					text:'Обменяться',
+				},
+				'-',
+				'-',
+				'-',
+			]
 		},
 					]
 				},
@@ -1368,11 +1492,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЖурналВыгрузки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.УправлениеОтчетностьюСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1431,14 +1557,9 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -1471,6 +1592,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

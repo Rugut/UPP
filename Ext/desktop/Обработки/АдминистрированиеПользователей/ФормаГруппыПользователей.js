@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группы пользователей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -54,11 +55,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -297,11 +300,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокПользователи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -361,11 +366,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПользователиГруппы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыПользователейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

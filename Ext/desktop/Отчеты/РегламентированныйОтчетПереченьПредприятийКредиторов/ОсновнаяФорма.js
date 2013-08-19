@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Перечень предприятий-кредиторов',
 	
 	layout: {type: "fit",align: "stretch"},

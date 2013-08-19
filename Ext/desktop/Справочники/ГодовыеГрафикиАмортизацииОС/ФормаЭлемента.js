@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Годовые графики амортизации ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -59,6 +60,13 @@
 			width: 304,
 			height: 19,
 			style: 'position:absolute;left:106px;top:57px;width:304px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:417px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -271,14 +279,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:417px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет НДС по продукции (работам, услугам)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -148,6 +149,29 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Дт/кт',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'Надпись2',
 			text: 'от',
@@ -172,30 +196,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				{
-					text:'Дт/кт',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:161px;width:400px;height:25px;',

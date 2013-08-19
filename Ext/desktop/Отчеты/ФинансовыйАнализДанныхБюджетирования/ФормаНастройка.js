@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет  Финансовый анализ данных бюджетирования',
 	
 	layout: {type: "fit",align: "stretch"},

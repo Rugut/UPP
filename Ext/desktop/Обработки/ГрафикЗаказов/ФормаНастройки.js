@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -99,15 +100,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:16px;top:132px;width:515px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -158,11 +168,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляЗаказаНаПроизводство');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -213,11 +225,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляЗаказаПоставщику');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -268,11 +282,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляЗаказаПокупателя');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -436,11 +452,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляВнутренниеЗаказы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикЗаказов.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -479,14 +497,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:16px;top:132px;width:515px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

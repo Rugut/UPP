@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заполнение справочника Регионы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -52,7 +53,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Регионы").data,
-					fields: ['Пометка','Наименование','Код','Ссылка',]
+					fields: ['Ссылка','Родитель.Представление','Пометка','Наименование','Код','Ссылка',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -86,11 +87,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('АдресноеДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Регионы.ФормаЗаполненияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Регионы.ФормаЗаполненияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -99,6 +102,26 @@
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:32px;width:220px;height:385px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:422px;top:231px;width:155px;height:129px;',
+			items:
+			[
+				{
+					text:'Пометить вложенные',
+				},
+				{
+					text:'Сбросить вложенные',
+				},
+				'-',
+				{
+					text:'Пометить текущий уровень',
+				},
+				{
+					text:'Сбросить текущий уровень',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -173,27 +196,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:422px;top:231px;width:155px;height:129px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Пометить вложенные',
-				},
-				{
-					text:'Сбросить вложенные',
-				},
-				'-',
-				{
-					text:'Пометить текущий уровень',
-				},
-				{
-					text:'Сбросить текущий уровень',
 				},
 			]
 		},

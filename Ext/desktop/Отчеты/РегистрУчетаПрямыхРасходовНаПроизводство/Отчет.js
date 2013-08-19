@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр учета прямых расходов на производство',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -62,6 +63,50 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Заголовок',
+				},
+				{
+					text:'Настройка...',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'datefield',
 			hideLabel: true,
 			disabled: false,
@@ -110,56 +155,13 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:70px;top:56px;width:526px;height:20px;',
+			width: 526,
+			height: 20,
 		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Настройка...',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Заголовок',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

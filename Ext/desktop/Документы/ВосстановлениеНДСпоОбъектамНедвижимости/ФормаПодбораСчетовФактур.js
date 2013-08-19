@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подбор счетов-фактур',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -135,15 +136,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СчетаФактуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаПодбораСчетовФактурСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаПодбораСчетовФактурСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:31px;width:561px;height:24px;',
+			items:
+			[
+				{
+					text:'Выделить все',
+				},
+				{
+					text:'Снять выделение всех',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -208,28 +232,6 @@
 				'-',
 				{
 					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:31px;width:561px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выделить все',
-				},
-				{
-					text:'Снять выделение всех',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Очистить',
 				},
 			]
 		},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Документ Поступление доп. расходов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -262,15 +263,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Оборудование');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:645px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по поступлению',
+				},
+				{
+					text:'Добавить из поступления',
+				},
+				'-',
+				{
+					text:'Распределить сумму расхода по оборудованию',
+				},
+			]
 		},
 					]
 				},
@@ -497,11 +517,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -952,15 +974,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоступлениеДопРасходов.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:645px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по заказам документа',
+				},
+			]
 		},
 		{
 			xtype: 'label',

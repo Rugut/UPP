@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Должности организаций',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -49,6 +50,23 @@
 			xtype: 'checkbox',
 			boxLabel: 'Административно-управленческий персонал',
 			style: 'position:absolute;left:184px;top:59px;width:256px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -472,7 +490,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
-					fields: ['Принадлежность','Категория',]
+					fields: ['Ссылка','Принадлежность','Категория',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -500,11 +518,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Категории');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -535,7 +555,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
-					fields: ['Свойство','Значение',]
+					fields: ['Ссылка','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -563,15 +583,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:275px;top:89px;width:266px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить новую категорию',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:89px;width:263px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -604,7 +646,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДолжностиОрганизаций").data,
-					fields: ['ВидЕжегодногоОтпуска','КоличествоДнейОтпускаВГод',]
+					fields: ['Ссылка','ВидЕжегодногоОтпуска','КоличествоДнейОтпускаВГод',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -632,15 +674,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЕжегодныеОтпуска');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДолжностиОрганизаций.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:535px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+			]
 		},
 					]
 				},
@@ -662,24 +719,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:448px;width:565px;height:25px;',

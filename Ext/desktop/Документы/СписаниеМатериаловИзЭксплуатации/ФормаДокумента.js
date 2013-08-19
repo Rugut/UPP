@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Списание материалов из эксплуатации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -330,11 +331,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Материалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СписаниеМатериаловИзЭксплуатации.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СписаниеМатериаловИзЭксплуатации.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

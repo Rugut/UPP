@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обновление регламентированной отчетности',
 	
 	layout: {type: "fit",align: "stretch"},

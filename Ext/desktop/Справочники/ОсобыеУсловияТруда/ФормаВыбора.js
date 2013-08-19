@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Особые условия труда',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,7 +47,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОсобыеУсловияТруда").data,
-					fields: ['Картинка','Код','КодДляОтчетности2010',]
+					fields: ['Ссылка','Картинка','Код','КодДляОтчетности2010',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -77,24 +78,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОсобыеУсловияТруда.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОсобыеУсловияТруда.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:425px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -208,6 +206,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

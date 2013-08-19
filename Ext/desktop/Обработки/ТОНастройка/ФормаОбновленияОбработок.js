@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обновление обработок обслуживания',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,24 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:981px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Выбрать все',
+				},
+				{
+					text:'Снять все',
+				},
+				'-',
+				{
+					text:'Обновить список обработок с сайта',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаСостоянияОбновления',
 			xtype: 'grid',
@@ -126,11 +145,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаСостоянияОбновления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаОбновленияОбработокСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаОбновленияОбработокСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -237,25 +258,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:981px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Выбрать все',
-				},
-				{
-					text:'Снять все',
-				},
-				'-',
-				{
-					text:'Обновить список обработок с сайта',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:528px;width:981px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о среднесписочной численности',
 	
 	layout: {type: "fit",align: "stretch"},

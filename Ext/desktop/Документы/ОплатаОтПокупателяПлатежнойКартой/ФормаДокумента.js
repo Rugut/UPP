@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Оплата от покупателя платежной картой',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -499,15 +500,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОплатаОтПокупателяПлатежнойКартой.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОплатаОтПокупателяПлатежнойКартой.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:308px;height:24px;',
+			items:
+			[
+				{
+					text:'По задолженностям',
+				},
+			]
 		},
 		{
 			xtype: 'label',

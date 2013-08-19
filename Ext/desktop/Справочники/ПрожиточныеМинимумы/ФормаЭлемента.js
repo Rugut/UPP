@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Прожиточный минимум субъекта РФ, в целом по РФ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,90 +47,8 @@
 			style: 'position:absolute;left:93px;top:33px;width:240px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Величина прожиточного минимума',
-			style: 'position:absolute;left:8px;top:65px;width:446px;height:16px;',
-		},
-		{
-			id: 'ВеличинаПрожиточногоМинимума',
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:84px;width:446px;height:177px;',
-			height: 177,width: 446,
-			columns:
-			[
-				{
-					text:'',
-					width:'32',
-					dataIndex:'Картинка',
-					flex:1,
-				},
-				{
-					text:'Дата',
-					width:'120',
-					dataIndex:'Период',
-					flex:1,
-				},
-				{
-					text:'Размер',
-					width:'100',
-					dataIndex:'Размер',
-					flex:1,
-				},
-			],
-			store:
-			{
-				data: Ext.create("Ext.data.Store",
-				{
-					data: Ext.create("Данные.Справочники.ПрожиточныеМинимумы").data,
-					fields: ['Картинка','Период','Размер',]
-				}).data.items,
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке/100', timeout: 200},
-				fields:
-				[
-					{
-						name:'Ссылка',
-					},
-					{
-						name:'Картинка',
-					},
-					{
-						name:'Период',
-					},
-					{
-						name:'Размер',
-					},
-				]
-			},
-			listeners:
-			{
-				dblclick:
-				{
-					element: 'body',
-					fn: function ()
-					{
-						var грид = Ext.getCmp('ВеличинаПрожиточногоМинимума');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.ПрожиточныеМинимумы.ФормаЭлементаСобытия'], function ()
-						{
-							var obj = Ext.create("Справочники.ПрожиточныеМинимумы.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
-						});
-					}
-				}
-			},
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:462px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -179,6 +98,89 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Величина прожиточного минимума',
+			style: 'position:absolute;left:8px;top:65px;width:446px;height:16px;',
+		},
+		{
+			id: 'ВеличинаПрожиточногоМинимума',
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:84px;width:446px;height:177px;',
+			height: 177,width: 446,
+			columns:
+			[
+				{
+					text:'',
+					width:'32',
+					dataIndex:'Картинка',
+					flex:1,
+				},
+				{
+					text:'Дата',
+					width:'120',
+					dataIndex:'Период',
+					flex:1,
+				},
+				{
+					text:'Размер',
+					width:'100',
+					dataIndex:'Размер',
+					flex:1,
+				},
+			],
+			store:
+			{
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ПрожиточныеМинимумы").data,
+					fields: ['Ссылка','Картинка','Период','Размер',]
+				}).data.items,
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ПрожиточныеМинимумы/ВыбратьПоСсылке/100', timeout: 200},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Картинка',
+					},
+					{
+						name:'Период',
+					},
+					{
+						name:'Размер',
+					},
+				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ВеличинаПрожиточногоМинимума');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
+						Ext.require(['Справочники.ПрожиточныеМинимумы.ФормаЭлементаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ПрожиточныеМинимумы.ФормаЭлементаСобытия");
+							obj.ПередатьСсылку(стрЗнач);
+						});
+					}
+				}
+			},
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:269px;width:462px;height:25px;',

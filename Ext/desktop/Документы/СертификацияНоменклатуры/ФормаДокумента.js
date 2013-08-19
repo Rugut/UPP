@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сертификация номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:666px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -530,15 +538,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Анализы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СертификацияНоменклатуры.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СертификацияНоменклатуры.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по типовому анализу',
+				},
+				{
+					text:'Добавить из типового анализа',
+				},
+			]
 		},
 					]
 				},
@@ -656,14 +679,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:666px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:666px;height:25px;',

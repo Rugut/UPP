@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отличия обновления от текущей версии',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр учета прямых расходов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -162,15 +163,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокПоказателей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрУчетаПрямыхРасходовНаПроизводство.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрУчетаПрямыхРасходовНаПроизводство.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:101px;width:344px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -186,6 +208,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:84px;top:54px;width:266px;height:19px;',
+			width: 266,
+			height: 19,
 		},
 					]
 				},

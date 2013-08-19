@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка соответствия счетов БУ и НУ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -74,6 +75,23 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:594px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -200,38 +218,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствиеСчетовБУиНУ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УстановкаСоответствияСчетовБУиНУ.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УстановкаСоответствияСчетовБУиНУ.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:57px;width:578px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Установить Флажки',
+				},
+				{
+					text:'Снять Флажки',
+				},
+				'-',
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:594px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:296px;width:594px;height:25px;',
@@ -257,22 +274,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:57px;width:578px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Установить Флажки',
-				},
-				{
-					text:'Снять Флажки',
-				},
-				'-',
 			]
 		},
 	]

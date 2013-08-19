@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод распределения основного заработка сотрудников',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -315,15 +316,54 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеНачислений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Действие открыть свойства',
+				},
+				{
+					text:'Действие открыть категории',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -413,58 +453,32 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводРаспределенияОсновногоЗаработкаРаботниковОрганизации.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:121px;width:592px;height:24px;',
+			items:
+			[
+				{
+					text:'Списком работников',
+				},
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Действие открыть свойства',
-				},
-				{
-					text:'Действие открыть категории',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:450px;width:608px;height:25px;',
@@ -485,17 +499,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:121px;width:592px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком работников',
 				},
 			]
 		},

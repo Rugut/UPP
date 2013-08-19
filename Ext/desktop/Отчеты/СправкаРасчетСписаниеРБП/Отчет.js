@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Списание расходов будущих периодов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -61,28 +62,8 @@
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьПериод',
-			text: 'Период:',
-			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;text-align:left;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'ПредставлениеПериодаРегистрации',
-			width: 109,
-			height: 19,
-			style: 'position:absolute;left:61px;top:34px;width:109px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -129,6 +110,25 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериод',
+			text: 'Период:',
+			style: 'position:absolute;left:8px;top:33px;width:53px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПредставлениеПериодаРегистрации',
+			width: 109,
+			height: 19,
+			style: 'position:absolute;left:61px;top:34px;width:109px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

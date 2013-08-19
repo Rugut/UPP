@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подразделения организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -58,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
-					fields: ['Наименование','Код','КодПоОКАТО','КПП','Порядок',]
+					fields: ['Ссылка','Родитель.Представление','Наименование','Код','КодПоОКАТО','КПП','Порядок',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -95,11 +96,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

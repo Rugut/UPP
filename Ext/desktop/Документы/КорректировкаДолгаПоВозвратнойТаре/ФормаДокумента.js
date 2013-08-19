@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировка долга по возвратной таре',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -182,11 +183,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВозвратнаяТара');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаДолгаПоВозвратнойТаре.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаДолгаПоВозвратнойТаре.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

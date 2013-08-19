@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -143,15 +144,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:162px;width:264px;height:25px;',
+			items:
+			[
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Установить все',
+				},
+				{
+					text:'Снять все',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -300,15 +322,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ИзмеренияКолонки',
@@ -358,15 +396,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияКолонки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:224px;top:117px;width:24px;height:109px;',
+			items:
+			[
+				{
+					text:' >',
+				},
+				{
+					text:' <',
+				},
+			]
 		},
 					]
 				},
@@ -458,15 +511,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -518,15 +580,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыбранныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:29px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',

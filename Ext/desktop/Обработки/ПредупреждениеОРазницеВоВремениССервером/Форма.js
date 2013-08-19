@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Разница во времени с сервером 1С:Предприятия',
 	
 	layout: {type: "fit",align: "stretch"},

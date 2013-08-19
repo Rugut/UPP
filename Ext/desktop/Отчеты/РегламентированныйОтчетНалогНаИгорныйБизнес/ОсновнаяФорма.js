@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Налог на игорный бизнес',
 	
 	layout: {type: "fit",align: "stretch"},

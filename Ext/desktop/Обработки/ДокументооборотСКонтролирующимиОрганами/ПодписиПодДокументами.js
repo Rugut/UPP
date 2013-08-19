@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Электронно-цифровые подписи',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,11 +109,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Подписи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПодписиПодДокументамиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПодписиПодДокументамиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -152,6 +155,27 @@
 			xtype: 'fieldset',
 			title: '',
 			style: 'position:absolute;left:8px;top:126px;width:816px;height:3px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:133px;width:816px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Проверить',
+				},
+				'-',
+				{
+					text:'Показать сертификат',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -251,28 +275,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:133px;width:816px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Проверить',
-				},
-				'-',
-				{
-					text:'Показать сертификат',
-				},
-			]
-		},
 	]
 	});
 });

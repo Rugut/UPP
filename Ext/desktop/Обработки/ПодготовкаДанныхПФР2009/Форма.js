@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подготовка данных СЗВ-4',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -94,6 +95,28 @@
 			style: 'position:absolute;left:8px;top:57px;width:954px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:81px;width:275px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Принято ПФР',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Перенести',
+				},
+			]
+		},
+		{
 			id: 'ПачкиДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:105px;width:275px;height:130px;',
@@ -141,11 +164,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -367,15 +392,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОЗадолженности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить строку',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Заполнить расчетами с ПФР',
+				},
+			]
 		},
 					]
 				},
@@ -695,15 +746,42 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаПачек');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:275px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -721,6 +799,69 @@
 					title:'Страница СЗВ41',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Обновить',
+				},
+			]
+		},
 		{
 			id: 'ЗаписиОСтаже',
 			xtype: 'grid',
@@ -913,11 +1054,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗаписиОСтаже');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1446,11 +1589,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаСсылокСЗВ4');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1530,29 +1675,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:81px;width:275px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Принято ПФР',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Перенести',
-				},
-			]
-		},
 	]
 	});
 });

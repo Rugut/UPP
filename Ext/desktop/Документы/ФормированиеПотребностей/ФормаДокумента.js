@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Формирование потребностей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,6 +41,37 @@
 			width: 120,
 			height: 19,
 			style: 'position:absolute;left:188px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Действие открыть свойства',
+				},
+				{
+					text:'Действие открыть категории',
+				},
+				'-',
+				{
+					text:'Выбирать даты периодом',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -135,15 +167,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПланыПродаж');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -235,15 +276,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПланыПроизводства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -335,15 +385,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПланыЗакупок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -408,15 +467,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВнутренниеЗаказы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -481,15 +554,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗаказыПокупателей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -554,15 +641,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗаказыНаПроизводство');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -645,15 +746,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПланыПосменные');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -808,15 +918,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Потребности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПотребностей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПотребностей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:620px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -971,38 +1105,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Действие открыть свойства',
-				},
-				{
-					text:'Действие открыть категории',
-				},
-				'-',
-				{
-					text:'Выбирать даты периодом',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:650px;height:25px;',

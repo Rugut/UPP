@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Начисление зарплаты сотрудникам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -164,6 +165,26 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			items:
+			[
+				{
+					text:'Полный расчет',
+				},
+				'-',
+				{
+					text:'Расчет начислений',
+				},
+				{
+					text:'Погашение займов',
+				},
+				{
+					text:'Расчет удержаний',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьНомер',
 			text: 'Номер',
@@ -179,6 +200,38 @@
 					title:'Начисления',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'Начисления',
 			xtype: 'grid',
@@ -434,11 +487,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеЗарплатыРаботникам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеЗарплатыРаботникам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -678,15 +733,49 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Удержания');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеЗарплатыРаботникам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеЗарплатыРаботникам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -778,15 +867,49 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПогашениеЗаймов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеЗарплатыРаботникам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеЗарплатыРаботникам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -896,27 +1019,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Полный расчет',
-				},
-				'-',
-				{
-					text:'Расчет начислений',
-				},
-				{
-					text:'Погашение займов',
-				},
-				{
-					text:'Расчет удержаний',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:530px;width:720px;height:25px;',

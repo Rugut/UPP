@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Редактирование запроса',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -68,6 +69,44 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:356px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
 			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:34px;width:356px;height:228px;',
@@ -124,11 +163,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Параметры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -197,11 +238,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Представления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаРедактированияЗапросаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -242,6 +285,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:148px;top:132px;width:145px;height:19px;',
+			width: 145,
+			height: 19,
 		},
 		{
 			xtype: 'label',

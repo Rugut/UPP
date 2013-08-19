@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Гражданство физического лица',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -119,7 +120,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['ПринятПоДолгосрочномуДоговору','Организация','Период','ПериодЗавершения',]
+					fields: ['Ссылка','Родитель.Представление','ПринятПоДолгосрочномуДоговору','Организация','Период','ПериодЗавершения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -153,11 +154,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПринятыеПоДолгосрочнымДоговорам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЗаписиГражданствоСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЗаписиГражданствоСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

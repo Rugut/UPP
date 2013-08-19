@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Тарифы банков',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -90,14 +91,9 @@
 			name: 'Процент',
 			style: 'position:absolute;left:130px;top:62px;width:100px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -112,6 +108,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:143px;width:400px;height:25px;',

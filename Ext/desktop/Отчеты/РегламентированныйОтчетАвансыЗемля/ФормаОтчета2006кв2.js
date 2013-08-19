@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет по авансовым платежам по земельному налогу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -174,6 +175,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -183,6 +186,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:423px;top:26px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',

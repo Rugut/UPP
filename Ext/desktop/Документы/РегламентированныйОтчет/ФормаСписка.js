@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регламентированные отчеты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,15 +109,48 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентированныйОтчет.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентированныйОтчет.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:688px;height:25px;',
+			items:
+			[
+				{
+					text:'Новый',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Журнал выгрузки',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'trigger',
@@ -179,10 +213,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:107px;top:61px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:107px;top:86px;width:119px;height:19px;',
+			width: 119,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -197,6 +235,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:428px;top:61px;width:61px;height:19px;',
+			width: 61,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -286,38 +326,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:688px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Новый',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Установить пометку удаления',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Журнал выгрузки',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

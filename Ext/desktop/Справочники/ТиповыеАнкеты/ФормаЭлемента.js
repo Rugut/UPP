@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Типовая анкета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,75 @@
 			width: 217,
 			height: 19,
 			style: 'position:absolute;left:95px;top:33px;width:217px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Ввести на основании)',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Редактировать код',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -218,7 +288,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
-					fields: ['Раздел','НомерСтроки','Вопрос','Обязательный','ВесВопроса','СекундОтвета',]
+					fields: ['Ссылка','Родитель.Представление','Раздел','НомерСтроки','Вопрос','Обязательный','ВесВопроса','СекундОтвета',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -258,11 +328,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВопросыАнкеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -306,7 +378,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
-					fields: ['Код','Наименование','Комментарий',]
+					fields: ['Ссылка','Родитель.Представление','Код','Наименование','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -337,15 +409,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РазделыАнкеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:416px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Обновить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -363,6 +463,13 @@
 					title:'Макет печатной формы анкеты',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:416px;height:24px;',
+			items:
+			[
+			]
+		},
 					]
 				},
 			]
@@ -399,76 +506,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'(Ввести на основании)',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Редактировать код',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

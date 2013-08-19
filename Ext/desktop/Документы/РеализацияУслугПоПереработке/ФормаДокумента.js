@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Реализация услуг по переработке',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -397,11 +398,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Продукция');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -594,11 +597,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Услуги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -793,11 +798,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИспользованныеМатериалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1165,11 +1172,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеализацияУслугПоПереработке.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

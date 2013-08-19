@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма П-5 (м)',
 	
 	layout: {type: "fit",align: "stretch"},

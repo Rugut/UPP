@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о трудовом стаже застрахованного лица (СЗВ-К)',
 	
 	layout: {type: "fit",align: "stretch"},

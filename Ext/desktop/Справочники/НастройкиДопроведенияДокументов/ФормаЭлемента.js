@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка допроведения документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,13 @@
 			width: 347,
 			height: 19,
 			style: 'position:absolute;left:103px;top:191px;width:347px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:458px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -149,14 +157,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:458px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:218px;width:458px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Клиент банка (загрузка / выгрузка платежных документов)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,6 +26,57 @@
 					title:'  Выгрузка  ',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:113px;width:757px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отметить все',
+				},
+				{
+					text:'Снять отметку у всех',
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Упорядочить по убыванию',
+				},
+				{
+					text:'Упорядочить по возрастанию',
+				},
+			]
+		},
 		{
 			id: 'ДокументыНаЭкспорт',
 			xtype: 'grid',
@@ -631,15 +683,70 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыНаЭкспорт');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КлиентБанк.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КлиентБанк.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:200px;top:220px;width:380px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Упорядочить по возрастанию',
+				},
+				{
+					text:'Упорядочить по убыванию',
+				},
+				'-',
+				{
+					text:'Настройка списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -818,6 +925,43 @@
 					title:'  Загрузка  ',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:113px;width:757px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Отметить все',
+				},
+				{
+					text:'Снять отметку у всех',
+				},
+				'-',
+				{
+					text:'Создать не найденное ...',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Упорядочить по возрастанию',
+				},
+				{
+					text:'Упорядочить по убыванию',
+				},
+				'-',
+			]
+		},
 		{
 			id: 'ДокументыКИмпорту',
 			xtype: 'grid',
@@ -1010,15 +1154,46 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыКИмпорту');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КлиентБанк.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КлиентБанк.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:38px;top:187px;width:228px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Упорядочить по возрастанию',
+				},
+				{
+					text:'Упорядочить по убыванию',
+				},
+				'-',
+				{
+					text:'Настройка списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',

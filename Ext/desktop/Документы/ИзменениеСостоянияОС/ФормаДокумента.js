@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменение состояния ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -222,6 +223,16 @@
 			style: 'position:absolute;left:336px;top:145px;width:242px;height:15px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:182px;width:646px;height:24px;',
+			items:
+			[
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
 			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:206px;width:646px;height:146px;',
@@ -278,15 +289,44 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеСостоянияОС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеСостоянияОС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -394,45 +434,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:182px;width:646px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'По наименованию',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 	]
 	});
 });

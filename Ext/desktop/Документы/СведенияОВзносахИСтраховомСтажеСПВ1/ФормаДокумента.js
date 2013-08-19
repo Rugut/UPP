@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о взносах и страховом стаже для установления трудовой пенсии (СПВ-1)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,13 @@
 			width: 621,
 			height: 19,
 			style: 'position:absolute;left:97px;top:428px;width:621px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -399,6 +407,16 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:830px;height:24px;',
+			items:
+			[
+				{
+					text:'Суммы взносов',
+				},
+			]
+		},
+		{
 			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:40px;width:830px;height:177px;',
@@ -545,11 +563,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОВзносахИСтраховомСтажеСПВ1.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОВзносахИСтраховомСтажеСПВ1.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -568,14 +588,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',

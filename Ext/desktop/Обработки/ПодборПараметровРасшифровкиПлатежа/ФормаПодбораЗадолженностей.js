@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Подбор задолженности для платежа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:51px;width:764px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ЗадолженностьДляОплаты',
 			xtype: 'grid',
@@ -117,11 +125,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗадолженностьДляОплаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораЗадолженностейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораЗадолженностейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -177,14 +187,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:51px;width:764px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

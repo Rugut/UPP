@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Декларация по ЕСН для ИП, адвокатов, нотариусов, занимающихся частной практикой',
 	
 	layout: {type: "fit",align: "stretch"},

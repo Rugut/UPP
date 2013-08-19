@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Технологические операции',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -301,6 +302,13 @@
 			style: 'position:absolute;left:233px;top:260px;width:83px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:418px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСпособРаспределенияЗатратНаВыпуск',
 			text: 'Способ распределения затрат на выпуск:',
@@ -409,14 +417,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:418px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:311px;width:418px;height:25px;',

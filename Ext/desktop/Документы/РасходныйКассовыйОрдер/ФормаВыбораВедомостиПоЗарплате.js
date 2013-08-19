@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ведомости на выплату заработной платы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -135,11 +136,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаВыбораВедомостиПоЗарплатеСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаВыбораВедомостиПоЗарплатеСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

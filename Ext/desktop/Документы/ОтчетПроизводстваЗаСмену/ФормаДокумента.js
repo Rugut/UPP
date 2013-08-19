@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет производства за смену',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,52 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка',
+				},
+				'-',
+				{
+					text:'Дт/кт',
+				},
+				{
+					text:'Дт/кт',
+				},
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
@@ -580,15 +627,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Продукция');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по заданию на производство',
+				},
+				{
+					text:'Добавить из заказа покупателя',
+				},
+				'-',
+				{
+					text:'Заполнить по заказу на производство',
+				},
+				{
+					text:'Добавить по заказу на производство',
+				},
+			]
 		},
 					]
 				},
@@ -596,6 +665,16 @@
 					title:'Получатели',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить из шаблона',
+				},
+			]
+		},
 		{
 			id: 'Получатели',
 			xtype: 'grid',
@@ -941,11 +1020,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Получатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1001,6 +1082,29 @@
 			name: 'НадписьСтатьяЗатрат',
 			text: 'Статья затрат:',
 			style: 'position:absolute;left:270px;top:6px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:25px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по спецификации',
+				},
+				{
+					text:'Заполнить с подбором аналогов',
+				},
+				{
+					text:'Заполнить по остаткам',
+				},
+				{
+					text:'Заполнить по потребностям',
+				},
+				'-',
+				{
+					text:'Добавить из требование - накладная...',
+				},
+			]
 		},
 		{
 			id: 'Материалы',
@@ -1221,11 +1325,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Материалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1479,15 +1585,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеМатериалов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 					]
 				},
@@ -1759,15 +1879,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТехнологическиеОперации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по тех. карте',
+				},
+			]
 		},
 					]
 				},
@@ -1859,15 +1991,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Исполнители');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:42px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Рассчитать',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -2064,15 +2209,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеТехнологическихОпераций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 					]
 				},
@@ -2200,15 +2357,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПрочиеЗатраты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по остаткам',
+				},
+			]
 		},
 					]
 				},
@@ -2408,15 +2577,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеПрочихЗатрат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -2724,15 +2903,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВозвратныеОтходы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:337px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по спецификации',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -3004,15 +3195,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеВозвратныхОтходов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПроизводстваЗаСмену.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить распределение возвратных отходов',
+				},
+			]
 		},
 					]
 				},
@@ -3130,53 +3333,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-				'-',
-				{
-					text:'Дт/кт',
-				},
-				{
-					text:'Дт/кт',
-				},
-				'-',
-				{
-					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
 	]
 	});
 });

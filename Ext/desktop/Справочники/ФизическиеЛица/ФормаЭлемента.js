@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Физическое лицо',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -20,6 +21,19 @@
 			name: 'НадписьНаименование',
 			text: 'Имя:',
 			style: 'position:absolute;left:8px;top:33px;width:38px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			items:
+			[
+				{
+					text:'Лицевые счета',
+				},
+				{
+					text:'Медицинские страховые полисы',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -182,7 +196,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Картинка','Тип','Вид','Представление','Комментарий',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Тип','Вид','Представление','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -219,11 +233,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КонтактнаяИнформация');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -397,7 +413,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['СтепеньРодства','Родственник','ДатаРождения',]
+					fields: ['Ссылка','Родитель.Представление','СтепеньРодства','Родственник','ДатаРождения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -428,11 +444,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставСемьи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -487,7 +505,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['ВидОбразования','УчебноеЗаведение','Специальность','Диплом','ГодОкончания','Квалификация',]
+					fields: ['Ссылка','Родитель.Представление','ВидОбразования','УчебноеЗаведение','Специальность','Диплом','ГодОкончания','Квалификация',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -527,11 +545,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Образование');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -562,7 +582,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Язык','СтепеньЗнанияЯзыка',]
+					fields: ['Ссылка','Родитель.Представление','Язык','СтепеньЗнанияЯзыка',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -590,11 +610,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗнаниеЯзыков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -684,7 +706,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Профессия',]
+					fields: ['Ссылка','Родитель.Представление','Профессия',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -709,11 +731,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Профессии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -837,7 +861,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['УченаяСтепень','ДатаПрисужденияУченойСтепени','ОтрасльНауки','ДиссертационныйСовет','ДипломСерияНомер','ДипломВыданОрганизация',]
+					fields: ['Ссылка','Родитель.Представление','УченаяСтепень','ДатаПрисужденияУченойСтепени','ОтрасльНауки','ДиссертационныйСовет','ДипломСерияНомер','ДипломВыданОрганизация',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -877,11 +901,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УченыеСтепени');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -941,7 +967,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['УченоеЗвание','ДатаПрисвоенияУченогоЗвания','АттестатСерия','АттестатНомер','АттестатВыданОрганизация','НаучнаяСпециальность',]
+					fields: ['Ссылка','Родитель.Представление','УченоеЗвание','ДатаПрисвоенияУченогоЗвания','АттестатСерия','АттестатНомер','АттестатВыданОрганизация','НаучнаяСпециальность',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -981,11 +1007,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УченыеЗвания');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1017,6 +1045,40 @@
 			name: 'НадписьПол',
 			text: 'Пол:',
 			style: 'position:absolute;left:182px;top:6px;width:40px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:578px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1060,7 +1122,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Награда','НомерПриказа','ДатаПриказа','ЧейПриказ',]
+					fields: ['Ссылка','Родитель.Представление','Награда','НомерПриказа','ДатаПриказа','ЧейПриказ',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1094,11 +1156,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Награды');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1141,7 +1205,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Свойство','Значение',]
+					fields: ['Ссылка','Родитель.Представление','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1169,15 +1233,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:10px;top:101px;width:270px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'Категории',
@@ -1204,7 +1277,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Принадлежность','Категория',]
+					fields: ['Ссылка','Родитель.Представление','Принадлежность','Категория',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1232,11 +1305,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Категории');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1247,6 +1322,19 @@
 			name: 'НадписьКатегории',
 			text: 'Категории',
 			style: 'position:absolute;left:298px;top:6px;width:286px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:307px;top:101px;width:269px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить новую категорию',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 					]
 				},
@@ -1297,7 +1385,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Картинка','Дата','Содержание','ВидЗаметки','Автор',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Дата','Содержание','ВидЗаметки','Автор',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1334,15 +1422,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Заметки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:46px;width:578px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1511,20 +1608,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Лицевые счета',
-				},
-				{
-					text:'Медицинские страховые полисы',
-				},
-			]
-		},
 	]
 	});
 });

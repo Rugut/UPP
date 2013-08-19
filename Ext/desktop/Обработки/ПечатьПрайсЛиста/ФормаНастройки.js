@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка прайс-листа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -248,15 +249,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -348,15 +358,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -403,15 +422,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыбранныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -467,15 +495,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Порядок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -549,15 +586,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаНастройкиПолейПечать');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьПрайсЛиста.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',

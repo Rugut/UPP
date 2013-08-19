@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '<ФИО|Помещение>',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
+			items:
+			[
+				{
+					text:'Открыть документ занятости',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Наименование',
@@ -55,17 +66,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Открыть документ занятости',
-				},
-			]
-		},
 	]
 	});
 });

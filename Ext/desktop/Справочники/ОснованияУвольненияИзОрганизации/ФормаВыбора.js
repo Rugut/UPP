@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Основания увольнения (статьи ТК РФ)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,7 +47,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОснованияУвольненияИзОрганизации").data,
-					fields: ['Картинка','Наименование','ТекстОснования',]
+					fields: ['Ссылка','Картинка','Наименование','ТекстОснования',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -77,24 +78,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОснованияУвольненияИзОрганизации.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОснованияУвольненияИзОрганизации.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:631px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -212,6 +210,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

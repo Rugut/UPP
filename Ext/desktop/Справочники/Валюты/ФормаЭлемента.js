@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Валюта',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -110,7 +111,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Валюты").data,
-					fields: ['Картинка','Период','Валюта','Курс','Кратность',]
+					fields: ['Ссылка','Картинка','Период','Валюта','Курс','Кратность',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -147,11 +148,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокКурсыВалют');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Валюты.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Валюты.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -167,6 +170,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:48px;top:105px;width:76px;height:19px;',
+			width: 76,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -227,6 +232,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:48px;top:153px;width:76px;height:19px;',
+			width: 76,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -293,6 +300,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:364px;top:177px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',

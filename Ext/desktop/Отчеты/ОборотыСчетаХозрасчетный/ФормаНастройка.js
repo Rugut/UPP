@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -165,6 +166,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:84px;top:78px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -310,15 +313,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Детализация');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:24px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -416,15 +428,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыСчетаХозрасчетный.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:4px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Список заявлений абонентов спецоператоров связи',
 	
 	layout: {type: "fit",align: "stretch"},

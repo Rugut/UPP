@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Экспорт/Импорт контактных данных объектов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -52,14 +53,20 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:182px;top:81px;width:181px;height:19px;',
+			width: 181,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:182px;top:105px;width:181px;height:19px;',
+			width: 181,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:182px;top:129px;width:181px;height:19px;',
+			width: 181,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -88,6 +95,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:182px;top:33px;width:269px;height:19px;',
+			width: 269,
+			height: 19,
 		},
 		{
 			xtype: 'label',

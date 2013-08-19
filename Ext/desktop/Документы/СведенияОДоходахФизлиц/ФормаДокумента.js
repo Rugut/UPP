@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о доходах физических лиц для ИФНС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -154,6 +155,16 @@
 			style: 'position:absolute;left:96px;top:527px;width:526px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:239px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'физ.лицами, получавшими доходы',
+				},
+			]
+		},
+		{
 			id: 'РаботникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:263px;width:614px;height:259px;',
@@ -246,11 +257,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -357,6 +370,13 @@
 			style: 'position:absolute;left:8px;top:223px;width:614px;height:16px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'radiogroup',
 			defaults: {name: 'ccType'},
 			items: [
@@ -410,25 +430,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:239px;width:614px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'физ.лицами, получавшими доходы',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

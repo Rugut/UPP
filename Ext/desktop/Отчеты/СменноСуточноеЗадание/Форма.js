@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,57 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Восстановить значения',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -83,6 +135,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:0px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -115,10 +169,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:48px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:24px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -137,6 +195,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:72px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 					]
 				},
@@ -146,58 +206,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Отбор',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				'-',
-				{
-					text:'Восстановить значения',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

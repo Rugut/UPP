@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'План продаж',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -58,6 +59,16 @@
 				},
 				{
 					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить план',
 				},
 			]
 		},
@@ -262,11 +273,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставПлана');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланПродаж.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланПродаж.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -621,17 +634,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить план',
-				},
-			]
-		},
 	]
 	});
 });

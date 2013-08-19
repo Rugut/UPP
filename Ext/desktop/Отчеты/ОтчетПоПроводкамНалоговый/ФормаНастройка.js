@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка: Отчет по проводкам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -167,15 +168,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Корреспонденции');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:90px;width:126px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
 		},
 		{
 			id: 'ТабличноеПолеОтбор',
@@ -261,15 +281,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетПоПроводкамНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:140px;top:90px;width:296px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Включить все',
+				},
+				{
+					text:'Выключить все',
+				},
+			]
 		},
 					]
 				},

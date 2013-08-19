@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Регламентный пересчет по моделям бюджетирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись36',
@@ -167,67 +175,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыДляОбработки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентныйПересчетПоМоделямБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентныйПересчетПоМоделямБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
-			boxLabel: 'Автоматически по указанным параметрам',
-			style: 'position:absolute;left:14px;top:102px;width:268px;height:16px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Вручную',
-			style: 'position:absolute;left:14px;top:123px;width:268px;height:16px;',
-		},
-			]
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:457px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:303px;width:457px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:165px;width:441px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -257,6 +219,45 @@
 				'-',
 				{
 					text:'Заполнить',
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Автоматически по указанным параметрам',
+			style: 'position:absolute;left:14px;top:102px;width:268px;height:16px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Вручную',
+			style: 'position:absolute;left:14px;top:123px;width:268px;height:16px;',
+		},
+			]
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:303px;width:457px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

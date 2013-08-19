@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,58 @@
 			width: 552,
 			height: 19,
 			style: 'position:absolute;left:94px;top:327px;width:552px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:85px;width:468px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+				'-',
+				{
+					text:'Выполнить перенос проводок',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Открыть соответствия счетов',
+				},
+				'-',
+				{
+					text:'Открыть исключения проводок',
+				},
+			]
 		},
 		{
 			id: 'ТабличноеПолеДвижения',
@@ -231,11 +284,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДвижения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереносПроводокМеждународный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереносПроводокМеждународный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -412,60 +467,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:85px;width:468px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить отбор и сортировку списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-				'-',
-				{
-					text:'Выполнить перенос проводок',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Открыть соответствия счетов',
-				},
-				'-',
-				{
-					text:'Открыть исключения проводок',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:354px;width:654px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Поиск объектов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -130,15 +131,40 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиПоиска');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:92px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'Включить все',
+				},
+				{
+					text:'Выключить все',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Дополнительно...',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -149,6 +175,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:84px;top:68px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -191,11 +219,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокНайденныхСсылок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -205,6 +235,37 @@
 			xtype: 'fieldset',
 			title: 'Результаты поиска',
 			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:19px;width:627px;height:24px;',
+			items:
+			[
+				{
+					text:'Раскрыть',
+				},
+				{
+					text:'Свернуть',
+				},
+				'-',
+				{
+					text:'Показать детально',
+				},
+				'-',
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 					]
 				},
@@ -219,6 +280,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:84px;top:0px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -232,6 +295,23 @@
 			style: 'position:absolute;left:547px;top:24px;width:80px;height:19px;',
 		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			items:
+			[
+				{
+					text:'Загрузить настройку поиска',
+				},
+				{
+					text:'Сохранить настройки поиска',
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},
@@ -271,24 +351,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Загрузить настройку поиска',
-				},
-				{
-					text:'Сохранить настройки поиска',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

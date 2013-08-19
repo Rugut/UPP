@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет о движении денежных средств по МСФО',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки временных интервалов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкаИнтервалов").data,
-					fields: ['Картинка','Наименование',]
+					fields: ['Ссылка','Картинка','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,15 +69,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаИнтервалов.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаИнтервалов.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ТабличноеПоле',
@@ -109,7 +119,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкаИнтервалов").data,
-					fields: ['НомерСтроки','НачалоИнтервала','Подпись',]
+					fields: ['Ссылка','НомерСтроки','НачалоИнтервала','Подпись',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -140,11 +150,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПоле');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаИнтервалов.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаИнтервалов.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -154,14 +166,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

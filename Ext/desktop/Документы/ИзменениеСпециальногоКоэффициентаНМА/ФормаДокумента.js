@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменение понижающего коэффициента для расчета амортизации НМА (налоговый учет)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,33 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:476px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -230,15 +258,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НМА');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеСпециальногоКоэффициентаНМА.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:94px;width:460px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить для списка НМА',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -249,34 +289,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:476px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:392px;width:476px;height:25px;',
@@ -301,17 +313,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:94px;width:460px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить для списка НМА',
 				},
 			]
 		},

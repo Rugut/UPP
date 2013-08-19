@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Формирование списка сотрудников',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -134,11 +135,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -386,11 +389,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиПремии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -669,11 +674,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиРазовыхРасчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1055,11 +1062,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиРазовыхРасчетовДополнительные');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1564,15 +1573,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеНачислений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:25px;width:413px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+			]
 		},
 					]
 				},
@@ -1867,11 +1891,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиРазовыхУдержаний');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1942,15 +1968,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеУпрНачислений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:22px;width:413px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+			]
 		},
 					]
 				},
@@ -2293,11 +2334,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеСпискаРаботников.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

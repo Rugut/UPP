@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отражение НДС к вычету',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -339,6 +340,19 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по расчетному документу',
+				},
+				{
+					text:'Добавить из расчетного документа',
+				},
+			]
+		},
+		{
 			id: 'ТоварыИУслуги',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:631px;height:163px;',
@@ -530,11 +544,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТоварыИУслуги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтражениеПоступленияТоваровИУслугНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтражениеПоступленияТоваровИУслугНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -603,15 +619,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыОплаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтражениеПоступленияТоваровИУслугНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтражениеПоступленияТоваровИУслугНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},

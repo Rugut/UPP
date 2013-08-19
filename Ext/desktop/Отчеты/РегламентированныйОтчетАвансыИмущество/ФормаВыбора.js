@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор из списка',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,11 +64,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокКодов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентированныйОтчетАвансыИмущество.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентированныйОтчетАвансыИмущество.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

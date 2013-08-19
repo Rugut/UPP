@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Пакетный ввод бюджетных операций',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -225,15 +233,51 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РеквизитыОпераций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:750px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -270,11 +314,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабЗависимыеОбороты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -739,15 +785,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокДокументовОперации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводБюджетныхОпераций.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:750px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Снять пометки',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
 		},
 					]
 				},
@@ -757,14 +829,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',

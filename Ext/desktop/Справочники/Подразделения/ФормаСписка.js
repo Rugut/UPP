@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Структура предприятия',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,17 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:858px;height:25px;',
+			items:
+			[
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 		{
 			id: 'Подразделения',
 			xtype: 'grid',
@@ -52,7 +64,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Подразделения").data,
-					fields: ['Наименование','Код','ПодразделенияОрганизаций','Порядок',]
+					fields: ['Ссылка','Родитель.Представление','Наименование','Код','ПодразделенияОрганизаций','Порядок',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -86,11 +98,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Подразделения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Подразделения.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Подразделения.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -107,6 +121,44 @@
 			name: 'НадписьСтруктураПодразделенийОрганизаций',
 			text: ' Подразделения организаций (юридических лиц)',
 			style: 'position:absolute;left:433px;top:33px;width:417px;height:20px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:433px;top:58px;width:322px;height:24px;',
+			items:
+			[
+				{
+					text:'Упорядочить по: Код',
+				},
+				{
+					text:'Упорядочить по: Наименование',
+				},
+				{
+					text:'Упорядочить по: Порядок',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:58px;width:410px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			id: 'ПодразделенияОрганизаций',
@@ -157,7 +209,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Подразделения").data,
-					fields: ['Организация','Наименование','Код','Подразделения','НесколькоПодразделений','Порядок',]
+					fields: ['Ссылка','Родитель.Представление','Организация','Наименование','Код','Подразделения','НесколькоПодразделений','Порядок',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -197,76 +249,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПодразделенияОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Подразделения.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Подразделения.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:858px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:433px;top:58px;width:322px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Упорядочить по: Код',
-				},
-				{
-					text:'Упорядочить по: Наименование',
-				},
-				{
-					text:'Упорядочить по: Порядок',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:58px;width:410px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Изменить',
-				},
-				{
-					text:'',
-				},
-				'-',
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:755px;top:58px;width:95px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -277,6 +274,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

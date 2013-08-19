@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация внешней обработки, печатной формы,  обработки по заполнению табличных частей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,17 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Настройка доступа',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -101,6 +113,43 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:22px;width:602px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Заменить файл',
+				},
+				{
+					text:'Сохранить файл на диск',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
+		},
+		{
 			id: 'Принадлежность',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:47px;width:602px;height:200px;',
@@ -185,7 +234,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
-					fields: ['НомерСтроки','ПредставлениеОбъекта','ТабличнаяЧасть','ПредставлениеКнопки','ПредставлениеОтбораПостроителя','ИмяФайлаПечатнойФормы','ЗаменяемаяПечатнаяФорма','НастройкиПостроителяДляОтбора','ТабличнаяЧастьИмя','ХранилищеВнешнейОбработки','ПредставлениеНастроекОбработки','СпособЗапуска',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ПредставлениеОбъекта','ТабличнаяЧасть','ПредставлениеКнопки','ПредставлениеОтбораПостроителя','ИмяФайлаПечатнойФормы','ЗаменяемаяПечатнаяФорма','НастройкиПостроителяДляОтбора','ТабличнаяЧастьИмя','ХранилищеВнешнейОбработки','ПредставлениеНастроекОбработки','СпособЗапуска',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -243,11 +292,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Принадлежность');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВнешниеОбработки.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -305,26 +356,9 @@
 			text: 'КомментарийКФайлуИсточнику',
 			style: 'position:absolute;left:8px;top:81px;width:514px;height:27px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Настройка доступа',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:527px;top:81px;width:83px;height:27px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -338,6 +372,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

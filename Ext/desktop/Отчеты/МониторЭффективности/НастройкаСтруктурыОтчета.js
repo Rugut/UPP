@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка структуры монитора',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -153,59 +154,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиКопия');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МониторЭффективности.НастройкаСтруктурыОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МониторЭффективности.НастройкаСтруктурыОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьТекстОписания',
-			text: 'НадписьТекстОписания',
-			style: 'position:absolute;left:69px;top:260px;width:723px;height:28px;',
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОписание',
-			text: 'Описание:',
-			style: 'position:absolute;left:8px;top:260px;width:58px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:296px;width:801px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:8px;width:785px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -247,6 +210,45 @@
 				'-',
 				{
 					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТекстОписания',
+			text: 'НадписьТекстОписания',
+			style: 'position:absolute;left:69px;top:260px;width:723px;height:28px;',
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписание',
+			text: 'Описание:',
+			style: 'position:absolute;left:8px;top:260px;width:58px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:296px;width:801px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

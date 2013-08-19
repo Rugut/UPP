@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Оприходования товаров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -162,11 +163,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОприходованиеТоваров.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОприходованиеТоваров.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анализ состояния налогового учета по УСН',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -128,6 +129,41 @@
 					title:'Дополнительная',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:787px;top:2px;width:261px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Настройка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:2px;top:2px;width:551px;height:24px;',
+			items:
+			[
+				{
+					text:'Назад',
+				},
+				'-',
+				{
+					text:'Структура налоговой базы',
+				},
+				'-',
+				{
+					text:'Печать...',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
+		},
 					]
 				},
 			]

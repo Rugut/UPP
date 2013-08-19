@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Показатели расчета заработной платы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,53 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Справочник показателей',
+				},
+				'-',
+				{
+					text:'Плановые начисления',
+				},
+				{
+					text:'Плановые удержания',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Справочник показателей',
+				},
+				'-',
+				{
+					text:'Плановые начисления',
+				},
+				'-',
+				{
+					text:'Плановые удержания',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:29px;width:676px;height:324px;',
@@ -118,11 +166,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЕжемесячныеПоказатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -276,11 +326,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Сотрудники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -399,11 +451,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПодразделенияОрганизацийЕжемесячные');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -463,11 +517,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -518,11 +574,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПодразделенияПоЦФОЕжемесячные');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -738,15 +796,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПлановыеЗначенияПоказателейСхемМотивации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:240px;top:1px;width:422px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -798,11 +878,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПодразделенияОрганизацииПлановые');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -853,11 +935,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПодразделенияПлановые');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -939,15 +1023,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПлановыеЗначенияПоказателейСхемМотивацииОбщие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗначенияПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 					]
 				},
@@ -961,54 +1067,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Справочник показателей',
-				},
-				'-',
-				{
-					text:'Плановые начисления',
-				},
-				{
-					text:'Плановые удержания',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Справочник показателей',
-				},
-				'-',
-				{
-					text:'Плановые начисления',
-				},
-				'-',
-				{
-					text:'Плановые удержания',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

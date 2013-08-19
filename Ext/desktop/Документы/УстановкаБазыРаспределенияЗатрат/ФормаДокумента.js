@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка базы распределения затрат',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -380,11 +381,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('БазаРаспределения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УстановкаБазыРаспределенияЗатрат.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УстановкаБазыРаспределенияЗатрат.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

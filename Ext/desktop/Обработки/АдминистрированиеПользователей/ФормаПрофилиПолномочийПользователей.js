@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профили полномочий пользователей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -168,11 +169,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставРолей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаПрофилиПолномочийПользователейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаПрофилиПолномочийПользователейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -217,11 +220,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоПрофилей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаПрофилиПолномочийПользователейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаПрофилиПолномочийПользователейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -275,11 +280,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоПрав');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаПрофилиПолномочийПользователейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаПрофилиПолномочийПользователейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -311,6 +318,18 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:363px;top:60px;width:192px;height:19px;',
+			width: 192,
+			height: 19,
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:246px;top:105px;width:420px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -356,17 +375,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:246px;top:105px;width:420px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Изменить',
-				},
-			]
-		},
 	]
 	});
 });

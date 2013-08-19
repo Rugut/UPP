@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Возврат товаров поставщику',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -281,15 +282,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Оборудование');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить  по поступлению',
+				},
+				{
+					text:'Добавить из поступления',
+				},
+			]
 		},
 					]
 				},
@@ -561,11 +577,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -755,11 +773,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВозвратнаяТара');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1524,15 +1544,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВозвратТоваровПоставщику.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить документы расчетов с контрагентом',
+				},
+			]
 		},
 					]
 				},

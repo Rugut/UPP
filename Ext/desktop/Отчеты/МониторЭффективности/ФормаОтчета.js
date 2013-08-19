@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Монитор эффективности',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -206,6 +207,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:131px;top:4px;width:125px;height:19px;',
+			width: 125,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -370,11 +373,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МониторЭффективности.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МониторЭффективности.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -956,11 +961,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МониторЭффективности.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МониторЭффективности.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1035,11 +1042,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МониторЭффективности.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МониторЭффективности.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1108,11 +1117,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Сортировка');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МониторЭффективности.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МониторЭффективности.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обновление информационной базы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,14 +16,9 @@
 		xtype: 'form',
 		items:
 		[
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:696px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -40,6 +36,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

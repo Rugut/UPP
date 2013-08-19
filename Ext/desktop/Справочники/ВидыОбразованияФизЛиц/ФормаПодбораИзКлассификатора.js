@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Виды образования физических лиц',
 	
 	layout: {type: "fit",align: "stretch"},

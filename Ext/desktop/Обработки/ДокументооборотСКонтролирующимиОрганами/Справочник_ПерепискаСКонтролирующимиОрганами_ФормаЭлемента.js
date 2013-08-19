@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Переписка с контролирующими органами',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,31 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			items:
+			[
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Ответить',
+				},
+				'-',
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Перечитать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:157px;width:638px;height:353px;',
@@ -142,11 +168,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Вложения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ПерепискаСКонтролирующимиОрганами_ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Справочник_ПерепискаСКонтролирующимиОрганами_ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -262,32 +290,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Перечитать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:518px;width:654px;height:25px;',

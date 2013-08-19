@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Исполнительный лист',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -196,6 +197,13 @@
 			style: 'position:absolute;left:100px;top:446px;width:600px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьДата',
 			text: 'от:',
@@ -330,6 +338,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:100px;top:105px;width:246px;height:19px;',
+			width: 246,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -596,14 +606,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:473px;width:708px;height:25px;',

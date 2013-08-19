@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Конструктор спецификаций',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:408px;',
@@ -208,15 +216,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоСпецификаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:374px;height:24px;',
+			items:
+			[
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				{
+					text:'Обновить',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -350,11 +380,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокСпецификацииНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -408,11 +440,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокХарактеристикиНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -437,6 +471,115 @@
 					title:'Спецификации',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:369px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Новая группа',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Иерархический просмотр',
+				},
+				{
+					text:'Переместить в группу',
+				},
+				{
+					text:'Уровень вверх',
+				},
+				{
+					text:'Уровень вниз',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Сортировка',
+					menu: [
+				{
+					text:'(Поля сортировки)',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Версии спецификации',
+				},
+					]
+				},
+				{
+					text:'Создать версию',
+				},
+				'-',
+				{
+					text:'Печать спецификации',
+				},
+			]
+		},
 		{
 			id: 'СписокСпецификацииОтдельный',
 			xtype: 'grid',
@@ -548,11 +691,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокСпецификацииОтдельный');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -648,15 +793,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокНоменклатура');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:370px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ДеревоНоменклатуры',
@@ -697,11 +851,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -713,6 +869,13 @@
 					title:'Номенклатура',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:370px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'СписокНоменклатураОтдельный',
 			xtype: 'grid',
@@ -788,11 +951,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокНоменклатураОтдельный');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторСпецификаций.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1075,14 +1240,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

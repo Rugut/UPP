@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Невыходы в организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -152,6 +153,43 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:137px;width:636px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 		{
 			id: 'Начисления',
@@ -534,15 +572,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НевыходыВОрганизациях.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НевыходыВОрганизациях.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -630,101 +680,8 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
-			boxLabel: 'Целодневные (целосменные)',
-			style: 'position:absolute;left:96px;top:81px;width:169px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'Внутрисменные',
-			style: 'position:absolute;left:96px;top:102px;width:169px;height:19px;',
-		},
-			]
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:137px;width:636px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Изменить',
-				},
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:406px;width:652px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:219px;width:636px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -776,6 +733,49 @@
 				},
 				{
 					text:'Настройка списка...',
+				},
+			]
+		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Целодневные (целосменные)',
+			style: 'position:absolute;left:96px;top:81px;width:169px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'Внутрисменные',
+			style: 'position:absolute;left:96px;top:102px;width:169px;height:19px;',
+		},
+			]
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:406px;width:652px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

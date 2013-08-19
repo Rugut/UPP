@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Конструктор пользовательского поля',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:119px;top:84px;width:203px;height:19px;',
+			width: 203,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -28,6 +31,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:119px;top:36px;width:203px;height:19px;',
+			width: 203,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -38,6 +43,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:119px;top:60px;width:203px;height:19px;',
+			width: 203,
+			height: 19,
 		},
 		{
 			xtype: 'label',

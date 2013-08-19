@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Допроведение документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -101,6 +102,17 @@
 			style: 'position:absolute;left:268px;top:126px;width:19px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
+		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:8px;top:169px;width:411px;height:89px;',
 		},
@@ -152,18 +164,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:427px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Справка',
 				},
 			]
 		},

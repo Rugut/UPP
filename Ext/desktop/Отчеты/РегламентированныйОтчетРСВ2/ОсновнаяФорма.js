@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'РСВ-2 ПФР',
 	
 	layout: {type: "fit",align: "stretch"},

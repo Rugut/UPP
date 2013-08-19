@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Информация о зарегистрированной номенклатуре (ЮНИСКАН/GS1 Russia)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,29 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:624px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаШтрихкодов',
 			xtype: 'grid',
@@ -180,11 +204,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаШтрихкодов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбменДаннымиСЮнискан.СинхронизацияНоменклатурыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбменДаннымиСЮнискан.СинхронизацияНоменклатурыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -298,30 +324,6 @@
 				'-',
 				{
 					text:'Действие1',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:624px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Скопировать',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Обновить',
 				},
 			]
 		},

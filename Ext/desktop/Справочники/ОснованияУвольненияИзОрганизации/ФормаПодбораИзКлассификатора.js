@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Основания увольнения (статьи ТК РФ)',
 	
 	layout: {type: "fit",align: "stretch"},

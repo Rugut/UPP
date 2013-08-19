@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подписание исходных сообщений',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -252,11 +253,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбмена');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ПодписаниеСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ПодписаниеСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -278,41 +281,8 @@
 			style: 'position:absolute;left:8px;top:12px;width:71px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:35px;width:614px;height:3px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:474px;width:630px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Подписать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:38px;width:614px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -351,6 +321,38 @@
 				},
 				{
 					text:'Отключить отбор',
+				},
+			]
+		},
+		{
+			xtype: 'fieldset',
+			title: '',
+			style: 'position:absolute;left:8px;top:35px;width:614px;height:3px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:474px;width:630px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Подписать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
 				},
 			]
 		},

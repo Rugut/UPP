@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка зависимостей оборотов по статьям',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -333,6 +334,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:172px;width:640px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ЗависимостиОборотовПоСтатьям',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:196px;width:640px;height:160px;',
@@ -452,15 +460,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗависимостиОборотовПоСтатьям');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УстановкаЗависимостейОборотовПоСтатьям.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -486,35 +516,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:172px;width:640px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:656px;height:25px;',

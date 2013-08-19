@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -48,6 +49,33 @@
 			style: 'position:absolute;left:194px;top:33px;width:258px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:153px;width:444px;height:236px;',
 			height: 236,width: 444,
@@ -57,6 +85,13 @@
 					title:'ОС и Инвестиционная собственность',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'СписокОС',
 			xtype: 'grid',
@@ -123,11 +158,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереоценкаАктивовМеждународный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереоценкаАктивовМеждународный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -139,6 +176,13 @@
 					title:'НМА',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'СписокНМА',
 			xtype: 'grid',
@@ -196,11 +240,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокНМА');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереоценкаАктивовМеждународный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереоценкаАктивовМеждународный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -212,6 +258,13 @@
 					title:'Финансовые активы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'СписокФинансовыеАктивы',
 			xtype: 'grid',
@@ -287,11 +340,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокФинансовыеАктивы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереоценкаАктивовМеждународный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереоценкаАктивовМеждународный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -501,34 +556,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:460px;height:25px;',

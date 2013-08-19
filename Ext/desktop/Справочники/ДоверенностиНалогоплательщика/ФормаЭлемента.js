@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Доверенность налогоплательщика',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -72,6 +73,13 @@
 			value: 0,
 			name: 'ПризнакДоверителя',
 			style: 'position:absolute;left:137px;top:85px;width:195px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:499px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -1224,7 +1232,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоверенностиНалогоплательщика").data,
-					fields: ['ОбластьПолномочий','ОКАТО','КПП',]
+					fields: ['Ссылка','ОбластьПолномочий','ОКАТО','КПП',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1255,11 +1263,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПолномочияПредставителя');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоверенностиНалогоплательщика.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1281,14 +1291,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:499px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:583px;width:499px;height:25px;',

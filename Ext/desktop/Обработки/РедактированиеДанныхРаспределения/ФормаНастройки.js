@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки отображения данных',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -99,11 +100,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КомпоновщикНастроекНастройки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -247,11 +250,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -309,11 +314,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеПоляПолейГруппировок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -412,11 +419,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляГруппировки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -474,11 +483,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеПоляВыбора');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -550,15 +561,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Выбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -605,11 +625,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеПоляОтбора');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1185,15 +1207,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1240,11 +1271,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеПоляПорядка');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1307,15 +1340,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Порядок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1434,15 +1476,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УсловноеОформление');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1489,15 +1540,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПользовательскиеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1607,15 +1667,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыВывода');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеДанныхРаспределения.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			items:
+			[
+			]
 		},
 					]
 				},

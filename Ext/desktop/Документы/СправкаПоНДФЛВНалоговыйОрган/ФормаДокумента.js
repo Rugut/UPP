@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Справки 2-НДФЛ для передачи в ИФНС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:805px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:789px;height:43px;',
@@ -195,6 +203,16 @@
 			style: 'position:absolute;left:106px;top:494px;width:683px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:123px;width:789px;height:24px;',
+			items:
+			[
+				{
+					text:'физ.лицами, получавшими доходы',
+				},
+			]
+		},
+		{
 			id: 'СотрудникиОрганизации',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:147px;width:254px;height:292px;',
@@ -260,11 +278,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СотрудникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -559,11 +579,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОДоходах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -617,11 +639,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОВычетах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -907,11 +931,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СуммыНалогов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СправкаПоНДФЛВНалоговыйОрган.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1428,14 +1454,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:805px;height:25px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

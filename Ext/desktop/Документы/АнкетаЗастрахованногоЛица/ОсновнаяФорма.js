@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анкета застрахованного лица (АДВ-1)',
 	
 	layout: {type: "fit",align: "stretch"},

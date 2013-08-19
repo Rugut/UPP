@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Журнал учета полученных и выставленных счетов-фактур по Постановлению № 1137',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -78,14 +79,9 @@
 				};
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:815px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -108,6 +104,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

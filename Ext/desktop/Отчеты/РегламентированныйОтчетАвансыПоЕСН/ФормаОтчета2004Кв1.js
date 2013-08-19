@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Авансы по ЕСН',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,40 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:83px;width:764px;height:346px;',
@@ -60,6 +95,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -103,6 +140,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -158,6 +197,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -231,6 +272,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:5px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -322,6 +365,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:116px;top:0px;width:96px;height:19px;',
+			width: 96,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -353,6 +398,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:315px;top:0px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -371,41 +418,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:435px;width:780px;height:25px;',

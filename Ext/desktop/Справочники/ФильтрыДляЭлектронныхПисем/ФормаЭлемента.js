@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Фильтры для электронных писем',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -91,6 +92,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:99px;width:347px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'УсловияФильтра',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:123px;width:347px;height:243px;',
@@ -127,7 +135,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФильтрыДляЭлектронныхПисем").data,
-					fields: ['НомерСтроки','ОтрицаниеУсловия','Условие','ЗначениеУсловия',]
+					fields: ['Ссылка','НомерСтроки','ОтрицаниеУсловия','Условие','ЗначениеУсловия',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -161,15 +169,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УсловияФильтра');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:359px;top:99px;width:347px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ДействияФильтра',
@@ -208,7 +225,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФильтрыДляЭлектронныхПисем").data,
-					fields: ['НомерСтроки','ДействиеФильтра','ГруппаПисем','Оформление',]
+					fields: ['Ссылка','НомерСтроки','ДействиеФильтра','ГруппаПисем','Оформление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -242,15 +259,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДействияФильтра');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФильтрыДляЭлектронныхПисем.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:714px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -261,6 +287,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:141px;top:371px;width:139px;height:19px;',
+			width: 139,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -281,30 +309,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:99px;width:347px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:359px;top:99px;width:347px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:714px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:398px;width:714px;height:25px;',

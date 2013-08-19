@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Окончание межрасчетного периода',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -88,11 +89,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаСотрудников');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2009.ФормаВводаДатыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2009.ФормаВводаДатыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -104,14 +107,9 @@
 			text: 'Выберите сотрудников, выходящих на пенсию',
 			style: 'position:absolute;left:8px;top:38px;width:258px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:59px;width:343px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				'-',
@@ -120,6 +118,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

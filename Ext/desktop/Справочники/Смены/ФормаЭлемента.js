@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Смена',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,6 +47,13 @@
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:430px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ПериодыСмены',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:100px;width:430px;height:220px;',
@@ -76,7 +84,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Смены").data,
-					fields: ['НомерСтроки','ВремяНачала','ВремяОкончания',]
+					fields: ['Ссылка','НомерСтроки','ВремяНачала','ВремяОкончания',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -107,37 +115,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПериодыСмены');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Смены.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Смены.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды смены:',
-			style: 'position:absolute;left:8px;top:60px;width:430px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:430px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:446px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -152,6 +144,15 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Периоды смены:',
+			style: 'position:absolute;left:8px;top:60px;width:430px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:446px;height:25px;',

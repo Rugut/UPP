@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отражение в учете бухгалтерских расчетов с персоналом',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -123,14 +124,9 @@
 			height: 19,
 			style: 'position:absolute;left:113px;top:105px;width:220px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:341px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -165,6 +161,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:132px;width:341px;height:25px;',

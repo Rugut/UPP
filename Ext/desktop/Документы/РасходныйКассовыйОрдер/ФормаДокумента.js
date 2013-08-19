@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Документ Расходный кассовый ордер',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -956,15 +957,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:294px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 		{
 			xtype: 'label',
@@ -1569,15 +1605,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыплатаЗаработнойПлаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:21px;width:618px;height:24px;',
+			items:
+			[
+				{
+					text:'Неоплаченными ведомостями',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -2292,15 +2340,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыплатаДепонентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -2380,15 +2442,52 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Депоненты_РасшифровкаПоСтатьям');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасходныйКассовыйОрдер.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+			]
 		},
 					]
 				},

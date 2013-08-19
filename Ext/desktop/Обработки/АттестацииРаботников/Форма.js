@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Аттестации сотрудников',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,11 +65,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Работники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АттестацииРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АттестацииРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -241,15 +244,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Аттестации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АттестацииРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АттестацииРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:597px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -347,6 +359,24 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:336px;height:25px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				'-',
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:342px;top:6px;width:261px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Квитанция о приеме',
 	
 	layout: {type: "fit",align: "stretch"},

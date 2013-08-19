@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Курс обучения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -158,6 +159,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:268px;width:398px;height:176px;',
 			height: 176,width: 398,
@@ -167,6 +175,13 @@
 					title:'Состав курса',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ЗанятияКурса',
 			xtype: 'grid',
@@ -192,7 +207,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КурсыОбучения").data,
-					fields: ['НомерСтроки','Занятие',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Занятие',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -220,11 +235,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗанятияКурса');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КурсыОбучения.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КурсыОбучения.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -236,6 +253,17 @@
 					title:'Изучаемые компетенции*',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Коррекция весов',
+				},
+			]
+		},
 		{
 			id: 'ИзучаемыеКомпетенции',
 			xtype: 'grid',
@@ -267,7 +295,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КурсыОбучения").data,
-					fields: ['НомерСтроки','Компетенция','Вес',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Компетенция','Вес',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -298,11 +326,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзучаемыеКомпетенции');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КурсыОбучения.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КурсыОбучения.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -377,14 +407,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:452px;width:414px;height:25px;',

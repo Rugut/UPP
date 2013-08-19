@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Пакетный ввод документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -73,11 +74,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСписокФильтров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -113,27 +116,79 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеЗначенияФильтров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:290px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:301px;top:6px;width:187px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:493px;top:8px;width:123px;height:20px;',
+			width: 123,
+			height: 20,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:252px;width:290px;height:19px;',
+			width: 290,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:301px;top:252px;width:315px;height:19px;',
+			width: 315,
+			height: 19,
 		},
 					]
 				},
@@ -225,11 +280,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПакетныйВводДокументов.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

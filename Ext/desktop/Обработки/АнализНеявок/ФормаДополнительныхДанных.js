@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Начисление по больничному листу: дополнительные данные',
 	
 	layout: {type: "fit",align: "stretch"},

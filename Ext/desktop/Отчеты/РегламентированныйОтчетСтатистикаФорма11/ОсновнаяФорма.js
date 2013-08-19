@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма 11: ""Сведения о наличии и движении основных фондов (средств) и других нефинансовых активов',
 	
 	layout: {type: "fit",align: "stretch"},

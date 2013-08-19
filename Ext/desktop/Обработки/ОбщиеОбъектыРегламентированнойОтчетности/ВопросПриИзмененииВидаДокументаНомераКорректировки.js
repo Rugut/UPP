@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменен вид документа и(или) номер корректировки',
 	
 	layout: {type: "fit",align: "stretch"},

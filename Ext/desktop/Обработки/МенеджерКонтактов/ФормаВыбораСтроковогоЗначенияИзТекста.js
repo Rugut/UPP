@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма выбора строковых значений из текста',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,14 +30,9 @@
 			title: 'Найденные значения',
 			style: 'position:absolute;left:442px;top:10px;width:190px;height:16px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:30px;width:428px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -51,7 +47,6 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:442px;top:30px;width:190px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -59,6 +54,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

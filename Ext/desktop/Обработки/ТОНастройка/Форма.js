@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подключение и настройка торгового оборудования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,6 +26,29 @@
 					title:'Сканеры штрихкода',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'СканерыШтрихКода',
 			xtype: 'grid',
@@ -73,11 +97,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СканерыШтрихКода');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -89,6 +115,29 @@
 					title:'Фискальные регистраторы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ФискальныеРегистраторы',
 			xtype: 'grid',
@@ -146,11 +195,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФискальныеРегистраторы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -162,6 +213,29 @@
 					title:'Терминалы сбора данных',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ТерминалыСбораДанных',
 			xtype: 'grid',
@@ -210,11 +284,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТерминалыСбораДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -226,6 +302,29 @@
 					title:'Дисплеи покупателя',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ДисплеиПокупателя',
 			xtype: 'grid',
@@ -283,11 +382,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДисплеиПокупателя');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -299,6 +400,29 @@
 					title:'Считыватели магнитных карт',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'СчитывателиМагнитныхКарт',
 			xtype: 'grid',
@@ -347,11 +471,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СчитывателиМагнитныхКарт');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -363,6 +489,29 @@
 					title:'Электронные весы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ЭлектронныеВесы',
 			xtype: 'grid',
@@ -411,11 +560,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЭлектронныеВесы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -427,6 +578,29 @@
 					title:'Весы с печатью этикеток',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ВесыСПечатьюЭтикеток',
 			xtype: 'grid',
@@ -475,11 +649,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВесыСПечатьюЭтикеток');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -491,6 +667,29 @@
 					title:'ККМ в режиме Offline',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ККМOffline',
 			xtype: 'grid',
@@ -548,11 +747,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ККМOffline');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -564,6 +765,29 @@
 					title:'ККМ в режиме Online',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ККМOnline',
 			xtype: 'grid',
@@ -621,11 +845,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ККМOnline');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -637,6 +863,29 @@
 					title:'Эквайринговые системы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'ЭквайринговыеСистемы',
 			xtype: 'grid',
@@ -685,11 +934,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЭквайринговыеСистемы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -701,6 +952,29 @@
 					title:'Считыватели RFID меток',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Параметры',
+				},
+			]
+		},
 		{
 			id: 'СчитывателиRFIDМеток',
 			xtype: 'grid',
@@ -749,11 +1023,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СчитывателиRFIDМеток');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОНастройка.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОНастройка.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

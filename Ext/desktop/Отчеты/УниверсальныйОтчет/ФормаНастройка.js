@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,19 +65,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПоказатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:95px;width:670px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Снять пометки',
+				},
+				'-',
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:363px;top:6px;width:313px;height:19px;',
+			width: 313,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -276,11 +308,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеИзмеренияСтроки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -334,15 +368,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеИзмеренияКолонки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:320px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:356px;top:6px;width:320px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -368,6 +418,28 @@
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
 			style: 'position:absolute;left:6px;top:6px;width:80px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:48px;width:670px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+			]
 		},
 		{
 			id: 'ТабличноеПолеОтобранныеИнтервалы',
@@ -417,11 +489,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтобранныеИнтервалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -430,6 +504,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:6px;width:588px;height:19px;',
+			width: 588,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -526,15 +602,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -542,6 +627,13 @@
 					title:'Дополнительные поля',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ТабличноеПолеВыбранныеПоля',
 			xtype: 'grid',
@@ -599,11 +691,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеВыбранныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -615,6 +709,13 @@
 					title:'Сортировка',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ТабличноеПолеПорядок',
 			xtype: 'grid',
@@ -663,11 +764,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПорядок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -745,15 +848,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеУсловноеОформление');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:69px;width:670px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -768,6 +880,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:128px;top:27px;width:548px;height:19px;',
+			width: 548,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -818,11 +932,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПоказатели1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -944,11 +1060,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1051,11 +1169,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеИзмеренияСтроки1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1109,15 +1229,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеИзмеренияКолонки1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:242px;top:97px;width:210px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:482px;top:97px;width:210px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1173,11 +1309,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПоказатели2');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1299,11 +1437,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор2');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1364,15 +1504,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеИзмеренияСтроки2');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОтчет.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:360px;top:97px;width:332px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1402,6 +1551,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:365px;top:8px;width:327px;height:19px;',
+			width: 327,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1412,6 +1563,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:365px;top:8px;width:327px;height:19px;',
+			width: 327,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1722,30 +1875,6 @@
 				{
 					text:'Отмена',
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:242px;top:97px;width:210px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:482px;top:97px;width:210px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:360px;top:97px;width:332px;height:24px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

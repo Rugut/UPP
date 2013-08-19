@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Встреча',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:675px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНомер',
@@ -130,6 +138,36 @@
 			style: 'position:absolute;left:379px;top:6px;width:130px;height:24px;text-align:center;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:245px;top:6px;width:130px;height:24px;',
+			items:
+			[
+				{
+					text:'Предыдущий день',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:527px;top:6px;width:123px;height:24px;',
+			items:
+			[
+				{
+					text:'Следующий день',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:27px;width:75px;height:24px;',
+			items:
+			[
+				{
+					text:'Подобрать',
+				},
+			]
+		},
+		{
 			id: 'Участники',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:56px;width:222px;height:144px;',
@@ -168,11 +206,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Участники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Встречи.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Встречи.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -182,6 +222,33 @@
 			xtype: 'fieldset',
 			title: 'Участники ',
 			style: 'position:absolute;left:6px;top:6px;width:222px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:81px;top:27px;width:147px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Отображать занятость',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:18px;top:111px;width:175px;height:24px;',
+			items:
+			[
+				{
+					text:'Подобрать',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+			]
 		},
 					]
 				},
@@ -343,14 +410,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:675px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:675px;height:25px;',

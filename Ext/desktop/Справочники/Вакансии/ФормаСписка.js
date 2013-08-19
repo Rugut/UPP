@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Вакансии',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,7 +71,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Вакансии").data,
-					fields: ['Картинка','Код','Наименование','Организация.Представление','Подразделение','Должность.Представление','ПлановаяДатаЗакрытия',]
+					fields: ['Ссылка','Картинка','Код','Наименование','Организация.Представление','Подразделение','Должность.Представление','ПлановаяДатаЗакрытия',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -113,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Вакансии.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Вакансии.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -126,6 +129,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -141,14 +146,9 @@
 			boxLabel: 'Организация:',
 			style: 'position:absolute;left:178px;top:33px;width:88px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:729px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -252,6 +252,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

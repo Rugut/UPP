@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подбор документов планирования движения денежных средств',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:29px;width:306px;height:24px;',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+			]
+		},
 		{
 			id: 'ПланируемыеДвижения',
 			xtype: 'grid',
@@ -171,11 +182,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПланируемыеДвижения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораПланируемыхДвиженийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборПараметровРасшифровкиПлатежа.ФормаПодбораПланируемыхДвиженийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -196,17 +209,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:29px;width:306px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-			]
-		},
 	]
 	});
 });

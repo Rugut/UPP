@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помещения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -94,14 +95,9 @@
 			boxLabel: 'Для встреч',
 			style: 'position:absolute;left:8px;top:82px;width:384px;height:15px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -116,6 +112,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:105px;width:400px;height:25px;',

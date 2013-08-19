@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Оформить документы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -23,6 +24,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:221px;top:24px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -79,6 +82,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:221px;top:345px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -174,6 +179,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:221px;top:223px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -195,6 +202,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:221px;top:123px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',

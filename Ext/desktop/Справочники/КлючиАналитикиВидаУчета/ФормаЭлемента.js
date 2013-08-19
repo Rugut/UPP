@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ключ аналитики вида учета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,13 @@
 			width: 270,
 			height: 19,
 			style: 'position:absolute;left:97px;top:33px;width:270px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:375px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -366,14 +374,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:375px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:273px;width:375px;height:25px;',

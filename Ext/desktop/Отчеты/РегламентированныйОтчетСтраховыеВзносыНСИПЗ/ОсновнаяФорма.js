@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет об использовании сумм страховых взносов',
 	
 	layout: {type: "fit",align: "stretch"},

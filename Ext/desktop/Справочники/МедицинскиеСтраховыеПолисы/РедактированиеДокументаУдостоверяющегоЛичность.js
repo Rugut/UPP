@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Паспортные данные физического лица',
 	
 	layout: {type: "fit",align: "stretch"},

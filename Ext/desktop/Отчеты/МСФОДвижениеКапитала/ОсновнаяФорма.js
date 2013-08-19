@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет об изменениях в капитале по МСФО',
 	
 	layout: {type: "fit",align: "stretch"},

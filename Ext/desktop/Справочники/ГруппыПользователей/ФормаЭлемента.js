@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа пользователей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,54 @@
 			width: 284,
 			height: 19,
 			style: 'position:absolute;left:92px;top:33px;width:284px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -91,6 +140,26 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:266px;top:113px;width:226px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			id: 'ПользователиГруппы',
 			xtype: 'grid',
 			style: 'position:absolute;left:266px;top:138px;width:226px;height:214px;',
@@ -115,7 +184,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГруппыПользователей").data,
-					fields: ['НомерСтроки','Пользователь',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Пользователь',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -143,11 +212,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПользователиГруппы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГруппыПользователей.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГруппыПользователей.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -178,7 +249,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГруппыПользователей").data,
-					fields: ['ВидОбъектаДоступа','ДоступноОбъектов',]
+					fields: ['Ссылка','Родитель.Представление','ВидОбъектаДоступа','ДоступноОбъектов',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -206,15 +277,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВидыОбъектовДоступа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГруппыПользователей.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГруппыПользователей.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:113px;width:249px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Настройка доступа',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -246,55 +336,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:392px;width:500px;height:25px;',
 			dock: 'bottom',
 			items:
@@ -313,45 +354,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:266px;top:113px;width:226px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:113px;width:249px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Настройка доступа',
 				},
 			]
 		},

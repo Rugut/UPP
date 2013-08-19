@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Увольнение из организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -113,6 +114,16 @@
 			width: 461,
 			height: 19,
 			style: 'position:absolute;left:96px;top:412px;width:461px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:549px;height:24px;',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
 		},
 		{
 			id: 'РаботникиОрганизации',
@@ -261,11 +272,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УвольнениеИзОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УвольнениеИзОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -369,60 +382,9 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:124px;width:549px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:268px;top:438px;width:297px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:438px;width:268px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				'-',
-				{
-					text:'Отменить исправление',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:72px;top:269px;width:389px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -481,6 +443,45 @@
 				},
 				{
 					text:'Настройка списка...',
+				},
+			]
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:268px;top:438px;width:297px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:438px;width:268px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				'-',
+				{
+					text:'Отменить исправление',
 				},
 			]
 		},

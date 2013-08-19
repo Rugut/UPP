@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка программы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,11 +64,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокРазделов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -264,15 +267,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ШаблоныТелефонов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:12px;top:100px;width:148px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'numberfield',
@@ -509,15 +536,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаОтложенногоПроведения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаПрограммыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:12px;top:48px;width:148px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -738,6 +789,19 @@
 			name: 'Надпись81',
 			text: 'При обновлении списка «Мои задачи» будут создаваться следующие виды задач:',
 			style: 'position:absolute;left:12px;top:35px;width:522px;height:22px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:316px;top:118px;width:116px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+			]
 		},
 					]
 				},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Формирование заказов поставщикам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -100,15 +101,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеЗакупки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализТочкиЗаказа.ФормаФормированиеЗаказовПоставщикамСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализТочкиЗаказа.ФормаФормированиеЗаказовПоставщикамСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -164,15 +184,48 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СформированныеДокументы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализТочкиЗаказа.ФормаФормированиеЗаказовПоставщикамСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализТочкиЗаказа.ФормаФормированиеЗаказовПоставщикамСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Установить/Снять пометку на удаление',
+				},
+				{
+					text:'Удалить непосредственно',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},

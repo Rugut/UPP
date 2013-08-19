@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка показателя монитора эффективности',
 	
 	layout: {type: "fit",align: "stretch"},

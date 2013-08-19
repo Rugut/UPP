@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Передача материалов в эксплуатацию',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -378,15 +379,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Материалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаМатериаловВЭксплуатацию.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаМатериаловВЭксплуатацию.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:123px;width:636px;height:26px;',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -617,19 +632,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:123px;width:636px;height:26px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
 	]
 	});
 });

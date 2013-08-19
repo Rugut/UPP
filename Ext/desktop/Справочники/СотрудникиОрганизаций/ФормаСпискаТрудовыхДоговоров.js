@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Трудовые договоры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -88,7 +89,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Картинка','ДатаДоговора','НомерДоговора','ОбособленноеПодразделение.Представление','Наименование','ПодразделениеОрганизации.Представление','Должность.Представление','ДатаНачала','ДатаОкончания','ИспытательныйСрок',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','ДатаДоговора','НомерДоговора','ОбособленноеПодразделение.Представление','Наименование','ПодразделениеОрганизации.Представление','Должность.Представление','ДатаНачала','ДатаОкончания','ИспытательныйСрок',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -140,38 +141,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаТрудовыхДоговоровСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаТрудовыхДоговоровСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'Организация',
-			width: 220,
-			height: 19,
-			style: 'position:absolute;left:97px;top:33px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Организация:',
-			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:707px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -292,6 +276,24 @@
 				},
 			]
 		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			width: 220,
+			height: 19,
+			style: 'position:absolute;left:97px;top:33px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:8px;top:33px;width:87px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

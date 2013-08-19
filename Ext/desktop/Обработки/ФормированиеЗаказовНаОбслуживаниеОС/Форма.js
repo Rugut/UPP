@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Формирование заказов на обслуживание ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,30 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Открыть список заказов на обслуживание ОС',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
 		{
 			id: 'ОсновныеСредстваДляРемонта',
 			xtype: 'grid',
@@ -144,11 +169,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсновныеСредстваДляРемонта');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -193,45 +220,46 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоУслуг');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЗаказовНаОбслуживаниеОС.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:227px;top:33px;width:501px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:33px;width:215px;height:24px;',
+			items:
+			[
+				{
+					text:'Новая дата',
+				},
+				'-',
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Открыть список заказов на обслуживание ОС',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:366px;width:736px;height:25px;',
@@ -248,32 +276,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:227px;top:33px;width:501px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:33px;width:215px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Новая дата',
-				},
-				'-',
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
 				},
 			]
 		},

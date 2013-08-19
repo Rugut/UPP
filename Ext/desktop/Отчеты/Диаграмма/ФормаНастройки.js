@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки диаграммы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:128px;top:30px;width:280px;height:19px;',
+			width: 280,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -28,6 +31,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:128px;top:54px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -70,6 +75,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -86,6 +93,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:24px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -101,6 +110,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -117,6 +128,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:24px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -152,6 +165,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -198,6 +213,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -244,6 +261,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:0px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -264,6 +283,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:136px;top:24px;width:335px;height:19px;',
+			width: 335,
+			height: 19,
 		},
 		{
 			xtype: 'label',

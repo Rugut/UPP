@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Справка-расчет ""Рублевая сумма документа в иностранной валюте""',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,19 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			items:
+			[
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+			]
+		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -65,20 +79,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:62px;width:430px;height:25px;',

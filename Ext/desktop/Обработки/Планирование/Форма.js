@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Планирование',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,33 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -122,11 +150,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоПланов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -270,15 +300,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставПлана');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:242px;top:22px;width:734px;height:24px;',
+			items:
+			[
+				{
+					text:'Редактировать',
+				},
+				'-',
+				'-',
+			]
 		},
 		{
 			xtype: 'trigger',
@@ -462,11 +506,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Потребности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -486,6 +532,20 @@
 			xtype: 'fieldset',
 			title: 'Потребности',
 			style: 'position:absolute;left:242px;top:241px;width:734px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:230px;height:24px;',
+			items:
+			[
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Обновить',
+				},
+				'-',
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -508,6 +568,16 @@
 					title:'Плановые задания',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
+			items:
+			[
+				{
+					text:'(История отборов)',
+				},
+			]
+		},
 		{
 			id: 'ПроизводственнаяПрограмма',
 			xtype: 'grid',
@@ -655,11 +725,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПроизводственнаяПрограмма');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Планирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Планирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -671,6 +743,24 @@
 					title:'Диаграмма Ганта',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
+			items:
+			[
+				{
+					text:'Свернуть все',
+				},
+				{
+					text:'Развернуть все',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗагрузкаОписание',
@@ -764,34 +854,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

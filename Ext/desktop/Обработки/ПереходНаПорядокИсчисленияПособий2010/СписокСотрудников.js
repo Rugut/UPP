@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -65,11 +66,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отставники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереходНаПорядокИсчисленияПособий2010.СписокСотрудниковСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереходНаПорядокИсчисленияПособий2010.СписокСотрудниковСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -120,11 +123,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Облученные');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереходНаПорядокИсчисленияПособий2010.СписокСотрудниковСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереходНаПорядокИсчисленияПособий2010.СписокСотрудниковСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

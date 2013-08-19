@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод формулы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -79,11 +80,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыВыпускаПродукции');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводФормулы.ФормаВводаФормулыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводФормулы.ФормаВводаФормулыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -163,11 +166,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводФормулы.ФормаВводаФормулыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводФормулы.ФормаВводаФормулыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

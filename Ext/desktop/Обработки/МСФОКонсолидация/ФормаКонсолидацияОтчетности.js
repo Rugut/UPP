@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Консолидация отчетности по МСФО',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -230,11 +231,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПоле');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -443,11 +446,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -505,11 +510,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон5');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -571,11 +578,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред5');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -637,11 +646,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон6');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -703,11 +714,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред6');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -781,11 +794,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон7');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -841,11 +856,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред7');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -907,11 +924,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон8');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -967,11 +986,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред8');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1033,11 +1054,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон11');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1099,11 +1122,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред11');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1165,11 +1190,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон12');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1231,11 +1258,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред12');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1297,11 +1326,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗКон21');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1363,11 +1394,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗПред21');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1583,11 +1616,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеРезультат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияОтчетностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

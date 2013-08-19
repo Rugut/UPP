@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отбор',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -24,6 +25,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:186px;top:267px;width:336px;height:19px;',
+			width: 336,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -34,10 +37,44 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:186px;top:243px;width:336px;height:19px;',
+			width: 336,
+			height: 19,
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:216px;top:21px;width:49px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				{
+					text:'СнятьФлажки',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:473px;top:147px;width:49px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				{
+					text:'СнятьФлажки',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:473px;top:21px;width:49px;height:24px;',
 			items:
 			[
 				{
@@ -90,11 +127,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РолиСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СписокПользователейИБ.ФормаОтбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СписокПользователейИБ.ФормаОтбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -139,11 +178,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИнтерфейсыСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СписокПользователейИБ.ФормаОтбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СписокПользователейИБ.ФормаОтбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -188,11 +229,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЯзыкиСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СписокПользователейИБ.ФормаОтбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СписокПользователейИБ.ФормаОтбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -206,6 +249,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:23px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -236,40 +281,6 @@
 				'-',
 				{
 					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:216px;top:21px;width:49px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				{
-					text:'СнятьФлажки',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:473px;top:21px;width:49px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				{
-					text:'СнятьФлажки',
 				},
 			]
 		},

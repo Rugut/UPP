@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа Кассы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -91,6 +92,14 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:546px;height:25px;',
+			items:
+			[
+				'-',
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьРодитель1',
 			text: 'Группа касс:',
@@ -140,15 +149,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:546px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:108px;width:546px;height:25px;',

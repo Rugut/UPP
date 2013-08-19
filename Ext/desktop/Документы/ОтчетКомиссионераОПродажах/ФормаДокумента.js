@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет комиссионера',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -473,11 +474,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -586,11 +589,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПокупателиТовары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -714,11 +719,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДенежныеСредства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1718,11 +1725,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетКомиссионераОПродажах.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Справочно',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -118,11 +119,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПеречисленоНДФЛПоФизлицам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -203,11 +206,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПеречисленоНДФЛВсего');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОДоходахФизлиц.ФормаПеречисленоНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

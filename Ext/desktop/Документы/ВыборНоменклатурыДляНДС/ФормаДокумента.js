@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -153,6 +154,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:124px;width:388px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'Номенклатура',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:148px;width:388px;height:160px;',
@@ -209,37 +217,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Номенклатура');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыборНоменклатурыДляНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыборНоменклатурыДляНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Номенклатура',
-			style: 'position:absolute;left:8px;top:108px;width:388px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:124px;width:388px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -257,6 +249,15 @@
 				},
 			]
 		},
+		{
+			xtype: 'fieldset',
+			title: 'Номенклатура',
+			style: 'position:absolute;left:8px;top:108px;width:388px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:340px;width:404px;height:25px;',

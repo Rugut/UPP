@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отражение в учете пособия по документу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -321,11 +322,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтражениеНачислений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеПоБольничномуЛисту.ФормаОтраженияВУчетеСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеПоБольничномуЛисту.ФормаОтраженияВУчетеСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

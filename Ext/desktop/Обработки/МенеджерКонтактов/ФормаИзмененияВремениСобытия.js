@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменение времени события',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -74,10 +75,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:80px;top:136px;width:246px;height:19px;',
+			width: 246,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:204px;top:84px;width:122px;height:19px;',
+			width: 122,
+			height: 19,
 		},
 		],
 	}],

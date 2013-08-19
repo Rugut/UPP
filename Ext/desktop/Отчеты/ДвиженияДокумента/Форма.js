@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет по движениям документа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,23 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:712px;height:25px;',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Сохранить значения...',
+				},
+				{
+					text:'Восстановить значения...',
+				},
+			]
+		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -70,29 +88,13 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:612px;top:33px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:712px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Сохранить значения...',
-				},
-				{
-					text:'Восстановить значения...',
-				},
-			]
-		},
 	]
 	});
 });

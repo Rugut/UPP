@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выгрузка данных в ТСД',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -188,11 +189,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПолеТовары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОВыгрузкаТСД.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОВыгрузкаТСД.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -209,6 +212,22 @@
 				{
 					text:'Очистить выделение',
 				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:700px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
 			]
 		},
 		{
@@ -240,6 +259,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:158px;top:6px;width:168px;height:20px;',
+			width: 168,
+			height: 20,
 		},
 		{
 			xtype: 'textfield',
@@ -258,6 +279,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:158px;top:31px;width:168px;height:20px;',
+			width: 168,
+			height: 20,
 		},
 		{
 			xtype: 'textfield',
@@ -276,6 +299,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:158px;top:56px;width:168px;height:20px;',
+			width: 168,
+			height: 20,
 		},
 		{
 			xtype: 'textfield',
@@ -294,6 +319,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:158px;top:81px;width:168px;height:20px;',
+			width: 168,
+			height: 20,
 		},
 		{
 			xtype: 'textfield',
@@ -317,28 +344,13 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:166px;top:28px;width:167px;height:19px;',
+			width: 167,
+			height: 19,
 		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:700px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				'-',
-			]
-		},
 	]
 	});
 });

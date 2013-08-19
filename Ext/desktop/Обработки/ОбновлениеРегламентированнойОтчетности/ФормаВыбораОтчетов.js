@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выберите обновляемые отчеты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -75,11 +76,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбновлениеРегламентированнойОтчетности.ФормаВыбораОтчетовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбновлениеРегламентированнойОтчетности.ФормаВыбораОтчетовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

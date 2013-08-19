@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет по проводкам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -95,19 +96,8 @@
 			},
 		},
 		{
-			xtype: 'button',
-			name: 'КнопкаНастройкаПериода',
-			text: '...',
-			style: 'position:absolute;left:272px;top:33px;width:20px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -159,6 +149,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:272px;top:33px;width:20px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

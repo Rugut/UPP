@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки обмена данными',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,91 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Ввести на основании...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
+				},
+				{
+					text:'Монитор обменов',
+				},
+				'-',
+				{
+					text:'Зарегистрировать для обмена',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+					]
+				},
+				{
+					text:'Ввести на основании...',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
+				},
+				'-',
+				{
+					text:'Монитор обменов',
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьКод',
@@ -385,6 +471,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:140px;top:24px;width:182px;height:19px;',
+			width: 182,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -502,6 +590,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:328px;top:24px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -562,6 +652,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:94px;top:93px;width:254px;height:19px;',
+			width: 254,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -797,7 +889,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
-					fields: ['ЭтоНастройкаДляВыгрузки','НаименованиеПравилаВыгрузки','НастройкаВыгрузки','ВыгружатьДанные','ВыгружатьПоСсылке','КодПравилаВыгрузки','КодПравилаОбмена','НастройкаНеПоддерживается',]
+					fields: ['Ссылка','ЭтоНастройкаДляВыгрузки','НаименованиеПравилаВыгрузки','НастройкаВыгрузки','ВыгружатьДанные','ВыгружатьПоСсылке','КодПравилаВыгрузки','КодПравилаОбмена','НастройкаНеПоддерживается',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -843,15 +935,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаВыгрузкиДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:464px;height:24px;',
+			items:
+			[
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Изменить настройку',
+				},
+				'-',
+				{
+					text:'Загрузить настройки',
+				},
+			]
 		},
 					]
 				},
@@ -920,7 +1035,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
-					fields: ['ЭтоНастройкаДляВыгрузки','НаименованиеПравилаОбмена','ИмяНастройкиДляПользователя','ОписаниеНастройкиДляПользователя','ИмяНастройкиДляАлгоритма','НастройкаНеПоддерживается','ВариантПоискаНеПоддерживается','КодПравилаОбмена',]
+					fields: ['Ссылка','ЭтоНастройкаДляВыгрузки','НаименованиеПравилаОбмена','ИмяНастройкиДляПользователя','ОписаниеНастройкиДляПользователя','ИмяНастройкиДляАлгоритма','НастройкаНеПоддерживается','ВариантПоискаНеПоддерживается','КодПравилаОбмена',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -966,15 +1081,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаВариантовПоискаОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:5px;top:6px;width:465px;height:24px;',
+			items:
+			[
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Загрузить параметры выбора',
+				},
+			]
 		},
 					]
 				},
@@ -1121,7 +1255,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
-					fields: ['ТекстСообщения',]
+					fields: ['Ссылка','ТекстСообщения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1146,15 +1280,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СообщенияНеЯвляющиесяОшибками');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:16px;top:234px;width:468px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -1204,7 +1362,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиОбменаДанными").data,
-					fields: ['Картинка','Код','Наименование','Комментарий',]
+					fields: ['Ссылка','Картинка','Код','Наименование','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1238,15 +1396,60 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиВыполненияОбменов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиОбменаДанными.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:50px;width:478px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 					]
 				},
@@ -1256,92 +1459,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Ввести на основании...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				'-',
-				{
-					text:'Выполнить обмен',
-				},
-				{
-					text:'Монитор обменов',
-				},
-				'-',
-				{
-					text:'Зарегистрировать для обмена',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-					]
-				},
-				{
-					text:'Ввести на основании...',
-				},
-				'-',
-				{
-					text:'Выполнить обмен',
-				},
-				'-',
-				{
-					text:'Монитор обменов',
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:526px;width:507px;height:25px;',

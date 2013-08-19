@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Инвентаризация незавершенного производства',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,20 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:410px;width:652px;height:25px;',
@@ -372,6 +387,28 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить остатками материалов в производстве',
+				},
+				{
+					text:'Заполнить по нормативам (упр. учет)',
+				},
+				{
+					text:'Заполнить по нормативам (регл. учет)',
+				},
+				{
+					text:'Заполнить остатками затрат (упр. учет)',
+				},
+				{
+					text:'Заполнить остатками затрат (регл. учет)',
+				},
+			]
+		},
+		{
 			id: 'Материалы',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:32px;width:622px;height:132px;',
@@ -563,11 +600,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Материалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -699,15 +738,33 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПрочиеЗатраты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИнвентаризацияНЗП.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по остаткам (упр. и регл. учет)',
+				},
+				{
+					text:'Заполнить по остаткам (упр. учет)',
+				},
+				{
+					text:'Заполнить по остаткам (регл. учет)',
+				},
+			]
 		},
 					]
 				},
@@ -717,21 +774,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 	]
 	});
 });

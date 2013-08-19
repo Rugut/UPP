@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Редактирование контактной информации',
 	
 	layout: {type: "fit",align: "stretch"},

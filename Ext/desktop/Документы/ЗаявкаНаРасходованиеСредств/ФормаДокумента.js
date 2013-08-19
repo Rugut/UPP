@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Документ Заявка на расходование средств',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -409,15 +410,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:294px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -961,6 +974,16 @@
 			style: 'position:absolute;left:6px;top:6px;width:88px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:30px;width:358px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить и провести',
+				},
+			]
+		},
+		{
 			id: 'РазмещениеЗаявки',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:54px;width:627px;height:79px;',
@@ -1017,11 +1040,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РазмещениеЗаявки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗаявкаНаРасходованиеСредств.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

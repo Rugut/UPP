@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Анализ начисленного НДС с авансов',
 	
 	layout: {type: "fit",align: "stretch"},

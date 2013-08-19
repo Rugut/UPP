@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Консолидация по информационной базе',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:640px;height:326px;',
@@ -250,15 +258,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:67px;width:640px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -446,11 +467,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДвижения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -515,11 +538,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеРезультат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МСФОКонсолидация.ФормаКонсолидацияДанныхСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -533,14 +558,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:656px;height:25px;',

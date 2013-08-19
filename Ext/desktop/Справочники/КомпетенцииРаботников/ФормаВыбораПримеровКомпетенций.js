@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Примеры компетенций (критериев оценки)',
 	
 	layout: {type: "fit",align: "stretch"},

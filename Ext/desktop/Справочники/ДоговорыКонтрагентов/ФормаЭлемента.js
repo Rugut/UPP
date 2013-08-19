@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Договор контрагента',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -320,6 +321,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:151px;top:25px;width:170px;height:19px;',
+			width: 170,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -852,7 +855,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
-					fields: ['Картинка','Дата','Номер','ДатаНачала','Периодичность','СуммаУсловийДоговора',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Дата','Номер','ДатаНачала','Периодичность','СуммаУсловийДоговора',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -892,15 +895,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыУсловияДоговора');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:30px;width:481px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1056,7 +1072,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
-					fields: ['ПолучательСкидки','Номенклатура','Характеристика','Качество','Условие','ЗначениеУсловия','Процент','Валюта','ДеньНедели','ВремяНачала','ВремяОкончания','Начало','Окончание','УстановкаСкидокНоменклатуры','ОтменаСкидок',]
+					fields: ['Ссылка','Родитель.Представление','ПолучательСкидки','Номенклатура','Характеристика','Качество','Условие','ЗначениеУсловия','Процент','Валюта','ДеньНедели','ВремяНачала','ВремяОкончания','Начало','Окончание','УстановкаСкидокНоменклатуры','ОтменаСкидок',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1123,11 +1139,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Скидки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1210,7 +1228,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
-					fields: ['ПометкаУдаления','Свойство','Значение',]
+					fields: ['Ссылка','Родитель.Представление','ПометкаУдаления','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1241,15 +1259,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Свойства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:481px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1288,7 +1315,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоговорыКонтрагентов").data,
-					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+					fields: ['Ссылка','Родитель.Представление','ПометкаУдаления','Принадлежность','Категория',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -1319,15 +1346,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Категории');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоговорыКонтрагентов.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:481px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -1387,6 +1435,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:106px;top:129px;width:397px;height:19px;',
+			width: 397,
+			height: 19,
 		},
 		{
 			xtype: 'label',

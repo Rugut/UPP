@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Виды контактной информации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -58,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВидыКонтактнойИнформации").data,
-					fields: ['Картинка','Код','Тип.Представление','Наименование','ВидОбъектаКонтактнойИнформации.Представление',]
+					fields: ['Ссылка','Картинка','Код','Тип.Представление','Наименование','ВидОбъектаКонтактнойИнформации.Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -95,24 +96,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВидыКонтактнойИнформации.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВидыКонтактнойИнформации.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:496px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -121,6 +119,10 @@
 				'-',
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

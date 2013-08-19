@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Календарный план закупок',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,43 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Помощник заполнения',
+				},
+				'-',
+				{
+					text:'Помощник установки соответствия заказов покупателей и заказов поставщикам',
+				},
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Помощник заполнения',
+				},
+				'-',
+				{
+					text:'Помощник установки соответствия заказов покупателей и заказов поставщикам',
+				},
+			]
+		},
 		{
 			id: 'ДеревоПодбора',
 			xtype: 'grid',
@@ -99,11 +137,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоПодбора');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -146,6 +186,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:509px;top:57px;width:183px;height:19px;',
+			width: 183,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -192,6 +234,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:143px;top:57px;width:201px;height:19px;',
+			width: 201,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -258,44 +302,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Помощник заполнения',
-				},
-				'-',
-				{
-					text:'Помощник установки соответствия заказов покупателей и заказов поставщикам',
-				},
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Помощник заполнения',
-				},
-				'-',
-				{
-					text:'Помощник установки соответствия заказов покупателей и заказов поставщикам',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:700px;height:25px;',

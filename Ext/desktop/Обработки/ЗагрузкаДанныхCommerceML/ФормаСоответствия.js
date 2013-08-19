@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сопоставление объектов из файла и информационной базы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,15 +109,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияВалют');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+			]
 		},
 					]
 				},
@@ -190,15 +214,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+			]
 		},
 					]
 				},
@@ -272,15 +319,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+				{
+					text:'Создать все',
+				},
+			]
 		},
 					]
 				},
@@ -372,15 +445,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияБанков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+			]
 		},
 					]
 				},
@@ -472,15 +568,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияБанковскихСчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+			]
 		},
 					]
 				},
@@ -545,15 +664,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияЕдиницИзмерения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+				{
+					text:'Создать все',
+				},
+			]
 		},
 					]
 				},
@@ -627,15 +772,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствиеВидовНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+				{
+					text:'Создать все',
+				},
+			]
 		},
 					]
 				},
@@ -643,6 +814,30 @@
 					title:'Номенклатура',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+				{
+					text:'Создать все',
+				},
+			]
+		},
 		{
 			id: 'СоответствияТоваров',
 			xtype: 'grid',
@@ -763,11 +958,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияТоваров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -836,15 +1033,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияКачества');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+				{
+					text:'Создать все',
+				},
+			]
 		},
 					]
 				},
@@ -945,15 +1168,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияТиповЦен');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаСоответствияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			items:
+			[
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				'-',
+				{
+					text:'Показать несопоставленные',
+				},
+				'-',
+				{
+					text:'Создать по данным из файла',
+				},
+				{
+					text:'Создать все',
+				},
+			]
 		},
 					]
 				},

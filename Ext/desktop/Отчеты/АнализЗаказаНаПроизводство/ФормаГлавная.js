@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анализ заказа на производство',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,21 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьЗаказ',
@@ -96,22 +112,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

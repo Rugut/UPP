@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировка учета по НДФЛ, страховым взносам и ЕСН',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,6 +107,43 @@
 			width: 636,
 			height: 19,
 			style: 'position:absolute;left:169px;top:443px;width:636px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:813px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -273,15 +311,56 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НДФЛСведенияОДоходах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -294,6 +373,45 @@
 					title:'НДФЛ по ставке 13%',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		{
 			id: 'НДФЛИсчисленный13',
 			xtype: 'grid',
@@ -396,11 +514,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НДФЛИсчисленный13');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -527,11 +647,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НДФЛПредоставленныеВычеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -582,6 +704,16 @@
 					title:'НДФЛ удержанный',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'суммами исчисленного налога',
+				},
+			]
+		},
 		{
 			id: 'НДФЛУдержанный',
 			xtype: 'grid',
@@ -702,11 +834,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НДФЛУдержанный');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -852,11 +986,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтраховыеВзносыСведенияОДоходах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1063,11 +1199,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтраховыеВзносы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1082,6 +1220,16 @@
 			xtype: 'fieldset',
 			title: 'Исчислено взносов в ПФР, ФСС и ФОМС',
 			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'по данным для исчисления НДФЛ',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -1189,15 +1337,56 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЕСНСведенияОДоходах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 		{
 			id: 'ЕСННалоги',
@@ -1355,11 +1544,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЕСННалоги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1549,15 +1740,56 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПособияСоциальномуСтрахованию');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -1736,11 +1968,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПособияПоУходуЗаРебенкомДоПолутораЛет');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НДФЛиЕСНДоходыИНалоги.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1831,44 +2065,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:813px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:470px;width:813px;height:25px;',

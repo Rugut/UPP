@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка обмена данными',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -100,6 +101,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:246px;top:86px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -211,6 +214,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:401px;top:86px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -227,6 +232,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:28px;top:70px;width:413px;height:19px;',
+			width: 413,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -309,15 +316,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаВыбораОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДанными.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДанными.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:538px;height:24px;',
+			items:
+			[
+				{
+					text:'Выбрать все',
+				},
+				{
+					text:'Отменить все',
+				},
+			]
 		},
 					]
 				},
@@ -548,6 +570,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:154px;top:24px;width:385px;height:19px;',
+			width: 385,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -1095,15 +1119,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаВыгрузкиДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДанными.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДанными.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Изменить настройку',
+				},
+			]
 		},
 					]
 				},
@@ -1111,6 +1154,19 @@
 					title:'Сопоставление объектов',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'НастройкаВариантовПоискаОбъектов',
 			xtype: 'grid',
@@ -1213,11 +1269,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаВариантовПоискаОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДанными.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДанными.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'ABC-классификация покупателей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,6 +41,33 @@
 			width: 120,
 			height: 19,
 			style: 'position:absolute;left:186px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -84,6 +112,16 @@
 			width: 77,
 			height: 19,
 			style: 'position:absolute;left:265px;top:6px;width:77px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:31px;width:600px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			id: 'ТаблицаРаспределенияКонтрагентов',
@@ -178,11 +216,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаРаспределенияКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ABCКлассификацияПокупателей.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ABCКлассификацияПокупателей.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -354,34 +394,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:409px;width:630px;height:25px;',

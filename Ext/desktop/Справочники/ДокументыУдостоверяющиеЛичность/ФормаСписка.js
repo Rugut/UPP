@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Документы, удостоверяющие личность',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -52,7 +53,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДокументыУдостоверяющиеЛичность").data,
-					fields: ['Картинка','Наименование','КодИМНС','КодПФР',]
+					fields: ['Ссылка','Картинка','Наименование','КодИМНС','КодПФР',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -86,11 +87,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументыУдостоверяющиеЛичность.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументыУдостоверяющиеЛичность.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

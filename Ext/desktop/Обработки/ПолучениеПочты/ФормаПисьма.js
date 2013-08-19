@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Содержание письма',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -76,11 +77,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФайлыПисьма');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПолучениеПочты.ФормаПисьмаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПолучениеПочты.ФормаПисьмаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

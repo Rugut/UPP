@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Счет-фактура полученный',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -484,11 +485,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Авансы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураПолученный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураПолученный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -562,11 +565,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыОснования');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураПолученный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураПолученный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статьи отчета о прибылях и убытках',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -76,7 +77,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СтатьиОтчетаОПрибыляхИУбытках").data,
-					fields: ['НомерСтроки','СтатьяОборотов','Знак',]
+					fields: ['Ссылка','НомерСтроки','СтатьяОборотов','Знак',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -107,11 +108,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборСтатейОборотов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СтатьиОтчетаОПрибыляхИУбытках.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -148,49 +151,8 @@
 			]
 		},
 		{
-			xtype: 'textarea',
-			hideLabel: true,
-			disabled: false,
-			name: 'НаименованиеДляОтчета',
-			style: 'position:absolute;left:96px;top:81px;width:220px;height:38px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Наименование для отчета:',
-			style: 'position:absolute;left:8px;top:81px;width:88px;height:38px;text-align:left;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:311px;width:324px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -236,6 +198,46 @@
 				'-',
 				{
 					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'textarea',
+			hideLabel: true,
+			disabled: false,
+			name: 'НаименованиеДляОтчета',
+			style: 'position:absolute;left:96px;top:81px;width:220px;height:38px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Наименование для отчета:',
+			style: 'position:absolute;left:8px;top:81px;width:88px;height:38px;text-align:left;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:311px;width:324px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

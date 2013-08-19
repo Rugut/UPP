@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сотрудники',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			items:
+			[
+				{
+					text:'Данные сотрудника',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:276px;top:159px;width:716px;height:249px;',
@@ -111,7 +122,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Группа','Наименование','Код','ОбособленноеПодразделение.Представление','Подразделение','Должность.Представление','Состояние','ДатаПриема','ДатаУвольнения','Аванс','НомерЛицевогоСчета','Банк',]
+					fields: ['Ссылка','Родитель.Представление','Группа','Наименование','Код','ОбособленноеПодразделение.Представление','Подразделение','Должность.Представление','Состояние','ДатаПриема','ДатаУвольнения','Аванс','НомерЛицевогоСчета','Банк',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -169,11 +180,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -182,6 +195,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:74px;top:0px;width:216px;height:19px;',
+			width: 216,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
@@ -279,7 +294,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -304,11 +319,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -380,7 +397,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Организация.Представление','Наименование','Код',]
+					fields: ['Ссылка','Родитель.Представление','Организация.Представление','Наименование','Код',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -411,11 +428,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПодразделенияОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -478,7 +497,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Наименование','ВидДоговора.Представление',]
+					fields: ['Ссылка','Родитель.Представление','Наименование','ВидДоговора.Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -506,11 +525,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВидыДоговоров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -523,6 +544,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:0px;top:0px;width:262px;height:19px;',
+			width: 262,
+			height: 19,
 		},
 					]
 				},
@@ -539,6 +562,22 @@
 					title:'Форма медицинского страхования',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:1px;top:25px;width:715px;height:24px;',
+			items:
+			[
+				{
+					text:'Обязательное страхование',
+				},
+				{
+					text:'Добровольное страхование',
+				},
+				{
+					text:'Добровольное страхование родственника',
+				},
+			]
+		},
 		{
 			id: 'МедицинскиеСтраховыеПолисы',
 			xtype: 'grid',
@@ -594,7 +633,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['Код','Наименование','ДатаВыдачиПолиса','ДатаОкончанияПолиса','ВидСтрахования','ПрограммаСтрахования','Родственник',]
+					fields: ['Ссылка','Родитель.Представление','Код','Наименование','ДатаВыдачиПолиса','ДатаОкончанияПолиса','ВидСтрахования','ПрограммаСтрахования','Родственник',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -637,11 +676,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('МедицинскиеСтраховыеПолисы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -653,6 +694,24 @@
 					title:'Форма остатков отпусков',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:55px;width:716px;height:24px;',
+			items:
+			[
+				{
+					text:'Редактировать остаток отпуска',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Изменить количество дней отпуска в год',
+				},
+			]
+		},
 		{
 			id: 'ОстаткиОтпусковТекущегоСотрудника',
 			xtype: 'grid',
@@ -696,7 +755,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['ВидЕжегодногоОтпуска','ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
+					fields: ['Ссылка','Родитель.Представление','ВидЕжегодногоОтпуска','ГодРаботы','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода','Количество',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -733,11 +792,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОстаткиОтпусковТекущегоСотрудника');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -763,17 +824,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Данные сотрудника',
-				},
-			]
-		},
 	]
 	});
 });

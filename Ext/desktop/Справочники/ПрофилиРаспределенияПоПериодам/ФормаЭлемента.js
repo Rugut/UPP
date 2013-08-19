@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профили распределения по периодам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -134,6 +135,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:127px;width:390px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'Распределение',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:151px;width:390px;height:220px;',
@@ -164,7 +172,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиРаспределенияПоПериодам").data,
-					fields: ['НомерСтроки','НомерПодпериода','ДоляПодпериода',]
+					fields: ['Ссылка','НомерСтроки','НомерПодпериода','ДоляПодпериода',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -195,15 +203,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Распределение');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиРаспределенияПоПериодам.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиРаспределенияПоПериодам.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -214,22 +231,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:127px;width:390px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:379px;width:406px;height:25px;',

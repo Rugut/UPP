@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Категории объектов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -52,7 +53,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КатегорииОбъектов").data,
-					fields: ['Картинка','Код','Наименование','НазначениеКатегории.Представление',]
+					fields: ['Ссылка','Картинка','Код','Наименование','НазначениеКатегории.Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -86,11 +87,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КатегорииОбъектов.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КатегорииОбъектов.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -122,7 +125,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КатегорииОбъектов").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -147,11 +150,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокНазначенияСвойствКатегорийОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КатегорииОбъектов.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КатегорииОбъектов.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

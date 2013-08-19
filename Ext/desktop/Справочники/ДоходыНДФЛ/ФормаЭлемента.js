@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Код дохода для исчисления НДФЛ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -121,6 +122,13 @@
 			style: 'position:absolute;left:8px;top:122px;width:284px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:471px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'radiogroup',
 			defaults: {name: 'ccType'},
 			items: [
@@ -140,14 +148,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:471px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:222px;width:471px;height:25px;',

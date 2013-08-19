@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Счет-фактура выданный',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -665,11 +666,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыОснования');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -723,11 +726,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДатаНомерДокументовОплаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -737,6 +742,13 @@
 			xtype: 'fieldset',
 			title: 'Платежно-расчетный документ',
 			style: 'position:absolute;left:0px;top:129px;width:776px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -859,11 +871,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Авансы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -905,6 +919,13 @@
 			name: 'НадписьДатаНаАванс',
 			text: 'Дата:',
 			style: 'position:absolute;left:0px;top:215px;width:36px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1146,11 +1167,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НалоговыйАгент');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1192,6 +1215,16 @@
 			name: 'НадписьДатаНалоговыйАгент',
 			text: 'Дата:',
 			style: 'position:absolute;left:0px;top:218px;width:36px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить суммы по основанию',
+				},
+			]
 		},
 					]
 				},
@@ -1252,15 +1285,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыОснованияКорректировка');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СчетФактураВыданный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СчетФактураВыданный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',

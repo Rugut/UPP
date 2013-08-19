@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Общероссийский классификатор организационно-правовых форм',
 	
 	layout: {type: "fit",align: "stretch"},

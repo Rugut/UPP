@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Расчет авансовых платежей по транспортному налогу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -60,6 +61,13 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:63px;width:771px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ТранспортныеСредства',
@@ -226,11 +234,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТранспортныеСредства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетАвансовыхПлатежейПоТранспортномуНалогу.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетАвансовыхПлатежейПоТранспортномуНалогу.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -300,50 +310,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('АвансовыеПлатежи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетАвансовыхПлатежейПоТранспортномуНалогу.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетАвансовыхПлатежейПоТранспортномуНалогу.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьПериодСоставленияОтчета',
-			text: 'НадписьПериодСоставленияОтчета',
-			style: 'position:absolute;left:470px;top:33px;width:100px;height:19px;text-align:center;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаПредыдущийПериод',
-			text: '',
-			style: 'position:absolute;left:445px;top:33px;width:20px;height:19px;',
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаСледующийПериод',
-			text: '',
-			style: 'position:absolute;left:576px;top:33px;width:20px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:63px;width:771px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:787px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -368,6 +349,28 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПериодСоставленияОтчета',
+			text: 'НадписьПериодСоставленияОтчета',
+			style: 'position:absolute;left:470px;top:33px;width:100px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаПредыдущийПериод',
+			text: '',
+			style: 'position:absolute;left:445px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаСледующийПериод',
+			text: '',
+			style: 'position:absolute;left:576px;top:33px;width:20px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:787px;height:25px;',

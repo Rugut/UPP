@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки защищенного документооборота',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -172,6 +173,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:111px;top:138px;width:271px;height:19px;',
+			width: 271,
+			height: 19,
 		},
 		{
 			xtype: 'radiogroup',

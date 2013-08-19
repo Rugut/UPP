@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Неформализованный документ налогового органа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,41 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			items:
+			[
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Показать цикл обмена, связанный с документом',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Ответить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНалоговыйОрган',
@@ -118,42 +154,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Показать цикл обмена, связанный с документом',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:413px;width:640px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Перерасчет зарплаты организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -117,54 +118,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыПерерасчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПерерасчетЗарплатыОрганизаций.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПерерасчетЗарплатыОрганизаций.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьТекущийПериод',
-			text: 'Текущий период регистрации документов:',
-			style: 'position:absolute;left:8px;top:58px;width:220px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'ТекущийПериод',
-			width: 141,
-			height: 19,
-			style: 'position:absolute;left:231px;top:58px;width:141px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:317px;width:380px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:380px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -199,6 +167,40 @@
 				'-',
 				{
 					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьТекущийПериод',
+			text: 'Текущий период регистрации документов:',
+			style: 'position:absolute;left:8px;top:58px;width:220px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ТекущийПериод',
+			width: 141,
+			height: 19,
+			style: 'position:absolute;left:231px;top:58px;width:141px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:317px;width:380px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

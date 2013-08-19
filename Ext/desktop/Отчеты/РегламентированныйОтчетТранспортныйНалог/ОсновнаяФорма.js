@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Декларация по транспортному налогу',
 	
 	layout: {type: "fit",align: "stretch"},

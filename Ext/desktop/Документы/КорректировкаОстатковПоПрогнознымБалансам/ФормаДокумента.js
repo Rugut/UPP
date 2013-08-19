@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировка остатков по прогнозным балансам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -172,6 +173,16 @@
 			style: 'position:absolute;left:94px;top:441px;width:428px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
 			id: 'НовыеОстаткиПоСчетамБюджетирования',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:168px;width:514px;height:220px;',
@@ -291,15 +302,44 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НовыеОстаткиПоСчетамБюджетирования');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаОстатковПоПрогнознымБалансам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаОстатковПоПрогнознымБалансам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:530px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -388,45 +428,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:530px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:468px;width:530px;height:25px;',

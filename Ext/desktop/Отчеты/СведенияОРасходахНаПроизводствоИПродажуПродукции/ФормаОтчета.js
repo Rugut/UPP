@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о расходах на производство и продажу продукции (товаров, работ и услуг)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -75,6 +76,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:212px;top:20px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 					]
 				},
@@ -724,11 +727,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -855,11 +860,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СведенияОРасходахНаПроизводствоИПродажуПродукции.ФормаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -878,6 +885,23 @@
 			xtype: 'fieldset',
 			title: '',
 			style: 'position:absolute;left:0px;top:0px;width:306px;height:42px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:2px;width:297px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Восстановить',
+				},
+				'-',
+				{
+					text:'ЗакрытьПанельНастроек',
+				},
+			]
 		},
 		{
 			xtype: 'label',

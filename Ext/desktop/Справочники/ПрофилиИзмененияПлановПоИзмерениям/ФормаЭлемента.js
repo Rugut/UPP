@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профили изменения планов по измерениям',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -179,6 +180,24 @@
 			style: 'position:absolute;left:122px;top:132px;width:344px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:220px;width:458px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Рассчитывать проценты автоматически',
 			style: 'position:absolute;left:8px;top:179px;width:230px;height:15px;',
@@ -224,7 +243,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоИзмерениям").data,
-					fields: ['НомерСтроки','ЭлементУправленческойАналитики','ПроцентДляРаспределения',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ЭлементУправленческойАналитики','ПроцентДляРаспределения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -255,11 +274,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЭлементыДляРаспределения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -284,26 +305,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:220px;width:458px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Подбор',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:474px;height:25px;',

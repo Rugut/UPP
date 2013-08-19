@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Дополнительные параметры ограничений',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -59,11 +60,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокИменПолей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -164,15 +167,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйПоискОбъектов.ФормаНастройкиПостроителяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:17px;width:560px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',

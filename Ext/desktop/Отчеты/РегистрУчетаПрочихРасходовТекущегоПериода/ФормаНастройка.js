@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр учета прочих и косвенных расходов (настройка)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -136,6 +137,19 @@
 					title:'Виды расходов',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:452px;top:6px;width:24px;height:206px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 					]
 				},
 			]

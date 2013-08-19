@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подразделения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,55 @@
 			width: 300,
 			height: 19,
 			style: 'position:absolute;left:91px;top:33px;width:300px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:538px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Редактировать код',
+				},
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				'-',
+				{
+					text:'Настройка доступа',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -197,7 +247,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Подразделения").data,
-					fields: ['Организация','ПодразделениеОрганизации',]
+					fields: ['Ссылка','Родитель.Представление','Организация','ПодразделениеОрганизации',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -225,11 +275,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствиеПодразделениямОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -278,7 +330,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Подразделения").data,
-					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+					fields: ['Ссылка','Родитель.Представление','ПометкаУдаления','Принадлежность','Категория',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -309,11 +361,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Категории');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -350,7 +404,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Подразделения").data,
-					fields: ['ПометкаУдаления','Свойство','Значение',]
+					fields: ['Ссылка','Родитель.Представление','ПометкаУдаления','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -381,15 +435,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Подразделения.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Подразделения.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:63px;width:247px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:257px;top:63px;width:247px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -411,56 +481,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:538px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Редактировать код',
-				},
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				'-',
-				{
-					text:'Настройка доступа',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:447px;width:538px;height:25px;',

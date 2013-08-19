@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Открыть/сохранить вложение',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,23 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:51px;width:194px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
 		{
 			xtype: 'radiogroup',
 			defaults: {name: 'ccType'},
@@ -35,24 +53,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:51px;width:194px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
 	]
 	});
 });

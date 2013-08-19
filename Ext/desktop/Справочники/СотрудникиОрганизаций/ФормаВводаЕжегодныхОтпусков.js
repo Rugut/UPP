@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ежегодные отпуска сотрудника',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,19 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:7px;width:384px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+			]
+		},
 		{
 			id: 'ЕжегодныеОтпуска',
 			xtype: 'grid',
@@ -40,7 +54,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СотрудникиОрганизаций").data,
-					fields: ['ВидЕжегодногоОтпуска','КоличествоДнейОтпускаВГод',]
+					fields: ['Ссылка','Родитель.Представление','ВидЕжегодногоОтпуска','КоличествоДнейОтпускаВГод',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,11 +82,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЕжегодныеОтпуска');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СотрудникиОрганизаций.ФормаВводаЕжегодныхОтпусковСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СотрудникиОрганизаций.ФормаВводаЕжегодныхОтпусковСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -82,20 +98,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:7px;width:384px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:241px;width:400px;height:25px;',

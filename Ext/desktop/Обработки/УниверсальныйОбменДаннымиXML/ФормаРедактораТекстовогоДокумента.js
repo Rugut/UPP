@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Модуль отладки обработчиков и алгоритмов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,21 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
+			items:
+			[
+				{
+					text:'Копировать в буфер обмена',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:622px;height:534px;',
@@ -36,22 +52,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Копировать в буфер обмена',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
 	]
 	});
 });

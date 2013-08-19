@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помощник планирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,52 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:814px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Выбирать даты периодом',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Выбирать даты периодом',
+				},
+				'-',
+				{
+					text:'Восстановить настройку...',
+				},
+				{
+					text:'Сохранить настройку...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:798px;height:475px;',
@@ -127,15 +174,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеКонечныеПланы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникПланирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникПланирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -181,6 +237,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:362px;top:430px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -190,6 +248,13 @@
 			width: 286,
 			height: 19,
 			style: 'position:absolute;left:504px;top:430px;width:286px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ТабличноеПолеСтратегииРасчетаКоличества',
@@ -311,11 +376,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСтратегииРасчетаКоличества');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникПланирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникПланирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -361,6 +428,15 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:362px;top:430px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -451,11 +527,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСтратегииРасчетаСуммы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникПланирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникПланирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -551,15 +629,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникПланирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникПланирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -634,15 +721,48 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСформированныеДокументы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникПланирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникПланирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Снять пометки',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				{
+					text:'Установить/Снять пометку на удаление',
+				},
+				{
+					text:'Удалить непосредственно',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -657,53 +777,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:814px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Выбирать даты периодом',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Выбирать даты периодом',
-				},
-				'-',
-				{
-					text:'Восстановить настройку...',
-				},
-				{
-					text:'Сохранить настройку...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:516px;width:814px;height:25px;',

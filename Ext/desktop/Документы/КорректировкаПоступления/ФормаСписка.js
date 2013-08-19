@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировки поступления',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -216,11 +217,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КорректировкаПоступления.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КорректировкаПоступления.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

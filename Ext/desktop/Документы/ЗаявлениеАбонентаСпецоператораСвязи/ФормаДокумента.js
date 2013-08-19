@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заявление абонента Спецоператора Связи',
 	
 	layout: {type: "fit",align: "stretch"},

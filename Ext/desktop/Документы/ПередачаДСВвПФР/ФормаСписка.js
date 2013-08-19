@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Передача в ПФР Заявлений о добровольном вступлении в правоотношения (ДСВ-1)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,11 +109,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаДСВвПФР.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаДСВвПФР.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

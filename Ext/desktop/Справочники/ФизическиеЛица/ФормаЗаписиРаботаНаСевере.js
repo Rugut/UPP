@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о стаже работы на севере',
 	
 	layout: {type: "fit",align: "stretch"},

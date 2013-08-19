@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Акт об оказании производственных услуг',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -518,15 +519,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Услуги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по заказу покупателя (счету на оплату)',
+				},
+				{
+					text:'Добавить из заказа покупателя',
+				},
+				'-',
+				{
+					text:'Заполнить по заказу на производство',
+				},
+				{
+					text:'Добавить по заказу на производство',
+				},
+			]
 		},
 					]
 				},
@@ -534,6 +557,29 @@
 					title:'Материалы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по спецификации',
+				},
+				{
+					text:'Заполнить с подбором аналогов',
+				},
+				{
+					text:'Заполнить по остаткам',
+				},
+				{
+					text:'Заполнить по потребностям',
+				},
+				'-',
+				{
+					text:'Добавить из требование - накладная...',
+				},
+			]
+		},
 		{
 			id: 'Материалы',
 			xtype: 'grid',
@@ -699,11 +745,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Материалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -877,15 +925,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеМатериалов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -986,15 +1044,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПрочиеЗатраты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 					]
 				},
@@ -1007,6 +1079,16 @@
 			name: 'ИнфНадписьКурса',
 			text: '(10000 TRL = 6500 руб.)',
 			style: 'position:absolute;left:193px;top:25px;width:451px;height:19px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить распределение прочих затрат',
+				},
+			]
 		},
 		{
 			id: 'РаспределениеПрочихЗатрат',
@@ -1137,11 +1219,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеПрочихЗатрат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1555,15 +1639,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыРасчетовСКонтрагентом');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктОбОказанииПроизводственныхУслуг.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по заказам документа',
+				},
+			]
 		},
 		{
 			xtype: 'label',

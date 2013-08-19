@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Декларация по единому с/х налогу',
 	
 	layout: {type: "fit",align: "stretch"},

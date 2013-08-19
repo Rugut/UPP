@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Редактирование состава плана',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -163,15 +164,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставПлана');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -179,6 +189,14 @@
 					title:'Производственная программа',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			items:
+			[
+				'-',
+			]
+		},
 		{
 			id: 'ПроизводственнаяПрограмма',
 			xtype: 'grid',
@@ -335,11 +353,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПроизводственнаяПрограмма');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Планирование.ФормаРедактированиеСоставаПланаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки расчета цены номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -76,7 +77,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиРасчетаЦеныНоменклатуры").data,
-					fields: ['Картинка','Наименование','ТипЦен.Представление','СоздаватьНовыйДокумент','ФормироватьДокументыАвтоматически','ОтражатьВУправленческомУчете','ОтражатьВРегламентированномУчете','Комментарий',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Наименование','ТипЦен.Представление','СоздаватьНовыйДокумент','ФормироватьДокументыАвтоматически','ОтражатьВУправленческомУчете','ОтражатьВРегламентированномУчете','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -122,15 +123,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:793px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'Дерево',
@@ -151,7 +161,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиРасчетаЦеныНоменклатуры").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -176,11 +186,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиРасчетаЦеныНоменклатуры.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -190,14 +202,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:793px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

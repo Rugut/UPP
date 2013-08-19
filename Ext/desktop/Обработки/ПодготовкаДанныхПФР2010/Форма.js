@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подготовка данных для передачи в ПФР',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -90,6 +91,25 @@
 			style: 'position:absolute;left:0px;top:310px;width:984px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:248px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Перенести',
+				},
+			]
+		},
+		{
 			id: 'ПачкиДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:46px;width:248px;height:96px;',
@@ -137,11 +157,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -271,15 +293,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиСЗВ6');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:333px;height:25px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Перенести в другую опись АДВ-6-2',
+				},
+			]
 		},
 					]
 				},
@@ -730,15 +771,41 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОЗадолженности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:984px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить строку',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Заполнить расчетами с ПФР',
+				},
+			]
 		},
 					]
 				},
@@ -921,15 +988,33 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаПачек');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:333px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'Только изменившиеся (рекомендуется)',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1183,11 +1268,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗаписиОСтаже');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1870,11 +1957,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиСПВ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1937,15 +2026,40 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Пенсионеры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:22px;width:333px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -2415,15 +2529,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаПачекСПВ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:333px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				'-',
+				{
+					text:'Перенести в другую пачку',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -2677,11 +2819,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗаписиОСтажеСПВ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -2814,6 +2958,25 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:25px;width:293px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+			]
+		},
+		{
 			id: 'ПачкиСЗВ63',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:49px;width:293px;height:182px;',
@@ -2870,11 +3033,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиСЗВ63');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -3323,15 +3488,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаПачекСЗВ63');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:342px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				'-',
+				{
+					text:'Перенести в другую пачку',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -3402,11 +3595,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОЗаработке');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПФР2010.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

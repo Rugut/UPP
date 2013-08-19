@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Проверка штрихкодов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -16,6 +17,16 @@
 		items:
 		[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			items:
+			[
+				{
+					text:'Загрузить из терминала',
+				},
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Таблица проверяемых товаров',
 			style: 'position:absolute;left:8px;top:79px;width:484px;height:16px;',
@@ -24,6 +35,25 @@
 			xtype: 'checkbox',
 			boxLabel: 'Не удалять отсканированные позиции из таблицы проверки',
 			style: 'position:absolute;left:8px;top:56px;width:327px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:95px;width:484px;height:24px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+				{
+					text:'Действие2',
+				},
+				{
+					text:'Действие3',
+				},
+				{
+					text:'Действие4',
+				},
+			]
 		},
 		{
 			id: 'Товары',
@@ -136,11 +166,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроверкаШтрихкодов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроверкаШтрихкодов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -164,17 +196,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Загрузить из терминала',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:275px;width:500px;height:25px;',
 			dock: 'bottom',
 			items:
@@ -186,26 +207,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:95px;width:484px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Действие1',
-				},
-				{
-					text:'Действие2',
-				},
-				{
-					text:'Действие3',
-				},
-				{
-					text:'Действие4',
 				},
 			]
 		},

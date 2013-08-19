@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Подбор',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:70px;top:8px;width:281px;height:19px;',
+			width: 281,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -366,11 +369,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НоменклатураДляПодбора');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -485,11 +490,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникНоменклатура');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -590,11 +597,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОстаткиТоваров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -693,11 +702,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокЦенОстатков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -757,6 +768,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:178px;top:74px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 					]
 				},
@@ -888,11 +901,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСпецификации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -933,6 +948,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:70px;top:57px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -953,6 +970,13 @@
 			name: 'ИнфНадписьПараметрыПодбора',
 			text: 'Здесь будет отображаться информация о способе подбора',
 			style: 'position:absolute;left:97px;top:79px;width:358px;height:24px;text-align:right;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -1004,11 +1028,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1097,17 +1123,32 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоСпецификаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Изображение',
 				},
 			]
 		},
@@ -1172,28 +1213,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Изображение',
-				},
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Косвенные налоги при ввозе товаров из Республики Беларусь',
 	
 	layout: {type: "fit",align: "stretch"},

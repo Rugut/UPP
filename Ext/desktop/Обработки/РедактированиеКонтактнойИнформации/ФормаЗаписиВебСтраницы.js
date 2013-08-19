@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Веб-страница',
 	
 	layout: {type: "fit",align: "stretch"},

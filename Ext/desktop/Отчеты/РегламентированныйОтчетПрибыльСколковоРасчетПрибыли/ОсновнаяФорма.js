@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет совокупного размера прибыли (убытка)',
 	
 	layout: {type: "fit",align: "stretch"},

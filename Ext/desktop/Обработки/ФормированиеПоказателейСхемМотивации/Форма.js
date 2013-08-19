@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Формирование показателей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,23 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:402px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Восстановить значения',
+				},
+				{
+					text:'Сохранить значения',
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись5',
@@ -92,11 +110,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиОтчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеПоказателейСхемМотивации.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеПоказателейСхемМотивации.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -128,29 +148,13 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:91px;top:74px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:402px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Восстановить значения',
-				},
-				{
-					text:'Сохранить значения',
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:295px;width:402px;height:25px;',

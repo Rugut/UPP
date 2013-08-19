@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группы, в которые входит пользователь',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Пользователи").data,
-					fields: ['ГруппаПользователей',]
+					fields: ['Ссылка','Родитель.Представление','ГруппаПользователей',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -65,15 +66,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоГрупп');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Пользователи.ФормаНастройкиГруппПользователяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Пользователи.ФормаНастройкиГруппПользователяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:14px;top:13px;width:105px;height:24px;',
+			items:
+			[
+				{
+					text:'Настройка доступа',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+			]
 		},
 		],
 	}],
@@ -94,24 +114,6 @@
 				'-',
 				{
 					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:14px;top:13px;width:105px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Настройка доступа',
-				},
-				'-',
-				{
-					text:'Вывести список...',
-				},
-				{
-					text:'Настройка списка...',
 				},
 			]
 		},

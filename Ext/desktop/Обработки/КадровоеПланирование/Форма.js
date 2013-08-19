@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Кадровое планирование',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,23 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:944px;height:25px;',
+			items:
+			[
+				{
+					text:'Состояние кадрового плана',
+				},
+				{
+					text:'Исполнение кадрового плана',
+				},
+				'-',
+				{
+					text:'Коэффициент текучести кадров',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:539px;',
@@ -67,11 +85,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Подразделения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -224,11 +244,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РабочиеМеста');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -359,15 +381,93 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Вакансии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:764px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Вакансии',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -458,11 +558,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмененияКадровогоПлана');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КадровоеПланирование.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КадровоеПланирование.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -486,6 +588,19 @@
 			]
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:854px;top:0px;width:146px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:778px;top:33px;width:214px;height:539px;',
 			height: 539,width: 214,
@@ -501,38 +616,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:944px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Состояние кадрового плана',
-				},
-				{
-					text:'Исполнение кадрового плана',
-				},
-				'-',
-				{
-					text:'Коэффициент текучести кадров',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:854px;top:0px;width:146px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-			]
-		},
 	]
 	});
 });

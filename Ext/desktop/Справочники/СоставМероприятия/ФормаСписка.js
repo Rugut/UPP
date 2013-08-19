@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Состав мероприятия',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -58,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СоставМероприятия").data,
-					fields: ['Картинка','Код','Наименование','ДатаНачала','ДатаОкончания',]
+					fields: ['Ссылка','Картинка','Код','Наименование','ДатаНачала','ДатаОкончания',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -95,39 +96,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставМероприятия');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СоставМероприятия.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СоставМероприятия.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'Мероприятие',
-			width: 389,
-			height: 20,
-			style: 'position:absolute;left:88px;top:32px;width:389px;height:20px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись1',
-			text: 'Мероприятие:',
-			style: 'position:absolute;left:8px;top:32px;width:80px;height:20px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:485px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -238,6 +221,25 @@
 				},
 			]
 		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Мероприятие',
+			width: 389,
+			height: 20,
+			style: 'position:absolute;left:88px;top:32px;width:389px;height:20px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись1',
+			text: 'Мероприятие:',
+			style: 'position:absolute;left:8px;top:32px;width:80px;height:20px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

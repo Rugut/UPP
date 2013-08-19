@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Степени знания языков',
 	
 	layout: {type: "fit",align: "stretch"},

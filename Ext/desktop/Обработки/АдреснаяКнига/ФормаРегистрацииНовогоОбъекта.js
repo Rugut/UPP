@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация нового объекта',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -18,6 +19,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:150px;top:8px;width:258px;height:19px;',
+			width: 258,
+			height: 19,
 		},
 		{
 			xtype: 'label',

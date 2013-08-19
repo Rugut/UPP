@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Автоматическая настройка параметров учетной записи абонентов ""Такском""',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подбор материалов и аналогов для выпуска продукции',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -180,11 +181,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоИсходныеКомплектующие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -209,6 +212,20 @@
 				'-',
 				{
 					text:'Справка',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:30px;width:706px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Автозамена',
 				},
 			]
 		},
@@ -324,11 +341,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОстаткиМатериалов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборМатериаловИАналогов.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -338,21 +357,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:30px;width:706px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Автозамена',
-				},
-			]
-		},
 	]
 	});
 });

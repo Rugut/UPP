@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профиль полномочий пользователей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -16,6 +17,16 @@
 		items:
 		[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:631px;height:25px;',
+			items:
+			[
+				{
+					text:'Групповая обработка пользователей',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьОсновнойИнтерфейс',
 			text: 'Основной интерфейс:',
@@ -24,6 +35,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:405px;top:33px;width:183px;height:19px;',
+			width: 183,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -59,7 +72,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиПолномочийПользователей").data,
-					fields: ['ИмяРоли',]
+					fields: ['Ссылка','Родитель.Представление','ИмяРоли',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -84,11 +97,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставРолей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -119,7 +134,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиПолномочийПользователей").data,
-					fields: ['Право','Значение',]
+					fields: ['Ссылка','Родитель.Представление','Право','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -147,15 +162,44 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоПрав');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиПолномочийПользователей.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:290px;top:108px;width:333px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Копировать',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:108px;width:271px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -219,17 +263,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:631px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Групповая обработка пользователей',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:376px;width:631px;height:25px;',
 			dock: 'bottom',
 			items:
@@ -248,35 +281,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:290px;top:108px;width:333px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Копировать',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:108px;width:271px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Изменить',
 				},
 			]
 		},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ключевые ресурсы предприятия',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -180,6 +181,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Характеристики',
 			style: 'position:absolute;left:8px;top:85px;width:414px;height:16px;',
@@ -188,14 +196,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:157px;width:430px;height:25px;',

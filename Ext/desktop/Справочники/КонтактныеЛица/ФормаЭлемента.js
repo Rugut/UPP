@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Контактные лица',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,27 @@
 			width: 400,
 			height: 19,
 			style: 'position:absolute;left:98px;top:57px;width:400px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				'-',
+				{
+					text:'Электронные письма',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Написать письмо',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -98,7 +120,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
-					fields: ['Картинка','Тип','Вид','Представление','Комментарий',]
+					fields: ['Ссылка','Картинка','Тип','Вид','Представление','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -135,15 +157,99 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КонтактнаяИнформация');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+					]
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Командная панель контактной информации редактировать в диалоге',
+				},
+				'-',
+				{
+					text:'Основная',
+				},
+			]
 		},
 					]
 				},
@@ -194,7 +300,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
-					fields: ['Картинка','Период','Контрагент','КонтактноеЛицоКонтрагента','ДатаУвольнения',]
+					fields: ['Ссылка','Картинка','Период','Контрагент','КонтактноеЛицоКонтрагента','ДатаУвольнения',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -231,15 +337,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НаборКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -308,7 +423,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
-					fields: ['Картинка','СостояниеСобытия','Важность','Дата','Номер','ВидСобытия','Ответственный','ОписаниеСобытия',]
+					fields: ['Ссылка','Картинка','СостояниеСобытия','Важность','Дата','Номер','ВидСобытия','Ответственный','ОписаниеСобытия',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -354,15 +469,150 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('События');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Установить интервал дат...',
+				},
+				{
+					text:'Поиск по номеру...',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Сортировка',
+					menu: [
+				{
+					text:'(Поля сортировки)',
+				},
+					]
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'На основании',
+					menu: [
+				{
+					text:'(Ввести на основании)',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+					]
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Установить пометку удаления',
+				},
+				'-',
+				{
+					text:'Установить интервал дат...',
+				},
+				{
+					text:'Поиск по номеру...',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'На основании',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 					]
 				},
@@ -518,7 +768,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
-					fields: ['ПометкаУдаления','Свойство','Значение',]
+					fields: ['Ссылка','ПометкаУдаления','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -549,15 +799,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -596,7 +855,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КонтактныеЛица").data,
-					fields: ['ПометкаУдаления','Принадлежность','Категория',]
+					fields: ['Ссылка','ПометкаУдаления','Принадлежность','Категория',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -627,15 +886,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Категории');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтактныеЛица.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтактныеЛица.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+			]
 		},
 					]
 				},
@@ -678,28 +958,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				'-',
-				{
-					text:'Электронные письма',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Написать письмо',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:362px;width:595px;height:25px;',

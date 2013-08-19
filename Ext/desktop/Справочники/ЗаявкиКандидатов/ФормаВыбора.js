@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Кандидаты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,7 +71,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ЗаявкиКандидатов").data,
-					fields: ['Картинка','Важность.Представление','Код','Наименование','Состояние.Представление','ФизЛицо.Представление','Организация.Представление',]
+					fields: ['Ссылка','Картинка','Важность.Представление','Код','Наименование','Состояние.Представление','ФизЛицо.Представление','Организация.Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -113,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗаявкиКандидатов.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗаявкиКандидатов.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -126,6 +129,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:33px;width:224px;height:19px;',
+			width: 224,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -141,14 +146,9 @@
 			boxLabel: 'Организация:',
 			style: 'position:absolute;left:248px;top:33px;width:88px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:649px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -262,6 +262,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

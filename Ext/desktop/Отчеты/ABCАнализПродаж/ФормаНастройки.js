@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка ABC-анализ продаж',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -72,6 +73,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:148px;top:97px;width:350px;height:19px;',
+			width: 350,
+			height: 19,
 		},
 		{
 			id: 'Показатели',
@@ -121,19 +124,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:140px;width:492px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:148px;top:74px;width:350px;height:19px;',
+			width: 350,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -212,15 +246,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -312,15 +355,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:49px;width:492px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -339,6 +391,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:6px;width:127px;height:19px;',
+			width: 127,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -399,15 +453,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Порядок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ABCАнализПродаж.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ABCАнализПродаж.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

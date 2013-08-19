@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Перенос транзакций на следующие периоды',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:626px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'НастройкаПереносаТранзакций',
 			xtype: 'grid',
@@ -153,28 +161,38 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаПереносаТранзакций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АктуализацияБюджетов.ФормаПереносТранзакцийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АктуализацияБюджетов.ФормаПереносТранзакцийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:33px;width:610px;height:25px;',
+			items:
+			[
+				{
+					text:'Установить все',
+				},
+				{
+					text:'Снять все',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:626px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:345px;width:626px;height:25px;',
@@ -187,23 +205,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:33px;width:610px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все',
-				},
-				{
-					text:'Заполнить',
 				},
 			]
 		},

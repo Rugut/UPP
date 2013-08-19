@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Параметры анализа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -73,11 +74,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -101,6 +104,16 @@
 					title:'Недопустимые проводки',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:426px;height:25px;',
+			items:
+			[
+				{
+					text:'Восстановить',
+				},
+			]
+		},
 		{
 			id: 'Проводки',
 			xtype: 'grid',
@@ -176,11 +189,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Проводки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -294,11 +309,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТехнологическийАнализБухгалтерскогоУчета.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

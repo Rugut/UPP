@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Универсальный журнал документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -81,15 +82,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйЖурналДокументов.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйЖурналДокументов.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:681px;height:26px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -101,14 +111,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:681px;height:26px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

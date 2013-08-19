@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод начальных остатков НДС по партиям',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -218,15 +219,42 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеПоПартиям');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковНДСпоПартиям.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковНДСпоПартиям.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				{
+					text:'',
+				},
+				'-',
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -376,15 +404,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеПоСФ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковНДСпоПартиям.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковНДСпоПартиям.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:764px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -393,6 +430,13 @@
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
+			items:
+			[
 			]
 		},
 		{
@@ -449,40 +493,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				{
-					text:'',
-				},
-				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

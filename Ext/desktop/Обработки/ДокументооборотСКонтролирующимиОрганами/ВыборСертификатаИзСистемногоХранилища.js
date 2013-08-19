@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Цифровые сертификаты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,24 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Показывать просроченные',
+				},
+				'-',
+				{
+					text:'Открыть справку',
+				},
+			]
+		},
 		{
 			id: 'Сертификаты',
 			xtype: 'grid',
@@ -180,11 +199,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Сертификаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.ВыборСертификатаИзСистемногоХранилищаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.ВыборСертификатаИзСистемногоХранилищаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -279,33 +300,9 @@
 			text: 'Отпечаток',
 			style: 'position:absolute;left:91px;top:390px;width:275px;height:16px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Показывать просроченные',
-				},
-				'-',
-				{
-					text:'Открыть справку',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:33px;width:729px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -330,6 +327,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

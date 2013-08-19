@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Поиск дублирующихся элементов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,17 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:693px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Настройка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:677px;height:318px;',
@@ -82,15 +94,35 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиОтчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:663px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Найти элементы',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -146,15 +178,51 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НайденныеОбъекты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:5px;width:663px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Предыдущая группа',
+				},
+				{
+					text:'Следующая группа',
+				},
+				'-',
+				{
+					text:'Указать как правильный',
+				},
+				'-',
+				{
+					text:'Поиск зависимых элементов',
+				},
+				'-',
+				{
+					text:'Поиск ссылок',
+				},
+				'-',
+				'-',
+			]
 		},
 					]
 				},
@@ -162,6 +230,24 @@
 					title:'Зависимые элементы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:663px;height:24px;',
+			items:
+			[
+				{
+					text:'Поиск ссылок',
+				},
+				'-',
+				{
+					text:'Выполнить замену',
+				},
+				'-',
+				{
+					text:'Удалить элементы',
+				},
+			]
+		},
 		{
 			id: 'ЗависимыеОбъекты',
 			xtype: 'grid',
@@ -219,11 +305,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗависимыеОбъекты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -259,11 +347,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НайденныеЗависимыеСсылки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -305,15 +395,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НайденныеСсылки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоискИЗаменаДублирующихсяЭлементов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:237px;height:24px;',
+			items:
+			[
+				{
+					text:'Выполнить замену',
+				},
+				'-',
+				{
+					text:'Удалить элементы',
+				},
+			]
 		},
 					]
 				},
@@ -323,18 +429,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:693px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Настройка',
-				},
-			]
-		},
 	]
 	});
 });

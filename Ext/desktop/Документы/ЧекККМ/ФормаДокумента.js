@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Чек ККМ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -451,15 +452,48 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЧекККМ.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЧекККМ.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Поиск по штрихкоду',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+				'-',
+				{
+					text:'Серийные номера',
+				},
+				'-',
+				{
+					text:'Состав набора',
+				},
+				'-',
+				{
+					text:'Вес',
+				},
+				{
+					text:'Оплатить картой',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -529,11 +563,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Оплата');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЧекККМ.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЧекККМ.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -565,6 +601,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:42px;top:6px;width:223px;height:19px;',
+			width: 223,
+			height: 19,
 		},
 		{
 			xtype: 'label',

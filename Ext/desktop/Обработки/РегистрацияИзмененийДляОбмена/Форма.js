@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация изменений для обмена',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -127,15 +128,44 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоОбмена');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияИзмененийДляОбмена.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияИзмененийДляОбмена.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:686px;height:24px;',
+			items:
+			[
+				{
+					text:'Развернуть дерево',
+				},
+				{
+					text:'Свернуть дерево',
+				},
+				'-',
+				{
+					text:'Отменить регистрацию',
+				},
+				{
+					text:'Добавить регистрацию',
+				},
+				{
+					text:'Показать зарегистрированные изменения данного типа',
+				},
+				'-',
+				{
+					text:'Результат стандартной выгрузки',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -202,34 +232,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:686px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Развернуть дерево',
-				},
-				{
-					text:'Свернуть дерево',
-				},
-				'-',
-				{
-					text:'Отменить регистрацию',
-				},
-				{
-					text:'Добавить регистрацию',
-				},
-				{
-					text:'Показать зарегистрированные изменения данного типа',
-				},
-				'-',
-				{
-					text:'Результат стандартной выгрузки',
 				},
 			]
 		},

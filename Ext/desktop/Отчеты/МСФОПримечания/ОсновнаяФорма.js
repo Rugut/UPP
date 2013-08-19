@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Примечания к отчетам по МСФО',
 	
 	layout: {type: "fit",align: "stretch"},

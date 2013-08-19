@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Аккредитив полученный: Назначение платежа',
 	
 	layout: {type: "fit",align: "stretch"},

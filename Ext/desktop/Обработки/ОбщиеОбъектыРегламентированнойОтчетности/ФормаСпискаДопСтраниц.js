@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выберите страницу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,15 +64,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаДопСтраниц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаСпискаДопСтраницСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаСпискаДопСтраницСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:367px;height:25px;',
+			items:
+			[
+				{
+					text:'Редактировать',
+				},
+				{
+					text:'Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 		],
 	}],
@@ -93,29 +118,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:367px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Редактировать',
-				},
-				{
-					text:'Переместить вверх',
-				},
-				{
-					text:'&Переместить вниз',
-				},
-				{
-					text:'Сортировать по возрастанию',
-				},
-				{
-					text:'Сортировать по убыванию',
 				},
 			]
 		},

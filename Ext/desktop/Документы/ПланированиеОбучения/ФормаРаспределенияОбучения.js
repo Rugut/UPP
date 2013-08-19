@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помощник равномерного распределения обучения по периоду ',
 	
 	layout: {type: "fit",align: "stretch"},

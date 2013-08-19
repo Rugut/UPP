@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Вложения электронных писем',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,7 +65,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВложенияЭлектронныхПисем").data,
-					fields: ['Картинка','Объект.Представление','ИмяФайла','Наименование','ИДФайлаПочтовогоПисьма','Предмет',]
+					fields: ['Ссылка','Картинка','Объект.Представление','ИмяФайла','Наименование','ИДФайлаПочтовогоПисьма','Предмет',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -104,24 +105,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВложенияЭлектронныхПисем.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВложенияЭлектронныхПисем.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:504px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -130,6 +128,10 @@
 				'-',
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет Диаграмма',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -95,6 +96,35 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
+		{
 			xtype: 'button',
 			name: 'НастройкаПериода',
 			text: '...',
@@ -109,6 +139,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:508px;top:56px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -158,36 +190,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Детализация отчета о прибылях и убытках',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -113,7 +114,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДетализацияОтчетаОПрибыляхИУбытках").data,
-					fields: ['НомерСтроки','СтатьяОборотов','Знак',]
+					fields: ['Ссылка','НомерСтроки','СтатьяОборотов','Знак',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -144,11 +145,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборСтатейОборотов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДетализацияОтчетаОПрибыляхИУбытках.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДетализацияОтчетаОПрибыляхИУбытках.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

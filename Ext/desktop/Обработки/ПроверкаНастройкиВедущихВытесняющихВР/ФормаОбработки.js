@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Проверка настройки списков ведущих и вытесняющих видов расчета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -112,11 +113,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаЦиклическихСсылок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -232,11 +235,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокПлохихВР');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -304,11 +309,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокВРУдалить');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -353,11 +360,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокВРДобавить');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроверкаНастройкиВедущихВытесняющихВР.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

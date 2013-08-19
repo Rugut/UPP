@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор реквизита',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -54,11 +55,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоРеквизитов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораРеквизитаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрупповаяОбработкаСправочниковИДокументов.ФормаВыбораРеквизитаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

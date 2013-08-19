@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отбор',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -170,26 +171,38 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:6px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:56px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:81px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:131px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:156px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:181px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -208,6 +221,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:31px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -226,6 +241,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:149px;top:106px;width:143px;height:19px;',
+			width: 143,
+			height: 19,
 		},
 					]
 				},

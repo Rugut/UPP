@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подготовка данных по НДФЛ для передачи в налоговые органы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -85,6 +86,28 @@
 			style: 'position:absolute;left:8px;top:47px;width:984px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:69px;width:365px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Принято налоговым органом',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+			]
+		},
+		{
 			id: 'Документы2НДФЛ',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:93px;width:365px;height:131px;',
@@ -150,11 +173,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Документы2НДФЛ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -589,15 +614,47 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаРеестра2НДФЛ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:349px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				'-',
+				{
+					text:'Пронумеровать',
+				},
+				'-',
+				{
+					text:'Перенести',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -684,11 +741,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОДоходах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -742,11 +801,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОВычетах');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1110,11 +1171,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СуммыНалогов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодготовкаДанныхПоНДФЛ.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1496,29 +1559,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:69px;width:365px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Принято налоговым органом',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-			]
-		},
 	]
 	});
 });

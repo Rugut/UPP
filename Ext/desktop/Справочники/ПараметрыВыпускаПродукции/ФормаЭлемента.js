@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Параметры выпуска продукции',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -107,6 +108,13 @@
 			style: 'position:absolute;left:110px;top:229px;width:382px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:96px;width:484px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:120px;width:484px;height:104px;',
@@ -137,7 +145,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПараметрыВыпускаПродукции").data,
-					fields: ['НомерСтроки','ВидПараметра','Значение',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ВидПараметра','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -168,15 +176,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Параметры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПараметрыВыпускаПродукции.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПараметрыВыпускаПродукции.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -187,22 +204,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:96px;width:484px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:256px;width:500px;height:25px;',

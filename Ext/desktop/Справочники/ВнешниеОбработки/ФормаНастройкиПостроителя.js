@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка условий',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,7 +65,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
-					fields: ['Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
+					fields: ['Ссылка','Родитель.Представление','Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -104,15 +105,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВнешниеОбработки.ФормаНастройкиПостроителяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаНастройкиПостроителяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:384px;height:24px;',
+			items:
+			[
+			]
 		},
 		],
 	}],
@@ -139,14 +149,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:384px;height:24px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

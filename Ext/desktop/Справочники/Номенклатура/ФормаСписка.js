@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Номенклатура',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -112,7 +113,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['Картинка','Код','Артикул','Наименование','НаименованиеПолное','ВидНоменклатуры.Представление','БазоваяЕдиницаИзмерения.Представление','ЕдиницаХраненияОстатков.Представление','НомерГТД.Представление','СтранаПроисхождения.Представление','СтавкаНДС.Представление','НоменклатурнаяГруппа.Представление','ЦеноваяГруппа.Представление','Комментарий',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','Артикул','Наименование','НаименованиеПолное','ВидНоменклатуры.Представление','БазоваяЕдиницаИзмерения.Представление','ЕдиницаХраненияОстатков.Представление','НомерГТД.Представление','СтранаПроисхождения.Представление','СтавкаНДС.Представление','НоменклатурнаяГруппа.Представление','ЦеноваяГруппа.Представление','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -176,11 +177,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -205,7 +208,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -230,11 +233,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -353,7 +358,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['ХарактеристикаСклад','МестоХранения','Общий','Свободный','СвободныйОжидаемый','ВРезерве',]
+					fields: ['Ссылка','Родитель.Представление','ХарактеристикаСклад','МестоХранения','Общий','Свободный','СвободныйОжидаемый','ВРезерве',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -393,11 +398,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОстаткиТоваров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -463,7 +470,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['Наименование','Ссылка','БазовыйТипЦен','Рассчитывается','ОкруглятьВБольшуюСторону','ПроцентСкидкиНаценки','Префикс',]
+					fields: ['Ссылка','Родитель.Представление','Наименование','Ссылка','БазовыйТипЦен','Рассчитывается','ОкруглятьВБольшуюСторону','ПроцентСкидкиНаценки','Префикс',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -506,11 +513,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокЦенОстатков');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -570,6 +579,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:225px;top:125px;width:195px;height:19px;',
+			width: 195,
+			height: 19,
 		},
 					]
 				},
@@ -591,17 +602,8 @@
 			style: 'position:absolute;left:175px;top:33px;width:57px;height:19px;',
 		},
 		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:357px;top:95px;width:157px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -622,6 +624,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

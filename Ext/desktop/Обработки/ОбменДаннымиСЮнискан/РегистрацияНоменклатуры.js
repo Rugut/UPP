@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация номенклатуры в ЮНИСКАН/GS1 Russia',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -317,11 +318,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаТранспортныхУпаковокРегистрации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -543,15 +546,33 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаДляРегистрации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбменДаннымиСЮнискан.РегистрацияНоменклатурыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:32px;width:224px;height:24px;',
+			items:
+			[
+				{
+					text:'Отметить все позиции для регистрации',
+				},
+				{
+					text:'Отменить выделение всех позиций для регистрации',
+				},
+				{
+					text:'Обновить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -583,23 +604,6 @@
 				'-',
 				{
 					text:'Действие1',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:32px;width:224px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Отметить все позиции для регистрации',
-				},
-				{
-					text:'Отменить выделение всех позиций для регистрации',
-				},
-				{
-					text:'Обновить',
 				},
 			]
 		},

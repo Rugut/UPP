@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Баланс по МСФО',
 	
 	layout: {type: "fit",align: "stretch"},

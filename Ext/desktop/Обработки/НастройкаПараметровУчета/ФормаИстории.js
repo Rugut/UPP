@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,20 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+			]
+		},
 		{
 			id: 'ТабличноеПоле',
 			xtype: 'grid',
@@ -45,15 +60,33 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПоле');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.ФормаИсторииСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.ФормаИсторииСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:37px;top:128px;width:145px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -77,38 +110,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:37px;top:128px;width:145px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'Удалить',
-				},
-				{
-					text:'Вывести список...',
-				},
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки обмена с WEB-сайтом',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,34 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Монитор обменов',
+				},
+				{
+					text:'Выполнить обмен',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Монитор обменов',
+				},
+				'-',
+				{
+					text:'Выполнить обмен',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:190px;top:58px;width:492px;height:464px;',
@@ -368,6 +397,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:128px;height:15px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:52px;width:478px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ПостроительОтчетаОтбор',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:78px;width:478px;height:360px;',
@@ -416,7 +452,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкиОбменаССайтом").data,
-					fields: ['Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
+					fields: ['Ссылка','Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -456,11 +492,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтчетаОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиОбменаССайтом.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -640,6 +678,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:185px;top:6px;width:178px;height:19px;',
+			width: 178,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -922,35 +962,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				'-',
-				{
-					text:'Монитор обменов',
-				},
-				{
-					text:'Выполнить обмен',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Монитор обменов',
-				},
-				'-',
-				{
-					text:'Выполнить обмен',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:554px;width:690px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка границы последовательности партионного учета',
 	
 	layout: {type: "fit",align: "stretch"},

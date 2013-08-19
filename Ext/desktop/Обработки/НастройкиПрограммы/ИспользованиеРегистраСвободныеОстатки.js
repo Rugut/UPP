@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка параметра программы - Использовать регистр ""Свободные остатки""',
 	
 	layout: {type: "fit",align: "stretch"},

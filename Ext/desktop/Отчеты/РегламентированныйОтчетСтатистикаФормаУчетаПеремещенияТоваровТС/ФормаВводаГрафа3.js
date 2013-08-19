@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Графа 3. Лицо, отв. за фин. урегулирование (ввод реквизитов)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -377,6 +378,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:126px;top:8px;width:265px;height:19px;',
+			width: 265,
+			height: 19,
 		},
 		{
 			xtype: 'label',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заявления ДСВ-1',
 	
 	layout: {type: "fit",align: "stretch"},

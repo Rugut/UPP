@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Регистрация изменений для обмена',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,23 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:576px;height:25px;',
+			items:
+			[
+				{
+					text:'Выполнить',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаРезультата',
 			xtype: 'grid',
@@ -45,11 +63,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаРезультата');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияИзмененийДляОбмена.ФормаРезультатаЗапросаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияИзмененийДляОбмена.ФормаРезультатаЗапросаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -59,24 +79,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:576px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выполнить',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:485px;width:576px;height:25px;',

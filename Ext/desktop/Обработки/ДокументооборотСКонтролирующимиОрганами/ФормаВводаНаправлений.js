@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о контролирующем органе (направление документооборота)',
 	
 	layout: {type: "fit",align: "stretch"},

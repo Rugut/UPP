@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка параметра учета ""Использовать расширенную аналитику учета затрат""',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -193,11 +194,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаНастройки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -207,6 +210,27 @@
 			xtype: 'fieldset',
 			title: 'Данные для заполнения регистров',
 			style: 'position:absolute;left:6px;top:73px;width:486px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:93px;width:370px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Рассчитать',
+				},
+				'-',
+				{
+					text:'Обновить статусы',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -279,11 +303,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаОтображаемыхДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -477,11 +503,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиАналитикиУчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеНастроекУчета.ИспользованиеРасширеннойАналитикиУчетаЗатратСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

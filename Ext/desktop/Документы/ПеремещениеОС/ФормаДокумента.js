@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Перемещение ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -320,6 +321,16 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:184px;width:649px;height:24px;',
+			items:
+			[
+				{
+					text:'По наименованию',
+				},
+			]
+		},
+		{
 			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:209px;width:649px;height:175px;',
@@ -376,15 +387,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПеремещениеОС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПеремещениеОС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Открыть свойства',
+				},
+				{
+					text:'Открыть категории',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -529,44 +568,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:184px;width:649px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'По наименованию',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:665px;height:25px;',

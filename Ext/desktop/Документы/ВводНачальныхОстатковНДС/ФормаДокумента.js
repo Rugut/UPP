@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод начальных остатков НДС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,6 +107,13 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -605,15 +613,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеПоСФ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:748px;height:24px;',
+			items:
+			[
+				{
+					text:'Сформировать счета-фактуры',
+				},
+				{
+					text:'Сформировать счета-фактуры и заполнить расчеты с контрагентами',
+				},
+			]
 		},
 		{
 			id: 'ДополнительныеСведения',
@@ -1005,11 +1028,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДополнительныеСведения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1176,15 +1201,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетыСКонтрагентами');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:6px;width:746px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 					]
 				},
@@ -1192,6 +1227,14 @@
 					title:'Авансы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:6px;width:746px;height:24px;',
+			items:
+			[
+				'-',
+			]
+		},
 		{
 			id: 'РасчетыСКонтрагентамиАвансы',
 			xtype: 'grid',
@@ -1321,11 +1364,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетыСКонтрагентамиАвансы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1389,14 +1434,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

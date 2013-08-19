@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Шифрование и отправка',
 	
 	layout: {type: "fit",align: "stretch"},

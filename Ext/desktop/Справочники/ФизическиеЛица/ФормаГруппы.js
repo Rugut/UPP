@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа физических лиц',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -92,34 +93,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:84px;width:634px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:634px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -169,6 +143,32 @@
 				},
 			]
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:84px;width:634px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

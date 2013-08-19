@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Конструктор пользовательского поля',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -84,11 +85,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Интервалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонструкторПользовательскихПолей.ФормаИнтервалыСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонструкторПользовательскихПолей.ФормаИнтервалыСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -98,6 +101,24 @@
 			xtype: 'fieldset',
 			title: 'Интервалы',
 			style: 'position:absolute;left:8px;top:53px;width:291px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:72px;width:291px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'textfield',
@@ -128,25 +149,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:72px;width:291px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'',
 				},
 			]
 		},

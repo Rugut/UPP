@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отпуск по уходу за ребенком',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -74,6 +75,19 @@
 			width: 680,
 			height: 19,
 			style: 'position:absolute;left:96px;top:531px;width:680px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:784px;height:25px;',
+			items:
+			[
+				{
+					text:'Данные для расчета среднего заработка',
+				},
+				{
+					text:'Плановые начисления и удержания',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -407,15 +421,52 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:50px;width:754px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'datefield',
@@ -578,15 +629,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасчетСреднего2011');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:50px;width:754px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -970,15 +1056,52 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсновныеНачисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:754px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -1296,15 +1419,52 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПлановыеУдержания');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:754px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -2109,11 +2269,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеОДетях');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтпускПоУходуЗаРебенком.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -2226,6 +2388,41 @@
 			name: 'НадписьНомерСправкиОтДругогоРодителя2',
 			text: '№',
 			style: 'position:absolute;left:263px;top:341px;width:25px;height:19px;text-align:right;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:30px;width:754px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -2413,20 +2610,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:784px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Данные для расчета среднего заработка',
-				},
-				{
-					text:'Плановые начисления и удержания',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:251px;top:555px;width:533px;height:25px;',

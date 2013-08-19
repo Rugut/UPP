@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Бухгалтерская отчетность',
 	
 	layout: {type: "fit",align: "stretch"},

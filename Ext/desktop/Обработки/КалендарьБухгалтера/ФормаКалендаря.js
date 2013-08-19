@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Календарь бухгалтера',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,28 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'День',
+				},
+				'-',
+				{
+					text:'Неделя',
+				},
+				'-',
+				{
+					text:'Действие1',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьДляОрганизации',
@@ -63,6 +86,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:532px;top:91px;width:130px;height:19px;',
+			width: 130,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -165,11 +190,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаСобытийКалендаря');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарьБухгалтера.ФормаКалендаряСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарьБухгалтера.ФормаКалендаряСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -179,6 +206,22 @@
 				},
 				{
 					title:'Неделя',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:295px;top:28px;width:218px;height:24px;',
+			items:
+			[
+				{
+					text:'Открыть',
+				},
+				{
+					text:'Оповещение',
+				},
+				{
+					text:'Перейти к дате',
 				},
 			]
 		},
@@ -217,52 +260,12 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'День',
-				},
-				'-',
-				{
-					text:'Неделя',
-				},
-				'-',
-				{
-					text:'Действие1',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
 			dock: 'bottom',
 			items:
 			[
 				{
 					xtype: 'tbfill'
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:295px;top:28px;width:218px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Открыть',
-				},
-				{
-					text:'Оповещение',
-				},
-				{
-					text:'Перейти к дате',
 				},
 			]
 		},

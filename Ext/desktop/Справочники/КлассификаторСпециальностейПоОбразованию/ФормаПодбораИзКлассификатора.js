@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Классификатор специальностей по образованию (ОКСО)',
 	
 	layout: {type: "fit",align: "stretch"},

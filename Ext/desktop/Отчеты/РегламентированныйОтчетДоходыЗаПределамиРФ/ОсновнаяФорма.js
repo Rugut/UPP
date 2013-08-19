@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Декларация о доходах за пределами РФ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,6 +65,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:100px;top:81px;width:192px;height:19px;',
+			width: 192,
+			height: 19,
 		},
 		{
 			xtype: 'label',

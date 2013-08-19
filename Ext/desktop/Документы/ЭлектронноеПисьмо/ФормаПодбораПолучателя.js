@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Проверка и выбор получателей/отправителей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,15 +64,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаПодбораПолучателяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаПодбораПолучателяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:80px;width:432px;height:24px;',
+			items:
+			[
+				{
+					text:'Зарегистрировать новый',
+				},
+				'-',
+				{
+					text:'Изменить',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подобрать из адресной книги (F12)',
+				},
+				'-',
+			]
 		},
 		{
 			xtype: 'label',
@@ -115,33 +144,6 @@
 				{
 					text:'Отмена',
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:80px;width:432px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Зарегистрировать новый',
-				},
-				'-',
-				{
-					text:'Изменить',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Подобрать из адресной книги (F12)',
-				},
-				'-',
 			]
 		},
 	]

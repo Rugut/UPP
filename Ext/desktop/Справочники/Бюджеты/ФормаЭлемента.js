@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Бюджеты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -103,18 +104,17 @@
 			name: 'Комментарий',
 			style: 'position:absolute;left:94px;top:105px;width:220px;height:72px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:322px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:185px;width:322px;height:25px;',

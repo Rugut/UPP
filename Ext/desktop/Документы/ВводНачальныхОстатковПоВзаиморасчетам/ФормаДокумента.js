@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод начальных остатков по взаиморасчетам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,6 +107,13 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -290,15 +298,26 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеПоРасчетам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:5px;top:6px;width:695px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+			]
 		},
 					]
 				},
@@ -306,6 +325,15 @@
 					title:'Авансы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:694px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+			]
+		},
 		{
 			id: 'ДанныеПоАвансам',
 			xtype: 'grid',
@@ -453,11 +481,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеПоАвансам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -562,11 +592,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеПоРезервамПоСомнительнымДолгам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводНачальныхОстатковПоВзаиморасчетам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -685,14 +717,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

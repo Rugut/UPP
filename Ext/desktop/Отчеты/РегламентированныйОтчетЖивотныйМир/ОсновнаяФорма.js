@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сбор за пользование объектами животного мира',
 	
 	layout: {type: "fit",align: "stretch"},

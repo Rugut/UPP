@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Спецификации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:0px;width:231px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ТЗСпецификаций',
 			xtype: 'grid',
@@ -45,11 +53,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТЗСпецификаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВводаСпецификацийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентированныйОтчетЗаявлениеОВвозеТоваров.ФормаВводаСпецификацийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -76,14 +86,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:0px;width:231px;height:25px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Назначения использования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -82,7 +83,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НазначенияИспользования").data,
-					fields: ['Картинка','Код','Наименование','СпособПогашенияСтоимости.Представление','СрокПолезногоИспользования','Количество','ЕдиницаИзмерения.Представление','СпособОтраженияРасходов.Представление','Владелец',]
+					fields: ['Ссылка','Картинка','Код','Наименование','СпособПогашенияСтоимости.Представление','СрокПолезногоИспользования','Количество','ЕдиницаИзмерения.Представление','СпособОтраженияРасходов.Представление','Владелец',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -131,24 +132,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НазначенияИспользования.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НазначенияИспользования.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -157,6 +155,10 @@
 				'-',
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

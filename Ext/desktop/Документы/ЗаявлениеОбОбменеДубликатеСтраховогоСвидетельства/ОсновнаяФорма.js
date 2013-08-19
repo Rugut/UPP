@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заявление об обмене дубликате страхового свидетельства',
 	
 	layout: {type: "fit",align: "stretch"},

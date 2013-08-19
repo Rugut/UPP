@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация счетов-фактур налогового агента',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -93,6 +94,16 @@
 			width: 80,
 			height: 19,
 			style: 'position:absolute;left:165px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:57px;width:725px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по данным учета',
+				},
+			]
 		},
 		{
 			id: 'Список',
@@ -214,15 +225,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияСчетовФактурНалоговогоАгента.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияСчетовФактурНалоговогоАгента.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:741px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Список счетов-фактур (выд.)',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -258,29 +282,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:57px;width:725px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить по данным учета',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:741px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Список счетов-фактур (выд.)',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:400px;width:741px;height:25px;',

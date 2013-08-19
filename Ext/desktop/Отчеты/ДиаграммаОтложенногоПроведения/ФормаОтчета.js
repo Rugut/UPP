@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Диаграмма отложенного проведения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:947px;height:25px;',
+			items:
+			[
+				{
+					text:'Действие1',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьДопроведено',
@@ -67,17 +78,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:947px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Действие1',
-				},
-			]
-		},
 	]
 	});
 });

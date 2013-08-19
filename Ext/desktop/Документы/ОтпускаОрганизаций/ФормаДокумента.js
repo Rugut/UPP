@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отпуска организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,6 +107,53 @@
 			width: 548,
 			height: 19,
 			style: 'position:absolute;left:86px;top:348px;width:548px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:642px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				'-',
+				{
+					text:'Редактировать номер',
+				},
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Открыть начисления',
+				},
+				'-',
+				{
+					text:'Открыть свойства',
+				},
+				{
+					text:'Открыть категории',
+				},
+			]
 		},
 		{
 			id: 'РаботникиОрганизации',
@@ -281,15 +329,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтпускаОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтпускаОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:626px;height:24px;',
+			items:
+			[
+				{
+					text:'По графику отпусков',
+				},
+				'-',
+				{
+					text:'Списком сотрудников',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -459,54 +523,6 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:642px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				'-',
-				{
-					text:'Редактировать номер',
-				},
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-					]
-				},
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Открыть начисления',
-				},
-				'-',
-				{
-					text:'Открыть свойства',
-				},
-				{
-					text:'Открыть категории',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:268px;top:375px;width:374px;height:25px;',
 			dock: 'bottom',
 			items:
@@ -525,21 +541,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:626px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'По графику отпусков',
-				},
-				'-',
-				{
-					text:'Списком сотрудников',
 				},
 			]
 		},

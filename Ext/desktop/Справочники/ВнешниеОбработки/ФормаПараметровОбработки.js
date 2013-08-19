@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Дополнительные параметры обработки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
-					fields: ['ИмяПараметра','ЗначениеПараметра',]
+					fields: ['Ссылка','Родитель.Представление','ИмяПараметра','ЗначениеПараметра',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,15 +69,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыОбработки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВнешниеОбработки.ФормаПараметровОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаПараметровОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:384px;height:24px;',
+			items:
+			[
+			]
 		},
 		],
 	}],
@@ -98,14 +108,6 @@
 				{
 					text:'Отмена',
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:384px;height:24px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обновление модуля документооборота с контролирующими органами',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка стратегии редактирования номеров (кодов) объектов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,15 +64,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаСтратегииРедактированияНомеровОбъектов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаСтратегииРедактированияНомеровОбъектов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:538px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по умолчанию',
+				},
+				'-',
+			]
 		},
 		],
 	}],
@@ -98,18 +112,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:8px;width:538px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить по умолчанию',
-				},
-				'-',
 			]
 		},
 	]

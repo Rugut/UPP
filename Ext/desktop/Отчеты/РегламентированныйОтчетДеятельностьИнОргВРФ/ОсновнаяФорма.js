@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет о деятельности иностранной организации в РФ',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Распределение материалов на выпуск',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,41 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Настройка',
+				},
+				'-',
+				{
+					text:'Показать/скрыть счета учета',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:383px;width:652px;height:25px;',
@@ -214,6 +250,18 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
+		{
 			id: 'Продукция',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:622px;height:131px;',
@@ -405,11 +453,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Продукция');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -421,6 +471,29 @@
 					title:'Материалы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по спецификации',
+				},
+				{
+					text:'Заполнить по остаткам',
+				},
+				{
+					text:'Заполнить по инвентаризации',
+				},
+				'-',
+				{
+					text:'Добавить из требование - накладная...',
+				},
+				{
+					text:'Добавить из документа выпуска...',
+				},
+			]
+		},
 		{
 			id: 'Материалы',
 			xtype: 'grid',
@@ -631,11 +704,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Материалы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -884,15 +959,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеМатериалов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
 		},
 					]
 				},
@@ -1110,15 +1199,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВозвратныеОтходы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по спецификации',
+				},
+				{
+					text:'Заполнить по остаткам',
+				},
+			]
 		},
 					]
 				},
@@ -1126,6 +1230,18 @@
 					title:'Распределение возвратных отходов',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			items:
+			[
+				'-',
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		{
 			id: 'РаспределениеВозвратныхОтходов',
 			xtype: 'grid',
@@ -1363,11 +1479,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаспределениеВозвратныхОтходов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РаспределениеМатериаловНаВыпуск.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1564,42 +1682,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Настройка',
-				},
-				'-',
-				{
-					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
 	]
 	});
 });

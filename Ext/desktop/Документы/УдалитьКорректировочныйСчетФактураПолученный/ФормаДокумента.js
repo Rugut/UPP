@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировочный счет-фактура полученный',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -625,15 +626,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВосстановлениеНДС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УдалитьКорректировочныйСчетФактураПолученный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УдалитьКорректировочныйСчетФактураПолученный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -725,15 +735,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВычетНДС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УдалитьКорректировочныйСчетФактураПолученный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УдалитьКорректировочныйСчетФактураПолученный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',

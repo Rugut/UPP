@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка показателей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,6 +26,32 @@
 					title:'Показатели',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:420px;height:24px;',
+			items:
+			[
+				{
+					text:'Параметры',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Из списка',
+				},
+			]
+		},
 		{
 			id: 'ТабличноеПолеПоказателей',
 			xtype: 'grid',
@@ -73,11 +100,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеПоказателей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РапортРуководителю.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РапортРуководителю.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -120,6 +149,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:306px;top:99px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -171,6 +202,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:306px;top:26px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -251,15 +284,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеВремяПубликации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РапортРуководителю.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РапортРуководителю.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:150px;top:248px;width:276px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',

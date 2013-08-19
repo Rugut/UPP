@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Печать раскладки номенклатуры по местам хранения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,19 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
@@ -81,11 +95,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Группировки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -185,11 +201,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Поля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -248,11 +266,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Сортировка');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -261,10 +281,26 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:66px;top:33px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:195px;width:379px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:393px;top:72px;width:379px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:73px;width:379px;height:24px;',
 			items:
 			[
 			]
@@ -368,11 +404,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаНастройкиПолейПечать');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -518,11 +556,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПредставленияПриоритетовМестХранения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьРаскладкиНоменклатурыПоМестамХранения.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -532,36 +572,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:393px;top:72px;width:379px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:73px;width:379px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

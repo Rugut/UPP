@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,6 +26,19 @@
 					title:'Базовые начисления',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:453px;height:24px;',
+			items:
+			[
+				{
+					text:'Дополнительные начисления организаций',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'БазовыеВидыРасчета',
 			xtype: 'grid',
@@ -50,7 +64,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Резервы").data,
-					fields: ['НомерСтроки','ВидРасчета',]
+					fields: ['Ссылка','НомерСтроки','ВидРасчета',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -78,11 +92,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('БазовыеВидыРасчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -94,6 +110,26 @@
 					title:'Размеры отчислений',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:453px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
+		},
 		{
 			id: 'НаборЗаписейРазмерыОтчислений',
 			xtype: 'grid',
@@ -131,7 +167,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Резервы").data,
-					fields: ['Период','Организация','Размер','Резерв',]
+					fields: ['Ссылка','Период','Организация','Размер','Резерв',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -165,11 +201,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НаборЗаписейРазмерыОтчислений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Резервы.ФормаНастройкиРезервовЗКСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

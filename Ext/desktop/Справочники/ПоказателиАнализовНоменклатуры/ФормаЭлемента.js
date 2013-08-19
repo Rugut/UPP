@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Показатели анализов номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -137,6 +138,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:105px;width:515px;height:152px;',
 			height: 152,width: 515,
@@ -229,6 +237,13 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:6px;width:515px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ДопустимыеЗначенияПоказателей',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:30px;width:515px;height:116px;',
@@ -253,7 +268,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПоказателиАнализовНоменклатуры").data,
-					fields: ['НомерСтроки','ЗначениеПоказателя',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ЗначениеПоказателя',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -281,11 +296,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДопустимыеЗначенияПоказателей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоказателиАнализовНоменклатуры.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -305,14 +322,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:295px;width:531px;height:25px;',

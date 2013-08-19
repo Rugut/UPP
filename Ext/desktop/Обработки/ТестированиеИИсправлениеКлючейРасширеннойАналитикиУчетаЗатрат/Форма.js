@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Тестирование и исправление ключей аналитики',
 	
 	layout: {type: "fit",align: "stretch"},

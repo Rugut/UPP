@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка задач пользователей',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -85,11 +86,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаНастройкиРолей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкиПрограммы.НастройкаРолейИсполнителейСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкиПрограммы.НастройкаРолейИсполнителейСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -100,6 +103,16 @@
 			name: 'НадписьСотрудник',
 			text: 'НадписьСотрудник',
 			style: 'position:absolute;left:194px;top:8px;width:462px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:276px;top:129px;width:101px;height:24px;',
+			items:
+			[
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		],
 	}],
@@ -121,17 +134,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:276px;top:129px;width:101px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Вывести список...',
 				},
 			]
 		},

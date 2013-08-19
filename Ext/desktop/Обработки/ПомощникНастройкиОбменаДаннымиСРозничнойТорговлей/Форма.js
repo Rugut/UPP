@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка обмена данными',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -90,6 +91,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:246px;top:86px;width:260px;height:19px;',
+			width: 260,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -201,6 +204,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:509px;top:86px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 					]
 				},
@@ -217,6 +222,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:28px;top:70px;width:413px;height:19px;',
+			width: 413,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -344,15 +351,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствияМагазиновИСкладов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:532px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -408,15 +424,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТипыЦенНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:532px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -663,11 +688,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаВыбораОрганизаций');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -763,15 +790,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборПоНоменклатуре');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -863,15 +899,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборПоКонтрагентам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -963,15 +1008,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборПоСкладам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1063,15 +1117,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборПоКассам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -1374,6 +1437,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:154px;top:24px;width:385px;height:19px;',
+			width: 385,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -1975,15 +2040,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаВыгрузкиДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
+			items:
+			[
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Изменить настройку',
+				},
+			]
 		},
 					]
 				},
@@ -1991,6 +2075,19 @@
 					title:'Сопоставление объектов',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
+			items:
+			[
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+			]
+		},
 		{
 			id: 'НастройкаВариантовПоискаОбъектов',
 			xtype: 'grid',
@@ -2093,11 +2190,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкаВариантовПоискаОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиСРозничнойТорговлей.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ученые степени',
 	
 	layout: {type: "fit",align: "stretch"},

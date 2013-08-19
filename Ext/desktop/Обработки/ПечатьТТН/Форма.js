@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Печать ТТН',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -236,6 +237,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:352px;top:297px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',

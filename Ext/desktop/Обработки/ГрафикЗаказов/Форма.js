@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'График заказов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,50 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Видимость отборы',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Восстановить настройку',
+				},
+				'-',
+				{
+					text:'Сохранить график',
+				},
+				{
+					text:'Отменить не сохраненные изменения',
+				},
+				'-',
+				{
+					text:'Диагностика',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'datefield',
 			hideLabel: true,
@@ -54,6 +99,13 @@
 			name: 'НадписьПо',
 			text: 'по',
 			style: 'position:absolute;left:889px;top:2px;width:16px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:761px;top:0px;width:239px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -150,15 +202,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтборы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГрафикЗаказов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГрафикЗаказов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:953px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -168,59 +229,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Видимость отборы',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'Восстановить настройку',
-				},
-				'-',
-				{
-					text:'Сохранить график',
-				},
-				{
-					text:'Отменить не сохраненные изменения',
-				},
-				'-',
-				{
-					text:'Диагностика',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:761px;top:0px;width:239px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод индивидуальных графиков работы организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -198,6 +199,13 @@
 			width: 907,
 			height: 19,
 			style: 'position:absolute;left:85px;top:434px;width:907px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -1250,11 +1258,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГрафикРаботы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводИндивидуальныхГрафиковРаботыОрганизации.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводИндивидуальныхГрафиковРаботыОрганизации.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1320,14 +1330,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:461px;width:1000px;height:25px;',

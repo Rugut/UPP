@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подразделения организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПодразделенияОрганизаций").data,
-					fields: ['Наименование','Код',]
+					fields: ['Ссылка','Родитель.Представление','Наименование','Код',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,69 +69,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'trigger',
-			hideLabel: true,
-			disabled: false,
-			trigger1Cls: 'x-form-select-trigger',
-			trigger2Cls: 'x-form-search-trigger',
-			name: 'Организация.Представление',
-			width: 200,
-			height: 19,
-			Хранилище:'Ссылка',
-			style: 'position:absolute;left:233px;top:33px;width:200px;height:19px;',
-			onTriggerClick : function(ЭтотОбъект)
-			{
-				var СтрокаЗнч = ЭтотОбъект.target.className;
-				var Элемент = this.up('window');
-				var Окно = Ext.getCmp(Элемент.getId());
-				var Ссылка = Окно.Хранилище;
-				if (СтрокаЗнч.indexOf("-select-") != -1)
-				{
-					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия'], function ()
-					{
-						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия");
-						объект.ПередатьСсылку(Ссылка);
-					});
-				};
-				if (СтрокаЗнч.indexOf("-clear-") != -1)
-				{
-					alert('clear');
-				};
-				if (СтрокаЗнч.indexOf("-search-") != -1)
-				{
-					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия'], function ()
-					{
-						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия");
-						объект.ПередатьСсылку(Ссылка);
-					});
-				};
-			},
-		},
-		{
-			xtype: 'label',
-			name: 'НадписьОрганизация',
-			text: 'Подразделения организации',
-			style: 'position:absolute;left:8px;top:33px;width:223px;height:19px;text-align:left;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:441px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -198,6 +151,55 @@
 				},
 			]
 		},
+		{
+			xtype: 'trigger',
+			hideLabel: true,
+			disabled: false,
+			trigger1Cls: 'x-form-select-trigger',
+			trigger2Cls: 'x-form-search-trigger',
+			name: 'Организация.Представление',
+			width: 200,
+			height: 19,
+			Хранилище:'Ссылка',
+			style: 'position:absolute;left:233px;top:33px;width:200px;height:19px;',
+			onTriggerClick : function(ЭтотОбъект)
+			{
+				var СтрокаЗнч = ЭтотОбъект.target.className;
+				var Элемент = this.up('window');
+				var Окно = Ext.getCmp(Элемент.getId());
+				var Ссылка = Окно.Хранилище;
+				if (СтрокаЗнч.indexOf("-select-") != -1)
+				{
+					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+				if (СтрокаЗнч.indexOf("-clear-") != -1)
+				{
+					alert('clear');
+				};
+				if (СтрокаЗнч.indexOf("-search-") != -1)
+				{
+					Ext.require(['Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия'], function ()
+					{
+						var объект = Ext.create("Справочники.ПодразделенияОрганизаций.ФормаВыбораСобытия");
+						объект.ПередатьСсылку(Ссылка);
+					});
+				};
+			},
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьОрганизация',
+			text: 'Подразделения организации',
+			style: 'position:absolute;left:8px;top:33px;width:223px;height:19px;text-align:left;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

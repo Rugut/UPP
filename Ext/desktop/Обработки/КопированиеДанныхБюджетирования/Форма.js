@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Копирование данных бюджетирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,40 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'trigger',
 			hideLabel: true,
@@ -683,11 +718,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПоле1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КопированиеДанныхБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КопированиеДанныхБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -698,12 +735,55 @@
 			title: 'Отбор данных',
 			style: 'position:absolute;left:6px;top:6px;width:339px;height:13px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:339px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Включить все',
+				},
+				{
+					text:'Выключить все',
+				},
+			]
+		},
 					]
 				},
 				{
 					title:'Новые бюджетные операции',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
+			items:
+			[
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Снять пометки',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Провести',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
+		},
 		{
 			id: 'СписокДокументовОперации',
 			xtype: 'grid',
@@ -779,11 +859,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокДокументовОперации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КопированиеДанныхБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КопированиеДанныхБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -795,6 +877,30 @@
 					title:'Новые документы расчетов по моделям',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
+			items:
+			[
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Снять пометки',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Рассчитать и провести',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
+		},
 		{
 			id: 'СписокДокументовРасчеты',
 			xtype: 'grid',
@@ -861,11 +967,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокДокументовРасчеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КопированиеДанныхБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КопированиеДанныхБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1028,41 +1136,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:440px;width:732px;height:25px;',

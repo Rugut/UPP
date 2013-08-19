@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Способы учета доходов сотрудников при исчислении страховых взносов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ДоходыПоСтраховымВзносам").data,
-					fields: ['Картинка','Наименование',]
+					fields: ['Ссылка','Картинка','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,30 +69,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДоходыПоСтраховымВзносам.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДоходыПоСтраховымВзносам.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьВидаДохода',
-			text: 'НадписьВидаДохода',
-			style: 'position:absolute;left:8px;top:379px;width:750px;height:39px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:766px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -186,6 +178,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьВидаДохода',
+			text: 'НадписьВидаДохода',
+			style: 'position:absolute;left:8px;top:379px;width:750px;height:39px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

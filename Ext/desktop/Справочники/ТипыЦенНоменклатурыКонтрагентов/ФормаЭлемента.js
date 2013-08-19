@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Типы цен номенклатуры контрагентов',
 	
 	layout: {type: "fit",align: "stretch"},

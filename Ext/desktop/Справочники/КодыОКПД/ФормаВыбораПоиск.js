@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Коды ОКПД',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.КодыОКПД").data,
-					fields: ['Код','Имя',]
+					fields: ['Ссылка','Родитель.Представление','Код','Имя',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,15 +69,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КодыОКПД.ФормаВыбораПоискСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КодыОКПД.ФормаВыбораПоискСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:788px;height:25px;',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Иерархический просмотр',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -130,6 +147,26 @@
 			height: 19,
 			style: 'position:absolute;left:6px;top:6px;width:296px;height:19px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:175px;top:26px;width:127px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:113px;height:24px;',
+			items:
+			[
+				{
+					text:'Поиск',
+				},
+			]
+		},
 					]
 				},
 			]
@@ -160,21 +197,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:788px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Иерархический просмотр',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:448px;width:788px;height:25px;',

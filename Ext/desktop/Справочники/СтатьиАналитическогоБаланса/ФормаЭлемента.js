@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статьи аналитического баланса',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -88,7 +89,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СтатьиАналитическогоБаланса").data,
-					fields: ['НомерСтроки','Счет','НаименованиеСчета','ВидОстатка','Знак',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Счет','НаименованиеСчета','ВидОстатка','Знак',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -125,11 +126,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборСчетовБюджетирования');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СтатьиАналитическогоБаланса.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СтатьиАналитическогоБаланса.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

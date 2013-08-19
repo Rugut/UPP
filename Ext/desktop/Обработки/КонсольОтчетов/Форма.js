@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Консоль отчетов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -74,6 +75,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:32px;top:0px;width:251px;height:20px;',
+			width: 251,
+			height: 20,
 		},
 		{
 			xtype: 'label',
@@ -93,6 +96,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:32px;top:0px;width:251px;height:20px;',
+			width: 251,
+			height: 20,
 		},
 		{
 			xtype: 'label',
@@ -115,6 +120,13 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:17px;top:26px;width:146px;height:26px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ДеревоЗапросов',
 			xtype: 'grid',
@@ -154,11 +166,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоЗапросов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -258,11 +272,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -341,11 +357,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -399,11 +417,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияКолонки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -414,6 +434,26 @@
 			name: 'Надпись6',
 			text: 'Для создания нового отчета необходимо нажать правой клавишей мыши на списке отчетов и выбрать в появившемся меню пункт "Добавить".',
 			style: 'position:absolute;left:8px;top:4px;width:499px;height:69px;text-align:center;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:239px;top:12px;width:32px;height:24px;',
+			items:
+			[
+				{
+					text:' > ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:239px;top:44px;width:32px;height:24px;',
+			items:
+			[
+				{
+					text:' < ',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -482,11 +522,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляДляПорядка');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -540,15 +582,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Порядок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:239px;top:12px;width:32px;height:24px;',
+			items:
+			[
+				{
+					text:' > ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:239px;top:44px;width:32px;height:24px;',
+			items:
+			[
+				{
+					text:' < ',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -617,11 +681,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоляДляВыбранных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -666,15 +732,37 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыбранныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонсольОтчетов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонсольОтчетов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:239px;top:12px;width:32px;height:24px;',
+			items:
+			[
+				{
+					text:' > ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:239px;top:44px;width:32px;height:24px;',
+			items:
+			[
+				{
+					text:' < ',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -704,14 +792,20 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:209px;top:29px;width:175px;height:19px;',
+			width: 175,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:209px;top:50px;width:175px;height:19px;',
+			width: 175,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:209px;top:8px;width:175px;height:19px;',
+			width: 175,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -751,11 +845,33 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:209px;top:71px;width:175px;height:19px;',
+			width: 175,
+			height: 19,
 		},
 					]
 				},
 				{
 					title:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:23px;top:57px;width:144px;height:24px;',
+			items:
+			[
+				{
+					text:'Расшифровка...',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:199px;top:13px;width:34px;height:24px;',
+			items:
+			[
+				{
+					text:'Выполнить отчет',
 				},
 			]
 		},

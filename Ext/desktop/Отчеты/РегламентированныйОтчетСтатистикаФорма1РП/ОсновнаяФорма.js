@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма 1-РП (срочная)',
 	
 	layout: {type: "fit",align: "stretch"},

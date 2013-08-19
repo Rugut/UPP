@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Опрос',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -74,6 +75,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:0px;top:0px;width:350px;height:19px;',
+			width: 350,
+			height: 19,
 		},
 					]
 				},
@@ -84,6 +87,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:8px;top:24px;width:342px;height:19px;',
+			width: 342,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -174,11 +179,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НесколькоВариантовОтветов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Опрос.ФормаВводаОтветовТестаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Опрос.ФормаВводаОтветовТестаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -466,11 +473,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСоставногоОтвета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Опрос.ФормаВводаОтветовТестаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Опрос.ФормаВводаОтветовТестаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Вычеты по НДФЛ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,7 +71,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВычетыНДФЛ").data,
-					fields: ['Картинка','Код','Наименование','КолонкаКодов','КодДляОтчетности2011','КодДляОтчетности2010','КодДляОтчетности2009',]
+					fields: ['Ссылка','Картинка','Код','Наименование','КолонкаКодов','КодДляОтчетности2011','КодДляОтчетности2010','КодДляОтчетности2009',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -113,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВычетыНДФЛ.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВычетыНДФЛ.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

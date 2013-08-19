@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Акцизы на табачные изделия',
 	
 	layout: {type: "fit",align: "stretch"},

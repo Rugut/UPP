@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Налоговые органы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -267,6 +268,13 @@
 			style: 'position:absolute;left:96px;top:431px;width:590px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:694px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Реквизиты',
 			style: 'position:absolute;left:8px;top:159px;width:678px;height:16px;',
@@ -325,14 +333,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:694px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:458px;width:694px;height:25px;',

@@ -14,20 +14,20 @@
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
   cursor: default;
-  background: #F5F2DD !important;
+  background: #FFFBF0 !important;
   padding: 2px; }
 
 /*Шрифт формы*/
 .x-body {
   color: black;
-  font-size: 12px;
-  font-family: tahoma, arial, verdana, sans-serif; }
-
+  font-size:  8px; /*12px;*/
+  /*font-family: tahoma, arial, verdana, sans-serif; }*/ /*так было*/
+  font-family: MS Shell Dlg, arial, verdana, sans-serif; }
 /*Панель*/
 
 .x-panel-body-default {
-  background: #F5F2DD;/*white;*/
-  border-color: #F5F2DD; /*#99bce8;*/
+  background: #FFFBF0;/*white;*/
+  border-color: #FFFBF0; /*#99bce8;*/
   color: black;
   border-width: 1px;
   border-style: solid; }
@@ -51,3 +51,103 @@ textarea.x-form-field {
   background-color: white;
   background-image: url('../../resources/themes/images/default/form/text-bg.gif');
   border-color: #b5b8c8; }
+
+/* Тулбары */
+.x-toolbar-default {
+  border-color: #99bce8;
+  background-image: none;
+  background-color: #F5F2DD;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #F5F2DD), color-stop(100%, #F5F2DD));
+  background-image: -webkit-linear-gradient(top, #F5F2DD, #F5F2DD);
+  background-image: -moz-linear-gradient(top, #F5F2DD, #F5F2DD);
+  background-image: -o-linear-gradient(top, #F5F2DD, #F5F2DD);
+  background-image: linear-gradient(top, #F5F2DD, #F5F2DD); }
+
+/* Надписи формы */
+.x-panel-body {
+  overflow: hidden;
+  position: relative;
+  font-size: 11px; }
+
+/* текстовые поля формы*/
+.x-form-field,
+.x-form-display-field {
+  margin: 0 0 0 0;
+  font: normal 11px MS Shell Dlg, arial, verdana, sans-serif;
+  color: black; }
+
+/*Окно (переферические параметры)*/
+.x-window-default {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 2px 2px 2px 2px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #C0C0C0; }
+
+/* Окно (Заголовок) */
+.x-window-header-default-top {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 4px 5px 0 5px;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  background-color: #C0C0C0; }/*ced9e7*/
+
+/* рамка */
+.x-fieldset-header {
+  font: 11px/14px bold tahoma, arial, verdana, sans-serif;
+  /*text-decoration: underline;*/
+  color: #9F6500;
+  padding: 0 0px 0px;
+  overflow: hidden; }
+
+ /*//////////////////////////////////////////////////////// begin КОМБОБОКС (combobox)/////////////////////////////////////////////////////////////*/  
+ /*высота комбобокса (без кнопки)*/  
+.x-border-box .x-form-text {
+  height: 19px; }
+/* Высота кнопки комбобокса*/
+.x-border-box .x-form-trigger {
+  height: 19px; }
+ /*////////////////////////////////////////////////////////end КОМБОБОКС (combobox)/////////////////////////////////////////////////////////////*/  
+
+ /*////////////////////////////////////////////////////////begin Столбцы грида//////////////////////////////////////////////////////////////////*/  
+.x-column-header {
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  border-right: 1px solid #c5c5c5;
+  border-left: 0 none;
+  border-top: 0 none;
+  border-bottom: 0 none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  font: normal 11px tahoma, arial, verdana, sans-serif;
+  background-image: none;
+  background-color: #F5F2DD;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #F5F2DD));
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #F5F2DD);
+  background-image: -moz-linear-gradient(top, #f9f9f9, #F5F2DD);
+  background-image: -o-linear-gradient(top, #f9f9f9, #F5F2DD);
+  background-image: linear-gradient(top, #f9f9f9, #F5F2DD); }
+
+/*////////////////////////////////////////////////////////end Столбцы грида///////////////////////////////////////////////////////////////////*/  

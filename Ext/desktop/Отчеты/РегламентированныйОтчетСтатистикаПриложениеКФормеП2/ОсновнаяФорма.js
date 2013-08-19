@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Приложение к форме П-2',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Групповое добавление элементов справочника ""Основные средства""',
 	
 	layout: {type: "fit",align: "stretch"},

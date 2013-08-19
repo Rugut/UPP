@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Загруженные документы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,45 +64,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаЗаписанныхДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаДанныхCommerceML.ФормаЗаписанныхДокументовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаДанныхCommerceML.ФормаЗаписанныхДокументовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьЗагруженныхДокументов',
-			text: 'Надпись загрузки документов. Информация по загруженным документам приведена ниже:',
-			style: 'position:absolute;left:47px;top:8px;width:545px;height:32px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:354px;width:600px;height:25px;',
-			dock: 'bottom',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:46px;width:584px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -128,6 +105,31 @@
 				'-',
 				{
 					text:'Обновить',
+				},
+			]
+		},
+		{
+			xtype: 'label',
+			name: 'НадписьЗагруженныхДокументов',
+			text: 'Надпись загрузки документов. Информация по загруженным документам приведена ниже:',
+			style: 'position:absolute;left:47px;top:8px;width:545px;height:32px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:354px;width:600px;height:25px;',
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
 				},
 			]
 		},

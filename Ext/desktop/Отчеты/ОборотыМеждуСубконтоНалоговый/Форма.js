@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет Обороты между субконто',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -95,6 +96,33 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			items:
+			[
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Заголовок',
+				},
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Възстанови стойностите...',
+				},
+				{
+					text:'Съхрани стойностите...',
+				},
+				'-',
+				{
+					text:'Затвори',
+				},
+			]
+		},
+		{
 			xtype: 'button',
 			name: 'НастройкаПериода',
 			text: '...',
@@ -149,34 +177,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Заголовок',
-				},
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Възстанови стойностите...',
-				},
-				{
-					text:'Съхрани стойностите...',
-				},
-				'-',
-				{
-					text:'Затвори',
-				},
-			]
-		},
 	]
 	});
 });

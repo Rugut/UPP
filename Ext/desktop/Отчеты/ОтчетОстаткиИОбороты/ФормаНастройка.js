@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -113,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокПоказателей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -171,6 +174,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:78px;top:0px;width:382px;height:19px;',
+			width: 382,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -266,15 +271,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияСтроки1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -366,15 +380,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -426,15 +449,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВыбранныеПоля1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:26px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -490,15 +522,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Порядок1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтчетОстаткиИОбороты.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

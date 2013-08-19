@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма №6',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,30 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			items:
+			[
+				{
+					text:'Проверить в Интернете',
+				},
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
+				},
+				{
+					text:'Подготовить к отправке',
+				},
+				'-',
+				{
+					text:'Показать отправки',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:460px;width:720px;height:25px;',
@@ -45,6 +70,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:86px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -69,6 +96,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:183px;top:24px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -179,31 +208,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Проверить в Интернете',
-				},
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				{
-					text:'Подготовить к отправке',
-				},
-				'-',
-				{
-					text:'Показать отправки',
-				},
-			]
-		},
 	]
 	});
 });

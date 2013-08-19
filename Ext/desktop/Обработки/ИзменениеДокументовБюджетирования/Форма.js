@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Изменение документов бюджетирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:628px;height:384px;',
@@ -28,6 +36,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:88px;top:30px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -119,11 +129,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -216,6 +228,25 @@
 			style: 'position:absolute;left:600px;top:6px;width:20px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:70px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Включить все',
+				},
+				{
+					text:'Выключить все',
+				},
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Отбор документов',
 			style: 'position:absolute;left:6px;top:54px;width:614px;height:16px;',
@@ -292,11 +323,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Действия');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -365,15 +398,42 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабДокументовФорма');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИзменениеДокументовБюджетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:614px;height:24px;',
+			items:
+			[
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -388,14 +448,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:644px;height:25px;',

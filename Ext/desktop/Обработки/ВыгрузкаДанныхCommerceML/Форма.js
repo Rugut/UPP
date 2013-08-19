@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выгрузка данных в формате CommerceML',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -16,8 +17,17 @@
 		items:
 		[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:44px;top:56px;width:428px;height:19px;',
+			width: 428,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -149,11 +159,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтчетаКаталогОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -163,6 +175,13 @@
 			xtype: 'fieldset',
 			title: 'Отбор для выгрузки информации о товарах',
 			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -284,11 +303,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтчетаПрайсаОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -299,6 +320,13 @@
 			title: 'Отбор для выгрузки прайс-листа',
 			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
+			items:
+			[
+			]
+		},
 					]
 				},
 				{
@@ -306,8 +334,37 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:66px;width:591px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Очистить',
+				},
+			]
+		},
+		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:101px;top:0px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -436,11 +493,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -505,11 +564,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Классификатор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -599,15 +660,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтчетаПрайсCML_1Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:248px;top:108px;width:343px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -855,14 +925,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

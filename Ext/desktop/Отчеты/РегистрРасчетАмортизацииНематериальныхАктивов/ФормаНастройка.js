@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр-расчет амортизации нематериальных активов',
 	
 	layout: {type: "fit",align: "stretch"},

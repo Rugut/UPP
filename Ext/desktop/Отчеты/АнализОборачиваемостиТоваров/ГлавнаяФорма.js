@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анализ оборачиваемости товаров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,51 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Заголовок',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Заголовок',
+				},
+				'-',
+				{
+					text:'Настройка ...',
+				},
+				{
+					text:'Восстановить значения',
+				},
+				{
+					text:'Сохранить значения ...',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:552px;height:72px;',
@@ -38,6 +84,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:110px;top:0px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -56,6 +104,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:110px;top:24px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -74,6 +124,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:110px;top:48px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -178,57 +230,13 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:400px;top:57px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Заголовок',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Заголовок',
-				},
-				'-',
-				{
-					text:'Настройка ...',
-				},
-				{
-					text:'Восстановить значения',
-				},
-				{
-					text:'Сохранить значения ...',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

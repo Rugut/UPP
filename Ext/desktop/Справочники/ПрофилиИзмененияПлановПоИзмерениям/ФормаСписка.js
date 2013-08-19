@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профили изменения планов по измерениям',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,7 +65,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоИзмерениям").data,
-					fields: ['Картинка','Код','Наименование','ИзмерениеБюджетирования.Представление','ИсточникДанных.Представление','ПоказательИсточника',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','Наименование','ИзмерениеБюджетирования.Представление','ИсточникДанных.Представление','ПоказательИсточника',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -104,11 +105,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -133,7 +136,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПрофилиИзмененияПлановПоИзмерениям").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -158,28 +161,29 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПрофилиИзмененияПлановПоИзмерениям.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:629px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

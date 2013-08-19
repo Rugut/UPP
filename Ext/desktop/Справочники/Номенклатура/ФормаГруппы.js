@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группа Номенклатура',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -89,6 +90,17 @@
 					});
 				};
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:422px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Настройка доступа',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -186,18 +198,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:422px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Настройка доступа',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:144px;width:422px;height:25px;',

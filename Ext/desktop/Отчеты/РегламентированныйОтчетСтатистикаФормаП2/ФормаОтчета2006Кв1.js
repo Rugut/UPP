@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма П-2',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,28 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			items:
+			[
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Действие2',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись6',
@@ -68,6 +91,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:180px;top:33px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -132,29 +157,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',

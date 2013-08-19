@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Элемент Источники данных для расчетов бюджетирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,20 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:601px;height:25px;',
+			items:
+			[
+				{
+					text:'Проверить',
+				},
+				'-',
+				{
+					text:'Произвольный запрос',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
@@ -104,7 +119,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
-					fields: ['ИмяДатаГраницы','ПредставлениеДатыГраницы','НачальнаяГраницаОтсчета','ДатаНачальнойГраницыОтсчета','ПериодСмещения','Сдвиг',]
+					fields: ['Ссылка','Родитель.Представление','ИмяДатаГраницы','ПредставлениеДатыГраницы','НачальнаяГраницаОтсчета','ДатаНачальнойГраницыОтсчета','ПериодСмещения','Сдвиг',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -144,11 +159,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДатыОтбораДанныхИсточника');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -190,7 +207,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
-					fields: ['НомерСтроки','Использование','Представление',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Использование','Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -221,11 +238,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Показатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -269,7 +288,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
-					fields: ['ИмяПоляИсточника','ИзмерениеБюджетирования',]
+					fields: ['Ссылка','Родитель.Представление','ИмяПоляИсточника','ИзмерениеБюджетирования',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -297,11 +316,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИзмеренияИсточника');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -339,6 +360,13 @@
 					title:'Отбор',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:380px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Отбор',
 			xtype: 'grid',
@@ -388,7 +416,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
-					fields: ['Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
+					fields: ['Ссылка','Родитель.Представление','Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -428,11 +456,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -478,6 +508,40 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:539px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
+		},
+		{
 			id: 'Параметры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:30px;width:539px;height:253px;',
@@ -502,7 +566,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ИсточникиДанныхДляРасчетовБюджетирования").data,
-					fields: ['ИмяПараметра','ЗначениеПараметра',]
+					fields: ['Ссылка','Родитель.Представление','ИмяПараметра','ЗначениеПараметра',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -530,11 +594,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Параметры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИсточникиДанныхДляРасчетовБюджетирования.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -567,21 +633,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:601px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Проверить',
-				},
-				'-',
-				{
-					text:'Произвольный запрос',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:415px;width:601px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация счетов-фактур на суммовые разницы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,17 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Список счетов-фактур (выд.)',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'Надпись1',
@@ -54,6 +66,17 @@
 			name: 'КнопкаВыбораПериода',
 			text: '...',
 			style: 'position:absolute;left:253px;top:33px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:76px;width:720px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -217,11 +240,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияСчетовФактурНаСуммовыеРазницы.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияСчетовФактурНаСуммовыеРазницы.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -231,18 +256,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Список счетов-фактур (выд.)',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:365px;width:736px;height:25px;',
@@ -259,18 +272,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:76px;width:720px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
 				},
 			]
 		},

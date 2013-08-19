@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод основания применения льготы',
 	
 	layout: {type: "fit",align: "stretch"},

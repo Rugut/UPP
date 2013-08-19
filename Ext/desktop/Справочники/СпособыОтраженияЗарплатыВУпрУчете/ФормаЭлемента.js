@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Способы отражения зарплаты в управленческом учете',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -166,6 +167,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Учет',
 			style: 'position:absolute;left:8px;top:60px;width:388px;height:17px;',
@@ -219,14 +227,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:181px;width:404px;height:25px;',

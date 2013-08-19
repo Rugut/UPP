@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет плановой себестоимости',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:627px;height:384px;',
@@ -126,15 +134,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:90px;width:613px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -259,15 +276,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:609px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 					]
 				},
@@ -1641,15 +1671,33 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоРезультат');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПлановойСебестоимости.ФормаОсновнаяСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:611px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Рассчитать',
+				},
+				'-',
+				{
+					text:'Изменить...',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -1685,14 +1733,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:643px;height:25px;',

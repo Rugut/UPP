@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помощник заполнения календарного плана закупок',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -101,11 +102,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаТоваров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -115,6 +118,32 @@
 			xtype: 'fieldset',
 			title: 'Номенклатура, для подбора поставщиков',
 			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:16px;width:619px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -193,15 +222,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИКатегорииКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:115px;width:619px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -371,11 +409,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КонечнаяТаблица');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаПомощникаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

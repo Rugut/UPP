@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Оформление строки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -77,18 +78,17 @@
 			text: 'Цвет фона:',
 			style: 'position:absolute;left:8px;top:108px;width:79px;height:19px;text-align:left;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:184px;width:400px;height:25px;',

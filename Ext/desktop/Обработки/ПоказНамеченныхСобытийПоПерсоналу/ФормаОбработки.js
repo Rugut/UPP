@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Запланированные кадровые перестановки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -169,11 +170,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеРезультаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПоказНамеченныхСобытийПоПерсоналу.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -184,6 +187,44 @@
 			name: 'КнопкаВыбораПериода',
 			text: '...',
 			style: 'position:absolute;left:273px;top:8px;width:20px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:56px;width:525px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Установить',
+				},
+				{
+					text:'Снять',
+				},
+				'-',
+				{
+					text:'Инвертировать',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -257,45 +298,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:56px;width:525px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Удалить',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Установить',
-				},
-				{
-					text:'Снять',
-				},
-				'-',
-				{
-					text:'Инвертировать',
-				},
-			]
-		},
 	]
 	});
 });

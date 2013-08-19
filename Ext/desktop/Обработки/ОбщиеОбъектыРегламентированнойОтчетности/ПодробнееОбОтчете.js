@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подробнее об отчете',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -102,11 +103,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФормыОтчета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ПодробнееОбОтчетеСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ПодробнееОбОтчетеСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

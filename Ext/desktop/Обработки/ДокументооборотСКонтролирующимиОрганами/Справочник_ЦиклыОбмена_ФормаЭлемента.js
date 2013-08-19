@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Циклы обмена',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -56,6 +57,19 @@
 			name: 'Организация',
 			text: 'Организация',
 			style: 'position:absolute;left:119px;top:133px;width:591px;height:15px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
+			items:
+			[
+				{
+					text:'Показать документы',
+				},
+				{
+					text:'Показать отчет о состоянии',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -1193,20 +1207,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Показать документы',
-				},
-				{
-					text:'Показать отчет о состоянии',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:599px;width:718px;height:25px;',

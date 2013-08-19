@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки формирования документов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -76,14 +77,9 @@
 				};
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:480px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -129,6 +125,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:85px;width:480px;height:25px;',

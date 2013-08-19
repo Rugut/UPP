@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор характеристики номенклатуры по значениям свойств',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -30,6 +31,28 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:29px;width:380px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'Перечитать',
 				},
 			]
 		},
@@ -64,7 +87,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
-					fields: ['ПометкаУдаления','Свойство','Значение',]
+					fields: ['Ссылка','ПометкаУдаления','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -95,11 +118,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ХарактеристикиНоменклатуры.ФормаВыбораСОтборомСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ХарактеристикиНоменклатуры.ФормаВыбораСОтборомСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -130,7 +155,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
-					fields: ['ПометкаУдаления','Характеристика',]
+					fields: ['Ссылка','ПометкаУдаления','Характеристика',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -158,11 +183,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Характеристики');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ХарактеристикиНоменклатуры.ФормаВыбораСОтборомСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ХарактеристикиНоменклатуры.ФормаВыбораСОтборомСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -207,29 +234,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:29px;width:380px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				{
-					text:'&Изменить',
-				},
-				{
-					text:'Закончить редактирование',
-				},
-				{
-					text:'Перечитать',
-				},
-			]
-		},
 	]
 	});
 });

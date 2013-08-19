@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Оформление документов ""Реализация товаров и услуг""',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -33,6 +34,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:112px;top:125px;width:239px;height:19px;',
+			width: 239,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -69,6 +72,23 @@
 			xtype: 'fieldset',
 			title: 'Рамка',
 			style: 'position:absolute;left:8px;top:205px;width:360px;height:163px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:744px;height:25px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				{
+					text:'Показывать форму настройки при формировании документов',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -142,6 +162,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:487px;top:125px;width:239px;height:19px;',
+			width: 239,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -325,24 +347,6 @@
 				},
 				{
 					text:'Сформировать документы',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:744px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				{
-					text:'Показывать форму настройки при формировании документов',
 				},
 			]
 		},

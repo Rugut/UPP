@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Скрытые отчеты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,7 +47,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.РегламентированныеОтчеты").data,
-					fields: ['Пометка','Код','Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Пометка','Код','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -77,15 +78,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РегламентированныеОтчеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентированныеОтчеты.ФормаВыбораЭлементовДляВосстановленияПоказаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентированныеОтчеты.ФормаВыбораЭлементовДляВосстановленияПоказаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:10px;width:534px;height:25px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+			]
 		},
 		],
 	}],
@@ -111,20 +127,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:10px;width:534px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
 				},
 			]
 		},

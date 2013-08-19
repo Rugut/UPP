@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Классификация покупателей по стадиям взаимоотношений',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,6 +47,33 @@
 			width: 120,
 			height: 19,
 			style: 'position:absolute;left:162px;top:33px;width:120px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -133,6 +161,16 @@
 			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:358px;top:6px;width:66px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:32px;width:630px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			id: 'ТаблицаРаспределенияКонтрагентов',
@@ -254,11 +292,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаРаспределенияКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КлассификацияПокупателейПоСтадиямВзаимоотношений.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -487,34 +527,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:405px;width:660px;height:25px;',

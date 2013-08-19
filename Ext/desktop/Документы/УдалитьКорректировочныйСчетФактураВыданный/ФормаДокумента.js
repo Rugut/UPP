@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Корректировочный счет-фактура выданный',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -565,15 +566,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТоварыИУслуги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УдалитьКорректировочныйСчетФактураВыданный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:751px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по счету-фактуре',
+				},
+			]
 		},
 		{
 			xtype: 'label',

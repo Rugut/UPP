@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистрация оплаты ОС и НМА для УСН',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -93,6 +94,26 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'',
+				},
+				'-',
+					]
+				},
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:524px;height:195px;',
 			height: 195,width: 524,
@@ -102,6 +123,13 @@
 					title:'Основные средства',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Оплата',
 			xtype: 'grid',
@@ -168,11 +196,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Оплата');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -250,15 +280,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОплатаНМА');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -332,15 +371,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОплатаМодернизацииОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РегистрацияОплатыОсновныхСредствДляУСН.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -411,27 +459,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'',
-				},
-				'-',
-					]
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:334px;width:540px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -185,6 +186,16 @@
 			width: 132,
 			height: 19,
 			style: 'position:absolute;left:218px;top:57px;width:132px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:83px;width:709px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить ОС',
+				},
+			]
 		},
 		{
 			id: 'ОсновныеСредства',
@@ -387,41 +398,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсновныеСредства');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПереводОсновныхСредствИИнвестиционнойСобственностиМеждународный.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'button',
-			name: 'КнопкаВыбораПериода',
-			text: '...',
-			style: 'position:absolute;left:354px;top:57px;width:20px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:83px;width:709px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заполнить ОС',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:725px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -446,6 +437,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'button',
+			name: 'КнопкаВыбораПериода',
+			text: '...',
+			style: 'position:absolute;left:354px;top:57px;width:20px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:351px;width:725px;height:25px;',

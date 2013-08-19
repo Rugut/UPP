@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма №4',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,30 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			items:
+			[
+				{
+					text:'Проверить в Интернете',
+				},
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Подготовить к отправке и подписать',
+				},
+				{
+					text:'Подготовить к отправке',
+				},
+				'-',
+				{
+					text:'Показать отправки',
+				},
+			]
+		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:457px;width:720px;height:25px;',
@@ -45,6 +70,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:82px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -69,6 +96,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:174px;top:23px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -159,6 +188,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:0px;top:261px;width:232px;height:19px;',
+			width: 232,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -234,31 +265,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Проверить в Интернете',
-				},
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Подготовить к отправке и подписать',
-				},
-				{
-					text:'Подготовить к отправке',
-				},
-				'-',
-				{
-					text:'Показать отправки',
-				},
-			]
-		},
 	]
 	});
 });

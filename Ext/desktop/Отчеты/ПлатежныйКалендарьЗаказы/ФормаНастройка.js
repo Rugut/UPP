@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -166,15 +167,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОсновныеГруппировки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:98px;width:324px;height:24px;',
+			items:
+			[
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Установить все',
+				},
+				{
+					text:'Снять все',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -243,11 +265,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДополнительныеГруппировки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -362,15 +386,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежныйКалендарьЗаказы.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:324px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выгруженные файлы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -81,11 +82,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоответствиеКонтрагентовИФайлов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаДанныхCommerceML.ФормаФайловВыгрузкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

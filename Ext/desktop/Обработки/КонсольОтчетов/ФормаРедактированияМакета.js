@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Редактирование макета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -25,6 +26,24 @@
 					title:'Макет',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:398px;height:25px;',
+			items:
+			[
+				{
+					text:'Получить макет',
+				},
+				'-',
+				{
+					text:'Получить макет с оформлением',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 					]
 				},
 				{

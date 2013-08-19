@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выбор характеристики номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
-					fields: ['Свойство','Значение',]
+					fields: ['Ссылка','Свойство','Значение',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,11 +69,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СвойстваИЗначения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -115,7 +118,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ХарактеристикиНоменклатуры").data,
-					fields: ['Картинка','Наименование','ОКП.Представление','Владелец',]
+					fields: ['Ссылка','Картинка','Наименование','ОКП.Представление','Владелец',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -149,11 +152,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокХарактеристики');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ХарактеристикиНоменклатуры.ФормаВыбораБезОтбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

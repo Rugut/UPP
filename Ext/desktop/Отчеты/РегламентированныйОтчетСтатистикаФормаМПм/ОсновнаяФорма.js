@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статистика: Форма МП(микро)',
 	
 	layout: {type: "fit",align: "stretch"},

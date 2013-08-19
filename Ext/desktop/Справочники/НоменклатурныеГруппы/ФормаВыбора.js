@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Номенклатурные группы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -64,7 +65,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
-					fields: ['Картинка','Код','Наименование','ЕдиницаХраненияОстатков.Представление','БазоваяЕдиницаИзмерения.Представление','СтавкаНДС.Представление',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','Наименование','ЕдиницаХраненияОстатков.Представление','БазоваяЕдиницаИзмерения.Представление','СтавкаНДС.Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -104,15 +105,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НоменклатурныеГруппы.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НоменклатурныеГруппы.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+			]
 		},
 		{
 			id: 'Дерево',
@@ -133,7 +147,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НоменклатурныеГруппы").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -158,11 +172,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НоменклатурныеГруппы.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НоменклатурныеГруппы.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -172,18 +188,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-			]
-		},
 	]
 	});
 });

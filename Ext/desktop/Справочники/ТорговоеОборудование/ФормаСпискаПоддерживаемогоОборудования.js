@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Поддерживаемое торговое оборудование',
 	
 	layout: {type: "fit",align: "stretch"},

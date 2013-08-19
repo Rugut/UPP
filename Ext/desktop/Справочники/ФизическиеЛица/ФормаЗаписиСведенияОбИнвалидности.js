@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения об инвалидности',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -104,6 +105,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:8px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		],
 	}],

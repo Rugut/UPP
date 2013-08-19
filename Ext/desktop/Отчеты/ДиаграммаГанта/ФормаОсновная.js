@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -48,6 +49,58 @@
 			name: 'Надпись4',
 			text: 'по:',
 			style: 'position:absolute;left:148px;top:33px;width:16px;height:19px;text-align:center;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:586px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Сформировать',
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'Отбор',
+				},
+				'-',
+				{
+					text:'Настройка...',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -101,6 +154,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 					]
 				},
@@ -152,6 +207,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 					]
 				},
@@ -160,6 +217,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:366px;top:33px;width:212px;height:19px;',
+			width: 212,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -213,6 +272,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:162px;top:0px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
 		},
 					]
 				},
@@ -222,59 +283,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:586px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Сформировать',
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Сформировать',
-				},
-				'-',
-				{
-					text:'Отбор',
-				},
-				'-',
-				{
-					text:'Настройка...',
-				},
-				'-',
-				{
-					text:'Печать',
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

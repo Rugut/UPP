@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод серийных номеров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:781px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'label',
 			name: 'НадписьНоменклатура',
@@ -276,15 +284,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СерийныеНомера');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:430px;top:26px;width:335px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 		{
 			id: 'НачальныеЗначенияПорядкаПрисвоения',
@@ -370,15 +388,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НачальныеЗначенияПорядкаПрисвоения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:26px;width:149px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 		{
 			xtype: 'label',
@@ -487,6 +515,13 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:26px;width:765px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'СерийныеНомераВвод',
 			xtype: 'grid',
 			style: 'position:absolute;left:0px;top:50px;width:765px;height:121px;',
@@ -543,11 +578,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СерийныеНомераВвод');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводСерийныхНомеров.ОсновнаяФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -581,14 +618,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:781px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:307px;width:781px;height:25px;',

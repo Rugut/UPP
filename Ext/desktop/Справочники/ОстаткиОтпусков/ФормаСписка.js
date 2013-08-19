@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Остатки отпусков прошлых лет',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,7 +47,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
-					fields: ['Картинка','Физлицо.Представление','ДатаАктуальности',]
+					fields: ['Ссылка','Картинка','Физлицо.Представление','ДатаАктуальности',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -77,101 +78,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОстаткиОтпусков.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОстаткиОтпусков.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		{
-			id: 'ТабличноеПоле1',
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:176px;width:384px;height:116px;',
-			height: 116,width: 384,
-			columns:
-			[
-				{
-					text:'Количество',
-					width:'100',
-					dataIndex:'Количество',
-					flex:1,
-				},
-				{
-					text:'Дата начала рабочего года',
-					width:'100',
-					dataIndex:'ДатаНачалаРабочегоГода',
-					flex:1,
-				},
-				{
-					text:'Дата окончания рабочего года',
-					width:'100',
-					dataIndex:'ДатаОкончанияРабочегоГода',
-					flex:1,
-				},
-			],
-			store:
-			{
-				data: Ext.create("Ext.data.Store",
-				{
-					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
-					fields: ['Количество','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода',]
-				}).data.items,
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 200},
-				fields:
-				[
-					{
-						name:'Ссылка',
-					},
-					{
-						name:'Количество',
-					},
-					{
-						name:'ДатаНачалаРабочегоГода',
-					},
-					{
-						name:'ДатаОкончанияРабочегоГода',
-					},
-				]
-			},
-			listeners:
-			{
-				dblclick:
-				{
-					element: 'body',
-					fn: function ()
-					{
-						var грид = Ext.getCmp('ТабличноеПоле1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.ОстаткиОтпусков.ФормаСпискаСобытия'], function ()
-						{
-							var obj = Ext.create("Справочники.ОстаткиОтпусков.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
-						});
-					}
-				}
-			},
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Остатки',
-			style: 'position:absolute;left:8px;top:156px;width:384px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -256,6 +177,89 @@
 				},
 			]
 		},
+		{
+			id: 'ТабличноеПоле1',
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:176px;width:384px;height:116px;',
+			height: 116,width: 384,
+			columns:
+			[
+				{
+					text:'Количество',
+					width:'100',
+					dataIndex:'Количество',
+					flex:1,
+				},
+				{
+					text:'Дата начала рабочего года',
+					width:'100',
+					dataIndex:'ДатаНачалаРабочегоГода',
+					flex:1,
+				},
+				{
+					text:'Дата окончания рабочего года',
+					width:'100',
+					dataIndex:'ДатаОкончанияРабочегоГода',
+					flex:1,
+				},
+			],
+			store:
+			{
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОстаткиОтпусков").data,
+					fields: ['Ссылка','Количество','ДатаНачалаРабочегоГода','ДатаОкончанияРабочегоГода',]
+				}).data.items,
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОстаткиОтпусков/ВыбратьПоСсылке/100', timeout: 200},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Количество',
+					},
+					{
+						name:'ДатаНачалаРабочегоГода',
+					},
+					{
+						name:'ДатаОкончанияРабочегоГода',
+					},
+				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('ТабличноеПоле1');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
+						Ext.require(['Справочники.ОстаткиОтпусков.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОстаткиОтпусков.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(стрЗнач);
+						});
+					}
+				}
+			},
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Остатки',
+			style: 'position:absolute;left:8px;top:156px;width:384px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

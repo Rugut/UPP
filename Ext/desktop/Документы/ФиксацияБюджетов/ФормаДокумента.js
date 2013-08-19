@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Фиксация бюджетов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -261,14 +262,9 @@
 			height: 19,
 			style: 'position:absolute;left:96px;top:177px;width:220px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:324px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -286,6 +282,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:204px;width:324px;height:25px;',

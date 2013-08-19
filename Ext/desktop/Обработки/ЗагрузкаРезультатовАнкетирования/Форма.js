@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Загрузка результатов анкетирования',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -91,11 +92,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Входящие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -151,11 +154,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Вложения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -218,15 +223,39 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПолеОтветов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:74px;width:222px;height:25px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Загрузить',
+				},
+				'-',
+				{
+					text:'Пометить все файлы для загрузки',
+				},
+				'-',
+				{
+					text:'Пометить все файлы как незагружаемые',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -399,11 +428,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Дерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -417,6 +448,35 @@
 			width: 484,
 			height: 19,
 			style: 'position:absolute;left:65px;top:5px;width:484px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:105px;width:273px;height:24px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Пометить все файлы для загрузки',
+				},
+				{
+					text:'Пометить все файлы как незагружаемые',
+				},
+				'-',
+				{
+					text:'Удалить текущий файл с данными опроса после загрузки',
+				},
+				'-',
+				{
+					text:'Предварительный просмотр файла',
+				},
+				'-',
+				{
+					text:'Загрузить',
+				},
+			]
 		},
 		{
 			id: 'ПолеОтветовИзКаталога',
@@ -475,15 +535,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПолеОтветовИзКаталога');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗагрузкаРезультатовАнкетирования.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:285px;top:105px;width:264px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -562,14 +634,9 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:573px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -577,6 +644,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

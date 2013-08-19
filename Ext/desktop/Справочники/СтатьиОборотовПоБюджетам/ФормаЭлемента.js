@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Статьи оборотов по бюджетам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:495px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:84px;width:479px;height:316px;',
@@ -350,7 +358,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СтатьиОборотовПоБюджетам").data,
-					fields: ['НомерСтроки','СчетДт','СчетКт','КоэффициентДляСуммы','КоэффициентДляКоличества',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','СчетДт','СчетКт','КоэффициентДляСуммы','КоэффициентДляКоличества',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -387,15 +395,51 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ШаблоныПроводок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СтатьиОборотовПоБюджетам.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СтатьиОборотовПоБюджетам.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:465px;height:27px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -627,14 +671,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:495px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:432px;width:495px;height:25px;',

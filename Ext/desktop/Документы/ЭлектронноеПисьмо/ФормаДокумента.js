@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Электронное письмо',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,19 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			items:
+			[
+				{
+					text:'HTML',
+				},
+				{
+					text:'Простой текст',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -29,6 +43,109 @@
 			name: 'НадписьКому',
 			text: 'Кому:',
 			style: 'position:absolute;left:7px;top:57px;width:85px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Ответить',
+				},
+				{
+					text:'Ответить всем',
+				},
+				{
+					text:'Переслать',
+				},
+				'-',
+				{
+					text:'Ввести событие',
+				},
+				{
+					text:'Показать заголовок письма',
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Редактирование',
+				},
+				{
+					text:'Восстановить исходный текст',
+				},
+				'-',
+				{
+					text:'Адресная книга',
+				},
+				'-',
+				{
+					text:'Создать опрос',
+				},
+				'-',
+				{
+					text:'Структура подчиненности',
+				},
+				'-',
+				{
+					text:'Найти в списке',
+				},
+				{
+					text:'Записать',
+				},
+				{
+					text:'Записать и закрыть',
+				},
+				{
+					text:'Перечитать',
+				},
+				{
+					text:'Скопировать',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Ответить',
+				},
+				'-',
+				{
+					text:'Ответить всем',
+				},
+				'-',
+				{
+					text:'Переслать',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Записать и закрыть',
+				},
+				'-',
+				{
+					text:'Адресная книга',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -93,6 +210,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:102px;top:33px;width:552px;height:19px;',
+			width: 552,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -327,6 +446,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:101px;top:59px;width:277px;height:19px;',
+			width: 277,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -400,15 +521,125 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВложенияПисьма');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+				{
+					text:'(Список отборов)',
+				},
+				'-',
+				{
+					text:'(История отборов)',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Сортировка',
+					menu: [
+				{
+					text:'(Поля сортировки)',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Открыть',
+				},
+				'-',
+				{
+					text:'Сохранить',
+				},
+				'-',
+					]
+				},
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Открыть',
+				},
+				'-',
+				{
+					text:'Сохранить',
+				},
+			]
 		},
 					]
 				},
@@ -473,15 +704,48 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВложенияПисьмаТЗ');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЭлектронноеПисьмо.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				'-',
+				'-',
+				{
+					text:'Открыть',
+				},
+				'-',
+				{
+					text:'Сохранить',
+				},
+			]
 		},
 					]
 				},
@@ -516,124 +780,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'HTML',
-				},
-				{
-					text:'Простой текст',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Ответить',
-				},
-				{
-					text:'Ответить всем',
-				},
-				{
-					text:'Переслать',
-				},
-				'-',
-				{
-					text:'Ввести событие',
-				},
-				{
-					text:'Показать заголовок письма',
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Редактирование',
-				},
-				{
-					text:'Восстановить исходный текст',
-				},
-				'-',
-				{
-					text:'Адресная книга',
-				},
-				'-',
-				{
-					text:'Создать опрос',
-				},
-				'-',
-				{
-					text:'Структура подчиненности',
-				},
-				'-',
-				{
-					text:'Найти в списке',
-				},
-				{
-					text:'Записать',
-				},
-				{
-					text:'Записать и закрыть',
-				},
-				{
-					text:'Перечитать',
-				},
-				{
-					text:'Скопировать',
-				},
-				'-',
-				{
-					text:'Удалить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Ответить',
-				},
-				'-',
-				{
-					text:'Ответить всем',
-				},
-				'-',
-				{
-					text:'Переслать',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Записать и закрыть',
-				},
-				'-',
-				{
-					text:'Адресная книга',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Классификатор профессий и должностей. Раздел ""Профессии рабочих"" ',
 	
 	layout: {type: "fit",align: "stretch"},

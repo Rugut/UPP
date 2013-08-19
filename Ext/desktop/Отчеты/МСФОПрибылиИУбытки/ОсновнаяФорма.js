@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет о прибылях и убытках по МСФО',
 	
 	layout: {type: "fit",align: "stretch"},

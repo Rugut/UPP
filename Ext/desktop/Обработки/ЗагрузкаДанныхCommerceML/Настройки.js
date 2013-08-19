@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки загрузки данных',
 	
 	layout: {type: "fit",align: "stretch"},

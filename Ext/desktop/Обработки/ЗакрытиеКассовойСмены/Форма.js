@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Закрытие кассовой смены',
 	
 	layout: {type: "fit",align: "stretch"},

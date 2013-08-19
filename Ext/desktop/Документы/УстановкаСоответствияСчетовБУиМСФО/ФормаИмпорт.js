@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Импорт правил соответствия счетов БУ и МСФО',
 	
 	layout: {type: "fit",align: "stretch"},

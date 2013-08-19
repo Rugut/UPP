@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Дополнительные параметры',
 	
 	layout: {type: "fit",align: "stretch"},

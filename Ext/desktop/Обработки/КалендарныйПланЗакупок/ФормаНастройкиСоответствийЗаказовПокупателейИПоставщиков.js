@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помощник настройки соответствий заказов покупателей и заказов поставщикам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -81,11 +82,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоСоответствияЗаказов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КалендарныйПланЗакупок.ФормаНастройкиСоответствийЗаказовПокупателейИПоставщиковСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КалендарныйПланЗакупок.ФормаНастройкиСоответствийЗаказовПокупателейИПоставщиковСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -100,6 +103,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:592px;top:12px;width:180px;height:19px;',
+			width: 180,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',

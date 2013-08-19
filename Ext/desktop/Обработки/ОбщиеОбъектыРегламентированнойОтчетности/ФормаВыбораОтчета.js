@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выберите отчет',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -144,11 +145,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЖурналОтчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

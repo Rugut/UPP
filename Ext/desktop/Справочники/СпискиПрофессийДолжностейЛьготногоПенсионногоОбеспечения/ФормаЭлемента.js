@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Профессии и должности льготного пенсионного обеспечения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -45,18 +46,17 @@
 			height: 19,
 			style: 'position:absolute;left:94px;top:57px;width:220px;height:19px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:322px;height:25px;',
-			dock: 'top',
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:84px;width:322px;height:25px;',

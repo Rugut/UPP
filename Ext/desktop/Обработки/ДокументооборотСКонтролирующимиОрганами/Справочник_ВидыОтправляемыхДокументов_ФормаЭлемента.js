@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Вид отправляемого документа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -197,6 +198,13 @@
 			text: 'Описание:',
 			style: 'position:absolute;left:8px;top:86px;width:84px;height:15px;text-align:left;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
+			items:
+			[
+			]
+		},
 		],
 	}],
 	dockedItems:
@@ -226,14 +234,6 @@
 				{
 					text:'Справка',
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

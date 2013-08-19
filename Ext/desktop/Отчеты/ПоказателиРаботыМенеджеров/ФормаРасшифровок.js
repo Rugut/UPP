@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет  Показатели работы менеджеров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,14 +16,9 @@
 		xtype: 'form',
 		items:
 		[
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:569px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -41,6 +37,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

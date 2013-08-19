@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Авторизация: Введите пароль или прочитайте регистрационную карту',
 	
 	layout: {type: "fit",align: "stretch"},

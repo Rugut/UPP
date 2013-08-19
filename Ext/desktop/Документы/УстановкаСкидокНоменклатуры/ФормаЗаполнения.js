@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Установка скидок номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},

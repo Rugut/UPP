@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежное поручение исходящее',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -948,15 +949,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РасшифровкаПлатежа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:21px;width:296px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1059,11 +1072,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПеречислениеЗаработнойПлаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПлатежноеПоручениеИсходящее.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1073,6 +1088,40 @@
 			xtype: 'fieldset',
 			title: 'Ведомости на выплату заработной платы',
 			style: 'position:absolute;left:6px;top:7px;width:619px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:23px;width:619px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Изменить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Закончить редактирование',
+				},
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				{
+					text:'Сортировать по возрастанию',
+				},
+				{
+					text:'Сортировать по убыванию',
+				},
+			]
 		},
 					]
 				},
@@ -2403,6 +2452,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:124px;top:27px;width:177px;height:19px;',
+			width: 177,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2413,10 +2464,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:124px;top:81px;width:505px;height:19px;',
+			width: 505,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:124px;top:0px;width:505px;height:19px;',
+			width: 505,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2575,10 +2630,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:124px;top:81px;width:505px;height:19px;',
+			width: 505,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:124px;top:0px;width:505px;height:19px;',
+			width: 505,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -2685,6 +2744,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:131px;top:28px;width:505px;height:19px;',
+			width: 505,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2737,6 +2798,13 @@
 		},
 					]
 				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
+			items:
+			[
 			]
 		},
 		{
@@ -2951,14 +3019,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

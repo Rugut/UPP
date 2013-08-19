@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Нормативы обслуживания ОС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -334,6 +335,17 @@
 			style: 'position:absolute;left:136px;top:250px;width:85px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:293px;width:390px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			id: 'ОС',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:317px;width:390px;height:80px;',
@@ -364,7 +376,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НормативыОбслуживанияОС").data,
-					fields: ['НомерСтроки','ИнвентарныйНомер','ОсновноеСредство',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ИнвентарныйНомер','ОсновноеСредство',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -395,15 +407,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НормативыОбслуживанияОС.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НормативыОбслуживанияОС.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -462,26 +483,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:6px;top:293px;width:390px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

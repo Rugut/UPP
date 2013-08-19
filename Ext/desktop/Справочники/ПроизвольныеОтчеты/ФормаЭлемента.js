@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Общая настройка отчета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -62,7 +63,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
-					fields: ['ИмяИсточника','НаборДанных',]
+					fields: ['Ссылка','Родитель.Представление','ИмяИсточника','НаборДанных',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -90,15 +91,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ИсточникиДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроизвольныеОтчеты.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроизвольныеОтчеты.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
+			items:
+			[
+				{
+					text:'Показатель монитора эффективности',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -156,6 +169,13 @@
 			title: 'Источники данных',
 			style: 'position:absolute;left:8px;top:95px;width:429px;height:16px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:111px;width:429px;height:24px;',
+			items:
+			[
+			]
+		},
 		],
 	}],
 	dockedItems:
@@ -181,25 +201,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Показатель монитора эффективности',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:111px;width:429px;height:24px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Показатели работы менеджеров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -50,52 +51,8 @@
 			style: 'position:absolute;left:166px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:60px;width:606px;height:24px;',
-			height: 24,width: 606,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Страница1',
-					items:
-					[
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Менеджер:',
-			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'ПолеНастройкиМенеджер',
-			width: 363,
-			height: 19,
-			style: 'position:absolute;left:243px;top:0px;width:363px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:81px;top:0px;width:160px;height:19px;',
-		},
-					]
-				},
-			]
-		},
-		{
-			xtype: 'button',
-			name: 'КнопкаНастройкаПериода',
-			text: '...',
-			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:622px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -161,6 +118,51 @@
 				},
 			]
 		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:60px;width:606px;height:24px;',
+			height: 24,width: 606,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Менеджер:',
+			style: 'position:absolute;left:0px;top:0px;width:79px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'ПолеНастройкиМенеджер',
+			width: 363,
+			height: 19,
+			style: 'position:absolute;left:243px;top:0px;width:363px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:81px;top:0px;width:160px;height:19px;',
+			width: 160,
+			height: 19,
+		},
+					]
+				},
+			]
+		},
+		{
+			xtype: 'button',
+			name: 'КнопкаНастройкаПериода',
+			text: '...',
+			style: 'position:absolute;left:248px;top:33px;width:20px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

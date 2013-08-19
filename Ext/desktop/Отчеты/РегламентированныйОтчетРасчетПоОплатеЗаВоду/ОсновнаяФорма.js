@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет по оплате за воду',
 	
 	layout: {type: "fit",align: "stretch"},

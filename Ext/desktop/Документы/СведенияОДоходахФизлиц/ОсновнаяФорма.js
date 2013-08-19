@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о доходах физлиц',
 	
 	layout: {type: "fit",align: "stretch"},

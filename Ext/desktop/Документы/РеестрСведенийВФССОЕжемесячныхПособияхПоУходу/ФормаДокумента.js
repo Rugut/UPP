@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Реестр сведений в ФСС о ежемесячных пособиях по уходу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -154,6 +155,13 @@
 			style: 'position:absolute;left:96px;top:528px;width:887px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:991px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:81px;width:975px;height:441px;',
 			height: 441,width: 975,
@@ -163,6 +171,16 @@
 					title:'Пособия',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:961px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по приказам на отпуск',
+				},
+			]
+		},
 		{
 			id: 'РаботникиОрганизации',
 			xtype: 'grid',
@@ -238,11 +256,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РаботникиОрганизации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1187,11 +1207,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДанныеОДетях');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РеестрСведенийВФССОЕжемесячныхПособияхПоУходу.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1202,6 +1224,41 @@
 			name: 'Надпись21',
 			text: 'Документы на всех детей',
 			style: 'position:absolute;left:6px;top:76px;width:160px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:98px;width:565px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1999,14 +2056,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:991px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:991px;height:25px;',

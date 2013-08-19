@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Фамилия, имя, отчество физ. лица',
 	
 	layout: {type: "fit",align: "stretch"},

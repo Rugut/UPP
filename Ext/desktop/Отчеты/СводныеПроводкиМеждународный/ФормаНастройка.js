@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка Сводные проводки',
 	
 	layout: {type: "fit",align: "stretch"},

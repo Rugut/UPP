@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Рабочие центры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -91,6 +92,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:84px;width:423px;height:201px;',
 			height: 201,width: 423,
@@ -125,7 +133,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.РабочиеЦентры").data,
-					fields: ['НомерСтроки','РабочийЦентр',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','РабочийЦентр',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -153,15 +161,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПодчиненныеРабочиеЦентры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РабочиеЦентры.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РабочиеЦентры.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:27px;width:409px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -189,14 +206,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:293px;width:439px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Автоподбор характеристики номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -26,6 +27,13 @@
 					title:'Исходные комплектующие',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:484px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'АвтоподборХарактеристики',
 			xtype: 'grid',
@@ -51,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['НомерСтроки','Свойство',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Свойство',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -79,11 +87,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('АвтоподборХарактеристики');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораХарактеристикиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораХарактеристикиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -95,6 +105,13 @@
 					title:'Возвратные отходы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:484px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'АвтоподборХарактеристикиОтходы',
 			xtype: 'grid',
@@ -120,7 +137,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['НомерСтроки','Свойство',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Свойство',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -148,11 +165,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('АвтоподборХарактеристикиОтходы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораХарактеристикиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаАвтоподбораХарактеристикиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

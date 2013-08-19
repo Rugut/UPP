@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заявление о ввозе товаров и уплате косвенных налогов',
 	
 	layout: {type: "fit",align: "stretch"},

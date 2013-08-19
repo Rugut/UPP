@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Акцизы на нефтепродукты',
 	
 	layout: {type: "fit",align: "stretch"},

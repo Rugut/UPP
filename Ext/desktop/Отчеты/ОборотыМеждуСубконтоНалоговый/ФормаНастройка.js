@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка Обороты между субконто',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -158,11 +159,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВидыСубконто');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -216,15 +219,31 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КорВидыСубконто');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:116px;width:182px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:194px;top:116px;width:182px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'trigger',
@@ -319,15 +338,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Детализация');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:24px;width:222px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'ДоступныеПоля',
@@ -368,11 +396,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоступныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -480,15 +510,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотыМеждуСубконтоНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},

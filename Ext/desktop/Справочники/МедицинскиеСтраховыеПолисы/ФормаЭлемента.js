@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Медицинский страховой полис',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -336,6 +337,17 @@
 			style: 'position:absolute;left:145px;top:331px;width:307px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Файлы',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСтрахование',
 			text: 'Страхование:',
@@ -419,18 +431,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Файлы',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:490px;width:460px;height:25px;',

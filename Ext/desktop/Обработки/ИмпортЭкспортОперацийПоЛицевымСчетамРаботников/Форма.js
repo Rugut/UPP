@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Импорт / экспорт операций по лицевым счетам сотрудников',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -164,15 +165,46 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗявкиНаОткрытиеСчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:97px;width:752px;height:24px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Установить интервал',
+				},
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Выгрузить',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -233,6 +265,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:664px;top:6px;width:94px;height:19px;',
+			width: 94,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -243,6 +277,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:664px;top:30px;width:94px;height:19px;',
+			width: 94,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -446,6 +482,35 @@
 			style: 'position:absolute;left:6px;top:6px;width:112px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:97px;width:752px;height:24px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Установить интервал',
+				},
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Выгрузить',
+				},
+				'-',
+				{
+					text:'Печать',
+				},
+			]
+		},
+		{
 			id: 'ПлатежныеПорученияЗачислениеЗарплаты',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:121px;width:752px;height:282px;',
@@ -556,11 +621,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПлатежныеПорученияЗачислениеЗарплаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -620,6 +687,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:664px;top:6px;width:94px;height:19px;',
+			width: 94,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -630,6 +699,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:664px;top:30px;width:94px;height:19px;',
+			width: 94,
+			height: 19,
 		},
 					]
 				},
@@ -656,6 +727,34 @@
 			name: 'Надпись7',
 			text: 'Каталог импорта:',
 			style: 'position:absolute;left:6px;top:7px;width:95px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:48px;width:752px;height:24px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Установить интервал',
+				},
+				'-',
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				{
+					text:'Загрузить',
+				},
+				'-',
+				{
+					text:'Лицевые счета',
+				},
+			]
 		},
 		{
 			id: 'ФайлыДляИмпорта',
@@ -723,11 +822,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФайлыДляИмпорта');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -853,11 +954,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОперацииПоСчетам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -935,15 +1038,57 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РегистрСведенийСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИмпортЭкспортОперацийПоЛицевымСчетамРаботников.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Установить отбор и сортировку списка...',
+				},
+				{
+					text:'Отбор по значению в текущей колонке',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'История отборов',
+					menu: [
+					]
+				},
+				{
+					text:'Отключить отбор',
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Сортировка',
+					menu: [
+					]
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+				{
+					text:'Настройка списка...',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 					]
 				},

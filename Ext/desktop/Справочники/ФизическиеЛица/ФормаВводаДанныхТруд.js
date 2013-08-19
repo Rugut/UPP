@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Физические лица',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -58,7 +59,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['НомерСтроки','Организация','НачалоРаботы','ОкончаниеРаботы','Должность',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','Организация','НачалоРаботы','ОкончаниеРаботы','Должность',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -95,15 +96,35 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТрудоваяДеятельность');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			items:
+			[
+				{
+					text:'Форма СЗВ-К',
+				},
+				'-',
+				{
+					text:'Заполнить по данным СЗВ-К',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -172,7 +193,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['ВидСтажа','ДатаОтсчета','РазмерЛет','РазмерМесяцев','РазмерДней',]
+					fields: ['Ссылка','Родитель.Представление','ВидСтажа','ДатаОтсчета','РазмерЛет','РазмерМесяцев','РазмерДней',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -209,11 +230,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Стажи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхТрудСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -223,25 +246,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Форма СЗВ-К',
-				},
-				'-',
-				{
-					text:'Заполнить по данным СЗВ-К',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:346px;width:400px;height:25px;',

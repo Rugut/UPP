@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Строки финансового расчета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -105,6 +106,13 @@
 			style: 'position:absolute;left:94px;top:109px;width:304px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'textfield',
 			hideLabel: true,
 			disabled: false,
@@ -123,14 +131,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:136px;width:406px;height:25px;',

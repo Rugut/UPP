@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выберите вид отчета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,35 +64,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораВидаОтчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ФормаВыбораВидаОтчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьОписаниеОтчета',
-			text: 'НадписьОписаниеОтчета',
-			style: 'position:absolute;left:8px;top:340px;width:521px;height:58px;',
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Описание',
-			style: 'position:absolute;left:8px;top:322px;width:521px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:537px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -138,6 +125,21 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьОписаниеОтчета',
+			text: 'НадписьОписаниеОтчета',
+			style: 'position:absolute;left:8px;top:340px;width:521px;height:58px;',
+		},
+		{
+			xtype: 'fieldset',
+			title: 'Описание',
+			style: 'position:absolute;left:8px;top:322px;width:521px;height:16px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

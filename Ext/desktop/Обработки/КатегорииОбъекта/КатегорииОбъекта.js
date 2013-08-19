@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Категории',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -101,11 +102,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КатегорииОбъекта');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КатегорииОбъекта.КатегорииОбъектаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КатегорииОбъекта.КатегорииОбъектаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

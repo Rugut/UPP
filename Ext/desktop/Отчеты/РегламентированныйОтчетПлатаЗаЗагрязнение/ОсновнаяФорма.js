@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Плата за загрязнение окружающей среды',
 	
 	layout: {type: "fit",align: "stretch"},

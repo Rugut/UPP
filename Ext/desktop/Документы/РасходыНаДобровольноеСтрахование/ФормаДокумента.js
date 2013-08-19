@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расходы на страхование',
 	
 	layout: {type: "fit",align: "stretch"},

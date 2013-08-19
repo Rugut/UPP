@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подбор объектов недвижимости',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -90,11 +91,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОбъектыНедвижимостиПодбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаПодбораОбъектовНедвижимостиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВосстановлениеНДСпоОбъектамНедвижимости.ФормаПодбораОбъектовНедвижимостиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -146,6 +149,28 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:55px;width:522px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Выделить все',
+				},
+				{
+					text:'Снять выделение всех',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+			]
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Отбирать только объекты недвижимости, введенные в эксплуатацию в 2006 году',
 			style: 'position:absolute;left:8px;top:31px;width:440px;height:19px;',
@@ -169,29 +194,6 @@
 				'-',
 				{
 					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:55px;width:522px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Выделить все',
-				},
-				{
-					text:'Снять выделение всех',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Очистить',
 				},
 			]
 		},

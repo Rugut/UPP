@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Подбор прочих затрат',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -57,14 +58,9 @@
 			text: 'НадписьВалютаРегл',
 			style: 'position:absolute;left:180px;top:33px;width:52px;height:21px;',
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:62px;width:241px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -80,6 +76,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

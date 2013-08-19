@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Погашение задолженности подотчетных лиц в регл. учете',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -160,6 +161,37 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:84px;width:636px;height:255px;',
 			height: 255,width: 636,
@@ -169,6 +201,16 @@
 					title:'Начисления',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить долгами подотчетных лиц',
+				},
+			]
+		},
 		{
 			id: 'Начисления',
 			xtype: 'grid',
@@ -280,11 +322,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -407,15 +451,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Удержания');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПогашениеЗадолженностиПодотчетныхЛицВРегламентированномУчете.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:622px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить долгами подотчетных лиц',
+				},
+			]
 		},
 					]
 				},
@@ -434,38 +490,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:371px;width:652px;height:25px;',

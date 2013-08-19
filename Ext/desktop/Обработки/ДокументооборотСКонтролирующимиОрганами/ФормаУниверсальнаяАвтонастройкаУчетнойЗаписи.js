@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Автоматическая настройка параметров учетной записи',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Варианты ответов опросов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -52,7 +53,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВариантыОтветовОпросов").data,
-					fields: ['Картинка','Наименование','ОценкаОтвета','ТребуетРазвернутыйОтвет',]
+					fields: ['Ссылка','Картинка','Наименование','ОценкаОтвета','ТребуетРазвернутыйОтвет',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -86,24 +87,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Список');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВариантыОтветовОпросов.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВариантыОтветовОпросов.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -225,6 +223,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выплата зарплаты расходными ордерами',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -180,11 +181,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеРКО');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыплатаЗарплатыРасходнымиОрдерами.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыплатаЗарплатыРасходнымиОрдерами.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -194,6 +197,27 @@
 			xtype: 'fieldset',
 			title: 'Выплаченные суммы',
 			style: 'position:absolute;left:8px;top:33px;width:584px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:49px;width:584px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Установить флаги',
+				},
+				{
+					text:'Снять флаги',
+				},
+				{
+					text:'Инвертировать',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -308,28 +332,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:49px;width:584px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Установить флаги',
-				},
-				{
-					text:'Снять флаги',
-				},
-				{
-					text:'Инвертировать',
-				},
-				'-',
-				{
-					text:'Обновить',
 				},
 			]
 		},

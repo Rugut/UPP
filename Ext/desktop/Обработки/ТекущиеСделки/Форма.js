@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Текущие сделки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,80 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Настроить интервал',
+				},
+				'-',
+				{
+					text:'Настроить отбор',
+				},
+				{
+					text:'Отбор по текущему значению',
+				},
+				{
+					text:'Снять отбор',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Анализ сделки',
+				},
+				'-',
+				{
+					text:'Настройка списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+				'-',
+				{
+					text:'Закрыть',
+				},
+				{
+					text:'Справка',
+				},
+					]
+				},
+				'-',
+				{
+					text:'Настроить интервал',
+				},
+				'-',
+				{
+					text:'Настроить отбор',
+				},
+				{
+					text:'Отбор по текущему значению',
+				},
+				{
+					text:'Снять отбор',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'textfield',
 			hideLabel: true,
@@ -150,11 +225,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СделкиПредставление');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТекущиеСделки.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТекущиеСделки.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -164,81 +241,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Настроить интервал',
-				},
-				'-',
-				{
-					text:'Настроить отбор',
-				},
-				{
-					text:'Отбор по текущему значению',
-				},
-				{
-					text:'Снять отбор',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Анализ сделки',
-				},
-				'-',
-				{
-					text:'Настройка списка...',
-				},
-				{
-					text:'Вывести список...',
-				},
-				'-',
-				{
-					text:'Закрыть',
-				},
-				{
-					text:'Справка',
-				},
-					]
-				},
-				'-',
-				{
-					text:'Настроить интервал',
-				},
-				'-',
-				{
-					text:'Настроить отбор',
-				},
-				{
-					text:'Отбор по текущему значению',
-				},
-				{
-					text:'Снять отбор',
-				},
-				'-',
-				'-',
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

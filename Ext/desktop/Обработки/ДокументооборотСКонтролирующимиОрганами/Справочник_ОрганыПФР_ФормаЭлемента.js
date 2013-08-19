@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Органы ПФР',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -46,6 +47,13 @@
 			style: 'position:absolute;left:152px;top:58px;width:375px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:535px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: '',
 			style: 'position:absolute;left:8px;top:84px;width:519px;height:3px;',
@@ -69,14 +77,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:535px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:119px;width:535px;height:25px;',

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка ABC-классификации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -24,6 +25,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:156px;top:34px;width:347px;height:19px;',
+			width: 347,
+			height: 19,
 		},
 		{
 			xtype: 'label',

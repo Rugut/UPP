@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка автоматического заполнения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
+			items:
+			[
+				{
+					text:'Поступления',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:794px;height:351px;',
@@ -832,6 +843,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:123px;top:51px;width:142px;height:19px;',
+			width: 142,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -960,6 +973,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:517px;top:51px;width:142px;height:19px;',
+			width: 142,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1139,15 +1154,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборПоступления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:768px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -1186,6 +1222,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:365px;top:315px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -2022,6 +2060,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:123px;top:51px;width:142px;height:19px;',
+			width: 142,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2132,6 +2172,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:517px;top:51px;width:142px;height:19px;',
+			width: 142,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2443,15 +2485,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОтборПлатежи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПланДвиженияДенежныхСредств.ФормаНастройкиЗаполненияСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:768px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -2490,6 +2553,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:365px;top:315px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -2504,17 +2569,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Поступления',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:810px;height:25px;',

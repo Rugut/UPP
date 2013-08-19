@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Адресная книга (подбор)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -82,11 +83,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КонтрагентыСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -167,15 +170,25 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('КонтактныеЛицаКонтрагентовСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			items:
+			[
+				'-',
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -211,10 +224,14 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:178px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -285,15 +302,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизЛицаСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			items:
+			[
+				{
+					text:'Контрагенты (Контактные лица)',
+				},
+				{
+					text:'Физические лица',
+				},
+				{
+					text:'Прочие контактные лица',
+				},
+				{
+					text:'Организации',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -310,6 +348,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -374,15 +414,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПрочиеКонтактныеЛицаСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			items:
+			[
+				{
+					text:'Контрагенты (Контактные лица)',
+				},
+				{
+					text:'Физические лица',
+				},
+				{
+					text:'Прочие контактные лица',
+				},
+				{
+					text:'Организации',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -399,6 +460,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -463,15 +526,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОрганизацииСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			items:
+			[
+				{
+					text:'Контрагенты (Контактные лица)',
+				},
+				{
+					text:'Физические лица',
+				},
+				{
+					text:'Прочие контактные лица',
+				},
+				{
+					text:'Организации',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -488,6 +572,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -552,15 +638,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЛичныеКонтактыСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'button',
@@ -577,6 +672,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -641,15 +738,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПользователиСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'button',
@@ -666,6 +772,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 					]
 				},
@@ -733,11 +841,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГруппыРассылкиСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -802,11 +912,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставГруппыРассылки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -815,6 +927,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -930,11 +1044,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РезультатыПоиска');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -943,6 +1059,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:292px;top:363px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
@@ -1046,15 +1164,43 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Кому');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'button',
@@ -1080,6 +1226,32 @@
 					title:'Копии',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'Копии',
 			xtype: 'grid',
@@ -1137,11 +1309,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Копии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1171,6 +1345,32 @@
 					title:'Скрытые копии',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'СкрытыеКопии',
 			xtype: 'grid',
@@ -1228,11 +1428,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СкрытыеКопии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1262,6 +1464,26 @@
 					title:'Объекты',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 		{
 			id: 'Объекты',
 			xtype: 'grid',
@@ -1310,11 +1532,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Объекты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдреснаяКнига.ФормаПодбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдреснаяКнига.ФормаПодбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

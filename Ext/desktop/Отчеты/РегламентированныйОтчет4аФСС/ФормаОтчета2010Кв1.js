@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: '4а-ФСС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -42,6 +43,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -64,6 +67,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:0px;top:5px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -131,6 +136,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:82px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -140,6 +147,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:422px;top:24px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',

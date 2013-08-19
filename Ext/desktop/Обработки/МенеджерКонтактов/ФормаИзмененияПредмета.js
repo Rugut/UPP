@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Укажите новый предмет',
 	
 	layout: {type: "fit",align: "stretch"},

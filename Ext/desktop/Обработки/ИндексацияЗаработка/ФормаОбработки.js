@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Помощник повышения зарплаты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -256,11 +257,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаИстории');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -442,11 +445,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаИстории1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -788,15 +793,54 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДолжностныеОклады');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:46px;top:109px;width:402px;height:24px;',
+			items:
+			[
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Проверить по штатному расписанию',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -897,15 +941,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ШтатноеРасписание');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:121px;top:101px;width:385px;height:26px;',
+			items:
+			[
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 					]
 				},
@@ -988,15 +1067,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТарифныеРазряды');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:113px;top:122px;width:267px;height:24px;',
+			items:
+			[
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 					]
 				},
@@ -1034,15 +1148,50 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДопТарифныеРазряды');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ИндексацияЗаработка.ФормаОбработкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:114px;top:94px;width:222px;height:26px;',
+			items:
+			[
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 					]
 				},

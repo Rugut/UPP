@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Премии сотрудникам организаций',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -153,15 +154,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПремииРаботниковОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПремииРаботниковОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			items:
+			[
+				{
+					text:'Зарплата к выплате (начисленные суммы)',
+				},
+				{
+					text:'Зарплата к выплате (начисленные суммы за вычетом налогов)',
+				},
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -196,20 +212,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Зарплата к выплате (начисленные суммы)',
-				},
-				{
-					text:'Зарплата к выплате (начисленные суммы за вычетом налогов)',
-				},
-			]
-		},
 	]
 	});
 });

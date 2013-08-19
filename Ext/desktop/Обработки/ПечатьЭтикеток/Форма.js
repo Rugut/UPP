@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Печать этикеток',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -202,11 +203,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеТовары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПечатьЭтикеток.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПечатьЭтикеток.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -460,6 +463,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:90px;top:13px;width:113px;height:19px;',
+			width: 113,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',

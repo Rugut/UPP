@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка: Карточка счета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -116,6 +117,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:124px;top:78px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -161,6 +164,13 @@
 					title:'Отбор',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:380px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Отбор',
 			xtype: 'grid',
@@ -245,11 +255,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КарточкаСчетаБюджетирование.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КарточкаСчетаБюджетирование.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

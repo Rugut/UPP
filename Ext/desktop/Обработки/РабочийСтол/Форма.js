@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Рабочий стол',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -2437,11 +2438,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСписокСсылокНаИТСПерсонал');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РабочийСтол.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РабочийСтол.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Особенности текущей версии подсистемы ""Регламентированная отчетность""',
 	
 	layout: {type: "fit",align: "stretch"},

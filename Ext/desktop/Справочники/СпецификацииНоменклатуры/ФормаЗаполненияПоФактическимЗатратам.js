@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Спецификации номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -146,7 +147,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпецификацииНоменклатуры").data,
-					fields: ['Материал','ХарактеристикаМатериала','СтатьяЗатрат','ЕдиницаИзмерения','Количество',]
+					fields: ['Ссылка','Родитель.Представление','Материал','ХарактеристикаМатериала','СтатьяЗатрат','ЕдиницаИзмерения','Количество',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -183,15 +184,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФактЗатраты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратамСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпецификацииНоменклатуры.ФормаЗаполненияПоФактическимЗатратамСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -401,18 +415,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
 				},
 			]
 		},

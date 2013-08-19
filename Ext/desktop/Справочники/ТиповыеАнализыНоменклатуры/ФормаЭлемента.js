@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Типовые анализы номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -92,6 +93,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:480px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ПоказателиАнализа',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:132px;width:464px;height:144px;',
@@ -116,7 +124,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТиповыеАнализыНоменклатуры").data,
-					fields: ['НомерСтроки','ПоказательАнализа',]
+					fields: ['Ссылка','Родитель.Представление','НомерСтроки','ПоказательАнализа',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -144,15 +152,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПоказателиАнализа');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТиповыеАнализыНоменклатуры.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:107px;width:464px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -163,14 +180,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:480px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:284px;width:480px;height:25px;',
@@ -192,14 +201,6 @@
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:107px;width:464px;height:24px;',
-			dock: 'top',
-			items:
-			[
 			]
 		},
 	]

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет  Взаиморасчеты с комитентами',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,14 +16,9 @@
 		xtype: 'form',
 		items:
 		[
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:520px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -78,6 +74,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

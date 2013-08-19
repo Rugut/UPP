@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка формы элемента Номенклатура',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,19 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:698px;height:25px;',
+			items:
+			[
+				{
+					text:'ВосстановитьНастройки',
+				},
+				{
+					text:'СохранитьНастройки',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:682px;height:226px;',
@@ -25,6 +39,19 @@
 					title:'Настройка страниц',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:668px;height:24px;',
+			items:
+			[
+				{
+					text:'Видимые',
+				},
+				{
+					text:'Невидимые',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаСтраниц',
 			xtype: 'grid',
@@ -56,7 +83,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['Видимость','Представление','ВидимостьСистемная',]
+					fields: ['Ссылка','Родитель.Представление','Видимость','Представление','ВидимостьСистемная',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -87,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаСтраниц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -103,6 +132,26 @@
 					title:'Настройка реквизитов',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:668px;height:24px;',
+			items:
+			[
+				{
+					text:'Видимые',
+				},
+				{
+					text:'Невидимые',
+				},
+				'-',
+				{
+					text:'Обязательные',
+				},
+				{
+					text:'Необязательные',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаРеквизитов',
 			xtype: 'grid',
@@ -152,7 +201,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['Доступность','Обязательность','Уникальность','Представление','ДоступностьСистемная','ОбязательностьСистемная',]
+					fields: ['Ссылка','Родитель.Представление','Доступность','Обязательность','Уникальность','Представление','ДоступностьСистемная','ОбязательностьСистемная',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -192,11 +241,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаРеквизитов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -208,6 +259,33 @@
 					title:'Настройка цен номенклатуры',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:668px;height:24px;',
+			items:
+			[
+				{
+					text:'&Переместить вверх',
+				},
+				{
+					text:'&Переместить вниз',
+				},
+				'-',
+				{
+					text:'Видимые',
+				},
+				{
+					text:'Невидимые',
+				},
+				'-',
+				{
+					text:'Обязательные',
+				},
+				{
+					text:'Необязательные',
+				},
+			]
+		},
 		{
 			id: 'ТаблицаЦенНоменклатуры',
 			xtype: 'grid',
@@ -239,7 +317,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Номенклатура").data,
-					fields: ['Доступность','Обязательность','Представление',]
+					fields: ['Ссылка','Родитель.Представление','Доступность','Обязательность','Представление',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -270,11 +348,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаЦенНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Номенклатура.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Номенклатура.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -288,20 +368,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:698px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'ВосстановитьНастройки',
-				},
-				{
-					text:'СохранитьНастройки',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:698px;height:25px;',

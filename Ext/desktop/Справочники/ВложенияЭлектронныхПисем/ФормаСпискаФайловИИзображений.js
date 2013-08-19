@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Хранилище дополнительной информации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -52,7 +53,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВложенияЭлектронныхПисем").data,
-					fields: ['Картинка','ИмяФайла','Наименование','ЭлектронноеПисьмо',]
+					fields: ['Ссылка','Картинка','ИмяФайла','Наименование','ЭлектронноеПисьмо',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -86,24 +87,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВложенияЭлектронныхПисем.ФормаСпискаФайловИИзображенийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВложенияЭлектронныхПисем.ФормаСпискаФайловИИзображенийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -228,6 +226,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

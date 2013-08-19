@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Валюты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,7 +71,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Валюты").data,
-					fields: ['Картинка','Код','Наименование','НаименованиеПолное','Курс','Кратность','ПараметрыПрописиНаРусском',]
+					fields: ['Ссылка','Картинка','Код','Наименование','НаименованиеПолное','Курс','Кратность','ПараметрыПрописиНаРусском',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -113,11 +114,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокВалюты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Валюты.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Валюты.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

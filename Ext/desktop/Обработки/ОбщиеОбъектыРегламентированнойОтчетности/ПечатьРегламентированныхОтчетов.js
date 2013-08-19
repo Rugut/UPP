@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Предварительный просмотр',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -72,11 +73,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокЛистов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ПечатьРегламентированныхОтчетовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОбщиеОбъектыРегламентированнойОтчетности.ПечатьРегламентированныхОтчетовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -134,6 +137,33 @@
 			style: 'position:absolute;left:14px;top:401px;width:135px;height:16px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:25px;width:198px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить пометки',
+				},
+				{
+					text:'Снять пометки',
+				},
+				'-',
+				{
+					text:'Раскрыть',
+				},
+				{
+					text:'Свернуть',
+				},
+				'-',
+				{
+					text:'Переместить вниз',
+				},
+				{
+					text:'Переместить вверх',
+				},
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Содержание',
 			style: 'position:absolute;left:212px;top:7px;width:521px;height:17px;',
@@ -167,34 +197,6 @@
 				'-',
 				{
 					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:25px;width:198px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить пометки',
-				},
-				{
-					text:'Снять пометки',
-				},
-				'-',
-				{
-					text:'Раскрыть',
-				},
-				{
-					text:'Свернуть',
-				},
-				'-',
-				{
-					text:'Переместить вниз',
-				},
-				{
-					text:'Переместить вверх',
 				},
 			]
 		},

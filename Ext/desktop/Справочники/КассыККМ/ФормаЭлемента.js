@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Кассы ККМ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,14 @@
 			width: 263,
 			height: 19,
 			style: 'position:absolute;left:89px;top:57px;width:263px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:452px;height:25px;',
+			items:
+			[
+				'-',
+			]
 		},
 		{
 			xtype: 'label',
@@ -111,6 +120,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:107px;top:105px;width:111px;height:19px;',
+			width: 111,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -122,15 +133,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:452px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:191px;width:452px;height:25px;',

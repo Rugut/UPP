@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма выбора типа цен',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,37 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:6px;width:247px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить тип цен',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Установить все пометки',
+				},
+				{
+					text:'Снять все пометки',
+				},
+			]
+		},
 		{
 			id: 'ДеревоТиповЦенСкидок',
 			xtype: 'grid',
@@ -54,11 +86,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоТиповЦенСкидок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФормированиеЦен.ФормаВыбораТипаЦенСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФормированиеЦен.ФормаВыбораТипаЦенСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -73,38 +107,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:6px;width:247px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Добавить тип цен',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Конструктор настроек...',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Установить все пометки',
-				},
-				{
-					text:'Снять все пометки',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:207px;width:263px;height:25px;',

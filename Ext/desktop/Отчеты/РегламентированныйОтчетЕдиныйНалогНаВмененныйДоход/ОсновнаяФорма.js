@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Декларация по ЕНВД',
 	
 	layout: {type: "fit",align: "stretch"},

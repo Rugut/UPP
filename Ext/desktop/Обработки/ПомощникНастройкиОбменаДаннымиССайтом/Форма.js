@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка обмена данными с WEB - сайтом',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -387,15 +388,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтчетаОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПомощникНастройкиОбменаДаннымиССайтом.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПомощникНастройкиОбменаДаннымиССайтом.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:97px;width:545px;height:24px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -418,6 +428,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:212px;top:50px;width:178px;height:19px;',
+			width: 178,
+			height: 19,
 		},
 		{
 			xtype: 'label',

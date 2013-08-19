@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отобрать заказы поставщикам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -39,6 +40,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:64px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -49,6 +52,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:8px;width:210px;height:19px;',
+			width: 210,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -59,6 +64,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:40px;width:210px;height:19px;',
+			width: 210,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -69,6 +76,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:356px;top:8px;width:209px;height:19px;',
+			width: 209,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -82,6 +91,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:96px;width:210px;height:19px;',
+			width: 210,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -95,6 +106,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:142px;top:120px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -209,15 +222,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗакрытиеЗаказовПоставщикам.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗакрытиеЗаказовПоставщикам.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -513,11 +535,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеЗаказы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ЗакрытиеЗаказовПоставщикам.ФормаОтбораЗаказовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ЗакрытиеЗаказовПоставщикам.ФормаОтбораЗаказовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -531,6 +555,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:408px;top:6px;width:179px;height:19px;',
+			width: 179,
+			height: 19,
 		},
 		{
 			xtype: 'label',

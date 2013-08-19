@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Графа 10. Документы (ввод реквизитов)',
 	
 	layout: {type: "fit",align: "stretch"},

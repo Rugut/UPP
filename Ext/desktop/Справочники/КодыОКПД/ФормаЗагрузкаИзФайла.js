@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Загрузка справочника ОКПД из CSV файла',
 	
 	layout: {type: "fit",align: "stretch"},

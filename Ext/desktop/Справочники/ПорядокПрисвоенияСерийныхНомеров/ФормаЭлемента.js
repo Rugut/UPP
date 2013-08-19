@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Порядок присвоения серийных номеров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,13 @@
 			width: 398,
 			height: 19,
 			style: 'position:absolute;left:89px;top:33px;width:398px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:74px;width:584px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			id: 'РазрядыСерийногоНомера',
@@ -88,7 +96,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПорядокПрисвоенияСерийныхНомеров").data,
-					fields: ['НомерСтроки','Источник','Значение','ТипРазряда','РазмерРазряда',]
+					fields: ['Ссылка','НомерСтроки','Источник','Значение','ТипРазряда','РазмерРазряда',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -125,15 +133,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('РазрядыСерийногоНомера');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПорядокПрисвоенияСерийныхНомеров.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -189,22 +206,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:74px;width:584px;height:24px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:291px;width:600px;height:25px;',

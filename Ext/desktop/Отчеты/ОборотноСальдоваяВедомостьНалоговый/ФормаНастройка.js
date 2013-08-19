@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка: Оборотно-сальдовая ведомость',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -176,6 +177,13 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:4px;width:400px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ПравилаРазвернутогоСальдо',
 			xtype: 'grid',
 			style: 'position:absolute;left:4px;top:28px;width:400px;height:152px;',
@@ -232,11 +240,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПравилаРазвернутогоСальдо');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотноСальдоваяВедомостьНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотноСальдоваяВедомостьНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -248,6 +258,13 @@
 					title:'Детализация',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:4px;top:4px;width:400px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ПравилаВыводаИтогов',
 			xtype: 'grid',
@@ -305,11 +322,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПравилаВыводаИтогов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОборотноСальдоваяВедомостьНалоговый.ФормаНастройкаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОборотноСальдоваяВедомостьНалоговый.ФормаНастройкаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

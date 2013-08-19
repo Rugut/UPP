@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка состава регистров',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,22 @@
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			items:
+			[
+				{
+					text:'Отметить все регистры',
+				},
+				{
+					text:'Снять отметку со всех регистров',
+				},
+				{
+					text:'Инвертировать отметки',
+				},
+			]
+		},
 					]
 				},
 				{
@@ -39,6 +56,22 @@
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			items:
+			[
+				{
+					text:'Отметить все регистры',
+				},
+				{
+					text:'Снять отметку со всех регистров',
+				},
+				{
+					text:'Инвертировать отметки',
+				},
+			]
+		},
 					]
 				},
 				{
@@ -48,6 +81,22 @@
 		{
 			xtype: 'itemselector',
 			style: 'position:absolute;left:6px;top:30px;width:335px;height:268px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			items:
+			[
+				{
+					text:'Отметить все регистры',
+				},
+				{
+					text:'Снять отметку со всех регистров',
+				},
+				{
+					text:'Инвертировать отметки',
+				},
+			]
 		},
 					]
 				},

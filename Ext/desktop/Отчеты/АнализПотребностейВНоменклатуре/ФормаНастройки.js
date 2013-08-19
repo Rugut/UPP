@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка Анализ потребностей в номенклатуре',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -53,6 +54,13 @@
 					title:'Группировки',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Группировки',
 			xtype: 'grid',
@@ -101,11 +109,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Группировки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализПотребностейВНоменклатуре.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализПотребностейВНоменклатуре.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -117,6 +127,13 @@
 					title:'Отбор',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'Отбор',
 			xtype: 'grid',
@@ -201,11 +218,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АнализПотребностейВНоменклатуре.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АнализПотребностейВНоменклатуре.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

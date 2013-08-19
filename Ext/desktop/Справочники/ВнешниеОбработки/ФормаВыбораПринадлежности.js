@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Принадлежность печатной формы',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,7 +45,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
-					fields: ['',]
+					fields: ['Ссылка','Родитель.Представление','',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -69,11 +70,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВнешниеОбработки.ФормаВыбораПринадлежностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаВыбораПринадлежностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -104,7 +107,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
-					fields: ['',]
+					fields: ['Ссылка','Родитель.Представление','',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -129,11 +132,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокСправочников');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВнешниеОбработки.ФормаВыбораПринадлежностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаВыбораПринадлежностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -164,7 +169,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ВнешниеОбработки").data,
-					fields: ['',]
+					fields: ['Ссылка','Родитель.Представление','',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -189,11 +194,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокОтчетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВнешниеОбработки.ФормаВыбораПринадлежностиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВнешниеОбработки.ФормаВыбораПринадлежностиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

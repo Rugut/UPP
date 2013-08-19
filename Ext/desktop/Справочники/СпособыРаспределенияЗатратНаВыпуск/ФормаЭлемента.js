@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Способы распределения затрат',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -59,6 +60,13 @@
 			width: 522,
 			height: 19,
 			style: 'position:absolute;left:90px;top:412px;width:522px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'tabpanel',
@@ -403,6 +411,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:156px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:590px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'ТабличноеПоле1',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:31px;width:590px;height:163px;',
@@ -451,7 +466,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпособыРаспределенияЗатратНаВыпуск").data,
-					fields: ['Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
+					fields: ['Ссылка','Использование','Имя','ВидСравнения','Значение','ЗначениеС','ЗначениеПо',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -491,11 +506,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПоле1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -546,6 +563,13 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:42px;width:590px;height:24px;',
+			items:
+			[
+			]
+		},
+		{
 			id: 'Фильтры',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:66px;width:590px;height:128px;',
@@ -582,7 +606,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.СпособыРаспределенияЗатратНаВыпуск").data,
-					fields: ['НомерСтроки','НоменклатурнаяГруппа','Продукция','Коэффициент',]
+					fields: ['Ссылка','НомерСтроки','НоменклатурнаяГруппа','Продукция','Коэффициент',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -616,11 +640,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Фильтры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.СпособыРаспределенияЗатратНаВыпуск.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -657,6 +683,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:177px;top:133px;width:435px;height:19px;',
+			width: 435,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -706,14 +734,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:438px;width:620px;height:25px;',

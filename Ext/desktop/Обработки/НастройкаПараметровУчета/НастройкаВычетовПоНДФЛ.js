@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка вычетов по НДФЛ',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -87,11 +88,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НДФЛВычетыПоДоходам');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.НастройкаВычетовПоНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.НастройкаВычетовПоНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -178,15 +181,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НДФЛРазмерВычетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.НастройкаВычетовПоНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.НастройкаВычетовПоНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:321px;top:124px;width:95px;height:24px;',
+			items:
+			[
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -209,17 +224,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:321px;top:124px;width:95px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Вывести список...',
 				},
 			]
 		},

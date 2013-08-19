@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Основные средства',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,7 +107,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
-					fields: ['Картинка','Код','Наименование','НаименованиеПолное','Изготовитель','НомерПаспорта','ЗаводскойНомер','ДатаВыпуска','КодПоОКОФ.Представление','АмортизационнаяГруппа.Представление','ГруппаОС.Представление','Автотранспорт','Комментарий',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Код','Наименование','НаименованиеПолное','Изготовитель','НомерПаспорта','ЗаводскойНомер','ДатаВыпуска','КодПоОКОФ.Представление','АмортизационнаяГруппа.Представление','ГруппаОС.Представление','Автотранспорт','Комментарий',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -167,78 +168,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОсновныеСредства.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
-		{
-			id: 'СправочникДерево',
-			xtype: 'grid',
-			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
-			height: 320,width: 160,
-			columns:
-			[
-				{
-					text:'Наименование',
-					width:'160',
-					dataIndex:'Наименование',
-					flex:1,
-				},
-			],
-			store:
-			{
-				data: Ext.create("Ext.data.Store",
-				{
-					data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
-					fields: ['Наименование',]
-				}).data.items,
-				autoLoad: true,
-				pageSize: 50,
-				restful: true,
-				autoSync: false,
-				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 200},
-				fields:
-				[
-					{
-						name:'Ссылка',
-					},
-					{
-						name:'Наименование',
-					},
-				]
-			},
-			listeners:
-			{
-				dblclick:
-				{
-					element: 'body',
-					fn: function ()
-					{
-						var грид = Ext.getCmp('СправочникДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
-						Ext.require(['Справочники.ОсновныеСредства.ФормаСпискаСобытия'], function ()
-						{
-							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
-						});
-					}
-				}
-			},
-		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:677px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -270,6 +214,66 @@
 				},
 			]
 		},
+		{
+			id: 'СправочникДерево',
+			xtype: 'grid',
+			style: 'position:absolute;left:8px;top:33px;width:160px;height:320px;',
+			height: 320,width: 160,
+			columns:
+			[
+				{
+					text:'Наименование',
+					width:'160',
+					dataIndex:'Наименование',
+					flex:1,
+				},
+			],
+			store:
+			{
+				data: Ext.create("Ext.data.Store",
+				{
+					data: Ext.create("Данные.Справочники.ОсновныеСредства").data,
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
+				}).data.items,
+				autoLoad: true,
+				pageSize: 50,
+				restful: true,
+				autoSync: false,
+				proxy: {type: 'jsonp',url: 'https://localhost:1337/Справочники/ОсновныеСредства/ВыбратьПоСсылке/100', timeout: 200},
+				fields:
+				[
+					{
+						name:'Ссылка',
+					},
+					{
+						name:'Наименование',
+					},
+				]
+			},
+			listeners:
+			{
+				dblclick:
+				{
+					element: 'body',
+					fn: function ()
+					{
+						var грид = Ext.getCmp('СправочникДерево');
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
+						Ext.require(['Справочники.ОсновныеСредства.ФормаСпискаСобытия'], function ()
+						{
+							var obj = Ext.create("Справочники.ОсновныеСредства.ФормаСпискаСобытия");
+							obj.ПередатьСсылку(стрЗнач);
+						});
+					}
+				}
+			},
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

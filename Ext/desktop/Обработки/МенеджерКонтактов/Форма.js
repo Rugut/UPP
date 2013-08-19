@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Менеджер контактов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -50,6 +51,90 @@
 			name: 'НадписьКонтрагент',
 			text: 'Контрагент:',
 			style: 'position:absolute;left:1px;top:0px;width:88px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:24px;width:804px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'',
+					menu: [
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Настроить интервал',
+				},
+				'-',
+				{
+					text:'Настроить отбор',
+				},
+				{
+					text:'Отбор по текущему значению',
+				},
+				{
+					text:'Снять отбор',
+				},
+				'-',
+				'-',
+				'-',
+				{
+					text:'Анализ заказа',
+				},
+				{
+					text:'Документы по заказу',
+				},
+				'-',
+				{
+					text:'Настройка списка...',
+				},
+				{
+					text:'Вывести список...',
+				},
+					]
+				},
+				'-',
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Настроить интервал',
+				},
+				'-',
+				{
+					text:'Настроить отбор',
+				},
+				{
+					text:'Отбор по текущему значению',
+				},
+				{
+					text:'Снять отбор',
+				},
+				'-',
+				'-',
+			]
 		},
 		{
 			id: 'ЗаказыИСобытияПредставление',
@@ -162,11 +247,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЗаказыИСобытияПредставление');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -279,11 +366,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СделкиДень');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -301,6 +390,13 @@
 			name: 'НадписьДня',
 			text: 'НадписьДня',
 			style: 'position:absolute;left:0px;top:0px;width:200px;height:22px;text-align:left;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:671px;top:420px;width:133px;height:26px;',
+			items:
+			[
+			]
 		},
 					]
 				},
@@ -573,11 +669,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЭлектронныеПисьмаСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -825,6 +923,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:6px;top:6px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -885,11 +985,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГруппыПисемДерево');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -934,11 +1036,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПредметыСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -998,11 +1102,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГруппыПисемДерево1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.МенеджерКонтактов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.МенеджерКонтактов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

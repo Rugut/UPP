@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка автоматического заполнения',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сведения о плановых удержаниях сотрудников организации (ввод)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -108,53 +109,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводСведенийОПлановыхУдержанияхРаботниковОрганизаций.ФормаСпискаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводСведенийОПлановыхУдержанияхРаботниковОрганизаций.ФормаСпискаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'tabpanel',
-			style: 'position:absolute;left:8px;top:33px;width:984px;height:19px;',
-			height: 19,width: 984,
-			tabBar:{hidden:true},
-			items:
-			[
-				{
-					title:'Страница1',
-					items:
-					[
-		{
-			xtype: 'checkbox',
-			boxLabel: 'Организация:',
-			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;',
-		},
-		{
-			xtype: 'textfield',
-			hideLabel: true,
-			disabled: false,
-			name: 'Организация',
-			width: 220,
-			height: 19,
-			style: 'position:absolute;left:92px;top:0px;width:220px;height:19px;',
-		},
-					]
-				},
-			]
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -306,6 +275,39 @@
 				},
 			]
 		},
+		{
+			xtype: 'tabpanel',
+			style: 'position:absolute;left:8px;top:33px;width:984px;height:19px;',
+			height: 19,width: 984,
+			tabBar:{hidden:true},
+			items:
+			[
+				{
+					title:'Страница1',
+					items:
+					[
+		{
+			xtype: 'checkbox',
+			boxLabel: 'Организация:',
+			style: 'position:absolute;left:0px;top:0px;width:87px;height:19px;',
+		},
+		{
+			xtype: 'textfield',
+			hideLabel: true,
+			disabled: false,
+			name: 'Организация',
+			width: 220,
+			height: 19,
+			style: 'position:absolute;left:92px;top:0px;width:220px;height:19px;',
+		},
+					]
+				},
+			]
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

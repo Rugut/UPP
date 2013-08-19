@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выгрузка данных в весы с печатью этикеток',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,42 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				{
+					text:'Заполнить',
+				},
+				{
+					text:'Выгрузить в весы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+				'-',
+					]
+				},
+				'-',
+				{
+					text:'Заполнить',
+				},
+				'-',
+				{
+					text:'Выгрузить в весы',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 		{
 			xtype: 'fieldset',
 			title: 'Настройки',
@@ -34,6 +71,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:40px;top:1px;width:286px;height:19px;',
+			width: 286,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -178,15 +217,24 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Отборы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОВыгрузкаВВесыСПечатьюЭтикеток.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОВыгрузкаВВесыСПечатьюЭтикеток.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:15px;width:684px;height:24px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -331,11 +379,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Товары');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТОВыгрузкаВВесыСПечатьюЭтикеток.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТОВыгрузкаВВесыСПечатьюЭтикеток.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -345,43 +395,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Действия',
-					menu: [
-				{
-					text:'Заполнить',
-				},
-				{
-					text:'Выгрузить в весы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-				'-',
-					]
-				},
-				'-',
-				{
-					text:'Заполнить',
-				},
-				'-',
-				{
-					text:'Выгрузить в весы',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
 	]
 	});
 });

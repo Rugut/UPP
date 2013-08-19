@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Подразделения',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -34,7 +35,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.Подразделения").data,
-					fields: ['Наименование',]
+					fields: ['Ссылка','Родитель.Представление','Наименование',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -59,30 +60,21 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникСписок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.Подразделения.ФормаВыбораСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.Подразделения.ФормаВыбораСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
 		},
 		{
-			xtype: 'label',
-			name: 'НадписьПодразделения',
-			text: 'Подразделения',
-			style: 'position:absolute;left:8px;top:33px;width:123px;height:19px;text-align:left;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:391px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -147,6 +139,16 @@
 				},
 			]
 		},
+		{
+			xtype: 'label',
+			name: 'НадписьПодразделения',
+			text: 'Подразделения',
+			style: 'position:absolute;left:8px;top:33px;width:123px;height:19px;text-align:left;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

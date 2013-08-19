@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выберите сохраненную форму ""П-1 Приложение 3"" для выгрузки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,20 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			items:
+			[
+				{
+					text:'Выбрать',
+				},
+				'-',
+				{
+					text:'Открыть',
+				},
+			]
+		},
 		{
 			id: 'СписокФормП1Пр3',
 			xtype: 'grid',
@@ -108,11 +123,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокФормП1Пр3');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РегламентированныйОтчетСтатистикаФормаП1.ФормаВыбораПриложения3События'], function ()
 						{
 							var obj = Ext.create("Справочники.РегламентированныйОтчетСтатистикаФормаП1.ФормаВыбораПриложения3События");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -122,21 +139,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Выбрать',
-				},
-				'-',
-				{
-					text:'Открыть',
-				},
-			]
-		},
 	]
 	});
 });

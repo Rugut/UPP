@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка интервала',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -68,7 +69,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.НастройкаИнтервалов").data,
-					fields: ['НомерСтроки','НачалоИнтервала','Подпись',]
+					fields: ['Ссылка','НомерСтроки','НачалоИнтервала','Подпись',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -99,11 +100,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличнаяЧасть');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаИнтервалов.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаИнтервалов.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

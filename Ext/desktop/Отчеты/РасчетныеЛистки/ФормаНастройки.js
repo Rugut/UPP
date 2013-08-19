@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройки отчета',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -125,11 +126,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиСкрытыеЭлемент');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -219,11 +222,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиСкрытыеГруппировкиСтрок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -313,11 +318,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НастройкиСкрытыеГруппировкиКолонок');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -407,11 +414,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеНастройкиСкрытые');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -456,11 +465,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеДоступныеПоля');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -496,6 +507,27 @@
 			xtype: 'fieldset',
 			title: 'Группировки',
 			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:18px;width:365px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить поле',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+			]
 		},
 		{
 			id: 'ТабличноеПолеГруппировкиСтрокСтраницаТаблица',
@@ -590,15 +622,59 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеГруппировкиСтрокСтраницаТаблица');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:318px;width:348px;height:24px;',
+			items:
+			[
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -764,15 +840,45 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеОтборСтраницаБезПараметров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:18px;width:365px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить поле',
+				},
+				'-',
+				{
+					text:'Добавить группу',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 		{
 			xtype: 'fieldset',
@@ -836,11 +942,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТабличноеПолеСортировкаСтраницаБезПараметров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1004,11 +1112,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УсловноеОформлениеСтраницаОформление');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетныеЛистки.ФормаНастройкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетныеЛистки.ФормаНастройкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1023,6 +1133,30 @@
 			xtype: 'fieldset',
 			title: 'Общее',
 			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:86px;width:365px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -1092,14 +1226,9 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:21px;top:107px;width:203px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -1108,6 +1237,10 @@
 				'-',
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

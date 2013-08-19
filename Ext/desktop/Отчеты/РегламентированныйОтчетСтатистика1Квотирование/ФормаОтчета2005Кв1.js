@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Форма 1-квотирование (Москва)',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,32 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			items:
+			[
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'Поиск',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+				'-',
+				{
+					text:'Расширить поле бланка',
+				},
+				'-',
+				{
+					text:'Действие2',
+				},
+			]
+		},
 		{
 			xtype: 'label',
 			name: '_ИндикаторВнешнегоОтчета',
@@ -55,6 +82,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:82px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -68,6 +97,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:399px;top:23px;width:116px;height:19px;',
+			width: 116,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -154,33 +185,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Очистить',
-				},
-				'-',
-				{
-					text:'Поиск',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-				'-',
-				{
-					text:'Расширить поле бланка',
-				},
-				'-',
-				{
-					text:'Действие2',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:716px;height:25px;',

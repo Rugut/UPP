@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Сформированные бюджетные операции',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:653px;height:25px;',
+			items:
+			[
+				{
+					text:'Включить возможность изменения',
+				},
+			]
+		},
 		{
 			id: 'БюджетныеОперации',
 			xtype: 'grid',
@@ -144,11 +155,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('БюджетныеОперации');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РасчетПоМоделиБюджетирования.ФормаПросмотрОперацийСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РасчетПоМоделиБюджетирования.ФормаПросмотрОперацийСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -165,6 +178,40 @@
 					title:'Страница1',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:637px;height:25px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+			]
+		},
 					]
 				},
 			]
@@ -173,17 +220,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:653px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Включить возможность изменения',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:346px;width:653px;height:25px;',

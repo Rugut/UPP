@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Управление персональными данными',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -297,11 +298,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('События');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеПерсональнымиДанными.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеПерсональнымиДанными.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -346,11 +349,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОСобытии');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеПерсональнымиДанными.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеПерсональнымиДанными.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -374,6 +379,21 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:138px;top:27px;width:138px;height:19px;',
+			width: 138,
+			height: 19,
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:85px;height:24px;',
+			items:
+			[
+				{
+					text:'Обновить',
+				},
+				{
+					text:'Установить период',
+				},
+			]
 		},
 		{
 			id: 'ОбластиДанных',
@@ -432,11 +452,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ОбластиДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УправлениеПерсональнымиДанными.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УправлениеПерсональнымиДанными.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -445,6 +467,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:113px;top:541px;width:138px;height:19px;',
+			width: 138,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -455,6 +479,19 @@
 			xtype: 'fieldset',
 			title: 'Субъекты события',
 			style: 'position:absolute;left:469px;top:141px;width:221px;height:16px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:469px;top:22px;width:221px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Справка',
+				},
+			]
 		},
 					]
 				},

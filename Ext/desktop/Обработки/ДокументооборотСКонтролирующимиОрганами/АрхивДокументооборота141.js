@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Архив документооборота по отчетности с ФНС в формате приказа от 26 марта 2009 г. № ММ-7-6/141@ и более ранних',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,70 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
+			items:
+			[
+				{
+					text:'Исходящие документы',
+				},
+				{
+					text:'Входящие документы',
+				},
+				{
+					text:'Запросы на информационное обслуживание',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Сегодня',
+				},
+				{
+					text:'Текущая неделя',
+				},
+				{
+					text:'Текущий месяц',
+				},
+				{
+					text:'Текущий квартал',
+				},
+				{
+					text:'Текущий год',
+				},
+				'-',
+				{
+					text:'Вчера',
+				},
+				{
+					text:'Предыдущая неделя',
+				},
+				{
+					text:'Предыдущий месяц',
+				},
+				{
+					text:'Предыдущий квартал',
+				},
+				{
+					text:'Предыдущий год',
+				},
+				'-',
+				{
+					text:'Произвольный период',
+				},
+				{
+					text:'Без ограничений',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
@@ -291,11 +356,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаОтчетность');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -511,6 +578,23 @@
 				},
 			]
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:562px;height:24px;',
+			items:
+			[
+				{
+					text:'Выгрузить контейнеры и их содержимое',
+				},
+				'-',
+				{
+					text:'Выгрузить контейнеры',
+				},
+				{
+					text:'Выгрузить содержимое',
+				},
+			]
+		},
 					]
 				},
 				{
@@ -619,11 +703,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаИсходящиеДокументы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -793,11 +879,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаВходящиеДокументы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -883,6 +971,20 @@
 					title:'Запросы',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
+			items:
+			[
+				{
+					text:'Открыть основание',
+				},
+				'-',
+				{
+					text:'Журнал запросов на информационное обслуживание',
+				},
+			]
+		},
 		{
 			id: 'ЦиклыОбменаЗапросы',
 			xtype: 'grid',
@@ -1066,11 +1168,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ЦиклыОбменаЗапросы');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1265,11 +1369,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УчетныеЗаписи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.АрхивДокументооборота141События");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1304,72 +1410,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Исходящие документы',
-				},
-				{
-					text:'Входящие документы',
-				},
-				{
-					text:'Запросы на информационное обслуживание',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Сегодня',
-				},
-				{
-					text:'Текущая неделя',
-				},
-				{
-					text:'Текущий месяц',
-				},
-				{
-					text:'Текущий квартал',
-				},
-				{
-					text:'Текущий год',
-				},
-				'-',
-				{
-					text:'Вчера',
-				},
-				{
-					text:'Предыдущая неделя',
-				},
-				{
-					text:'Предыдущий месяц',
-				},
-				{
-					text:'Предыдущий квартал',
-				},
-				{
-					text:'Предыдущий год',
-				},
-				'-',
-				{
-					text:'Произвольный период',
-				},
-				{
-					text:'Без ограничений',
-				},
-			]
-		},
 	]
 	});
 });

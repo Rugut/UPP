@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Физические лица',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -78,7 +79,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Картинка','Период','ПрименятьВычетыТекст','ВычетыПрименение','Организация',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Период','ПрименятьВычетыТекст','ВычетыПрименение','Организация',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -115,15 +116,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПрименениеВычетов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:285px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -193,7 +215,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Картинка','Период','ВычетыЛичныеТекст','ВычетыЛичныеПрименение','КодВычетаЛичный','Основание',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','Период','ВычетыЛичныеТекст','ВычетыЛичныеПрименение','КодВычетаЛичный','Основание',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -233,11 +255,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтандартныеВычеты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -315,7 +339,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['Картинка','КолонкаПериод','Период','ПериодЗавершения','ВычетыНаДетейТекст','ВычетыНаДетейПрименение','КодВычетаНаДетей','КоличествоДетей','Основание',]
+					fields: ['Ссылка','Родитель.Представление','Картинка','КолонкаПериод','Период','ПериодЗавершения','ВычетыНаДетейТекст','ВычетыНаДетейПрименение','КодВычетаНаДетей','КоличествоДетей','Основание',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -364,15 +388,36 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтандартныеВычетыНаДетей');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:297px;top:22px;width:371px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+			]
 		},
 					]
 				},
@@ -507,7 +552,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ФизическиеЛица").data,
-					fields: ['МесяцНалоговогоПериода','Размер',]
+					fields: ['Ссылка','Родитель.Представление','МесяцНалоговогоПериода','Размер',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -535,11 +580,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДоходыПредыдущие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ФизическиеЛица.ФормаВводаДанныхНДФЛСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

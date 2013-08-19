@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Начисление дивидендов организации',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -155,6 +156,23 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
+			items:
+			[
+				{
+					text:'Рассчитать все',
+				},
+				'-',
+				{
+					text:'Рассчитать дивиденды',
+				},
+				{
+					text:'Рассчитать НДФЛ',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:444px;width:651px;height:25px;',
 			items:
 			[
@@ -268,15 +286,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Начисления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НачислениеДивидендовОрганизаций.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НачислениеДивидендовОрганизаций.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:173px;width:635px;height:24px;',
+			items:
+			[
+				{
+					text:'Списком сотрудников',
+				},
+			]
 		},
 		{
 			xtype: 'numberfield',
@@ -401,58 +431,8 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
-			boxLabel: 'Общая сумма:',
-			style: 'position:absolute;left:13px;top:107px;width:96px;height:19px;',
-		},
-		{
-			xtype: 'radio',
-			boxLabel: 'На одну акцию:',
-			style: 'position:absolute;left:13px;top:131px;width:96px;height:19px;',
-		},
-			]
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Рассчитать все',
-				},
-				'-',
-				{
-					text:'Рассчитать дивиденды',
-				},
-				{
-					text:'Рассчитать НДФЛ',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:173px;width:635px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком сотрудников',
-				},
-			]
-		},
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:241px;width:635px;height:24px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -507,6 +487,26 @@
 				},
 			]
 		},
+		{
+			xtype: 'radiogroup',
+			defaults: {name: 'ccType'},
+			items: [
+		{
+			xtype: 'radio',
+			boxLabel: 'Общая сумма:',
+			style: 'position:absolute;left:13px;top:107px;width:96px;height:19px;',
+		},
+		{
+			xtype: 'radio',
+			boxLabel: 'На одну акцию:',
+			style: 'position:absolute;left:13px;top:131px;width:96px;height:19px;',
+		},
+			]
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

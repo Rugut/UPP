@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Платежи за пользование недрами',
 	
 	layout: {type: "fit",align: "stretch"},

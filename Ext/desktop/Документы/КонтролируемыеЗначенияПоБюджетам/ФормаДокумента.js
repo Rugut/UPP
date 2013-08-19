@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Контролируемые значения по бюджетам',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -272,6 +273,26 @@
 		},
 		{
 			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			items:
+			[
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:433px;width:410px;height:25px;',
 			items:
 			[
@@ -307,6 +328,13 @@
 					title:'Выборочно',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:8px;width:394px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ГраницыЗначений',
 			xtype: 'grid',
@@ -418,11 +446,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГраницыЗначений');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КонтролируемыеЗначенияПоБюджетам.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -660,27 +690,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-			]
-		},
 	]
 	});
 });

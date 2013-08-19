@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Опись сведений, передаваемых страхователем в ПФР',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -31,6 +32,13 @@
 			style: 'position:absolute;left:96px;top:502px;width:670px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'checkbox',
 			boxLabel: 'Принято в ПФР',
 			style: 'position:absolute;left:775px;top:502px;width:106px;height:19px;',
@@ -46,6 +54,16 @@
 					title:'АДВ11',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:27px;width:875px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить расчетами с ПФР',
+				},
+			]
+		},
 		{
 			id: 'СведенияОЗадолженности1',
 			xtype: 'grid',
@@ -130,11 +148,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОЗадолженности1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -270,11 +290,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиДокументов1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -328,11 +350,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаПачек1');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -484,6 +508,45 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:22px;width:503px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Провести пачку',
+				},
+				{
+					text:'Отменить проведение пачки',
+				},
+				'-',
+				'-',
+				{
+					text:'Сформировать',
+				},
+				'-',
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			id: 'ПачкиДокументов',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:46px;width:503px;height:242px;',
@@ -576,11 +639,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПачкиДокументов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -634,11 +699,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФизлицаПачек');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -654,12 +721,69 @@
 			title: 'Пачки СЗВ-4',
 			style: 'position:absolute;left:6px;top:6px;width:503px;height:16px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:515px;top:22px;width:352px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Открыть СЗВ-4',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+			]
+		},
 					]
 				},
 				{
 					title:'Расчеты с ПФР',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:861px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить расчетами с ПФР',
+				},
+			]
+		},
 		{
 			id: 'СведенияОЗадолженности',
 			xtype: 'grid',
@@ -744,11 +868,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СведенияОЗадолженности');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПередачаСЗВ4вПФР.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1155,14 +1281,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',

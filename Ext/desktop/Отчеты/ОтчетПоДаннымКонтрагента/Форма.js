@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отчет по данным контрагента',
 	
 	layout: {type: "fit",align: "stretch"},

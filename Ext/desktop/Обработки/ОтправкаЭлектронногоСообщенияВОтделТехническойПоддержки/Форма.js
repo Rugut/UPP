@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отправка электронного сообщения в отдел технической поддержки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -70,11 +71,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ФайлыВложения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтправкаЭлектронногоСообщенияВОтделТехническойПоддержки.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

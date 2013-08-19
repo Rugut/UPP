@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Рассылка анкеты',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -68,6 +69,26 @@
 					items:
 					[
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+			]
+		},
+		{
 			id: 'Получатели',
 			xtype: 'grid',
 			style: 'position:absolute;left:6px;top:24px;width:443px;height:204px;',
@@ -92,7 +113,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
-					fields: ['Объект','Получатель',]
+					fields: ['Ссылка','Родитель.Представление','Объект','Получатель',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -120,11 +141,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Получатели');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -136,6 +159,25 @@
 					title:'Вложения',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'Изменить',
+				},
+				{
+					text:'Удалить',
+				},
+			]
+		},
 		{
 			id: 'Вложения',
 			xtype: 'grid',
@@ -155,7 +197,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
-					fields: ['ИмяФайла',]
+					fields: ['Ссылка','Родитель.Представление','ИмяФайла',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -180,11 +222,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Вложения');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаРассылкиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -300,6 +344,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:89px;top:0px;width:368px;height:19px;',
+			width: 368,
+			height: 19,
 		},
 					]
 				},

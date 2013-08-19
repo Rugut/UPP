@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод доли выручки, не облагаемой НДС (%)',
 	
 	layout: {type: "fit",align: "stretch"},

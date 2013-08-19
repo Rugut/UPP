@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Стандартные вычеты - 2011',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -60,11 +61,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СотрудникиСДетьми');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеВычетовНаДетей2011.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеВычетовНаДетей2011.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -172,11 +175,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВычетыСотрудниковСДетьми');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеВычетовНаДетей2011.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеВычетовНаДетей2011.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -329,11 +334,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('НовыеВычетыСотрудниковСДетьми');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.РедактированиеВычетовНаДетей2011.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.РедактированиеВычетовНаДетей2011.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

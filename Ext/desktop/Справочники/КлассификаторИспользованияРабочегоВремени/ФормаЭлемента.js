@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Классификатор использования рабочего времени',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -68,6 +69,13 @@
 			style: 'position:absolute;left:130px;top:57px;width:220px;height:45px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:466px;height:25px;',
+			items:
+			[
+			]
+		},
+		{
 			xtype: 'fieldset',
 			title: 'Условные обозначения (коды) использования рабочего времени',
 			style: 'position:absolute;left:8px;top:121px;width:450px;height:16px;',
@@ -87,14 +95,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:466px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:169px;width:466px;height:25px;',

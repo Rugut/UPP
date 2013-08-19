@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет единовременного взноса за разрешенный прилов',
 	
 	layout: {type: "fit",align: "stretch"},

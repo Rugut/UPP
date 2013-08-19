@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Автообмен с сервером ФСС',
 	
 	layout: {type: "fit",align: "stretch"},

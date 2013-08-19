@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Индивидуальная карточка ЕСН',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -106,28 +107,8 @@
 			},
 		},
 		{
-			xtype: 'numberfield',
-			hideLabel: true,
-			hideTrigger: true,
-			disabled: false,
-			value: 0,
-			name: 'НалоговыйПериод',
-			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
-		},
-		{
-			xtype: 'label',
-			name: 'Надпись2',
-			text: 'Налоговый период:',
-			style: 'position:absolute;left:326px;top:33px;width:105px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
-		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
-			dock: 'top',
 			items:
 			[
 				{
@@ -175,6 +156,25 @@
 				},
 			]
 		},
+		{
+			xtype: 'numberfield',
+			hideLabel: true,
+			hideTrigger: true,
+			disabled: false,
+			value: 0,
+			name: 'НалоговыйПериод',
+			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
+		},
+		{
+			xtype: 'label',
+			name: 'Надпись2',
+			text: 'Налоговый период:',
+			style: 'position:absolute;left:326px;top:33px;width:105px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

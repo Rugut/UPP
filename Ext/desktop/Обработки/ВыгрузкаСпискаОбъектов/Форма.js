@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Выгрузка списка объектов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,13 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:426px;height:25px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'СписокВыгружаемыхОбъектов',
 			xtype: 'grid',
@@ -63,11 +71,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокВыгружаемыхОбъектов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВыгрузкаСпискаОбъектов.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВыгрузкаСпискаОбъектов.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -93,18 +103,27 @@
 			title: 'Выгружаемые объекты',
 			style: 'position:absolute;left:8px;top:58px;width:410px;height:16px;',
 		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:79px;width:410px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		],
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:426px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:292px;width:426px;height:25px;',
@@ -121,24 +140,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:79px;width:410px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'&Добавить',
-				},
-				{
-					text:'&Удалить',
-				},
-				'-',
-				{
-					text:'Подбор',
 				},
 			]
 		},

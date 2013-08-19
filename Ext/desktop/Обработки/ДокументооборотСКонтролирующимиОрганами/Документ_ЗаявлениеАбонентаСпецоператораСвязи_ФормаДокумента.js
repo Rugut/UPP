@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Заявление на подключение',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -425,15 +426,40 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Направления');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ДокументооборотСКонтролирующимиОрганами.Документ_ЗаявлениеАбонентаСпецоператораСвязи_ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ДокументооборотСКонтролирующимиОрганами.Документ_ЗаявлениеАбонентаСпецоператораСвязи_ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:828px;height:24px;',
+			items:
+			[
+				{
+					text:'Добавить',
+				},
+				{
+					text:'Скопировать',
+				},
+				{
+					text:'Редактировать',
+				},
+				{
+					text:'Удалить',
+				},
+				'-',
+				{
+					text:'Востановить',
+				},
+			]
 		},
 					]
 				},
@@ -620,6 +646,29 @@
 			]
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:860px;height:25px;',
+			items:
+			[
+				{
+					text:'Заявление  на подключение',
+				},
+				{
+					text:'Соглашение об оказании услуг',
+				},
+				{
+					text:'Лицензия на использование ПО',
+				},
+				{
+					text:'Сертификат пользователя',
+				},
+				'-',
+				{
+					text:'Пакет документов',
+				},
+			]
+		},
+		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:844px;height:40px;',
 			height: 40,width: 844,
@@ -731,30 +780,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:860px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Заявление  на подключение',
-				},
-				{
-					text:'Соглашение об оказании услуг',
-				},
-				{
-					text:'Лицензия на использование ПО',
-				},
-				{
-					text:'Сертификат пользователя',
-				},
-				'-',
-				{
-					text:'Пакет документов',
-				},
-			]
-		},
 	]
 	});
 });

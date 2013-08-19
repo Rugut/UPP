@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка учета зарплаты и управления персоналом',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -891,11 +892,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаРезервов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -927,6 +930,36 @@
 			name: 'Надпись95',
 			text: 'Оценочные обязательства и резервы, размеры отчислений на:',
 			style: 'position:absolute;left:10px;top:337px;width:381px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:10px;top:356px;width:496px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				'-',
+				{
+					text:'&Удалить',
+				},
+			]
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:351px;top:430px;width:133px;height:24px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Удалить',
+				},
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 					]
 				},
@@ -1075,11 +1108,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТарифСтраховыхВзносов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1099,6 +1134,26 @@
 			width: 496,
 			height: 19,
 			style: 'position:absolute;left:10px;top:58px;width:496px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:281px;top:193px;width:192px;height:27px;',
+			items:
+			[
+				{
+					text:'&Добавить',
+				},
+				{
+					text:'&Скопировать',
+				},
+				{
+					text:'&Удалить',
+				},
+				'-',
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -1163,11 +1218,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СтавкиФССНС');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -1507,15 +1564,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокГосударственныеПособия');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.НастройкаПараметровУчета.НастройкаПараметровУчетаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:323px;top:215px;width:122px;height:24px;',
+			items:
+			[
+				{
+					text:'Вывести список...',
+				},
+			]
 		},
 		{
 			xtype: 'label',

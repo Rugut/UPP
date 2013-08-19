@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Обработка  Анализ входящего НДС',
 	
 	layout: {type: "fit",align: "stretch"},

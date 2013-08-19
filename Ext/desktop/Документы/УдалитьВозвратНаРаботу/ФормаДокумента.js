@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Возврат на работу',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -144,15 +145,27 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Работники');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УдалитьВозвратНаРаботу.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УдалитьВозвратНаРаботу.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:121px;width:428px;height:24px;',
+			items:
+			[
+				{
+					text:'Списком работников',
+				},
+			]
 		},
 		{
 			xtype: 'toolbar',
@@ -277,17 +290,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:121px;width:428px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Списком работников',
-				},
-			]
-		},
 	]
 	});
 });

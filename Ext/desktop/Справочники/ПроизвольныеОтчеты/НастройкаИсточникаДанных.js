@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка источника данных',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -40,7 +41,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ПроизвольныеОтчеты").data,
-					fields: ['Параметр','ПутьКДанным',]
+					fields: ['Ссылка','Родитель.Представление','Параметр','ПутьКДанным',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -68,11 +69,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПараметрыИсточникаДанных');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПроизвольныеОтчеты.НастройкаИсточникаДанныхСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -87,6 +90,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:95px;top:8px;width:256px;height:19px;',
+			width: 256,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -293,6 +298,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:95px;top:32px;width:256px;height:19px;',
+			width: 256,
+			height: 19,
 		},
 		],
 	}],

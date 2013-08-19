@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод количества и цены',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -72,6 +73,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:78px;top:203px;width:308px;height:19px;',
+			width: 308,
+			height: 19,
 		},
 		{
 			id: 'ТаблицаХарактеристикНоменклатуры',
@@ -184,11 +187,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаХарактеристикНоменклатуры');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ПодборНоменклатуры.ВводПараметровССериямиСХарактеристикамиСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ПодборНоменклатуры.ВводПараметровССериямиСХарактеристикамиСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

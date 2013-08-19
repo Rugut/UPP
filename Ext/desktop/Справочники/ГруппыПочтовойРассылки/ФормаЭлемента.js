@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группы почтовой рассылки',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -44,6 +45,13 @@
 			width: 189,
 			height: 19,
 			style: 'position:absolute;left:94px;top:33px;width:189px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			items:
+			[
+			]
 		},
 		{
 			xtype: 'label',
@@ -126,7 +134,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГруппыПочтовойРассылки").data,
-					fields: ['Объект','Владелец',]
+					fields: ['Ссылка','Родитель.Представление','Объект','Владелец',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -154,15 +162,33 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СоставГруппыРассылки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
+			items:
+			[
+				'-',
+				{
+					text:'Очистить',
+				},
+				'-',
+				{
+					text:'',
+				},
+				'-',
+			]
 		},
 					]
 				},
@@ -195,7 +221,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ГруппыПочтовойРассылки").data,
-					fields: ['Использование','УчетнаяЗапись',]
+					fields: ['Ссылка','Родитель.Представление','Использование','УчетнаяЗапись',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -223,15 +249,48 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УчетныеЗаписи');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ГруппыПочтовойРассылки.ФормаЭлементаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
+			items:
+			[
+				{
+					text:'Изменить',
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+				'-',
+				'-',
+				{
+					text:'Конструктор настроек...',
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
 		},
 					]
 				},
@@ -241,14 +300,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:406px;height:25px;',

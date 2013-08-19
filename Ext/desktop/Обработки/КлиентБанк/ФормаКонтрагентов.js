@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Клиент банка: Создание ненайденных объектов',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -63,15 +64,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДеревоКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КлиентБанк.ФормаКонтрагентовСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КлиентБанк.ФормаКонтрагентовСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:1px;width:97px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить все',
+				},
+				{
+					text:'Снять все пометки',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -98,20 +114,6 @@
 				{
 					text:'Закрыть',
 					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:1px;width:97px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить все',
-				},
-				{
-					text:'Снять все пометки',
 				},
 			]
 		},

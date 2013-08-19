@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Расчет платы за негативное воздействие на окружающую среду (основная форма)',
 	
 	layout: {type: "fit",align: "stretch"},

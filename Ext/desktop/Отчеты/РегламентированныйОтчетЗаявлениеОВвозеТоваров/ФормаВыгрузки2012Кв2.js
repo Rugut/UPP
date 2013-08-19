@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Параметры выгрузки',
 	
 	layout: {type: "fit",align: "stretch"},

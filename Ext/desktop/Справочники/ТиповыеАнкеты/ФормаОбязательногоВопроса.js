@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка обязательности ответа на вопрос',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -130,7 +131,7 @@
 				data: Ext.create("Ext.data.Store",
 				{
 					data: Ext.create("Данные.Справочники.ТиповыеАнкеты").data,
-					fields: ['ЗначениеСписка',]
+					fields: ['Ссылка','Родитель.Представление','ЗначениеСписка',]
 				}).data.items,
 				autoLoad: true,
 				pageSize: 50,
@@ -155,11 +156,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СписокЗначенийОтвета');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ТиповыеАнкеты.ФормаОбязательногоВопросаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Группы доступа',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,14 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
+			items:
+			[
+				'-',
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:33px;width:611px;height:291px;',
@@ -84,11 +93,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГруппыДоступаКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -133,11 +144,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДеревоГруппыДоступаКонтрагентов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -236,11 +249,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГруппыДоступаФизическихЛиц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -285,11 +300,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДеревоГруппыДоступаФизическихЛиц');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -388,11 +405,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ГруппыЗаявокКандидатов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -437,11 +456,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('СправочникДеревоГруппыЗаявокКандидатов');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.АдминистрированиеПользователей.ФормаГруппыДоступаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -483,15 +504,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-			]
-		},
 	]
 	});
 });

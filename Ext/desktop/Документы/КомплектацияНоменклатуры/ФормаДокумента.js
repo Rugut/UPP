@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Комплектация номенклатуры',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -801,11 +802,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('Комплектующие');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.КомплектацияНоменклатуры.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.КомплектацияНоменклатуры.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}

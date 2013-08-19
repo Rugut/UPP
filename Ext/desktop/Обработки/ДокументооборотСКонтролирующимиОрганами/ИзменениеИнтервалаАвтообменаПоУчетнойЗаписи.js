@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Настройка автоматического обмена',
 	
 	layout: {type: "fit",align: "stretch"},

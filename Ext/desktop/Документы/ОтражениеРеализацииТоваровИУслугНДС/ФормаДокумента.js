@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Отражение начисления НДС',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -213,6 +214,36 @@
 			style: 'position:absolute;left:90px;top:421px;width:574px;height:19px;',
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			items:
+			[
+				{
+					text:'Цены и валюта...',
+				},
+				'-',
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Движения документа по регистрам',
+				},
+				{
+					text:'Структура подчиненности документа',
+				},
+				'-',
+					]
+				},
+				{
+					text:'',
+				},
+				{
+					text:'',
+				},
+			]
+		},
+		{
 			xtype: 'label',
 			name: 'НадписьСчетФактура',
 			text: 'Счет-фактура:',
@@ -239,6 +270,19 @@
 					title:'Товары и услуги',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			items:
+			[
+				{
+					text:'Заполнить по расчетному документу',
+				},
+				{
+					text:'Добавить из расчетного документа',
+				},
+			]
+		},
 		{
 			id: 'ТоварыИУслуги',
 			xtype: 'grid',
@@ -458,11 +502,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТоварыИУслуги');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -474,6 +520,13 @@
 					title:'Документы оплаты',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			items:
+			[
+			]
+		},
 		{
 			id: 'ДокументыОплаты',
 			xtype: 'grid',
@@ -531,11 +584,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ДокументыОплаты');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ОтражениеРеализацииТоваровИУслугНДС.ФормаДокументаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -712,37 +767,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Цены и валюта...',
-				},
-				'-',
-				{
-					xtype: 'splitbutton',
-					text:'Перейти',
-					menu: [
-				{
-					text:'Движения документа по регистрам',
-				},
-				{
-					text:'Структура подчиненности документа',
-				},
-				'-',
-					]
-				},
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:448px;width:672px;height:25px;',

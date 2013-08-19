@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Регистр-расчет фин. результатов от реализации амортизируемого имущества',
 	
 	layout: {type: "fit",align: "stretch"},

@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Косвенные налоги при ввозе товаров из государств - членов таможенного союза',
 	
 	layout: {type: "fit",align: "stretch"},

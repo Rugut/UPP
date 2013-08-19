@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Универсальный обмен данными в формате XML',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -15,6 +16,31 @@
 		xtype: 'form',
 		items:
 		[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:632px;height:25px;',
+			items:
+			[
+				{
+					text:'Справка',
+				},
+				'-',
+				{
+					text:'Восстановить значения...',
+				},
+				{
+					text:'Сохранить значения...',
+				},
+				'-',
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Настройки',
+				},
+			]
+		},
 		{
 			xtype: 'tabpanel',
 			style: 'position:absolute;left:8px;top:31px;width:618px;height:497px;',
@@ -98,15 +124,35 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаПравилВыгрузки');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:30px;width:273px;height:25px;',
+			items:
+			[
+				{
+					text:'Установить для правил',
+				},
+				{
+					text:'Снять для правил',
+				},
+				'-',
+				{
+					text:'Очистить отборы',
+				},
+				'-',
+			]
 		},
 		{
 			id: 'ПостроительОтбор',
@@ -192,15 +238,28 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ПостроительОтбор');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:285px;top:30px;width:311px;height:25px;',
+			items:
+			[
+				'-',
+				{
+					text:'Показать результат отбора',
+				},
+			]
 		},
 		{
 			xtype: 'label',
@@ -301,15 +360,30 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ТаблицаНастройкиПараметров');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:6px;width:590px;height:24px;',
+			items:
+			[
+				{
+					text:'Восстановить',
+				},
+				{
+					text:'Сохранить',
+				},
+			]
 		},
 					]
 				},
@@ -389,6 +463,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:172px;top:0px;width:202px;height:19px;',
+			width: 202,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -399,6 +475,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:454px;top:0px;width:150px;height:19px;',
+			width: 150,
+			height: 19,
 		},
 		{
 			xtype: 'tabpanel',
@@ -792,6 +870,8 @@
 		{
 			xtype: 'combobox',
 			style: 'position:absolute;left:352px;top:215px;width:258px;height:19px;',
+			width: 258,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -874,15 +954,34 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('УдаляемыеДанные');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.УниверсальныйОбменДаннымиXML.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
 			},
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:6px;top:76px;width:604px;height:24px;',
+			items:
+			[
+				{
+					text:'ОтметитьВсе',
+				},
+				{
+					text:'ОтменитьВсе',
+				},
+				'-',
+				{
+					text:'Удалить',
+				},
+			]
 		},
 		{
 			xtype: 'checkbox',
@@ -897,32 +996,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:632px;height:25px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Справка',
-				},
-				'-',
-				{
-					text:'Восстановить значения...',
-				},
-				{
-					text:'Сохранить значения...',
-				},
-				'-',
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Настройки',
-				},
-			]
-		},
 	]
 	});
 });

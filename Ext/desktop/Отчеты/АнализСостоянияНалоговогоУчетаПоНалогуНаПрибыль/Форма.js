@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Анализ состояния налогового учета по налогу на прибыль',
 	
 	layout: {type: "fit",align: "stretch"},

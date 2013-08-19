@@ -7,6 +7,7 @@
 	iconCls: 'bogus',
 	minimizable: true,
 	maximizable: true,
+	resizable: false,
 	title: 'Ввод на основании',
 	
 	layout: {type: "fit",align: "stretch"},
@@ -29,6 +30,23 @@
 			width: 319,
 			height: 19,
 			style: 'position:absolute;left:73px;top:4px;width:319px;height:19px;',
+		},
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:28px;width:384px;height:24px;',
+			items:
+			[
+				{
+					text:'Установить флажки',
+				},
+				{
+					text:'Снять флажки',
+				},
+				'-',
+				{
+					text:'Обновить',
+				},
+			]
 		},
 		{
 			id: 'ВводНаОсновании',
@@ -78,11 +96,13 @@
 					fn: function ()
 					{
 						var грид = Ext.getCmp('ВводНаОсновании');
-						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data;
+						var ссылка = грид.getView().getSelectionModel().getSelection()[0].data.Ссылка;
+						var Хранилище = грид.store;
+						var стрЗнач = Хранилище.findRecord('Ссылка', ссылка).data;
 						Ext.require(['Справочники.ВводРегламентированныхКадровыхДокументовНаОсновании.ФормаСобытия'], function ()
 						{
 							var obj = Ext.create("Справочники.ВводРегламентированныхКадровыхДокументовНаОсновании.ФормаСобытия");
-							obj.ПередатьСсылку(ссылка);
+							obj.ПередатьСсылку(стрЗнач);
 						});
 					}
 				}
@@ -92,24 +112,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:28px;width:384px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				{
-					text:'Установить флажки',
-				},
-				{
-					text:'Снять флажки',
-				},
-				'-',
-				{
-					text:'Обновить',
-				},
-			]
-		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:237px;width:400px;height:25px;',
